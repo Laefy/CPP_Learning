@@ -22,7 +22,7 @@ Si vous êtes sous Windows, vous pouvez télécharger l'outil depuis {{< open_in
 2- Recommencer l'étape 4 associée à votre système sur {{< open_in_new_tab "../1-vscode/" "cette page" />}}, ou suivez les instructions de la rubrique "Utilisation" sur {{< open_in_new_tab "../2-cmake/#utilisation" "cette page" />}}.\
 3- Placez-vous ensuite dans l'onglet Source Control de VSCode (Ctrl+Shift+G ou `View > SCM`).\
 4- Cliquez sur `Initialize Repository`.
-![](/images/vscode-git-init.png)
+![](/CPP_Learning/images/vscode-git-init.png)
 
 5- Les fichiers générés par la compilation devraient apparaître dans la liste des changements détectés par git.\
 Comme nous ne souhaitons pas sauvegarder les fichiers temporaires, nous allons les ignorer en ajoutant un nouveau fichier `.gitignore`.\
@@ -40,22 +40,22 @@ build/
 
 6- Si votre exécutable est généré dans le même répertoire que les fichiers sources, et que celui-ci ne comporte pas d'extension, vous pouvez ajouter son nom sur une nouvelle ligne du fichier `.gitignore`.\
 7- Retournez dans l'onglet Source Control, et appuyez sur le bouton `+` pour stager vos modifications.
-![](/images/vscode-git-stage.png)
+![](/CPP_Learning/images/vscode-git-stage.png)
 
 8- Entrez un message décrivant vos changements et cliquez sur la coche pour les committer.
-![](/images/vscode-git-commit.png)
+![](/CPP_Learning/images/vscode-git-commit.png)
 
 #### Clone d'un dépôt existant
 
 1- Si vous possédez un compte Github, commencez par forker le dépôt suivant : https://github.com/Laefy/CPP-M1-test-git-clone.
-![](/images/github-fork.png)
+![](/CPP_Learning/images/github-fork.png)
 
 2- Ouvrez VSCode.\
 3- Lancer la commande `Git: Clone` depuis le panneau de commandes (Ctrl+Shift+P ou `View > Command Palette...`).
-![](/images/vscode-git-clone.png)
+![](/CPP_Learning/images/vscode-git-clone.png)
 
 4- Fournissez-lui l'URL du dépôt créé sur votre compte à la suite du fork, ou utilisez l'URL du dépôt d'origine : https://github.com/Laefy/CPP-M1-test-git-clone.git/ (vous ne pourrez alors pas réalisez de push sur ce dépôt).
-![](/images/vscode-git-clone-url.png)
+![](/CPP_Learning/images/vscode-git-clone-url.png)
 
 
 4- Sélectionnez le dossier où vous ranger habituellement vos projets de code, pour que git y copie le dépôt distant.\
@@ -69,10 +69,10 @@ int main()
 ```
 
 6- Allez dans l'onglet Source Control de VSCode (Ctrl+Shift+G ou `View > SCM`) et appuyez sur le bouton `+` pour stager vos changements.
-![](/images/vscode-git-clone-stage.png)
+![](/CPP_Learning/images/vscode-git-clone-stage.png)
 
 7- Entrez un message et cliquez sur la coche pour committer vos changements.
-![](/images/vscode-git-clone-commit.png)
+![](/CPP_Learning/images/vscode-git-clone-commit.png)
 
 8- Si vous avez utilisé votre propre compte pour cloner le dépôt, vous pouvez maintenant y pusher votre commit en utilisant la commande `Git: Push`.
-![](/images/vscode-git-push.png)
+![](/CPP_Learning/images/vscode-git-push.png)

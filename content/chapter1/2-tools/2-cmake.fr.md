@@ -20,7 +20,7 @@ Afin de pouvoir utiliser CMake facilement depuis VSCode, il faut installer les e
 
 1- Démarrez VSCode.\
 2- Ouvrez le panneau des extensions et recherchez les extensions CMake et CMakeTools.
-![](/images/cmake-ext.png)
+![](/CPP_Learning/images/cmake-ext.png)
 
 3- Cliquez ensuite sur le bouton `Install` pour chacune d'entre elles.\
 4- Redémarrez VSCode.\

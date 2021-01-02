@@ -132,7 +132,7 @@ Allez sur {{% open_in_new_tab "https://en.cppreference.com/w/" "ce site" /%}} et
 
 {{% expand "Solution" %}}
 Vous devriez arriver sur {{% open_in_new_tab "https://en.cppreference.com/w/cpp/io/cout" "cette page" /%}}, vous indiquant que le header à référencer est `<iostream>` :
-![](/images/doc-cout.png)
+![](/CPP_Learning/images/doc-cout.png)
 
 Placez le code suivant dans votre fichier :
 ```cpp
