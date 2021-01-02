@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  
+  <sitemap>
+    <loc>https://laefy.github.io/CPP_Learning/fr/sitemap.xml</loc>
+    
+      <lastmod>2020-11-14T19:34:19+01:00</lastmod>
+    
+  </sitemap>
+  
+  <sitemap>
+    <loc>https://laefy.github.io/CPP_Learning/en/sitemap.xml</loc>
+    
+  </sitemap>
+  
+</sitemapindex>

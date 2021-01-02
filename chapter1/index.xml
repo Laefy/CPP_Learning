@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Introduction au C&#43;&#43; on Cours de C&#43;&#43; - Niveau Master</title>
+    <link>https://laefy.github.io/CPP_Learning/chapter1/</link>
+    <description>Recent content in Introduction au C&#43;&#43; on Cours de C&#43;&#43; - Niveau Master</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 14 Nov 2020 19:34:19 +0100</lastBuildDate><atom:link href="https://laefy.github.io/CPP_Learning/chapter1/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Présentation du langage</title>
+      <link>https://laefy.github.io/CPP_Learning/chapter1/1-language/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://laefy.github.io/CPP_Learning/chapter1/1-language/</guid>
+      <description>Cette page vous présentera quelques caractéristiques du C++, les différences avec d&amp;rsquo;autres langages que vous avez étudiés jusque là, pourquoi est-ce que certains disent que C++ est compliqué, alors que pas forcément, et ce qui fait que le langage est aussi utilisé aujourd&amp;rsquo;hui. Promis, c&amp;rsquo;est la seule page du cours où vous trouverez autant de pavés 🙂
+ Quelques caractéristiques C++ est un langage de programmation informatique inventé dans les années 1980 par un informaticien nommé Bjarne Stroupstrup.</description>
+    </item>
+    
+    <item>
+      <title>Questionnaire !</title>
+      <link>https://laefy.github.io/CPP_Learning/chapter1/form/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://laefy.github.io/CPP_Learning/chapter1/form/</guid>
+      <description>Félicitations !! Vous avez enfin terminé le Chapitre 1 ! Vous aviez l&amp;rsquo;impression qu&amp;rsquo;il n&amp;rsquo;en finirait jamais, qu&amp;rsquo;il aspirerait votre âme dans des méandres ténébreux, mais c&amp;rsquo;est bon, vous l&amp;rsquo;avez terrassé 🥳🎉
+ Avant de nous quitter pour aller savourer ce moment, vous devriez profiter que le chapitre soit bien frais dans votre tête pour répondre au questionnaire ci-dessous. Nous vous rappelons que si vous êtes en M1 à l&amp;rsquo;UGE, il participera à votre notation.</description>
+    </item>
+    
+    <item>
+      <title>Synthèse</title>
+      <link>https://laefy.github.io/CPP_Learning/chapter1/summary/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://laefy.github.io/CPP_Learning/chapter1/summary/</guid>
+      <description>Ce qu&amp;rsquo;il faut retenir Théorie  C++ est un langage compilé, performant, documenté, standardisé et disposant d&amp;rsquo;une large communauté. Il est verbeux et sa syntaxe font qu&amp;rsquo;il ne s&amp;rsquo;agit pas du langage le plus agréable à lire. Une référence est une variable qui pointe sur la même zone de mémoire qu&amp;rsquo;une autre variable.  Méthodologie  Lorsqu&amp;rsquo;on a besoin d&amp;rsquo;une fonction, on commence par aller voir sur Internet si elle n&amp;rsquo;existe pas déjà dans la librairie standard.</description>
+    </item>
+    
+  </channel>
+</rss>

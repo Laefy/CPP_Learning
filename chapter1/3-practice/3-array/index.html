@@ -1,0 +1,1111 @@
+<!DOCTYPE html>
+<html lang="fr" class="js csstransforms3d">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="Hugo 0.76.5" />
+    <meta name="description" content="">
+
+
+    <link rel="icon" href="/CPP_Learning/images/favicon.png" type="image/png">
+
+    <title>Tableau Numérique :: Cours de C&#43;&#43; - Niveau Master</title>
+
+    
+    <link href="/CPP_Learning/css/nucleus.css?1609581461" rel="stylesheet">
+    <link href="/CPP_Learning/css/fontawesome-all.min.css?1609581461" rel="stylesheet">
+    <link href="/CPP_Learning/css/hybrid.css?1609581461" rel="stylesheet">
+    <link href="/CPP_Learning/css/featherlight.min.css?1609581461" rel="stylesheet">
+    <link href="/CPP_Learning/css/perfect-scrollbar.min.css?1609581461" rel="stylesheet">
+    <link href="/CPP_Learning/css/auto-complete.css?1609581461" rel="stylesheet">
+    <link href="/CPP_Learning/css/atom-one-dark-reasonable.css?1609581461" rel="stylesheet">
+    <link href="/CPP_Learning/css/theme.css?1609581461" rel="stylesheet">
+    <link href="/CPP_Learning/css/hugo-theme.css?1609581461" rel="stylesheet">
+    
+    <link href="/CPP_Learning/css/theme-mine.css?1609581461" rel="stylesheet">
+    
+    <link href="/CPP_Learning/css/syntax.css?1609581461" rel="stylesheet">
+
+    <script src="/CPP_Learning/js/jquery-3.3.1.min.js?1609581461"></script>
+
+    <style>
+      :root #header + #content > #left > #rlblock_left{
+          display:none !important;
+      }
+      
+        :not(pre) > code + span.copy-to-clipboard {
+            display: none;
+        }
+      
+    </style>
+    
+  </head>
+  <body class="" data-url="/CPP_Learning/chapter1/3-practice/3-array/">
+    <nav id="sidebar" class="showVisitedLinks">
+
+
+
+  <div id="header-wrapper">
+    <div id="header">
+      <a id="logo" href="/">🎄 C++ 🎄</a>
+
+    </div>
+    
+        <div class="searchbox">
+    <label for="search-by"><i class="fas fa-search"></i></label>
+    <input data-search-input id="search-by" type="search" placeholder="Rechercher...">
+    <span data-search-clear=""><i class="fas fa-times"></i></span>
+</div>
+
+<script type="text/javascript" src="/CPP_Learning/js/lunr.min.js?1609581461"></script>
+<script type="text/javascript" src="/CPP_Learning/js/auto-complete.js?1609581461"></script>
+<script type="text/javascript">
+    
+        var baseurl = "https:\/\/laefy.github.io\/CPP_Learning\/";
+    
+</script>
+<script type="text/javascript" src="/CPP_Learning/js/search.js?1609581461"></script>
+
+    
+  </div>
+
+    <div class="highlightable">
+    <ul class="topics">
+
+        
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/CPP_Learning/chapter1/" title="Introduction au C&#43;&#43;" class="dd-item 
+        parent
+        
+        
+        ">
+      <a href="/CPP_Learning/chapter1/">
+          <b>I- </b>Introduction au C&#43;&#43;
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+          
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/CPP_Learning/chapter1/1-language/" title="Présentation du langage" class="dd-item ">
+        <a href="/CPP_Learning/chapter1/1-language/">
+        Présentation du langage
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/CPP_Learning/chapter1/2-tools/" title="Outils" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/CPP_Learning/chapter1/2-tools/">
+          Outils
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/CPP_Learning/chapter1/2-tools/1-vscode/" title="Visual Studio Code" class="dd-item ">
+        <a href="/CPP_Learning/chapter1/2-tools/1-vscode/">
+        Visual Studio Code
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/CPP_Learning/chapter1/2-tools/2-cmake/" title="CMake" class="dd-item ">
+        <a href="/CPP_Learning/chapter1/2-tools/2-cmake/">
+        CMake
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/CPP_Learning/chapter1/2-tools/3-git/" title="Git" class="dd-item ">
+        <a href="/CPP_Learning/chapter1/2-tools/3-git/">
+        Git
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/CPP_Learning/chapter1/2-tools/4-compilation/" title="Compilation &amp; Exécution" class="dd-item ">
+        <a href="/CPP_Learning/chapter1/2-tools/4-compilation/">
+        Compilation &amp; Exécution
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/CPP_Learning/chapter1/3-practice/" title="Premiers programmes" class="dd-item 
+        parent
+        
+        
+        ">
+      <a href="/CPP_Learning/chapter1/3-practice/">
+          Premiers programmes
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/CPP_Learning/chapter1/3-practice/1-hello-world/" title="Hello World" class="dd-item ">
+        <a href="/CPP_Learning/chapter1/3-practice/1-hello-world/">
+        Hello World
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/CPP_Learning/chapter1/3-practice/2-parrot.fd/" title="Perroquet" class="dd-item ">
+        <a href="/CPP_Learning/chapter1/3-practice/2-parrot.fd/">
+        Perroquet
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/CPP_Learning/chapter1/3-practice/3-array/" title="Tableau Numérique" class="dd-item active">
+        <a href="/CPP_Learning/chapter1/3-practice/3-array/">
+        Tableau Numérique
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/CPP_Learning/chapter1/3-practice/4-calculator/" title="Calculette" class="dd-item ">
+        <a href="/CPP_Learning/chapter1/3-practice/4-calculator/">
+        Calculette
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/CPP_Learning/chapter1/form/" title="Questionnaire !" class="dd-item ">
+        <a href="/CPP_Learning/chapter1/form/">
+        Questionnaire !
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/CPP_Learning/chapter1/summary/" title="Synthèse" class="dd-item ">
+        <a href="/CPP_Learning/chapter1/summary/">
+        Synthèse
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+         
+    </ul>
+
+    
+    
+      <section id="shortcuts">
+        <h3>Accès rapide</h3>
+        <ul>
+          
+              <li> 
+                  <a class="padding" href="https://github.com/Laefy/CPP_Learning/"><i class='fab fa-github'></i> Dépôt GitHub</a>
+              </li>
+          
+              <li> 
+                  <a class="padding" href="https://en.cppreference.com/w/"><i class='fas fa-passport'></i> CPP-Ref</a>
+              </li>
+          
+        </ul>
+      </section>
+    
+
+    
+    <section id="prefooter">
+      <hr/>
+      <ul>
+      
+      
+      
+        <li><a class="padding" href="#" data-clear-history-toggle=""><i class="fas fa-history fa-fw"></i> Supprimer l&#39;historique</a></li>
+      
+      </ul>
+    </section>
+    
+    <section id="footer">
+      <p>Built with <a href="https://github.com/matcornic/hugo-theme-learn"><i class="fas fa-heart"></i></a> from <a href="https://getgrav.org">Grav</a> and <a href="https://gohugo.io/">Hugo</a></p>
+
+    </section>
+  </div>
+</nav>
+
+
+
+
+        <section id="body">
+        <div id="overlay"></div>
+        <div class="padding highlightable">
+              
+              <div>
+                <div id="top-bar">
+                
+                
+                <div id="breadcrumbs" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
+                    <span id="sidebar-toggle-span">
+                        <a href="#" id="sidebar-toggle" data-sidebar-toggle="">
+                          <i class="fas fa-bars"></i>
+                        </a>
+                    </span>
+                  
+                  <span id="toc-menu"><i class="fas fa-list-alt"></i></span>
+                  
+                  <span class="links">
+                 
+                 
+                    
+          
+          
+            
+            
+          
+          
+            
+            
+          
+          
+            
+            
+          
+          
+            <a href='/CPP_Learning/'>Accueil</a> > <a href='/CPP_Learning/chapter1/'>Introduction au C++</a> > <a href='/CPP_Learning/chapter1/3-practice/'>Premiers programmes</a> > Tableau Numérique
+          
+        
+          
+        
+          
+        
+          
+        
+                 
+                  </span>
+                </div>
+                
+                    <div class="progress">
+    <div class="wrapper">
+<nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#tableau-statique">Tableau statique</a></li>
+        <li><a href="#passage-darguments-au-programme">Passage d&rsquo;arguments au programme</a></li>
+        <li><a href="#conversion-dune-chaîne-en-entier">Conversion d&rsquo;une chaîne en entier</a></li>
+        <li><a href="#allocation-de-tableau-dynamique">Allocation de tableau dynamique</a></li>
+        <li><a href="#stdvector">std::vector</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+    </div>
+</div>
+
+                
+              </div>
+            </div>
+            
+        <div id="head-tags">
+        
+        </div>
+        
+        <div id="body-inner">
+          
+            <h1>
+              
+              Tableau Numérique
+            </h1>
+          
+
+        
+
+
+<p>Le but de cet exercice est de voir comment manipuler les tableaux en C++ et passer des arguments au programme. Votre objectif sera d&rsquo;afficher un tableau de nombres, dont la taille sera définie par les paramètres passés au programme.</p>
+<hr>
+<p>Pour cet exercice, vous modifierez le fichier :<br>
+- <code>chap-01/3-array.cpp</code></p>
+<p>La cible à compiler est <code>c1-3-array</code>.</p>
+<hr>
+<h3 id="tableau-statique">Tableau statique</h3>
+<p>Le code initial de l&rsquo;exercice vous est fourni. Le voici :</p>
+<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp">
+</span><span class="cp"></span>
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="kt">int</span> <span class="n">array</span><span class="p">[]</span> <span class="o">=</span> <span class="p">{</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span> <span class="p">};</span>
+
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">4</span><span class="p">;</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">array</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div><p>Ce programme permet d&rsquo;instancier un tableau d&rsquo;entiers contenant les valeurs 0, 1, 2 et 3, et d&rsquo;afficher ses valeurs. La taille du tableau n&rsquo;étant pas spécifié dans les crochets <code>[]</code>, elle est déduite automatiquement à partir du nombre de valeurs fournies dans les accolades <code>{}</code>. Ce qui n&rsquo;est pas très élégant ici, c&rsquo;est que l&rsquo;on doit fournir cette taille dans la boucle juste en dessous. Si on ajoute une nouvelle valeur dans les accolades ou que l&rsquo;on en retire une, il faut donc penser à mettre à jour la condition d&rsquo;arrêt de la boucle.</p>
+<p>Pour ne plus avoir ce problème, vous allez remplacer votre boucle <code>for</code>, par une boucle <strong>foreach</strong>. La syntaxe est similaire au Java :</p>
+<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="nl">value</span> <span class="p">:</span> <span class="n">values</span><span class="p">)</span>
+</code></pre></div><p>Effectuez le changement et les modifications associées, et testez que votre programme fonctionne toujours.</p>
+
+<div class="expand">
+    <div class="expand-label" style="cursor: pointer;" onclick="$h = $(this);$h.next('div').slideToggle(100,function () {$h.children('i').attr('class',function () {return $h.next('div').is(':visible') ? 'fas fa-chevron-down' : 'fas fa-chevron-right';});});">
+        <i style="font-size:x-small;" class="fas fa-chevron-right"></i>
+        <span>
+        
+    	
+    	Solution
+    	
+    	</span>
+    </div>
+    <div class="expand-content" style="display: none;">
+        <div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="nl">value</span> <span class="p">:</span> <span class="n">array</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">value</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+    </div>
+</div>
+
+<div class="notices info" ><p>Il est possible d&rsquo;utiliser une boucle foreach uniquement sur un tableau statique seulement s&rsquo;il est déclaré dans la même fonction que votre boucle. Nous verrons dans le <a href="/chapter3/">Chapitre 3</a> une autre manière de définir des tableaux statiques, qui permet de les manipuler plus facilement que les tableaux statiques &lsquo;primitifs&rsquo;.</p>
+</div>
+
+<p>Vous souhaiteriez maintenant avoir dans votre tableau les nombres de 1 à 50. Mais vous n&rsquo;avez pas très envie d&rsquo;écrire cette suite à la main dans les accolades. Vous allez donc utiliser les crochets <code>[]</code> pour spécifiez la nouvelle taille du tableau, ainsi qu&rsquo;une boucle <code>for</code> pour intialiser votre tableau. N&rsquo;oubliez pas de définir votre tableau avec <code>= {}</code>. Cela permettra de remplir dans un premier temps le tableau de 0, plutôt que de valeurs aléatoires. Vérifiez que vous obtenez les bonnes valeurs dans la sortie du programme.</p>
+
+<div class="expand">
+    <div class="expand-label" style="cursor: pointer;" onclick="$h = $(this);$h.next('div').slideToggle(100,function () {$h.children('i').attr('class',function () {return $h.next('div').is(':visible') ? 'fas fa-chevron-down' : 'fas fa-chevron-right';});});">
+        <i style="font-size:x-small;" class="fas fa-chevron-right"></i>
+        <span>
+        
+    	
+    	Solution
+    	
+    	</span>
+    </div>
+    <div class="expand-content" style="display: none;">
+        <div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="kt">int</span> <span class="n">array</span><span class="p">[</span><span class="mi">50</span><span class="p">]</span> <span class="o">=</span> <span class="p">{};</span>
+
+<span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">50</span><span class="p">;</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="c1">// Array indices start at 0, so we need to use (i+1) if we want the series to start at 1.
+</span><span class="c1"></span>    <span class="n">array</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+    </div>
+</div>
+<hr>
+<h3 id="passage-darguments-au-programme">Passage d&rsquo;arguments au programme</h3>
+<p>Nous souhaiterions maintenant avoir un tableau de taille variable, donc la taille serait spécifiée en utilisant le premier argument du programme.
+Pour cela, nous allons modifier la <strong>signature</strong> de la fonction <code>main</code> par :</p>
+<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="kt">int</span> <span class="n">main</span><span class="p">(</span><span class="kt">int</span> <span class="n">argc</span><span class="p">,</span> <span class="kt">char</span><span class="o">**</span> <span class="n">argv</span><span class="p">)</span>
+</code></pre></div>
+<div class="notices tip" ><p><code>argc</code> signifie &lsquo;arguments count&rsquo;, et <code>argv</code> &lsquo;arguments values&rsquo;. Il n&rsquo;est pas nécessaire de les nommer de cette façon, mais par convention, c&rsquo;est plus propre de le faire.</p>
+</div>
+
+<p>Si l&rsquo;argument n&rsquo;est pas fourni, affichez un message d&rsquo;erreur en écrivant dans <code>std::cerr</code> et sortez du programme avec le code d&rsquo;erreur -1. Sinon, affichez le contenu de l&rsquo;argument. Vous pouvez commenter le restant du code avec le tableau, en utilisant <code>/* code */</code> ou bien <code>// code</code> sur chaque ligne.</p>
+<p>Afin de tester votre programme, vous pouvez soit le lancer depuis un terminal (le programme devrait être généré dans le dossier <code>build/chap-01/{config}/c1-3-array)</code>), ou bien générer un nouveau fichier <code>launch.json</code> depuis VSCode et modifier son contenu pour y passer l&rsquo;argument de votre choix.</p>
+
+<div class="expand">
+    <div class="expand-label" style="cursor: pointer;" onclick="$h = $(this);$h.next('div').slideToggle(100,function () {$h.children('i').attr('class',function () {return $h.next('div').is(':visible') ? 'fas fa-chevron-down' : 'fas fa-chevron-right';});});">
+        <i style="font-size:x-small;" class="fas fa-chevron-right"></i>
+        <span>
+        
+    	
+    	Solution
+    	
+    	</span>
+    </div>
+    <div class="expand-content" style="display: none;">
+        <div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="kt">int</span> <span class="nf">main</span><span class="p">(</span><span class="kt">int</span> <span class="n">argc</span><span class="p">,</span> <span class="kt">char</span><span class="o">**</span> <span class="n">argv</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="c1">// First argument is always the command name used to launch the program.
+</span><span class="c1"></span>    <span class="k">if</span> <span class="p">(</span><span class="n">argc</span> <span class="o">&lt;</span> <span class="mi">2</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">std</span><span class="o">::</span><span class="n">cerr</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;Expected argument for array size.&#34;</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+        <span class="k">return</span> <span class="o">-</span><span class="mi">1</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">argv</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+
+    <span class="c1">// Commented
+</span><span class="c1"></span>    <span class="c1">// code
+</span><span class="c1"></span>    <span class="c1">// ...
+</span><span class="c1"></span>
+    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+    </div>
+</div>
+<hr>
+<h3 id="conversion-dune-chaîne-en-entier">Conversion d&rsquo;une chaîne en entier</h3>
+<p>Nous pouvons bien récupérer la taille attendue pour le tableau, mais hélas, il s&rsquo;agit d&rsquo;une chaîne de caractères, et non d&rsquo;un entier.
+Recherchez sur Internet s&rsquo;il n&rsquo;existe pas une fonction dans la librairie standard permettant de réaliser cette conversion, et utilisez-la pour récupérer cette valeur dans une variable <code>length</code>.</p>
+
+<div class="expand">
+    <div class="expand-label" style="cursor: pointer;" onclick="$h = $(this);$h.next('div').slideToggle(100,function () {$h.children('i').attr('class',function () {return $h.next('div').is(':visible') ? 'fas fa-chevron-down' : 'fas fa-chevron-right';});});">
+        <i style="font-size:x-small;" class="fas fa-chevron-right"></i>
+        <span>
+        
+    	
+    	Solution
+    	
+    	</span>
+    </div>
+    <div class="expand-content" style="display: none;">
+        <p>Vous pouvez utiliser la fonction <code>std::stoi</code> (définie dans <code>&lt;string&gt;</code>) ou éventuellement la fonction C <code>std::atoi</code> (définie dans <code>&lt;cstdlib&gt;</code>).</p>
+<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="kt">int</span> <span class="n">length</span> <span class="o">=</span> <span class="n">std</span><span class="o">::</span><span class="n">stoi</span><span class="p">(</span><span class="n">argv</span><span class="p">[</span><span class="mi">1</span><span class="p">]);</span>
+<span class="k">if</span> <span class="p">(</span><span class="n">length</span> <span class="o">&lt;=</span> <span class="mi">0</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">cerr</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;Expected strictly positive value for array size.&#34;</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+    <span class="k">return</span> <span class="o">-</span><span class="mi">1</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">length</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+</code></pre></div><div class="notices note" ><p>Si vous utilisez <code>std::stoi</code> et que la chaîne fournie ne commence pas par un entier, le programme va lever une exception. Nous verrons comment traiter les exceptions au <a href="/chapter7/">Chapitre 7</a>.</p>
+</div>
+
+    </div>
+</div>
+<hr>
+<h3 id="allocation-de-tableau-dynamique">Allocation de tableau dynamique</h3>
+<p>Vous pouvez maintenant décommenter le code pour le tableau, que vous allez modifier afin d&rsquo;allouer un tableau dynamique.</p>
+<p>Pour allouer de la mémoire en C++, nous allons utiliser l&rsquo;opérateur <code>new</code>. Et pour la libérer, nous utiliserons <code>delete</code>. Afin d&rsquo;allouer une variable de type <code>int</code> (que l&rsquo;on oubliera pas de libérer) ayant pour valeur 4, on utilisera le code suivant :</p>
+<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="kt">int</span><span class="o">*</span> <span class="n">value</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">int</span><span class="p">(</span><span class="mi">4</span><span class="p">);</span>
+<span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;Value is &#34;</span> <span class="o">&lt;&lt;</span> <span class="o">*</span><span class="n">value</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+<span class="k">delete</span> <span class="n">value</span><span class="p">;</span>
+</code></pre></div><p>C&rsquo;est bien tout ça, mais nous, ce qu&rsquo;on aimerait, c&rsquo;est un tableau. La syntaxe que nous venons de voir ne permet pas de spécifier le nombre de blocs à allouer pour le tableau. Dans notre cas, il faut en réalité utiliser les operator <code>new[]</code> et <code>delete[]</code>. Si on veut allouer un tableau de 4 entiers allant de 0 à 3, on utilisera donc :</p>
+<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="kt">int</span><span class="o">*</span> <span class="n">values</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">int</span><span class="p">[</span><span class="mi">4</span><span class="p">]</span> <span class="p">{</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span> <span class="p">};</span>
+<span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;Values are &#34;</span> <span class="o">&lt;&lt;</span> <span class="n">values</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;, &#34;</span> <span class="o">&lt;&lt;</span> <span class="n">values</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;, &#34;</span> <span class="o">&lt;&lt;</span> <span class="n">values</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;, &#34;</span> <span class="o">&lt;&lt;</span> <span class="n">values</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+<span class="k">delete</span><span class="p">[]</span> <span class="n">values</span><span class="p">;</span>
+</code></pre></div>
+<div class="notices info" ><p>Notez bien le fait que l&rsquo;on utilise des crochets vides sur le <code>delete</code>. Si vous les oubliez, le programme risque de râler.<br>
+Pensez aussi à mettre des accolades vides derrière le <code>new int[size]</code> si vous ne souhaitez pas spécifier de valeurs, afin d&rsquo;avoir des 0 dans le tableau, plutôt que des valeurs aléatoires.</p>
+</div>
+
+<p>Utilisez les opérateurs <code>new[]</code> et <code>delete[]</code> et faites les modifications appropriées afin d&rsquo;allouer un tableau de la taille attendue, plutôt qu&rsquo;un tableau de taille statique.</p>
+
+<div class="expand">
+    <div class="expand-label" style="cursor: pointer;" onclick="$h = $(this);$h.next('div').slideToggle(100,function () {$h.children('i').attr('class',function () {return $h.next('div').is(':visible') ? 'fas fa-chevron-down' : 'fas fa-chevron-right';});});">
+        <i style="font-size:x-small;" class="fas fa-chevron-right"></i>
+        <span>
+        
+    	
+    	Solution
+    	
+    	</span>
+    </div>
+    <div class="expand-content" style="display: none;">
+        <div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="kt">int</span><span class="o">*</span> <span class="n">array</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">int</span><span class="p">[</span><span class="n">length</span><span class="p">]</span> <span class="p">{};</span>
+
+<span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">length</span><span class="p">;</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">array</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="nl">value</span> <span class="p">:</span> <span class="n">array</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">value</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="k">delete</span><span class="p">[]</span> <span class="n">array</span><span class="p">;</span>
+</code></pre></div>
+    </div>
+</div>
+<p>Essayez maintenant de compiler. Vous devriez avoir une erreur de ce style au niveau de votre boucle foreach :</p>
+<div class="highlight"><pre class="chroma"><code class="language-b" data-lang="b"><span class="c">error blabla: &#39;begin&#39;: no matching overloaded function found
+</span></code></pre></div><p>Eh oui, les boucles foreach ne fonctionnent pas avec les tableaux dynamiques. Vous devez donc la remplacez par une boucle <code>for</code> classique. 
+
+<div class="expand">
+    <div class="expand-label" style="cursor: pointer;" onclick="$h = $(this);$h.next('div').slideToggle(100,function () {$h.children('i').attr('class',function () {return $h.next('div').is(':visible') ? 'fas fa-chevron-down' : 'fas fa-chevron-right';});});">
+        <i style="font-size:x-small;" class="fas fa-chevron-right"></i>
+        <span>
+        
+    	
+    	Solution
+    	
+    	</span>
+    </div>
+    <div class="expand-content" style="display: none;">
+        <div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">length</span><span class="p">;</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">array</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+    </div>
+</div></p>
+<hr>
+<h3 id="stdvector">std::vector</h3>
+<p>Afin de pouvoir manipuler des tableaux plus simplement, la librairie standard définit la classe <code>std::vector</code>. Vous n&rsquo;aurez ainsi plus à vous préoccuper de libérer la mémoire, à initialiser des valeurs qui seront de toute manière écrasées, et vous pourrez réutiliser des boucles foreach.</p>
+<p>Pour définir un <code>std::vector</code> initialement vide qui contiendra des entiers, on utilise l&rsquo;instruction suivante :</p>
+<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">array</span><span class="p">;</span>
+</code></pre></div><p>Pour ajouter de nouvelles valeurs à ce tableau (par exemple, 8, 5 et -3), on utilise la <strong>fonction membre</strong> <code>emplace_back</code>. Pour accéder à une fonction membre en C++, on utilise la même syntaxe que pour accéder à une méthode en Java :</p>
+<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="n">array</span><span class="p">.</span><span class="n">emplace_back</span><span class="p">(</span><span class="mi">8</span><span class="p">);</span>
+<span class="n">array</span><span class="p">.</span><span class="n">emplace_back</span><span class="p">(</span><span class="mi">5</span><span class="p">);</span>
+<span class="n">array</span><span class="p">.</span><span class="n">emplace_back</span><span class="p">(</span><span class="o">-</span><span class="mi">3</span><span class="p">);</span>
+</code></pre></div><p>Modifiez votre code de façon à utiliser un <code>std::vector</code> plutôt qu&rsquo;un tableau alloué manuellement, retransformer votre boucle pour l&rsquo;affichage en boucle foreach et testez que tout fonctionne correctement.
+
+<div class="expand">
+    <div class="expand-label" style="cursor: pointer;" onclick="$h = $(this);$h.next('div').slideToggle(100,function () {$h.children('i').attr('class',function () {return $h.next('div').is(':visible') ? 'fas fa-chevron-down' : 'fas fa-chevron-right';});});">
+        <i style="font-size:x-small;" class="fas fa-chevron-right"></i>
+        <span>
+        
+    	
+    	Solution
+    	
+    	</span>
+    </div>
+    <div class="expand-content" style="display: none;">
+        <p>Commencez par inclure le header <code>&lt;vector&gt;</code>.
+Dans votre fonction, vous devriez avoir le code suivant.</p>
+<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">array</span><span class="p">;</span>
+
+<span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">length</span><span class="p">;</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">array</span><span class="p">.</span><span class="n">emplace_back</span><span class="p">(</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="nl">value</span> <span class="p">:</span> <span class="n">array</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">value</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+    </div>
+</div></p>
+
+
+<footer class="footline">
+	
+</footer>
+
+        
+        </div> 
+        
+
+      </div>
+
+    <div id="navigation">
+        
+        
+        
+        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+            
+        
+        
+        
+
+
+	 
+	 
+		
+			<a class="nav nav-prev" href="/CPP_Learning/chapter1/3-practice/2-parrot.fd/" title="Perroquet"> <i class="fa fa-chevron-left"></i></a>
+		
+		
+			<a class="nav nav-next" href="/CPP_Learning/chapter1/3-practice/4-calculator/" title="Calculette" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+		
+	
+    </div>
+
+    </section>
+    
+    <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
+      <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
+    </div>
+    <script src="/CPP_Learning/js/clipboard.min.js?1609581461"></script>
+    <script src="/CPP_Learning/js/perfect-scrollbar.min.js?1609581461"></script>
+    <script src="/CPP_Learning/js/perfect-scrollbar.jquery.min.js?1609581461"></script>
+    <script src="/CPP_Learning/js/jquery.sticky.js?1609581461"></script>
+    <script src="/CPP_Learning/js/featherlight.min.js?1609581461"></script>
+    <script src="/CPP_Learning/js/highlight.pack.js?1609581461"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <script src="/CPP_Learning/js/modernizr.custom-3.6.0.js?1609581461"></script>
+    <script src="/CPP_Learning/js/learn.js?1609581461"></script>
+    <script src="/CPP_Learning/js/hugo-learn.js?1609581461"></script>
+
+    <link href="/CPP_Learning/mermaid/mermaid.css?1609581461" rel="stylesheet" />
+    <script src="/CPP_Learning/mermaid/mermaid.js?1609581461"></script>
+    <script>
+        mermaid.initialize({ startOnLoad: true });
+    </script>
+    
+
+  </body>
+</html>
+

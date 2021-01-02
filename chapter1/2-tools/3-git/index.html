@@ -1,0 +1,913 @@
+<!DOCTYPE html>
+<html lang="fr" class="js csstransforms3d">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="Hugo 0.76.5" />
+    <meta name="description" content="">
+
+
+    <link rel="icon" href="/CPP_Learning/images/favicon.png" type="image/png">
+
+    <title>Git :: Cours de C&#43;&#43; - Niveau Master</title>
+
+    
+    <link href="/CPP_Learning/css/nucleus.css?1609581461" rel="stylesheet">
+    <link href="/CPP_Learning/css/fontawesome-all.min.css?1609581461" rel="stylesheet">
+    <link href="/CPP_Learning/css/hybrid.css?1609581461" rel="stylesheet">
+    <link href="/CPP_Learning/css/featherlight.min.css?1609581461" rel="stylesheet">
+    <link href="/CPP_Learning/css/perfect-scrollbar.min.css?1609581461" rel="stylesheet">
+    <link href="/CPP_Learning/css/auto-complete.css?1609581461" rel="stylesheet">
+    <link href="/CPP_Learning/css/atom-one-dark-reasonable.css?1609581461" rel="stylesheet">
+    <link href="/CPP_Learning/css/theme.css?1609581461" rel="stylesheet">
+    <link href="/CPP_Learning/css/hugo-theme.css?1609581461" rel="stylesheet">
+    
+    <link href="/CPP_Learning/css/theme-mine.css?1609581461" rel="stylesheet">
+    
+    <link href="/CPP_Learning/css/syntax.css?1609581461" rel="stylesheet">
+
+    <script src="/CPP_Learning/js/jquery-3.3.1.min.js?1609581461"></script>
+
+    <style>
+      :root #header + #content > #left > #rlblock_left{
+          display:none !important;
+      }
+      
+        :not(pre) > code + span.copy-to-clipboard {
+            display: none;
+        }
+      
+    </style>
+    
+  </head>
+  <body class="" data-url="/CPP_Learning/chapter1/2-tools/3-git/">
+    <nav id="sidebar" class="showVisitedLinks">
+
+
+
+  <div id="header-wrapper">
+    <div id="header">
+      <a id="logo" href="/">🎄 C++ 🎄</a>
+
+    </div>
+    
+        <div class="searchbox">
+    <label for="search-by"><i class="fas fa-search"></i></label>
+    <input data-search-input id="search-by" type="search" placeholder="Rechercher...">
+    <span data-search-clear=""><i class="fas fa-times"></i></span>
+</div>
+
+<script type="text/javascript" src="/CPP_Learning/js/lunr.min.js?1609581461"></script>
+<script type="text/javascript" src="/CPP_Learning/js/auto-complete.js?1609581461"></script>
+<script type="text/javascript">
+    
+        var baseurl = "https:\/\/laefy.github.io\/CPP_Learning\/";
+    
+</script>
+<script type="text/javascript" src="/CPP_Learning/js/search.js?1609581461"></script>
+
+    
+  </div>
+
+    <div class="highlightable">
+    <ul class="topics">
+
+        
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/CPP_Learning/chapter1/" title="Introduction au C&#43;&#43;" class="dd-item 
+        parent
+        
+        
+        ">
+      <a href="/CPP_Learning/chapter1/">
+          <b>I- </b>Introduction au C&#43;&#43;
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+          
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/CPP_Learning/chapter1/1-language/" title="Présentation du langage" class="dd-item ">
+        <a href="/CPP_Learning/chapter1/1-language/">
+        Présentation du langage
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/CPP_Learning/chapter1/2-tools/" title="Outils" class="dd-item 
+        parent
+        
+        
+        ">
+      <a href="/CPP_Learning/chapter1/2-tools/">
+          Outils
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/CPP_Learning/chapter1/2-tools/1-vscode/" title="Visual Studio Code" class="dd-item ">
+        <a href="/CPP_Learning/chapter1/2-tools/1-vscode/">
+        Visual Studio Code
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/CPP_Learning/chapter1/2-tools/2-cmake/" title="CMake" class="dd-item ">
+        <a href="/CPP_Learning/chapter1/2-tools/2-cmake/">
+        CMake
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/CPP_Learning/chapter1/2-tools/3-git/" title="Git" class="dd-item active">
+        <a href="/CPP_Learning/chapter1/2-tools/3-git/">
+        Git
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/CPP_Learning/chapter1/2-tools/4-compilation/" title="Compilation &amp; Exécution" class="dd-item ">
+        <a href="/CPP_Learning/chapter1/2-tools/4-compilation/">
+        Compilation &amp; Exécution
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/CPP_Learning/chapter1/3-practice/" title="Premiers programmes" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/CPP_Learning/chapter1/3-practice/">
+          Premiers programmes
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/CPP_Learning/chapter1/3-practice/1-hello-world/" title="Hello World" class="dd-item ">
+        <a href="/CPP_Learning/chapter1/3-practice/1-hello-world/">
+        Hello World
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/CPP_Learning/chapter1/3-practice/2-parrot.fd/" title="Perroquet" class="dd-item ">
+        <a href="/CPP_Learning/chapter1/3-practice/2-parrot.fd/">
+        Perroquet
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/CPP_Learning/chapter1/3-practice/3-array/" title="Tableau Numérique" class="dd-item ">
+        <a href="/CPP_Learning/chapter1/3-practice/3-array/">
+        Tableau Numérique
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/CPP_Learning/chapter1/3-practice/4-calculator/" title="Calculette" class="dd-item ">
+        <a href="/CPP_Learning/chapter1/3-practice/4-calculator/">
+        Calculette
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/CPP_Learning/chapter1/form/" title="Questionnaire !" class="dd-item ">
+        <a href="/CPP_Learning/chapter1/form/">
+        Questionnaire !
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/CPP_Learning/chapter1/summary/" title="Synthèse" class="dd-item ">
+        <a href="/CPP_Learning/chapter1/summary/">
+        Synthèse
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+         
+    </ul>
+
+    
+    
+      <section id="shortcuts">
+        <h3>Accès rapide</h3>
+        <ul>
+          
+              <li> 
+                  <a class="padding" href="https://github.com/Laefy/CPP_Learning/"><i class='fab fa-github'></i> Dépôt GitHub</a>
+              </li>
+          
+              <li> 
+                  <a class="padding" href="https://en.cppreference.com/w/"><i class='fas fa-passport'></i> CPP-Ref</a>
+              </li>
+          
+        </ul>
+      </section>
+    
+
+    
+    <section id="prefooter">
+      <hr/>
+      <ul>
+      
+      
+      
+        <li><a class="padding" href="#" data-clear-history-toggle=""><i class="fas fa-history fa-fw"></i> Supprimer l&#39;historique</a></li>
+      
+      </ul>
+    </section>
+    
+    <section id="footer">
+      <p>Built with <a href="https://github.com/matcornic/hugo-theme-learn"><i class="fas fa-heart"></i></a> from <a href="https://getgrav.org">Grav</a> and <a href="https://gohugo.io/">Hugo</a></p>
+
+    </section>
+  </div>
+</nav>
+
+
+
+
+        <section id="body">
+        <div id="overlay"></div>
+        <div class="padding highlightable">
+              
+              <div>
+                <div id="top-bar">
+                
+                
+                <div id="breadcrumbs" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
+                    <span id="sidebar-toggle-span">
+                        <a href="#" id="sidebar-toggle" data-sidebar-toggle="">
+                          <i class="fas fa-bars"></i>
+                        </a>
+                    </span>
+                  
+                  <span id="toc-menu"><i class="fas fa-list-alt"></i></span>
+                  
+                  <span class="links">
+                 
+                 
+                    
+          
+          
+            
+            
+          
+          
+            
+            
+          
+          
+            
+            
+          
+          
+            <a href='/CPP_Learning/'>Accueil</a> > <a href='/CPP_Learning/chapter1/'>Introduction au C++</a> > <a href='/CPP_Learning/chapter1/2-tools/'>Outils</a> > Git
+          
+        
+          
+        
+          
+        
+          
+        
+                 
+                  </span>
+                </div>
+                
+                    <div class="progress">
+    <div class="wrapper">
+<nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#installation">Installation</a></li>
+        <li><a href="#manipulation-dun-dépôt-depuis-vscode">Manipulation d&rsquo;un dépôt depuis VSCode</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+    </div>
+</div>
+
+                
+              </div>
+            </div>
+            
+        <div id="head-tags">
+        
+        </div>
+        
+        <div id="body-inner">
+          
+            <h1>
+              
+              Git
+            </h1>
+          
+
+        
+
+
+<p>Pour le gestionnaire de version, nous utiliserons 
+<a href="https://git-scm.com/" target="_blank" rel="noopener noreferrer">git</a>. Vous pourrez ensuite héberger votre dépôt pour les TPs et le projet sur la plateforme de votre choix (Github, Gitlab, Bitbucket, votre serveur perso, peu importe), du moment que l&rsquo;on peut y avoir accès pour l&rsquo;évaluation.</p>
+<hr>
+<h3 id="installation">Installation</h3>
+<p>Si vous êtes sous Unix, vous devriez pouvoir installer git depuis votre gestionnaire de paquets.<br>
+Si vous êtes sous Windows, vous pouvez télécharger l&rsquo;outil depuis 
+<a href="https://git-scm.com/download/win/" target="_blank" rel="noopener noreferrer">cette page</a>.</p>
+<hr>
+<h3 id="manipulation-dun-dépôt-depuis-vscode">Manipulation d&rsquo;un dépôt depuis VSCode</h3>
+<h4 id="nouveau-dépôt">Nouveau dépôt</h4>
+<p>1- Créez un nouveau dossier <code>test-git-init</code> et ouvrez-le dans VSCode.<br>
+2- Recommencer l&rsquo;étape 4 associée à votre système sur 
+<a href="../1-vscode/" target="_blank" rel="noopener noreferrer">cette page</a>, ou suivez les instructions de la rubrique &ldquo;Utilisation&rdquo; sur 
+<a href="../2-cmake/#utilisation" target="_blank" rel="noopener noreferrer">cette page</a>.<br>
+3- Placez-vous ensuite dans l&rsquo;onglet Source Control de VSCode (Ctrl+Shift+G ou <code>View &gt; SCM</code>).<br>
+4- Cliquez sur <code>Initialize Repository</code>.
+<img src="/images/vscode-git-init.png" alt=""></p>
+<p>5- Les fichiers générés par la compilation devraient apparaître dans la liste des changements détectés par git.<br>
+Comme nous ne souhaitons pas sauvegarder les fichiers temporaires, nous allons les ignorer en ajoutant un nouveau fichier <code>.gitignore</code>.<br>
+Créez ce fichier à la racine de votre dossier et copiez-collez dedans les lignes ci-dessous :</p>
+<div class="highlight"><pre class="chroma"><code class="language-b" data-lang="b"><span class="c">build/
+</span><span class="c"></span><span class="nt">.</span><span class="c">vscode/
+</span><span class="c">
+</span><span class="c">*</span><span class="nt">.</span><span class="c">exe
+</span><span class="c">*</span><span class="nt">.</span><span class="c">obj
+</span><span class="c">*</span><span class="nt">.</span><span class="c">pdb
+</span><span class="c">*</span><span class="nt">.</span><span class="c">ilk
+</span><span class="c">*</span><span class="nt">.</span><span class="c">o
+</span></code></pre></div><p>6- Si votre exécutable est généré dans le même répertoire que les fichiers sources, et que celui-ci ne comporte pas d&rsquo;extension, vous pouvez ajouter son nom sur une nouvelle ligne du fichier <code>.gitignore</code>.<br>
+7- Retournez dans l&rsquo;onglet Source Control, et appuyez sur le bouton <code>+</code> pour stager vos modifications.
+<img src="/images/vscode-git-stage.png" alt=""></p>
+<p>8- Entrez un message décrivant vos changements et cliquez sur la coche pour les committer.
+<img src="/images/vscode-git-commit.png" alt=""></p>
+<h4 id="clone-dun-dépôt-existant">Clone d&rsquo;un dépôt existant</h4>
+<p>1- Si vous possédez un compte Github, commencez par forker le dépôt suivant : <a href="https://github.com/Laefy/CPP-M1-test-git-clone">https://github.com/Laefy/CPP-M1-test-git-clone</a>.
+<img src="/images/github-fork.png" alt=""></p>
+<p>2- Ouvrez VSCode.<br>
+3- Lancer la commande <code>Git: Clone</code> depuis le panneau de commandes (Ctrl+Shift+P ou <code>View &gt; Command Palette...</code>).
+<img src="/images/vscode-git-clone.png" alt=""></p>
+<p>4- Fournissez-lui l&rsquo;URL du dépôt créé sur votre compte à la suite du fork, ou utilisez l&rsquo;URL du dépôt d&rsquo;origine : <a href="https://github.com/Laefy/CPP-M1-test-git-clone.git/">https://github.com/Laefy/CPP-M1-test-git-clone.git/</a> (vous ne pourrez alors pas réalisez de push sur ce dépôt).
+<img src="/images/vscode-git-clone-url.png" alt=""></p>
+<p>4- Sélectionnez le dossier où vous ranger habituellement vos projets de code, pour que git y copie le dépôt distant.<br>
+5- Dans le fichier <code>main.cpp</code>, remplacez le contenu de la fonction <code>main</code> par les instructions ci-dessous :</p>
+<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
+<span class="p">{</span>
+	<span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;ByeBye now&#34;</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+	<span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span> 
+</code></pre></div><p>6- Allez dans l&rsquo;onglet Source Control de VSCode (Ctrl+Shift+G ou <code>View &gt; SCM</code>) et appuyez sur le bouton <code>+</code> pour stager vos changements.
+<img src="/images/vscode-git-clone-stage.png" alt=""></p>
+<p>7- Entrez un message et cliquez sur la coche pour committer vos changements.
+<img src="/images/vscode-git-clone-commit.png" alt=""></p>
+<p>8- Si vous avez utilisé votre propre compte pour cloner le dépôt, vous pouvez maintenant y pusher votre commit en utilisant la commande <code>Git: Push</code>.
+<img src="/images/vscode-git-push.png" alt=""></p>
+
+
+<footer class="footline">
+	
+</footer>
+
+        
+        </div> 
+        
+
+      </div>
+
+    <div id="navigation">
+        
+        
+        
+        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+            
+        
+        
+        
+
+
+	 
+	 
+		
+			<a class="nav nav-prev" href="/CPP_Learning/chapter1/2-tools/2-cmake/" title="CMake"> <i class="fa fa-chevron-left"></i></a>
+		
+		
+			<a class="nav nav-next" href="/CPP_Learning/chapter1/2-tools/4-compilation/" title="Compilation &amp; Exécution" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+		
+	
+    </div>
+
+    </section>
+    
+    <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
+      <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
+    </div>
+    <script src="/CPP_Learning/js/clipboard.min.js?1609581461"></script>
+    <script src="/CPP_Learning/js/perfect-scrollbar.min.js?1609581461"></script>
+    <script src="/CPP_Learning/js/perfect-scrollbar.jquery.min.js?1609581461"></script>
+    <script src="/CPP_Learning/js/jquery.sticky.js?1609581461"></script>
+    <script src="/CPP_Learning/js/featherlight.min.js?1609581461"></script>
+    <script src="/CPP_Learning/js/highlight.pack.js?1609581461"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <script src="/CPP_Learning/js/modernizr.custom-3.6.0.js?1609581461"></script>
+    <script src="/CPP_Learning/js/learn.js?1609581461"></script>
+    <script src="/CPP_Learning/js/hugo-learn.js?1609581461"></script>
+
+    <link href="/CPP_Learning/mermaid/mermaid.css?1609581461" rel="stylesheet" />
+    <script src="/CPP_Learning/mermaid/mermaid.js?1609581461"></script>
+    <script>
+        mermaid.initialize({ startOnLoad: true });
+    </script>
+    
+
+  </body>
+</html>
+

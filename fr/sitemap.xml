@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  
+  <url>
+    <loc>https://laefy.github.io/CPP_Learning/chapter1/3-practice/1-hello-world/</loc>
+  </url>
+  
+  <url>
+    <loc>https://laefy.github.io/CPP_Learning/chapter1/1-language/</loc>
+  </url>
+  
+  <url>
+    <loc>https://laefy.github.io/CPP_Learning/chapter1/2-tools/1-vscode/</loc>
+  </url>
+  
+  <url>
+    <loc>https://laefy.github.io/CPP_Learning/chapter1/2-tools/2-cmake/</loc>
+  </url>
+  
+  <url>
+    <loc>https://laefy.github.io/CPP_Learning/chapter1/2-tools/</loc>
+  </url>
+  
+  <url>
+    <loc>https://laefy.github.io/CPP_Learning/chapter1/3-practice/2-parrot.fd/</loc>
+  </url>
+  
+  <url>
+    <loc>https://laefy.github.io/CPP_Learning/chapter1/2-tools/3-git/</loc>
+  </url>
+  
+  <url>
+    <loc>https://laefy.github.io/CPP_Learning/chapter1/3-practice/</loc>
+  </url>
+  
+  <url>
+    <loc>https://laefy.github.io/CPP_Learning/chapter1/3-practice/3-array/</loc>
+  </url>
+  
+  <url>
+    <loc>https://laefy.github.io/CPP_Learning/chapter1/3-practice/4-calculator/</loc>
+  </url>
+  
+  <url>
+    <loc>https://laefy.github.io/CPP_Learning/chapter1/2-tools/4-compilation/</loc>
+  </url>
+  
+  <url>
+    <loc>https://laefy.github.io/CPP_Learning/chapter1/form/</loc>
+  </url>
+  
+  <url>
+    <loc>https://laefy.github.io/CPP_Learning/chapter1/summary/</loc>
+  </url>
+  
+  <url>
+    <loc>https://laefy.github.io/CPP_Learning/</loc>
+    <lastmod>2020-11-14T19:34:19+01:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://laefy.github.io/CPP_Learning/en/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="fr"
+                href="https://laefy.github.io/CPP_Learning/"
+                />
+  </url>
+  
+  <url>
+    <loc>https://laefy.github.io/CPP_Learning/chapter1/</loc>
+    <lastmod>2020-11-14T19:34:19+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://laefy.github.io/CPP_Learning/categories/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://laefy.github.io/CPP_Learning/en/categories/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="fr"
+                href="https://laefy.github.io/CPP_Learning/categories/"
+                />
+  </url>
+  
+  <url>
+    <loc>https://laefy.github.io/CPP_Learning/tags/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://laefy.github.io/CPP_Learning/en/tags/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="fr"
+                href="https://laefy.github.io/CPP_Learning/tags/"
+                />
+  </url>
+  
+</urlset>

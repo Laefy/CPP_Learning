@@ -1,0 +1,859 @@
+<!DOCTYPE html>
+<html lang="fr" class="js csstransforms3d">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="Hugo 0.76.5" />
+    <meta name="description" content="">
+
+
+    <link rel="icon" href="/CPP_Learning/images/favicon.png" type="image/png">
+
+    <title>Premiers programmes :: Cours de C&#43;&#43; - Niveau Master</title>
+
+    
+    <link href="/CPP_Learning/css/nucleus.css?1609581461" rel="stylesheet">
+    <link href="/CPP_Learning/css/fontawesome-all.min.css?1609581461" rel="stylesheet">
+    <link href="/CPP_Learning/css/hybrid.css?1609581461" rel="stylesheet">
+    <link href="/CPP_Learning/css/featherlight.min.css?1609581461" rel="stylesheet">
+    <link href="/CPP_Learning/css/perfect-scrollbar.min.css?1609581461" rel="stylesheet">
+    <link href="/CPP_Learning/css/auto-complete.css?1609581461" rel="stylesheet">
+    <link href="/CPP_Learning/css/atom-one-dark-reasonable.css?1609581461" rel="stylesheet">
+    <link href="/CPP_Learning/css/theme.css?1609581461" rel="stylesheet">
+    <link href="/CPP_Learning/css/hugo-theme.css?1609581461" rel="stylesheet">
+    
+    <link href="/CPP_Learning/css/theme-mine.css?1609581461" rel="stylesheet">
+    
+    <link href="/CPP_Learning/css/syntax.css?1609581461" rel="stylesheet">
+
+    <script src="/CPP_Learning/js/jquery-3.3.1.min.js?1609581461"></script>
+
+    <style>
+      :root #header + #content > #left > #rlblock_left{
+          display:none !important;
+      }
+      
+        :not(pre) > code + span.copy-to-clipboard {
+            display: none;
+        }
+      
+    </style>
+    
+  </head>
+  <body class="" data-url="/CPP_Learning/chapter1/3-practice/">
+    <nav id="sidebar" class="showVisitedLinks">
+
+
+
+  <div id="header-wrapper">
+    <div id="header">
+      <a id="logo" href="/">🎄 C++ 🎄</a>
+
+    </div>
+    
+        <div class="searchbox">
+    <label for="search-by"><i class="fas fa-search"></i></label>
+    <input data-search-input id="search-by" type="search" placeholder="Rechercher...">
+    <span data-search-clear=""><i class="fas fa-times"></i></span>
+</div>
+
+<script type="text/javascript" src="/CPP_Learning/js/lunr.min.js?1609581461"></script>
+<script type="text/javascript" src="/CPP_Learning/js/auto-complete.js?1609581461"></script>
+<script type="text/javascript">
+    
+        var baseurl = "https:\/\/laefy.github.io\/CPP_Learning\/";
+    
+</script>
+<script type="text/javascript" src="/CPP_Learning/js/search.js?1609581461"></script>
+
+    
+  </div>
+
+    <div class="highlightable">
+    <ul class="topics">
+
+        
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/CPP_Learning/chapter1/" title="Introduction au C&#43;&#43;" class="dd-item 
+        parent
+        
+        
+        ">
+      <a href="/CPP_Learning/chapter1/">
+          <b>I- </b>Introduction au C&#43;&#43;
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+          
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/CPP_Learning/chapter1/1-language/" title="Présentation du langage" class="dd-item ">
+        <a href="/CPP_Learning/chapter1/1-language/">
+        Présentation du langage
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/CPP_Learning/chapter1/2-tools/" title="Outils" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/CPP_Learning/chapter1/2-tools/">
+          Outils
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/CPP_Learning/chapter1/2-tools/1-vscode/" title="Visual Studio Code" class="dd-item ">
+        <a href="/CPP_Learning/chapter1/2-tools/1-vscode/">
+        Visual Studio Code
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/CPP_Learning/chapter1/2-tools/2-cmake/" title="CMake" class="dd-item ">
+        <a href="/CPP_Learning/chapter1/2-tools/2-cmake/">
+        CMake
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/CPP_Learning/chapter1/2-tools/3-git/" title="Git" class="dd-item ">
+        <a href="/CPP_Learning/chapter1/2-tools/3-git/">
+        Git
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/CPP_Learning/chapter1/2-tools/4-compilation/" title="Compilation &amp; Exécution" class="dd-item ">
+        <a href="/CPP_Learning/chapter1/2-tools/4-compilation/">
+        Compilation &amp; Exécution
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/CPP_Learning/chapter1/3-practice/" title="Premiers programmes" class="dd-item 
+        parent
+        active
+        
+        ">
+      <a href="/CPP_Learning/chapter1/3-practice/">
+          Premiers programmes
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/CPP_Learning/chapter1/3-practice/1-hello-world/" title="Hello World" class="dd-item ">
+        <a href="/CPP_Learning/chapter1/3-practice/1-hello-world/">
+        Hello World
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/CPP_Learning/chapter1/3-practice/2-parrot.fd/" title="Perroquet" class="dd-item ">
+        <a href="/CPP_Learning/chapter1/3-practice/2-parrot.fd/">
+        Perroquet
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/CPP_Learning/chapter1/3-practice/3-array/" title="Tableau Numérique" class="dd-item ">
+        <a href="/CPP_Learning/chapter1/3-practice/3-array/">
+        Tableau Numérique
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/CPP_Learning/chapter1/3-practice/4-calculator/" title="Calculette" class="dd-item ">
+        <a href="/CPP_Learning/chapter1/3-practice/4-calculator/">
+        Calculette
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/CPP_Learning/chapter1/form/" title="Questionnaire !" class="dd-item ">
+        <a href="/CPP_Learning/chapter1/form/">
+        Questionnaire !
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/CPP_Learning/chapter1/summary/" title="Synthèse" class="dd-item ">
+        <a href="/CPP_Learning/chapter1/summary/">
+        Synthèse
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+         
+    </ul>
+
+    
+    
+      <section id="shortcuts">
+        <h3>Accès rapide</h3>
+        <ul>
+          
+              <li> 
+                  <a class="padding" href="https://github.com/Laefy/CPP_Learning/"><i class='fab fa-github'></i> Dépôt GitHub</a>
+              </li>
+          
+              <li> 
+                  <a class="padding" href="https://en.cppreference.com/w/"><i class='fas fa-passport'></i> CPP-Ref</a>
+              </li>
+          
+        </ul>
+      </section>
+    
+
+    
+    <section id="prefooter">
+      <hr/>
+      <ul>
+      
+      
+      
+        <li><a class="padding" href="#" data-clear-history-toggle=""><i class="fas fa-history fa-fw"></i> Supprimer l&#39;historique</a></li>
+      
+      </ul>
+    </section>
+    
+    <section id="footer">
+      <p>Built with <a href="https://github.com/matcornic/hugo-theme-learn"><i class="fas fa-heart"></i></a> from <a href="https://getgrav.org">Grav</a> and <a href="https://gohugo.io/">Hugo</a></p>
+
+    </section>
+  </div>
+</nav>
+
+
+
+
+        <section id="body">
+        <div id="overlay"></div>
+        <div class="padding highlightable">
+              
+              <div>
+                <div id="top-bar">
+                
+                
+                <div id="breadcrumbs" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
+                    <span id="sidebar-toggle-span">
+                        <a href="#" id="sidebar-toggle" data-sidebar-toggle="">
+                          <i class="fas fa-bars"></i>
+                        </a>
+                    </span>
+                  
+                  <span id="toc-menu"><i class="fas fa-list-alt"></i></span>
+                  
+                  <span class="links">
+                 
+                 
+                    
+          
+          
+            
+            
+          
+          
+            
+            
+          
+          
+            <a href='/CPP_Learning/'>Accueil</a> > <a href='/CPP_Learning/chapter1/'>Introduction au C++</a> > Premiers programmes
+          
+        
+          
+        
+          
+        
+                 
+                  </span>
+                </div>
+                
+                    <div class="progress">
+    <div class="wrapper">
+<nav id="TableOfContents"></nav>
+    </div>
+</div>
+
+                
+              </div>
+            </div>
+            
+        <div id="head-tags">
+        
+        </div>
+        
+        <div id="body-inner">
+          
+            <h1>
+              
+              Premiers programmes
+            </h1>
+          
+
+        
+
+
+
+	
+
+	<p>Nous allons maintenant enfin pouvoir coder ! Dans cette partie, vous verrez comment :</p>
+<ul>
+<li>écrire un programme,</li>
+<li>déclarer des variables,</li>
+<li>écrire sur la sortie standard,</li>
+<li>lire sur l&rsquo;entrée standard,</li>
+<li>définir des fonctions,</li>
+<li>utilisez les structures de contrôle (conditions, boucles, switch, etc.),</li>
+<li>créer des tableaux et des chaînes de caractères,</li>
+<li>allouer et libérer de la mémoire.</li>
+</ul>
+<p>Ça fait beaucoup hein ? 😈</p>
+<p>En réalité, comme vous avez déjà fait du C et du Java, il y a pas mal de choses que vous connaissez déjà. Le C++ introduit quelques subtilités, mais nous insisterons suffisamment dessus pour que vous les reteniez sans problème 🙂</p>
+<p>Récupérez le dépôt git <a href="https://github.com/Laefy/CPP_Learning">https://github.com/Laefy/CPP_Learning</a> afin de pouvoir faire les exercices facilement.</p>
+
+
+
+
+
+<footer class=" footline" >
+	
+</footer>
+
+        
+        </div> 
+        
+
+      </div>
+
+    <div id="navigation">
+        
+        
+        
+        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+            
+        
+        
+        
+
+
+	 
+	 
+		
+			<a class="nav nav-prev" href="/CPP_Learning/chapter1/2-tools/4-compilation/" title="Compilation &amp; Exécution"> <i class="fa fa-chevron-left"></i></a>
+		
+		
+			<a class="nav nav-next" href="/CPP_Learning/chapter1/3-practice/1-hello-world/" title="Hello World" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+		
+	
+    </div>
+
+    </section>
+    
+    <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
+      <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
+    </div>
+    <script src="/CPP_Learning/js/clipboard.min.js?1609581461"></script>
+    <script src="/CPP_Learning/js/perfect-scrollbar.min.js?1609581461"></script>
+    <script src="/CPP_Learning/js/perfect-scrollbar.jquery.min.js?1609581461"></script>
+    <script src="/CPP_Learning/js/jquery.sticky.js?1609581461"></script>
+    <script src="/CPP_Learning/js/featherlight.min.js?1609581461"></script>
+    <script src="/CPP_Learning/js/highlight.pack.js?1609581461"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <script src="/CPP_Learning/js/modernizr.custom-3.6.0.js?1609581461"></script>
+    <script src="/CPP_Learning/js/learn.js?1609581461"></script>
+    <script src="/CPP_Learning/js/hugo-learn.js?1609581461"></script>
+
+    <link href="/CPP_Learning/mermaid/mermaid.css?1609581461" rel="stylesheet" />
+    <script src="/CPP_Learning/mermaid/mermaid.js?1609581461"></script>
+    <script>
+        mermaid.initialize({ startOnLoad: true });
+    </script>
+    
+
+  </body>
+</html>

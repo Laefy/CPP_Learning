@@ -1,0 +1,1071 @@
+<!DOCTYPE html>
+<html lang="fr" class="js csstransforms3d">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="Hugo 0.76.5" />
+    <meta name="description" content="">
+
+
+    <link rel="icon" href="/CPP_Learning/images/favicon.png" type="image/png">
+
+    <title>Perroquet :: Cours de C&#43;&#43; - Niveau Master</title>
+
+    
+    <link href="/CPP_Learning/css/nucleus.css?1609581461" rel="stylesheet">
+    <link href="/CPP_Learning/css/fontawesome-all.min.css?1609581461" rel="stylesheet">
+    <link href="/CPP_Learning/css/hybrid.css?1609581461" rel="stylesheet">
+    <link href="/CPP_Learning/css/featherlight.min.css?1609581461" rel="stylesheet">
+    <link href="/CPP_Learning/css/perfect-scrollbar.min.css?1609581461" rel="stylesheet">
+    <link href="/CPP_Learning/css/auto-complete.css?1609581461" rel="stylesheet">
+    <link href="/CPP_Learning/css/atom-one-dark-reasonable.css?1609581461" rel="stylesheet">
+    <link href="/CPP_Learning/css/theme.css?1609581461" rel="stylesheet">
+    <link href="/CPP_Learning/css/hugo-theme.css?1609581461" rel="stylesheet">
+    
+    <link href="/CPP_Learning/css/theme-mine.css?1609581461" rel="stylesheet">
+    
+    <link href="/CPP_Learning/css/syntax.css?1609581461" rel="stylesheet">
+
+    <script src="/CPP_Learning/js/jquery-3.3.1.min.js?1609581461"></script>
+
+    <style>
+      :root #header + #content > #left > #rlblock_left{
+          display:none !important;
+      }
+      
+        :not(pre) > code + span.copy-to-clipboard {
+            display: none;
+        }
+      
+    </style>
+    
+  </head>
+  <body class="" data-url="/CPP_Learning/chapter1/3-practice/2-parrot.fd/">
+    <nav id="sidebar" class="showVisitedLinks">
+
+
+
+  <div id="header-wrapper">
+    <div id="header">
+      <a id="logo" href="/">🎄 C++ 🎄</a>
+
+    </div>
+    
+        <div class="searchbox">
+    <label for="search-by"><i class="fas fa-search"></i></label>
+    <input data-search-input id="search-by" type="search" placeholder="Rechercher...">
+    <span data-search-clear=""><i class="fas fa-times"></i></span>
+</div>
+
+<script type="text/javascript" src="/CPP_Learning/js/lunr.min.js?1609581461"></script>
+<script type="text/javascript" src="/CPP_Learning/js/auto-complete.js?1609581461"></script>
+<script type="text/javascript">
+    
+        var baseurl = "https:\/\/laefy.github.io\/CPP_Learning\/";
+    
+</script>
+<script type="text/javascript" src="/CPP_Learning/js/search.js?1609581461"></script>
+
+    
+  </div>
+
+    <div class="highlightable">
+    <ul class="topics">
+
+        
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/CPP_Learning/chapter1/" title="Introduction au C&#43;&#43;" class="dd-item 
+        parent
+        
+        
+        ">
+      <a href="/CPP_Learning/chapter1/">
+          <b>I- </b>Introduction au C&#43;&#43;
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+          
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/CPP_Learning/chapter1/1-language/" title="Présentation du langage" class="dd-item ">
+        <a href="/CPP_Learning/chapter1/1-language/">
+        Présentation du langage
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/CPP_Learning/chapter1/2-tools/" title="Outils" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/CPP_Learning/chapter1/2-tools/">
+          Outils
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/CPP_Learning/chapter1/2-tools/1-vscode/" title="Visual Studio Code" class="dd-item ">
+        <a href="/CPP_Learning/chapter1/2-tools/1-vscode/">
+        Visual Studio Code
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/CPP_Learning/chapter1/2-tools/2-cmake/" title="CMake" class="dd-item ">
+        <a href="/CPP_Learning/chapter1/2-tools/2-cmake/">
+        CMake
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/CPP_Learning/chapter1/2-tools/3-git/" title="Git" class="dd-item ">
+        <a href="/CPP_Learning/chapter1/2-tools/3-git/">
+        Git
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/CPP_Learning/chapter1/2-tools/4-compilation/" title="Compilation &amp; Exécution" class="dd-item ">
+        <a href="/CPP_Learning/chapter1/2-tools/4-compilation/">
+        Compilation &amp; Exécution
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/CPP_Learning/chapter1/3-practice/" title="Premiers programmes" class="dd-item 
+        parent
+        
+        
+        ">
+      <a href="/CPP_Learning/chapter1/3-practice/">
+          Premiers programmes
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/CPP_Learning/chapter1/3-practice/1-hello-world/" title="Hello World" class="dd-item ">
+        <a href="/CPP_Learning/chapter1/3-practice/1-hello-world/">
+        Hello World
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/CPP_Learning/chapter1/3-practice/2-parrot.fd/" title="Perroquet" class="dd-item active">
+        <a href="/CPP_Learning/chapter1/3-practice/2-parrot.fd/">
+        Perroquet
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/CPP_Learning/chapter1/3-practice/3-array/" title="Tableau Numérique" class="dd-item ">
+        <a href="/CPP_Learning/chapter1/3-practice/3-array/">
+        Tableau Numérique
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/CPP_Learning/chapter1/3-practice/4-calculator/" title="Calculette" class="dd-item ">
+        <a href="/CPP_Learning/chapter1/3-practice/4-calculator/">
+        Calculette
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/CPP_Learning/chapter1/form/" title="Questionnaire !" class="dd-item ">
+        <a href="/CPP_Learning/chapter1/form/">
+        Questionnaire !
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/CPP_Learning/chapter1/summary/" title="Synthèse" class="dd-item ">
+        <a href="/CPP_Learning/chapter1/summary/">
+        Synthèse
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+         
+    </ul>
+
+    
+    
+      <section id="shortcuts">
+        <h3>Accès rapide</h3>
+        <ul>
+          
+              <li> 
+                  <a class="padding" href="https://github.com/Laefy/CPP_Learning/"><i class='fab fa-github'></i> Dépôt GitHub</a>
+              </li>
+          
+              <li> 
+                  <a class="padding" href="https://en.cppreference.com/w/"><i class='fas fa-passport'></i> CPP-Ref</a>
+              </li>
+          
+        </ul>
+      </section>
+    
+
+    
+    <section id="prefooter">
+      <hr/>
+      <ul>
+      
+      
+      
+        <li><a class="padding" href="#" data-clear-history-toggle=""><i class="fas fa-history fa-fw"></i> Supprimer l&#39;historique</a></li>
+      
+      </ul>
+    </section>
+    
+    <section id="footer">
+      <p>Built with <a href="https://github.com/matcornic/hugo-theme-learn"><i class="fas fa-heart"></i></a> from <a href="https://getgrav.org">Grav</a> and <a href="https://gohugo.io/">Hugo</a></p>
+
+    </section>
+  </div>
+</nav>
+
+
+
+
+        <section id="body">
+        <div id="overlay"></div>
+        <div class="padding highlightable">
+              
+              <div>
+                <div id="top-bar">
+                
+                
+                <div id="breadcrumbs" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
+                    <span id="sidebar-toggle-span">
+                        <a href="#" id="sidebar-toggle" data-sidebar-toggle="">
+                          <i class="fas fa-bars"></i>
+                        </a>
+                    </span>
+                  
+                  <span id="toc-menu"><i class="fas fa-list-alt"></i></span>
+                  
+                  <span class="links">
+                 
+                 
+                    
+          
+          
+            
+            
+          
+          
+            
+            
+          
+          
+            
+            
+          
+          
+            <a href='/CPP_Learning/'>Accueil</a> > <a href='/CPP_Learning/chapter1/'>Introduction au C++</a> > <a href='/CPP_Learning/chapter1/3-practice/'>Premiers programmes</a> > Perroquet
+          
+        
+          
+        
+          
+        
+          
+        
+                 
+                  </span>
+                </div>
+                
+                    <div class="progress">
+    <div class="wrapper">
+<nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#lire-un-entier">Lire un entier</a></li>
+        <li><a href="#faire-une-boucle">Faire une boucle</a></li>
+        <li><a href="#les-chaînes-de-caractères">Les chaînes de caractères</a></li>
+        <li><a href="#omettre-std">Omettre <code>std</code></a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+    </div>
+</div>
+
+                
+              </div>
+            </div>
+            
+        <div id="head-tags">
+        
+        </div>
+        
+        <div id="body-inner">
+          
+            <h1>
+              
+              Perroquet
+            </h1>
+          
+
+        
+
+
+<p>Vous allez maintenant implémenter un perroquet, qui répète ce que vous dites dans la console.</p>
+<hr>
+<p>Pour cet exercice, vous modifierez le fichier :<br>
+- <code>chap-01/2-parrot.cpp</code></p>
+<p>La cible à compiler est <code>c1-2-parrot</code>.</p>
+<hr>
+<h3 id="lire-un-entier">Lire un entier</h3>
+<p>Commencez par écrire une fonction <code>main</code> qui ne fait rien, comme dans l&rsquo;exercice précédent.
+Compilez et exécutez le programme, pour être sûr que tout est bien configuré.</p>
+<p>Ensuite, vous allez déclarer une variable de type <code>int</code>. Cela se fait de la même manière qu&rsquo;en C.</p>
+<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="kt">int</span> <span class="n">number</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+</code></pre></div>
+<div class="notices tip" ><p>Il faut toujours initialiser vos variables de types primitifs (c&rsquo;est-à-dire les variables qui ne sont pas des instances de classe). Cela permet d&rsquo;avoir des crashes et des bugs non-aléatoires, qui se reproduisent toujours de la même manière. Parce que quand un bug ne se produit qu&rsquo;une fois sur dix, il y a des chances que ce soit le correcteur du TP qui se le prenne, alors que tout c&rsquo;était bien passé la dernière fois que vous avez testé le programme.<br>
+Et plus sérieusement, quand vous serez en entreprise, et que vous vous arracherez les cheveux à relancer 341 fois le même programme pour essayer de reproduire un bug (qu&rsquo;il faut bien corriger, même s&rsquo;il n&rsquo;arrive qu&rsquo;une fois sur 341), vous vous rappelerez que faire en sorte que vos programmes soient déterministes, ça aide à ne pas devenir chauve.</p>
+</div>
+
+<p>Utilisez ensuite l&rsquo;instruction suivante pour lire un nombre depuis l&rsquo;entrée standard.
+Vous conviendrez que la seule différence avec l&rsquo;instruction pour écrire sur la sortie standard, c&rsquo;est qu&rsquo;on utilise <code>cin</code> plutôt que <code>cout</code>, et que les chevrons sont dans l&rsquo;autre sens.</p>
+<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="n">std</span><span class="o">::</span><span class="n">cin</span> <span class="o">&gt;&gt;</span> <span class="n">number</span><span class="p">;</span>
+</code></pre></div><p>Ecrivez ensuite <code>number</code> sur la sortie standard et tester votre programme. Si vous exécutez depuis VSCode, utilisez <code>CMake: Run Without Debugging</code> plutôt que <code>CMake: Debug</code>, afin que le programme s&rsquo;exécute dans le terminal intégré pour pouvoir y entrer vos valeurs.</p>
+
+<div class="expand">
+    <div class="expand-label" style="cursor: pointer;" onclick="$h = $(this);$h.next('div').slideToggle(100,function () {$h.children('i').attr('class',function () {return $h.next('div').is(':visible') ? 'fas fa-chevron-down' : 'fas fa-chevron-right';});});">
+        <i style="font-size:x-small;" class="fas fa-chevron-right"></i>
+        <span>
+        
+    	
+    	Solution
+    	
+    	</span>
+    </div>
+    <div class="expand-content" style="display: none;">
+        <div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp">
+</span><span class="cp"></span>
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="kt">int</span> <span class="n">number</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">cin</span> <span class="o">&gt;&gt;</span> <span class="n">number</span><span class="p">;</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;Craow &#34;</span> <span class="o">&lt;&lt;</span> <span class="n">number</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;!&#34;</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+    </div>
+</div>
+<hr>
+<h3 id="faire-une-boucle">Faire une boucle</h3>
+<p>Vous allez maintenant utilisez une boucle <code>while</code> afin d&rsquo;exécuter vos instructions à l&rsquo;infini. Placez <code>true</code> en condition du <code>while</code>.</p>
+
+<div class="expand">
+    <div class="expand-label" style="cursor: pointer;" onclick="$h = $(this);$h.next('div').slideToggle(100,function () {$h.children('i').attr('class',function () {return $h.next('div').is(':visible') ? 'fas fa-chevron-down' : 'fas fa-chevron-right';});});">
+        <i style="font-size:x-small;" class="fas fa-chevron-right"></i>
+        <span>
+        
+    	
+    	Solution
+    	
+    	</span>
+    </div>
+    <div class="expand-content" style="display: none;">
+        <div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="k">while</span> <span class="p">(</span><span class="nb">true</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="kt">int</span> <span class="n">number</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">cin</span> <span class="o">&gt;&gt;</span> <span class="n">number</span><span class="p">;</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;Craow &#34;</span> <span class="o">&lt;&lt;</span> <span class="n">number</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;!&#34;</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+    </div>
+</div>
+<p>Afin de pouvoir terminer le programme un peu plus proprement qu&rsquo;avec Ctrl+C, ajoutez une condition pour sortir de la boucle si le nombre entré est -1. Cela se fait de la même manière qu&rsquo;en C.</p>
+
+<div class="expand">
+    <div class="expand-label" style="cursor: pointer;" onclick="$h = $(this);$h.next('div').slideToggle(100,function () {$h.children('i').attr('class',function () {return $h.next('div').is(':visible') ? 'fas fa-chevron-down' : 'fas fa-chevron-right';});});">
+        <i style="font-size:x-small;" class="fas fa-chevron-right"></i>
+        <span>
+        
+    	
+    	Solution
+    	
+    	</span>
+    </div>
+    <div class="expand-content" style="display: none;">
+        <div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="k">while</span> <span class="p">(</span><span class="nb">true</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="kt">int</span> <span class="n">number</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">cin</span> <span class="o">&gt;&gt;</span> <span class="n">number</span><span class="p">;</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;Craow &#34;</span> <span class="o">&lt;&lt;</span> <span class="n">number</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;!&#34;</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+
+    <span class="k">if</span> <span class="p">(</span><span class="n">number</span> <span class="o">==</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="k">break</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+    </div>
+</div>
+<p>Essayez de remplacer votre <code>while</code> par une boucle <code>do ... while</code>, de manière à supprimer le <code>if</code>.</p>
+
+<div class="expand">
+    <div class="expand-label" style="cursor: pointer;" onclick="$h = $(this);$h.next('div').slideToggle(100,function () {$h.children('i').attr('class',function () {return $h.next('div').is(':visible') ? 'fas fa-chevron-down' : 'fas fa-chevron-right';});});">
+        <i style="font-size:x-small;" class="fas fa-chevron-right"></i>
+        <span>
+        
+    	
+    	Solution
+    	
+    	</span>
+    </div>
+    <div class="expand-content" style="display: none;">
+        <div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="kt">int</span> <span class="n">number</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+
+<span class="k">do</span>
+<span class="p">{</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">cin</span> <span class="o">&gt;&gt;</span> <span class="n">number</span><span class="p">;</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;Craow &#34;</span> <span class="o">&lt;&lt;</span> <span class="n">number</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;!&#34;</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="k">while</span> <span class="p">(</span><span class="n">number</span> <span class="o">!=</span> <span class="o">-</span><span class="mi">1</span><span class="p">);</span>
+</code></pre></div>
+    </div>
+</div>
+<p>Supposons maintenant que notre perroquet a une durée de vie de 10 allocutions. Remplacez le <code>do ... while</code> par une boucle <code>for</code> de dix itérations.</p>
+
+<div class="expand">
+    <div class="expand-label" style="cursor: pointer;" onclick="$h = $(this);$h.next('div').slideToggle(100,function () {$h.children('i').attr('class',function () {return $h.next('div').is(':visible') ? 'fas fa-chevron-down' : 'fas fa-chevron-right';});});">
+        <i style="font-size:x-small;" class="fas fa-chevron-right"></i>
+        <span>
+        
+    	
+    	Solution
+    	
+    	</span>
+    </div>
+    <div class="expand-content" style="display: none;">
+        <div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">10</span><span class="p">;</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="kt">int</span> <span class="n">number</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">cin</span> <span class="o">&gt;&gt;</span> <span class="n">number</span><span class="p">;</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;Craow &#34;</span> <span class="o">&lt;&lt;</span> <span class="n">number</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;!&#34;</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+    </div>
+</div>
+
+<div class="notices tip" ><p>En C++, il est tout à fait valide et même conseillé de définir son itérateur directement dans l&rsquo;instruction <code>for</code>. Cela permet de limiter le <strong>scope</strong> de la variable à la boucle dans laquelle elle est définie.<br>
+On écrira donc <code>for (int i = 0; i &lt; 10; ++ i) { ... }</code> plutôt que <code>int i; for (i = 0; i &lt; 10; ++i) { ... }</code>.</p>
+</div>
+
+<hr>
+<h3 id="les-chaînes-de-caractères">Les chaînes de caractères</h3>
+<p>Jusqu&rsquo;ici, notre perroquet ne sait dire que &ldquo;Craow&rdquo; et comptez. D&rsquo;ailleurs, si vous lui dites autre chose qu&rsquo;un nombre, il a tendance à s&rsquo;étrangler.<br>
+Nous allons donc lui apprendre à faire des vraies phrases.</p>
+<p>La librairie standard du C++ définit la classe <code>std::string</code>. Cherchez quel header inclure pour pouvoir l&rsquo;utiliser, et ajoutez-le à votre programmme.<br>
+Remplacez ensuite votre variable <code>number</code> de type <code>int</code> par une variable <code>word</code> de type <code>std::string</code>.</p>
+
+<div class="expand">
+    <div class="expand-label" style="cursor: pointer;" onclick="$h = $(this);$h.next('div').slideToggle(100,function () {$h.children('i').attr('class',function () {return $h.next('div').is(':visible') ? 'fas fa-chevron-down' : 'fas fa-chevron-right';});});">
+        <i style="font-size:x-small;" class="fas fa-chevron-right"></i>
+        <span>
+        
+    	
+    	Solution
+    	
+    	</span>
+    </div>
+    <div class="expand-content" style="display: none;">
+        <div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">10</span><span class="p">;</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">word</span><span class="p">;</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">cin</span> <span class="o">&gt;&gt;</span> <span class="n">word</span><span class="p">;</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;Craow &#34;</span> <span class="o">&lt;&lt;</span> <span class="n">word</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;!&#34;</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+    </div>
+</div>
+
+<div class="notices tip" ><p>Vous n&rsquo;avez pas besoin ici d&rsquo;initialiser <code>word</code> en écrivant <code>= &quot;&quot;</code>. En effet, <code>std::string</code> est une classe, et par défaut, les instances de cette classe sont déjà initialisées avec la chaîne vide.</p>
+</div>
+
+<hr>
+<h3 id="omettre-std">Omettre <code>std</code></h3>
+<p>Vous en avez marre de devoir écrire <code>std::</code> partout ? Il est possible de ne pas avoir à le faire en écrivant l&rsquo;instruction suivante juste après vos includes dans le cpp, ou alors dans le corps d&rsquo;une fonction :</p>
+<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+</code></pre></div><p>Placez cette instruction au début de votre fonction <code>main</code>, retirez tous les <code>std::</code> devant les symboles de la librairie standard et vérifiez que votre programme compile toujours.</p>
+
+<div class="expand">
+    <div class="expand-label" style="cursor: pointer;" onclick="$h = $(this);$h.next('div').slideToggle(100,function () {$h.children('i').attr('class',function () {return $h.next('div').is(':visible') ? 'fas fa-chevron-down' : 'fas fa-chevron-right';});});">
+        <i style="font-size:x-small;" class="fas fa-chevron-right"></i>
+        <span>
+        
+    	
+    	Solution
+    	
+    	</span>
+    </div>
+    <div class="expand-content" style="display: none;">
+        <div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span> 
+
+<span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">10</span><span class="p">;</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">string</span> <span class="n">word</span><span class="p">;</span>
+    <span class="n">cin</span> <span class="o">&gt;&gt;</span> <span class="n">word</span><span class="p">;</span>
+    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;Craow &#34;</span> <span class="o">&lt;&lt;</span> <span class="n">word</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;!&#34;</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+    </div>
+</div>
+
+<div class="notices info" ><p>Lorsqu&rsquo;on utilise <code>using namespace</code> dans un bloc d&rsquo;instructions (fonction, boucle, condition, etc), il faut savoir que son effet est limité à ce bloc.<br>
+Autre point important, il faut éviter d&rsquo;utiliser des <code>using namespace</code> à l&rsquo;intérieur de headers. Comme vous le savez peut-être, lorsque l&rsquo;on fait un include depuis un .cpp, le fichier inclu est en fait copié-collé dedans. Si on inclut un fichier qui réalise un <code>using namespace</code>, puis que l&rsquo;on inclut au autre header derrière (librairie standard par exemple), le <code>using namespace</code> du premier header risque d&rsquo;impacter le code du second header&hellip;</p>
+</div>
+
+
+
+<footer class="footline">
+	
+</footer>
+
+        
+        </div> 
+        
+
+      </div>
+
+    <div id="navigation">
+        
+        
+        
+        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+            
+        
+        
+        
+
+
+	 
+	 
+		
+			<a class="nav nav-prev" href="/CPP_Learning/chapter1/3-practice/1-hello-world/" title="Hello World"> <i class="fa fa-chevron-left"></i></a>
+		
+		
+			<a class="nav nav-next" href="/CPP_Learning/chapter1/3-practice/3-array/" title="Tableau Numérique" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+		
+	
+    </div>
+
+    </section>
+    
+    <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
+      <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
+    </div>
+    <script src="/CPP_Learning/js/clipboard.min.js?1609581461"></script>
+    <script src="/CPP_Learning/js/perfect-scrollbar.min.js?1609581461"></script>
+    <script src="/CPP_Learning/js/perfect-scrollbar.jquery.min.js?1609581461"></script>
+    <script src="/CPP_Learning/js/jquery.sticky.js?1609581461"></script>
+    <script src="/CPP_Learning/js/featherlight.min.js?1609581461"></script>
+    <script src="/CPP_Learning/js/highlight.pack.js?1609581461"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <script src="/CPP_Learning/js/modernizr.custom-3.6.0.js?1609581461"></script>
+    <script src="/CPP_Learning/js/learn.js?1609581461"></script>
+    <script src="/CPP_Learning/js/hugo-learn.js?1609581461"></script>
+
+    <link href="/CPP_Learning/mermaid/mermaid.css?1609581461" rel="stylesheet" />
+    <script src="/CPP_Learning/mermaid/mermaid.js?1609581461"></script>
+    <script>
+        mermaid.initialize({ startOnLoad: true });
+    </script>
+    
+
+  </body>
+</html>
+
