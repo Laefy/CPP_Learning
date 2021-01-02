@@ -12,21 +12,21 @@
     <title>Git :: Cours de C&#43;&#43; - Niveau Master</title>
 
     
-    <link href="/CPP_Learning/css/nucleus.css?1609584134" rel="stylesheet">
-    <link href="/CPP_Learning/css/fontawesome-all.min.css?1609584134" rel="stylesheet">
-    <link href="/CPP_Learning/css/hybrid.css?1609584134" rel="stylesheet">
-    <link href="/CPP_Learning/css/featherlight.min.css?1609584134" rel="stylesheet">
-    <link href="/CPP_Learning/css/perfect-scrollbar.min.css?1609584134" rel="stylesheet">
-    <link href="/CPP_Learning/css/auto-complete.css?1609584134" rel="stylesheet">
-    <link href="/CPP_Learning/css/atom-one-dark-reasonable.css?1609584134" rel="stylesheet">
-    <link href="/CPP_Learning/css/theme.css?1609584134" rel="stylesheet">
-    <link href="/CPP_Learning/css/hugo-theme.css?1609584134" rel="stylesheet">
+    <link href="/CPP_Learning/css/nucleus.css?1609620897" rel="stylesheet">
+    <link href="/CPP_Learning/css/fontawesome-all.min.css?1609620897" rel="stylesheet">
+    <link href="/CPP_Learning/css/hybrid.css?1609620897" rel="stylesheet">
+    <link href="/CPP_Learning/css/featherlight.min.css?1609620897" rel="stylesheet">
+    <link href="/CPP_Learning/css/perfect-scrollbar.min.css?1609620897" rel="stylesheet">
+    <link href="/CPP_Learning/css/auto-complete.css?1609620897" rel="stylesheet">
+    <link href="/CPP_Learning/css/atom-one-dark-reasonable.css?1609620897" rel="stylesheet">
+    <link href="/CPP_Learning/css/theme.css?1609620897" rel="stylesheet">
+    <link href="/CPP_Learning/css/hugo-theme.css?1609620897" rel="stylesheet">
     
-    <link href="/CPP_Learning/css/theme-mine.css?1609584134" rel="stylesheet">
+    <link href="/CPP_Learning/css/theme-mine.css?1609620897" rel="stylesheet">
     
-    <link href="/CPP_Learning/css/syntax.css?1609584134" rel="stylesheet">
+    <link href="/CPP_Learning/css/syntax.css?1609620897" rel="stylesheet">
 
-    <script src="/CPP_Learning/js/jquery-3.3.1.min.js?1609584134"></script>
+    <script src="/CPP_Learning/js/jquery-3.3.1.min.js?1609620897"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -57,14 +57,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/CPP_Learning/js/lunr.min.js?1609584134"></script>
-<script type="text/javascript" src="/CPP_Learning/js/auto-complete.js?1609584134"></script>
+<script type="text/javascript" src="/CPP_Learning/js/lunr.min.js?1609620897"></script>
+<script type="text/javascript" src="/CPP_Learning/js/auto-complete.js?1609620897"></script>
 <script type="text/javascript">
     
         var baseurl = "https:\/\/laefy.github.io\/CPP_Learning\/";
     
 </script>
-<script type="text/javascript" src="/CPP_Learning/js/search.js?1609584134"></script>
+<script type="text/javascript" src="/CPP_Learning/js/search.js?1609620897"></script>
 
     
   </div>
@@ -560,7 +560,7 @@ Si vous êtes sous Windows, vous pouvez télécharger l&rsquo;outil depuis
 <a href="../2-cmake/#utilisation" target="_blank" rel="noopener noreferrer">cette page</a>.<br>
 3- Placez-vous ensuite dans l&rsquo;onglet Source Control de VSCode (Ctrl+Shift+G ou <code>View &gt; SCM</code>).<br>
 4- Cliquez sur <code>Initialize Repository</code>.
-<img src="/images/vscode-git-init.png" alt=""></p>
+<img src="/CPP_Learning/images/vscode-git-init.png" alt=""></p>
 <p>5- Les fichiers générés par la compilation devraient apparaître dans la liste des changements détectés par git.<br>
 Comme nous ne souhaitons pas sauvegarder les fichiers temporaires, nous allons les ignorer en ajoutant un nouveau fichier <code>.gitignore</code>.<br>
 Créez ce fichier à la racine de votre dossier et copiez-collez dedans les lignes ci-dessous :</p>
@@ -574,17 +574,17 @@ Créez ce fichier à la racine de votre dossier et copiez-collez dedans les lign
 </span><span class="c">*</span><span class="nt">.</span><span class="c">o
 </span></code></pre></div><p>6- Si votre exécutable est généré dans le même répertoire que les fichiers sources, et que celui-ci ne comporte pas d&rsquo;extension, vous pouvez ajouter son nom sur une nouvelle ligne du fichier <code>.gitignore</code>.<br>
 7- Retournez dans l&rsquo;onglet Source Control, et appuyez sur le bouton <code>+</code> pour stager vos modifications.
-<img src="/images/vscode-git-stage.png" alt=""></p>
+<img src="/CPP_Learning/images/vscode-git-stage.png" alt=""></p>
 <p>8- Entrez un message décrivant vos changements et cliquez sur la coche pour les committer.
-<img src="/images/vscode-git-commit.png" alt=""></p>
+<img src="/CPP_Learning/images/vscode-git-commit.png" alt=""></p>
 <h4 id="clone-dun-dépôt-existant">Clone d&rsquo;un dépôt existant</h4>
 <p>1- Si vous possédez un compte Github, commencez par forker le dépôt suivant : <a href="https://github.com/Laefy/CPP-M1-test-git-clone">https://github.com/Laefy/CPP-M1-test-git-clone</a>.
-<img src="/images/github-fork.png" alt=""></p>
+<img src="/CPP_Learning/images/github-fork.png" alt=""></p>
 <p>2- Ouvrez VSCode.<br>
 3- Lancer la commande <code>Git: Clone</code> depuis le panneau de commandes (Ctrl+Shift+P ou <code>View &gt; Command Palette...</code>).
-<img src="/images/vscode-git-clone.png" alt=""></p>
+<img src="/CPP_Learning/images/vscode-git-clone.png" alt=""></p>
 <p>4- Fournissez-lui l&rsquo;URL du dépôt créé sur votre compte à la suite du fork, ou utilisez l&rsquo;URL du dépôt d&rsquo;origine : <a href="https://github.com/Laefy/CPP-M1-test-git-clone.git/">https://github.com/Laefy/CPP-M1-test-git-clone.git/</a> (vous ne pourrez alors pas réalisez de push sur ce dépôt).
-<img src="/images/vscode-git-clone-url.png" alt=""></p>
+<img src="/CPP_Learning/images/vscode-git-clone-url.png" alt=""></p>
 <p>4- Sélectionnez le dossier où vous ranger habituellement vos projets de code, pour que git y copie le dépôt distant.<br>
 5- Dans le fichier <code>main.cpp</code>, remplacez le contenu de la fonction <code>main</code> par les instructions ci-dessous :</p>
 <div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
@@ -593,11 +593,11 @@ Créez ce fichier à la racine de votre dossier et copiez-collez dedans les lign
 	<span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
 <span class="p">}</span> 
 </code></pre></div><p>6- Allez dans l&rsquo;onglet Source Control de VSCode (Ctrl+Shift+G ou <code>View &gt; SCM</code>) et appuyez sur le bouton <code>+</code> pour stager vos changements.
-<img src="/images/vscode-git-clone-stage.png" alt=""></p>
+<img src="/CPP_Learning/images/vscode-git-clone-stage.png" alt=""></p>
 <p>7- Entrez un message et cliquez sur la coche pour committer vos changements.
-<img src="/images/vscode-git-clone-commit.png" alt=""></p>
+<img src="/CPP_Learning/images/vscode-git-clone-commit.png" alt=""></p>
 <p>8- Si vous avez utilisé votre propre compte pour cloner le dépôt, vous pouvez maintenant y pusher votre commit en utilisant la commande <code>Git: Push</code>.
-<img src="/images/vscode-git-push.png" alt=""></p>
+<img src="/CPP_Learning/images/vscode-git-push.png" alt=""></p>
 
 
 <footer class="footline">
@@ -890,19 +890,19 @@ Créez ce fichier à la racine de votre dossier et copiez-collez dedans les lign
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/CPP_Learning/js/clipboard.min.js?1609584134"></script>
-    <script src="/CPP_Learning/js/perfect-scrollbar.min.js?1609584134"></script>
-    <script src="/CPP_Learning/js/perfect-scrollbar.jquery.min.js?1609584134"></script>
-    <script src="/CPP_Learning/js/jquery.sticky.js?1609584134"></script>
-    <script src="/CPP_Learning/js/featherlight.min.js?1609584134"></script>
-    <script src="/CPP_Learning/js/highlight.pack.js?1609584134"></script>
+    <script src="/CPP_Learning/js/clipboard.min.js?1609620897"></script>
+    <script src="/CPP_Learning/js/perfect-scrollbar.min.js?1609620897"></script>
+    <script src="/CPP_Learning/js/perfect-scrollbar.jquery.min.js?1609620897"></script>
+    <script src="/CPP_Learning/js/jquery.sticky.js?1609620897"></script>
+    <script src="/CPP_Learning/js/featherlight.min.js?1609620897"></script>
+    <script src="/CPP_Learning/js/highlight.pack.js?1609620897"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/CPP_Learning/js/modernizr.custom-3.6.0.js?1609584134"></script>
-    <script src="/CPP_Learning/js/learn.js?1609584134"></script>
-    <script src="/CPP_Learning/js/hugo-learn.js?1609584134"></script>
+    <script src="/CPP_Learning/js/modernizr.custom-3.6.0.js?1609620897"></script>
+    <script src="/CPP_Learning/js/learn.js?1609620897"></script>
+    <script src="/CPP_Learning/js/hugo-learn.js?1609620897"></script>
 
-    <link href="/CPP_Learning/mermaid/mermaid.css?1609584134" rel="stylesheet" />
-    <script src="/CPP_Learning/mermaid/mermaid.js?1609584134"></script>
+    <link href="/CPP_Learning/mermaid/mermaid.css?1609620897" rel="stylesheet" />
+    <script src="/CPP_Learning/mermaid/mermaid.js?1609620897"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>
