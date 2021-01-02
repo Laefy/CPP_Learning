@@ -27,7 +27,7 @@ languageName = "English"
 
 [[menu.shortcuts]]
 name = "<i class='fab fa-github'></i> Dépôt GitHub"
-url = "https://github.com/Laefy/CPP_Learning/"
+url = "https://github.com/Laefy/CPP_Learning_Code/"
 weight = 1
 
 [[menu.shortcuts]]
