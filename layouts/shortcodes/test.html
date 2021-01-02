@@ -1,0 +1,19 @@
+{{ $_hugo_config := `{ "version": 1 }` }}
+
+<form id="test" method=POST action="https://formspree.io/f/mknppako">
+  <label for="name">Vous êtes : </label>
+  <input type="text" id="name" name="name" placeholder="Prénom Nom">
+  <hr/>
+  
+  {{ .Inner }}
+
+  <hr/>
+
+  <label for="questions">Avez-vous des questions suite à la lecture de ce chapitre ?</label>
+  <textarea id="questions" name="questions" rows="5" cols="50"></textarea>
+
+  <label for="comments">Avez-vous des commentaires concernant le chapitre et/ou le site ?</label>
+  <textarea id="comments" name="comments" rows="5" cols="50"></textarea>
+
+  <input type="submit" value="Valider">
+</form> 

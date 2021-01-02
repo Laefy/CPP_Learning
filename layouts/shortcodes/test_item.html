@@ -1,0 +1,5 @@
+{{ $_hugo_config := `{ "version": 1 }` }}
+{{ $id := .Params.id }}
+
+<label for="q{{ $id }}">{{ $id }}- {{ .Inner }}</label>
+<input type="text" id="q{{ $id }}" name="q{{ $id }}"></input>

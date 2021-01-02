@@ -1,0 +1,36 @@
+baseURL = "https://laefy.github.io/CPP_Learning/"
+languageCode = "en-us"
+defaultContentLanguage = "fr"
+theme = "learn"
+pygmentsUseClasses = true
+
+[params]
+  themeVariant = "mine"
+  showVisitedLinks = true
+  disableInlineCopyToClipBoard = true
+  disableLanguageSwitchingButton = true
+  custom_css = ["css/syntax.css"]
+
+[markup.goldmark.renderer]
+  unsafe = true
+
+[Languages]
+[Languages.fr]
+title = "Cours de C++ - Niveau Master"
+weight = 1
+languageName = "Français"
+
+[Languages.en]
+title = "C++ Master Courses"
+weight = 2
+languageName = "English"
+
+[[menu.shortcuts]]
+name = "<i class='fab fa-github'></i> Dépôt GitHub"
+url = "https://github.com/Laefy/CPP_Learning/"
+weight = 1
+
+[[menu.shortcuts]]
+name = "<i class='fas fa-passport'></i> CPP-Ref"
+url = "https://en.cppreference.com/w/"
+weight = 2

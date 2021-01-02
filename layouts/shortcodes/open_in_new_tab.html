@@ -1,0 +1,2 @@
+{{ $_hugo_config := `{ "version": 1 }` }}
+<a href="{{ .Get 0 }}" target="_blank" rel="noopener noreferrer">{{ with .Get 1 }}{{ . }}{{ else }}{{ .Inner }}{{ end }}</a>
