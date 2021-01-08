@@ -1,5 +1,5 @@
 ---
-title: "Perroquet"
+title: "🦜 Perroquet"
 weight: 2
 ---
 

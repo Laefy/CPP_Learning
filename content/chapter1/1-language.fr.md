@@ -73,7 +73,7 @@ Mais C++ ne se limite pas qu'à ces domaines. Il est un des langages de programm
 Cette popularité peut s'expliquer par le fait qu'il est extrêmement bien documenté et qu'il dispose d'une large communauté à laquelle s'adresser en cas de difficulté.
 On peut aussi supposer que les nombreuses évolutions qu'il a connu depuis une dizaine d'années, autant pour apporter de nouvelles fonctionnalités que pour le rendre plus intuitif à utiliser, l'ont aidé à gagner des utilisateurs.
 
-Un autre aspect important et apprécié du C++ est qu'il s'agit c'est un langage sans surprise. Le standard spécifie tout ce qui est supporté, et surtout, tout ce qui ne l'est pas (undefined behavior). Si quelque chose est supporté, alors le standard définit un comportement que les compilateurs devront garantir quelque soit la machine sur laquelle le programme sera exécuté. Cela permet aux programmeurs d'être assurés que ce qui doit fonctionner fonctionnera effectivement, et de ne pas s'étonner si ce qui est spécifié comme undefined behavior ne fonctionne pas comme ils l'espéraient.
+Un autre aspect important et apprécié du C++ est qu'il s'agit d'un langage sans surprise. Le standard spécifie tout ce qui est supporté, et surtout, tout ce qui ne l'est pas (undefined behavior). Si quelque chose est supporté, alors le standard définit un comportement que les compilateurs devront garantir quelque soit la machine sur laquelle le programme sera exécuté. Cela permet aux programmeurs d'être assurés que ce qui doit fonctionner fonctionnera effectivement, et de ne pas s'étonner si ce qui est spécifié comme undefined behavior ne fonctionne pas comme ils l'espéraient.
 
 ---
 
@@ -82,6 +82,6 @@ Un autre aspect important et apprécié du C++ est qu'il s'agit c'est un langage
 - {{< open_in_new_tab "https://en.cppreference.com/w/" "Documentation du langage et de la librairie standard" />}}
 - {{< open_in_new_tab "https://www.godbolt.org/" "Pour compiler du code avec plein de compilateurs différents, et même l'exécuter" />}}
 - {{< open_in_new_tab "https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines" "Bonnes pratiques" />}}
-- {{< open_in_new_tab "https://isocpp.org/faq" "Une super FAC" />}}
+- {{< open_in_new_tab "https://isocpp.org/faq" "Une super FAQ" />}}
 - {{< open_in_new_tab "https://isocpp.org/std/the-standard" "Informations sur le standard" />}}
 

@@ -1,5 +1,5 @@
 ---
-title: "Tableau Numérique"
+title: "🔢 Tableau Numérique"
 weight: 3
 ---
 

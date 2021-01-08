@@ -1,5 +1,5 @@
 ---
-title: "Hello World"
+title: "👋 Hello World"
 weight: 1
 ---
 
@@ -101,7 +101,7 @@ Ce problème existe aussi en C bien sûr, et pour y pallier, certaines APIs pré
 {{% /notice %}}
 
 `cout`\
-Il s'agit de la variable contenant le flux pour écrire sur la sortie standard du programme. Je ne sais pas pourquoi 'c', mais le 'out' indique 'sortie'. Par symétrie, on fera référence au flux pour l'entrée standard avec `cin`.
+Il s'agit de la variable globale contenant le flux pour écrire sur la sortie standard du programme. Je ne sais pas pourquoi 'c', mais le 'out' indique 'sortie'. Par symétrie, on fera référence au flux pour l'entrée standard avec `cin`.
 
 `<<`\
 Il s'agit d'un opérateur, un peu comme `+` ou `%`. Si on utilise `<<` entre une variable de flux et une chaîne de caractère, cette chaîne de caractère sera écrite dans le flux.
@@ -128,7 +128,7 @@ blabla error ##: 'endl': undeclared identifier blabla
 
 Le premier message indique que le compilateur ne trouve aucun symbole nommé `cout` dans le namespace `std`. Eh bien oui, le C++, c'est comme le C. Le compilateur est un peu bêbête, et il faut tout lui indiquer, même où trouver les symboles de la librairie standard.
 
-Allez sur {{% open_in_new_tab "https://en.cppreference.com/w/" "ce site" /%}} et recherchez `cout`. Vous devriez pouvoir déterminer dans quel header il se trouve, et ajouter la directive d'inclusion correspondante au fichier.
+Allez sur {{% open_in_new_tab "https://en.cppreference.com/w/" "ce site" /%}} et recherchez `cout`. Cela devrait vous permettre de déterminer dans quel header la fonction est déclarée, afin d'ajouter la directive d'inclusion correspondante au fichier.
 
 {{% expand "Solution" %}}
 Vous devriez arriver sur {{% open_in_new_tab "https://en.cppreference.com/w/cpp/io/cout" "cette page" /%}}, vous indiquant que le header à référencer est `<iostream>` :

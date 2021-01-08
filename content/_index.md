@@ -16,7 +16,7 @@ Sur ce site, vous trouverez le cours de C++ destiné à l'enseignement des Maste
 Ce cours sera organisé comme un cours inversé. C'est-à-dire que vous devrez lire et avoir compris le chapitre du cours avant d'arriver à la séance de TP associée.\
 Ce choix a été pris en raison des arguments suivants : 
 - d'après mon expérience personnelle d'étudiante, les cours magistraux de code sont en général peu utiles. On écoute du blabla pendant 2h (c'est long, ça donne envie de dormir ou de faire autre chose sur son téléphone), et d'ici à ce qu'on arrive en TP, on a oublié les trois-quarts. Du coup, on passe la moitié de la séance à relire le poly de cours plutôt qu'à coder.
-- le nombre d'heures allouées à l'enseignement étant limité, nous avons décidé avec les autres enseignements de les consacrer entièrement aux réponses à vos questions et à la pratique.
+- le nombre d'heures allouées à l'enseignement étant limité, nous avons décidé avec les autres enseignants de les consacrer entièrement aux réponses à vos questions et à la pratique.
 
 Le cours sera organisé en une dizaine de chapitres. Chaque chapitre contiendra des exercices guidés avec leurs solutions, qui vous permettrons de travailler et d'assimiler les notions du cours. À la fin du chapitre, vous trouverez un questionnaire à remplir, et une page de synthèse.
 

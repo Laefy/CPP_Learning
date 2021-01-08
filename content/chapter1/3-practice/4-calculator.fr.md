@@ -1,5 +1,5 @@
 ---
-title: "Calculette"
+title: "🧮 Calculette"
 weight: 4
 ---
 
@@ -560,7 +560,7 @@ bool parse_params(char& op, std::vector<int>& values, int argc, char** argv)
 
 Un autre cas d'utilisation des références, c'est pour passer des paramètres coûteux à copier à une fonction. Par exemple, pour passer des classes qui réalisent des allocations dynamiques en interne, comme std::vector ou std::string, on peut tout à fait décider d'utiliser des références pour éviter que ces allocations ne se fassent.
 
-Le problème de passer d'une copie à une référence, c'est que l'on donne le pouvoir à la fonction de modifier des choses qu'on souhaiterait qu'elle ne modifie pas. Pour éviter cela, on va passer les paramètres par en utilisant des **références constantes** (abbrégé const-ref). Pour définir une const-ref, il suffit d'ajouter le mot-clef `const` devant le type de la référence :
+Le problème de passer d'une copie à une référence, c'est que l'on donne le pouvoir à la fonction de modifier des choses qu'on souhaiterait qu'elle ne modifie pas. Pour éviter cela, on va passer les paramètres en utilisant des **références constantes** (abbrégé const-ref). Pour définir une const-ref, il suffit d'ajouter le mot-clef `const` devant le type de la référence :
 ```cpp
 int original = 3;
 const int& const_ref = original;
