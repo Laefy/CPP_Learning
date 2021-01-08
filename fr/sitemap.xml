@@ -3,7 +3,12 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://laefy.github.io/CPP_Learning/chapter1/3-practice/1-hello-world/</loc>
+    <loc>https://laefy.github.io/CPP_Learning/chapter1/</loc>
+    <lastmod>2020-11-14T19:34:19+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://laefy.github.io/CPP_Learning/chapter2/1-poo/</loc>
   </url>
   
   <url>
@@ -15,11 +20,24 @@
   </url>
   
   <url>
+    <loc>https://laefy.github.io/CPP_Learning/chapter1/3-practice/1-hello-world/</loc>
+  </url>
+  
+  <url>
+    <loc>https://laefy.github.io/CPP_Learning/chapter2/</loc>
+    <lastmod>2020-11-14T19:34:19+01:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://laefy.github.io/CPP_Learning/chapter1/2-tools/2-cmake/</loc>
   </url>
   
   <url>
     <loc>https://laefy.github.io/CPP_Learning/chapter1/2-tools/</loc>
+  </url>
+  
+  <url>
+    <loc>https://laefy.github.io/CPP_Learning/chapter2/2-first-class/</loc>
   </url>
   
   <url>
@@ -39,7 +57,7 @@
   </url>
   
   <url>
-    <loc>https://laefy.github.io/CPP_Learning/chapter1/3-practice/4-calculator/</loc>
+    <loc>https://laefy.github.io/CPP_Learning/chapter2/3-constructor/</loc>
   </url>
   
   <url>
@@ -47,11 +65,35 @@
   </url>
   
   <url>
+    <loc>https://laefy.github.io/CPP_Learning/chapter2/4-clone/</loc>
+  </url>
+  
+  <url>
+    <loc>https://laefy.github.io/CPP_Learning/chapter1/3-practice/4-calculator/</loc>
+  </url>
+  
+  <url>
+    <loc>https://laefy.github.io/CPP_Learning/chapter2/5-rectangle/</loc>
+  </url>
+  
+  <url>
+    <loc>https://laefy.github.io/CPP_Learning/chapter2/6-polygon/</loc>
+  </url>
+  
+  <url>
     <loc>https://laefy.github.io/CPP_Learning/chapter1/form/</loc>
   </url>
   
   <url>
+    <loc>https://laefy.github.io/CPP_Learning/chapter2/form/</loc>
+  </url>
+  
+  <url>
     <loc>https://laefy.github.io/CPP_Learning/chapter1/summary/</loc>
+  </url>
+  
+  <url>
+    <loc>https://laefy.github.io/CPP_Learning/chapter2/summary/</loc>
   </url>
   
   <url>
@@ -67,11 +109,6 @@
                 hreflang="fr"
                 href="https://laefy.github.io/CPP_Learning/"
                 />
-  </url>
-  
-  <url>
-    <loc>https://laefy.github.io/CPP_Learning/chapter1/</loc>
-    <lastmod>2020-11-14T19:34:19+01:00</lastmod>
   </url>
   
   <url>

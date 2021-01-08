@@ -9,7 +9,7 @@
 
     <link rel="icon" href="/CPP_Learning/images/favicon.png" type="image/png">
 
-    <title>Présentation du langage :: Cours de C&#43;&#43; - Niveau Master</title>
+    <title>Classes :: Cours de C&#43;&#43; - Niveau Master</title>
 
     
     <link href="/CPP_Learning/css/nucleus.css?1610140451" rel="stylesheet">
@@ -40,7 +40,7 @@
     </style>
     
   </head>
-  <body class="" data-url="/CPP_Learning/chapter1/1-language/">
+  <body class="" data-url="/CPP_Learning/chapter2/">
     <nav id="sidebar" class="showVisitedLinks">
 
 
@@ -83,7 +83,7 @@
   
     
     <li data-nav-id="/CPP_Learning/chapter1/" title="Introduction au C&#43;&#43;" class="dd-item 
-        parent
+        
         
         
         ">
@@ -113,7 +113,7 @@
  
   
     
-      <li data-nav-id="/CPP_Learning/chapter1/1-language/" title="Présentation du langage" class="dd-item active">
+      <li data-nav-id="/CPP_Learning/chapter1/1-language/" title="Présentation du langage" class="dd-item ">
         <a href="/CPP_Learning/chapter1/1-language/">
         Présentation du langage
         <i class="fas fa-check read-icon"></i>
@@ -428,8 +428,8 @@
   
     
     <li data-nav-id="/CPP_Learning/chapter2/" title="Classes" class="dd-item 
-        
-        
+        parent
+        active
         
         ">
       <a href="/CPP_Learning/chapter2/">
@@ -681,8 +681,6 @@
                         </a>
                     </span>
                   
-                  <span id="toc-menu"><i class="fas fa-list-alt"></i></span>
-                  
                   <span class="links">
                  
                  
@@ -693,13 +691,7 @@
             
           
           
-            
-            
-          
-          
-            <a href='/CPP_Learning/'>Accueil</a> > <a href='/CPP_Learning/chapter1/'>Introduction au C++</a> > Présentation du langage
-          
-        
+            <a href='/CPP_Learning/'>Accueil</a> > Classes
           
         
           
@@ -708,24 +700,6 @@
                   </span>
                 </div>
                 
-                    <div class="progress">
-    <div class="wrapper">
-<nav id="TableOfContents">
-  <ul>
-    <li>
-      <ul>
-        <li><a href="#quelques-caractéristiques">Quelques caractéristiques</a></li>
-        <li><a href="#un-langage-complexe-">Un langage complexe ?</a></li>
-        <li><a href="#un-langage-populaire">Un langage populaire</a></li>
-        <li><a href="#liens-utiles">Liens utiles</a></li>
-      </ul>
-    </li>
-  </ul>
-</nav>
-    </div>
-</div>
-
-                
               </div>
             </div>
             
@@ -733,87 +707,32 @@
         
         </div>
         
+          <div id="chapter">
+        
         <div id="body-inner">
-          
-            <h1>
-              
-              Présentation du langage
-            </h1>
           
 
         
 
 
-<p>Cette page vous présentera quelques caractéristiques du C++, les différences avec d&rsquo;autres langages que vous avez étudiés jusque là, pourquoi est-ce que certains disent que C++ est compliqué, alors que pas forcément, et ce qui fait que le langage est aussi utilisé aujourd&rsquo;hui. Promis, c&rsquo;est la seule page du cours où vous trouverez autant de pavés 🙂</p>
-<hr>
-<h3 id="quelques-caractéristiques">Quelques caractéristiques</h3>
-<p>C++ est un langage de programmation informatique inventé dans les années 1980 par un informaticien nommé Bjarne Stroupstrup. Il s&rsquo;agit d&rsquo;un langage&hellip;</p>
-<h5 id="-compilé">&hellip; Compilé</h5>
-<p>Tout comme le C, le C++ est un langage compilé. Nous aurons donc besoin d&rsquo;un compilateur afin de générer le programme exécutable à partir de son code source.<br>
-Contrairement aux langages interprétés (Python) ou semi-interprétés (Java), une fois le programme compilé, celui-ci peut directement être exécuté par le système d&rsquo;exploitation.<br>
-L&rsquo;avantage est que le programme est généralement plus rapide à exécuter, puisqu&rsquo;il n&rsquo;est pas nécessaire de passer par un interpréteur.<br>
-En revanche, l&rsquo;exécutable ne sera pas portable et il faudra recompiler le programme pour chacun des systèmes sur lequel il devra être exécuté.
-Cela implique donc soit de fournir les exécutables pour l&rsquo;ensemble des systèmes que l&rsquo;on souhaite supporter, soit de distribuer son code-source pour que chacun puisse compiler le programme pour le système qu&rsquo;il utilise.</p>
-<h5 id="-orienté-objet">&hellip; Orienté-objet</h5>
-<p>Comme le Java, C++ est un langage orienté-objet.
-On pourra donc y définir des classes, dotées de fonctions membres et d&rsquo;attributs, définir des relations d&rsquo;héritage entre elles et redéfinir le comportement de base des classes mères dans les classes filles.<br>
-Cependant, le C++ n&rsquo;est pas un langage purement orienté-objet. On peut définir des fonctions en dehors de toute classe (on parle alors de fonctions libres), voire même implémenter des programmes complets sans définir la moindre classe.</p>
-<h5 id="-générique">&hellip; Générique</h5>
-<p>Un langage est dit générique s&rsquo;il permet d&rsquo;appliquer un même algorithme sur différents types de données. Dans le cas du C++, la généricité s&rsquo;exprime via les mécanismes suivants :<br>
-- le polymorphisme : on peut passer un objet de type Chien à une fonction recevant un objet de type Animal,<br>
-- la surcharge : on peut définir différentes fonctions avec le même nom, dès lors qu&rsquo;elles acceptent un nombre différent de paramètres, ou que ces paramètres ne sont pas de même types,<br>
-- les templates (ou &ldquo;patrons&rdquo; en français, mais nous utiliserons toujours le terme anglais dans ce cours) : il est possible de définir des types et fonctions permettant de travailler avec des paramètres dont le type n&rsquo;est pas clairement spécifié.</p>
-<hr>
-<h3 id="un-langage-complexe-">Un langage complexe ?</h3>
-<p>Le C++ est un langage qui est souvent qualifié de complexe.</p>
-<p>Pour commencer, celui-ci ne dispose pas de garbage-collector. Il faut donc manipuler avec soin la mémoire allouée, penser à la libérer lorsqu&rsquo;elle n&rsquo;est plus utilisée et généralement passer des pointeurs pour référencer les blocs de mémoire.</p>
 
-<div class="notices tip" ><p>Le C++ dispose de mécanismes permettant de limiter l&rsquo;usage des pointeurs :<br>
-- pour passer des paramètres à une fonction par référence plutôt que par copie, on peut utiliser des références : <code>void fcn(int&amp; ref)</code> au lieu de <code>void fcn(int copy)</code>,<br>
-- pour libérer automatiquement la mémoire d&rsquo;un objet alloué sur le tas lorsqu&rsquo;on ne l&rsquo;utilise plus, C++14 introduit les smart pointers, que nous étudierons dans le <a href="/chapter7">Chapitre VII</a>.</p>
-</div>
+	
+		<h3>Chapitre 2</h3>
+		<h1>Classes</h1>
+	
 
-<p>Ensuite, le code produit en C++ peut rapidement devenir illisible.
-Les espaces et tabulations n&rsquo;étant pas significatifs comme en Python, le C++ repose sur l&rsquo;utilisation de <code>()</code>, <code>{}</code> et <code>;</code> pour délimiter les expressions, instructions et blocs d&rsquo;exécutions.
-L&rsquo;utilisation de symboles ne se limite pas à ça. On retrouve également l&rsquo;utilisation de <code>&lt;&gt;</code> (templates), <code>::</code> (namespaces) ou encore <code>[]</code> (tableaux).
-Finalement, lorsque tous ces caractères se retrouvent encapsulés les uns dans les autres, il peut être difficile de déchiffrer certains bouts de code.</p>
-
-<div class="notices tip" ><p>Il est toujours possible de rendre son code plus clair en définissant des variables pour expliciter des expressions, ou des fonctions pour extraire un ensemble d&rsquo;instructions.</p>
-</div>
-
-<p>Enfin, pour préserver la rétro-compatibilité du C++, très peu de nouveaux mots-clefs ont été ajoutés au fil des versions. 
-La syntaxe des nouvelles fonctionnalités se base donc souvent sur la réutilisation de mots-clefs déjà existants, mais utilisés dans un autre contexte, ou encore sur l&rsquo;utilisation de caractères spéciaux.<br>
-- <code>inline</code> servait à la base uniquement à déclarer des fonctions comme inlinées (<a href="/chapter8">chap. VII</a>) mais depuis C++17, il peut aussi être utilisé pour les variables.<br>
-- les lambdas (<a href="/chapter6">chap. VI</a>) sont introduites par C++11 avec la syntaxe suivante : <code>[c1, c2](int p1, int p2) { return (c1 + p1) - (c2 + p2); }</code>.</p>
-<p>Ces différents points font du C++ un langage plutôt difficile à aborder. Mais en réalité, une fois la syntaxe démystifiée, il devient relativement aisé de le comprendre et de programmer avec.</p>
-<hr>
-<h3 id="un-langage-populaire">Un langage populaire</h3>
-<p>C++ est l&rsquo;un des rares langages orienté-objet permettant une gestion extrèmement fine de la mémoire et des composants matériel de la machine.
-Il est également très performant, ce qui fait de lui le langage de prédilection dans des domaines pour lesquels la performance est critique : systèmes d&rsquo;exploitation, systèmes embarqués, pilotes, moteurs de recherche, jeux vidéos, moteurs de rendu 3D, etc.</p>
-<p>Mais C++ ne se limite pas qu&rsquo;à ces domaines. Il est un des langages de programmation les plus utilisés à travers le monde pour le développement d&rsquo;applications ou d&rsquo;API.
-Cette popularité peut s&rsquo;expliquer par le fait qu&rsquo;il est extrêmement bien documenté et qu&rsquo;il dispose d&rsquo;une large communauté à laquelle s&rsquo;adresser en cas de difficulté.
-On peut aussi supposer que les nombreuses évolutions qu&rsquo;il a connu depuis une dizaine d&rsquo;années, autant pour apporter de nouvelles fonctionnalités que pour le rendre plus intuitif à utiliser, l&rsquo;ont aidé à gagner des utilisateurs.</p>
-<p>Un autre aspect important et apprécié du C++ est qu&rsquo;il s&rsquo;agit d&rsquo;un langage sans surprise. Le standard spécifie tout ce qui est supporté, et surtout, tout ce qui ne l&rsquo;est pas (undefined behavior). Si quelque chose est supporté, alors le standard définit un comportement que les compilateurs devront garantir quelque soit la machine sur laquelle le programme sera exécuté. Cela permet aux programmeurs d&rsquo;être assurés que ce qui doit fonctionner fonctionnera effectivement, et de ne pas s&rsquo;étonner si ce qui est spécifié comme undefined behavior ne fonctionne pas comme ils l&rsquo;espéraient.</p>
-<hr>
-<h3 id="liens-utiles">Liens utiles</h3>
-<ul>
-<li>
-<a href="https://en.cppreference.com/w/" target="_blank" rel="noopener noreferrer">Documentation du langage et de la librairie standard</a></li>
-<li>
-<a href="https://www.godbolt.org/" target="_blank" rel="noopener noreferrer">Pour compiler du code avec plein de compilateurs différents, et même l&#39;exécuter</a></li>
-<li>
-<a href="https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines" target="_blank" rel="noopener noreferrer">Bonnes pratiques</a></li>
-<li>
-<a href="https://isocpp.org/faq" target="_blank" rel="noopener noreferrer">Une super FAQ</a></li>
-<li>
-<a href="https://isocpp.org/std/the-standard" target="_blank" rel="noopener noreferrer">Informations sur le standard</a></li>
-</ul>
+	<p>L&rsquo;objectif de ce chapitre est de vous apprendre à créer et utiliser des classes en C++.</p>
 
 
-<footer class="footline">
+
+
+
+<footer class=" footline" >
 	
 </footer>
 
+        
+            </div> 
         
         </div> 
         
@@ -845,6 +764,8 @@ On peut aussi supposer que les nombreuses évolutions qu&rsquo;il a connu depuis
             
                 
                     
+                        
+                        
                     
                 
                 
@@ -861,7 +782,6 @@ On peut aussi supposer que les nombreuses évolutions qu&rsquo;il a connu depuis
             
                 
                     
-                    
                 
                 
 
@@ -869,89 +789,6 @@ On peut aussi supposer que les nombreuses évolutions qu&rsquo;il a connu depuis
                     
                     
 
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                        
-                        
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
                     
             
         
@@ -1049,6 +886,51 @@ On peut aussi supposer que les nombreuses évolutions qu&rsquo;il a connu depuis
                     
 
                     
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
             
         
                     
@@ -1084,10 +966,49 @@ On peut aussi supposer que les nombreuses évolutions qu&rsquo;il a connu depuis
                     
 
                     
+            
+        
+                    
                         
             
             
                 
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
                     
                 
                 
@@ -1224,10 +1145,10 @@ On peut aussi supposer que les nombreuses évolutions qu&rsquo;il a connu depuis
 	 
 	 
 		
-			<a class="nav nav-prev" href="/CPP_Learning/chapter1/" title="Introduction au C&#43;&#43;"> <i class="fa fa-chevron-left"></i></a>
+			<a class="nav nav-prev" href="/CPP_Learning/chapter1/summary/" title="Synthèse"> <i class="fa fa-chevron-left"></i></a>
 		
 		
-			<a class="nav nav-next" href="/CPP_Learning/chapter1/2-tools/" title="Outils" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+			<a class="nav nav-next" href="/CPP_Learning/chapter2/1-poo/" title="C&#39;est quoi un objet déjà ?" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
 		
 	
     </div>
@@ -1257,4 +1178,3 @@ On peut aussi supposer que les nombreuses évolutions qu&rsquo;il a connu depuis
 
   </body>
 </html>
-

@@ -9,7 +9,7 @@
 
     <link rel="icon" href="/CPP_Learning/images/favicon.png" type="image/png">
 
-    <title>Présentation du langage :: Cours de C&#43;&#43; - Niveau Master</title>
+    <title>Questionnaire ! :: Cours de C&#43;&#43; - Niveau Master</title>
 
     
     <link href="/CPP_Learning/css/nucleus.css?1610140451" rel="stylesheet">
@@ -40,7 +40,7 @@
     </style>
     
   </head>
-  <body class="" data-url="/CPP_Learning/chapter1/1-language/">
+  <body class="" data-url="/CPP_Learning/chapter2/form/">
     <nav id="sidebar" class="showVisitedLinks">
 
 
@@ -83,7 +83,7 @@
   
     
     <li data-nav-id="/CPP_Learning/chapter1/" title="Introduction au C&#43;&#43;" class="dd-item 
-        parent
+        
         
         
         ">
@@ -113,7 +113,7 @@
  
   
     
-      <li data-nav-id="/CPP_Learning/chapter1/1-language/" title="Présentation du langage" class="dd-item active">
+      <li data-nav-id="/CPP_Learning/chapter1/1-language/" title="Présentation du langage" class="dd-item ">
         <a href="/CPP_Learning/chapter1/1-language/">
         Présentation du langage
         <i class="fas fa-check read-icon"></i>
@@ -428,7 +428,7 @@
   
     
     <li data-nav-id="/CPP_Learning/chapter2/" title="Classes" class="dd-item 
-        
+        parent
         
         
         ">
@@ -582,7 +582,7 @@
  
   
     
-      <li data-nav-id="/CPP_Learning/chapter2/form/" title="Questionnaire !" class="dd-item ">
+      <li data-nav-id="/CPP_Learning/chapter2/form/" title="Questionnaire !" class="dd-item active">
         <a href="/CPP_Learning/chapter2/form/">
         Questionnaire !
         <i class="fas fa-check read-icon"></i>
@@ -697,7 +697,7 @@
             
           
           
-            <a href='/CPP_Learning/'>Accueil</a> > <a href='/CPP_Learning/chapter1/'>Introduction au C++</a> > Présentation du langage
+            <a href='/CPP_Learning/'>Accueil</a> > <a href='/CPP_Learning/chapter2/'>Classes</a> > Questionnaire !
           
         
           
@@ -710,18 +710,7 @@
                 
                     <div class="progress">
     <div class="wrapper">
-<nav id="TableOfContents">
-  <ul>
-    <li>
-      <ul>
-        <li><a href="#quelques-caractéristiques">Quelques caractéristiques</a></li>
-        <li><a href="#un-langage-complexe-">Un langage complexe ?</a></li>
-        <li><a href="#un-langage-populaire">Un langage populaire</a></li>
-        <li><a href="#liens-utiles">Liens utiles</a></li>
-      </ul>
-    </li>
-  </ul>
-</nav>
+<nav id="TableOfContents"></nav>
     </div>
 </div>
 
@@ -737,77 +726,153 @@
           
             <h1>
               
-              Présentation du langage
+              Questionnaire !
             </h1>
           
 
         
 
 
-<p>Cette page vous présentera quelques caractéristiques du C++, les différences avec d&rsquo;autres langages que vous avez étudiés jusque là, pourquoi est-ce que certains disent que C++ est compliqué, alors que pas forcément, et ce qui fait que le langage est aussi utilisé aujourd&rsquo;hui. Promis, c&rsquo;est la seule page du cours où vous trouverez autant de pavés 🙂</p>
+<p>Vous pensiez que le Chapitre 2 serait plus léger que le Chapitre 1 ? Désolée de vous avoir déçus 😅<br>
+Mais bon, vous l&rsquo;avez enfin terminé, donc vous pouvez être fiers de vous ! 😀</p>
 <hr>
-<h3 id="quelques-caractéristiques">Quelques caractéristiques</h3>
-<p>C++ est un langage de programmation informatique inventé dans les années 1980 par un informaticien nommé Bjarne Stroupstrup. Il s&rsquo;agit d&rsquo;un langage&hellip;</p>
-<h5 id="-compilé">&hellip; Compilé</h5>
-<p>Tout comme le C, le C++ est un langage compilé. Nous aurons donc besoin d&rsquo;un compilateur afin de générer le programme exécutable à partir de son code source.<br>
-Contrairement aux langages interprétés (Python) ou semi-interprétés (Java), une fois le programme compilé, celui-ci peut directement être exécuté par le système d&rsquo;exploitation.<br>
-L&rsquo;avantage est que le programme est généralement plus rapide à exécuter, puisqu&rsquo;il n&rsquo;est pas nécessaire de passer par un interpréteur.<br>
-En revanche, l&rsquo;exécutable ne sera pas portable et il faudra recompiler le programme pour chacun des systèmes sur lequel il devra être exécuté.
-Cela implique donc soit de fournir les exécutables pour l&rsquo;ensemble des systèmes que l&rsquo;on souhaite supporter, soit de distribuer son code-source pour que chacun puisse compiler le programme pour le système qu&rsquo;il utilise.</p>
-<h5 id="-orienté-objet">&hellip; Orienté-objet</h5>
-<p>Comme le Java, C++ est un langage orienté-objet.
-On pourra donc y définir des classes, dotées de fonctions membres et d&rsquo;attributs, définir des relations d&rsquo;héritage entre elles et redéfinir le comportement de base des classes mères dans les classes filles.<br>
-Cependant, le C++ n&rsquo;est pas un langage purement orienté-objet. On peut définir des fonctions en dehors de toute classe (on parle alors de fonctions libres), voire même implémenter des programmes complets sans définir la moindre classe.</p>
-<h5 id="-générique">&hellip; Générique</h5>
-<p>Un langage est dit générique s&rsquo;il permet d&rsquo;appliquer un même algorithme sur différents types de données. Dans le cas du C++, la généricité s&rsquo;exprime via les mécanismes suivants :<br>
-- le polymorphisme : on peut passer un objet de type Chien à une fonction recevant un objet de type Animal,<br>
-- la surcharge : on peut définir différentes fonctions avec le même nom, dès lors qu&rsquo;elles acceptent un nombre différent de paramètres, ou que ces paramètres ne sont pas de même types,<br>
-- les templates (ou &ldquo;patrons&rdquo; en français, mais nous utiliserons toujours le terme anglais dans ce cours) : il est possible de définir des types et fonctions permettant de travailler avec des paramètres dont le type n&rsquo;est pas clairement spécifié.</p>
-<hr>
-<h3 id="un-langage-complexe-">Un langage complexe ?</h3>
-<p>Le C++ est un langage qui est souvent qualifié de complexe.</p>
-<p>Pour commencer, celui-ci ne dispose pas de garbage-collector. Il faut donc manipuler avec soin la mémoire allouée, penser à la libérer lorsqu&rsquo;elle n&rsquo;est plus utilisée et généralement passer des pointeurs pour référencer les blocs de mémoire.</p>
-
-<div class="notices tip" ><p>Le C++ dispose de mécanismes permettant de limiter l&rsquo;usage des pointeurs :<br>
-- pour passer des paramètres à une fonction par référence plutôt que par copie, on peut utiliser des références : <code>void fcn(int&amp; ref)</code> au lieu de <code>void fcn(int copy)</code>,<br>
-- pour libérer automatiquement la mémoire d&rsquo;un objet alloué sur le tas lorsqu&rsquo;on ne l&rsquo;utilise plus, C++14 introduit les smart pointers, que nous étudierons dans le <a href="/chapter7">Chapitre VII</a>.</p>
-</div>
-
-<p>Ensuite, le code produit en C++ peut rapidement devenir illisible.
-Les espaces et tabulations n&rsquo;étant pas significatifs comme en Python, le C++ repose sur l&rsquo;utilisation de <code>()</code>, <code>{}</code> et <code>;</code> pour délimiter les expressions, instructions et blocs d&rsquo;exécutions.
-L&rsquo;utilisation de symboles ne se limite pas à ça. On retrouve également l&rsquo;utilisation de <code>&lt;&gt;</code> (templates), <code>::</code> (namespaces) ou encore <code>[]</code> (tableaux).
-Finalement, lorsque tous ces caractères se retrouvent encapsulés les uns dans les autres, il peut être difficile de déchiffrer certains bouts de code.</p>
-
-<div class="notices tip" ><p>Il est toujours possible de rendre son code plus clair en définissant des variables pour expliciter des expressions, ou des fonctions pour extraire un ensemble d&rsquo;instructions.</p>
-</div>
-
-<p>Enfin, pour préserver la rétro-compatibilité du C++, très peu de nouveaux mots-clefs ont été ajoutés au fil des versions. 
-La syntaxe des nouvelles fonctionnalités se base donc souvent sur la réutilisation de mots-clefs déjà existants, mais utilisés dans un autre contexte, ou encore sur l&rsquo;utilisation de caractères spéciaux.<br>
-- <code>inline</code> servait à la base uniquement à déclarer des fonctions comme inlinées (<a href="/chapter8">chap. VII</a>) mais depuis C++17, il peut aussi être utilisé pour les variables.<br>
-- les lambdas (<a href="/chapter6">chap. VI</a>) sont introduites par C++11 avec la syntaxe suivante : <code>[c1, c2](int p1, int p2) { return (c1 + p1) - (c2 + p2); }</code>.</p>
-<p>Ces différents points font du C++ un langage plutôt difficile à aborder. Mais en réalité, une fois la syntaxe démystifiée, il devient relativement aisé de le comprendre et de programmer avec.</p>
-<hr>
-<h3 id="un-langage-populaire">Un langage populaire</h3>
-<p>C++ est l&rsquo;un des rares langages orienté-objet permettant une gestion extrèmement fine de la mémoire et des composants matériel de la machine.
-Il est également très performant, ce qui fait de lui le langage de prédilection dans des domaines pour lesquels la performance est critique : systèmes d&rsquo;exploitation, systèmes embarqués, pilotes, moteurs de recherche, jeux vidéos, moteurs de rendu 3D, etc.</p>
-<p>Mais C++ ne se limite pas qu&rsquo;à ces domaines. Il est un des langages de programmation les plus utilisés à travers le monde pour le développement d&rsquo;applications ou d&rsquo;API.
-Cette popularité peut s&rsquo;expliquer par le fait qu&rsquo;il est extrêmement bien documenté et qu&rsquo;il dispose d&rsquo;une large communauté à laquelle s&rsquo;adresser en cas de difficulté.
-On peut aussi supposer que les nombreuses évolutions qu&rsquo;il a connu depuis une dizaine d&rsquo;années, autant pour apporter de nouvelles fonctionnalités que pour le rendre plus intuitif à utiliser, l&rsquo;ont aidé à gagner des utilisateurs.</p>
-<p>Un autre aspect important et apprécié du C++ est qu&rsquo;il s&rsquo;agit d&rsquo;un langage sans surprise. Le standard spécifie tout ce qui est supporté, et surtout, tout ce qui ne l&rsquo;est pas (undefined behavior). Si quelque chose est supporté, alors le standard définit un comportement que les compilateurs devront garantir quelque soit la machine sur laquelle le programme sera exécuté. Cela permet aux programmeurs d&rsquo;être assurés que ce qui doit fonctionner fonctionnera effectivement, et de ne pas s&rsquo;étonner si ce qui est spécifié comme undefined behavior ne fonctionne pas comme ils l&rsquo;espéraient.</p>
-<hr>
-<h3 id="liens-utiles">Liens utiles</h3>
+<p>Avant de nous quitter pour aller savourer ce moment, vous devriez profiter que le chapitre soit bien frais dans votre tête pour répondre au questionnaire ci-dessous. Nous vous rappelons que si vous êtes en M1 à l&rsquo;UGE, il participera à votre notation.</p>
+<p>Rappel du barème :</p>
 <ul>
-<li>
-<a href="https://en.cppreference.com/w/" target="_blank" rel="noopener noreferrer">Documentation du langage et de la librairie standard</a></li>
-<li>
-<a href="https://www.godbolt.org/" target="_blank" rel="noopener noreferrer">Pour compiler du code avec plein de compilateurs différents, et même l&#39;exécuter</a></li>
-<li>
-<a href="https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines" target="_blank" rel="noopener noreferrer">Bonnes pratiques</a></li>
-<li>
-<a href="https://isocpp.org/faq" target="_blank" rel="noopener noreferrer">Une super FAQ</a></li>
-<li>
-<a href="https://isocpp.org/std/the-standard" target="_blank" rel="noopener noreferrer">Informations sur le standard</a></li>
+<li>si vous répondez plutôt bien aux questions : 3/3</li>
+<li>si vous répondez passablement bien aux questions : 2/3</li>
+<li>si vous ne répondez pas du tout bien aux questions : 1/2</li>
+<li>si vous ne répondez pas aux questions du tout : 0/3</li>
 </ul>
+<p>L&rsquo;objectif de ce questionnaire étant de s&rsquo;assurer que vous avez pris le temps de comprendre le cours et de faire les exercices, vous pouvez avoir la note maximale même si vous n&rsquo;avez pas toutes les bonnes réponses. C&rsquo;est donc un moyen facile de remonter sa moyenne 🙂</p>
+<p>Une fois que vous avez terminé, cliquez sur le bouton <code>Validez</code> pour que le résultat nous soit envoyé par mail. Bon courage à vous !</p>
+<hr>
+
+
+<form id="test" method=POST action="https://formspree.io/f/mknppako">
+  <label for="name">Vous êtes : </label>
+  <input type="text" id="name" name="name" placeholder="Prénom Nom">
+  <hr/>
+  
+  <p><label for="q1">1- Quel est le terme C++ permettant de désigner les “méthodes” d’une classe ?</label>
+<input type="text" id="q1" name="q1"></input></p>
+<p><label for="q2">2- Supposons une classe <code>Cercle</code> disposant d’un attribut <code>_points</code> de type <code>std::vector&lt;point&gt;</code>. Quel invariant cette classe pourrait-elle décider d’enforcer ?</label>
+<input type="text" id="q2" name="q2"></input></p>
+<p><label for="q3">3- Citez une règle permettant de respecter le principe d’encapsulation en C++.</label>
+<input type="text" id="q3" name="q3"></input></p>
+<hr>
+<p><label for="q4">4- En quoi consiste la méthodologie TDD ?</label>
+<input type="text" id="q4" name="q4"></input></p>
+<p><label for="q5">5- Donnez un avantage de cette pratique.</label>
+<input type="text" id="q5" name="q5"></input></p>
+<hr>
+<p><label for="q6">6- Quel est le nom de la fonctionnalité permettant d’initialiser un attribut sur la même ligne que sa définition ?</label>
+<input type="text" id="q6" name="q6"></input></p>
+<p><label for="q7">7- Dans un constructeur, comment s’appelle la zone dans laquelle on initialise les attributs de la classe ?</label>
+<input type="text" id="q7" name="q7"></input></p>
+<p><label for="q8">8- A quoi fait-on généralement référence lorsque l’on parle d’implémentation par défaut ?</label>
+<input type="text" id="q8" name="q8"></input></p>
+<p><label for="q9">9- Quand est-ce qu’une référence devient une dangling reference ?</label>
+<input type="text" id="q9" name="q9"></input></p>
+<p><label for="q10">10- Dans l’implémentation d’une fonction-membre, quel mot-clef permet de faire référence à l’instance courante ?</label>
+<input type="text" id="q10" name="q10"></input></p>
+<p><label for="q11">11- Quelles sont les 4 fonctions vues dans ce chapitre que le compilateur peut générer automatiquement ?</label>
+<input type="text" id="q11" name="q11"></input></p>
+<hr>
+<p><label for="q12">12- A quoi sert <code>#pragma once</code> ?</label>
+<input type="text" id="q12" name="q12"></input></p>
+<p><label for="q13">13- Supposons une fonction-membre <code>bool hello() const</code> définie dans une classe <code>Greetings</code>. Que faut-il faire pour l’implémenter dans un .cpp séparé ?</label>
+<input type="text" id="q13" name="q13"></input></p>
+<p><label for="q14">14- Soit un attribut statique déclaré par <code>static float _attr</code> dans une classe <code>UneClasse</code>. Comment faut-il faire pour le définir ?</label>
+<input type="text" id="q14" name="q14"></input></p>
+<p><label for="q15">15- La ligne <code>static int Toto::fcn_static() { return 1; }</code> placée dans un fichier <code>Toto.cpp</code> ne compile. Pourtant, <code>fcn_static</code> a été déclarée comme il faut dans la classe <code>Toto</code> et l’include a été fait. Quel est le problème ?</label>
+<input type="text" id="q15" name="q15"></input></p>
+<hr>
+<p><label for="q16">16- Donnez la signature de l’opérateur <code>&lt;&lt;</code> permettant d’afficher le contenu une variable de type <code>Cat</code> dans un flux de sortie.</label>
+<input type="text" id="q16" name="q16"></input></p>
+<p><label for="q17">17- Quelle instruction permet de définir un alias <code>SmallerName</code> sur le type suivant : <code>std::unique_ptr&lt;std::array&lt;std::string, 3&gt;&gt;</code> ?</label>
+<input type="text" id="q17" name="q17"></input></p>
+<hr>
+<p><label for="q18">18- Comment désigne-t-on le constructeur d’une classe acceptant 0 paramètre ?</label>
+<input type="text" id="q18" name="q18"></input></p>
+<p><label for="q19">19- Afin de construire un objet à partir d’un autre de même type, quel est le nom du constructeur à appeler ?</label>
+<input type="text" id="q19" name="q19"></input></p>
+<p><label for="q20">20- Donnez la signature de l’opérateur d’assignation d’une class <code>Mouse</code>.</label>
+<input type="text" id="q20" name="q20"></input></p>
+<p><label for="q21">21- Donnez la signature du destructeur d’une classe <code>Dying</code>.</label>
+<input type="text" id="q21" name="q21"></input></p>
+<hr>
+<p>A partir du code ci-dessous, indiquez si les instructions (que l&rsquo;on suppose hors de la classe) compilent ou non. Si c&rsquo;est le cas, décrivez leur effet.</p>
+<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="k">class</span> <span class="nc">Dog</span>
+<span class="p">{</span>
+<span class="k">public</span><span class="o">:</span>
+    <span class="n">Dog</span><span class="p">();</span>
+    <span class="n">Dog</span><span class="p">(</span><span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&amp;</span> <span class="n">str</span><span class="p">);</span>
+    <span class="n">Dog</span><span class="p">(</span><span class="kt">int</span> <span class="n">v1</span><span class="p">,</span> <span class="kt">int</span> <span class="n">v2</span><span class="p">);</span>
+
+    <span class="kt">void</span> <span class="nf">set</span><span class="p">(</span><span class="kt">int</span> <span class="n">v</span><span class="p">);</span>
+    <span class="kt">int</span> <span class="nf">get</span><span class="p">()</span> <span class="k">const</span><span class="p">;</span>
+
+    <span class="k">static</span> <span class="kt">int</span> <span class="n">_nb</span><span class="p">;</span>
+    <span class="k">static</span> <span class="kt">void</span> <span class="nf">call</span><span class="p">(</span><span class="k">const</span> <span class="n">Dog</span><span class="o">&amp;</span> <span class="n">d</span><span class="p">);</span>
+
+<span class="k">private</span><span class="o">:</span>
+    <span class="kt">void</span> <span class="n">move</span><span class="p">();</span>
+
+    <span class="k">static</span> <span class="kt">void</span> <span class="nf">speak</span><span class="p">();</span>
+    <span class="k">friend</span> <span class="kt">void</span> <span class="nf">print</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">ostream</span><span class="o">&amp;</span> <span class="n">stream</span><span class="p">,</span> <span class="k">const</span> <span class="n">Dog</span><span class="o">&amp;</span> <span class="n">dog</span><span class="p">);</span>
+<span class="p">};</span>
+</code></pre></div><p><label for="q22">22- <code>Dog d; auto v = d.get();</code></label>
+<input type="text" id="q22" name="q22"></input></p>
+<p><label for="q23">23- <code>Dog d; print(std::cout, d);</code></label>
+<input type="text" id="q23" name="q23"></input></p>
+<p><label for="q24">24- <code>Dog::speak();</code></label>
+<input type="text" id="q24" name="q24"></input></p>
+<p><label for="q25">25- <code>Dog d = &quot;chien&quot;;</code></label>
+<input type="text" id="q25" name="q25"></input></p>
+<p><label for="q26">26- <code>const Dog d; d.set(8);</code></label>
+<input type="text" id="q26" name="q26"></input></p>
+<p><label for="q27">27- <code>Dog d; d.move();</code></label>
+<input type="text" id="q27" name="q27"></input></p>
+<p><label for="q28">28- <code>Dog d; std::cout &lt;&lt; d._nb &lt;&lt; std::endl;</code></label>
+<input type="text" id="q28" name="q28"></input></p>
+<p><label for="q29">29- <code>Dog d();</code></label>
+<input type="text" id="q29" name="q29"></input></p>
+<p><label for="q30">30- <code>Dog d; Dog::call(d);</code></label>
+<input type="text" id="q30" name="q30"></input></p>
+<p><label for="q31">31- <code>Dog d { -1, 3 };</code></label>
+<input type="text" id="q31" name="q31"></input></p>
+<hr>
+<p>Les deux prochaines questions font référence à cette classe :</p>
+<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="k">class</span> <span class="nc">Toto</span>
+<span class="p">{</span>
+<span class="k">public</span><span class="o">:</span>
+    <span class="n">Toto</span><span class="p">()</span> <span class="o">:</span> <span class="n">Toto</span><span class="p">(</span><span class="mi">3</span><span class="p">),</span> <span class="n">_value2</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+    <span class="p">{}</span>
+
+    <span class="n">Toto</span><span class="p">(</span><span class="kt">int</span> <span class="n">v1</span><span class="p">)</span> <span class="o">:</span> <span class="n">_value1</span><span class="p">(</span><span class="n">v1</span><span class="p">)</span>
+    <span class="p">{}</span>
+
+<span class="k">private</span><span class="o">:</span>
+    <span class="kt">int</span> <span class="n">_value1</span><span class="p">;</span>
+    <span class="kt">int</span> <span class="n">_value2</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div><p><label for="q32">32- Ce code ne compile pas pour deux raisons. Quelles sont-elles ?</label>
+<input type="text" id="q32" name="q32"></input></p>
+<p><label for="q33">33- Que pouvez-vous faire pour que le constructeur à 1 paramètre soit déterministe ?</label>
+<input type="text" id="q33" name="q33"></input></p>
+
+
+  <hr/>
+
+  <label for="questions">Avez-vous des questions suite à la lecture de ce chapitre ?</label>
+  <textarea id="questions" name="questions" rows="5" cols="50"></textarea>
+
+  <label for="comments">Avez-vous des commentaires concernant le chapitre et/ou le site ?</label>
+  <textarea id="comments" name="comments" rows="5" cols="50"></textarea>
+
+  <input type="submit" value="Valider">
+</form> 
 
 
 <footer class="footline">
@@ -845,6 +910,8 @@ On peut aussi supposer que les nombreuses évolutions qu&rsquo;il a connu depuis
             
                 
                     
+                        
+                        
                     
                 
                 
@@ -861,7 +928,6 @@ On peut aussi supposer que les nombreuses évolutions qu&rsquo;il a connu depuis
             
                 
                     
-                    
                 
                 
 
@@ -869,89 +935,6 @@ On peut aussi supposer que les nombreuses évolutions qu&rsquo;il a connu depuis
                     
                     
 
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                        
-                        
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
                     
             
         
@@ -997,41 +980,6 @@ On peut aussi supposer que les nombreuses évolutions qu&rsquo;il a connu depuis
                     
                     
 
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
                     
             
         
@@ -1148,6 +1096,109 @@ On peut aussi supposer que les nombreuses évolutions qu&rsquo;il a connu depuis
             
         
                     
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
                         
             
             
@@ -1200,6 +1251,26 @@ On peut aussi supposer que les nombreuses évolutions qu&rsquo;il a connu depuis
             
             
                 
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
                     
                 
                 
@@ -1224,10 +1295,10 @@ On peut aussi supposer que les nombreuses évolutions qu&rsquo;il a connu depuis
 	 
 	 
 		
-			<a class="nav nav-prev" href="/CPP_Learning/chapter1/" title="Introduction au C&#43;&#43;"> <i class="fa fa-chevron-left"></i></a>
+			<a class="nav nav-prev" href="/CPP_Learning/chapter2/6-polygon/" title="💠 Polygône"> <i class="fa fa-chevron-left"></i></a>
 		
 		
-			<a class="nav nav-next" href="/CPP_Learning/chapter1/2-tools/" title="Outils" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+			<a class="nav nav-next" href="/CPP_Learning/chapter2/summary/" title="Synthèse" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
 		
 	
     </div>

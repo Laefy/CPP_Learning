@@ -9,7 +9,7 @@
 
     <link rel="icon" href="/CPP_Learning/images/favicon.png" type="image/png">
 
-    <title>🦜 Perroquet :: Cours de C&#43;&#43; - Niveau Master</title>
+    <title>🧬 Clône :: Cours de C&#43;&#43; - Niveau Master</title>
 
     
     <link href="/CPP_Learning/css/nucleus.css?1610140451" rel="stylesheet">
@@ -40,7 +40,7 @@
     </style>
     
   </head>
-  <body class="" data-url="/CPP_Learning/chapter1/3-practice/2-parrot.fd/">
+  <body class="" data-url="/CPP_Learning/chapter2/4-clone/">
     <nav id="sidebar" class="showVisitedLinks">
 
 
@@ -83,7 +83,7 @@
   
     
     <li data-nav-id="/CPP_Learning/chapter1/" title="Introduction au C&#43;&#43;" class="dd-item 
-        parent
+        
         
         
         ">
@@ -257,7 +257,7 @@
   
     
     <li data-nav-id="/CPP_Learning/chapter1/3-practice/" title="Premiers programmes" class="dd-item 
-        parent
+        
         
         
         ">
@@ -306,7 +306,7 @@
  
   
     
-      <li data-nav-id="/CPP_Learning/chapter1/3-practice/2-parrot.fd/" title="🦜 Perroquet" class="dd-item active">
+      <li data-nav-id="/CPP_Learning/chapter1/3-practice/2-parrot.fd/" title="🦜 Perroquet" class="dd-item ">
         <a href="/CPP_Learning/chapter1/3-practice/2-parrot.fd/">
         🦜 Perroquet
         <i class="fas fa-check read-icon"></i>
@@ -428,7 +428,7 @@
   
     
     <li data-nav-id="/CPP_Learning/chapter2/" title="Classes" class="dd-item 
-        
+        parent
         
         
         ">
@@ -519,7 +519,7 @@
  
   
     
-      <li data-nav-id="/CPP_Learning/chapter2/4-clone/" title="🧬 Clône" class="dd-item ">
+      <li data-nav-id="/CPP_Learning/chapter2/4-clone/" title="🧬 Clône" class="dd-item active">
         <a href="/CPP_Learning/chapter2/4-clone/">
         🧬 Clône
         <i class="fas fa-check read-icon"></i>
@@ -697,13 +697,7 @@
             
           
           
-            
-            
-          
-          
-            <a href='/CPP_Learning/'>Accueil</a> > <a href='/CPP_Learning/chapter1/'>Introduction au C++</a> > <a href='/CPP_Learning/chapter1/3-practice/'>Premiers programmes</a> > 🦜 Perroquet
-          
-        
+            <a href='/CPP_Learning/'>Accueil</a> > <a href='/CPP_Learning/chapter2/'>Classes</a> > 🧬 Clône
           
         
           
@@ -720,10 +714,9 @@
   <ul>
     <li>
       <ul>
-        <li><a href="#lire-un-entier">Lire un entier</a></li>
-        <li><a href="#faire-une-boucle">Faire une boucle</a></li>
-        <li><a href="#les-chaînes-de-caractères">Les chaînes de caractères</a></li>
-        <li><a href="#omettre-std">Omettre <code>std</code></a></li>
+        <li><a href="#constructeur-de-copie">Constructeur de copie</a></li>
+        <li><a href="#opérateur-">Opérateur <code>&lt;&lt;</code></a></li>
+        <li><a href="#opérateur-dassignation">Opérateur d&rsquo;assignation</a></li>
       </ul>
     </li>
   </ul>
@@ -743,33 +736,23 @@
           
             <h1>
               
-              🦜 Perroquet
+              🧬 Clône
             </h1>
           
 
         
 
 
-<p>Vous allez maintenant implémenter un perroquet, qui répète ce que vous dites dans la console.</p>
+<p>Dans cet exercice, vous verrez comment implémenter un constructeur de copie et un opérateur d&rsquo;assignation.<br>
+Nous en profiterons aussi pour vous montrer comment surcharger l&rsquo;opérateur <code>&lt;&lt;</code>.</p>
 <hr>
 <p>Pour cet exercice, vous modifierez le fichier :<br>
-- <code>chap-01/2-parrot.cpp</code></p>
-<p>La cible à compiler est <code>c1-2-parrot</code>.</p>
+- <code>chap-02/3-clone.cpp</code></p>
+<p>La cible à compiler est <code>c2-3-clone</code>.</p>
 <hr>
-<h3 id="lire-un-entier">Lire un entier</h3>
-<p>Commencez par écrire une fonction <code>main</code> qui ne fait rien, comme dans l&rsquo;exercice précédent.
-Compilez et exécutez le programme, pour être sûr que tout est bien configuré.</p>
-<p>Ensuite, vous allez déclarer une variable de type <code>int</code>. Cela se fait de la même manière qu&rsquo;en C.</p>
-<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="kt">int</span> <span class="n">number</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
-</code></pre></div>
-<div class="notices tip" ><p>Il faut toujours initialiser vos variables de types primitifs (c&rsquo;est-à-dire les variables qui ne sont pas des instances de classe). Cela permet d&rsquo;avoir des crashes et des bugs non-aléatoires, qui se reproduisent toujours de la même manière. Parce que quand un bug ne se produit qu&rsquo;une fois sur dix, il y a des chances que ce soit le correcteur du TP qui se le prenne, alors que tout c&rsquo;était bien passé la dernière fois que vous avez testé le programme.<br>
-Et plus sérieusement, quand vous serez en entreprise, et que vous vous arracherez les cheveux à relancer 341 fois le même programme pour essayer de reproduire un bug (qu&rsquo;il faut bien corriger, même s&rsquo;il n&rsquo;arrive qu&rsquo;une fois sur 341), vous vous rappelerez que faire en sorte que vos programmes soient déterministes, ça aide à ne pas devenir chauve.</p>
-</div>
-
-<p>Utilisez ensuite l&rsquo;instruction suivante pour lire un nombre depuis l&rsquo;entrée standard.
-Vous conviendrez que la seule différence avec l&rsquo;instruction pour écrire sur la sortie standard, c&rsquo;est qu&rsquo;on utilise <code>cin</code> plutôt que <code>cout</code>, et que les chevrons sont dans l&rsquo;autre sens.</p>
-<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="n">std</span><span class="o">::</span><span class="n">cin</span> <span class="o">&gt;&gt;</span> <span class="n">number</span><span class="p">;</span>
-</code></pre></div><p>Ecrivez ensuite <code>number</code> sur la sortie standard et tester votre programme. Si vous exécutez depuis VSCode, utilisez <code>CMake: Run Without Debugging</code> plutôt que <code>CMake: Debug</code>, afin que le programme s&rsquo;exécute dans le terminal intégré pour pouvoir y entrer vos valeurs.</p>
+<h3 id="constructeur-de-copie">Constructeur de copie</h3>
+<p>Dans la fonction <code>main</code>, instanciez à la suite du code existant une nouvelle instance de <code>Person</code> et initialisée là à partir de la variable <code>batman</code>. Cela se fait exactement de la même manière que si vous souhaitiez créer une copie d&rsquo;une variable de type <code>int</code>.<br>
+Affichez ensuite le contenu de cet objet, en copiant-collant l&rsquo;instruction permettant d&rsquo;afficher le contenu de <code>batman</code>.</p>
 
 <div class="expand">
     <div class="expand-label" style="cursor: pointer;" onclick="$h = $(this);$h.next('div').slideToggle(100,function () {$h.children('i').attr('class',function () {return $h.next('div').is(':visible') ? 'fas fa-chevron-down' : 'fas fa-chevron-right';});});">
@@ -782,70 +765,211 @@ Vous conviendrez que la seule différence avec l&rsquo;instruction pour écrire 
     	</span>
     </div>
     <div class="expand-content" style="display: none;">
-        <div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp">
-</span><span class="cp"></span>
-<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
-<span class="p">{</span>
-    <span class="kt">int</span> <span class="n">number</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
-    <span class="n">std</span><span class="o">::</span><span class="n">cin</span> <span class="o">&gt;&gt;</span> <span class="n">number</span><span class="p">;</span>
-    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;Craow &#34;</span> <span class="o">&lt;&lt;</span> <span class="n">number</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;!&#34;</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
-    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
-<span class="p">}</span>
+        <div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="n">Person</span> <span class="n">clone</span> <span class="o">=</span> <span class="n">batman</span><span class="p">;</span>
+<span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;Person named &#39;&#34;</span> <span class="o">&lt;&lt;</span> <span class="n">clone</span><span class="p">.</span><span class="n">get_full_name</span><span class="p">()</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;&#39; is &#34;</span> <span class="o">&lt;&lt;</span> <span class="n">clone</span><span class="p">.</span><span class="n">get_age</span><span class="p">()</span> <span class="o">&lt;&lt;</span> <span class="s">&#34; years old.&#34;</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
 </code></pre></div>
     </div>
 </div>
-<hr>
-<h3 id="faire-une-boucle">Faire une boucle</h3>
-<p>Vous allez maintenant utilisez une boucle <code>while</code> afin d&rsquo;exécuter vos instructions à l&rsquo;infini. Placez <code>true</code> en condition du <code>while</code>.</p>
+<p>Vous devriez obtenir le même résultat en sortie pour Batman et sa copie.</p>
+<p>Nous aimerions maintenant avoir un clône plutôt qu&rsquo;une copie. C&rsquo;est-à-dire qu&rsquo;au moment de l&rsquo;instanciation du clône, ce serait bien qu&rsquo;il vienne de naître, plutôt qu&rsquo;il ait déjà 23 ans.</p>
+<p>Pour ce faire, vous allez devoir redéfinir votre propre constructeur de copie. Je dis &ldquo;redéfinir&rdquo;, car le compilateur (qui est gentil des fois) en a déjà défini un pour vous. Sans ça, l&rsquo;instruction <code>Person clone = batman;</code> n&rsquo;aurait pas pu compiler.</p>
 
-<div class="expand">
-    <div class="expand-label" style="cursor: pointer;" onclick="$h = $(this);$h.next('div').slideToggle(100,function () {$h.children('i').attr('class',function () {return $h.next('div').is(':visible') ? 'fas fa-chevron-down' : 'fas fa-chevron-right';});});">
-        <i style="font-size:x-small;" class="fas fa-chevron-right"></i>
-        <span>
-        
-    	
-    	Solution
-    	
-    	</span>
-    </div>
-    <div class="expand-content" style="display: none;">
-        <div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="k">while</span> <span class="p">(</span><span class="nb">true</span><span class="p">)</span>
-<span class="p">{</span>
-    <span class="kt">int</span> <span class="n">number</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
-    <span class="n">std</span><span class="o">::</span><span class="n">cin</span> <span class="o">&gt;&gt;</span> <span class="n">number</span><span class="p">;</span>
-    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;Craow &#34;</span> <span class="o">&lt;&lt;</span> <span class="n">number</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;!&#34;</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
-<span class="p">}</span>
-</code></pre></div>
-    </div>
+<div class="notices note" ><p>Le compilateur défini un constructeur de copie uniquement si vous n&rsquo;en définissez pas un vous-même, et que chacun des attributs de votre classe est <strong>copiable</strong> (= disposant d&rsquo;un constructeur de copie).<br>
+Dans ce cas, l'<strong>implémentation par défaut du constructeur de copie</strong> appelera pour chacun des attributs de la classe son propre constructeur de copie.</p>
 </div>
-<p>Afin de pouvoir terminer le programme un peu plus proprement qu&rsquo;avec Ctrl+C, ajoutez une condition pour sortir de la boucle si le nombre entré est -1. Cela se fait de la même manière qu&rsquo;en C.</p>
 
-<div class="expand">
-    <div class="expand-label" style="cursor: pointer;" onclick="$h = $(this);$h.next('div').slideToggle(100,function () {$h.children('i').attr('class',function () {return $h.next('div').is(':visible') ? 'fas fa-chevron-down' : 'fas fa-chevron-right';});});">
-        <i style="font-size:x-small;" class="fas fa-chevron-right"></i>
-        <span>
-        
-    	
-    	Solution
-    	
-    	</span>
-    </div>
-    <div class="expand-content" style="display: none;">
-        <div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="k">while</span> <span class="p">(</span><span class="nb">true</span><span class="p">)</span>
+<p>Voici la syntaxe permettant de définir un constructeur de copie :</p>
+<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="k">class</span> <span class="nc">ClassName</span>
 <span class="p">{</span>
-    <span class="kt">int</span> <span class="n">number</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
-    <span class="n">std</span><span class="o">::</span><span class="n">cin</span> <span class="o">&gt;&gt;</span> <span class="n">number</span><span class="p">;</span>
-    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;Craow &#34;</span> <span class="o">&lt;&lt;</span> <span class="n">number</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;!&#34;</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
-
-    <span class="k">if</span> <span class="p">(</span><span class="n">number</span> <span class="o">==</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+<span class="k">public</span><span class="o">:</span>
+    <span class="n">ClassName</span><span class="p">(</span><span class="k">const</span> <span class="n">ClassName</span><span class="o">&amp;</span> <span class="n">other</span><span class="p">)</span>
+        <span class="o">:</span> <span class="n">_attribute_1</span> <span class="p">{</span> <span class="cm">/* probably other._attribute_1 */</span> <span class="p">}</span>
+        <span class="p">,</span> <span class="n">_attribute_2</span> <span class="p">{</span> <span class="cm">/* probably other._attribute_2 */</span> <span class="p">}</span>
+        <span class="p">,</span> <span class="p">...</span>
     <span class="p">{</span>
-        <span class="k">break</span><span class="p">;</span>
+        <span class="c1">// some optional code
+</span><span class="c1"></span>    <span class="p">}</span>
+
+<span class="k">private</span><span class="o">:</span>
+    <span class="n">type</span> <span class="n">_attribute_1</span><span class="p">;</span>
+    <span class="n">type</span> <span class="n">_attribute_2</span><span class="p">;</span>
+    <span class="p">...</span>
+<span class="p">};</span>
+</code></pre></div><p>Au final, il s&rsquo;agit simplement d&rsquo;un constructeur à 1 paramètre, ce paramètre étant une const-ref sur la classe courante.</p>
+<p>Essayez de définir un constructeur de copie pour la classe <code>Person</code>, qui effectue la copie de l&rsquo;ensemble des attributs de la classe.<br>
+Vérifiez que vous obtenez le même résultat que précédemment.</p>
+
+<div class="expand">
+    <div class="expand-label" style="cursor: pointer;" onclick="$h = $(this);$h.next('div').slideToggle(100,function () {$h.children('i').attr('class',function () {return $h.next('div').is(':visible') ? 'fas fa-chevron-down' : 'fas fa-chevron-right';});});">
+        <i style="font-size:x-small;" class="fas fa-chevron-right"></i>
+        <span>
+        
+    	
+    	Solution
+    	
+    	</span>
+    </div>
+    <div class="expand-content" style="display: none;">
+        <div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="n">Person</span><span class="p">(</span><span class="k">const</span> <span class="n">Person</span><span class="o">&amp;</span> <span class="n">other</span><span class="p">)</span>
+    <span class="o">:</span> <span class="n">_name</span> <span class="p">{</span> <span class="n">other</span><span class="p">.</span><span class="n">_name</span> <span class="p">}</span>
+    <span class="p">,</span> <span class="n">_surname</span> <span class="p">{</span> <span class="n">other</span><span class="p">.</span><span class="n">_surname</span> <span class="p">}</span>
+    <span class="p">,</span> <span class="n">_age</span> <span class="p">{</span> <span class="n">other</span><span class="p">.</span><span class="n">_age</span> <span class="p">}</span>
+<span class="p">{}</span>
+</code></pre></div>
+    </div>
+</div>
+<p>Supprimez l&rsquo;initialisation de l&rsquo;attribut <code>_age</code> de la liste d&rsquo;initialisation. De cette manière, le compilateur réalisera l&rsquo;initialisation de <code>_age</code> à partir de son class-initializer (c&rsquo;est-à-dire le <code>= 0u</code>).<br>
+Testez le programme pour vous assurer que le clône a bien 0 an après son instanciation.</p>
+
+<div class="expand">
+    <div class="expand-label" style="cursor: pointer;" onclick="$h = $(this);$h.next('div').slideToggle(100,function () {$h.children('i').attr('class',function () {return $h.next('div').is(':visible') ? 'fas fa-chevron-down' : 'fas fa-chevron-right';});});">
+        <i style="font-size:x-small;" class="fas fa-chevron-right"></i>
+        <span>
+        
+    	
+    	Solution
+    	
+    	</span>
+    </div>
+    <div class="expand-content" style="display: none;">
+        <div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="k">class</span> <span class="nc">Person</span>
+<span class="p">{</span>
+<span class="k">public</span><span class="o">:</span>
+    <span class="p">...</span>
+
+    <span class="n">Person</span><span class="p">(</span><span class="k">const</span> <span class="n">Person</span><span class="o">&amp;</span> <span class="n">other</span><span class="p">)</span>
+        <span class="o">:</span> <span class="n">_name</span> <span class="p">{</span> <span class="n">other</span><span class="p">.</span><span class="n">_name</span> <span class="p">}</span>
+        <span class="p">,</span> <span class="n">_surname</span> <span class="p">{</span> <span class="n">other</span><span class="p">.</span><span class="n">_surname</span> <span class="p">}</span>
+    <span class="p">{}</span>
+
+    <span class="p">...</span>
+
+<span class="k">private</span><span class="o">:</span>
+    <span class="p">...</span>
+    <span class="kt">unsigned</span> <span class="kt">int</span> <span class="n">_age</span> <span class="o">=</span> <span class="mi">0u</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+    </div>
+</div>
+<hr>
+<h3 id="opérateur-">Opérateur <code>&lt;&lt;</code></h3>
+<p>Nous vous avons précédemment demandé de copier-coller l&rsquo;instruction pour afficher le contenu de votre objet. Si vous l&rsquo;avez fait, sachez que vous devriez avoir honte 😳</p>
+<p>Afin de réaliser l&rsquo;affichage en bonne-et-due forme de votre objet, vous allez implémenter une nouvelle version de l&rsquo;opérateur <code>&lt;&lt;</code>.</p>
+<p><strong>Qu&rsquo;est-ce qu&rsquo;un opérateur ?</strong><br>
+C&rsquo;est simplement une fonction avec un nom bizarre : <code>operator¤</code>, et pouvant être appelée en utilisant <code>¤</code> au lieu des parenthèses <code>()</code>.<br>
+Supposons une classe <code>SomeClass</code>, avec un seul attribut <code>value</code> de type <code>int</code>. On peut alors définir un opérateur binaire <code>+</code> et l&rsquo;utiliser de la manière suivante :</p>
+<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="c1">// Definition
+</span><span class="c1"></span><span class="kt">int</span> <span class="k">operator</span><span class="o">+</span><span class="p">(</span><span class="k">const</span> <span class="n">SomeClass</span><span class="o">&amp;</span> <span class="n">p1</span><span class="p">,</span> <span class="k">const</span> <span class="n">SomeClass</span><span class="o">&amp;</span> <span class="n">p2</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="k">return</span> <span class="n">p1</span><span class="p">.</span><span class="n">value</span> <span class="o">+</span> <span class="n">p2</span><span class="p">.</span><span class="n">value</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="c1">// Call
+</span><span class="c1"></span><span class="n">SomeClass</span> <span class="n">c1</span> <span class="p">{</span> <span class="mi">3</span> <span class="p">};</span>
+<span class="n">SomeClass</span> <span class="n">c2</span> <span class="p">{</span> <span class="mi">6</span> <span class="p">};</span>
+<span class="kt">int</span> <span class="n">res</span> <span class="o">=</span> <span class="n">c1</span> <span class="o">+</span> <span class="n">c2</span><span class="p">;</span> <span class="c1">// -&gt; 9
+</span></code></pre></div><p><strong>Une nouvelle version ?</strong><br>
+En C++, on peut définir des fonctions qui ont le même nom, du moment qu&rsquo;elles ne prennent pas le même nombre de paramètres, ou bien que ces paramètres sont de types différents. Il s&rsquo;agit du mécanisme de <strong>surcharge</strong> de fonctions.</p>
+<p>L&rsquo;opérateur <code>&lt;&lt;</code> a déjà été défini, puisque vous l&rsquo;avez utilisé afin d&rsquo;afficher des <code>string</code> et des <code>int</code> dans le flux <code>cout</code>.<br>
+Votre objectif est de lui définir une nouvelle surcharge, de manière à pouvoir écrire :</p>
+<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">batman</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+</code></pre></div><p>Votre surcharge acceptera deux paramètres, car <code>&lt;&lt;</code> est un opérateur binaire :<br>
+- le premier doit être du même type que <code>std::cout</code>. Recherchez dans la documentation de la librairie standard le type de cette variable.<br>
+- le second doit être du même type que <code>batman</code>, c&rsquo;est-à-dire de type <code>Person</code>.<br>
+Pour le type de retour, vous devez utiliser <code>std::ostream&amp;</code>, car c&rsquo;est ce qui vous permettra d&rsquo;utiliser <code>&lt;&lt;</code> plusieurs fois dans la même instruction.</p>
+<p>Sachant que vous utiliserez un passage par référence pour le premier argument et par const-ref pour le deuxième, quel sera la signature de votre surcharge ?
+
+<div class="expand">
+    <div class="expand-label" style="cursor: pointer;" onclick="$h = $(this);$h.next('div').slideToggle(100,function () {$h.children('i').attr('class',function () {return $h.next('div').is(':visible') ? 'fas fa-chevron-down' : 'fas fa-chevron-right';});});">
+        <i style="font-size:x-small;" class="fas fa-chevron-right"></i>
+        <span>
+        
+    	
+    	Solution
+    	
+    	</span>
+    </div>
+    <div class="expand-content" style="display: none;">
+        <div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="n">std</span><span class="o">::</span><span class="n">ostream</span><span class="o">&amp;</span> <span class="k">operator</span><span class="o">&lt;&lt;</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">ostream</span><span class="o">&amp;</span> <span class="n">stream</span><span class="p">,</span> <span class="k">const</span> <span class="n">Person</span><span class="o">&amp;</span> <span class="n">person</span><span class="p">)</span>
+</code></pre></div>
+    </div>
+</div></p>
+<p>Définissez le code de cette fonction entre la classe <code>Person</code> et la fonction <code>main</code>. Vous pouvez utiliser le premier argument comme valeur de retour.</p>
+
+<div class="expand">
+    <div class="expand-label" style="cursor: pointer;" onclick="$h = $(this);$h.next('div').slideToggle(100,function () {$h.children('i').attr('class',function () {return $h.next('div').is(':visible') ? 'fas fa-chevron-down' : 'fas fa-chevron-right';});});">
+        <i style="font-size:x-small;" class="fas fa-chevron-right"></i>
+        <span>
+        
+    	
+    	Solution
+    	
+    	</span>
+    </div>
+    <div class="expand-content" style="display: none;">
+        <div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="n">std</span><span class="o">::</span><span class="n">ostream</span><span class="o">&amp;</span> <span class="k">operator</span><span class="o">&lt;&lt;</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">ostream</span><span class="o">&amp;</span> <span class="n">stream</span><span class="p">,</span> <span class="k">const</span> <span class="n">Person</span><span class="o">&amp;</span> <span class="n">person</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="k">return</span> <span class="n">stream</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;Person named &#39;&#34;</span> <span class="o">&lt;&lt;</span> <span class="n">person</span><span class="p">.</span><span class="n">get_full_name</span><span class="p">()</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;&#39; is &#34;</span> <span class="o">&lt;&lt;</span> <span class="n">person</span><span class="p">.</span><span class="n">get_age</span><span class="p">()</span> <span class="o">&lt;&lt;</span> <span class="s">&#34; years old.&#34;</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div><div class="notices note" ><p>Afin de pouvoir être utilisé en série, l&rsquo;opérateur <code>&lt;&lt;</code> est toujours supposé retourner son premier paramètre. Le résultat de <code>(stream &lt;&lt; ... &lt;&lt; ... )</code> devrait donc être <code>stream</code>. Il est donc possible (mais pas nécessaire) d&rsquo;écrire <code>return stream &lt;&lt; ... &lt;&lt; ...;</code> directement, au lieu de faire le <code>return stream;</code> sur une ligne séparée.</p>
+</div>
+
+    </div>
+</div>
+<p>Modifiez la fonction <code>main</code> afin qu&rsquo;elle utilise l&rsquo;opérateur <code>&lt;&lt;</code> que vous venez de définir et testez que le programme fonctionne comme avant.</p>
+
+<div class="expand">
+    <div class="expand-label" style="cursor: pointer;" onclick="$h = $(this);$h.next('div').slideToggle(100,function () {$h.children('i').attr('class',function () {return $h.next('div').is(':visible') ? 'fas fa-chevron-down' : 'fas fa-chevron-right';});});">
+        <i style="font-size:x-small;" class="fas fa-chevron-right"></i>
+        <span>
+        
+    	
+    	Solution
+    	
+    	</span>
+    </div>
+    <div class="expand-content" style="display: none;">
+        <div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="n">Person</span> <span class="n">batman</span> <span class="p">{</span> <span class="s">&#34;Bruce&#34;</span><span class="p">,</span> <span class="s">&#34;Wayne&#34;</span> <span class="p">};</span>
+<span class="n">batman</span><span class="p">.</span><span class="n">wait</span><span class="p">(</span><span class="mi">23</span><span class="p">);</span>
+<span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">batman</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+
+<span class="n">Person</span> <span class="n">clone</span> <span class="o">=</span> <span class="n">batman</span><span class="p">;</span>
+<span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">clone</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+</code></pre></div>
+    </div>
+</div>
+<hr>
+<h3 id="opérateur-dassignation">Opérateur d&rsquo;assignation</h3>
+<p>Lorsqu&rsquo;on rédéfinit le constructeur de copie, il est souvent nécessaire de redéfinir également l&rsquo;opérateur d&rsquo;assignation.<br>
+&ldquo;Redéfinir&rdquo;, car ici encore, le compilateur fournit une implémentation par défaut de cette fonction.</p>
+<p>Ajoutez le code suivant à votre <code>main</code>:</p>
+<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="n">Person</span> <span class="n">assigned_clone</span> <span class="p">{</span> <span class="s">&#34;Batman&#34;</span><span class="p">,</span> <span class="s">&#34;2&#34;</span> <span class="p">};</span>
+<span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">assigned_clone</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+
+<span class="n">assigned_clone</span> <span class="o">=</span> <span class="n">batman</span><span class="p">;</span>
+<span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">assigned_clone</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+</code></pre></div><p>Lancez le programme. Vous devriez constater que l&rsquo;âge de <code>assigned_clone</code> est de 23 ans.</p>
+<p>Pour être cohérent avec ce que nous avons fait précédemment, nous allons dire que l&rsquo;âge d&rsquo;une instance de <code>Person</code> est toujours initialisé 0 lors de sa construction et qu&rsquo;il ne peut être modifié que lors d&rsquo;un appel à <code>wait</code>.
+L'<strong>implémentation par défaut de l&rsquo;opérateur d&rsquo;assignation</strong> ne respecte pas cette proposition, puisqu&rsquo;elle modifie l&rsquo;âge de notre instance.</p>
+<p>Voici le code permettant de redéfinir l&rsquo;opérateur d&rsquo;assignation d&rsquo;une classe :</p>
+<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="n">ClassName</span><span class="o">&amp;</span> <span class="k">operator</span><span class="o">=</span><span class="p">(</span><span class="k">const</span> <span class="n">ClassName</span><span class="o">&amp;</span> <span class="n">other</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="k">this</span> <span class="o">!=</span> <span class="o">&amp;</span><span class="n">other</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">_attribute_1</span> <span class="o">=</span> <span class="cm">/* probably other._attribute_1; */</span>
+        <span class="n">_attribute_2</span> <span class="o">=</span> <span class="cm">/* probably other._attribute_2; */</span>
+        <span class="p">...</span>
     <span class="p">}</span>
+
+    <span class="k">return</span> <span class="o">*</span><span class="k">this</span><span class="p">;</span>
 <span class="p">}</span>
-</code></pre></div>
-    </div>
-</div>
-<p>Essayez de remplacer votre <code>while</code> par une boucle <code>do ... while</code>, de manière à supprimer le <code>if</code>.</p>
+</code></pre></div><p><strong>Qui est <code>this</code> ?</strong><br>
+Comme en Java, <code>this</code> fait référence à l&rsquo;instance courante de la classe. Attention cependant, en C++, <code>this</code> est un pointeur. C&rsquo;est d&rsquo;ailleurs pour cela qu&rsquo;on renvoie <code>*this</code> et non <code>this</code>.</p>
+<p><strong>Pourquoi la comparaison entre <code>this</code> et <code>&amp;other</code> ?</strong><br>
+Il est très important de réaliser cette comparaison, en particulier dans le cas ou l&rsquo;un des attributs de la classe est un objet alloué dynamiquement.<br>
+En effet, pour réaliser la copie de <code>other._attr</code>, vous allez devoir allouer de la mémoire supplémentaire et stocker son pointeur dans <code>this-&gt;_attr</code>. Sauf que si <code>this</code> et <code>other</code> font référence au même objet, en modifiant <code>this-&gt;_attr</code>, vous allez également écraser <code>other._attr</code> et donc perdre l&rsquo;adresse du bloc alloué dans <code>other._attr</code>.<br>
+C&rsquo;est comme ça qu&rsquo;on se retrouve avec des fuites de mémoire et un PC qui rame.</p>
+<p>Implémentez l&rsquo;opérateur d&rsquo;assignation de manière à ne copier que les attributs <code>_name</code> et <code>_surname</code>. Testez que le programme fonctionne comme prévu.</p>
 
 <div class="expand">
     <div class="expand-label" style="cursor: pointer;" onclick="$h = $(this);$h.next('div').slideToggle(100,function () {$h.children('i').attr('class',function () {return $h.next('div').is(':visible') ? 'fas fa-chevron-down' : 'fas fa-chevron-right';});});">
@@ -858,108 +982,19 @@ Vous conviendrez que la seule différence avec l&rsquo;instruction pour écrire 
     	</span>
     </div>
     <div class="expand-content" style="display: none;">
-        <div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="kt">int</span> <span class="n">number</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
-
-<span class="k">do</span>
+        <div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="n">Person</span><span class="o">&amp;</span> <span class="k">operator</span><span class="o">=</span><span class="p">(</span><span class="k">const</span> <span class="n">Person</span><span class="o">&amp;</span> <span class="n">other</span><span class="p">)</span>
 <span class="p">{</span>
-    <span class="n">std</span><span class="o">::</span><span class="n">cin</span> <span class="o">&gt;&gt;</span> <span class="n">number</span><span class="p">;</span>
-    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;Craow &#34;</span> <span class="o">&lt;&lt;</span> <span class="n">number</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;!&#34;</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
-<span class="p">}</span>
-<span class="k">while</span> <span class="p">(</span><span class="n">number</span> <span class="o">!=</span> <span class="o">-</span><span class="mi">1</span><span class="p">);</span>
-</code></pre></div>
-    </div>
-</div>
-<p>Supposons maintenant que notre perroquet a une durée de vie de 10 allocutions. Remplacez le <code>do ... while</code> par une boucle <code>for</code> de dix itérations.</p>
+    <span class="k">if</span> <span class="p">(</span><span class="k">this</span> <span class="o">!=</span> <span class="o">&amp;</span><span class="n">other</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">_name</span> <span class="o">=</span> <span class="n">other</span><span class="p">.</span><span class="n">_name</span><span class="p">;</span>
+        <span class="n">_surname</span> <span class="o">=</span> <span class="n">other</span><span class="p">.</span><span class="n">_surname</span><span class="p">;</span>
+    <span class="p">}</span>
 
-<div class="expand">
-    <div class="expand-label" style="cursor: pointer;" onclick="$h = $(this);$h.next('div').slideToggle(100,function () {$h.children('i').attr('class',function () {return $h.next('div').is(':visible') ? 'fas fa-chevron-down' : 'fas fa-chevron-right';});});">
-        <i style="font-size:x-small;" class="fas fa-chevron-right"></i>
-        <span>
-        
-    	
-    	Solution
-    	
-    	</span>
-    </div>
-    <div class="expand-content" style="display: none;">
-        <div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">10</span><span class="p">;</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span>
-<span class="p">{</span>
-    <span class="kt">int</span> <span class="n">number</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
-    <span class="n">std</span><span class="o">::</span><span class="n">cin</span> <span class="o">&gt;&gt;</span> <span class="n">number</span><span class="p">;</span>
-    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;Craow &#34;</span> <span class="o">&lt;&lt;</span> <span class="n">number</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;!&#34;</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+    <span class="k">return</span> <span class="o">*</span><span class="k">this</span><span class="p">;</span>
 <span class="p">}</span>
 </code></pre></div>
     </div>
 </div>
-
-<div class="notices tip" ><p>En C++, il est tout à fait valide et même conseillé de définir son itérateur directement dans l&rsquo;instruction <code>for</code>. Cela permet de limiter le <strong>scope</strong> de la variable à la boucle dans laquelle elle est définie.<br>
-On écrira donc <code>for (int i = 0; i &lt; 10; ++ i) { ... }</code> plutôt que <code>int i; for (i = 0; i &lt; 10; ++i) { ... }</code>.</p>
-</div>
-
-<hr>
-<h3 id="les-chaînes-de-caractères">Les chaînes de caractères</h3>
-<p>Jusqu&rsquo;ici, notre perroquet ne sait dire que &ldquo;Craow&rdquo; et comptez. D&rsquo;ailleurs, si vous lui dites autre chose qu&rsquo;un nombre, il a tendance à s&rsquo;étrangler.<br>
-Nous allons donc lui apprendre à faire des vraies phrases.</p>
-<p>La librairie standard du C++ définit la classe <code>std::string</code>. Cherchez quel header inclure pour pouvoir l&rsquo;utiliser, et ajoutez-le à votre programmme.<br>
-Remplacez ensuite votre variable <code>number</code> de type <code>int</code> par une variable <code>word</code> de type <code>std::string</code>.</p>
-
-<div class="expand">
-    <div class="expand-label" style="cursor: pointer;" onclick="$h = $(this);$h.next('div').slideToggle(100,function () {$h.children('i').attr('class',function () {return $h.next('div').is(':visible') ? 'fas fa-chevron-down' : 'fas fa-chevron-right';});});">
-        <i style="font-size:x-small;" class="fas fa-chevron-right"></i>
-        <span>
-        
-    	
-    	Solution
-    	
-    	</span>
-    </div>
-    <div class="expand-content" style="display: none;">
-        <div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">10</span><span class="p">;</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span>
-<span class="p">{</span>
-    <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">word</span><span class="p">;</span>
-    <span class="n">std</span><span class="o">::</span><span class="n">cin</span> <span class="o">&gt;&gt;</span> <span class="n">word</span><span class="p">;</span>
-    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;Craow &#34;</span> <span class="o">&lt;&lt;</span> <span class="n">word</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;!&#34;</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
-<span class="p">}</span>
-</code></pre></div>
-    </div>
-</div>
-
-<div class="notices tip" ><p>Vous n&rsquo;avez pas besoin ici d&rsquo;initialiser <code>word</code> en écrivant <code>= &quot;&quot;</code>. En effet, <code>std::string</code> est une classe, et par défaut, les instances de cette classe sont déjà initialisées avec la chaîne vide.</p>
-</div>
-
-<hr>
-<h3 id="omettre-std">Omettre <code>std</code></h3>
-<p>Vous en avez marre de devoir écrire <code>std::</code> partout ? Il est possible de ne pas avoir à le faire en écrivant l&rsquo;instruction suivante juste après vos includes dans le cpp, ou alors dans le corps d&rsquo;une fonction :</p>
-<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
-</code></pre></div><p>Placez cette instruction au début de votre fonction <code>main</code>, retirez tous les <code>std::</code> devant les symboles de la librairie standard et vérifiez que votre programme compile toujours.</p>
-
-<div class="expand">
-    <div class="expand-label" style="cursor: pointer;" onclick="$h = $(this);$h.next('div').slideToggle(100,function () {$h.children('i').attr('class',function () {return $h.next('div').is(':visible') ? 'fas fa-chevron-down' : 'fas fa-chevron-right';});});">
-        <i style="font-size:x-small;" class="fas fa-chevron-right"></i>
-        <span>
-        
-    	
-    	Solution
-    	
-    	</span>
-    </div>
-    <div class="expand-content" style="display: none;">
-        <div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span> 
-
-<span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">10</span><span class="p">;</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span>
-<span class="p">{</span>
-    <span class="n">string</span> <span class="n">word</span><span class="p">;</span>
-    <span class="n">cin</span> <span class="o">&gt;&gt;</span> <span class="n">word</span><span class="p">;</span>
-    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;Craow &#34;</span> <span class="o">&lt;&lt;</span> <span class="n">word</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;!&#34;</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
-<span class="p">}</span>
-</code></pre></div>
-    </div>
-</div>
-
-<div class="notices info" ><p>Lorsqu&rsquo;on utilise <code>using namespace</code> dans un bloc d&rsquo;instructions (fonction, boucle, condition, etc), il faut savoir que son effet est limité à ce bloc.<br>
-Autre point important, il faut éviter d&rsquo;utiliser des <code>using namespace</code> à l&rsquo;intérieur de headers. Comme vous le savez peut-être, lorsque l&rsquo;on fait un include depuis un .cpp, le fichier inclu est en fait copié-collé dedans. Si on inclut un fichier qui réalise un <code>using namespace</code>, puis que l&rsquo;on inclut au autre header derrière (librairie standard par exemple), le <code>using namespace</code> du premier header risque d&rsquo;impacter le code du second header&hellip;</p>
-</div>
-
 
 
 <footer class="footline">
@@ -997,6 +1032,8 @@ Autre point important, il faut éviter d&rsquo;utiliser des <code>using namespac
             
                 
                     
+                        
+                        
                     
                 
                 
@@ -1012,9 +1049,6 @@ Autre point important, il faut éviter d&rsquo;utiliser des <code>using namespac
             
             
                 
-                    
-                        
-                        
                     
                 
                 
@@ -1068,129 +1102,6 @@ Autre point important, il faut éviter d&rsquo;utiliser des <code>using namespac
                     
                     
 
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-                        
-            
-            
-                
-                    
-                        
-                        
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                        
-                        
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
                     
             
         
@@ -1307,10 +1218,133 @@ Autre point important, il faut éviter d&rsquo;utiliser des <code>using namespac
             
         
                     
+            
+        
+                    
                         
             
             
                 
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
                     
                 
                 
@@ -1383,10 +1417,10 @@ Autre point important, il faut éviter d&rsquo;utiliser des <code>using namespac
 	 
 	 
 		
-			<a class="nav nav-prev" href="/CPP_Learning/chapter1/3-practice/1-hello-world/" title="👋 Hello World"> <i class="fa fa-chevron-left"></i></a>
+			<a class="nav nav-prev" href="/CPP_Learning/chapter2/3-constructor/" title="🔨 Constructeur"> <i class="fa fa-chevron-left"></i></a>
 		
 		
-			<a class="nav nav-next" href="/CPP_Learning/chapter1/3-practice/3-array/" title="🔢 Tableau Numérique" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+			<a class="nav nav-next" href="/CPP_Learning/chapter2/5-rectangle/" title="🔳 Rectangle" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
 		
 	
     </div>
