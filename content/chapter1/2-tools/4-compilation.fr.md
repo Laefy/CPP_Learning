@@ -25,9 +25,10 @@ Vous pouvez ajouter des options de compilation (voir [plus bas](#options-de-comp
 
 #### Avec CMake
 
-Commencez par vous placer dans le répertoire qui contiendra les fichiers temporaires générés par la compilation (un dossier `build/` dans ou à-côté du répertoire de sources par exemple), puis exécutez la commande suivante :
+Commencez par vous placer dans le répertoire qui contiendra les fichiers temporaires générés par la compilation (un dossier `build/` dans ou à-côté du répertoire de sources par exemple), puis exécutez la commande `cmake` en lui passant le chemin du répertoire contenant le fichier `CMakeLists.txt` :
 ```b
-cmake /path/to/CMakeLists.txt
+cd      path/to/build/folder
+cmake   path/to/src/folder/containing/CMakeLists.txt
 ```
 
 Si vous avez des erreurs, cela signifie soit que votre `CMakeLists.txt` contient des erreurs, soit qu'il faut modifier le `CMakeCache.txt` (généré dans le dossier de build) pour spécifier manuellement les chemins vers les librairies qui n'ont pas été trouvées.
