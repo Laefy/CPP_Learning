@@ -12,21 +12,21 @@
     <title>Compilation &amp; Exécution :: Cours de C&#43;&#43; - Niveau Master</title>
 
     
-    <link href="/CPP_Learning/css/nucleus.css?1610140451" rel="stylesheet">
-    <link href="/CPP_Learning/css/fontawesome-all.min.css?1610140451" rel="stylesheet">
-    <link href="/CPP_Learning/css/hybrid.css?1610140451" rel="stylesheet">
-    <link href="/CPP_Learning/css/featherlight.min.css?1610140451" rel="stylesheet">
-    <link href="/CPP_Learning/css/perfect-scrollbar.min.css?1610140451" rel="stylesheet">
-    <link href="/CPP_Learning/css/auto-complete.css?1610140451" rel="stylesheet">
-    <link href="/CPP_Learning/css/atom-one-dark-reasonable.css?1610140451" rel="stylesheet">
-    <link href="/CPP_Learning/css/theme.css?1610140451" rel="stylesheet">
-    <link href="/CPP_Learning/css/hugo-theme.css?1610140451" rel="stylesheet">
+    <link href="/CPP_Learning/css/nucleus.css?1610197626" rel="stylesheet">
+    <link href="/CPP_Learning/css/fontawesome-all.min.css?1610197626" rel="stylesheet">
+    <link href="/CPP_Learning/css/hybrid.css?1610197626" rel="stylesheet">
+    <link href="/CPP_Learning/css/featherlight.min.css?1610197626" rel="stylesheet">
+    <link href="/CPP_Learning/css/perfect-scrollbar.min.css?1610197626" rel="stylesheet">
+    <link href="/CPP_Learning/css/auto-complete.css?1610197626" rel="stylesheet">
+    <link href="/CPP_Learning/css/atom-one-dark-reasonable.css?1610197626" rel="stylesheet">
+    <link href="/CPP_Learning/css/theme.css?1610197626" rel="stylesheet">
+    <link href="/CPP_Learning/css/hugo-theme.css?1610197626" rel="stylesheet">
     
-    <link href="/CPP_Learning/css/theme-mine.css?1610140451" rel="stylesheet">
+    <link href="/CPP_Learning/css/theme-mine.css?1610197626" rel="stylesheet">
     
-    <link href="/CPP_Learning/css/syntax.css?1610140451" rel="stylesheet">
+    <link href="/CPP_Learning/css/syntax.css?1610197626" rel="stylesheet">
 
-    <script src="/CPP_Learning/js/jquery-3.3.1.min.js?1610140451"></script>
+    <script src="/CPP_Learning/js/jquery-3.3.1.min.js?1610197626"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -57,14 +57,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/CPP_Learning/js/lunr.min.js?1610140451"></script>
-<script type="text/javascript" src="/CPP_Learning/js/auto-complete.js?1610140451"></script>
+<script type="text/javascript" src="/CPP_Learning/js/lunr.min.js?1610197626"></script>
+<script type="text/javascript" src="/CPP_Learning/js/auto-complete.js?1610197626"></script>
 <script type="text/javascript">
     
         var baseurl = "https:\/\/laefy.github.io\/CPP_Learning\/";
     
 </script>
-<script type="text/javascript" src="/CPP_Learning/js/search.js?1610140451"></script>
+<script type="text/javascript" src="/CPP_Learning/js/search.js?1610197626"></script>
 
     
   </div>
@@ -759,8 +759,9 @@
 <div class="highlight"><pre class="chroma"><code class="language-b" data-lang="b"><span class="c">clang</span><span class="nb">++</span><span class="c"> f1</span><span class="nt">.</span><span class="c">cpp f2</span><span class="nt">.</span><span class="c">cpp f3</span><span class="nt">.</span><span class="c">cpp </span><span class="nb">-</span><span class="c">o program
 </span></code></pre></div><p>Vous pouvez ajouter des options de compilation (voir <a href="#options-de-compilation">plus bas</a>) à la fin de la ligne de commande.</p>
 <h4 id="avec-cmake">Avec CMake</h4>
-<p>Commencez par vous placer dans le répertoire qui contiendra les fichiers temporaires générés par la compilation (un dossier <code>build/</code> dans ou à-côté du répertoire de sources par exemple), puis exécutez la commande suivante :</p>
-<div class="highlight"><pre class="chroma"><code class="language-b" data-lang="b"><span class="c">cmake /path/to/CMakeLists</span><span class="nt">.</span><span class="c">txt
+<p>Commencez par vous placer dans le répertoire qui contiendra les fichiers temporaires générés par la compilation (un dossier <code>build/</code> dans ou à-côté du répertoire de sources par exemple), puis exécutez la commande <code>cmake</code> en lui passant le chemin du répertoire contenant le fichier <code>CMakeLists.txt</code> :</p>
+<div class="highlight"><pre class="chroma"><code class="language-b" data-lang="b"><span class="c">cd      path/to/build/folder
+</span><span class="c">cmake   path/to/src/folder/containing/CMakeLists</span><span class="nt">.</span><span class="c">txt
 </span></code></pre></div><p>Si vous avez des erreurs, cela signifie soit que votre <code>CMakeLists.txt</code> contient des erreurs, soit qu&rsquo;il faut modifier le <code>CMakeCache.txt</code> (généré dans le dossier de build) pour spécifier manuellement les chemins vers les librairies qui n&rsquo;ont pas été trouvées.</p>
 <p>Vous devrez ensuite utiliser une commande qui dépend de la configuration utilisée par CMake pour compiler le projet.</p>
 <p>Sous Unix, ce sera probablement :</p>
@@ -1241,19 +1242,19 @@ Compilez ensuite avec <code>Tasks: Run Build Task</code>.</p>
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/CPP_Learning/js/clipboard.min.js?1610140451"></script>
-    <script src="/CPP_Learning/js/perfect-scrollbar.min.js?1610140451"></script>
-    <script src="/CPP_Learning/js/perfect-scrollbar.jquery.min.js?1610140451"></script>
-    <script src="/CPP_Learning/js/jquery.sticky.js?1610140451"></script>
-    <script src="/CPP_Learning/js/featherlight.min.js?1610140451"></script>
-    <script src="/CPP_Learning/js/highlight.pack.js?1610140451"></script>
+    <script src="/CPP_Learning/js/clipboard.min.js?1610197626"></script>
+    <script src="/CPP_Learning/js/perfect-scrollbar.min.js?1610197626"></script>
+    <script src="/CPP_Learning/js/perfect-scrollbar.jquery.min.js?1610197626"></script>
+    <script src="/CPP_Learning/js/jquery.sticky.js?1610197626"></script>
+    <script src="/CPP_Learning/js/featherlight.min.js?1610197626"></script>
+    <script src="/CPP_Learning/js/highlight.pack.js?1610197626"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/CPP_Learning/js/modernizr.custom-3.6.0.js?1610140451"></script>
-    <script src="/CPP_Learning/js/learn.js?1610140451"></script>
-    <script src="/CPP_Learning/js/hugo-learn.js?1610140451"></script>
+    <script src="/CPP_Learning/js/modernizr.custom-3.6.0.js?1610197626"></script>
+    <script src="/CPP_Learning/js/learn.js?1610197626"></script>
+    <script src="/CPP_Learning/js/hugo-learn.js?1610197626"></script>
 
-    <link href="/CPP_Learning/mermaid/mermaid.css?1610140451" rel="stylesheet" />
-    <script src="/CPP_Learning/mermaid/mermaid.js?1610140451"></script>
+    <link href="/CPP_Learning/mermaid/mermaid.css?1610197626" rel="stylesheet" />
+    <script src="/CPP_Learning/mermaid/mermaid.js?1610197626"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>
