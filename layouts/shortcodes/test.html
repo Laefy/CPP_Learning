@@ -1,6 +1,6 @@
 {{ $_hugo_config := `{ "version": 1 }` }}
 
-<form id="test" method=POST action="https://formspree.io/f/mknppako">
+<form id="test" method=POST action="{{ .Params.url }}">
   <label for="name">Vous êtes : </label>
   <input type="text" id="name" name="name" placeholder="Prénom Nom">
   <hr/>
