@@ -194,7 +194,7 @@ Pour l'opérateur, vous allez récupérer un `char` au lieu d'une `string` compl
 
 Voici donc la signature de la fonction que vous devez implémenter :
 ```cpp
-bool parse_args(char* op, std::vector<int>* values, int arg, char** argv)
+bool parse_params(char* op, std::vector<int>* values, int arg, char** argv)
 ```
 
 Modifiez le code du programme pour introduire cette fonction et l'appeler. Vérifiez que tout fonctionne comme avant.
