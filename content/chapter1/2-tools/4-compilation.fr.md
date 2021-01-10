@@ -3,7 +3,8 @@ title: "Compilation & Exécution"
 weight: 4
 ---
 
-Nous allons maintenant voir comment compiler un programme avec nos différents outils.
+Nous allons maintenant voir comment compiler un programme avec nos différents outils.\
+Vous n'êtes pas obligé de connaître toutes les méthodes présentées ci-dessous, ce qui compte, c'est que vous puissiez compiler et lancer vos programmes d'une manière ou d'une autre.
 
 ---
 

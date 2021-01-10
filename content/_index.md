@@ -56,9 +56,9 @@ Le reste de la séance sera consacrée à la réalisation de ce TP.
 
 #### Enoncés
 
-Vous pourrez récupérer les énoncés de TPs à {{% open_in_new_tab "unlienici" "cette adresse" /%}} (si le lien ne marche pas d'ici le début des TPs, merci de me contacter rapidement).
+Vous pourrez récupérer les énoncés de TP au format Markdown sur le même {{% open_in_new_tab "https://github.com/Laefy/CPP_Learning_Code" "dépôt" /%}} que les exercices du cours.
 
-Les premiers TPs contiennent une série d'exercices très classiques, pour vous apprendre à maîtriser les différentes notions individuellement.
+Les premiers TPs contiennent une série d'exercices très classiques, pour vous apprendre à maîtriser chaque notion individuellement.
 Ces TPs pourront être réalisé seuls ou en binôme, et ne seront pas notés.
 
 Ensuite, par la suite, vous travaillerez sur un unique gros TP-filé, qui devra être réalisé seul.
