@@ -199,6 +199,11 @@ Si vous choisissez d'utiliser la syntaxe `()`, faites attention lorsque vous app
 Si vous écrivez `Class obj();` au lieu de `Class obj;`, le compilateur va râler.
 {{% /notice %}}
 
+{{% notice note %}}
+Pour initialiser des attributs dans la liste d'initialisation, il est possible d'utiliser `()` au lieu des `{}`.\
+Contrairement à l'initialisation des variables, on peut par contre écrire `: _attr()` sans rien dans les parenthèses. Incompréhensible n'est-ce pas ? 😵
+{{% /notice %}}
+
 ---
 
 ### À bas les setters

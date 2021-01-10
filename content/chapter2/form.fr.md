@@ -56,7 +56,6 @@ class Dog
 {
 public:
     Dog();
-    Dog(const std::string& str);
     Dog(int v1, int v2);
 
     void set(int v);
@@ -76,7 +75,7 @@ private:
 {{% test_item id=22 %}}`Dog d; auto v = d.get();`{{% /test_item %}}
 {{% test_item id=23 %}}`Dog d; print(std::cout, d);`{{% /test_item %}}
 {{% test_item id=24 %}}`Dog::speak();`{{% /test_item %}}
-{{% test_item id=25 %}}`Dog d = "chien";`{{% /test_item %}}
+{{% test_item id=25 %}}`Dog d1; Dog d2 = d1;`{{% /test_item %}}
 {{% test_item id=26 %}}`const Dog d; d.set(8);`{{% /test_item %}}
 {{% test_item id=27 %}}`Dog d; d.move();`{{% /test_item %}}
 {{% test_item id=28 %}}`Dog d; std::cout << d._nb << std::endl;`{{% /test_item %}}

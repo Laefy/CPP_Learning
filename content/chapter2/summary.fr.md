@@ -15,7 +15,8 @@ weight: 101
 - **implémentation par défaut** = implémentation d'une fonction générée par le compilateur dans certaines conditions
 - **opérateur d'assignation** = fonction appelée lorsque l'on écrit `a = ...;`, sachant que `a` a été instancié plus tôt
 - **destructeur** = fonction appelée à la destruction d'un objet
-- Lorsque la variable référencée par une référence est détruite, on a une dangling reference 
+- **surcharge** = fonction de même nom, acceptant un nombre différent de paramètres et/ou des paramètres de types différents
+- Lorsque la variable référencée par une référence est détruite, on a une dangling reference
 
 ##### Pratique
 

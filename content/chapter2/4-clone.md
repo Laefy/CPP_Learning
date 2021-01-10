@@ -125,7 +125,7 @@ int res = c1 + c2; // -> 9
 En C++, on peut définir des fonctions qui ont le même nom, du moment qu'elles ne prennent pas le même nombre de paramètres, ou bien que ces paramètres sont de types différents. Il s'agit du mécanisme de **surcharge** de fonctions.
 
 L'opérateur `<<` a déjà été défini, puisque vous l'avez utilisé afin d'afficher des `string` et des `int` dans le flux `cout`.\
-Votre objectif est de lui définir une nouvelle surcharge, de manière à pouvoir écrire :
+Votre objectif est de surcharger cet opérateur, de manière à pouvoir écrire :
 ```cpp
 std::cout << batman << std::endl;
 ```
