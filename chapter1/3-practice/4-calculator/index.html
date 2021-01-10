@@ -12,21 +12,21 @@
     <title>🧮 Calculette :: Cours de C&#43;&#43; - Niveau Master</title>
 
     
-    <link href="/CPP_Learning/css/nucleus.css?1610305893" rel="stylesheet">
-    <link href="/CPP_Learning/css/fontawesome-all.min.css?1610305893" rel="stylesheet">
-    <link href="/CPP_Learning/css/hybrid.css?1610305893" rel="stylesheet">
-    <link href="/CPP_Learning/css/featherlight.min.css?1610305893" rel="stylesheet">
-    <link href="/CPP_Learning/css/perfect-scrollbar.min.css?1610305893" rel="stylesheet">
-    <link href="/CPP_Learning/css/auto-complete.css?1610305893" rel="stylesheet">
-    <link href="/CPP_Learning/css/atom-one-dark-reasonable.css?1610305893" rel="stylesheet">
-    <link href="/CPP_Learning/css/theme.css?1610305893" rel="stylesheet">
-    <link href="/CPP_Learning/css/hugo-theme.css?1610305893" rel="stylesheet">
+    <link href="/CPP_Learning/css/nucleus.css?1610311972" rel="stylesheet">
+    <link href="/CPP_Learning/css/fontawesome-all.min.css?1610311972" rel="stylesheet">
+    <link href="/CPP_Learning/css/hybrid.css?1610311972" rel="stylesheet">
+    <link href="/CPP_Learning/css/featherlight.min.css?1610311972" rel="stylesheet">
+    <link href="/CPP_Learning/css/perfect-scrollbar.min.css?1610311972" rel="stylesheet">
+    <link href="/CPP_Learning/css/auto-complete.css?1610311972" rel="stylesheet">
+    <link href="/CPP_Learning/css/atom-one-dark-reasonable.css?1610311972" rel="stylesheet">
+    <link href="/CPP_Learning/css/theme.css?1610311972" rel="stylesheet">
+    <link href="/CPP_Learning/css/hugo-theme.css?1610311972" rel="stylesheet">
     
-    <link href="/CPP_Learning/css/theme-mine.css?1610305893" rel="stylesheet">
+    <link href="/CPP_Learning/css/theme-mine.css?1610311972" rel="stylesheet">
     
-    <link href="/CPP_Learning/css/syntax.css?1610305893" rel="stylesheet">
+    <link href="/CPP_Learning/css/syntax.css?1610311972" rel="stylesheet">
 
-    <script src="/CPP_Learning/js/jquery-3.3.1.min.js?1610305893"></script>
+    <script src="/CPP_Learning/js/jquery-3.3.1.min.js?1610311972"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -57,14 +57,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/CPP_Learning/js/lunr.min.js?1610305893"></script>
-<script type="text/javascript" src="/CPP_Learning/js/auto-complete.js?1610305893"></script>
+<script type="text/javascript" src="/CPP_Learning/js/lunr.min.js?1610311972"></script>
+<script type="text/javascript" src="/CPP_Learning/js/auto-complete.js?1610311972"></script>
 <script type="text/javascript">
     
         var baseurl = "https:\/\/laefy.github.io\/CPP_Learning\/";
     
 </script>
-<script type="text/javascript" src="/CPP_Learning/js/search.js?1610305893"></script>
+<script type="text/javascript" src="/CPP_Learning/js/search.js?1610311972"></script>
 
     
   </div>
@@ -883,7 +883,7 @@ Vous aurez donc pour la <strong>définition</strong> de chaque fonction quelque 
 Comme une fonction ne peut renvoyer qu&rsquo;une seule valeur, nous utiliserons les paramètres pour récupérer l&rsquo;opérateur et les opérandes. Comme en C, il faudra passer par des pointeurs, puisqu&rsquo;autrement, les variables seront copiées.</p>
 <p>Pour l&rsquo;opérateur, vous allez récupérer un <code>char</code> au lieu d&rsquo;une <code>string</code> complète. En effet, dans le restant du <code>main</code>, nous attendons soit &lsquo;+&rsquo;, &lsquo;*&rsquo; ou &lsquo;-&rsquo;, donc nous n&rsquo;avons pas besoin de stocker la chaîne complète au déjà du traitement des arguments.</p>
 <p>Voici donc la signature de la fonction que vous devez implémenter :</p>
-<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="kt">bool</span> <span class="n">parse_args</span><span class="p">(</span><span class="kt">char</span><span class="o">*</span> <span class="n">op</span><span class="p">,</span> <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;*</span> <span class="n">values</span><span class="p">,</span> <span class="kt">int</span> <span class="n">arg</span><span class="p">,</span> <span class="kt">char</span><span class="o">**</span> <span class="n">argv</span><span class="p">)</span>
+<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="kt">bool</span> <span class="n">parse_params</span><span class="p">(</span><span class="kt">char</span><span class="o">*</span> <span class="n">op</span><span class="p">,</span> <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;*</span> <span class="n">values</span><span class="p">,</span> <span class="kt">int</span> <span class="n">arg</span><span class="p">,</span> <span class="kt">char</span><span class="o">**</span> <span class="n">argv</span><span class="p">)</span>
 </code></pre></div><p>Modifiez le code du programme pour introduire cette fonction et l&rsquo;appeler. Vérifiez que tout fonctionne comme avant.</p>
 
 <div class="expand">
@@ -1746,19 +1746,19 @@ De toute manière, on ne peut parler de référence qu&rsquo;à la définition d
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/CPP_Learning/js/clipboard.min.js?1610305893"></script>
-    <script src="/CPP_Learning/js/perfect-scrollbar.min.js?1610305893"></script>
-    <script src="/CPP_Learning/js/perfect-scrollbar.jquery.min.js?1610305893"></script>
-    <script src="/CPP_Learning/js/jquery.sticky.js?1610305893"></script>
-    <script src="/CPP_Learning/js/featherlight.min.js?1610305893"></script>
-    <script src="/CPP_Learning/js/highlight.pack.js?1610305893"></script>
+    <script src="/CPP_Learning/js/clipboard.min.js?1610311972"></script>
+    <script src="/CPP_Learning/js/perfect-scrollbar.min.js?1610311972"></script>
+    <script src="/CPP_Learning/js/perfect-scrollbar.jquery.min.js?1610311972"></script>
+    <script src="/CPP_Learning/js/jquery.sticky.js?1610311972"></script>
+    <script src="/CPP_Learning/js/featherlight.min.js?1610311972"></script>
+    <script src="/CPP_Learning/js/highlight.pack.js?1610311972"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/CPP_Learning/js/modernizr.custom-3.6.0.js?1610305893"></script>
-    <script src="/CPP_Learning/js/learn.js?1610305893"></script>
-    <script src="/CPP_Learning/js/hugo-learn.js?1610305893"></script>
+    <script src="/CPP_Learning/js/modernizr.custom-3.6.0.js?1610311972"></script>
+    <script src="/CPP_Learning/js/learn.js?1610311972"></script>
+    <script src="/CPP_Learning/js/hugo-learn.js?1610311972"></script>
 
-    <link href="/CPP_Learning/mermaid/mermaid.css?1610305893" rel="stylesheet" />
-    <script src="/CPP_Learning/mermaid/mermaid.js?1610305893"></script>
+    <link href="/CPP_Learning/mermaid/mermaid.css?1610311972" rel="stylesheet" />
+    <script src="/CPP_Learning/mermaid/mermaid.js?1610311972"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>
