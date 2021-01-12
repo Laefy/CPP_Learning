@@ -3,12 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://laefy.github.io/CPP_Learning/chapter1/</loc>
-    <lastmod>2020-11-14T19:34:19+01:00</lastmod>
+    <loc>https://laefy.github.io/CPP_Learning/chapter2/1-poo/</loc>
   </url>
   
   <url>
-    <loc>https://laefy.github.io/CPP_Learning/chapter2/1-poo/</loc>
+    <loc>https://laefy.github.io/CPP_Learning/chapter1/</loc>
   </url>
   
   <url>
@@ -25,7 +24,6 @@
   
   <url>
     <loc>https://laefy.github.io/CPP_Learning/chapter2/</loc>
-    <lastmod>2020-11-14T19:34:19+01:00</lastmod>
   </url>
   
   <url>
@@ -42,6 +40,10 @@
   
   <url>
     <loc>https://laefy.github.io/CPP_Learning/chapter1/3-practice/2-parrot.fd/</loc>
+  </url>
+  
+  <url>
+    <loc>https://laefy.github.io/CPP_Learning/chapter3/</loc>
   </url>
   
   <url>
@@ -98,7 +100,6 @@
   
   <url>
     <loc>https://laefy.github.io/CPP_Learning/</loc>
-    <lastmod>2020-11-14T19:34:19+01:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
