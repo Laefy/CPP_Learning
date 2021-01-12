@@ -21,7 +21,7 @@ Une fois que vous avez terminé, cliquez sur le bouton `Validez` pour que le ré
 
 ---
 
-{{% test url="https://formspree.io/f/mknppako" %}}
+{{% test chapter=1 %}}
 {{% test_item id=1 %}}Citez trois éléments qui participent à la popularité du C++.{{% /test_item %}}
 {{% test_item id=2 %}}Donnez un inconvénient des langages compilés.{{% /test_item %}}
 {{% test_item id=3 %}}Le C++ est-il un langage orienté-objet ?{{% /test_item %}}

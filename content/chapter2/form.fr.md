@@ -22,7 +22,7 @@ Une fois que vous avez terminé, cliquez sur le bouton `Validez` pour que le ré
 
 ---
 
-{{% test url="https://formspree.io/f/xzbkyawz" %}}
+{{% test chapter=2 %}}
 {{% test_item id=1 %}}Quel est le terme C++ permettant de désigner les "méthodes" d'une classe ?{{% /test_item %}}
 {{% test_item id=2 %}}Supposons une classe `Cercle` disposant d'un attribut `_points` de type `std::vector<point>`. Quel invariant cette classe pourrait-elle décider d'enforcer ?{{% /test_item %}}
 {{% test_item id=3 %}}Citez une règle permettant de respecter le principe d'encapsulation en C++.{{% /test_item %}}
