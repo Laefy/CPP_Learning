@@ -1,9 +1,8 @@
 ---
 title: "Classes"
-date: 2020-11-14T19:34:19+01:00
 chapter: true
 chapterName: Chapitre 2
-pre: "<b>II- </b>"
+pre: "<b>2- </b>"
 weight: 2
 ---
 

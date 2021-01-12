@@ -1,9 +1,8 @@
 ---
 title: "Introduction au C++"
-date: 2020-11-14T19:34:19+01:00
 chapter: true
 chapterName: Chapitre 1
-pre: "<b>I- </b>"
+pre: "<b>1- </b>"
 weight: 1
 ---
 
