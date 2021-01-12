@@ -409,7 +409,7 @@ int add(std::vector<int> values)
     return result;
 }
 
-int times(std::vector<int> values)
+int multiply(std::vector<int> values)
 {
     auto result = 1;
     for (auto v : values)
