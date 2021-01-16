@@ -23,34 +23,34 @@ Une fois que vous avez terminé, cliquez sur le bouton `Validez` pour que le ré
 ---
 
 {{% test chapter=2 %}}
-{{% test_item id=1 %}}Quel est le terme C++ permettant de désigner les "méthodes" d'une classe ?{{% /test_item %}}
-{{% test_item id=2 %}}Supposons une classe `Cercle` disposant d'un attribut `_points` de type `std::vector<point>`. Quel invariant cette classe pourrait-elle décider d'enforcer ?{{% /test_item %}}
-{{% test_item id=3 %}}Citez une règle permettant de respecter le principe d'encapsulation en C++.{{% /test_item %}}
+{{% test_item id=1 desc="methods-name-in-cpp" %}}Quel est le terme C++ permettant de désigner les "méthodes" d'une classe ?{{% /test_item %}}
+{{% test_item id=2 desc="invariant-for-circle" %}}Supposons une classe `Cercle` disposant d'un attribut `_points` de type `std::vector<point>`. Quel invariant cette classe pourrait-elle décider d'enforcer ?{{% /test_item %}}
+{{% test_item id=3 desc="rule-for-encaps" %}}Citez une règle permettant de respecter le principe d'encapsulation en C++.{{% /test_item %}}
 ---
-{{% test_item id=4 %}}En quoi consiste la méthodologie TDD ?{{% /test_item %}}
-{{% test_item id=5 %}}Donnez un avantage de cette pratique.{{% /test_item %}}
+{{% test_item id=4 desc="whats-tdd" %}}En quoi consiste la méthodologie TDD ?{{% /test_item %}}
+{{% test_item id=5 desc="pros-of-tdd" %}}Donnez un avantage de cette pratique.{{% /test_item %}}
 ---
-{{% test_item id=6 %}}Quel est le nom de la fonctionnalité permettant d'initialiser un attribut sur la même ligne que sa définition ?{{% /test_item %}}
-{{% test_item id=7 %}}Dans un constructeur, comment s'appelle la zone dans laquelle on initialise les attributs de la classe ?{{% /test_item %}}
-{{% test_item id=8 %}}A quoi fait-on généralement référence lorsque l'on parle d'implémentation par défaut ?{{% /test_item %}}
-{{% test_item id=9 %}}Quand est-ce qu'une référence devient une dangling reference ?{{% /test_item %}}
-{{% test_item id=10 %}}Dans l'implémentation d'une fonction-membre, quel mot-clef permet de faire référence à l'instance courante ?{{% /test_item %}}
-{{% test_item id=11 %}}Quelles sont les 4 fonctions vues dans ce chapitre que le compilateur peut générer automatiquement ?{{% /test_item %}}
+{{% test_item id=6 desc="init-attrib-inline" %}}Quel est le nom de la fonctionnalité permettant d'initialiser un attribut sur la même ligne que sa définition ?{{% /test_item %}}
+{{% test_item id=7 desc="init-attrib-constr" %}}Dans un constructeur, comment s'appelle la zone dans laquelle on initialise les attributs de la classe ?{{% /test_item %}}
+{{% test_item id=8 desc="impl-by-default" %}}A quoi fait-on généralement référence lorsque l'on parle d'implémentation par défaut ?{{% /test_item %}}
+{{% test_item id=9 desc="dangling-ref" %}}Quand est-ce qu'une référence devient une dangling reference ?{{% /test_item %}}
+{{% test_item id=10 desc="curr-inst-keyword" %}}Dans l'implémentation d'une fonction-membre, quel mot-clef permet de faire référence à l'instance courante ?{{% /test_item %}}
+{{% test_item id=11 desc="autogen-fcns" %}}Quelles sont les 4 fonctions vues dans ce chapitre que le compilateur peut générer automatiquement ?{{% /test_item %}}
 ---
-{{% test_item id=12 %}}A quoi sert `#pragma once` ?{{% /test_item %}}
-{{% test_item id=13 %}}Supposons une fonction-membre `bool hello() const` définie dans une classe `Greetings`. Que faut-il faire pour l'implémenter dans un .cpp séparé ?{{% /test_item %}}
-{{% test_item id=14 %}}Soit un attribut statique déclaré par `static float _attr` dans une classe `UneClasse`. Comment faut-il faire pour le définir ?{{% /test_item %}}
-{{% test_item id=15 %}}La ligne `static int Toto::fcn_static() { return 1; }` placée dans un fichier `Toto.cpp` ne compile. Pourtant, `fcn_static` a été déclarée comme il faut dans la classe `Toto` et l'include a été fait. Quel est le problème ?{{% /test_item %}}
+{{% test_item id=12 desc="pragma-once-purpose" %}}A quoi sert `#pragma once` ?{{% /test_item %}}
+{{% test_item id=13 desc="define-const-fcn-in-cpp" %}}Supposons une fonction-membre `bool hello() const` définie dans une classe `Greetings`. Que faut-il faire pour l'implémenter dans un .cpp séparé ?{{% /test_item %}}
+{{% test_item id=14 desc="define-static-attr" %}}Soit un attribut statique déclaré par `static float _attr` dans une classe `UneClasse`. Comment faut-il faire pour le définir ?{{% /test_item %}}
+{{% test_item id=15 desc="define-static-fcn-in-cpp" %}}La ligne `static int Toto::fcn_static() { return 1; }` placée dans un fichier `Toto.cpp` ne compile. Pourtant, `fcn_static` a été déclarée comme il faut dans la classe `Toto` et l'include a été fait. Quel est le problème ?{{% /test_item %}}
 ---
-{{% test_item id=16 %}}Donnez la signature de l'opérateur `<<` permettant d'afficher le contenu une variable de type `Cat` dans un flux de sortie.{{% /test_item %}}
-{{% test_item id=17 %}}Quelle instruction permet de définir un alias `SmallerName` sur le type suivant : `std::unique_ptr<std::array<std::string, 3>>` ?{{% /test_item %}}
+{{% test_item id=16 desc="signature-<<" %}}Donnez la signature de l'opérateur `<<` permettant d'afficher le contenu une variable de type `Cat` dans un flux de sortie.{{% /test_item %}}
+{{% test_item id=17 desc="define-alias" %}}Quelle instruction permet de définir un alias `SmallerName` sur le type suivant : `std::unique_ptr<std::array<std::string, 3>>` ?{{% /test_item %}}
 ---
-{{% test_item id=18 %}}Comment désigne-t-on le constructeur d'une classe acceptant 0 paramètre ?{{% /test_item %}}
-{{% test_item id=19 %}}Afin de construire un objet à partir d'un autre de même type, quel est le nom du constructeur à appeler ?{{% /test_item %}}
-{{% test_item id=20 %}}Donnez la signature de l'opérateur d'assignation d'une class `Mouse`.{{% /test_item %}}
-{{% test_item id=21 %}}Donnez la signature du destructeur d'une classe `Dying`.{{% /test_item %}}
+{{% test_item id=18 desc="constr-with-0-param" %}}Comment désigne-t-on le constructeur d'une classe acceptant 0 paramètre ?{{% /test_item %}}
+{{% test_item id=19 desc="constr-from-same-type" %}}Afin de construire un objet à partir d'un autre de même type, quel est le nom du constructeur à appeler ?{{% /test_item %}}
+{{% test_item id=20 desc="sign-op-assign" %}}Donnez la signature de l'opérateur d'assignation d'une class `Mouse`.{{% /test_item %}}
+{{% test_item id=21 desc="sign-destr" %}}Donnez la signature du destructeur d'une classe `Dying`.{{% /test_item %}}
 ---
-A partir du code ci-dessous, indiquez si les instructions (que l'on suppose hors de la classe) compilent ou non. Si c'est le cas, décrivez leur effet.
+A partir du code ci-dessous, indiquez si les instructions (que l'on suppose hors de la classe) compilent ou non. Si ce n'est le cas, précisez la raison.
 ```cpp
 class Dog
 {
