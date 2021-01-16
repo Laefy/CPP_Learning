@@ -206,7 +206,7 @@ Compilez et utilisez le débuggeur pour inspecter la valeur de `polygon._vertice
 Comme vous pouvez le constater, dans la section `Variables`, le débuggeur suppose que `_vertices` pointe sur un unique `Vertex`, et il ne vous affiche donc que la première valeur :
 ![](/CPP_Learning/images/vscode-debug-array.png)
 
-Afin de pouvoir inspecter les 3 cases du tableau `_vertices`, vous pouvez placer l'expression `*polygon._vertices@3` (Linux, Mac) ou `polygon._vertices, 3` (Win) dans la section `Watch` :
+Afin de pouvoir inspecter les 3 cases du tableau `_vertices`, vous pouvez placer l'expression `*polygon._vertices@3` dans la section `Watch` (si ça ne fonctionne pas, essayez `polygon._vertices, 3` ou `(Vertex[3]) polygon`) :
 ![](/CPP_Learning/images/vscode-watch-array.png)
 
 ---
