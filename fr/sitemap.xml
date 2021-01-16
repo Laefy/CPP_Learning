@@ -79,11 +79,11 @@
   </url>
   
   <url>
-    <loc>https://laefy.github.io/CPP_Learning/chapter1/form/</loc>
+    <loc>https://laefy.github.io/CPP_Learning/chapter1/test/</loc>
   </url>
   
   <url>
-    <loc>https://laefy.github.io/CPP_Learning/chapter2/form/</loc>
+    <loc>https://laefy.github.io/CPP_Learning/chapter2/test/</loc>
   </url>
   
   <url>
@@ -120,6 +120,14 @@
                 hreflang="fr"
                 href="https://laefy.github.io/CPP_Learning/categories/"
                 />
+  </url>
+  
+  <url>
+    <loc>https://laefy.github.io/CPP_Learning/chapter1/test_done/</loc>
+  </url>
+  
+  <url>
+    <loc>https://laefy.github.io/CPP_Learning/chapter2/test_done/</loc>
   </url>
   
   <url>

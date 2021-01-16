@@ -18,10 +18,10 @@
     
     <item>
       <title>Questionnaire !</title>
-      <link>https://laefy.github.io/CPP_Learning/chapter1/form/</link>
+      <link>https://laefy.github.io/CPP_Learning/chapter1/test/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://laefy.github.io/CPP_Learning/chapter1/form/</guid>
+      <guid>https://laefy.github.io/CPP_Learning/chapter1/test/</guid>
       <description>Félicitations !! Vous avez enfin terminé le Chapitre 1 ! Vous aviez l&amp;rsquo;impression qu&amp;rsquo;il n&amp;rsquo;en finirait jamais, qu&amp;rsquo;il aspirerait votre âme dans des méandres ténébreux, mais c&amp;rsquo;est bon, vous l&amp;rsquo;avez terrassé 🥳🎉
  Avant de nous quitter pour aller savourer ce moment, vous devriez profiter que le chapitre soit bien frais dans votre tête pour répondre au questionnaire ci-dessous. Nous vous rappelons que si vous êtes en M1 à l&amp;rsquo;UGE, il participera à votre notation.</description>
     </item>
@@ -33,6 +33,15 @@
       
       <guid>https://laefy.github.io/CPP_Learning/chapter1/summary/</guid>
       <description>Ce qu&amp;rsquo;il faut retenir Théorie  C++ est un langage compilé, performant, documenté, standardisé et disposant d&amp;rsquo;une large communauté. Il est verbeux et sa syntaxe font qu&amp;rsquo;il ne s&amp;rsquo;agit pas du langage le plus agréable à lire. Une référence est une variable qui pointe sur la même zone de mémoire qu&amp;rsquo;une autre variable.  Méthodologie  Lorsqu&amp;rsquo;on a besoin d&amp;rsquo;une fonction, on commence par aller voir sur Internet si elle n&amp;rsquo;existe pas déjà dans la librairie standard.</description>
+    </item>
+    
+    <item>
+      <title>Merci !</title>
+      <link>https://laefy.github.io/CPP_Learning/chapter1/test_done/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://laefy.github.io/CPP_Learning/chapter1/test_done/</guid>
+      <description>Vos réponses nous ont bien été communiquées 😃 Retourner à la synthèse du Chapitre</description>
     </item>
     
   </channel>
