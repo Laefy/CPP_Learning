@@ -50,7 +50,7 @@ Une fois que vous avez terminé, cliquez sur le bouton `Validez` pour que le ré
 {{% test_item id=20 desc="sign-op-assign" %}}Donnez la signature de l'opérateur d'assignation d'une class `Mouse`.{{% /test_item %}}
 {{% test_item id=21 desc="sign-destr" %}}Donnez la signature du destructeur d'une classe `Dying`.{{% /test_item %}}
 ---
-A partir du code ci-dessous, indiquez si les instructions (que l'on suppose hors de la classe) compilent ou non. Si ce n'est le cas, précisez la raison.
+A partir du code ci-dessous, indiquez si les instructions (que l'on suppose hors de la classe) compilent ou non. Si ce n'est pas le cas, précisez la raison.
 ```cpp
 class Dog
 {
