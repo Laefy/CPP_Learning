@@ -329,11 +329,13 @@ par des :
 std::cout << rect << std::endl;
 ```
 
-N'oubliez pas d'ajouter la déclaration de la fonction dans le header `Rectangle.h`, afin que vous puissiez vous en servir dans `main`.
+N'oubliez pas d'ajouter la déclaration de la fonction ainsi que l'include de `<ostream>` dans le header `Rectangle.h`, afin que vous puissiez vous en servir dans `main`.
 
 {{% expand "Solution" %}}
 ```cpp
 // Rectangle.h :
+
+#include <ostream>
 
 class Rectangle
 {
@@ -343,10 +345,6 @@ class Rectangle
 std::ostream& operator<<(std::ostream& stream, const Rectangle& rect);
 
 // Rectangle.cpp :
-
-#include <ostream>
-
-...
 
 std::ostream& operator<<(std::ostream& stream, const Rectangle& rect)
 {
