@@ -9,7 +9,7 @@
 
     <link rel="icon" href="/CPP_Learning/images/favicon.png" type="image/png">
 
-    <title>C&#39;est quoi un objet déjà ? :: Cours de C&#43;&#43; - Niveau Master</title>
+    <title>Un peu de doc... :: Cours de C&#43;&#43; - Niveau Master</title>
 
     
     <link href="/CPP_Learning/css/nucleus.css?1610891914" rel="stylesheet">
@@ -40,7 +40,7 @@
     </style>
     
   </head>
-  <body class="" data-url="/CPP_Learning/chapter2/1-poo/">
+  <body class="" data-url="/CPP_Learning/chapter3/1-doc/">
     <nav id="sidebar" class="showVisitedLinks">
 
 
@@ -431,7 +431,7 @@
   
     
     <li data-nav-id="/CPP_Learning/chapter2/" title="Classes" class="dd-item 
-        parent
+        
         
         
         ">
@@ -459,7 +459,7 @@
  
   
     
-      <li data-nav-id="/CPP_Learning/chapter2/1-poo/" title="C&#39;est quoi un objet déjà ?" class="dd-item active">
+      <li data-nav-id="/CPP_Learning/chapter2/1-poo/" title="C&#39;est quoi un objet déjà ?" class="dd-item ">
         <a href="/CPP_Learning/chapter2/1-poo/">
         C&#39;est quoi un objet déjà ?
         <i class="fas fa-check read-icon"></i>
@@ -638,7 +638,7 @@
   
     
     <li data-nav-id="/CPP_Learning/chapter3/" title="Conteneurs standards" class="dd-item 
-        
+        parent
         
         
         ">
@@ -666,7 +666,7 @@
  
   
     
-      <li data-nav-id="/CPP_Learning/chapter3/1-doc/" title="Un peu de doc..." class="dd-item ">
+      <li data-nav-id="/CPP_Learning/chapter3/1-doc/" title="Un peu de doc..." class="dd-item active">
         <a href="/CPP_Learning/chapter3/1-doc/">
         Un peu de doc...
         <i class="fas fa-check read-icon"></i>
@@ -918,7 +918,7 @@
             
           
           
-            <a href='/CPP_Learning/'>Accueil</a> > <a href='/CPP_Learning/chapter2/'>Classes</a> > C'est quoi un objet déjà ?
+            <a href='/CPP_Learning/'>Accueil</a> > <a href='/CPP_Learning/chapter3/'>Conteneurs standards</a> > Un peu de doc...
           
         
           
@@ -935,7 +935,9 @@
   <ul>
     <li>
       <ul>
-        <li></li>
+        <li><a href="#documentation-dune-classe">Documentation d&rsquo;une classe</a></li>
+        <li><a href="#documentation-dune-fonction">Documentation d&rsquo;une fonction</a></li>
+        <li><a href="#mission-de-recherche">Mission de recherche</a></li>
       </ul>
     </li>
   </ul>
@@ -955,34 +957,125 @@
           
             <h1>
               
-              C&#39;est quoi un objet déjà ?
+              Un peu de doc...
             </h1>
           
 
         
 
 
-<p>Commençons par donner quelques rappels des notions de POO que vous avez pu voir l&rsquo;an dernier.</p>
+<p>Pour démarrez ce chapitre, nous allons vous expliquer comment parcourir la documentation que vous trouverez sur le site 
+<a href="https://en.cppreference.com/w/" target="_blank" rel="noopener noreferrer">cppreference</a>.</p>
+<p>Commencez par ouvrir 
+<a href="https://en.cppreference.com/w/cpp/container/vector" target="_blank" rel="noopener noreferrer">cette page</a>. Vous y trouverez la documentation de la classe <code>vector</code>.<br>
+A première vue, son contenu peut paraître indigeste. Nous allons donc vous expliquer comment il est structuré afin que vous puissiez vous y repérer plus facilement.</p>
 <hr>
-<h4 id="objet">Objet</h4>
-<p>Dans un programme, un <strong>objet</strong> est un élément constitué d&rsquo;un <strong>état</strong>, et disposant d&rsquo;une <strong>interface</strong> permettant d&rsquo;intéragir avec cet état.</p>
-<h4 id="classe">Classe</h4>
-<p>Un objet est généralement créé à partir d&rsquo;un modèle, que l&rsquo;on appelle <strong>classe</strong>. Un objet créé à partir d&rsquo;une classe constitue une <strong>instance</strong> de cette classe.</p>
-<h4 id="etat">Etat</h4>
-<p>L&rsquo;état d&rsquo;un objet est un ensemble de valeurs, pouvant ou non varier au cours de l&rsquo;exécution du programme.</p>
-<h4 id="attributs">Attributs</h4>
-<p>Les <strong>attributs</strong> sont les propriétés définies par une classe à partir desquelles on construit l&rsquo;état des instances.<br>
-Si une classe Personne définit deux attributs <code>nom</code> et <code>âge</code>, alors l&rsquo;état de chaque instance de Personne sera composée d&rsquo;une valeur pour le nom, et d&rsquo;une pour l&rsquo;age.</p>
-<h4 id="interface">Interface</h4>
-<p>L&rsquo;interface est l&rsquo;ensemble des procédés permettant d&rsquo;accéder à l&rsquo;état d&rsquo;un objet ou de le modifier.<br>
-Selon les langages, elle ne se présente pas de la même manière. En C++, elle se compose des <strong>fonctions-membres</strong> de la classe, ainsi que de ses éventuels attributs publiques.</p>
-<h4 id="invariant-de-classe">Invariant de classe</h4>
-<p>Un <strong>invariant de classe</strong> est une condition que toutes les instances de cette classe doivent vérifier.<br>
-Un des invariants de la classe Carré est qu&rsquo;il faut qu&rsquo;à tout moment, les 4 côtés d&rsquo;une instance soient de même longueur.<br>
-Un des invariants de la classe Fraction est que le dénominateur de chacune de ses instances ne peut pas être nul.</p>
-<h4 id="encapsulation">Encapsulation</h4>
-<p>L'<strong>encapsulation</strong> est le principe déclarant que pour pour accéder/modifier l&rsquo;état d&rsquo;un objet, il faut passer par des &ldquo;routines&rdquo; (fonction-membre en C++, méthode en Java, &hellip;). Il s&rsquo;accompagne souvent du masquage de l&rsquo;état des objets, c&rsquo;est-à-dire que l&rsquo;on déclare les attributs dans la partie privée de la classe.<br>
-Respecter le principe d&rsquo;encapsulation permet de garantir les invariants de classe plus facilement.</p>
+<h3 id="documentation-dune-classe">Documentation d&rsquo;une classe</h3>
+<h4 id="1-en-tête">1. En-tête</h4>
+<p><img src="/CPP_Learning/images/chapter3/doc-vector-header.png" alt=""></p>
+<p>Dans l&rsquo;en-tête de la documentation, vous trouverez le nom de la classe, suivi du header à inclure afin de pouvoir l&rsquo;utiliser.<br>
+Une phrase décrit ensuite brièvement le rôle de la classe : on nous dit par exemple que <code>vector</code> est un conteneur séquentiel de taille dynamique.</p>
+
+<div class="notices note" ><p>Un conteneur séquentiel est un conteneur &ldquo;linéaire&rdquo;, comme un tableau ou une liste. Les arbres et les graphes ne sont donc pas des conteneur séquentiels.</p>
+</div>
+
+<p>On trouve ensuite une description plus détaillée, dans laquelle il est possible d&rsquo;obtenir des informations sur comment le conteneur est implémenté :</p>
+<ul>
+<li>Comment les éléments sont organisés en mémoire ? (contigûs comme dans un tableau, éparpillés comme dans une liste chaînée, &hellip;)</li>
+<li>Si l&rsquo;utilisateur doit penser à allouer ou libérer de la mémoire. Dans le cas du <code>vector</code>, tout est géré automatiquement par la classe.</li>
+<li>La complexité des opérations classiques (accès, insertions, suppressions, etc),</li>
+<li>&hellip;</li>
+</ul>
+<h4 id="2-paramètres-de-template--spécialisations">2. Paramètres de template / Spécialisations</h4>
+<p><img src="/CPP_Learning/images/chapter3/doc-vector-params.png" alt=""></p>
+<p>Les paramètres de templates correspondent aux éléments que vous devez indiquer dans les <code>&lt;...&gt;</code> de <code>vector</code>. Ces éléments doivent parfois respecter des contraintes, et cette section de la documentation permet d&rsquo;en prendre connaissance.</p>
+<p>On peut ici voir que pour utiliser un <code>vector&lt;T&gt;</code>, il faut que <code>T</code> soit constructible par copie (= contructeur par copie disponible) et assignable par copie (= opérateur d&rsquo;assignation par copie disponible).</p>
+<p><strong>Qu&rsquo;en est-il d'<code>Allocator</code> ? Pourquoi n&rsquo;avons nous pas eu à fournir de valeur pour ce paramètre à <code>vector</code> ?</strong><br>
+Nous n&rsquo;étudierons pas dans ce cours le rôle du paramètre <code>Allocator</code>. Cependant, sachez que si vous avez pu écrire <code>vector&lt;int&gt;</code> plutôt que <code>vector&lt;int, allocator&gt;</code> jusqu&rsquo;ici, c&rsquo;est parce que ce paramètre a une valeur par défaut. Pour connaître la valeur par défaut éventuelle d&rsquo;un paramètre de template, vous pouvez retourner voir <a href="./#1-en-t%C3%AAte">l&rsquo;en-tête</a> de la page.</p>
+<p>Juste après les paramètres, vous trouvez des informations sur les éventuelles spécialisations de la classe.<br>
+Une spécialisation est une version un peu modifiée de la classe, qui sera utilisée à la place de la version de base si on lui donne  des paramètres de template particuliers.<br>
+Sur cette page, on vous dit que si vous utilisez des <code>vector&lt;bool&gt;</code>, alors l&rsquo;implémentation de la classe est adaptée de manière à occuper moins d&rsquo;espace en mémoire.</p>
+<h4 id="3-invalidation-ditérateurs">3. Invalidation d&rsquo;itérateurs</h4>
+<p>On trouve ensuite la liste des fonctions qui, lorsqu&rsquo;elles sont appelées, invalident les itérateurs. Nous étudierons les itérateurs et leur invalidation dans le <a href="/chapter6">Chapitre 6</a>.
+<img src="/CPP_Learning/images/chapter3/doc-vector-it.png" alt=""></p>
+
+<div class="notices warning" ><p>Sachez que si vous êtes en train de parcourir un conteneur au moyen d&rsquo;une boucle <strong>foreach</strong>, vous ne devez utiliser aucune fonction pouvant invalider l&rsquo;itérateur <code>end()</code>.<br>
+Dans le cas du <code>vector</code>, si vous regardez le tableau, cela élimine donc toutes les fonctions qui ne sont pas des opérations de lecture seule.</p>
+</div>
+
+<h4 id="4-types-membres">4. Types membres</h4>
+<p>La section suivante donne la liste des types définis à l&rsquo;intérieur de la classe. On ne s&rsquo;intéressera pas à son contenu pour le moment.
+<img src="/CPP_Learning/images/chapter3/doc-vector-types.png" alt=""></p>
+<h4 id="5-fonctions">5. Fonctions</h4>
+<p>On trouve enfin la liste des fonctions que l&rsquo;on va pouvoir utiliser sur la classe. C&rsquo;est cette partie que vous consulterez le plus souvent.
+<img src="/CPP_Learning/images/chapter3/doc-vector-fcns.png" alt=""></p>
+<p>Cette liste est organisée en catégories, dont la première contient toujours le constructeur, le destructeur et l&rsquo;opérateur d&rsquo;assignation (et parfois quelques autres fonctions).
+Sur chaque ligne est indiquée le nom de la fonction, une brève description de ce qu&rsquo;elle fait, la version à partir de laquelle elle est disponible et sa visibilité.</p>
+<h4 id="6-exemple">6. Exemple</h4>
+<p>Tout en bas de la page, vous trouvez généralement un exemple permettant de comprendre très rapidement comme la classe peut s&rsquo;utiliser.
+<img src="/CPP_Learning/images/chapter3/doc-vector-ex.png" alt=""></p>
+<hr>
+<h3 id="documentation-dune-fonction">Documentation d&rsquo;une fonction</h3>
+<p>Cliquez maintenant sur la fonction <code>emplace_back</code>, afin d&rsquo;ouvrir la page contenant sa documentation. Nous détaillerons seulement les sections les plus importantes.</p>
+<h4 id="1-en-tête-1">1. En-tête</h4>
+<p><img src="/CPP_Learning/images/chapter3/doc-fcn-header.png" alt=""></p>
+<p>Dans l&rsquo;en-tête des pages de documentation de fonctions, vous trouverez les signatures des différentes surcharges de la fonction, ainsi que les versions pour lesquelles elles sont disponibles.<br>
+Vous pouvez par exemple voir qu&rsquo;initialement, <code>emplace_back</code> ne retournait rien, et qu&rsquo;à partir de C++17, elle retourne une référence.</p>
+<p>En-dessous des signatures des surcharges, vous trouvez le détail ce que la fonction fait pendant son appel.</p>
+<h4 id="2-paramètres">2. Paramètres</h4>
+<p><img src="/CPP_Learning/images/chapter3/doc-fcn-params.png" alt=""></p>
+<p>Vous trouvez ici pour chaque paramètre attendu par la fonction, ce que celle-ci compte en faire. Notez par exemple que dans le cas de <code>emplace_back</code>, les arguments sont directement transmis au constructeur de l&rsquo;élément à insérer.<br>
+Si vous avez une classe <code>Person</code> dont le constructeur attend un prénom et un nom, vous pouvez donc écrire le code suivant :</p>
+<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">Person</span><span class="o">&gt;</span> <span class="n">persons</span><span class="p">;</span>
+<span class="n">persons</span><span class="p">.</span><span class="n">emplace_back</span><span class="p">(</span><span class="s">&#34;Bruce&#34;</span><span class="p">,</span> <span class="s">&#34;Wayne&#34;</span><span class="p">);</span>
+<span class="n">persons</span><span class="p">.</span><span class="n">emplace_back</span><span class="p">(</span><span class="s">&#34;Clark&#34;</span><span class="p">,</span> <span class="s">&#34;Kent&#34;</span><span class="p">);</span>
+</code></pre></div><p>En dessous des paramètres de la fonction, on vous indique les éventuelles contraintes sur les paramètres de template. Si on souhaite appeler <code>emplace_back</code> sur un <code>std::vector&lt;Person&gt;</code>, il faut que <code>Person</code> soit <code>MoveInsertable</code> et <code>EmplaceConstructible</code>. Vous pouvez cliquer sur chacune de ces contraintes si vous désirez savoir ce qu&rsquo;elles impliquent.</p>
+<h4 id="3-valeur-de-retour">3. Valeur de retour</h4>
+<p><img src="/CPP_Learning/images/chapter3/doc-fcn-return.png" alt=""></p>
+<p>On vous indique simplement ce que la fonction vous renvoie.</p>
+<h4 id="4-exceptions">4. Exceptions</h4>
+<p><img src="/CPP_Learning/images/chapter3/doc-fcn-exceptions.png" alt=""></p>
+<p>Il est possible de lancer des exceptions en C++. Cette section indique la liste des exceptions que la fonction peut lancer et ce qu&rsquo;il se passe dans ce cas-là.<br>
+Pour <code>emplace_back</code>, on voit que la fonction si une exception est lancé par le move constructor de l&rsquo;élément, alors le comportement de la fonction est indéfinie (undefined behavior).</p>
+<h4 id="5-exemples">5. Exemples</h4>
+<p><img src="/CPP_Learning/images/chapter3/doc-fcn-ex.png" alt=""></p>
+<p>En fin de page, vous trouverez finalement le ou les exemples d&rsquo;utilisation de la fonction.</p>
+
+<div class="notices tip" ><p>Le premier réflexe à avoir lorsque vous voulez savoir comment utiliser une fonction, c&rsquo;est d&rsquo;aller voir les exemples. Vous pourrez généralement récupérer et adapter le code qui vous est présenté à votre cas d&rsquo;utilisation personnel.</p>
+</div>
+
+<hr>
+<h3 id="mission-de-recherche">Mission de recherche</h3>
+<p>Vous allez maintenant partir en mission. Votre objectif est de collecter les renseignements nécessaires pour répondre aux questions suivantes :</p>
+<ol>
+<li>Quelle est la complexité d&rsquo;insertion dans une <code>std::map</code> ?</li>
+<li>Quelles différences y a-t-il entre les fonctions <code>push_back()</code> et <code>emplace_back()</code> de la classe <code>std::vector</code> ?</li>
+<li>Quelle fonction permet de savoir si un conteneur est vide ?</li>
+<li>Quelle est la différence entre <code>std::vector::size()</code> et <code>std::vector::capacity()</code> ?</li>
+<li>A quoi sert la classe <code>std::stack</code> ?</li>
+<li>Quelle fonction permet de retirer le dernier élément d&rsquo;un objet de type <code>std::queue</code> ?</li>
+</ol>
+
+<div class="expand">
+    <div class="expand-label" style="cursor: pointer;" onclick="$h = $(this);$h.next('div').slideToggle(100,function () {$h.children('i').attr('class',function () {return $h.next('div').is(':visible') ? 'fas fa-chevron-down' : 'fas fa-chevron-right';});});">
+        <i style="font-size:x-small;" class="fas fa-chevron-right"></i>
+        <span>
+        
+    	
+    	Solution
+    	
+    	</span>
+    </div>
+    <div class="expand-content" style="display: none;">
+        <p>1/ On peut trouver ce genre d&rsquo;information dans l&rsquo;en-tête de la documentation de la classe <code>map</code>. Il y est indiqué que les opérations de recherche, suppression et insertion sont de complexité logarithmique.</p>
+<p>2/ En comparant les signatures de <code>push_back</code> et <code>emplace_back</code>, on se rend compte qu&rsquo;il faut fournir directment à <code>push_back</code> l&rsquo;élément à insérer (un seul élément de type <code>T</code>), alors qu&rsquo;on peut fournir à <code>emplace_back</code> les paramètres permettant de construire le nouvel élément.</p>
+<p>3/ En regardant sur les pages de différentes classes de conteneurs (<code>vector</code>, <code>array</code>, <code>map</code>, <code>set</code>, etc), on se rend qu&rsquo;elles ont toutes une fonction membre <code>empty()</code>, qui renvoie <code>true</code> si le conteneur est vide.</p>
+<p>4/ Il suffit de lire la description des deux fonctions pour se rendre compte que <code>size()</code> renvoie le nombre d&rsquo;éléments du tableau, tandis que <code>capacity()</code> renvoie le nombre d&rsquo;éléments pouvant tenir dans l&rsquo;espace mémoire actuellement alloué par le tableau. L&rsquo;exemple fourni sur la page de <code>capacity()</code> met bien en valeur cette distinction.</p>
+<p>5/ D&rsquo;après la description dans l&rsquo;en-tête de <code>stack</code>, il s&rsquo;agit d&rsquo;une pile LIFO (last-in-first-out).</p>
+<p>6/ En parcourant la liste des fonctions sur la page de <code>std::queue</code>, on se rend compte qu&rsquo;il n&rsquo;existe pas de fonction permettant de retirer son dernier élément.</p>
+
+    </div>
+</div>
 
 
 <footer class="footline">
@@ -1254,7 +1347,6 @@ Respecter le principe d&rsquo;encapsulation permet de garantir les invariants de
             
                 
                     
-                    
                 
                 
 
@@ -1267,7 +1359,6 @@ Respecter le principe d&rsquo;encapsulation permet de garantir les invariants de
             
             
                 
-                    
                     
                 
                 
@@ -1284,9 +1375,6 @@ Respecter le principe d&rsquo;encapsulation permet de garantir les invariants de
             
             
                 
-                    
-                        
-                        
                     
                 
                 
@@ -1408,6 +1496,7 @@ Respecter le principe d&rsquo;encapsulation permet de garantir les invariants de
             
                 
                     
+                    
                 
                 
 
@@ -1420,6 +1509,7 @@ Respecter le principe d&rsquo;encapsulation permet de garantir les invariants de
             
             
                 
+                    
                     
                 
                 
@@ -1436,6 +1526,9 @@ Respecter le principe d&rsquo;encapsulation permet de garantir les invariants de
             
             
                 
+                    
+                        
+                        
                     
                 
                 
@@ -1561,10 +1654,10 @@ Respecter le principe d&rsquo;encapsulation permet de garantir les invariants de
 	 
 	 
 		
-			<a class="nav nav-prev" href="/CPP_Learning/chapter2/" title="Classes"> <i class="fa fa-chevron-left"></i></a>
+			<a class="nav nav-prev" href="/CPP_Learning/chapter3/" title="Conteneurs standards"> <i class="fa fa-chevron-left"></i></a>
 		
 		
-			<a class="nav nav-next" href="/CPP_Learning/chapter2/2-first-class/" title="✨ Première classe" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+			<a class="nav nav-next" href="/CPP_Learning/chapter3/2-vectors/" title="Tableaux dynamiques" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
 		
 	
     </div>

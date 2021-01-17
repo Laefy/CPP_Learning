@@ -9,7 +9,7 @@
 
     <link rel="icon" href="/CPP_Learning/images/favicon.png" type="image/png">
 
-    <title>C&#39;est quoi un objet déjà ? :: Cours de C&#43;&#43; - Niveau Master</title>
+    <title>Paires et tuples :: Cours de C&#43;&#43; - Niveau Master</title>
 
     
     <link href="/CPP_Learning/css/nucleus.css?1610891914" rel="stylesheet">
@@ -40,7 +40,7 @@
     </style>
     
   </head>
-  <body class="" data-url="/CPP_Learning/chapter2/1-poo/">
+  <body class="" data-url="/CPP_Learning/chapter3/6-tuples/">
     <nav id="sidebar" class="showVisitedLinks">
 
 
@@ -431,7 +431,7 @@
   
     
     <li data-nav-id="/CPP_Learning/chapter2/" title="Classes" class="dd-item 
-        parent
+        
         
         
         ">
@@ -459,7 +459,7 @@
  
   
     
-      <li data-nav-id="/CPP_Learning/chapter2/1-poo/" title="C&#39;est quoi un objet déjà ?" class="dd-item active">
+      <li data-nav-id="/CPP_Learning/chapter2/1-poo/" title="C&#39;est quoi un objet déjà ?" class="dd-item ">
         <a href="/CPP_Learning/chapter2/1-poo/">
         C&#39;est quoi un objet déjà ?
         <i class="fas fa-check read-icon"></i>
@@ -638,7 +638,7 @@
   
     
     <li data-nav-id="/CPP_Learning/chapter3/" title="Conteneurs standards" class="dd-item 
-        
+        parent
         
         
         ">
@@ -771,7 +771,7 @@
  
   
     
-      <li data-nav-id="/CPP_Learning/chapter3/6-tuples/" title="Paires et tuples" class="dd-item ">
+      <li data-nav-id="/CPP_Learning/chapter3/6-tuples/" title="Paires et tuples" class="dd-item active">
         <a href="/CPP_Learning/chapter3/6-tuples/">
         Paires et tuples
         <i class="fas fa-check read-icon"></i>
@@ -918,7 +918,7 @@
             
           
           
-            <a href='/CPP_Learning/'>Accueil</a> > <a href='/CPP_Learning/chapter2/'>Classes</a> > C'est quoi un objet déjà ?
+            <a href='/CPP_Learning/'>Accueil</a> > <a href='/CPP_Learning/chapter3/'>Conteneurs standards</a> > Paires et tuples
           
         
           
@@ -935,7 +935,8 @@
   <ul>
     <li>
       <ul>
-        <li></li>
+        <li><a href="#micro-rappel-sur-les-pair">Micro rappel sur les <code>pair</code></a></li>
+        <li><a href="#les-tuples">Les tuples</a></li>
       </ul>
     </li>
   </ul>
@@ -955,34 +956,129 @@
           
             <h1>
               
-              C&#39;est quoi un objet déjà ?
+              Paires et tuples
             </h1>
           
 
         
 
 
-<p>Commençons par donner quelques rappels des notions de POO que vous avez pu voir l&rsquo;an dernier.</p>
+<p>Vous avez déjà utilisé le type <code>pair</code> au cours d&rsquo;exercices précédents. Nous allons maintenant vous présenter son cousin, la classe <code>tuple</code>.</p>
 <hr>
-<h4 id="objet">Objet</h4>
-<p>Dans un programme, un <strong>objet</strong> est un élément constitué d&rsquo;un <strong>état</strong>, et disposant d&rsquo;une <strong>interface</strong> permettant d&rsquo;intéragir avec cet état.</p>
-<h4 id="classe">Classe</h4>
-<p>Un objet est généralement créé à partir d&rsquo;un modèle, que l&rsquo;on appelle <strong>classe</strong>. Un objet créé à partir d&rsquo;une classe constitue une <strong>instance</strong> de cette classe.</p>
-<h4 id="etat">Etat</h4>
-<p>L&rsquo;état d&rsquo;un objet est un ensemble de valeurs, pouvant ou non varier au cours de l&rsquo;exécution du programme.</p>
-<h4 id="attributs">Attributs</h4>
-<p>Les <strong>attributs</strong> sont les propriétés définies par une classe à partir desquelles on construit l&rsquo;état des instances.<br>
-Si une classe Personne définit deux attributs <code>nom</code> et <code>âge</code>, alors l&rsquo;état de chaque instance de Personne sera composée d&rsquo;une valeur pour le nom, et d&rsquo;une pour l&rsquo;age.</p>
-<h4 id="interface">Interface</h4>
-<p>L&rsquo;interface est l&rsquo;ensemble des procédés permettant d&rsquo;accéder à l&rsquo;état d&rsquo;un objet ou de le modifier.<br>
-Selon les langages, elle ne se présente pas de la même manière. En C++, elle se compose des <strong>fonctions-membres</strong> de la classe, ainsi que de ses éventuels attributs publiques.</p>
-<h4 id="invariant-de-classe">Invariant de classe</h4>
-<p>Un <strong>invariant de classe</strong> est une condition que toutes les instances de cette classe doivent vérifier.<br>
-Un des invariants de la classe Carré est qu&rsquo;il faut qu&rsquo;à tout moment, les 4 côtés d&rsquo;une instance soient de même longueur.<br>
-Un des invariants de la classe Fraction est que le dénominateur de chacune de ses instances ne peut pas être nul.</p>
-<h4 id="encapsulation">Encapsulation</h4>
-<p>L'<strong>encapsulation</strong> est le principe déclarant que pour pour accéder/modifier l&rsquo;état d&rsquo;un objet, il faut passer par des &ldquo;routines&rdquo; (fonction-membre en C++, méthode en Java, &hellip;). Il s&rsquo;accompagne souvent du masquage de l&rsquo;état des objets, c&rsquo;est-à-dire que l&rsquo;on déclare les attributs dans la partie privée de la classe.<br>
-Respecter le principe d&rsquo;encapsulation permet de garantir les invariants de classe plus facilement.</p>
+<p>Pour cet exercice, vous modifierez le fichier :<br>
+- <code>chap-03/5-tuples.cpp</code></p>
+<p>La cible à compiler est <code>c3-5-tuples</code>.</p>
+<hr>
+<h3 id="micro-rappel-sur-les-pair">Micro rappel sur les <code>pair</code></h3>
+<p>La classe <code>pair</code> est un type templaté avec deux paramètres :</p>
+<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="n">std</span><span class="o">::</span><span class="n">pair</span><span class="o">&lt;</span><span class="kt">int</span><span class="p">,</span> <span class="kt">float</span><span class="o">&gt;</span> <span class="n">such_a_nice_pair</span> <span class="p">{</span> <span class="mi">1</span><span class="p">,</span> <span class="mf">3.f</span> <span class="p">};</span>
+</code></pre></div><p>On accède aux éléments de la <code>pair</code> directement via ses attributs <code>first</code> et <code>second</code> (pas de getters) :</p>
+<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="kt">int</span> <span class="n">int_value</span>     <span class="o">=</span> <span class="n">such_a_nice_pair</span><span class="p">.</span><span class="n">first</span><span class="p">;</span>
+<span class="kt">float</span> <span class="n">float_value</span> <span class="o">=</span> <span class="n">such_a_nice_pair</span><span class="p">.</span><span class="n">second</span><span class="p">;</span>
+</code></pre></div><p>Enfin, pour créer des <code>pair</code> à la volée, c&rsquo;est-à-dire sans définir de variables (passage à une fonction par exemple), on peut utiliser le code suivant :</p>
+<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="n">std</span><span class="o">::</span><span class="n">map</span><span class="o">&lt;</span><span class="kt">unsigned</span> <span class="kt">int</span><span class="p">,</span> <span class="kt">float</span><span class="o">&gt;</span> <span class="n">values</span><span class="p">;</span>
+
+<span class="c1">// Si les valeurs sont correctement typées :
+</span><span class="c1"></span><span class="n">values</span><span class="p">.</span><span class="n">insert</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">make_pair</span><span class="p">(</span><span class="mi">3u</span><span class="p">,</span> <span class="mf">5.f</span><span class="p">));</span>
+<span class="n">values</span><span class="p">.</span><span class="n">insert</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">pair</span> <span class="p">{</span> <span class="mi">4u</span><span class="p">,</span> <span class="mf">9.5f</span> <span class="p">});</span>
+
+<span class="c1">// Si les valeurs requièrent une conversion :
+</span><span class="c1"></span><span class="n">values</span><span class="p">.</span><span class="n">insert</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">make_pair</span><span class="o">&lt;</span><span class="kt">unsigned</span> <span class="kt">int</span><span class="p">,</span> <span class="kt">float</span><span class="o">&gt;</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">8</span><span class="p">));</span>
+<span class="n">values</span><span class="p">.</span><span class="n">insert</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">pair</span><span class="o">&lt;</span><span class="kt">unsigned</span> <span class="kt">int</span><span class="p">,</span> <span class="kt">float</span><span class="o">&gt;</span> <span class="p">{</span> <span class="mi">12</span><span class="p">,</span> <span class="o">-</span><span class="mf">6.5</span> <span class="p">});</span>
+</code></pre></div><hr>
+<h3 id="les-tuples">Les tuples</h3>
+<p>Un <code>tuple</code>, c&rsquo;est comme une <code>pair</code>, sauf qu&rsquo;au lieu de ne contenir que deux éléments, elle peut en contenir autant qu&rsquo;on veut.</p>
+<p>Contrairement aux <code>pair</code>, on ne récupérera pas les valeurs avec <code>first</code>, <code>second</code>, <code>third</code>, etc. Il faudra utiliser la fonction libre <code>std::get</code> :</p>
+<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="n">std</span><span class="o">::</span><span class="n">tuple</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="p">,</span> <span class="kt">int</span><span class="o">&gt;</span> <span class="n">named_value</span> <span class="p">{</span> <span class="s">&#34;one&#34;</span><span class="p">,</span> <span class="mi">1</span> <span class="p">};</span>
+
+<span class="k">auto</span> <span class="n">name</span>  <span class="o">=</span> <span class="n">std</span><span class="o">::</span><span class="n">get</span><span class="o">&lt;</span><span class="mi">0</span><span class="o">&gt;</span><span class="p">(</span><span class="n">named_value</span><span class="p">);</span>
+<span class="k">auto</span> <span class="n">value</span> <span class="o">=</span> <span class="n">std</span><span class="o">::</span><span class="n">get</span><span class="o">&lt;</span><span class="mi">1</span><span class="o">&gt;</span><span class="p">(</span><span class="n">named_value</span><span class="p">);</span>
+</code></pre></div>
+<div class="notices note" ><p>Pourquoi une fonction libre plutôt qu&rsquo;une fonction-membre ? Aucune idée. Mais en tout cas, rappelez-vous que si vous écrivez <code>some_tuple.get(0)</code>, ça ne compilera pas.</p>
+</div>
+
+<p>L&rsquo;un des intérêts du <code>tuple</code>, c&rsquo;est de pouvoir regrouper plusieurs valeurs dans une seule, sans avoir à définir de nouvelle classe.<br>
+Lorsqu&rsquo;une fonction devait vous retourner plusieurs valeurs, vous étiez souvent contraints d&rsquo;ajouter des &ldquo;paramètres de retour&rdquo; à la fonction.<br>
+Maintenant, vous saurez que vous pouvez utiliser des tuples.</p>
+<p>Modifiez le code du fichier <code>5-tuples.cpp</code> afin d&rsquo;appliquer ce principe.</p>
+
+<div class="expand">
+    <div class="expand-label" style="cursor: pointer;" onclick="$h = $(this);$h.next('div').slideToggle(100,function () {$h.children('i').attr('class',function () {return $h.next('div').is(':visible') ? 'fas fa-chevron-down' : 'fas fa-chevron-right';});});">
+        <i style="font-size:x-small;" class="fas fa-chevron-right"></i>
+        <span>
+        
+    	
+    	Solution
+    	
+    	</span>
+    </div>
+    <div class="expand-content" style="display: none;">
+        
+<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp">
+</span><span class="cp">#include</span> <span class="cpf">&lt;string&gt;</span><span class="cp">
+</span><span class="hl"><span class="cp">#include</span> <span class="cpf">&lt;tuple&gt;</span><span class="cp">
+</span></span><span class="cp"></span>
+<span class="hl"><span class="n">std</span><span class="o">::</span><span class="n">tuple</span><span class="o">&lt;</span><span class="kt">bool</span><span class="p">,</span> <span class="kt">int</span><span class="p">,</span> <span class="kt">int</span><span class="o">&gt;</span> <span class="n">parse_params</span><span class="p">(</span><span class="kt">int</span> <span class="n">argc</span><span class="p">,</span> <span class="k">const</span> <span class="kt">char</span><span class="o">*</span> <span class="k">const</span><span class="o">*</span> <span class="n">argv</span><span class="p">)</span>
+</span><span class="p">{</span>
+<span class="hl">    <span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">tuple</span><span class="o">&lt;</span><span class="kt">bool</span><span class="p">,</span> <span class="kt">int</span><span class="p">,</span> <span class="kt">int</span><span class="o">&gt;</span> <span class="n">error</span> <span class="p">{</span> <span class="nb">false</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span> <span class="p">};</span>
+</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">argc</span> <span class="o">!=</span> <span class="mi">3</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">std</span><span class="o">::</span><span class="n">cerr</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;Program expects 2 parameters!&#34;</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+<span class="hl">        <span class="k">return</span> <span class="n">error</span><span class="p">;</span>
+</span>    <span class="p">}</span>
+
+    <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">num_str</span> <span class="o">=</span> <span class="n">argv</span><span class="p">[</span><span class="mi">1</span><span class="p">];</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">den_str</span> <span class="o">=</span> <span class="n">argv</span><span class="p">[</span><span class="mi">2</span><span class="p">];</span>
+    
+<span class="hl">    <span class="kt">int</span> <span class="n">num</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+</span><span class="hl">    <span class="kt">int</span> <span class="n">den</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+</span>
+    <span class="k">try</span>
+    <span class="p">{</span>
+        <span class="n">num</span> <span class="o">=</span> <span class="n">std</span><span class="o">::</span><span class="n">stoi</span><span class="p">(</span><span class="n">num_str</span><span class="p">);</span>
+        <span class="n">den</span> <span class="o">=</span> <span class="n">std</span><span class="o">::</span><span class="n">stoi</span><span class="p">(</span><span class="n">den_str</span><span class="p">);</span>
+    <span class="p">}</span>
+    <span class="k">catch</span> <span class="p">(</span><span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">exception</span><span class="o">&amp;</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">std</span><span class="o">::</span><span class="n">cerr</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;Program expects 2 integer parameters!&#34;</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+<span class="hl">        <span class="k">return</span> <span class="n">error</span><span class="p">;</span>
+</span>    <span class="p">}</span>
+    
+    <span class="k">if</span> <span class="p">(</span><span class="n">den</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">std</span><span class="o">::</span><span class="n">cerr</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;Denominator cannot be null!&#34;</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+<span class="hl">        <span class="k">return</span> <span class="n">error</span><span class="p">;</span>
+</span>    <span class="p">}</span>
+
+<span class="hl">    <span class="k">return</span> <span class="n">std</span><span class="o">::</span><span class="n">tuple</span> <span class="p">{</span> <span class="nb">true</span><span class="p">,</span> <span class="n">num</span><span class="p">,</span> <span class="n">den</span> <span class="p">};</span>
+</span><span class="p">}</span>
+
+<span class="hl"><span class="n">std</span><span class="o">::</span><span class="n">tuple</span><span class="o">&lt;</span><span class="kt">int</span><span class="p">,</span> <span class="kt">int</span><span class="o">&gt;</span> <span class="n">divide</span><span class="p">(</span><span class="kt">int</span> <span class="n">numerator</span><span class="p">,</span> <span class="kt">int</span> <span class="n">denominator</span><span class="p">)</span>
+</span><span class="p">{</span>
+<span class="hl">    <span class="k">return</span> <span class="n">std</span><span class="o">::</span><span class="n">tuple</span> <span class="p">{</span> <span class="n">numerator</span> <span class="o">/</span> <span class="n">denominator</span><span class="p">,</span> <span class="n">numerator</span> <span class="o">%</span> <span class="n">denominator</span> <span class="p">};</span>
+</span><span class="p">}</span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">(</span><span class="kt">int</span> <span class="n">argc</span><span class="p">,</span> <span class="kt">char</span><span class="o">**</span> <span class="n">argv</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="hl">    <span class="k">const</span> <span class="k">auto</span> <span class="n">parse_res</span> <span class="o">=</span> <span class="n">parse_params</span><span class="p">(</span><span class="n">argc</span><span class="p">,</span> <span class="n">argv</span><span class="p">);</span>
+</span><span class="hl">    <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">std</span><span class="o">::</span><span class="n">get</span><span class="o">&lt;</span><span class="mi">0</span><span class="o">&gt;</span><span class="p">(</span><span class="n">parse_res</span><span class="p">))</span>
+</span>    <span class="p">{</span>
+        <span class="k">return</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="p">}</span>
+
+<span class="hl">    <span class="k">const</span> <span class="k">auto</span> <span class="n">num</span> <span class="o">=</span> <span class="n">std</span><span class="o">::</span><span class="n">get</span><span class="o">&lt;</span><span class="mi">1</span><span class="o">&gt;</span><span class="p">(</span><span class="n">parse_res</span><span class="p">);</span>
+</span><span class="hl">    <span class="k">const</span> <span class="k">auto</span> <span class="n">den</span> <span class="o">=</span> <span class="n">std</span><span class="o">::</span><span class="n">get</span><span class="o">&lt;</span><span class="mi">2</span><span class="o">&gt;</span><span class="p">(</span><span class="n">parse_res</span><span class="p">);</span>
+</span><span class="hl">    <span class="k">const</span> <span class="k">auto</span> <span class="n">div_res</span> <span class="o">=</span> <span class="n">divide</span><span class="p">(</span><span class="n">num</span><span class="p">,</span> <span class="n">den</span><span class="p">);</span>
+</span>
+<span class="hl">    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">num</span> <span class="o">&lt;&lt;</span> <span class="s">&#34; = &#34;</span> <span class="o">&lt;&lt;</span> <span class="n">den</span> <span class="o">&lt;&lt;</span> <span class="s">&#34; * &#34;</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">get</span><span class="o">&lt;</span><span class="mi">0</span><span class="o">&gt;</span><span class="p">(</span><span class="n">div_res</span><span class="p">)</span> <span class="o">&lt;&lt;</span> <span class="s">&#34; + &#34;</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">get</span><span class="o">&lt;</span><span class="mi">1</span><span class="o">&gt;</span><span class="p">(</span><span class="n">div_res</span><span class="p">)</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>   
+</span>
+    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+
+    </div>
+</div>
 
 
 <footer class="footline">
@@ -1254,7 +1350,6 @@ Respecter le principe d&rsquo;encapsulation permet de garantir les invariants de
             
                 
                     
-                    
                 
                 
 
@@ -1267,7 +1362,6 @@ Respecter le principe d&rsquo;encapsulation permet de garantir les invariants de
             
             
                 
-                    
                     
                 
                 
@@ -1284,9 +1378,6 @@ Respecter le principe d&rsquo;encapsulation permet de garantir les invariants de
             
             
                 
-                    
-                        
-                        
                     
                 
                 
@@ -1408,6 +1499,7 @@ Respecter le principe d&rsquo;encapsulation permet de garantir les invariants de
             
                 
                     
+                    
                 
                 
 
@@ -1420,6 +1512,9 @@ Respecter le principe d&rsquo;encapsulation permet de garantir les invariants de
             
             
                 
+                    
+                        
+                        
                     
                 
                 
@@ -1501,6 +1596,7 @@ Respecter le principe d&rsquo;encapsulation permet de garantir les invariants de
             
                 
                     
+                    
                 
                 
 
@@ -1516,6 +1612,9 @@ Respecter le principe d&rsquo;encapsulation permet de garantir les invariants de
             
             
                 
+                    
+                        
+                        
                     
                 
                 
@@ -1561,10 +1660,10 @@ Respecter le principe d&rsquo;encapsulation permet de garantir les invariants de
 	 
 	 
 		
-			<a class="nav nav-prev" href="/CPP_Learning/chapter2/" title="Classes"> <i class="fa fa-chevron-left"></i></a>
+			<a class="nav nav-prev" href="/CPP_Learning/chapter3/5-strings/" title="Manipulation de chaînes"> <i class="fa fa-chevron-left"></i></a>
 		
 		
-			<a class="nav nav-next" href="/CPP_Learning/chapter2/2-first-class/" title="✨ Première classe" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+			<a class="nav nav-next" href="/CPP_Learning/chapter3/test/" title="Questionnaire !" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
 		
 	
     </div>

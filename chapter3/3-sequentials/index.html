@@ -9,7 +9,7 @@
 
     <link rel="icon" href="/CPP_Learning/images/favicon.png" type="image/png">
 
-    <title>C&#39;est quoi un objet déjà ? :: Cours de C&#43;&#43; - Niveau Master</title>
+    <title>Autres conteneurs séquentiels :: Cours de C&#43;&#43; - Niveau Master</title>
 
     
     <link href="/CPP_Learning/css/nucleus.css?1610891914" rel="stylesheet">
@@ -40,7 +40,7 @@
     </style>
     
   </head>
-  <body class="" data-url="/CPP_Learning/chapter2/1-poo/">
+  <body class="" data-url="/CPP_Learning/chapter3/3-sequentials/">
     <nav id="sidebar" class="showVisitedLinks">
 
 
@@ -431,7 +431,7 @@
   
     
     <li data-nav-id="/CPP_Learning/chapter2/" title="Classes" class="dd-item 
-        parent
+        
         
         
         ">
@@ -459,7 +459,7 @@
  
   
     
-      <li data-nav-id="/CPP_Learning/chapter2/1-poo/" title="C&#39;est quoi un objet déjà ?" class="dd-item active">
+      <li data-nav-id="/CPP_Learning/chapter2/1-poo/" title="C&#39;est quoi un objet déjà ?" class="dd-item ">
         <a href="/CPP_Learning/chapter2/1-poo/">
         C&#39;est quoi un objet déjà ?
         <i class="fas fa-check read-icon"></i>
@@ -638,7 +638,7 @@
   
     
     <li data-nav-id="/CPP_Learning/chapter3/" title="Conteneurs standards" class="dd-item 
-        
+        parent
         
         
         ">
@@ -708,7 +708,7 @@
  
   
     
-      <li data-nav-id="/CPP_Learning/chapter3/3-sequentials/" title="Autres conteneurs séquentiels" class="dd-item ">
+      <li data-nav-id="/CPP_Learning/chapter3/3-sequentials/" title="Autres conteneurs séquentiels" class="dd-item active">
         <a href="/CPP_Learning/chapter3/3-sequentials/">
         Autres conteneurs séquentiels
         <i class="fas fa-check read-icon"></i>
@@ -918,7 +918,7 @@
             
           
           
-            <a href='/CPP_Learning/'>Accueil</a> > <a href='/CPP_Learning/chapter2/'>Classes</a> > C'est quoi un objet déjà ?
+            <a href='/CPP_Learning/'>Accueil</a> > <a href='/CPP_Learning/chapter3/'>Conteneurs standards</a> > Autres conteneurs séquentiels
           
         
           
@@ -935,7 +935,9 @@
   <ul>
     <li>
       <ul>
-        <li></li>
+        <li><a href="#tableaux-de-taille-fixe">Tableaux de taille fixe</a></li>
+        <li><a href="#listes-chaînées">Listes chaînées</a></li>
+        <li><a href="#pile-ou-file">Pile ou File</a></li>
       </ul>
     </li>
   </ul>
@@ -955,34 +957,200 @@
           
             <h1>
               
-              C&#39;est quoi un objet déjà ?
+              Autres conteneurs séquentiels
             </h1>
           
 
         
 
 
-<p>Commençons par donner quelques rappels des notions de POO que vous avez pu voir l&rsquo;an dernier.</p>
+<p>Vous allez maintenant manipuler les autres conteneurs séquentiels que la libraire propose.</p>
 <hr>
-<h4 id="objet">Objet</h4>
-<p>Dans un programme, un <strong>objet</strong> est un élément constitué d&rsquo;un <strong>état</strong>, et disposant d&rsquo;une <strong>interface</strong> permettant d&rsquo;intéragir avec cet état.</p>
-<h4 id="classe">Classe</h4>
-<p>Un objet est généralement créé à partir d&rsquo;un modèle, que l&rsquo;on appelle <strong>classe</strong>. Un objet créé à partir d&rsquo;une classe constitue une <strong>instance</strong> de cette classe.</p>
-<h4 id="etat">Etat</h4>
-<p>L&rsquo;état d&rsquo;un objet est un ensemble de valeurs, pouvant ou non varier au cours de l&rsquo;exécution du programme.</p>
-<h4 id="attributs">Attributs</h4>
-<p>Les <strong>attributs</strong> sont les propriétés définies par une classe à partir desquelles on construit l&rsquo;état des instances.<br>
-Si une classe Personne définit deux attributs <code>nom</code> et <code>âge</code>, alors l&rsquo;état de chaque instance de Personne sera composée d&rsquo;une valeur pour le nom, et d&rsquo;une pour l&rsquo;age.</p>
-<h4 id="interface">Interface</h4>
-<p>L&rsquo;interface est l&rsquo;ensemble des procédés permettant d&rsquo;accéder à l&rsquo;état d&rsquo;un objet ou de le modifier.<br>
-Selon les langages, elle ne se présente pas de la même manière. En C++, elle se compose des <strong>fonctions-membres</strong> de la classe, ainsi que de ses éventuels attributs publiques.</p>
-<h4 id="invariant-de-classe">Invariant de classe</h4>
-<p>Un <strong>invariant de classe</strong> est une condition que toutes les instances de cette classe doivent vérifier.<br>
-Un des invariants de la classe Carré est qu&rsquo;il faut qu&rsquo;à tout moment, les 4 côtés d&rsquo;une instance soient de même longueur.<br>
-Un des invariants de la classe Fraction est que le dénominateur de chacune de ses instances ne peut pas être nul.</p>
-<h4 id="encapsulation">Encapsulation</h4>
-<p>L'<strong>encapsulation</strong> est le principe déclarant que pour pour accéder/modifier l&rsquo;état d&rsquo;un objet, il faut passer par des &ldquo;routines&rdquo; (fonction-membre en C++, méthode en Java, &hellip;). Il s&rsquo;accompagne souvent du masquage de l&rsquo;état des objets, c&rsquo;est-à-dire que l&rsquo;on déclare les attributs dans la partie privée de la classe.<br>
-Respecter le principe d&rsquo;encapsulation permet de garantir les invariants de classe plus facilement.</p>
+<p>Pour cet exercice, vous modifierez le fichier :<br>
+- <code>chap-03/2-sequentials.cpp</code></p>
+<p>La cible à compiler est <code>c3-2-sequentials</code>.</p>
+<hr>
+<h3 id="tableaux-de-taille-fixe">Tableaux de taille fixe</h3>
+<p>Pour créer des tableaux de taille fixe, il est bien entendu possible d&rsquo;utiliser les tableaux primitifs. L&rsquo;inconvénient, c&rsquo;est qu&rsquo;il faut penser à les initialiser, ce que tout le monde ne pense pas toujours à faire&hellip;.</p>
+<p>Du coup, pour pallier à ce problème, il est possible d&rsquo;utiliser la classe <code>std::array</code>. Dans les paramètres de template, il faut préciser le type des éléments, comme pour <code>vector</code>, mais il faut également indiquer la taille du tableau :</p>
+<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="n">std</span><span class="o">::</span><span class="n">array</span><span class="o">&lt;</span><span class="kt">int</span><span class="p">,</span> <span class="mi">3</span><span class="o">&gt;</span> <span class="n">an_array_with_3_elements</span><span class="p">;</span>
+</code></pre></div>
+<div class="notices info" ><p>Lorsque vous fournissez une expression à un paramètre de template, il faut que le compilateur soit capable de calculer la valeur de cette expression au moment de la compilation.<br>
+Si vous essayez d&rsquo;utiliser une variable pour indiquer la taille d&rsquo;un <code>std::array</code>, vous aurez donc une erreur de compilation.</p>
+</div>
+
+<p><strong>Dans quelle situation peut-on utiliser un <code>std::array</code> ?</strong></p>
+<p>Un des cas d&rsquo;utilisation classique est lorsque l&rsquo;on souhaite créer un tableau associatif indexé par des entiers de 0 à N.<br>
+Cela s&rsquo;y prête d&rsquo;autant plus lorsque l&rsquo;indice est en réalité une <strong>enumération</strong>.</p>
+
+<div class="notices note" ><p>Pour définir et utiliser des <code>enum</code> en C++, c&rsquo;est un peu plus simple qu&rsquo;en C : il n&rsquo;y a pas besoin de faire de <code>typedef</code> pour référencer l&rsquo;enum par son nom.</p>
+</div>
+
+<p>Dans le code de base du fichier, vous pouvez trouver une énumération <code>Fruit</code>, contenant les valeurs <code>Abricot</code>, <code>Cherry</code>, <code>Mango</code> et <code>Raspberry</code>. Vous avez également une dernière valeur <code>Fruit_Count</code>, qui contient donc le nombre de valeurs de l&rsquo;enum.<br>
+Définissez un <code>array</code> servant à indiquer pour chaque fruit possible le nom de ce fruit. Assignez ensuite dans chaque case la valeur appropriée.</p>
+
+<div class="expand">
+    <div class="expand-label" style="cursor: pointer;" onclick="$h = $(this);$h.next('div').slideToggle(100,function () {$h.children('i').attr('class',function () {return $h.next('div').is(':visible') ? 'fas fa-chevron-down' : 'fas fa-chevron-right';});});">
+        <i style="font-size:x-small;" class="fas fa-chevron-right"></i>
+        <span>
+        
+    	
+    	Solution
+    	
+    	</span>
+    </div>
+    <div class="expand-content" style="display: none;">
+        <div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="n">std</span><span class="o">::</span><span class="n">array</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="p">,</span> <span class="n">Fruit_Count</span><span class="o">&gt;</span> <span class="n">fruit_names</span><span class="p">;</span>
+<span class="n">fruit_names</span><span class="p">[</span><span class="n">Abricot</span><span class="p">]</span> <span class="o">=</span> <span class="s">&#34;abricot&#34;</span><span class="p">;</span>
+<span class="n">fruit_names</span><span class="p">[</span><span class="n">Cherry</span><span class="p">]</span> <span class="o">=</span> <span class="s">&#34;cherry&#34;</span><span class="p">;</span>
+<span class="n">fruit_names</span><span class="p">[</span><span class="n">Mango</span><span class="p">]</span> <span class="o">=</span> <span class="s">&#34;mango&#34;</span><span class="p">;</span>
+<span class="n">fruit_names</span><span class="p">[</span><span class="n">Raspberry</span><span class="p">]</span> <span class="o">=</span> <span class="s">&#34;raspberry&#34;</span><span class="p">;</span>
+</code></pre></div>
+    </div>
+</div>
+<p><strong>C&rsquo;est quoi l&rsquo;intérêt d&rsquo;utiliser un <code>array</code>, alors qu&rsquo;on peut faire la même chose, et même plus, avec un <code>vector</code> ?</strong></p>
+<p>Une partie de la réponse est dans la question : en programmation, faire plus, c&rsquo;est rarement synonyme de faire mieux&hellip;<br>
+Lorsqu&rsquo;une classe permet de répondre exactement à un besoin, il vaut mieux utiliser cette classe là plutôt qu&rsquo;en utiliser une autre qui répond aussi au besoin, mais vous permet en plus de faire le café, nettoyer les toilettes et détruire le monde. Pourquoi ? Tout simplement parce que moins il y a de code à devoir supporter, plus c&rsquo;est simple de maintenir ses programmes et de les faire évoluer.</p>
+<p>Une autre raison de préférer l&rsquo;usage d&rsquo;un <code>array</code> à un <code>vector</code> est de réduire le nombre d&rsquo;allocations dynamiques du programme. En effet, contrairement aux <code>vector</code>, l&rsquo;espace de stockage des <code>array</code> peut être placé sur la pile. C&rsquo;est donc toujours intéressant de s&rsquo;économiser des opérations coûteuses lorsqu&rsquo;on en a la possibilité.</p>
+<hr>
+<h3 id="listes-chaînées">Listes chaînées</h3>
+<p>La librairie standard implémente les classes <code>std::list</code> et <code>std::forward_list</code>, qui représente respectivement des listes doublement et simplement chaînées.</p>
+<p>L&rsquo;intérêt des listes vis-à-vis des tableaux, c&rsquo;est qu&rsquo;il est possible d&rsquo;insérer ou de supprimer des éléments en O(1). De nouvelles fonctions de modifications sont donc disponibles dans l&rsquo;interface de la liste, comme <code>merge</code> (fusionner deux listes), <code>splice</code> (insérer une liste au milieu d&rsquo;une autre), <code>remove</code> (retirer des éléments selon leur valeur) ou encore <code>sort</code> (trier la liste).</p>
+<p>L&rsquo;inconvénient, c&rsquo;est qu&rsquo;il n&rsquo;est plus possible d&rsquo;accéder à un élément depuis sa position en O(1). D&rsquo;ailleurs, l&rsquo;opérateur <code>[]</code> n&rsquo;est pas disponible sur les listes de la STL.</p>
+<p>Dans la fonction <code>try_lists</code>, quatres listes vides sont définies. Commencez par leur ajouter des valeurs (de la manière de votre choix).<br>
+Faites ensuite en sorte de regrouper <code>l1</code> et <code>l2</code> dans une même liste ordonnée. Faites de même avec <code>l3</code> et <code>l4</code>.<br>
+Placez enfin le résultat du deuxième groupement en plein milieu du premier groupement.</p>
+
+<div class="expand">
+    <div class="expand-label" style="cursor: pointer;" onclick="$h = $(this);$h.next('div').slideToggle(100,function () {$h.children('i').attr('class',function () {return $h.next('div').is(':visible') ? 'fas fa-chevron-down' : 'fas fa-chevron-right';});});">
+        <i style="font-size:x-small;" class="fas fa-chevron-right"></i>
+        <span>
+        
+    	
+    	Solution
+    	
+    	</span>
+    </div>
+    <div class="expand-content" style="display: none;">
+        <div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="c1">// There are many differentes ways to put values in a list.
+</span><span class="c1"></span><span class="n">std</span><span class="o">::</span><span class="n">list</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">l1</span> <span class="p">{</span> <span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="o">-</span><span class="mi">3</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">200</span><span class="p">,</span> <span class="o">-</span><span class="mi">8</span><span class="p">,</span> <span class="mi">6</span> <span class="p">};</span>
+<span class="n">std</span><span class="o">::</span><span class="n">list</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">l2</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="o">-</span><span class="mi">45</span><span class="p">);</span>
+
+<span class="n">std</span><span class="o">::</span><span class="n">list</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">l3</span><span class="p">;</span>
+<span class="n">l3</span><span class="p">.</span><span class="n">assign</span><span class="p">({</span> <span class="mi">41</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">12</span> <span class="p">});</span>
+
+<span class="n">std</span><span class="o">::</span><span class="n">list</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">l4</span><span class="p">;</span>
+<span class="n">l4</span><span class="p">.</span><span class="n">emplace_front</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
+<span class="n">l4</span><span class="p">.</span><span class="n">emplace_front</span><span class="p">(</span><span class="mi">4</span><span class="p">);</span>
+<span class="n">l4</span><span class="p">.</span><span class="n">emplace_front</span><span class="p">(</span><span class="mi">6</span><span class="p">);</span>
+
+<span class="c1">// First possibility : sort first, then use merge.
+</span><span class="c1"></span><span class="n">l1</span><span class="p">.</span><span class="n">sort</span><span class="p">();</span>
+<span class="n">l2</span><span class="p">.</span><span class="n">sort</span><span class="p">();</span>
+<span class="n">l1</span><span class="p">.</span><span class="n">merge</span><span class="p">(</span><span class="n">l2</span><span class="p">);</span>
+
+<span class="c1">// Second possibility : append one to the other, then use sort.
+</span><span class="c1"></span><span class="n">l3</span><span class="p">.</span><span class="n">splice</span><span class="p">(</span><span class="n">l3</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span> <span class="n">l4</span><span class="p">);</span>
+<span class="n">l3</span><span class="p">.</span><span class="n">sort</span><span class="p">();</span>
+
+<span class="c1">// Find the middle of the list by using function std::advance, and insert the other list at this position.
+</span><span class="c1"></span><span class="k">auto</span> <span class="n">mid</span> <span class="o">=</span> <span class="n">l1</span><span class="p">.</span><span class="n">begin</span><span class="p">();</span>
+<span class="n">std</span><span class="o">::</span><span class="n">advance</span><span class="p">(</span><span class="n">mid</span><span class="p">,</span> <span class="n">l1</span><span class="p">.</span><span class="n">size</span><span class="p">()</span> <span class="o">/</span> <span class="mi">2</span><span class="p">);</span>
+<span class="n">l1</span><span class="p">.</span><span class="n">splice</span><span class="p">(</span><span class="n">mid</span><span class="p">,</span> <span class="n">l3</span><span class="p">);</span>
+</code></pre></div>
+    </div>
+</div>
+<p><strong>Concrètement, que peut-on faire avec une <code>list</code> que l&rsquo;on ne peut pas faire avec une <code>forward_list</code> ?</strong></p>
+<p>Dans une <code>forward_list</code>, on ne connaît que le début de la liste. Il faut donc la parcourir en entière si on veut accéder à la fin. Il n&rsquo;est aussi pas possible de la parcourir à l&rsquo;envers.<br>
+A part cela, les autres opérations sont disponibles avec la même complexité.</p>
+<hr>
+<h3 id="pile-ou-file">Pile ou File</h3>
+<p>Les derniers conteneurs que nous allons ici sont les piles <code>std::stack</code> et les files <code>std::queue</code>. Nous n&rsquo;allons pas rappeler en détail ce que sont les piles ou les files, mais si vous avez tout oublier de vos cours d&rsquo;algorithmique, sachez au moins que dans une pile, les insertions et suppressions sont effectuées en fin de conteneur, alors que dans une file, les suppressions s&rsquo;effectuent en tête et les insertions en fin de conteneur.</p>
+<p>Dans le cas de la STL, <code>stack</code> et <code>queue</code> ont la particularité d&rsquo;être des adapteurs. Cela signifie que vous pouvez choisir l&rsquo;implémentation que vous souhaitez utiliser en interne. La seule contrainte, c&rsquo;est que la classe sous-jacente doit fournir certaines fonctions. Par exemple, dans le cas de la pile, on pourrait utiliser <code>vector</code> ou <code>list</code>, mais pas <code>forward_list</code> car elle ne définit pas <code>push_back</code> :<br>
+<img src="/CPP_Learning/images/chapter3/doc-stack-constraints.png" alt=""></p>
+<p>Sur l&rsquo;image ci-dessus, on vous précise quel conteneur est utilisé par défaut si vous n&rsquo;en spécifier aucun (c&rsquo;est-à-dire si vous écrivez juste <code>std::stack&lt;int&gt;</code>, au lieu de <code>std::stack&lt;int, smtg&gt;</code>). De quelle classe s&rsquo;agit-il ?<br>
+En cherchant un petit peu dans sa documentation, essayez de trouver une raison pour laquelle la librairie a décidé d&rsquo;utiliser ce conteneur là par défaut.</p>
+
+<div class="expand">
+    <div class="expand-label" style="cursor: pointer;" onclick="$h = $(this);$h.next('div').slideToggle(100,function () {$h.children('i').attr('class',function () {return $h.next('div').is(':visible') ? 'fas fa-chevron-down' : 'fas fa-chevron-right';});});">
+        <i style="font-size:x-small;" class="fas fa-chevron-right"></i>
+        <span>
+        
+    	
+    	Solution
+    	
+    	</span>
+    </div>
+    <div class="expand-content" style="display: none;">
+        <p>Par défaut, <code>stack</code> est implémentée au moyen d&rsquo;une <code>std::deque</code>. L&rsquo;avantage de cette classe pour l&rsquo;implémentation d&rsquo;une pile, c&rsquo;est qu&rsquo;elle est très efficace pour ajouter et retirer des éléments en fin de conteneur (complexité en O(1)), et lors de ces opérations, les itérateurs sur les autres éléments ne sont jamais invalidés (= plus de sécurité). Elle est aussi plus performante que le <code>vector</code> lors des réallocations (pas de copie des éléments existants).</p>
+
+    </div>
+</div>
+<p>Vous allez maintenant instancier une <code>stack</code> utilisant comme implémentation sous-jacente un <code>vector&lt;int&gt;</code>, plutôt qu&rsquo;une <code>deque</code>. Pour cela, il suffit de spécifier le type de conteneur dans un second paramètre de template.<br>
+Faites en sorte que la <code>stack</code> contienne à la fin <code>{ 0, 1, 2 }</code>.</p>
+
+<div class="expand">
+    <div class="expand-label" style="cursor: pointer;" onclick="$h = $(this);$h.next('div').slideToggle(100,function () {$h.children('i').attr('class',function () {return $h.next('div').is(':visible') ? 'fas fa-chevron-down' : 'fas fa-chevron-right';});});">
+        <i style="font-size:x-small;" class="fas fa-chevron-right"></i>
+        <span>
+        
+    	
+    	Solution
+    	
+    	</span>
+    </div>
+    <div class="expand-content" style="display: none;">
+        <div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="c1">// The stack can be initialized from nothing, and then values are added with push or emplace.
+</span><span class="c1"></span><span class="n">std</span><span class="o">::</span><span class="n">stack</span><span class="o">&lt;</span><span class="kt">int</span><span class="p">,</span> <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;&gt;</span> <span class="n">s1</span><span class="p">;</span>
+<span class="n">s1</span><span class="p">.</span><span class="n">emplace</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
+<span class="n">s1</span><span class="p">.</span><span class="n">emplace</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
+<span class="n">s1</span><span class="p">.</span><span class="n">emplace</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span>
+
+<span class="c1">// It can also be initialized from an already existing container, matching the type used internally.
+</span><span class="c1"></span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">v</span> <span class="p">{</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span> <span class="p">};</span>
+<span class="n">std</span><span class="o">::</span><span class="n">stack</span><span class="o">&lt;</span><span class="kt">int</span><span class="p">,</span> <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;&gt;</span> <span class="n">s2</span> <span class="p">{</span> <span class="n">v</span> <span class="p">};</span>
+</code></pre></div><p>Notez que les deux syntaxe <code>s2 { v }</code> et <code>s2(v)</code> fonctionnent, puisque <code>stack</code> n&rsquo;a pas de constructeur par initializer_list.</p>
+
+    </div>
+</div>
+<p>Essayez maintenant de parcourir la <code>stack</code> via une boucle <code>for</code> pour l&rsquo;afficher (pas foreach). Qu&rsquo;est-ce qui pose problème ?</p>
+
+<div class="expand">
+    <div class="expand-label" style="cursor: pointer;" onclick="$h = $(this);$h.next('div').slideToggle(100,function () {$h.children('i').attr('class',function () {return $h.next('div').is(':visible') ? 'fas fa-chevron-down' : 'fas fa-chevron-right';});});">
+        <i style="font-size:x-small;" class="fas fa-chevron-right"></i>
+        <span>
+        
+    	
+    	Solution
+    	
+    	</span>
+    </div>
+    <div class="expand-content" style="display: none;">
+        <p>Dans une pile, on ne peut accéder qu&rsquo;au premier élément. La classe <code>stack</code> ne fournit donc pas l&rsquo;ensemble des fonctions dont dispose le conteneur sous-jacent, et c&rsquo;est bien là son intérêt.<br>
+Si on décide de définir un attribut d&rsquo;une classe en tant que <code>stack</code> plutôt qu&rsquo;en tant que <code>vector</code>, on ajoute en fait des contraintes sur les opérations qu&rsquo;il est possible d&rsquo;effectuer sur ce membre. Cela permet donc d&rsquo;enforcer les invariants de la classe plus facilement.</p>
+
+    </div>
+</div>
+<p>Retentez maintenant le parcours via une boucle <code>foreach</code>. Essayez de compiler, et déduisez-en le nom des fonctions attendues par le compilateur pour pouvoir parcourir un conteneur via une boucle <code>foreach</code>.</p>
+
+<div class="expand">
+    <div class="expand-label" style="cursor: pointer;" onclick="$h = $(this);$h.next('div').slideToggle(100,function () {$h.children('i').attr('class',function () {return $h.next('div').is(':visible') ? 'fas fa-chevron-down' : 'fas fa-chevron-right';});});">
+        <i style="font-size:x-small;" class="fas fa-chevron-right"></i>
+        <span>
+        
+    	
+    	Solution
+    	
+    	</span>
+    </div>
+    <div class="expand-content" style="display: none;">
+        <p>Le compilateur nous dit ceci :</p>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">error: <span class="s1">&#39;begin&#39;</span> was not declared in this scope
+error: <span class="s1">&#39;end&#39;</span> was not declared in this scope
+</code></pre></div><p>On peut donc en déduire que pour qu&rsquo;une classe soit itérable via une boucle foreach, il semblerait qu&rsquo;elle doive fournir deux fonctions appelées <code>begin</code> et <code>end</code>. Nous y reviendrons au cours du <a href="/chapter6/">Chapitre 6</a>.</p>
+
+    </div>
+</div>
 
 
 <footer class="footline">
@@ -1254,7 +1422,6 @@ Respecter le principe d&rsquo;encapsulation permet de garantir les invariants de
             
                 
                     
-                    
                 
                 
 
@@ -1267,7 +1434,6 @@ Respecter le principe d&rsquo;encapsulation permet de garantir les invariants de
             
             
                 
-                    
                     
                 
                 
@@ -1284,9 +1450,6 @@ Respecter le principe d&rsquo;encapsulation permet de garantir les invariants de
             
             
                 
-                    
-                        
-                        
                     
                 
                 
@@ -1408,6 +1571,7 @@ Respecter le principe d&rsquo;encapsulation permet de garantir les invariants de
             
                 
                     
+                    
                 
                 
 
@@ -1420,6 +1584,9 @@ Respecter le principe d&rsquo;encapsulation permet de garantir les invariants de
             
             
                 
+                    
+                        
+                        
                     
                 
                 
@@ -1453,6 +1620,7 @@ Respecter le principe d&rsquo;encapsulation permet de garantir les invariants de
             
                 
                     
+                    
                 
                 
 
@@ -1468,6 +1636,9 @@ Respecter le principe d&rsquo;encapsulation permet de garantir les invariants de
             
             
                 
+                    
+                        
+                        
                     
                 
                 
@@ -1561,10 +1732,10 @@ Respecter le principe d&rsquo;encapsulation permet de garantir les invariants de
 	 
 	 
 		
-			<a class="nav nav-prev" href="/CPP_Learning/chapter2/" title="Classes"> <i class="fa fa-chevron-left"></i></a>
+			<a class="nav nav-prev" href="/CPP_Learning/chapter3/2-vectors/" title="Tableaux dynamiques"> <i class="fa fa-chevron-left"></i></a>
 		
 		
-			<a class="nav nav-next" href="/CPP_Learning/chapter2/2-first-class/" title="✨ Première classe" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+			<a class="nav nav-next" href="/CPP_Learning/chapter3/4-associatives/" title="Conteneurs associatifs" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
 		
 	
     </div>

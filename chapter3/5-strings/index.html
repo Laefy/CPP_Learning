@@ -9,7 +9,7 @@
 
     <link rel="icon" href="/CPP_Learning/images/favicon.png" type="image/png">
 
-    <title>C&#39;est quoi un objet déjà ? :: Cours de C&#43;&#43; - Niveau Master</title>
+    <title>Manipulation de chaînes :: Cours de C&#43;&#43; - Niveau Master</title>
 
     
     <link href="/CPP_Learning/css/nucleus.css?1610891914" rel="stylesheet">
@@ -40,7 +40,7 @@
     </style>
     
   </head>
-  <body class="" data-url="/CPP_Learning/chapter2/1-poo/">
+  <body class="" data-url="/CPP_Learning/chapter3/5-strings/">
     <nav id="sidebar" class="showVisitedLinks">
 
 
@@ -431,7 +431,7 @@
   
     
     <li data-nav-id="/CPP_Learning/chapter2/" title="Classes" class="dd-item 
-        parent
+        
         
         
         ">
@@ -459,7 +459,7 @@
  
   
     
-      <li data-nav-id="/CPP_Learning/chapter2/1-poo/" title="C&#39;est quoi un objet déjà ?" class="dd-item active">
+      <li data-nav-id="/CPP_Learning/chapter2/1-poo/" title="C&#39;est quoi un objet déjà ?" class="dd-item ">
         <a href="/CPP_Learning/chapter2/1-poo/">
         C&#39;est quoi un objet déjà ?
         <i class="fas fa-check read-icon"></i>
@@ -638,7 +638,7 @@
   
     
     <li data-nav-id="/CPP_Learning/chapter3/" title="Conteneurs standards" class="dd-item 
-        
+        parent
         
         
         ">
@@ -750,7 +750,7 @@
  
   
     
-      <li data-nav-id="/CPP_Learning/chapter3/5-strings/" title="Manipulation de chaînes" class="dd-item ">
+      <li data-nav-id="/CPP_Learning/chapter3/5-strings/" title="Manipulation de chaînes" class="dd-item active">
         <a href="/CPP_Learning/chapter3/5-strings/">
         Manipulation de chaînes
         <i class="fas fa-check read-icon"></i>
@@ -918,7 +918,7 @@
             
           
           
-            <a href='/CPP_Learning/'>Accueil</a> > <a href='/CPP_Learning/chapter2/'>Classes</a> > C'est quoi un objet déjà ?
+            <a href='/CPP_Learning/'>Accueil</a> > <a href='/CPP_Learning/chapter3/'>Conteneurs standards</a> > Manipulation de chaînes
           
         
           
@@ -935,7 +935,9 @@
   <ul>
     <li>
       <ul>
-        <li></li>
+        <li><a href="#opérations-standards">Opérations standards</a></li>
+        <li><a href="#conversions">Conversions</a></li>
+        <li><a href="#passage-de-chaînes">Passage de chaînes</a></li>
       </ul>
     </li>
   </ul>
@@ -955,34 +957,146 @@
           
             <h1>
               
-              C&#39;est quoi un objet déjà ?
+              Manipulation de chaînes
             </h1>
           
 
         
 
 
-<p>Commençons par donner quelques rappels des notions de POO que vous avez pu voir l&rsquo;an dernier.</p>
+<p>Dans cette partie, nous reviendrons sur les fonctions fournies par la librairie permettant de manipuler des <code>string</code>. Vous apprendrez aussi ce que sont les <code>string_view</code> et à quoi elles servent.</p>
 <hr>
-<h4 id="objet">Objet</h4>
-<p>Dans un programme, un <strong>objet</strong> est un élément constitué d&rsquo;un <strong>état</strong>, et disposant d&rsquo;une <strong>interface</strong> permettant d&rsquo;intéragir avec cet état.</p>
-<h4 id="classe">Classe</h4>
-<p>Un objet est généralement créé à partir d&rsquo;un modèle, que l&rsquo;on appelle <strong>classe</strong>. Un objet créé à partir d&rsquo;une classe constitue une <strong>instance</strong> de cette classe.</p>
-<h4 id="etat">Etat</h4>
-<p>L&rsquo;état d&rsquo;un objet est un ensemble de valeurs, pouvant ou non varier au cours de l&rsquo;exécution du programme.</p>
-<h4 id="attributs">Attributs</h4>
-<p>Les <strong>attributs</strong> sont les propriétés définies par une classe à partir desquelles on construit l&rsquo;état des instances.<br>
-Si une classe Personne définit deux attributs <code>nom</code> et <code>âge</code>, alors l&rsquo;état de chaque instance de Personne sera composée d&rsquo;une valeur pour le nom, et d&rsquo;une pour l&rsquo;age.</p>
-<h4 id="interface">Interface</h4>
-<p>L&rsquo;interface est l&rsquo;ensemble des procédés permettant d&rsquo;accéder à l&rsquo;état d&rsquo;un objet ou de le modifier.<br>
-Selon les langages, elle ne se présente pas de la même manière. En C++, elle se compose des <strong>fonctions-membres</strong> de la classe, ainsi que de ses éventuels attributs publiques.</p>
-<h4 id="invariant-de-classe">Invariant de classe</h4>
-<p>Un <strong>invariant de classe</strong> est une condition que toutes les instances de cette classe doivent vérifier.<br>
-Un des invariants de la classe Carré est qu&rsquo;il faut qu&rsquo;à tout moment, les 4 côtés d&rsquo;une instance soient de même longueur.<br>
-Un des invariants de la classe Fraction est que le dénominateur de chacune de ses instances ne peut pas être nul.</p>
-<h4 id="encapsulation">Encapsulation</h4>
-<p>L'<strong>encapsulation</strong> est le principe déclarant que pour pour accéder/modifier l&rsquo;état d&rsquo;un objet, il faut passer par des &ldquo;routines&rdquo; (fonction-membre en C++, méthode en Java, &hellip;). Il s&rsquo;accompagne souvent du masquage de l&rsquo;état des objets, c&rsquo;est-à-dire que l&rsquo;on déclare les attributs dans la partie privée de la classe.<br>
-Respecter le principe d&rsquo;encapsulation permet de garantir les invariants de classe plus facilement.</p>
+<p>Pour cet exercice, vous modifierez le fichier :<br>
+- <code>chap-03/4-strings.cpp</code></p>
+<p>La cible à compiler est <code>c3-4-strings</code>.</p>
+<hr>
+<h3 id="opérations-standards">Opérations standards</h3>
+<p>Parmis les opérations standards que l&rsquo;on peut effectuer sur des chaînes de caractère, on retrouve :</p>
+<ul>
+<li>la concaténation,</li>
+<li>l&rsquo;extration de sous-chaîne,</li>
+<li>la recherche de caractère ou de sous-chaîne,</li>
+<li>la comparaison,</li>
+<li>le remplacement d&rsquo;une partie de la chaîne.</li>
+</ul>
+<p>Recherchez dans la documentation les fonctions qui permettent d&rsquo;effectuer les opérations ci-dessus.</p>
+
+<div class="expand">
+    <div class="expand-label" style="cursor: pointer;" onclick="$h = $(this);$h.next('div').slideToggle(100,function () {$h.children('i').attr('class',function () {return $h.next('div').is(':visible') ? 'fas fa-chevron-down' : 'fas fa-chevron-right';});});">
+        <i style="font-size:x-small;" class="fas fa-chevron-right"></i>
+        <span>
+        
+    	
+    	Solution
+    	
+    	</span>
+    </div>
+    <div class="expand-content" style="display: none;">
+        <ul>
+<li>concaténation -&gt; <code>operator+</code> : <code>auto str_3 = str1 + str2;</code></li>
+<li>extration de sous-chaîne -&gt; <code>substr</code> : <code>auto str_me = std::string { &quot;find me&quot; }.substr(5, 2);</code></li>
+<li>recherche -&gt; <code>find</code> : <code>auto pos = str.find(&quot;abc&quot;);</code></li>
+<li>comparaison -&gt; <code>operator==</code> : <code>auto are_equal = (str1 == str2);</code></li>
+<li>remplacement -&gt; <code>replace</code> : <code>std::string { &quot;this is old&quot; }.replace(8, 3, &quot;new&quot;);</code></li>
+</ul>
+
+    </div>
+</div>
+<hr>
+<h3 id="conversions">Conversions</h3>
+<p>Quelle fonction permet de convertir des valeurs numériques en chaînes de caractères ?
+
+<div class="expand">
+    <div class="expand-label" style="cursor: pointer;" onclick="$h = $(this);$h.next('div').slideToggle(100,function () {$h.children('i').attr('class',function () {return $h.next('div').is(':visible') ? 'fas fa-chevron-down' : 'fas fa-chevron-right';});});">
+        <i style="font-size:x-small;" class="fas fa-chevron-right"></i>
+        <span>
+        
+    	
+    	Solution
+    	
+    	</span>
+    </div>
+    <div class="expand-content" style="display: none;">
+        <p>Il s&rsquo;agit de <code>std::to_string</code>.</p>
+
+    </div>
+</div></p>
+<p>Quelles fonctions permettent maintenant de faire l&rsquo;inverse ? Que se passe-t-il si la chaîne de caractères ne contient pas vraiment une valeur du type attendu ?
+
+<div class="expand">
+    <div class="expand-label" style="cursor: pointer;" onclick="$h = $(this);$h.next('div').slideToggle(100,function () {$h.children('i').attr('class',function () {return $h.next('div').is(':visible') ? 'fas fa-chevron-down' : 'fas fa-chevron-right';});});">
+        <i style="font-size:x-small;" class="fas fa-chevron-right"></i>
+        <span>
+        
+    	
+    	Solution
+    	
+    	</span>
+    </div>
+    <div class="expand-content" style="display: none;">
+        <p>Il s&rsquo;agit des fonctions <code>std::stoi</code> (string to int), <code>std::stol</code> (string to long), <code>std::stof</code> (string to float), etc.<br>
+Si la chaîne ne contient pas réellement un nombre, alors, la fonction lance une exception de type <code>std::invalid_argument</code>.</p>
+
+    </div>
+</div></p>
+<hr>
+<h3 id="passage-de-chaînes">Passage de chaînes</h3>
+<p>Pour passer une chaînes de caractères à une fonction, et sachant que cette fonction ne la modifie pas, vous aviez jusqu&rsquo;ici deux options possibles (ou en tout cas, deux options pas trop nulles) :</p>
+<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="c1">// Passage par const char*.
+</span><span class="c1"></span><span class="kt">void</span> <span class="nf">print_str</span><span class="p">(</span><span class="k">const</span> <span class="kt">char</span><span class="o">*</span> <span class="n">str</span><span class="p">);</span>
+
+<span class="c1">// Passage par const std::string&amp;.
+</span><span class="c1"></span><span class="kt">void</span> <span class="nf">print_str</span><span class="p">(</span><span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&amp;</span> <span class="n">str</span><span class="p">);</span>
+</code></pre></div><p>Dans le premier cas, on manipule un pointeur. Et comme vous le savez maintenant, les pointeurs, ce n&rsquo;est pas ce qui est le plus sécurisé pour passer de l&rsquo;information à une fonction. L&rsquo;utilisateur peut notamment passer <code>nullptr</code> alors que l&rsquo;implémentation de la fonction peut ne pas le prévoir. De plus, les <code>const char*</code> ne sont pas aussi facilement manipulables que les <code>string</code> (comparaison ne marche pas avec <code>==</code>, pas de concaténation, etc).</p>
+<p>Du coup, on pourrait se dire qu&rsquo;il vaut mieux tout le temps passer par des <code>const std::string&amp;</code>. Le problème, c&rsquo;est qu&rsquo;il y a des situations où le passage par <code>string</code> n&rsquo;est pas souhaitable. Voici un exemple de ce genre de cas :</p>
+<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp">
+</span><span class="cp"></span>
+<span class="kt">void</span> <span class="nf">print_in_console</span><span class="p">(</span><span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&amp;</span> <span class="n">str</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">str</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="n">print_in_console</span><span class="p">(</span><span class="s">&#34;print me&#34;</span><span class="p">);</span>
+    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div><p>Dans le code ci-dessus, on fournit à la fonction une chaîne litérale. Au moment du passage à <code>print_in_console</code>, une conversion <code>const char*</code> vers <code>string</code> est réalisée, ce qui déclenche une allocation dynamique. Et comme vous le savez déjà, les allocations dynamiques sont des opérations coûteuses, qu&rsquo;il vaut mieux éviter de faire si elles ne sont pas nécessaires. Dans ce cas particulier, le programme serait donc (un tout petit peu) plus efficace si la fonction <code>print_in_console</code> avait pris un <code>const char*</code> plutôt qu&rsquo;une <code>std::string</code>.</p>
+<p>Pour ne pas avoir à choisir entre sécurité et performances, le type <code>string_view</code> a été introduit avec C++17 dans la librairie standard.</p>
+<p><strong>Qu&rsquo;est-ce qu&rsquo;une <code>string_view</code> ?</strong><br>
+Il s&rsquo;agit d&rsquo;une toute petite classe qui ne contient que deux membres : un pointeur sur une chaîne de caractère et la taille de cette chaîne. Cette classe permet donc de référencer une chaîne de caractère existante (qu&rsquo;il s&rsquo;agisse d&rsquo;une <code>string</code> ou d&rsquo;un <code>const char*</code>) sans allouer de mémoire supplémentaire. Enfin, elle dispose d&rsquo;un certain nombre de fonctions permettant de simplifier sa manipulation (<code>substr</code>, <code>find</code>, <code>contains</code>, etc).</p>
+
+<div class="notices warning" ><p>Attention, lorsqu&rsquo;on utilise des <code>string_view</code>, il faut faire attention à la durée de vie des objets. Si une <code>string</code> référencée par une <code>string_view</code> est détruite, et que l&rsquo;on essaye d&rsquo;utiliser la <code>string_view</code> ensuite, on se retrouve avec des problèmes du même style que les dangling references.</p>
+</div>
+
+<p>Modifiez la signature de la fonction <code>print_in_console</code> de manière à utiliser une <code>string_view</code>. Comme <code>string_view</code> est une classe peu coûteuse à copier, il est préférable de la passer par valeur plutôt que référence.</p>
+
+<div class="expand">
+    <div class="expand-label" style="cursor: pointer;" onclick="$h = $(this);$h.next('div').slideToggle(100,function () {$h.children('i').attr('class',function () {return $h.next('div').is(':visible') ? 'fas fa-chevron-down' : 'fas fa-chevron-right';});});">
+        <i style="font-size:x-small;" class="fas fa-chevron-right"></i>
+        <span>
+        
+    	
+    	Solution
+    	
+    	</span>
+    </div>
+    <div class="expand-content" style="display: none;">
+        <div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp">
+</span><span class="cp"></span>
+<span class="kt">void</span> <span class="nf">print_in_console</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">string_view</span> <span class="n">str</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">str</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="n">print_in_console</span><span class="p">(</span><span class="s">&#34;print me&#34;</span><span class="p">);</span>
+    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+    </div>
+</div>
 
 
 <footer class="footline">
@@ -1254,7 +1368,6 @@ Respecter le principe d&rsquo;encapsulation permet de garantir les invariants de
             
                 
                     
-                    
                 
                 
 
@@ -1267,7 +1380,6 @@ Respecter le principe d&rsquo;encapsulation permet de garantir les invariants de
             
             
                 
-                    
                     
                 
                 
@@ -1284,9 +1396,6 @@ Respecter le principe d&rsquo;encapsulation permet de garantir les invariants de
             
             
                 
-                    
-                        
-                        
                     
                 
                 
@@ -1408,6 +1517,7 @@ Respecter le principe d&rsquo;encapsulation permet de garantir les invariants de
             
                 
                     
+                    
                 
                 
 
@@ -1420,6 +1530,9 @@ Respecter le principe d&rsquo;encapsulation permet de garantir les invariants de
             
             
                 
+                    
+                        
+                        
                     
                 
                 
@@ -1485,6 +1598,7 @@ Respecter le principe d&rsquo;encapsulation permet de garantir les invariants de
             
                 
                     
+                    
                 
                 
 
@@ -1500,6 +1614,9 @@ Respecter le principe d&rsquo;encapsulation permet de garantir les invariants de
             
             
                 
+                    
+                        
+                        
                     
                 
                 
@@ -1561,10 +1678,10 @@ Respecter le principe d&rsquo;encapsulation permet de garantir les invariants de
 	 
 	 
 		
-			<a class="nav nav-prev" href="/CPP_Learning/chapter2/" title="Classes"> <i class="fa fa-chevron-left"></i></a>
+			<a class="nav nav-prev" href="/CPP_Learning/chapter3/4-associatives/" title="Conteneurs associatifs"> <i class="fa fa-chevron-left"></i></a>
 		
 		
-			<a class="nav nav-next" href="/CPP_Learning/chapter2/2-first-class/" title="✨ Première classe" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+			<a class="nav nav-next" href="/CPP_Learning/chapter3/6-tuples/" title="Paires et tuples" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
 		
 	
     </div>

@@ -29,6 +29,18 @@ Etat L&amp;rsquo;état d&amp;rsquo;un objet est un ensemble de valeurs, pouvant 
     </item>
     
     <item>
+      <title>Un peu de doc...</title>
+      <link>https://laefy.github.io/CPP_Learning/chapter3/1-doc/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://laefy.github.io/CPP_Learning/chapter3/1-doc/</guid>
+      <description>Pour démarrez ce chapitre, nous allons vous expliquer comment parcourir la documentation que vous trouverez sur le site cppreference.
+Commencez par ouvrir cette page. Vous y trouverez la documentation de la classe vector.
+A première vue, son contenu peut paraître indigeste. Nous allons donc vous expliquer comment il est structuré afin que vous puissiez vous y repérer plus facilement.
+ Documentation d&amp;rsquo;une classe 1. En-tête Dans l&amp;rsquo;en-tête de la documentation, vous trouverez le nom de la classe, suivi du header à inclure afin de pouvoir l&amp;rsquo;utiliser.</description>
+    </item>
+    
+    <item>
       <title>Visual Studio Code</title>
       <link>https://laefy.github.io/CPP_Learning/chapter1/2-tools/1-vscode/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -66,6 +78,19 @@ Si vous êtes sous Windows, vous pouvez télécharger l&amp;rsquo;installeur que
     </item>
     
     <item>
+      <title>Tableaux dynamiques</title>
+      <link>https://laefy.github.io/CPP_Learning/chapter3/2-vectors/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://laefy.github.io/CPP_Learning/chapter3/2-vectors/</guid>
+      <description>Vous apprendrez ici à utiliser des vector de manière un peu plus avancée : construction, accès, insertions, suppressions et recherches n&amp;rsquo;auront plus de secrets pour vous !
+ Pour cet exercice, vous modifierez le fichier :
+- chap-03/1-vectors.cpp
+La cible à compiler est c3-1-vectors.
+ Construction Au chapitre précédent, nous vous avions présenté différentes syntaxes permettant d&amp;rsquo;instancier une classe. Nous vous avions en particulier indiquer qu&amp;rsquo;il était possible d&amp;rsquo;utiliser la syntaxe Class c { p1, p2 }; ou bien la syntaxe Class c(p1, p2);.</description>
+    </item>
+    
+    <item>
       <title>✨ Première classe</title>
       <link>https://laefy.github.io/CPP_Learning/chapter2/2-first-class/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -91,6 +116,20 @@ int main() { // Person p;  // p.set_name(&amp;#34;Batman&amp;#34;);  // p.set_ag
 La cible à compiler est c1-2-parrot.
  Lire un entier Commencez par écrire une fonction main qui ne fait rien, comme dans l&amp;rsquo;exercice précédent. Compilez et exécutez le programme, pour être sûr que tout est bien configuré.
 Ensuite, vous allez déclarer une variable de type int.</description>
+    </item>
+    
+    <item>
+      <title>Autres conteneurs séquentiels</title>
+      <link>https://laefy.github.io/CPP_Learning/chapter3/3-sequentials/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://laefy.github.io/CPP_Learning/chapter3/3-sequentials/</guid>
+      <description>Vous allez maintenant manipuler les autres conteneurs séquentiels que la libraire propose.
+ Pour cet exercice, vous modifierez le fichier :
+- chap-03/2-sequentials.cpp
+La cible à compiler est c3-2-sequentials.
+ Tableaux de taille fixe Pour créer des tableaux de taille fixe, il est bien entendu possible d&amp;rsquo;utiliser les tableaux primitifs. L&amp;rsquo;inconvénient, c&amp;rsquo;est qu&amp;rsquo;il faut penser à les initialiser, ce que tout le monde ne pense pas toujours à faire&amp;hellip;.
+Du coup, pour pallier à ce problème, il est possible d&amp;rsquo;utiliser la classe std::array.</description>
     </item>
     
     <item>
@@ -145,6 +184,21 @@ clang++f1.cpp f2.cpp f3.cpp -o program Vous pouvez ajouter des options de compil
     </item>
     
     <item>
+      <title>Conteneurs associatifs</title>
+      <link>https://laefy.github.io/CPP_Learning/chapter3/4-associatives/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://laefy.github.io/CPP_Learning/chapter3/4-associatives/</guid>
+      <description>Un conteneur associatif est un conteneur dans lequel les éléments peuvent être indexés par des objets, et non plus seulement par des entiers.
+Vous allez donc ici voir les différents types de conteneurs associatifs proposés par la STL.
+ Pour cet exercice, vous modifierez les fichiers :
+- chap-03/3-associatives/main.cpp
+- chap-03/3-associatives/keys.h
+La cible à compiler est c3-3-associatives.
+ Les sets (ensembles) Un set est un conteneur dans lequel les éléments sont &amp;ldquo;indexés par eux-mêmes&amp;rdquo;.</description>
+    </item>
+    
+    <item>
       <title>🧬 Clône</title>
       <link>https://laefy.github.io/CPP_Learning/chapter2/4-clone/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -173,6 +227,20 @@ int main(int argc, char** argv) { // Parsing program parameters.  some code.</de
     </item>
     
     <item>
+      <title>Manipulation de chaînes</title>
+      <link>https://laefy.github.io/CPP_Learning/chapter3/5-strings/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://laefy.github.io/CPP_Learning/chapter3/5-strings/</guid>
+      <description>Dans cette partie, nous reviendrons sur les fonctions fournies par la librairie permettant de manipuler des string. Vous apprendrez aussi ce que sont les string_view et à quoi elles servent.
+ Pour cet exercice, vous modifierez le fichier :
+- chap-03/4-strings.cpp
+La cible à compiler est c3-4-strings.
+ Opérations standards Parmis les opérations standards que l&amp;rsquo;on peut effectuer sur des chaînes de caractère, on retrouve :
+ la concaténation, l&amp;rsquo;extration de sous-chaîne, la recherche de caractère ou de sous-chaîne, la comparaison, le remplacement d&amp;rsquo;une partie de la chaîne.</description>
+    </item>
+    
+    <item>
       <title>🔳 Rectangle</title>
       <link>https://laefy.github.io/CPP_Learning/chapter2/5-rectangle/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -185,6 +253,20 @@ int main(int argc, char** argv) { // Parsing program parameters.  some code.</de
 - chap-02/4-rectangle/Rectangle.h
 La cible à compiler est c2-4-rectangle.
  Header en C++ Vous commencez l&amp;rsquo;exercice avec une fonction main dans le fichier main.</description>
+    </item>
+    
+    <item>
+      <title>Paires et tuples</title>
+      <link>https://laefy.github.io/CPP_Learning/chapter3/6-tuples/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://laefy.github.io/CPP_Learning/chapter3/6-tuples/</guid>
+      <description>Vous avez déjà utilisé le type pair au cours d&amp;rsquo;exercices précédents. Nous allons maintenant vous présenter son cousin, la classe tuple.
+ Pour cet exercice, vous modifierez le fichier :
+- chap-03/5-tuples.cpp
+La cible à compiler est c3-5-tuples.
+ Micro rappel sur les pair La classe pair est un type templaté avec deux paramètres :
+std::pair&amp;lt;int, float&amp;gt; such_a_nice_pair { 1, 3.f }; On accède aux éléments de la pair directement via ses attributs first et second (pas de getters) :</description>
     </item>
     
     <item>
@@ -227,6 +309,16 @@ Mais bon, vous l&amp;rsquo;avez enfin terminé, donc vous pouvez être fiers de 
     </item>
     
     <item>
+      <title>Questionnaire !</title>
+      <link>https://laefy.github.io/CPP_Learning/chapter3/test/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://laefy.github.io/CPP_Learning/chapter3/test/</guid>
+      <description>Le premier objectif de ce chapitre était de vous présenter quelques classes de la STL, leurs rôles, leurs différences, dans quelles situations les utiliser et comment.
+Il avait également un deuxième objectif, qui était en quelque sorte de vous apprendre à vous débrouiller tout seul : vous devriez désormais être capable de rechercher par vous-même des informations dans la documentation, et vous devriez aussi appréhender un peu mieux qu&amp;rsquo;avant les messages du compilateur.</description>
+    </item>
+    
+    <item>
       <title>Synthèse</title>
       <link>https://laefy.github.io/CPP_Learning/chapter1/summary/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -242,6 +334,15 @@ Mais bon, vous l&amp;rsquo;avez enfin terminé, donc vous pouvez être fiers de 
       
       <guid>https://laefy.github.io/CPP_Learning/chapter2/summary/</guid>
       <description>Ce qu&amp;rsquo;il faut retenir Théorie  A quoi correspondent les termes attributs et fonction-membres constructeur = fonction appelée à l&amp;rsquo;instanciation d&amp;rsquo;une classe constructeur par défaut = constructeur à 0 paramètre implémentation par défaut = implémentation d&amp;rsquo;une fonction générée par le compilateur dans certaines conditions opérateur d&amp;rsquo;assignation = fonction appelée lorsque l&amp;rsquo;on écrit a = ...;, sachant que a a été instancié plus tôt destructeur = fonction appelée à la destruction d&amp;rsquo;un objet surcharge = fonction de même nom, acceptant un nombre différent de paramètres et/ou des paramètres de types différents Lorsque la variable référencée par une référence est détruite, on a une dangling reference  Pratique  Utiliser this pour faire référence à l&amp;rsquo;instance courante Comparer this et &amp;amp;other au début de l&amp;rsquo;opérateur d&amp;rsquo;assignation Utiliser const aussi souvent que possible   Ce qu&amp;rsquo;il faut savoir faire Langage  Définir une classe : class A {}; (sans oublier le point-virgule) Définir des attributs et des fonctions-membres Indiquer la visibilité d&amp;rsquo;un ou plusieurs membres : public: - private: Définir un constructeur : ClassName(int p1, char p2) : _a1 { p1 }, _a2 { p2 } { } Déléguer la construction à un autre constructeur : ClassName(int p) : ClassName { p, p } {} Définir un constructeur de copie : ClassName(const ClassName&amp;amp; other) : _a1 { other.</description>
+    </item>
+    
+    <item>
+      <title>Synthèse</title>
+      <link>https://laefy.github.io/CPP_Learning/chapter3/summary/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://laefy.github.io/CPP_Learning/chapter3/summary/</guid>
+      <description>Ce qu&amp;rsquo;il faut retenir Théorie  Un conteneur séquentiel est un conteneur dans lequel les élements se suivent (tableaux, listes, &amp;hellip;). Un conteneur associatif est un conteneur dans lequel chaque élément est indexé par une clef (l&amp;rsquo;élément pouvant être la clef elle-même). Les types passés en paramètre de template doivent parfois respecter des contraintes pour compiler (ces contraintes sont spécifiées dans la documentation).  Librairie standard  Tableau de taille dynamique : vector Tableau de taille fixe : array Listes chaînées : list ou forward_list Ensembles : set ou unordered_set Dictionnaires : map ou unordered_map  Pratique  On peut passer les chaînes de caractères constantes par std::string_view plutôt que const std::string&amp;amp; ou const char*.</description>
     </item>
     
     <item>
@@ -270,6 +371,15 @@ Mais bon, vous l&amp;rsquo;avez enfin terminé, donc vous pouvez être fiers de 
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://laefy.github.io/CPP_Learning/chapter2/test_done/</guid>
+      <description>Vos réponses nous ont bien été communiquées 😃 Retourner à la synthèse du Chapitre</description>
+    </item>
+    
+    <item>
+      <title>Merci !</title>
+      <link>https://laefy.github.io/CPP_Learning/chapter3/test_done/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://laefy.github.io/CPP_Learning/chapter3/test_done/</guid>
       <description>Vos réponses nous ont bien été communiquées 😃 Retourner à la synthèse du Chapitre</description>
     </item>
     

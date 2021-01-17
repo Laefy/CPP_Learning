@@ -9,7 +9,7 @@
 
     <link rel="icon" href="/CPP_Learning/images/favicon.png" type="image/png">
 
-    <title>C&#39;est quoi un objet déjà ? :: Cours de C&#43;&#43; - Niveau Master</title>
+    <title>Synthèse :: Cours de C&#43;&#43; - Niveau Master</title>
 
     
     <link href="/CPP_Learning/css/nucleus.css?1610891914" rel="stylesheet">
@@ -40,7 +40,7 @@
     </style>
     
   </head>
-  <body class="" data-url="/CPP_Learning/chapter2/1-poo/">
+  <body class="" data-url="/CPP_Learning/chapter3/summary/">
     <nav id="sidebar" class="showVisitedLinks">
 
 
@@ -431,7 +431,7 @@
   
     
     <li data-nav-id="/CPP_Learning/chapter2/" title="Classes" class="dd-item 
-        parent
+        
         
         
         ">
@@ -459,7 +459,7 @@
  
   
     
-      <li data-nav-id="/CPP_Learning/chapter2/1-poo/" title="C&#39;est quoi un objet déjà ?" class="dd-item active">
+      <li data-nav-id="/CPP_Learning/chapter2/1-poo/" title="C&#39;est quoi un objet déjà ?" class="dd-item ">
         <a href="/CPP_Learning/chapter2/1-poo/">
         C&#39;est quoi un objet déjà ?
         <i class="fas fa-check read-icon"></i>
@@ -638,7 +638,7 @@
   
     
     <li data-nav-id="/CPP_Learning/chapter3/" title="Conteneurs standards" class="dd-item 
-        
+        parent
         
         
         ">
@@ -813,7 +813,7 @@
  
   
     
-      <li data-nav-id="/CPP_Learning/chapter3/summary/" title="Synthèse" class="dd-item ">
+      <li data-nav-id="/CPP_Learning/chapter3/summary/" title="Synthèse" class="dd-item active">
         <a href="/CPP_Learning/chapter3/summary/">
         Synthèse
         <i class="fas fa-check read-icon"></i>
@@ -918,7 +918,7 @@
             
           
           
-            <a href='/CPP_Learning/'>Accueil</a> > <a href='/CPP_Learning/chapter2/'>Classes</a> > C'est quoi un objet déjà ?
+            <a href='/CPP_Learning/'>Accueil</a> > <a href='/CPP_Learning/chapter3/'>Conteneurs standards</a> > Synthèse
           
         
           
@@ -935,7 +935,9 @@
   <ul>
     <li>
       <ul>
-        <li></li>
+        <li><a href="#ce-quil-faut-retenir">Ce qu&rsquo;il faut retenir</a></li>
+        <li><a href="#ce-quil-faut-savoir-faire">Ce qu&rsquo;il faut savoir faire</a></li>
+        <li><a href="#ce-dont-il-faut-à-peu-près-se-souvenir">Ce dont il faut à peu près se souvenir</a></li>
       </ul>
     </li>
   </ul>
@@ -955,34 +957,69 @@
           
             <h1>
               
-              C&#39;est quoi un objet déjà ?
+              Synthèse
             </h1>
           
 
         
 
 
-<p>Commençons par donner quelques rappels des notions de POO que vous avez pu voir l&rsquo;an dernier.</p>
 <hr>
-<h4 id="objet">Objet</h4>
-<p>Dans un programme, un <strong>objet</strong> est un élément constitué d&rsquo;un <strong>état</strong>, et disposant d&rsquo;une <strong>interface</strong> permettant d&rsquo;intéragir avec cet état.</p>
-<h4 id="classe">Classe</h4>
-<p>Un objet est généralement créé à partir d&rsquo;un modèle, que l&rsquo;on appelle <strong>classe</strong>. Un objet créé à partir d&rsquo;une classe constitue une <strong>instance</strong> de cette classe.</p>
-<h4 id="etat">Etat</h4>
-<p>L&rsquo;état d&rsquo;un objet est un ensemble de valeurs, pouvant ou non varier au cours de l&rsquo;exécution du programme.</p>
-<h4 id="attributs">Attributs</h4>
-<p>Les <strong>attributs</strong> sont les propriétés définies par une classe à partir desquelles on construit l&rsquo;état des instances.<br>
-Si une classe Personne définit deux attributs <code>nom</code> et <code>âge</code>, alors l&rsquo;état de chaque instance de Personne sera composée d&rsquo;une valeur pour le nom, et d&rsquo;une pour l&rsquo;age.</p>
-<h4 id="interface">Interface</h4>
-<p>L&rsquo;interface est l&rsquo;ensemble des procédés permettant d&rsquo;accéder à l&rsquo;état d&rsquo;un objet ou de le modifier.<br>
-Selon les langages, elle ne se présente pas de la même manière. En C++, elle se compose des <strong>fonctions-membres</strong> de la classe, ainsi que de ses éventuels attributs publiques.</p>
-<h4 id="invariant-de-classe">Invariant de classe</h4>
-<p>Un <strong>invariant de classe</strong> est une condition que toutes les instances de cette classe doivent vérifier.<br>
-Un des invariants de la classe Carré est qu&rsquo;il faut qu&rsquo;à tout moment, les 4 côtés d&rsquo;une instance soient de même longueur.<br>
-Un des invariants de la classe Fraction est que le dénominateur de chacune de ses instances ne peut pas être nul.</p>
-<h4 id="encapsulation">Encapsulation</h4>
-<p>L'<strong>encapsulation</strong> est le principe déclarant que pour pour accéder/modifier l&rsquo;état d&rsquo;un objet, il faut passer par des &ldquo;routines&rdquo; (fonction-membre en C++, méthode en Java, &hellip;). Il s&rsquo;accompagne souvent du masquage de l&rsquo;état des objets, c&rsquo;est-à-dire que l&rsquo;on déclare les attributs dans la partie privée de la classe.<br>
-Respecter le principe d&rsquo;encapsulation permet de garantir les invariants de classe plus facilement.</p>
+<h3 id="ce-quil-faut-retenir">Ce qu&rsquo;il faut retenir</h3>
+<h5 id="théorie">Théorie</h5>
+<ul>
+<li>Un conteneur séquentiel est un conteneur dans lequel les élements se suivent (tableaux, listes, &hellip;).</li>
+<li>Un conteneur associatif est un conteneur dans lequel chaque élément est indexé par une clef (l&rsquo;élément pouvant être la clef elle-même).</li>
+<li>Les types passés en paramètre de template doivent parfois respecter des contraintes pour compiler (ces contraintes sont spécifiées dans la documentation).</li>
+</ul>
+<h5 id="librairie-standard">Librairie standard</h5>
+<ul>
+<li>Tableau de taille dynamique : <code>vector</code></li>
+<li>Tableau de taille fixe : <code>array</code></li>
+<li>Listes chaînées : <code>list</code> ou <code>forward_list</code></li>
+<li>Ensembles : <code>set</code> ou <code>unordered_set</code></li>
+<li>Dictionnaires : <code>map</code> ou <code>unordered_map</code></li>
+</ul>
+<h5 id="pratique">Pratique</h5>
+<ul>
+<li>On peut passer les chaînes de caractères constantes par <code>std::string_view</code> plutôt que <code>const std::string&amp;</code> ou <code>const char*</code>.</li>
+<li>Si une classe définit une constructeur acceptant un paramètre de type initializer_list, alors il faut forcément utiliser la syntaxe <code>(...)</code> plutôt que <code>{ ... }</code> pour appeler un autre constructeur.</li>
+<li>On peut écrire <code>values[idx]</code> si <code>values</code> est un tableau primitif ou si la classe de <code>values</code> définit un <code>operator[]</code>.</li>
+</ul>
+<h5 id="méthodologie">Méthodologie</h5>
+<ul>
+<li>Pour savoir comment utiliser une classe ou fonction, commencer par regarder l&rsquo;exemple fourni dans la doc.</li>
+</ul>
+<hr>
+<h3 id="ce-quil-faut-savoir-faire">Ce qu&rsquo;il faut savoir faire</h3>
+<h5 id="langage">Langage</h5>
+<ul>
+<li>Définir un opérateur de comparaison : <code>bool operator&lt;(const ClassName&amp; other) { return /* ... */; }</code></li>
+<li>Définir un opérateur d&rsquo;égalité : <code>bool operator==(const ClassName&amp; other) { return /* ... */; }</code></li>
+</ul>
+<h5 id="librairie-standard-1">Librairie standard</h5>
+<ul>
+<li>Utiliser les fonctions génériques permettant d&rsquo;accéder ou de manipuler un conteneur : <code>size</code>, <code>empty</code>, <code>clear</code>, <code>emplace_back</code>, <code>insert</code>, <code>erase</code>, etc.</li>
+<li>Instancier des conteneurs de la librairie standard et les utiliser (en consultant la doc si besoin).</li>
+<li>Instancier des <code>pair</code> et des <code>tuple</code>.</li>
+<li>Accéder au n-ième élément d&rsquo;un <code>tuple</code> : <code>auto&amp; fifth = std::get&lt;4&gt;(my_tuple);</code></li>
+</ul>
+<h5 id="méthodologie-1">Méthodologie</h5>
+<ul>
+<li>Rechercher dans la documentation comment utiliser une fonction ou une classe (header à inclure, paramètres, contraintes, etc).</li>
+<li>Utiliser la documentation pour choisir la meilleure classe à utiliser dans une situation donnée (complexité des opérations, espace utilisé, condition d&rsquo;invalidation des itérateurs, etc).</li>
+<li>Identifier les &ldquo;vraies&rdquo; erreurs dans la sortie du compilateur pour les corriger.</li>
+</ul>
+<hr>
+<h3 id="ce-dont-il-faut-à-peu-près-se-souvenir">Ce dont il faut à peu près se souvenir</h3>
+<h5 id="théorie-1">Théorie</h5>
+<ul>
+<li>Un foncteur est un objet qui définit un <code>operator()</code>.</li>
+</ul>
+<h5 id="librairie-standard-2">Librairie standard</h5>
+<ul>
+<li>Il faut spécialiser la classe <code>std::hash</code> pour <code>Key</code> si on souhaite utiliser <code>Key</code> comme clef d&rsquo;un <code>unordered_set</code> ou <code>unordered_map</code>.</li>
+</ul>
 
 
 <footer class="footline">
@@ -1254,160 +1291,6 @@ Respecter le principe d&rsquo;encapsulation permet de garantir les invariants de
             
                 
                     
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-                        
-            
-            
-                
-                    
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                        
-                        
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-        
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
                 
                 
 
@@ -1532,6 +1415,160 @@ Respecter le principe d&rsquo;encapsulation permet de garantir les invariants de
             
             
                 
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
                     
                 
                 
@@ -1561,10 +1598,10 @@ Respecter le principe d&rsquo;encapsulation permet de garantir les invariants de
 	 
 	 
 		
-			<a class="nav nav-prev" href="/CPP_Learning/chapter2/" title="Classes"> <i class="fa fa-chevron-left"></i></a>
+			<a class="nav nav-prev" href="/CPP_Learning/chapter3/test/" title="Questionnaire !"> <i class="fa fa-chevron-left"></i></a>
 		
 		
-			<a class="nav nav-next" href="/CPP_Learning/chapter2/2-first-class/" title="✨ Première classe" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+			<a class="nav nav-next" href="/CPP_Learning/chapter3/1-doc/" title="Un peu de doc..." style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
 		
 	
     </div>

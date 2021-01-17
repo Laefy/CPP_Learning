@@ -15,6 +15,10 @@
   </url>
   
   <url>
+    <loc>https://laefy.github.io/CPP_Learning/chapter3/1-doc/</loc>
+  </url>
+  
+  <url>
     <loc>https://laefy.github.io/CPP_Learning/chapter1/2-tools/1-vscode/</loc>
   </url>
   
@@ -35,11 +39,23 @@
   </url>
   
   <url>
+    <loc>https://laefy.github.io/CPP_Learning/chapter3/2-vectors/</loc>
+  </url>
+  
+  <url>
     <loc>https://laefy.github.io/CPP_Learning/chapter2/2-first-class/</loc>
   </url>
   
   <url>
     <loc>https://laefy.github.io/CPP_Learning/chapter1/3-practice/2-parrot.fd/</loc>
+  </url>
+  
+  <url>
+    <loc>https://laefy.github.io/CPP_Learning/chapter3/3-sequentials/</loc>
+  </url>
+  
+  <url>
+    <loc>https://laefy.github.io/CPP_Learning/chapter3/</loc>
   </url>
   
   <url>
@@ -63,6 +79,10 @@
   </url>
   
   <url>
+    <loc>https://laefy.github.io/CPP_Learning/chapter3/4-associatives/</loc>
+  </url>
+  
+  <url>
     <loc>https://laefy.github.io/CPP_Learning/chapter2/4-clone/</loc>
   </url>
   
@@ -71,7 +91,15 @@
   </url>
   
   <url>
+    <loc>https://laefy.github.io/CPP_Learning/chapter3/5-strings/</loc>
+  </url>
+  
+  <url>
     <loc>https://laefy.github.io/CPP_Learning/chapter2/5-rectangle/</loc>
+  </url>
+  
+  <url>
+    <loc>https://laefy.github.io/CPP_Learning/chapter3/6-tuples/</loc>
   </url>
   
   <url>
@@ -87,11 +115,19 @@
   </url>
   
   <url>
+    <loc>https://laefy.github.io/CPP_Learning/chapter3/test/</loc>
+  </url>
+  
+  <url>
     <loc>https://laefy.github.io/CPP_Learning/chapter1/summary/</loc>
   </url>
   
   <url>
     <loc>https://laefy.github.io/CPP_Learning/chapter2/summary/</loc>
+  </url>
+  
+  <url>
+    <loc>https://laefy.github.io/CPP_Learning/chapter3/summary/</loc>
   </url>
   
   <url>
@@ -132,6 +168,10 @@
   
   <url>
     <loc>https://laefy.github.io/CPP_Learning/chapter2/test_done/</loc>
+  </url>
+  
+  <url>
+    <loc>https://laefy.github.io/CPP_Learning/chapter3/test_done/</loc>
   </url>
   
   <url>
