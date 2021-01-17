@@ -123,6 +123,10 @@
   </url>
   
   <url>
+    <loc>https://laefy.github.io/CPP_Learning/faq/</loc>
+  </url>
+  
+  <url>
     <loc>https://laefy.github.io/CPP_Learning/chapter1/test_done/</loc>
   </url>
   
@@ -142,6 +146,10 @@
                 hreflang="fr"
                 href="https://laefy.github.io/CPP_Learning/tags/"
                 />
+  </url>
+  
+  <url>
+    <loc>https://laefy.github.io/CPP_Learning/workflow/</loc>
   </url>
   
 </urlset>

@@ -245,6 +245,17 @@ Mais bon, vous l&amp;rsquo;avez enfin terminé, donc vous pouvez être fiers de 
     </item>
     
     <item>
+      <title>FAQ</title>
+      <link>https://laefy.github.io/CPP_Learning/faq/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://laefy.github.io/CPP_Learning/faq/</guid>
+      <description>Pourquoi je n&amp;rsquo;arrive pas à lancer mon projet avec CMake ? Cela peut-être dû à plusieurs raisons :
+1. Vous n&amp;rsquo;avez pas ouvert le bon dossier dans VSCode. Il faut toujours ouvrir le dossier qui contient tous les chapitres et tous les TPs, pas le dossier d&amp;rsquo;un chapitre ou d&amp;rsquo;un TP en particulier.
+2. Vous avez essayé de lancer le programme via le menu Run de VSCode. Si vous tentez de lancer un programme de cette manière, VSCode va générer un fichier launch.</description>
+    </item>
+    
+    <item>
       <title>Merci !</title>
       <link>https://laefy.github.io/CPP_Learning/chapter1/test_done/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -260,6 +271,16 @@ Mais bon, vous l&amp;rsquo;avez enfin terminé, donc vous pouvez être fiers de 
       
       <guid>https://laefy.github.io/CPP_Learning/chapter2/test_done/</guid>
       <description>Vos réponses nous ont bien été communiquées 😃 Retourner à la synthèse du Chapitre</description>
+    </item>
+    
+    <item>
+      <title>Workflow</title>
+      <link>https://laefy.github.io/CPP_Learning/workflow/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://laefy.github.io/CPP_Learning/workflow/</guid>
+      <description>Afin de pouvoir mettre en place votre environnement de travail rapidement, vous pouvez suivre les étapes ci-dessous.
+ Récupérer le dépôt Git du cours et des TPs   Forkez le dépôt https://github.com/Laefy/CPP_Learning_Code/.   Ouvrez une nouvelle fenêtre dans VSCode et cliquez sur &amp;ldquo;clone repository&amp;hellip;&amp;rdquo;   Copiez le lien de votre dépôt créé par le fork.   Collez ce lien dans la fenêtre de VSCode et sélectionnez &amp;ldquo;Clone from URL&amp;rdquo;.</description>
     </item>
     
   </channel>

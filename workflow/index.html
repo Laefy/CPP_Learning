@@ -1,0 +1,1416 @@
+<!DOCTYPE html>
+<html lang="fr" class="js csstransforms3d">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="Hugo 0.76.5" />
+    <meta name="description" content="">
+
+
+    <link rel="icon" href="/CPP_Learning/images/favicon.png" type="image/png">
+
+    <title>Workflow :: Cours de C&#43;&#43; - Niveau Master</title>
+
+    
+    <link href="/CPP_Learning/css/nucleus.css?1610880753" rel="stylesheet">
+    <link href="/CPP_Learning/css/fontawesome-all.min.css?1610880753" rel="stylesheet">
+    <link href="/CPP_Learning/css/hybrid.css?1610880753" rel="stylesheet">
+    <link href="/CPP_Learning/css/featherlight.min.css?1610880753" rel="stylesheet">
+    <link href="/CPP_Learning/css/perfect-scrollbar.min.css?1610880753" rel="stylesheet">
+    <link href="/CPP_Learning/css/auto-complete.css?1610880753" rel="stylesheet">
+    <link href="/CPP_Learning/css/atom-one-dark-reasonable.css?1610880753" rel="stylesheet">
+    <link href="/CPP_Learning/css/theme.css?1610880753" rel="stylesheet">
+    <link href="/CPP_Learning/css/hugo-theme.css?1610880753" rel="stylesheet">
+    
+    <link href="/CPP_Learning/css/theme-mine.css?1610880753" rel="stylesheet">
+    
+    <link href="/CPP_Learning/css/syntax.css?1610880753" rel="stylesheet">
+
+    <script src="/CPP_Learning/js/jquery-3.3.1.min.js?1610880753"></script>
+
+    <style>
+      :root #header + #content > #left > #rlblock_left{
+          display:none !important;
+      }
+      
+        :not(pre) > code + span.copy-to-clipboard {
+            display: none;
+        }
+      
+    </style>
+    
+  </head>
+  <body class="" data-url="/CPP_Learning/workflow/">
+    <nav id="sidebar" class="showVisitedLinks">
+
+
+
+  <div id="header-wrapper">
+    <div id="header">
+      <a id="logo" href="https://laefy.github.io/CPP_Learning/">🎄 C++ 🎄</a>
+
+    </div>
+    
+        <div class="searchbox">
+    <label for="search-by"><i class="fas fa-search"></i></label>
+    <input data-search-input id="search-by" type="search" placeholder="Rechercher...">
+    <span data-search-clear=""><i class="fas fa-times"></i></span>
+</div>
+
+<script type="text/javascript" src="/CPP_Learning/js/lunr.min.js?1610880753"></script>
+<script type="text/javascript" src="/CPP_Learning/js/auto-complete.js?1610880753"></script>
+<script type="text/javascript">
+    
+        var baseurl = "https:\/\/laefy.github.io\/CPP_Learning\/";
+    
+</script>
+<script type="text/javascript" src="/CPP_Learning/js/search.js?1610880753"></script>
+
+    
+  </div>
+
+    <div class="highlightable">
+    <ul class="topics">
+
+        
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/CPP_Learning/chapter1/" title="Introduction au C&#43;&#43;" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/CPP_Learning/chapter1/">
+          <b>1- </b>Introduction au C&#43;&#43;
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+          
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/CPP_Learning/chapter1/1-language/" title="Présentation du langage" class="dd-item ">
+        <a href="/CPP_Learning/chapter1/1-language/">
+        Présentation du langage
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/CPP_Learning/chapter1/2-tools/" title="Outils" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/CPP_Learning/chapter1/2-tools/">
+          Outils
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/CPP_Learning/chapter1/2-tools/1-vscode/" title="Visual Studio Code" class="dd-item ">
+        <a href="/CPP_Learning/chapter1/2-tools/1-vscode/">
+        Visual Studio Code
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/CPP_Learning/chapter1/2-tools/2-cmake/" title="CMake" class="dd-item ">
+        <a href="/CPP_Learning/chapter1/2-tools/2-cmake/">
+        CMake
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/CPP_Learning/chapter1/2-tools/3-git/" title="Git" class="dd-item ">
+        <a href="/CPP_Learning/chapter1/2-tools/3-git/">
+        Git
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/CPP_Learning/chapter1/2-tools/4-compilation/" title="Compilation &amp; Exécution" class="dd-item ">
+        <a href="/CPP_Learning/chapter1/2-tools/4-compilation/">
+        Compilation &amp; Exécution
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/CPP_Learning/chapter1/3-practice/" title="Premiers programmes" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/CPP_Learning/chapter1/3-practice/">
+          Premiers programmes
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/CPP_Learning/chapter1/3-practice/1-hello-world/" title="👋 Hello World" class="dd-item ">
+        <a href="/CPP_Learning/chapter1/3-practice/1-hello-world/">
+        👋 Hello World
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/CPP_Learning/chapter1/3-practice/2-parrot.fd/" title="🦜 Perroquet" class="dd-item ">
+        <a href="/CPP_Learning/chapter1/3-practice/2-parrot.fd/">
+        🦜 Perroquet
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/CPP_Learning/chapter1/3-practice/3-array/" title="🔢 Tableau Numérique" class="dd-item ">
+        <a href="/CPP_Learning/chapter1/3-practice/3-array/">
+        🔢 Tableau Numérique
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/CPP_Learning/chapter1/3-practice/4-calculator/" title="🧮 Calculette" class="dd-item ">
+        <a href="/CPP_Learning/chapter1/3-practice/4-calculator/">
+        🧮 Calculette
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/CPP_Learning/chapter1/test/" title="Questionnaire !" class="dd-item ">
+        <a href="/CPP_Learning/chapter1/test/">
+        Questionnaire !
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/CPP_Learning/chapter1/summary/" title="Synthèse" class="dd-item ">
+        <a href="/CPP_Learning/chapter1/summary/">
+        Synthèse
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+             
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/CPP_Learning/chapter2/" title="Classes" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/CPP_Learning/chapter2/">
+          <b>2- </b>Classes
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/CPP_Learning/chapter2/1-poo/" title="C&#39;est quoi un objet déjà ?" class="dd-item ">
+        <a href="/CPP_Learning/chapter2/1-poo/">
+        C&#39;est quoi un objet déjà ?
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/CPP_Learning/chapter2/2-first-class/" title="✨ Première classe" class="dd-item ">
+        <a href="/CPP_Learning/chapter2/2-first-class/">
+        ✨ Première classe
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/CPP_Learning/chapter2/3-constructor/" title="🔨 Constructeur" class="dd-item ">
+        <a href="/CPP_Learning/chapter2/3-constructor/">
+        🔨 Constructeur
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/CPP_Learning/chapter2/4-clone/" title="🧬 Clône" class="dd-item ">
+        <a href="/CPP_Learning/chapter2/4-clone/">
+        🧬 Clône
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/CPP_Learning/chapter2/5-rectangle/" title="🔳 Rectangle" class="dd-item ">
+        <a href="/CPP_Learning/chapter2/5-rectangle/">
+        🔳 Rectangle
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/CPP_Learning/chapter2/6-polygon/" title="💠 Polygône" class="dd-item ">
+        <a href="/CPP_Learning/chapter2/6-polygon/">
+        💠 Polygône
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/CPP_Learning/chapter2/test/" title="Questionnaire !" class="dd-item ">
+        <a href="/CPP_Learning/chapter2/test/">
+        Questionnaire !
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/CPP_Learning/chapter2/summary/" title="Synthèse" class="dd-item ">
+        <a href="/CPP_Learning/chapter2/summary/">
+        Synthèse
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+             
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+         
+    </ul>
+
+    
+    
+      <section id="shortcuts">
+        <h3>Accès rapide</h3>
+        <ul>
+          
+              <li> 
+                  <a class="padding" href="https://github.com/Laefy/CPP_Learning_Code/"><i class='fab fa-github'></i> Dépôt GitHub</a>
+              </li>
+          
+              <li> 
+                  <a class="padding" href="https://laefy.github.io/CPP_Learning/workflow"><i class='far fa-list-alt'></i> Workflow</a>
+              </li>
+          
+              <li> 
+                  <a class="padding" href="https://laefy.github.io/CPP_Learning/faq"><i class='fas fa-question-circle'></i> FAQ</a>
+              </li>
+          
+              <li> 
+                  <a class="padding" href="https://en.cppreference.com/w/"><i class='fas fa-passport'></i> CPP-Ref</a>
+              </li>
+          
+        </ul>
+      </section>
+    
+
+    
+    <section id="prefooter">
+      <hr/>
+      <ul>
+      
+      
+      
+        <li><a class="padding" href="#" data-clear-history-toggle=""><i class="fas fa-history fa-fw"></i> Supprimer l&#39;historique</a></li>
+      
+      </ul>
+    </section>
+    
+    <section id="footer">
+      <p>Built with <a href="https://github.com/matcornic/hugo-theme-learn"><i class="fas fa-heart"></i></a> from <a href="https://getgrav.org">Grav</a> and <a href="https://gohugo.io/">Hugo</a></p>
+
+    </section>
+  </div>
+</nav>
+
+
+
+
+        <section id="body">
+        <div id="overlay"></div>
+        <div class="padding highlightable">
+              
+              <div>
+                <div id="top-bar">
+                
+                
+                <div id="breadcrumbs" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
+                    <span id="sidebar-toggle-span">
+                        <a href="#" id="sidebar-toggle" data-sidebar-toggle="">
+                          <i class="fas fa-bars"></i>
+                        </a>
+                    </span>
+                  
+                  <span id="toc-menu"><i class="fas fa-list-alt"></i></span>
+                  
+                  <span class="links">
+                 
+                 
+                    
+          
+          
+            
+            
+          
+          
+            <a href='/CPP_Learning/'>Accueil</a> > Workflow
+          
+        
+          
+        
+                 
+                  </span>
+                </div>
+                
+                    <div class="progress">
+    <div class="wrapper">
+<nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#récupérer-le-dépôt-git-du-cours-et-des-tps">Récupérer le dépôt Git du cours et des TPs</a></li>
+        <li><a href="#configurer-le-dépôt">Configurer le dépôt</a></li>
+        <li><a href="#programmer--compiler--tester">Programmer / Compiler / Tester</a></li>
+        <li><a href="#sauvegarder-son-travail-avec-git">Sauvegarder son travail avec Git</a></li>
+        <li><a href="#récupérer-les-derniers-exercices-du-cours-et-du-tp">Récupérer les derniers exercices du cours et du TP</a></li>
+        <li><a href="#résoudre-les-conflits">Résoudre les conflits</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+    </div>
+</div>
+
+                
+              </div>
+            </div>
+            
+        <div id="head-tags">
+        
+        </div>
+        
+        <div id="body-inner">
+          
+            <h1>
+              
+              Workflow
+            </h1>
+          
+
+        
+
+
+<p>Afin de pouvoir mettre en place votre environnement de travail rapidement, vous pouvez suivre les étapes ci-dessous.</p>
+<hr>
+<h3 id="récupérer-le-dépôt-git-du-cours-et-des-tps">Récupérer le dépôt Git du cours et des TPs</h3>
+<ol>
+<li>
+<p>Forkez le dépôt <a href="https://github.com/Laefy/CPP_Learning_Code/">https://github.com/Laefy/CPP_Learning_Code/</a>.
+<img src="/CPP_Learning/images/workflow/01-fork.png" alt=""></p>
+</li>
+<li>
+<p>Ouvrez une nouvelle fenêtre dans VSCode et cliquez sur &ldquo;clone repository&hellip;&rdquo;
+<img src="/CPP_Learning/images/workflow/02-open_vscode.png" alt=""></p>
+</li>
+<li>
+<p>Copiez le lien de votre dépôt créé par le fork.
+<img src="/CPP_Learning/images/workflow/03-get_url.png" alt=""></p>
+</li>
+<li>
+<p>Collez ce lien dans la fenêtre de VSCode et sélectionnez &ldquo;Clone from URL&rdquo;.
+<img src="/CPP_Learning/images/workflow/04-clone.png" alt=""></p>
+</li>
+<li>
+<p>Choisissez le répertoire dans lequel le dépôt sera cloné.
+<img src="/CPP_Learning/images/workflow/05-select_location.png" alt=""></p>
+</li>
+<li>
+<p>Ouvrez le répertoire cloné dans VSCode.
+<img src="/CPP_Learning/images/workflow/05-select_location.png" alt=""></p>
+</li>
+</ol>
+<hr>
+<h3 id="configurer-le-dépôt">Configurer le dépôt</h3>
+<ol>
+<li>
+<p>Ouvrez le menu CMake.
+<img src="/CPP_Learning/images/workflow/07-open_cmake_view.png" alt=""></p>
+</li>
+<li>
+<p>Cliquez sur le bouton permettant de configurer le projet (commande VSCode : <code>CMake: Configure</code>).
+<img src="/CPP_Learning/images/workflow/08-configure.png" alt=""></p>
+</li>
+<li>
+<p>Choisissez le compilateur à utiliser dans la liste qui vous est proposée.
+<img src="/CPP_Learning/images/workflow/09-select_kit.png" alt=""></p>
+</li>
+<li>
+<p>Autoriser CMake Tools à configurer IntelliSense.
+<img src="/CPP_Learning/images/workflow/10-allow_intellisense.png" alt=""></p>
+</li>
+<li>
+<p>L&rsquo;ensemble des exécutables devraient être apparu dans le menu CMake, rangés par dossier.
+<img src="/CPP_Learning/images/workflow/11-after_configuration.png" alt=""></p>
+</li>
+</ol>
+<hr>
+<h3 id="programmer--compiler--tester">Programmer / Compiler / Tester</h3>
+<ol>
+<li>
+<p>Retournez sur la vue du workspace et modifiez les fichiers de votre choix.
+<img src="/CPP_Learning/images/workflow/12-file_view.png" alt=""></p>
+</li>
+<li>
+<p>Dans la barre bleue en bas, cliquez sur le bouton de lancement (si vous en avez plusieurs, utilisez celui à droite de l&rsquo;insecte).<br>
+L&rsquo;exécutable sera compilé automatiquement s&rsquo;il n&rsquo;est pas à jour.<br>
+<img src="/CPP_Learning/images/workflow/13-first_run.png" alt=""></p>
+</li>
+<li>
+<p>Sélectionnez la cible à exécuter.
+<img src="/CPP_Learning/images/workflow/14-select_exe.png" alt=""></p>
+</li>
+<li>
+<p>Si le programme a correctement compilé, il devrait s&rsquo;être exécuté dans le terminal.<br>
+Vous devriez aussi voir apparaître le nom de la cible à-côté du bouton de lancement. 
+<img src="/CPP_Learning/images/workflow/15-current_exe.png" alt=""></p>
+</li>
+<li>
+<p>Supposons maintenant que vous souhaitiez travailler sur un autre programme.<br>
+Cliquez sur le nom de la cible à-côté du bouton de lancement.
+<img src="/CPP_Learning/images/workflow/16-change_exe.png" alt=""></p>
+</li>
+<li>
+<p>Sélectionnez la nouvelle cible à exécuter.
+<img src="/CPP_Learning/images/workflow/17-select_new_exe.png" alt=""></p>
+</li>
+<li>
+<p>Cliquez enfin sur l&rsquo;un des deux boutons de lancement :<br>
+- insecte : exécution en mode debug (Ctrl+F5)<br>
+- lecture : exécution sans debug (Shift+F5)
+<img src="/CPP_Learning/images/workflow/18-run_or_debug.png" alt=""></p>
+</li>
+</ol>
+<hr>
+<h3 id="sauvegarder-son-travail-avec-git">Sauvegarder son travail avec Git</h3>
+<ol>
+<li>
+<p>Exécutez la commande <code>git status</code> pour voir les fichiers modifiés.
+<img src="/CPP_Learning/images/workflow/19-git_status.png" alt=""></p>
+</li>
+<li>
+<p>Utilisez ensuite <code>git add</code> sur les fichiers dont vous voulez sauvegarder les changements (<code>git add .</code> pour tout ajouter).
+<img src="/CPP_Learning/images/workflow/20-git_add.png" alt=""></p>
+</li>
+<li>
+<p>Entrez ensuite la commande <code>git commit -m &quot;un message décrivant vos changements&quot;</code> afin de sauvegarder les changements sur votre disque.<br>
+<img src="/CPP_Learning/images/workflow/21-git_commit.png" alt=""></p>
+</li>
+</ol>
+<hr>
+<h3 id="récupérer-les-derniers-exercices-du-cours-et-du-tp">Récupérer les derniers exercices du cours et du TP</h3>
+<ol>
+<li>
+<p>Exécutez la commande <code>git remote add upstream https://github.com/Laefy/CPP_Learning_Code.git</code> pour que votre dépôt local puisse faire référence au dépôt du cours avec l&rsquo;identifiant <code>upstream</code>.<br>
+Vous pouvez utiliser les commandes <code>git remote -v show</code> pour afficher la liste de tous les dépôts distants suivis par votre dépôt local :<br>
+- <code>origin</code> fait généralement référence au dépôt cloné,<br>
+- <code>upstream</code> fait généralement référence au dépôt forké.
+<img src="/CPP_Learning/images/workflow/22-git_remote.png" alt=""></p>
+</li>
+<li>
+<p>Utilisez ensuite <code>git fetch upstream</code> afin de télécharger dans les branches du dépôt pointé par <code>upstream</code>.
+<img src="/CPP_Learning/images/workflow/23-git_fetch.png" alt=""></p>
+</li>
+<li>
+<p>Exécutez <code>git branch -a</code> pour vérifier que les branches de <code>upstream</code> ont bien été récupérées dans votre dépôt.<br>
+Le but de la prochaine manipulation sera d&rsquo;intégrer les changements de la branche <code>upstream/master</code> dans votre branche locale.
+<img src="/CPP_Learning/images/workflow/24-git_branch.png" alt=""></p>
+</li>
+<li>
+<p>Exécutez la commande <code>git merge upstream/master</code> afin de récupérer les changements de la branche.<br>
+Dans l&rsquo;image suivante, on voit qu&rsquo;il n&rsquo;y a eu aucun nouveau changement sur le dépôt du cours.
+<img src="/CPP_Learning/images/workflow/25-git_merge_none.png" alt=""></p>
+</li>
+<li>
+<p>Si après quelques jours, vous pensez que des changements ont eu lieu sur le dépôt distant, vous pouvez réexécuter les commandes <code>git fetch upstream</code> et <code>git merge upstream/master</code>.
+Ici, de nouveaux changements ont été détectés et récupérés sur la branche locale <code>master</code>.
+<img src="/CPP_Learning/images/workflow/26-git_merge_new.png" alt=""></p>
+</li>
+</ol>
+<hr>
+<h3 id="résoudre-les-conflits">Résoudre les conflits</h3>
+<ol>
+<li>
+<p>Supposons que vous ayiez modifié le fichier CMakeLists.txt à un moment, pour ajouter un commentaire dedans.<br>
+Vous avez bien entendu sauvegardé votre changement en appelant <code>git add CMakeLists.txt</code> puis <code>git commit -m &quot;...&quot;</code>.
+<img src="/CPP_Learning/images/workflow/27-git_commit.png" alt=""></p>
+</li>
+<li>
+<p>Vous lancez ensuite <code>git fetch upstream</code> et <code>git merge upstream/master</code> pour récupérer les derniers changements du cours.<br>
+Hélas, ces changements contenaient également des modifications autour de la ligne que vous aviez modifié dans le fichier <code>CMakeLists.txt</code>.
+Votre branche locale se retrouve donc dans un état de conflit.
+<img src="/CPP_Learning/images/workflow/28-git_merge_conflict.png" alt=""></p>
+</li>
+<li>
+<p>Vous pouvez constater dans la sortie sur le terminal que le conflit concerne effectivement le fichier <code>CMakeLists.txt</code>, mais ce n&rsquo;est pas forcément ce qu&rsquo;il y a de plus lisible.<br>
+Ouvrez du coup le menu SourceControl dans VSCode.
+<img src="/CPP_Learning/images/workflow/29-git_check_conflict.png" alt=""></p>
+</li>
+<li>
+<p>Vous pouvez maintenant voir clairement la liste de tous les fichiers contenant des conflits. Ici, il n&rsquo;y a que <code>CMakeLists.txt</code>.<br>
+Cliquez sur ce fichier afin de l&rsquo;ouvrir dans l&rsquo;éditeur.<br>
+Vos propres modifications apparaissent dans la partie &ldquo;Current Change&rdquo;, et les modifications que vous essayez de merger apparaissent dans la partie &ldquo;Incoming Change&rdquo;.
+<img src="/CPP_Learning/images/workflow/30-git_explain_conflict.png" alt=""></p>
+</li>
+<li>
+<p>Vous pouvez cliquer sur l&rsquo;une des options juste au-dessus du conflit pour choisir les modifications que vous préférez garder.<br>
+Vous pouvez aussi éditer le fichier à la main directement.
+<img src="/CPP_Learning/images/workflow/31-git_quick_action.png" alt=""></p>
+</li>
+<li>
+<p>Ici, vous avez décidé de conserver les nouveaux changements (&ldquo;Accept Incoming Change&rdquo;) et avez sauvegardé le fichier.<br>
+Mais vous avez finalement des regrets&hellip;<br>
+Pour revenir en arrière, exécutez la commande <code>git merge --abort</code>.
+<img src="/CPP_Learning/images/workflow/32-git_merge_abort.png" alt=""></p>
+</li>
+<li>
+<p>Vous devriez constater que tous les fichiers sont revenus à l&rsquo;état qu&rsquo;ils avaient avant d&rsquo;essayer de merger.<br>
+Entrez de nouveau la commande <code>git merge upstream/master</code>.
+<img src="/CPP_Learning/images/workflow/33-git_merge_retry.png" alt=""></p>
+</li>
+<li>
+<p>Ce coup-ci, vous décidez d&rsquo;éditer le fichier à la main, afin de conserver les deux commentaires : le vôtre et celui du cours.
+<img src="/CPP_Learning/images/workflow/34-git_resolve_conflict.png" alt=""></p>
+</li>
+<li>
+<p>Lancez la commande <code>git status</code> pour être sûr de ne rien oublier.<br>
+Ici, le fichier CMakeLists.txt apparaît toujours dans la liste des fichiers à merger.
+<img src="/CPP_Learning/images/workflow/35-git_merge_status.png" alt=""></p>
+</li>
+<li>
+<p>Utilisez <code>git add CMakeLists.txt</code> pour valider la résolution du conflit dans ce fichier, puis finalement le merge avec <code>git commit</code>.<br>
+Un fichier devrait s&rsquo;ouvrir dans l&rsquo;éditeur configuré pour git (VSCode dans la capture, mais s&rsquo;agira probablement d&rsquo;un autre éditeur chez-vous).
+Sauvegardez et fermez ce fichier pour enregistrer le commit.
+<img src="/CPP_Learning/images/workflow/36-git_merge_commit.png" alt=""></p>
+</li>
+<li>
+<p>Utilisez maintenant la commande <code>git log</code> pour vérifier que vous avez bien récupérer les changements de la branche <code>upstream/master</code>.
+<img src="/CPP_Learning/images/workflow/37-git_log.png" alt=""></p>
+</li>
+<li>
+<p>Vous devriez voir apparaitre la liste des derniers commits de votre branche local (du moins récent en bas au plus récent en haut).<br>
+Vous pouvez voir que vous êtes bien à jour de la branche <code>upstream/master</code>, car son nom apparaît à-côté de l&rsquo;un des commits.<br>
+Ensuite, vous trouvez la liste de vos propres commits.<br>
+Pour terminer, le commit du merge que vous venez de réaliser apparaît tout en haut de la liste.
+<img src="/CPP_Learning/images/workflow/38-git_log_result.png" alt=""></p>
+</li>
+</ol>
+
+
+<footer class="footline">
+	
+</footer>
+
+        
+        </div> 
+        
+
+      </div>
+
+    <div id="navigation">
+        
+        
+        
+        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+        
+                    
+            
+        
+                    
+            
+        
+        
+        
+
+
+	 
+	 
+		
+		
+			<a class="nav nav-next" href="/CPP_Learning/chapter1/" title="Introduction au C&#43;&#43;" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+		
+	
+    </div>
+
+    </section>
+    
+    <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
+      <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
+    </div>
+    <script src="/CPP_Learning/js/clipboard.min.js?1610880753"></script>
+    <script src="/CPP_Learning/js/perfect-scrollbar.min.js?1610880753"></script>
+    <script src="/CPP_Learning/js/perfect-scrollbar.jquery.min.js?1610880753"></script>
+    <script src="/CPP_Learning/js/jquery.sticky.js?1610880753"></script>
+    <script src="/CPP_Learning/js/featherlight.min.js?1610880753"></script>
+    <script src="/CPP_Learning/js/highlight.pack.js?1610880753"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <script src="/CPP_Learning/js/modernizr.custom-3.6.0.js?1610880753"></script>
+    <script src="/CPP_Learning/js/learn.js?1610880753"></script>
+    <script src="/CPP_Learning/js/hugo-learn.js?1610880753"></script>
+
+    <link href="/CPP_Learning/mermaid/mermaid.css?1610880753" rel="stylesheet" />
+    <script src="/CPP_Learning/mermaid/mermaid.js?1610880753"></script>
+    <script>
+        mermaid.initialize({ startOnLoad: true });
+    </script>
+    
+
+  </body>
+</html>
+
