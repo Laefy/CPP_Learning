@@ -31,6 +31,16 @@ url = "https://github.com/Laefy/CPP_Learning_Code/"
 weight = 1
 
 [[menu.shortcuts]]
+name = "<i class='far fa-list-alt'></i> Workflow"
+url = "/workflow"
+weight = 2
+
+[[menu.shortcuts]]
+name = "<i class='fas fa-question-circle'></i> FAQ"
+url = "/faq"
+weight = 3
+
+[[menu.shortcuts]]
 name = "<i class='fas fa-passport'></i> CPP-Ref"
 url = "https://en.cppreference.com/w/"
-weight = 2
+weight = 4
