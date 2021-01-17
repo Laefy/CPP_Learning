@@ -290,11 +290,12 @@ private:
 };
 
 // Rectangle.cpp :
-
+...
 void Rectangle::set_default_size(float size)
 {
     _default_size = size;
 }
+...
 ```
 {{% /expand %}}
 
