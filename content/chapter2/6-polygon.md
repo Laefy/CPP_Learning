@@ -175,13 +175,11 @@ Sachant que `_vertices` est un tableau, et non pas un pointeur sur un unique `Ve
 
 {{% notice tip %}}
 Pour définir un destructeur, c'est comme pour définir un constructeur par défaut, mais sans la liste d'initialisation et avec un `~` devant le nom.\
-Et pour tapper le symbole `~` sur un clavier français, il faut utiliser la combinaison AltGr+2 deux fois (comme pour les `¨`).
+Et pour tapper le symbole `~` sur un clavier français, il faut utiliser la combinaison AltGr+2 deux fois (comme pour les `¨`), ou éventuellement AltGr+2 une fois, suivi du premier caractère de la classe
+(pour écrire ~Destructor, AltGr+2, Shift+D, puis "estructor").
 {{% /notice %}}
 
 {{% expand "Solution" %}}
-N'oubliez pas d'inclure `"realloc.h"` dans `Polygon.cpp`.\
-Voici une implémentation possible pour `add_vertex` :
-
 ```cpp
 Polygon::~Polygon()
 {
@@ -401,8 +399,8 @@ Avancez jusqu'à l'instruction `polygon.add_vertex(8, 9);` avec F10.\
 Entrez maintenant à l'intérieur de l'appel en utilisant F11.\
 Itérez dans la fonction avec F10 jusqu'à ce les valeurs du sommet dans votre Watch changent. Où est le problème ?
 
-C'est la réallocation du tableau `_vertices` qui est responsable de la corruption de `_vertex`. Eh oui, les références, ce ne sont en fait que des pointeurs un peu plus jolis.\
-`_vertex` pointe sur le même emplacement que `_vertices[1]`, sauf que `_vertices` est entre temps réalloué et la mémoire utilisée par le tableau d'origine est libérée. Or, à aucun moment `_vertex` n'est prévenu qu'il faut aller pointer sur la mémoire du nouveau tableau. D'ailleurs, `_vertex` étant une référence et non un pointeur, il n'est pas possible de modifier la zone vers laquelle elle pointe après son initialisation.
+C'est la réallocation du tableau `_vertices` qui est responsable de la corruption de `vertex`. Eh oui, les références, ce ne sont en fait que des pointeurs un peu plus jolis.\
+`vertex` pointe sur le même emplacement que `_vertices[1]`, sauf que `_vertices` est entre temps réalloué et la mémoire utilisée par le tableau d'origine est libérée. Or, à aucun moment `vertex` n'est prévenu qu'il faut aller pointer sur la mémoire du nouveau tableau. D'ailleurs, `vertex` étant une référence et non un pointeur, il n'est pas possible de modifier la zone vers laquelle elle pointe après son initialisation.
 
 {{% notice info %}}
 Ce problème est courant et porte le nom de **dangling reference**. En français, cela se traduit subtilement par "référence pendouillante". Dès lors que vous avez une référence qui pointe sur de la mémoire qui a été libérée en court de route, vous faites face à une dangling reference. Il faut donc être prudent lorsque vous utilisez des références : essayez de vous assurer, avant d'utiliser une référence, que la durée de vie de la variable d'origine se bien supérieure à la durée de vie des références qui seront créées dessus.
