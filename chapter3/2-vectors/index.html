@@ -12,21 +12,21 @@
     <title>Tableaux dynamiques :: Cours de C&#43;&#43; - Niveau Master</title>
 
     
-    <link href="/CPP_Learning/css/nucleus.css?1610891914" rel="stylesheet">
-    <link href="/CPP_Learning/css/fontawesome-all.min.css?1610891914" rel="stylesheet">
-    <link href="/CPP_Learning/css/hybrid.css?1610891914" rel="stylesheet">
-    <link href="/CPP_Learning/css/featherlight.min.css?1610891914" rel="stylesheet">
-    <link href="/CPP_Learning/css/perfect-scrollbar.min.css?1610891914" rel="stylesheet">
-    <link href="/CPP_Learning/css/auto-complete.css?1610891914" rel="stylesheet">
-    <link href="/CPP_Learning/css/atom-one-dark-reasonable.css?1610891914" rel="stylesheet">
-    <link href="/CPP_Learning/css/theme.css?1610891914" rel="stylesheet">
-    <link href="/CPP_Learning/css/hugo-theme.css?1610891914" rel="stylesheet">
+    <link href="/CPP_Learning/css/nucleus.css?1611423634" rel="stylesheet">
+    <link href="/CPP_Learning/css/fontawesome-all.min.css?1611423634" rel="stylesheet">
+    <link href="/CPP_Learning/css/hybrid.css?1611423634" rel="stylesheet">
+    <link href="/CPP_Learning/css/featherlight.min.css?1611423634" rel="stylesheet">
+    <link href="/CPP_Learning/css/perfect-scrollbar.min.css?1611423634" rel="stylesheet">
+    <link href="/CPP_Learning/css/auto-complete.css?1611423634" rel="stylesheet">
+    <link href="/CPP_Learning/css/atom-one-dark-reasonable.css?1611423634" rel="stylesheet">
+    <link href="/CPP_Learning/css/theme.css?1611423634" rel="stylesheet">
+    <link href="/CPP_Learning/css/hugo-theme.css?1611423634" rel="stylesheet">
     
-    <link href="/CPP_Learning/css/theme-mine.css?1610891914" rel="stylesheet">
+    <link href="/CPP_Learning/css/theme-mine.css?1611423634" rel="stylesheet">
     
-    <link href="/CPP_Learning/css/syntax.css?1610891914" rel="stylesheet">
+    <link href="/CPP_Learning/css/syntax.css?1611423634" rel="stylesheet">
 
-    <script src="/CPP_Learning/js/jquery-3.3.1.min.js?1610891914"></script>
+    <script src="/CPP_Learning/js/jquery-3.3.1.min.js?1611423634"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -57,14 +57,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/CPP_Learning/js/lunr.min.js?1610891914"></script>
-<script type="text/javascript" src="/CPP_Learning/js/auto-complete.js?1610891914"></script>
+<script type="text/javascript" src="/CPP_Learning/js/lunr.min.js?1611423634"></script>
+<script type="text/javascript" src="/CPP_Learning/js/auto-complete.js?1611423634"></script>
 <script type="text/javascript">
     
         var baseurl = "https:\/\/laefy.github.io\/CPP_Learning\/";
     
 </script>
-<script type="text/javascript" src="/CPP_Learning/js/search.js?1610891914"></script>
+<script type="text/javascript" src="/CPP_Learning/js/search.js?1611423634"></script>
 
     
   </div>
@@ -1222,12 +1222,12 @@ Faites le nécessaire pour que <code>erase</code> ne soit appelé qu&rsquo;une s
     <div class="expand-content" style="display: none;">
         <p><code>erase</code> dispose d&rsquo;une surcharge acceptant deux itérateurs, qui permet de supprimer tous les éléments présents entre ces deux itérateurs.<br>
 Comme d&rsquo;habitude, l&rsquo;élément pointé par l&rsquo;itérateur de fin est exclu. On doit donc écrire :</p>
-<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="n">v</span><span class="p">.</span><span class="n">erase</span><span class="p">(</span><span class="n">v</span><span class="p">.</span><span class="n">begin</span><span class="p">()</span> <span class="o">+</span> <span class="mi">2</span><span class="p">,</span> <span class="n">v</span><span class="p">.</span><span class="n">begin</span><span class="p">()</span> <span class="o">+</span> <span class="mi">6</span><span class="p">);</span>
+<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="n">v</span><span class="p">.</span><span class="n">erase</span><span class="p">(</span><span class="n">v</span><span class="p">.</span><span class="n">begin</span><span class="p">()</span> <span class="o">+</span> <span class="mi">2</span><span class="p">,</span> <span class="n">v</span><span class="p">.</span><span class="n">begin</span><span class="p">()</span> <span class="o">+</span> <span class="mi">7</span><span class="p">);</span>
 </code></pre></div>
     </div>
 </div>
 <p>Supposons maintenant que vous souhaitez retirer un élément du tableau en fonction de sa valeur, et non plus de sa position.<br>
-Voici du code permettant de retirer le premier 5 rencontré dans un tableau <code>v</code> :</p>
+Voici du code permettant de retirer le premier 9 rencontré dans un tableau <code>v</code> :</p>
 <div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="k">auto</span> <span class="n">it</span> <span class="o">=</span> <span class="n">v</span><span class="p">.</span><span class="n">begin</span><span class="p">();</span>
 
 <span class="k">for</span> <span class="p">(;</span> <span class="n">it</span> <span class="o">!=</span> <span class="n">v</span><span class="p">.</span><span class="n">end</span><span class="p">();</span> <span class="o">++</span><span class="n">it</span><span class="p">)</span>
@@ -1890,19 +1890,19 @@ Enfin, arrangez-vous pour supprimer tout le contenu du tableau.</p>
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/CPP_Learning/js/clipboard.min.js?1610891914"></script>
-    <script src="/CPP_Learning/js/perfect-scrollbar.min.js?1610891914"></script>
-    <script src="/CPP_Learning/js/perfect-scrollbar.jquery.min.js?1610891914"></script>
-    <script src="/CPP_Learning/js/jquery.sticky.js?1610891914"></script>
-    <script src="/CPP_Learning/js/featherlight.min.js?1610891914"></script>
-    <script src="/CPP_Learning/js/highlight.pack.js?1610891914"></script>
+    <script src="/CPP_Learning/js/clipboard.min.js?1611423634"></script>
+    <script src="/CPP_Learning/js/perfect-scrollbar.min.js?1611423634"></script>
+    <script src="/CPP_Learning/js/perfect-scrollbar.jquery.min.js?1611423634"></script>
+    <script src="/CPP_Learning/js/jquery.sticky.js?1611423634"></script>
+    <script src="/CPP_Learning/js/featherlight.min.js?1611423634"></script>
+    <script src="/CPP_Learning/js/highlight.pack.js?1611423634"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/CPP_Learning/js/modernizr.custom-3.6.0.js?1610891914"></script>
-    <script src="/CPP_Learning/js/learn.js?1610891914"></script>
-    <script src="/CPP_Learning/js/hugo-learn.js?1610891914"></script>
+    <script src="/CPP_Learning/js/modernizr.custom-3.6.0.js?1611423634"></script>
+    <script src="/CPP_Learning/js/learn.js?1611423634"></script>
+    <script src="/CPP_Learning/js/hugo-learn.js?1611423634"></script>
 
-    <link href="/CPP_Learning/mermaid/mermaid.css?1610891914" rel="stylesheet" />
-    <script src="/CPP_Learning/mermaid/mermaid.js?1610891914"></script>
+    <link href="/CPP_Learning/mermaid/mermaid.css?1611423634" rel="stylesheet" />
+    <script src="/CPP_Learning/mermaid/mermaid.js?1611423634"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>
