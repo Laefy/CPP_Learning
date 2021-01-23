@@ -213,13 +213,13 @@ Faites le nécessaire pour que `erase` ne soit appelé qu'une seule fois par vot
 `erase` dispose d'une surcharge acceptant deux itérateurs, qui permet de supprimer tous les éléments présents entre ces deux itérateurs.\
 Comme d'habitude, l'élément pointé par l'itérateur de fin est exclu. On doit donc écrire :
 ```cpp
-v.erase(v.begin() + 2, v.begin() + 6);
+v.erase(v.begin() + 2, v.begin() + 7);
 ```
 {{% /expand %}}
 
 
 Supposons maintenant que vous souhaitez retirer un élément du tableau en fonction de sa valeur, et non plus de sa position.\
-Voici du code permettant de retirer le premier 5 rencontré dans un tableau `v` :
+Voici du code permettant de retirer le premier 9 rencontré dans un tableau `v` :
 ```cpp
 auto it = v.begin();
 

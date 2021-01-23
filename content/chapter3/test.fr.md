@@ -20,8 +20,8 @@ J'espère donc que ce chapitre a rempli ses objectifs et que vous vous sentez ma
 {{% test_item id=6 desc="function-array-access" %}}Quelle est la fonction définie par `vector` qui permet d'accéder à un élément avec l'expression `values[idx]` ?{{% /test_item %}}
 {{% test_item id=7 desc="functions-foreach" %}}Quelles fonctions faut-il définir dans un conteneur pour pouvoir le parcourir au moyen d'une boucle foreach ?{{% /test_item %}}
 {{% test_item id=8 desc="set-key-constraint" %}}Pour pouvoir utiliser un `std::set<Key>`, quelle contrainte la classe `Key` doit-elle respecter ?{{% /test_item %}}
-{{% test_item id=9 desc="set-key-constraint-fcn" %}}Afin de respecter cette contrainte, quelle est la signature de la fonction à définir ?{{% /test_item %}}
-{{% test_item id=10 desc="set-key-constraint-fcn" lines=3 %}}Quelles fonctions doivent être définies dans `MyOwnContainer` pour utiliser un objet de type `std::queue<float, MyOwnContainer>` ? Indiquez leurs signatures.{{% /test_item %}}
+{{% test_item id=9 desc="set-key-constraint-sign" %}}Afin de respecter cette contrainte, quelle est la signature de la fonction à définir ?{{% /test_item %}}
+{{% test_item id=10 desc="queue-inner-ctn-fcns" lines=3 %}}Quelles fonctions doivent être définies dans `MyOwnContainer` pour utiliser un objet de type `std::queue<float, MyOwnContainer>` ? Indiquez leurs signatures.{{% /test_item %}}
 ---
 {{% test_item id=11 desc="nb-elem" %}}Quelle fonction permet de connaître le nombre d'éléments d'un conteneur ?{{% /test_item %}}
 {{% test_item id=12 desc="empty-container" %}}Quelle fonction permet de savoir si un conteneur est vide ?{{% /test_item %}}
