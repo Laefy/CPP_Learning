@@ -9,7 +9,7 @@
 
     <link rel="icon" href="/CPP_Learning/images/favicon.png" type="image/png">
 
-    <title>🔨 Constructeur :: Cours de C&#43;&#43; - Niveau Master</title>
+    <title>Héritage :: Cours de C&#43;&#43; - Niveau Master</title>
 
     
     <link href="/CPP_Learning/css/nucleus.css?1612354466" rel="stylesheet">
@@ -40,7 +40,7 @@
     </style>
     
   </head>
-  <body class="" data-url="/CPP_Learning/chapter2/3-constructor/">
+  <body class="" data-url="/CPP_Learning/chapter4/">
     <nav id="sidebar" class="showVisitedLinks">
 
 
@@ -431,7 +431,7 @@
   
     
     <li data-nav-id="/CPP_Learning/chapter2/" title="Classes" class="dd-item 
-        parent
+        
         
         
         ">
@@ -501,7 +501,7 @@
  
   
     
-      <li data-nav-id="/CPP_Learning/chapter2/3-constructor/" title="🔨 Constructeur" class="dd-item active">
+      <li data-nav-id="/CPP_Learning/chapter2/3-constructor/" title="🔨 Constructeur" class="dd-item ">
         <a href="/CPP_Learning/chapter2/3-constructor/">
         🔨 Constructeur
         <i class="fas fa-check read-icon"></i>
@@ -845,8 +845,8 @@
   
     
     <li data-nav-id="/CPP_Learning/chapter4/" title="Héritage" class="dd-item 
-        
-        
+        parent
+        active
         
         ">
       <a href="/CPP_Learning/chapter4/">
@@ -1085,8 +1085,6 @@
                         </a>
                     </span>
                   
-                  <span id="toc-menu"><i class="fas fa-list-alt"></i></span>
-                  
                   <span class="links">
                  
                  
@@ -1097,13 +1095,7 @@
             
           
           
-            
-            
-          
-          
-            <a href='/CPP_Learning/'>Accueil</a> > <a href='/CPP_Learning/chapter2/'>Classes</a> > 🔨 Constructeur
-          
-        
+            <a href='/CPP_Learning/'>Accueil</a> > Héritage
           
         
           
@@ -1112,24 +1104,6 @@
                   </span>
                 </div>
                 
-                    <div class="progress">
-    <div class="wrapper">
-<nav id="TableOfContents">
-  <ul>
-    <li>
-      <ul>
-        <li><a href="#constructeur-à-paramètres">Constructeur à paramètres</a></li>
-        <li><a href="#le-constructeur-par-défaut">Le constructeur par défaut</a></li>
-        <li><a href="#syntaxe-dinstanciation">Syntaxe d&rsquo;instanciation</a></li>
-        <li><a href="#à-bas-les-setters">À bas les setters</a></li>
-      </ul>
-    </li>
-  </ul>
-</nav>
-    </div>
-</div>
-
-                
               </div>
             </div>
             
@@ -1137,236 +1111,33 @@
         
         </div>
         
+          <div id="chapter">
+        
         <div id="body-inner">
           
-            <h1>
-              
-              🔨 Constructeur
-            </h1>
-          
 
         
 
 
-<p>Dans cet exercice, vous apprendrez à paramétrer la construction de vos objets.</p>
-<hr>
-<p>Pour cet exercice, vous modifierez le fichier :<br>
-- <code>chap-02/2-constructor.cpp</code></p>
-<p>La cible à compiler est <code>c2-2-constructor</code>.</p>
-<hr>
-<h3 id="constructeur-à-paramètres">Constructeur à paramètres</h3>
-<p>Reprenez le code de l&rsquo;exercice précédent.</p>
-<p>Vous aviez implémenté une fonction-membre <code>set_name</code> dans la classe <code>Person</code> pour initialiser l&rsquo;attribut <code>_name</code>. Or, ce serait bien d&rsquo;une part de réellement pouvoir initialiser cet attribut plutôt que de le modifier après l&rsquo;instanciation, et d&rsquo;autre part, de supprimer ce <strong>setter</strong>, afin qu&rsquo;une fois initialisé, il ne soit plus possible de modifier <code>_name</code>.</p>
-<p>Pour faire cela, il va falloir que vous définissiez une fonction spéciale appelée <strong>constructeur</strong>.
-Voici la syntaxe générique d&rsquo;un constructeur :</p>
-<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="k">class</span> <span class="nc">ClassName</span>
-<span class="p">{</span>
-<span class="k">public</span><span class="o">:</span>
-    <span class="n">ClassName</span><span class="p">(</span><span class="n">type</span> <span class="n">p1</span><span class="p">,</span> <span class="n">type</span> <span class="n">p2</span><span class="p">,</span> <span class="p">...)</span>
-        <span class="o">:</span> <span class="n">_attribute_1</span> <span class="p">{</span> <span class="cm">/* value for _a1 */</span> <span class="p">}</span>
-        <span class="p">,</span> <span class="n">_attribute_2</span> <span class="p">{</span> <span class="cm">/* value for _a2 */</span> <span class="p">}</span>
-        <span class="p">,</span> <span class="p">...</span>
-    <span class="p">{</span>
-        <span class="c1">// some optional code
-</span><span class="c1"></span>    <span class="p">}</span>
 
-<span class="k">private</span><span class="o">:</span>
-    <span class="n">type</span> <span class="n">_attribute_1</span><span class="p">;</span>
-    <span class="n">type</span> <span class="n">_attribute_2</span><span class="p">;</span>
-    <span class="p">...</span>
-<span class="p">};</span>
-</code></pre></div><p>Il s&rsquo;agit donc d&rsquo;une fonction sans type de retour, de même nom que la classe. Les membres sont initialisés entre le prototype et le corps de la fonction, dans ce qui s&rsquo;appelle la <strong>liste d&rsquo;initialisation</strong>.</p>
-<p>Voici un exemple de ce que cela peut donner sur une petite classe :</p>
-<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="k">class</span> <span class="nc">Dog</span>
-<span class="p">{</span>
-<span class="k">public</span><span class="o">:</span>
-    <span class="n">Dog</span><span class="p">(</span><span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&amp;</span> <span class="n">breed</span><span class="p">,</span> <span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&amp;</span> <span class="n">name</span><span class="p">)</span>
-        <span class="o">:</span> <span class="n">_breed</span> <span class="p">{</span> <span class="n">breed</span> <span class="p">}</span>
-        <span class="p">,</span> <span class="n">_name</span> <span class="p">{</span> <span class="n">name</span> <span class="p">}</span>
-    <span class="p">{</span>
-        <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;Dog named &#34;</span> <span class="o">&lt;&lt;</span> <span class="n">name</span> <span class="o">&lt;&lt;</span> <span class="s">&#34; has just been born!&#34;</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
-    <span class="p">}</span>
+	
+		<h3>Chapitre 4</h3>
+		<h1>Héritage</h1>
+	
 
-<span class="k">private</span><span class="o">:</span>
-    <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">_breed</span><span class="p">;</span>
-    <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">_name</span><span class="p">;</span>
-<span class="p">};</span>
-</code></pre></div><p>Et pour instancier la classe <code>Dog</code> avec le constructeur ci-dessus, on peut écrire :</p>
-<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="n">Dog</span> <span class="n">dog</span> <span class="p">{</span> <span class="s">&#34;Colley&#34;</span><span class="p">,</span> <span class="s">&#34;Lassie&#34;</span> <span class="p">};</span> 
-</code></pre></div><p>Commencez par modifier votre fonction <code>main</code>, de manière à passer le nom <code>&quot;Batman&quot;</code> à la construction de la variable <code>p</code>, puis supprimez l&rsquo;appel à <code>set_name</code>.
-Modifiez ensuite la classe <code>Person</code> pour lui ajouter un constructeur à un paramètre, dans lequel vous initialiser l&rsquo;attribut <code>_name</code>. Vous n&rsquo;êtes pas obligé d&rsquo;initialiser <code>_age</code> dans la liste d&rsquo;initialisation du constructeur, car cet attribut est déjà initialisé au niveau de sa définition (= <strong>class initializer</strong>).</p>
-<p>Comme d&rsquo;habitude, compilez et testez ensuite votre programme.</p>
-
-<div class="expand">
-    <div class="expand-label" style="cursor: pointer;" onclick="$h = $(this);$h.next('div').slideToggle(100,function () {$h.children('i').attr('class',function () {return $h.next('div').is(':visible') ? 'fas fa-chevron-down' : 'fas fa-chevron-right';});});">
-        <i style="font-size:x-small;" class="fas fa-chevron-right"></i>
-        <span>
-        
-    	
-    	Solution
-    	
-    	</span>
-    </div>
-    <div class="expand-content" style="display: none;">
-        <p>Instanciation :</p>
-<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="n">Person</span> <span class="n">p</span> <span class="p">{</span> <span class="s">&#34;Batman&#34;</span> <span class="p">};</span>
-</code></pre></div><p>Définition du constructeur :</p>
-<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="k">class</span> <span class="nc">Person</span>
-<span class="p">{</span>
-<span class="k">public</span><span class="o">:</span>
-    <span class="n">Person</span><span class="p">(</span><span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&amp;</span> <span class="n">name</span><span class="p">)</span>
-        <span class="o">:</span> <span class="n">_name</span> <span class="p">{</span> <span class="n">name</span> <span class="p">}</span>
-    <span class="p">{}</span>
-
-    <span class="p">...</span>
-<span class="p">};</span>
-</code></pre></div>
-    </div>
-</div>
-<p>Batman n&rsquo;est pas né Batman. Batman est né Bruce Wayne.<br>
-Modifiez l&rsquo;instanciation de <code>p</code> de manière à passer deux paramètres <code>name</code> et <code>surname</code>.
-Ajoutez l&rsquo;attribut correspondant <code>_surname</code> à la classe et modifiez la définition de son constructeur afin de prendre en compte ces changements.</p>
-
-<div class="expand">
-    <div class="expand-label" style="cursor: pointer;" onclick="$h = $(this);$h.next('div').slideToggle(100,function () {$h.children('i').attr('class',function () {return $h.next('div').is(':visible') ? 'fas fa-chevron-down' : 'fas fa-chevron-right';});});">
-        <i style="font-size:x-small;" class="fas fa-chevron-right"></i>
-        <span>
-        
-    	
-    	Solution
-    	
-    	</span>
-    </div>
-    <div class="expand-content" style="display: none;">
-        <p>Instanciation :</p>
-<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="n">Person</span> <span class="n">p</span> <span class="p">{</span> <span class="s">&#34;Bruce&#34;</span><span class="p">,</span> <span class="s">&#34;Wayne&#34;</span> <span class="p">};</span>
-</code></pre></div><p>Définition du constructeur :</p>
-<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="k">class</span> <span class="nc">Person</span>
-<span class="p">{</span>
-<span class="k">public</span><span class="o">:</span>
-    <span class="n">Person</span><span class="p">(</span><span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&amp;</span> <span class="n">name</span><span class="p">,</span> <span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&amp;</span> <span class="n">surname</span><span class="p">)</span>
-        <span class="o">:</span> <span class="n">_name</span> <span class="p">{</span> <span class="n">name</span> <span class="p">}</span>
-        <span class="p">,</span> <span class="n">_surname</span> <span class="p">{</span> <span class="n">surname</span> <span class="p">}</span>
-    <span class="p">{}</span>
-
-    <span class="p">...</span>
-
-<span class="k">private</span><span class="o">:</span>
-    <span class="n">std</span><span class="o">::</span><span class="n">string</span>  <span class="n">_name</span><span class="p">;</span>
-    <span class="n">std</span><span class="o">::</span><span class="n">string</span>  <span class="n">_surname</span><span class="p">;</span>
-    <span class="kt">unsigned</span> <span class="kt">int</span> <span class="n">_age</span> <span class="o">=</span> <span class="mi">0u</span><span class="p">;</span>
-<span class="p">};</span>
-</code></pre></div>
-    </div>
-</div>
-<p>Pour terminer, renommez votre fonction <code>get_name</code> en <code>get_full_name</code> et réalisez les modifications nécessaires afin que celle-ci renvoie <code>&quot;Bruce Wayne&quot;</code> plutôt que <code>&quot;Bruce&quot;</code>.
-
-<div class="expand">
-    <div class="expand-label" style="cursor: pointer;" onclick="$h = $(this);$h.next('div').slideToggle(100,function () {$h.children('i').attr('class',function () {return $h.next('div').is(':visible') ? 'fas fa-chevron-down' : 'fas fa-chevron-right';});});">
-        <i style="font-size:x-small;" class="fas fa-chevron-right"></i>
-        <span>
-        
-    	
-    	Solution
-    	
-    	</span>
-    </div>
-    <div class="expand-content" style="display: none;">
-        <p>La fonction <code>get_name</code> pouvait renvoyer une const-ref, car le résultat pointait sur l&rsquo;espace mémoire de l&rsquo;attribut <code>_name</code>.
-Comme le résultat ne fait plus référence à un attribut de la classe, il est nécessaire de le renvoyer par valeur.</p>
-<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">get_full_name</span><span class="p">()</span> <span class="k">const</span> <span class="p">{</span> <span class="k">return</span> <span class="n">_name</span> <span class="o">+</span> <span class="s">&#34; &#34;</span> <span class="o">+</span> <span class="n">_surname</span><span class="p">;</span> <span class="p">}</span>
-</code></pre></div>
-    </div>
-</div></p>
-<hr>
-<h3 id="le-constructeur-par-défaut">Le constructeur par défaut</h3>
-<p>Modifiez l&rsquo;instanciation de <code>p</code> dans la fonction <code>main</code> de manière à ne plus lui passer d&rsquo;arguments (comme c&rsquo;était le cas avant de commencer l&rsquo;exercice) :</p>
-<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="n">Person</span> <span class="n">p</span><span class="p">;</span>
-</code></pre></div><p>Le programme ne compile plus alors qu&rsquo;il compilait tout à l&rsquo;heure.<br>
-Commentez la définition de votre constructeur, et essayez de compiler à nouveau. Ca recompile&hellip;</p>
-<p><strong>Pourquoi le programme compile quand on retire un constructeur ?</strong></p>
-<p>Lorsque l&rsquo;utilisateur ne définit aucun constructeur, le compilateur définit (s&rsquo;il le peut) un constructeur qui n&rsquo;attend aucun argument.</p>
-<p>On appelle <strong>constructeur par défaut</strong> tout constructeur qui n&rsquo;attend aucun paramètre. L&rsquo;utilisateur et le compilateur peuvent donc tout deux définir un constructeur par défaut. Dans le cas du compilateur, on parlera d'<strong>implémentation par défaut du constructeur par défaut</strong>.</p>
-<p>L&rsquo;implémentation par défaut du constructeur par défaut (trop de &ldquo;defaut&rdquo;, je sais) initialise les attributs de la classe selon les règles suivantes :<br>
-1- en utilisant le class-initializer s&rsquo;il est fourni (comme pour <code>_age</code>),<br>
-2- s&rsquo;il n&rsquo;y a pas de class-initializer et que l&rsquo;attribut est une classe, en appelant son constructeur par défaut (comme pour <code>_name</code>, qui étant une <code>std::string</code>, est construit par défaut avec la chaîne vide),<br>
-3- s&rsquo;il n&rsquo;y a pas de class-initializer et que l&rsquo;attribut n&rsquo;est pas une classe, alors son contenu sera indéfini.</p>
-<p>Du coup pour répondre à la question, le code originel compilait car le compilateur définissait un constructeur par défaut à la classe <code>Person</code>. Dès lors que vous avez ajouté votre propre constructeur, le compilateur a supposé que vous ne vouliez probablement plus de l&rsquo;implémentation qu&rsquo;il vous fournissait. Il ne vous était donc plus possible d&rsquo;instancier la classe <code>Person</code> sans paramètres.</p>
-<p>Si vous vouliez pouvoir le faire à nouveau, tout en gardant votre constructeur à 2 paramètres, vous devriez donc définir un nouveau constructeur par défaut.</p>
-<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="k">class</span> <span class="nc">Person</span>
-<span class="p">{</span>
-<span class="k">public</span><span class="o">:</span>
-    <span class="n">Person</span><span class="p">()</span>
-    <span class="p">{}</span>
-
-    <span class="n">Person</span><span class="p">(</span><span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&amp;</span> <span class="n">name</span><span class="p">,</span> <span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&amp;</span> <span class="n">surname</span><span class="p">)</span>
-        <span class="o">:</span> <span class="n">_name</span> <span class="p">{</span> <span class="n">name</span> <span class="p">},</span> <span class="n">_surname</span> <span class="p">{</span> <span class="n">surname</span> <span class="p">}</span>
-    <span class="p">{}</span>
-
-    <span class="p">...</span>
-<span class="p">};</span>
-</code></pre></div>
-<div class="notices note" ><p>1- Si on n&rsquo;initialise aucun attribut dans la liste d&rsquo;initialisation d&rsquo;un constructeur, alors il faut omettre complètement cette liste (écrire <code>Person() {}</code> plutôt que <code>Person() : {}</code>).<br>
-2- Si un attribut n&rsquo;est pas initialisé via la liste d&rsquo;initialisation, alors il est initialisé selon les mêmes règles que celles exposées pour l&rsquo;implémentation par défaut du constructeur par défaut. C&rsquo;est pour cela que l&rsquo;on n&rsquo;a pas besoin de respécifier <code>_age</code> dans la liste d&rsquo;initialisation du constructeur à 2 paramètres.</p>
-</div>
-
-<hr>
-<h3 id="syntaxe-dinstanciation">Syntaxe d&rsquo;instanciation</h3>
-<p>Nous avons vu deux manières d&rsquo;instancier une classe :</p>
-<ul>
-<li>avec 0 paramètre : <code>Class obj;</code>,</li>
-<li>avec N paramètres : <code>Class obj { p1, p2, ..., pn };</code>.</li>
-</ul>
-<p>En réalité, on peut également utiliser la syntaxe avec des <code>{}</code> lorsqu&rsquo;on initialise avec 0 paramètre : <code>Class obj {};</code><br>
-Et on peut aussi utiliser la syntaxe avec des <code>()</code>, mais seulement si on a au moins 1 paramètre : <code>Class obj(p1, p2, ..., pn);</code><br>
-Et enfin, lorsqu&rsquo;il n&rsquo;y a qu&rsquo;un seul paramètre, on peut dans certains cas utiliser <code>= p</code> : <code>std::string s = &quot;Batman&quot;;</code>.</p>
-<p>Ces syntaxes s&rsquo;utilisent également pour l&rsquo;instanciation des primitives : <code>int a = 1;</code> / <code>int a { 1 };</code> / <code>int a(1);</code></p>
-<p>Pour le moment, vous pouvez considérer que ces méthodes sont plus ou moins équivalentes (évidemment, ce n&rsquo;est pas le cas, sinon ce ne serait pas drôle, mais nous y reviendrons au <a href="/chapter3/">Chapitre 3</a>).
-Ne vous embêtez pas à mémoriser toutes ces règles par coeur. Retenez simplement que d&rsquo;autres variations de syntaxe existent, pour que vous ne soyiez pas étonner si vous les rencontrez dans du code que vous n&rsquo;avez pas écrit.</p>
-
-<div class="notices info" ><p>Si vous choisissez d&rsquo;utiliser la syntaxe <code>()</code>, faites attention lorsque vous appelez le constructeur par défaut (= à 0 paramètre), car il faut alors complètement omettre les parenthèses.<br>
-Si vous écrivez <code>Class obj();</code> au lieu de <code>Class obj;</code>, le compilateur va râler.</p>
-</div>
-
-
-<div class="notices note" ><p>Pour initialiser des attributs dans la liste d&rsquo;initialisation, il est possible d&rsquo;utiliser <code>()</code> au lieu des <code>{}</code>.<br>
-Contrairement à l&rsquo;initialisation des variables, on peut par contre écrire <code>: _attr()</code> sans rien dans les parenthèses. Incompréhensible n&rsquo;est-ce pas ? 😵</p>
-</div>
-
-<hr>
-<h3 id="à-bas-les-setters">À bas les setters</h3>
-<p>L&rsquo;ajout de votre constructeur vous a permis de supprimer le setter pour <code>_name</code>, afin que l&rsquo;on ne puisse pas modifier l&rsquo;attribut après son initialisation.<br>
-Il reste le setter pour <code>_age</code>, qui ne pose pas spécialement de problème, si ce n&rsquo;est qu&rsquo;on peut remonter le temps avec. Et là, c&rsquo;est <em>Batman</em>, pas <em>Retour vers le futur</em> 🦇</p>
-<p>Vous allez donc remplacer votre fonction <code>set_age</code> par une fonction <code>wait</code>, qui permet uniquement d&rsquo;augmenter l&rsquo;âge de votre objet. Testez que votre programme fonctionne correctement.</p>
-
-<div class="expand">
-    <div class="expand-label" style="cursor: pointer;" onclick="$h = $(this);$h.next('div').slideToggle(100,function () {$h.children('i').attr('class',function () {return $h.next('div').is(':visible') ? 'fas fa-chevron-down' : 'fas fa-chevron-right';});});">
-        <i style="font-size:x-small;" class="fas fa-chevron-right"></i>
-        <span>
-        
-    	
-    	Solution
-    	
-    	</span>
-    </div>
-    <div class="expand-content" style="display: none;">
-        <p>Appel :</p>
-<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="n">p</span><span class="p">.</span><span class="n">wait</span><span class="p">(</span><span class="mi">23</span><span class="p">);</span>
-</code></pre></div><p>Définition :</p>
-<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="kt">void</span> <span class="nf">wait</span><span class="p">(</span><span class="kt">unsigned</span> <span class="kt">int</span> <span class="n">years</span><span class="p">)</span> <span class="p">{</span> <span class="n">_age</span> <span class="o">+=</span> <span class="n">years</span><span class="p">;</span> <span class="p">}</span>
-</code></pre></div>
-    </div>
-</div>
-
-<div class="notices note" ><p>Définir et utiliser des setters n&rsquo;est pas forcément mauvais. Ce qui est mauvais, c&rsquo;est de définir des setters pour tous les attributs d&rsquo;une classe, sans prendre le temps de définir au préalable ses invariants (l&rsquo;attribut <code>_age</code> ne peut pas décroitre au cours de l&rsquo;exécution).</p>
-</div>
+	<p>Vous apprendrez dans ce chapitre comment fonctionne l&rsquo;héritage en C++. Vous verrez qu&rsquo;il existe de nombreuses différences avec l&rsquo;héritage en Java, bien qu&rsquo;on retrouve des concepts similaires.<br>
+Pour la pratique, nous vous montrerons comment créer une hiérarchie de classes, puis comment faire pour redéfinir le comportement des classes-filles.</p>
 
 
 
-<footer class="footline">
+
+
+<footer class=" footline" >
 	
 </footer>
 
+        
+            </div> 
         
         </div> 
         
@@ -1632,7 +1403,6 @@ Il reste le setter pour <code>_age</code>, qui ne pose pas spécialement de prob
             
                 
                     
-                    
                 
                 
 
@@ -1646,8 +1416,21 @@ Il reste le setter pour <code>_age</code>, qui ne pose pas spécialement de prob
             
                 
                     
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
                         
-                        
+            
+            
+                
                     
                 
                 
@@ -1680,26 +1463,6 @@ Il reste le setter pour <code>_age</code>, qui ne pose pas spécialement de prob
             
             
                 
-                    
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                        
-                        
                     
                 
                 
@@ -1938,6 +1701,7 @@ Il reste le setter pour <code>_age</code>, qui ne pose pas spécialement de prob
             
                 
                     
+                    
                 
                 
 
@@ -1950,6 +1714,9 @@ Il reste le setter pour <code>_age</code>, qui ne pose pas spécialement de prob
             
             
                 
+                    
+                        
+                        
                     
                 
                 
@@ -2070,10 +1837,10 @@ Il reste le setter pour <code>_age</code>, qui ne pose pas spécialement de prob
 	 
 	 
 		
-			<a class="nav nav-prev" href="/CPP_Learning/chapter2/2-first-class/" title="✨ Première classe"> <i class="fa fa-chevron-left"></i></a>
+			<a class="nav nav-prev" href="/CPP_Learning/chapter3/summary/" title="Synthèse"> <i class="fa fa-chevron-left"></i></a>
 		
 		
-			<a class="nav nav-next" href="/CPP_Learning/chapter2/4-clone/" title="🧬 Clône" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+			<a class="nav nav-next" href="/CPP_Learning/chapter4/1-hierarchy/" title="💼 Hiérarchie professionnelle" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
 		
 	
     </div>
@@ -2103,4 +1870,3 @@ Il reste le setter pour <code>_age</code>, qui ne pose pas spécialement de prob
 
   </body>
 </html>
-

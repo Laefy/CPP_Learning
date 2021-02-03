@@ -9,7 +9,7 @@
 
     <link rel="icon" href="/CPP_Learning/images/favicon.png" type="image/png">
 
-    <title>🔨 Constructeur :: Cours de C&#43;&#43; - Niveau Master</title>
+    <title>🚗 Véhicule partagé :: Cours de C&#43;&#43; - Niveau Master</title>
 
     
     <link href="/CPP_Learning/css/nucleus.css?1612354466" rel="stylesheet">
@@ -40,7 +40,7 @@
     </style>
     
   </head>
-  <body class="" data-url="/CPP_Learning/chapter2/3-constructor/">
+  <body class="" data-url="/CPP_Learning/chapter4/5-vehicles/">
     <nav id="sidebar" class="showVisitedLinks">
 
 
@@ -431,7 +431,7 @@
   
     
     <li data-nav-id="/CPP_Learning/chapter2/" title="Classes" class="dd-item 
-        parent
+        
         
         
         ">
@@ -501,7 +501,7 @@
  
   
     
-      <li data-nav-id="/CPP_Learning/chapter2/3-constructor/" title="🔨 Constructeur" class="dd-item active">
+      <li data-nav-id="/CPP_Learning/chapter2/3-constructor/" title="🔨 Constructeur" class="dd-item ">
         <a href="/CPP_Learning/chapter2/3-constructor/">
         🔨 Constructeur
         <i class="fas fa-check read-icon"></i>
@@ -845,7 +845,7 @@
   
     
     <li data-nav-id="/CPP_Learning/chapter4/" title="Héritage" class="dd-item 
-        
+        parent
         
         
         ">
@@ -957,7 +957,7 @@
  
   
     
-      <li data-nav-id="/CPP_Learning/chapter4/5-vehicles/" title="🚗 Véhicule partagé" class="dd-item ">
+      <li data-nav-id="/CPP_Learning/chapter4/5-vehicles/" title="🚗 Véhicule partagé" class="dd-item active">
         <a href="/CPP_Learning/chapter4/5-vehicles/">
         🚗 Véhicule partagé
         <i class="fas fa-check read-icon"></i>
@@ -1101,7 +1101,7 @@
             
           
           
-            <a href='/CPP_Learning/'>Accueil</a> > <a href='/CPP_Learning/chapter2/'>Classes</a> > 🔨 Constructeur
+            <a href='/CPP_Learning/'>Accueil</a> > <a href='/CPP_Learning/chapter4/'>Héritage</a> > 🚗 Véhicule partagé
           
         
           
@@ -1118,10 +1118,9 @@
   <ul>
     <li>
       <ul>
-        <li><a href="#constructeur-à-paramètres">Constructeur à paramètres</a></li>
-        <li><a href="#le-constructeur-par-défaut">Le constructeur par défaut</a></li>
-        <li><a href="#syntaxe-dinstanciation">Syntaxe d&rsquo;instanciation</a></li>
-        <li><a href="#à-bas-les-setters">À bas les setters</a></li>
+        <li><a href="#introduction-du-permis">Introduction du permis</a></li>
+        <li><a href="#voiture-volante">Voiture volante</a></li>
+        <li><a href="#véhicule-abstrait">Véhicule abstrait</a></li>
       </ul>
     </li>
   </ul>
@@ -1141,61 +1140,63 @@
           
             <h1>
               
-              🔨 Constructeur
+              🚗 Véhicule partagé
             </h1>
           
 
         
 
 
-<p>Dans cet exercice, vous apprendrez à paramétrer la construction de vos objets.</p>
+<p>Pour terminer ce chapitre, nous allons voir comment faire pour accéder directement aux attributs de votre classe de base,
+comment appeler la fonction parent depuis la rédéfinition de cette fonction dans la classe-fille et enfin, comment modéliser des classes abstraites.</p>
 <hr>
-<p>Pour cet exercice, vous modifierez le fichier :<br>
-- <code>chap-02/2-constructor.cpp</code></p>
-<p>La cible à compiler est <code>c2-2-constructor</code>.</p>
+<p>Pour cet exercice, vous modifierez les fichiers :<br>
+- <code>chap-04/3-vehicles/Program.cpp</code><br>
+- <code>chap-04/3-vehicles/Vehicle.h</code><br>
+- <code>chap-04/3-vehicles/Car.h</code><br>
+- <code>chap-04/3-vehicles/Scooter.h</code></p>
+<p>La cible à compiler est <code>c4-3-vehicles</code>.</p>
 <hr>
-<h3 id="constructeur-à-paramètres">Constructeur à paramètres</h3>
-<p>Reprenez le code de l&rsquo;exercice précédent.</p>
-<p>Vous aviez implémenté une fonction-membre <code>set_name</code> dans la classe <code>Person</code> pour initialiser l&rsquo;attribut <code>_name</code>. Or, ce serait bien d&rsquo;une part de réellement pouvoir initialiser cet attribut plutôt que de le modifier après l&rsquo;instanciation, et d&rsquo;autre part, de supprimer ce <strong>setter</strong>, afin qu&rsquo;une fois initialisé, il ne soit plus possible de modifier <code>_name</code>.</p>
-<p>Pour faire cela, il va falloir que vous définissiez une fonction spéciale appelée <strong>constructeur</strong>.
-Voici la syntaxe générique d&rsquo;un constructeur :</p>
-<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="k">class</span> <span class="nc">ClassName</span>
-<span class="p">{</span>
-<span class="k">public</span><span class="o">:</span>
-    <span class="n">ClassName</span><span class="p">(</span><span class="n">type</span> <span class="n">p1</span><span class="p">,</span> <span class="n">type</span> <span class="n">p2</span><span class="p">,</span> <span class="p">...)</span>
-        <span class="o">:</span> <span class="n">_attribute_1</span> <span class="p">{</span> <span class="cm">/* value for _a1 */</span> <span class="p">}</span>
-        <span class="p">,</span> <span class="n">_attribute_2</span> <span class="p">{</span> <span class="cm">/* value for _a2 */</span> <span class="p">}</span>
-        <span class="p">,</span> <span class="p">...</span>
-    <span class="p">{</span>
-        <span class="c1">// some optional code
-</span><span class="c1"></span>    <span class="p">}</span>
+<h3 id="introduction-du-permis">Introduction du permis</h3>
+<p>Dans le programme que l&rsquo;on vous fournit, n&rsquo;importe qui peut conduire n&rsquo;importe quoi.
+Mais avec les nouvelles régulations, les conducteurs de voiture doivent maintenant être un possession d&rsquo;un permis B pour rouler.</p>
+<p>Modifiez la classe <code>Driver</code> de manière à pouvoir savoir si un conducteur à passer son permis ou non.
+A la construction, aucun conducteur n&rsquo;a son permis et il peut l&rsquo;obtenir ensuite via une fonction <code>pass_car_licence_exam</code>.</p>
 
-<span class="k">private</span><span class="o">:</span>
-    <span class="n">type</span> <span class="n">_attribute_1</span><span class="p">;</span>
-    <span class="n">type</span> <span class="n">_attribute_2</span><span class="p">;</span>
-    <span class="p">...</span>
-<span class="p">};</span>
-</code></pre></div><p>Il s&rsquo;agit donc d&rsquo;une fonction sans type de retour, de même nom que la classe. Les membres sont initialisés entre le prototype et le corps de la fonction, dans ce qui s&rsquo;appelle la <strong>liste d&rsquo;initialisation</strong>.</p>
-<p>Voici un exemple de ce que cela peut donner sur une petite classe :</p>
-<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="k">class</span> <span class="nc">Dog</span>
+<div class="expand">
+    <div class="expand-label" style="cursor: pointer;" onclick="$h = $(this);$h.next('div').slideToggle(100,function () {$h.children('i').attr('class',function () {return $h.next('div').is(':visible') ? 'fas fa-chevron-down' : 'fas fa-chevron-right';});});">
+        <i style="font-size:x-small;" class="fas fa-chevron-right"></i>
+        <span>
+        
+    	
+    	Solution
+    	
+    	</span>
+    </div>
+    <div class="expand-content" style="display: none;">
+        <div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="k">class</span> <span class="nc">Driver</span>
 <span class="p">{</span>
 <span class="k">public</span><span class="o">:</span>
-    <span class="n">Dog</span><span class="p">(</span><span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&amp;</span> <span class="n">breed</span><span class="p">,</span> <span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&amp;</span> <span class="n">name</span><span class="p">)</span>
-        <span class="o">:</span> <span class="n">_breed</span> <span class="p">{</span> <span class="n">breed</span> <span class="p">}</span>
-        <span class="p">,</span> <span class="n">_name</span> <span class="p">{</span> <span class="n">name</span> <span class="p">}</span>
+    <span class="kt">void</span> <span class="n">pass_car_licence_exam</span><span class="p">()</span>
     <span class="p">{</span>
-        <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;Dog named &#34;</span> <span class="o">&lt;&lt;</span> <span class="n">name</span> <span class="o">&lt;&lt;</span> <span class="s">&#34; has just been born!&#34;</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+        <span class="n">_has_car_licence</span> <span class="o">=</span> <span class="nb">true</span><span class="p">;</span> 
+    <span class="p">}</span>
+
+    <span class="kt">bool</span> <span class="nf">has_car_licence</span><span class="p">()</span> <span class="k">const</span>
+    <span class="p">{</span>
+        <span class="k">return</span> <span class="n">_has_car_licence</span><span class="p">;</span>
     <span class="p">}</span>
 
 <span class="k">private</span><span class="o">:</span>
-    <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">_breed</span><span class="p">;</span>
-    <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">_name</span><span class="p">;</span>
+    <span class="kt">bool</span> <span class="n">_has_car_licence</span> <span class="o">=</span> <span class="nb">false</span><span class="p">;</span>
 <span class="p">};</span>
-</code></pre></div><p>Et pour instancier la classe <code>Dog</code> avec le constructeur ci-dessus, on peut écrire :</p>
-<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="n">Dog</span> <span class="n">dog</span> <span class="p">{</span> <span class="s">&#34;Colley&#34;</span><span class="p">,</span> <span class="s">&#34;Lassie&#34;</span> <span class="p">};</span> 
-</code></pre></div><p>Commencez par modifier votre fonction <code>main</code>, de manière à passer le nom <code>&quot;Batman&quot;</code> à la construction de la variable <code>p</code>, puis supprimez l&rsquo;appel à <code>set_name</code>.
-Modifiez ensuite la classe <code>Person</code> pour lui ajouter un constructeur à un paramètre, dans lequel vous initialiser l&rsquo;attribut <code>_name</code>. Vous n&rsquo;êtes pas obligé d&rsquo;initialiser <code>_age</code> dans la liste d&rsquo;initialisation du constructeur, car cet attribut est déjà initialisé au niveau de sa définition (= <strong>class initializer</strong>).</p>
-<p>Comme d&rsquo;habitude, compilez et testez ensuite votre programme.</p>
+</code></pre></div>
+    </div>
+</div>
+<p>Il va maintenant falloir que vous utilisiez cette fonction depuis <code>Car</code>.
+Le problème, c&rsquo;est que <code>_driver</code> n&rsquo;est accessible que depuis <code>Vehicle</code>, car c&rsquo;est un attribut privé.
+Afin de pouvoir y accéder depuis les sous-classes, changez sa visibilité à <code>protected</code>.</p>
+<p>Modifiez ensuite l&rsquo;implémentation de <code>Car::drive</code>, de façon à ce que si le conduteur n&rsquo;ait pas son permis, la voiture n&rsquo;avance pas.</p>
 
 <div class="expand">
     <div class="expand-label" style="cursor: pointer;" onclick="$h = $(this);$h.next('div').slideToggle(100,function () {$h.children('i').attr('class',function () {return $h.next('div').is(':visible') ? 'fas fa-chevron-down' : 'fas fa-chevron-right';});});">
@@ -1208,24 +1209,43 @@ Modifiez ensuite la classe <code>Person</code> pour lui ajouter un constructeur 
     	</span>
     </div>
     <div class="expand-content" style="display: none;">
-        <p>Instanciation :</p>
-<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="n">Person</span> <span class="n">p</span> <span class="p">{</span> <span class="s">&#34;Batman&#34;</span> <span class="p">};</span>
-</code></pre></div><p>Définition du constructeur :</p>
-<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="k">class</span> <span class="nc">Person</span>
+        <div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="k">class</span> <span class="nc">Vehicle</span>
 <span class="p">{</span>
 <span class="k">public</span><span class="o">:</span>
-    <span class="n">Person</span><span class="p">(</span><span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&amp;</span> <span class="n">name</span><span class="p">)</span>
-        <span class="o">:</span> <span class="n">_name</span> <span class="p">{</span> <span class="n">name</span> <span class="p">}</span>
-    <span class="p">{}</span>
+    <span class="p">...</span>
 
+<span class="k">protected</span><span class="o">:</span>
+    <span class="k">const</span> <span class="n">Driver</span><span class="o">&amp;</span> <span class="n">_driver</span><span class="p">;</span>
+<span class="p">};</span>
+
+<span class="k">class</span> <span class="nc">Car</span> <span class="o">:</span> <span class="k">public</span> <span class="n">Vehicle</span>
+<span class="p">{</span>
+    <span class="p">...</span>
+
+    <span class="kt">unsigned</span> <span class="kt">int</span> <span class="n">drive</span><span class="p">()</span> <span class="k">const</span> <span class="k">override</span>
+    <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">_driver</span><span class="p">.</span><span class="n">has_car_licence</span><span class="p">())</span>
+        <span class="p">{</span>
+            <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;Vrooooom!&#34;</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+            <span class="k">return</span> <span class="n">_speed</span><span class="p">;</span>
+        <span class="p">}</span>
+        <span class="k">else</span>
+        <span class="p">{</span>
+            <span class="n">std</span><span class="o">::</span><span class="n">cerr</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;No car licence detected...&#34;</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+            <span class="k">return</span> <span class="mi">0u</span><span class="p">;</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+    
     <span class="p">...</span>
 <span class="p">};</span>
 </code></pre></div>
     </div>
 </div>
-<p>Batman n&rsquo;est pas né Batman. Batman est né Bruce Wayne.<br>
-Modifiez l&rsquo;instanciation de <code>p</code> de manière à passer deux paramètres <code>name</code> et <code>surname</code>.
-Ajoutez l&rsquo;attribut correspondant <code>_surname</code> à la classe et modifiez la définition de son constructeur afin de prendre en compte ces changements.</p>
+<hr>
+<h3 id="voiture-volante">Voiture volante</h3>
+<p>La nouvelle mode maintenant, ce sont les voitures volantes.
+Les voitures volantes ont toutes les fonctionnalités des voitures normales, si ce n&rsquo;est que lorsque vous rouler en l&rsquo;air, vous allez 10x plus vite qu&rsquo;en roulant au sol.</p>
+<p>Introduisez la classe <code>FlyingCar</code>, dérivée de <code>Car</code>, et redéfinissez sa fonction <code>drive</code> pour parcourir 10 fois la distance que vous auriez parcouru avec une voiture normale.</p>
 
 <div class="expand">
     <div class="expand-label" style="cursor: pointer;" onclick="$h = $(this);$h.next('div').slideToggle(100,function () {$h.children('i').attr('class',function () {return $h.next('div').is(':visible') ? 'fas fa-chevron-down' : 'fas fa-chevron-right';});});">
@@ -1238,28 +1258,34 @@ Ajoutez l&rsquo;attribut correspondant <code>_surname</code> à la classe et mod
     	</span>
     </div>
     <div class="expand-content" style="display: none;">
-        <p>Instanciation :</p>
-<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="n">Person</span> <span class="n">p</span> <span class="p">{</span> <span class="s">&#34;Bruce&#34;</span><span class="p">,</span> <span class="s">&#34;Wayne&#34;</span> <span class="p">};</span>
-</code></pre></div><p>Définition du constructeur :</p>
-<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="k">class</span> <span class="nc">Person</span>
+        <p>On peut :</p>
+<ul>
+<li>soit créer un nouvel attribut <code>flying_speed</code>, et l&rsquo;utiliser dans <code>FlyingCar::drive</code>,</li>
+<li>soit rendre <code>Car::_speed</code> <code>protected</code>, et retourner <code>10u * _speed</code> dans <code>FlyingCar::drive</code>.</li>
+</ul>
+<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="k">class</span> <span class="nc">FlyingCar</span><span class="o">:</span> <span class="k">public</span> <span class="n">Car</span>
 <span class="p">{</span>
 <span class="k">public</span><span class="o">:</span>
-    <span class="n">Person</span><span class="p">(</span><span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&amp;</span> <span class="n">name</span><span class="p">,</span> <span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&amp;</span> <span class="n">surname</span><span class="p">)</span>
-        <span class="o">:</span> <span class="n">_name</span> <span class="p">{</span> <span class="n">name</span> <span class="p">}</span>
-        <span class="p">,</span> <span class="n">_surname</span> <span class="p">{</span> <span class="n">surname</span> <span class="p">}</span>
+    <span class="n">FlyingCar</span><span class="p">(</span><span class="k">const</span> <span class="n">Driver</span><span class="o">&amp;</span> <span class="n">driver</span><span class="p">,</span> <span class="kt">unsigned</span> <span class="kt">int</span> <span class="n">speed</span><span class="p">)</span>
+        <span class="o">:</span> <span class="n">Car</span> <span class="p">{</span> <span class="n">driver</span><span class="p">,</span> <span class="n">speed</span> <span class="p">}</span>
+        <span class="p">,</span> <span class="n">_flying_speed</span> <span class="p">{</span> <span class="mi">10u</span> <span class="o">*</span> <span class="n">speed</span> <span class="p">}</span>
     <span class="p">{}</span>
 
-    <span class="p">...</span>
+    <span class="kt">unsigned</span> <span class="kt">int</span> <span class="nf">drive</span><span class="p">()</span> <span class="k">const</span> <span class="k">override</span>
+    <span class="p">{</span>
+        <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;Sweeesh!&#34;</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+        <span class="k">return</span> <span class="n">_flying_speed</span><span class="p">;</span>
+    <span class="p">}</span>
 
 <span class="k">private</span><span class="o">:</span>
-    <span class="n">std</span><span class="o">::</span><span class="n">string</span>  <span class="n">_name</span><span class="p">;</span>
-    <span class="n">std</span><span class="o">::</span><span class="n">string</span>  <span class="n">_surname</span><span class="p">;</span>
-    <span class="kt">unsigned</span> <span class="kt">int</span> <span class="n">_age</span> <span class="o">=</span> <span class="mi">0u</span><span class="p">;</span>
+    <span class="kt">unsigned</span> <span class="kt">int</span> <span class="n">_flying_speed</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
 <span class="p">};</span>
 </code></pre></div>
     </div>
 </div>
-<p>Pour terminer, renommez votre fonction <code>get_name</code> en <code>get_full_name</code> et réalisez les modifications nécessaires afin que celle-ci renvoie <code>&quot;Bruce Wayne&quot;</code> plutôt que <code>&quot;Bruce&quot;</code>.
+<p>Chaque fois qu&rsquo;une nouvelle technologie arrive sur le marché, les régulations mettent un peu de temps à arriver.
+Dans le cas de la voiture volante, le conducteur doit désormais être en possession d&rsquo;un permis de l&rsquo;air pour pouvoir s&rsquo;en servir.
+Commencez par ajouter ce qu&rsquo;il faut dans <code>Driver</code> pour passer le permis adéquat et savoir s&rsquo;il l&rsquo;a.</p>
 
 <div class="expand">
     <div class="expand-label" style="cursor: pointer;" onclick="$h = $(this);$h.next('div').slideToggle(100,function () {$h.children('i').attr('class',function () {return $h.next('div').is(':visible') ? 'fas fa-chevron-down' : 'fas fa-chevron-right';});});">
@@ -1272,72 +1298,103 @@ Ajoutez l&rsquo;attribut correspondant <code>_surname</code> à la classe et mod
     	</span>
     </div>
     <div class="expand-content" style="display: none;">
-        <p>La fonction <code>get_name</code> pouvait renvoyer une const-ref, car le résultat pointait sur l&rsquo;espace mémoire de l&rsquo;attribut <code>_name</code>.
-Comme le résultat ne fait plus référence à un attribut de la classe, il est nécessaire de le renvoyer par valeur.</p>
-<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">get_full_name</span><span class="p">()</span> <span class="k">const</span> <span class="p">{</span> <span class="k">return</span> <span class="n">_name</span> <span class="o">+</span> <span class="s">&#34; &#34;</span> <span class="o">+</span> <span class="n">_surname</span><span class="p">;</span> <span class="p">}</span>
-</code></pre></div>
-    </div>
-</div></p>
-<hr>
-<h3 id="le-constructeur-par-défaut">Le constructeur par défaut</h3>
-<p>Modifiez l&rsquo;instanciation de <code>p</code> dans la fonction <code>main</code> de manière à ne plus lui passer d&rsquo;arguments (comme c&rsquo;était le cas avant de commencer l&rsquo;exercice) :</p>
-<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="n">Person</span> <span class="n">p</span><span class="p">;</span>
-</code></pre></div><p>Le programme ne compile plus alors qu&rsquo;il compilait tout à l&rsquo;heure.<br>
-Commentez la définition de votre constructeur, et essayez de compiler à nouveau. Ca recompile&hellip;</p>
-<p><strong>Pourquoi le programme compile quand on retire un constructeur ?</strong></p>
-<p>Lorsque l&rsquo;utilisateur ne définit aucun constructeur, le compilateur définit (s&rsquo;il le peut) un constructeur qui n&rsquo;attend aucun argument.</p>
-<p>On appelle <strong>constructeur par défaut</strong> tout constructeur qui n&rsquo;attend aucun paramètre. L&rsquo;utilisateur et le compilateur peuvent donc tout deux définir un constructeur par défaut. Dans le cas du compilateur, on parlera d'<strong>implémentation par défaut du constructeur par défaut</strong>.</p>
-<p>L&rsquo;implémentation par défaut du constructeur par défaut (trop de &ldquo;defaut&rdquo;, je sais) initialise les attributs de la classe selon les règles suivantes :<br>
-1- en utilisant le class-initializer s&rsquo;il est fourni (comme pour <code>_age</code>),<br>
-2- s&rsquo;il n&rsquo;y a pas de class-initializer et que l&rsquo;attribut est une classe, en appelant son constructeur par défaut (comme pour <code>_name</code>, qui étant une <code>std::string</code>, est construit par défaut avec la chaîne vide),<br>
-3- s&rsquo;il n&rsquo;y a pas de class-initializer et que l&rsquo;attribut n&rsquo;est pas une classe, alors son contenu sera indéfini.</p>
-<p>Du coup pour répondre à la question, le code originel compilait car le compilateur définissait un constructeur par défaut à la classe <code>Person</code>. Dès lors que vous avez ajouté votre propre constructeur, le compilateur a supposé que vous ne vouliez probablement plus de l&rsquo;implémentation qu&rsquo;il vous fournissait. Il ne vous était donc plus possible d&rsquo;instancier la classe <code>Person</code> sans paramètres.</p>
-<p>Si vous vouliez pouvoir le faire à nouveau, tout en gardant votre constructeur à 2 paramètres, vous devriez donc définir un nouveau constructeur par défaut.</p>
-<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="k">class</span> <span class="nc">Person</span>
+        <div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="k">class</span> <span class="nc">Driver</span>
 <span class="p">{</span>
 <span class="k">public</span><span class="o">:</span>
-    <span class="n">Person</span><span class="p">()</span>
-    <span class="p">{}</span>
+    <span class="p">...</span>
 
-    <span class="n">Person</span><span class="p">(</span><span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&amp;</span> <span class="n">name</span><span class="p">,</span> <span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&amp;</span> <span class="n">surname</span><span class="p">)</span>
-        <span class="o">:</span> <span class="n">_name</span> <span class="p">{</span> <span class="n">name</span> <span class="p">},</span> <span class="n">_surname</span> <span class="p">{</span> <span class="n">surname</span> <span class="p">}</span>
-    <span class="p">{}</span>
+    <span class="kt">void</span> <span class="n">pass_air_licence_exam</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="n">_has_air_licence</span> <span class="o">=</span> <span class="nb">true</span><span class="p">;</span> 
+    <span class="p">}</span>
 
+    <span class="kt">bool</span> <span class="nf">has_air_licence</span><span class="p">()</span> <span class="k">const</span>
+    <span class="p">{</span>
+        <span class="k">return</span> <span class="n">_has_air_licence</span><span class="p">;</span>
+    <span class="p">}</span>
+
+<span class="k">private</span><span class="o">:</span>
+    <span class="p">...</span>
+    <span class="kt">bool</span> <span class="n">_has_air_licence</span> <span class="o">=</span> <span class="nb">false</span><span class="p">;</span>
+<span class="p">};</span>
+</code></pre></div>
+    </div>
+</div>
+<p>Vous allez maintenant devoir modifier la fonction <code>FlyingCar::drive</code>, afin que le conducteur ne puisse utiliser le mode volant que s&rsquo;il est équippé d&rsquo;un permis de l&rsquo;air.
+Autrement, s&rsquo;il a son permis classique, il peut utiliser le mode roulant.</p>
+<p>Dans une fonction redéfinie, il est possible de faire appel au comportement défini dans la classe parente. 
+Pour cela, on utilise la syntaxe suivante :</p>
+<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="k">class</span> <span class="nc">DerivedClass</span> <span class="o">:</span> <span class="k">public</span> <span class="n">BaseClass</span>
+<span class="p">{</span>
+    <span class="kt">void</span> <span class="n">DerivedClass</span><span class="o">::</span><span class="n">fcn</span><span class="p">(</span><span class="kt">int</span> <span class="n">a</span><span class="p">)</span> <span class="k">override</span>
+    <span class="p">{</span>
+        <span class="c1">// Calling base behavior.
+</span><span class="c1"></span>        <span class="n">BaseClass</span><span class="o">::</span><span class="n">fcn</span><span class="p">(</span><span class="n">a</span><span class="p">);</span>
+
+        <span class="c1">// Then executing specific behavior.
+</span><span class="c1"></span>        <span class="p">...</span>
+    <span class="p">}</span>
+<span class="p">};</span>
+</code></pre></div><p>Utilisez la syntaxe ci-dessus pour faire appel au comportement de base de <code>drive</code> dans le cas où le conducteur n&rsquo;a pas son permis de l&rsquo;air.<br>
+Testez ensuite les trois situations suivantes :<br>
+- si le conducteur a son permis de l&rsquo;air =&gt; mode volant,<br>
+- sinon, si le conducteur a son permis classique =&gt; mode roulant,<br>
+- sinon =&gt; la voiture n&rsquo;avance pas.</p>
+
+<div class="expand">
+    <div class="expand-label" style="cursor: pointer;" onclick="$h = $(this);$h.next('div').slideToggle(100,function () {$h.children('i').attr('class',function () {return $h.next('div').is(':visible') ? 'fas fa-chevron-down' : 'fas fa-chevron-right';});});">
+        <i style="font-size:x-small;" class="fas fa-chevron-right"></i>
+        <span>
+        
+    	
+    	Solution
+    	
+    	</span>
+    </div>
+    <div class="expand-content" style="display: none;">
+        <div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="k">class</span> <span class="nc">FlyingCar</span> <span class="o">:</span> <span class="k">public</span> <span class="n">Car</span>
+<span class="p">{</span>
+    <span class="p">...</span>
+
+    <span class="kt">unsigned</span> <span class="kt">int</span> <span class="n">drive</span><span class="p">()</span> <span class="k">const</span> <span class="k">override</span>
+    <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">_driver</span><span class="p">.</span><span class="n">has_air_licence</span><span class="p">())</span>
+        <span class="p">{</span>
+            <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;Sweeesh!&#34;</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+            <span class="k">return</span> <span class="n">_flying_speed</span><span class="p">;</span>
+        <span class="p">}</span>
+        <span class="k">else</span>
+        <span class="p">{</span>
+            <span class="k">return</span> <span class="n">Car</span><span class="o">::</span><span class="n">drive</span><span class="p">();</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+    
     <span class="p">...</span>
 <span class="p">};</span>
 </code></pre></div>
-<div class="notices note" ><p>1- Si on n&rsquo;initialise aucun attribut dans la liste d&rsquo;initialisation d&rsquo;un constructeur, alors il faut omettre complètement cette liste (écrire <code>Person() {}</code> plutôt que <code>Person() : {}</code>).<br>
-2- Si un attribut n&rsquo;est pas initialisé via la liste d&rsquo;initialisation, alors il est initialisé selon les mêmes règles que celles exposées pour l&rsquo;implémentation par défaut du constructeur par défaut. C&rsquo;est pour cela que l&rsquo;on n&rsquo;a pas besoin de respécifier <code>_age</code> dans la liste d&rsquo;initialisation du constructeur à 2 paramètres.</p>
+    </div>
 </div>
-
 <hr>
-<h3 id="syntaxe-dinstanciation">Syntaxe d&rsquo;instanciation</h3>
-<p>Nous avons vu deux manières d&rsquo;instancier une classe :</p>
-<ul>
-<li>avec 0 paramètre : <code>Class obj;</code>,</li>
-<li>avec N paramètres : <code>Class obj { p1, p2, ..., pn };</code>.</li>
-</ul>
-<p>En réalité, on peut également utiliser la syntaxe avec des <code>{}</code> lorsqu&rsquo;on initialise avec 0 paramètre : <code>Class obj {};</code><br>
-Et on peut aussi utiliser la syntaxe avec des <code>()</code>, mais seulement si on a au moins 1 paramètre : <code>Class obj(p1, p2, ..., pn);</code><br>
-Et enfin, lorsqu&rsquo;il n&rsquo;y a qu&rsquo;un seul paramètre, on peut dans certains cas utiliser <code>= p</code> : <code>std::string s = &quot;Batman&quot;;</code>.</p>
-<p>Ces syntaxes s&rsquo;utilisent également pour l&rsquo;instanciation des primitives : <code>int a = 1;</code> / <code>int a { 1 };</code> / <code>int a(1);</code></p>
-<p>Pour le moment, vous pouvez considérer que ces méthodes sont plus ou moins équivalentes (évidemment, ce n&rsquo;est pas le cas, sinon ce ne serait pas drôle, mais nous y reviendrons au <a href="/chapter3/">Chapitre 3</a>).
-Ne vous embêtez pas à mémoriser toutes ces règles par coeur. Retenez simplement que d&rsquo;autres variations de syntaxe existent, pour que vous ne soyiez pas étonner si vous les rencontrez dans du code que vous n&rsquo;avez pas écrit.</p>
+<h3 id="véhicule-abstrait">Véhicule abstrait</h3>
+<p>Avec le code actuel, il est tout à fait possible d&rsquo;instancier des classes <code>Vehicle</code>.
+Cependant, cette classe ne devrait pas être instanciable, puisqu&rsquo;elle est juste là pour définir l&rsquo;interface que tous les véhicules doivent implémenter.
+En Java, vous auriez d&rsquo;ailleurs probablement définir le type <code>Vehicle</code> en utilisant une interface, ou éventuellement une classe abstraite.</p>
+<p>En C++, il n&rsquo;existe pas pas de mot-clef permettant de définir des interfaces ou des classes abstraites.
+Vous pouvez néanmoins empêcher un utilisateur d&rsquo;instancier une classe qui ne devrait pas l&rsquo;être via deux mécanismes.</p>
+<p><strong>1. Constructeur protégé</strong></p>
+<p>On place le constructeur de la classe dans la partie <code>protected</code>. Ainsi, seule la classe elle-même et les sous-classes peuvent appeler le constructeur de l&rsquo;objet.</p>
+<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="k">class</span> <span class="nc">AbstractClass</span>
+<span class="p">{</span>
+<span class="k">protected</span><span class="o">:</span>
+    <span class="n">AbstractClass</span><span class="p">()</span> <span class="p">{</span> <span class="cm">/* Can only be instanciated from current and child classes  */</span> <span class="p">}</span>
 
-<div class="notices info" ><p>Si vous choisissez d&rsquo;utiliser la syntaxe <code>()</code>, faites attention lorsque vous appelez le constructeur par défaut (= à 0 paramètre), car il faut alors complètement omettre les parenthèses.<br>
-Si vous écrivez <code>Class obj();</code> au lieu de <code>Class obj;</code>, le compilateur va râler.</p>
-</div>
+<span class="k">public</span><span class="o">:</span>
+    <span class="k">virtual</span> <span class="o">~</span><span class="n">AbstractClass</span><span class="p">()</span> <span class="p">{}</span>
 
-
-<div class="notices note" ><p>Pour initialiser des attributs dans la liste d&rsquo;initialisation, il est possible d&rsquo;utiliser <code>()</code> au lieu des <code>{}</code>.<br>
-Contrairement à l&rsquo;initialisation des variables, on peut par contre écrire <code>: _attr()</code> sans rien dans les parenthèses. Incompréhensible n&rsquo;est-ce pas ? 😵</p>
-</div>
-
-<hr>
-<h3 id="à-bas-les-setters">À bas les setters</h3>
-<p>L&rsquo;ajout de votre constructeur vous a permis de supprimer le setter pour <code>_name</code>, afin que l&rsquo;on ne puisse pas modifier l&rsquo;attribut après son initialisation.<br>
-Il reste le setter pour <code>_age</code>, qui ne pose pas spécialement de problème, si ce n&rsquo;est qu&rsquo;on peut remonter le temps avec. Et là, c&rsquo;est <em>Batman</em>, pas <em>Retour vers le futur</em> 🦇</p>
-<p>Vous allez donc remplacer votre fonction <code>set_age</code> par une fonction <code>wait</code>, qui permet uniquement d&rsquo;augmenter l&rsquo;âge de votre objet. Testez que votre programme fonctionne correctement.</p>
+    <span class="k">virtual</span> <span class="kt">void</span> <span class="nf">fcn_a</span><span class="p">(</span><span class="kt">int</span> <span class="n">p</span><span class="p">);</span>
+    <span class="k">virtual</span> <span class="kt">void</span> <span class="nf">fcn_b</span><span class="p">()</span> <span class="k">const</span><span class="p">;</span>
+<span class="p">};</span>
+</code></pre></div><p>Déclarez le constructeur de <code>Vehicle</code> dans la partie protégée de la classe, et essayez d&rsquo;instancier un <code>Vehicle</code> depuis le <code>main</code>. Quelle erreur de compilation obtenez-vous ?</p>
 
 <div class="expand">
     <div class="expand-label" style="cursor: pointer;" onclick="$h = $(this);$h.next('div').slideToggle(100,function () {$h.children('i').attr('class',function () {return $h.next('div').is(':visible') ? 'fas fa-chevron-down' : 'fas fa-chevron-right';});});">
@@ -1350,17 +1407,75 @@ Il reste le setter pour <code>_age</code>, qui ne pose pas spécialement de prob
     	</span>
     </div>
     <div class="expand-content" style="display: none;">
-        <p>Appel :</p>
-<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="n">p</span><span class="p">.</span><span class="n">wait</span><span class="p">(</span><span class="mi">23</span><span class="p">);</span>
-</code></pre></div><p>Définition :</p>
-<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="kt">void</span> <span class="nf">wait</span><span class="p">(</span><span class="kt">unsigned</span> <span class="kt">int</span> <span class="n">years</span><span class="p">)</span> <span class="p">{</span> <span class="n">_age</span> <span class="o">+=</span> <span class="n">years</span><span class="p">;</span> <span class="p">}</span>
+        <div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="k">class</span> <span class="nc">Vehicle</span>
+<span class="p">{</span>
+<span class="k">protected</span><span class="o">:</span>
+    <span class="n">Vehicle</span><span class="p">(</span><span class="k">const</span> <span class="n">Driver</span><span class="o">&amp;</span> <span class="n">driver</span><span class="p">)</span>
+        <span class="o">:</span> <span class="n">_driver</span> <span class="p">{</span> <span class="n">driver</span> <span class="p">}</span>
+    <span class="p">{}</span>
+
+<span class="k">public</span><span class="o">:</span>
+    <span class="k">virtual</span> <span class="o">~</span><span class="n">Vehicle</span><span class="p">()</span> <span class="p">{}</span>
+
+    <span class="p">...</span>
+<span class="p">};</span>
+</code></pre></div><p>A l&rsquo;instanciation, on obtient une erreur du style :</p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="s1">&#39;Vehicle::Vehicle&#39;</span>: cannot access protected member declared in class <span class="s1">&#39;Vehicle&#39;</span>
 </code></pre></div>
     </div>
 </div>
+<p><strong>2. Fonction virtuelle pure</strong></p>
+<p>Une fonction virtuelle pure est une déclaration de fonction sans implémentation.
+Si vous essayez d&rsquo;instancier une classe contenant des fonctions virtuelles pures, le compilateur ne vous laissera pas faire.</p>
+<p>Lorsque vous héritez d&rsquo;une classe contenant des fonctions virtuelles pures, vous pouvez les redéfinir comme n&rsquo;importe quelle autre fonction virtuelle.
+Vous pourrez ensuite instancier ces classes-filles, du moment que vous avez bien fourni une définition à chacune des fonctions virtuelles pures de la classe de base.</p>
+<p>Pour déclarer une fonction virtuelle pure, il faut écrire <code>= 0;</code> tout au bout de sa déclaration :</p>
+<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="k">class</span> <span class="nc">Interface</span>
+<span class="p">{</span>
+<span class="k">public</span><span class="o">:</span>
+    <span class="k">virtual</span> <span class="o">~</span><span class="n">Interface</span><span class="p">()</span> <span class="p">{}</span>
 
-<div class="notices note" ><p>Définir et utiliser des setters n&rsquo;est pas forcément mauvais. Ce qui est mauvais, c&rsquo;est de définir des setters pour tous les attributs d&rsquo;une classe, sans prendre le temps de définir au préalable ses invariants (l&rsquo;attribut <code>_age</code> ne peut pas décroitre au cours de l&rsquo;exécution).</p>
+    <span class="k">virtual</span> <span class="kt">void</span> <span class="nf">fcn_a</span><span class="p">(</span><span class="kt">int</span> <span class="n">p</span><span class="p">)</span> <span class="p">{}</span>    <span class="c1">// Classic virtual function.
+</span><span class="c1"></span>    <span class="k">virtual</span> <span class="kt">void</span> <span class="nf">fcn_b</span><span class="p">()</span> <span class="k">const</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="c1">// Pure virtual function, that needs to be redefined in the derived class so that they can be instanciated.
+</span><span class="c1"></span><span class="p">};</span>
+</code></pre></div><p>Supprimez l&rsquo;implémentation de <code>Vehicle::drive</code> et transformez-la en fonction virtuelle pure. Quelles erreurs de compilation obtenez-vous maintenant ?</p>
+
+<div class="expand">
+    <div class="expand-label" style="cursor: pointer;" onclick="$h = $(this);$h.next('div').slideToggle(100,function () {$h.children('i').attr('class',function () {return $h.next('div').is(':visible') ? 'fas fa-chevron-down' : 'fas fa-chevron-right';});});">
+        <i style="font-size:x-small;" class="fas fa-chevron-right"></i>
+        <span>
+        
+    	
+    	Solution
+    	
+    	</span>
+    </div>
+    <div class="expand-content" style="display: none;">
+        <div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="k">class</span> <span class="nc">Vehicle</span>
+<span class="p">{</span>
+<span class="k">protected</span><span class="o">:</span>
+    <span class="n">Vehicle</span><span class="p">(</span><span class="k">const</span> <span class="n">Driver</span><span class="o">&amp;</span> <span class="n">driver</span><span class="p">)</span>
+        <span class="o">:</span> <span class="n">_driver</span> <span class="p">{</span> <span class="n">driver</span> <span class="p">}</span>
+    <span class="p">{}</span>
+
+<span class="k">public</span><span class="o">:</span>
+    <span class="k">virtual</span> <span class="o">~</span><span class="n">Vehicle</span><span class="p">()</span> <span class="p">{}</span>
+
+    <span class="k">virtual</span> <span class="kt">unsigned</span> <span class="kt">int</span> <span class="nf">drive</span><span class="p">()</span> <span class="k">const</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+
+    <span class="p">...</span>
+<span class="p">};</span>
+</code></pre></div><p>A l&rsquo;instanciation, on obtient quelque chose comme :</p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="s1">&#39;Vehicle&#39;</span>: cannot instantiate abstract class
+see declaration of <span class="s1">&#39;Vehicle&#39;</span>
+due to following members:
+<span class="s1">&#39;unsigned int Vehicle::drive(void) const&#39;</span>: is abstract
+...
+...
+<span class="s1">&#39;Vehicle::Vehicle&#39;</span>: cannot access protected member declared in class <span class="s1">&#39;Vehicle&#39;</span>
+</code></pre></div>
+    </div>
 </div>
-
 
 
 <footer class="footline">
@@ -1632,163 +1747,6 @@ Il reste le setter pour <code>_age</code>, qui ne pose pas spécialement de prob
             
                 
                     
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-                        
-            
-            
-                
-                    
-                        
-                        
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                        
-                        
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-        
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
                 
                 
 
@@ -2030,6 +1988,163 @@ Il reste le setter pour <code>_age</code>, qui ne pose pas spécialement de prob
             
             
                 
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
                     
                 
                 
@@ -2070,10 +2185,10 @@ Il reste le setter pour <code>_age</code>, qui ne pose pas spécialement de prob
 	 
 	 
 		
-			<a class="nav nav-prev" href="/CPP_Learning/chapter2/2-first-class/" title="✨ Première classe"> <i class="fa fa-chevron-left"></i></a>
+			<a class="nav nav-prev" href="/CPP_Learning/chapter4/4-polymorphism/" title="Polymorphisme"> <i class="fa fa-chevron-left"></i></a>
 		
 		
-			<a class="nav nav-next" href="/CPP_Learning/chapter2/4-clone/" title="🧬 Clône" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+			<a class="nav nav-next" href="/CPP_Learning/chapter4/test/" title="Questionnaire !" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
 		
 	
     </div>

@@ -64,6 +64,25 @@ La cible à compiler est c1-1-hello_world.
     </item>
     
     <item>
+      <title>💼 Hiérarchie professionnelle</title>
+      <link>https://laefy.github.io/CPP_Learning/chapter4/1-hierarchy/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://laefy.github.io/CPP_Learning/chapter4/1-hierarchy/</guid>
+      <description>Dans cette première partie, vous apprendrez comment définir des relations de parenté entre vos classes.
+Nous ne parlerons sur cette page que d&amp;rsquo;héritage dit &amp;ldquo;statique&amp;rdquo;, c&amp;rsquo;est-à-dire que nous ne chercherons pas à modifier dans les classes-fille le comportement hérité de la classe-mère.
+ Pour cet exercice, vous modifierez les fichiers :
+- chap-04/1-hierarchy/Boss.cpp
+- chap-04/1-hierarchy/Boss.h
+- chap-04/1-hierarchy/Staff.cpp
+- chap-04/1-hierarchy/Staff.h
+- chap-04/1-hierarchy/Intern.cpp
+- chap-04/1-hierarchy/Intern.h
+La cible à compiler est c4-1-hierarchy.
+ Définir une classe-mère Commencez par jeter un coup d&amp;rsquo;oeil à chacun des fichiers fournis.</description>
+    </item>
+    
+    <item>
       <title>CMake</title>
       <link>https://laefy.github.io/CPP_Learning/chapter1/2-tools/2-cmake/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -105,6 +124,22 @@ int main() { // Person p;  // p.set_name(&amp;#34;Batman&amp;#34;);  // p.set_ag
     </item>
     
     <item>
+      <title>🐮 Concerto animalier</title>
+      <link>https://laefy.github.io/CPP_Learning/chapter4/2-farm/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://laefy.github.io/CPP_Learning/chapter4/2-farm/</guid>
+      <description>Vous allez maintenant apprendre à définir des classes permettant à leurs enfants de spécialiser leur comportement. On parle alors de classe polymorphe.
+Nous ferons un petit récapitulatif en fin de page, pour rappelez les points essentiels auxquels il faut faire attention lorsque vous définissez des classes polymorphes pour éviter les bugs.
+ Pour cet exercice, vous modifierez les fichiers :
+- chap-04/2-farm/FarmHouse.cpp
+- chap-04/2-farm/Animal.h
+- chap-04/2-farm/Dog.h
+- chap-04/2-farm/Cat.h
+- chap-04/2-farm/Chicken.h</description>
+    </item>
+    
+    <item>
       <title>🦜 Perroquet</title>
       <link>https://laefy.github.io/CPP_Learning/chapter1/3-practice/2-parrot.fd/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -141,6 +176,16 @@ Du coup, pour pallier à ce problème, il est possible d&amp;rsquo;utiliser la c
       <description>Pour le gestionnaire de version, nous utiliserons git. Vous pourrez ensuite héberger votre dépôt pour les TPs et le projet sur la plateforme de votre choix (Github, Gitlab, Bitbucket, votre serveur perso, peu importe), du moment que l&amp;rsquo;on peut y avoir accès pour l&amp;rsquo;évaluation.
  Installation Si vous êtes sous Unix, vous devriez pouvoir installer git depuis votre gestionnaire de paquets.
 Si vous êtes sous Windows, vous pouvez télécharger l&amp;rsquo;outil depuis cette page.</description>
+    </item>
+    
+    <item>
+      <title>Résolution d&#39;appel virtuel</title>
+      <link>https://laefy.github.io/CPP_Learning/chapter4/3-virtual/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://laefy.github.io/CPP_Learning/chapter4/3-virtual/</guid>
+      <description>Nous allons maintenant rentrer dans les détails de ce qu&amp;rsquo;il se passe sous le manteau, lorsque le programme effectue un appel virtuel.
+ Virtual table Lorsqu&amp;rsquo;une classe Parent contenant des fonctions virtuelles est compilée, le compilateur va générer pour l&amp;rsquo;ensemble des classes qui en dérivent une virtual table. Il s&amp;rsquo;agit d&amp;rsquo;une tableau qui contient, pour chaque fonction virtuelle de la classe, un pointeur sur la fonction qui sera vraiment appelée.</description>
     </item>
     
     <item>
@@ -199,6 +244,16 @@ La cible à compiler est c3-3-associatives.
     </item>
     
     <item>
+      <title>Polymorphisme</title>
+      <link>https://laefy.github.io/CPP_Learning/chapter4/4-polymorphism/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://laefy.github.io/CPP_Learning/chapter4/4-polymorphism/</guid>
+      <description>Vous avez probablement déjà entendu le terme polymorphisme, vous l&amp;rsquo;avez peut-être même déjà utilisé, mais quand vous y réfléchissez, si on vous demandait de le définir clairement, vous ne sauriez pas forcément quoi répondre. Cette page sera donc l&amp;rsquo;occasion de revenir sur sa définition.
+Dans ce chapitre, nous nous sommes intéressés à deux manières de mettre-en-ouvre le polymorphisme en C++ : l&amp;rsquo;héritage statique et l&amp;rsquo;héritage dynamique. Nous détaillerons les différences entre les deux et dans quels cas utiliser l&amp;rsquo;un ou l&amp;rsquo;autre.</description>
+    </item>
+    
+    <item>
       <title>🧬 Clône</title>
       <link>https://laefy.github.io/CPP_Learning/chapter2/4-clone/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -253,6 +308,22 @@ La cible à compiler est c3-4-strings.
 - chap-02/4-rectangle/Rectangle.h
 La cible à compiler est c2-4-rectangle.
  Header en C++ Vous commencez l&amp;rsquo;exercice avec une fonction main dans le fichier main.</description>
+    </item>
+    
+    <item>
+      <title>🚗 Véhicule partagé</title>
+      <link>https://laefy.github.io/CPP_Learning/chapter4/5-vehicles/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://laefy.github.io/CPP_Learning/chapter4/5-vehicles/</guid>
+      <description>Pour terminer ce chapitre, nous allons voir comment faire pour accéder directement aux attributs de votre classe de base, comment appeler la fonction parent depuis la rédéfinition de cette fonction dans la classe-fille et enfin, comment modéliser des classes abstraites.
+ Pour cet exercice, vous modifierez les fichiers :
+- chap-04/3-vehicles/Program.cpp
+- chap-04/3-vehicles/Vehicle.h
+- chap-04/3-vehicles/Car.h
+- chap-04/3-vehicles/Scooter.h
+La cible à compiler est c4-3-vehicles.
+ Introduction du permis Dans le programme que l&amp;rsquo;on vous fournit, n&amp;rsquo;importe qui peut conduire n&amp;rsquo;importe quoi.</description>
     </item>
     
     <item>
@@ -319,6 +390,15 @@ Il avait également un deuxième objectif, qui était en quelque sorte de vous a
     </item>
     
     <item>
+      <title>Questionnaire !</title>
+      <link>https://laefy.github.io/CPP_Learning/chapter4/test/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://laefy.github.io/CPP_Learning/chapter4/test/</guid>
+      <description>Livraison en cours&amp;hellip;.</description>
+    </item>
+    
+    <item>
       <title>Synthèse</title>
       <link>https://laefy.github.io/CPP_Learning/chapter1/summary/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -343,6 +423,15 @@ Il avait également un deuxième objectif, qui était en quelque sorte de vous a
       
       <guid>https://laefy.github.io/CPP_Learning/chapter3/summary/</guid>
       <description>Ce qu&amp;rsquo;il faut retenir Théorie  Un conteneur séquentiel est un conteneur dans lequel les élements se suivent (tableaux, listes, &amp;hellip;). Un conteneur associatif est un conteneur dans lequel chaque élément est indexé par une clef (l&amp;rsquo;élément pouvant être la clef elle-même). Les types passés en paramètre de template doivent parfois respecter des contraintes pour compiler (ces contraintes sont spécifiées dans la documentation).  Librairie standard  Tableau de taille dynamique : vector Tableau de taille fixe : array Listes chaînées : list ou forward_list Ensembles : set ou unordered_set Dictionnaires : map ou unordered_map  Pratique  On peut passer les chaînes de caractères constantes par std::string_view plutôt que const std::string&amp;amp; ou const char*.</description>
+    </item>
+    
+    <item>
+      <title>Synthèse</title>
+      <link>https://laefy.github.io/CPP_Learning/chapter4/summary/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://laefy.github.io/CPP_Learning/chapter4/summary/</guid>
+      <description>Livraison en cours&amp;hellip;.</description>
     </item>
     
     <item>
