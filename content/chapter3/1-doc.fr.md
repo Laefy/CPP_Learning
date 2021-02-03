@@ -115,7 +115,7 @@ On vous indique simplement ce que la fonction vous renvoie.
 ![](/CPP_Learning/images/chapter3/doc-fcn-exceptions.png)
 
 Il est possible de lancer des exceptions en C++. Cette section indique la liste des exceptions que la fonction peut lancer et ce qu'il se passe dans ce cas-là.\
-Pour `emplace_back`, on voit que la fonction si une exception est lancé par le move constructor de l'élément, alors le comportement de la fonction est indéfinie (undefined behavior).
+Pour `emplace_back`, on voit que si une exception est lancée par le move constructor de l'élément, alors le comportement de la fonction est indéfini (undefined behavior).
 
 #### 5. Exemples
 
@@ -142,7 +142,7 @@ Vous allez maintenant partir en mission. Votre objectif est de collecter les ren
 {{% expand "Solution" %}}
 1/ On peut trouver ce genre d'information dans l'en-tête de la documentation de la classe `map`. Il y est indiqué que les opérations de recherche, suppression et insertion sont de complexité logarithmique.
 
-2/ En comparant les signatures de `push_back` et `emplace_back`, on se rend compte qu'il faut fournir directment à `push_back` l'élément à insérer (un seul élément de type `T`), alors qu'on peut fournir à `emplace_back` les paramètres permettant de construire le nouvel élément.
+2/ En comparant les signatures de `push_back` et `emplace_back`, on se rend compte qu'il faut fournir directement à `push_back` l'élément à insérer (un seul élément de type `T`), alors qu'on peut fournir à `emplace_back` les paramètres permettant de construire le nouvel élément.
 
 3/ En regardant sur les pages de différentes classes de conteneurs (`vector`, `array`, `map`, `set`, etc), on se rend qu'elles ont toutes une fonction membre `empty()`, qui renvoie `true` si le conteneur est vide.
 
