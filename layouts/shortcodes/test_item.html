@@ -6,5 +6,5 @@
 {{ if isset .Params "lines" }}
 <textarea id="q{{ $id }}" name="q{{ $id }}-{{ $desc }}" rows="{{ .Params.lines }}" cols="50"></textarea>
 {{ else }}
-<input type="text" id="q{{ $id }}" name="q{{ $id }}-{{ $desc }}"></input>
+<textarea type="text" id="q{{ $id }}" name="q{{ $id }}-{{ $desc }}" rows="1" cols="50"></textarea>
 {{ end }}
