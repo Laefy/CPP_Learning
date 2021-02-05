@@ -382,7 +382,7 @@ Eh bien, c'est exactement pour cela que `~Chicken` n'est pas appelé pendant la 
 Dans la classe `Opera`, vous avez libéré la mémoire de chacun des animaux du tableau en utilisant `delete`.
 Comme ces éléments sont de type `Animal*`, le compilateur commence par regarder le prototype de `~Animal`.
 Comme vous n'avez pas défini le destructeur vous-même, il tombe sur le destructeur généré par défaut.
-L'implémentation par défaut du destructeur n'étant pas virtuelle, le compilateur détermine qu'il n'y aura pas besoin de rechercher dans de redéfinition dans les classe-filles au moment de l'exécution du programme.
+L'implémentation par défaut du destructeur n'étant pas virtuelle, le compilateur détermine qu'il n'y aura pas besoin de rechercher de redéfinition dans les classe-filles au moment de l'exécution du programme.
 L'instruction `delete animal` est donc résolue en appelant `~Animal`.
 
 Du coup, afin que le destructeur `~Chicken` soit toujours appelé lors de la destruction d'un objet de type `Chicken`, il faut que vous définissiez explicitement le destructeur de `Animal` de manière à pouvoir le déclarer virtuel.
