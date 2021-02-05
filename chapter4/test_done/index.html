@@ -9,7 +9,7 @@
 
     <link rel="icon" href="/CPP_Learning/images/favicon.png" type="image/png">
 
-    <title>Synthèse :: Cours de C&#43;&#43; - Niveau Master</title>
+    <title>Merci ! :: Cours de C&#43;&#43; - Niveau Master</title>
 
     
     <link href="/CPP_Learning/css/nucleus.css?1612568118" rel="stylesheet">
@@ -40,7 +40,7 @@
     </style>
     
   </head>
-  <body class="" data-url="/CPP_Learning/chapter4/summary/">
+  <body class="" data-url="/CPP_Learning/chapter4/test_done/">
     <nav id="sidebar" class="showVisitedLinks">
 
 
@@ -999,7 +999,7 @@
  
   
     
-      <li data-nav-id="/CPP_Learning/chapter4/summary/" title="Synthèse" class="dd-item active">
+      <li data-nav-id="/CPP_Learning/chapter4/summary/" title="Synthèse" class="dd-item ">
         <a href="/CPP_Learning/chapter4/summary/">
         Synthèse
         <i class="fas fa-check read-icon"></i>
@@ -1104,7 +1104,7 @@
             
           
           
-            <a href='/CPP_Learning/'>Accueil</a> > <a href='/CPP_Learning/chapter4/'>Héritage</a> > Synthèse
+            <a href='/CPP_Learning/'>Accueil</a> > <a href='/CPP_Learning/chapter4/'>Héritage</a> > Merci !
           
         
           
@@ -1117,17 +1117,7 @@
                 
                     <div class="progress">
     <div class="wrapper">
-<nav id="TableOfContents">
-  <ul>
-    <li>
-      <ul>
-        <li><a href="#ce-quil-faut-savoir-faire">Ce qu&rsquo;il faut savoir faire</a></li>
-        <li><a href="#ce-quil-faut-retenir">Ce qu&rsquo;il faut retenir</a></li>
-        <li><a href="#ce-dont-il-faut-à-peu-près-se-souvenir">Ce dont il faut à peu près se souvenir</a></li>
-      </ul>
-    </li>
-  </ul>
-</nav>
+<nav id="TableOfContents"></nav>
     </div>
 </div>
 
@@ -1143,57 +1133,23 @@
           
             <h1>
               
-              Synthèse
+              Merci !
             </h1>
           
 
         
 
 
-<hr>
-<h3 id="ce-quil-faut-savoir-faire">Ce qu&rsquo;il faut savoir faire</h3>
-<h5 id="langage">Langage</h5>
-<ul>
-<li>Définir une relation de parenté <strong>publique</strong> entre deux classes : <code>class Child : public Parent { ... };</code></li>
-<li>Définir un membre (fonction ou attribut) accessible uniquement depuis la classe courante et ses enfants : <code>protected : int _a1 = 0; char _a2 = 'a';</code></li>
-<li>Appeler le constructeur de la classe parent : <code>Child(int p1, int p2) : Parent { p1 }, _p2 { p2 } { ... }</code></li>
-<li>Déclarer une fonction virtuelle dans la classe de base : <code>virtual void fcn(int p) const;</code></li>
-<li>Déclarer une fonction virtuelle pure dans la classe de base : <code>virtual void fcn(int p) const = 0;</code></li>
-<li>Redéfinir une fonction virtuelle dans une classe dérivée : <code>void fcn(int p) const override;</code></li>
-<li>Appeler une fonction de la classe-mère depuis une fonction de la classe-file : <code>void fcn(int p) const override { Parent::fcn(p); ... }</code></li>
-</ul>
-<hr>
-<h3 id="ce-quil-faut-retenir">Ce qu&rsquo;il faut retenir</h3>
-<h5 id="théorie">Théorie</h5>
-<ul>
-<li>L&rsquo;héritage statique sert uniquement à limiter la duplication de code. On ne l&rsquo;utilise pas pour faire du polymophisme.</li>
-<li>L&rsquo;héritage dynamique permet de créer des classes polymorphes, dont on peut redéfinir le comportement lorsqu&rsquo;on en hérite.</li>
-<li>Une classe polymorphe est une classe qui contient des fonctions virtuelles.</li>
-<li>Une fonction de la classe-fille override une fonction de la classe-mère <strong>uniquement si elles ont la même signature</strong> (nom, paramètres, const, etc).</li>
-<li>Une virtual table est un tableau dans lequel sont référencées les fonctions qui seront vraiment appelées au cours d&rsquo;un appel virtuel.</li>
-</ul>
-<h5 id="pratique">Pratique</h5>
-<ul>
-<li>Lorsqu&rsquo;on copie un objet, on perd sa virtual table, et on ne peut donc plus garantir que les redéfinitions de fonctions seront bien appelées pendant les appels virtuels.<br>
-Il faut donc toujours passer les objets polymorphes aux fonctions par référence.</li>
-<li>Il faut <strong>toujours</strong> déclarer un <strong>destructeur virtuel</strong> (même s&rsquo;il ne fait rien) dans une classe de base polymorphe.</li>
-<li>Pour modéliser une classe abstraite, on peut mettre son constructeur dans la partie <code>protected</code> ou déclarer certaines de ces fonctions comme étant virtuelles pures.</li>
-<li>Il n&rsquo;est pas possible d&rsquo;instancier une classe si elle contient des fonctions virtuelles pures, ou qu&rsquo;elle hérite de fonctions virtuelles pures qu&rsquo;elle ne redéfinit pas.</li>
-</ul>
-<h5 id="librairie-standard">Librairie standard</h5>
-<ul>
-<li>Lorsqu&rsquo;un conteneur n&rsquo;acceptent pas les références (si les éléments doivent être réassignables par exemple), on peut utiliser des pointeurs à la place.</li>
-</ul>
-<hr>
-<h3 id="ce-dont-il-faut-à-peu-près-se-souvenir">Ce dont il faut à peu près se souvenir</h3>
-<h5 id="théorie-1">Théorie</h5>
-<ul>
-<li>Pour éviter de dupliquer du code, on peut utiliser la composition. Contrairement à l&rsquo;héritage statique, la composition permet d&rsquo;encapsuler l&rsquo;objet dont on veut réutiliser le code.</li>
-</ul>
-<h5 id="pratique-1">Pratique</h5>
-<ul>
-<li>Il est possible de créer des relations de parenté privées, mais il est très rare d&rsquo;en avoir véritablement besoin.</li>
-</ul>
+
+
+
+<div style="text-align: center; font-size: large;">
+    Vos réponses nous ont bien été communiquées 😃 
+    <br/>
+    <a href="../summary">Retourner à la synthèse du Chapitre</a>
+</div>
+
+
 
 
 <footer class="footline">
@@ -1876,7 +1832,6 @@ Il faut donc toujours passer les objets polymorphes aux fonctions par référenc
             
                 
                     
-                    
                 
                 
 
@@ -1905,7 +1860,7 @@ Il faut donc toujours passer les objets polymorphes aux fonctions par référenc
 	 
 	 
 		
-			<a class="nav nav-prev" href="/CPP_Learning/chapter4/test/" title="Questionnaire !"> <i class="fa fa-chevron-left"></i></a>
+			<a class="nav nav-prev" href="/CPP_Learning/chapter3/summary/" title="Synthèse"> <i class="fa fa-chevron-left"></i></a>
 		
 		
 			<a class="nav nav-next" href="/CPP_Learning/chapter4/1-hierarchy/" title="💼 Hiérarchie professionnelle" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>

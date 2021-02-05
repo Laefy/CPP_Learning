@@ -83,7 +83,15 @@ La cible à compiler est c4-3-vehicles.
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://laefy.github.io/CPP_Learning/chapter4/test/</guid>
-      <description>Livraison en cours&amp;hellip;.</description>
+      <description>Vous avez terminé le Chapitre 4 ! C&amp;rsquo;est donc maintenant le moment de connecter vos neurones pour répondre aux questions suivantes.
+Bon courage à vous 🙂
+ Vous êtes : Votre adresse mail : 1- Qu’est-ce qu’une classe polymorphe ?
+
+2- Définissez une classe polymorphe Nothing qui ne fait rien.
+
+3- Comment représenter une classe abstraite en C++ ?
+
+ Les questions 4 à 8 font référence au code suivant :</description>
     </item>
     
     <item>
@@ -92,7 +100,16 @@ La cible à compiler est c4-3-vehicles.
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://laefy.github.io/CPP_Learning/chapter4/summary/</guid>
-      <description>Livraison en cours&amp;hellip;.</description>
+      <description>Ce qu&amp;rsquo;il faut savoir faire Langage  Définir une relation de parenté publique entre deux classes : class Child : public Parent { ... }; Définir un membre (fonction ou attribut) accessible uniquement depuis la classe courante et ses enfants : protected : int _a1 = 0; char _a2 = &#39;a&#39;; Appeler le constructeur de la classe parent : Child(int p1, int p2) : Parent { p1 }, _p2 { p2 } { .</description>
+    </item>
+    
+    <item>
+      <title>Merci !</title>
+      <link>https://laefy.github.io/CPP_Learning/chapter4/test_done/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://laefy.github.io/CPP_Learning/chapter4/test_done/</guid>
+      <description>Vos réponses nous ont bien été communiquées 😃 Retourner à la synthèse du Chapitre</description>
     </item>
     
   </channel>
