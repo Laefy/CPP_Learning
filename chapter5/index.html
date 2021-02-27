@@ -9,7 +9,7 @@
 
     <link rel="icon" href="/CPP_Learning/images/favicon.png" type="image/png">
 
-    <title>Questionnaire ! :: Cours de C&#43;&#43; - Niveau Master</title>
+    <title>Gestion des ressources :: Cours de C&#43;&#43; - Niveau Master</title>
 
     
     <link href="/CPP_Learning/css/nucleus.css?1614426198" rel="stylesheet">
@@ -40,7 +40,7 @@
     </style>
     
   </head>
-  <body class="" data-url="/CPP_Learning/chapter4/test/">
+  <body class="" data-url="/CPP_Learning/chapter5/">
     <nav id="sidebar" class="showVisitedLinks">
 
 
@@ -845,7 +845,7 @@
   
     
     <li data-nav-id="/CPP_Learning/chapter4/" title="Héritage" class="dd-item 
-        parent
+        
         
         
         ">
@@ -978,7 +978,7 @@
  
   
     
-      <li data-nav-id="/CPP_Learning/chapter4/test/" title="Questionnaire !" class="dd-item active">
+      <li data-nav-id="/CPP_Learning/chapter4/test/" title="Questionnaire !" class="dd-item ">
         <a href="/CPP_Learning/chapter4/test/">
         Questionnaire !
         <i class="fas fa-check read-icon"></i>
@@ -1031,8 +1031,8 @@
   
     
     <li data-nav-id="/CPP_Learning/chapter5/" title="Gestion des ressources" class="dd-item 
-        
-        
+        parent
+        active
         
         ">
       <a href="/CPP_Learning/chapter5/">
@@ -1187,8 +1187,6 @@
                         </a>
                     </span>
                   
-                  <span id="toc-menu"><i class="fas fa-list-alt"></i></span>
-                  
                   <span class="links">
                  
                  
@@ -1199,13 +1197,7 @@
             
           
           
-            
-            
-          
-          
-            <a href='/CPP_Learning/'>Accueil</a> > <a href='/CPP_Learning/chapter4/'>Héritage</a> > Questionnaire !
-          
-        
+            <a href='/CPP_Learning/'>Accueil</a> > Gestion des ressources
           
         
           
@@ -1214,13 +1206,6 @@
                   </span>
                 </div>
                 
-                    <div class="progress">
-    <div class="wrapper">
-<nav id="TableOfContents"></nav>
-    </div>
-</div>
-
-                
               </div>
             </div>
             
@@ -1228,125 +1213,44 @@
         
         </div>
         
+          <div id="chapter">
+        
         <div id="body-inner">
-          
-            <h1>
-              
-              Questionnaire !
-            </h1>
           
 
         
 
 
-<p>Vous avez terminé le Chapitre 4 ! C&rsquo;est donc maintenant le moment de connecter vos neurones pour répondre aux questions suivantes.<br>
-Bon courage à vous 🙂</p>
-<hr>
 
+	
+		<h3>Chapitre 5</h3>
+		<h1>Gestion des ressources</h1>
+	
 
-<form id="test" data-chapter="4" method=POST action="https://formsubmit.co/3aa0f379a1aed9c454634cc2da153a7b">
-  <label for="name">Vous êtes : </label>
-  <input type="text" id="name" name="name" placeholder="Prénom Nom" />
-
-  <label for="name">Votre adresse mail : </label>
-  <input type="text" name="email" placeholder="mail@smthg.com" />
-
-  <input type="hidden" name="_replyto" />
-  <input type="hidden" name="_subject" value="[C++][Chapitre 4] Retour sur ton questionnaire" />
-
-  <hr/>
-  
-  <p><label for="q1">1- Qu’est-ce qu’une classe polymorphe ?</label></p>
-<p><textarea type="text" id="q1" name="q1-class-polymorph" rows="1" cols="50"></textarea></p>
-<p><label for="q2">2- Définissez une classe polymorphe <code>Nothing</code> qui ne fait rien.</label></p>
-<p><textarea id="q2" name="q2-poly-code" rows="5" cols="50"></textarea></p>
-<p><label for="q3">3- Comment représenter une classe abstraite en C++ ?</label></p>
-<p><textarea id="q3" name="q3-abstract-class" rows="2" cols="50"></textarea></p>
-<hr>
-<p>Les questions 4 à 8 font référence au code suivant :</p>
-<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="k">class</span> <span class="nc">A</span>
-<span class="p">{</span>
-<span class="k">public</span><span class="o">:</span>
-    <span class="k">virtual</span> <span class="kt">int</span>  <span class="n">fcn1</span><span class="p">(</span><span class="kt">int</span> <span class="n">p1</span><span class="p">,</span> <span class="kt">int</span> <span class="n">p2</span><span class="p">)</span> <span class="k">const</span> <span class="p">{</span> <span class="k">return</span> <span class="n">p1</span> <span class="o">*</span> <span class="n">p2</span><span class="p">;</span> <span class="p">}</span>
-    <span class="k">virtual</span> <span class="kt">void</span> <span class="nf">fcn2</span><span class="p">(</span><span class="k">const</span> <span class="kt">char</span><span class="o">*</span> <span class="n">str</span><span class="p">)</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
-    <span class="k">virtual</span> <span class="kt">void</span> <span class="nf">fcn3</span><span class="p">(</span><span class="kt">bool</span><span class="p">)</span> <span class="p">{}</span>
-    <span class="k">const</span> <span class="kt">char</span><span class="o">*</span>  <span class="nf">fcn4</span><span class="p">()</span> <span class="p">{</span> <span class="k">return</span> <span class="s">&#34;artichaut&#34;</span><span class="p">;</span> <span class="p">}</span>
-<span class="p">};</span>
-
-<span class="k">class</span> <span class="nc">B</span> <span class="o">:</span> <span class="n">A</span>
-<span class="p">{</span>
-<span class="k">public</span><span class="o">:</span>
-    <span class="kt">int</span> <span class="n">fcn1</span><span class="p">(</span><span class="kt">int</span> <span class="n">p1</span><span class="p">,</span> <span class="kt">int</span> <span class="n">p2</span><span class="p">)</span> <span class="p">{</span> <span class="k">return</span> <span class="n">p1</span> <span class="o">+</span> <span class="n">p2</span><span class="p">;</span> <span class="p">}</span>
-
-    <span class="kt">void</span> <span class="nf">fcn2</span><span class="p">(</span><span class="k">const</span> <span class="kt">char</span><span class="o">*</span><span class="p">)</span> <span class="k">override</span> <span class="p">{}</span>
-
-    <span class="kt">void</span> <span class="nf">fcn3</span><span class="p">(</span><span class="kt">bool</span> <span class="n">b</span><span class="p">)</span>
-    <span class="p">{</span>
-        <span class="k">if</span> <span class="p">(</span><span class="n">b</span><span class="p">)</span>
-        <span class="p">{</span>
-            <span class="n">A</span><span class="o">::</span><span class="n">fcn3</span><span class="p">(</span><span class="n">b</span><span class="p">);</span>
-        <span class="p">}</span>
-    <span class="p">}</span>
-    
-    <span class="k">const</span> <span class="kt">char</span><span class="o">*</span> <span class="nf">fcn4</span><span class="p">()</span> <span class="p">{</span> <span class="k">return</span> <span class="s">&#34;sopalin&#34;</span><span class="p">;</span> <span class="p">}</span>
-<span class="p">};</span>
-
-<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
-<span class="p">{</span>
-    <span class="n">A</span><span class="o">*</span> <span class="n">a</span> <span class="o">=</span> <span class="k">new</span> <span class="n">B</span><span class="p">();</span>
-
-    <span class="n">a</span><span class="o">-&gt;</span><span class="n">fcn1</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">);</span>
-    <span class="n">a</span><span class="o">-&gt;</span><span class="n">fcn2</span><span class="p">(</span><span class="s">&#34;la la la&#34;</span><span class="p">);</span>
-    <span class="n">a</span><span class="o">-&gt;</span><span class="n">fcn3</span><span class="p">(</span><span class="nb">false</span><span class="p">);</span>
-    <span class="n">a</span><span class="o">-&gt;</span><span class="n">fcn4</span><span class="p">();</span>
-
-    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
-<span class="p">}</span>
-</code></pre></div><p><label for="q4">4- Le programme ci-dessus ne compile pas. Pourquoi et que faut-il faire pour le corriger ?</label></p>
-<p><textarea id="q4" name="q4-compile-error" rows="3" cols="50"></textarea></p>
-<p><label for="q5">5- En plus du problème de compilation, on peut relever trois erreurs de programmation qui pourraient générer des problèmes à l’exécution. Quelles sont-elles et que faut-il faire pour les corriger ?</label></p>
-<p><textarea id="q5" name="q5-exec-issues" rows="3" cols="50"></textarea></p>
-<p><label for="q6">6- Pour chacun des appels sur <code>a</code>, indiquez quelle fonction sera appelée (<code>A::fcnX</code> ou <code>B::fcnX</code>) et justifiez.</label></p>
-<p><textarea id="q6" name="q6-called-fcns" rows="4" cols="50"></textarea></p>
-<hr>
-<p><label for="q7">7- Définissez une classe <code>SharedStuff</code> contenant un attribut <code>_value</code> accessible uniquement depuis ses classes dérivées. Ajoutez un constructeur à 1 paramètre pour initialiser ce membre.</label></p>
-<p><textarea id="q7" name="q7-some-code" rows="10" cols="50"></textarea></p>
-<p><label for="q8">8- Définissez une classe <code>MoreStuff</code> héritant de <code>SharedStuff</code> et contenant un attribut <code>_value2</code>. Définissez les fonctions nécessaires permettant d’instancier un objet de ce type, et d’afficher les valeurs de ses deux membres dans la console.</label></p>
-<p><textarea id="q8" name="q8-some-code" rows="10" cols="50"></textarea></p>
-<hr>
-<p><label for="q9">9- Définissez une classe <code>Food</code> contenant une fonction virtuelle pure <code>miam_miam</code>. Cette fonction doit servir à afficher le nom de l’aliment dans la console.</label></p>
-<p><textarea id="q9" name="q9-some-code" rows="10" cols="50"></textarea></p>
-<p><label for="q10">10- Définissez une classe <code>Nutella</code> héritant de <code>Food</code>. Ajoutez ce qu’il faut pour rendre cette classe instanciable.</label></p>
-<p><textarea id="q10" name="q10-some-code" rows="10" cols="50"></textarea></p>
-
-
-  <hr/>
-
-  <label for="time">Combien de temps avez-vous mis à compléter ce chapitre ?</label>
-  <input type="text" name="time" placeholder="environ 4h30" />
-
-  <label for="questions">Avez-vous des questions suite à sa lecture ?</label>
-  <textarea id="questions" name="questions" rows="5" cols="50"></textarea>
-
-  <label for="comments">Avez-vous des commentaires concernant le chapitre et/ou le site ?</label>
-  <textarea id="comments" name="comments" rows="5" cols="50"></textarea>
-
-  <input type="hidden" name="_template" value="table" />
-  <input type="hidden" name="_captcha" value="false" />
-  <input type="hidden" name="_next" value="https://laefy.github.io/CPP_Learning//chapter4/test_done/" />
-
-  <input type="submit" disabled style="display: none" aria-hidden="true" />
-  <input type="submit" value="Valider" />
-</form>
-
-<script src="/CPP_Learning/js/save-test-answers.js"></script>
+	<p>Il existe beaucoup de langages dans lequel le concept de propriété n&rsquo;existe pas.
+Par exemple, en Java, tout le monde et personne n&rsquo;est propriétaire d&rsquo;un objet.
+Lorsque vous créez un objet, vous obtenez une référence que vous pouvez ensuite copier et passer à n&rsquo;importe quelle autre entité du programme.
+Tant qu&rsquo;il existe encore au moins référence sur l&rsquo;objet, celui-ci continue d&rsquo;exister.
+Ce mécanisme est assuré par le garbage-collector, qui s&rsquo;occupe de traquer le nombre de références de chacun des objets construits.
+Dès qu&rsquo;un objet n&rsquo;est plus référencé nulle part, il est ajouté à la liste des ressources pouvant être libérées.</p>
+<p>Lorsque les performances ne sont pas critiques, disposer de ce genre d&rsquo;outil est très pratique, puisque cela permet d&rsquo;une part de ne pas avoir à libérer la mémoire soi-même, mais aussi et surtout d&rsquo;éviter de libérer malencontreusement des resources qui pourraient encore être utilisées.
+Vous savez que l&rsquo;un des atouts majeurs du C++, c&rsquo;est les performances qu&rsquo;il apporte.
+C&rsquo;est pour cela que la gestion de la mémoire est manuelle dans ce langage, et que l&rsquo;on se retrouve parfois avec des problèmes de dangling references (comme nous l&rsquo;avions vu au Chapitre 2) ou des fuites de mémoire.</p>
+<p>Ce chapitre sera dédiée à la gestion des ressources en C++.
+Nous commencerons donc par présenter les concepts de durée de vie (ou <strong>lifespan</strong>) et d'<strong>ownership</strong> (ou propriété en français) d&rsquo;une ressource.
+Nous verrons ensuite en pratique ce que le C++ propose pour expliciter l&rsquo;ownership d&rsquo;une ressource et compenser l&rsquo;absence de garbage-collector.
+Nous vous présenterons enfin la syntaxe introduite en C++11 pour traduire la transmission de l&rsquo;ownership.</p>
 
 
 
-<footer class="footline">
+
+
+<footer class=" footline" >
 	
 </footer>
 
+        
+            </div> 
         
         </div> 
         
@@ -1910,7 +1814,6 @@ Bon courage à vous 🙂</p>
             
                 
                     
-                    
                 
                 
 
@@ -1923,9 +1826,6 @@ Bon courage à vous 🙂</p>
             
             
                 
-                    
-                        
-                        
                     
                 
                 
@@ -2007,7 +1907,6 @@ Bon courage à vous 🙂</p>
             
                 
                     
-                    
                 
                 
 
@@ -2023,9 +1922,6 @@ Bon courage à vous 🙂</p>
             
             
                 
-                    
-                        
-                        
                     
                 
                 
@@ -2051,6 +1947,7 @@ Bon courage à vous 🙂</p>
             
                 
                     
+                    
                 
                 
 
@@ -2063,6 +1960,9 @@ Bon courage à vous 🙂</p>
             
             
                 
+                    
+                        
+                        
                     
                 
                 
@@ -2119,10 +2019,10 @@ Bon courage à vous 🙂</p>
 	 
 	 
 		
-			<a class="nav nav-prev" href="/CPP_Learning/chapter4/5-vehicles/" title="🚗 Véhicule partagé"> <i class="fa fa-chevron-left"></i></a>
+			<a class="nav nav-prev" href="/CPP_Learning/chapter4/summary/" title="Synthèse"> <i class="fa fa-chevron-left"></i></a>
 		
 		
-			<a class="nav nav-next" href="/CPP_Learning/chapter4/summary/" title="Synthèse" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+			<a class="nav nav-next" href="/CPP_Learning/chapter5/1-lifespan/" title="Durée de vie" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
 		
 	
     </div>
@@ -2152,4 +2052,3 @@ Bon courage à vous 🙂</p>
 
   </body>
 </html>
-

@@ -9,7 +9,7 @@
 
     <link rel="icon" href="/CPP_Learning/images/favicon.png" type="image/png">
 
-    <title>Questionnaire ! :: Cours de C&#43;&#43; - Niveau Master</title>
+    <title>Durée de vie :: Cours de C&#43;&#43; - Niveau Master</title>
 
     
     <link href="/CPP_Learning/css/nucleus.css?1614426198" rel="stylesheet">
@@ -40,7 +40,7 @@
     </style>
     
   </head>
-  <body class="" data-url="/CPP_Learning/chapter4/test/">
+  <body class="" data-url="/CPP_Learning/chapter5/1-lifespan/">
     <nav id="sidebar" class="showVisitedLinks">
 
 
@@ -845,7 +845,7 @@
   
     
     <li data-nav-id="/CPP_Learning/chapter4/" title="Héritage" class="dd-item 
-        parent
+        
         
         
         ">
@@ -978,7 +978,7 @@
  
   
     
-      <li data-nav-id="/CPP_Learning/chapter4/test/" title="Questionnaire !" class="dd-item active">
+      <li data-nav-id="/CPP_Learning/chapter4/test/" title="Questionnaire !" class="dd-item ">
         <a href="/CPP_Learning/chapter4/test/">
         Questionnaire !
         <i class="fas fa-check read-icon"></i>
@@ -1031,7 +1031,7 @@
   
     
     <li data-nav-id="/CPP_Learning/chapter5/" title="Gestion des ressources" class="dd-item 
-        
+        parent
         
         
         ">
@@ -1059,7 +1059,7 @@
  
   
     
-      <li data-nav-id="/CPP_Learning/chapter5/1-lifespan/" title="Durée de vie" class="dd-item ">
+      <li data-nav-id="/CPP_Learning/chapter5/1-lifespan/" title="Durée de vie" class="dd-item active">
         <a href="/CPP_Learning/chapter5/1-lifespan/">
         Durée de vie
         <i class="fas fa-check read-icon"></i>
@@ -1203,7 +1203,7 @@
             
           
           
-            <a href='/CPP_Learning/'>Accueil</a> > <a href='/CPP_Learning/chapter4/'>Héritage</a> > Questionnaire !
+            <a href='/CPP_Learning/'>Accueil</a> > <a href='/CPP_Learning/chapter5/'>Gestion des ressources</a> > Durée de vie
           
         
           
@@ -1216,7 +1216,16 @@
                 
                     <div class="progress">
     <div class="wrapper">
-<nav id="TableOfContents"></nav>
+<nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#définition">Définition</a></li>
+        <li><a href="#destruction-intempestive">Destruction intempestive</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
     </div>
 </div>
 
@@ -1232,115 +1241,248 @@
           
             <h1>
               
-              Questionnaire !
+              Durée de vie
             </h1>
           
 
         
 
 
-<p>Vous avez terminé le Chapitre 4 ! C&rsquo;est donc maintenant le moment de connecter vos neurones pour répondre aux questions suivantes.<br>
-Bon courage à vous 🙂</p>
 <hr>
-
-
-<form id="test" data-chapter="4" method=POST action="https://formsubmit.co/3aa0f379a1aed9c454634cc2da153a7b">
-  <label for="name">Vous êtes : </label>
-  <input type="text" id="name" name="name" placeholder="Prénom Nom" />
-
-  <label for="name">Votre adresse mail : </label>
-  <input type="text" name="email" placeholder="mail@smthg.com" />
-
-  <input type="hidden" name="_replyto" />
-  <input type="hidden" name="_subject" value="[C++][Chapitre 4] Retour sur ton questionnaire" />
-
-  <hr/>
-  
-  <p><label for="q1">1- Qu’est-ce qu’une classe polymorphe ?</label></p>
-<p><textarea type="text" id="q1" name="q1-class-polymorph" rows="1" cols="50"></textarea></p>
-<p><label for="q2">2- Définissez une classe polymorphe <code>Nothing</code> qui ne fait rien.</label></p>
-<p><textarea id="q2" name="q2-poly-code" rows="5" cols="50"></textarea></p>
-<p><label for="q3">3- Comment représenter une classe abstraite en C++ ?</label></p>
-<p><textarea id="q3" name="q3-abstract-class" rows="2" cols="50"></textarea></p>
+<p>Pour cet exercice, vous modifierez les fichiers :<br>
+- <code>chap-05/1-teachers/DataBase.cpp</code><br>
+- <code>chap-05/1-teachers/DataBase.h</code></p>
+<p>La cible à compiler est <code>c5-1-teachers</code>.</p>
 <hr>
-<p>Les questions 4 à 8 font référence au code suivant :</p>
-<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="k">class</span> <span class="nc">A</span>
+<h3 id="définition">Définition</h3>
+<p>La durée de vie d&rsquo;une ressource (bloc de mémoire, flux, connection réseau, etc) correspond à la période durant laquelle cette ressource est valide.</p>
+<p>Le C++ est un langage dans lequel nous avons la main sur la durée de vie de nos ressources.
+Dans le cas d&rsquo;un objet, sa durée de vie s&rsquo;étend de sa construction à sa destruction.
+Ce qu&rsquo;il est important de noter, c&rsquo;est que cette durée de vie ne coïncide pas toujours avec la portée de la variable référençant l&rsquo;objet.</p>
+<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="kt">void</span> <span class="nf">lifespan</span><span class="p">()</span>
 <span class="p">{</span>
-<span class="k">public</span><span class="o">:</span>
-    <span class="k">virtual</span> <span class="kt">int</span>  <span class="n">fcn1</span><span class="p">(</span><span class="kt">int</span> <span class="n">p1</span><span class="p">,</span> <span class="kt">int</span> <span class="n">p2</span><span class="p">)</span> <span class="k">const</span> <span class="p">{</span> <span class="k">return</span> <span class="n">p1</span> <span class="o">*</span> <span class="n">p2</span><span class="p">;</span> <span class="p">}</span>
-    <span class="k">virtual</span> <span class="kt">void</span> <span class="nf">fcn2</span><span class="p">(</span><span class="k">const</span> <span class="kt">char</span><span class="o">*</span> <span class="n">str</span><span class="p">)</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
-    <span class="k">virtual</span> <span class="kt">void</span> <span class="nf">fcn3</span><span class="p">(</span><span class="kt">bool</span><span class="p">)</span> <span class="p">{}</span>
-    <span class="k">const</span> <span class="kt">char</span><span class="o">*</span>  <span class="nf">fcn4</span><span class="p">()</span> <span class="p">{</span> <span class="k">return</span> <span class="s">&#34;artichaut&#34;</span><span class="p">;</span> <span class="p">}</span>
-<span class="p">};</span>
-
-<span class="k">class</span> <span class="nc">B</span> <span class="o">:</span> <span class="n">A</span>
-<span class="p">{</span>
-<span class="k">public</span><span class="o">:</span>
-    <span class="kt">int</span> <span class="n">fcn1</span><span class="p">(</span><span class="kt">int</span> <span class="n">p1</span><span class="p">,</span> <span class="kt">int</span> <span class="n">p2</span><span class="p">)</span> <span class="p">{</span> <span class="k">return</span> <span class="n">p1</span> <span class="o">+</span> <span class="n">p2</span><span class="p">;</span> <span class="p">}</span>
-
-    <span class="kt">void</span> <span class="nf">fcn2</span><span class="p">(</span><span class="k">const</span> <span class="kt">char</span><span class="o">*</span><span class="p">)</span> <span class="k">override</span> <span class="p">{}</span>
-
-    <span class="kt">void</span> <span class="nf">fcn3</span><span class="p">(</span><span class="kt">bool</span> <span class="n">b</span><span class="p">)</span>
+    <span class="kt">int</span><span class="o">*</span> <span class="n">five</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">int</span> <span class="p">{</span> <span class="mi">5</span> <span class="p">};</span>
+    <span class="kt">int</span><span class="o">&amp;</span> <span class="n">five_ref</span> <span class="o">=</span> <span class="o">*</span><span class="n">five</span><span class="p">;</span>
     <span class="p">{</span>
-        <span class="k">if</span> <span class="p">(</span><span class="n">b</span><span class="p">)</span>
-        <span class="p">{</span>
-            <span class="n">A</span><span class="o">::</span><span class="n">fcn3</span><span class="p">(</span><span class="n">b</span><span class="p">);</span>
-        <span class="p">}</span>
+        <span class="kt">int</span> <span class="n">three</span> <span class="o">=</span> <span class="mi">3</span><span class="p">;</span>
+        <span class="k">delete</span> <span class="n">five</span><span class="p">;</span>
     <span class="p">}</span>
-    
-    <span class="k">const</span> <span class="kt">char</span><span class="o">*</span> <span class="nf">fcn4</span><span class="p">()</span> <span class="p">{</span> <span class="k">return</span> <span class="s">&#34;sopalin&#34;</span><span class="p">;</span> <span class="p">}</span>
+    <span class="kt">int</span> <span class="n">ten</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div><p>Dans le code ci-dessus, la portée de la variable <code>five_ref</code> s&rsquo;étend de la ligne 4 à la ligne 10 (= l&rsquo;accolade fermante de <code>lifespan</code>).
+En revanche, la durée de vie de l&rsquo;objet référencé par <code>five_ref</code> s&rsquo;étend de la ligne 3 (construction du <code>int</code>) jusqu&rsquo;à la ligne 7 (destruction de ce <code>int</code>).<br>
+La variable <code>five_ref</code> est donc une dangling reference de la ligne 8 et la ligne 10. Il ne faut surtout pas s&rsquo;en servir dans cette section du programme.</p>
+<p>Réorganisez les instructions afin que la portée des variables n&rsquo;excèdent pas (ou presque pas) la durée de vie des ressources qui leur sont associées.</p>
+
+<div class="expand">
+    <div class="expand-label" style="cursor: pointer;" onclick="$h = $(this);$h.next('div').slideToggle(100,function () {$h.children('i').attr('class',function () {return $h.next('div').is(':visible') ? 'fas fa-chevron-down' : 'fas fa-chevron-right';});});">
+        <i style="font-size:x-small;" class="fas fa-chevron-right"></i>
+        <span>
+        
+    	
+    	Solution
+    	
+    	</span>
+    </div>
+    <div class="expand-content" style="display: none;">
+        <p>Il faut s&rsquo;arranger pour que <code>delete five</code> soit exécuté juste avant la fin du bloc dans lequel <code>five</code> et <code>five_ref</code> sont définies.<br>
+Par exemple :</p>
+<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="kt">void</span> <span class="nf">lifespan</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="p">{</span>
+        <span class="kt">int</span><span class="o">*</span> <span class="n">five</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">int</span> <span class="p">{</span> <span class="mi">5</span> <span class="p">};</span>
+        <span class="kt">int</span><span class="o">&amp;</span> <span class="n">five_ref</span> <span class="o">=</span> <span class="o">*</span><span class="n">five</span><span class="p">;</span>
+        <span class="k">delete</span> <span class="n">five</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="kt">int</span> <span class="n">three</span> <span class="o">=</span> <span class="mi">3</span><span class="p">;</span>
+    <span class="kt">int</span> <span class="n">ten</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+    </div>
+</div>
+
+<div class="notices tip" ><p>Autant que possible, arrangez-vous pour que les portées de vos variables correspondent à la durée de vie des objets qu&rsquo;elles référencent.
+Evitez par exemple d&rsquo;écrire un <code>delete</code> en plein milieu d&rsquo;un bloc.</p>
+</div>
+
+<hr>
+<h3 id="destruction-intempestive">Destruction intempestive</h3>
+<p>Le programme <code>c5-1-teachers</code> sert à générer une base de données référençant les différentes matières d&rsquo;un cursus et les professeurs qui les enseignent.
+Cette base dispose des contraintes suivantes :</p>
+<ul>
+<li>Un cursus peut avoir plusieurs matières.</li>
+<li>Une matière n&rsquo;apparaît que dans un seul cursus.</li>
+<li>Une matière est enseignée par différents professeurs.</li>
+<li>Un professeur peut enseigner plusieurs matières.</li>
+</ul>
+<p>Commencez par ajouter ce qu&rsquo;il manque pour que le programme compile et remplisse son rôle.</p>
+
+<div class="expand">
+    <div class="expand-label" style="cursor: pointer;" onclick="$h = $(this);$h.next('div').slideToggle(100,function () {$h.children('i').attr('class',function () {return $h.next('div').is(':visible') ? 'fas fa-chevron-down' : 'fas fa-chevron-right';});});">
+        <i style="font-size:x-small;" class="fas fa-chevron-right"></i>
+        <span>
+        
+    	
+    	Indices
+    	
+    	</span>
+    </div>
+    <div class="expand-content" style="display: none;">
+        <ul>
+<li>Il n&rsquo;est pas possible de stocker directement des références dans les conteneurs de la STL, car les références ne sont pas réassignables.<br>
+Que pouvez-vous utiliser à la place ?</li>
+<li><code>std::find</code> est appliqué sur un <code>vector</code> de <code>Teacher*</code> (resp. <code>Curriculum*</code>) et une <code>string</code>.<br>
+Quelle surcharge devez-vous fournir à l&rsquo;opérateur pour que l&rsquo;instruction compile ?<br>
+Pouvez du coup par conséquent définir cette surcharge comme fonction-membre de <code>Teacher</code> (resp. <code>Curriculum</code>) ?</li>
+</ul>
+
+    </div>
+</div>
+
+<div class="expand">
+    <div class="expand-label" style="cursor: pointer;" onclick="$h = $(this);$h.next('div').slideToggle(100,function () {$h.children('i').attr('class',function () {return $h.next('div').is(':visible') ? 'fas fa-chevron-down' : 'fas fa-chevron-right';});});">
+        <i style="font-size:x-small;" class="fas fa-chevron-right"></i>
+        <span>
+        
+    	
+    	Solution
+    	
+    	</span>
+    </div>
+    <div class="expand-content" style="display: none;">
+        <p>Pour les attributs <code>Subject::_teachers</code> et <code>Curriculum::_subjects</code>, on peut utiliser respectivement un <code>std::set&lt;const Teacher*&gt;</code> et un <code>std::set&lt;const Subject*&gt;</code>.
+L&rsquo;insertion se fait avec <code>_teachers.insert(&amp;teacher)</code> et <code>_subjects.insert(&amp;subject)</code> (on récupère l&rsquo;adresse de la référence pour créer un pointeur).</p>
+<p>Pour l&rsquo;opérateur d&rsquo;égalité, on est obligé de définir un opérateur libre, car le premier paramètre n&rsquo;est pas un <code>const Teacher&amp;</code> (resp. <code>const Curriculum&amp;</code>) mais un <code>const Teacher*</code> (resp. <code>const Curriculum*</code>).
+On peut néanmoins le déclarer ami de <code>Teacher</code> (resp. <code>Curriculum</code>) afin d&rsquo;accéder à ses attributs privés.</p>
+<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="k">class</span> <span class="nc">Teacher</span>
+<span class="p">{</span>
+<span class="k">public</span><span class="o">:</span>
+    <span class="p">...</span>
+    <span class="k">friend</span> <span class="kt">bool</span> <span class="k">operator</span><span class="o">==</span><span class="p">(</span><span class="k">const</span> <span class="n">Teacher</span><span class="o">*</span> <span class="n">teacher</span><span class="p">,</span> <span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&amp;</span> <span class="n">name</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="k">return</span> <span class="n">teacher</span><span class="o">-&gt;</span><span class="n">_name</span> <span class="o">==</span> <span class="n">name</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="p">...</span>
 <span class="p">};</span>
 
-<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
+<span class="k">class</span> <span class="nc">Curriculum</span>
 <span class="p">{</span>
-    <span class="n">A</span><span class="o">*</span> <span class="n">a</span> <span class="o">=</span> <span class="k">new</span> <span class="n">B</span><span class="p">();</span>
+<span class="k">public</span><span class="o">:</span>
+    <span class="p">...</span>
+    <span class="k">friend</span> <span class="kt">bool</span> <span class="k">operator</span><span class="o">==</span><span class="p">(</span><span class="k">const</span> <span class="n">Curriculum</span><span class="o">*</span> <span class="n">curriculum</span><span class="p">,</span> <span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&amp;</span> <span class="n">name</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="k">return</span> <span class="n">curriculum</span><span class="o">-&gt;</span><span class="n">_name</span> <span class="o">==</span> <span class="n">name</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="p">...</span>
+<span class="p">};</span>
+</code></pre></div><p>Enfin, pour l&rsquo;affichage, on peut simplement accéder aux éléments de chaque <code>set</code> en bouclant dessus et en déréférençant les pointeurs :</p>
+<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="k">class</span> <span class="nc">Subject</span>
+<span class="p">{</span>
+<span class="k">public</span><span class="o">:</span>
+    <span class="p">...</span>
+    <span class="k">friend</span> <span class="n">std</span><span class="o">::</span><span class="n">ostream</span><span class="o">&amp;</span> <span class="k">operator</span><span class="o">&lt;&lt;</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">ostream</span><span class="o">&amp;</span> <span class="n">stream</span><span class="p">,</span> <span class="k">const</span> <span class="n">Subject</span><span class="o">&amp;</span> <span class="n">subject</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">stream</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;-&gt; Subject &#34;</span> <span class="o">&lt;&lt;</span> <span class="n">subject</span><span class="p">.</span><span class="n">_name</span> <span class="o">&lt;&lt;</span> <span class="s">&#34; teached by: &#34;</span><span class="p">;</span>
 
-    <span class="n">a</span><span class="o">-&gt;</span><span class="n">fcn1</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">);</span>
-    <span class="n">a</span><span class="o">-&gt;</span><span class="n">fcn2</span><span class="p">(</span><span class="s">&#34;la la la&#34;</span><span class="p">);</span>
-    <span class="n">a</span><span class="o">-&gt;</span><span class="n">fcn3</span><span class="p">(</span><span class="nb">false</span><span class="p">);</span>
-    <span class="n">a</span><span class="o">-&gt;</span><span class="n">fcn4</span><span class="p">();</span>
+        <span class="k">for</span> <span class="p">(</span><span class="k">const</span> <span class="k">auto</span><span class="o">*</span> <span class="nl">teacher</span> <span class="p">:</span> <span class="n">subject</span><span class="p">.</span><span class="n">_teachers</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="n">stream</span> <span class="o">&lt;&lt;</span> <span class="o">*</span><span class="n">teacher</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;, &#34;</span><span class="p">;</span>
+        <span class="p">}</span>
 
-    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+        <span class="k">return</span> <span class="n">stream</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="p">...</span>
+<span class="p">};</span>
+
+<span class="k">class</span> <span class="nc">Curriculum</span>
+<span class="p">{</span>
+<span class="k">public</span><span class="o">:</span>
+    <span class="p">...</span>
+    <span class="k">friend</span> <span class="n">std</span><span class="o">::</span><span class="n">ostream</span><span class="o">&amp;</span> <span class="k">operator</span><span class="o">&lt;&lt;</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">ostream</span><span class="o">&amp;</span> <span class="n">stream</span><span class="p">,</span> <span class="k">const</span> <span class="n">Curriculum</span><span class="o">&amp;</span> <span class="n">curriculum</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">stream</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;Curriculum &lt;&#34;</span> <span class="o">&lt;&lt;</span> <span class="n">curriculum</span><span class="p">.</span><span class="n">_name</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;&gt;&#34;</span><span class="p">;</span>
+
+        <span class="k">for</span> <span class="p">(</span><span class="k">const</span> <span class="k">auto</span><span class="o">*</span> <span class="nl">subject</span> <span class="p">:</span> <span class="n">curriculum</span><span class="p">.</span><span class="n">_subjects</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="n">stream</span> <span class="o">&lt;&lt;</span> <span class="o">*</span><span class="n">subject</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+        <span class="p">}</span>
+
+        <span class="k">return</span> <span class="n">stream</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="p">...</span>
+<span class="p">};</span>
+</code></pre></div>
+    </div>
+</div>
+<p>Comme de temps en temps, les professeurs partent à la retraite, rajoutez une fonctionnalité permettant de supprimer un professeur de la base.</p>
+
+<div class="expand">
+    <div class="expand-label" style="cursor: pointer;" onclick="$h = $(this);$h.next('div').slideToggle(100,function () {$h.children('i').attr('class',function () {return $h.next('div').is(':visible') ? 'fas fa-chevron-down' : 'fas fa-chevron-right';});});">
+        <i style="font-size:x-small;" class="fas fa-chevron-right"></i>
+        <span>
+        
+    	
+    	Solution
+    	
+    	</span>
+    </div>
+    <div class="expand-content" style="display: none;">
+        <div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="k">else</span> <span class="nf">if</span> <span class="p">(</span><span class="n">command</span> <span class="o">==</span> <span class="s">&#34;r&#34;</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">name</span><span class="p">;</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">cin</span> <span class="o">&gt;&gt;</span> <span class="n">name</span><span class="p">;</span>
+
+    <span class="k">const</span> <span class="k">auto</span> <span class="n">teacher_it</span> <span class="o">=</span> <span class="n">std</span><span class="o">::</span><span class="n">find</span><span class="p">(</span><span class="n">teachers</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span> <span class="n">teachers</span><span class="p">.</span><span class="n">end</span><span class="p">(),</span> <span class="n">name</span><span class="p">);</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">teacher_it</span> <span class="o">==</span> <span class="n">teachers</span><span class="p">.</span><span class="n">end</span><span class="p">())</span>
+    <span class="p">{</span>
+        <span class="k">continue</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="k">auto</span><span class="o">*</span> <span class="n">teacher</span> <span class="o">=</span> <span class="o">*</span><span class="n">teacher_it</span><span class="p">;</span>
+    <span class="n">teachers</span><span class="p">.</span><span class="n">erase</span><span class="p">(</span><span class="n">teacher_it</span><span class="p">);</span>
+    <span class="k">delete</span> <span class="n">teacher</span><span class="p">;</span>
 <span class="p">}</span>
-</code></pre></div><p><label for="q4">4- Le programme ci-dessus ne compile pas. Pourquoi et que faut-il faire pour le corriger ?</label></p>
-<p><textarea id="q4" name="q4-compile-error" rows="3" cols="50"></textarea></p>
-<p><label for="q5">5- En plus du problème de compilation, on peut relever trois erreurs de programmation qui pourraient générer des problèmes à l’exécution. Quelles sont-elles et que faut-il faire pour les corriger ?</label></p>
-<p><textarea id="q5" name="q5-exec-issues" rows="3" cols="50"></textarea></p>
-<p><label for="q6">6- Pour chacun des appels sur <code>a</code>, indiquez quelle fonction sera appelée (<code>A::fcnX</code> ou <code>B::fcnX</code>) et justifiez.</label></p>
-<p><textarea id="q6" name="q6-called-fcns" rows="4" cols="50"></textarea></p>
-<hr>
-<p><label for="q7">7- Définissez une classe <code>SharedStuff</code> contenant un attribut <code>_value</code> accessible uniquement depuis ses classes dérivées. Ajoutez un constructeur à 1 paramètre pour initialiser ce membre.</label></p>
-<p><textarea id="q7" name="q7-some-code" rows="10" cols="50"></textarea></p>
-<p><label for="q8">8- Définissez une classe <code>MoreStuff</code> héritant de <code>SharedStuff</code> et contenant un attribut <code>_value2</code>. Définissez les fonctions nécessaires permettant d’instancier un objet de ce type, et d’afficher les valeurs de ses deux membres dans la console.</label></p>
-<p><textarea id="q8" name="q8-some-code" rows="10" cols="50"></textarea></p>
-<hr>
-<p><label for="q9">9- Définissez une classe <code>Food</code> contenant une fonction virtuelle pure <code>miam_miam</code>. Cette fonction doit servir à afficher le nom de l’aliment dans la console.</label></p>
-<p><textarea id="q9" name="q9-some-code" rows="10" cols="50"></textarea></p>
-<p><label for="q10">10- Définissez une classe <code>Nutella</code> héritant de <code>Food</code>. Ajoutez ce qu’il faut pour rendre cette classe instanciable.</label></p>
-<p><textarea id="q10" name="q10-some-code" rows="10" cols="50"></textarea></p>
+</code></pre></div><div class="notices info" ><p>Il ne faut pas écrire <code>teachers.erase(teacher_it)</code> suivi de <code>delete *teacher_it</code>, car <code>erase</code> invalide <code>teacher_it</code>. Il n&rsquo;est donc plus valide de le déréférencer ensuite.<br>
+Il est également déconseillé de faire l&rsquo;inverse : <code>delete *teacher_it</code> suivi de <code>teachers.erase(teacher_it)</code>, car <code>teachers</code> contient alors une dangling reference, ce qui pourrait être constitué une faille si quelqu&rsquo;un venait rajouter du code entre ces deux lignes.<br>
+La bonne solution est de créer une variable temporaire pour déréférencer l&rsquo;itérateur avant son invalidation et libérer la mémoire seulement après avoir supprimé la référence du tableau.</p>
+</div>
 
+    </div>
+</div>
+<p>Que se passe-t-il si vous essayiez d&rsquo;afficher le contenu d&rsquo;une matière qu&rsquo;un professeur retraité enseignait ?<br>
+Que faut-il que vous ajoutiez à la classe <code>Subject</code> pour avoir la possibilité de supprimer un professeur de la base de manière sûre ?</p>
 
-  <hr/>
+<div class="expand">
+    <div class="expand-label" style="cursor: pointer;" onclick="$h = $(this);$h.next('div').slideToggle(100,function () {$h.children('i').attr('class',function () {return $h.next('div').is(':visible') ? 'fas fa-chevron-down' : 'fas fa-chevron-right';});});">
+        <i style="font-size:x-small;" class="fas fa-chevron-right"></i>
+        <span>
+        
+    	
+    	Solution
+    	
+    	</span>
+    </div>
+    <div class="expand-content" style="display: none;">
+        <p>Lorsque cette situation se produit, le programme rentre dans un état instable, résultant d&rsquo;un accès à de la mémoire libérée.
+En effet, au moment d&rsquo;afficher le contenu de la matière, on tente d&rsquo;accéder à chacun des éléments de <code>_teachers</code> alors que l&rsquo;un d&rsquo;entre eux vient d&rsquo;être détruit (= dangling reference).</p>
+<p>Pour régler ce problème, il faudrait que <code>Subject</code> propose une fonction permettant de retirer l&rsquo;un de ses professeurs, et que l&rsquo;on appelle cette fonction sur toutes les matières avant de détruire le contenu de <code>teacher</code>.</p>
+<p>Dans <code>Subject</code> :</p>
+<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="kt">void</span> <span class="nf">remove_teacher</span><span class="p">(</span><span class="k">const</span> <span class="n">Teacher</span><span class="o">&amp;</span> <span class="n">teacher</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">_teachers</span><span class="p">.</span><span class="n">erase</span><span class="p">(</span><span class="o">&amp;</span><span class="n">teacher</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div><p>Dans le <code>main</code> :</p>
+<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="k">auto</span><span class="o">*</span> <span class="n">teacher</span> <span class="o">=</span> <span class="o">*</span><span class="n">teacher_it</span><span class="p">;</span>
+<span class="k">for</span> <span class="p">(</span><span class="k">auto</span><span class="o">*</span> <span class="nl">subject</span> <span class="p">:</span> <span class="n">subjects</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">subject</span><span class="o">-&gt;</span><span class="n">remove_teacher</span><span class="p">(</span><span class="o">*</span><span class="n">teacher</span><span class="p">);</span>
+<span class="p">}</span>
 
-  <label for="time">Combien de temps avez-vous mis à compléter ce chapitre ?</label>
-  <input type="text" name="time" placeholder="environ 4h30" />
-
-  <label for="questions">Avez-vous des questions suite à sa lecture ?</label>
-  <textarea id="questions" name="questions" rows="5" cols="50"></textarea>
-
-  <label for="comments">Avez-vous des commentaires concernant le chapitre et/ou le site ?</label>
-  <textarea id="comments" name="comments" rows="5" cols="50"></textarea>
-
-  <input type="hidden" name="_template" value="table" />
-  <input type="hidden" name="_captcha" value="false" />
-  <input type="hidden" name="_next" value="https://laefy.github.io/CPP_Learning//chapter4/test_done/" />
-
-  <input type="submit" disabled style="display: none" aria-hidden="true" />
-  <input type="submit" value="Valider" />
-</form>
-
-<script src="/CPP_Learning/js/save-test-answers.js"></script>
-
+<span class="n">teachers</span><span class="p">.</span><span class="n">erase</span><span class="p">(</span><span class="n">teacher_it</span><span class="p">);</span>
+<span class="k">delete</span> <span class="n">teacher</span><span class="p">;</span>
+</code></pre></div>
+    </div>
+</div>
 
 
 <footer class="footline">
@@ -1910,7 +2052,6 @@ Bon courage à vous 🙂</p>
             
                 
                     
-                    
                 
                 
 
@@ -1924,8 +2065,21 @@ Bon courage à vous 🙂</p>
             
                 
                     
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
                         
-                        
+            
+            
+                
                     
                 
                 
@@ -2007,26 +2161,6 @@ Bon courage à vous 🙂</p>
             
                 
                     
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                        
-                        
-                    
                 
                 
 
@@ -2051,6 +2185,7 @@ Bon courage à vous 🙂</p>
             
                 
                     
+                    
                 
                 
 
@@ -2063,6 +2198,7 @@ Bon courage à vous 🙂</p>
             
             
                 
+                    
                     
                 
                 
@@ -2079,6 +2215,9 @@ Bon courage à vous 🙂</p>
             
             
                 
+                    
+                        
+                        
                     
                 
                 
@@ -2119,10 +2258,10 @@ Bon courage à vous 🙂</p>
 	 
 	 
 		
-			<a class="nav nav-prev" href="/CPP_Learning/chapter4/5-vehicles/" title="🚗 Véhicule partagé"> <i class="fa fa-chevron-left"></i></a>
+			<a class="nav nav-prev" href="/CPP_Learning/chapter5/" title="Gestion des ressources"> <i class="fa fa-chevron-left"></i></a>
 		
 		
-			<a class="nav nav-next" href="/CPP_Learning/chapter4/summary/" title="Synthèse" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+			<a class="nav nav-next" href="/CPP_Learning/chapter5/2-ownership/" title="Ownership" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
 		
 	
     </div>

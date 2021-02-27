@@ -1,0 +1,3026 @@
+<!DOCTYPE html>
+<html lang="fr" class="js csstransforms3d">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="Hugo 0.76.5" />
+    <meta name="description" content="">
+
+
+    <link rel="icon" href="/CPP_Learning/images/favicon.png" type="image/png">
+
+    <title>Pointeurs intelligents :: Cours de C&#43;&#43; - Niveau Master</title>
+
+    
+    <link href="/CPP_Learning/css/nucleus.css?1614426198" rel="stylesheet">
+    <link href="/CPP_Learning/css/fontawesome-all.min.css?1614426198" rel="stylesheet">
+    <link href="/CPP_Learning/css/hybrid.css?1614426198" rel="stylesheet">
+    <link href="/CPP_Learning/css/featherlight.min.css?1614426198" rel="stylesheet">
+    <link href="/CPP_Learning/css/perfect-scrollbar.min.css?1614426198" rel="stylesheet">
+    <link href="/CPP_Learning/css/auto-complete.css?1614426198" rel="stylesheet">
+    <link href="/CPP_Learning/css/atom-one-dark-reasonable.css?1614426198" rel="stylesheet">
+    <link href="/CPP_Learning/css/theme.css?1614426198" rel="stylesheet">
+    <link href="/CPP_Learning/css/hugo-theme.css?1614426198" rel="stylesheet">
+    
+    <link href="/CPP_Learning/css/theme-mine.css?1614426198" rel="stylesheet">
+    
+    <link href="/CPP_Learning/css/syntax.css?1614426198" rel="stylesheet">
+
+    <script src="/CPP_Learning/js/jquery-3.3.1.min.js?1614426198"></script>
+
+    <style>
+      :root #header + #content > #left > #rlblock_left{
+          display:none !important;
+      }
+      
+        :not(pre) > code + span.copy-to-clipboard {
+            display: none;
+        }
+      
+    </style>
+    
+  </head>
+  <body class="" data-url="/CPP_Learning/chapter5/3-smart-ptrs/">
+    <nav id="sidebar" class="showVisitedLinks">
+
+
+
+  <div id="header-wrapper">
+    <div id="header">
+      <a id="logo" href="https://laefy.github.io/CPP_Learning/">🥞 C++ 🥞</a>
+
+    </div>
+    
+        <div class="searchbox">
+    <label for="search-by"><i class="fas fa-search"></i></label>
+    <input data-search-input id="search-by" type="search" placeholder="Rechercher...">
+    <span data-search-clear=""><i class="fas fa-times"></i></span>
+</div>
+
+<script type="text/javascript" src="/CPP_Learning/js/lunr.min.js?1614426198"></script>
+<script type="text/javascript" src="/CPP_Learning/js/auto-complete.js?1614426198"></script>
+<script type="text/javascript">
+    
+        var baseurl = "https:\/\/laefy.github.io\/CPP_Learning\/";
+    
+</script>
+<script type="text/javascript" src="/CPP_Learning/js/search.js?1614426198"></script>
+
+    
+  </div>
+
+    <div class="highlightable">
+    <ul class="topics">
+
+        
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/CPP_Learning/chapter1/" title="Introduction au C&#43;&#43;" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/CPP_Learning/chapter1/">
+          <b>1- </b>Introduction au C&#43;&#43;
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+          
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/CPP_Learning/chapter1/1-language/" title="Présentation du langage" class="dd-item ">
+        <a href="/CPP_Learning/chapter1/1-language/">
+        Présentation du langage
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/CPP_Learning/chapter1/2-tools/" title="Outils" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/CPP_Learning/chapter1/2-tools/">
+          Outils
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/CPP_Learning/chapter1/2-tools/1-vscode/" title="Visual Studio Code" class="dd-item ">
+        <a href="/CPP_Learning/chapter1/2-tools/1-vscode/">
+        Visual Studio Code
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/CPP_Learning/chapter1/2-tools/2-cmake/" title="CMake" class="dd-item ">
+        <a href="/CPP_Learning/chapter1/2-tools/2-cmake/">
+        CMake
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/CPP_Learning/chapter1/2-tools/3-git/" title="Git" class="dd-item ">
+        <a href="/CPP_Learning/chapter1/2-tools/3-git/">
+        Git
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/CPP_Learning/chapter1/2-tools/4-compilation/" title="Compilation &amp; Exécution" class="dd-item ">
+        <a href="/CPP_Learning/chapter1/2-tools/4-compilation/">
+        Compilation &amp; Exécution
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/CPP_Learning/chapter1/3-practice/" title="Premiers programmes" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/CPP_Learning/chapter1/3-practice/">
+          Premiers programmes
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/CPP_Learning/chapter1/3-practice/1-hello-world/" title="👋 Hello World" class="dd-item ">
+        <a href="/CPP_Learning/chapter1/3-practice/1-hello-world/">
+        👋 Hello World
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/CPP_Learning/chapter1/3-practice/2-parrot.fd/" title="🦜 Perroquet" class="dd-item ">
+        <a href="/CPP_Learning/chapter1/3-practice/2-parrot.fd/">
+        🦜 Perroquet
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/CPP_Learning/chapter1/3-practice/3-array/" title="🔢 Tableau Numérique" class="dd-item ">
+        <a href="/CPP_Learning/chapter1/3-practice/3-array/">
+        🔢 Tableau Numérique
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/CPP_Learning/chapter1/3-practice/4-calculator/" title="🧮 Calculette" class="dd-item ">
+        <a href="/CPP_Learning/chapter1/3-practice/4-calculator/">
+        🧮 Calculette
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/CPP_Learning/chapter1/test/" title="Questionnaire !" class="dd-item ">
+        <a href="/CPP_Learning/chapter1/test/">
+        Questionnaire !
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/CPP_Learning/chapter1/summary/" title="Synthèse" class="dd-item ">
+        <a href="/CPP_Learning/chapter1/summary/">
+        Synthèse
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+             
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/CPP_Learning/chapter2/" title="Classes" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/CPP_Learning/chapter2/">
+          <b>2- </b>Classes
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/CPP_Learning/chapter2/1-poo/" title="C&#39;est quoi un objet déjà ?" class="dd-item ">
+        <a href="/CPP_Learning/chapter2/1-poo/">
+        C&#39;est quoi un objet déjà ?
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/CPP_Learning/chapter2/2-first-class/" title="✨ Première classe" class="dd-item ">
+        <a href="/CPP_Learning/chapter2/2-first-class/">
+        ✨ Première classe
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/CPP_Learning/chapter2/3-constructor/" title="🔨 Constructeur" class="dd-item ">
+        <a href="/CPP_Learning/chapter2/3-constructor/">
+        🔨 Constructeur
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/CPP_Learning/chapter2/4-clone/" title="🧬 Clône" class="dd-item ">
+        <a href="/CPP_Learning/chapter2/4-clone/">
+        🧬 Clône
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/CPP_Learning/chapter2/5-rectangle/" title="🔳 Rectangle" class="dd-item ">
+        <a href="/CPP_Learning/chapter2/5-rectangle/">
+        🔳 Rectangle
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/CPP_Learning/chapter2/6-polygon/" title="💠 Polygône" class="dd-item ">
+        <a href="/CPP_Learning/chapter2/6-polygon/">
+        💠 Polygône
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/CPP_Learning/chapter2/test/" title="Questionnaire !" class="dd-item ">
+        <a href="/CPP_Learning/chapter2/test/">
+        Questionnaire !
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/CPP_Learning/chapter2/summary/" title="Synthèse" class="dd-item ">
+        <a href="/CPP_Learning/chapter2/summary/">
+        Synthèse
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+             
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/CPP_Learning/chapter3/" title="Conteneurs standards" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/CPP_Learning/chapter3/">
+          <b>3- </b>Conteneurs standards
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/CPP_Learning/chapter3/1-doc/" title="Un peu de doc..." class="dd-item ">
+        <a href="/CPP_Learning/chapter3/1-doc/">
+        Un peu de doc...
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/CPP_Learning/chapter3/2-vectors/" title="Tableaux dynamiques" class="dd-item ">
+        <a href="/CPP_Learning/chapter3/2-vectors/">
+        Tableaux dynamiques
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/CPP_Learning/chapter3/3-sequentials/" title="Autres conteneurs séquentiels" class="dd-item ">
+        <a href="/CPP_Learning/chapter3/3-sequentials/">
+        Autres conteneurs séquentiels
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/CPP_Learning/chapter3/4-associatives/" title="Conteneurs associatifs" class="dd-item ">
+        <a href="/CPP_Learning/chapter3/4-associatives/">
+        Conteneurs associatifs
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/CPP_Learning/chapter3/5-strings/" title="Manipulation de chaînes" class="dd-item ">
+        <a href="/CPP_Learning/chapter3/5-strings/">
+        Manipulation de chaînes
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/CPP_Learning/chapter3/6-tuples/" title="Paires et tuples" class="dd-item ">
+        <a href="/CPP_Learning/chapter3/6-tuples/">
+        Paires et tuples
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/CPP_Learning/chapter3/test/" title="Questionnaire !" class="dd-item ">
+        <a href="/CPP_Learning/chapter3/test/">
+        Questionnaire !
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/CPP_Learning/chapter3/summary/" title="Synthèse" class="dd-item ">
+        <a href="/CPP_Learning/chapter3/summary/">
+        Synthèse
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+             
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/CPP_Learning/chapter4/" title="Héritage" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/CPP_Learning/chapter4/">
+          <b>4- </b>Héritage
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/CPP_Learning/chapter4/1-hierarchy/" title="💼 Hiérarchie professionnelle" class="dd-item ">
+        <a href="/CPP_Learning/chapter4/1-hierarchy/">
+        💼 Hiérarchie professionnelle
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/CPP_Learning/chapter4/2-farm/" title="🐮 Concerto animalier" class="dd-item ">
+        <a href="/CPP_Learning/chapter4/2-farm/">
+        🐮 Concerto animalier
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/CPP_Learning/chapter4/3-virtual/" title="Résolution d&#39;appel virtuel" class="dd-item ">
+        <a href="/CPP_Learning/chapter4/3-virtual/">
+        Résolution d&#39;appel virtuel
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/CPP_Learning/chapter4/4-polymorphism/" title="Polymorphisme" class="dd-item ">
+        <a href="/CPP_Learning/chapter4/4-polymorphism/">
+        Polymorphisme
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/CPP_Learning/chapter4/5-vehicles/" title="🚗 Véhicule partagé" class="dd-item ">
+        <a href="/CPP_Learning/chapter4/5-vehicles/">
+        🚗 Véhicule partagé
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/CPP_Learning/chapter4/test/" title="Questionnaire !" class="dd-item ">
+        <a href="/CPP_Learning/chapter4/test/">
+        Questionnaire !
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/CPP_Learning/chapter4/summary/" title="Synthèse" class="dd-item ">
+        <a href="/CPP_Learning/chapter4/summary/">
+        Synthèse
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+             
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/CPP_Learning/chapter5/" title="Gestion des ressources" class="dd-item 
+        parent
+        
+        
+        ">
+      <a href="/CPP_Learning/chapter5/">
+          <b>5- </b>Gestion des ressources
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/CPP_Learning/chapter5/1-lifespan/" title="Durée de vie" class="dd-item ">
+        <a href="/CPP_Learning/chapter5/1-lifespan/">
+        Durée de vie
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/CPP_Learning/chapter5/2-ownership/" title="Ownership" class="dd-item ">
+        <a href="/CPP_Learning/chapter5/2-ownership/">
+        Ownership
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/CPP_Learning/chapter5/3-smart-ptrs/" title="Pointeurs intelligents" class="dd-item active">
+        <a href="/CPP_Learning/chapter5/3-smart-ptrs/">
+        Pointeurs intelligents
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+         
+    </ul>
+
+    
+    
+      <section id="shortcuts">
+        <h3>Accès rapide</h3>
+        <ul>
+          
+              <li> 
+                  <a class="padding" href="https://github.com/Laefy/CPP_Learning_Code/"><i class='fab fa-github'></i> Dépôt GitHub</a>
+              </li>
+          
+              <li> 
+                  <a class="padding" href="https://laefy.github.io/CPP_Learning/workflow"><i class='far fa-list-alt'></i> Workflow</a>
+              </li>
+          
+              <li> 
+                  <a class="padding" href="https://laefy.github.io/CPP_Learning/faq"><i class='fas fa-question-circle'></i> FAQ</a>
+              </li>
+          
+              <li> 
+                  <a class="padding" href="https://en.cppreference.com/w/"><i class='fas fa-passport'></i> CPP-Ref</a>
+              </li>
+          
+        </ul>
+      </section>
+    
+
+    
+    <section id="prefooter">
+      <hr/>
+      <ul>
+      
+      
+      
+        <li><a class="padding" href="#" data-clear-history-toggle=""><i class="fas fa-history fa-fw"></i> Supprimer l&#39;historique</a></li>
+      
+      </ul>
+    </section>
+    
+    <section id="footer">
+      <p>Built with <a href="https://github.com/matcornic/hugo-theme-learn"><i class="fas fa-heart"></i></a> from <a href="https://getgrav.org">Grav</a> and <a href="https://gohugo.io/">Hugo</a></p>
+
+    </section>
+  </div>
+</nav>
+
+
+
+
+        <section id="body">
+        <div id="overlay"></div>
+        <div class="padding highlightable">
+              
+              <div>
+                <div id="top-bar">
+                
+                
+                <div id="breadcrumbs" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
+                    <span id="sidebar-toggle-span">
+                        <a href="#" id="sidebar-toggle" data-sidebar-toggle="">
+                          <i class="fas fa-bars"></i>
+                        </a>
+                    </span>
+                  
+                  <span id="toc-menu"><i class="fas fa-list-alt"></i></span>
+                  
+                  <span class="links">
+                 
+                 
+                    
+          
+          
+            
+            
+          
+          
+            
+            
+          
+          
+            <a href='/CPP_Learning/'>Accueil</a> > <a href='/CPP_Learning/chapter5/'>Gestion des ressources</a> > Pointeurs intelligents
+          
+        
+          
+        
+          
+        
+                 
+                  </span>
+                </div>
+                
+                    <div class="progress">
+    <div class="wrapper">
+<nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#ownership-simple">Ownership simple</a></li>
+        <li><a href="#ownership-partagé">Ownership partagé</a></li>
+        <li><a href="#les-pointeurs-nu-cest-terminé-">Les pointeurs nu, c&rsquo;est terminé ?</a></li>
+        <li><a href="#raii">RAII</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+    </div>
+</div>
+
+                
+              </div>
+            </div>
+            
+        <div id="head-tags">
+        
+        </div>
+        
+        <div id="body-inner">
+          
+            <h1>
+              
+              Pointeurs intelligents
+            </h1>
+          
+
+        
+
+
+<p>Maintenant que vous savez ce à quoi correspond l&rsquo;ownership, nous allons vous présentez les smart pointers.</p>
+<hr>
+<h3 id="ownership-simple">Ownership simple</h3>
+<p>Pour cet exercice, vous modifierez les fichiers :<br>
+- <code>chap-05/2-pokemons/Journey.cpp</code><br>
+- <code>chap-05/2-pokemons/PC.h</code><br>
+- <code>chap-05/2-pokemons/PokeCenter.h</code><br>
+- <code>chap-05/2-pokemons/Pokedex.h</code><br>
+- <code>chap-05/2-pokemons/Pokemon.h</code><br>
+- <code>chap-05/2-pokemons/ProfessorOak.h</code><br>
+- <code>chap-05/2-pokemons/Trainer.h</code></p>
+<p>La cible à compiler est <code>c5-2-pokemons</code>.</p>
+<hr>
+<p>En général, on peut s&rsquo;arranger pour qu&rsquo;à tout instant de l&rsquo;exécution d&rsquo;un programme, chacune des ressources ait un unique propriétaire.
+C&rsquo;était par exemple le cas dans l&rsquo;exercice précédent : un Pokémon pouvait changer de propriétaire, certes, mais il ne pouvait pas avoir deux propriétaires au même moment.</p>
+<p>Pour représenter explicitement ce type d&rsquo;ownership, vous avez deux possibilités :</p>
+<ul>
+<li>utiliser un attribut de type <code>T</code> (sans référence, ni pointeur) : <code>T _my_object;</code></li>
+<li>utiliser un attribut de type <code>std::unique_ptr&lt;T&gt;</code> : <code>std::unique_ptr&lt;T&gt; _my_object_ptr;</code></li>
+</ul>
+<p>Un <code>unique_ptr</code>, c&rsquo;est comme un raw pointer (= pointeur nu), mis-à-part le fait que l&rsquo;on ne peut pas le copier, et que l&rsquo;objet alloué dedans est automatiquement détruit lorsque le <code>unique_ptr</code> est lui-même détruit.</p>
+<p>Voici un petit exemple :</p>
+<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="c1">// Les smart-pointeurs se trouvent dans &lt;memory&gt;
+</span><span class="c1"></span><span class="cp">#include</span> <span class="cpf">&lt;memory&gt;</span><span class="cp">
+</span><span class="cp"></span>
+<span class="c1">// std::move se trouve dans &lt;utility&gt;
+</span><span class="c1"></span><span class="cp">#include</span> <span class="cpf">&lt;utility&gt;</span><span class="cp">
+</span><span class="cp"></span>
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="c1">// On peut initialiser un unique_ptr en utilisant std::make_unique&lt;Type&gt;(p1, p2, ...).
+</span><span class="c1"></span>    <span class="n">std</span><span class="o">::</span><span class="n">unique_ptr</span><span class="o">&lt;</span><span class="n">Animal</span><span class="o">&gt;</span> <span class="n">animal</span> <span class="o">=</span> <span class="n">std</span><span class="o">::</span><span class="n">make_unique</span><span class="o">&lt;</span><span class="n">Cow</span><span class="o">&gt;</span><span class="p">();</span>
+
+    <span class="c1">// On peut utiliser * pour récupérer une référence sur l&#39;objet.
+</span><span class="c1"></span>    <span class="n">Animal</span><span class="o">&amp;</span> <span class="n">animal_ref</span> <span class="o">=</span> <span class="o">*</span><span class="n">animal</span><span class="p">;</span>
+
+    <span class="c1">// On peut utiliser -&gt; pour déréférencer le unique_ptr.
+</span><span class="c1"></span>    <span class="n">animal</span><span class="o">-&gt;</span><span class="n">sing</span><span class="p">();</span> <span class="c1">// &#34;Mewwwwh&#34;
+</span><span class="c1"></span>
+    <span class="c1">// On peut réassigner le pointeur. L&#39;objet précédent est automatiquement détruit.
+</span><span class="c1"></span>    <span class="n">animal</span> <span class="o">=</span> <span class="n">std</span><span class="o">::</span><span class="n">make_unique</span><span class="o">&lt;</span><span class="n">Dog</span><span class="o">&gt;</span><span class="p">();</span>
+    <span class="n">animal</span><span class="o">-&gt;</span><span class="n">sing</span><span class="p">();</span> <span class="c1">// &#34;Waf&#34;
+</span><span class="c1"></span>
+    <span class="c1">// On peut également construire un unique_ptr à partir d&#39;un raw pointer.
+</span><span class="c1"></span>    <span class="n">std</span><span class="o">::</span><span class="n">unique_ptr</span><span class="o">&lt;</span><span class="n">Chicken</span><span class="o">&gt;</span> <span class="n">chicken</span> <span class="p">{</span> <span class="k">new</span> <span class="n">Chicken</span> <span class="p">};</span>
+    <span class="n">chicken</span><span class="o">-&gt;</span><span class="n">sing</span><span class="p">();</span> <span class="c1">// &#34;Cotcotcotcotcodet&#34;
+</span><span class="c1"></span>
+    <span class="c1">// unique_ptr a un constructeur par défaut, qui initialise le contenu à nullptr.
+</span><span class="c1"></span>    <span class="n">std</span><span class="o">::</span><span class="n">unique_ptr</span><span class="o">&lt;</span><span class="n">Animal</span><span class="o">&gt;</span> <span class="n">no_animal</span><span class="p">;</span>
+
+    <span class="c1">// On peut vérifier la validité d&#39;un unique_ptr. 
+</span><span class="c1"></span>    <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">no_animal</span> <span class="o">&amp;&amp;</span> <span class="n">animal</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="c1">// On ne peut pas copier un unique_ptr dans un autre. C&#39;est pour ça qu&#39;il s&#39;appelle unique_ptr.
+</span><span class="c1"></span>        <span class="c1">// no_animal = animal; // ne compile pas
+</span><span class="c1"></span>
+        <span class="c1">// Il est par contre possible de transférer le contenu d&#39;un unique_ptr dans un autre.
+</span><span class="c1"></span>        <span class="n">no_animal</span> <span class="o">=</span> <span class="n">std</span><span class="o">::</span><span class="n">move</span><span class="p">(</span><span class="n">animal</span><span class="p">);</span>
+        
+        <span class="c1">// `no_animal` contient maintenant une poule et `animal` contient une valeur indéterminée. Il ne faut
+</span><span class="c1"></span>        <span class="c1">// surtout pas réutiliser un unique_ptr après avoir déplacé son contenu ailleurs.
+</span><span class="c1"></span>    <span class="p">}</span>
+
+    <span class="c1">// Pas de fuite de mémoire à la sortie du programme, car au moment de détruire un unique_ptr,
+</span><span class="c1"></span>    <span class="c1">// si son contenu est valide, celui-ci est également détruit.
+</span><span class="c1"></span>    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+<div class="notices tip" ><p>Vous devriez utiliser autant que possible <code>std::make_unique</code> plutôt que <code>new</code> pour initialiser des <code>unique_ptr</code>.
+Si vous souhaitez comprendre pourquoi, vous pouvez aller lire <a href="https://herbsutter.com/gotw/_102/">cet article</a>.</p>
+</div>
+
+<hr>
+<h5 id="pc">PC</h5>
+<p>Reprenez l&rsquo;exercice précédent.
+Remplacez le type de <code>PC::_stored_pokemons</code> par un <code>std::vector&lt;std::unique_ptr&lt;Pokemon&gt;&gt;</code>.</p>
+<p>Comme il n&rsquo;existe pas d'<code>operator==</code> permettant de tester l&rsquo;égalité entre un raw pointer et un smart pointer, vous devrez également remplacer l&rsquo;appel à <code>find</code> dans <code>release</code> par un appel à <code>find_if</code> :</p>
+<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="c1">// La fonction get() permet de récupérer le raw pointer contenu dans le unique_ptr.
+</span><span class="c1"></span><span class="k">auto</span> <span class="n">it</span> <span class="o">=</span> <span class="n">std</span><span class="o">::</span><span class="n">find_if</span><span class="p">(</span><span class="n">_stored_pokemons</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span> <span class="n">_stored_pokemons</span><span class="p">.</span><span class="n">end</span><span class="p">(),</span> <span class="p">[</span><span class="o">&amp;</span><span class="n">pokemon</span><span class="p">](</span><span class="k">const</span> <span class="k">auto</span><span class="o">&amp;</span> <span class="n">p</span><span class="p">)</span> <span class="p">{</span> <span class="k">return</span> <span class="n">p</span><span class="p">.</span><span class="n">get</span><span class="p">()</span> <span class="o">==</span> <span class="o">&amp;</span><span class="n">pokemon</span><span class="p">;</span> <span class="p">});</span>
+</code></pre></div><p>Le destructeur de votre classe est-il encore utile ?<br>
+Que faut-il changer pour que les fonctions <code>release</code>, puis <code>remove</code>, compilent ?</p>
+
+<div class="expand">
+    <div class="expand-label" style="cursor: pointer;" onclick="$h = $(this);$h.next('div').slideToggle(100,function () {$h.children('i').attr('class',function () {return $h.next('div').is(':visible') ? 'fas fa-chevron-down' : 'fas fa-chevron-right';});});">
+        <i style="font-size:x-small;" class="fas fa-chevron-right"></i>
+        <span>
+        
+    	
+    	Solution
+    	
+    	</span>
+    </div>
+    <div class="expand-content" style="display: none;">
+        <p>Le destructeur de la classe peut être supprimé, puisqu&rsquo;il ne servait qu&rsquo;à appeler <code>delete</code> sur les raw pointers.
+La classe <code>unique_ptr</code> s&rsquo;en charge maintenant toute seule.</p>
+<p>Pour que la fonction <code>release</code> compile, il faut remplacer le type de retour de la fonction par un <code>std::unique_ptr&lt;Pokemon&gt;</code>.
+En effet, la fonction transfert l&rsquo;ownership du <code>Pokemon</code>, c&rsquo;est donc logique de passer par un <code>unique_ptr</code>.</p>
+<p>Après avoir fait ces changements, il faut aussi modifier la fonction <code>remove</code>.
+Celle-ci faisait un appel à <code>delete</code> sur le pointeur.
+Ce n&rsquo;est désormais plus nécessaire, puisqu&rsquo;une fois de plus, <code>unique_ptr</code> gère ça pour nous !</p>
+<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="k">class</span> <span class="nc">PC</span>
+<span class="p">{</span>
+<span class="k">public</span><span class="o">:</span>
+    <span class="kt">void</span> <span class="n">transfer</span><span class="p">(</span><span class="n">Pokemon</span><span class="o">*</span> <span class="n">pokemon</span><span class="p">)</span> <span class="p">{</span> <span class="n">_stored_pokemons</span><span class="p">.</span><span class="n">emplace_back</span><span class="p">(</span><span class="n">pokemon</span><span class="p">);</span> <span class="p">}</span>
+
+    <span class="kt">void</span> <span class="nf">remove</span><span class="p">(</span><span class="k">const</span> <span class="n">Pokemon</span><span class="o">&amp;</span> <span class="n">pokemon</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="k">auto</span> <span class="n">to_destroy</span> <span class="o">=</span> <span class="n">release</span><span class="p">(</span><span class="n">pokemon</span><span class="p">);</span>
+    <span class="p">}</span>
+
+    <span class="na">[[nodiscard]]</span> <span class="n">std</span><span class="o">::</span><span class="n">unique_ptr</span><span class="o">&lt;</span><span class="n">Pokemon</span><span class="o">&gt;</span> <span class="n">release</span><span class="p">(</span><span class="k">const</span> <span class="n">Pokemon</span><span class="o">&amp;</span> <span class="n">pokemon</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">std</span><span class="o">::</span><span class="n">unique_ptr</span><span class="o">&lt;</span><span class="n">Pokemon</span><span class="o">&gt;</span> <span class="n">result</span><span class="p">;</span>
+
+        <span class="k">auto</span> <span class="n">it</span> <span class="o">=</span> <span class="n">std</span><span class="o">::</span><span class="n">find_if</span><span class="p">(</span><span class="n">_stored_pokemons</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span> <span class="n">_stored_pokemons</span><span class="p">.</span><span class="n">end</span><span class="p">(),</span> <span class="p">[</span><span class="o">&amp;</span><span class="n">pokemon</span><span class="p">](</span><span class="k">const</span> <span class="k">auto</span><span class="o">&amp;</span> <span class="n">p</span><span class="p">)</span> <span class="p">{</span> <span class="k">return</span> <span class="n">p</span><span class="p">.</span><span class="n">get</span><span class="p">()</span> <span class="o">==</span> <span class="o">&amp;</span><span class="n">pokemon</span><span class="p">;</span> <span class="p">});</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">it</span> <span class="o">!=</span> <span class="n">_stored_pokemons</span><span class="p">.</span><span class="n">end</span><span class="p">())</span>
+        <span class="p">{</span>
+            <span class="n">std</span><span class="o">::</span><span class="n">swap</span><span class="p">(</span><span class="n">result</span><span class="p">,</span> <span class="o">*</span><span class="n">it</span><span class="p">);</span>
+            <span class="n">_stored_pokemons</span><span class="p">.</span><span class="n">erase</span><span class="p">(</span><span class="n">it</span><span class="p">);</span>
+        <span class="p">}</span>
+
+        <span class="k">return</span> <span class="n">result</span><span class="p">;</span>
+    <span class="p">}</span>
+
+<span class="k">private</span><span class="o">:</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">unique_ptr</span><span class="o">&lt;</span><span class="n">Pokemon</span><span class="o">&gt;&gt;</span> <span class="n">_stored_pokemons</span><span class="p">;</span>
+<span class="p">};</span>
+</code></pre></div><div class="notices tip" ><p>Il ne faut pas retirer l&rsquo;attribut <code>[[nodiscard]]</code> de la fonction <code>release</code>.
+En effet, si vous le faites, alors la fonction <code>remove</code> n&rsquo;apporte aucune plus-value.
+En gardant <code>[[nodiscard]]</code> sur <code>release</code>, on a deux cas d&rsquo;utilisation bien distincts :<br>
+- <code>remove</code> sert à supprimer une valeur du conteneur,<br>
+- <code>release</code> sert à extraire une valeur du conteneur.<br>
+C&rsquo;est donc logique de conserver l&rsquo;attribut <code>[[nodiscard]]</code> sur <code>release</code>.
+Si quelqu&rsquo;un n&rsquo;est vraiment pas intéressé par la valeur de retour, il peut utiliser <code>remove</code> à la place.</p>
+</div>
+
+    </div>
+</div>
+<p>Pour indiquer que la fonction <code>transfer</code> s&rsquo;attend à ce qu&rsquo;on lui transmette l&rsquo;ownership du Pokémon qu&rsquo;elle reçoit, transformez le type du paramètre en <code>unique_ptr</code>.
+Vous devriez avoir des erreurs de ce type :</p>
+<div class="highlight"><pre class="chroma"><code class="language-b" data-lang="b"><span class="c">cannot convert argument 1 from &#39;Pokemon *&#39; to &#39;std::unique_ptr</span><span class="nv">&lt;</span><span class="c">Pokemon</span><span class="nt">,</span><span class="c">std::default_delete</span><span class="nv">&lt;</span><span class="c">Pokemon</span><span class="nv">&gt;&gt;</span><span class="c">&#39;
+</span></code></pre></div><p>Selon-vous, pourquoi les raw pointers ne se convertissent pas implicitement en <code>unique_ptr</code> ?</p>
+
+<div class="expand">
+    <div class="expand-label" style="cursor: pointer;" onclick="$h = $(this);$h.next('div').slideToggle(100,function () {$h.children('i').attr('class',function () {return $h.next('div').is(':visible') ? 'fas fa-chevron-down' : 'fas fa-chevron-right';});});">
+        <i style="font-size:x-small;" class="fas fa-chevron-right"></i>
+        <span>
+        
+    	
+    	Solution
+    	
+    	</span>
+    </div>
+    <div class="expand-content" style="display: none;">
+        <p>Rappelez-vous, un <code>unique_ptr</code> libère automatiquement la mémoire lors de sa destruction.<br>
+Si un raw pointer est converti en <code>unique_ptr</code> alors que ce n&rsquo;est pas prévu, la destruction de ce <code>unique_ptr</code> libérera la mémoire associée à notre raw pointer, et on ne s&rsquo;en rendra compte qu&rsquo;au moment de la segfault.<br>
+Du coup, il est possible de convertir un raw pointer en <code>unique_ptr</code>, mais uniquement si c&rsquo;est fait de manière explicite.</p>
+<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="n">fcn_taking_unique_ptr</span><span class="p">(</span><span class="n">raw_ptr</span><span class="p">);</span>                        <span class="c1">// conversion implicite =&gt; erreur
+</span><span class="c1"></span><span class="n">fcn_taking_unique_ptr</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">unique_ptr</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="p">{</span> <span class="n">raw_ptr</span> <span class="p">});</span> <span class="c1">// conversion explicite =&gt; ok
+</span></code></pre></div>
+    </div>
+</div>
+<p>Ajoutez une surcharge à la fonction <code>transfer</code>, acceptant un raw pointer, et qui le convertit en <code>unique_ptr</code> pour appeler l&rsquo;autre version de <code>transfer</code>.
+Vous pourrez supprimer cette surcharge une fois que vous aurez anéanti les derniers raw pointers du programme.</p>
+
+<div class="expand">
+    <div class="expand-label" style="cursor: pointer;" onclick="$h = $(this);$h.next('div').slideToggle(100,function () {$h.children('i').attr('class',function () {return $h.next('div').is(':visible') ? 'fas fa-chevron-down' : 'fas fa-chevron-right';});});">
+        <i style="font-size:x-small;" class="fas fa-chevron-right"></i>
+        <span>
+        
+    	
+    	Solution
+    	
+    	</span>
+    </div>
+    <div class="expand-content" style="display: none;">
+        <div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="kt">void</span> <span class="nf">transfer</span><span class="p">(</span><span class="n">Pokemon</span><span class="o">*</span> <span class="n">pokemon</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="c1">// On construit explicitement un unique_ptr à partir du raw pointer.
+</span><span class="c1"></span>    <span class="n">transfer</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">unique_ptr</span><span class="o">&lt;</span><span class="n">Pokemon</span><span class="o">&gt;</span> <span class="p">{</span> <span class="n">pokemon</span> <span class="p">});</span>
+<span class="p">}</span>
+</code></pre></div>
+    </div>
+</div>
+<p>Vous devriez maintenant avoir l&rsquo;erreur suivante :</p>
+<div class="highlight"><pre class="chroma"><code class="language-b" data-lang="b"><span class="c">error C2280: &#39;std::unique_ptr</span><span class="nv">&lt;</span><span class="c">Pokemon</span><span class="nt">,</span><span class="c">std::default_delete</span><span class="nv">&lt;</span><span class="c">Pokemon</span><span class="nv">&gt;&gt;</span><span class="c">::unique_ptr(const std::unique_ptr</span><span class="nv">&lt;</span><span class="c">Pokemon</span><span class="nt">,</span><span class="c">std::default_delete</span><span class="nv">&lt;</span><span class="c">Pokemon</span><span class="nv">&gt;&gt;</span><span class="c"> &amp;)&#39;: attempting to reference a deleted function
+</span></code></pre></div><p>Que faut-il faire dans la fonction <code>transfer</code> (celle prenant un <code>unique_ptr</code>) pour indiquer au compilateur que l&rsquo;on ne cherche pas à copier le pointeur, mais à le déplacer dans le <code>vector</code> ?</p>
+
+<div class="expand">
+    <div class="expand-label" style="cursor: pointer;" onclick="$h = $(this);$h.next('div').slideToggle(100,function () {$h.children('i').attr('class',function () {return $h.next('div').is(':visible') ? 'fas fa-chevron-down' : 'fas fa-chevron-right';});});">
+        <i style="font-size:x-small;" class="fas fa-chevron-right"></i>
+        <span>
+        
+    	
+    	Solution
+    	
+    	</span>
+    </div>
+    <div class="expand-content" style="display: none;">
+        <p>Il faut include <code>&lt;utility&gt;</code> et écrire <code>std::move(pokemon)</code>.</p>
+<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="kt">void</span> <span class="nf">transfer</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">unique_ptr</span><span class="o">&lt;</span><span class="n">Pokemon</span><span class="o">&gt;</span> <span class="n">pokemon</span><span class="p">)</span> <span class="p">{</span> <span class="n">_stored_pokemons</span><span class="p">.</span><span class="n">emplace_back</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">move</span><span class="p">(</span><span class="n">pokemon</span><span class="p">));</span> <span class="p">}</span>
+</code></pre></div>
+    </div>
+</div>
+<hr>
+<h5 id="trainer">Trainer</h5>
+<p>Modifiez maintenant le type de <code>Trainer::_team</code> pour utiliser des <code>unique_ptr</code>.
+
+<div class="expand">
+    <div class="expand-label" style="cursor: pointer;" onclick="$h = $(this);$h.next('div').slideToggle(100,function () {$h.children('i').attr('class',function () {return $h.next('div').is(':visible') ? 'fas fa-chevron-down' : 'fas fa-chevron-right';});});">
+        <i style="font-size:x-small;" class="fas fa-chevron-right"></i>
+        <span>
+        
+    	
+    	Solution
+    	
+    	</span>
+    </div>
+    <div class="expand-content" style="display: none;">
+        <div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="n">std</span><span class="o">::</span><span class="n">array</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">unique_ptr</span><span class="o">&lt;</span><span class="n">Pokemon</span><span class="o">&gt;</span><span class="p">,</span> <span class="mi">6</span><span class="o">&gt;</span> <span class="n">_team</span><span class="p">;</span>
+</code></pre></div>
+    </div>
+</div></p>
+<p>Pourquoi les boucles <code>for (auto* t : _team)</code> ne compilent plus ?
+Que faut-il changer pour corriger le problème ? (en gardant bien en tête le fait qu&rsquo;un <code>unique_ptr</code> n&rsquo;est pas copiable)
+
+<div class="expand">
+    <div class="expand-label" style="cursor: pointer;" onclick="$h = $(this);$h.next('div').slideToggle(100,function () {$h.children('i').attr('class',function () {return $h.next('div').is(':visible') ? 'fas fa-chevron-down' : 'fas fa-chevron-right';});});">
+        <i style="font-size:x-small;" class="fas fa-chevron-right"></i>
+        <span>
+        
+    	
+    	Solution
+    	
+    	</span>
+    </div>
+    <div class="expand-content" style="display: none;">
+        <p>Seuls les pointeurs nu peuvent être référencés avec <code>auto*</code>.
+Il faut donc écrire <code>auto&amp;</code> ou <code>const auto&amp;</code> (si on écrit juste <code>auto</code>, le compilateur va essayer de copier le <code>unique_ptr</code>, donc ça ne fonctionnera pas).</p>
+
+    </div>
+</div></p>
+<p>Pourquoi ne doit-on pas remplacer le type de retour de <code>get_first_pokemon</code> par un <code>unique_ptr</code> ?
+Et pourquoi ne peut-on pas non plus le remplacer par une référence ?
+Que cherche-t-on à représenter ici avec ce raw pointer ?
+
+<div class="expand">
+    <div class="expand-label" style="cursor: pointer;" onclick="$h = $(this);$h.next('div').slideToggle(100,function () {$h.children('i').attr('class',function () {return $h.next('div').is(':visible') ? 'fas fa-chevron-down' : 'fas fa-chevron-right';});});">
+        <i style="font-size:x-small;" class="fas fa-chevron-right"></i>
+        <span>
+        
+    	
+    	Solution
+    	
+    	</span>
+    </div>
+    <div class="expand-content" style="display: none;">
+        <p>Le raw pointer sert ici à représenter un référence sans ownership optionnelle.<br>
+Il s&rsquo;agit d&rsquo;une des seules situations dans lesquelles l&rsquo;usage d&rsquo;un raw pointer est encore légitime.</p>
+
+    </div>
+</div></p>
+<p>Modifiez la fonction <code>get_first_pokemon</code> pour qu&rsquo;elle compile.
+Vous pouvez utiliser la fonction-membre <code>get()</code> pour accéder au raw pointer stocké dans un <code>unique_ptr</code>.
+
+<div class="expand">
+    <div class="expand-label" style="cursor: pointer;" onclick="$h = $(this);$h.next('div').slideToggle(100,function () {$h.children('i').attr('class',function () {return $h.next('div').is(':visible') ? 'fas fa-chevron-down' : 'fas fa-chevron-right';});});">
+        <i style="font-size:x-small;" class="fas fa-chevron-right"></i>
+        <span>
+        
+    	
+    	Solution
+    	
+    	</span>
+    </div>
+    <div class="expand-content" style="display: none;">
+        <div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="n">Pokemon</span><span class="o">*</span> <span class="nf">get_first_pokemon</span><span class="p">()</span> <span class="k">const</span>
+<span class="p">{</span>
+    <span class="k">for</span> <span class="p">(</span><span class="k">auto</span><span class="o">&amp;</span> <span class="nl">t</span> <span class="p">:</span> <span class="n">_team</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">t</span> <span class="o">!=</span> <span class="k">nullptr</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="k">return</span> <span class="n">t</span><span class="p">.</span><span class="n">get</span><span class="p">();</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+
+    <span class="k">return</span> <span class="k">nullptr</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+    </div>
+</div></p>
+<p>Modifiez la fonction <code>give_pokemons</code> afin qu&rsquo;elle retourne des <code>unique_ptr</code>.<br>
+Pourquoi l&rsquo;instruction <code>_teams.fill(nullptr)</code> ne compile plus ?
+Retirez-là, et réinitialisez les pointeurs de <code>_teams</code> depuis la boucle directement.<br>
+
+<div class="expand">
+    <div class="expand-label" style="cursor: pointer;" onclick="$h = $(this);$h.next('div').slideToggle(100,function () {$h.children('i').attr('class',function () {return $h.next('div').is(':visible') ? 'fas fa-chevron-down' : 'fas fa-chevron-right';});});">
+        <i style="font-size:x-small;" class="fas fa-chevron-right"></i>
+        <span>
+        
+    	
+    	Solution
+    	
+    	</span>
+    </div>
+    <div class="expand-content" style="display: none;">
+        <p>En recherchant dans la doc de <code>std::array&lt;T&gt;::fill</code>, on constate que la fonction attend un <code>const T&amp;</code>.
+Dans notre cas, la fonction prend donc un <code>const unique_ptr&lt;Pokemon&gt;&amp;</code>.
+En écrivant <code>_team.fill(nullptr)</code>, un <code>unique_ptr</code> est créé implicitement à partir de <code>nullptr</code>, et la fonction <code>fill</code> essaye de copier ce <code>unique_ptr</code> dans chacune des cases du tableau.
+Or <code>unique_ptr</code> n&rsquo;est pas copiable. On ne peut donc pas utiliser la fonction <code>fill</code> sur un tableau de <code>unique_ptr</code>.</p>
+<div class="notices note" ><p>Pourquoi un <code>unique_ptr</code> peut être crée implicitement à partir de <code>nullptr</code>, alors qu&rsquo;on a dit plus haut qu&rsquo;on ne peut pas convertir un raw pointer en <code>unique_ptr</code> implicitement ?<br>
+Tout simplement parce que la valeur <code>nullptr</code> n&rsquo;est pas de type raw pointer (de quel type s&rsquo;agirait-il d&rsquo;ailleurs ? <code>void*</code> ? <code>char*</code> ?), mais de type <code>nullptr_t</code>.<br>
+Et <code>unique_ptr</code> est bien implicitement convertible depuis un <code>nullptr_t</code>.</p>
+</div>
+<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="na">[[nodiscard]]</span> <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">unique_ptr</span><span class="o">&lt;</span><span class="n">Pokemon</span><span class="o">&gt;&gt;</span> <span class="n">give_pokemons</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">unique_ptr</span><span class="o">&lt;</span><span class="n">Pokemon</span><span class="o">&gt;&gt;</span> <span class="n">pokemons</span><span class="p">;</span>
+
+    <span class="k">for</span> <span class="p">(</span><span class="k">auto</span><span class="o">&amp;</span> <span class="nl">t</span> <span class="p">:</span> <span class="n">_team</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">t</span> <span class="o">!=</span> <span class="k">nullptr</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="k">auto</span><span class="o">&amp;</span> <span class="n">ptr</span> <span class="o">=</span> <span class="n">pokemons</span><span class="p">.</span><span class="n">emplace_back</span><span class="p">();</span>
+            <span class="n">std</span><span class="o">::</span><span class="n">swap</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">ptr</span><span class="p">);</span>
+
+            <span class="c1">// Autre version un peu moins élégante, mais qui reste valide :
+</span><span class="c1"></span>            <span class="c1">// pokemons.emplace_back(std::move(t));
+</span><span class="c1"></span>            <span class="c1">// t = std::unique_ptr&lt;Pokemon&gt;{};
+</span><span class="c1"></span>        <span class="p">}</span>
+    <span class="p">}</span>
+
+    <span class="k">return</span> <span class="n">pokemons</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+    </div>
+</div></p>
+<p>Corrigez maintenant la fonction <code>transfer_team_to_pc</code>.</p>
+
+<div class="expand">
+    <div class="expand-label" style="cursor: pointer;" onclick="$h = $(this);$h.next('div').slideToggle(100,function () {$h.children('i').attr('class',function () {return $h.next('div').is(':visible') ? 'fas fa-chevron-down' : 'fas fa-chevron-right';});});">
+        <i style="font-size:x-small;" class="fas fa-chevron-right"></i>
+        <span>
+        
+    	
+    	Solution
+    	
+    	</span>
+    </div>
+    <div class="expand-content" style="display: none;">
+        <p>Il faut dire au compilateur de déplacer le <code>unique_ptr</code> avec <code>std::move</code> pour qu&rsquo;il n&rsquo;essaye pas de le copier.</p>
+<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="kt">void</span> <span class="nf">transfer_team_to_pc</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="k">for</span> <span class="p">(</span><span class="k">auto</span><span class="o">&amp;</span> <span class="nl">pokemon</span> <span class="p">:</span> <span class="n">give_pokemons</span><span class="p">())</span>
+    <span class="p">{</span>
+        <span class="n">_pc</span><span class="p">.</span><span class="n">transfer</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">move</span><span class="p">(</span><span class="n">pokemon</span><span class="p">));</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+    </div>
+</div>
+<p>La fonction <code>remove_from_team</code> ne compile pas pour trois raisons :</p>
+<ul>
+<li>le <code>std::find</code>, car on ne peut pas comparer des raw pointers à des smart pointers ; il faut utiliser <code>get()</code> pour récupérer un raw pointer et le comparer à l&rsquo;autre raw pointer.</li>
+<li>l&rsquo;instruction <code>auto to_destroy = *it</code></li>
+<li>l&rsquo;instruction <code>delete to_destroy</code>.</li>
+</ul>
+<p>Fixez ces trois erreurs.</p>
+
+<div class="expand">
+    <div class="expand-label" style="cursor: pointer;" onclick="$h = $(this);$h.next('div').slideToggle(100,function () {$h.children('i').attr('class',function () {return $h.next('div').is(':visible') ? 'fas fa-chevron-down' : 'fas fa-chevron-right';});});">
+        <i style="font-size:x-small;" class="fas fa-chevron-right"></i>
+        <span>
+        
+    	
+    	Solution
+    	
+    	</span>
+    </div>
+    <div class="expand-content" style="display: none;">
+        <p>La variable <code>to_destroy</code> servait uniquement à assurer que <code>*it</code> ne pointe jamais sur de la mémoire libérée.
+Avec le smart pointer, on n&rsquo;a plus besoin de cette variable du tout.</p>
+<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="kt">bool</span> <span class="nf">remove_from_team</span><span class="p">(</span><span class="k">const</span> <span class="n">Pokemon</span><span class="o">&amp;</span> <span class="n">pokemon</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="c1">// On utilise la même lambda que dans `PC::release`.
+</span><span class="c1"></span>    <span class="k">auto</span> <span class="n">it</span> <span class="o">=</span> <span class="n">std</span><span class="o">::</span><span class="n">find_if</span><span class="p">(</span><span class="n">_team</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span> <span class="n">_team</span><span class="p">.</span><span class="n">end</span><span class="p">(),</span> <span class="p">[</span><span class="o">&amp;</span><span class="n">pokemon</span><span class="p">](</span><span class="k">const</span> <span class="k">auto</span><span class="o">&amp;</span> <span class="n">p</span><span class="p">)</span> <span class="p">{</span> <span class="k">return</span> <span class="n">p</span><span class="p">.</span><span class="n">get</span><span class="p">()</span> <span class="o">==</span> <span class="o">&amp;</span><span class="n">pokemon</span><span class="p">;</span> <span class="p">});</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">it</span> <span class="o">!=</span> <span class="n">_team</span><span class="p">.</span><span class="n">end</span><span class="p">())</span>
+    <span class="p">{</span>
+        <span class="c1">// On peut réinitialiser un unique_ptr soit en appelant la fonction reset(), soit
+</span><span class="c1"></span>        <span class="c1">// en assignant explicitement nullptr au pointeur.
+</span><span class="c1"></span>        <span class="c1">// Dans les deux cas, le contenu précédent est automatiquement détruit.
+</span><span class="c1"></span>        <span class="n">it</span><span class="o">-&gt;</span><span class="n">reset</span><span class="p">();</span>
+        <span class="c1">//*it = nullptr;
+</span><span class="c1"></span>
+        <span class="k">return</span> <span class="nb">true</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="k">return</span> <span class="nb">false</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+    </div>
+</div>
+<p>Modifiez la signature et le contenu de <code>add_to_teams</code> afin d&rsquo;accepter un <code>unique_ptr</code>.
+
+<div class="expand">
+    <div class="expand-label" style="cursor: pointer;" onclick="$h = $(this);$h.next('div').slideToggle(100,function () {$h.children('i').attr('class',function () {return $h.next('div').is(':visible') ? 'fas fa-chevron-down' : 'fas fa-chevron-right';});});">
+        <i style="font-size:x-small;" class="fas fa-chevron-right"></i>
+        <span>
+        
+    	
+    	Solution
+    	
+    	</span>
+    </div>
+    <div class="expand-content" style="display: none;">
+        <div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="kt">bool</span> <span class="nf">add_to_team</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">unique_ptr</span><span class="o">&lt;</span><span class="n">Pokemon</span><span class="o">&gt;</span> <span class="n">pokemon</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="k">for</span> <span class="p">(</span><span class="k">auto</span><span class="o">&amp;</span> <span class="nl">t</span> <span class="p">:</span> <span class="n">_team</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">t</span> <span class="o">==</span> <span class="k">nullptr</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="n">std</span><span class="o">::</span><span class="n">swap</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">pokemon</span><span class="p">);</span>
+            <span class="c1">// t = std::move(pokemon); fonctionne également.
+</span><span class="c1"></span>            <span class="k">return</span> <span class="nb">true</span><span class="p">;</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+
+    <span class="k">return</span> <span class="nb">false</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+    </div>
+</div></p>
+<p>Faites en sorte que <code>collect</code> prenne lui aussi un unique_ptr en paramètre.<br>
+Afin de faire compiler la fonction, vous pourriez être tenté d&rsquo;écrire :</p>
+<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">add_to_team</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">move</span><span class="p">(</span><span class="n">pokemon</span><span class="p">)))</span>
+<span class="p">{</span>
+    <span class="n">_pc</span><span class="p">.</span><span class="n">transfer</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">move</span><span class="p">(</span><span class="n">pokemon</span><span class="p">));</span>
+<span class="p">}</span>
+</code></pre></div><p>Pourquoi ce code n&rsquo;est pas correct ?
+
+<div class="expand">
+    <div class="expand-label" style="cursor: pointer;" onclick="$h = $(this);$h.next('div').slideToggle(100,function () {$h.children('i').attr('class',function () {return $h.next('div').is(':visible') ? 'fas fa-chevron-down' : 'fas fa-chevron-right';});});">
+        <i style="font-size:x-small;" class="fas fa-chevron-right"></i>
+        <span>
+        
+    	
+    	Solution
+    	
+    	</span>
+    </div>
+    <div class="expand-content" style="display: none;">
+        <p>Une fois qu&rsquo;un objet a été déplacé, il faut partir du principe que son contenu n&rsquo;est plus disponible.
+Au moment de l&rsquo;appel à <code>add_to_team(std::move(pokemon))</code>, le contenu de <code>pokemon</code> est déplacé dans la fonction, et il n&rsquo;est donc plus là au moment de l&rsquo;appel à <code>_pc.transfer(std::move(pokemon))</code>.</p>
+
+    </div>
+</div></p>
+<p>Afin de pouvoir écrire <code>add_to_team(pokemon)</code> plutôt que <code>add_to_team(std::move(pokemon))</code>, comment pourriez-vous modifier la signature de <code>add_to_team</code> ?
+
+<div class="expand">
+    <div class="expand-label" style="cursor: pointer;" onclick="$h = $(this);$h.next('div').slideToggle(100,function () {$h.children('i').attr('class',function () {return $h.next('div').is(':visible') ? 'fas fa-chevron-down' : 'fas fa-chevron-right';});});">
+        <i style="font-size:x-small;" class="fas fa-chevron-right"></i>
+        <span>
+        
+    	
+    	Solution
+    	
+    	</span>
+    </div>
+    <div class="expand-content" style="display: none;">
+        <p>On prend le <code>unique_ptr</code> par référence plutôt que par valeur.
+Lorsqu&rsquo;une fonction attend un <code>unique_ptr&amp;</code>, cela signifie que la fonction va <strong>peut-être</strong> récupérer l&rsquo;ownership de l&rsquo;objet.</p>
+<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="kt">void</span> <span class="nf">collect</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">unique_ptr</span><span class="o">&lt;</span><span class="n">Pokemon</span><span class="o">&gt;</span> <span class="n">pokemon</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="k">auto</span><span class="o">*</span> <span class="n">fighter</span> <span class="o">=</span> <span class="n">get_first_pokemon</span><span class="p">())</span>
+    <span class="p">{</span>
+        <span class="n">fighter</span><span class="o">-&gt;</span><span class="n">level_up</span><span class="p">();</span>
+    <span class="p">}</span>
+
+    <span class="n">_pokedex</span><span class="p">.</span><span class="n">add</span><span class="p">(</span><span class="o">*</span><span class="n">pokemon</span><span class="p">);</span>
+
+    <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">add_to_team</span><span class="p">(</span><span class="n">pokemon</span><span class="p">))</span>
+    <span class="p">{</span>
+        <span class="n">_pc</span><span class="p">.</span><span class="n">transfer</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">move</span><span class="p">(</span><span class="n">pokemon</span><span class="p">));</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kt">bool</span> <span class="nf">add_to_team</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">unique_ptr</span><span class="o">&lt;</span><span class="n">Pokemon</span><span class="o">&gt;&amp;</span> <span class="n">pokemon</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="k">for</span> <span class="p">(</span><span class="k">auto</span><span class="o">&amp;</span> <span class="nl">t</span> <span class="p">:</span> <span class="n">_team</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">t</span> <span class="o">==</span> <span class="k">nullptr</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="n">std</span><span class="o">::</span><span class="n">swap</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">pokemon</span><span class="p">);</span>
+            <span class="k">return</span> <span class="nb">true</span><span class="p">;</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+
+    <span class="k">return</span> <span class="nb">false</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+    </div>
+</div></p>
+<p>Pour terminez, ajoutez une surcharge à <code>collect</code> acceptant un raw pointer, de la même manière que ce que vous avez fait pour <code>PC::transfer</code>, et corrigez les erreurs dans le <code>main</code>.
+
+<div class="expand">
+    <div class="expand-label" style="cursor: pointer;" onclick="$h = $(this);$h.next('div').slideToggle(100,function () {$h.children('i').attr('class',function () {return $h.next('div').is(':visible') ? 'fas fa-chevron-down' : 'fas fa-chevron-right';});});">
+        <i style="font-size:x-small;" class="fas fa-chevron-right"></i>
+        <span>
+        
+    	
+    	Solution
+    	
+    	</span>
+    </div>
+    <div class="expand-content" style="display: none;">
+        <p>On prend le <code>unique_ptr</code> par référence plutôt que par valeur.
+Lorsqu&rsquo;une fonction attend un <code>unique_ptr&amp;</code>, cela signifie que la fonction va <strong>peut-être</strong> récupérer l&rsquo;ownership de l&rsquo;objet.</p>
+<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="c1">// Trainer.h
+</span><span class="c1"></span><span class="kt">void</span> <span class="nf">collect</span><span class="p">(</span><span class="n">Pokemon</span><span class="o">*</span> <span class="n">pokemon</span><span class="p">)</span> <span class="p">{</span> <span class="n">collect</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">unique_ptr</span><span class="o">&lt;</span><span class="n">Pokemon</span><span class="o">&gt;</span> <span class="p">{</span> <span class="n">pokemon</span> <span class="p">});</span> <span class="p">}</span>
+
+<span class="c1">// Journey.cpp
+</span><span class="c1"></span><span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="p">...</span>
+    <span class="k">for</span> <span class="p">(</span><span class="k">auto</span><span class="o">&amp;</span> <span class="nl">pokemon</span> <span class="p">:</span> <span class="n">some_girl</span><span class="p">.</span><span class="n">give_pokemons</span><span class="p">())</span>
+    <span class="p">{</span>
+        <span class="n">red</span><span class="p">.</span><span class="n">collect</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">move</span><span class="p">(</span><span class="n">pokemon</span><span class="p">));</span>
+    <span class="p">}</span>
+
+    <span class="k">auto</span> <span class="n">to_destroy</span> <span class="o">=</span> <span class="n">some_guy</span><span class="p">.</span><span class="n">give_pokemons</span><span class="p">();</span>
+    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+    </div>
+</div></p>
+<hr>
+<h5 id="professoroak">ProfessorOak</h5>
+<p>Modifiez le type de <code>ProfessorOak::_starters</code> afin d&rsquo;exprimer clairement l&rsquo;ownership.<br>
+Note: Il n&rsquo;est pas possible de mettre des objets non copiables dans une <code>initializer_list</code>.
+Vous devrez donc initialiser le tableau en ajoutant les valeurs une par une depuis le corps du constructeur.</p>
+
+<div class="expand">
+    <div class="expand-label" style="cursor: pointer;" onclick="$h = $(this);$h.next('div').slideToggle(100,function () {$h.children('i').attr('class',function () {return $h.next('div').is(':visible') ? 'fas fa-chevron-down' : 'fas fa-chevron-right';});});">
+        <i style="font-size:x-small;" class="fas fa-chevron-right"></i>
+        <span>
+        
+    	
+    	Solution
+    	
+    	</span>
+    </div>
+    <div class="expand-content" style="display: none;">
+        <div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="k">class</span> <span class="nc">ProfessorOak</span>
+<span class="p">{</span>
+<span class="k">public</span><span class="o">:</span>
+    <span class="n">ProfessorOak</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="n">_starters</span><span class="p">.</span><span class="n">emplace_back</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">make_unique</span><span class="o">&lt;</span><span class="n">Pokemon</span><span class="o">&gt;</span><span class="p">(</span><span class="s">&#34;Bulbasaur&#34;</span><span class="p">,</span> <span class="mi">2</span><span class="p">));</span>
+        <span class="n">_starters</span><span class="p">.</span><span class="n">emplace_back</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">make_unique</span><span class="o">&lt;</span><span class="n">Pokemon</span><span class="o">&gt;</span><span class="p">(</span><span class="s">&#34;Charmander&#34;</span><span class="p">,</span> <span class="mi">2</span><span class="p">));</span>
+        <span class="n">_starters</span><span class="p">.</span><span class="n">emplace_back</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">make_unique</span><span class="o">&lt;</span><span class="n">Pokemon</span><span class="o">&gt;</span><span class="p">(</span><span class="s">&#34;Squirtle&#34;</span><span class="p">,</span> <span class="mi">2</span><span class="p">));</span>
+    <span class="p">}</span>
+
+    <span class="na">[[nodiscard]]</span> <span class="n">std</span><span class="o">::</span><span class="n">unique_ptr</span><span class="o">&lt;</span><span class="n">Pokemon</span><span class="o">&gt;</span> <span class="n">get_starter</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">_starters</span><span class="p">.</span><span class="n">empty</span><span class="p">())</span>
+        <span class="p">{</span>
+            <span class="k">return</span> <span class="n">std</span><span class="o">::</span><span class="n">make_unique</span><span class="o">&lt;</span><span class="n">Pokemon</span><span class="o">&gt;</span><span class="p">(</span><span class="s">&#34;Pikachu&#34;</span><span class="p">,</span> <span class="mi">2</span><span class="p">);</span>
+        <span class="p">}</span>
+
+        <span class="n">std</span><span class="o">::</span><span class="n">unique_ptr</span><span class="o">&lt;</span><span class="n">Pokemon</span><span class="o">&gt;</span> <span class="n">pokemon</span><span class="p">;</span>
+        <span class="n">std</span><span class="o">::</span><span class="n">swap</span><span class="p">(</span><span class="n">pokemon</span><span class="p">,</span> <span class="n">_starters</span><span class="p">.</span><span class="n">front</span><span class="p">());</span>
+        <span class="c1">// auto pokemon = std::move(_starters.front()); est valide aussi 
+</span><span class="c1"></span>        <span class="n">_starters</span><span class="p">.</span><span class="n">pop_front</span><span class="p">();</span>
+        <span class="k">return</span> <span class="n">pokemon</span><span class="p">;</span>
+    <span class="p">}</span>
+
+<span class="k">private</span><span class="o">:</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">deque</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">unique_ptr</span><span class="o">&lt;</span><span class="n">Pokemon</span><span class="o">&gt;&gt;</span> <span class="n">_starters</span><span class="p">;</span>
+<span class="p">};</span>
+</code></pre></div>
+    </div>
+</div>
+<hr>
+<h5 id="journey">Journey</h5>
+<p>Terminez le travail en retirant les derniers raw pointers du fichier <code>Journey.cpp</code>.
+Vous devriez également pouvoir retirer les surcharges ajoutées dans <code>Trainer</code> et <code>PC</code> plus tôt.</p>
+
+<div class="expand">
+    <div class="expand-label" style="cursor: pointer;" onclick="$h = $(this);$h.next('div').slideToggle(100,function () {$h.children('i').attr('class',function () {return $h.next('div').is(':visible') ? 'fas fa-chevron-down' : 'fas fa-chevron-right';});});">
+        <i style="font-size:x-small;" class="fas fa-chevron-right"></i>
+        <span>
+        
+    	
+    	Solution
+    	
+    	</span>
+    </div>
+    <div class="expand-content" style="display: none;">
+        <div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="na">[[nodiscard]]</span> <span class="n">std</span><span class="o">::</span><span class="n">unique_ptr</span><span class="o">&lt;</span><span class="n">Pokemon</span><span class="o">&gt;</span> <span class="n">random_encounter</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="k">switch</span> <span class="p">(</span><span class="n">rand</span><span class="p">()</span> <span class="o">%</span> <span class="mi">4</span><span class="p">)</span>
+    <span class="p">{</span>
+    <span class="k">case</span> <span class="mi">0</span><span class="o">:</span>
+        <span class="k">return</span> <span class="n">std</span><span class="o">::</span><span class="n">make_unique</span><span class="o">&lt;</span><span class="n">Pokemon</span><span class="o">&gt;</span><span class="p">(</span><span class="s">&#34;Magikarp&#34;</span><span class="p">,</span> <span class="n">rand</span><span class="p">()</span> <span class="o">%</span> <span class="mi">4</span><span class="p">);</span>
+    <span class="k">case</span> <span class="mi">1</span><span class="o">:</span>
+        <span class="k">return</span> <span class="n">std</span><span class="o">::</span><span class="n">make_unique</span><span class="o">&lt;</span><span class="n">Pokemon</span><span class="o">&gt;</span><span class="p">(</span><span class="s">&#34;Caterpie&#34;</span><span class="p">,</span> <span class="mi">1</span> <span class="o">+</span> <span class="n">rand</span><span class="p">()</span> <span class="o">%</span> <span class="mi">2</span><span class="p">);</span>
+    <span class="k">case</span> <span class="mi">2</span><span class="o">:</span>
+        <span class="k">return</span> <span class="n">std</span><span class="o">::</span><span class="n">make_unique</span><span class="o">&lt;</span><span class="n">Pokemon</span><span class="o">&gt;</span><span class="p">(</span><span class="s">&#34;Psyduck&#34;</span><span class="p">,</span> <span class="mi">6</span> <span class="o">+</span> <span class="n">rand</span><span class="p">()</span> <span class="o">%</span> <span class="mi">12</span><span class="p">);</span>
+    <span class="k">case</span> <span class="mi">3</span><span class="o">:</span>
+        <span class="k">return</span> <span class="n">std</span><span class="o">::</span><span class="n">make_unique</span><span class="o">&lt;</span><span class="n">Pokemon</span><span class="o">&gt;</span><span class="p">(</span><span class="s">&#34;Jigglypuff&#34;</span><span class="p">,</span> <span class="mi">4</span> <span class="o">+</span> <span class="n">rand</span><span class="p">()</span> <span class="o">%</span> <span class="mi">7</span><span class="p">);</span>
+    <span class="k">default</span><span class="o">:</span>
+        <span class="k">return</span> <span class="k">nullptr</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="p">...</span>
+    <span class="k">for</span> <span class="p">(</span><span class="k">auto</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">32</span><span class="p">;</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="k">auto</span> <span class="n">encounter</span> <span class="o">=</span> <span class="n">random_encounter</span><span class="p">();</span>
+
+        <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">red</span><span class="p">.</span><span class="n">get_pokedex</span><span class="p">().</span><span class="n">has_duplicate</span><span class="p">(</span><span class="o">*</span><span class="n">encounter</span><span class="p">)</span> <span class="o">&amp;&amp;</span> <span class="n">try_capture</span><span class="p">(</span><span class="n">red</span><span class="p">,</span> <span class="o">*</span><span class="n">encounter</span><span class="p">))</span>
+        <span class="p">{</span>
+            <span class="n">red</span><span class="p">.</span><span class="n">collect</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">move</span><span class="p">(</span><span class="n">encounter</span><span class="p">));</span>
+        <span class="p">}</span>
+        <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">try_capture</span><span class="p">(</span><span class="n">blue</span><span class="p">,</span> <span class="o">*</span><span class="n">encounter</span><span class="p">))</span>
+        <span class="p">{</span>
+            <span class="n">blue</span><span class="p">.</span><span class="n">collect</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">move</span><span class="p">(</span><span class="n">encounter</span><span class="p">));</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+    <span class="p">...</span>
+<span class="p">}</span>
+</code></pre></div>
+    </div>
+</div>
+<hr>
+<h3 id="ownership-partagé">Ownership partagé</h3>
+<p>Pour cet exercice, vous modifierez les fichiers :<br>
+- <code>chap-05/3-cache/Cache.cpp</code><br>
+- <code>chap-05/3-cache/Model.h</code><br>
+- <code>chap-05/3-cache/Texture.h</code>\</p>
+<p>La cible à compiler est <code>c5-3-cache</code>.</p>
+<hr>
+<p>Comme nous l&rsquo;avons dit plus haut, dans la plupart des situations, il est possible d&rsquo;identifier un unique propriétaire pour une ressource donnée.
+Mais bien entendu, il y a des exceptions.</p>
+<p>Prenons le cas d&rsquo;un cache de textures.
+Lorsqu&rsquo;on charge un modèle 3D, on charge également l&rsquo;ensemble des textures dont il a besoin.
+Cependant, une même texture peut-être utilisée par beaucoup de modèles.
+Du coup, plutôt que de charger une texture autant de fois qu&rsquo;il y a de modèles qui en ont besoin, on aimerait charger une seule fois la texture, et la réutiliser pour tous ces modèles.
+Et pour ne pas encombrer la RAM, dès qu&rsquo;on décharge un modèle, il faut aussi décharger les textures qui ne sont plus utilisées par qui que ce soit.
+La durée de vie d&rsquo;une texture dépend donc de la durée de vie de chacun des modèles qui l&rsquo;utilisent.
+Comme les modèles ont des durées de vie complètement indépendantes, on est obligé de partager l&rsquo;ownership entre eux.</p>
+<p>La STL fournit <code>std::shared_ptr</code> pour traiter l&rsquo;ownership partagé.
+En plus d&rsquo;allouer le bloc mémoire pour l&rsquo;objet, il alloue de la place pour un compteur.
+Lorsqu&rsquo;on copie un <code>shared_ptr</code>, le compteur qui lui est associé est incrémenté.
+Dès qu&rsquo;un <code>shared_ptr</code> est détruit, le compteur est décrémenté.
+Lorsqu&rsquo;il tombe à 0, alors l&rsquo;objet référencé par le pointeur est détruit.</p>
+<p>Ouvrez le fichier <code>Model.h</code>.
+Pour le moment, les textures sont référencées au moyen de <code>unique_ptr</code>.<br>
+Remplacez les par des <code>shared_ptr</code>.<br>
+Pour créer un <code>unique_ptr&lt;T&gt;</code>, on écrit <code>make_unique&lt;T&gt;(...)</code>.
+Quelle fonction faut-il donc probablement utiliser pour créer un <code>shared_ptr&lt;Texture&gt;</code> ?</p>
+
+<div class="expand">
+    <div class="expand-label" style="cursor: pointer;" onclick="$h = $(this);$h.next('div').slideToggle(100,function () {$h.children('i').attr('class',function () {return $h.next('div').is(':visible') ? 'fas fa-chevron-down' : 'fas fa-chevron-right';});});">
+        <i style="font-size:x-small;" class="fas fa-chevron-right"></i>
+        <span>
+        
+    	
+    	Solution
+    	
+    	</span>
+    </div>
+    <div class="expand-content" style="display: none;">
+        <div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="k">class</span> <span class="nc">Model</span>
+<span class="p">{</span>
+    <span class="p">...</span>
+    <span class="k">static</span> <span class="kt">void</span> <span class="n">Create</span><span class="p">(</span><span class="n">Container</span><span class="o">&amp;</span> <span class="n">models</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="p">...</span>
+        <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">shared_ptr</span><span class="o">&lt;</span><span class="n">Texture</span><span class="o">&gt;&gt;</span> <span class="n">textures</span><span class="p">;</span>
+        <span class="p">...</span>
+    <span class="p">}</span>
+    <span class="p">...</span>
+    <span class="n">Model</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">string_view</span> <span class="n">name</span><span class="p">,</span> <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">shared_ptr</span><span class="o">&lt;</span><span class="n">Texture</span><span class="o">&gt;&gt;</span> <span class="n">textures</span><span class="p">)</span>
+        <span class="o">:</span> <span class="n">_name</span> <span class="p">{</span> <span class="n">name</span> <span class="p">}</span>
+        <span class="p">,</span> <span class="n">_textures</span> <span class="p">{</span> <span class="n">std</span><span class="o">::</span><span class="n">move</span><span class="p">(</span><span class="n">textures</span><span class="p">)</span> <span class="p">}</span>
+    <span class="p">{</span>
+        <span class="p">...</span>
+    <span class="p">}</span>
+    <span class="p">...</span>
+
+    <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">shared_ptr</span><span class="o">&lt;</span><span class="n">Texture</span><span class="o">&gt;&gt;</span> <span class="n">_textures</span><span class="p">;</span>
+<span class="p">};</span>
+
+<span class="k">class</span> <span class="nc">Texture</span>
+<span class="p">{</span>
+<span class="k">public</span><span class="o">:</span>
+    <span class="k">static</span> <span class="n">std</span><span class="o">::</span><span class="n">shared_ptr</span><span class="o">&lt;</span><span class="n">Texture</span><span class="o">&gt;</span> <span class="n">Load</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">string_view</span> <span class="n">name</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="p">...</span>
+        <span class="k">return</span> <span class="n">std</span><span class="o">::</span><span class="n">make_shared</span><span class="o">&lt;</span><span class="n">Texture</span><span class="o">&gt;</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">width</span><span class="p">,</span> <span class="n">height</span><span class="p">);</span>
+    <span class="p">}</span>
+    <span class="p">...</span>
+<span class="p">};</span>
+</code></pre></div>
+    </div>
+</div>
+<p>Ajoutez une fonction permettant de rechercher dans un <code>Model::Container</code> si une texture avec un nom donné existe déjà.
+Si c&rsquo;est le cas, la fonction renvoie cette texture, et sinon, elle appelle et retourne le résultat de <code>Texture::Load</code>.<br>
+Modifiez ensuite <code>Model::Create</code> pour appelez votre nouvelle fonction.</p>
+
+<div class="expand">
+    <div class="expand-label" style="cursor: pointer;" onclick="$h = $(this);$h.next('div').slideToggle(100,function () {$h.children('i').attr('class',function () {return $h.next('div').is(':visible') ? 'fas fa-chevron-down' : 'fas fa-chevron-right';});});">
+        <i style="font-size:x-small;" class="fas fa-chevron-right"></i>
+        <span>
+        
+    	
+    	Solution
+    	
+    	</span>
+    </div>
+    <div class="expand-content" style="display: none;">
+        <div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="c1">// Dans Model:
+</span><span class="c1"></span><span class="k">static</span> <span class="kt">void</span> <span class="nf">Create</span><span class="p">(</span><span class="n">Container</span><span class="o">&amp;</span> <span class="n">models</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="p">...</span>
+        <span class="n">textures</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">FindOrLoadTexture</span><span class="p">(</span><span class="n">models</span><span class="p">,</span> <span class="n">texture</span><span class="p">));</span>
+    <span class="p">...</span>
+<span class="p">}</span>
+
+<span class="k">static</span> <span class="n">std</span><span class="o">::</span><span class="n">shared_ptr</span><span class="o">&lt;</span><span class="n">Texture</span><span class="o">&gt;</span> <span class="n">FindOrLoadTexture</span><span class="p">(</span><span class="k">const</span> <span class="n">Container</span><span class="o">&amp;</span> <span class="n">models</span><span class="p">,</span> <span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&amp;</span> <span class="n">name</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="k">for</span> <span class="p">(</span><span class="k">const</span> <span class="k">auto</span><span class="o">&amp;</span> <span class="p">[</span><span class="n">_</span><span class="p">,</span> <span class="n">model</span><span class="p">]</span> <span class="o">:</span> <span class="n">models</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="k">for</span> <span class="p">(</span><span class="k">const</span> <span class="k">auto</span><span class="o">&amp;</span> <span class="nl">texture</span> <span class="p">:</span> <span class="n">model</span><span class="o">-&gt;</span><span class="n">_textures</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="k">if</span> <span class="p">(</span><span class="n">texture</span><span class="o">-&gt;</span><span class="n">get_name</span><span class="p">()</span> <span class="o">==</span> <span class="n">name</span><span class="p">)</span>
+            <span class="p">{</span>
+                <span class="k">return</span> <span class="n">texture</span><span class="p">;</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+
+    <span class="k">return</span> <span class="n">Texture</span><span class="o">::</span><span class="n">Load</span><span class="p">(</span><span class="n">name</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="c1">// Dans Texture:
+</span><span class="c1"></span><span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&amp;</span> <span class="n">get_name</span><span class="p">()</span> <span class="k">const</span> <span class="p">{</span> <span class="k">return</span> <span class="n">_name</span><span class="p">;</span> <span class="p">}</span>
+</code></pre></div>
+    </div>
+</div>
+<p>Et voilà ! Vos textures sont maintenant partagées par différents <code>Model</code>. Dès qu&rsquo;une texture n&rsquo;est plus référencée, elle est automatiquement détruite.</p>
+<p>Le seul truc un peu triste dans ce programme, c&rsquo;est le fait de devoir faire une recherche linéaire parmis tous les modèles pour trouver si l&rsquo;un d&rsquo;entre eux possède la texture qui nous intéresse.
+Pour éviter d&rsquo;avoir à faire cela, vous allez créer une nouvelle classe qui permettra de référencer les <code>Texture</code> actuellement chargées.</p>
+<p>Définissez une classe <code>Cache</code>, contenant une hash map <code>_textures</code> de <code>string</code> vers <code>shared_ptr&lt;Texture&gt;</code>.
+Déplacez la fonction <code>Texture::Load</code> dans <code>Cache</code> et modifiez-la afin que :</p>
+<ul>
+<li>si la texture est présente dans <code>_textures</code>, on la renvoie directement,</li>
+<li>sinon, on la charge, on l&rsquo;insère dans le cache et on la renvoie.</li>
+</ul>
+<p>Ajoutez ensuite une instance de <code>Cache</code> dans la fonction <code>main</code>, et modifiez ce qu&rsquo;il faut dans <code>Model::Create</code> pour pouvoir utiliser ce cache.
+Vous pouvez également supprimer votre ancienne fonction de recherche.</p>
+
+<div class="expand">
+    <div class="expand-label" style="cursor: pointer;" onclick="$h = $(this);$h.next('div').slideToggle(100,function () {$h.children('i').attr('class',function () {return $h.next('div').is(':visible') ? 'fas fa-chevron-down' : 'fas fa-chevron-right';});});">
+        <i style="font-size:x-small;" class="fas fa-chevron-right"></i>
+        <span>
+        
+    	
+    	Solution
+    	
+    	</span>
+    </div>
+    <div class="expand-content" style="display: none;">
+        <div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="c1">// Texture.h:
+</span><span class="c1"></span><span class="k">class</span> <span class="nc">Texture</span>
+<span class="p">{</span>
+<span class="k">public</span><span class="o">:</span>
+    <span class="k">class</span> <span class="nc">Cache</span>
+    <span class="p">{</span>
+    <span class="k">public</span><span class="o">:</span>
+        <span class="n">std</span><span class="o">::</span><span class="n">shared_ptr</span><span class="o">&lt;</span><span class="n">Texture</span><span class="o">&gt;</span> <span class="n">Load</span><span class="p">(</span><span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&amp;</span> <span class="n">name</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="k">auto</span> <span class="n">it</span> <span class="o">=</span> <span class="n">_textures</span><span class="p">.</span><span class="n">find</span><span class="p">(</span><span class="n">name</span><span class="p">);</span>
+            <span class="k">if</span> <span class="p">(</span><span class="n">it</span> <span class="o">!=</span> <span class="n">_textures</span><span class="p">.</span><span class="n">end</span><span class="p">())</span>
+            <span class="p">{</span>
+                <span class="k">return</span> <span class="n">it</span><span class="o">-&gt;</span><span class="n">second</span><span class="p">;</span>
+            <span class="p">}</span>
+
+            <span class="p">...</span>
+
+            <span class="n">std</span><span class="o">::</span><span class="n">shared_ptr</span><span class="o">&lt;</span><span class="n">Texture</span><span class="o">&gt;</span> <span class="n">texture</span> <span class="o">=</span> <span class="n">std</span><span class="o">::</span><span class="n">make_shared</span><span class="o">&lt;</span><span class="n">Texture</span><span class="o">&gt;</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">width</span><span class="p">,</span> <span class="n">height</span><span class="p">);</span>
+            <span class="n">_textures</span><span class="p">.</span><span class="n">emplace_hint</span><span class="p">(</span><span class="n">it</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">texture</span><span class="p">);</span>
+            <span class="k">return</span> <span class="n">texture</span><span class="p">;</span>
+        <span class="p">}</span>
+
+    <span class="k">private</span><span class="o">:</span>
+        <span class="n">std</span><span class="o">::</span><span class="n">unordered_map</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="p">,</span> <span class="n">std</span><span class="o">::</span><span class="n">shared_ptr</span><span class="o">&lt;</span><span class="n">Texture</span><span class="o">&gt;&gt;</span> <span class="n">_textures</span><span class="p">;</span>
+    <span class="p">};</span>
+
+    <span class="k">static</span> <span class="n">std</span><span class="o">::</span><span class="n">shared_ptr</span><span class="o">&lt;</span><span class="n">Texture</span><span class="o">&gt;</span> <span class="n">Load</span><span class="p">(</span><span class="n">Cache</span><span class="o">&amp;</span> <span class="n">cache</span><span class="p">,</span> <span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&amp;</span> <span class="n">name</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="k">return</span> <span class="n">cache</span><span class="p">.</span><span class="n">Load</span><span class="p">(</span><span class="n">name</span><span class="p">);</span>
+    <span class="p">}</span>
+
+    <span class="p">...</span>
+<span class="p">};</span>
+
+<span class="c1">// Model.h:
+</span><span class="c1"></span><span class="k">static</span> <span class="kt">void</span> <span class="nf">Create</span><span class="p">(</span><span class="n">Container</span><span class="o">&amp;</span> <span class="n">models</span><span class="p">,</span> <span class="n">Texture</span><span class="o">::</span><span class="n">Cache</span><span class="o">&amp;</span> <span class="n">cache</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="p">...</span>
+        <span class="n">textures</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">Texture</span><span class="o">::</span><span class="n">Load</span><span class="p">(</span><span class="n">cache</span><span class="p">,</span> <span class="n">texture</span><span class="p">));</span>
+    <span class="p">...</span>
+<span class="p">}</span>
+
+<span class="c1">// Cache.cpp:
+</span><span class="c1"></span><span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="n">Model</span><span class="o">::</span><span class="n">Container</span> <span class="n">models</span><span class="p">;</span>
+    <span class="n">Texture</span><span class="o">::</span><span class="n">Cache</span> <span class="n">cache</span><span class="p">;</span>
+
+    <span class="p">...</span>
+        <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">command</span> <span class="o">==</span> <span class="s">&#34;c&#34;</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="n">Model</span><span class="o">::</span><span class="n">Create</span><span class="p">(</span><span class="n">models</span><span class="p">,</span> <span class="n">cache</span><span class="p">);</span>
+        <span class="p">}</span>
+    <span class="p">...</span>
+
+    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+    </div>
+</div>
+<p>Testez le programme.
+Vous devriez vous rendre compte que les textures ne sont plus du tout libérées.
+C&rsquo;est tout à fait normal, puisque le cache acquiert l&rsquo;ownership des textures.<br>
+Afin de retrouver le comportement précédent, vous allez utiliser le dernier type de smart pointer proposé par la STL : <code>std::weak_ptr&lt;T&gt;</code>.<br>
+Le <code>weak_ptr</code> est un pointeur qui sert à écouter une ressource partagée, sans en prendre l&rsquo;ownership.
+Il permet donc de vérifier qu&rsquo;une ressource est toujours vivante, et si c&rsquo;est le cas, d&rsquo;y accéder.</p>
+<p>Un <code>weak_ptr</code> s&rsquo;utilise généralement de la façon suivante :</p>
+<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="n">std</span><span class="o">::</span><span class="n">shared_ptr</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">shared</span> <span class="p">{</span> <span class="k">new</span> <span class="kt">int</span> <span class="p">{</span> <span class="mi">3</span> <span class="p">}</span> <span class="p">};</span>
+
+<span class="c1">// On construit un weak_ptr à partir d&#39;un shared_ptr.
+</span><span class="c1"></span><span class="n">std</span><span class="o">::</span><span class="n">weak_ptr</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">weak</span> <span class="o">=</span> <span class="n">shared</span><span class="p">;</span>
+
+<span class="c1">// On utilise lock pour savoir si la ressource est valide.
+</span><span class="c1"></span><span class="k">if</span> <span class="p">(</span><span class="k">auto</span> <span class="n">new_shared</span> <span class="o">=</span> <span class="n">weak</span><span class="p">.</span><span class="n">lock</span><span class="p">())</span>
+<span class="p">{</span>
+    <span class="c1">// Si la ressource existe encore, lock retourne un shared_ptr valide sur cette ressource.
+</span><span class="c1"></span>    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="o">*</span><span class="n">new_shared</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span> <span class="c1">// 3
+</span><span class="c1"></span>
+    <span class="n">shared</span><span class="p">.</span><span class="n">reset</span><span class="p">();</span>
+<span class="p">}</span>
+<span class="c1">//-&gt; la ressource est libérée car shared a été reset et new_shared a été détruit.
+</span><span class="c1"></span>
+<span class="k">if</span> <span class="p">(</span><span class="k">auto</span> <span class="n">new_shared</span> <span class="o">=</span> <span class="n">weak</span><span class="p">.</span><span class="n">lock</span><span class="p">())</span>
+<span class="p">{</span>
+    <span class="c1">// Si la ressource n&#39;existe plus au moment de l&#39;appel à lock, alors lock renvoie un shared_ptr null.
+</span><span class="c1"></span>    <span class="c1">// On ne passerait donc pas dans cette condition.
+</span><span class="c1"></span><span class="p">}</span>
+</code></pre></div>
+<div class="notices tip" ><p>Lorsqu&rsquo;on utilise des <code>weak_ptr</code>, il est préférable d&rsquo;utiliser <code>new</code> pour initialiser les <code>shared_ptr</code> plutôt que <code>make_shared</code>.<br>
+Si vous souhaitez savoir pourquoi, vous pouvez lire <a href="https://dev.to/dbdanilov/std-sharedptr-is-an-anti-pattern-49jo">cet article</a>.</p>
+</div>
+
+<p>Changez le type de <code>Cache::_textures</code> de manière à pouvoir observer les textures sans en prendre l&rsquo;ownership.
+Modifiez la fonction <code>Load</code> en conséquence.</p>
+
+<div class="expand">
+    <div class="expand-label" style="cursor: pointer;" onclick="$h = $(this);$h.next('div').slideToggle(100,function () {$h.children('i').attr('class',function () {return $h.next('div').is(':visible') ? 'fas fa-chevron-down' : 'fas fa-chevron-right';});});">
+        <i style="font-size:x-small;" class="fas fa-chevron-right"></i>
+        <span>
+        
+    	
+    	Solution
+    	
+    	</span>
+    </div>
+    <div class="expand-content" style="display: none;">
+        <div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="k">class</span> <span class="nc">Cache</span>
+<span class="p">{</span>
+<span class="k">public</span><span class="o">:</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">shared_ptr</span><span class="o">&lt;</span><span class="n">Texture</span><span class="o">&gt;</span> <span class="n">Load</span><span class="p">(</span><span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&amp;</span> <span class="n">name</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="k">auto</span> <span class="n">it</span> <span class="o">=</span> <span class="n">_textures</span><span class="p">.</span><span class="n">find</span><span class="p">(</span><span class="n">name</span><span class="p">);</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">it</span> <span class="o">!=</span> <span class="n">_textures</span><span class="p">.</span><span class="n">end</span><span class="p">())</span>
+        <span class="p">{</span>
+            <span class="k">if</span> <span class="p">(</span><span class="k">auto</span> <span class="n">texture</span> <span class="o">=</span> <span class="n">it</span><span class="o">-&gt;</span><span class="n">second</span><span class="p">.</span><span class="n">lock</span><span class="p">())</span>
+            <span class="p">{</span>
+                <span class="k">return</span> <span class="n">texture</span><span class="p">;</span>
+            <span class="p">}</span>
+
+            <span class="c1">// Il ne faut pas oublier de supprimer l&#39;ancien élément, car
+</span><span class="c1"></span>            <span class="c1">// les fonctions d&#39;insertion d&#39;unordered_map ne font rien lorsqu&#39;une
+</span><span class="c1"></span>            <span class="c1">// valeur est déjà présente.  
+</span><span class="c1"></span>            <span class="n">_textures</span><span class="p">.</span><span class="n">erase</span><span class="p">(</span><span class="n">it</span><span class="p">);</span>
+        <span class="p">}</span>
+
+
+        <span class="p">...</span>
+
+        <span class="c1">// On remplace make_shared par un new.
+</span><span class="c1"></span>        <span class="n">std</span><span class="o">::</span><span class="n">shared_ptr</span><span class="o">&lt;</span><span class="n">Texture</span><span class="o">&gt;</span> <span class="n">texture</span> <span class="p">{</span> <span class="k">new</span> <span class="n">Texture</span> <span class="p">{</span> <span class="n">name</span><span class="p">,</span> <span class="n">width</span><span class="p">,</span> <span class="n">height</span> <span class="p">}</span> <span class="p">};</span>
+        <span class="n">_textures</span><span class="p">.</span><span class="n">emplace_hint</span><span class="p">(</span><span class="n">it</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">std</span><span class="o">::</span><span class="n">weak_ptr</span> <span class="p">{</span> <span class="n">texture</span> <span class="p">});</span>
+        <span class="k">return</span> <span class="n">texture</span><span class="p">;</span>
+    <span class="p">}</span>
+
+<span class="k">private</span><span class="o">:</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">unordered_map</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="p">,</span> <span class="n">std</span><span class="o">::</span><span class="n">shared_ptr</span><span class="o">&lt;</span><span class="n">Texture</span><span class="o">&gt;&gt;</span> <span class="n">_textures</span><span class="p">;</span>
+<span class="p">};</span>
+</code></pre></div>
+    </div>
+</div>
+
+<div class="notices info" ><p>Les <code>shared_ptr</code>, c&rsquo;est bien, mais c&rsquo;est à utiliser seulement quand on en a vraiment besoin.
+D&rsquo;une part, si vous utilisez des <code>shared_ptr</code> quand vous pouvez utiliser des <code>unique_ptr</code>, l&rsquo;architecture de votre code risque d&rsquo;en partir (vous pouvez créer des dépendances cycliques, et vous retrouvez avec des fuites de mémoire)
+D&rsquo;autre part, l&rsquo;usage des <code>shared_ptr</code> est beaucoup moins efficace que celui des <code>unique_ptr</code> :<br>
+- l&rsquo;incrémentation et la décrémentation du compteur sont réalisées avec des atomiques (afin d&rsquo;être thread-safe), il s&rsquo;agit donc d&rsquo;opérations coûteuses.<br>
+- tant qu&rsquo;un <code>weak_ptr</code> existe, la mémoire du bloc complet n&rsquo;est pas libérée.</p>
+</div>
+
+<hr>
+<h3 id="les-pointeurs-nu-cest-terminé-">Les pointeurs nu, c&rsquo;est terminé ?</h3>
+<p>Maintenant que vous connaissez les smart pointeurs et les références, vous ne devriez quasiment plus avoir besoin de raw pointers.</p>
+<p>Voici les deux cas qui peuvent encore justifier l&rsquo;utilisation d&rsquo;un raw pointer :</p>
+<ul>
+<li>représenter une référence optionnelle,</li>
+<li>créer des conteneurs de références (alternative aux conteneurs de <code>reference_wrapper</code>, qui rendent le code parfois moins lisible).</li>
+</ul>
+<p>Notez bien dans ces deux cas que le pointeur n&rsquo;est pas propriétaire de son contenu.
+Désormais, vous devez utiliser <code>unique_ptr</code> (et des fois <code>shared_ptr</code>) pour représenter un pointeur propriétaire de ressources.
+Vous pouvez donc dire au revoir à <code>new</code> et adieu à <code>delete</code>.</p>
+<hr>
+<h3 id="raii">RAII</h3>
+<p>RAII signifie &ldquo;Resource Acquisition is Initialization&rdquo;.
+Il s&rsquo;agit d&rsquo;une technique consistant à lier la durée de vie d&rsquo;une ressource à la durée de vie d&rsquo;un objet : la ressource est acquise au cours de l&rsquo;initialisation de l&rsquo;objet (dans son constructeur) et elle est libérée à sa destruction.</p>
+<p>Lorsque l&rsquo;on a pas besoin de référence et que l&rsquo;on manipule un objet directement par valeur, c&rsquo;est donc très pratique, car on a la garantie que le destructeur de l&rsquo;objet va bien tout nettoyer pendant son exécution.</p>
+<p>Exemple avec <code>std::vector</code> :</p>
+<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="kt">void</span> <span class="nf">make_vector</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="c1">// Un bloc de mémoire pouvant contenir 3 entiers est automatiquement alloué par l&#39;instruction suivante.
+</span><span class="c1"></span>    <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">v</span> <span class="p">{</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span> <span class="p">};</span>
+
+    <span class="c1">// Ce bloc de mémoire peut éventuellement être réalloué en fonction des opérations réalisées sur v.
+</span><span class="c1"></span>    <span class="n">v</span><span class="p">.</span><span class="n">emplace_back</span><span class="p">(</span><span class="mi">4</span><span class="p">);</span>
+
+    <span class="c1">// Le destructeur de la variable v est **automatiquement** appelé à la sortie du bloc, entraînant la libération
+</span><span class="c1"></span>    <span class="c1">// du bloc de mémoire sous-jacent. 
+</span><span class="c1"></span><span class="p">}</span>
+</code></pre></div><p>Exemple avec <code>std::fstream</code> :</p>
+<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="kt">void</span> <span class="nf">write_content</span><span class="p">(</span><span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&amp;</span> <span class="n">content</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="c1">// Déclenche l&#39;ouverture de my_document.txt en écriture.
+</span><span class="c1"></span>    <span class="n">std</span><span class="o">::</span><span class="n">fstream</span> <span class="n">file</span> <span class="p">{</span> <span class="s">&#34;my_document.txt&#34;</span><span class="p">,</span> <span class="n">std</span><span class="o">::</span><span class="n">fstream</span><span class="o">::</span><span class="n">out</span> <span class="o">|</span> <span class="n">std</span><span class="o">::</span><span class="n">fstream</span><span class="o">::</span><span class="n">app</span> <span class="p">};</span>
+
+    <span class="c1">// Ajoute content à la fin du buffer. Les modifications ne sont pas encore enregistrées dans le fichier. 
+</span><span class="c1"></span>    <span class="n">file</span> <span class="o">&lt;&lt;</span> <span class="n">content</span><span class="p">;</span>
+
+    <span class="c1">// Le destructeur de la variable file est **automatiquement** appelé à la sortie du bloc, entraînant la
+</span><span class="c1"></span>    <span class="c1">// sauvegarde des modifications dans le fichier ainsi que sa fermeture.
+</span><span class="c1"></span><span class="p">}</span>
+</code></pre></div><p>Vous connaissiez déjà pas mal de classes de la STL qui utilisent la technique RAII pour gérer la durée de vie de leurs ressources : <code>vector</code>, <code>string</code>, les autres conteneurs, les smart pointers que vous venez de voir, etc.
+Maintenant, si quelqu&rsquo;un vous parle de RAII, vous saurez qu&rsquo;il est en fait en train de vous parler d&rsquo;objets (généralement placées sur la pile) qui possède des ressources qui se libèrent &ldquo;toutes seules&rdquo; quand l&rsquo;objet est détruit.</p>
+
+
+<footer class="footline">
+	
+</footer>
+
+        
+        </div> 
+        
+
+      </div>
+
+    <div id="navigation">
+        
+        
+        
+        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+            
+        
+        
+        
+
+
+	 
+	 
+		
+			<a class="nav nav-prev" href="/CPP_Learning/chapter5/2-ownership/" title="Ownership"> <i class="fa fa-chevron-left"></i></a>
+		
+		
+			<a class="nav nav-next" href="/CPP_Learning/chapter5/1-lifespan/" title="Durée de vie" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+		
+	
+    </div>
+
+    </section>
+    
+    <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
+      <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
+    </div>
+    <script src="/CPP_Learning/js/clipboard.min.js?1614426199"></script>
+    <script src="/CPP_Learning/js/perfect-scrollbar.min.js?1614426199"></script>
+    <script src="/CPP_Learning/js/perfect-scrollbar.jquery.min.js?1614426199"></script>
+    <script src="/CPP_Learning/js/jquery.sticky.js?1614426199"></script>
+    <script src="/CPP_Learning/js/featherlight.min.js?1614426199"></script>
+    <script src="/CPP_Learning/js/highlight.pack.js?1614426199"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <script src="/CPP_Learning/js/modernizr.custom-3.6.0.js?1614426199"></script>
+    <script src="/CPP_Learning/js/learn.js?1614426199"></script>
+    <script src="/CPP_Learning/js/hugo-learn.js?1614426199"></script>
+
+    <link href="/CPP_Learning/mermaid/mermaid.css?1614426199" rel="stylesheet" />
+    <script src="/CPP_Learning/mermaid/mermaid.js?1614426199"></script>
+    <script>
+        mermaid.initialize({ startOnLoad: true });
+    </script>
+    
+
+  </body>
+</html>
+
