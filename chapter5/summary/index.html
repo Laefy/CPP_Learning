@@ -9,7 +9,7 @@
 
     <link rel="icon" href="/CPP_Learning/images/favicon.png" type="image/png">
 
-    <title>💼 Hiérarchie professionnelle :: Cours de C&#43;&#43; - Niveau Master</title>
+    <title>Synthèse :: Cours de C&#43;&#43; - Niveau Master</title>
 
     
     <link href="/CPP_Learning/css/nucleus.css?1614533464" rel="stylesheet">
@@ -40,7 +40,7 @@
     </style>
     
   </head>
-  <body class="" data-url="/CPP_Learning/chapter4/1-hierarchy/">
+  <body class="" data-url="/CPP_Learning/chapter5/summary/">
     <nav id="sidebar" class="showVisitedLinks">
 
 
@@ -845,7 +845,7 @@
   
     
     <li data-nav-id="/CPP_Learning/chapter4/" title="Héritage" class="dd-item 
-        parent
+        
         
         
         ">
@@ -873,7 +873,7 @@
  
   
     
-      <li data-nav-id="/CPP_Learning/chapter4/1-hierarchy/" title="💼 Hiérarchie professionnelle" class="dd-item active">
+      <li data-nav-id="/CPP_Learning/chapter4/1-hierarchy/" title="💼 Hiérarchie professionnelle" class="dd-item ">
         <a href="/CPP_Learning/chapter4/1-hierarchy/">
         💼 Hiérarchie professionnelle
         <i class="fas fa-check read-icon"></i>
@@ -1031,7 +1031,7 @@
   
     
     <li data-nav-id="/CPP_Learning/chapter5/" title="Gestion des ressources" class="dd-item 
-        
+        parent
         
         
         ">
@@ -1143,7 +1143,7 @@
  
   
     
-      <li data-nav-id="/CPP_Learning/chapter5/summary/" title="Synthèse" class="dd-item ">
+      <li data-nav-id="/CPP_Learning/chapter5/summary/" title="Synthèse" class="dd-item active">
         <a href="/CPP_Learning/chapter5/summary/">
         Synthèse
         <i class="fas fa-check read-icon"></i>
@@ -1248,7 +1248,7 @@
             
           
           
-            <a href='/CPP_Learning/'>Accueil</a> > <a href='/CPP_Learning/chapter4/'>Héritage</a> > 💼 Hiérarchie professionnelle
+            <a href='/CPP_Learning/'>Accueil</a> > <a href='/CPP_Learning/chapter5/'>Gestion des ressources</a> > Synthèse
           
         
           
@@ -1265,8 +1265,9 @@
   <ul>
     <li>
       <ul>
-        <li><a href="#définir-une-classe-mère">Définir une classe-mère</a></li>
-        <li><a href="#visibilité-de-la-relation-de-parenté">Visibilité de la relation de parenté</a></li>
+        <li><a href="#ce-quil-faut-retenir">Ce qu&rsquo;il faut retenir</a></li>
+        <li><a href="#ce-quil-faut-savoir-faire">Ce qu&rsquo;il faut savoir faire</a></li>
+        <li><a href="#ce-dont-il-faut-à-peu-près-se-souvenir">Ce dont il faut à peu près se souvenir</a></li>
       </ul>
     </li>
   </ul>
@@ -1286,219 +1287,64 @@
           
             <h1>
               
-              💼 Hiérarchie professionnelle
+              Synthèse
             </h1>
           
 
         
 
 
-<p>Dans cette première partie, vous apprendrez comment définir des relations de parenté entre vos classes.<br>
-Nous ne parlerons sur cette page que d&rsquo;héritage dit &ldquo;statique&rdquo;, c&rsquo;est-à-dire que nous ne chercherons pas à modifier dans les <strong>classes-fille</strong> le comportement hérité de la <strong>classe-mère</strong>.</p>
 <hr>
-<p>Pour cet exercice, vous modifierez les fichiers :<br>
-- <code>chap-04/1-hierarchy/Boss.cpp</code><br>
-- <code>chap-04/1-hierarchy/Boss.h</code><br>
-- <code>chap-04/1-hierarchy/Staff.cpp</code><br>
-- <code>chap-04/1-hierarchy/Staff.h</code><br>
-- <code>chap-04/1-hierarchy/Intern.cpp</code><br>
-- <code>chap-04/1-hierarchy/Intern.h</code></p>
-<p>La cible à compiler est <code>c4-1-hierarchy</code>.</p>
+<h3 id="ce-quil-faut-retenir">Ce qu&rsquo;il faut retenir</h3>
+<h5 id="théorie">Théorie</h5>
+<ul>
+<li>Une ressource est généralement une entité que l&rsquo;on demande à l&rsquo;OS de nous &ldquo;prêter&rdquo;, comme un bloc de mémoire, un fichier ou encore une connection réseau.<br>
+Certains objets du programme peuvent également être considéré comme des ressources.</li>
+<li>Une ressource est valide de son acquisition à sa libération. La durée de vie d&rsquo;une ressource fait référence est cette période de validité.</li>
+<li>RAII : technique qui consiste à s&rsquo;assurer qu&rsquo;une ressource sera bien libérée, en l&rsquo;associant à un objet (smart pointer, conteneur STL, &hellip;).
+Cet objet réalise alors la libération de la ressource dans son destructeur.</li>
+<li>Le propriétaire d&rsquo;une ressource, c&rsquo;est le composant (objet, fonction, variable) responsable de la durée de vie de cette ressource.</li>
+</ul>
+<h5 id="pratique">Pratique</h5>
+<ul>
+<li>La composition (= on est propriétaire) s&rsquo;exprime avec <code>Obj object</code> ou <code>std::unique_ptr&lt;Obj&gt; object</code>.</li>
+<li>L&rsquo;aggrégation (= on n&rsquo;est pas propriétaire) s&rsquo;exprime avec des références <code>Obj&amp; object</code> ou (<code>Obj* object</code> si optionnel).</li>
+</ul>
 <hr>
-<h3 id="définir-une-classe-mère">Définir une classe-mère</h3>
-<p>Commencez par jeter un coup d&rsquo;oeil à chacun des fichiers fournis.<br>
-Comme vous pouvez le constater, les différentes classes partagent beaucoup de code.</p>
-<p>Vous allez donc commencer par créer une classe contenant l&rsquo;ensemble du code dupliqué par les autres classes.
-Placez-la dans un ou des fichiers séparés et modifiez le CMakeLists.txt (celui dans chap-04) pour qu&rsquo;il les ajoute bien à la compilation de l&rsquo;exécutable.
-Pour le nom de la classe, essayez de trouver quelque chose qui soit digne de son contenu.</p>
-
-<div class="expand">
-    <div class="expand-label" style="cursor: pointer;" onclick="$h = $(this);$h.next('div').slideToggle(100,function () {$h.children('i').attr('class',function () {return $h.next('div').is(':visible') ? 'fas fa-chevron-down' : 'fas fa-chevron-right';});});">
-        <i style="font-size:x-small;" class="fas fa-chevron-right"></i>
-        <span>
-        
-    	
-    	Solution
-    	
-    	</span>
-    </div>
-    <div class="expand-content" style="display: none;">
-        <p>Afin de pouvoir retourner le grade (<code>get_rank()</code>) de chaque employé, on ajoute un attribut <code>_rank</code> à la classe.<br>
-Et on n&rsquo;oublie pas de définir un constructeur pour initialiser chacun des membres de la nouvelle classe.</p>
-<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="cp">#include</span> <span class="cpf">&#34;Rank.h&#34;</span><span class="cp">
-</span><span class="cp"></span>
-<span class="cp">#include</span> <span class="cpf">&lt;string&gt;</span><span class="cp">
-</span><span class="cp">#include</span> <span class="cpf">&lt;string_view&gt;</span><span class="cp">
-</span><span class="cp"></span>
-<span class="k">class</span> <span class="nc">Employee</span>
-<span class="p">{</span>
-<span class="k">public</span><span class="o">:</span>
-    <span class="n">Employee</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">string_view</span> <span class="n">name</span><span class="p">,</span> <span class="n">std</span><span class="o">::</span><span class="n">string_view</span> <span class="n">surname</span><span class="p">,</span> <span class="kt">unsigned</span> <span class="kt">int</span> <span class="n">salary</span><span class="p">,</span> <span class="n">Rank</span> <span class="n">rank</span><span class="p">)</span>
-        <span class="o">:</span> <span class="n">_name</span> <span class="p">{</span> <span class="n">name</span> <span class="p">}</span>
-        <span class="p">,</span> <span class="n">_surname</span> <span class="p">{</span> <span class="n">surname</span> <span class="p">}</span>
-        <span class="p">,</span> <span class="n">_salary</span> <span class="p">{</span> <span class="n">salary</span> <span class="p">}</span>
-        <span class="p">,</span> <span class="n">_rank</span> <span class="p">{</span> <span class="n">rank</span> <span class="p">}</span>
-    <span class="p">{}</span>
-
-    <span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&amp;</span> <span class="n">get_name</span><span class="p">()</span> <span class="k">const</span> <span class="p">{</span> <span class="k">return</span> <span class="n">_name</span><span class="p">;</span> <span class="p">}</span>
-    <span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&amp;</span> <span class="n">get_surname</span><span class="p">()</span> <span class="k">const</span> <span class="p">{</span> <span class="k">return</span> <span class="n">_surname</span><span class="p">;</span> <span class="p">}</span>
-
-    <span class="kt">unsigned</span> <span class="kt">int</span> <span class="nf">get_salary</span><span class="p">()</span> <span class="k">const</span> <span class="p">{</span> <span class="k">return</span> <span class="n">_salary</span><span class="p">;</span> <span class="p">}</span>
-    <span class="kt">void</span>         <span class="nf">increase_salary</span><span class="p">(</span><span class="kt">unsigned</span> <span class="kt">int</span> <span class="n">raise</span><span class="p">)</span> <span class="p">{</span> <span class="n">_salary</span> <span class="o">+=</span> <span class="n">raise</span><span class="p">;</span> <span class="p">}</span>
-
-    <span class="n">Rank</span> <span class="nf">get_rank</span><span class="p">()</span> <span class="k">const</span> <span class="p">{</span> <span class="k">return</span> <span class="n">_rank</span><span class="p">;</span> <span class="p">}</span>
-
-<span class="k">private</span><span class="o">:</span>
-    <span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">_name</span><span class="p">;</span>
-    <span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">_surname</span><span class="p">;</span>
-    <span class="kt">unsigned</span> <span class="kt">int</span>      <span class="n">_salary</span><span class="p">;</span>
-    <span class="n">Rank</span>              <span class="n">_rank</span><span class="p">;</span>
-<span class="p">};</span>
-</code></pre></div>
-    </div>
-</div>
-<p>Vous allez maintenant modifier la définition de la classe <code>Boss</code> afin de la faire hériter de votre nouvelle classe.
-Pour cela, il faut écrire le code suivant :</p>
-<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="cp">#include</span> <span class="cpf">&#34;Employee.h&#34;</span><span class="cp">
-</span><span class="cp"></span><span class="p">...</span>
-
-<span class="k">class</span> <span class="nc">Boss</span> <span class="o">:</span> <span class="k">public</span> <span class="n">Employee</span>
-<span class="p">{</span>
-    <span class="p">...</span>
-<span class="p">};</span>
-</code></pre></div><p>La deuxième étape est de supprimer l&rsquo;ensemble des champs (attributs et fonctions-membres) déjà définies dans la <strong>classe-mère</strong>.<br>
-Il ne devrait vous rester que ceci :</p>
-<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="k">class</span> <span class="nc">Boss</span> <span class="o">:</span> <span class="k">public</span> <span class="n">Employee</span>
-<span class="p">{</span>
-<span class="k">public</span><span class="o">:</span>
-    <span class="n">Boss</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">string_view</span> <span class="n">name</span><span class="p">,</span> <span class="n">std</span><span class="o">::</span><span class="n">string_view</span> <span class="n">surname</span><span class="p">,</span> <span class="kt">unsigned</span> <span class="kt">int</span> <span class="n">salary</span><span class="p">,</span> <span class="kt">bool</span> <span class="n">is_nice</span><span class="p">);</span>
-
-    <span class="kt">void</span> <span class="nf">assign_task</span><span class="p">(</span><span class="n">Staff</span><span class="o">&amp;</span> <span class="n">staff</span><span class="p">)</span> <span class="k">const</span><span class="p">;</span>
-    <span class="kt">void</span> <span class="nf">ask_coffee</span><span class="p">(</span><span class="n">Intern</span><span class="o">&amp;</span> <span class="n">intern</span><span class="p">)</span> <span class="k">const</span><span class="p">;</span>
-
-<span class="k">private</span><span class="o">:</span>
-    <span class="kt">bool</span> <span class="n">_is_nice</span><span class="p">;</span>
-<span class="p">};</span>
-</code></pre></div><p>Pour terminer, vous devez modifier l&rsquo;implémentation du constructeur afin d&rsquo;appeler le constructeur parent :</p>
-<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="n">Boss</span><span class="o">::</span><span class="n">Boss</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">string_view</span> <span class="n">name</span><span class="p">,</span> <span class="n">std</span><span class="o">::</span><span class="n">string_view</span> <span class="n">surname</span><span class="p">,</span> <span class="kt">unsigned</span> <span class="kt">int</span> <span class="n">salary</span><span class="p">,</span> <span class="kt">bool</span> <span class="n">is_nice</span><span class="p">)</span>
-    <span class="o">:</span> <span class="n">Employee</span> <span class="p">{</span> <span class="n">name</span><span class="p">,</span> <span class="n">surname</span><span class="p">,</span> <span class="n">salary</span><span class="p">,</span> <span class="n">Rank</span><span class="o">::</span><span class="n">TopManagement</span> <span class="p">}</span>
-    <span class="p">,</span> <span class="n">_is_nice</span> <span class="p">{</span> <span class="n">is_nice</span> <span class="p">}</span>
-<span class="p">{}</span>
-</code></pre></div><p>Comme vous pouvez le constater, c&rsquo;est un peu la même syntaxe que lorsque vous souhaitez déléguer la construction à un autre constructeur, si ce n&rsquo;est
-que vous devez initialiser vos propres attributs à la suite de l&rsquo;appel au constructeur de la classe-mère.</p>
-<p>Refactorisez maintenant les deux autres classes <code>Staff</code> et <code>Intern</code> de manière à supprimer le code dupliqué en les faisant hériter de <code>Employee</code>.</p>
-
-<div class="expand">
-    <div class="expand-label" style="cursor: pointer;" onclick="$h = $(this);$h.next('div').slideToggle(100,function () {$h.children('i').attr('class',function () {return $h.next('div').is(':visible') ? 'fas fa-chevron-down' : 'fas fa-chevron-right';});});">
-        <i style="font-size:x-small;" class="fas fa-chevron-right"></i>
-        <span>
-        
-    	
-    	Solution
-    	
-    	</span>
-    </div>
-    <div class="expand-content" style="display: none;">
-        <p>Staff.h:</p>
-<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="cp">#include</span> <span class="cpf">&#34;Employee.h&#34;</span><span class="cp">
-</span><span class="cp"></span>
-<span class="cp">#include</span> <span class="cpf">&lt;string&gt;</span><span class="cp">
-</span><span class="cp">#include</span> <span class="cpf">&lt;string_view&gt;</span><span class="cp">
-</span><span class="cp"></span>
-<span class="k">class</span> <span class="nc">Staff</span> <span class="o">:</span> <span class="k">public</span> <span class="n">Employee</span>
-<span class="p">{</span>
-<span class="k">public</span><span class="o">:</span>
-    <span class="n">Staff</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">string_view</span> <span class="n">name</span><span class="p">,</span> <span class="n">std</span><span class="o">::</span><span class="n">string_view</span> <span class="n">surname</span><span class="p">,</span> <span class="kt">unsigned</span> <span class="kt">int</span> <span class="n">salary</span><span class="p">);</span>
-
-    <span class="kt">void</span> <span class="nf">receive_task</span><span class="p">();</span>
-    <span class="kt">void</span> <span class="nf">complete_task</span><span class="p">();</span>
-
-    <span class="kt">unsigned</span> <span class="kt">int</span> <span class="nf">get_assigned_tasks</span><span class="p">()</span> <span class="k">const</span> <span class="p">{</span> <span class="k">return</span> <span class="n">_assigned_tasks</span><span class="p">;</span> <span class="p">}</span>
-    <span class="kt">unsigned</span> <span class="kt">int</span> <span class="nf">get_done_tasks</span><span class="p">()</span> <span class="k">const</span> <span class="p">{</span> <span class="k">return</span> <span class="n">_done_tasks</span><span class="p">;</span> <span class="p">}</span>
-
-<span class="k">private</span><span class="o">:</span>
-    <span class="kt">unsigned</span> <span class="kt">int</span> <span class="n">_assigned_tasks</span> <span class="o">=</span> <span class="mi">0u</span><span class="p">;</span>
-    <span class="kt">unsigned</span> <span class="kt">int</span> <span class="n">_done_tasks</span> <span class="o">=</span> <span class="mi">0u</span><span class="p">;</span>
-<span class="p">};</span>
-</code></pre></div><p>Staff.cpp:</p>
-<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="cp">#include</span> <span class="cpf">&#34;Staff.h&#34;</span><span class="cp">
-</span><span class="cp">#include</span> <span class="cpf">&#34;Rank.h&#34;</span><span class="cp">
-</span><span class="cp"></span>
-<span class="n">Staff</span><span class="o">::</span><span class="n">Staff</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">string_view</span> <span class="n">name</span><span class="p">,</span> <span class="n">std</span><span class="o">::</span><span class="n">string_view</span> <span class="n">surname</span><span class="p">,</span> <span class="kt">unsigned</span> <span class="kt">int</span> <span class="n">salary</span><span class="p">)</span>
-    <span class="o">:</span> <span class="n">Employee</span> <span class="p">{</span> <span class="n">name</span><span class="p">,</span> <span class="n">surname</span><span class="p">,</span> <span class="n">salary</span><span class="p">,</span> <span class="n">Rank</span><span class="o">::</span><span class="n">Default</span> <span class="p">}</span>
-<span class="p">{}</span>
-
-<span class="p">...</span>
-</code></pre></div><p>Intern.h:</p>
-<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="cp">#include</span> <span class="cpf">&#34;Employee.h&#34;</span><span class="cp">
-</span><span class="cp"></span>
-<span class="cp">#include</span> <span class="cpf">&lt;string&gt;</span><span class="cp">
-</span><span class="cp">#include</span> <span class="cpf">&lt;string_view&gt;</span><span class="cp">
-</span><span class="cp"></span>
-<span class="k">class</span> <span class="nc">Intern</span> <span class="o">:</span> <span class="k">public</span> <span class="n">Employee</span>
-<span class="p">{</span>
-<span class="k">public</span><span class="o">:</span>
-    <span class="n">Intern</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">string_view</span> <span class="n">name</span><span class="p">,</span> <span class="n">std</span><span class="o">::</span><span class="n">string_view</span> <span class="n">surname</span><span class="p">,</span> <span class="kt">unsigned</span> <span class="kt">int</span> <span class="n">salary</span><span class="p">,</span> <span class="kt">bool</span> <span class="n">is_clumsy</span><span class="p">);</span>
-
-    <span class="kt">void</span> <span class="nf">fetch_coffee</span><span class="p">();</span>
-
-    <span class="kt">unsigned</span> <span class="kt">int</span> <span class="nf">get_nb_broken_cups</span><span class="p">()</span> <span class="k">const</span> <span class="p">{</span> <span class="k">return</span> <span class="n">_nb_broken_cups</span><span class="p">;</span> <span class="p">}</span>
-
-<span class="k">private</span><span class="o">:</span>
-    <span class="kt">bool</span>         <span class="n">_is_clumsy</span><span class="p">;</span>
-    <span class="kt">unsigned</span> <span class="kt">int</span> <span class="n">_nb_broken_cups</span> <span class="o">=</span> <span class="mi">0u</span><span class="p">;</span>
-<span class="p">};</span>
-</code></pre></div><p>Intern.cpp:</p>
-<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="cp">#include</span> <span class="cpf">&#34;Intern.h&#34;</span><span class="cp">
-</span><span class="cp">#include</span> <span class="cpf">&#34;Rank.h&#34;</span><span class="cp">
-</span><span class="cp"></span>
-<span class="n">Intern</span><span class="o">::</span><span class="n">Intern</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">string_view</span> <span class="n">name</span><span class="p">,</span> <span class="n">std</span><span class="o">::</span><span class="n">string_view</span> <span class="n">surname</span><span class="p">,</span> <span class="kt">unsigned</span> <span class="kt">int</span> <span class="n">salary</span><span class="p">,</span> <span class="kt">bool</span> <span class="n">is_clumsy</span><span class="p">)</span>
-    <span class="o">:</span> <span class="n">Employee</span> <span class="p">{</span> <span class="n">name</span><span class="p">,</span> <span class="n">surname</span><span class="p">,</span> <span class="n">salary</span><span class="p">,</span> <span class="n">Rank</span><span class="o">::</span><span class="n">Slave</span> <span class="p">}</span>
-    <span class="p">,</span> <span class="n">_is_clumsy</span> <span class="p">{</span> <span class="n">is_clumsy</span> <span class="p">}</span>
-<span class="p">{}</span>
-
-<span class="p">...</span>
-</code></pre></div>
-    </div>
-</div>
+<h3 id="ce-quil-faut-savoir-faire">Ce qu&rsquo;il faut savoir faire</h3>
+<h5 id="méthodologie">Méthodologie</h5>
+<ul>
+<li>Il faut déterminer qui sera owner de qui avant de commencer à coder, afin de définir correctement l&rsquo;architecture de ses classes.</li>
+<li>Il faut aussi définir qui aura le droit d&rsquo;utiliser une ressource sans en être propriétaire.</li>
+</ul>
+<h5 id="librairie-standard">Librairie standard</h5>
+<ul>
+<li>Inclure les smart pointers : <code>#include &lt;memory&gt;</code></li>
+<li>Créer un <code>unique_ptr&lt;T&gt;</code> : <code>std::make_unique&lt;T&gt;(p1, p2, ...)</code>.</li>
+<li>Transférer un <code>unique_ptr</code> (non-copiable) : <code>auto new_owner = std::move(ptr)</code> / <code>fcn(std::move(ptr))</code></li>
+<li>Savoir si un <code>unique_ptr</code> fait référence à un objet précis : <code>ptr-&gt;get() == &amp;ref</code></li>
+<li>Accéder au contenu d&rsquo;un <code>unique_ptr</code> : <code>auto&amp; obj = *ptr</code> / <code>*ptr-&gt;obj_fcn()</code></li>
+<li>Créer des <code>shared_ptr&lt;T&gt;</code> : <code>std::make_shared&lt;T&gt;(p1, p2, ...)</code></li>
+<li>Inverser deux objets : <code>std::swap(obj1, obj2)</code> dans <code>&lt;utility&gt;</code></li>
+</ul>
+<h5 id="langage">Langage</h5>
+<ul>
+<li><code>[[nodiscard]]</code> pour être sûr que la valeur de retour d&rsquo;une fonction n&rsquo;est pas ignorée.</li>
+</ul>
+<h5 id="pratique-1">Pratique</h5>
+<ul>
+<li>Prévenir tous les composants qui ont une référence sur un objet avant de procéder à sa destruction.</li>
+<li>Ecrire <code>[[nodiscard]]</code> sur les fonctions destinées à transférer l&rsquo;ownership d&rsquo;une ressource.
+C&rsquo;est d&rsquo;autant plus important de le faire lorsque le type de retour ne réalise pas la libération de la ressource à sa destruction (= sans RAII), comme les raw pointers.</li>
+</ul>
 <hr>
-<h3 id="visibilité-de-la-relation-de-parenté">Visibilité de la relation de parenté</h3>
-<p>Vous vous demandez peut-être pourquoi il fallait mettre <code>public</code> devant le nom de la classe-mère au moment de déclarer votre héritage.<br>
-En fait, en C++, il est possible de définir la visibilité d&rsquo;une relation d&rsquo;héritage. Celle-ci peut aussi bien être privée que publique.</p>
-<p>Par exemple, dans le cas suivant :</p>
-<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="k">class</span> <span class="nc">Child</span> <span class="o">:</span> <span class="k">private</span> <span class="n">Parent</span>
-<span class="p">{</span>
-    <span class="p">...</span>
-<span class="p">};</span>
-</code></pre></div><p>Si <code>Parent</code> déclare une fonction <code>get_parent_name()</code>, alors il ne sera possible d&rsquo;utiliser cette fonction qu&rsquo;à l&rsquo;intérieur de la classe <code>Child</code>.<br>
-C&rsquo;est comme si tous les attributs et fonctions héritées de <code>Parent</code> étaient placés dans la partie privée de <code>Child</code>.</p>
-<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="c1">// In member function of Child:
-</span><span class="c1"></span><span class="kt">void</span> <span class="n">Child</span><span class="o">::</span><span class="n">get_child_name</span><span class="p">()</span> <span class="k">const</span>
-<span class="p">{</span>
-    <span class="c1">// The following line compile.
-</span><span class="c1"></span>    <span class="k">return</span> <span class="nf">get_parent_name</span><span class="p">();</span>
-<span class="p">}</span>
-
-<span class="c1">// In main function:
-</span><span class="c1"></span><span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
-<span class="p">{</span>
-    <span class="n">Child</span> <span class="n">child</span><span class="p">;</span>
-
-    <span class="c1">// The following line doesn&#39;t compile, because Child is &#34;hiding&#34; the fact that it inherits from Parent. 
-</span><span class="c1"></span>    <span class="n">child</span><span class="p">.</span><span class="n">get_parent_name</span><span class="p">();</span>
-
-    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
-<span class="p">}</span>
-</code></pre></div><p>A part pour de très rares cas (comme des patterns de programmation un peu particuliers), il est déconseillé d&rsquo;employer de l&rsquo;héritage privé, car on peut alors généralement remplacer la relation &ldquo;is-a&rdquo; par une relation &ldquo;has-a&rdquo;, c&rsquo;est-à-dire une composition.</p>
-<p><strong>Mais dans ce cas, pourquoi avoir aborder le sujet ?</strong></p>
-<p>Tout simplement parce qu&rsquo;en faisant de l&rsquo;héritage, vous allez vous retrouver au moins une fois avec une erreur de ce type :</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">error: <span class="s1">&#39;some variable or function&#39;</span> is inaccessible within this context
-</code></pre></div><p>Au cours du chapitre 2, nous vous avions indiqué que la différence entre une <code>class</code> et une <code>struct</code>, c&rsquo;était la visibilité par défaut.<br>
-Eh bien cette visibilité par défaut s&rsquo;applique également à la relation d&rsquo;héritage.</p>
-<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="k">class</span> <span class="nc">A</span>  <span class="o">:</span> <span class="n">B</span> <span class="p">{};</span>    <span class="c1">// private inheritance, because the default visibility for a class is &#39;private&#39;
-</span><span class="c1"></span><span class="k">struct</span> <span class="nc">A</span> <span class="o">:</span> <span class="n">B</span> <span class="p">{};</span>    <span class="c1">// public inheritance, because the default visibility for a struct is &#39;public&#39;
-</span></code></pre></div><p>Donc lorsque vous faites de l&rsquo;héritage avec des <code>class</code>, <strong>n&rsquo;oubliez pas de placer le mot-clef <code>public</code> devant le nom de la classe-mère</strong>.
-Autrement, la relation d&rsquo;héritage sera privée et le compilateur ne vous laissera pas accéder aux fonctions-membres du parent en dehors de la classe.</p>
+<h3 id="ce-dont-il-faut-à-peu-près-se-souvenir">Ce dont il faut à peu près se souvenir</h3>
+<h5 id="librairie-standard-1">Librairie standard</h5>
+<ul>
+<li>Utiliser un <code>std::reference_wrapper&lt;T&gt;</code></li>
+<li>Créer des <code>weak_ptr&lt;T&gt;</code> : <code>std::weak_ptr&lt;T&gt; weak { some_shared_ptr }</code></li>
+<li>Créer un <code>shared_ptr&lt;T&gt;</code> si utilisé avec des <code>weak_ptr</code> : <code>std::shared_ptr&lt;T&gt; p { new T { p1, p2, ... } }</code></li>
+</ul>
 
 
 <footer class="footline">
@@ -2068,7 +1914,6 @@ Autrement, la relation d&rsquo;héritage sera privée et le compilateur ne vous 
             
                 
                     
-                    
                 
                 
 
@@ -2081,7 +1926,6 @@ Autrement, la relation d&rsquo;héritage sera privée et le compilateur ne vous 
             
             
                 
-                    
                     
                 
                 
@@ -2098,9 +1942,6 @@ Autrement, la relation d&rsquo;héritage sera privée et le compilateur ne vous 
             
             
                 
-                    
-                        
-                        
                     
                 
                 
@@ -2206,6 +2047,7 @@ Autrement, la relation d&rsquo;héritage sera privée et le compilateur ne vous 
             
                 
                     
+                    
                 
                 
 
@@ -2218,6 +2060,9 @@ Autrement, la relation d&rsquo;héritage sera privée et le compilateur ne vous 
             
             
                 
+                    
+                        
+                        
                     
                 
                 
@@ -2282,6 +2127,7 @@ Autrement, la relation d&rsquo;héritage sera privée et le compilateur ne vous 
             
             
                 
+                    
                     
                 
                 
@@ -2311,10 +2157,10 @@ Autrement, la relation d&rsquo;héritage sera privée et le compilateur ne vous 
 	 
 	 
 		
-			<a class="nav nav-prev" href="/CPP_Learning/chapter4/" title="Héritage"> <i class="fa fa-chevron-left"></i></a>
+			<a class="nav nav-prev" href="/CPP_Learning/chapter5/test/" title="Questionnaire !"> <i class="fa fa-chevron-left"></i></a>
 		
 		
-			<a class="nav nav-next" href="/CPP_Learning/chapter4/2-farm/" title="🐮 Concerto animalier" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+			<a class="nav nav-next" href="/CPP_Learning/chapter5/1-lifespan/" title="Durée de vie" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
 		
 	
     </div>

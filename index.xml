@@ -455,7 +455,21 @@ Bon courage à vous 🙂
 
 3- Comment représenter une classe abstraite en C++ ?
 
- Les questions 4 à 8 font référence au code suivant :</description>
+ Les questions 4 à 6 font référence au code suivant :</description>
+    </item>
+    
+    <item>
+      <title>Questionnaire !</title>
+      <link>https://laefy.github.io/CPP_Learning/chapter5/test/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://laefy.github.io/CPP_Learning/chapter5/test/</guid>
+      <description>C&amp;rsquo;est l&amp;rsquo;heure du test ! Bon courage 🙂
+ Vous êtes : Votre adresse mail : 1- Quel est la responsabilité du propriétaire d’une ressource.
+
+2- Quelles sont les deux raisons pour lesquelles il faut utiliser des smart pointers plutôt que des raw pointers lorsqu’on veut exprimer la notion d’ownership ?
+
+3- Quels sont les trois smart pointers proposés par la STL ? A quoi sert chacun d’entre eux ?</description>
     </item>
     
     <item>
@@ -492,6 +506,16 @@ Bon courage à vous 🙂
       
       <guid>https://laefy.github.io/CPP_Learning/chapter4/summary/</guid>
       <description>Ce qu&amp;rsquo;il faut savoir faire Langage  Définir une relation de parenté publique entre deux classes : class Child : public Parent { ... }; Définir un membre (fonction ou attribut) accessible uniquement depuis la classe courante et ses enfants : protected : int _a1 = 0; char _a2 = &#39;a&#39;; Appeler le constructeur de la classe parent : Child(int p1, int p2) : Parent { p1 }, _p2 { p2 } { .</description>
+    </item>
+    
+    <item>
+      <title>Synthèse</title>
+      <link>https://laefy.github.io/CPP_Learning/chapter5/summary/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://laefy.github.io/CPP_Learning/chapter5/summary/</guid>
+      <description>Ce qu&amp;rsquo;il faut retenir Théorie  Une ressource est généralement une entité que l&amp;rsquo;on demande à l&amp;rsquo;OS de nous &amp;ldquo;prêter&amp;rdquo;, comme un bloc de mémoire, un fichier ou encore une connection réseau.
+Certains objets du programme peuvent également être considéré comme des ressources. Une ressource est valide de son acquisition à sa libération. La durée de vie d&amp;rsquo;une ressource fait référence est cette période de validité. RAII : technique qui consiste à s&amp;rsquo;assurer qu&amp;rsquo;une ressource sera bien libérée, en l&amp;rsquo;associant à un objet (smart pointer, conteneur STL, &amp;hellip;).</description>
     </item>
     
     <item>
@@ -538,6 +562,15 @@ Bon courage à vous 🙂
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://laefy.github.io/CPP_Learning/chapter4/test_done/</guid>
+      <description>Vos réponses nous ont bien été communiquées 😃 Retourner à la synthèse du Chapitre</description>
+    </item>
+    
+    <item>
+      <title>Merci !</title>
+      <link>https://laefy.github.io/CPP_Learning/chapter5/test_done/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://laefy.github.io/CPP_Learning/chapter5/test_done/</guid>
       <description>Vos réponses nous ont bien été communiquées 😃 Retourner à la synthèse du Chapitre</description>
     </item>
     
