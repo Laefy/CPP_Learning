@@ -14,7 +14,7 @@ Bon courage à vous 🙂
 {{% test_item id=2 lines="5" desc="poly-code" %}}Définissez une classe polymorphe `Nothing` qui ne fait rien.{{% /test_item %}}
 {{% test_item id=3 lines="2" desc="abstract-class" %}}Comment représenter une classe abstraite en C++ ?{{% /test_item %}}
 ---
-Les questions 4 à 8 font référence au code suivant :
+Les questions 4 à 6 font référence au code suivant :
 
 ```cpp
 class A

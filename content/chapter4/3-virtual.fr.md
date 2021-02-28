@@ -186,7 +186,7 @@ const Son& son_cref = son;
 son_cref.fcn_c();                   // (4)
 
 GrandFather& son_as_grand_father = son;
-son.fcn_c();                        // (5)
+son_as_grand_father.fcn_c();        // (5)
 
 Father grand_son_copy_as_father = grand_son;
 grand_son_copy_as_father.fcn_d();   // (6)
