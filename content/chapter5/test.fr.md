@@ -29,7 +29,7 @@ public:
     {
         for (auto* obj: _objects)
         {
-            delete _objects;
+            delete obj;
         }
     }
 
