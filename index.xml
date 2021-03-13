@@ -33,6 +33,17 @@ Le C++ est un langage dans lequel nous avons la main sur la durée de vie de nos
     </item>
     
     <item>
+      <title>Parcours et recherches</title>
+      <link>https://laefy.github.io/CPP_Learning/chapter6/1-searches/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://laefy.github.io/CPP_Learning/chapter6/1-searches/</guid>
+      <description>Parcours de plages Pour parcourir une plage d&amp;rsquo;éléments, vous devriez normalement déjà savoir qu&amp;rsquo;il faut utiliser une boucle for ou foreach. Les boucles while et do-while ne sont en effet pas vraiment adaptées à ce type d&amp;rsquo;usage.
+Vous trouverez quelques conseils dans cette partie pour rendre votre code plus lisible, concis et fiable.
+ Boucle foreach Lorsqu&amp;rsquo;on itère sur un conteneur avec une boucle foreach, il faut faire attention à si l&amp;rsquo;on souhaite récupérer une copie de l&amp;rsquo;élément ou une référence.</description>
+    </item>
+    
+    <item>
       <title>Présentation du langage</title>
       <link>https://laefy.github.io/CPP_Learning/chapter1/1-language/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -143,6 +154,16 @@ La cible à compiler est c3-1-vectors.
     </item>
     
     <item>
+      <title>Transformations</title>
+      <link>https://laefy.github.io/CPP_Learning/chapter6/2-transformations/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://laefy.github.io/CPP_Learning/chapter6/2-transformations/</guid>
+      <description>Maintenant que nous vous avons présenté les fonctions permettant de récupérer des informations à partir d&amp;rsquo;une plage d&amp;rsquo;éléments, nous allons vous présenter celles qui permettent de manipuler et de transformer ces plages.
+ Suppressions Afin de supprimer des éléments d&amp;rsquo;une plage, on utilise la fonction std::remove. Cette fonction a pour effet de déplacer les éléments à conserver au début de la plage, en préservant leur ordre. Elle renvoie un itérateur sur le nouvel itérateur de fin de plage.</description>
+    </item>
+    
+    <item>
       <title>✨ Première classe</title>
       <link>https://laefy.github.io/CPP_Learning/chapter2/2-first-class/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -209,6 +230,16 @@ Du coup, pour pallier à ce problème, il est possible d&amp;rsquo;utiliser la c
       <description>Pour le gestionnaire de version, nous utiliserons git. Vous pourrez ensuite héberger votre dépôt pour les TPs et le projet sur la plateforme de votre choix (Github, Gitlab, Bitbucket, votre serveur perso, peu importe), du moment que l&amp;rsquo;on peut y avoir accès pour l&amp;rsquo;évaluation.
  Installation Si vous êtes sous Unix, vous devriez pouvoir installer git depuis votre gestionnaire de paquets.
 Si vous êtes sous Windows, vous pouvez télécharger l&amp;rsquo;outil depuis cette page.</description>
+    </item>
+    
+    <item>
+      <title>Itérateurs</title>
+      <link>https://laefy.github.io/CPP_Learning/chapter6/3-iterators/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://laefy.github.io/CPP_Learning/chapter6/3-iterators/</guid>
+      <description>Normalement, avec tout ce que vous avez vu jusqu&amp;rsquo;ici, vous devriez être capable d&amp;rsquo;utiliser correctement un itérateur :
+ déréférencement avec *it incrémentation avec ++it récupérer les itérateurs de début et de fin d&amp;rsquo;un conteneur avec ctn.begin() et ctn.end() insérer un élément dans un conteneur avec auto it_on_new = ctn.insert(it, new_value) supprimer un élément d&amp;rsquo;un conteneur avec auto it_on_next = ctn.erase(it)  Vous allez maintenant voir ce qu&amp;rsquo;il faut faire pour implémenter vos propres itérateurs.</description>
     </item>
     
     <item>
@@ -293,6 +324,16 @@ Vous allez donc ici voir les différents types de conteneurs associatifs propos�
 - chap-03/3-associatives/keys.h
 La cible à compiler est c3-3-associatives.
  Les sets (ensembles) Un set est un conteneur dans lequel les éléments sont &amp;ldquo;indexés par eux-mêmes&amp;rdquo;.</description>
+    </item>
+    
+    <item>
+      <title>Lambdas</title>
+      <link>https://laefy.github.io/CPP_Learning/chapter6/4-lambdas/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://laefy.github.io/CPP_Learning/chapter6/4-lambdas/</guid>
+      <description>Les lambdas sont des objets-fonction un peu spéciaux, que l&amp;rsquo;on peut facilement définir depuis le corps d&amp;rsquo;une fonction. Vous avez déjà dû voir de nombreux exemples d&amp;rsquo;utilisation de lambda tout au long de ce cours. Nous allons maintenant revenir plus en détail sur leur fonctionnement et vous montrez tout ce qu&amp;rsquo;il est possible de faire avec.
+ Syntaxe La définition d&amp;rsquo;une lambda est composée en général de trois parties :</description>
     </item>
     
     <item>
@@ -465,11 +506,26 @@ Bon courage à vous 🙂
       
       <guid>https://laefy.github.io/CPP_Learning/chapter5/test/</guid>
       <description>C&amp;rsquo;est l&amp;rsquo;heure du test ! Bon courage 🙂
- Vous êtes : Votre adresse mail : 1- Quel est la responsabilité du propriétaire d’une ressource.
+ Vous êtes : Votre adresse mail : 1- Quel est la responsabilité du propriétaire d’une ressource ?
 
 2- Quelles sont les deux raisons pour lesquelles il faut utiliser des smart pointers plutôt que des raw pointers lorsqu’on veut exprimer la notion d’ownership ?
 
 3- Quels sont les trois smart pointers proposés par la STL ? A quoi sert chacun d’entre eux ?</description>
+    </item>
+    
+    <item>
+      <title>Questionnaire !</title>
+      <link>https://laefy.github.io/CPP_Learning/chapter6/test/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://laefy.github.io/CPP_Learning/chapter6/test/</guid>
+      <description>C&amp;rsquo;est l&amp;rsquo;heure du test ! N&amp;rsquo;oubliez pas que vous pouvez utiliser Godbolt pour compiler et tester des petits bouts de code.
+Bon courage à vous 🙂
+ Vous êtes : Votre adresse mail : 1- Quel type de boucle faut-il utiliser pour modifier la structure d’un conteneur lors d’un parcours ?
+
+2- Dans quel cas peut-il être intéressant d’utiliser la fonction std::for_each ?
+
+ 3- Quels headers contiennent les algorithmes de la STL ?</description>
     </item>
     
     <item>
@@ -515,7 +571,16 @@ Bon courage à vous 🙂
       
       <guid>https://laefy.github.io/CPP_Learning/chapter5/summary/</guid>
       <description>Ce qu&amp;rsquo;il faut retenir Théorie  Une ressource est généralement une entité que l&amp;rsquo;on demande à l&amp;rsquo;OS de nous &amp;ldquo;prêter&amp;rdquo;, comme un bloc de mémoire, un fichier ou encore une connection réseau.
-Certains objets du programme peuvent également être considéré comme des ressources. Une ressource est valide de son acquisition à sa libération. La durée de vie d&amp;rsquo;une ressource fait référence est cette période de validité. RAII : technique qui consiste à s&amp;rsquo;assurer qu&amp;rsquo;une ressource sera bien libérée, en l&amp;rsquo;associant à un objet (smart pointer, conteneur STL, &amp;hellip;).</description>
+Certains objets du programme peuvent également être considérés comme des ressources. Une ressource est valide de son acquisition à sa libération. La durée de vie d&amp;rsquo;une ressource fait référence est cette période de validité. RAII : technique qui consiste à s&amp;rsquo;assurer qu&amp;rsquo;une ressource sera bien libérée, en l&amp;rsquo;associant à un objet (smart pointer, conteneur STL, &amp;hellip;).</description>
+    </item>
+    
+    <item>
+      <title>Synthèse</title>
+      <link>https://laefy.github.io/CPP_Learning/chapter6/summary/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://laefy.github.io/CPP_Learning/chapter6/summary/</guid>
+      <description>// 🚧🚥🔨 //</description>
     </item>
     
     <item>
@@ -571,6 +636,15 @@ Certains objets du programme peuvent également être considéré comme des ress
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://laefy.github.io/CPP_Learning/chapter5/test_done/</guid>
+      <description>Vos réponses nous ont bien été communiquées 😃 Retourner à la synthèse du Chapitre</description>
+    </item>
+    
+    <item>
+      <title>Merci !</title>
+      <link>https://laefy.github.io/CPP_Learning/chapter6/test_done/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://laefy.github.io/CPP_Learning/chapter6/test_done/</guid>
       <description>Vos réponses nous ont bien été communiquées 😃 Retourner à la synthèse du Chapitre</description>
     </item>
     

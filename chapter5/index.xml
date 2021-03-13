@@ -65,7 +65,7 @@ La cible à compiler est c5-2-pokemons.
       
       <guid>https://laefy.github.io/CPP_Learning/chapter5/test/</guid>
       <description>C&amp;rsquo;est l&amp;rsquo;heure du test ! Bon courage 🙂
- Vous êtes : Votre adresse mail : 1- Quel est la responsabilité du propriétaire d’une ressource.
+ Vous êtes : Votre adresse mail : 1- Quel est la responsabilité du propriétaire d’une ressource ?
 
 2- Quelles sont les deux raisons pour lesquelles il faut utiliser des smart pointers plutôt que des raw pointers lorsqu’on veut exprimer la notion d’ownership ?
 
@@ -79,7 +79,7 @@ La cible à compiler est c5-2-pokemons.
       
       <guid>https://laefy.github.io/CPP_Learning/chapter5/summary/</guid>
       <description>Ce qu&amp;rsquo;il faut retenir Théorie  Une ressource est généralement une entité que l&amp;rsquo;on demande à l&amp;rsquo;OS de nous &amp;ldquo;prêter&amp;rdquo;, comme un bloc de mémoire, un fichier ou encore une connection réseau.
-Certains objets du programme peuvent également être considéré comme des ressources. Une ressource est valide de son acquisition à sa libération. La durée de vie d&amp;rsquo;une ressource fait référence est cette période de validité. RAII : technique qui consiste à s&amp;rsquo;assurer qu&amp;rsquo;une ressource sera bien libérée, en l&amp;rsquo;associant à un objet (smart pointer, conteneur STL, &amp;hellip;).</description>
+Certains objets du programme peuvent également être considérés comme des ressources. Une ressource est valide de son acquisition à sa libération. La durée de vie d&amp;rsquo;une ressource fait référence est cette période de validité. RAII : technique qui consiste à s&amp;rsquo;assurer qu&amp;rsquo;une ressource sera bien libérée, en l&amp;rsquo;associant à un objet (smart pointer, conteneur STL, &amp;hellip;).</description>
     </item>
     
     <item>
