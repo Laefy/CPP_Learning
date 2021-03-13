@@ -10,7 +10,7 @@ weight: 101
 ##### Théorie
 
 - Une ressource est généralement une entité que l'on demande à l'OS de nous "prêter", comme un bloc de mémoire, un fichier ou encore une connection réseau.\
-Certains objets du programme peuvent également être considéré comme des ressources.
+Certains objets du programme peuvent également être considérés comme des ressources.
 - Une ressource est valide de son acquisition à sa libération. La durée de vie d'une ressource fait référence est cette période de validité. 
 - RAII : technique qui consiste à s'assurer qu'une ressource sera bien libérée, en l'associant à un objet (smart pointer, conteneur STL, ...).
 Cet objet réalise alors la libération de la ressource dans son destructeur.

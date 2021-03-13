@@ -37,13 +37,13 @@ Cela s'y prête d'autant plus lorsque l'indice est en réalité une **enumérati
 Pour définir et utiliser des `enum` en C++, c'est un peu plus simple qu'en C : il n'y a pas besoin de faire de `typedef` pour référencer l'enum par son nom.
 {{% /notice %}}
 
-Dans le code de base du fichier, vous pouvez trouver une énumération `Fruit`, contenant les valeurs `Abricot`, `Cherry`, `Mango` et `Raspberry`. Vous avez également une dernière valeur `Fruit_Count`, qui contient donc le nombre de valeurs de l'enum.\
+Dans le code de base du fichier, vous pouvez trouver une énumération `Fruit`, contenant les valeurs `Apricot`, `Cherry`, `Mango` et `Raspberry`. Vous avez également une dernière valeur `Fruit_Count`, qui contient donc le nombre de valeurs de l'enum.\
 Définissez un `array` servant à indiquer pour chaque fruit possible le nom de ce fruit. Assignez ensuite dans chaque case la valeur appropriée.
 
 {{% expand "Solution" %}}
 ```cpp
 std::array<std::string, Fruit_Count> fruit_names;
-fruit_names[Abricot] = "abricot";
+fruit_names[Apricot] = "apricot";
 fruit_names[Cherry] = "cherry";
 fruit_names[Mango] = "mango";
 fruit_names[Raspberry] = "raspberry";

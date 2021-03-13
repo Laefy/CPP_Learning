@@ -215,7 +215,7 @@ std::array<std::unique_ptr<Pokemon>, 6> _team;
 Pourquoi les boucles `for (auto* t : _team)` ne compilent plus ?
 Que faut-il changer pour corriger le problème ? (en gardant bien en tête le fait qu'un `unique_ptr` n'est pas copiable)
 {{% expand "Solution" %}}
-Seuls les pointeurs nu peuvent être référencés avec `auto*`.
+Seuls les pointeurs nus peuvent être référencés avec `auto*`.
 Il faut donc écrire `auto&` ou `const auto&` (si on écrit juste `auto`, le compilateur va essayer de copier le `unique_ptr`, donc ça ne fonctionnera pas).
 {{% /expand %}}
 
@@ -248,7 +248,7 @@ Pokemon* get_first_pokemon() const
 
 Modifiez la fonction `give_pokemons` afin qu'elle retourne des `unique_ptr`.\
 Pourquoi l'instruction `_teams.fill(nullptr)` ne compile plus ?
-Retirez-là, et réinitialisez les pointeurs de `_teams` depuis la boucle directement.   
+Retirez-la, et réinitialisez les pointeurs de `_teams` depuis la boucle directement.   
 {{% expand "Solution" %}}
 En recherchant dans la doc de `std::array<T>::fill`, on constate que la fonction attend un `const T&`.
 Dans notre cas, la fonction prend donc un `const unique_ptr<Pokemon>&`.
@@ -401,10 +401,8 @@ bool add_to_team(std::unique_ptr<Pokemon>& pokemon)
 ```
 {{% /expand %}}
 
-Pour terminez, ajoutez une surcharge à `collect` acceptant un raw pointer, de la même manière que ce que vous avez fait pour `PC::transfer`, et corrigez les erreurs dans le `main`.
+Pour terminer, ajoutez une surcharge à `collect` acceptant un raw pointer, de la même manière que ce que vous avez fait pour `PC::transfer`, et corrigez les erreurs dans le `main`.
 {{% expand "Solution" %}}
-On prend le `unique_ptr` par référence plutôt que par valeur.
-Lorsqu'une fonction attend un `unique_ptr&`, cela signifie que la fonction va **peut-être** récupérer l'ownership de l'objet.
 ```cpp
 // Trainer.h
 void collect(Pokemon* pokemon) { collect(std::unique_ptr<Pokemon> { pokemon }); }
@@ -518,7 +516,7 @@ int main()
 Pour cet exercice, vous modifierez les fichiers :\
 \- `chap-05/3-cache/Cache.cpp`\
 \- `chap-05/3-cache/Model.h`\
-\- `chap-05/3-cache/Texture.h`\
+\- `chap-05/3-cache/Texture.h`
 
 La cible à compiler est `c5-3-cache`.
 
@@ -770,7 +768,7 @@ private:
 
 {{% notice info %}}
 Les `shared_ptr`, c'est bien, mais c'est à utiliser seulement quand on en a vraiment besoin.
-D'une part, si vous utilisez des `shared_ptr` quand vous pouvez utiliser des `unique_ptr`, l'architecture de votre code risque d'en partir (vous pouvez créer des dépendances cycliques, et vous retrouvez avec des fuites de mémoire)
+D'une part, si vous utilisez des `shared_ptr` quand vous pouvez utiliser des `unique_ptr`, l'architecture de votre code risque d'en pâtir (vous pouvez créer des dépendances cycliques, et vous retrouvez avec des fuites de mémoire)
 D'autre part, l'usage des `shared_ptr` est beaucoup moins efficace que celui des `unique_ptr` :\
 \- l'incrémentation et la décrémentation du compteur sont réalisées avec des atomiques (afin d'être thread-safe), il s'agit donc d'opérations coûteuses.\
 \- tant qu'un `weak_ptr` existe, la mémoire du bloc complet n'est pas libérée. 
@@ -778,7 +776,7 @@ D'autre part, l'usage des `shared_ptr` est beaucoup moins efficace que celui des
 
 ---
 
-### Les pointeurs nu, c'est terminé ?
+### Les pointeurs nus, c'est terminé ?
 
 Maintenant que vous connaissez les smart pointeurs et les références, vous ne devriez quasiment plus avoir besoin de raw pointers.
 
@@ -797,7 +795,7 @@ Vous pouvez donc dire au revoir à `new` et adieu à `delete`.
 RAII signifie "Resource Acquisition is Initialization".
 Il s'agit d'une technique consistant à lier la durée de vie d'une ressource à la durée de vie d'un objet : la ressource est acquise au cours de l'initialisation de l'objet (dans son constructeur) et elle est libérée à sa destruction.
 
-Lorsque l'on a pas besoin de référence et que l'on manipule un objet directement par valeur, c'est donc très pratique, car on a la garantie que le destructeur de l'objet va bien tout nettoyer pendant son exécution.
+Lorsque l'on n'a pas besoin de référence et que l'on manipule un objet directement par valeur, c'est donc très pratique, car on a la garantie que le destructeur de l'objet va bien tout nettoyer pendant son exécution.
 
 Exemple avec `std::vector` :
 ```cpp

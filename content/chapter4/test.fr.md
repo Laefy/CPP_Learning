@@ -59,7 +59,7 @@ int main()
 
 {{% test_item id=4 lines=3 desc="compile-error" %}}Le programme ci-dessus ne compile pas. Pourquoi et que faut-il faire pour le corriger ?{{% /test_item %}}
 {{% test_item id=5 lines=3 desc="exec-issues" %}}En plus du problème de compilation, on peut relever trois erreurs de programmation qui pourraient générer des problèmes à l'exécution. Quelles sont-elles et que faut-il faire pour les corriger ?{{% /test_item %}}
-{{% test_item id=6 lines=4 desc="called-fcns" %}}Pour chacun des appels sur `a`, indiquez quelle fonction sera appelée (`A::fcnX` ou `B::fcnX`) et justifiez.{{% /test_item %}}
+{{% test_item id=6 lines=4 desc="called-fcns" %}}Pour chacun des appels sur `a`, indiquez quelle fonction sera appelée (`A::fcnX` ou `B::fcnX`) et justifiez. Vous considérerez que vous n'avez pas effectué les corrections de la question précédente.{{% /test_item %}}
 
 ---
 

@@ -80,7 +80,7 @@ Commencez par ajouter ce qu'il manque pour que le programme compile et remplisse
 Que pouvez-vous utiliser à la place ?
 - `std::find` est appliqué sur un `vector` de `Teacher*` (resp. `Curriculum*`) et une `string`.\
 Quelle surcharge devez-vous fournir à l'opérateur pour que l'instruction compile ?\
-Pouvez du coup par conséquent définir cette surcharge comme fonction-membre de `Teacher` (resp. `Curriculum`) ? 
+Pensez-vous par conséquent pouvoir définir cette surcharge comme fonction-membre de `Teacher` (resp. `Curriculum`) ? 
 {{% /expand %}}
 
 {{% expand "Solution" %}}
@@ -176,7 +176,7 @@ else if (command == "r")
 
 {{% notice info %}}
 Il ne faut pas écrire `teachers.erase(teacher_it)` suivi de `delete *teacher_it`, car `erase` invalide `teacher_it`. Il n'est donc plus valide de le déréférencer ensuite.\
-Il est également déconseillé de faire l'inverse : `delete *teacher_it` suivi de `teachers.erase(teacher_it)`, car `teachers` contient alors une dangling reference, ce qui pourrait être constitué une faille si quelqu'un venait rajouter du code entre ces deux lignes.\
+Il est également déconseillé de faire l'inverse : `delete *teacher_it` suivi de `teachers.erase(teacher_it)`, car `teachers` contient alors une dangling reference, ce qui pourrait constituer une faille si quelqu'un venait rajouter du code entre ces deux lignes.\
 La bonne solution est de créer une variable temporaire pour déréférencer l'itérateur avant son invalidation et libérer la mémoire seulement après avoir supprimé la référence du tableau.
 {{% /notice %}}
 

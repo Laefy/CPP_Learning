@@ -44,7 +44,7 @@ Le destructeur de `Pokemon` n'est appelé qu'à trois endroits : `delete encount
 Le programme est probablement bourré de fuites de mémoire...
 
 Avant de détruire le contenu de `encounter`, on notifie les dresseurs `red` et `blue`.
-Pourtant, cela ne semble pas nécessaire, puisque cette instruction ne semble être exécutées que lorsqu'au dresseur n'attrape le Pokémon.
+Pourtant, cela ne semble pas nécessaire, puisque cette instruction ne semble être exécutée que lorsqu'aucun dresseur n'attrape le Pokémon.
 
 Avant de détruire `pokemon` dans la dernière boucle du `main`, on notifie `pc3`.
 Etant donné que `pc3` n'a jamais été utilisé précédemment dans le `main`, le notifier n'était probablement pas nécessaire.
@@ -67,7 +67,7 @@ Or, il est nécessaire de pouvoir le faire pour s'assurer que le programme n'est
 Le premier problème de cette architecture, c'est qu'il est extrêmement difficile d'identifier qui possède des références sur une instance particulière d'un `Pokemon` à un instant donné du programme :
 `pc1` ? `red._team` ? `pc1` et `red._team` ? `pc1` et `red._team` et `pokecenter` ? seulement `pokecenter` ?
 
-Le deuxième problème, c'est que même si avions cette information, nous ne sommes pas capables de déterminer qui est supposé libérer le bloc de mémoire alloué à un Pokémon et prévenir le restant des objets qui en dépendent de sa destruction imminente.
+Le deuxième problème, c'est que même si nous avions cette information, nous ne serions pas capables de déterminer qui est supposé libérer le bloc de mémoire alloué pour un Pokémon, ni de prévenir de sa destruction imminente les objets qui en dépendent.
 
 Pour désigner le composant responsable de ces deux missions, on utilise le terme de **propriétaire** ou **owner**. Pour être tout à fait précis, le propriétaire d'une ressource, c'est le **composant chargé de la durée de vie de cette ressource**.
 Et du coup, pour s'assurer que l'on accède toujours à des ressources valides, et que ces ressources sont bien libérées lorsque l'on n'en a plus besoin, il est nécessaire d'identifier le propriétaire de chaque ressource pour vérifier qu'il fait son travail correctement.
@@ -79,7 +79,7 @@ Et du coup, pour s'assurer que l'on accède toujours à des ressources valides, 
 Lorsqu'il n'est pas possible d'identifier clairement le propriétaire d'une ressource dans un programme, il faut commencer par analyser comment intéragissent les composants du programme entre eux.
 Cela permet généralement d'encapsuler un certain nombre d'objets à l'intérieur d'une même classe et de diviser le problème.
 
-Exemple : dans le code suivant, qui est-responsable de `res1` ?
+Exemple : dans le code suivant, qui est responsable de `res1` ?
 ```cpp
 A a { res1 };           // a can be the owner of res1, but it can also be a simple observer of res1 
 B b { res1, res2 };     // same for b
@@ -146,7 +146,7 @@ Cela signifie qu'en toute logique, détruire un `Trainer` permettra d'entraîner
 {{% /notice %}}
 
 Supprimez maintenant les variables de type `PC` et `Pokedex` du `main` et refactorisez le code de manière à utiliser vos nouveaux attributs à la place.\
-Profitez-en pour en pour retirer les instructions inutiles, par exemple, lorsqu'un Pokémon est supprimé d'un conteneur dans lequel il ne pouvait de toute manière pas être.\
+Profitez-en pour en retirer les instructions inutiles, par exemple, lorsqu'un Pokémon est supprimé d'un conteneur dans lequel il ne pouvait de toute manière pas être.\
 Vous êtes libre de modifier légèrement le comportement du programme, du moment que vous n'introduisez pas des bugs qui n'étaient pas là avant.
 
 {{% expand "Solution" %}}
@@ -401,7 +401,7 @@ blue.release_duplicates();
 
 **Don de Pokémon**
 
-`Trainer::collect` prenant maintenant charge le transfert vers le PC si l'équipe est pleine, on peut simplement remplacer le contenu de la boucle par : 
+`Trainer::collect` prenant maintenant en charge le transfert vers le PC si l'équipe est pleine, on peut simplement remplacer le contenu de la boucle par : 
 ```cpp
 for (auto* pokemon : some_girl.give_pokemons())
 {
@@ -474,7 +474,7 @@ Pouvez-vous répondre à cette question en analysant seulement le code de `PokeC
 L'instruction `pokecenter.heal(red.get_pokemons())` ne réalise pas de transfert, puisque `Trainer::get_pokemons` ne cède pas l'ownership des Pokémons de l'équipe (contrairement à `Trainer::give_pokemons`).\
 `PokeCenter::heal` recevant un objet qui ne porte pas d'ownership, on peut donc en conclure que la classe `PokeCenter` est supposée être un observeur de `Pokemon`, et non pas un owner.
 Afin de déduire cette information, il a été nécessaire d'analyser le code du `main`.
-En effet, l'attribut `PokeCenter::_traumatized_pokemons` est exactement du même type que `PC::_stored_pokemons`, alors que le premier ne porte pas d'ownership mais le second oui.\
+En effet, l'attribut `PokeCenter::_traumatized_pokemons` est exactement du même type que `PC::_stored_pokemons`, alors que le premier ne porte pas d'ownership mais le second oui.
 
 **ProfessorOak est bien un owner**\
 La classe `ProfessorOak` alloue elle-même ses propres instances de Pokémons.
@@ -527,8 +527,8 @@ Ecrire `delete nullptr` est tout à fait correct. L'instruction ne fait juste ri
 C'est d'écrire `delete ptr` avec `ptr` non nul mais déjà libéré qui peut générer une segfault.
 {{% /notice %}}
 
-Il faut ensuite s'assurer que toutes les fonctions qui ont a un moment reçu l'ownership d'un Pokémon l'ont soit cédé à quelqu'un d'autre, soit ont bien libéré les ressources qui lui étaient associées.
-- `auto* encounter = random_encounter()` : `main` acquière l'ownership du résultat de `random_encounter`. Si l'ownership n'est pas cédé a un `Trainer`, la variable `encounter` est bien libérée.
+Il faut ensuite s'assurer que toutes les fonctions qui ont à un moment reçu l'ownership d'un Pokémon l'ont soit cédé à quelqu'un d'autre, soit ont bien libéré les ressources qui lui étaient associées.
+- `auto* encounter = random_encounter()` : `main` acquière l'ownership du résultat de `random_encounter`. Si l'ownership n'est pas cédé à un `Trainer`, la variable `encounter` est bien libérée.
 - `for (auto* pokemon : some_girl.give_pokemons())` : `main` acquière l'ownership du résultat de `give_pokemons`, qu'il transfère ensuite à `red`.
 - `for (auto* pokemon : some_guy.give_pokemons())` : `main` acquière l'ownership du résultat de `give_pokemons`, et il en libère la mémoire.
 Il n'y a donc pas de problème à ce niveau là.
@@ -651,7 +651,7 @@ Modifiez les signatures des fonctions qui ne récupèrent pas l'ownership de ce 
 Rappel: n'essayez par contre pas de remplacer des `std::vector<T*>` par des `std::vector<T&>`, cela ne compilera pas.
 
 {{% expand "Solution" %}}
-Il faut bien penser à reconvertir la référence en pointeur l'intérieur des implémentations là où cela est nécessaire (appel à std::find, par exemple).
+Il faut bien penser à reconvertir la référence en pointeur à l'intérieur des implémentations là où cela est nécessaire (appel à std::find, par exemple).
 
 ```cpp
 // PC.h
@@ -915,13 +915,13 @@ En C++, les problèmes de gestion de mémoire, c'est courant :
 L'objectif de cet exercice, c'était de vous faire prendre conscience que plus une ressource est partagée dans un programme, plus il est difficile de savoir qui est censé la gérer.
 
 Du coup, afin de faciliter la compréhension du programme et de limiter les erreurs, voilà ce que vous pouvez appliquer :
-- Faites en sorte qu'il soit facile de distinguer si vos fonctions exposent des ressource (comme `get_pokemons`) ou transfèrent des ressources (comme `give_pokemons`).
+- Faites en sorte qu'il soit facile de distinguer si vos fonctions exposent des ressources (comme `get_pokemons`) ou transfèrent des ressources (comme `give_pokemons`).
 - Faites aussi en sorte qu'il soit facile de distinguer si un objet est propriétaire d'une ressource (composition) ou s'il ne fait que l'utiliser (aggrégation).  
 - Si dans une fonction, vous ne souhaitez plus référencer une ressource dont vous avez l'ownership :
     - soit vous libérez la ressource,
     - soit vous placez cette ressource dans la valeur de retour de la fonction, que vous marquez `[[nodiscard]]`.
 - Essayez de faire en sorte que les composants qui intéragissent ensemble et partagent les mêmes ressources soient fortement couplés.
-Cela permet de notifier plus facilement les dépendances d'une ressource que celle-ci va être libérée.
+Cela permet de notifier plus facilement les dépendances d'une ressource avant qu'elle ne soit libérée.
 
 ---
 
