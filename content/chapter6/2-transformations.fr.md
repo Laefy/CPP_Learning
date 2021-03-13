@@ -33,7 +33,7 @@ On peut également utiliser la variante `std::remove_if` afin de retirer tous le
 std::vector<std::string> names { ... };
 
 // Retire tous les noms vides du tableau.
-names.erase(names.remove_if(names.begin(), names.end(), [](const std::string& n) { return n.empty(); }),
+names.erase(std::remove_if(names.begin(), names.end(), [](const std::string& n) { return n.empty(); }),
             names.end());
 ```
 
