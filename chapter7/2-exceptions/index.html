@@ -12,21 +12,21 @@
     <title>Exceptions :: Cours de C&#43;&#43; - Niveau Master</title>
 
     
-    <link href="/CPP_Learning/css/nucleus.css?1616215070" rel="stylesheet">
-    <link href="/CPP_Learning/css/fontawesome-all.min.css?1616215070" rel="stylesheet">
-    <link href="/CPP_Learning/css/hybrid.css?1616215070" rel="stylesheet">
-    <link href="/CPP_Learning/css/featherlight.min.css?1616215070" rel="stylesheet">
-    <link href="/CPP_Learning/css/perfect-scrollbar.min.css?1616215070" rel="stylesheet">
-    <link href="/CPP_Learning/css/auto-complete.css?1616215070" rel="stylesheet">
-    <link href="/CPP_Learning/css/atom-one-dark-reasonable.css?1616215070" rel="stylesheet">
-    <link href="/CPP_Learning/css/theme.css?1616215070" rel="stylesheet">
-    <link href="/CPP_Learning/css/hugo-theme.css?1616215070" rel="stylesheet">
+    <link href="/CPP_Learning/css/nucleus.css?1616215739" rel="stylesheet">
+    <link href="/CPP_Learning/css/fontawesome-all.min.css?1616215739" rel="stylesheet">
+    <link href="/CPP_Learning/css/hybrid.css?1616215739" rel="stylesheet">
+    <link href="/CPP_Learning/css/featherlight.min.css?1616215739" rel="stylesheet">
+    <link href="/CPP_Learning/css/perfect-scrollbar.min.css?1616215739" rel="stylesheet">
+    <link href="/CPP_Learning/css/auto-complete.css?1616215739" rel="stylesheet">
+    <link href="/CPP_Learning/css/atom-one-dark-reasonable.css?1616215739" rel="stylesheet">
+    <link href="/CPP_Learning/css/theme.css?1616215739" rel="stylesheet">
+    <link href="/CPP_Learning/css/hugo-theme.css?1616215739" rel="stylesheet">
     
-    <link href="/CPP_Learning/css/theme-mine.css?1616215070" rel="stylesheet">
+    <link href="/CPP_Learning/css/theme-mine.css?1616215739" rel="stylesheet">
     
-    <link href="/CPP_Learning/css/syntax.css?1616215070" rel="stylesheet">
+    <link href="/CPP_Learning/css/syntax.css?1616215739" rel="stylesheet">
 
-    <script src="/CPP_Learning/js/jquery-3.3.1.min.js?1616215070"></script>
+    <script src="/CPP_Learning/js/jquery-3.3.1.min.js?1616215739"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -57,14 +57,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/CPP_Learning/js/lunr.min.js?1616215070"></script>
-<script type="text/javascript" src="/CPP_Learning/js/auto-complete.js?1616215070"></script>
+<script type="text/javascript" src="/CPP_Learning/js/lunr.min.js?1616215739"></script>
+<script type="text/javascript" src="/CPP_Learning/js/auto-complete.js?1616215739"></script>
 <script type="text/javascript">
     
         var baseurl = "https:\/\/laefy.github.io\/CPP_Learning\/";
     
 </script>
-<script type="text/javascript" src="/CPP_Learning/js/search.js?1616215070"></script>
+<script type="text/javascript" src="/CPP_Learning/js/search.js?1616215739"></script>
 
     
   </div>
@@ -1576,7 +1576,7 @@ Lorsqu&rsquo;une exception est lancée, on sort du bloc courant, et on remonte l
 <ol>
 <li>Car jeter et attraper une exception, c&rsquo;est relativement coûteux à faire, en comparaison de simplement vérifier une condition.</li>
 <li>Les assertions peuvent être complètement désactivées en définissant la constante <code>NDEBUG</code>, et ce n&rsquo;est pas le cas des exceptions.</li>
-<li>Il arrive parfois que le système-cible de notre programme ne gère pas bien, voire pas du tout, les exceptions (dans l&rsquo;embarqué par exemple).</li>
+<li>Il arrive parfois que le système-cible de notre programme ne gère pas bien, voire pas du tout, les exceptions (c&rsquo;est notamment le cas de certains systèmes embarqués).</li>
 </ol>
 <hr>
 <h3 id="utilisation-des-exceptions">Utilisation des exceptions</h3>
@@ -1597,6 +1597,7 @@ Elle comporte une fonction virtuelle <code>what()</code>, qui permet d&rsquo;acc
 <li><code>std::logic_error</code> : violation d&rsquo;invariant ou de précondition (=&gt; erreur de programmation)</li>
 <li><code>std::invalid_argument</code> : l&rsquo;un des arguments de la fonction n&rsquo;est pas valide</li>
 <li><code>std::runtime_error</code> : erreurs détectables uniquement à l&rsquo;exécution (problème d&rsquo;ouverture de fichier, mauvaise entrée de l&rsquo;utilisateur, &hellip;)</li>
+<li>&hellip;</li>
 </ul>
 <p>A la construction, chacune d&rsquo;entre elle attend le message d&rsquo;erreur qui sera retourné par l&rsquo;appel à <code>what()</code>.</p>
 <div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="c1">// std::invalid_argument
@@ -1722,7 +1723,7 @@ Si une relation d&rsquo;héritage existe entre les types que vous souhaitez attr
 <span class="p">}</span>
 </code></pre></div><hr>
 <h3 id="stack-unwinding">Stack unwinding</h3>
-<p>Lorsque vous sortez d&rsquo;un bloc (<code>if</code>, <code>else</code>, <code>for</code>, fonctions, etc.) dans lequel vous avez défini des variables, celles-ci sont automatiquement désallouées de la pile et leur destructeur est correctement appelé. 
+<p>Lorsque vous sortez d&rsquo;un bloc (<code>if</code>, <code>else</code>, <code>for</code>, fonctions, etc.) dans lequel vous avez défini des variables, celles-ci sont automatiquement détruites (le destructeur est appelé, et la variable est retirée de la pile).
 Dans le cas des exceptions, ce mécanisme s&rsquo;applique également, et on parle de <strong>stack unwinding</strong>.</p>
 <p>Lorsque vous allouez des ressources dans une fonction qui <code>throw</code>, il faut faire attention aux fuites de mémoire :</p>
 <div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="kt">void</span> <span class="nf">fcn</span><span class="p">(</span><span class="n">size_t</span> <span class="n">count</span><span class="p">)</span>
@@ -1743,7 +1744,7 @@ Dans le cas des exceptions, ce mécanisme s&rsquo;applique également, et on par
 
     <span class="k">delete</span><span class="p">[]</span> <span class="n">bad_c_array</span><span class="p">;</span>
 <span class="p">}</span>
-</code></pre></div><p>Pensez donc bien à utiliser des classes RAII (conteneurs standards, smart pointers, etc), pour profiter du <strong>stack unwinding</strong> et ne pas avoir à vous soucier de libérer les ressources.</p>
+</code></pre></div><p>Pensez donc bien à utiliser des classes RAII (conteneurs standards, smart pointers, etc), pour profiter du stack unwinding et ne pas avoir à vous soucier de libérer les ressources.</p>
 <div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="kt">void</span> <span class="nf">fcn</span><span class="p">(</span><span class="n">size_t</span> <span class="n">count</span><span class="p">)</span>
 <span class="p">{</span>
     <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">good_cpp_array</span><span class="p">(</span><span class="n">count</span><span class="p">);</span>
@@ -2814,19 +2815,19 @@ Chacune d&rsquo;entre elle attend un message à sa construction, qui sera retour
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/CPP_Learning/js/clipboard.min.js?1616215070"></script>
-    <script src="/CPP_Learning/js/perfect-scrollbar.min.js?1616215070"></script>
-    <script src="/CPP_Learning/js/perfect-scrollbar.jquery.min.js?1616215070"></script>
-    <script src="/CPP_Learning/js/jquery.sticky.js?1616215070"></script>
-    <script src="/CPP_Learning/js/featherlight.min.js?1616215070"></script>
-    <script src="/CPP_Learning/js/highlight.pack.js?1616215070"></script>
+    <script src="/CPP_Learning/js/clipboard.min.js?1616215739"></script>
+    <script src="/CPP_Learning/js/perfect-scrollbar.min.js?1616215739"></script>
+    <script src="/CPP_Learning/js/perfect-scrollbar.jquery.min.js?1616215739"></script>
+    <script src="/CPP_Learning/js/jquery.sticky.js?1616215739"></script>
+    <script src="/CPP_Learning/js/featherlight.min.js?1616215739"></script>
+    <script src="/CPP_Learning/js/highlight.pack.js?1616215739"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/CPP_Learning/js/modernizr.custom-3.6.0.js?1616215070"></script>
-    <script src="/CPP_Learning/js/learn.js?1616215070"></script>
-    <script src="/CPP_Learning/js/hugo-learn.js?1616215070"></script>
+    <script src="/CPP_Learning/js/modernizr.custom-3.6.0.js?1616215739"></script>
+    <script src="/CPP_Learning/js/learn.js?1616215739"></script>
+    <script src="/CPP_Learning/js/hugo-learn.js?1616215739"></script>
 
-    <link href="/CPP_Learning/mermaid/mermaid.css?1616215070" rel="stylesheet" />
-    <script src="/CPP_Learning/mermaid/mermaid.js?1616215070"></script>
+    <link href="/CPP_Learning/mermaid/mermaid.css?1616215739" rel="stylesheet" />
+    <script src="/CPP_Learning/mermaid/mermaid.js?1616215739"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>
