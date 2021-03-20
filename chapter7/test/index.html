@@ -9,7 +9,7 @@
 
     <link rel="icon" href="/CPP_Learning/images/favicon.png" type="image/png">
 
-    <title>Transformations :: Cours de C&#43;&#43; - Niveau Master</title>
+    <title>Questionnaire ! :: Cours de C&#43;&#43; - Niveau Master</title>
 
     
     <link href="/CPP_Learning/css/nucleus.css?1616261875" rel="stylesheet">
@@ -40,7 +40,7 @@
     </style>
     
   </head>
-  <body class="" data-url="/CPP_Learning/chapter6/2-transformations/">
+  <body class="" data-url="/CPP_Learning/chapter7/test/">
     <nav id="sidebar" class="showVisitedLinks">
 
 
@@ -1175,7 +1175,7 @@
   
     
     <li data-nav-id="/CPP_Learning/chapter6/" title="Algorithmes" class="dd-item 
-        parent
+        
         
         
         ">
@@ -1224,7 +1224,7 @@
  
   
     
-      <li data-nav-id="/CPP_Learning/chapter6/2-transformations/" title="Transformations" class="dd-item active">
+      <li data-nav-id="/CPP_Learning/chapter6/2-transformations/" title="Transformations" class="dd-item ">
         <a href="/CPP_Learning/chapter6/2-transformations/">
         Transformations
         <i class="fas fa-check read-icon"></i>
@@ -1340,7 +1340,7 @@
   
     
     <li data-nav-id="/CPP_Learning/chapter7/" title="Traitement d&#39;erreurs" class="dd-item 
-        
+        parent
         
         
         ">
@@ -1410,7 +1410,7 @@
  
   
     
-      <li data-nav-id="/CPP_Learning/chapter7/test/" title="Questionnaire !" class="dd-item ">
+      <li data-nav-id="/CPP_Learning/chapter7/test/" title="Questionnaire !" class="dd-item active">
         <a href="/CPP_Learning/chapter7/test/">
         Questionnaire !
         <i class="fas fa-check read-icon"></i>
@@ -1536,7 +1536,7 @@
             
           
           
-            <a href='/CPP_Learning/'>Accueil</a> > <a href='/CPP_Learning/chapter6/'>Algorithmes</a> > Transformations
+            <a href='/CPP_Learning/'>Accueil</a> > <a href='/CPP_Learning/chapter7/'>Traitement d'erreurs</a> > Questionnaire !
           
         
           
@@ -1549,21 +1549,7 @@
                 
                     <div class="progress">
     <div class="wrapper">
-<nav id="TableOfContents">
-  <ul>
-    <li>
-      <ul>
-        <li><a href="#suppressions">Suppressions</a></li>
-        <li><a href="#copies">Copies</a></li>
-        <li><a href="#transformation">Transformation</a></li>
-        <li><a href="#remplissages">Remplissages</a></li>
-        <li><a href="#réductions">Réductions</a></li>
-        <li><a href="#réordonnancement">Réordonnancement</a></li>
-        <li><a href="#autres-fonctions">Autres fonctions</a></li>
-      </ul>
-    </li>
-  </ul>
-</nav>
+<nav id="TableOfContents"></nav>
     </div>
 </div>
 
@@ -1579,156 +1565,72 @@
           
             <h1>
               
-              Transformations
+              Questionnaire !
             </h1>
           
 
         
 
 
-<p>Maintenant que nous vous avons présenté les fonctions permettant de récupérer des informations à partir d&rsquo;une plage d&rsquo;éléments, nous allons vous présenter celles qui permettent de manipuler et de transformer ces plages.</p>
+<p>C&rsquo;est l&rsquo;heure du test ! N&rsquo;oubliez pas que vous pouvez utiliser <a href="https://www.godbolt.org/z/ofohb4">Godbolt</a> pour compiler et tester des petits bouts de code.<br>
+Bon courage à vous 🙂</p>
 <hr>
-<h3 id="suppressions">Suppressions</h3>
-<p>Afin de supprimer des éléments d&rsquo;une plage, on utilise la fonction <code>std::remove</code>.
-Cette fonction a pour effet de déplacer les éléments à conserver au début de la plage, en préservant leur ordre.
-Elle renvoie un itérateur sur le nouvel itérateur de fin de plage.</p>
 
-<div class="notices warning" ><p><code>std::remove</code> permet d&rsquo;éliminer des éléments d&rsquo;une plage, pas de les supprimer d&rsquo;un conteneur.
-Si vous voulez supprimer les éléments du conteneur, il faut bien penser à appeler <code>erase</code> sur le conteneur.</p>
-</div>
 
-<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">values</span> <span class="p">{</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="o">-</span><span class="mi">4</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">3</span> <span class="p">};</span>
+<form id="test" data-chapter="7" method=POST action="https://formsubmit.co/3aa0f379a1aed9c454634cc2da153a7b">
+  <label for="name">Vous êtes : </label>
+  <input type="text" id="name" name="name" placeholder="Prénom Nom" />
 
-<span class="k">const</span> <span class="k">auto</span> <span class="n">new_end</span> <span class="o">=</span> <span class="n">std</span><span class="o">::</span><span class="n">remove</span><span class="p">(</span><span class="n">values</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span> <span class="n">values</span><span class="p">.</span><span class="n">end</span><span class="p">(),</span> <span class="mi">3</span><span class="p">);</span>
-<span class="c1">// values contient maintenant { 0, 6, 5, -4, 5, ?, ?, ?, ? };
-</span><span class="c1"></span>
-<span class="c1">// On utilise values.erase afin de supprimer les éléments &#34;éliminés&#34; par remove.
-</span><span class="c1"></span><span class="n">values</span><span class="p">.</span><span class="n">erase</span><span class="p">(</span><span class="n">new_end</span><span class="p">,</span> <span class="n">values</span><span class="p">.</span><span class="n">end</span><span class="p">());</span>
-</code></pre></div><p>On peut également utiliser la variante <code>std::remove_if</code> afin de retirer tous les éléments vérifiant un prédicat.</p>
-<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&gt;</span> <span class="n">names</span> <span class="p">{</span> <span class="p">...</span> <span class="p">};</span>
+  <label for="name">Votre adresse mail : </label>
+  <input type="text" name="email" placeholder="mail@smthg.com" />
 
-<span class="c1">// Retire tous les noms vides du tableau.
-</span><span class="c1"></span><span class="n">names</span><span class="p">.</span><span class="n">erase</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">remove_if</span><span class="p">(</span><span class="n">names</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span> <span class="n">names</span><span class="p">.</span><span class="n">end</span><span class="p">(),</span> <span class="p">[](</span><span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&amp;</span> <span class="n">n</span><span class="p">)</span> <span class="p">{</span> <span class="k">return</span> <span class="n">n</span><span class="p">.</span><span class="n">empty</span><span class="p">();</span> <span class="p">}),</span>
-            <span class="n">names</span><span class="p">.</span><span class="n">end</span><span class="p">());</span>
-</code></pre></div><hr>
-<h3 id="copies">Copies</h3>
-<p>Lorsqu&rsquo;on veut copier une plage d&rsquo;éléments, on peut utiliser <code>std::copy</code> ou <code>std::copy_n</code>.</p>
-<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">src</span> <span class="p">{</span> <span class="p">...</span> <span class="p">}</span>
-<span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">dst</span><span class="p">;</span>
+  <input type="hidden" name="_replyto" />
+  <input type="hidden" name="_subject" value="[C++][Chapitre 7] Retour sur ton questionnaire" />
 
-<span class="n">dst</span><span class="p">.</span><span class="n">resize</span><span class="p">(</span><span class="n">src</span><span class="p">.</span><span class="n">size</span><span class="p">());</span>
+  <hr/>
+  
+  <p><label for="q1">1- A quoi sert une assertion ?</label></p>
+<p><textarea id="q1" name="q1-assertion" rows="1" cols="50"></textarea></p>
+<p><label for="q2">2- Pourquoi ne faut-il pas utiliser d’assertions pour traiter une erreur d’utilisation d’un logiciel ?</label></p>
+<p><textarea id="q2" name="q2-why-no-assert-misuse" rows="1" cols="50"></textarea></p>
+<p><label for="q3">3- Ecrivez une assertion permettant de s’assurer qu’une variable <code>name</code> de type <code>std::string</code> n’est pas vide.</label></p>
+<p><textarea id="q3" name="q3-assert-for-not-empty-str" rows="1" cols="50"></textarea></p>
+<hr>
+<p><label for="q4">4- Dans quel header de la STL trouve-t-on les implémentations de <code>std::exception</code> ?</label></p>
+<p><textarea id="q4" name="q4-header-except-impl" rows="1" cols="50"></textarea></p>
+<p><label for="q5">5- Dans la STL, quel type d’exception pouvez-vous utiliser pour indiquer qu’une valeur n’appartient pas à la plage attendue ?</label></p>
+<p><textarea id="q5" name="q5-except-for-out-range" rows="1" cols="50"></textarea></p>
+<p><label for="q6">6- Où ne doit-on jamais lancer d’exceptions ?</label></p>
+<p><textarea id="q6" name="q6-never-throw-there" rows="1" cols="50"></textarea></p>
+<hr>
+<p><label for="q7">7- On suppose que vous êtes dans une fonction <code>factorial</code> permettant de calculer la factorielle d’un <code>int</code> passé en paramètre. Ecrivez les instructions permettant de vérifier que cet entier n’est pas négatif, et de lancer une exception si c’est le cas.</label></p>
+<p><textarea id="q7" name="q7-throw" rows="3" cols="50"></textarea></p>
+<p><label for="q8">8- Ecrivez maintenant le code permettant d’appeler <code>factorial</code> : si tout se passe bien, le résultat de la fonction est affiché dans <code>std::cout</code>, sinon, le message d’erreur de l’exception est affiché dans <code>std::cerr</code>.</label></p>
+<p><textarea id="q8" name="q8-try-catch" rows="5" cols="50"></textarea></p>
+<hr>
 
-<span class="c1">// Avec copy : src_begin, src_end, dst_begin
-</span><span class="c1"></span><span class="n">std</span><span class="o">::</span><span class="n">copy</span><span class="p">(</span><span class="n">src</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span> <span class="n">src</span><span class="p">.</span><span class="n">end</span><span class="p">(),</span> <span class="n">dst</span><span class="p">.</span><span class="n">begin</span><span class="p">());</span>
 
-<span class="c1">// Avec copy_n : src_begin, nb_elem, dst_begin
-</span><span class="c1"></span><span class="n">std</span><span class="o">::</span><span class="n">copy_n</span><span class="p">(</span><span class="n">src</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span> <span class="n">src</span><span class="p">.</span><span class="n">count</span><span class="p">(),</span> <span class="n">dst</span><span class="p">.</span><span class="n">begin</span><span class="p">());</span>
-</code></pre></div><p>Comme vous pouvez le constater, avant d&rsquo;effectuer l&rsquo;appel à <code>std::copy</code> / <code>std::copy_n</code>, il a fallu appeler <code>dst.resize(...)</code>.
-Et oui, comme pour <code>remove</code>, <code>copy</code> ne permet pas de modifier la structure du conteneur d&rsquo;éléments.
-On doit donc s&rsquo;assurer du fait que <code>dst</code> pointe sur un emplacement mémoire correctement alloué.</p>
-<p>Une autre manière de gérer ce cas, c&rsquo;est d&rsquo;utiliser la classe <code>std::back_inserter</code> (dans <code>&lt;iterator&gt;</code>)
-Il s&rsquo;agit d&rsquo;un itérateur qui permet d&rsquo;insérer des éléments dans un conteneur chaque fois qu&rsquo;on l&rsquo;incrémente.
-On peut donc réécrire le code de cette manière :</p>
-<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">src</span> <span class="p">{</span> <span class="p">...</span> <span class="p">}</span>
-<span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">dst</span><span class="p">;</span>
+  <hr/>
 
-<span class="c1">// Chaque fois que l&#39;algorithme va incrémenter le back_inserter, celui-ci va appeler dst.push_back().
-</span><span class="c1"></span><span class="n">std</span><span class="o">::</span><span class="n">copy</span><span class="p">(</span><span class="n">src</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span> <span class="n">src</span><span class="p">.</span><span class="n">end</span><span class="p">(),</span> <span class="n">std</span><span class="o">::</span><span class="n">back_inserter</span> <span class="p">{</span> <span class="n">dst</span> <span class="p">});</span>
-<span class="n">std</span><span class="o">::</span><span class="n">copy_n</span><span class="p">(</span><span class="n">src</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span> <span class="n">src</span><span class="p">.</span><span class="n">count</span><span class="p">(),</span> <span class="n">std</span><span class="o">::</span><span class="n">back_inserter</span> <span class="p">{</span> <span class="n">dst</span> <span class="p">});</span>
-</code></pre></div><p>La STL propose également la fonction <code>copy_if</code>.
-Celle-ci accepte un prédicat, qui permet de spécifier quels sont les éléments que l&rsquo;on souhaite copier.</p>
-<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">src</span> <span class="p">{</span> <span class="p">...</span> <span class="p">}</span>
-<span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">dst</span><span class="p">;</span>
+  <label for="time">Combien de temps avez-vous mis à compléter ce chapitre ?</label>
+  <input type="text" name="time" placeholder="environ 4h30" />
 
-<span class="n">std</span><span class="o">::</span><span class="n">copy_if</span><span class="p">(</span><span class="n">src</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span> <span class="n">src</span><span class="p">.</span><span class="n">end</span><span class="p">(),</span> <span class="n">std</span><span class="o">::</span><span class="n">back_inserter</span> <span class="p">{</span> <span class="n">dst</span> <span class="p">},</span> <span class="p">[](</span><span class="kt">int</span> <span class="n">v</span><span class="p">)</span> <span class="p">{</span> <span class="k">return</span> <span class="n">v</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span><span class="p">;</span> <span class="p">});</span>
-</code></pre></div><p>Pour le <code>copy_if</code>, l&rsquo;utilisation du <code>back_inserter</code> est vraiment très intéressante, puisque sinon, le code ressemblerait à ça :</p>
-<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">src</span> <span class="p">{</span> <span class="p">...</span> <span class="p">}</span>
-<span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">dst</span><span class="p">;</span>
+  <label for="questions">Avez-vous des questions suite à sa lecture ?</label>
+  <textarea id="questions" name="questions" rows="5" cols="50"></textarea>
 
-<span class="n">dst</span><span class="p">.</span><span class="n">resize</span><span class="p">(</span><span class="n">src</span><span class="p">.</span><span class="n">size</span><span class="p">());</span>
-<span class="k">auto</span> <span class="n">dst_end</span> <span class="o">=</span> <span class="n">std</span><span class="o">::</span><span class="n">copy_if</span><span class="p">(</span><span class="n">src</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span> <span class="n">src</span><span class="p">.</span><span class="n">end</span><span class="p">(),</span> <span class="n">dst</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span> <span class="p">[](</span><span class="kt">int</span> <span class="n">v</span><span class="p">)</span> <span class="p">{</span> <span class="k">return</span> <span class="n">v</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span><span class="p">;</span> <span class="p">});</span>
-<span class="n">dst</span><span class="p">.</span><span class="n">erase</span><span class="p">(</span><span class="n">dst_end</span><span class="p">,</span> <span class="n">dst</span><span class="p">.</span><span class="n">end</span><span class="p">());</span>
-</code></pre></div><hr>
-<h3 id="transformation">Transformation</h3>
-<p>La fonction <code>std::transform</code> sert à appliquer une fonction (au sens mathématique: <code>y = f(x)</code>) à tous les éléments d&rsquo;une plage.</p>
-<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">Dog</span><span class="o">&gt;</span> <span class="n">dogs</span> <span class="p">{</span> <span class="p">...</span> <span class="p">};</span>
-<span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&gt;</span> <span class="n">names</span><span class="p">;</span>
+  <label for="comments">Avez-vous des commentaires concernant le chapitre et/ou le site ?</label>
+  <textarea id="comments" name="comments" rows="5" cols="50"></textarea>
 
-<span class="n">std</span><span class="o">::</span><span class="n">transform</span><span class="p">(</span><span class="n">dogs</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span> <span class="n">dogs</span><span class="p">.</span><span class="n">end</span><span class="p">(),</span> <span class="n">std</span><span class="o">::</span><span class="n">back_inserter</span><span class="p">(</span><span class="n">names</span><span class="p">),</span> <span class="p">[](</span><span class="k">const</span> <span class="n">Dog</span><span class="o">&amp;</span> <span class="n">dog</span><span class="p">)</span> <span class="p">{</span> <span class="k">return</span> <span class="n">dog</span><span class="p">.</span><span class="n">get_name</span><span class="p">();</span> <span class="p">});</span> 
-</code></pre></div><p>Lorsque la fonction appliquée retourne le même type que celui en paramètre, vous pouvez décider de construire le résultat sur la même plage que celle en entrée.</p>
-<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">values</span> <span class="p">{</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">4</span> <span class="p">};</span>
-<span class="n">std</span><span class="o">::</span><span class="n">transform</span><span class="p">(</span><span class="n">values</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span> <span class="n">values</span><span class="p">.</span><span class="n">end</span><span class="p">(),</span> <span class="n">values</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span> <span class="p">[](</span><span class="kt">int</span> <span class="n">v</span><span class="p">)</span> <span class="p">{</span> <span class="k">return</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">v</span> <span class="o">-</span> <span class="mi">3</span><span class="p">;</span> <span class="p">});</span>
-<span class="c1">// =&gt; values = { -3, 15, 5 }
-</span></code></pre></div><hr>
-<h3 id="remplissages">Remplissages</h3>
-<p>Pour remplir une plage d&rsquo;éléments d&rsquo;une même valeur, vous pouvez utiliser <code>std::fill</code> ou <code>std::fill_n</code>.</p>
-<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="c1">// fill remplit la plage comprise entre values.begin() et values.end().
-</span><span class="c1"></span><span class="n">std</span><span class="o">::</span><span class="n">fill</span><span class="p">(</span><span class="n">values</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span> <span class="n">values</span><span class="p">.</span><span class="n">end</span><span class="p">(),</span> <span class="mi">5</span><span class="p">);</span>
+  <input type="hidden" name="_template" value="table" />
+  <input type="hidden" name="_captcha" value="false" />
+  <input type="hidden" name="_next" value="https://laefy.github.io/CPP_Learning//chapter7/test_done/" />
 
-<span class="c1">// fill_n remplit la plage de taille values.size() commençant à values.begin().
-</span><span class="c1"></span><span class="n">std</span><span class="o">::</span><span class="n">fill_n</span><span class="p">(</span><span class="n">values</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span> <span class="n">values</span><span class="p">.</span><span class="n">size</span><span class="p">(),</span> <span class="mi">5</span><span class="p">);</span>
-</code></pre></div><p>Et si vous souhaitez remplir la plage avec des valeurs différentes, vous pouvez utiliser <code>std::generate</code> ou <code>std::generate_n</code>.
-Contrairement à <code>fill</code> qui attend une valeur bien précise, <code>generate</code> attend un générateur, c&rsquo;est-à-dire un foncteur à 0 paramètre qui retourne un élément.</p>
-<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="n">std</span><span class="o">::</span><span class="n">generate</span><span class="p">(</span><span class="n">values</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span> <span class="n">values</span><span class="p">.</span><span class="n">end</span><span class="p">(),</span> <span class="n">create_random_value</span><span class="p">);</span>
+  <input type="submit" disabled style="display: none" aria-hidden="true" />
+  <input type="submit" value="Valider" />
+</form>
 
-<span class="n">std</span><span class="o">::</span><span class="n">generate_n</span><span class="p">(</span><span class="n">values</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span> <span class="n">values</span><span class="p">.</span><span class="n">size</span><span class="p">(),</span> <span class="p">[</span><span class="o">&amp;</span><span class="n">queue</span><span class="p">]()</span>
-<span class="p">{</span>
-    <span class="k">auto</span> <span class="n">value</span> <span class="o">=</span> <span class="n">queue</span><span class="p">.</span><span class="n">front</span><span class="p">();</span>
-    <span class="n">queue</span><span class="p">.</span><span class="n">pop</span><span class="p">();</span>
-    <span class="k">return</span> <span class="n">value</span><span class="p">;</span>
-<span class="p">});</span>
-</code></pre></div><p>Enfin, sachez qu&rsquo;il est possible d&rsquo;utiliser des <code>back_inserter</code> avec <code>fill_n</code> et <code>generate_n</code>.</p>
-<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="n">std</span><span class="o">::</span><span class="n">fill_n</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">back_inserter</span> <span class="p">{</span> <span class="n">values</span> <span class="p">},</span> <span class="mi">5</span><span class="p">);</span>
+<script src="/CPP_Learning/js/save-test-answers.js"></script>
 
-<span class="n">std</span><span class="o">::</span><span class="n">generate_n</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">back_inserter</span> <span class="p">{</span> <span class="n">values</span> <span class="p">},</span> <span class="p">[</span><span class="o">&amp;</span><span class="n">queue</span><span class="p">]()</span>
-<span class="p">{</span>
-    <span class="k">auto</span> <span class="n">value</span> <span class="o">=</span> <span class="n">queue</span><span class="p">.</span><span class="n">front</span><span class="p">();</span>
-    <span class="n">queue</span><span class="p">.</span><span class="n">pop</span><span class="p">();</span>
-    <span class="k">return</span> <span class="n">value</span><span class="p">;</span>
-<span class="p">});</span>
-</code></pre></div><hr>
-<h3 id="réductions">Réductions</h3>
-<p>Une réduction est une opération qui accepte un ensemble d&rsquo;éléments et retourne une valeur.
-Par exemple, une somme et un produit sont des réductions.</p>
-<p>Dans la librairie standard, a deux fonctions qui permettent de faire des réductions : <code>std::accumulate</code> et <code>std::reduce</code>.
-Attention, elles se trouvent dans <code>&lt;numeric&gt;</code> et non pas dans <code>&lt;algorithm&gt;</code>.</p>
-<p>La différence entre <code>accumulate</code> et <code>reduce</code>, c&rsquo;est que <code>reduce</code> ne doit être utilisé que pour des opérations à la fois associatives et commutatives.
-En contre-partie, cela fait que <code>reduce</code> peut lancer des opérations sur des paires d&rsquo;éléments en parallèle.</p>
-<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">values</span> <span class="p">{</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="o">-</span><span class="mi">8</span> <span class="p">};</span>
-<span class="c1">// Le 3e paramètre correspond à l&#39;élément initial (on passe en général l&#39;élément neutre pour l&#39;opération).
-</span><span class="c1"></span><span class="k">const</span> <span class="k">auto</span> <span class="n">product</span> <span class="o">=</span> <span class="n">std</span><span class="o">::</span><span class="n">reduce</span><span class="p">(</span><span class="n">values</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span> <span class="n">values</span><span class="p">.</span><span class="n">end</span><span class="p">(),</span> <span class="mi">1</span><span class="p">,</span> <span class="p">[](</span><span class="kt">int</span> <span class="n">v1</span><span class="p">,</span> <span class="kt">int</span> <span class="n">v2</span><span class="p">)</span> <span class="p">{</span> <span class="k">return</span> <span class="n">v1</span> <span class="o">*</span> <span class="n">v2</span><span class="p">;</span> <span class="p">});</span>
-
-<span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&gt;</span> <span class="n">names</span> <span class="p">{</span> <span class="p">...</span> <span class="p">}</span>
-<span class="c1">// La concaténation de chaînes de caractères n&#39;étant pas commutative, on ne peut pas utiliser reduce.
-</span><span class="c1"></span><span class="k">const</span> <span class="k">auto</span> <span class="n">many_names</span> <span class="o">=</span> <span class="n">std</span><span class="o">::</span><span class="n">accumulate</span><span class="p">(</span><span class="n">names</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span> <span class="n">names</span><span class="p">.</span><span class="n">end</span><span class="p">(),</span> <span class="s">&#34;&gt; &#34;</span><span class="p">,</span> <span class="p">[](</span><span class="k">const</span> <span class="k">auto</span><span class="o">&amp;</span> <span class="n">str1</span><span class="p">,</span> <span class="k">const</span> <span class="k">auto</span><span class="o">&amp;</span> <span class="n">str2</span><span class="p">)</span> <span class="p">{</span> <span class="k">return</span> <span class="n">str1</span> <span class="o">+</span> <span class="s">&#34; &#34;</span> <span class="o">+</span> <span class="n">str2</span><span class="p">;</span> <span class="p">});</span>
-</code></pre></div><hr>
-<h3 id="réordonnancement">Réordonnancement</h3>
-<h5 id="tri">Tri</h5>
-<p>Pour trier une plage d&rsquo;éléments, on utilise <code>std::sort</code>.</p>
-<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="c1">// Réordonne en utilisant operator&lt;.
-</span><span class="c1"></span><span class="n">std</span><span class="o">::</span><span class="n">sort</span><span class="p">(</span><span class="n">names</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span> <span class="n">names</span><span class="p">.</span><span class="n">end</span><span class="p">());</span>
-
-<span class="c1">// On peut également fournir un autre foncteur de comparaison.
-</span><span class="c1"></span><span class="n">std</span><span class="o">::</span><span class="n">sort</span><span class="p">(</span><span class="n">names</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span> <span class="n">names</span><span class="p">.</span><span class="n">end</span><span class="p">(),</span> <span class="n">std</span><span class="o">::</span><span class="n">greater</span> <span class="p">{})</span>
-</code></pre></div><p>Il existe également <code>std::stable_sort</code>, qui permet de trier de manière stable.<br>
-Trier de manière &ldquo;stable&rdquo; signifie que si deux éléments sont équivalents (il n&rsquo;y en a pas un plus petit que l&rsquo;autre), alors l&rsquo;opération de tri ne les réordonnera pas l&rsquo;un par rapport à l&rsquo;autre.</p>
-<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&gt;</span> <span class="n">names</span> <span class="p">{</span> <span class="s">&#34;Toto&#34;</span><span class="p">,</span> <span class="s">&#34;toto&#34;</span><span class="p">,</span> <span class="s">&#34;tata&#34;</span><span class="p">,</span> <span class="s">&#34;Tata&#34;</span> <span class="p">};</span>
-
-<span class="n">std</span><span class="o">::</span><span class="n">stable_sort</span><span class="p">(</span><span class="n">names</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span> <span class="n">names</span><span class="p">.</span><span class="n">end</span><span class="p">(),</span> <span class="n">compare_no_case</span><span class="p">);</span>
-<span class="c1">// =&gt; names = { &#34;tata&#34;, &#34;Tata&#34;, &#34;Toto&#34;, &#34;toto&#34; }
-</span><span class="c1">// &#34;tata&#34; est toujours devant &#34;Tata&#34; et &#34;Toto&#34; est toujours devant &#34;toto&#34;.
-</span></code></pre></div><hr>
-<h5 id="inversion">Inversion</h5>
-<p>La fonction <code>std::reverse</code> permet de &ldquo;retourner&rdquo; une série d&rsquo;éléments.
-Pour pouvoir s&rsquo;en servir, il faut fournir à l&rsquo;algorithme des itérateurs bidirectionnels.</p>
-<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">values</span> <span class="p">{</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">5</span> <span class="p">};</span>
-
-<span class="n">std</span><span class="o">::</span><span class="n">reverse</span><span class="p">(</span><span class="n">values</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span> <span class="n">values</span><span class="p">.</span><span class="n">end</span><span class="p">());</span>
-<span class="c1">// =&gt; values = { 5, 2, 4, 3, 0 }
-</span></code></pre></div><hr>
-<h3 id="autres-fonctions">Autres fonctions</h3>
-<p>Il existe plein d&rsquo;autres fonctions qui permettent de manipuler des plages de données.
-Avant d&rsquo;implémenter un algorithme à la main, pensez donc toujours à aller vérifier dans la documentation d'<code>&lt;algorithm&gt;</code> ou de <code>&lt;numeric&gt;</code> si ces bibliothèques ne propose pas déjà ce qu&rsquo;il vous faut.</p>
 
 
 <footer class="footline">
@@ -2532,7 +2434,6 @@ Avant d&rsquo;implémenter un algorithme à la main, pensez donc toujours à all
             
                 
                     
-                    
                 
                 
 
@@ -2545,26 +2446,6 @@ Avant d&rsquo;implémenter un algorithme à la main, pensez donc toujours à all
             
             
                 
-                    
-                        
-                        
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
                     
                 
                 
@@ -2582,8 +2463,21 @@ Avant d&rsquo;implémenter un algorithme à la main, pensez donc toujours à all
             
                 
                     
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
                         
-                        
+            
+            
+                
                     
                 
                 
@@ -2657,6 +2551,7 @@ Avant d&rsquo;implémenter un algorithme à la main, pensez donc toujours à all
             
                 
                     
+                    
                 
                 
 
@@ -2669,6 +2564,9 @@ Avant d&rsquo;implémenter un algorithme à la main, pensez donc toujours à all
             
             
                 
+                    
+                        
+                        
                     
                 
                 
@@ -2702,6 +2600,7 @@ Avant d&rsquo;implémenter un algorithme à la main, pensez donc toujours à all
             
                 
                     
+                    
                 
                 
 
@@ -2717,6 +2616,9 @@ Avant d&rsquo;implémenter un algorithme à la main, pensez donc toujours à all
             
             
                 
+                    
+                        
+                        
                     
                 
                 
@@ -2746,10 +2648,10 @@ Avant d&rsquo;implémenter un algorithme à la main, pensez donc toujours à all
 	 
 	 
 		
-			<a class="nav nav-prev" href="/CPP_Learning/chapter6/1-searches/" title="Parcours et recherches"> <i class="fa fa-chevron-left"></i></a>
+			<a class="nav nav-prev" href="/CPP_Learning/chapter7/2-exceptions/" title="Exceptions"> <i class="fa fa-chevron-left"></i></a>
 		
 		
-			<a class="nav nav-next" href="/CPP_Learning/chapter6/3-iterators/" title="Itérateurs" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+			<a class="nav nav-next" href="/CPP_Learning/chapter7/summary/" title="Synthèse" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
 		
 	
     </div>

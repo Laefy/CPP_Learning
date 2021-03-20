@@ -27,5 +27,38 @@ Voici quelques exemples :
 C&amp;rsquo;est donc un mécanisme extrêmement utilisé pour le traitement des erreurs (autant de programmation que d&amp;rsquo;utilisation), puisque l&amp;rsquo;erreur est remontée automatiquement jusqu&amp;rsquo;à l&amp;rsquo;endroit qui peut la traiter, sans avoir besoin de toucher au code des fonctions intermédiaires.</description>
     </item>
     
+    <item>
+      <title>Questionnaire !</title>
+      <link>https://laefy.github.io/CPP_Learning/chapter7/test/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://laefy.github.io/CPP_Learning/chapter7/test/</guid>
+      <description>C&amp;rsquo;est l&amp;rsquo;heure du test ! N&amp;rsquo;oubliez pas que vous pouvez utiliser Godbolt pour compiler et tester des petits bouts de code.
+Bon courage à vous 🙂
+ Vous êtes : Votre adresse mail : 1- A quoi sert une assertion ?
+
+2- Pourquoi ne faut-il pas utiliser d’assertions pour traiter une erreur d’utilisation d’un logiciel ?
+
+3- Ecrivez une assertion permettant de s’assurer qu’une variable name de type std::string n’est pas vide.</description>
+    </item>
+    
+    <item>
+      <title>Synthèse</title>
+      <link>https://laefy.github.io/CPP_Learning/chapter7/summary/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://laefy.github.io/CPP_Learning/chapter7/summary/</guid>
+      <description>// 🚧🚥🔨 //</description>
+    </item>
+    
+    <item>
+      <title>Merci !</title>
+      <link>https://laefy.github.io/CPP_Learning/chapter7/test_done/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://laefy.github.io/CPP_Learning/chapter7/test_done/</guid>
+      <description>Vos réponses nous ont bien été communiquées 😃 Retourner à la synthèse du Chapitre</description>
+    </item>
+    
   </channel>
 </rss>
