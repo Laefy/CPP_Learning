@@ -48,7 +48,7 @@ void AnimalCenter::update()
 
 1. Car jeter et attraper une exception, c'est relativement coûteux à faire, en comparaison de simplement vérifier une condition.
 2. Les assertions peuvent être complètement désactivées en définissant la constante `NDEBUG`, et ce n'est pas le cas des exceptions.
-3. Il arrive parfois que le système-cible de notre programme ne gère pas bien, voire pas du tout, les exceptions (dans l'embarqué par exemple).
+3. Il arrive parfois que le système-cible de notre programme ne gère pas bien, voire pas du tout, les exceptions (c'est notamment le cas de certains systèmes embarqués).
 
 ---
 
@@ -83,6 +83,7 @@ La STL propose quelques classes d'exceptions génériques, qui font partie de `<
 - `std::logic_error` : violation d'invariant ou de précondition (=> erreur de programmation)
 - `std::invalid_argument` : l'un des arguments de la fonction n'est pas valide
 - `std::runtime_error` : erreurs détectables uniquement à l'exécution (problème d'ouverture de fichier, mauvaise entrée de l'utilisateur, ...)
+- ...
 
 A la construction, chacune d'entre elle attend le message d'erreur qui sera retourné par l'appel à `what()`.
 ```cpp
@@ -226,7 +227,7 @@ catch (const std::invalid_argument& err)
 
 ### Stack unwinding
 
-Lorsque vous sortez d'un bloc (`if`, `else`, `for`, fonctions, etc.) dans lequel vous avez défini des variables, celles-ci sont automatiquement désallouées de la pile et leur destructeur est correctement appelé. 
+Lorsque vous sortez d'un bloc (`if`, `else`, `for`, fonctions, etc.) dans lequel vous avez défini des variables, celles-ci sont automatiquement détruites (le destructeur est appelé, et la variable est retirée de la pile).
 Dans le cas des exceptions, ce mécanisme s'applique également, et on parle de **stack unwinding**.
 
 Lorsque vous allouez des ressources dans une fonction qui `throw`, il faut faire attention aux fuites de mémoire :
@@ -251,7 +252,7 @@ void fcn(size_t count)
 }
 ```
 
-Pensez donc bien à utiliser des classes RAII (conteneurs standards, smart pointers, etc), pour profiter du **stack unwinding** et ne pas avoir à vous soucier de libérer les ressources.
+Pensez donc bien à utiliser des classes RAII (conteneurs standards, smart pointers, etc), pour profiter du stack unwinding et ne pas avoir à vous soucier de libérer les ressources.
 ```cpp
 void fcn(size_t count)
 {
