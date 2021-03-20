@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Traitement d&#39;erreurs on Cours de C&#43;&#43; - Niveau Master</title>
+    <link>https://laefy.github.io/CPP_Learning/chapter7/</link>
+    <description>Recent content in Traitement d&#39;erreurs on Cours de C&#43;&#43; - Niveau Master</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language><atom:link href="https://laefy.github.io/CPP_Learning/chapter7/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Assertions</title>
+      <link>https://laefy.github.io/CPP_Learning/chapter7/1-assertions/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://laefy.github.io/CPP_Learning/chapter7/1-assertions/</guid>
+      <description>Types d&amp;rsquo;erreurs Lorsqu&amp;rsquo;une erreur se produit dans un logiciel, il s&amp;rsquo;agit soit d&amp;rsquo;une erreur de programmation, soit d&amp;rsquo;une erreur d&amp;rsquo;utilisation du logiciel.
+Voici quelques exemples :
+ Un pointeur null a été déréférencé : erreur de programmation. Le programme a demandé à l&amp;rsquo;utilisateur de rentrer une image, mais celui-ci a fournit un fichier texte : erreur d&amp;rsquo;utilisation. On a écrit dans la case array.size() de array : erreur de programmation.</description>
+    </item>
+    
+    <item>
+      <title>Exceptions</title>
+      <link>https://laefy.github.io/CPP_Learning/chapter7/2-exceptions/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://laefy.github.io/CPP_Learning/chapter7/2-exceptions/</guid>
+      <description>Qu&amp;rsquo;est-ce qu&amp;rsquo;une exception ? En C++, une exception sert à interrompre le flot classique d&amp;rsquo;exécution du programme lorsqu&amp;rsquo;un événement particulier se produit. Lorsqu&amp;rsquo;une exception est lancée, on sort du bloc courant, et on remonte la callstack autant que nécessaire, jusqu&amp;rsquo;à atteindre un bloc capable de traiter l&amp;rsquo;exception.
+C&amp;rsquo;est donc un mécanisme extrêmement utilisé pour le traitement des erreurs (autant de programmation que d&amp;rsquo;utilisation), puisque l&amp;rsquo;erreur est remontée automatiquement jusqu&amp;rsquo;à l&amp;rsquo;endroit qui peut la traiter, sans avoir besoin de toucher au code des fonctions intermédiaires.</description>
+    </item>
+    
+  </channel>
+</rss>

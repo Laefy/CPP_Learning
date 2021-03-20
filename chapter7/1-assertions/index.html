@@ -9,24 +9,24 @@
 
     <link rel="icon" href="/CPP_Learning/images/favicon.png" type="image/png">
 
-    <title>👋 Hello World :: Cours de C&#43;&#43; - Niveau Master</title>
+    <title>Assertions :: Cours de C&#43;&#43; - Niveau Master</title>
 
     
-    <link href="/CPP_Learning/css/nucleus.css?1616215069" rel="stylesheet">
-    <link href="/CPP_Learning/css/fontawesome-all.min.css?1616215069" rel="stylesheet">
-    <link href="/CPP_Learning/css/hybrid.css?1616215069" rel="stylesheet">
-    <link href="/CPP_Learning/css/featherlight.min.css?1616215069" rel="stylesheet">
-    <link href="/CPP_Learning/css/perfect-scrollbar.min.css?1616215069" rel="stylesheet">
-    <link href="/CPP_Learning/css/auto-complete.css?1616215069" rel="stylesheet">
-    <link href="/CPP_Learning/css/atom-one-dark-reasonable.css?1616215069" rel="stylesheet">
-    <link href="/CPP_Learning/css/theme.css?1616215069" rel="stylesheet">
-    <link href="/CPP_Learning/css/hugo-theme.css?1616215069" rel="stylesheet">
+    <link href="/CPP_Learning/css/nucleus.css?1616215070" rel="stylesheet">
+    <link href="/CPP_Learning/css/fontawesome-all.min.css?1616215070" rel="stylesheet">
+    <link href="/CPP_Learning/css/hybrid.css?1616215070" rel="stylesheet">
+    <link href="/CPP_Learning/css/featherlight.min.css?1616215070" rel="stylesheet">
+    <link href="/CPP_Learning/css/perfect-scrollbar.min.css?1616215070" rel="stylesheet">
+    <link href="/CPP_Learning/css/auto-complete.css?1616215070" rel="stylesheet">
+    <link href="/CPP_Learning/css/atom-one-dark-reasonable.css?1616215070" rel="stylesheet">
+    <link href="/CPP_Learning/css/theme.css?1616215070" rel="stylesheet">
+    <link href="/CPP_Learning/css/hugo-theme.css?1616215070" rel="stylesheet">
     
-    <link href="/CPP_Learning/css/theme-mine.css?1616215069" rel="stylesheet">
+    <link href="/CPP_Learning/css/theme-mine.css?1616215070" rel="stylesheet">
     
-    <link href="/CPP_Learning/css/syntax.css?1616215069" rel="stylesheet">
+    <link href="/CPP_Learning/css/syntax.css?1616215070" rel="stylesheet">
 
-    <script src="/CPP_Learning/js/jquery-3.3.1.min.js?1616215069"></script>
+    <script src="/CPP_Learning/js/jquery-3.3.1.min.js?1616215070"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -40,7 +40,7 @@
     </style>
     
   </head>
-  <body class="" data-url="/CPP_Learning/chapter1/3-practice/1-hello-world/">
+  <body class="" data-url="/CPP_Learning/chapter7/1-assertions/">
     <nav id="sidebar" class="showVisitedLinks">
 
 
@@ -57,14 +57,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/CPP_Learning/js/lunr.min.js?1616215069"></script>
-<script type="text/javascript" src="/CPP_Learning/js/auto-complete.js?1616215069"></script>
+<script type="text/javascript" src="/CPP_Learning/js/lunr.min.js?1616215070"></script>
+<script type="text/javascript" src="/CPP_Learning/js/auto-complete.js?1616215070"></script>
 <script type="text/javascript">
     
         var baseurl = "https:\/\/laefy.github.io\/CPP_Learning\/";
     
 </script>
-<script type="text/javascript" src="/CPP_Learning/js/search.js?1616215069"></script>
+<script type="text/javascript" src="/CPP_Learning/js/search.js?1616215070"></script>
 
     
   </div>
@@ -83,7 +83,7 @@
   
     
     <li data-nav-id="/CPP_Learning/chapter1/" title="Introduction au C&#43;&#43;" class="dd-item 
-        parent
+        
         
         
         ">
@@ -257,7 +257,7 @@
   
     
     <li data-nav-id="/CPP_Learning/chapter1/3-practice/" title="Premiers programmes" class="dd-item 
-        parent
+        
         
         
         ">
@@ -285,7 +285,7 @@
  
   
     
-      <li data-nav-id="/CPP_Learning/chapter1/3-practice/1-hello-world/" title="👋 Hello World" class="dd-item active">
+      <li data-nav-id="/CPP_Learning/chapter1/3-practice/1-hello-world/" title="👋 Hello World" class="dd-item ">
         <a href="/CPP_Learning/chapter1/3-practice/1-hello-world/">
         👋 Hello World
         <i class="fas fa-check read-icon"></i>
@@ -1340,7 +1340,7 @@
   
     
     <li data-nav-id="/CPP_Learning/chapter7/" title="Traitement d&#39;erreurs" class="dd-item 
-        
+        parent
         
         
         ">
@@ -1368,7 +1368,7 @@
  
   
     
-      <li data-nav-id="/CPP_Learning/chapter7/1-assertions/" title="Assertions" class="dd-item ">
+      <li data-nav-id="/CPP_Learning/chapter7/1-assertions/" title="Assertions" class="dd-item active">
         <a href="/CPP_Learning/chapter7/1-assertions/">
         Assertions
         <i class="fas fa-check read-icon"></i>
@@ -1491,13 +1491,7 @@
             
           
           
-            
-            
-          
-          
-            <a href='/CPP_Learning/'>Accueil</a> > <a href='/CPP_Learning/chapter1/'>Introduction au C++</a> > <a href='/CPP_Learning/chapter1/3-practice/'>Premiers programmes</a> > 👋 Hello World
-          
-        
+            <a href='/CPP_Learning/'>Accueil</a> > <a href='/CPP_Learning/chapter7/'>Traitement d'erreurs</a> > Assertions
           
         
           
@@ -1514,8 +1508,9 @@
   <ul>
     <li>
       <ul>
-        <li><a href="#la-fonction-main">La fonction main</a></li>
-        <li><a href="#ecrire-sur-la-sortie-standard">Ecrire sur la sortie standard</a></li>
+        <li><a href="#types-derreurs">Types d&rsquo;erreurs</a></li>
+        <li><a href="#quest-ce-quune-assertion-">Qu&rsquo;est-ce qu&rsquo;une assertion ?</a></li>
+        <li><a href="#comment-asserter-">Comment asserter ?</a></li>
       </ul>
     </li>
   </ul>
@@ -1535,150 +1530,184 @@
           
             <h1>
               
-              👋 Hello World
+              Assertions
             </h1>
           
 
         
 
 
-<p>Pour votre premier programme, on ne va pas trop faire dans l&rsquo;originalité, il s&rsquo;agira d&rsquo;un Hello World.
-Vous l&rsquo;avez d&rsquo;ailleurs déjà probablement vu dans la rubrique précédente, pour tester vos outils.</p>
 <hr>
-<p>Pour cet exercice, vous modifierez le fichier :<br>
-- <code>chap-01/1-hello_world.cpp</code></p>
-<p>La cible à compiler est <code>c1-1-hello_world</code>.</p>
+<h3 id="types-derreurs">Types d&rsquo;erreurs</h3>
+<p>Lorsqu&rsquo;une erreur se produit dans un logiciel, il s&rsquo;agit soit d&rsquo;une erreur de programmation, soit d&rsquo;une erreur d&rsquo;utilisation du logiciel.</p>
+<p>Voici quelques exemples :</p>
+<ol>
+<li>Un pointeur null a été déréférencé : erreur de programmation.</li>
+<li>Le programme a demandé à l&rsquo;utilisateur de rentrer une image, mais celui-ci a fournit un fichier texte : erreur d&rsquo;utilisation.</li>
+<li>On a écrit dans la case <code>array.size()</code> de <code>array</code> : erreur de programmation.</li>
+<li>L&rsquo;utilisateur a entraîné &ldquo;-34&rdquo; alors que le programme attendait un entier positif : erreur d&rsquo;utilisation.</li>
+<li>On a inversé une condition dans un <code>if</code>, ce qui fait que le résultat n&rsquo;était pas le bon : erreur de programmation.</li>
+</ol>
+<p>Qu&rsquo;il s&rsquo;agisse d&rsquo;une erreur de programmation ou d&rsquo;une erreur d&rsquo;utilisation, le programme peut parfois entrer dans un état instable.
+Si on est chanceux, il va crasher immédiatement.
+Si on n&rsquo;est moins chanceux, on peut se retrouver avec un crash à l&rsquo;autre bout du programme (le cauchemar de l&rsquo;écrasement mémoire 😱), ou encore un bug qui semble n&rsquo;avoir aucun rapport avec l&rsquo;erreur d&rsquo;origine, et qui n&rsquo;arrive qu&rsquo;une fois tous les 3 mois, quand les planètes sont alignées.</p>
+<p>Afin d&rsquo;éviter ce genre de déboires, il est nécessaire de détecter les erreurs le plus tôt possible pour adapter le comportement du programme.</p>
+<p>Dans le cas des erreurs de programmation, on interrompera son exécution immédiatement.
+Si possible, on essayera de fournir des détails sur l&rsquo;origine du problème (nom du fichier, numéro de ligne, instruction, raison du crash, &hellip;).</p>
+<p>Et dans le cas des erreurs d&rsquo;utilisation, on indiquera à l&rsquo;utilisateur avec un joli message d&rsquo;erreur ce qu&rsquo;il a mal fait, et comment il aurait dû le faire.
+On essayera aussi de faire en sorte que le programme puisse continuer son exécution normalement.</p>
 <hr>
-<h3 id="la-fonction-main">La fonction main</h3>
-<p>Tout d&rsquo;abord, commençons par écrire la fonction qui est appelée lorsqu&rsquo;on lance le programme. On parle de <strong>point d&rsquo;entrée</strong>. Comme en C, cette fonction doit s&rsquo;appeler <code>main</code> et renvoyer une valeur de type <code>int</code>. Pour ce premier exercice, nous n&rsquo;aurons pas besoin de lui fournir d&rsquo;arguments.</p>
-<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
+<h3 id="quest-ce-quune-assertion-">Qu&rsquo;est-ce qu&rsquo;une assertion ?</h3>
+<p>Une assertion est une expression qui doit toujours être évaluée à vraie.</p>
+<p>En C++, le but des assertions, c&rsquo;est de faire crasher brutalement le programme si une condition n&rsquo;est pas respectée, afin d&rsquo;éviter que des problèmes plus difficiles à identifier ne se manifestent par la suite.</p>
+<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="kt">void</span> <span class="n">AnimalCenter</span><span class="o">::</span><span class="n">adopt_dog</span><span class="p">(</span><span class="n">Someone</span><span class="o">&amp;</span> <span class="n">someone</span><span class="p">)</span>
 <span class="p">{</span>
-    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="c1">// If you don&#39;t like dogs, then you shouldn&#39;t end up here!
+</span><span class="c1"></span>    <span class="n">assert</span><span class="p">(</span><span class="n">someone</span><span class="p">.</span><span class="n">like_dog</span><span class="p">());</span>
+
+    <span class="n">someone</span><span class="p">.</span><span class="n">receive</span><span class="p">(</span><span class="n">_dogs</span><span class="p">.</span><span class="n">front</span><span class="p">());</span>
+    <span class="n">_dogs</span><span class="p">.</span><span class="n">pop_front</span><span class="p">();</span>
 <span class="p">}</span>
-</code></pre></div><p>Vérifiez que votre programme compile et s&rsquo;exécute sans erreur.</p>
+</code></pre></div><p>Comme on l&rsquo;a dit plus haut, seules les erreurs de programmation sont censées entraîner la fin du programme.
+Les assertions vont donc servir à identifier ce type d&rsquo;erreurs, pour aider les programmeurs à corriger les failles de leur programme.</p>
+<p>Normalement, une fois la phase de production et de debug d&rsquo;un logiciel terminée, plus aucune assertion n&rsquo;est censée échouée.
+Puisqu&rsquo;il n&rsquo;est pas nécessaire d&rsquo;évaluer des conditions supposées être toujours vraies, les assertions sont du coup généralement désactivées avant de déployer le programme chez le client.
+Cela permet de gagner en performances.</p>
 
-<div class="expand">
-    <div class="expand-label" style="cursor: pointer;" onclick="$h = $(this);$h.next('div').slideToggle(100,function () {$h.children('i').attr('class',function () {return $h.next('div').is(':visible') ? 'fas fa-chevron-down' : 'fas fa-chevron-right';});});">
-        <i style="font-size:x-small;" class="fas fa-chevron-right"></i>
-        <span>
-        
-    	
-    	Rappel des commandes VSCode
-    	
-    	</span>
-    </div>
-    <div class="expand-content" style="display: none;">
-        <p>1- <code>CMake: Configure</code> (nécessaire seulement si vous ne l&rsquo;avez jamais lancé sur ce projet)</p>
-<div class="highlight"><pre class="chroma"><code class="language-b" data-lang="b"><span class="k">[</span><span class="c">main</span><span class="k">]</span><span class="c"> Configuring folder: cours</span><span class="nb">-</span><span class="c">cpp 
-</span><span class="c"></span><span class="k">[</span><span class="c">proc</span><span class="k">]</span><span class="c"> Executing command: &#34;C:\Program Files\CMake\bin\cmake</span><span class="nt">.</span><span class="c">exe&#34; </span><span class="nb">--</span><span class="c">no</span><span class="nb">-</span><span class="c">warn</span><span class="nb">-</span><span class="c">unused</span><span class="nb">-</span><span class="c">cli </span><span class="nb">-</span><span class="c">DCMAKE_EXPORT_COMPILE_COMMANDS:BOOL=TRUE </span><span class="nb">-</span><span class="c">Hd:/Cours/C</span><span class="nb">++</span><span class="c">/test/cours</span><span class="nb">-</span><span class="c">cpp </span><span class="nb">-</span><span class="c">Bd:/Cours/C</span><span class="nb">++</span><span class="c">/test/cours</span><span class="nb">-</span><span class="c">cpp/build </span><span class="nb">-</span><span class="c">G &#34;Visual Studio 16 2019&#34; </span><span class="nb">-</span><span class="c">T host=x64 </span><span class="nb">-</span><span class="c">A x64
-</span><span class="c"></span><span class="k">[</span><span class="c">cmake</span><span class="k">]</span><span class="c"> Not searching for unused variables given on the command line</span><span class="nt">.</span><span class="c">
-</span><span class="c"></span><span class="k">[</span><span class="c">cmake</span><span class="k">]</span><span class="c"> </span><span class="nb">--</span><span class="c"> Selecting Windows SDK version 10</span><span class="nt">.</span><span class="c">0</span><span class="nt">.</span><span class="c">18362</span><span class="nt">.</span><span class="c">0 to target Windows 10</span><span class="nt">.</span><span class="c">0</span><span class="nt">.</span><span class="c">18363</span><span class="nt">.</span><span class="c">
-</span><span class="c"></span><span class="k">[</span><span class="c">cmake</span><span class="k">]</span><span class="c"> </span><span class="nb">--</span><span class="c"> The C compiler identification is MSVC 19</span><span class="nt">.</span><span class="c">24</span><span class="nt">.</span><span class="c">28314</span><span class="nt">.</span><span class="c">0
-</span><span class="c"></span><span class="k">[</span><span class="c">cmake</span><span class="k">]</span><span class="c"> </span><span class="nb">--</span><span class="c"> The CXX compiler identification is MSVC 19</span><span class="nt">.</span><span class="c">24</span><span class="nt">.</span><span class="c">28314</span><span class="nt">.</span><span class="c">0
-</span><span class="c"></span><span class="k">[</span><span class="c">cmake</span><span class="k">]</span><span class="c"> </span><span class="nb">--</span><span class="c"> Check for working C compiler: C:/Program Files (x86)/Microsoft Visual Studio/2019/Community/VC/Tools/MSVC/14</span><span class="nt">.</span><span class="c">24</span><span class="nt">.</span><span class="c">28314/bin/Hostx64/x64/cl</span><span class="nt">.</span><span class="c">exe
-</span><span class="c"></span><span class="k">[</span><span class="c">cmake</span><span class="k">]</span><span class="c"> </span><span class="nb">--</span><span class="c"> Check for working C compiler: C:/Program Files (x86)/Microsoft Visual Studio/2019/Community/VC/Tools/MSVC/14</span><span class="nt">.</span><span class="c">24</span><span class="nt">.</span><span class="c">28314/bin/Hostx64/x64/cl</span><span class="nt">.</span><span class="c">exe </span><span class="nb">--</span><span class="c"> works
-</span><span class="c"></span><span class="k">[</span><span class="c">cmake</span><span class="k">]</span><span class="c"> </span><span class="nb">--</span><span class="c"> Detecting C compiler ABI info
-</span><span class="c"></span><span class="k">[</span><span class="c">cmake</span><span class="k">]</span><span class="c"> </span><span class="nb">--</span><span class="c"> Detecting C compiler ABI info </span><span class="nb">-</span><span class="c"> done
-</span><span class="c"></span><span class="k">[</span><span class="c">cmake</span><span class="k">]</span><span class="c"> </span><span class="nb">--</span><span class="c"> Detecting C compile features
-</span><span class="c"></span><span class="k">[</span><span class="c">cmake</span><span class="k">]</span><span class="c"> </span><span class="nb">--</span><span class="c"> Detecting C compile features </span><span class="nb">-</span><span class="c"> done
-</span><span class="c"></span><span class="k">[</span><span class="c">cmake</span><span class="k">]</span><span class="c"> </span><span class="nb">--</span><span class="c"> Check for working CXX compiler: C:/Program Files (x86)/Microsoft Visual Studio/2019/Community/VC/Tools/MSVC/14</span><span class="nt">.</span><span class="c">24</span><span class="nt">.</span><span class="c">28314/bin/Hostx64/x64/cl</span><span class="nt">.</span><span class="c">exe
-</span><span class="c"></span><span class="k">[</span><span class="c">cmake</span><span class="k">]</span><span class="c"> </span><span class="nb">--</span><span class="c"> Check for working CXX compiler: C:/Program Files (x86)/Microsoft Visual Studio/2019/Community/VC/Tools/MSVC/14</span><span class="nt">.</span><span class="c">24</span><span class="nt">.</span><span class="c">28314/bin/Hostx64/x64/cl</span><span class="nt">.</span><span class="c">exe </span><span class="nb">--</span><span class="c"> works
-</span><span class="c"></span><span class="k">[</span><span class="c">cmake</span><span class="k">]</span><span class="c"> </span><span class="nb">--</span><span class="c"> Detecting CXX compiler ABI info
-</span><span class="c"></span><span class="k">[</span><span class="c">cmake</span><span class="k">]</span><span class="c"> </span><span class="nb">--</span><span class="c"> Detecting CXX compiler ABI info </span><span class="nb">-</span><span class="c"> done
-</span><span class="c"></span><span class="k">[</span><span class="c">cmake</span><span class="k">]</span><span class="c"> </span><span class="nb">--</span><span class="c"> Detecting CXX compile features
-</span><span class="c"></span><span class="k">[</span><span class="c">cmake</span><span class="k">]</span><span class="c"> </span><span class="nb">--</span><span class="c"> Detecting CXX compile features </span><span class="nb">-</span><span class="c"> done
-</span><span class="c"></span><span class="k">[</span><span class="c">cmake</span><span class="k">]</span><span class="c"> </span><span class="nb">--</span><span class="c"> Configuring done
-</span><span class="c"></span><span class="k">[</span><span class="c">cmake</span><span class="k">]</span><span class="c"> </span><span class="nb">--</span><span class="c"> Generating done
-</span><span class="c"></span><span class="k">[</span><span class="c">cmake</span><span class="k">]</span><span class="c"> </span><span class="nb">--</span><span class="c"> Build files have been written to: D:/Cours/C</span><span class="nb">++</span><span class="c">/test/cours</span><span class="nb">-</span><span class="c">cpp/build
-</span></code></pre></div><p>2- <code>CMake: Build Target</code> (Shift+F7) : <code>1-hello_world</code></p>
-<div class="highlight"><pre class="chroma"><code class="language-b" data-lang="b"><span class="k">[</span><span class="c">main</span><span class="k">]</span><span class="c"> Building folder: cours</span><span class="nb">-</span><span class="c">cpp 1</span><span class="nb">-</span><span class="c">hello_world
-</span><span class="c"></span><span class="k">[</span><span class="c">build</span><span class="k">]</span><span class="c"> Starting build
-</span><span class="c"></span><span class="k">[</span><span class="c">proc</span><span class="k">]</span><span class="c"> Executing command: &#34;C:\Program Files\CMake\bin\cmake</span><span class="nt">.</span><span class="c">exe&#34; </span><span class="nb">--</span><span class="c">build d:/Cours/C</span><span class="nb">++</span><span class="c">/test/cours</span><span class="nb">-</span><span class="c">cpp/build </span><span class="nb">--</span><span class="c">config Debug </span><span class="nb">--</span><span class="c">target 1</span><span class="nb">-</span><span class="c">hello_world </span><span class="nb">--</span><span class="c"> /maxcpucount:18
-</span><span class="c"></span><span class="k">[</span><span class="c">build</span><span class="k">]</span><span class="c"> Microsoft (R) Build Engine version 16</span><span class="nt">.</span><span class="c">4</span><span class="nt">.</span><span class="c">0</span><span class="nb">+</span><span class="c">e901037fe for </span><span class="nt">.</span><span class="c">NET Framework
-</span><span class="c"></span><span class="k">[</span><span class="c">build</span><span class="k">]</span><span class="c"> Copyright (C) Microsoft Corporation</span><span class="nt">.</span><span class="c"> All rights reserved</span><span class="nt">.</span><span class="c">
-</span><span class="c"></span><span class="k">[</span><span class="c">build</span><span class="k">]</span><span class="c"> 
-</span><span class="c"></span><span class="k">[</span><span class="c">build</span><span class="k">]</span><span class="c">   Checking Build System
-</span><span class="c"></span><span class="k">[</span><span class="c">build</span><span class="k">]</span><span class="c">   Building Custom Rule D:/Cours/C</span><span class="nb">++</span><span class="c">/test/cours</span><span class="nb">-</span><span class="c">cpp/chap</span><span class="nb">-</span><span class="c">01/CMakeLists</span><span class="nt">.</span><span class="c">txt
-</span><span class="c"></span><span class="k">[</span><span class="c">build</span><span class="k">]</span><span class="c">   1</span><span class="nb">-</span><span class="c">hello_world</span><span class="nt">.</span><span class="c">cpp
-</span><span class="c"></span><span class="k">[</span><span class="c">build</span><span class="k">]</span><span class="c">   1</span><span class="nb">-</span><span class="c">hello_world</span><span class="nt">.</span><span class="c">vcxproj </span><span class="nb">-</span><span class="nv">&gt;</span><span class="c"> D:\Cours\C</span><span class="nb">++</span><span class="c">\test\cours</span><span class="nb">-</span><span class="c">cpp\build\chap</span><span class="nb">-</span><span class="c">01\Debug\1</span><span class="nb">-</span><span class="c">hello_world</span><span class="nt">.</span><span class="c">exe
-</span><span class="c"></span><span class="k">[</span><span class="c">build</span><span class="k">]</span><span class="c"> Build finished with exit code 0
-</span></code></pre></div><p>3- <code>CMake: Set Debug Target</code> : <code>1-hello_world</code> (nécessaire seulement une fois pour l&rsquo;exercice)</p>
-<p>4- <code>CMake: Debug</code> (Ctrl+F5)</p>
-<div class="highlight"><pre class="chroma"><code class="language-b" data-lang="b"><span class="c">The program &#39;</span><span class="k">[</span><span class="c">15604</span><span class="k">]</span><span class="c"> 1</span><span class="nb">-</span><span class="c">hello_world</span><span class="nt">.</span><span class="c">exe&#39; has exited with code 0 (0x0)</span><span class="nt">.</span><span class="c">
-</span></code></pre></div>
-    </div>
-</div>
-
-<div class="notices note" ><p>La valeur de retour du <code>main</code> indique si le programme s&rsquo;est terminé sans erreur. Si tout se passe bien, il faut retourner 0. N&rsquo;importe quelle autre valeur indique une erreur.</p>
+<div class="notices info" ><p>Il ne faut <strong>jamais</strong> utiliser des assertions pour traiter des erreurs d&rsquo;utilisation.
+Personne n&rsquo;a envie de voir son logiciel crasher juste avant la sauvegarde d&rsquo;un document, parce qu&rsquo;il a essayé de mettre un accent dans le nom du fichier, ou parce que le disque dur était plein.
+En plus, comme les assertions sont désactivées une fois le logiciel dépolyé, votre client risque de se retrouver avec des bugs que vous n&rsquo;aurez jamais rencontrés.</p>
 </div>
 
 <hr>
-<h3 id="ecrire-sur-la-sortie-standard">Ecrire sur la sortie standard</h3>
-<p>Ajoutez l&rsquo;instruction suivante dans votre fonction <code>main</code> :</p>
-<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;Hello World!&#34;</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
-</code></pre></div><p>Cette ligne permet d&rsquo;afficher la chaîne de caractère &ldquo;Hello World!&rdquo; sur la sortie standard du programme. Nous allons la décortiquer ensemble&hellip;</p>
-<p><code>std::</code><br>
-En C++, il est possible de définir des <strong>espaces de noms</strong>, ou <strong>namespaces</strong>. <code>std</code> fait référence au namespace utilisé pour la librairie standard. Si on écrit <code>std::cout</code>, c&rsquo;est donc pour référencer un symbole nommé <code>cout</code> défini par la librairie standard.</p>
+<h3 id="comment-asserter-">Comment asserter ?</h3>
+<p>En C++, il est possible d&rsquo;utiliser la macro <code>assert</code> disponible dans le header <code>&lt;cassert&gt;</code>.</p>
+<hr>
+<h5 id="utilisation-de-assert">Utilisation de <code>assert</code></h5>
+<p>Celle-ci prend en paramètre une condition.
+Si elle est évaluée à vraie, alors le programme continue.
+Autrement, le programme est interrompu et un message d&rsquo;erreur est affiché.
+Ce dernier présente le contenu de l&rsquo;assertion, le chemin du fichier et le numéro de la ligne où elle est écrite.</p>
+<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="k">class</span> <span class="nc">Class</span>
+<span class="p">{</span>
+<span class="k">public</span><span class="o">:</span>
+    <span class="kt">void</span> <span class="n">initialize</span><span class="p">(</span><span class="kt">unsigned</span> <span class="kt">int</span> <span class="n">p1</span><span class="p">,</span> <span class="kt">unsigned</span> <span class="kt">int</span> <span class="n">p2</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="c1">// On peut vérifier la validité des paramètres qu&#39;on nous donne (IllegalArgumentException en Java).
+</span><span class="c1"></span>        <span class="n">assert</span><span class="p">(</span><span class="n">p1</span> <span class="o">&lt;</span> <span class="n">p2</span> <span class="o">&amp;&amp;</span> <span class="n">p2</span> <span class="o">&lt;</span> <span class="mi">100</span><span class="p">);</span>
 
-<div class="notices note" ><p>Les librairies développées en C++ définissent généralement des namespaces pour contenir leurs symboles. Cela permet d&rsquo;éviter des conflits de noms dans les programmes qui les utilisent. Par exemple, 
-<a href="https://ogrecave.github.io/ogre/api/latest/" target="_blank" rel="noopener noreferrer">Ogre</a> définit ses symboles dans <code>Ogre</code>, la 
-<a href="https://www.sfml-dev.org/documentation/" target="_blank" rel="noopener noreferrer">SFML</a> dans <code>sf</code>, etc.<br>
-Ce problème existe aussi en C bien sûr, et pour y pallier, certaines APIs préfixent tous leurs symboles (la 
-<a href="https://wiki.libsdl.org/CategoryAPI" target="_blank" rel="noopener noreferrer">SDL</a> par exemple)&hellip; Ce n&rsquo;est pas très pratique, d&rsquo;où la bonne idée d&rsquo;avoir introduit les namespaces en C++.</p>
+        <span class="c1">// On peut aussi vérifier les pré-conditions de la fonction courante (IllegalStateException en Java).
+</span><span class="c1"></span>        <span class="n">assert</span><span class="p">(</span><span class="o">!</span><span class="n">_attr</span><span class="p">.</span><span class="n">is_valid</span><span class="p">());</span> <span class="c1">// on n&#39;est pas censé appeler Class::initialize() si _attr est déjà valide. 
+</span><span class="c1"></span>
+        <span class="c1">// On peut également vérifier les post-conditions d&#39;une fonction que l&#39;on appelle.
+</span><span class="c1"></span>        <span class="n">_attr</span><span class="p">.</span><span class="n">set_params</span><span class="p">(</span><span class="n">p1</span><span class="p">,</span> <span class="n">p2</span><span class="p">);</span>
+        <span class="n">assert</span><span class="p">(</span><span class="n">_attr</span><span class="p">.</span><span class="n">is_valid</span><span class="p">());</span> <span class="c1">// _attr.set_params() est censé rendre _attr valid. 
+</span><span class="c1"></span>    <span class="p">}</span>
+
+    <span class="kt">void</span> <span class="nf">process</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">unique_ptr</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">value</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="c1">// Paramètre
+</span><span class="c1"></span>        <span class="n">assert</span><span class="p">(</span><span class="n">value</span> <span class="o">!=</span> <span class="k">nullptr</span><span class="p">);</span> <span class="c1">// On attend un pointeur non-null.
+</span><span class="c1"></span>
+        <span class="c1">// Pré-condition de Class::process
+</span><span class="c1"></span>        <span class="n">assert</span><span class="p">(</span><span class="n">_attr</span><span class="p">.</span><span class="n">is_valid</span><span class="p">());</span> <span class="c1">// Class::process() ne doit pas être appelée si _attr n&#39;est pas valide. 
+</span><span class="c1"></span>
+        <span class="c1">// Post-condition de _attr::process
+</span><span class="c1"></span>        <span class="n">_attr</span><span class="p">.</span><span class="n">process</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">move</span><span class="p">(</span><span class="n">value</span><span class="p">));</span>
+        <span class="n">assert</span><span class="p">(</span><span class="n">_attr</span><span class="p">.</span><span class="n">is_valid</span><span class="p">());</span> <span class="c1">// _attr.process() n&#39;est pas censé modifier la validité de _attr.
+</span><span class="c1"></span>    <span class="p">}</span>
+
+<span class="k">private</span><span class="o">:</span>
+    <span class="n">Attr</span> <span class="n">_attr</span><span class="p">;</span>
+<span class="p">};</span>
+
+<span class="k">class</span> <span class="nc">Square</span>
+<span class="p">{</span>
+<span class="k">public</span><span class="o">:</span>
+    <span class="kt">void</span> <span class="n">do_stuff</span><span class="p">(...)</span>
+    <span class="p">{</span>
+        <span class="c1">// On peut également vérifier les invariants d&#39;une classe.
+</span><span class="c1"></span>        <span class="n">assert</span><span class="p">(</span><span class="n">all_segments_have_same_length</span><span class="p">());</span>
+        <span class="n">do_some_stuff</span><span class="p">();</span>
+        <span class="n">assert</span><span class="p">(</span><span class="n">all_segments_have_same_length</span><span class="p">());</span>
+        <span class="n">do_some_other_stuff</span><span class="p">();</span>
+        <span class="n">assert</span><span class="p">(</span><span class="n">all_segments_have_same_length</span><span class="p">());</span>
+    <span class="p">}</span>
+
+<span class="k">private</span><span class="o">:</span>
+    <span class="kt">bool</span> <span class="n">all_segments_have_same_length</span><span class="p">()</span> <span class="k">const</span> <span class="p">{</span> <span class="k">return</span> <span class="p">...;</span> <span class="p">}</span>
+
+    <span class="n">std</span><span class="o">::</span><span class="n">array</span><span class="o">&lt;</span><span class="n">Point</span><span class="p">,</span> <span class="mi">4</span><span class="o">&gt;</span> <span class="n">_points</span><span class="p">;</span>  
+<span class="p">};</span>
+</code></pre></div>
+<div class="notices note" ><p>La <a href="https://fr.wikipedia.org/wiki/Programmation_par_contrat">programmation par contrat</a> est un paradigme qui consiste à vérifier tout un tas d&rsquo;assertions au cours de l&rsquo;exécution d&rsquo;un programme pour s&rsquo;assurer qu&rsquo;il est bien dans l&rsquo;état attendu.
+Un mécanisme de programmation par contrat aurait dû être introduit nativement dans le langage en C++20, mais cela n&rsquo;a finalement pas eu lieu.
+Pour l&rsquo;instant, les macros de type <code>assert</code> restent donc l&rsquo;outil standard pour essayer de programmer par contrat en C++.</p>
 </div>
 
-<p><code>cout</code><br>
-Il s&rsquo;agit de la variable globale contenant le flux pour écrire sur la sortie standard du programme. Je ne sais pas pourquoi &lsquo;c&rsquo;, mais le &lsquo;out&rsquo; indique &lsquo;sortie&rsquo;. Par symétrie, on fera référence au flux pour l&rsquo;entrée standard avec <code>cin</code>.</p>
-<p><code>&lt;&lt;</code><br>
-Il s&rsquo;agit d&rsquo;un opérateur, un peu comme <code>+</code> ou <code>%</code>. Si on utilise <code>&lt;&lt;</code> entre une variable de flux et une chaîne de caractère, cette chaîne de caractère sera écrite dans le flux.</p>
-<p><code>&quot;Hello World!&quot;</code><br>
-Une chaîne de caractère, comme en C.</p>
-<p><code>endl</code><br>
-Cette variable permet d&rsquo;écrire le caractère de fin de ligne <code>\n</code> (&lsquo;endl&rsquo; pour &lsquo;end of line&rsquo;) dans le flux. Il permet également de forcer son flush.</p>
-
-<div class="notices tip" ><p>En C, on a dû vous dire expliquer qu&rsquo;il fallait toujours mettre des <code>\n</code> à la fin de vos écritures avec <code>printf</code>, car cela permet d&rsquo;être sûr que tout est bien écrit dans la console. En C++, <code>\n</code> ne suffit pas à le garantir, on utilisera donc <code>endl</code> lorsque l&rsquo;on veut que le résultat soit écrit dans la console immédiatement.</p>
-</div>
-
-<p>Essayez maintenant de recompiler votre programme. Vous devriez obtenir des erreurs de ce style :</p>
-<div class="highlight"><pre class="chroma"><code class="language-b" data-lang="b"><span class="c">blabla error ##: &#39;cout&#39;: is not a member of &#39;std&#39; blabla
-</span><span class="c">blabla message : see declaration of &#39;std&#39; blabla
-</span><span class="c">blabla error ##: &#39;cout&#39;: undeclared identifier blabla
-</span><span class="c">blabla error ##: &#39;endl&#39;: is not a member of &#39;std&#39; blabla
-</span><span class="c">blabla message : see declaration of &#39;std&#39; blabla
-</span><span class="c">blabla error ##: &#39;endl&#39;: undeclared identifier blabla
-</span></code></pre></div><p>Le premier message indique que le compilateur ne trouve aucun symbole nommé <code>cout</code> dans le namespace <code>std</code>. Eh bien oui, le C++, c&rsquo;est comme le C. Le compilateur est un peu bêbête, et il faut tout lui indiquer, même où trouver les symboles de la librairie standard.</p>
-<p>Allez sur 
-<a href="https://en.cppreference.com/w/" target="_blank" rel="noopener noreferrer">ce site</a> et recherchez <code>cout</code>. Cela devrait vous permettre de déterminer dans quel header la fonction est déclarée, afin d&rsquo;ajouter la directive d&rsquo;inclusion correspondante au fichier.</p>
-
-<div class="expand">
-    <div class="expand-label" style="cursor: pointer;" onclick="$h = $(this);$h.next('div').slideToggle(100,function () {$h.children('i').attr('class',function () {return $h.next('div').is(':visible') ? 'fas fa-chevron-down' : 'fas fa-chevron-right';});});">
-        <i style="font-size:x-small;" class="fas fa-chevron-right"></i>
-        <span>
-        
-    	
-    	Solution
-    	
-    	</span>
-    </div>
-    <div class="expand-content" style="display: none;">
-        <p>Vous devriez arriver sur 
-<a href="https://en.cppreference.com/w/cpp/io/cout" target="_blank" rel="noopener noreferrer">cette page</a>, vous indiquant que le header à référencer est <code>&lt;iostream&gt;</code> :
-<img src="/CPP_Learning/images/doc-cout.png" alt=""></p>
-<p>Placez le code suivant dans votre fichier :</p>
-<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp">
+<p>Comme <code>assert</code> n&rsquo;est pas très verbeux, il est possible d&rsquo;ajouter <code>&amp;&amp; &quot;un message&quot;</code> au contenu de l&rsquo;assertion.
+Si la condition est vérifiée, alors <code>&amp;&amp; &quot;un message&quot;</code> ne changera rien, car une chaîne de caractères convertie en <code>bool</code> vaut forcément <code>true</code>. 
+Et si l&rsquo;assertion échoue, la condition complète sera affichée dans le message d&rsquo;erreur.</p>
+<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="c1">// Si l&#39;assertion échoue, on aura comme message :
+</span><span class="c1">// Assertion failed: _attr_.is_valid() &amp;&amp; &#34;you probably need to call Initialize() function&#34;, file ###.cpp, line ### 
+</span><span class="c1"></span><span class="n">assert</span><span class="p">(</span><span class="n">_attr_</span><span class="p">.</span><span class="n">is_valid</span><span class="p">()</span> <span class="o">&amp;&amp;</span> <span class="s">&#34;you probably need to call initialize() function&#34;</span><span class="p">);</span>
+</code></pre></div><hr>
+<h5 id="désactivation-en-release">Désactivation en Release</h5>
+<p>Il faut savoir que lorsque la constante <code>NDEBUG</code> est définie, la macro <code>assert</code> ne fait plus rien.
+En particulier, son contenu n&rsquo;est plus évalué.
+Ce système permet donc de désactiver les assertions en release.</p>
+<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="cp">#define NDEBUG
 </span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&lt;cassert&gt;</span><span class="cp">
+</span><span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp">
+</span><span class="cp"></span>
+<span class="kt">void</span> <span class="nf">this_will_never_be_called</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;You can&#39;t see me... I&#39;m a shadow...&#34;</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+<span class="p">}</span>
+
 <span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
 <span class="p">{</span>
-    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;Hello World!&#34;</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+    <span class="n">assert</span><span class="p">(</span><span class="n">this_will_never_be_called</span><span class="p">());</span>
     <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
 <span class="p">}</span>
 </code></pre></div>
-    </div>
+<div class="notices warning" ><p>Attention à ne pas appeler n&rsquo;importe quelle fonction à l&rsquo;intérieur d&rsquo;un <code>assert</code>.
+Par exemple, si vous écrivez quelque chose comme <code>assert(my_set.insert(value))</code>, soyez bien conscient que l&rsquo;insertion n&rsquo;aura lieu que si vous êtes en mode debug.</p>
 </div>
-<p>Vous devriez maintenant pouvoir compiler le programme sans soucis. Exécutez-le et vérifiez que vous obtenez bien un résultat similaire à celui-ci :</p>
-<div class="highlight"><pre class="chroma"><code class="language-b" data-lang="b"><span class="c">Hello World!
-</span><span class="c">The program &#39;</span><span class="k">[</span><span class="c">2288</span><span class="k">]</span><span class="c"> c1</span><span class="nb">-</span><span class="c">1</span><span class="nb">-</span><span class="c">hello_world</span><span class="nt">.</span><span class="c">exe&#39; has exited with code 0 (0x0)</span><span class="nt">.</span><span class="c">
-</span></code></pre></div>
+
+
+<div class="notices tip" ><p>Il n&rsquo;est pas nécessaire d&rsquo;écrire <code>#define NDEBUG</code> dans tous les fichiers lorsqu&rsquo;on veut passer en Release.
+Des arguments peuvent être fournis à la commande de compilation pour définir des constantes (<code>gcc -c *.cpp -o program -DNDEBUG</code>) sans avoir à changer les sources.
+D&rsquo;ailleurs, par défaut, CMake ajoute tout seul <code>-DNDEBUG</code> à la ligne de commande de la build Release.</p>
+</div>
+
+<hr>
+<h5 id="redéfinir-son-propre-assert">Redéfinir son propre assert</h5>
+<p>Si vous trouvez que <code>assert</code> ne vous donne pas suffisamment d&rsquo;informations, vous pouvez tout à fait définir votre propre macro d&rsquo;assertion.
+Par exemple, celle-ci vous permettra d&rsquo;afficher le contenu d&rsquo;une variable :</p>
+<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="cp">#ifndef NDEBUG
+</span><span class="cp"></span>
+<span class="cp">#define super_assert(cdn, msg)                                                  \
+</span><span class="cp">    if (!cdn)                                                                   \
+</span><span class="cp">    {                                                                           \
+</span><span class="cp">        std::cerr &lt;&lt; &#34;Assertion failed: &#34; &lt;&lt; #cdn                               \
+</span><span class="cp">                  &lt;&lt; &#34;\nLocation: &#34; &lt;&lt; __FILE__ &lt;&lt; &#34; (ln.&#34; &lt;&lt; __LINE__ &lt;&lt; &#34;)&#34;   \
+</span><span class="cp">                  &lt;&lt; &#34;\nReason: &#34; &lt;&lt; msg                                        \
+</span><span class="cp">                  &lt;&lt; std::endl;                                                 \
+</span><span class="cp">        std::terminate();                                                       \
+</span><span class="cp">    }
+</span><span class="cp"></span>
+<span class="cp">#else
+</span><span class="cp">#define super_assert(cdn, msg) ;
+</span><span class="cp">#endif
+</span><span class="cp"></span>
+<span class="kt">void</span> <span class="nf">fcn</span><span class="p">(</span><span class="kt">int</span> <span class="n">value</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">super_assert</span><span class="p">(</span><span class="n">value</span> <span class="o">&gt;</span> <span class="o">-</span><span class="mi">100</span> <span class="o">&amp;&amp;</span> <span class="n">value</span> <span class="o">&lt;</span> <span class="mi">100</span><span class="p">,</span> <span class="n">value</span><span class="p">);</span>
+    <span class="p">...</span>
+<span class="p">};</span>
+</code></pre></div>
 
 <footer class="footline">
 	
@@ -1715,6 +1744,8 @@ Cette variable permet d&rsquo;écrire le caractère de fin de ligne <code>\n</co
             
                 
                     
+                        
+                        
                     
                 
                 
@@ -1730,9 +1761,6 @@ Cette variable permet d&rsquo;écrire le caractère de fin de ligne <code>\n</co
             
             
                 
-                    
-                        
-                        
                     
                 
                 
@@ -1830,7 +1858,6 @@ Cette variable permet d&rsquo;écrire le caractère de fin de ligne <code>\n</co
             
                 
                     
-                    
                 
                 
 
@@ -1843,7 +1870,6 @@ Cette variable permet d&rsquo;écrire le caractère de fin de ligne <code>\n</co
             
             
                 
-                    
                     
                 
                 
@@ -1860,9 +1886,6 @@ Cette variable permet d&rsquo;écrire le caractère de fin de ligne <code>\n</co
             
             
                 
-                    
-                        
-                        
                     
                 
                 
@@ -2604,6 +2627,7 @@ Cette variable permet d&rsquo;écrire le caractère de fin de ligne <code>\n</co
             
                 
                     
+                    
                 
                 
 
@@ -2616,6 +2640,7 @@ Cette variable permet d&rsquo;écrire le caractère de fin de ligne <code>\n</co
             
             
                 
+                    
                     
                 
                 
@@ -2632,6 +2657,9 @@ Cette variable permet d&rsquo;écrire le caractère de fin de ligne <code>\n</co
             
             
                 
+                    
+                        
+                        
                     
                 
                 
@@ -2656,10 +2684,10 @@ Cette variable permet d&rsquo;écrire le caractère de fin de ligne <code>\n</co
 	 
 	 
 		
-			<a class="nav nav-prev" href="/CPP_Learning/chapter1/3-practice/" title="Premiers programmes"> <i class="fa fa-chevron-left"></i></a>
+			<a class="nav nav-prev" href="/CPP_Learning/chapter7/" title="Traitement d&#39;erreurs"> <i class="fa fa-chevron-left"></i></a>
 		
 		
-			<a class="nav nav-next" href="/CPP_Learning/chapter1/3-practice/2-parrot.fd/" title="🦜 Perroquet" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+			<a class="nav nav-next" href="/CPP_Learning/chapter7/2-exceptions/" title="Exceptions" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
 		
 	
     </div>
@@ -2669,19 +2697,19 @@ Cette variable permet d&rsquo;écrire le caractère de fin de ligne <code>\n</co
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/CPP_Learning/js/clipboard.min.js?1616215069"></script>
-    <script src="/CPP_Learning/js/perfect-scrollbar.min.js?1616215069"></script>
-    <script src="/CPP_Learning/js/perfect-scrollbar.jquery.min.js?1616215069"></script>
-    <script src="/CPP_Learning/js/jquery.sticky.js?1616215069"></script>
-    <script src="/CPP_Learning/js/featherlight.min.js?1616215069"></script>
-    <script src="/CPP_Learning/js/highlight.pack.js?1616215069"></script>
+    <script src="/CPP_Learning/js/clipboard.min.js?1616215070"></script>
+    <script src="/CPP_Learning/js/perfect-scrollbar.min.js?1616215070"></script>
+    <script src="/CPP_Learning/js/perfect-scrollbar.jquery.min.js?1616215070"></script>
+    <script src="/CPP_Learning/js/jquery.sticky.js?1616215070"></script>
+    <script src="/CPP_Learning/js/featherlight.min.js?1616215070"></script>
+    <script src="/CPP_Learning/js/highlight.pack.js?1616215070"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/CPP_Learning/js/modernizr.custom-3.6.0.js?1616215069"></script>
-    <script src="/CPP_Learning/js/learn.js?1616215069"></script>
-    <script src="/CPP_Learning/js/hugo-learn.js?1616215069"></script>
+    <script src="/CPP_Learning/js/modernizr.custom-3.6.0.js?1616215070"></script>
+    <script src="/CPP_Learning/js/learn.js?1616215070"></script>
+    <script src="/CPP_Learning/js/hugo-learn.js?1616215070"></script>
 
-    <link href="/CPP_Learning/mermaid/mermaid.css?1616215069" rel="stylesheet" />
-    <script src="/CPP_Learning/mermaid/mermaid.js?1616215069"></script>
+    <link href="/CPP_Learning/mermaid/mermaid.css?1616215070" rel="stylesheet" />
+    <script src="/CPP_Learning/mermaid/mermaid.js?1616215070"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

@@ -9,24 +9,24 @@
 
     <link rel="icon" href="/CPP_Learning/images/favicon.png" type="image/png">
 
-    <title>👋 Hello World :: Cours de C&#43;&#43; - Niveau Master</title>
+    <title>Exceptions :: Cours de C&#43;&#43; - Niveau Master</title>
 
     
-    <link href="/CPP_Learning/css/nucleus.css?1616215069" rel="stylesheet">
-    <link href="/CPP_Learning/css/fontawesome-all.min.css?1616215069" rel="stylesheet">
-    <link href="/CPP_Learning/css/hybrid.css?1616215069" rel="stylesheet">
-    <link href="/CPP_Learning/css/featherlight.min.css?1616215069" rel="stylesheet">
-    <link href="/CPP_Learning/css/perfect-scrollbar.min.css?1616215069" rel="stylesheet">
-    <link href="/CPP_Learning/css/auto-complete.css?1616215069" rel="stylesheet">
-    <link href="/CPP_Learning/css/atom-one-dark-reasonable.css?1616215069" rel="stylesheet">
-    <link href="/CPP_Learning/css/theme.css?1616215069" rel="stylesheet">
-    <link href="/CPP_Learning/css/hugo-theme.css?1616215069" rel="stylesheet">
+    <link href="/CPP_Learning/css/nucleus.css?1616215070" rel="stylesheet">
+    <link href="/CPP_Learning/css/fontawesome-all.min.css?1616215070" rel="stylesheet">
+    <link href="/CPP_Learning/css/hybrid.css?1616215070" rel="stylesheet">
+    <link href="/CPP_Learning/css/featherlight.min.css?1616215070" rel="stylesheet">
+    <link href="/CPP_Learning/css/perfect-scrollbar.min.css?1616215070" rel="stylesheet">
+    <link href="/CPP_Learning/css/auto-complete.css?1616215070" rel="stylesheet">
+    <link href="/CPP_Learning/css/atom-one-dark-reasonable.css?1616215070" rel="stylesheet">
+    <link href="/CPP_Learning/css/theme.css?1616215070" rel="stylesheet">
+    <link href="/CPP_Learning/css/hugo-theme.css?1616215070" rel="stylesheet">
     
-    <link href="/CPP_Learning/css/theme-mine.css?1616215069" rel="stylesheet">
+    <link href="/CPP_Learning/css/theme-mine.css?1616215070" rel="stylesheet">
     
-    <link href="/CPP_Learning/css/syntax.css?1616215069" rel="stylesheet">
+    <link href="/CPP_Learning/css/syntax.css?1616215070" rel="stylesheet">
 
-    <script src="/CPP_Learning/js/jquery-3.3.1.min.js?1616215069"></script>
+    <script src="/CPP_Learning/js/jquery-3.3.1.min.js?1616215070"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -40,7 +40,7 @@
     </style>
     
   </head>
-  <body class="" data-url="/CPP_Learning/chapter1/3-practice/1-hello-world/">
+  <body class="" data-url="/CPP_Learning/chapter7/2-exceptions/">
     <nav id="sidebar" class="showVisitedLinks">
 
 
@@ -57,14 +57,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/CPP_Learning/js/lunr.min.js?1616215069"></script>
-<script type="text/javascript" src="/CPP_Learning/js/auto-complete.js?1616215069"></script>
+<script type="text/javascript" src="/CPP_Learning/js/lunr.min.js?1616215070"></script>
+<script type="text/javascript" src="/CPP_Learning/js/auto-complete.js?1616215070"></script>
 <script type="text/javascript">
     
         var baseurl = "https:\/\/laefy.github.io\/CPP_Learning\/";
     
 </script>
-<script type="text/javascript" src="/CPP_Learning/js/search.js?1616215069"></script>
+<script type="text/javascript" src="/CPP_Learning/js/search.js?1616215070"></script>
 
     
   </div>
@@ -83,7 +83,7 @@
   
     
     <li data-nav-id="/CPP_Learning/chapter1/" title="Introduction au C&#43;&#43;" class="dd-item 
-        parent
+        
         
         
         ">
@@ -257,7 +257,7 @@
   
     
     <li data-nav-id="/CPP_Learning/chapter1/3-practice/" title="Premiers programmes" class="dd-item 
-        parent
+        
         
         
         ">
@@ -285,7 +285,7 @@
  
   
     
-      <li data-nav-id="/CPP_Learning/chapter1/3-practice/1-hello-world/" title="👋 Hello World" class="dd-item active">
+      <li data-nav-id="/CPP_Learning/chapter1/3-practice/1-hello-world/" title="👋 Hello World" class="dd-item ">
         <a href="/CPP_Learning/chapter1/3-practice/1-hello-world/">
         👋 Hello World
         <i class="fas fa-check read-icon"></i>
@@ -1340,7 +1340,7 @@
   
     
     <li data-nav-id="/CPP_Learning/chapter7/" title="Traitement d&#39;erreurs" class="dd-item 
-        
+        parent
         
         
         ">
@@ -1389,7 +1389,7 @@
  
   
     
-      <li data-nav-id="/CPP_Learning/chapter7/2-exceptions/" title="Exceptions" class="dd-item ">
+      <li data-nav-id="/CPP_Learning/chapter7/2-exceptions/" title="Exceptions" class="dd-item active">
         <a href="/CPP_Learning/chapter7/2-exceptions/">
         Exceptions
         <i class="fas fa-check read-icon"></i>
@@ -1491,13 +1491,7 @@
             
           
           
-            
-            
-          
-          
-            <a href='/CPP_Learning/'>Accueil</a> > <a href='/CPP_Learning/chapter1/'>Introduction au C++</a> > <a href='/CPP_Learning/chapter1/3-practice/'>Premiers programmes</a> > 👋 Hello World
-          
-        
+            <a href='/CPP_Learning/'>Accueil</a> > <a href='/CPP_Learning/chapter7/'>Traitement d'erreurs</a> > Exceptions
           
         
           
@@ -1514,8 +1508,10 @@
   <ul>
     <li>
       <ul>
-        <li><a href="#la-fonction-main">La fonction main</a></li>
-        <li><a href="#ecrire-sur-la-sortie-standard">Ecrire sur la sortie standard</a></li>
+        <li><a href="#quest-ce-quune-exception-">Qu&rsquo;est-ce qu&rsquo;une exception ?</a></li>
+        <li><a href="#utilisation-des-exceptions">Utilisation des exceptions</a></li>
+        <li><a href="#stack-unwinding">Stack unwinding</a></li>
+        <li><a href="#définir-ses-propres-types-dexceptions">Définir ses propres types d&rsquo;exceptions</a></li>
       </ul>
     </li>
   </ul>
@@ -1535,150 +1531,300 @@
           
             <h1>
               
-              👋 Hello World
+              Exceptions
             </h1>
           
 
         
 
 
-<p>Pour votre premier programme, on ne va pas trop faire dans l&rsquo;originalité, il s&rsquo;agira d&rsquo;un Hello World.
-Vous l&rsquo;avez d&rsquo;ailleurs déjà probablement vu dans la rubrique précédente, pour tester vos outils.</p>
 <hr>
-<p>Pour cet exercice, vous modifierez le fichier :<br>
-- <code>chap-01/1-hello_world.cpp</code></p>
-<p>La cible à compiler est <code>c1-1-hello_world</code>.</p>
-<hr>
-<h3 id="la-fonction-main">La fonction main</h3>
-<p>Tout d&rsquo;abord, commençons par écrire la fonction qui est appelée lorsqu&rsquo;on lance le programme. On parle de <strong>point d&rsquo;entrée</strong>. Comme en C, cette fonction doit s&rsquo;appeler <code>main</code> et renvoyer une valeur de type <code>int</code>. Pour ce premier exercice, nous n&rsquo;aurons pas besoin de lui fournir d&rsquo;arguments.</p>
-<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
-<span class="p">{</span>
-    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
-<span class="p">}</span>
-</code></pre></div><p>Vérifiez que votre programme compile et s&rsquo;exécute sans erreur.</p>
-
-<div class="expand">
-    <div class="expand-label" style="cursor: pointer;" onclick="$h = $(this);$h.next('div').slideToggle(100,function () {$h.children('i').attr('class',function () {return $h.next('div').is(':visible') ? 'fas fa-chevron-down' : 'fas fa-chevron-right';});});">
-        <i style="font-size:x-small;" class="fas fa-chevron-right"></i>
-        <span>
-        
-    	
-    	Rappel des commandes VSCode
-    	
-    	</span>
-    </div>
-    <div class="expand-content" style="display: none;">
-        <p>1- <code>CMake: Configure</code> (nécessaire seulement si vous ne l&rsquo;avez jamais lancé sur ce projet)</p>
-<div class="highlight"><pre class="chroma"><code class="language-b" data-lang="b"><span class="k">[</span><span class="c">main</span><span class="k">]</span><span class="c"> Configuring folder: cours</span><span class="nb">-</span><span class="c">cpp 
-</span><span class="c"></span><span class="k">[</span><span class="c">proc</span><span class="k">]</span><span class="c"> Executing command: &#34;C:\Program Files\CMake\bin\cmake</span><span class="nt">.</span><span class="c">exe&#34; </span><span class="nb">--</span><span class="c">no</span><span class="nb">-</span><span class="c">warn</span><span class="nb">-</span><span class="c">unused</span><span class="nb">-</span><span class="c">cli </span><span class="nb">-</span><span class="c">DCMAKE_EXPORT_COMPILE_COMMANDS:BOOL=TRUE </span><span class="nb">-</span><span class="c">Hd:/Cours/C</span><span class="nb">++</span><span class="c">/test/cours</span><span class="nb">-</span><span class="c">cpp </span><span class="nb">-</span><span class="c">Bd:/Cours/C</span><span class="nb">++</span><span class="c">/test/cours</span><span class="nb">-</span><span class="c">cpp/build </span><span class="nb">-</span><span class="c">G &#34;Visual Studio 16 2019&#34; </span><span class="nb">-</span><span class="c">T host=x64 </span><span class="nb">-</span><span class="c">A x64
-</span><span class="c"></span><span class="k">[</span><span class="c">cmake</span><span class="k">]</span><span class="c"> Not searching for unused variables given on the command line</span><span class="nt">.</span><span class="c">
-</span><span class="c"></span><span class="k">[</span><span class="c">cmake</span><span class="k">]</span><span class="c"> </span><span class="nb">--</span><span class="c"> Selecting Windows SDK version 10</span><span class="nt">.</span><span class="c">0</span><span class="nt">.</span><span class="c">18362</span><span class="nt">.</span><span class="c">0 to target Windows 10</span><span class="nt">.</span><span class="c">0</span><span class="nt">.</span><span class="c">18363</span><span class="nt">.</span><span class="c">
-</span><span class="c"></span><span class="k">[</span><span class="c">cmake</span><span class="k">]</span><span class="c"> </span><span class="nb">--</span><span class="c"> The C compiler identification is MSVC 19</span><span class="nt">.</span><span class="c">24</span><span class="nt">.</span><span class="c">28314</span><span class="nt">.</span><span class="c">0
-</span><span class="c"></span><span class="k">[</span><span class="c">cmake</span><span class="k">]</span><span class="c"> </span><span class="nb">--</span><span class="c"> The CXX compiler identification is MSVC 19</span><span class="nt">.</span><span class="c">24</span><span class="nt">.</span><span class="c">28314</span><span class="nt">.</span><span class="c">0
-</span><span class="c"></span><span class="k">[</span><span class="c">cmake</span><span class="k">]</span><span class="c"> </span><span class="nb">--</span><span class="c"> Check for working C compiler: C:/Program Files (x86)/Microsoft Visual Studio/2019/Community/VC/Tools/MSVC/14</span><span class="nt">.</span><span class="c">24</span><span class="nt">.</span><span class="c">28314/bin/Hostx64/x64/cl</span><span class="nt">.</span><span class="c">exe
-</span><span class="c"></span><span class="k">[</span><span class="c">cmake</span><span class="k">]</span><span class="c"> </span><span class="nb">--</span><span class="c"> Check for working C compiler: C:/Program Files (x86)/Microsoft Visual Studio/2019/Community/VC/Tools/MSVC/14</span><span class="nt">.</span><span class="c">24</span><span class="nt">.</span><span class="c">28314/bin/Hostx64/x64/cl</span><span class="nt">.</span><span class="c">exe </span><span class="nb">--</span><span class="c"> works
-</span><span class="c"></span><span class="k">[</span><span class="c">cmake</span><span class="k">]</span><span class="c"> </span><span class="nb">--</span><span class="c"> Detecting C compiler ABI info
-</span><span class="c"></span><span class="k">[</span><span class="c">cmake</span><span class="k">]</span><span class="c"> </span><span class="nb">--</span><span class="c"> Detecting C compiler ABI info </span><span class="nb">-</span><span class="c"> done
-</span><span class="c"></span><span class="k">[</span><span class="c">cmake</span><span class="k">]</span><span class="c"> </span><span class="nb">--</span><span class="c"> Detecting C compile features
-</span><span class="c"></span><span class="k">[</span><span class="c">cmake</span><span class="k">]</span><span class="c"> </span><span class="nb">--</span><span class="c"> Detecting C compile features </span><span class="nb">-</span><span class="c"> done
-</span><span class="c"></span><span class="k">[</span><span class="c">cmake</span><span class="k">]</span><span class="c"> </span><span class="nb">--</span><span class="c"> Check for working CXX compiler: C:/Program Files (x86)/Microsoft Visual Studio/2019/Community/VC/Tools/MSVC/14</span><span class="nt">.</span><span class="c">24</span><span class="nt">.</span><span class="c">28314/bin/Hostx64/x64/cl</span><span class="nt">.</span><span class="c">exe
-</span><span class="c"></span><span class="k">[</span><span class="c">cmake</span><span class="k">]</span><span class="c"> </span><span class="nb">--</span><span class="c"> Check for working CXX compiler: C:/Program Files (x86)/Microsoft Visual Studio/2019/Community/VC/Tools/MSVC/14</span><span class="nt">.</span><span class="c">24</span><span class="nt">.</span><span class="c">28314/bin/Hostx64/x64/cl</span><span class="nt">.</span><span class="c">exe </span><span class="nb">--</span><span class="c"> works
-</span><span class="c"></span><span class="k">[</span><span class="c">cmake</span><span class="k">]</span><span class="c"> </span><span class="nb">--</span><span class="c"> Detecting CXX compiler ABI info
-</span><span class="c"></span><span class="k">[</span><span class="c">cmake</span><span class="k">]</span><span class="c"> </span><span class="nb">--</span><span class="c"> Detecting CXX compiler ABI info </span><span class="nb">-</span><span class="c"> done
-</span><span class="c"></span><span class="k">[</span><span class="c">cmake</span><span class="k">]</span><span class="c"> </span><span class="nb">--</span><span class="c"> Detecting CXX compile features
-</span><span class="c"></span><span class="k">[</span><span class="c">cmake</span><span class="k">]</span><span class="c"> </span><span class="nb">--</span><span class="c"> Detecting CXX compile features </span><span class="nb">-</span><span class="c"> done
-</span><span class="c"></span><span class="k">[</span><span class="c">cmake</span><span class="k">]</span><span class="c"> </span><span class="nb">--</span><span class="c"> Configuring done
-</span><span class="c"></span><span class="k">[</span><span class="c">cmake</span><span class="k">]</span><span class="c"> </span><span class="nb">--</span><span class="c"> Generating done
-</span><span class="c"></span><span class="k">[</span><span class="c">cmake</span><span class="k">]</span><span class="c"> </span><span class="nb">--</span><span class="c"> Build files have been written to: D:/Cours/C</span><span class="nb">++</span><span class="c">/test/cours</span><span class="nb">-</span><span class="c">cpp/build
-</span></code></pre></div><p>2- <code>CMake: Build Target</code> (Shift+F7) : <code>1-hello_world</code></p>
-<div class="highlight"><pre class="chroma"><code class="language-b" data-lang="b"><span class="k">[</span><span class="c">main</span><span class="k">]</span><span class="c"> Building folder: cours</span><span class="nb">-</span><span class="c">cpp 1</span><span class="nb">-</span><span class="c">hello_world
-</span><span class="c"></span><span class="k">[</span><span class="c">build</span><span class="k">]</span><span class="c"> Starting build
-</span><span class="c"></span><span class="k">[</span><span class="c">proc</span><span class="k">]</span><span class="c"> Executing command: &#34;C:\Program Files\CMake\bin\cmake</span><span class="nt">.</span><span class="c">exe&#34; </span><span class="nb">--</span><span class="c">build d:/Cours/C</span><span class="nb">++</span><span class="c">/test/cours</span><span class="nb">-</span><span class="c">cpp/build </span><span class="nb">--</span><span class="c">config Debug </span><span class="nb">--</span><span class="c">target 1</span><span class="nb">-</span><span class="c">hello_world </span><span class="nb">--</span><span class="c"> /maxcpucount:18
-</span><span class="c"></span><span class="k">[</span><span class="c">build</span><span class="k">]</span><span class="c"> Microsoft (R) Build Engine version 16</span><span class="nt">.</span><span class="c">4</span><span class="nt">.</span><span class="c">0</span><span class="nb">+</span><span class="c">e901037fe for </span><span class="nt">.</span><span class="c">NET Framework
-</span><span class="c"></span><span class="k">[</span><span class="c">build</span><span class="k">]</span><span class="c"> Copyright (C) Microsoft Corporation</span><span class="nt">.</span><span class="c"> All rights reserved</span><span class="nt">.</span><span class="c">
-</span><span class="c"></span><span class="k">[</span><span class="c">build</span><span class="k">]</span><span class="c"> 
-</span><span class="c"></span><span class="k">[</span><span class="c">build</span><span class="k">]</span><span class="c">   Checking Build System
-</span><span class="c"></span><span class="k">[</span><span class="c">build</span><span class="k">]</span><span class="c">   Building Custom Rule D:/Cours/C</span><span class="nb">++</span><span class="c">/test/cours</span><span class="nb">-</span><span class="c">cpp/chap</span><span class="nb">-</span><span class="c">01/CMakeLists</span><span class="nt">.</span><span class="c">txt
-</span><span class="c"></span><span class="k">[</span><span class="c">build</span><span class="k">]</span><span class="c">   1</span><span class="nb">-</span><span class="c">hello_world</span><span class="nt">.</span><span class="c">cpp
-</span><span class="c"></span><span class="k">[</span><span class="c">build</span><span class="k">]</span><span class="c">   1</span><span class="nb">-</span><span class="c">hello_world</span><span class="nt">.</span><span class="c">vcxproj </span><span class="nb">-</span><span class="nv">&gt;</span><span class="c"> D:\Cours\C</span><span class="nb">++</span><span class="c">\test\cours</span><span class="nb">-</span><span class="c">cpp\build\chap</span><span class="nb">-</span><span class="c">01\Debug\1</span><span class="nb">-</span><span class="c">hello_world</span><span class="nt">.</span><span class="c">exe
-</span><span class="c"></span><span class="k">[</span><span class="c">build</span><span class="k">]</span><span class="c"> Build finished with exit code 0
-</span></code></pre></div><p>3- <code>CMake: Set Debug Target</code> : <code>1-hello_world</code> (nécessaire seulement une fois pour l&rsquo;exercice)</p>
-<p>4- <code>CMake: Debug</code> (Ctrl+F5)</p>
-<div class="highlight"><pre class="chroma"><code class="language-b" data-lang="b"><span class="c">The program &#39;</span><span class="k">[</span><span class="c">15604</span><span class="k">]</span><span class="c"> 1</span><span class="nb">-</span><span class="c">hello_world</span><span class="nt">.</span><span class="c">exe&#39; has exited with code 0 (0x0)</span><span class="nt">.</span><span class="c">
-</span></code></pre></div>
-    </div>
-</div>
-
-<div class="notices note" ><p>La valeur de retour du <code>main</code> indique si le programme s&rsquo;est terminé sans erreur. Si tout se passe bien, il faut retourner 0. N&rsquo;importe quelle autre valeur indique une erreur.</p>
-</div>
-
-<hr>
-<h3 id="ecrire-sur-la-sortie-standard">Ecrire sur la sortie standard</h3>
-<p>Ajoutez l&rsquo;instruction suivante dans votre fonction <code>main</code> :</p>
-<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;Hello World!&#34;</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
-</code></pre></div><p>Cette ligne permet d&rsquo;afficher la chaîne de caractère &ldquo;Hello World!&rdquo; sur la sortie standard du programme. Nous allons la décortiquer ensemble&hellip;</p>
-<p><code>std::</code><br>
-En C++, il est possible de définir des <strong>espaces de noms</strong>, ou <strong>namespaces</strong>. <code>std</code> fait référence au namespace utilisé pour la librairie standard. Si on écrit <code>std::cout</code>, c&rsquo;est donc pour référencer un symbole nommé <code>cout</code> défini par la librairie standard.</p>
-
-<div class="notices note" ><p>Les librairies développées en C++ définissent généralement des namespaces pour contenir leurs symboles. Cela permet d&rsquo;éviter des conflits de noms dans les programmes qui les utilisent. Par exemple, 
-<a href="https://ogrecave.github.io/ogre/api/latest/" target="_blank" rel="noopener noreferrer">Ogre</a> définit ses symboles dans <code>Ogre</code>, la 
-<a href="https://www.sfml-dev.org/documentation/" target="_blank" rel="noopener noreferrer">SFML</a> dans <code>sf</code>, etc.<br>
-Ce problème existe aussi en C bien sûr, et pour y pallier, certaines APIs préfixent tous leurs symboles (la 
-<a href="https://wiki.libsdl.org/CategoryAPI" target="_blank" rel="noopener noreferrer">SDL</a> par exemple)&hellip; Ce n&rsquo;est pas très pratique, d&rsquo;où la bonne idée d&rsquo;avoir introduit les namespaces en C++.</p>
-</div>
-
-<p><code>cout</code><br>
-Il s&rsquo;agit de la variable globale contenant le flux pour écrire sur la sortie standard du programme. Je ne sais pas pourquoi &lsquo;c&rsquo;, mais le &lsquo;out&rsquo; indique &lsquo;sortie&rsquo;. Par symétrie, on fera référence au flux pour l&rsquo;entrée standard avec <code>cin</code>.</p>
-<p><code>&lt;&lt;</code><br>
-Il s&rsquo;agit d&rsquo;un opérateur, un peu comme <code>+</code> ou <code>%</code>. Si on utilise <code>&lt;&lt;</code> entre une variable de flux et une chaîne de caractère, cette chaîne de caractère sera écrite dans le flux.</p>
-<p><code>&quot;Hello World!&quot;</code><br>
-Une chaîne de caractère, comme en C.</p>
-<p><code>endl</code><br>
-Cette variable permet d&rsquo;écrire le caractère de fin de ligne <code>\n</code> (&lsquo;endl&rsquo; pour &lsquo;end of line&rsquo;) dans le flux. Il permet également de forcer son flush.</p>
-
-<div class="notices tip" ><p>En C, on a dû vous dire expliquer qu&rsquo;il fallait toujours mettre des <code>\n</code> à la fin de vos écritures avec <code>printf</code>, car cela permet d&rsquo;être sûr que tout est bien écrit dans la console. En C++, <code>\n</code> ne suffit pas à le garantir, on utilisera donc <code>endl</code> lorsque l&rsquo;on veut que le résultat soit écrit dans la console immédiatement.</p>
-</div>
-
-<p>Essayez maintenant de recompiler votre programme. Vous devriez obtenir des erreurs de ce style :</p>
-<div class="highlight"><pre class="chroma"><code class="language-b" data-lang="b"><span class="c">blabla error ##: &#39;cout&#39;: is not a member of &#39;std&#39; blabla
-</span><span class="c">blabla message : see declaration of &#39;std&#39; blabla
-</span><span class="c">blabla error ##: &#39;cout&#39;: undeclared identifier blabla
-</span><span class="c">blabla error ##: &#39;endl&#39;: is not a member of &#39;std&#39; blabla
-</span><span class="c">blabla message : see declaration of &#39;std&#39; blabla
-</span><span class="c">blabla error ##: &#39;endl&#39;: undeclared identifier blabla
-</span></code></pre></div><p>Le premier message indique que le compilateur ne trouve aucun symbole nommé <code>cout</code> dans le namespace <code>std</code>. Eh bien oui, le C++, c&rsquo;est comme le C. Le compilateur est un peu bêbête, et il faut tout lui indiquer, même où trouver les symboles de la librairie standard.</p>
-<p>Allez sur 
-<a href="https://en.cppreference.com/w/" target="_blank" rel="noopener noreferrer">ce site</a> et recherchez <code>cout</code>. Cela devrait vous permettre de déterminer dans quel header la fonction est déclarée, afin d&rsquo;ajouter la directive d&rsquo;inclusion correspondante au fichier.</p>
-
-<div class="expand">
-    <div class="expand-label" style="cursor: pointer;" onclick="$h = $(this);$h.next('div').slideToggle(100,function () {$h.children('i').attr('class',function () {return $h.next('div').is(':visible') ? 'fas fa-chevron-down' : 'fas fa-chevron-right';});});">
-        <i style="font-size:x-small;" class="fas fa-chevron-right"></i>
-        <span>
-        
-    	
-    	Solution
-    	
-    	</span>
-    </div>
-    <div class="expand-content" style="display: none;">
-        <p>Vous devriez arriver sur 
-<a href="https://en.cppreference.com/w/cpp/io/cout" target="_blank" rel="noopener noreferrer">cette page</a>, vous indiquant que le header à référencer est <code>&lt;iostream&gt;</code> :
-<img src="/CPP_Learning/images/doc-cout.png" alt=""></p>
-<p>Placez le code suivant dans votre fichier :</p>
-<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp">
+<h3 id="quest-ce-quune-exception-">Qu&rsquo;est-ce qu&rsquo;une exception ?</h3>
+<p>En C++, une exception sert à interrompre le flot classique d&rsquo;exécution du programme lorsqu&rsquo;un événement particulier se produit.
+Lorsqu&rsquo;une exception est lancée, on sort du bloc courant, et on remonte la callstack autant que nécessaire, jusqu&rsquo;à atteindre un bloc capable de traiter l&rsquo;exception.</p>
+<p>C&rsquo;est donc un mécanisme extrêmement utilisé pour le traitement des erreurs (autant de programmation que d&rsquo;utilisation), puisque l&rsquo;erreur est remontée automatiquement jusqu&rsquo;à l&rsquo;endroit qui peut la traiter, sans avoir besoin de toucher au code des fonctions intermédiaires.</p>
+<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="cp">#include</span> <span class="cpf">&lt;stdexcept&gt;</span><span class="cp">
 </span><span class="cp"></span>
+<span class="kt">void</span> <span class="n">AnimalCenter</span><span class="o">::</span><span class="n">adopt_dog</span><span class="p">(</span><span class="n">Someone</span><span class="o">&amp;</span> <span class="n">someone</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">someone</span><span class="p">.</span><span class="n">like_dogs</span><span class="p">())</span>
+    <span class="p">{</span>
+        <span class="k">throw</span> <span class="n">std</span><span class="o">::</span><span class="n">invalid_argument</span> <span class="p">{</span> <span class="s">&#34;Les gens qui n&#39;aiment pas les chiens n&#39;ont rien à faire ici !&#34;</span> <span class="p">};</span>
+    <span class="p">}</span>
+
+    <span class="n">someone</span><span class="p">.</span><span class="n">receive</span><span class="p">(</span><span class="n">_dogs</span><span class="p">.</span><span class="n">front</span><span class="p">());</span>
+    <span class="n">_dogs</span><span class="p">.</span><span class="n">pop_front</span><span class="p">();</span>
+<span class="p">}</span>
+
+<span class="p">...</span>
+
+<span class="kt">void</span> <span class="n">AnimalCenter</span><span class="o">::</span><span class="n">update</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="k">while</span> <span class="p">(</span><span class="k">auto</span><span class="o">*</span> <span class="n">client</span> <span class="o">=</span> <span class="n">get_new_client</span><span class="p">())</span>
+    <span class="p">{</span>
+        <span class="k">try</span>
+        <span class="p">{</span>
+            <span class="n">_seller</span><span class="p">.</span><span class="n">process</span><span class="p">(</span><span class="o">*</span><span class="n">client</span><span class="p">);</span>
+        <span class="p">}</span>
+        <span class="k">catch</span> <span class="p">(</span><span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">invalid_argument</span><span class="o">&amp;</span> <span class="n">arg_error</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;Seller: </span><span class="se">\&#34;</span><span class="s">&#34;</span> <span class="o">&lt;&lt;</span> <span class="n">arg_error</span><span class="p">.</span><span class="n">what</span><span class="p">()</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;</span><span class="se">\&#34;</span><span class="s">&#34;</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span> <span class="c1">// =&gt; Seller: &#34;Les gens qui n&#39;aiment pas les chiens n&#39;ont rien à faire ici !&#34;
+</span><span class="c1"></span>        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div><p><strong>Puisqu&rsquo;il est possible de traiter des erreurs de programmation avec les exceptions, pourquoi utiliser des assertions ?</strong></p>
+<ol>
+<li>Car jeter et attraper une exception, c&rsquo;est relativement coûteux à faire, en comparaison de simplement vérifier une condition.</li>
+<li>Les assertions peuvent être complètement désactivées en définissant la constante <code>NDEBUG</code>, et ce n&rsquo;est pas le cas des exceptions.</li>
+<li>Il arrive parfois que le système-cible de notre programme ne gère pas bien, voire pas du tout, les exceptions (dans l&rsquo;embarqué par exemple).</li>
+</ol>
+<hr>
+<h3 id="utilisation-des-exceptions">Utilisation des exceptions</h3>
+<h5 id="stdexception">std::exception</h5>
+<p>La classe <code>std::exception</code> (dans <code>&lt;exception&gt;</code>) est l&rsquo;interface de base dont dérivent toutes les exceptions de la STL.
+Elle comporte une fonction virtuelle <code>what()</code>, qui permet d&rsquo;accéder au message d&rsquo;erreur associé à l&rsquo;exception.</p>
+<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="c1">// Si `err` est une std::exception, on peut appeler `what()` pour récupérer le message d&#39;erreur. 
+</span><span class="c1"></span><span class="n">std</span><span class="o">::</span><span class="n">cerr</span> <span class="o">&lt;&lt;</span> <span class="n">err</span><span class="p">.</span><span class="n">what</span><span class="p">()</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+</code></pre></div><hr>
+<h5 id="throw">Throw</h5>
+<p>Pour lancer une exception, il suffit d&rsquo;utiliser l&rsquo;instruction <code>throw</code> :</p>
+<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="k">throw</span> <span class="n">std</span><span class="o">::</span><span class="n">runtime_error</span> <span class="p">{</span> <span class="s">&#34;Something wrong happened!&#34;</span> <span class="p">};</span>
+</code></pre></div><p>Notez qu&rsquo;il n&rsquo;est pas obligatoire de construire l&rsquo;exception sur la ligne où elle est lancée :</p>
+<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="n">std</span><span class="o">::</span><span class="n">runtime_error</span> <span class="n">err</span> <span class="p">{</span> <span class="s">&#34;Something wrong happened!&#34;</span> <span class="p">}</span><span class="o">:</span>
+<span class="k">throw</span> <span class="n">err</span><span class="p">;</span>
+</code></pre></div><p>La STL propose quelques classes d&rsquo;exceptions génériques, qui font partie de <code>&lt;stdexcept&gt;</code> (et non pas <code>&lt;exception&gt;</code>) :</p>
+<ul>
+<li><code>std::logic_error</code> : violation d&rsquo;invariant ou de précondition (=&gt; erreur de programmation)</li>
+<li><code>std::invalid_argument</code> : l&rsquo;un des arguments de la fonction n&rsquo;est pas valide</li>
+<li><code>std::runtime_error</code> : erreurs détectables uniquement à l&rsquo;exécution (problème d&rsquo;ouverture de fichier, mauvaise entrée de l&rsquo;utilisateur, &hellip;)</li>
+</ul>
+<p>A la construction, chacune d&rsquo;entre elle attend le message d&rsquo;erreur qui sera retourné par l&rsquo;appel à <code>what()</code>.</p>
+<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="c1">// std::invalid_argument
+</span><span class="c1"></span><span class="n">std</span><span class="o">::</span><span class="n">pair</span><span class="o">&lt;</span><span class="kt">int</span><span class="p">,</span> <span class="kt">int</span><span class="o">&gt;</span> <span class="n">euclidian_division</span><span class="p">(</span><span class="kt">int</span> <span class="n">num</span><span class="p">,</span> <span class="kt">int</span> <span class="n">den</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">den</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="k">throw</span> <span class="n">std</span><span class="o">::</span><span class="n">invalid_argument</span> <span class="p">{</span> <span class="s">&#34;The denominator is null.&#34;</span> <span class="p">};</span>
+    <span class="p">}</span>
+
+    <span class="k">return</span> <span class="n">std</span><span class="o">::</span><span class="n">pair</span> <span class="p">{</span> <span class="n">num</span> <span class="o">/</span> <span class="n">den</span><span class="p">,</span> <span class="n">num</span> <span class="o">%</span> <span class="n">den</span> <span class="p">};</span>
+<span class="p">}</span>
+
+<span class="c1">// std::logic_error
+</span><span class="c1"></span><span class="k">class</span> <span class="nc">Square</span>
+<span class="p">{</span>
+<span class="k">public</span><span class="o">:</span>
+    <span class="kt">void</span> <span class="n">fcn1</span><span class="p">(...)</span>
+    <span class="p">{</span>
+        <span class="n">check_square</span><span class="p">();</span>
+        <span class="p">...</span>
+    <span class="p">}</span>
+
+    <span class="kt">void</span> <span class="nf">fcn2</span><span class="p">(...)</span>
+    <span class="p">{</span>
+        <span class="n">check_square</span><span class="p">();</span>
+        <span class="p">...</span>
+    <span class="p">}</span>
+
+    <span class="p">...</span>
+
+<span class="k">private</span><span class="o">:</span>
+    <span class="kt">void</span> <span class="n">check_square</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="cm">/* check if the segments length are not equal */</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">msg</span><span class="p">;</span>
+            <span class="n">msg</span> <span class="o">+=</span> <span class="s">&#34;This square is not a square anymore: &#34;</span><span class="p">;</span>
+            <span class="n">msg</span> <span class="o">+=</span> <span class="n">segments_to_string</span><span class="p">();</span>
+
+            <span class="k">throw</span> <span class="n">std</span><span class="o">::</span><span class="n">logic_error</span> <span class="p">{</span> <span class="n">msg</span> <span class="p">};</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+
+    <span class="p">...</span>
+<span class="p">};</span>
+
+<span class="c1">// std::runtime_error
+</span><span class="c1"></span><span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">query_mail</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">mail</span><span class="p">;</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">getline</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">cin</span><span class="p">,</span> <span class="n">mail</span><span class="p">);</span> 
+
+    <span class="k">if</span> <span class="p">(</span><span class="n">mail</span><span class="p">.</span><span class="n">find</span><span class="p">(</span><span class="sc">&#39;@&#39;</span><span class="p">)</span> <span class="o">==</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">::</span><span class="n">npos</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">err</span><span class="p">;</span>
+        <span class="n">err</span> <span class="o">+=</span> <span class="s">&#34;</span><span class="se">\&#39;</span><span class="s">&#34;</span><span class="p">;</span>
+        <span class="n">err</span> <span class="o">+=</span> <span class="n">mail</span><span class="p">;</span>
+        <span class="n">err</span> <span class="o">+=</span> <span class="s">&#34;</span><span class="se">\&#39;</span><span class="s"> is not a valid email address.&#34;</span><span class="p">;</span>
+
+        <span class="k">throw</span> <span class="n">std</span><span class="o">::</span><span class="n">runtime_error</span> <span class="p">{</span>  <span class="n">err</span> <span class="p">};</span>
+    <span class="p">}</span>
+
+    <span class="k">return</span> <span class="n">mail</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+<div class="notices warning" ><p>Attention, il ne faut pas appeler du code susceptible de lancer une exception (instruction throw / fonction qui throw) depuis le destructeur d&rsquo;une classe.
+Cela peut générer des undefined behaviors.</p>
+</div>
+
+<hr>
+<h5 id="try-catch">Try-Catch</h5>
+<p>Pour attraper une erreur, il suffit de placer le code pouvant lancer une exception dans un bloc <code>try-catch</code>.</p>
+<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="k">try</span>
+<span class="p">{</span>
+    <span class="cm">/* du code qui peut throw */</span>
+<span class="p">}</span>
+<span class="k">catch</span> <span class="p">(</span><span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">exception</span><span class="o">&amp;</span> <span class="n">err</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="cm">/* traitement de l&#39;exception */</span>
+<span class="p">}</span>
+</code></pre></div>
+<div class="notices info" ><p>Si vous lancez une exception polymorphe (c&rsquo;est le cas de <code>std::exception</code> et des ses dérivés), il faut bien penser à l&rsquo;attraper dans le <code>catch</code> par référence et non pas par copie.</p>
+</div>
+
+<p>Il est possible de placer plusieurs <code>catch</code> à la suite, pour traiter différemments des exceptions en fonction de leur type :</p>
+<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="k">try</span>
+<span class="p">{</span>
+    <span class="cm">/* du code qui peut throw */</span>
+<span class="p">}</span>
+<span class="k">catch</span> <span class="p">(</span><span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">invalid_argument</span><span class="o">&amp;</span> <span class="n">err</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">cerr</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;My bad: &#34;</span> <span class="o">&lt;&lt;</span> <span class="n">err</span><span class="p">.</span><span class="n">what</span><span class="p">()</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="k">catch</span> <span class="p">(</span><span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">logic_error</span><span class="o">&amp;</span> <span class="n">err</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">cerr</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;Also my bad: &#34;</span> <span class="o">&lt;&lt;</span> <span class="n">err</span><span class="p">.</span><span class="n">what</span><span class="p">()</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="k">catch</span> <span class="p">(</span><span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">runtime_error</span><span class="o">&amp;</span> <span class="n">err</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">cerr</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;This one is not my fault: &#34;</span> <span class="o">&lt;&lt;</span> <span class="n">err</span><span class="p">.</span><span class="n">what</span><span class="p">()</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="cm">/* si c&#39;est un autre type, alors l&#39;exception continue de remonter la callstack */</span>
+</code></pre></div><p>Attention par contre à l&rsquo;ordre dans lequel vous définissez les blocs <code>catch</code>.
+En effet, le compilateur ne va pas aller chercher le bloc &ldquo;le plus spécialisé&rdquo; pour traiter une exception.
+Il utilisera le premier qu&rsquo;il trouve permettant de traiter l&rsquo;exception donnée.
+Si une relation d&rsquo;héritage existe entre les types que vous souhaitez attrapés, il faut donc écrire les <code>catch</code> du type le plus dérivé au type le plus générique.</p>
+<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="k">try</span>
+<span class="p">{</span>
+    <span class="c1">// Comme std::invalid_argument est une sous-classe de std::logic_error
+</span><span class="c1"></span>    <span class="c1">// on va entrer dans le premier catch au lieu du deuxième.
+</span><span class="c1"></span>
+    <span class="k">throw</span> <span class="n">std</span><span class="o">::</span><span class="n">invalid_argument</span> <span class="p">{</span> <span class="s">&#34;err&#34;</span> <span class="p">};</span>
+    <span class="c1">// =&gt; &#34;logic_error&#34;
+</span><span class="c1"></span><span class="p">}</span>
+<span class="k">catch</span> <span class="p">(</span><span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">logic_error</span><span class="o">&amp;</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">cerr</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;logic_error&#34;</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="k">catch</span> <span class="p">(</span><span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">invalid_argument</span><span class="o">&amp;</span> <span class="n">err</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">cerr</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;invalid_argument&#34;</span> <span class="o">&lt;&lt;</span> <span class="n">err</span><span class="p">.</span><span class="n">what</span><span class="p">()</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div><hr>
+<h3 id="stack-unwinding">Stack unwinding</h3>
+<p>Lorsque vous sortez d&rsquo;un bloc (<code>if</code>, <code>else</code>, <code>for</code>, fonctions, etc.) dans lequel vous avez défini des variables, celles-ci sont automatiquement désallouées de la pile et leur destructeur est correctement appelé. 
+Dans le cas des exceptions, ce mécanisme s&rsquo;applique également, et on parle de <strong>stack unwinding</strong>.</p>
+<p>Lorsque vous allouez des ressources dans une fonction qui <code>throw</code>, il faut faire attention aux fuites de mémoire :</p>
+<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="kt">void</span> <span class="nf">fcn</span><span class="p">(</span><span class="n">size_t</span> <span class="n">count</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="k">auto</span><span class="o">*</span> <span class="n">bad_c_array</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">int</span><span class="p">[</span><span class="n">count</span><span class="p">]</span> <span class="p">{};</span>
+
+    <span class="p">...</span>
+
+    <span class="k">if</span> <span class="p">(</span><span class="cm">/* something bad */</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="c1">// Il faut penser à écrire `delete[] bad_c_array` ici,
+</span><span class="c1"></span>        <span class="c1">// sinon, on a une fuite de mémoire...
+</span><span class="c1"></span>        <span class="k">delete</span><span class="p">[]</span> <span class="n">bad_c_array</span><span class="p">;</span>
+        <span class="k">throw</span> <span class="n">std</span><span class="o">::</span><span class="n">runtime_error</span> <span class="p">{</span> <span class="s">&#34;Something went wrong!&#34;</span> <span class="p">};</span>
+    <span class="p">}</span>
+
+    <span class="p">...</span>
+
+    <span class="k">delete</span><span class="p">[]</span> <span class="n">bad_c_array</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div><p>Pensez donc bien à utiliser des classes RAII (conteneurs standards, smart pointers, etc), pour profiter du <strong>stack unwinding</strong> et ne pas avoir à vous soucier de libérer les ressources.</p>
+<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="kt">void</span> <span class="nf">fcn</span><span class="p">(</span><span class="n">size_t</span> <span class="n">count</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">good_cpp_array</span><span class="p">(</span><span class="n">count</span><span class="p">);</span>
+
+    <span class="p">...</span>
+
+    <span class="k">if</span> <span class="p">(</span><span class="cm">/* something bad */</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="c1">// std::vector::~vector sera automatiquement appelé grâce au stack unwinding, ce qui entraînera la
+</span><span class="c1"></span>        <span class="c1">// libération de son buffer alloué en interne.
+</span><span class="c1"></span>        <span class="k">throw</span> <span class="n">std</span><span class="o">::</span><span class="n">runtime_error</span> <span class="p">{</span> <span class="s">&#34;Something went wrong!&#34;</span> <span class="p">};</span>
+    <span class="p">}</span>
+
+    <span class="p">...</span>
+<span class="p">}</span>
+</code></pre></div><hr>
+<h3 id="définir-ses-propres-types-dexceptions">Définir ses propres types d&rsquo;exceptions</h3>
+<p>Si vous souhaitez définir un type particulier d&rsquo;exception, vous pouvez hériter d&rsquo;une des classes présentées sur <a href="https://en.cppreference.com/w/cpp/header/stdexcept">cette page</a>.
+Chacune d&rsquo;entre elle attend un message à sa construction, qui sera retourné en cas d&rsquo;appel à <code>what()</code>.</p>
+<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="cp">#include</span> <span class="cpf">&lt;stdexcept&gt;</span><span class="cp">
+</span><span class="cp"></span>
+<span class="k">class</span> <span class="nc">DogLegsError</span> <span class="o">:</span> <span class="k">public</span> <span class="n">std</span><span class="o">::</span><span class="n">out_of_range</span>
+<span class="p">{</span>
+<span class="k">public</span><span class="o">:</span>
+    <span class="n">DogLegsError</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">string_view</span> <span class="n">name</span><span class="p">,</span> <span class="n">size_t</span> <span class="n">legs_count</span><span class="p">)</span>
+        <span class="o">:</span> <span class="n">std</span><span class="o">::</span><span class="n">out_of_range</span> <span class="p">{</span> <span class="n">build_error_msg</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">legs_count</span><span class="p">)</span> <span class="p">}</span>
+        <span class="p">,</span> <span class="n">_name</span> <span class="p">{</span> <span class="n">name</span> <span class="p">}</span>
+    <span class="p">{}</span>
+
+<span class="k">private</span><span class="o">:</span>
+    <span class="k">static</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">build_error_msg</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">string_view</span> <span class="n">name</span><span class="p">,</span> <span class="n">size_t</span> <span class="n">legs_count</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="o">::</span><span class="n">string_literals</span><span class="p">;</span>
+
+        <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">msg</span><span class="p">;</span>
+        <span class="n">msg</span> <span class="o">+=</span> <span class="s">&#34;A dog has 4 legs at most. Ok, maybe 5 in some rare cases. &#34;</span><span class="p">;</span>
+        <span class="n">msg</span> <span class="o">+=</span> <span class="s">&#34;But clearly, if you saw &#34;</span><span class="p">;</span>
+        <span class="n">msg</span> <span class="o">+=</span> <span class="n">name</span><span class="p">;</span>
+        <span class="n">msg</span> <span class="o">+=</span> <span class="s">&#34; with &#34;</span><span class="p">;</span>
+        <span class="n">msg</span> <span class="o">+=</span> <span class="n">std</span><span class="o">::</span><span class="n">to_string</span><span class="p">(</span><span class="n">legs_count</span><span class="p">);</span>
+        <span class="n">msg</span> <span class="o">+=</span> <span class="s">&#34; legs, then you either need glasses, or we must run away from the evil spider-dog...&#34;</span><span class="p">;</span>
+
+        <span class="k">return</span> <span class="n">msg</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">_name</span><span class="p">;</span>
+<span class="p">};</span>
+
+<span class="k">class</span> <span class="nc">Dog</span>
+<span class="p">{</span>
+<span class="k">public</span><span class="o">:</span>
+    <span class="n">Dog</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">string_view</span> <span class="n">name</span><span class="p">,</span> <span class="n">size_t</span> <span class="n">legs_count</span><span class="p">)</span> <span class="o">:</span> <span class="n">_name</span> <span class="p">{</span> <span class="n">name</span> <span class="p">},</span> <span class="n">_legs_count</span> <span class="p">{</span> <span class="n">legs_count</span> <span class="p">}</span>
+    <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">_legs_count</span> <span class="o">&gt;</span> <span class="mi">5</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="k">throw</span> <span class="n">DogLegsError</span> <span class="p">{</span> <span class="n">name</span><span class="p">,</span> <span class="n">legs_count</span> <span class="p">};</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+
+<span class="k">private</span><span class="o">:</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">_name</span><span class="p">;</span>
+    <span class="n">size_t</span>      <span class="n">_legs_count</span> <span class="o">=</span> <span class="mi">0u</span><span class="p">;</span>
+<span class="p">};</span>
+
 <span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
 <span class="p">{</span>
-    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;Hello World!&#34;</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+    <span class="k">try</span>
+    <span class="p">{</span>
+        <span class="n">Dog</span> <span class="n">medor</span> <span class="p">{</span> <span class="s">&#34;Medor&#34;</span><span class="p">,</span> <span class="mi">4</span> <span class="p">};</span>
+        <span class="n">Dog</span> <span class="n">turlutu</span> <span class="p">{</span> <span class="s">&#34;Turlutu&#34;</span><span class="p">,</span> <span class="mi">3</span> <span class="p">};</span>
+        <span class="n">Dog</span> <span class="n">brutus</span> <span class="p">{</span> <span class="s">&#34;Brutus&#34;</span><span class="p">,</span> <span class="mi">5</span> <span class="p">};</span>
+        <span class="n">Dog</span> <span class="n">evil_beast</span> <span class="p">{</span> <span class="s">&#34;EvilBeast&#34;</span><span class="p">,</span> <span class="mi">12</span> <span class="p">};</span>
+    <span class="p">}</span>
+    <span class="k">catch</span> <span class="p">(</span><span class="k">const</span> <span class="n">DogLegsError</span><span class="o">&amp;</span> <span class="n">err</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">std</span><span class="o">::</span><span class="n">cerr</span> <span class="o">&lt;&lt;</span> <span class="n">err</span><span class="p">.</span><span class="n">what</span><span class="p">()</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+    <span class="p">}</span>
+
     <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
 <span class="p">}</span>
 </code></pre></div>
-    </div>
-</div>
-<p>Vous devriez maintenant pouvoir compiler le programme sans soucis. Exécutez-le et vérifiez que vous obtenez bien un résultat similaire à celui-ci :</p>
-<div class="highlight"><pre class="chroma"><code class="language-b" data-lang="b"><span class="c">Hello World!
-</span><span class="c">The program &#39;</span><span class="k">[</span><span class="c">2288</span><span class="k">]</span><span class="c"> c1</span><span class="nb">-</span><span class="c">1</span><span class="nb">-</span><span class="c">hello_world</span><span class="nt">.</span><span class="c">exe&#39; has exited with code 0 (0x0)</span><span class="nt">.</span><span class="c">
-</span></code></pre></div>
 
 <footer class="footline">
 	
@@ -1715,6 +1861,8 @@ Cette variable permet d&rsquo;écrire le caractère de fin de ligne <code>\n</co
             
                 
                     
+                        
+                        
                     
                 
                 
@@ -1730,9 +1878,6 @@ Cette variable permet d&rsquo;écrire le caractère de fin de ligne <code>\n</co
             
             
                 
-                    
-                        
-                        
                     
                 
                 
@@ -1830,7 +1975,6 @@ Cette variable permet d&rsquo;écrire le caractère de fin de ligne <code>\n</co
             
                 
                     
-                    
                 
                 
 
@@ -1843,7 +1987,6 @@ Cette variable permet d&rsquo;écrire le caractère de fin de ligne <code>\n</co
             
             
                 
-                    
                     
                 
                 
@@ -1860,9 +2003,6 @@ Cette variable permet d&rsquo;écrire le caractère de fin de ligne <code>\n</co
             
             
                 
-                    
-                        
-                        
                     
                 
                 
@@ -2604,6 +2744,7 @@ Cette variable permet d&rsquo;écrire le caractère de fin de ligne <code>\n</co
             
                 
                     
+                    
                 
                 
 
@@ -2616,6 +2757,9 @@ Cette variable permet d&rsquo;écrire le caractère de fin de ligne <code>\n</co
             
             
                 
+                    
+                        
+                        
                     
                 
                 
@@ -2632,6 +2776,7 @@ Cette variable permet d&rsquo;écrire le caractère de fin de ligne <code>\n</co
             
             
                 
+                    
                     
                 
                 
@@ -2656,10 +2801,10 @@ Cette variable permet d&rsquo;écrire le caractère de fin de ligne <code>\n</co
 	 
 	 
 		
-			<a class="nav nav-prev" href="/CPP_Learning/chapter1/3-practice/" title="Premiers programmes"> <i class="fa fa-chevron-left"></i></a>
+			<a class="nav nav-prev" href="/CPP_Learning/chapter7/1-assertions/" title="Assertions"> <i class="fa fa-chevron-left"></i></a>
 		
 		
-			<a class="nav nav-next" href="/CPP_Learning/chapter1/3-practice/2-parrot.fd/" title="🦜 Perroquet" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+			<a class="nav nav-next" href="/CPP_Learning/chapter7/1-assertions/" title="Assertions" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
 		
 	
     </div>
@@ -2669,19 +2814,19 @@ Cette variable permet d&rsquo;écrire le caractère de fin de ligne <code>\n</co
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/CPP_Learning/js/clipboard.min.js?1616215069"></script>
-    <script src="/CPP_Learning/js/perfect-scrollbar.min.js?1616215069"></script>
-    <script src="/CPP_Learning/js/perfect-scrollbar.jquery.min.js?1616215069"></script>
-    <script src="/CPP_Learning/js/jquery.sticky.js?1616215069"></script>
-    <script src="/CPP_Learning/js/featherlight.min.js?1616215069"></script>
-    <script src="/CPP_Learning/js/highlight.pack.js?1616215069"></script>
+    <script src="/CPP_Learning/js/clipboard.min.js?1616215070"></script>
+    <script src="/CPP_Learning/js/perfect-scrollbar.min.js?1616215070"></script>
+    <script src="/CPP_Learning/js/perfect-scrollbar.jquery.min.js?1616215070"></script>
+    <script src="/CPP_Learning/js/jquery.sticky.js?1616215070"></script>
+    <script src="/CPP_Learning/js/featherlight.min.js?1616215070"></script>
+    <script src="/CPP_Learning/js/highlight.pack.js?1616215070"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/CPP_Learning/js/modernizr.custom-3.6.0.js?1616215069"></script>
-    <script src="/CPP_Learning/js/learn.js?1616215069"></script>
-    <script src="/CPP_Learning/js/hugo-learn.js?1616215069"></script>
+    <script src="/CPP_Learning/js/modernizr.custom-3.6.0.js?1616215070"></script>
+    <script src="/CPP_Learning/js/learn.js?1616215070"></script>
+    <script src="/CPP_Learning/js/hugo-learn.js?1616215070"></script>
 
-    <link href="/CPP_Learning/mermaid/mermaid.css?1616215069" rel="stylesheet" />
-    <script src="/CPP_Learning/mermaid/mermaid.js?1616215069"></script>
+    <link href="/CPP_Learning/mermaid/mermaid.css?1616215070" rel="stylesheet" />
+    <script src="/CPP_Learning/mermaid/mermaid.js?1616215070"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

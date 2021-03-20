@@ -3,6 +3,10 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://laefy.github.io/CPP_Learning/chapter7/1-assertions/</loc>
+  </url>
+  
+  <url>
     <loc>https://laefy.github.io/CPP_Learning/chapter2/1-poo/</loc>
   </url>
   
@@ -44,6 +48,10 @@
   
   <url>
     <loc>https://laefy.github.io/CPP_Learning/chapter1/2-tools/2-cmake/</loc>
+  </url>
+  
+  <url>
+    <loc>https://laefy.github.io/CPP_Learning/chapter7/2-exceptions/</loc>
   </url>
   
   <url>
@@ -164,6 +172,10 @@
   
   <url>
     <loc>https://laefy.github.io/CPP_Learning/chapter2/6-polygon/</loc>
+  </url>
+  
+  <url>
+    <loc>https://laefy.github.io/CPP_Learning/chapter7/</loc>
   </url>
   
   <url>
