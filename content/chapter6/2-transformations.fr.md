@@ -59,16 +59,16 @@ Comme vous pouvez le constater, avant d'effectuer l'appel à `std::copy` / `std:
 Et oui, comme pour `remove`, `copy` ne permet pas de modifier la structure du conteneur d'éléments.
 On doit donc s'assurer du fait que `dst` pointe sur un emplacement mémoire correctement alloué.
 
-Une autre manière de gérer ce cas, c'est d'utiliser la classe `std::back_inserter` (dans `<iterator>`)
-Il s'agit d'un itérateur qui permet d'insérer des éléments dans un conteneur chaque fois qu'on l'incrémente.
+Une autre manière de gérer ce cas, c'est d'utiliser la fonction `std::back_inserter` (dans `<iterator>`)
+Elle crée un itérateur de type `std::back_insert_iterator`, qui permet d'**insérer** des éléments dans un conteneur chaque fois qu'on essaye de l'assigner.
 On peut donc réécrire le code de cette manière :
 ```cpp
 std::vector<int> src { ... }
 std::vector<int> dst;
 
-// Chaque fois que l'algorithme va incrémenter le back_inserter, celui-ci va appeler dst.push_back().
-std::copy(src.begin(), src.end(), std::back_inserter { dst });
-std::copy_n(src.begin(), src.count(), std::back_inserter { dst });
+// Chaque fois que l'algorithme va essayer de modifier le contenu de l'itérateur, ce dernier va appeler dst.push_back().
+std::copy(src.begin(), src.end(), std::back_inserter(dst));
+std::copy_n(src.begin(), src.count(), std::back_inserter(dst));
 ```
 
 La STL propose également la fonction `copy_if`.
@@ -77,10 +77,10 @@ Celle-ci accepte un prédicat, qui permet de spécifier quels sont les élément
 std::vector<int> src { ... }
 std::vector<int> dst;
 
-std::copy_if(src.begin(), src.end(), std::back_inserter { dst }, [](int v) { return v % 2 == 0; });
+std::copy_if(src.begin(), src.end(), std::back_inserter(dst), [](int v) { return v % 2 == 0; });
 ```
 
-Pour le `copy_if`, l'utilisation du `back_inserter` est vraiment très intéressante, puisque sinon, le code ressemblerait à ça :
+Pour le `copy_if`, l'utilisation de `back_inserter` est vraiment très intéressante, puisque sinon, le code ressemblerait à ça :
 ```cpp
 std::vector<int> src { ... }
 std::vector<int> dst;
@@ -137,11 +137,11 @@ std::generate_n(values.begin(), values.size(), [&queue]()
 });
 ```
 
-Enfin, sachez qu'il est possible d'utiliser des `back_inserter` avec `fill_n` et `generate_n`.
+Enfin, sachez qu'il est possible d'utiliser `back_inserter` avec `fill_n` et `generate_n`.
 ```cpp
-std::fill_n(std::back_inserter { values }, 5);
+std::fill_n(std::back_inserter(values), 5);
 
-std::generate_n(std::back_inserter { values }, [&queue]()
+std::generate_n(std::back_inserter(values), [&queue]()
 {
     auto value = queue.front();
     queue.pop();
