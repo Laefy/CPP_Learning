@@ -26,3 +26,5 @@ Bon courage à vous 🙂
 {{% test_item id=8 lines="5" desc="try-catch" %}}Ecrivez maintenant le code permettant d'appeler `factorial` : si tout se passe bien, le résultat de la fonction est affiché dans `std::cout`, sinon, le message d'erreur de l'exception est affiché dans `std::cerr`.{{% /test_item %}}
 
 ---
+
+{{% /test %}}

@@ -46,3 +46,5 @@ Bon courage à vous 🙂
 {{% test_item id=22 lines="1" desc="ex-lambda" %}}Soit une lambda nommée `is_finished`, capturant un entier par référence, prenant en paramètre une `string_view` et un `float`, et retournant un `bool`. Donnez une instruction permettant d'exécuter cette lambda.{{% /test_item %}}
 
 ---
+
+{{% /test %}}
