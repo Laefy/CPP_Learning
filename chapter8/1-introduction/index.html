@@ -12,21 +12,21 @@
     <title>Introduction :: Cours de C&#43;&#43; - Niveau Master</title>
 
     
-    <link href="/CPP_Learning/css/nucleus.css?1616895524" rel="stylesheet">
-    <link href="/CPP_Learning/css/fontawesome-all.min.css?1616895524" rel="stylesheet">
-    <link href="/CPP_Learning/css/hybrid.css?1616895524" rel="stylesheet">
-    <link href="/CPP_Learning/css/featherlight.min.css?1616895524" rel="stylesheet">
-    <link href="/CPP_Learning/css/perfect-scrollbar.min.css?1616895524" rel="stylesheet">
-    <link href="/CPP_Learning/css/auto-complete.css?1616895524" rel="stylesheet">
-    <link href="/CPP_Learning/css/atom-one-dark-reasonable.css?1616895524" rel="stylesheet">
-    <link href="/CPP_Learning/css/theme.css?1616895524" rel="stylesheet">
-    <link href="/CPP_Learning/css/hugo-theme.css?1616895524" rel="stylesheet">
+    <link href="/CPP_Learning/css/nucleus.css?1616895907" rel="stylesheet">
+    <link href="/CPP_Learning/css/fontawesome-all.min.css?1616895907" rel="stylesheet">
+    <link href="/CPP_Learning/css/hybrid.css?1616895907" rel="stylesheet">
+    <link href="/CPP_Learning/css/featherlight.min.css?1616895907" rel="stylesheet">
+    <link href="/CPP_Learning/css/perfect-scrollbar.min.css?1616895907" rel="stylesheet">
+    <link href="/CPP_Learning/css/auto-complete.css?1616895907" rel="stylesheet">
+    <link href="/CPP_Learning/css/atom-one-dark-reasonable.css?1616895907" rel="stylesheet">
+    <link href="/CPP_Learning/css/theme.css?1616895907" rel="stylesheet">
+    <link href="/CPP_Learning/css/hugo-theme.css?1616895907" rel="stylesheet">
     
-    <link href="/CPP_Learning/css/theme-mine.css?1616895524" rel="stylesheet">
+    <link href="/CPP_Learning/css/theme-mine.css?1616895907" rel="stylesheet">
     
-    <link href="/CPP_Learning/css/syntax.css?1616895524" rel="stylesheet">
+    <link href="/CPP_Learning/css/syntax.css?1616895907" rel="stylesheet">
 
-    <script src="/CPP_Learning/js/jquery-3.3.1.min.js?1616895524"></script>
+    <script src="/CPP_Learning/js/jquery-3.3.1.min.js?1616895907"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -57,14 +57,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/CPP_Learning/js/lunr.min.js?1616895524"></script>
-<script type="text/javascript" src="/CPP_Learning/js/auto-complete.js?1616895524"></script>
+<script type="text/javascript" src="/CPP_Learning/js/lunr.min.js?1616895907"></script>
+<script type="text/javascript" src="/CPP_Learning/js/auto-complete.js?1616895907"></script>
 <script type="text/javascript">
     
         var baseurl = "https:\/\/laefy.github.io\/CPP_Learning\/";
     
 </script>
-<script type="text/javascript" src="/CPP_Learning/js/search.js?1616895524"></script>
+<script type="text/javascript" src="/CPP_Learning/js/search.js?1616895907"></script>
 
     
   </div>
@@ -1746,16 +1746,18 @@ J&rsquo;en profite d&rsquo;ailleurs pour indiquer que <code>std::string</code> e
 En effet, si vous allez voir la documentation, vous pourrez constater que <code>std::string</code> est en fait un alias pour la classe <code>std::basic_string&lt;char&gt;</code>.</p>
 </div>
 
-<p>Lorsque vous utilisez un <code>vector&lt;int&gt;</code>, un <code>array&lt;float, 8&gt;</code> ou encore un <code>std::back_insert_iterator&lt;vector&lt;int&gt;&gt;</code>, le compilateur fait deux choses :</p>
+<p>Lorsque vous utilisez un <code>vector&lt;int&gt;</code>, un <code>array&lt;float, 8&gt;</code> ou encore un <code>std::back_insert_iterator&lt;vector&lt;int&gt;&gt;</code>, le compilateur fait trois choses :</p>
 <ul>
-<li>générer la classe à partir de la classe-template et des paramètres de template fournis : template <code>vector</code> + paramètre <code>int</code> = classe <code>vector&lt;int&gt;</code>,</li>
-<li>définir une variable ayant pour type de cette nouvelle classe.</li>
+<li>générer le code de la classe à partir de la classe-template et des paramètres de template fournis : template <code>vector</code> + paramètre <code>int</code> = classe <code>vector&lt;int&gt;</code>,</li>
+<li>compiler cette nouvelle classe,</li>
+<li>définir une variable de ce type.</li>
 </ul>
 <p>De même, lorsque vous essayez d&rsquo;appeler une fonction-template, comme <code>max</code>, le compilateur a besoin de réaliser des étapes supplémentaires par rapport à un appel classique :</p>
 <ul>
 <li>si besoin, déduire les paramètres de template à partir des arguments fournis lors de l&rsquo;appel : <code>std::max(3, 4)</code> -&gt; le paramètre de template est <code>int</code>, car 3 et 4 sont des <code>int</code>,</li>
 <li>générer le code de la fonction correspondant à la fonction-template et aux paramètres de templates : template <code>max</code> + paramètre <code>int</code> = fonction <code>max&lt;int&gt;</code>,</li>
-<li>réaliser l&rsquo;appel de cette nouvelle fonction.</li>
+<li>compiler cette nouvelle fonction,</li>
+<li>générer les instructions pour l&rsquo;appel.</li>
 </ul>
 <p>Nous reviendrons plus en détail sur ces étapes de génération de code et de déduction de paramètres de templates dans le prochain chapitre.
 Ce qu&rsquo;il faut néanmoins retenir ici, c&rsquo;est qu&rsquo;au moment où vous faites appel à un type ou une fonction templatée, le compilateur aura besoin du template pour générer le code dont il a besoin.
@@ -2894,19 +2896,19 @@ Cela implique donc généralement que l&rsquo;ensemble du code de ce template se
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/CPP_Learning/js/clipboard.min.js?1616895524"></script>
-    <script src="/CPP_Learning/js/perfect-scrollbar.min.js?1616895524"></script>
-    <script src="/CPP_Learning/js/perfect-scrollbar.jquery.min.js?1616895524"></script>
-    <script src="/CPP_Learning/js/jquery.sticky.js?1616895524"></script>
-    <script src="/CPP_Learning/js/featherlight.min.js?1616895524"></script>
-    <script src="/CPP_Learning/js/highlight.pack.js?1616895524"></script>
+    <script src="/CPP_Learning/js/clipboard.min.js?1616895907"></script>
+    <script src="/CPP_Learning/js/perfect-scrollbar.min.js?1616895907"></script>
+    <script src="/CPP_Learning/js/perfect-scrollbar.jquery.min.js?1616895907"></script>
+    <script src="/CPP_Learning/js/jquery.sticky.js?1616895907"></script>
+    <script src="/CPP_Learning/js/featherlight.min.js?1616895907"></script>
+    <script src="/CPP_Learning/js/highlight.pack.js?1616895907"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/CPP_Learning/js/modernizr.custom-3.6.0.js?1616895524"></script>
-    <script src="/CPP_Learning/js/learn.js?1616895524"></script>
-    <script src="/CPP_Learning/js/hugo-learn.js?1616895524"></script>
+    <script src="/CPP_Learning/js/modernizr.custom-3.6.0.js?1616895907"></script>
+    <script src="/CPP_Learning/js/learn.js?1616895907"></script>
+    <script src="/CPP_Learning/js/hugo-learn.js?1616895907"></script>
 
-    <link href="/CPP_Learning/mermaid/mermaid.css?1616895524" rel="stylesheet" />
-    <script src="/CPP_Learning/mermaid/mermaid.js?1616895524"></script>
+    <link href="/CPP_Learning/mermaid/mermaid.css?1616895907" rel="stylesheet" />
+    <script src="/CPP_Learning/mermaid/mermaid.js?1616895907"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>
