@@ -56,7 +56,7 @@ Cela permet de gagner en performances.
 {{% notice info %}}
 Il ne faut **jamais** utiliser des assertions pour traiter des erreurs d'utilisation.
 Personne n'a envie de voir son logiciel crasher juste avant la sauvegarde d'un document, parce qu'il a essayé de mettre un accent dans le nom du fichier, ou parce que le disque dur était plein.
-En plus, comme les assertions sont désactivées une fois le logiciel dépolyé, votre client risque de se retrouver avec des bugs que vous n'aurez jamais rencontrés.
+En plus, comme les assertions sont désactivées une fois le logiciel déployé, votre client risque de se retrouver avec des bugs que vous n'aurez jamais rencontrés.
 {{% /notice %}}
 
 ---
