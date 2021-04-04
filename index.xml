@@ -76,6 +76,18 @@ Vous trouverez quelques conseils dans cette partie pour rendre votre code plus l
     </item>
     
     <item>
+      <title>Référence universelle</title>
+      <link>https://laefy.github.io/CPP_Learning/chapter9/1-universal-ref/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://laefy.github.io/CPP_Learning/chapter9/1-universal-ref/</guid>
+      <description>Dans cette première section, nous commencerons par introduire les concepts de l-value et r-value.
+Cela nous conduira à vous présenter la notion de référence universelle. Nous vous expliquerons ensuite quand et comment vous en servir dans votre code.
+ l-value / r-value Avant de parler concrètement des références universelles, il faut aborder un point essentiel à leur compréhension.
+En C++, une expression est une suite d&amp;rsquo;opérateurs et d&amp;rsquo;opérandes pouvant être évaluée.</description>
+    </item>
+    
+    <item>
       <title>Un peu de doc...</title>
       <link>https://laefy.github.io/CPP_Learning/chapter3/1-doc/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -195,6 +207,19 @@ La cible à compiler est c5-2-pokemons.
 - chap-03/1-vectors.cpp
 La cible à compiler est c3-1-vectors.
  Construction Au chapitre précédent, nous vous avions présenté différentes syntaxes permettant d&amp;rsquo;instancier une classe. Nous vous avions en particulier indiquer qu&amp;rsquo;il était possible d&amp;rsquo;utiliser la syntaxe Class c { p1, p2 }; ou bien la syntaxe Class c(p1, p2);.</description>
+    </item>
+    
+    <item>
+      <title>Template variadique</title>
+      <link>https://laefy.github.io/CPP_Learning/chapter9/2-variadiac/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://laefy.github.io/CPP_Learning/chapter9/2-variadiac/</guid>
+      <description>Un template variadique, c&amp;rsquo;est un template qui attend un nombre variable de paramètres. Vous en avez déjà utilisé plusieurs, comme :
+- la fonction-template emplace_back de std::vector, qui attend n&amp;rsquo;importe quels nombres et types d&amp;rsquo;arguments, et les utilisent pour construire le nouvel élément,
+- la fonction-template std::make_unique, qui fonctionne sur le même principe,
+- la classe-template std::tuple, qui permet de représenter un N-uplet contenant n&amp;rsquo;importe quels types.
+L&amp;rsquo;objectif de cette section sera de vous apprendre à définir vos propres templates variadiques.</description>
     </item>
     
     <item>
@@ -328,6 +353,16 @@ La cible à compiler est c5-2-pokemons.
     </item>
     
     <item>
+      <title>Spécialisations</title>
+      <link>https://laefy.github.io/CPP_Learning/chapter9/3-specializations/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://laefy.github.io/CPP_Learning/chapter9/3-specializations/</guid>
+      <description>// 🚧🚥🔨 //
+ </description>
+    </item>
+    
+    <item>
       <title>🔢 Tableau Numérique</title>
       <link>https://laefy.github.io/CPP_Learning/chapter1/3-practice/3-array/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -403,6 +438,16 @@ Dans ce chapitre, nous nous sommes intéressés à deux manières de mettre-en-o
     </item>
     
     <item>
+      <title>Résolution d&#39;appels</title>
+      <link>https://laefy.github.io/CPP_Learning/chapter9/4-resolution/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://laefy.github.io/CPP_Learning/chapter9/4-resolution/</guid>
+      <description>// 🚧🚥🔨 //
+ </description>
+    </item>
+    
+    <item>
       <title>🧬 Clône</title>
       <link>https://laefy.github.io/CPP_Learning/chapter2/4-clone/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -442,6 +487,16 @@ int main(int argc, char** argv) { // Parsing program parameters.  some code.</de
 La cible à compiler est c3-4-strings.
  Opérations standards Parmis les opérations standards que l&amp;rsquo;on peut effectuer sur des chaînes de caractère, on retrouve :
  la concaténation, l&amp;rsquo;extration de sous-chaîne, la recherche de caractère ou de sous-chaîne, la comparaison, le remplacement d&amp;rsquo;une partie de la chaîne.</description>
+    </item>
+    
+    <item>
+      <title>SFINAE</title>
+      <link>https://laefy.github.io/CPP_Learning/chapter9/5-sfinae/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://laefy.github.io/CPP_Learning/chapter9/5-sfinae/</guid>
+      <description>En cours d&amp;rsquo;écriture&amp;hellip;
+ </description>
     </item>
     
     <item>
