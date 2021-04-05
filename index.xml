@@ -668,6 +668,17 @@ Bon courage à vous 🙂
     </item>
     
     <item>
+      <title>Questionnaire !</title>
+      <link>https://laefy.github.io/CPP_Learning/chapter9/test/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://laefy.github.io/CPP_Learning/chapter9/test/</guid>
+      <description>Ce questionnaire sera mis en ligne dans les tous prochains jours, et il sera à rendre le 11 avril au soir.
+N&amp;rsquo;hésitez néanmoins pas à utiliser le formulaire d&amp;rsquo;ici là pour envoyer vos questions.
+ Vous êtes : Votre adresse mail : Combien de temps avez-vous mis à compléter ce chapitre ?Avez-vous des questions suite à sa lecture ?Avez-vous des commentaires concernant le chapitre et/ou le site ?</description>
+    </item>
+    
+    <item>
       <title>Synthèse</title>
       <link>https://laefy.github.io/CPP_Learning/chapter1/summary/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -737,6 +748,15 @@ Certains objets du programme peuvent également être considérés comme des res
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://laefy.github.io/CPP_Learning/chapter8/summary/</guid>
+      <description>// 🚧🚥🔨 //</description>
+    </item>
+    
+    <item>
+      <title>Synthèse</title>
+      <link>https://laefy.github.io/CPP_Learning/chapter9/summary/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://laefy.github.io/CPP_Learning/chapter9/summary/</guid>
       <description>// 🚧🚥🔨 //</description>
     </item>
     
@@ -820,6 +840,15 @@ Certains objets du programme peuvent également être considérés comme des res
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://laefy.github.io/CPP_Learning/chapter8/test_done/</guid>
+      <description>Vos réponses nous ont bien été communiquées 😃 Retourner à la synthèse du Chapitre</description>
+    </item>
+    
+    <item>
+      <title>Merci !</title>
+      <link>https://laefy.github.io/CPP_Learning/chapter9/test_done/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://laefy.github.io/CPP_Learning/chapter9/test_done/</guid>
       <description>Vos réponses nous ont bien été communiquées 😃 Retourner à la synthèse du Chapitre</description>
     </item>
     
