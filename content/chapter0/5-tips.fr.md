@@ -64,7 +64,7 @@ target_compile_features(my_executable PUBLIC cxx_std_17)
 
 ### Raccourcis VSCode utiles
 
-Ctrl+Shift+P : Ouvre le panneau de commandes
+Ctrl+Shift+P : Ouvre le panneau de commandes\
 F7 : Compile la cible courante\
 Ctrl+F7 : Débugge la cible courante\
 Shift+F7 : Exécute la cible courante
@@ -73,9 +73,9 @@ Shift+F7 : Exécute la cible courante
 
 ### Commandes VSCode utiles
 
-CMake: Configure
-CMake: Set Build Target
-CMake: Build
-CMake: Set Debug Target
-CMake: Debug
+CMake: Configure\
+CMake: Set Build Target\
+CMake: Build\
+CMake: Set Debug Target\
+CMake: Debug\
 CMake: Run Without Debugging

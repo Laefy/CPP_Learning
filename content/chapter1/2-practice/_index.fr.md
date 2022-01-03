@@ -1,7 +1,7 @@
 ---
 title: "Premiers programmes"
 chapter: false
-weight: 3
+weight: 2
 ---
 
 Nous allons maintenant enfin pouvoir coder ! Dans cette partie, vous verrez comment :
