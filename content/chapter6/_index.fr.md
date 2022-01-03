@@ -3,7 +3,7 @@ title: "Algorithmes"
 chapter: true
 chapterName: Chapitre 6
 pre: "<b>6- </b>"
-weight: 6
+weight: 7
 ---
 
 Comme vous le savez déjà, la STL fournit tout un tas de conteneurs pour répondre à différents usages.

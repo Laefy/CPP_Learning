@@ -3,7 +3,7 @@ title: "Conteneurs standards"
 chapter: true
 chapterName: Chapitre 3
 pre: "<b>3- </b>"
-weight: 3
+weight: 4
 ---
 
 Dans ce chapitre, nous vous présenterons les différents types de conteneurs que vous pourrez trouver dans la librairie standard.

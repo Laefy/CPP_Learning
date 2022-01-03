@@ -3,7 +3,7 @@ title: "Templates"
 chapter: true
 chapterName: Chapitre 8
 pre: "<b>8- </b>"
-weight: 8
+weight: 9
 ---
 
 Les templates, c'est un peu comme un chien qui aboie. 

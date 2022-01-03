@@ -27,9 +27,9 @@ Une fois que vous avez terminé, cliquez sur le bouton `Validez` pour que le ré
 {{% test_item id=3 %}}Le C++ est-il un langage orienté-objet ?{{% /test_item %}}
 ---
 {{% test_item id=4 %}}Donnez le nom d'un compilateur.{{% /test_item %}}
-{{% test_item id=5 %}}Comptez-vous utiliser les outils proposés ?{{% /test_item %}}
-{{% test_item id=6 %}}Si oui, avez-vous rencontrer des difficultés lors de leur installation ? Lesquelles ?{{% /test_item %}}
-{{% test_item id=7 %}}Si non, pour quelles raisons ? Et que pensez-vous utiliser à la place ?{{% /test_item %}}
+{{% test_item id=5 %}}Avez-vous réalisé les exercices proposés dans ce chapitre ?{{% /test_item %}}
+{{% test_item id=6 %}}Si oui, avez-vous utilisé les outils installés dans la partie précédente (VSCode, CMake, etc) ?{{% /test_item %}}
+{{% test_item id=7 %}}Si non, pour quelles raisons ? Qu'avez-vous utilisé à la place ?{{% /test_item %}}
 {{% test_item id=8 %}}Concernant git, êtes-vous plutôt à l'aise (je sais utiliser des branches et comment résoudre les conflits), moyennement à l'aise (je fais pull, commit et push, mais ça s'arrête là) ou pas du tout à l'aise (cet outil n'a pas de sens / je ne l'ai jamais utilisé) ?{{% /test_item %}}
 ---
 {{% test_item id=9 %}}Donnez une instruction permettant d'écrire le texte "Happy New Year!" dans la console.{{% /test_item %}}

@@ -3,7 +3,7 @@ title: "Gestion des ressources"
 chapter: true
 chapterName: Chapitre 5
 pre: "<b>5- </b>"
-weight: 5
+weight: 6
 ---
 
 Il existe beaucoup de langages dans lequel le concept de propriété n'existe pas.

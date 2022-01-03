@@ -1,6 +1,6 @@
 ---
 title: "Git"
-weight: 3
+weight: 4
 ---
 
 Pour le gestionnaire de version, nous utiliserons {{< open_in_new_tab "https://git-scm.com/" "git" />}}. Vous pourrez ensuite héberger votre dépôt pour les TPs et le projet sur la plateforme de votre choix (Github, Gitlab, Bitbucket, votre serveur perso, peu importe), du moment que l'on peut y avoir accès pour l'évaluation.
@@ -16,7 +16,10 @@ Si vous êtes sous Windows, vous pouvez télécharger l'outil depuis {{< open_in
 
 ### Manipulation d'un dépôt depuis VSCode
 
-#### Nouveau dépôt
+Si vous savez déjà utiliser Git en ligne de commande, cela est largement suffisant.\
+Mais si vous êtes intéressés quand même, les sections ci-dessous détaillent comment utiliser Git directement depuis VSCode.
+
+#### Créer un nouveau dépôt
 
 1- Créez un nouveau dossier `test-git-init` et ouvrez-le dans VSCode.\
 2- Recommencer l'étape 4 associée à votre système sur {{< open_in_new_tab "../1-vscode/" "cette page" />}}, ou suivez les instructions de la rubrique "Utilisation" sur {{< open_in_new_tab "../2-cmake/#utilisation" "cette page" />}}.\
@@ -45,7 +48,7 @@ build/
 8- Entrez un message décrivant vos changements et cliquez sur la coche pour les committer.
 ![](/CPP_Learning/images/vscode-git-commit.png)
 
-#### Clone d'un dépôt existant
+#### Cloner un dépôt existant
 
 1- Si vous possédez un compte Github, commencez par forker le dépôt suivant : https://github.com/Laefy/CPP-M1-test-git-clone.
 ![](/CPP_Learning/images/github-fork.png)
