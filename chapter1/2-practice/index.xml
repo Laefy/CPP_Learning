@@ -2,16 +2,16 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Premiers programmes on Cours de C&#43;&#43; - Niveau Master</title>
-    <link>https://laefy.github.io/CPP_Learning/chapter1/3-practice/</link>
+    <link>https://laefy.github.io/CPP_Learning/chapter1/2-practice/</link>
     <description>Recent content in Premiers programmes on Cours de C&#43;&#43; - Niveau Master</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language><atom:link href="https://laefy.github.io/CPP_Learning/chapter1/3-practice/index.xml" rel="self" type="application/rss+xml" />
+    <language>en-us</language><atom:link href="https://laefy.github.io/CPP_Learning/chapter1/2-practice/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>👋 Hello World</title>
-      <link>https://laefy.github.io/CPP_Learning/chapter1/3-practice/1-hello-world/</link>
+      <link>https://laefy.github.io/CPP_Learning/chapter1/2-practice/1-hello-world/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://laefy.github.io/CPP_Learning/chapter1/3-practice/1-hello-world/</guid>
+      <guid>https://laefy.github.io/CPP_Learning/chapter1/2-practice/1-hello-world/</guid>
       <description>Pour votre premier programme, on ne va pas trop faire dans l&amp;rsquo;originalité, il s&amp;rsquo;agira d&amp;rsquo;un Hello World. Vous l&amp;rsquo;avez d&amp;rsquo;ailleurs déjà probablement vu dans la rubrique précédente, pour tester vos outils.
  Pour cet exercice, vous modifierez le fichier :
 - chap-01/1-hello_world.cpp
@@ -21,10 +21,10 @@ La cible à compiler est c1-1-hello_world.
     
     <item>
       <title>🦜 Perroquet</title>
-      <link>https://laefy.github.io/CPP_Learning/chapter1/3-practice/2-parrot.fd/</link>
+      <link>https://laefy.github.io/CPP_Learning/chapter1/2-practice/2-parrot/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://laefy.github.io/CPP_Learning/chapter1/3-practice/2-parrot.fd/</guid>
+      <guid>https://laefy.github.io/CPP_Learning/chapter1/2-practice/2-parrot/</guid>
       <description>Vous allez maintenant implémenter un perroquet, qui répète ce que vous dites dans la console.
  Pour cet exercice, vous modifierez le fichier :
 - chap-01/2-parrot.cpp
@@ -35,10 +35,10 @@ Ensuite, vous allez déclarer une variable de type int.</description>
     
     <item>
       <title>🔢 Tableau Numérique</title>
-      <link>https://laefy.github.io/CPP_Learning/chapter1/3-practice/3-array/</link>
+      <link>https://laefy.github.io/CPP_Learning/chapter1/2-practice/3-array/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://laefy.github.io/CPP_Learning/chapter1/3-practice/3-array/</guid>
+      <guid>https://laefy.github.io/CPP_Learning/chapter1/2-practice/3-array/</guid>
       <description>Le but de cet exercice est de voir comment manipuler les tableaux en C++ et passer des arguments au programme. Votre objectif sera d&amp;rsquo;afficher un tableau de nombres, dont la taille sera définie par les paramètres passés au programme.
  Pour cet exercice, vous modifierez le fichier :
 - chap-01/3-array.cpp
@@ -48,10 +48,10 @@ La cible à compiler est c1-3-array.
     
     <item>
       <title>🧮 Calculette</title>
-      <link>https://laefy.github.io/CPP_Learning/chapter1/3-practice/4-calculator/</link>
+      <link>https://laefy.github.io/CPP_Learning/chapter1/2-practice/4-calculator/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://laefy.github.io/CPP_Learning/chapter1/3-practice/4-calculator/</guid>
+      <guid>https://laefy.github.io/CPP_Learning/chapter1/2-practice/4-calculator/</guid>
       <description>Dans cet exercice, vous refactoriserez le code d&amp;rsquo;une mini-calculette. Cela sera l&amp;rsquo;occasion de voir l&amp;rsquo;instruction switch, les fonctions et le passage de paramètres par référence.
  Pour cet exercice, vous modifierez le fichier :
 - chap-01/4-calculator.cpp

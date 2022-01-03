@@ -111,10 +111,10 @@ A première vue, son contenu peut paraître indigeste. Nous allons donc vous exp
     
     <item>
       <title>👋 Hello World</title>
-      <link>https://laefy.github.io/CPP_Learning/chapter1/3-practice/1-hello-world/</link>
+      <link>https://laefy.github.io/CPP_Learning/chapter1/2-practice/1-hello-world/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://laefy.github.io/CPP_Learning/chapter1/3-practice/1-hello-world/</guid>
+      <guid>https://laefy.github.io/CPP_Learning/chapter1/2-practice/1-hello-world/</guid>
       <description>Pour votre premier programme, on ne va pas trop faire dans l&amp;rsquo;originalité, il s&amp;rsquo;agira d&amp;rsquo;un Hello World. Vous l&amp;rsquo;avez d&amp;rsquo;ailleurs déjà probablement vu dans la rubrique précédente, pour tester vos outils.
  Pour cet exercice, vous modifierez le fichier :
 - chap-01/1-hello_world.cpp
@@ -262,10 +262,10 @@ Nous ferons un petit récapitulatif en fin de page, pour rappelez les points ess
     
     <item>
       <title>🦜 Perroquet</title>
-      <link>https://laefy.github.io/CPP_Learning/chapter1/3-practice/2-parrot.fd/</link>
+      <link>https://laefy.github.io/CPP_Learning/chapter1/2-practice/2-parrot/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://laefy.github.io/CPP_Learning/chapter1/3-practice/2-parrot.fd/</guid>
+      <guid>https://laefy.github.io/CPP_Learning/chapter1/2-practice/2-parrot/</guid>
       <description>Vous allez maintenant implémenter un perroquet, qui répète ce que vous dites dans la console.
  Pour cet exercice, vous modifierez le fichier :
 - chap-01/2-parrot.cpp
@@ -364,10 +364,10 @@ La cible à compiler est c5-2-pokemons.
     
     <item>
       <title>🔢 Tableau Numérique</title>
-      <link>https://laefy.github.io/CPP_Learning/chapter1/3-practice/3-array/</link>
+      <link>https://laefy.github.io/CPP_Learning/chapter1/2-practice/3-array/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://laefy.github.io/CPP_Learning/chapter1/3-practice/3-array/</guid>
+      <guid>https://laefy.github.io/CPP_Learning/chapter1/2-practice/3-array/</guid>
       <description>Le but de cet exercice est de voir comment manipuler les tableaux en C++ et passer des arguments au programme. Votre objectif sera d&amp;rsquo;afficher un tableau de nombres, dont la taille sera définie par les paramètres passés au programme.
  Pour cet exercice, vous modifierez le fichier :
 - chap-01/3-array.cpp
@@ -461,10 +461,10 @@ La cible à compiler est c2-3-clone.
     
     <item>
       <title>🧮 Calculette</title>
-      <link>https://laefy.github.io/CPP_Learning/chapter1/3-practice/4-calculator/</link>
+      <link>https://laefy.github.io/CPP_Learning/chapter1/2-practice/4-calculator/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://laefy.github.io/CPP_Learning/chapter1/3-practice/4-calculator/</guid>
+      <guid>https://laefy.github.io/CPP_Learning/chapter1/2-practice/4-calculator/</guid>
       <description>Dans cet exercice, vous refactoriserez le code d&amp;rsquo;une mini-calculette. Cela sera l&amp;rsquo;occasion de voir l&amp;rsquo;instruction switch, les fonctions et le passage de paramètres par référence.
  Pour cet exercice, vous modifierez le fichier :
 - chap-01/4-calculator.cpp
@@ -696,9 +696,9 @@ N&amp;rsquo;hésitez néanmoins pas à utiliser le formulaire d&amp;rsquo;ici l�
       
       <guid>https://laefy.github.io/CPP_Learning/chapter0/test/</guid>
       <description>Si vous avez rencontré des problèmes lors de l&amp;rsquo;installation d&amp;rsquo;un des logiciels, n&amp;rsquo;hésitez pas à nous l&amp;rsquo;indiquer, afin que nous puissions améliorer nos explications. Merci d&amp;rsquo;avance ! 🙂
- Vous êtes : Votre adresse mail : 1- Avez-vous rencontrer des difficultés lors de l’installation d’un des composants ? Si oui, du ou desquels s’agit-il ?
+ Vous êtes : Votre adresse mail : 1- Avez-vous rencontré des difficultés lors de l’installation d’un des composants ? Si oui, du ou desquels s’agit-il ?
 
-2- Si une erreur est survenue à un moment, pouvez-vous la copier-coller ci-dessous, et indiquer à quel moment celle-ci a eu lieu ?</description>
+2- Si une erreur est survenue à un moment, pouvez-vous la copier-coller ci-dessous et indiquer le contexte dans lequel celle-ci a eu lieu ?</description>
     </item>
     
     <item>
