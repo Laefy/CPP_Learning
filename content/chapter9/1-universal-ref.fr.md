@@ -134,11 +134,11 @@ Retenez donc qu'étymologiquement, les noms signifient "left-value" et "right-va
 
 ---
 
-### Surcharge par l-value ou r-value
+### Surcharge par l-value ou r-value reference
 
 Comme vous le savez, il est possible de surcharger des fonctions.
 
-Mais ce que vous ne saviez probablement pas, c'est qu'il est possible de définir une surcharge qui sera utilisée uniquement si on lui passe une r-value.\
+Mais ce que vous ne saviez probablement pas, c'est qu'il est possible de définir une surcharge qui sera utilisée uniquement si on lui passe une expression r-value.\
 Voici la syntaxe :
 ```cpp
 void fcn(const std::string& str)
@@ -146,7 +146,7 @@ void fcn(const std::string& str)
     std::cout << "l-value contains " << str << std::endl;
 }
 
-void fcn(std::string&& str) // <- on utilise '&&' derrière le type
+void fcn(std::string&& str) // <- on utilise '&&' derrière le type pour définir une r-value reference
 {
     std::cout << "r-value contains " << str << std::endl;
 }
@@ -161,10 +161,10 @@ int main()
 ```
 
 Bien sûr, si vous retirez la surcharge `fcn(std::string&&)`, le programme continuera de compiler puisque jusqu'ici, vos programmes ont compilés (enfin j'espère) sans que vous ayiez eu besoin d'écrire `&&`.
-En effet, si le compilateur ne trouve pas de surcharge prenant une r-value de `T`, alors il se rabattera sur une surcharge acceptant un `T&`, `const T&` ou `T`.
+En effet, si le compilateur ne trouve pas de surcharge prenant une r-value reference de `T`, alors il se rabattera sur une surcharge acceptant un `T&`, `const T&` ou `T`.
 
 En revanche, le compilateur ne fera jamais l'inverse.
-Si votre fonction accepte une r-value et que vous n'avez pas défini de surcharge acceptant une l-value, vous ne pourrez pas compiler un appel dans lequel vous fournissez une l-value.
+Si votre fonction attend une r-value et que vous n'avez pas défini de surcharge acceptant de l-value, vous ne pourrez pas compiler un appel dans lequel vous fournissez une l-value.
 Essayez donc de commenter la surcharge `fcn(const std::string&)` dans le snippet de code ci-dessus.
 L'instruction `fcn(str)` ne devrait plus compiler, alors que `fcn(std::string { "tata" })` ne posera pas de problème.
 
@@ -213,7 +213,7 @@ Si vous consultez la documentation de `std::unique_ptr` par exemple, vous pourre
 En revanche, il est tout de même possible de construire un `unique_ptr` à partir d'un autre `unique_ptr`, du moment que l'on déplace ce dernier.
 
 Cela est possible parce que `unique_ptr` définit un move-constructor et un opérateur d'assignation par déplacement.
-Il s'agit de surcharges acceptant des r-values de `unique_ptr` au lieu de const-ref.
+Il s'agit de surcharges acceptant des r-value references de `unique_ptr` au lieu de const-ref.
 ```cpp
 unique_ptr(unique_ptr&&);
 unique_ptr& operator=(unique_ptr&&);
@@ -308,20 +308,20 @@ void generic_emplace(Ctn& ctn, T&& value) // <- on ajoute && sur T
 }
 ```
 
-**Heeeeeein ? Mais on vient de voir que `&&`, ça sert à faire des r-value !** 
+**Heeeeeein ? Mais on vient de voir que `&&`, ça sert à faire des r-value references !** 
 
 Et bah pas dans ce cas...\
-Si vous mettez `&&` sur un type précis, comme `int&&` ou `std::string&&`, vous êtes effectivement en train d'attendre une r-value sur ce type.\
+Si vous mettez `&&` sur un type précis, comme `int&&` ou `std::string&&`, vous êtes effectivement en train d'attendre qu'on vous passe une r-value de ce type.\
 En revanche, si vous mettez `&&` sur un type générique défini comme argument de template de la fonction, vous êtes en train de définir une référence universelle.\
-Cela signifie que **votre fonction pourra attendre n'importe quoi, qu'il s'agisse d'une ref, d'une const-ref ou d'une r-value.**
+Cela signifie que **votre fonction pourra attendre n'importe quoi, qu'il s'agisse d'une ref, d'une const-ref ou d'une r-value reference.**
 
 Personnellement, je pense qu'il s'agit du pire choix de réutilisation de syntaxe qui a été fait en C++...
 D'une part, ça fait qu'il n'est pas possible d'utiliser `T&&` pour restreindre l'usage d'une fonction-template à une r-value.
 Et d'autre part, c'est le troll ultime du mec qu'a décidé que le C++, fallait que ça soit dur.
 Déjà que c'est pas simple de comprendre la différence entre l-value et r-value, que c'est pas simple non plus d'apprendre à faire des templates, il fallait en plus qu'ils choisissent la même syntaxe pour exprimer deux notions complètement différentes, mais qui sont un peu liées quand même... 
 
-Enfin bref, retenez simplement que si vous écrivez `T&&` dans le cas où `T` est un argument de template de la fonction, alors c'est une référence universelle (c'est-à-dire que `T&&` sera remplacé par le type exact de l'expression passée en paramètre à la fonction) et pas une r-value.
-Vous pouvez aussi lire {{% open_in_new_tab "https://isocpp.org/blog/2012/11/universal-references-in-c11-scott-meyers" "cet article" /%}} si vous souhaitez apprendre à distinguer une r-value d'une référence universelle à tous les coups !
+Enfin bref, retenez simplement que si vous écrivez `T&&` dans le cas où `T` est un argument de template de la fonction, alors c'est une référence universelle (c'est-à-dire que `T&&` sera remplacé par le type exact de l'expression passée en paramètre à la fonction) et pas une r-value reference.
+Vous pouvez aussi lire {{% open_in_new_tab "https://isocpp.org/blog/2012/11/universal-references-in-c11-scott-meyers" "cet article" /%}} si vous souhaitez apprendre à distinguer une r-value reference d'une référence universelle à tous les coups !
 
 Revenons au code précédent.
 ```cpp
@@ -336,7 +336,7 @@ Voici les fonctions qui seront maintenant générées par chacun des appels :
 ```cpp
 std::list<int> values;
 generic_emplace(values, 3);
-// Comme on passe `3` qui est une r-value, la référence universelle est transformée en r-value
+// Comme on passe `3` qui est une r-value, la référence universelle est transformée en r-value reference
 // void generic_emplace(std::list<int>& ctn, int&& value)
 // {
 //     ctn.emplace_back(value);
@@ -353,7 +353,7 @@ generic_emplace(names, str);
 
 std::deque<std::unique_ptr<int>> ptrs;
 generic_emplace(ptrs, std::make_unique<int>(3));
-// Comme on passe `std::make_unique<int>(3)` qui est une r-value, la référence universelle est transformée en r-value
+// Comme on passe `std::make_unique<int>(3)` qui est une r-value, la référence universelle est transformée en r-value reference
 // void generic_emplace(std::deque<std::unique_ptr<int>>& ctn, std::unique_ptr<int>&& value)
 // {
 //     ctn.emplace_back(value);
@@ -392,7 +392,7 @@ void perfect_forwarder(T&& universal_ref)
 Le comportement de `std::forward` est le suivant :\
 \- si `universal_ref` est de type `const T&`, alors l'expression `std::forward<T>(universal_ref)` est une l-value de type `const T&`,\
 \- si `universal_ref` est de type `T&`, alors l'expression `std::forward<T>(universal_ref)` est une l-value de type `T&`,\
-\- si `universal_ref` est de type `T&&` (au sens r-value et pas référence universelle), alors l'expression `std::forward<T>(universal_ref)` est une r-value de type `T&&`.
+\- si `universal_ref` est de type `T&&` (au sens r-value reference et pas référence universelle), alors l'expression `std::forward<T>(universal_ref)` est une r-value de type `T&&`.
 
 Du coup, on peut réécrire `generic_emplace` de cette manière :
 ```cpp
@@ -438,8 +438,8 @@ generic_emplace(ptrs, std::make_unique<int>(3));
 
 ### Conclusion
 
-En C++, la plupart des expressions sont classées en deux grands groupes : les l-values et les r-values.\
-Les expressions l-values sont généralement des noms de variables, comme `value`, ou bien des appels de fonctions qui renvoient des l-values, comme `vec.emplace_back(3)`.\
+En C++, la plupart des expressions sont classées en deux grandes catégories : les l-values et les r-values.\
+Les expressions l-values sont généralement des noms de variables, comme `value`, ou bien des appels de fonctions qui renvoient des l-value references, comme `vec.emplace_back(3)`.\
 Les expressions r-values englobent à peu près tout le reste, à savoir les calculs, les litéraux qui ne sont pas des chaînes de caractères, les appels de fonctions qui renvoient un temporaire, les appels à `std::move`, etc.
 
 Lorsque que dans une fonction-template, vous souhaitez transmettre à une autre fonction l'un de vos paramètres par l-value si on vous l'avait passé par l-value, et par r-value si on vous l'avait passé par r-value, il faut :
