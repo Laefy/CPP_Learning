@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Mise en place on Cours de C&#43;&#43; - Niveau Master</title>
+    <link>https://laefy.github.io/CPP_Learning/chapter0/</link>
+    <description>Recent content in Mise en place on Cours de C&#43;&#43; - Niveau Master</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language><atom:link href="https://laefy.github.io/CPP_Learning/chapter0/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Compilateur</title>
+      <link>https://laefy.github.io/CPP_Learning/chapter0/1-compiler/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://laefy.github.io/CPP_Learning/chapter0/1-compiler/</guid>
+      <description>Pour le compilateur, vous devrez utiliser g++ (version &amp;gt;= 9) si vous êtes sous Windows ou Linux, et clang si vous êtes sous MacOS.
+ Windows  Ouvrez un terminal et exécutez g++ -v. Si la commande réussit, assurez-vous que la dernière ligne indique bien une version de gcc &amp;gt;= 9. Si ce n&amp;rsquo;est pas le cas, installez le gestionnaire de paquet MSYS2 en suivant les instructions sur cette page.</description>
+    </item>
+    
+    <item>
+      <title>Visual Studio Code</title>
+      <link>https://laefy.github.io/CPP_Learning/chapter0/2-vscode/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://laefy.github.io/CPP_Learning/chapter0/2-vscode/</guid>
+      <description>Pour l&amp;rsquo;IDE, nous vous conseillons d&amp;rsquo;utiliser Visual Studio Code, car celui-ci est disponible sur toutes les plateformes (contrairement à Visual Studio tout court), qu&amp;rsquo;il est très bien documenté et que vous pourrez trouvez de nombreux tutoriels en ligne pour apprendre à l&amp;rsquo;utiliser.
+Vous trouverez ci-dessous les instructions permettant d&amp;rsquo;installer VSCode.
+ Windows  Installez VSCode en suivant les instructions du paragraphe Installation.
+Si l&amp;rsquo;installeur vous propose d&amp;rsquo;installer git, vous pouvez acceptez, cela vous fera gagner du temps pour la suite.</description>
+    </item>
+    
+    <item>
+      <title>CMake</title>
+      <link>https://laefy.github.io/CPP_Learning/chapter0/3-cmake/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://laefy.github.io/CPP_Learning/chapter0/3-cmake/</guid>
+      <description>Afin de générer les artéfacts pour la compilation, nous utiliserons CMake.
+ Installation Si vous êtes sous Unix, vous devriez pouvoir installer CMake depuis votre gestionnaire de paquets.
+Si vous êtes sous Windows, vous pouvez utiliser l&amp;rsquo;installeur que vous trouverez sur cette page.
+ Intégration à VSCode Afin de pouvoir utiliser CMake facilement depuis VSCode, il faut installer les extensions CMake et CMakeTools.
+ Démarrez VSCode. Ouvrez le panneau des extensions et recherchez les extensions CMake et CMakeTools.</description>
+    </item>
+    
+    <item>
+      <title>Git</title>
+      <link>https://laefy.github.io/CPP_Learning/chapter0/4-git/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://laefy.github.io/CPP_Learning/chapter0/4-git/</guid>
+      <description>Pour le gestionnaire de version, nous utiliserons git. Vous pourrez ensuite héberger votre dépôt pour les TPs et le projet sur la plateforme de votre choix (Github, Gitlab, Bitbucket, votre serveur perso, peu importe), du moment que l&amp;rsquo;on peut y avoir accès pour l&amp;rsquo;évaluation.
+ Installation Si vous êtes sous Unix, vous devriez pouvoir installer git depuis votre gestionnaire de paquets.
+Si vous êtes sous Windows, vous pouvez télécharger l&amp;rsquo;outil depuis cette page.</description>
+    </item>
+    
+    <item>
+      <title>Astuces</title>
+      <link>https://laefy.github.io/CPP_Learning/chapter0/5-tips/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://laefy.github.io/CPP_Learning/chapter0/5-tips/</guid>
+      <description>Compiler un petit programme dans un terminal Avec g++ :
+g++f1.cpp f2.cpp f3.cpp -o program Avec clang :
+clang++f1.cpp f2.cpp f3.cpp -o program Vous pouvez ajouter des options de compilation (voir ci-dessous) à la fin de la ligne de commande.
+ Options de compilation Voici les options de compilation que nous vous conseillons d&amp;rsquo;utiliser pendant le cours, et que l&amp;rsquo;on activera pour compiler vos rendus de TPs :
+ -std=c++17 : spécifie que le projet sera compilé en C++17 -Wall -W : permet d&amp;rsquo;activer un certain nombre de warnings -Werror : transforme les warnings en erreurs, donc tant qu&amp;rsquo;il y a des warnings, le programme ne compile pas  Vous pouvez également utiliser :</description>
+    </item>
+    
+    <item>
+      <title>Retours ?</title>
+      <link>https://laefy.github.io/CPP_Learning/chapter0/test/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://laefy.github.io/CPP_Learning/chapter0/test/</guid>
+      <description>Si vous avez rencontré des problèmes lors de l&amp;rsquo;installation d&amp;rsquo;un des logiciels, n&amp;rsquo;hésitez pas à nous l&amp;rsquo;indiquer, afin que nous puissions améliorer nos explications. Merci d&amp;rsquo;avance ! 🙂
+ Vous êtes : Votre adresse mail : 1- Avez-vous rencontrer des difficultés lors de l’installation d’un des composants ? Si oui, du ou desquels s’agit-il ?
+
+2- Si une erreur est survenue à un moment, pouvez-vous la copier-coller ci-dessous, et indiquer à quel moment celle-ci a eu lieu ?</description>
+    </item>
+    
+    <item>
+      <title>Merci !</title>
+      <link>https://laefy.github.io/CPP_Learning/chapter0/test_done/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://laefy.github.io/CPP_Learning/chapter0/test_done/</guid>
+      <description>Vos réponses nous ont bien été communiquées 😃 Retourner à la synthèse du Chapitre</description>
+    </item>
+    
+  </channel>
+</rss>
