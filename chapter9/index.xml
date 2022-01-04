@@ -1,94 +1,0 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Paramètres de templates on Cours de C&#43;&#43; - Niveau Master</title>
-    <link>https://laefy.github.io/CPP_Learning/chapter9/</link>
-    <description>Recent content in Paramètres de templates on Cours de C&#43;&#43; - Niveau Master</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language><atom:link href="https://laefy.github.io/CPP_Learning/chapter9/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Référence universelle</title>
-      <link>https://laefy.github.io/CPP_Learning/chapter9/1-universal-ref/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://laefy.github.io/CPP_Learning/chapter9/1-universal-ref/</guid>
-      <description>Dans cette première section, nous commencerons par introduire les concepts de l-value et r-value.
-Cela nous conduira à vous présenter la notion de référence universelle. Nous vous expliquerons ensuite quand et comment vous en servir dans votre code.
- l-value / r-value Avant de parler concrètement des références universelles, il faut aborder un point essentiel à leur compréhension.
-En C++, une expression est une suite d&amp;rsquo;opérateurs et d&amp;rsquo;opérandes pouvant être évaluée.</description>
-    </item>
-    
-    <item>
-      <title>Template variadique</title>
-      <link>https://laefy.github.io/CPP_Learning/chapter9/2-variadiac/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://laefy.github.io/CPP_Learning/chapter9/2-variadiac/</guid>
-      <description>Un template variadique, c&amp;rsquo;est un template qui attend un nombre variable de paramètres. Vous en avez déjà utilisé plusieurs, comme :
-- la fonction-template emplace_back de std::vector, qui attend n&amp;rsquo;importe quels nombres et types d&amp;rsquo;arguments, et les utilisent pour construire le nouvel élément,
-- la fonction-template std::make_unique, qui fonctionne sur le même principe,
-- la classe-template std::tuple, qui permet de représenter un N-uplet contenant n&amp;rsquo;importe quels types.
-L&amp;rsquo;objectif de cette section sera de vous apprendre à définir vos propres templates variadiques.</description>
-    </item>
-    
-    <item>
-      <title>Spécialisations</title>
-      <link>https://laefy.github.io/CPP_Learning/chapter9/3-specializations/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://laefy.github.io/CPP_Learning/chapter9/3-specializations/</guid>
-      <description>Cette section sera consacrée à la spécialisation de templates de classe et de fonctions.
- // 🚧🚥🔨 //</description>
-    </item>
-    
-    <item>
-      <title>Résolution d&#39;appels</title>
-      <link>https://laefy.github.io/CPP_Learning/chapter9/4-resolution/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://laefy.github.io/CPP_Learning/chapter9/4-resolution/</guid>
-      <description>// 🚧🚥🔨 //
- </description>
-    </item>
-    
-    <item>
-      <title>SFINAE</title>
-      <link>https://laefy.github.io/CPP_Learning/chapter9/5-sfinae/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://laefy.github.io/CPP_Learning/chapter9/5-sfinae/</guid>
-      <description>En cours d&amp;rsquo;écriture&amp;hellip;
- </description>
-    </item>
-    
-    <item>
-      <title>Questionnaire !</title>
-      <link>https://laefy.github.io/CPP_Learning/chapter9/test/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://laefy.github.io/CPP_Learning/chapter9/test/</guid>
-      <description>Ce questionnaire sera mis en ligne dans les tous prochains jours, et il sera à rendre le 11 avril au soir.
-N&amp;rsquo;hésitez néanmoins pas à utiliser le formulaire d&amp;rsquo;ici là pour envoyer vos questions.
- Vous êtes : Votre adresse mail : Combien de temps avez-vous mis à compléter ce chapitre ?Avez-vous des questions suite à sa lecture ?Avez-vous des commentaires concernant le chapitre et/ou le site ?</description>
-    </item>
-    
-    <item>
-      <title>Synthèse</title>
-      <link>https://laefy.github.io/CPP_Learning/chapter9/summary/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://laefy.github.io/CPP_Learning/chapter9/summary/</guid>
-      <description>// 🚧🚥🔨 //</description>
-    </item>
-    
-    <item>
-      <title>Merci !</title>
-      <link>https://laefy.github.io/CPP_Learning/chapter9/test_done/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://laefy.github.io/CPP_Learning/chapter9/test_done/</guid>
-      <description>Vos réponses nous ont bien été communiquées 😃 Retourner à la synthèse du Chapitre</description>
-    </item>
-    
-  </channel>
-</rss>
