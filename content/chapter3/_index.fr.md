@@ -4,6 +4,7 @@ chapter: true
 chapterName: Chapitre 3
 pre: "<b>3- </b>"
 weight: 4
+draft: true
 ---
 
 Il existe beaucoup de langages dans lequel le concept de propriété n'existe pas.

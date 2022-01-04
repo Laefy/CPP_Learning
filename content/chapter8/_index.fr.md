@@ -4,6 +4,7 @@ chapter: true
 chapterName: Chapitre 8
 pre: "<b>8- </b>"
 weight: 9
+draft: true
 ---
 
 Les templates, c'est un peu comme un chien qui aboie. 

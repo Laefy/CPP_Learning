@@ -4,6 +4,7 @@ chapter: true
 chapterName: Chapitre 9
 pre: "<b>9- </b>"
 weight: 10
+draft: true
 ---
 
 Dans ce deuxième chapitre sur les templates, nous parlerons de tout un tas de fonctionnalités et subtilités liées aux paramètres de templates.
