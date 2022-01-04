@@ -72,9 +72,7 @@ clang++f1.cpp f2.cpp f3.cpp -o program Vous pouvez ajouter des options de compil
       
       <guid>https://laefy.github.io/CPP_Learning/chapter0/test/</guid>
       <description>Si vous avez rencontré des problèmes lors de l&amp;rsquo;installation d&amp;rsquo;un des logiciels, n&amp;rsquo;hésitez pas à nous l&amp;rsquo;indiquer, afin que nous puissions améliorer nos explications. Merci d&amp;rsquo;avance ! 🙂
- Vous êtes : Votre adresse mail : 1- Avez-vous rencontré des difficultés lors de l’installation d’un des composants ? Si oui, du ou desquels s’agit-il ?
-
-2- Si une erreur est survenue à un moment, pouvez-vous la copier-coller ci-dessous et indiquer le contexte dans lequel celle-ci a eu lieu ?</description>
+ Vous êtes : Votre adresse mail : Votre groupe : Groupe 1Groupe 2Groupe Alternants1- Avez-vous rencontré des difficultés lors de l’installation d’un des composants ? Si oui, du ou desquels s’agit-il ?</description>
     </item>
     
     <item>
