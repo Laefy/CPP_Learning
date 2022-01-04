@@ -8,9 +8,9 @@ Vous apprendrez ici à utiliser des `vector` de manière un peu plus avancée : 
 ---
 
 Pour cet exercice, vous modifierez le fichier :\
-\- `chap-03/1-vectors.cpp`
+\- `chap-05/1-vectors.cpp`
 
-La cible à compiler est `c3-1-vectors`.
+La cible à compiler est `c5-1-vectors`.
 
 ---
 

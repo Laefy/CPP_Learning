@@ -10,15 +10,15 @@ Maintenant que vous savez ce à quoi correspond l'ownership, nous allons vous pr
 ### Ownership simple
 
 Pour cet exercice, vous modifierez les fichiers :\
-\- `chap-05/2-pokemons/Journey.cpp`\
-\- `chap-05/2-pokemons/PC.h`\
-\- `chap-05/2-pokemons/PokeCenter.h`\
-\- `chap-05/2-pokemons/Pokedex.h`\
-\- `chap-05/2-pokemons/Pokemon.h`\
-\- `chap-05/2-pokemons/ProfessorOak.h`\
-\- `chap-05/2-pokemons/Trainer.h`
+\- `chap-03/2-pokemons/Journey.cpp`\
+\- `chap-03/2-pokemons/PC.h`\
+\- `chap-03/2-pokemons/PokeCenter.h`\
+\- `chap-03/2-pokemons/Pokedex.h`\
+\- `chap-03/2-pokemons/Pokemon.h`\
+\- `chap-03/2-pokemons/ProfessorOak.h`\
+\- `chap-03/2-pokemons/Trainer.h`
 
-La cible à compiler est `c5-2-pokemons`.
+La cible à compiler est `c3-2-pokemons`.
 
 ---
 
@@ -514,11 +514,11 @@ int main()
 ### Ownership partagé
 
 Pour cet exercice, vous modifierez les fichiers :\
-\- `chap-05/3-cache/Cache.cpp`\
-\- `chap-05/3-cache/Model.h`\
-\- `chap-05/3-cache/Texture.h`
+\- `chap-03/3-cache/Cache.cpp`\
+\- `chap-03/3-cache/Model.h`\
+\- `chap-03/3-cache/Texture.h`
 
-La cible à compiler est `c5-3-cache`.
+La cible à compiler est `c3-3-cache`.
 
 ---
 

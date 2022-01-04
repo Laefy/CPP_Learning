@@ -191,7 +191,7 @@ Et enfin, lorsqu'il n'y a qu'un seul paramètre, on peut dans certains cas utili
 
 Ces syntaxes s'utilisent également pour l'instanciation des primitives : `int a = 1;` / `int a { 1 };` / `int a(1);` 
 
-Pour le moment, vous pouvez considérer que ces méthodes sont plus ou moins équivalentes (évidemment, ce n'est pas le cas, sinon ce ne serait pas drôle, mais nous y reviendrons au [Chapitre 3](/chapter3/)).
+Pour le moment, vous pouvez considérer que ces méthodes sont plus ou moins équivalentes (évidemment, ce n'est pas le cas, sinon ce ne serait pas drôle, mais nous y reviendrons au [Chapitre 5](/chapter5/)).
 Ne vous embêtez pas à mémoriser toutes ces règles par coeur. Retenez simplement que d'autres variations de syntaxe existent, pour que vous ne soyiez pas étonner si vous les rencontrez dans du code que vous n'avez pas écrit.
 
 {{% notice info %}}

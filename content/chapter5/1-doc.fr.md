@@ -14,7 +14,7 @@ A première vue, son contenu peut paraître indigeste. Nous allons donc vous exp
 
 #### 1. En-tête
 
-![](/CPP_Learning/images/chapter3/doc-vector-header.png)
+![](/CPP_Learning/images/chapter5/doc-vector-header.png)
 
 Dans l'en-tête de la documentation, vous trouverez le nom de la classe, suivi du header à inclure afin de pouvoir l'utiliser.\
 Une phrase décrit ensuite brièvement le rôle de la classe : on nous dit par exemple que `vector` est un conteneur séquentiel de taille dynamique.
@@ -32,7 +32,7 @@ On trouve ensuite une description plus détaillée, dans laquelle il est possibl
 
 #### 2. Paramètres de template / Spécialisations
 
-![](/CPP_Learning/images/chapter3/doc-vector-params.png)
+![](/CPP_Learning/images/chapter5/doc-vector-params.png)
 
 Les paramètres de templates correspondent aux éléments que vous devez indiquer dans les `<...>` de `vector`. Ces éléments doivent parfois respecter des contraintes, et cette section de la documentation permet d'en prendre connaissance. 
 
@@ -48,7 +48,7 @@ Sur cette page, on vous dit que si vous utilisez des `vector<bool>`, alors l'imp
 #### 3. Invalidation d'itérateurs
 
 On trouve ensuite la liste des fonctions qui, lorsqu'elles sont appelées, invalident les itérateurs. Nous étudierons les itérateurs et leur invalidation dans le [Chapitre 6](/chapter6).
-![](/CPP_Learning/images/chapter3/doc-vector-it.png)
+![](/CPP_Learning/images/chapter5/doc-vector-it.png)
 
 {{% notice warning %}}
 
@@ -59,12 +59,12 @@ Dans le cas du `vector`, si vous regardez le tableau, cela élimine donc toutes 
 #### 4. Types membres
 
 La section suivante donne la liste des types définis à l'intérieur de la classe. On ne s'intéressera pas à son contenu pour le moment.
-![](/CPP_Learning/images/chapter3/doc-vector-types.png)
+![](/CPP_Learning/images/chapter5/doc-vector-types.png)
 
 #### 5. Fonctions
 
 On trouve enfin la liste des fonctions que l'on va pouvoir utiliser sur la classe. C'est cette partie que vous consulterez le plus souvent.
-![](/CPP_Learning/images/chapter3/doc-vector-fcns.png)
+![](/CPP_Learning/images/chapter5/doc-vector-fcns.png)
 
 Cette liste est organisée en catégories, dont la première contient toujours le constructeur, le destructeur et l'opérateur d'assignation (et parfois quelques autres fonctions).
 Sur chaque ligne est indiquée le nom de la fonction, une brève description de ce qu'elle fait, la version à partir de laquelle elle est disponible et sa visibilité.
@@ -72,7 +72,7 @@ Sur chaque ligne est indiquée le nom de la fonction, une brève description de 
 #### 6. Exemple
 
 Tout en bas de la page, vous trouvez généralement un exemple permettant de comprendre très rapidement comme la classe peut s'utiliser.
-![](/CPP_Learning/images/chapter3/doc-vector-ex.png)
+![](/CPP_Learning/images/chapter5/doc-vector-ex.png)
 
 
 ---
@@ -83,7 +83,7 @@ Cliquez maintenant sur la fonction `emplace_back`, afin d'ouvrir la page contena
 
 #### 1. En-tête
 
-![](/CPP_Learning/images/chapter3/doc-fcn-header.png)
+![](/CPP_Learning/images/chapter5/doc-fcn-header.png)
 
 Dans l'en-tête des pages de documentation de fonctions, vous trouverez les signatures des différentes surcharges de la fonction, ainsi que les versions pour lesquelles elles sont disponibles.\
 Vous pouvez par exemple voir qu'initialement, `emplace_back` ne retournait rien, et qu'à partir de C++17, elle retourne une référence.
@@ -92,7 +92,7 @@ En-dessous des signatures des surcharges, vous trouvez le détail ce que la fonc
 
 #### 2. Paramètres
 
-![](/CPP_Learning/images/chapter3/doc-fcn-params.png)
+![](/CPP_Learning/images/chapter5/doc-fcn-params.png)
 
 Vous trouvez ici pour chaque paramètre attendu par la fonction, ce que celle-ci compte en faire. Notez par exemple que dans le cas de `emplace_back`, les arguments sont directement transmis au constructeur de l'élément à insérer.\
 Si vous avez une classe `Person` dont le constructeur attend un prénom et un nom, vous pouvez donc écrire le code suivant :
@@ -106,20 +106,20 @@ En dessous des paramètres de la fonction, on vous indique les éventuelles cont
 
 #### 3. Valeur de retour
  
-![](/CPP_Learning/images/chapter3/doc-fcn-return.png)
+![](/CPP_Learning/images/chapter5/doc-fcn-return.png)
 
 On vous indique simplement ce que la fonction vous renvoie.
 
 #### 4. Exceptions
 
-![](/CPP_Learning/images/chapter3/doc-fcn-exceptions.png)
+![](/CPP_Learning/images/chapter5/doc-fcn-exceptions.png)
 
 Il est possible de lancer des exceptions en C++. Cette section indique la liste des exceptions que la fonction peut lancer et ce qu'il se passe dans ce cas-là.\
 Pour `emplace_back`, on voit que si une exception est lancée par le move constructor de l'élément, alors le comportement de la fonction est indéfini (undefined behavior).
 
 #### 5. Exemples
 
-![](/CPP_Learning/images/chapter3/doc-fcn-ex.png)
+![](/CPP_Learning/images/chapter5/doc-fcn-ex.png)
 
 En fin de page, vous trouverez finalement le ou les exemples d'utilisation de la fonction.
 

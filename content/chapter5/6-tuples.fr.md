@@ -8,9 +8,9 @@ Vous avez déjà utilisé le type `pair` au cours d'exercices précédents. Nous
 ---
 
 Pour cet exercice, vous modifierez le fichier :\
-\- `chap-03/5-tuples.cpp`
+\- `chap-05/5-tuples.cpp`
 
-La cible à compiler est `c3-5-tuples`.
+La cible à compiler est `c5-5-tuples`.
 
 ---
 

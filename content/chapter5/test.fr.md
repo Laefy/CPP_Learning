@@ -3,98 +3,41 @@ title: "Questionnaire !"
 weight: 100
 ---
 
-C'est l'heure du test ! Bon courage 🙂
+Le premier objectif de ce chapitre était de vous présenter quelques classes de la STL, leurs rôles, leurs différences, dans quelles situations les utiliser et comment.\
+Il avait également un deuxième objectif, qui était en quelque sorte de vous apprendre à vous débrouiller tout seul : vous devriez désormais être capable de rechercher par vous-même des informations dans la documentation, et vous devriez aussi appréhender un peu mieux qu'avant les messages du compilateur.
+
+J'espère donc que ce chapitre a rempli ses objectifs et que vous vous sentez maintenant plus à l'aise pour programmer !​ 😀​
 
 ---
 
 {{% test chapter=5 %}}
-
-{{% test_item id=1 lines="1" desc="resp-owner" %}}Quel est la responsabilité du propriétaire d'une ressource ?{{% /test_item %}}
-{{% test_item id=2 lines="2" desc="why-smart" %}}Quelles sont les deux raisons pour lesquelles il faut utiliser des smart pointers plutôt que des raw pointers lorsqu'on veut exprimer la notion d'ownership ?{{% /test_item %}}
-{{% test_item id=3 lines="3" desc="3-smarts" %}}Quels sont les trois smart pointers proposés par la STL ? A quoi sert chacun d'entre eux ?{{% /test_item %}}
-{{% test_item id=4 lines="2" desc="raw-ptr-use" %}}En C++ moderne, dans quelle(s) situation(s) est il valide d'utiliser un raw pointer ?{{% /test_item %}}
-{{% test_item id=5 lines="1" desc="move-not-copy" %}}Quelle fonction de la STL permet de déplacer un objet plutôt que de le copier ?{{% /test_item %}}
-
+{{% test_item id=1 desc="3-infos-in-doc-header" %}}Citez 3 informations que vous pouvez retrouver dans l'en-tête de la documentation d'une classe.{{% /test_item %}}
+{{% test_item id=2 desc="default-template-param" %}}Comment savoir s'il est nécessaire ou non de fournir un paramètre de template à une classe ?{{% /test_item %}}
+{{% test_item id=3 desc="3-banned-vector-fcns-foreach" %}}Citez 3 fonctions de `vector` qu'il ne faut pas appeler à l'intérieur d'une boucle foreach.{{% /test_item %}}
+{{% test_item id=4 desc="when-()-{}-diff" %}}Dans quel cas l'instanciation d'une classe via `(p1, p2, p3)` n'a pas le même comportement que l'instanciation via `{ p1, p2, p3 }` ?{{% /test_item %}}
+{{% test_item id=5 desc="section-usage" %}}Quel section de la documentation faut-il regarder pour savoir rapidement comment utiliser une fonction ?{{% /test_item %}}
 ---
-
-```cpp
-class SomeObjects
-{
-public:
-    SomeObjects(std::vector<Object*> objects)
-        : _objects { objects }
-    {}
-
-    ~SomeObjects()
-    {
-        for (auto* obj: _objects)
-        {
-            delete obj;
-        }
-    }
-
-    ...
-
-private:
-    std::vector<Object*> _objects;
-};
-```
-
-{{% test_item id=6 lines="1" desc="is-owner" %}}`SomeObjects` est-elle propriétaire des éléments contenus dans `_objects` ?{{% /test_item %}}
-{{% test_item id=7 lines="7" desc="as-owner" %}}Si vous vouliez que `SomeObjects` soit propriétaire du contenu de `_objects`, comment pourriez-vous réécrire le code plus clairement ?{{% /test_item %}}
-{{% test_item id=8 lines="7" desc="as-non-owner" %}}Même question si vous vouliez que `SomeObjects` ne soit pas propriétaire du contenu de `_objects`.{{% /test_item %}}
-
+{{% test_item id=6 desc="function-array-access" %}}Quelle est la fonction définie par `vector` qui permet d'accéder à un élément avec l'expression `values[idx]` ?{{% /test_item %}}
+{{% test_item id=7 desc="functions-foreach" %}}Quelles fonctions faut-il définir dans un conteneur pour pouvoir le parcourir au moyen d'une boucle foreach ?{{% /test_item %}}
+{{% test_item id=8 desc="set-key-constraint" %}}Pour pouvoir utiliser un `std::set<Key>`, quelle contrainte la classe `Key` doit-elle respecter ?{{% /test_item %}}
+{{% test_item id=9 desc="set-key-constraint-sign" %}}Afin de respecter cette contrainte, quelle est la signature de la fonction à définir ?{{% /test_item %}}
+{{% test_item id=10 desc="queue-inner-ctn-fcns" lines=3 %}}Quelles fonctions doivent être définies dans `MyOwnContainer` pour utiliser un objet de type `std::queue<float, MyOwnContainer>` ? Indiquez leurs signatures.{{% /test_item %}}
 ---
+{{% test_item id=11 desc="nb-elem" %}}Quelle fonction permet de connaître le nombre d'éléments d'un conteneur ?{{% /test_item %}}
+{{% test_item id=12 desc="empty-container" %}}Quelle fonction permet de savoir si un conteneur est vide ?{{% /test_item %}}
+{{% test_item id=13 desc="first-element" %}}Quelle fonction permet de récupérer le premier élément d'un conteneur séquentiel ?{{% /test_item %}}
+{{% test_item id=14 desc="insert-dict" %}}Citez deux fonctions permettant d'ajouter des éléments dans un dictionnaire.{{% /test_item %}}
+{{% test_item id=15 desc="suppress" %}}Quelle fonction permet de supprimer des éléments d'un conteneur séquentiel ?{{% /test_item %}}
+{{% test_item id=16 desc="remove-all" %}}Quelle fonction permet de vider entièrement un conteneur ?{{% /test_item %}}
+---
+{{% test_item id=17 desc="fixed-size-array" %}}Quelle classe permet de définir un tableau de taille fixe ?{{% /test_item %}}
+{{% test_item id=18 desc="a-b-c-in-array" %}}Définissez une variable de ce type, contenant les valeurs `'a'`, `'b'` et `'c'`.{{% /test_item %}}
+{{% test_item id=19 desc="pass-string" %}}Quelle classe permet de passer une chaîne littérale à une fonction sans faire d'allocation dynamique et sans passer de pointeur ?{{% /test_item %}}
+{{% test_item id=20 desc="unique-values-ctn" %}}Quelles classes faut-il utiliser pour représenter un ensemble de valeurs uniques ? Indiquez la complexité en temps des opérations d'insertions pour chacune d'entre elles.{{% /test_item %}}
+{{% test_item id=21 desc="ret-multi-values" %}}Quelle classe permet de retourner plusieurs valeurs d'une fonction facilement ?{{% /test_item %}}
+---
+{{% test_item id=22 desc="first-it" %}}Comment récupérer l'itérateur de début d'un conteneur dans une variable `it` ?{{% /test_item %}}
+{{% test_item id=23 desc="inc-5" %}}Comment incrémenter de 5 positions cet itérateur ?{{% /test_item %}}
+{{% test_item id=24 desc="val-it" %}}Comment récupérer la valeur pointé par cette itérateur dans une variable `value` ?{{% /test_item %}}
 
-Pour les questions 9 à 14 :\
-La classe `ResourceHolder` sert à gérer les durées de vie des ressources qu'elle contient.
-On suppose que dans le programme, une ressource n'a besoin que d'un seul propriétaire à chaque instant.  
-
-```cpp
-struct Resource
-{
-    Resource(std::string_view name)
-        : _name { name }
-    {}
-
-    std::string _name;
-};
-
-// Manages the lifetime of a group of Resources.
-// Also provides access to these Resources.
-class ResourceHolder
-{
-public:
-    // Creates a new resource.
-    void add_resource(std::string_view name);
-    // Destroys the resource named 'name'. Does nothing if not found.
-    void remove_resource(std::string_view name);
-
-    // Takes the ownership of an existing resource.
-    void acquire_resource(? resource);
-    // Transfers the ownership of the resource named 'name' to the caller.
-    // Return an appropriated representation of 'nothing' if not found.
-    ? yield_resource(std::string_view name);
-
-    // Provides access to the resource named 'name'.
-    ? get_resource(std::string_view name) const;
-
-private:
-    using iterator = ...;
-    using const_iterator = ...;
-
-    // Returns an iterator on the resource with the given name.
-    iterator find_resource(std::string_view name);
-    const_iterator find_resource(std::string_view name) const;
-
-    ? _resources;
-};
-```
-
-{{% test_item id=9 lines="1" desc="resources-type" %}}Quel peut être le type de `_resources` ?{{% /test_item %}}
-{{% test_item id=10 lines="3" desc="add_resource" %}}Implémentez le contenu de `add_resource`.{{% /test_item %}}
-{{% test_item id=11 lines="5" desc="remove_resource" %}}Implémentez le contenu de `remove_resource` en utilisant `find_resource`.{{% /test_item %}}
-{{% test_item id=12 lines="3" desc="acquire_resource" %}}Remplacez `?` dans la déclaration de `acquire_resource` et implémentez la fonction.{{% /test_item %}}
-{{% test_item id=13 lines="5" desc="yield_resource" %}}Remplacez `?` dans la déclaration de `yield_resource` et implémentez la fonction.{{% /test_item %}}
-{{% test_item id=14 lines="5" desc="get_resource" %}}Remplacez `?` dans la déclaration de `get_resource` et implémentez la fonction.{{% /test_item %}}
 {{% /test %}}

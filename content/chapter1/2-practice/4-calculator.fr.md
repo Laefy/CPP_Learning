@@ -388,7 +388,7 @@ default:
 ```
 {{% notice note %}}
 Vous vous demandez pourquoi j'ai ajouté la clause par défaut alors que tous les cas ont été traités ? En fait, le compilateur n'est pas suffisamment malin pour se rendre compte que `op` ne peut pas prendre d'autres valeurs que celles indiquées. On ajoute donc la clause `default`, car sinon, on se retrouve avec des warnings. Et les warnings, c'est le début des erreurs.\
-Si on voulait aller plus loin, on pourrait utiliser un `enum class` ([chap 5](/chapter5/)) à la place d'un `char` pour indiquer au compilateur la liste exhaustive des valeurs à traiter.
+Si on voulait aller plus loin, on pourrait utiliser un `enum class` à la place d'un `char` pour indiquer au compilateur la liste exhaustive des valeurs à traiter.
 {{% /notice %}}
 
 {{% /expand %}}

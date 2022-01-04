@@ -38,13 +38,8 @@ Un langage est dit générique s'il permet d'appliquer un même algorithme sur d
 
 Le C++ est un langage qui est souvent qualifié de complexe.
 
-Pour commencer, celui-ci ne dispose pas de garbage-collector. Il faut donc manipuler avec soin la mémoire allouée, penser à la libérer lorsqu'elle n'est plus utilisée et généralement passer des pointeurs pour référencer les blocs de mémoire.
-
-{{% notice tip %}}
-Le C++ dispose de mécanismes permettant de limiter l'usage des pointeurs : \
-\- pour passer des paramètres à une fonction par référence plutôt que par copie, on peut utiliser des références : `void fcn(int& ref)` au lieu de `void fcn(int copy)`, \
-\- pour libérer automatiquement la mémoire d'un objet alloué sur le tas lorsqu'on ne l'utilise plus, C++14 introduit les smart pointers, que nous étudierons dans le [Chapitre VII](/chapter7).
-{{% /notice %}}
+Pour commencer, celui-ci ne dispose pas de garbage-collector.
+Il faut donc manipuler avec soin la mémoire allouée, penser à la libérer lorsqu'elle n'est plus utilisée et faire attention de manière générale à la durée de vie des entités du programme.
 
 Ensuite, le code produit en C++ peut rapidement devenir illisible.
 Les espaces et tabulations n'étant pas significatifs comme en Python, le C++ repose sur l'utilisation de `()`, `{}` et `;` pour délimiter les expressions, instructions et blocs d'exécutions.
@@ -56,11 +51,12 @@ Il est toujours possible de rendre son code plus clair en définissant des varia
 {{% /notice %}}
 
 Enfin, pour préserver la rétro-compatibilité du C++, très peu de nouveaux mots-clefs ont été ajoutés au fil des versions. 
-La syntaxe des nouvelles fonctionnalités se base donc souvent sur la réutilisation de mots-clefs déjà existants, mais utilisés dans un autre contexte, ou encore sur l'utilisation de caractères spéciaux. \
-\- `inline` servait à la base uniquement à déclarer des fonctions comme inlinées ([chap. VII](/chapter8)) mais depuis C++17, il peut aussi être utilisé pour les variables. \
-\- les lambdas ([chap. VI](/chapter6)) sont introduites par C++11 avec la syntaxe suivante : `[c1, c2](int p1, int p2) { return (c1 + p1) - (c2 + p2); }`.
+La syntaxe des nouvelles fonctionnalités se base donc souvent sur la réutilisation de mots-clefs déjà existants, mais utilisés dans un autre contexte, ou encore sur l'utilisation de caractères spéciaux.\
+Les lambdas du C++ par exemple se présentent sous la forme suivante : `[c1, c2](int p1, int p2) { return (c1 + p1) - (c2 + p2); }`.\
+Pas très digeste, n'est-ce pas ? 🙄
 
-Ces différents points font du C++ un langage plutôt difficile à aborder. Mais en réalité, une fois la syntaxe démystifiée, il devient relativement aisé de le comprendre et de programmer avec.
+Ces différents points font du C++ un langage plutôt difficile à aborder.
+Mais en réalité, une fois la syntaxe démystifiée et le concept de durée de vie des entités intégré, il devient relativement aisé de le comprendre et de programmer avec ! 🏆
 
 ---
 
@@ -71,7 +67,7 @@ Il est également très performant, ce qui fait de lui le langage de prédilecti
 
 Mais C++ ne se limite pas qu'à ces domaines. Il est un des langages de programmation les plus utilisés à travers le monde pour le développement d'applications ou d'API.
 Cette popularité peut s'expliquer par le fait qu'il est extrêmement bien documenté et qu'il dispose d'une large communauté à laquelle s'adresser en cas de difficulté.
-On peut aussi supposer que les nombreuses évolutions qu'il a connu depuis une dizaine d'années, autant pour apporter de nouvelles fonctionnalités que pour le rendre plus intuitif à utiliser, l'ont aidé à gagner des utilisateurs.
+On peut aussi supposer que les nombreuses évolutions qu'il a connu depuis une dizaine d'années, autant pour apporter de nouvelles fonctionnalités que pour le rendre plus intuitif à utiliser, ont participé à son succès.
 
 Un autre aspect important et apprécié du C++ est qu'il s'agit d'un langage sans surprise. Le standard spécifie tout ce qui est supporté, et surtout, tout ce qui ne l'est pas (undefined behavior). Si quelque chose est supporté, alors le standard définit un comportement que les compilateurs devront garantir quelque soit la machine sur laquelle le programme sera exécuté. Cela permet aux programmeurs d'être assurés que ce qui doit fonctionner fonctionnera effectivement, et de ne pas s'étonner si ce qui est spécifié comme undefined behavior ne fonctionne pas comme ils l'espéraient.
 
@@ -84,4 +80,3 @@ Un autre aspect important et apprécié du C++ est qu'il s'agit d'un langage san
 - {{< open_in_new_tab "https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines" "Bonnes pratiques" />}}
 - {{< open_in_new_tab "https://isocpp.org/faq" "Une super FAQ" />}}
 - {{< open_in_new_tab "https://isocpp.org/std/the-standard" "Informations sur le standard" />}}
-

@@ -8,9 +8,9 @@ Dans cette partie, nous reviendrons sur les fonctions fournies par la librairie 
 ---
 
 Pour cet exercice, vous modifierez le fichier :\
-\- `chap-03/4-strings.cpp`
+\- `chap-05/4-strings.cpp`
 
-La cible à compiler est `c3-4-strings`.
+La cible à compiler est `c5-4-strings`.
 
 ---
 

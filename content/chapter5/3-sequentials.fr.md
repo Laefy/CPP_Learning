@@ -8,9 +8,9 @@ Vous allez maintenant manipuler les autres conteneurs séquentiels que la librai
 ---
 
 Pour cet exercice, vous modifierez le fichier :\
-\- `chap-03/2-sequentials.cpp`
+\- `chap-05/2-sequentials.cpp`
 
-La cible à compiler est `c3-2-sequentials`.
+La cible à compiler est `c5-2-sequentials`.
 
 ---
 
@@ -113,7 +113,7 @@ A part cela, les autres opérations sont disponibles avec la même complexité.
 Les derniers conteneurs que nous allons ici sont les piles `std::stack` et les files `std::queue`. Nous n'allons pas rappeler en détail ce que sont les piles ou les files, mais si vous avez tout oublier de vos cours d'algorithmique, sachez au moins que dans une pile, les insertions et suppressions sont effectuées en fin de conteneur, alors que dans une file, les suppressions s'effectuent en tête et les insertions en fin de conteneur.
 
 Dans le cas de la STL, `stack` et `queue` ont la particularité d'être des adapteurs. Cela signifie que vous pouvez choisir l'implémentation que vous souhaitez utiliser en interne. La seule contrainte, c'est que la classe sous-jacente doit fournir certaines fonctions. Par exemple, dans le cas de la pile, on pourrait utiliser `vector` ou `list`, mais pas `forward_list` car elle ne définit pas `push_back` :\
-![](/CPP_Learning/images/chapter3/doc-stack-constraints.png)
+![](/CPP_Learning/images/chapter5/doc-stack-constraints.png)
 
 Sur l'image ci-dessus, on vous précise quel conteneur est utilisé par défaut si vous n'en spécifier aucun (c'est-à-dire si vous écrivez juste `std::stack<int>`, au lieu de `std::stack<int, smtg>`). De quelle classe s'agit-il ?\
 En cherchant un petit peu dans sa documentation, essayez de trouver une raison pour laquelle la librairie a décidé d'utiliser ce conteneur là par défaut.

@@ -118,7 +118,8 @@ Cette introduction étant terminée, j'espère que vous vous amuserez et que vou
 
 ### Qui suis-je ?
 
-Je m'appelle Céline Noël et je suis programmeuse chez Ubisoft depuis 3 ans.
+Je m'appelle Céline Noël et je suis programmeuse chez Dental Monitoring depuis environ 3 mois.
+Avant cela, j'ai travaillé 4 ans pour Ubisoft.
 
 J'ai terminé mes études à l'UGE (anciennement UPEM ⚰️) en 2017, durant lesquelles j'ai effectué un Master Informatique en double-cursus avec un cycle d'ingénieur à l'IMAC.
 

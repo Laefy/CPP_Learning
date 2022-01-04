@@ -6,15 +6,15 @@ weight: 2
 ---
 
 Pour cet exercice, vous modifierez les fichiers :\
-\- `chap-05/2-pokemons/Journey.cpp`\
-\- `chap-05/2-pokemons/PC.h`\
-\- `chap-05/2-pokemons/PokeCenter.h`\
-\- `chap-05/2-pokemons/Pokedex.h`\
-\- `chap-05/2-pokemons/Pokemon.h`\
-\- `chap-05/2-pokemons/ProfessorOak.h`\
-\- `chap-05/2-pokemons/Trainer.h`
+\- `chap-03/2-pokemons/Journey.cpp`\
+\- `chap-03/2-pokemons/PC.h`\
+\- `chap-03/2-pokemons/PokeCenter.h`\
+\- `chap-03/2-pokemons/Pokedex.h`\
+\- `chap-03/2-pokemons/Pokemon.h`\
+\- `chap-03/2-pokemons/ProfessorOak.h`\
+\- `chap-03/2-pokemons/Trainer.h`
 
-La cible à compiler est `c5-2-pokemons`.
+La cible à compiler est `c3-2-pokemons`.
 
 ---
 

@@ -52,7 +52,7 @@ for (int value : array)
 {{% /expand %}}
 
 {{% notice info %}}
-Il est possible d'utiliser une boucle foreach uniquement sur un tableau statique seulement s'il est déclaré dans la même fonction que votre boucle. Nous verrons dans le [Chapitre 3](/chapter3/) une autre manière de définir des tableaux statiques, qui permet de les manipuler plus facilement que les tableaux statiques 'primitifs'. 
+Il est possible d'utiliser une boucle foreach uniquement sur un tableau statique seulement s'il est déclaré dans la même fonction que votre boucle. Nous verrons dans le [Chapitre 5](/chapter5/) une autre manière de définir des tableaux statiques, qui permet de les manipuler plus facilement que les tableaux statiques 'primitifs'. 
 {{% /notice %}}
 
 Vous souhaiteriez maintenant avoir dans votre tableau les nombres de 1 à 50. Mais vous n'avez pas très envie d'écrire cette suite à la main dans les accolades. Vous allez donc utiliser les crochets `[]` pour spécifiez la nouvelle taille du tableau, ainsi qu'une boucle `for` pour intialiser votre tableau. N'oubliez pas de définir votre tableau avec `= {}`. Cela permettra de remplir dans un premier temps le tableau de 0, plutôt que de valeurs aléatoires. Vérifiez que vous obtenez les bonnes valeurs dans la sortie du programme.

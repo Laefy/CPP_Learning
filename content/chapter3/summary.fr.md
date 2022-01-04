@@ -9,58 +9,53 @@ weight: 101
 
 ##### Théorie
 
-- Un conteneur séquentiel est un conteneur dans lequel les élements se suivent (tableaux, listes, ...).
-- Un conteneur associatif est un conteneur dans lequel chaque élément est indexé par une clef (l'élément pouvant être la clef elle-même).
-- Les types passés en paramètre de template doivent parfois respecter des contraintes pour compiler (ces contraintes sont spécifiées dans la documentation).
-
-##### Librairie standard
-
-- Tableau de taille dynamique : `vector`
-- Tableau de taille fixe : `array`
-- Listes chaînées : `list` ou `forward_list`
-- Ensembles : `set` ou `unordered_set`
-- Dictionnaires : `map` ou `unordered_map`
+- Une ressource est généralement une entité que l'on demande à l'OS de nous "prêter", comme un bloc de mémoire, un fichier ou encore une connection réseau.\
+Certains objets du programme peuvent également être considérés comme des ressources.
+- Une ressource est valide de son acquisition à sa libération. La durée de vie d'une ressource fait référence est cette période de validité. 
+- RAII : technique qui consiste à s'assurer qu'une ressource sera bien libérée, en l'associant à un objet (smart pointer, conteneur STL, ...).
+Cet objet réalise alors la libération de la ressource dans son destructeur.
+- Le propriétaire d'une ressource, c'est le composant (objet, fonction, variable) responsable de la durée de vie de cette ressource. 
 
 ##### Pratique
 
-- On peut passer les chaînes de caractères constantes par `std::string_view` plutôt que `const std::string&` ou `const char*`.
-- Si une classe définit une constructeur acceptant un paramètre de type initializer_list, alors il faut forcément utiliser la syntaxe `(...)` plutôt que `{ ... }` pour appeler un autre constructeur.
-- On peut écrire `values[idx]` si `values` est un tableau primitif ou si la classe de `values` définit un `operator[]`.
-
-##### Méthodologie
-
-- Pour savoir comment utiliser une classe ou fonction, commencer par regarder l'exemple fourni dans la doc.
+- La composition (= on est propriétaire) s'exprime avec `Obj object` ou `std::unique_ptr<Obj> object`.
+- L'aggrégation (= on n'est pas propriétaire) s'exprime avec des références `Obj& object` ou (`Obj* object` si optionnel).
 
 ---
 
 ### Ce qu'il faut savoir faire
 
-##### Langage
+##### Méthodologie
 
-- Définir un opérateur de comparaison : `bool operator<(const ClassName& other) { return /* ... */; }`
-- Définir un opérateur d'égalité : `bool operator==(const ClassName& other) { return /* ... */; }`
+- Il faut déterminer qui sera owner de qui avant de commencer à coder, afin de définir correctement l'architecture de ses classes.
+- Il faut aussi définir qui aura le droit d'utiliser une ressource sans en être propriétaire.
 
 ##### Librairie standard
 
-- Utiliser les fonctions génériques permettant d'accéder ou de manipuler un conteneur : `size`, `empty`, `clear`, `emplace_back`, `insert`, `erase`, etc.
-- Instancier des conteneurs de la librairie standard et les utiliser (en consultant la doc si besoin).
-- Instancier des `pair` et des `tuple`.
-- Accéder au n-ième élément d'un `tuple` : `auto& fifth = std::get<4>(my_tuple);`
+- Inclure les smart pointers : `#include <memory>`
+- Créer un `unique_ptr<T>` : `std::make_unique<T>(p1, p2, ...)`.
+- Transférer un `unique_ptr` (non-copiable) : `auto new_owner = std::move(ptr)` / `fcn(std::move(ptr))` 
+- Savoir si un `unique_ptr` fait référence à un objet précis : `ptr->get() == &ref`
+- Accéder au contenu d'un `unique_ptr` : `auto& obj = *ptr` / `*ptr->obj_fcn()`
+- Créer des `shared_ptr<T>` : `std::make_shared<T>(p1, p2, ...)`
+- Inverser deux objets : `std::swap(obj1, obj2)` dans `<utility>`
 
-##### Méthodologie
+##### Langage
 
-- Rechercher dans la documentation comment utiliser une fonction ou une classe (header à inclure, paramètres, contraintes, etc).
-- Utiliser la documentation pour choisir la meilleure classe à utiliser dans une situation donnée (complexité des opérations, espace utilisé, condition d'invalidation des itérateurs, etc).
-- Identifier les "vraies" erreurs dans la sortie du compilateur pour les corriger.
+- `[[nodiscard]]` pour être sûr que la valeur de retour d'une fonction n'est pas ignorée.
+
+##### Pratique
+
+- Prévenir tous les composants qui ont une référence sur un objet avant de procéder à sa destruction.
+- Ecrire `[[nodiscard]]` sur les fonctions destinées à transférer l'ownership d'une ressource.
+C'est d'autant plus important de le faire lorsque le type de retour ne réalise pas la libération de la ressource à sa destruction (= sans RAII), comme les raw pointers.
 
 ---
 
 ### Ce dont il faut à peu près se souvenir
 
-##### Théorie
-
-- Un foncteur est un objet qui définit un `operator()`.
-
 ##### Librairie standard
 
-- Il faut spécialiser la classe `std::hash` pour `Key` si on souhaite utiliser `Key` comme clef d'un `unordered_set` ou `unordered_map`.
+- Utiliser un `std::reference_wrapper<T>`
+- Créer des `weak_ptr<T>` : `std::weak_ptr<T> weak { some_shared_ptr }`
+- Créer un `shared_ptr<T>` si utilisé avec des `weak_ptr` : `std::shared_ptr<T> p { new T { p1, p2, ... } }`

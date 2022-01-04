@@ -6,10 +6,10 @@ weight: 1
 ---
 
 Pour cet exercice, vous modifierez les fichiers :\
-\- `chap-05/1-teachers/DataBase.cpp`\
-\- `chap-05/1-teachers/DataBase.h`
+\- `chap-03/1-teachers/DataBase.cpp`\
+\- `chap-03/1-teachers/DataBase.h`
 
-La cible à compiler est `c5-1-teachers`.
+La cible à compiler est `c3-1-teachers`.
 
 ---
 
