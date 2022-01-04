@@ -4,8 +4,15 @@
   <label for="name">Vous êtes : </label>
   <input type="text" id="name" name="name" placeholder="Prénom Nom" />
 
-  <label for="name">Votre adresse mail : </label>
+  <label for="email">Votre adresse mail : </label>
   <input type="text" name="email" placeholder="mail@smthg.com" />
+
+  <label for="group">Votre groupe : </label>
+  <select name="group">
+    <option value="group-G1">Groupe 1</option>
+    <option value="group-G2">Groupe 2</option>
+    <option value="group-Alt">Groupe Alternants</option>
+  </select>
 
   <input type="hidden" name="_replyto" />
   <input type="hidden" name="_subject" value="[C++][Chapitre {{ .Params.chapter }}] Retour sur ton questionnaire" />

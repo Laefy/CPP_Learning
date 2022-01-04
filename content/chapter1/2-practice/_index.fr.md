@@ -19,5 +19,5 @@ Nous allons maintenant enfin pouvoir coder ! Dans cette partie, vous verrez comm
 En réalité, comme vous avez déjà fait du C et du Java, il y a pas mal de choses que vous connaissez déjà. Le C++ introduit quelques subtilités, mais nous insisterons suffisamment dessus pour que vous les reteniez sans problème 🙂
 
 Récupérez le dépôt git https://github.com/Laefy/CPP_Learning_Code afin de réaliser les exercices facilement.\
-Si vous n'êtes pas très à l'aise avec Git ou CMake, vous pouvez suivre le tutoriel sur la page [Workflow](/CPP_Learning/workflow/) (accessible également depuis le menu du site).
+Si vous n'êtes pas très à l'aise avec Git ou CMake, vous pouvez suivre le tutoriel sur la page {{% open_in_new_tab "/CPP_Learning/workflow" "Workflow" /%}} (accessible également depuis le menu du site).
 
