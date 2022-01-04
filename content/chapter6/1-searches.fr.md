@@ -250,7 +250,7 @@ Vous n'allez pas pouvoir utiliser `find_first_of`, puisqu'il faudrait que la deu
 Heureusement, il y a `find_if`. Comme toutes les fonctions de `<algorithm>` (ou presque), `find_if` attend déjà les deux itérateurs bornant la plage d'éléments.\
 Ensuite, vous devez lui fournir un **foncteur** acceptant un unique paramètre du type des éléments de la plage (par valeur ou const-ref), et renvoyant un booléen.
 
-Un foncteur, c'est soit une fonction libre, soit une instance d'objet avec un `operator()`, soit une lambda.
+Un foncteur, c'est soit une fonction libre, soit une instance de classe avec un `operator()`, soit une lambda.
 
 ```cpp
 // Fonction libre

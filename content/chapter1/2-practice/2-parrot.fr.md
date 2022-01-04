@@ -25,7 +25,7 @@ int number = 0;
 ```
 
 {{% notice tip %}}
-Il faut toujours initialiser vos variables de types primitifs (c'est-à-dire les variables qui ne sont pas des instances de classe). Cela permet d'avoir des crashes et des bugs non-aléatoires, qui se reproduisent toujours de la même manière. Parce que quand un bug ne se produit qu'une fois sur dix, il y a des chances que ce soit le correcteur du TP qui se le prenne, alors que tout c'était bien passé la dernière fois que vous avez testé le programme.\
+Il faut toujours initialiser vos variables de types primitifs (c'est-à-dire les variables qui ne sont pas des instances de classe). Cela permet d'éviter d'avoir des crashes ou des bugs aléatoires. Parce que quand un bug ne se produit qu'une fois sur dix, il y a des chances que ce soit le correcteur du TP qui se le prenne, alors que tout c'était bien passé la dernière fois que vous avez testé le programme.\
 Et plus sérieusement, quand vous serez en entreprise, et que vous vous arracherez les cheveux à relancer 341 fois le même programme pour essayer de reproduire un bug (qu'il faut bien corriger, même s'il n'arrive qu'une fois sur 341), vous vous rappelerez que faire en sorte que vos programmes soient déterministes, ça aide à ne pas devenir chauve.
 {{% /notice %}}
 
@@ -36,7 +36,7 @@ Vous conviendrez que la seule différence avec l'instruction pour écrire sur la
 std::cin >> number;
 ```
 
-Ecrivez ensuite `number` sur la sortie standard et tester votre programme. Si vous exécutez depuis VSCode, utilisez `CMake: Run Without Debugging` plutôt que `CMake: Debug`, afin que le programme s'exécute dans le terminal intégré pour pouvoir y entrer vos valeurs.  
+Ecrivez ensuite `number` sur la sortie standard et testez votre programme. Si vous exécutez depuis VSCode, utilisez `CMake: Run Without Debugging` (Shift+F7) plutôt que `CMake: Debug` (Ctrl+F7), afin que le programme s'exécute dans le terminal intégré pour pouvoir y entrer vos valeurs.  
 
 {{% expand "Solution" %}}
 ```cpp
@@ -124,10 +124,11 @@ On écrira donc `for (int i = 0; i < 10; ++ i) { ... }` plutôt que `int i; for 
 
 ### Les chaînes de caractères
 
-Jusqu'ici, notre perroquet ne sait dire que "Craow" et comptez. D'ailleurs, si vous lui dites autre chose qu'un nombre, il a tendance à s'étrangler. \
+Jusqu'ici, notre perroquet ne sait dire que "Craow" et compter. D'ailleurs, si vous lui dites autre chose qu'un nombre, il a tendance à s'étrangler.\
 Nous allons donc lui apprendre à faire des vraies phrases.
 
-La librairie standard du C++ définit la classe `std::string`. Cherchez quel header inclure pour pouvoir l'utiliser, et ajoutez-le à votre programmme. \
+La librairie standard du C++ définit la classe `std::string`.\
+Cherchez d'abord sur [cpp-reference](https://en.cppreference.com/w/) quel header inclure pour pouvoir l'utiliser et ajoutez-le à votre programmme.\
 Remplacez ensuite votre variable `number` de type `int` par une variable `word` de type `std::string`.
 
 {{% expand "Solution" %}}
@@ -171,6 +172,6 @@ for (int i = 0; i < 10; ++i)
 
 {{% notice info %}}
 Lorsqu'on utilise `using namespace` dans un bloc d'instructions (fonction, boucle, condition, etc), il faut savoir que son effet est limité à ce bloc.\
-Autre point important, il faut éviter d'utiliser des `using namespace` à l'intérieur de headers. Comme vous le savez peut-être, lorsque l'on fait un include depuis un .cpp, le fichier inclu est en fait copié-collé dedans. Si on inclut un fichier qui réalise un `using namespace`, puis que l'on inclut au autre header derrière (librairie standard par exemple), le `using namespace` du premier header risque d'impacter le code du second header...
+Autre point important, il faut éviter d'utiliser des `using namespace` à l'intérieur de headers. Comme vous le savez peut-être, lorsque l'on fait un include depuis un .cpp, le fichier inclus est en fait copié-collé dedans. Si on inclut un fichier qui réalise un `using namespace`, puis que l'on inclut un autre header derrière (librairie standard par exemple), le `using namespace` du premier header risque d'impacter le code du second header...
 
 {{% /notice %}}

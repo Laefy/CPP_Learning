@@ -41,6 +41,11 @@ url = "/faq"
 weight = 3
 
 [[menu.shortcuts]]
+name = "<i class='fa fa-rocket'></i> Astuces"
+url = "/chapter0/5-tips/"
+weight = 4
+
+[[menu.shortcuts]]
 name = "<i class='fas fa-passport'></i> CPP-Ref"
 url = "https://en.cppreference.com/w/"
-weight = 4
+weight = 5

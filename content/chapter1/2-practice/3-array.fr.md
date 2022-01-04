@@ -51,10 +51,6 @@ for (int value : array)
 ```
 {{% /expand %}}
 
-{{% notice info %}}
-Il est possible d'utiliser une boucle foreach uniquement sur un tableau statique seulement s'il est déclaré dans la même fonction que votre boucle. Nous verrons dans le [Chapitre 5](/chapter5/) une autre manière de définir des tableaux statiques, qui permet de les manipuler plus facilement que les tableaux statiques 'primitifs'. 
-{{% /notice %}}
-
 Vous souhaiteriez maintenant avoir dans votre tableau les nombres de 1 à 50. Mais vous n'avez pas très envie d'écrire cette suite à la main dans les accolades. Vous allez donc utiliser les crochets `[]` pour spécifiez la nouvelle taille du tableau, ainsi qu'une boucle `for` pour intialiser votre tableau. N'oubliez pas de définir votre tableau avec `= {}`. Cela permettra de remplir dans un premier temps le tableau de 0, plutôt que de valeurs aléatoires. Vérifiez que vous obtenez les bonnes valeurs dans la sortie du programme.
 
 {{% expand "Solution" %}}
@@ -85,8 +81,25 @@ int main(int argc, char** argv)
 
 Si l'argument n'est pas fourni, affichez un message d'erreur en écrivant dans `std::cerr` et sortez du programme avec le code d'erreur -1. Sinon, affichez le contenu de l'argument. Vous pouvez commenter le restant du code avec le tableau, en utilisant `/* code */` ou bien `// code` sur chaque ligne.
 
-Afin de tester votre programme, vous pouvez soit le lancer depuis un terminal (le programme devrait être généré dans le dossier `build/chap-01/{config}/c1-3-array)`), ou bien générer un nouveau fichier `launch.json` depuis VSCode et modifier son contenu pour y passer l'argument de votre choix.
+Afin de tester le passage d'arguments à votre programme, vous avez 2 possibilités :
+1. Vous pouvez le lancer depuis un terminal.
+L'exécutable devrait avoir été généré quelque part dans le dossier `build/chap-01/`.
+```b
+## Unix
+./build/chap-01/c1-3-array arg1 arg2
 
+## Windows
+./build/chap-01/c1-3-array.exe arg1 arg2
+```
+2. Vous pouvez générer un fichier `launch.json` depuis VSCode.\
+Pour cela, allez dans le menu `Run` et sélectionnez `Add Configuration...`.
+Si VSCode vous propose plusieurs options, choisissez 'C++ (GDB/LLDB)'.\
+Enfin, modifiez les champs `"program"` et `"args"` dans le fichier qui vient de s'ouvrir :
+```json
+"program": "${command:cmake.launchTargetPath}", // copiez-collez la ligne telle quelle
+"args": ["voici", 3, "arguments"],              // fournissez les arguments de votre choix ici
+```
+\
 {{% expand "Solution" %}}
 ```cpp
 int main(int argc, char** argv)
@@ -137,71 +150,12 @@ Si vous utilisez `std::stoi` et que la chaîne fournie ne commence pas par un en
 
 ---
 
-### Allocation de tableau dynamique
+### Tableau dynamique
 
-Vous pouvez maintenant décommenter le code pour le tableau, que vous allez modifier afin d'allouer un tableau dynamique.
+Vous pouvez maintenant décommenter le code de manipulation du tableau, que vous allez transformer en tableau dynamique.
+La classe proposée par la librairie standard pour définir ce type de conteneur est `std::vector`.
 
-Pour allouer de la mémoire en C++, nous allons utiliser l'opérateur `new`. Et pour la libérer, nous utiliserons `delete`. Afin d'allouer une variable de type `int` (que l'on oubliera pas de libérer) ayant pour valeur 4, on utilisera le code suivant :
-```cpp
-int* value = new int(4);
-std::cout << "Value is " << *value << std::endl;
-delete value;
-``` 
-
-C'est bien tout ça, mais nous, ce qu'on aimerait, c'est un tableau. La syntaxe que nous venons de voir ne permet pas de spécifier le nombre de blocs à allouer pour le tableau. Dans notre cas, il faut en réalité utiliser les operator `new[]` et `delete[]`. Si on veut allouer un tableau de 4 entiers allant de 0 à 3, on utilisera donc :
-```cpp
-int* values = new int[4] { 0, 1, 2, 3 };
-std::cout << "Values are " << values[0] << ", " << values[1] << ", " << values[2] << ", " << values[3] << std::endl;
-delete[] values;
-```
-
-{{% notice info %}}
-Notez bien le fait que l'on utilise des crochets vides sur le `delete`. Si vous les oubliez, le programme risque de râler.\
-Pensez aussi à mettre des accolades vides derrière le `new int[size]` si vous ne souhaitez pas spécifier de valeurs, afin d'avoir des 0 dans le tableau, plutôt que des valeurs aléatoires.
-{{% /notice %}}
-
-Utilisez les opérateurs `new[]` et `delete[]` et faites les modifications appropriées afin d'allouer un tableau de la taille attendue, plutôt qu'un tableau de taille statique.
-
-{{% expand "Solution" %}}
-```cpp
-int* array = new int[length] {};
-
-for (int i = 0; i < length; ++i)
-{
-    array[i] = i+1;
-}
-
-for (int value : array)
-{
-    std::cout << value << std::endl;
-}
-
-delete[] array;
-```
-{{% /expand %}}
-
-Essayez maintenant de compiler. Vous devriez avoir une erreur de ce style au niveau de votre boucle foreach :
-```b
-error blabla: 'begin': no matching overloaded function found
-```
-
-Eh oui, les boucles foreach ne fonctionnent pas avec les tableaux dynamiques. Vous devez donc la remplacez par une boucle `for` classique. 
-{{% expand "Solution" %}}
-```cpp
-for (int i = 0; i < length; ++i)
-{
-    std::cout << array[i] << std::endl;
-}
-```
-{{% /expand %}}
-
----
-
-### std::vector
-
-Afin de pouvoir manipuler des tableaux plus simplement, la librairie standard définit la classe `std::vector`. Vous n'aurez ainsi plus à vous préoccuper de libérer la mémoire, à initialiser des valeurs qui seront de toute manière écrasées, et vous pourrez réutiliser des boucles foreach.
-
-Pour définir un `std::vector` initialement vide qui contiendra des entiers, on utilise l'instruction suivante :
+Afin de générer un `std::vector` initialement vide qui contiendra des entiers, on utilise l'instruction suivante :
 ```cpp
 std::vector<int> array;
 ```
@@ -213,7 +167,8 @@ array.emplace_back(5);
 array.emplace_back(-3);
 ```
 
-Modifiez votre code de façon à utiliser un `std::vector` plutôt qu'un tableau alloué manuellement, retransformer votre boucle pour l'affichage en boucle foreach et testez que tout fonctionne correctement.
+Modifiez votre code de façon à utiliser un `std::vector` plutôt qu'un tableau alloué manuellement et testez que tout fonctionne correctement.
+
 {{% expand "Solution" %}}
 Commencez par inclure le header `<vector>`.
 Dans votre fonction, vous devriez avoir le code suivant.

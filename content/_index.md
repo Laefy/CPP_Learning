@@ -22,10 +22,10 @@ Le cours sera organisé en une dizaine de chapitres. Chaque chapitre contiendra 
 
 #### Exercices
 
-Pour réaliser ces exercices, il est conseillé de partir du code contenu dans le dépôt git suivant : https://github.com/Laefy/CPP_Learning_Code.
+Pour réaliser ces exercices, vous devrez partir du code contenu dans le dépôt git suivant : https://github.com/Laefy/CPP_Learning_Code.
 
 Il est recommandé d'essayer de les faire dans un premier temps sans regarder les solutions.
-Si vous êtes bloqués, commencez par rechercher de l'aide sur Internet ou en demandant à vos camarades de classe.
+Si vous êtes bloqués, rechercher d'abord de l'aide sur Internet ou en demandant à vos camarades de classe.
 
 Une fois que vous avez quelque chose qui à l'air de fonctionner, regardez la solution pour vérifier que ce que vous avez fait est correct. Si votre code n'est pas identique, c'est probablement parce qu'il n'y a pas qu'une seule bonne réponse. Et si vous n'êtes vraiment pas sûr(e)s de votre solution, n'hésitez pas à m'envoyer ce que vous avez fait par mail ou Discord, ou à l'indiquer dans le formulaire de fin de chapitre, afin que je vous donne un retour.
 
@@ -37,7 +37,7 @@ Le questionnaire de fin de chapitre sera composé comme suit :
 - un champ pour entrer vos propres questions (on y répondra soit par mail, soit en début de TP),
 - un champ pour laisser des commentaires sur le format du cours et me prévenir si j'ai écrit des bêtises.
 
-N'hésitez vraiment surtout pas à poser vos questions dans le formulaire, mais aussi à me les envoyez par mail Discord, si cela vous bloque pour avancer. Si vous ne comprenez pas bien le cours, ça veut dire que le cours est mal écrit 😯
+N'hésitez vraiment surtout pas à poser vos questions dans le formulaire, mais aussi à me les envoyez par mail ou Discord, si cela vous bloque pour avancer. Si vous ne comprenez pas bien le cours, ça veut dire que le cours est mal écrit 😯
 
 #### Synthèse
 
@@ -58,17 +58,19 @@ Le reste de la séance sera consacrée à la réalisation de ce TP.
 
 Vous pourrez récupérer les énoncés de TP au format Markdown sur le même {{% open_in_new_tab "https://github.com/Laefy/CPP_Learning_Code" "dépôt" /%}} que les exercices du cours.
 
-Les premiers TPs contiennent une série d'exercices très classiques, pour vous apprendre à maîtriser chaque notion individuellement.
+Les premiers TPs contiennent une série d'exercices très classiques, pour vous apprendre à maîtriser chaque notion séparément.
 Ces TPs pourront être réalisé seuls ou en binôme, et ne seront pas notés.
 
-Ensuite, par la suite, vous travaillerez sur un unique gros TP-filé, qui devra être réalisé seul.
-Une base de code vous sera fournie, et vous devrez la modifier pour y ajouter des fonctionnalités, corriger des bugs et améliorer le code.
+Par la suite, les séances de TPs seront dédiées à avancer sur le projet sur lequel vous serez évalués individuellement.
+Une base de code vous sera fournie, et vous devrez la modifier pour y ajouter des fonctionnalités, corriger des bugs et améliorer le code.\
+Etant donné que vous intégrerez votre code dans un projet existant, vous devrez vous adapter aux conventions d'écriture déjà présentes (snake_case / CamelCase, spacing, etc).
 
 Les questions de chaque TP feront référence aux notions abordées durant le dernier chapitre de cours.
 Si vous n'avez pas terminé le TP durant la dernière séance, vous devrez donc le terminer chez vous, pour passer au TP suivant à la prochaine séance et ne pas prendre de retard.
 
 {{% notice note %}}
-Si pour une raison quelconque, vous n'avez pas réussi à terminer le dernier TP avant la séance suivante, commencez le nouveau TP quoi qu'il arrive. Nous essayerons de faire en sorte que chaque TP soit relativement indépendant, que vous puissiez les faire même si vous n'avez pas fini les questions du dernier.\
+Si pour une raison quelconque, vous n'avez pas réussi à terminer le dernier TP avant la séance suivante, commencez le nouveau TP quoi qu'il arrive.
+Nous essayerons de faire en sorte que chaque TP soit relativement indépendant, que vous puissiez les faire même si vous n'avez pas fini les questions du dernier.\
 Bien entendu, si vous ne terminez jamais vos TPs, vous accumulerez un retard de connaissances, qui sera difficile à compenser sur le long terme. 
 {{% /notice %}}
 
@@ -91,7 +93,7 @@ Votre note finale sera composée de deux notes, coefficient 0.5 chacune :
 	- si vous n'avez pas du tout bien répondu aux questions : 1/2
 	- si vous n'avez pas répondu aux questions du tout : 0/3
 
-2. La note de TP, basé sur le TP-filé à rendre à la fin du semestre. Le barème sera communiqué dans son énoncé.
+2. La note de projet, qui sera à remettre à la fin du semestre. Le barème sera communiqué dans son énoncé.
 
 ---
 
