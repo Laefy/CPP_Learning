@@ -12,21 +12,21 @@
     <title>🧮 Calculette :: Cours de C&#43;&#43; - Niveau Master</title>
 
     
-    <link href="/CPP_Learning/css/nucleus.css?1641338196" rel="stylesheet">
-    <link href="/CPP_Learning/css/fontawesome-all.min.css?1641338196" rel="stylesheet">
-    <link href="/CPP_Learning/css/hybrid.css?1641338196" rel="stylesheet">
-    <link href="/CPP_Learning/css/featherlight.min.css?1641338196" rel="stylesheet">
-    <link href="/CPP_Learning/css/perfect-scrollbar.min.css?1641338196" rel="stylesheet">
-    <link href="/CPP_Learning/css/auto-complete.css?1641338196" rel="stylesheet">
-    <link href="/CPP_Learning/css/atom-one-dark-reasonable.css?1641338196" rel="stylesheet">
-    <link href="/CPP_Learning/css/theme.css?1641338196" rel="stylesheet">
-    <link href="/CPP_Learning/css/hugo-theme.css?1641338196" rel="stylesheet">
+    <link href="/CPP_Learning/css/nucleus.css?1641422763" rel="stylesheet">
+    <link href="/CPP_Learning/css/fontawesome-all.min.css?1641422763" rel="stylesheet">
+    <link href="/CPP_Learning/css/hybrid.css?1641422763" rel="stylesheet">
+    <link href="/CPP_Learning/css/featherlight.min.css?1641422763" rel="stylesheet">
+    <link href="/CPP_Learning/css/perfect-scrollbar.min.css?1641422763" rel="stylesheet">
+    <link href="/CPP_Learning/css/auto-complete.css?1641422763" rel="stylesheet">
+    <link href="/CPP_Learning/css/atom-one-dark-reasonable.css?1641422763" rel="stylesheet">
+    <link href="/CPP_Learning/css/theme.css?1641422763" rel="stylesheet">
+    <link href="/CPP_Learning/css/hugo-theme.css?1641422763" rel="stylesheet">
     
-    <link href="/CPP_Learning/css/theme-mine.css?1641338196" rel="stylesheet">
+    <link href="/CPP_Learning/css/theme-mine.css?1641422763" rel="stylesheet">
     
-    <link href="/CPP_Learning/css/syntax.css?1641338196" rel="stylesheet">
+    <link href="/CPP_Learning/css/syntax.css?1641422763" rel="stylesheet">
 
-    <script src="/CPP_Learning/js/jquery-3.3.1.min.js?1641338196"></script>
+    <script src="/CPP_Learning/js/jquery-3.3.1.min.js?1641422763"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -57,14 +57,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/CPP_Learning/js/lunr.min.js?1641338196"></script>
-<script type="text/javascript" src="/CPP_Learning/js/auto-complete.js?1641338196"></script>
+<script type="text/javascript" src="/CPP_Learning/js/lunr.min.js?1641422763"></script>
+<script type="text/javascript" src="/CPP_Learning/js/auto-complete.js?1641422763"></script>
 <script type="text/javascript">
     
         var baseurl = "https:\/\/laefy.github.io\/CPP_Learning\/";
     
 </script>
-<script type="text/javascript" src="/CPP_Learning/js/search.js?1641338196"></script>
+<script type="text/javascript" src="/CPP_Learning/js/search.js?1641422763"></script>
 
     
   </div>
@@ -195,8 +195,29 @@
  
   
     
-      <li data-nav-id="/CPP_Learning/chapter0/5-tips/" title="Astuces" class="dd-item ">
-        <a href="/CPP_Learning/chapter0/5-tips/">
+      <li data-nav-id="/CPP_Learning/chapter0/5-clang-format/" title="Clang-Format" class="dd-item ">
+        <a href="/CPP_Learning/chapter0/5-clang-format/">
+        Clang-Format
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/CPP_Learning/chapter0/6-tips/" title="Astuces" class="dd-item ">
+        <a href="/CPP_Learning/chapter0/6-tips/">
         Astuces
         <i class="fas fa-check read-icon"></i>
         </a>
@@ -487,7 +508,7 @@
               </li>
           
               <li> 
-                  <a class="padding" href="https://laefy.github.io/CPP_Learning/chapter0/5-tips/"><i class='fa fa-rocket'></i> Astuces</a>
+                  <a class="padding" href="https://laefy.github.io/CPP_Learning/chapter0/6-tips/"><i class='fa fa-rocket'></i> Astuces</a>
               </li>
           
               <li> 
@@ -576,8 +597,8 @@
       <ul>
         <li><a href="#comprendre-le-code-existant">Comprendre le code existant</a></li>
         <li><a href="#extraction-de-chaque-étape-dans-des-fonctions">Extraction de chaque étape dans des fonctions</a></li>
+        <li><a href="#les-références">Les références</a></li>
         <li><a href="#switch-">Switch !</a></li>
-        <li><a href="#passage-par-référence">Passage par référence</a></li>
       </ul>
     </li>
   </ul>
@@ -631,7 +652,7 @@
 <li>Calcul de l&rsquo;opération</li>
 <li>Affichage du résultat</li>
 </ol>
-<p>Nous allons décortiquer le code de chacune de ces étapes.</p>
+<p>Nous allons analyser le code de chacune de ces étapes.</p>
 <h4 id="traitement-des-arguments">Traitement des arguments</h4>
 <div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="k">if</span> <span class="p">(</span><span class="n">argc</span> <span class="o">&lt;</span> <span class="mi">2</span><span class="p">)</span>
 <span class="p">{</span>
@@ -728,17 +749,12 @@ Vous aurez donc pour la <strong>définition</strong> de chaque fonction quelque 
 <div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="n">return_type</span> <span class="nf">fcn1_name</span><span class="p">(</span><span class="n">p1_type</span> <span class="n">p1</span><span class="p">,</span> <span class="n">p2_type</span> <span class="n">p2</span><span class="p">,</span> <span class="p">...);</span>
 <span class="n">return_type</span> <span class="nf">fcn2_name</span><span class="p">(</span><span class="n">p1_type</span> <span class="n">p1</span><span class="p">,</span> <span class="n">p2_type</span> <span class="n">p2</span><span class="p">,</span> <span class="p">...);</span>
 <span class="p">...</span>
-</code></pre></div><h4 id="traitement-des-arguments-1">Traitement des arguments</h4>
-<p>Cette fonction devra renvoyer trois informations :<br>
-- si les arguments sont valides ou non,<br>
-- l&rsquo;opérateur,<br>
-- les opérandes.</p>
-<p>La validité des arguments sera indiqué par la valeur de retour, de type <code>bool</code>.
-Comme une fonction ne peut renvoyer qu&rsquo;une seule valeur, nous utiliserons les paramètres pour récupérer l&rsquo;opérateur et les opérandes. Comme en C, il faudra passer par des pointeurs, puisqu&rsquo;autrement, les variables seront copiées.</p>
-<p>Pour l&rsquo;opérateur, vous allez récupérer un <code>char</code> au lieu d&rsquo;une <code>string</code> complète. En effet, dans le restant du <code>main</code>, nous attendons soit &lsquo;+&rsquo;, &lsquo;*&rsquo; ou &lsquo;-&rsquo;, donc nous n&rsquo;avons pas besoin de stocker la chaîne complète au déjà du traitement des arguments.</p>
-<p>Voici donc la signature de la fonction que vous devez implémenter :</p>
-<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="kt">bool</span> <span class="n">parse_params</span><span class="p">(</span><span class="kt">char</span><span class="o">*</span> <span class="n">op</span><span class="p">,</span> <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;*</span> <span class="n">values</span><span class="p">,</span> <span class="kt">int</span> <span class="n">arg</span><span class="p">,</span> <span class="kt">char</span><span class="o">**</span> <span class="n">argv</span><span class="p">)</span>
-</code></pre></div><p>Modifiez le code du programme pour introduire cette fonction et l&rsquo;appeler. Vérifiez que tout fonctionne comme avant.</p>
+</code></pre></div><h4 id="affichage-du-résultat-1">Affichage du résultat</h4>
+<p>Nous allons commencer par l&rsquo;étape la plus simple.</p>
+<p>Vous pouvez utiliser la signature suivante pour cette fonction :</p>
+<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="kt">void</span> <span class="n">display_result</span><span class="p">(</span><span class="kt">int</span> <span class="n">result</span><span class="p">)</span>
+</code></pre></div><p>Déplacez les instructions depuis le <code>main</code> vers l&rsquo;intérieur de la fonction, puis appelez la.<br>
+Compilez le programme et assurez-vous qu&rsquo;il fonctionne comme avant.</p>
 
 <div class="expand">
     <div class="expand-label" style="cursor: pointer;" onclick="$h = $(this);$h.next('div').slideToggle(100,function () {$h.children('i').attr('class',function () {return $h.next('div').is(':visible') ? 'fas fa-chevron-down' : 'fas fa-chevron-right';});});">
@@ -751,59 +767,32 @@ Comme une fonction ne peut renvoyer qu&rsquo;une seule valeur, nous utiliserons 
     	</span>
     </div>
     <div class="expand-content" style="display: none;">
-        
-<p>Le plus simple, c'est de couper-coller l'ancien code dans la fonction et de le modifier afin de fixer les erreurs :<br/>
-- remplacer les <code>return -1</code> par des <code>return false</code>, et ajouter le <code>return true</code> à la fin,<br/>
-- renommer <code>op</code> en <code>op_str</code>, puisqu'on introduit un paramètre du même nom, mais de type différent,<br/>
-- assigner <code>op_str[0]</code> à <code>op</code> (il faut écrire <code>*op</code> puisque <code>op</code> est un pointeur),<br/>
-- supprimer la définition de <code>values</code>, puisqu'on va directement remplir le tableau du même nom passé en paramètre,<br/>
-- remplacer <code>values.emplace_back</code> par <code>values->emplace_back</code>, car <code>values</code> est maintenant un pointeur.</p>
-
-<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="hl"><span class="kt">bool</span> <span class="nf">parse_params</span><span class="p">(</span><span class="kt">char</span><span class="o">*</span> <span class="n">op</span><span class="p">,</span> <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;*</span> <span class="n">values</span><span class="p">,</span> <span class="kt">int</span> <span class="n">argc</span><span class="p">,</span> <span class="kt">char</span><span class="o">**</span> <span class="n">argv</span><span class="p">)</span>
-</span><span class="p">{</span>
-    <span class="k">if</span> <span class="p">(</span><span class="n">argc</span> <span class="o">&lt;</span> <span class="mi">2</span><span class="p">)</span>
-    <span class="p">{</span>
-        <span class="n">std</span><span class="o">::</span><span class="n">cerr</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;Expected operator as first argument.&#34;</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
-<span class="hl">        <span class="k">return</span> <span class="nb">false</span><span class="p">;</span>
-</span>    <span class="p">}</span>
- 
-    <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">op_str</span> <span class="o">=</span> <span class="n">argv</span><span class="p">[</span><span class="mi">1</span><span class="p">];</span>
-<span class="hl">    <span class="k">if</span> <span class="p">(</span><span class="n">op_str</span> <span class="o">!=</span> <span class="s">&#34;+&#34;</span> <span class="o">&amp;&amp;</span> <span class="n">op_str</span> <span class="o">!=</span> <span class="s">&#34;*&#34;</span> <span class="o">&amp;&amp;</span> <span class="n">op_str</span> <span class="o">!=</span> <span class="s">&#34;-&#34;</span><span class="p">)</span>
-</span>    <span class="p">{</span>
-        <span class="n">std</span><span class="o">::</span><span class="n">cerr</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;Expected operator to be &#39;+&#39;, &#39;*&#39; or &#39;-&#39;.&#34;</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
-<span class="hl">        <span class="k">return</span> <span class="nb">false</span><span class="p">;</span>
-</span>    <span class="p">}</span>
-
-<span class="hl">    <span class="o">*</span><span class="n">op</span> <span class="o">=</span> <span class="n">op_str</span><span class="p">[</span><span class="mi">0</span><span class="p">];</span>
-</span>
-    <span class="k">for</span> <span class="p">(</span><span class="k">auto</span> <span class="n">arg_i</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span> <span class="n">arg_i</span> <span class="o">&lt;</span> <span class="n">argc</span><span class="p">;</span> <span class="o">++</span><span class="n">arg_i</span><span class="p">)</span>
-    <span class="p">{</span>
-        <span class="k">auto</span> <span class="n">value</span> <span class="o">=</span> <span class="n">std</span><span class="o">::</span><span class="n">stoi</span><span class="p">(</span><span class="n">argv</span><span class="p">[</span><span class="n">arg_i</span><span class="p">]);</span>
-<span class="hl">        <span class="n">values</span><span class="o">-&gt;</span><span class="n">emplace_back</span><span class="p">(</span><span class="n">value</span><span class="p">);</span>
-</span>    <span class="p">}</span>
-
-<span class="hl">    <span class="k">return</span> <span class="nb">true</span><span class="p">;</span>
-</span><span class="p">}</span>
-</code></pre></div>
-
-<p>Au niveau du site de l'appel, on peut supprimer le commentaire, qui devient redondant avec le nom de la fonction, définir les variables qui vont contenir l'opérateur et les opérandes, et vérifier que la fonction renvoie bien <code>true</code> pour continuer.</p>
-<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="kt">char</span> <span class="n">op</span> <span class="o">=</span> <span class="sc">&#39;?&#39;</span><span class="p">;</span>
-<span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">values</span><span class="p">;</span>
-
-<span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">parse_params</span><span class="p">(</span><span class="o">&amp;</span><span class="n">op</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">values</span><span class="p">,</span> <span class="n">argc</span><span class="p">,</span> <span class="n">argv</span><span class="p">))</span>
+        <p>Voici la fonction <code>display_result</code> :</p>
+<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="kt">void</span> <span class="nf">display_result</span><span class="p">(</span><span class="kt">int</span> <span class="n">result</span><span class="p">)</span>
 <span class="p">{</span>
-    <span class="k">return</span> <span class="o">-</span><span class="mi">1</span><span class="p">;</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;Result is &#34;</span> <span class="o">&lt;&lt;</span> <span class="n">result</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div><p>Au niveau du site de l&rsquo;appel, on peut supprimer le commentaire, qui devient redondant avec le nom de la fonction.</p>
+<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="kt">int</span> <span class="nf">main</span><span class="p">(</span><span class="kt">int</span> <span class="n">argc</span><span class="p">,</span> <span class="kt">char</span><span class="o">**</span> <span class="n">argv</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="c1">// Parsing program parameters.
+</span><span class="c1"></span>    <span class="n">some</span> <span class="n">code</span><span class="p">...</span>
+
+    <span class="c1">// Process operation, depending on the operator.
+</span><span class="c1"></span>    <span class="n">some</span> <span class="n">code</span><span class="p">...</span>
+
+    <span class="n">display_result</span><span class="p">(</span><span class="n">result</span><span class="p">);</span>
+
+    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
 <span class="p">}</span>
 </code></pre></div>
-
-<p> Il faut enfin penser à remplacer dans le <code>main</code> les <code>"+"</code> par <code>'+'</code>, <code>"*"</code> par <code>'*'</code> et <code>"-"</code> par <code>'-'</code>, car <code>op</code> n'est plus une <code>string</code> mais un <code>char</code>.</p>
-
-
     </div>
 </div>
 <h4 id="calcul-de-lopération-1">Calcul de l&rsquo;opération</h4>
-<p>Ici, la fonction ne devrait avoir besoin de renvoyer que le résultat du calcul. Hélas, à l&rsquo;intérieur du traitement de la soustraction, on peut quitter prématurément le programme si les arguments passés au programme sont invalides. La première étape consistera donc à déplacer cette vérification à l&rsquo;intérieur de la fonction <code>parse_params</code>, qui est là pour ça.</p>
-<p>Modifiez la fonction <code>parse_params</code> de manière à ce qu&rsquo;elle renvoie <code>false</code> si l&rsquo;utilisateur essaye d&rsquo;effectuer une soustraction sans donner aucune valeur. Supprimez ensuite la vérification associée du <code>main</code>. Testez pour vérifier que tout fonctionne comme avant.</p>
+<p>Ici, la fonction ne devrait avoir besoin de renvoyer que le résultat du calcul.
+Hélas, à l&rsquo;intérieur du traitement de la soustraction, on peut quitter prématurément le programme si les arguments passés au programme sont invalides.
+Vous allez donc commencer par déplacer cette vérification dans l&rsquo;étape de traitement des arguments du programme.</p>
+<p>Une fois cela fait, pensez-bien à compiler et testez que le programme fonctionne toujours.</p>
 
 <div class="expand">
     <div class="expand-label" style="cursor: pointer;" onclick="$h = $(this);$h.next('div').slideToggle(100,function () {$h.children('i').attr('class',function () {return $h.next('div').is(':visible') ? 'fas fa-chevron-down' : 'fas fa-chevron-right';});});">
@@ -816,11 +805,31 @@ Comme une fonction ne peut renvoyer qu&rsquo;une seule valeur, nous utiliserons 
     	</span>
     </div>
     <div class="expand-content" style="display: none;">
-        <p>On peut ajouter le code ci-dessous à la fonction <code>parse_params</code>, juste avant le <code>return true</code> :</p>
-<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="k">if</span> <span class="p">(</span><span class="o">*</span><span class="n">op</span> <span class="o">==</span> <span class="sc">&#39;-&#39;</span> <span class="o">&amp;&amp;</span> <span class="n">values</span><span class="o">-&gt;</span><span class="n">empty</span><span class="p">())</span>
+        <div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="kt">int</span> <span class="nf">main</span><span class="p">(</span><span class="kt">int</span> <span class="n">argc</span><span class="p">,</span> <span class="kt">char</span><span class="o">**</span> <span class="n">argv</span><span class="p">)</span>
 <span class="p">{</span>
-    <span class="n">std</span><span class="o">::</span><span class="n">cerr</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;Operator &#39;-&#39; expects at least one operand to substract from.&#34;</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
-    <span class="k">return</span> <span class="nb">false</span><span class="p">;</span>
+    <span class="c1">// Parsing program parameters.
+</span><span class="c1"></span>    <span class="p">...</span>
+
+    <span class="k">if</span> <span class="p">(</span><span class="n">op</span> <span class="o">==</span> <span class="s">&#34;-&#34;</span> <span class="o">&amp;&amp;</span> <span class="n">values</span><span class="p">.</span><span class="n">empty</span><span class="p">())</span>
+    <span class="p">{</span>
+        <span class="n">std</span><span class="o">::</span><span class="n">cerr</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;Operator &#39;-&#39; expects at least one operand to substract from.&#34;</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+        <span class="k">return</span> <span class="o">-</span><span class="mi">1</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="c1">// Process operation, depending on the operator.
+</span><span class="c1"></span>    <span class="p">...</span>
+    <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">op</span> <span class="o">==</span> <span class="s">&#34;-&#34;</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">result</span> <span class="o">=</span> <span class="n">values</span><span class="p">[</span><span class="mi">0</span><span class="p">];</span>
+        <span class="k">for</span> <span class="p">(</span><span class="k">auto</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">values</span><span class="p">.</span><span class="n">size</span><span class="p">();</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="n">result</span> <span class="o">-=</span> <span class="n">values</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+
+    <span class="n">display_result</span><span class="p">(</span><span class="n">result</span><span class="p">);</span>
+
+    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
 <span class="p">}</span>
 </code></pre></div>
     </div>
@@ -840,8 +849,7 @@ Comme une fonction ne peut renvoyer qu&rsquo;une seule valeur, nous utiliserons 
     	</span>
     </div>
     <div class="expand-content" style="display: none;">
-        <p>Ce coup-ci, on peut vraiment directement couper-coller les instructions à l&rsquo;intérieur de la fonction.</p>
-<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="kt">int</span> <span class="nf">compute_result</span><span class="p">(</span><span class="kt">char</span> <span class="n">op</span><span class="p">,</span> <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">values</span><span class="p">)</span>
+        <div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="kt">int</span> <span class="nf">compute_result</span><span class="p">(</span><span class="kt">char</span> <span class="n">op</span><span class="p">,</span> <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">values</span><span class="p">)</span>
 <span class="p">{</span>
     <span class="k">auto</span> <span class="n">result</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
 
@@ -871,15 +879,39 @@ Comme une fonction ne peut renvoyer qu&rsquo;une seule valeur, nous utiliserons 
 
     <span class="k">return</span> <span class="n">result</span><span class="p">;</span>
 <span class="p">}</span>
-</code></pre></div><p>On appelle ensuite la fonction avec :</p>
-<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="k">auto</span> <span class="n">result</span> <span class="o">=</span> <span class="n">compute_result</span><span class="p">(</span><span class="n">op</span><span class="p">,</span> <span class="n">values</span><span class="p">);</span>
+</code></pre></div><p>Pour le main, il faut bien penser à passer <code>op[0]</code> à la fonction, plutôt que <code>op</code> :</p>
+<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="kt">int</span> <span class="nf">main</span><span class="p">(</span><span class="kt">int</span> <span class="n">argc</span><span class="p">,</span> <span class="kt">char</span><span class="o">**</span> <span class="n">argv</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="c1">// Parsing program parameters.
+</span><span class="c1"></span>    <span class="p">...</span>
+
+    <span class="k">if</span> <span class="p">(</span><span class="n">op</span> <span class="o">==</span> <span class="s">&#34;-&#34;</span> <span class="o">&amp;&amp;</span> <span class="n">values</span><span class="p">.</span><span class="n">empty</span><span class="p">())</span>
+    <span class="p">{</span>
+        <span class="n">std</span><span class="o">::</span><span class="n">cerr</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;Operator &#39;-&#39; expects at least one operand to substract from.&#34;</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+        <span class="k">return</span> <span class="o">-</span><span class="mi">1</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="k">auto</span> <span class="n">result</span> <span class="o">=</span> <span class="n">compute_result</span><span class="p">(</span><span class="n">op</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">values</span><span class="p">);</span>
+    <span class="n">display_result</span><span class="p">(</span><span class="n">result</span><span class="p">);</span>
+
+    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
 </code></pre></div>
     </div>
 </div>
-<h4 id="affichage-du-résultat-1">Affichage du résultat</h4>
-<p>Rien de bien compliqué ici. Vous pouvez utiliser la signature suivante pour cette fonction :</p>
-<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="kt">void</span> <span class="n">display_result</span><span class="p">(</span><span class="kt">int</span> <span class="n">result</span><span class="p">)</span>
-</code></pre></div><br/>
+<h4 id="traitement-des-arguments-1">Traitement des arguments</h4>
+<p>Cette fonction devra renvoyer trois informations :<br>
+- si les arguments sont valides ou non,<br>
+- l&rsquo;opérateur,<br>
+- les opérandes.</p>
+<p>La validité des arguments sera indiqué par la valeur de retour, de type <code>bool</code>.
+Comme une fonction ne peut renvoyer qu&rsquo;une seule valeur, nous utiliserons les paramètres pour récupérer l&rsquo;opérateur et les opérandes.</p>
+<p>Pour l&rsquo;opérateur, vous allez récupérer un <code>char</code> au lieu d&rsquo;une <code>string</code> complète. En effet, dans le restant du <code>main</code>, nous attendons soit &lsquo;+&rsquo;, &lsquo;*&rsquo; ou &lsquo;-&rsquo;, donc nous n&rsquo;avons pas besoin de stocker la chaîne complète au déjà du traitement des arguments.</p>
+<p>Essayez d&rsquo;utiliser la signature suivante pour votre fonction :</p>
+<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="kt">bool</span> <span class="n">parse_params</span><span class="p">(</span><span class="kt">char</span> <span class="n">op</span><span class="p">,</span> <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">values</span><span class="p">,</span> <span class="kt">int</span> <span class="n">arg</span><span class="p">,</span> <span class="kt">char</span><span class="o">**</span> <span class="n">argv</span><span class="p">)</span>
+</code></pre></div><p>Modifiez le code du programme et vérifiez qu&rsquo;il compile.<br>
+En revanche, vous devriez constater en testant que tout ne se passe pas comme prévu&hellip;
+Nous verrons comment résoudre le problème dans la section suivante.</p>
 
 <div class="expand">
     <div class="expand-label" style="cursor: pointer;" onclick="$h = $(this);$h.next('div').slideToggle(100,function () {$h.children('i').attr('class',function () {return $h.next('div').is(':visible') ? 'fas fa-chevron-down' : 'fas fa-chevron-right';});});">
@@ -892,12 +924,50 @@ Comme une fonction ne peut renvoyer qu&rsquo;une seule valeur, nous utiliserons 
     	</span>
     </div>
     <div class="expand-content" style="display: none;">
-        <p>Voici la fonction <code>display_result</code> :</p>
-<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="kt">void</span> <span class="nf">display_result</span><span class="p">(</span><span class="kt">int</span> <span class="n">result</span><span class="p">)</span>
-<span class="p">{</span>
-    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;Result is &#34;</span> <span class="o">&lt;&lt;</span> <span class="n">result</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+        
+<p>Comme pour les fonctions précédentes, vous pouvez commencer par couper-coller les instructions depuis le main vers le corps de <code>parse_params</code>.<br/>
+Il faudra ensuite réaliser les changements suivants :<br/>
+- remplacer les <code>return -1</code> par des <code>return false</code>, et ajouter le <code>return true</code> à la fin,<br/>
+- renommer <code>op</code> en <code>op_str</code>, puisqu'on introduit un paramètre du même nom, mais de type différent,<br/>
+- assigner <code>op_str[0]</code> à <code>op</code>,<br/>
+- supprimer la définition de <code>values</code>, puisqu'on va directement remplir le tableau du même nom passé en paramètre,<br/>
+- dans la dernière condition, on peut remplacer la comparaison de chaînes (<code>op_str == "-"</code>) par une comparaison de caractères (<code>op == '-'</code>).</p>
+
+<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="hl"><span class="kt">bool</span> <span class="nf">parse_params</span><span class="p">(</span><span class="kt">char</span> <span class="n">op</span><span class="p">,</span> <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">values</span><span class="p">,</span> <span class="kt">int</span> <span class="n">argc</span><span class="p">,</span> <span class="kt">char</span><span class="o">**</span> <span class="n">argv</span><span class="p">)</span>
+</span><span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">argc</span> <span class="o">&lt;</span> <span class="mi">2</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">std</span><span class="o">::</span><span class="n">cerr</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;Expected operator as first argument.&#34;</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+<span class="hl">        <span class="k">return</span> <span class="nb">false</span><span class="p">;</span>
+</span>    <span class="p">}</span>
+ 
+<span class="hl">    <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">op_str</span> <span class="o">=</span> <span class="n">argv</span><span class="p">[</span><span class="mi">1</span><span class="p">];</span>
+</span><span class="hl">    <span class="k">if</span> <span class="p">(</span><span class="n">op_str</span> <span class="o">!=</span> <span class="s">&#34;+&#34;</span> <span class="o">&amp;&amp;</span> <span class="n">op_str</span> <span class="o">!=</span> <span class="s">&#34;*&#34;</span> <span class="o">&amp;&amp;</span> <span class="n">op_str</span> <span class="o">!=</span> <span class="s">&#34;-&#34;</span><span class="p">)</span>
+</span>    <span class="p">{</span>
+        <span class="n">std</span><span class="o">::</span><span class="n">cerr</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;Expected operator to be &#39;+&#39;, &#39;*&#39; or &#39;-&#39;.&#34;</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+<span class="hl">        <span class="k">return</span> <span class="nb">false</span><span class="p">;</span>
+</span>    <span class="p">}</span>
+
+<span class="hl">    <span class="n">op</span> <span class="o">=</span> <span class="n">op_str</span><span class="p">[</span><span class="mi">0</span><span class="p">];</span>
+</span>
+    <span class="k">for</span> <span class="p">(</span><span class="k">auto</span> <span class="n">arg_i</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span> <span class="n">arg_i</span> <span class="o">&lt;</span> <span class="n">argc</span><span class="p">;</span> <span class="o">++</span><span class="n">arg_i</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="k">auto</span> <span class="n">value</span> <span class="o">=</span> <span class="n">std</span><span class="o">::</span><span class="n">stoi</span><span class="p">(</span><span class="n">argv</span><span class="p">[</span><span class="n">arg_i</span><span class="p">]);</span>
+        <span class="n">values</span><span class="p">.</span><span class="n">emplace_back</span><span class="p">(</span><span class="n">value</span><span class="p">);</span>
+    <span class="p">}</span>
+
+<span class="hl">    <span class="k">if</span> <span class="p">(</span><span class="n">op</span> <span class="o">==</span> <span class="sc">&#39;-&#39;</span> <span class="o">&amp;&amp;</span> <span class="n">values</span><span class="p">.</span><span class="n">empty</span><span class="p">())</span>
+</span>    <span class="p">{</span>
+        <span class="n">std</span><span class="o">::</span><span class="n">cerr</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;Operator &#39;-&#39; expects at least one operand to substract from.&#34;</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+        <span class="k">return</span> <span class="o">-</span><span class="mi">1</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="k">return</span> <span class="nb">true</span><span class="p">;</span>
 <span class="p">}</span>
-</code></pre></div><p>Et voici à quoi devrait maintenant ressembler votre <code>main</code> :</p>
+</code></pre></div>
+
+<p>Dans le <code>main</code>, il faut remplacer le type de <code>op</code> par <code>char</code>, appeler la fonction et vérifier qu'elle renvoie bien <code>true</code> pour continuer.<br/>
+
 <div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="kt">int</span> <span class="nf">main</span><span class="p">(</span><span class="kt">int</span> <span class="n">argc</span><span class="p">,</span> <span class="kt">char</span><span class="o">**</span> <span class="n">argv</span><span class="p">)</span>
 <span class="p">{</span>
     <span class="kt">char</span> <span class="n">op</span> <span class="o">=</span> <span class="sc">&#39;?&#39;</span><span class="p">;</span>
@@ -913,6 +983,78 @@ Comme une fonction ne peut renvoyer qu&rsquo;une seule valeur, nous utiliserons 
 
     <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
 <span class="p">}</span>
+</code></pre></div>
+
+    </div>
+</div>
+<hr>
+<h3 id="les-références">Les références</h3>
+<p>De la même manière qu&rsquo;en C, lorsque l&rsquo;on passe des variables à une fonction, celles-ci sont copiées.<br>
+Les modifications effectuées à l&rsquo;intérieur de la fonction ne sont donc pas répercutées dans le code appelant.</p>
+<p>En C++, il est possible de changer ce comportement très simplement en utilisant des <strong>références</strong>.<br>
+Une référence, c&rsquo;est simplement une variable qui agit comme un alias d&rsquo;une autre variable.
+En d&rsquo;autres termes, les deux variables font référence au même emplacement dans la mémoire.</p>
+<p>Afin de définir une référence, il suffit de mettre un <code>&amp;</code> derrière le type de la variable. Par exemple :</p>
+<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="kt">int</span> <span class="n">original</span> <span class="o">=</span> <span class="mi">3</span><span class="p">;</span>
+<span class="kt">int</span><span class="o">&amp;</span> <span class="n">reference</span> <span class="o">=</span> <span class="n">original</span><span class="p">;</span>
+</code></pre></div><p>Et voilà ! Maintenant, si vous souhaitez modifier la valeur de <code>original</code>, vous pouvez bien sûr modifier <code>original</code> directement, mais vous pouvez aussi passer par <code>reference</code>. Il suffit de faire l&rsquo;assignation, de la même manière qu&rsquo;avec une variable classique :</p>
+<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="n">reference</span> <span class="o">=</span> <span class="mi">8</span><span class="p">;</span>
+</code></pre></div><p>Et si vous modifiez <code>original</code>, la valeur de <code>reference</code> est modifiée également.
+Eh bien oui, c&rsquo;est normal, puisque les deux variables correspondent au même bloc de mémoire.
+Vous pouvez d&rsquo;ailleurs essayer d&rsquo;imprimer leurs adresses pour en être convaincus :</p>
+<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="o">&amp;</span><span class="n">original</span> <span class="o">&lt;&lt;</span> <span class="s">&#34; &#34;</span> <span class="o">&lt;&lt;</span> <span class="o">&amp;</span><span class="n">reference</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+</code></pre></div>
+<div class="notices tip" ><p>D&rsquo;ailleurs, pour avoir l&rsquo;adresse d&rsquo;une variable, il faut aussi utiliser le caractère <code>&amp;</code>. C&rsquo;est un peu confusant tout ça&hellip;<br>
+Hélas, en C++, on réutilise en permanence les mêmes symboles et les mêmes mots-clefs pour faire des choses différentes, ce qui est un peu dommage, mais ça permet d&rsquo;assurer la rétro-compatibilité du langage.<br>
+Pour savoir si on parle d&rsquo;une référence ou d&rsquo;une adresse, il suffit de regarder où est placé le <code>&amp;</code>. Si c&rsquo;est derrière le type d&rsquo;une variable, c&rsquo;est une référence. Si ce n&rsquo;est pas derrière le type d&rsquo;une variable, c&rsquo;est probablement une adresse, ou alors une erreur de syntaxe&hellip;<br>
+De toute manière, on ne peut parler de référence qu&rsquo;à la définition d&rsquo;une variable, puisqu&rsquo;ensuite, on la manipule exactement de la même manière que n&rsquo;importe quelle autre variable.</p>
+</div>
+
+<h4 id="passage-par-référence">Passage par référence</h4>
+<p>Nous allons maintenant utiliser les références pour résoudre le bug introduit avec l&rsquo;ajout de la fonction <code>parse_params</code>.</p>
+<p>Ajoutez un <code>&amp;</code> sur le type de <code>op</code> dans la signature de <code>parse_params</code>.
+Faites de même avec <code>values</code>.<br>
+Testez que le programme fonctionne à nouveau correctement.</p>
+
+<div class="expand">
+    <div class="expand-label" style="cursor: pointer;" onclick="$h = $(this);$h.next('div').slideToggle(100,function () {$h.children('i').attr('class',function () {return $h.next('div').is(':visible') ? 'fas fa-chevron-down' : 'fas fa-chevron-right';});});">
+        <i style="font-size:x-small;" class="fas fa-chevron-right"></i>
+        <span>
+        
+    	
+    	Solution
+    	
+    	</span>
+    </div>
+    <div class="expand-content" style="display: none;">
+        <div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="kt">bool</span> <span class="nf">parse_params</span><span class="p">(</span><span class="kt">char</span><span class="o">&amp;</span> <span class="n">op</span><span class="p">,</span> <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;&amp;</span> <span class="n">values</span><span class="p">,</span> <span class="kt">int</span> <span class="n">argc</span><span class="p">,</span> <span class="kt">char</span><span class="o">**</span> <span class="n">argv</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="p">...</span>
+<span class="p">}</span>
+</code></pre></div>
+    </div>
+</div>
+<h4 id="passage-par-référence-constante">Passage par référence constante</h4>
+<p>Un autre cas d&rsquo;utilisation des références, c&rsquo;est pour passer des paramètres coûteux à copier à une fonction.<br>
+Par exemple, pour passer des classes qui réalisent des allocations dynamiques en interne, comme std::vector ou std::string, on peut tout à fait décider d&rsquo;utiliser des références pour éviter de réallouer de la mémoire pour rien.</p>
+<p>Le problème de passer d&rsquo;une copie à une référence, c&rsquo;est que l&rsquo;on donne le pouvoir à la fonction de modifier des choses qu&rsquo;on souhaiterait qu&rsquo;elle ne modifie pas. Pour éviter cela, on va passer les paramètres en utilisant des <strong>références constantes</strong> (abbrégé const-ref). Pour définir une const-ref, il suffit de placer le mot-clef <code>const</code> à-côté du type de la variable :</p>
+<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="kt">int</span> <span class="n">original</span> <span class="o">=</span> <span class="mi">3</span><span class="p">;</span>
+<span class="k">const</span> <span class="kt">int</span><span class="o">&amp;</span> <span class="n">const_ref</span> <span class="o">=</span> <span class="n">original</span><span class="p">;</span>
+</code></pre></div><p>Avec le code ci-dessus, vous pourrez lire le contenu de <code>const_ref</code>, mais vous ne pourrez pas le modifier. Si vous essayez d&rsquo;écrire <code>const_ref = 8</code>, vous aurez une erreur de compilation.</p>
+<p>Modifiez la signature de <code>compute_result</code> de manière à passer le tableau <code>values</code> par const-ref plutôt que par valeur.</p>
+
+<div class="expand">
+    <div class="expand-label" style="cursor: pointer;" onclick="$h = $(this);$h.next('div').slideToggle(100,function () {$h.children('i').attr('class',function () {return $h.next('div').is(':visible') ? 'fas fa-chevron-down' : 'fas fa-chevron-right';});});">
+        <i style="font-size:x-small;" class="fas fa-chevron-right"></i>
+        <span>
+        
+    	
+    	Solution
+    	
+    	</span>
+    </div>
+    <div class="expand-content" style="display: none;">
+        <div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="kt">int</span> <span class="nf">compute_result</span><span class="p">(</span><span class="kt">char</span> <span class="n">op</span><span class="p">,</span> <span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;&amp;</span> <span class="n">values</span><span class="p">)</span> <span class="p">{</span> <span class="p">...</span> <span class="p">}</span>
 </code></pre></div>
     </div>
 </div>
@@ -958,14 +1100,16 @@ Comme une fonction ne peut renvoyer qu&rsquo;une seule valeur, nous utiliserons 
 <span class="k">default</span><span class="o">:</span>
     <span class="k">break</span><span class="p">;</span>
 <span class="p">}</span>
-</code></pre></div><div class="notices note" ><p>Vous vous demandez pourquoi j&rsquo;ai ajouté la clause par défaut alors que tous les cas ont été traités ? En fait, le compilateur n&rsquo;est pas suffisamment malin pour se rendre compte que <code>op</code> ne peut pas prendre d&rsquo;autres valeurs que celles indiquées. On ajoute donc la clause <code>default</code>, car sinon, on se retrouve avec des warnings. Et les warnings, c&rsquo;est le début des erreurs.<br>
+</code></pre></div><div class="notices note" ><p>Vous vous demandez pourquoi j&rsquo;ai ajouté la clause par défaut alors que tous les cas ont été traités ?<br>
+En fait, le compilateur n&rsquo;est pas suffisamment malin pour se rendre compte que <code>op</code> ne peut pas prendre d&rsquo;autres valeurs que celles indiquées. On ajoute donc la clause <code>default</code>, car sinon, on se retrouve avec des warnings. Et les warnings, c&rsquo;est le début des erreurs.<br>
 Si on voulait aller plus loin, on pourrait utiliser un <code>enum class</code> à la place d&rsquo;un <code>char</code> pour indiquer au compilateur la liste exhaustive des valeurs à traiter.</p>
 </div>
 
     </div>
 </div>
-<p>Mmmmh, le résultat n&rsquo;est pas forcément ultra lisible. En général, on évite de mettre trop de code dans les <code>cases</code>, surtout quand il s&rsquo;agit de boucles ou de conditions.<br>
-Pour corriger ça, ajoutez des fonctions <code>add</code>, <code>multiply</code> et <code>sub</code>, et appelez-les depuis votre switch.</p>
+<p>Mmmmh, le résultat n&rsquo;est pas forcément très lisible. En général, on évite de mettre trop de code dans les <code>cases</code>, surtout quand il s&rsquo;agit de boucles ou de conditions.<br>
+Pour corriger ça, ajoutez des fonctions <code>add</code>, <code>multiply</code> et <code>sub</code>, et appelez-les depuis votre switch.<br>
+Pensez-bien à éviter les copies inutiles de <code>vector</code>.</p>
 
 <div class="expand">
     <div class="expand-label" style="cursor: pointer;" onclick="$h = $(this);$h.next('div').slideToggle(100,function () {$h.children('i').attr('class',function () {return $h.next('div').is(':visible') ? 'fas fa-chevron-down' : 'fas fa-chevron-right';});});">
@@ -978,7 +1122,7 @@ Pour corriger ça, ajoutez des fonctions <code>add</code>, <code>multiply</code>
     	</span>
     </div>
     <div class="expand-content" style="display: none;">
-        <div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="kt">int</span> <span class="nf">add</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">values</span><span class="p">)</span>
+        <div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="kt">int</span> <span class="nf">add</span><span class="p">(</span><span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;&amp;</span> <span class="n">values</span><span class="p">)</span>
 <span class="p">{</span>
     <span class="kt">int</span> <span class="n">result</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
     <span class="k">for</span> <span class="p">(</span><span class="k">auto</span> <span class="nl">v</span> <span class="p">:</span> <span class="n">values</span><span class="p">)</span>
@@ -988,7 +1132,7 @@ Pour corriger ça, ajoutez des fonctions <code>add</code>, <code>multiply</code>
     <span class="k">return</span> <span class="n">result</span><span class="p">;</span>
 <span class="p">}</span>
 
-<span class="kt">int</span> <span class="nf">multiply</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">values</span><span class="p">)</span>
+<span class="kt">int</span> <span class="nf">multiply</span><span class="p">(</span><span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;&amp;</span> <span class="n">values</span><span class="p">)</span>
 <span class="p">{</span>
     <span class="k">auto</span> <span class="n">result</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
     <span class="k">for</span> <span class="p">(</span><span class="k">auto</span> <span class="nl">v</span> <span class="p">:</span> <span class="n">values</span><span class="p">)</span>
@@ -998,7 +1142,7 @@ Pour corriger ça, ajoutez des fonctions <code>add</code>, <code>multiply</code>
     <span class="k">return</span> <span class="n">result</span><span class="p">;</span>
 <span class="p">}</span>
 
-<span class="kt">int</span> <span class="nf">sub</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">values</span><span class="p">)</span>
+<span class="kt">int</span> <span class="nf">sub</span><span class="p">(</span><span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;&amp;</span> <span class="n">values</span><span class="p">)</span>
 <span class="p">{</span>
     <span class="k">auto</span> <span class="n">result</span> <span class="o">=</span> <span class="n">values</span><span class="p">[</span><span class="mi">0</span><span class="p">];</span>
     <span class="k">for</span> <span class="p">(</span><span class="k">auto</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">values</span><span class="p">.</span><span class="n">size</span><span class="p">();</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span>
@@ -1008,7 +1152,7 @@ Pour corriger ça, ajoutez des fonctions <code>add</code>, <code>multiply</code>
     <span class="k">return</span> <span class="n">result</span><span class="p">;</span>
 <span class="p">}</span>
 
-<span class="kt">int</span> <span class="nf">compute_result</span><span class="p">(</span><span class="kt">char</span> <span class="n">op</span><span class="p">,</span> <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">values</span><span class="p">)</span>
+<span class="kt">int</span> <span class="nf">compute_result</span><span class="p">(</span><span class="kt">char</span> <span class="n">op</span><span class="p">,</span> <span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;&amp;</span> <span class="n">values</span><span class="p">)</span>
 <span class="p">{</span>
     <span class="k">switch</span> <span class="p">(</span><span class="n">op</span><span class="p">)</span>
     <span class="p">{</span>
@@ -1025,142 +1169,6 @@ Pour corriger ça, ajoutez des fonctions <code>add</code>, <code>multiply</code>
         <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
     <span class="p">}</span>
 <span class="p">}</span>
-</code></pre></div>
-    </div>
-</div>
-<hr>
-<h3 id="passage-par-référence">Passage par référence</h3>
-<p>Je suppose que vous avez un peu grincer des dents tout à l&rsquo;heure quand il a fallu utiliser des pointeurs pour modifier les valeurs des paramètres de nos fonctions. D&rsquo;une part, c&rsquo;est moche, d&rsquo;autre part, ça peut cacher des problèmes. En effet, dans la fonction <code>parse_params</code>, vous avez reçu des pointeurs, mais à aucun moment, vous n&rsquo;avez vérifié que ces pointeurs étaient valides (ou alors, vous êtes beaucoup trop prudents).<br>
-En théorie, il faudrait donc ajouter des conditions avant de les déréférencer :</p>
-<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="k">if</span> <span class="p">(</span><span class="n">op</span> <span class="o">!=</span> <span class="k">nullptr</span><span class="p">)</span>
-<span class="p">{</span>
-    <span class="o">*</span><span class="n">op</span> <span class="o">=</span> <span class="p">...</span>
-<span class="p">}</span>
-
-<span class="k">if</span> <span class="p">(</span><span class="n">values</span> <span class="o">!=</span> <span class="k">nullptr</span><span class="p">)</span>
-<span class="p">{</span>
-    <span class="k">for</span> <span class="p">(...)</span>
-    <span class="p">{</span>
-        <span class="n">values</span><span class="o">-&gt;</span><span class="n">emplace_back</span><span class="p">(...);</span>
-    <span class="p">}</span>
-<span class="p">}</span>
-</code></pre></div>
-<div class="notices info" ><p>Profitez-en pour noter qu&rsquo;en C++, on utilise <code>nullptr</code> plutôt que <code>NULL</code>. Pourquoi ? Tout simplement parce que <code>NULL</code> est un entier, alors que <code>nullptr</code> est un pointeur.<br>
-Donc si vous avez deux fonctions qui ont le même nom, que l&rsquo;une prend un paramètre de type <code>int</code>, et l&rsquo;autre de type <code>int*</code>, vous appelerez la première fonction en passant <code>NULL</code>. Sauf que si vous aviez voulu appelez la première fonction, vous auriez probablement passé 0. Prenez donc désormais l&rsquo;habitude d&rsquo;utiliser <code>nullptr</code> plutôt que <code>NULL</code>.</p>
-</div>
-
-<p>Bonne nouvelle ! En C++, nous allons pouvoir retirer complètement ces pointeurs en utilisant ce qui s&rsquo;appelle des <strong>références</strong>. Une référence, c&rsquo;est simple, c&rsquo;est une variable qui va faire référence à la même zone mémoire qu&rsquo;une autre variable. C&rsquo;est comme un pointeur en fait, mais sans les déréférencements, les adresses, les <code>nullptr</code>, et tout ce bazar là.</p>
-<p>Voyons donc comment est-ce qu&rsquo;on déclare une référence. C&rsquo;est simple, il suffit de mettre un <code>&amp;</code> derrière le type de la variable. Par exemple :</p>
-<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="kt">int</span> <span class="n">original</span> <span class="o">=</span> <span class="mi">3</span><span class="p">;</span>
-<span class="kt">int</span><span class="o">&amp;</span> <span class="n">reference</span> <span class="o">=</span> <span class="n">original</span><span class="p">;</span>
-</code></pre></div><p>Et voilà ! Maintenant, si vous souhaitez modifier la valeur de <code>original</code>, vous pouvez bien sûr modifier <code>original</code> directement, mais vous pouvez aussi passer par <code>reference</code>. Il suffit de faire l&rsquo;assignation, de la même manière qu&rsquo;avec une variable classique :</p>
-<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="n">reference</span> <span class="o">=</span> <span class="mi">8</span><span class="p">;</span>
-</code></pre></div><p>Et si vous modifiez <code>original</code>, la valeur de <code>reference</code> est modifiée également. Eh bien oui, c&rsquo;est normal, puisque les deux variables font référence au même bloc de mémoire. Vous pouvez d&rsquo;ailleurs essayer d&rsquo;imprimer leurs adresses pour en être convaincus.</p>
-
-<div class="notices tip" ><p>D&rsquo;ailleurs, pour avoir l&rsquo;adresse d&rsquo;une variable, il faut aussi utiliser le caractère <code>&amp;</code>. C&rsquo;est un peu confusant tout ça&hellip; Hélas, en C++, on réutilise en permanence les mêmes symboles et les mêmes mots-clefs pour faire des choses différentes, ce qui est un peu dommage, mais ça permet d&rsquo;assurer la rétro-compatibilité du langage.<br>
-Pour savoir si on parle d&rsquo;une référence ou d&rsquo;une adresse, il suffit de regarder où est placé le <code>&amp;</code>. Si c&rsquo;est derrière le type d&rsquo;une variable, c&rsquo;est une référence. Si ce n&rsquo;est pas derrière le type d&rsquo;une variable, c&rsquo;est probablement une adresse, ou alors une erreur de syntaxe&hellip;<br>
-De toute manière, on ne peut parler de référence qu&rsquo;à la définition d&rsquo;une variable, puisqu&rsquo;ensuite, on la manipule exactement de la même manière que n&rsquo;importe quelle autre variable.</p>
-</div>
-
-<p>On va maintenant utiliser les références pour simplifier le code et le rendre plus efficace.</p>
-<h4 id="passage-par-référence-1">Passage par référence</h4>
-<p>Un des premier cas d&rsquo;utilisation des références, c&rsquo;est pour passer des paramètres à une fonction qui va les modifier.</p>
-<p>Dans la fonction <code>parse_params</code>, commencez par changer le type de <code>op</code> pour passer d&rsquo;un <code>char*</code> à un <code>char</code>, comme si vous souhaitiez passer le paramètre par copie. N&rsquo;oubliez pas de modifier l&rsquo;appelant pour que tout compile, puis faites de même pour <code>values</code>.</p>
-
-<div class="expand">
-    <div class="expand-label" style="cursor: pointer;" onclick="$h = $(this);$h.next('div').slideToggle(100,function () {$h.children('i').attr('class',function () {return $h.next('div').is(':visible') ? 'fas fa-chevron-down' : 'fas fa-chevron-right';});});">
-        <i style="font-size:x-small;" class="fas fa-chevron-right"></i>
-        <span>
-        
-    	
-    	Solution
-    	
-    	</span>
-    </div>
-    <div class="expand-content" style="display: none;">
-        
-<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="hl"><span class="kt">bool</span> <span class="nf">parse_params</span><span class="p">(</span><span class="kt">char</span> <span class="n">op</span><span class="p">,</span> <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">values</span><span class="p">,</span> <span class="kt">int</span> <span class="n">argc</span><span class="p">,</span> <span class="kt">char</span><span class="o">**</span> <span class="n">argv</span><span class="p">)</span>
-</span><span class="p">{</span>
-    <span class="k">if</span> <span class="p">(</span><span class="n">argc</span> <span class="o">&lt;</span> <span class="mi">2</span><span class="p">)</span>
-    <span class="p">{</span>
-        <span class="n">std</span><span class="o">::</span><span class="n">cerr</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;Expected operator as first argument.&#34;</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
-        <span class="k">return</span> <span class="nb">false</span><span class="p">;</span>
-    <span class="p">}</span>
- 
-    <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">op_str</span> <span class="o">=</span> <span class="n">argv</span><span class="p">[</span><span class="mi">1</span><span class="p">];</span>
-    <span class="k">if</span> <span class="p">(</span><span class="n">op_str</span> <span class="o">!=</span> <span class="s">&#34;+&#34;</span> <span class="o">&amp;&amp;</span> <span class="n">op_str</span> <span class="o">!=</span> <span class="s">&#34;*&#34;</span> <span class="o">&amp;&amp;</span> <span class="n">op_str</span> <span class="o">!=</span> <span class="s">&#34;-&#34;</span><span class="p">)</span>
-    <span class="p">{</span>
-        <span class="n">std</span><span class="o">::</span><span class="n">cerr</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;Expected operator to be &#39;+&#39;, &#39;*&#39; or &#39;-&#39;.&#34;</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
-        <span class="k">return</span> <span class="nb">false</span><span class="p">;</span>
-    <span class="p">}</span>
-
-<span class="hl">    <span class="n">op</span> <span class="o">=</span> <span class="n">op_str</span><span class="p">[</span><span class="mi">0</span><span class="p">];</span>
-</span>
-    <span class="k">for</span> <span class="p">(</span><span class="k">auto</span> <span class="n">arg_i</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span> <span class="n">arg_i</span> <span class="o">&lt;</span> <span class="n">argc</span><span class="p">;</span> <span class="o">++</span><span class="n">arg_i</span><span class="p">)</span>
-    <span class="p">{</span>
-        <span class="k">auto</span> <span class="n">value</span> <span class="o">=</span> <span class="n">std</span><span class="o">::</span><span class="n">stoi</span><span class="p">(</span><span class="n">argv</span><span class="p">[</span><span class="n">arg_i</span><span class="p">]);</span>
-<span class="hl">        <span class="n">values</span><span class="p">.</span><span class="n">emplace_back</span><span class="p">(</span><span class="n">value</span><span class="p">);</span>
-</span>    <span class="p">}</span>
-
-<span class="hl">    <span class="k">if</span> <span class="p">(</span><span class="n">op</span> <span class="o">==</span> <span class="sc">&#39;-&#39;</span> <span class="o">&amp;&amp;</span> <span class="n">values</span><span class="p">.</span><span class="n">empty</span><span class="p">())</span>
-</span>    <span class="p">{</span>
-        <span class="n">std</span><span class="o">::</span><span class="n">cerr</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;Operator &#39;-&#39; expects at least one operand to substract from.&#34;</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
-        <span class="k">return</span> <span class="nb">false</span><span class="p">;</span>
-    <span class="p">}</span>
-
-    <span class="k">return</span> <span class="nb">true</span><span class="p">;</span>
-<span class="p">}</span>
-</code></pre></div>
-
-<p>Et dans le <code>main</code>, on retire les esperluettes :</p>
-<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="hl"><span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">parse_params</span><span class="p">(</span><span class="n">op</span><span class="p">,</span> <span class="n">values</span><span class="p">,</span> <span class="n">argc</span><span class="p">,</span> <span class="n">argv</span><span class="p">))</span>
-</span><span class="p">{</span>
-    <span class="k">return</span> <span class="o">-</span><span class="mi">1</span><span class="p">;</span>
-<span class="p">}</span>
-</code></pre></div>
-
-    </div>
-</div>
-<p>Normalement, la calculette ne devrait plus fonctionner, puis qu&rsquo;au retour de la fonction <code>parse_params</code>, les paramètres passés par valeur n&rsquo;auront pas été modifiés. Heureusement, le fix va être très rapide. Il suffit de modifiez la signature de <code>parse_params</code> pour indiquer que <code>op</code> et <code>values</code> sont désormais des références. Le reste du code (corps de la fonction et appelant) n&rsquo;a pas besoin d&rsquo;être modifié. Testez pour vérifier que tout fonctionne à nouveau.</p>
-
-<div class="expand">
-    <div class="expand-label" style="cursor: pointer;" onclick="$h = $(this);$h.next('div').slideToggle(100,function () {$h.children('i').attr('class',function () {return $h.next('div').is(':visible') ? 'fas fa-chevron-down' : 'fas fa-chevron-right';});});">
-        <i style="font-size:x-small;" class="fas fa-chevron-right"></i>
-        <span>
-        
-    	
-    	Solution
-    	
-    	</span>
-    </div>
-    <div class="expand-content" style="display: none;">
-        <div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="kt">bool</span> <span class="n">parse_params</span><span class="p">(</span><span class="kt">char</span><span class="o">&amp;</span> <span class="n">op</span><span class="p">,</span> <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;&amp;</span> <span class="n">values</span><span class="p">,</span> <span class="kt">int</span> <span class="n">argc</span><span class="p">,</span> <span class="kt">char</span><span class="o">**</span> <span class="n">argv</span><span class="p">)</span>
-</code></pre></div>
-    </div>
-</div>
-<h4 id="passage-par-référence-constante">Passage par référence constante</h4>
-<p>Un autre cas d&rsquo;utilisation des références, c&rsquo;est pour passer des paramètres coûteux à copier à une fonction. Par exemple, pour passer des classes qui réalisent des allocations dynamiques en interne, comme std::vector ou std::string, on peut tout à fait décider d&rsquo;utiliser des références pour éviter que ces allocations ne se fassent.</p>
-<p>Le problème de passer d&rsquo;une copie à une référence, c&rsquo;est que l&rsquo;on donne le pouvoir à la fonction de modifier des choses qu&rsquo;on souhaiterait qu&rsquo;elle ne modifie pas. Pour éviter cela, on va passer les paramètres en utilisant des <strong>références constantes</strong> (abbrégé const-ref). Pour définir une const-ref, il suffit d&rsquo;ajouter le mot-clef <code>const</code> devant le type de la référence :</p>
-<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="kt">int</span> <span class="n">original</span> <span class="o">=</span> <span class="mi">3</span><span class="p">;</span>
-<span class="k">const</span> <span class="kt">int</span><span class="o">&amp;</span> <span class="n">const_ref</span> <span class="o">=</span> <span class="n">original</span><span class="p">;</span>
-</code></pre></div><p>Avec le code ci-dessus, vous pourrez lire le contenu de <code>const_ref</code>, mais vous ne pourrez pas le modifier. Si vous essayez d&rsquo;écrire <code>const_ref = 8</code>, vous aurez une erreur de compilation.</p>
-<p>Modifiez maintenant les signatures de <code>add</code>, <code>multiply</code>, <code>sub</code> et <code>compute_result</code> de manière à passer le tableau <code>values</code> par const-ref plutôt que par valeur.</p>
-
-<div class="expand">
-    <div class="expand-label" style="cursor: pointer;" onclick="$h = $(this);$h.next('div').slideToggle(100,function () {$h.children('i').attr('class',function () {return $h.next('div').is(':visible') ? 'fas fa-chevron-down' : 'fas fa-chevron-right';});});">
-        <i style="font-size:x-small;" class="fas fa-chevron-right"></i>
-        <span>
-        
-    	
-    	Solution
-    	
-    	</span>
-    </div>
-    <div class="expand-content" style="display: none;">
-        <div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="kt">int</span> <span class="nf">add</span><span class="p">(</span><span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;&amp;</span> <span class="n">values</span><span class="p">)</span> <span class="p">{</span> <span class="p">...</span> <span class="p">}</span>
-<span class="kt">int</span> <span class="nf">multiply</span><span class="p">(</span><span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;&amp;</span> <span class="n">values</span><span class="p">)</span> <span class="p">{</span> <span class="p">...</span> <span class="p">}</span>
-<span class="kt">int</span> <span class="nf">sub</span><span class="p">(</span><span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;&amp;</span> <span class="n">values</span><span class="p">)</span> <span class="p">{</span> <span class="p">...</span> <span class="p">}</span>
-<span class="kt">int</span> <span class="nf">compute_result</span><span class="p">(</span><span class="kt">char</span> <span class="n">op</span><span class="p">,</span> <span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;&amp;</span> <span class="n">values</span><span class="p">)</span> <span class="p">{</span> <span class="p">...</span> <span class="p">}</span>
 </code></pre></div>
     </div>
 </div>
@@ -1211,6 +1219,22 @@ De toute manière, on ne peut parler de référence qu&rsquo;à la définition d
                     
                     
 
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
                     
                         
             
@@ -1501,19 +1525,19 @@ De toute manière, on ne peut parler de référence qu&rsquo;à la définition d
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/CPP_Learning/js/clipboard.min.js?1641338196"></script>
-    <script src="/CPP_Learning/js/perfect-scrollbar.min.js?1641338196"></script>
-    <script src="/CPP_Learning/js/perfect-scrollbar.jquery.min.js?1641338196"></script>
-    <script src="/CPP_Learning/js/jquery.sticky.js?1641338196"></script>
-    <script src="/CPP_Learning/js/featherlight.min.js?1641338196"></script>
-    <script src="/CPP_Learning/js/highlight.pack.js?1641338196"></script>
+    <script src="/CPP_Learning/js/clipboard.min.js?1641422763"></script>
+    <script src="/CPP_Learning/js/perfect-scrollbar.min.js?1641422763"></script>
+    <script src="/CPP_Learning/js/perfect-scrollbar.jquery.min.js?1641422763"></script>
+    <script src="/CPP_Learning/js/jquery.sticky.js?1641422763"></script>
+    <script src="/CPP_Learning/js/featherlight.min.js?1641422763"></script>
+    <script src="/CPP_Learning/js/highlight.pack.js?1641422763"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/CPP_Learning/js/modernizr.custom-3.6.0.js?1641338196"></script>
-    <script src="/CPP_Learning/js/learn.js?1641338196"></script>
-    <script src="/CPP_Learning/js/hugo-learn.js?1641338196"></script>
+    <script src="/CPP_Learning/js/modernizr.custom-3.6.0.js?1641422763"></script>
+    <script src="/CPP_Learning/js/learn.js?1641422763"></script>
+    <script src="/CPP_Learning/js/hugo-learn.js?1641422763"></script>
 
-    <link href="/CPP_Learning/mermaid/mermaid.css?1641338196" rel="stylesheet" />
-    <script src="/CPP_Learning/mermaid/mermaid.js?1641338196"></script>
+    <link href="/CPP_Learning/mermaid/mermaid.css?1641422763" rel="stylesheet" />
+    <script src="/CPP_Learning/mermaid/mermaid.js?1641422763"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

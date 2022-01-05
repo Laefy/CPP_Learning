@@ -53,11 +53,23 @@ Si vous êtes sous Windows, vous pouvez télécharger l&amp;rsquo;outil depuis c
     </item>
     
     <item>
-      <title>Astuces</title>
-      <link>https://laefy.github.io/CPP_Learning/chapter0/5-tips/</link>
+      <title>Clang-Format</title>
+      <link>https://laefy.github.io/CPP_Learning/chapter0/5-clang-format/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://laefy.github.io/CPP_Learning/chapter0/5-tips/</guid>
+      <guid>https://laefy.github.io/CPP_Learning/chapter0/5-clang-format/</guid>
+      <description>Clang-Format est un outil permettant de formatter automatiquement vos fichiers (indentation, espaces, retours à la ligne, etc).
+Comme le C++ est un langage avec une syntaxe un peu lourde, utiliser ce type d&amp;rsquo;outils permet de faciliter la lecture du code.
+ Configuration de VSCode Clang-Format est déjà disponible dans l&amp;rsquo;extension C/C++ installée précédemment. Pour qu&amp;rsquo;il se lance automatiquement lorsque vous sauvegardez vos fichiers, suivez les instructions ci-dessous.
+ Ouvrez le panneau de commandes VSCode (Ctrl+Shift+P).</description>
+    </item>
+    
+    <item>
+      <title>Astuces</title>
+      <link>https://laefy.github.io/CPP_Learning/chapter0/6-tips/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://laefy.github.io/CPP_Learning/chapter0/6-tips/</guid>
       <description>Compiler un petit programme dans un terminal Avec g++ :
 g++f1.cpp f2.cpp f3.cpp -o program Avec clang :
 clang++f1.cpp f2.cpp f3.cpp -o program Vous pouvez ajouter des options de compilation (voir ci-dessous) à la fin de la ligne de commande.

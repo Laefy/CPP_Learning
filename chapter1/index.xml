@@ -32,7 +32,7 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://laefy.github.io/CPP_Learning/chapter1/summary/</guid>
-      <description>Ce qu&amp;rsquo;il faut retenir Théorie  C++ est un langage compilé, performant, documenté, standardisé et disposant d&amp;rsquo;une large communauté. Il est verbeux et sa syntaxe font qu&amp;rsquo;il ne s&amp;rsquo;agit pas du langage le plus agréable à lire. Une référence est une variable qui pointe sur la même zone de mémoire qu&amp;rsquo;une autre variable.  Méthodologie  Lorsqu&amp;rsquo;on a besoin d&amp;rsquo;une fonction, on commence par aller voir sur Internet si elle n&amp;rsquo;existe pas déjà dans la librairie standard.</description>
+      <description>Ce qu&amp;rsquo;il faut retenir Théorie  C++ est un langage compilé, performant, documenté, standardisé et disposant d&amp;rsquo;une large communauté. Il est verbeux et sa syntaxe font qu&amp;rsquo;il ne s&amp;rsquo;agit pas du langage le plus agréable à lire. Une référence est une variable que permet d&amp;rsquo;aliaser une autre variable. Les deux variables font donc référence au même espace dans la mémoire.  Méthodologie  Lorsqu&amp;rsquo;on a besoin d&amp;rsquo;une fonction, on commence par aller voir sur Internet si elle n&amp;rsquo;existe pas déjà dans la librairie standard.</description>
     </item>
     
     <item>

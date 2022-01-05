@@ -9,24 +9,24 @@
 
     <link rel="icon" href="/CPP_Learning/images/favicon.png" type="image/png">
 
-    <title>Astuces :: Cours de C&#43;&#43; - Niveau Master</title>
+    <title>Clang-Format :: Cours de C&#43;&#43; - Niveau Master</title>
 
     
-    <link href="/CPP_Learning/css/nucleus.css?1641338196" rel="stylesheet">
-    <link href="/CPP_Learning/css/fontawesome-all.min.css?1641338196" rel="stylesheet">
-    <link href="/CPP_Learning/css/hybrid.css?1641338196" rel="stylesheet">
-    <link href="/CPP_Learning/css/featherlight.min.css?1641338196" rel="stylesheet">
-    <link href="/CPP_Learning/css/perfect-scrollbar.min.css?1641338196" rel="stylesheet">
-    <link href="/CPP_Learning/css/auto-complete.css?1641338196" rel="stylesheet">
-    <link href="/CPP_Learning/css/atom-one-dark-reasonable.css?1641338196" rel="stylesheet">
-    <link href="/CPP_Learning/css/theme.css?1641338196" rel="stylesheet">
-    <link href="/CPP_Learning/css/hugo-theme.css?1641338196" rel="stylesheet">
+    <link href="/CPP_Learning/css/nucleus.css?1641422763" rel="stylesheet">
+    <link href="/CPP_Learning/css/fontawesome-all.min.css?1641422763" rel="stylesheet">
+    <link href="/CPP_Learning/css/hybrid.css?1641422763" rel="stylesheet">
+    <link href="/CPP_Learning/css/featherlight.min.css?1641422763" rel="stylesheet">
+    <link href="/CPP_Learning/css/perfect-scrollbar.min.css?1641422763" rel="stylesheet">
+    <link href="/CPP_Learning/css/auto-complete.css?1641422763" rel="stylesheet">
+    <link href="/CPP_Learning/css/atom-one-dark-reasonable.css?1641422763" rel="stylesheet">
+    <link href="/CPP_Learning/css/theme.css?1641422763" rel="stylesheet">
+    <link href="/CPP_Learning/css/hugo-theme.css?1641422763" rel="stylesheet">
     
-    <link href="/CPP_Learning/css/theme-mine.css?1641338196" rel="stylesheet">
+    <link href="/CPP_Learning/css/theme-mine.css?1641422763" rel="stylesheet">
     
-    <link href="/CPP_Learning/css/syntax.css?1641338196" rel="stylesheet">
+    <link href="/CPP_Learning/css/syntax.css?1641422763" rel="stylesheet">
 
-    <script src="/CPP_Learning/js/jquery-3.3.1.min.js?1641338196"></script>
+    <script src="/CPP_Learning/js/jquery-3.3.1.min.js?1641422763"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -40,7 +40,7 @@
     </style>
     
   </head>
-  <body class="" data-url="/CPP_Learning/chapter0/5-tips/">
+  <body class="" data-url="/CPP_Learning/chapter0/5-clang-format/">
     <nav id="sidebar" class="showVisitedLinks">
 
 
@@ -57,14 +57,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/CPP_Learning/js/lunr.min.js?1641338196"></script>
-<script type="text/javascript" src="/CPP_Learning/js/auto-complete.js?1641338196"></script>
+<script type="text/javascript" src="/CPP_Learning/js/lunr.min.js?1641422763"></script>
+<script type="text/javascript" src="/CPP_Learning/js/auto-complete.js?1641422763"></script>
 <script type="text/javascript">
     
         var baseurl = "https:\/\/laefy.github.io\/CPP_Learning\/";
     
 </script>
-<script type="text/javascript" src="/CPP_Learning/js/search.js?1641338196"></script>
+<script type="text/javascript" src="/CPP_Learning/js/search.js?1641422763"></script>
 
     
   </div>
@@ -195,8 +195,29 @@
  
   
     
-      <li data-nav-id="/CPP_Learning/chapter0/5-tips/" title="Astuces" class="dd-item active">
-        <a href="/CPP_Learning/chapter0/5-tips/">
+      <li data-nav-id="/CPP_Learning/chapter0/5-clang-format/" title="Clang-Format" class="dd-item active">
+        <a href="/CPP_Learning/chapter0/5-clang-format/">
+        Clang-Format
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/CPP_Learning/chapter0/6-tips/" title="Astuces" class="dd-item ">
+        <a href="/CPP_Learning/chapter0/6-tips/">
         Astuces
         <i class="fas fa-check read-icon"></i>
         </a>
@@ -487,7 +508,7 @@
               </li>
           
               <li> 
-                  <a class="padding" href="https://laefy.github.io/CPP_Learning/chapter0/5-tips/"><i class='fa fa-rocket'></i> Astuces</a>
+                  <a class="padding" href="https://laefy.github.io/CPP_Learning/chapter0/6-tips/"><i class='fa fa-rocket'></i> Astuces</a>
               </li>
           
               <li> 
@@ -551,7 +572,7 @@
             
           
           
-            <a href='/CPP_Learning/'>Accueil</a> > <a href='/CPP_Learning/chapter0/'>Mise en place</a> > Astuces
+            <a href='/CPP_Learning/'>Accueil</a> > <a href='/CPP_Learning/chapter0/'>Mise en place</a> > Clang-Format
           
         
           
@@ -568,12 +589,7 @@
   <ul>
     <li>
       <ul>
-        <li><a href="#compiler-un-petit-programme-dans-un-terminal">Compiler un petit programme dans un terminal</a></li>
-        <li><a href="#options-de-compilation">Options de compilation</a></li>
-        <li><a href="#compiler-un-programme-depuis-vscode-avec-cmake">Compiler un programme depuis VSCode avec CMake</a></li>
-        <li><a href="#un-cmakeliststxt-minimal">Un CMakeLists.txt minimal</a></li>
-        <li><a href="#raccourcis-vscode-utiles">Raccourcis VSCode utiles</a></li>
-        <li><a href="#commandes-vscode-utiles">Commandes VSCode utiles</a></li>
+        <li><a href="#configuration-de-vscode">Configuration de VSCode</a></li>
       </ul>
     </li>
   </ul>
@@ -593,65 +609,33 @@
           
             <h1>
               
-              Astuces
+              Clang-Format
             </h1>
           
 
         
 
 
+<p>Clang-Format est un outil permettant de formatter automatiquement vos fichiers (indentation, espaces, retours à la ligne, etc).<br>
+Comme le C++ est un langage avec une syntaxe un peu lourde, utiliser ce type d&rsquo;outils permet de faciliter la lecture du code.</p>
 <hr>
-<h3 id="compiler-un-petit-programme-dans-un-terminal">Compiler un petit programme dans un terminal</h3>
-<p>Avec g++ :</p>
-<div class="highlight"><pre class="chroma"><code class="language-b" data-lang="b"><span class="c">g</span><span class="nb">++</span><span class="c"> f1</span><span class="nt">.</span><span class="c">cpp f2</span><span class="nt">.</span><span class="c">cpp f3</span><span class="nt">.</span><span class="c">cpp </span><span class="nb">-</span><span class="c">o program
-</span></code></pre></div><p>Avec clang :</p>
-<div class="highlight"><pre class="chroma"><code class="language-b" data-lang="b"><span class="c">clang</span><span class="nb">++</span><span class="c"> f1</span><span class="nt">.</span><span class="c">cpp f2</span><span class="nt">.</span><span class="c">cpp f3</span><span class="nt">.</span><span class="c">cpp </span><span class="nb">-</span><span class="c">o program
-</span></code></pre></div><p>Vous pouvez ajouter des options de compilation (voir <a href="#options-de-compilation">ci-dessous</a>) à la fin de la ligne de commande.</p>
-<hr>
-<h3 id="options-de-compilation">Options de compilation</h3>
-<p>Voici les options de compilation que nous vous conseillons d&rsquo;utiliser pendant le cours, et que l&rsquo;on activera pour compiler vos rendus de TPs :</p>
-<ul>
-<li><code>-std=c++17</code> : spécifie que le projet sera compilé en C++17</li>
-<li><code>-Wall -W</code> : permet d&rsquo;activer un certain nombre de warnings</li>
-<li><code>-Werror</code> : transforme les warnings en erreurs, donc tant qu&rsquo;il y a des warnings, le programme ne compile pas</li>
-</ul>
-<p>Vous pouvez également utiliser :</p>
-<ul>
-<li><code>-g</code> : ajoute des informations supplémentaires à l&rsquo;exécutable, afin de pouvoir le débugger plus facilement</li>
-</ul>
-<hr>
-<h3 id="compiler-un-programme-depuis-vscode-avec-cmake">Compiler un programme depuis VSCode avec CMake</h3>
-<p>Déjà, il faut avoir un fichier <a href="#un-cmakeliststxt-minimal">CMakeLists.txt</a> à la racine du dossier ouvert dans VSCode.</p>
-<p>Ensuite, on utilise la commande <code>CMake: Configure</code> pour regénérer les fichiers de build.<br>
-On doit exécuter cette commande à chaque fois que l&rsquo;on modifie le CMakeLists.txt, que l&rsquo;on rajoute des fichiers au project ou que l&rsquo;on en supprime.</p>
-<p>Enfin, on utilise la barre en bas de l&rsquo;éditeur pour compiler ou exécuter une cible (c&rsquo;est-à-dire un exécutable ou une librairie définie dans le CMakeLists.txt).
-<img src="/CPP_Learning/images/chapter0/vscode-toolbar.png" alt=""></p>
-<hr>
-<h3 id="un-cmakeliststxt-minimal">Un CMakeLists.txt minimal</h3>
-<pre><code>cmake_minimum_required(VERSION 3.1)
-project(my_project)
-
-add_executable(my_executable
-    my_file1.cpp
-    my_file2.cpp
-    my_file3.h
-)
-
-target_compile_features(my_executable PUBLIC cxx_std_17)
-</code></pre><hr>
-<h3 id="raccourcis-vscode-utiles">Raccourcis VSCode utiles</h3>
-<p>Ctrl+Shift+P : Ouvre le panneau de commandes<br>
-F7 : Compile la cible courante<br>
-Ctrl+F7 : Débugge la cible courante<br>
-Shift+F7 : Exécute la cible courante</p>
-<hr>
-<h3 id="commandes-vscode-utiles">Commandes VSCode utiles</h3>
-<p>CMake: Configure<br>
-CMake: Set Build Target<br>
-CMake: Build<br>
-CMake: Set Debug Target<br>
-CMake: Debug<br>
-CMake: Run Without Debugging</p>
+<h3 id="configuration-de-vscode">Configuration de VSCode</h3>
+<p>Clang-Format est déjà disponible dans l&rsquo;extension C/C++ installée précédemment.
+Pour qu&rsquo;il se lance automatiquement lorsque vous sauvegardez vos fichiers, suivez les instructions ci-dessous.</p>
+<ol>
+<li>Ouvrez le panneau de commandes VSCode (Ctrl+Shift+P).</li>
+<li>Exécuter la commande <code>Preferences: Open User Settings</code>.</li>
+<li>Recherchez et activez l&rsquo;option &ldquo;Editor: Format On Save&rdquo;.</li>
+</ol>
+<p>Testez maintenant que tout fonctionne.</p>
+<ol>
+<li>Téléchargez 
+<a href="/CPP_Learning/code/.clang-format" target="_blank" rel="noopener noreferrer">ce fichier</a>.</li>
+<li>Déplacez-le dans le dossier hello/ que vous avez récupéré précédemment.</li>
+<li>Ouvrez le dossier dans VSCode.</li>
+<li>Ajoutez ou supprimez des espaces dans le fichier helloworld.cpp.</li>
+<li>Vérifiez que lorsque vous sauvegardez le fichier, celui-ci retrouve son formattage original.</li>
+</ol>
 
 
 <footer class="footline">
@@ -789,6 +773,22 @@ CMake: Run Without Debugging</p>
                     
                         
                         
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
                     
                 
                 
@@ -972,7 +972,7 @@ CMake: Run Without Debugging</p>
 			<a class="nav nav-prev" href="/CPP_Learning/chapter0/4-git/" title="Git"> <i class="fa fa-chevron-left"></i></a>
 		
 		
-			<a class="nav nav-next" href="/CPP_Learning/chapter0/test/" title="Retours ?" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+			<a class="nav nav-next" href="/CPP_Learning/chapter0/6-tips/" title="Astuces" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
 		
 	
     </div>
@@ -982,19 +982,19 @@ CMake: Run Without Debugging</p>
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/CPP_Learning/js/clipboard.min.js?1641338196"></script>
-    <script src="/CPP_Learning/js/perfect-scrollbar.min.js?1641338196"></script>
-    <script src="/CPP_Learning/js/perfect-scrollbar.jquery.min.js?1641338196"></script>
-    <script src="/CPP_Learning/js/jquery.sticky.js?1641338196"></script>
-    <script src="/CPP_Learning/js/featherlight.min.js?1641338196"></script>
-    <script src="/CPP_Learning/js/highlight.pack.js?1641338196"></script>
+    <script src="/CPP_Learning/js/clipboard.min.js?1641422763"></script>
+    <script src="/CPP_Learning/js/perfect-scrollbar.min.js?1641422763"></script>
+    <script src="/CPP_Learning/js/perfect-scrollbar.jquery.min.js?1641422763"></script>
+    <script src="/CPP_Learning/js/jquery.sticky.js?1641422763"></script>
+    <script src="/CPP_Learning/js/featherlight.min.js?1641422763"></script>
+    <script src="/CPP_Learning/js/highlight.pack.js?1641422763"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/CPP_Learning/js/modernizr.custom-3.6.0.js?1641338196"></script>
-    <script src="/CPP_Learning/js/learn.js?1641338196"></script>
-    <script src="/CPP_Learning/js/hugo-learn.js?1641338196"></script>
+    <script src="/CPP_Learning/js/modernizr.custom-3.6.0.js?1641422763"></script>
+    <script src="/CPP_Learning/js/learn.js?1641422763"></script>
+    <script src="/CPP_Learning/js/hugo-learn.js?1641422763"></script>
 
-    <link href="/CPP_Learning/mermaid/mermaid.css?1641338196" rel="stylesheet" />
-    <script src="/CPP_Learning/mermaid/mermaid.js?1641338196"></script>
+    <link href="/CPP_Learning/mermaid/mermaid.css?1641422763" rel="stylesheet" />
+    <script src="/CPP_Learning/mermaid/mermaid.js?1641422763"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>
