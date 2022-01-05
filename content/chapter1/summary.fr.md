@@ -11,7 +11,7 @@ weight: 101
 
 - C++ est un langage compilé, performant, documenté, standardisé et disposant d'une large communauté.
 - Il est verbeux et sa syntaxe font qu'il ne s'agit pas du langage le plus agréable à lire.
-- Une référence est une variable qui pointe sur la même zone de mémoire qu'une autre variable.
+- Une référence est une variable que permet d'aliaser une autre variable. Les deux variables font donc référence au même espace dans la mémoire.
 
 ##### Méthodologie
 
@@ -20,13 +20,13 @@ weight: 101
 
 ##### Pratique
 
-- Toujours initialiser les variables de type primitif (`int`, `float`, `short`, `bool`, etc) et le contenu des tableaux statiques et alloués dynamiquement
+- Toujours initialiser les variables de type primitif (`int`, `float`, `short`, `bool`, etc) et le contenu des tableaux statiques
 - Préférer en général `std::endl` à `\n`
 - `<<` n'est qu'un opérateur, au même titre que `+` ou `==`
 - Préférer définir l'itérateur directement dans le `for`
-- `nullptr` plutôt que `NULL`
 - `auto` peut remplacer le type d'une variable si le compilateur est capable de le déduire du contexte
-- Passer par des `std::string` ou `strcmp` pour comparer des chaînes de caractères, plutôt que `==` entre deux `char*`
+- Utiliser des `std::string` pour représenter des chaînes de caractères
+- Utiliser des `std::vector` pour représenter des tableaux dynamiques
  
 ---
 
@@ -34,8 +34,9 @@ weight: 101
 
 ##### Outils
 
-- Compiler un programme (peu importe si c'est via un IDE comme VSCode ou un terminal, tant qu'il y a un exécutable à la fin).
-- Exécuter un programme depuis un terminal.
+- Configurer un projet avec cmake.
+- Compiler un programme.
+- Exécuter un programme.
 - Récupérer un dépôt git.
 
 ##### Langage

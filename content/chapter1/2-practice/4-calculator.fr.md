@@ -39,7 +39,7 @@ Déjà, en regardant les commentaires, on se rend compte que le programme compor
 2. Calcul de l'opération
 3. Affichage du résultat
 
-Nous allons décortiquer le code de chacune de ces étapes.
+Nous allons analyser le code de chacune de ces étapes.
 
 #### Traitement des arguments
 
@@ -180,89 +180,79 @@ return_type fcn2_name(p1_type p1, p2_type p2, ...);
 ...
 ```
 
-#### Traitement des arguments
+#### Affichage du résultat
 
-Cette fonction devra renvoyer trois informations :\
-\- si les arguments sont valides ou non,\
-\- l'opérateur,\
-\- les opérandes.
+Nous allons commencer par l'étape la plus simple.
 
-La validité des arguments sera indiqué par la valeur de retour, de type `bool`.
-Comme une fonction ne peut renvoyer qu'une seule valeur, nous utiliserons les paramètres pour récupérer l'opérateur et les opérandes. Comme en C, il faudra passer par des pointeurs, puisqu'autrement, les variables seront copiées.
-
-Pour l'opérateur, vous allez récupérer un `char` au lieu d'une `string` complète. En effet, dans le restant du `main`, nous attendons soit '+', '\*' ou '-', donc nous n'avons pas besoin de stocker la chaîne complète au déjà du traitement des arguments.     
-
-Voici donc la signature de la fonction que vous devez implémenter :
+Vous pouvez utiliser la signature suivante pour cette fonction :
 ```cpp
-bool parse_params(char* op, std::vector<int>* values, int arg, char** argv)
+void display_result(int result)
 ```
 
-Modifiez le code du programme pour introduire cette fonction et l'appeler. Vérifiez que tout fonctionne comme avant.
+Déplacez les instructions depuis le `main` vers l'intérieur de la fonction, puis appelez la.\
+Compilez le programme et assurez-vous qu'il fonctionne comme avant.
 
-{{< expand "Solution" >}}
-<p>Le plus simple, c'est de couper-coller l'ancien code dans la fonction et de le modifier afin de fixer les erreurs :<br/>
-- remplacer les <code>return -1</code> par des <code>return false</code>, et ajouter le <code>return true</code> à la fin,<br/>
-- renommer <code>op</code> en <code>op_str</code>, puisqu'on introduit un paramètre du même nom, mais de type différent,<br/>
-- assigner <code>op_str[0]</code> à <code>op</code> (il faut écrire <code>*op</code> puisque <code>op</code> est un pointeur),<br/>
-- supprimer la définition de <code>values</code>, puisqu'on va directement remplir le tableau du même nom passé en paramètre,<br/>
-- remplacer <code>values.emplace_back</code> par <code>values->emplace_back</code>, car <code>values</code> est maintenant un pointeur.</p>
-
-{{< highlight cpp "hl_lines=1 6 10 13 16 21 24">}}
-bool parse_params(char* op, std::vector<int>* values, int argc, char** argv)
+{{% expand "Solution" %}}
+Voici la fonction `display_result` :
+```cpp
+void display_result(int result)
 {
-    if (argc < 2)
-    {
-        std::cerr << "Expected operator as first argument." << std::endl;
-        return false;
-    }
- 
-    std::string op_str = argv[1];
-    if (op_str != "+" && op_str != "*" && op_str != "-")
-    {
-        std::cerr << "Expected operator to be '+', '*' or '-'." << std::endl;
-        return false;
-    }
-
-    *op = op_str[0];
-
-    for (auto arg_i = 2; arg_i < argc; ++arg_i)
-    {
-        auto value = std::stoi(argv[arg_i]);
-        values->emplace_back(value);
-    }
-
-    return true;
+    std::cout << "Result is " << result << std::endl;
 }
-{{< /highlight >}}
+```
 
-<p>Au niveau du site de l'appel, on peut supprimer le commentaire, qui devient redondant avec le nom de la fonction, définir les variables qui vont contenir l'opérateur et les opérandes, et vérifier que la fonction renvoie bien <code>true</code> pour continuer.</p>
-{{< highlight cpp >}}
-char op = '?';
-std::vector<int> values;
-
-if (!parse_params(&op, &values, argc, argv))
+Au niveau du site de l'appel, on peut supprimer le commentaire, qui devient redondant avec le nom de la fonction.
+```cpp
+int main(int argc, char** argv)
 {
-    return -1;
+    // Parsing program parameters.
+    some code...
+
+    // Process operation, depending on the operator.
+    some code...
+
+    display_result(result);
+
+    return 0;
 }
-{{< /highlight >}}
-
-<p> Il faut enfin penser à remplacer dans le <code>main</code> les <code>"+"</code> par <code>'+'</code>, <code>"*"</code> par <code>'*'</code> et <code>"-"</code> par <code>'-'</code>, car <code>op</code> n'est plus une <code>string</code> mais un <code>char</code>.</p>
-
-{{< /expand >}}
+```
+{{% /expand %}}
 
 #### Calcul de l'opération
 
-Ici, la fonction ne devrait avoir besoin de renvoyer que le résultat du calcul. Hélas, à l'intérieur du traitement de la soustraction, on peut quitter prématurément le programme si les arguments passés au programme sont invalides. La première étape consistera donc à déplacer cette vérification à l'intérieur de la fonction `parse_params`, qui est là pour ça.
+Ici, la fonction ne devrait avoir besoin de renvoyer que le résultat du calcul.
+Hélas, à l'intérieur du traitement de la soustraction, on peut quitter prématurément le programme si les arguments passés au programme sont invalides.
+Vous allez donc commencer par déplacer cette vérification dans l'étape de traitement des arguments du programme.
 
-Modifiez la fonction `parse_params` de manière à ce qu'elle renvoie `false` si l'utilisateur essaye d'effectuer une soustraction sans donner aucune valeur. Supprimez ensuite la vérification associée du `main`. Testez pour vérifier que tout fonctionne comme avant.
+Une fois cela fait, pensez-bien à compiler et testez que le programme fonctionne toujours.
 
 {{% expand "Solution" %}}
-On peut ajouter le code ci-dessous à la fonction `parse_params`, juste avant le `return true` :
 ```cpp
-if (*op == '-' && values->empty())
+int main(int argc, char** argv)
 {
-    std::cerr << "Operator '-' expects at least one operand to substract from." << std::endl;
-    return false;
+    // Parsing program parameters.
+    ...
+
+    if (op == "-" && values.empty())
+    {
+        std::cerr << "Operator '-' expects at least one operand to substract from." << std::endl;
+        return -1;
+    }
+
+    // Process operation, depending on the operator.
+    ...
+    else if (op == "-")
+    {
+        result = values[0];
+        for (auto i = 1; i < values.size(); ++i)
+        {
+            result -= values[i];
+        }
+    }
+
+    display_result(result);
+
+    return 0;
 }
 ```
 {{% /expand %}}
@@ -274,7 +264,6 @@ int compute_result(char op, std::vector<int> values)
 <br/>
 
 {{% expand "Solution" %}}
-Ce coup-ci, on peut vraiment directement couper-coller les instructions à l'intérieur de la fonction.
 ```cpp
 int compute_result(char op, std::vector<int> values)
 {
@@ -307,30 +296,95 @@ int compute_result(char op, std::vector<int> values)
     return result;
 }
 ```
-On appelle ensuite la fonction avec :
+Pour le main, il faut bien penser à passer `op[0]` à la fonction, plutôt que `op` :
 ```cpp
-auto result = compute_result(op, values);
+int main(int argc, char** argv)
+{
+    // Parsing program parameters.
+    ...
+
+    if (op == "-" && values.empty())
+    {
+        std::cerr << "Operator '-' expects at least one operand to substract from." << std::endl;
+        return -1;
+    }
+
+    auto result = compute_result(op[0], values);
+    display_result(result);
+
+    return 0;
+}
 ```
 {{% /expand %}}
 
-#### Affichage du résultat
 
-Rien de bien compliqué ici. Vous pouvez utiliser la signature suivante pour cette fonction :
+#### Traitement des arguments
+
+Cette fonction devra renvoyer trois informations :\
+\- si les arguments sont valides ou non,\
+\- l'opérateur,\
+\- les opérandes.
+
+La validité des arguments sera indiqué par la valeur de retour, de type `bool`.
+Comme une fonction ne peut renvoyer qu'une seule valeur, nous utiliserons les paramètres pour récupérer l'opérateur et les opérandes.
+
+Pour l'opérateur, vous allez récupérer un `char` au lieu d'une `string` complète. En effet, dans le restant du `main`, nous attendons soit '+', '\*' ou '-', donc nous n'avons pas besoin de stocker la chaîne complète au déjà du traitement des arguments.     
+
+Essayez d'utiliser la signature suivante pour votre fonction :
 ```cpp
-void display_result(int result)
+bool parse_params(char op, std::vector<int> values, int arg, char** argv)
 ```
-<br/>
 
-{{% expand "Solution" %}}
-Voici la fonction `display_result` :
-```cpp
-void display_result(int result)
+Modifiez le code du programme et vérifiez qu'il compile.\
+En revanche, vous devriez constater en testant que tout ne se passe pas comme prévu...
+Nous verrons comment résoudre le problème dans la section suivante.
+
+{{< expand "Solution" >}}
+<p>Comme pour les fonctions précédentes, vous pouvez commencer par couper-coller les instructions depuis le main vers le corps de <code>parse_params</code>.<br/>
+Il faudra ensuite réaliser les changements suivants :<br/>
+- remplacer les <code>return -1</code> par des <code>return false</code>, et ajouter le <code>return true</code> à la fin,<br/>
+- renommer <code>op</code> en <code>op_str</code>, puisqu'on introduit un paramètre du même nom, mais de type différent,<br/>
+- assigner <code>op_str[0]</code> à <code>op</code>,<br/>
+- supprimer la définition de <code>values</code>, puisqu'on va directement remplir le tableau du même nom passé en paramètre,<br/>
+- dans la dernière condition, on peut remplacer la comparaison de chaînes (<code>op_str == "-"</code>) par une comparaison de caractères (<code>op == '-'</code>).</p>
+
+{{< highlight cpp "hl_lines=1 6 9 10 13 16 24">}}
+bool parse_params(char op, std::vector<int> values, int argc, char** argv)
 {
-    std::cout << "Result is " << result << std::endl;
+    if (argc < 2)
+    {
+        std::cerr << "Expected operator as first argument." << std::endl;
+        return false;
+    }
+ 
+    std::string op_str = argv[1];
+    if (op_str != "+" && op_str != "*" && op_str != "-")
+    {
+        std::cerr << "Expected operator to be '+', '*' or '-'." << std::endl;
+        return false;
+    }
+
+    op = op_str[0];
+
+    for (auto arg_i = 2; arg_i < argc; ++arg_i)
+    {
+        auto value = std::stoi(argv[arg_i]);
+        values.emplace_back(value);
+    }
+
+    if (op == '-' && values.empty())
+    {
+        std::cerr << "Operator '-' expects at least one operand to substract from." << std::endl;
+        return -1;
+    }
+
+    return true;
 }
-```
-Et voici à quoi devrait maintenant ressembler votre `main` :
-```cpp
+{{< /highlight >}}
+
+<p>Dans le <code>main</code>, il faut remplacer le type de <code>op</code> par <code>char</code>, appeler la fonction et vérifier qu'elle renvoie bien <code>true</code> pour continuer.<br/>
+
+{{< highlight cpp >}}
 int main(int argc, char** argv)
 {
     char op = '?';
@@ -346,8 +400,81 @@ int main(int argc, char** argv)
 
     return 0;
 }
+{{< /highlight >}}
+{{< /expand >}}
+
+---
+
+### Les références
+
+De la même manière qu'en C, lorsque l'on passe des variables à une fonction, celles-ci sont copiées.\
+Les modifications effectuées à l'intérieur de la fonction ne sont donc pas répercutées dans le code appelant.
+
+En C++, il est possible de changer ce comportement très simplement en utilisant des **références**.\
+Une référence, c'est simplement une variable qui agit comme un alias d'une autre variable.
+En d'autres termes, les deux variables font référence au même emplacement dans la mémoire.
+
+Afin de définir une référence, il suffit de mettre un `&` derrière le type de la variable. Par exemple :
+```cpp
+int original = 3;
+int& reference = original;
 ```
 
+Et voilà ! Maintenant, si vous souhaitez modifier la valeur de `original`, vous pouvez bien sûr modifier `original` directement, mais vous pouvez aussi passer par `reference`. Il suffit de faire l'assignation, de la même manière qu'avec une variable classique :
+```cpp
+reference = 8;
+```
+
+Et si vous modifiez `original`, la valeur de `reference` est modifiée également.
+Eh bien oui, c'est normal, puisque les deux variables correspondent au même bloc de mémoire.
+Vous pouvez d'ailleurs essayer d'imprimer leurs adresses pour en être convaincus :
+```cpp
+std::cout << &original << " " << &reference << std::endl;
+```
+
+{{% notice tip %}}
+D'ailleurs, pour avoir l'adresse d'une variable, il faut aussi utiliser le caractère `&`. C'est un peu confusant tout ça...\
+Hélas, en C++, on réutilise en permanence les mêmes symboles et les mêmes mots-clefs pour faire des choses différentes, ce qui est un peu dommage, mais ça permet d'assurer la rétro-compatibilité du langage.\
+Pour savoir si on parle d'une référence ou d'une adresse, il suffit de regarder où est placé le `&`. Si c'est derrière le type d'une variable, c'est une référence. Si ce n'est pas derrière le type d'une variable, c'est probablement une adresse, ou alors une erreur de syntaxe...\
+De toute manière, on ne peut parler de référence qu'à la définition d'une variable, puisqu'ensuite, on la manipule exactement de la même manière que n'importe quelle autre variable.
+{{% /notice %}}
+
+#### Passage par référence
+
+Nous allons maintenant utiliser les références pour résoudre le bug introduit avec l'ajout de la fonction `parse_params`.
+
+Ajoutez un `&` sur le type de `op` dans la signature de `parse_params`.
+Faites de même avec `values`.\
+Testez que le programme fonctionne à nouveau correctement.
+
+{{% expand "Solution" %}}
+```cpp
+bool parse_params(char& op, std::vector<int>& values, int argc, char** argv)
+{
+    ...
+}
+```
+{{% /expand %}}
+
+#### Passage par référence constante
+
+Un autre cas d'utilisation des références, c'est pour passer des paramètres coûteux à copier à une fonction.\
+Par exemple, pour passer des classes qui réalisent des allocations dynamiques en interne, comme std::vector ou std::string, on peut tout à fait décider d'utiliser des références pour éviter de réallouer de la mémoire pour rien.
+
+Le problème de passer d'une copie à une référence, c'est que l'on donne le pouvoir à la fonction de modifier des choses qu'on souhaiterait qu'elle ne modifie pas. Pour éviter cela, on va passer les paramètres en utilisant des **références constantes** (abbrégé const-ref). Pour définir une const-ref, il suffit de placer le mot-clef `const` à-côté du type de la variable :
+```cpp
+int original = 3;
+const int& const_ref = original;
+```
+
+Avec le code ci-dessus, vous pourrez lire le contenu de `const_ref`, mais vous ne pourrez pas le modifier. Si vous essayez d'écrire `const_ref = 8`, vous aurez une erreur de compilation.
+
+Modifiez la signature de `compute_result` de manière à passer le tableau `values` par const-ref plutôt que par valeur.
+
+{{% expand "Solution" %}}
+```cpp
+int compute_result(char op, const std::vector<int>& values) { ... }
+```
 {{% /expand %}}
 
 ---
@@ -387,19 +514,20 @@ default:
 }
 ```
 {{% notice note %}}
-Vous vous demandez pourquoi j'ai ajouté la clause par défaut alors que tous les cas ont été traités ? En fait, le compilateur n'est pas suffisamment malin pour se rendre compte que `op` ne peut pas prendre d'autres valeurs que celles indiquées. On ajoute donc la clause `default`, car sinon, on se retrouve avec des warnings. Et les warnings, c'est le début des erreurs.\
+Vous vous demandez pourquoi j'ai ajouté la clause par défaut alors que tous les cas ont été traités ?\
+En fait, le compilateur n'est pas suffisamment malin pour se rendre compte que `op` ne peut pas prendre d'autres valeurs que celles indiquées. On ajoute donc la clause `default`, car sinon, on se retrouve avec des warnings. Et les warnings, c'est le début des erreurs.\
 Si on voulait aller plus loin, on pourrait utiliser un `enum class` à la place d'un `char` pour indiquer au compilateur la liste exhaustive des valeurs à traiter.
 {{% /notice %}}
 
 {{% /expand %}}
 
-
-Mmmmh, le résultat n'est pas forcément ultra lisible. En général, on évite de mettre trop de code dans les `cases`, surtout quand il s'agit de boucles ou de conditions.\
-Pour corriger ça, ajoutez des fonctions `add`, `multiply` et `sub`, et appelez-les depuis votre switch.
+Mmmmh, le résultat n'est pas forcément très lisible. En général, on évite de mettre trop de code dans les `cases`, surtout quand il s'agit de boucles ou de conditions.\
+Pour corriger ça, ajoutez des fonctions `add`, `multiply` et `sub`, et appelez-les depuis votre switch.\
+Pensez-bien à éviter les copies inutiles de `vector`.
 
 {{% expand "Solution" %}}
 ```cpp
-int add(std::vector<int> values)
+int add(const std::vector<int>& values)
 {
     int result = 0;
     for (auto v : values)
@@ -409,7 +537,7 @@ int add(std::vector<int> values)
     return result;
 }
 
-int multiply(std::vector<int> values)
+int multiply(const std::vector<int>& values)
 {
     auto result = 1;
     for (auto v : values)
@@ -419,7 +547,7 @@ int multiply(std::vector<int> values)
     return result;
 }
 
-int sub(std::vector<int> values)
+int sub(const std::vector<int>& values)
 {
     auto result = values[0];
     for (auto i = 1; i < values.size(); ++i)
@@ -429,7 +557,7 @@ int sub(std::vector<int> values)
     return result;
 }
 
-int compute_result(char op, std::vector<int> values)
+int compute_result(char op, const std::vector<int>& values)
 {
     switch (op)
     {
@@ -446,135 +574,5 @@ int compute_result(char op, std::vector<int> values)
         return 0;
     }
 }
-```
-{{% /expand %}}
-
----
-
-### Passage par référence
-
-Je suppose que vous avez un peu grincer des dents tout à l'heure quand il a fallu utiliser des pointeurs pour modifier les valeurs des paramètres de nos fonctions. D'une part, c'est moche, d'autre part, ça peut cacher des problèmes. En effet, dans la fonction `parse_params`, vous avez reçu des pointeurs, mais à aucun moment, vous n'avez vérifié que ces pointeurs étaient valides (ou alors, vous êtes beaucoup trop prudents).\
-En théorie, il faudrait donc ajouter des conditions avant de les déréférencer :
-```cpp
-if (op != nullptr)
-{
-    *op = ...
-}
-
-if (values != nullptr)
-{
-    for (...)
-    {
-        values->emplace_back(...);
-    }
-}
-```
-
-{{% notice info %}}
-Profitez-en pour noter qu'en C++, on utilise `nullptr` plutôt que `NULL`. Pourquoi ? Tout simplement parce que `NULL` est un entier, alors que `nullptr` est un pointeur.\
-Donc si vous avez deux fonctions qui ont le même nom, que l'une prend un paramètre de type `int`, et l'autre de type `int*`, vous appelerez la première fonction en passant `NULL`. Sauf que si vous aviez voulu appelez la première fonction, vous auriez probablement passé 0. Prenez donc désormais l'habitude d'utiliser `nullptr` plutôt que `NULL`.
-{{% /notice %}}
-
-Bonne nouvelle ! En C++, nous allons pouvoir retirer complètement ces pointeurs en utilisant ce qui s'appelle des **références**. Une référence, c'est simple, c'est une variable qui va faire référence à la même zone mémoire qu'une autre variable. C'est comme un pointeur en fait, mais sans les déréférencements, les adresses, les `nullptr`, et tout ce bazar là.
-
-Voyons donc comment est-ce qu'on déclare une référence. C'est simple, il suffit de mettre un `&` derrière le type de la variable. Par exemple :
-```cpp
-int original = 3;
-int& reference = original;
-```
-
-Et voilà ! Maintenant, si vous souhaitez modifier la valeur de `original`, vous pouvez bien sûr modifier `original` directement, mais vous pouvez aussi passer par `reference`. Il suffit de faire l'assignation, de la même manière qu'avec une variable classique :
-```cpp
-reference = 8;
-```
-
-Et si vous modifiez `original`, la valeur de `reference` est modifiée également. Eh bien oui, c'est normal, puisque les deux variables font référence au même bloc de mémoire. Vous pouvez d'ailleurs essayer d'imprimer leurs adresses pour en être convaincus.
-
-{{% notice tip %}}
-D'ailleurs, pour avoir l'adresse d'une variable, il faut aussi utiliser le caractère `&`. C'est un peu confusant tout ça... Hélas, en C++, on réutilise en permanence les mêmes symboles et les mêmes mots-clefs pour faire des choses différentes, ce qui est un peu dommage, mais ça permet d'assurer la rétro-compatibilité du langage.\
-Pour savoir si on parle d'une référence ou d'une adresse, il suffit de regarder où est placé le `&`. Si c'est derrière le type d'une variable, c'est une référence. Si ce n'est pas derrière le type d'une variable, c'est probablement une adresse, ou alors une erreur de syntaxe...\
-De toute manière, on ne peut parler de référence qu'à la définition d'une variable, puisqu'ensuite, on la manipule exactement de la même manière que n'importe quelle autre variable.
-{{% /notice %}}
-
-On va maintenant utiliser les références pour simplifier le code et le rendre plus efficace.
-
-#### Passage par référence
-
-Un des premier cas d'utilisation des références, c'est pour passer des paramètres à une fonction qui va les modifier.
-
-Dans la fonction `parse_params`, commencez par changer le type de `op` pour passer d'un `char*` à un `char`, comme si vous souhaitiez passer le paramètre par copie. N'oubliez pas de modifier l'appelant pour que tout compile, puis faites de même pour `values`.
-
-{{< expand "Solution" >}}
-{{< highlight cpp "hl_lines=1 16 21 24">}}
-bool parse_params(char op, std::vector<int> values, int argc, char** argv)
-{
-    if (argc < 2)
-    {
-        std::cerr << "Expected operator as first argument." << std::endl;
-        return false;
-    }
- 
-    std::string op_str = argv[1];
-    if (op_str != "+" && op_str != "*" && op_str != "-")
-    {
-        std::cerr << "Expected operator to be '+', '*' or '-'." << std::endl;
-        return false;
-    }
-
-    op = op_str[0];
-
-    for (auto arg_i = 2; arg_i < argc; ++arg_i)
-    {
-        auto value = std::stoi(argv[arg_i]);
-        values.emplace_back(value);
-    }
-
-    if (op == '-' && values.empty())
-    {
-        std::cerr << "Operator '-' expects at least one operand to substract from." << std::endl;
-        return false;
-    }
-
-    return true;
-}
-{{< /highlight >}}
-
-<p>Et dans le <code>main</code>, on retire les esperluettes :</p>
-{{< highlight cpp "hl_lines=1">}}
-if (!parse_params(op, values, argc, argv))
-{
-    return -1;
-}
-{{< /highlight >}}
-{{< /expand >}}
-
-Normalement, la calculette ne devrait plus fonctionner, puis qu'au retour de la fonction `parse_params`, les paramètres passés par valeur n'auront pas été modifiés. Heureusement, le fix va être très rapide. Il suffit de modifiez la signature de `parse_params` pour indiquer que `op` et `values` sont désormais des références. Le reste du code (corps de la fonction et appelant) n'a pas besoin d'être modifié. Testez pour vérifier que tout fonctionne à nouveau.
-
-{{% expand "Solution" %}}
-```cpp
-bool parse_params(char& op, std::vector<int>& values, int argc, char** argv)
-```
-{{% /expand %}}
-
-#### Passage par référence constante
-
-Un autre cas d'utilisation des références, c'est pour passer des paramètres coûteux à copier à une fonction. Par exemple, pour passer des classes qui réalisent des allocations dynamiques en interne, comme std::vector ou std::string, on peut tout à fait décider d'utiliser des références pour éviter que ces allocations ne se fassent.
-
-Le problème de passer d'une copie à une référence, c'est que l'on donne le pouvoir à la fonction de modifier des choses qu'on souhaiterait qu'elle ne modifie pas. Pour éviter cela, on va passer les paramètres en utilisant des **références constantes** (abbrégé const-ref). Pour définir une const-ref, il suffit d'ajouter le mot-clef `const` devant le type de la référence :
-```cpp
-int original = 3;
-const int& const_ref = original;
-```
-
-Avec le code ci-dessus, vous pourrez lire le contenu de `const_ref`, mais vous ne pourrez pas le modifier. Si vous essayez d'écrire `const_ref = 8`, vous aurez une erreur de compilation.
-
-Modifiez maintenant les signatures de `add`, `multiply`, `sub` et `compute_result` de manière à passer le tableau `values` par const-ref plutôt que par valeur.
-
-{{% expand "Solution" %}}
-```cpp
-int add(const std::vector<int>& values) { ... }
-int multiply(const std::vector<int>& values) { ... }
-int sub(const std::vector<int>& values) { ... }
-int compute_result(char op, const std::vector<int>& values) { ... }
 ```
 {{% /expand %}}

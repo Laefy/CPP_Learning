@@ -43,25 +43,21 @@ Une fois que vous avez terminé, cliquez sur le bouton `Validez` pour que le ré
 {{% test_item id=15 %}}Donnez un avantage à utiliser un `std::vector` plutôt qu'un tableau dynamique alloué manuellement.{{% /test_item %}}
 {{% test_item id=16 %}}A quoi sert la fonction `std::stoi` ?{{% /test_item %}}
 ---
-{{% test_item id=17 %}}Quel mot-clef faut-il préférer à `NULL` ?{{% /test_item %}}
-{{% test_item id=18 %}}Qu'utilise t-on en C++ pour qu'une fonction puisse modifier le contenu d'une variable passée en paramètre ?{{% /test_item %}}
-{{% test_item id=19 %}}Ecrivez la signature d'une fonction retournant un booléen et prenant en paramètre un tableau d'entiers qu'elle ne doit pas modifier.{{% /test_item %}}
+{{% test_item id=17 %}}Qu'utilise t-on en C++ pour qu'une fonction puisse modifier le contenu d'une variable passée en paramètre ?{{% /test_item %}}
+{{% test_item id=18 %}}Ecrivez la signature d'une fonction retournant un booléen et prenant en paramètre un tableau d'entiers qu'elle ne doit pas modifier.{{% /test_item %}}
 ---
 
 Les prochaines questions font référence aux instructions suivantes : 
 ```cpp
 bool              a;
 std::string       b;
-int*              c = new int[3] {};
-std::vector<char> d;
-auto              e = 4;
+std::vector<char> c;
+auto              d = 4;
 ```
 
-{{% test_item id=20 %}}Quelle est la valeur de `a` ?{{% /test_item %}}
-{{% test_item id=21 %}}Quelle est la valeur de `b` ?{{% /test_item %}}
-{{% test_item id=22 %}}Quelle est la valeur de `c[1]` ?{{% /test_item %}}
-{{% test_item id=23 %}}Ecrivez l'instruction permettant de libérer la mémoire allouée pour `c`.{{% /test_item %}}
-{{% test_item id=24 %}}Ecrivez l'instruction permettant d'ajouter la lettre 'A' dans le tableau `d`.{{% /test_item %}}
-{{% test_item id=25 %}}Quel est le type de `e` ?{{% /test_item %}}
+{{% test_item id=19 %}}Quelle est la valeur de `a` ?{{% /test_item %}}
+{{% test_item id=20 %}}Quelle est la valeur de `b` ?{{% /test_item %}}
+{{% test_item id=21 %}}Ecrivez l'instruction permettant d'ajouter la lettre 'A' dans le tableau `c`.{{% /test_item %}}
+{{% test_item id=22 %}}Quel est le type de `d` ?{{% /test_item %}}
 
 {{% /test %}}
