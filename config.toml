@@ -42,7 +42,7 @@ weight = 3
 
 [[menu.shortcuts]]
 name = "<i class='fa fa-rocket'></i> Astuces"
-url = "/chapter0/5-tips/"
+url = "/chapter0/6-tips/"
 weight = 4
 
 [[menu.shortcuts]]
