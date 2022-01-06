@@ -17,8 +17,10 @@ Pour qu'il se lance automatiquement lorsque vous sauvegardez vos fichiers, suive
 3. Recherchez et activez l'option "Editor: Format On Save".
 
 Testez maintenant que tout fonctionne.
-1. Téléchargez {{< open_in_new_tab "/CPP_Learning/code/.clang-format" "ce fichier" />}}.
-2. Déplacez-le dans le dossier hello/ que vous avez récupéré précédemment.
-3. Ouvrez le dossier dans VSCode.
-4. Ajoutez ou supprimez des espaces dans le fichier helloworld.cpp.
-5. Vérifiez que lorsque vous sauvegardez le fichier, celui-ci retrouve son formattage original.
+1. Ouvrez le dossier hello/ téléchargé précédemment dans VSCode.
+2. Ajoutez ou supprimez des espaces dans le fichier `helloworld.cpp`.
+3. Vérifiez que lorsque vous sauvegardez le fichier, celui-ci retrouve son formattage original.
+4. Ouvrez maintenant le fichier `.clang-format`.
+5. Recherchez le paramètre BraceWrapping > AfterFunction et settez le à `false`.
+6. Retournez dans `helloworld.cpp` et sauvegardez le fichier.
+7. Vérifiez qu'après avoir sauvegarder, l'accolade ouvrante du `main` est remontée à la ligne précédente.
