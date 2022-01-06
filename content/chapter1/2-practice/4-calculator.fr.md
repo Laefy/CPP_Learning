@@ -257,7 +257,7 @@ int main(int argc, char** argv)
 ```
 {{% /expand %}}
 
-Vous pouvez maintenant facilement extraire le code permettant de calculer le résultat de l'opération dans une nouvelle fonction. Voici la signature attendue :
+Vous pouvez maintenant extraire le code permettant de calculer le résultat de l'opération dans une nouvelle fonction. Voici la signature attendue :
 ```cpp
 int compute_result(char op, std::vector<int> values)
 ```
@@ -325,7 +325,7 @@ Cette fonction devra renvoyer trois informations :\
 \- l'opérateur,\
 \- les opérandes.
 
-La validité des arguments sera indiqué par la valeur de retour, de type `bool`.
+La validité des arguments sera indiquée par la valeur de retour, de type `bool`.\
 Comme une fonction ne peut renvoyer qu'une seule valeur, nous utiliserons les paramètres pour récupérer l'opérateur et les opérandes.
 
 Pour l'opérateur, vous allez récupérer un `char` au lieu d'une `string` complète. En effet, dans le restant du `main`, nous attendons soit '+', '\*' ou '-', donc nous n'avons pas besoin de stocker la chaîne complète au déjà du traitement des arguments.     

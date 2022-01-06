@@ -104,12 +104,16 @@ Au final, ce cours a pour objectif les points suivants :
 - que vous appreniez à programmer à peu près tout ce dont vous avez envie, sans être obligé de consulter Internet en permanence,
 - que vous puissiez éviter les erreurs de compilation et de programmation classiques,
 - que vous appreniez à utiliser des outils pour vous aider à débugger vos programmes (`printf` c'est sympa, mais un peu limité),
-- que vous acquiérez l'autonomie et les réflexes indispensables permettant de vous débloquer lorsque vous rencontrer un problème. 
+- que vous acquiériez l'autonomie et les réflexes indispensables permettant de vous débloquer lorsque vous rencontrer un problème. 
 
 Bien entendu, comme n'importe quel autre cours que vous trouverez sur Internet, vous aurez à fournir un minimum d'investissement si vous souhaitez en tirer quoi que ce soit. N'hésitez pas à prendre connaissance du paragraphe (volontairement moralisateur 💩) ci-dessous.
 
 {{% notice warning %}}
-Si cela ne vous intéresse vraiment pas, je ne souhaite pas vous forcer à travailler et je vous conseille grandement d'aller acquérir vos crédits universitaires dans d'autres matières. Le C++ n'étant pas un langage facile à aborder, sachez que la méthode : "je lis le chapitre vite fait la veille du TP", ne vous suffira pas à avoir une note potable à la fin du semestre. Je préfère donc vous prévenir à l'avance que si vous souhaitez effectivement apprendre le langage via ce cours, il faudra accepter d'y consacrer le temps nécessaire : 4h par chapitre et les 2h de TP en classe me paraîssent être le minimum. Si vous ne finissez par le TP en classe, vous devrez probablement accorder 1 ou 2h de travail supplémentaire. Réservez-vous donc à l'avance des créneaux sur votre emploi du temps pour pouvoir travailler et apprendre dans de bonnes conditions.
+Si cela ne vous intéresse vraiment pas, je ne souhaite pas vous forcer à travailler et je vous conseille grandement d'aller acquérir vos crédits universitaires dans d'autres matières.
+Le C++ n'étant pas un langage facile à aborder, sachez que la méthode : "je lis le chapitre vite fait la veille du TP", ne vous suffira pas à avoir une note potable à la fin du semestre.
+Je préfère donc vous prévenir à l'avance que si vous souhaitez effectivement apprendre le langage via ce cours, il faudra accepter d'y consacrer le temps nécessaire : 3h par chapitre et les 2h de TP en classe me paraîssent être le minimum.
+Si vous ne finissez par le TP en classe, vous devrez probablement accorder 1 ou 2h de travail supplémentaire.
+Réservez-vous donc à l'avance des créneaux sur votre emploi du temps pour pouvoir travailler et apprendre dans de bonnes conditions.
 {{% /notice %}}
 
 Par contre, si vous avez l'impression de galérer, alors que vous êtes effectivement motivés, il faudra vraiment me le dire (même si vous êtes super timides) que je modifie le cours pour le rendre plus compréhensible.
