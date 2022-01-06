@@ -12,21 +12,21 @@
     <title>🧮 Calculette :: Cours de C&#43;&#43; - Niveau Master</title>
 
     
-    <link href="/CPP_Learning/css/nucleus.css?1641470612" rel="stylesheet">
-    <link href="/CPP_Learning/css/fontawesome-all.min.css?1641470612" rel="stylesheet">
-    <link href="/CPP_Learning/css/hybrid.css?1641470612" rel="stylesheet">
-    <link href="/CPP_Learning/css/featherlight.min.css?1641470612" rel="stylesheet">
-    <link href="/CPP_Learning/css/perfect-scrollbar.min.css?1641470612" rel="stylesheet">
-    <link href="/CPP_Learning/css/auto-complete.css?1641470612" rel="stylesheet">
-    <link href="/CPP_Learning/css/atom-one-dark-reasonable.css?1641470612" rel="stylesheet">
-    <link href="/CPP_Learning/css/theme.css?1641470612" rel="stylesheet">
-    <link href="/CPP_Learning/css/hugo-theme.css?1641470612" rel="stylesheet">
+    <link href="/CPP_Learning/css/nucleus.css?1641495013" rel="stylesheet">
+    <link href="/CPP_Learning/css/fontawesome-all.min.css?1641495013" rel="stylesheet">
+    <link href="/CPP_Learning/css/hybrid.css?1641495013" rel="stylesheet">
+    <link href="/CPP_Learning/css/featherlight.min.css?1641495013" rel="stylesheet">
+    <link href="/CPP_Learning/css/perfect-scrollbar.min.css?1641495013" rel="stylesheet">
+    <link href="/CPP_Learning/css/auto-complete.css?1641495013" rel="stylesheet">
+    <link href="/CPP_Learning/css/atom-one-dark-reasonable.css?1641495013" rel="stylesheet">
+    <link href="/CPP_Learning/css/theme.css?1641495013" rel="stylesheet">
+    <link href="/CPP_Learning/css/hugo-theme.css?1641495013" rel="stylesheet">
     
-    <link href="/CPP_Learning/css/theme-mine.css?1641470612" rel="stylesheet">
+    <link href="/CPP_Learning/css/theme-mine.css?1641495013" rel="stylesheet">
     
-    <link href="/CPP_Learning/css/syntax.css?1641470612" rel="stylesheet">
+    <link href="/CPP_Learning/css/syntax.css?1641495013" rel="stylesheet">
 
-    <script src="/CPP_Learning/js/jquery-3.3.1.min.js?1641470612"></script>
+    <script src="/CPP_Learning/js/jquery-3.3.1.min.js?1641495013"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -57,14 +57,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/CPP_Learning/js/lunr.min.js?1641470612"></script>
-<script type="text/javascript" src="/CPP_Learning/js/auto-complete.js?1641470612"></script>
+<script type="text/javascript" src="/CPP_Learning/js/lunr.min.js?1641495013"></script>
+<script type="text/javascript" src="/CPP_Learning/js/auto-complete.js?1641495013"></script>
 <script type="text/javascript">
     
         var baseurl = "https:\/\/laefy.github.io\/CPP_Learning\/";
     
 </script>
-<script type="text/javascript" src="/CPP_Learning/js/search.js?1641470612"></script>
+<script type="text/javascript" src="/CPP_Learning/js/search.js?1641495013"></script>
 
     
   </div>
@@ -713,7 +713,7 @@ Dans vos TPs, vous pouvez choisir ou non d&rsquo;utiliser <code>auto</code>, ou 
         <span class="n">result</span> <span class="o">*=</span> <span class="n">v</span><span class="p">;</span>
     <span class="p">}</span>
 <span class="p">}</span>
-</code></pre></div><p>Pareil que plus haut, mais avec la multiplication. En revanche, il faut modifier la valeur initiale de <code>result</code>, car la valeur neutre pour le produit est 1 et pas 0. 
+</code></pre></div><p>Pareil que plus haut, mais avec la multiplication. En revanche, il faut modifier la valeur initiale de <code>result</code>, car la valeur neutre pour la multiplication est 1 et pas 0. 
 
 <br/><br/></p>
 <div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="k">else</span> <span class="nf">if</span> <span class="p">(</span><span class="n">op</span> <span class="o">==</span> <span class="s">&#34;-&#34;</span><span class="p">)</span>
@@ -973,7 +973,7 @@ Il faudra ensuite réaliser les changements suivants :<br/>
     <span class="kt">char</span> <span class="n">op</span> <span class="o">=</span> <span class="sc">&#39;?&#39;</span><span class="p">;</span>
     <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">values</span><span class="p">;</span>
 
-    <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">parse_params</span><span class="p">(</span><span class="o">&amp;</span><span class="n">op</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">values</span><span class="p">,</span> <span class="n">argc</span><span class="p">,</span> <span class="n">argv</span><span class="p">))</span>
+    <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">parse_params</span><span class="p">(</span><span class="n">op</span><span class="p">,</span> <span class="n">values</span><span class="p">,</span> <span class="n">argc</span><span class="p">,</span> <span class="n">argv</span><span class="p">))</span>
     <span class="p">{</span>
         <span class="k">return</span> <span class="o">-</span><span class="mi">1</span><span class="p">;</span>
     <span class="p">}</span>
@@ -1525,19 +1525,19 @@ Pensez-bien à éviter les copies inutiles de <code>vector</code>.</p>
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/CPP_Learning/js/clipboard.min.js?1641470612"></script>
-    <script src="/CPP_Learning/js/perfect-scrollbar.min.js?1641470612"></script>
-    <script src="/CPP_Learning/js/perfect-scrollbar.jquery.min.js?1641470612"></script>
-    <script src="/CPP_Learning/js/jquery.sticky.js?1641470612"></script>
-    <script src="/CPP_Learning/js/featherlight.min.js?1641470612"></script>
-    <script src="/CPP_Learning/js/highlight.pack.js?1641470612"></script>
+    <script src="/CPP_Learning/js/clipboard.min.js?1641495014"></script>
+    <script src="/CPP_Learning/js/perfect-scrollbar.min.js?1641495014"></script>
+    <script src="/CPP_Learning/js/perfect-scrollbar.jquery.min.js?1641495014"></script>
+    <script src="/CPP_Learning/js/jquery.sticky.js?1641495014"></script>
+    <script src="/CPP_Learning/js/featherlight.min.js?1641495014"></script>
+    <script src="/CPP_Learning/js/highlight.pack.js?1641495014"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/CPP_Learning/js/modernizr.custom-3.6.0.js?1641470612"></script>
-    <script src="/CPP_Learning/js/learn.js?1641470612"></script>
-    <script src="/CPP_Learning/js/hugo-learn.js?1641470612"></script>
+    <script src="/CPP_Learning/js/modernizr.custom-3.6.0.js?1641495014"></script>
+    <script src="/CPP_Learning/js/learn.js?1641495014"></script>
+    <script src="/CPP_Learning/js/hugo-learn.js?1641495014"></script>
 
-    <link href="/CPP_Learning/mermaid/mermaid.css?1641470612" rel="stylesheet" />
-    <script src="/CPP_Learning/mermaid/mermaid.js?1641470612"></script>
+    <link href="/CPP_Learning/mermaid/mermaid.css?1641495014" rel="stylesheet" />
+    <script src="/CPP_Learning/mermaid/mermaid.js?1641495014"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>
