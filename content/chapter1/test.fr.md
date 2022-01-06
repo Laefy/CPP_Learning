@@ -44,7 +44,7 @@ Une fois que vous avez terminé, cliquez sur le bouton `Validez` pour que le ré
 {{% test_item id=16 %}}A quoi sert la fonction `std::stoi` ?{{% /test_item %}}
 ---
 {{% test_item id=17 %}}Qu'utilise t-on en C++ pour qu'une fonction puisse modifier le contenu d'une variable passée en paramètre ?{{% /test_item %}}
-{{% test_item id=18 %}}Ecrivez la signature d'une fonction retournant un booléen et prenant en paramètre un tableau d'entiers qu'elle ne doit pas modifier.{{% /test_item %}}
+{{% test_item id=18 %}}Ecrivez la signature d'une fonction retournant un booléen et prenant en paramètre un tableau dynamique d'entiers qu'elle ne doit pas modifier.{{% /test_item %}}
 ---
 
 Les prochaines questions font référence aux instructions suivantes : 

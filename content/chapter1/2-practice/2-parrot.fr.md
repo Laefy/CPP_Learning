@@ -116,7 +116,8 @@ for (int i = 0; i < 10; ++i)
 {{% /expand %}}
 
 {{% notice tip %}}
-En C++, il est tout à fait valide et même conseillé de définir son itérateur directement dans l'instruction `for`. Cela permet de limiter le **scope** de la variable à la boucle dans laquelle elle est définie.\
+En C++, il est tout à fait valide et même conseillé de définir son indice d'itérations directement dans l'instruction `for`.
+Cela permet de limiter le **scope** (ou portée) de la variable à la boucle dans laquelle elle est définie.\
 On écrira donc `for (int i = 0; i < 10; ++ i) { ... }` plutôt que `int i; for (i = 0; i < 10; ++i) { ... }`.
 {{% /notice %}}
 

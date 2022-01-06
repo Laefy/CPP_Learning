@@ -97,7 +97,7 @@ Si VSCode vous propose plusieurs options, choisissez 'C++ (GDB/LLDB)'.\
 Enfin, modifiez les champs `"program"` et `"args"` dans le fichier qui vient de s'ouvrir :
 ```json
 "program": "${command:cmake.launchTargetPath}", // copiez-collez la ligne telle quelle
-"args": ["voici", 3, "arguments"],              // fournissez les arguments de votre choix ici
+"args": ["voici", "3", "arguments"],            // fournissez les arguments de votre choix ici
 ```
 \
 {{% expand "Solution" %}}

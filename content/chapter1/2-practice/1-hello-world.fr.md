@@ -107,3 +107,9 @@ Vous devriez maintenant pouvoir compiler le programme sans soucis. Exécutez-le 
 Hello World!
 The program '[2288] c1-1-hello_world.exe' has exited with code 0 (0x0).
 ```
+
+Par ailleurs, sachez qu'il est possible de chaîner l'opérateur `<<` et de lui fournir d'autres éléments que des chaînes de caractères. \
+Vous pouvez donc écrire des choses comme :
+```cpp
+std::cout << "I have " << 7 << " dogs." << std::endl;
+```

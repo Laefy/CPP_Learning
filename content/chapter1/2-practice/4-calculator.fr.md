@@ -125,7 +125,7 @@ else if (op == "*")
 }
 ```
 
-Pareil que plus haut, mais avec la multiplication. En revanche, il faut modifier la valeur initiale de `result`, car la valeur neutre pour le produit est 1 et pas 0. 
+Pareil que plus haut, mais avec la multiplication. En revanche, il faut modifier la valeur initiale de `result`, car la valeur neutre pour la multiplication est 1 et pas 0. 
 {{% empty_line %}}
 
 ```cpp
@@ -390,7 +390,7 @@ int main(int argc, char** argv)
     char op = '?';
     std::vector<int> values;
 
-    if (!parse_params(&op, &values, argc, argv))
+    if (!parse_params(op, values, argc, argv))
     {
         return -1;
     }
