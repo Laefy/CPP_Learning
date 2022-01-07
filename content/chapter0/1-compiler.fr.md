@@ -44,9 +44,9 @@ Vérifiez une nouvelle fois que votre g++ est bien à jour.
 Testez maintenant que tout fonctionne en suivant les étapes ci-dessous.
 1. Téléchargez {{< open_in_new_tab "/CPP_Learning/code/helloworld.cpp" "ce fichier" />}}.
 2. Ouvrez un terminal et placez-vous dans le répertoire contenant le fichier téléchargé : `cd path/to/folder`.
-3. Exécutez la commande `g++ .\helloworld.cpp -o hello`.\
+3. Exécutez la commande `g++ ./helloworld.cpp -o hello`.\
 Un fichier hello devrait avoir été généré.
-4. Exécutez `.\hello`.
+4. Exécutez `./hello`.
 Le programme devrait vous répondre "Hello!".
 
 ---
@@ -59,7 +59,7 @@ Le programme devrait vous répondre "Hello!".
 Testez maintenant que tout fonctionne en suivant les étapes ci-dessous.
 1. Téléchargez {{< open_in_new_tab "/CPP_Learning/code/helloworld.cpp" "ce fichier" />}}.
 2. Ouvrez un terminal et placez-vous dans le répertoire contenant le fichier téléchargé : `cd path/to/folder`.
-3. Exécutez la commande `clang++ .\helloworld.cpp -o hello`.\
+3. Exécutez la commande `clang++ ./helloworld.cpp -o hello`.\
 Un fichier hello devrait avoir été généré.
-4. Exécutez `.\hello`.
+4. Exécutez `./hello`.
 Le programme devrait vous répondre "Hello!".
