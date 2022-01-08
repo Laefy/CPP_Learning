@@ -40,7 +40,7 @@ Une fois que vous avez terminé, cliquez sur le bouton `Validez` pour que le ré
 {{% test_item id=13 desc="using ns forbidden" %}}Où doit-on éviter de placer l'instruction `using namespace std;` ?{{% /test_item %}}
 ---
 {{% test_item id=14 desc="stream for err" %}}Quel est le nom de la variable de flux dédiée à l'écriture des erreurs ?{{% /test_item %}}
-{{% test_item id=15 desc="vector use" %}}Donnez un avantage à utiliser un `std::vector` plutôt qu'un tableau dynamique alloué manuellement.{{% /test_item %}}
+{{% test_item id=15 desc="dyn array" %}}Quelle classe permet de représenter un tableau de taille dynamique ?{{% /test_item %}}
 {{% test_item id=16 desc="stoi?" %}}A quoi sert la fonction `std::stoi` ?{{% /test_item %}}
 ---
 {{% test_item id=17 desc="mutable arg" %}}Qu'utilise t-on en C++ pour qu'une fonction puisse modifier le contenu d'une variable passée en paramètre ?{{% /test_item %}}

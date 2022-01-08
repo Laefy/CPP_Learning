@@ -167,7 +167,7 @@ array.emplace_back(5);
 array.emplace_back(-3);
 ```
 
-Modifiez votre code de façon à utiliser un `std::vector` plutôt qu'un tableau alloué manuellement et testez que tout fonctionne correctement.
+Modifiez votre code de façon à utiliser un `std::vector` plutôt que le tableau de taille statique et testez que tout fonctionne correctement.
 
 {{% expand "Solution" %}}
 Commencez par inclure le header `<vector>`.
