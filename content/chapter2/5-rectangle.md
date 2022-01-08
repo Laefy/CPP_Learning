@@ -41,7 +41,7 @@ Dans cet exercice, vous allez voir comment extraire le constructeur de la classe
 Vous pouvez laisser dans le header les petits getters.
 
 `Rectangle.h` :\
-Remplacez les définitions du constructeur et de `scale` par des déclarations de fonction. Vous mettre de côté les anciennes définitions en les commentant.\
+Remplacez les définitions du constructeur et de `scale` par des déclarations de fonction. Vous mettrez de côté les anciennes définitions en les commentant.\
 Pour déclarer un constructeur, c'est pareil que pour n'importe quelle autre fonction. On écrit sa signature et on termine par un `;`.
 Si vous essayez de compiler le code, votre `main` devrait compiler sans erreur, par contre, votre programme ne devrait pas pouvoir linker.
 
@@ -73,7 +73,7 @@ public:
 Commencez par inclure le fichier `Rectangle.h`. Autrement, vous ne pourrez pas faire référence à la classe `Rectangle`.\
 Déplacez-y ensuite les définitions des fonctions qui étaient dans le header.\
 La dernière étape consiste à indiquer que ces fonctions appartiennent à la classe `Rectangle`. Pour cela, vous devez préfixer le nom de vos fonctions avec `Rectangle::`.
-C'est la même syntaxe que celle utilisée pour indiquer qu'un symbole fait partie d'un namespace. Ici, on indique que le symbole fait partie d'une classe.
+C'est la même syntaxe que celle utilisée pour indiquer qu'un symbole fait partie d'un namespace. Ici, on indique que le symbole fait partie d'une classe.\
 
 Vous devriez maintenant pouvoir compiler et tester le programme.
 
@@ -173,7 +173,7 @@ Une fois la construction déléguée, vous ne pouvez pas indiquer d'initialisati
 
 ### Membres statiques
 
-Nous souhaiterions maintenant pouvoir créer un série de carrés de même taille, sans avoir à spécifier le moindre paramètre à leur construction.
+Nous souhaiterions maintenant pouvoir créer une série de carrés de même taille, sans avoir à spécifier le moindre paramètre à leur construction.
 Voici à quoi le code devrait pour ressembler :
 
 ```cpp
@@ -188,7 +188,7 @@ Rectangle s3;
 Rectangle s4;
 Rectangle s5;
 
-// At this point, size of s1 and s2 should be 3.f, and size fo s3, s4 and s5 should be 5.f. 
+// At this point, size of s1 and s2 should be 3.f, and size of s3, s4 and s5 should be 5.f. 
 ```
 
 Pour cela, nous allons définir des **membres statiques** à la classe Rectangle.
@@ -215,7 +215,7 @@ A ce stade, vous ne devriez plus pouvoir compiler, car le linker n'arrive pas à
 
 En fait, vous n'avez fait que la moitié du travail. Vous avez déclaré l'attribut statique, mais vous ne l'avez pas défini. Pour cela, il faut aller dans un .cpp afin d'y ajouter la ligne suivante : `type ClassName::attribute;`. Notez qu'à cet endroit, on ne remet pas le mot-clef `static`, mais on préfixe par contre l'attribut avec `ClassName::`.
 
-Ajoutez la définition de l'attribut `_default_size` dans le fichier `Rectangle.cpp`. C'est au niveau de la définition d'un attribut que vous pouvez (et devez dans le cas des primitives) spécifier un initializer.
+Ajoutez la définition de l'attribut `_default_size` dans le fichier `Rectangle.cpp`. C'est au niveau de la définition d'un attribut que vous pouvez (et dans le cas des primitives, devez) spécifier un initializer.
 Compilez et testez votre programme avec un débuggeur de manière à vous assurez que la valeur de `_default_value` est correctement initialisée.
 
 {{% expand "Solution" %}}
@@ -224,7 +224,7 @@ float Rectangle::_default_size = 0.f;
 ```
 {{% /expand %}}
 
-Ajoutez ensuite un constructeur par défaut à votre classe, qui déléguera la construction au constructeur à 1 paramètre en lui passant `_default_size`. Les attributs statiques peuvent être accédés de la même manière que les attributs non-statiques.
+Ajoutez ensuite un constructeur par défaut à votre classe, qui déléguera la construction au constructeur à 1 paramètre en lui passant `_default_size`.
 
 Si vous ne l'avez pas déjà fait, ajoutez dans le `main` les instructions pour instancier une série de `Rectangle` à partir du constructeur par défaut. Compilez et vérifiez à l'aide d'un débuggeur que les rectangles créés ont bien tous pour taille la valeur contenue dans `_default_size`.
 

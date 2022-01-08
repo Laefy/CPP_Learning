@@ -93,7 +93,8 @@ public:
 
 Batman n'est pas né Batman. Batman est né Bruce Wayne.\
 Modifiez l'instanciation de `p` de manière à passer deux paramètres `name` et `surname`.
-Ajoutez l'attribut correspondant `_surname` à la classe et modifiez la définition de son constructeur afin de prendre en compte ces changements.
+Ajoutez l'attribut correspondant `_surname` à la classe et modifiez la définition de son constructeur afin de prendre en compte ces changements.\
+Attention, il y a un piège avec le type de retour.
 
 {{% expand "Solution" %}}
 Instanciation :
@@ -121,12 +122,21 @@ private:
 ```
 {{% /expand %}}
 
-Pour terminer, renommez votre fonction `get_name` en `get_full_name` et réalisez les modifications nécessaires afin que celle-ci renvoie `"Bruce Wayne"` plutôt que `"Bruce"`.
+Renommez votre fonction `get_name` en `get_full_name` et réalisez les modifications nécessaires afin que celle-ci renvoie `"Bruce Wayne"` plutôt que `"Bruce"`.
 {{% expand "Solution" %}}
 La fonction `get_name` pouvait renvoyer une const-ref, car le résultat pointait sur l'espace mémoire de l'attribut `_name`.
 Comme le résultat ne fait plus référence à un attribut de la classe, il est nécessaire de le renvoyer par valeur.
 ```cpp
 std::string get_full_name() const { return _name + " " + _surname; }
+```
+{{% /expand %}}
+
+Pour terminer, supprimez le setter pour _name, puisque celui-ci n'est plus utilisé.\
+Profitez-en également pour rajouter les `const` sur les membres qui ne sont jamais modifiés.
+{{% expand "Solution" %}}
+```cpp
+const std::string _name;
+const std::string _surname;
 ```
 {{% /expand %}}
 
@@ -148,10 +158,10 @@ Lorsque l'utilisateur ne définit aucun constructeur, le compilateur définit (s
 
 On appelle **constructeur par défaut** tout constructeur qui n'attend aucun paramètre. L'utilisateur et le compilateur peuvent donc tout deux définir un constructeur par défaut. Dans le cas du compilateur, on parlera d'**implémentation par défaut du constructeur par défaut**.
 
-L'implémentation par défaut du constructeur par défaut (trop de "defaut", je sais) initialise les attributs de la classe selon les règles suivantes :\
-1- en utilisant le class-initializer s'il est fourni (comme pour `_age`),\
-2- s'il n'y a pas de class-initializer et que l'attribut est une classe, en appelant son constructeur par défaut (comme pour `_name`, qui étant une `std::string`, est construit par défaut avec la chaîne vide),\
-3- s'il n'y a pas de class-initializer et que l'attribut n'est pas une classe, alors son contenu sera indéfini.
+L'implémentation par défaut du constructeur par défaut (trop de "defaut", je sais) initialise les attributs de la classe selon les règles suivantes :
+1. en utilisant le class-initializer s'il est fourni (comme pour `_age`),
+2. s'il n'y a pas de class-initializer et que l'attribut est une classe, en appelant son constructeur par défaut (comme pour `_name`, qui étant une `std::string`, est construit par défaut avec la chaîne vide),
+3. s'il n'y a pas de class-initializer et que l'attribut n'est pas une classe, alors son contenu sera indéfini.
 
 Du coup pour répondre à la question, le code originel compilait car le compilateur définissait un constructeur par défaut à la classe `Person`. Dès lors que vous avez ajouté votre propre constructeur, le compilateur a supposé que vous ne vouliez probablement plus de l'implémentation qu'il vous fournissait. Il ne vous était donc plus possible d'instancier la classe `Person` sans paramètres.
 
@@ -191,7 +201,7 @@ Et enfin, lorsqu'il n'y a qu'un seul paramètre, on peut dans certains cas utili
 
 Ces syntaxes s'utilisent également pour l'instanciation des primitives : `int a = 1;` / `int a { 1 };` / `int a(1);` 
 
-Pour le moment, vous pouvez considérer que ces méthodes sont plus ou moins équivalentes (évidemment, ce n'est pas le cas, sinon ce ne serait pas drôle, mais nous y reviendrons au [Chapitre 5](/chapter5/)).
+Pour le moment, vous pouvez considérer que ces méthodes sont plus ou moins équivalentes (évidemment, ce n'est pas le cas, sinon ce ne serait pas drôle, mais nous y reviendrons un peu plus tard).\
 Ne vous embêtez pas à mémoriser toutes ces règles par coeur. Retenez simplement que d'autres variations de syntaxe existent, pour que vous ne soyiez pas étonner si vous les rencontrez dans du code que vous n'avez pas écrit.
 
 {{% notice info %}}
@@ -226,5 +236,5 @@ void wait(unsigned int years) { _age += years; }
 {{% /expand %}}
 
 {{% notice note %}}
-Définir et utiliser des setters n'est pas forcément mauvais. Ce qui est mauvais, c'est de définir des setters pour tous les attributs d'une classe, sans prendre le temps de définir au préalable ses invariants (l'attribut `_age` ne peut pas décroitre au cours de l'exécution).
+Définir et utiliser des setters n'est pas forcément mauvais. Ce qui est mauvais, c'est de définir des setters pour tous les attributs d'une classe, sans prendre le temps de définir au préalable ses invariants (l'âge d'une personne ne peut pas décroître au cours de l'exécution).
 {{% /notice %}}
