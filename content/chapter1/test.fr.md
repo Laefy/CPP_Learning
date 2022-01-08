@@ -22,29 +22,29 @@ Une fois que vous avez terminé, cliquez sur le bouton `Validez` pour que le ré
 ---
 
 {{% test chapter=1 %}}
-{{% test_item id=1 %}}Citez trois éléments qui participent à la popularité du C++.{{% /test_item %}}
-{{% test_item id=2 %}}Donnez un inconvénient des langages compilés.{{% /test_item %}}
-{{% test_item id=3 %}}Le C++ est-il un langage orienté-objet ?{{% /test_item %}}
+{{% test_item id=1 desc="3 reasons popular" %}}Citez trois éléments qui participent à la popularité du C++.{{% /test_item %}}
+{{% test_item id=2 desc="1 drawback" %}}Donnez un inconvénient des langages compilés.{{% /test_item %}}
+{{% test_item id=3 desc="c++ oo?" %}}Le C++ est-il un langage orienté-objet ?{{% /test_item %}}
 ---
-{{% test_item id=4 %}}Donnez le nom d'un compilateur.{{% /test_item %}}
-{{% test_item id=5 %}}Avez-vous réalisé les exercices proposés dans ce chapitre ?{{% /test_item %}}
-{{% test_item id=6 %}}Si oui, avez-vous utilisé les outils installés dans la partie précédente (VSCode, CMake, etc) ?{{% /test_item %}}
-{{% test_item id=7 %}}Si non, pour quelles raisons ? Qu'avez-vous utilisé à la place ?{{% /test_item %}}
-{{% test_item id=8 %}}Concernant git, êtes-vous plutôt à l'aise (je sais utiliser des branches et comment résoudre les conflits), moyennement à l'aise (je fais pull, commit et push, mais ça s'arrête là) ou pas du tout à l'aise (cet outil n'a pas de sens / je ne l'ai jamais utilisé) ?{{% /test_item %}}
+{{% test_item id=4 desc="1 compiler" %}}Donnez le nom d'un compilateur.{{% /test_item %}}
+{{% test_item id=5 desc="ex done?" %}}Avez-vous réalisé les exercices proposés dans ce chapitre ?{{% /test_item %}}
+{{% test_item id=6 desc="used tools?" %}}Si oui, avez-vous utilisé les outils installés dans la partie précédente (VSCode, CMake, etc) ?{{% /test_item %}}
+{{% test_item id=7 desc="other tools?" %}}Si non, pour quelles raisons ? Qu'avez-vous utilisé à la place ?{{% /test_item %}}
+{{% test_item id=8 desc="git level" %}}Concernant git, êtes-vous plutôt à l'aise (je sais utiliser des branches et comment résoudre les conflits), moyennement à l'aise (je fais pull, commit et push, mais ça s'arrête là) ou pas du tout à l'aise (cet outil n'a pas de sens / je ne l'ai jamais utilisé) ?{{% /test_item %}}
 ---
-{{% test_item id=9 %}}Donnez une instruction permettant d'écrire le texte "Happy New Year!" dans la console.{{% /test_item %}}
-{{% test_item id=10 %}}Pourquoi écrit-on `std::` devant certains symboles ?{{% /test_item %}}
-{{% test_item id=11 %}}Quelle valeur faut-il retourner dans le `main` pour indiquer que tout s'est bien passé ?{{% /test_item %}}
+{{% test_item id=9 desc="print" %}}Donnez une instruction permettant d'écrire le texte "Happy New Year!" dans la console.{{% /test_item %}}
+{{% test_item id=10 desc="std::?" %}}Pourquoi écrit-on `std::` devant certains symboles ?{{% /test_item %}}
+{{% test_item id=11 desc="succ val" %}}Quelle valeur faut-il retourner dans le `main` pour indiquer que tout s'est bien passé ?{{% /test_item %}}
 ---
-{{% test_item id=12 %}}Est-il valide de définir des variables à l'intérieur de la zone d'initialisation d'une boucle `for` ?{{% /test_item %}}
-{{% test_item id=13 %}}Où doit-on éviter de placer l'instruction `using namespace std;` ?{{% /test_item %}}
+{{% test_item id=12 desc="for init def" %}}Est-il valide de définir des variables à l'intérieur de la zone d'initialisation d'une boucle `for` ?{{% /test_item %}}
+{{% test_item id=13 desc="using ns forbidden" %}}Où doit-on éviter de placer l'instruction `using namespace std;` ?{{% /test_item %}}
 ---
-{{% test_item id=14 %}}Quel est le nom de la variable de flux dédiée à l'écriture des erreurs ?{{% /test_item %}}
-{{% test_item id=15 %}}Donnez un avantage à utiliser un `std::vector` plutôt qu'un tableau dynamique alloué manuellement.{{% /test_item %}}
-{{% test_item id=16 %}}A quoi sert la fonction `std::stoi` ?{{% /test_item %}}
+{{% test_item id=14 desc="stream for err" %}}Quel est le nom de la variable de flux dédiée à l'écriture des erreurs ?{{% /test_item %}}
+{{% test_item id=15 desc="vector use" %}}Donnez un avantage à utiliser un `std::vector` plutôt qu'un tableau dynamique alloué manuellement.{{% /test_item %}}
+{{% test_item id=16 desc="stoi?" %}}A quoi sert la fonction `std::stoi` ?{{% /test_item %}}
 ---
-{{% test_item id=17 %}}Qu'utilise t-on en C++ pour qu'une fonction puisse modifier le contenu d'une variable passée en paramètre ?{{% /test_item %}}
-{{% test_item id=18 %}}Ecrivez la signature d'une fonction retournant un booléen et prenant en paramètre un tableau dynamique d'entiers qu'elle ne doit pas modifier.{{% /test_item %}}
+{{% test_item id=17 desc="mutable arg" %}}Qu'utilise t-on en C++ pour qu'une fonction puisse modifier le contenu d'une variable passée en paramètre ?{{% /test_item %}}
+{{% test_item id=18 desc="sign" %}}Ecrivez la signature d'une fonction retournant un booléen et prenant en paramètre un tableau dynamique d'entiers qu'elle ne doit pas modifier.{{% /test_item %}}
 ---
 
 Les prochaines questions font référence aux instructions suivantes : 
@@ -55,9 +55,9 @@ std::vector<char> c;
 auto              d = 4;
 ```
 
-{{% test_item id=19 %}}Quelle est la valeur de `a` ?{{% /test_item %}}
-{{% test_item id=20 %}}Quelle est la valeur de `b` ?{{% /test_item %}}
-{{% test_item id=21 %}}Ecrivez l'instruction permettant d'ajouter la lettre 'A' dans le tableau `c`.{{% /test_item %}}
-{{% test_item id=22 %}}Quel est le type de `d` ?{{% /test_item %}}
+{{% test_item id=19 desc="a val" %}}Quelle est la valeur de `a` ?{{% /test_item %}}
+{{% test_item id=20 desc="b val" %}}Quelle est la valeur de `b` ?{{% /test_item %}}
+{{% test_item id=21 desc="add to c" %}}Ecrivez l'instruction permettant d'ajouter la lettre 'A' dans le tableau `c`.{{% /test_item %}}
+{{% test_item id=22 desc="d type" %}}Quel est le type de `d` ?{{% /test_item %}}
 
 {{% /test %}}

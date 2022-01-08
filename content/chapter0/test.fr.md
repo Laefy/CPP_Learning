@@ -9,6 +9,6 @@ Merci d'avance ! 🙂
 ---
 
 {{% test chapter=0 %}}
-{{% test_item id=1 %}}Avez-vous rencontré des difficultés lors de l'installation d'un des composants ? Si oui, du ou desquels s'agit-il ?{{% /test_item %}}
-{{% test_item id=2 lines=4 %}}Si une erreur est survenue à un moment, pouvez-vous la copier-coller ci-dessous et indiquer le contexte dans lequel celle-ci a eu lieu ?{{% /test_item %}}
+{{% test_item id=1 desc="pb" %}}Avez-vous rencontré des difficultés lors de l'installation d'un des composants ? Si oui, du ou desquels s'agit-il ?{{% /test_item %}}
+{{% test_item id=2 lines=4 desc="info" %}}Si une erreur est survenue à un moment, pouvez-vous la copier-coller ci-dessous et indiquer le contexte dans lequel celle-ci a eu lieu ?{{% /test_item %}}
 {{% /test %}}
