@@ -100,11 +100,11 @@ Votre note finale sera composée de deux notes, coefficient 0.5 chacune :
 ### Conclusion
 
 Au final, ce cours a pour objectif les points suivants :
-- que vous soyiez capables de comprendre la plupart des bouts de code auxquels vous pourrez être confrontés dans le future,
-- que vous appreniez à programmer à peu près tout ce dont vous avez envie, sans être obligé de consulter Internet en permanence,
+- que vous soyiez capables de comprendre la plupart des bouts de code auxquels vous pourrez être confrontés dans le futur,
+- que vous appreniez à programmer à peu près tout ce dont vous avez envie, sans être obligé(e)s de consulter Internet en permanence,
 - que vous puissiez éviter les erreurs de compilation et de programmation classiques,
 - que vous appreniez à utiliser des outils pour vous aider à débugger vos programmes (`printf` c'est sympa, mais un peu limité),
-- que vous acquiériez l'autonomie et les réflexes indispensables permettant de vous débloquer lorsque vous rencontrer un problème. 
+- que vous acquiériez l'autonomie et les réflexes indispensables permettant de vous débloquer lorsque vous rencontrez un problème. 
 
 Bien entendu, comme n'importe quel autre cours que vous trouverez sur Internet, vous aurez à fournir un minimum d'investissement si vous souhaitez en tirer quoi que ce soit. N'hésitez pas à prendre connaissance du paragraphe (volontairement moralisateur 💩) ci-dessous.
 
