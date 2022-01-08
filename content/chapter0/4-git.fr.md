@@ -21,11 +21,10 @@ Mais si vous êtes intéressés quand même, les sections ci-dessous détaillent
 
 #### Créer un nouveau dépôt
 
-1. Créez un nouveau dossier `test-git-init` et ouvrez-le dans VSCode.
-2. Réouvrez le dossier hello/ téléchargé précédemment depuis VSCode.
-3. Configurer le projet avec `CMake: Configure`, puis compilez-le, comme vous l'avez appris sur la page précédente.
-4. Placez-vous ensuite dans l'onglet Source Control de VSCode (Ctrl+Shift+G ou `View > SCM`).
-5. Cliquez sur `Initialize Repository`.
+1. Réouvrez le dossier hello/ téléchargé précédemment depuis VSCode.
+2. Si vous ne l'aviez pas fait précédement, configurez le projet avec `CMake: Configure`, puis compilez-le.
+3. Placez-vous ensuite dans l'onglet Source Control de VSCode (Ctrl+Shift+G ou `View > SCM`).
+4. Cliquez sur `Initialize Repository`.
 ![](/CPP_Learning/images/vscode-git-init.png)
 6. Les fichiers générés par la compilation devraient apparaître dans la liste des changements détectés par git.
 Comme nous ne souhaitons pas sauvegarder les fichiers temporaires, nous allons les ignorer en ajoutant un nouveau fichier `.gitignore`.\
@@ -41,12 +40,11 @@ build/
 *.o
 ```
 
-7. Si votre exécutable est généré dans le même répertoire que les fichiers sources, et que celui-ci ne comporte pas d'extension, vous pouvez ajouter son nom sur une nouvelle ligne du fichier `.gitignore`.
+7. Vérifiez que seuls les fichiers helloworld.cpp, CMakeLists.txt, .clang-format et .gitignore apparaissent désormais dans la liste des changements.
 8. Retournez dans l'onglet Source Control, et appuyez sur le bouton `+` pour stager vos modifications.
-![](/CPP_Learning/images/vscode-git-stage.png)
-
+![](/CPP_Learning/images/chapter0/git-add.png)
 9. Entrez un message décrivant vos changements et cliquez sur la coche pour les committer.
-![](/CPP_Learning/images/vscode-git-commit.png)
+![](/CPP_Learning/images/chapter0/git-commit.png)
 
 #### Cloner un dépôt existant
 
