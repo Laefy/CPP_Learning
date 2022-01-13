@@ -36,11 +36,18 @@ Un des invariants de la classe Carré est qu'il faut qu'à tout moment, les 4 c�
 Un des invariants de la classe Fraction est que le dénominateur de chacune de ses instances ne peut pas être nul.\
 Un des invariants de la classe ListeCroissante est que les éléments sont toujours par ordre croissant.
 
-Chaque invariant de classe peut-être supposée réalisée au début de chaque fonction-membre (publique) et la fonction doit faire en sorte que l'invariant est de encore réalisé à la fin.  Ceci ne demande pas nécessairement de vérifier la condition.  Par exemple, la fonction qui ajoute un élément dans une ListeCroissante n'a pas besoin de vérifier que la liste est triée au début, et peut utiliser la recherche dichotomique pour trouver où doit être inséré le nouvel élément.  Si l'algorithme est écrit correctement, on n'aura pas besoin de faire un parcours complet de la liste pour vérifier qu'elle est toujours triée (ce test serait plus couteux que l'ajout).  Elle sera triée parce qu'on *a rien cassé*. 
+Lorsqu'une fonction-membre publique est appelée, on peut toujours supposer qu'à son entrée, les invariants sont assurés.
+En contre-partie, il faut que l'implémentation de la fonction garantissent que les invariants sont toujours vrais en sortie.\
+Par exemple, la fonction `SortedList::insert()` n'a pas besoin de vérifier que la liste est triée au début, car on part du principe que l'invariant est forcément vrai.
+On peut donc utiliser la recherche dichotomique pour trouver où doit être inséré le nouvel élément, ce qui est moins coûteux que si on avait à faire une recherche linéaire.\
+L'invariant permet donc ici de gagner en temps de calcul.
 
 #### Encapsulation
 
 L'**encapsulation** est le principe déclarant que pour pour accéder/modifier l'état d'un objet, il faut passer par des "routines" (fonction-membre en C++, méthode en Java, ...). Il s'accompagne souvent du masquage de l'état des objets, c'est-à-dire que l'on déclare les attributs dans la partie privée de la classe.\
 Respecter le principe d'encapsulation permet de garantir les invariants de classe plus facilement.
 
-Reprenons l'exemple de la classe ListeCroissante.  On ne laissera pas l'utilisateur accéder directement au tableau contenant les valeurs.  Il pourrait ajouter un élément à la fin, ce qui aurait de grande chance de casser l'invariant de classe.  S'il veut ajouter un élément, on le forcera à utiliser notre fonction-membre qui fera respecter l'invariant de classe.
+Reprenons l'exemple de la classe `SortedList`.
+On ne laissera pas l'utilisateur accéder directement au tableau contenant les valeurs.
+Il pourrait ajouter un élément à la fin, ce qui aurait de grande chance de briser l'invariant de classe.
+S'il veut ajouter un élément, on le forcera à passer par notre fonction-membre qui fera respecter l'invariant de classe.
