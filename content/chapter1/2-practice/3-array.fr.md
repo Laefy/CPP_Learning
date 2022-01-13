@@ -127,23 +127,25 @@ int main(int argc, char** argv)
 ### Conversion d'une chaîne en entier
 
 Nous pouvons bien récupérer la taille attendue pour le tableau, mais hélas, il s'agit d'une chaîne de caractères, et non d'un entier.
-Recherchez sur Internet s'il n'existe pas une fonction dans la librairie standard permettant de réaliser cette conversion, et utilisez-la pour récupérer cette valeur dans une variable `length`. 
+Recherchez sur Internet s'il n'existe pas une fonction dans la librairie standard permettant de réaliser cette conversion, et utilisez-la pour récupérer cette valeur dans une variable `array_size`. 
 
 {{% expand "Solution" %}}
 Vous pouvez utiliser la fonction `std::stoi` (définie dans `<string>`) ou éventuellement la fonction C `std::atoi` (définie dans `<cstdlib>`).
 ```cpp
-int length = std::stoi(argv[1]);
-if (length <= 0)
+int array_size = std::stoi(argv[1]);
+if (array_size <= 0)
 {
     std::cerr << "Expected strictly positive value for array size." << std::endl;
     return -1;
 }
 
-std::cout << length << std::endl;
+std::cout << array_size << std::endl;
 ```
 
 {{% notice note %}}
-Si vous utilisez `std::stoi` et que la chaîne fournie ne commence pas par un entier, le programme va lever une exception. Nous verrons comment traiter les exceptions au [Chapitre 7](/chapter7/).
+Si vous utilisez `std::stoi` et que la chaîne fournie ne commence pas par un entier, le programme va lever une exception.
+Nous verrons comment traiter les exceptions plus tard dans le cours.
+Considérez pour le moment que l'utilisateur vous fournit toujours bien un nombre.
 {{% /notice %}}
 
 {{% /expand %}}
@@ -175,7 +177,7 @@ Dans votre fonction, vous devriez avoir le code suivant.
 ```cpp
 std::vector<int> array;
 
-for (int i = 0; i < length; ++i)
+for (int i = 0; i < array_size; ++i)
 {
     array.emplace_back(i+1);
 }

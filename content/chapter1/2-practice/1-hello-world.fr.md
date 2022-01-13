@@ -28,7 +28,7 @@ int main()
 
 Vérifiez que votre programme compile et s'exécute sans erreur.
 
-Vous pouvez retrouver les commandes VSCode utiles {{% open_in_new_tab "/CPP_Learning/chapter0/5-tips/#commandes-vscode-utiles" "ici" /%}}.
+Vous pouvez retrouver les commandes VSCode utiles {{% open_in_new_tab "/CPP_Learning/chapter0/6-tips/#commandes-vscode-utiles" "ici" /%}}.
 
 {{% notice note %}}
 La valeur de retour du `main` indique si le programme s'est terminé sans erreur. Si tout se passe bien, il faut retourner 0. N'importe quelle autre valeur indique une erreur.
