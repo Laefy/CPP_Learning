@@ -32,7 +32,7 @@ int main()
 ```
 
 Vous allez procéder ici en suivant plus ou moins la méthodologie **Test Driven Development** (ou TDD),
-qui consiste à écrire le code des tests avant d'écrire le code appelé. Dans votre cas, il ne s'agira pas réellement de TDD (si vous voulez vraiment voir en quoi cela consiste, vous pouvez trouver plein d'exemples sur Internet), mais vous suivrez les étapes ci-dessous afin de vous habituez à écrire le code appelé uniquement à partir de ce que le code appelant requière :
+qui consiste à écrire le code des tests avant d'écrire le code appelé. Dans votre cas, il ne s'agira pas réellement de TDD (si vous voulez vraiment voir en quoi cela consiste, vous pouvez trouver plein d'exemples sur Internet), mais vous suivrez les étapes ci-dessous afin de vous habituer à écrire le code appelé uniquement à partir de ce que le code appelant requiert :
 1. Décommenter la prochaine ligne du `main`.
 2. Ecrire le code permettant de la faire compiler.
 3. Compiler et tester.
