@@ -197,7 +197,9 @@ Pour cela, nous allons définir des **membres statiques** à la classe Rectangle
 
 Un attribut est dit statique si sa valeur est portée par la classe et non par une instance. Cela permet d'avoir une variable qui est partagée par l'ensemble des instances d'une classe. 
 
-Pour mettre cela en pratique, vous allez définir un nouvel attribut statique `_default_size` dans la partie publique de la classe `Rectangle`. Il sera de type `float`, et vous n'essayerez pas de l'initialiser pour le moment. Vous pouvez utiliser la syntaxe suivante pour déclarer un attribut statique : `static type _attribute;`.
+Pour mettre cela en pratique, vous allez définir un nouvel attribut statique `_default_size` dans la partie publique de la classe `Rectangle`.
+Il sera de type `float`, et vous n'essayerez pas de l'initialiser pour le moment.
+Vous pouvez utiliser la syntaxe suivante pour déclarer un attribut statique : `static type _attribute;`.
 
 {{% expand "Solution" %}}
 ```cpp
@@ -215,10 +217,12 @@ A ce stade, vous ne devriez plus pouvoir compiler, car le linker n'arrive pas à
 
 En fait, vous n'avez fait que la moitié du travail. Vous avez déclaré l'attribut statique, mais vous ne l'avez pas défini. Pour cela, il faut aller dans un .cpp afin d'y ajouter la ligne suivante : `type ClassName::attribute;`. Notez qu'à cet endroit, on ne remet pas le mot-clef `static`, mais on préfixe par contre l'attribut avec `ClassName::`.
 
-Ajoutez la définition de l'attribut `_default_size` dans le fichier `Rectangle.cpp`. C'est au niveau de la définition d'un attribut que vous pouvez (et dans le cas des primitives, devez) spécifier un initializer.
+Ajoutez la définition de l'attribut `_default_size` dans le fichier `Rectangle.cpp`.
+C'est au niveau de la définition d'un attribut que vous pouvez spécifier un initializer.
 Compilez et testez votre programme avec un débuggeur de manière à vous assurez que la valeur de `_default_value` est correctement initialisée.
 
 {{% expand "Solution" %}}
+Comme la variable est statique, le compilateur l'initialisera à 0 de lui-même (contrairement aux primitives locales), mais c'est quand même plus clair de toujours spécifier une valeur d'initialisation à ses primitives.
 ```cpp
 float Rectangle::_default_size = 0.f;
 ```
