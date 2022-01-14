@@ -7,6 +7,18 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language><atom:link href="https://laefy.github.io/CPP_Learning/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>C&#39;est quoi un objet déjà ?</title>
+      <link>https://laefy.github.io/CPP_Learning/chapter2/1-poo/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://laefy.github.io/CPP_Learning/chapter2/1-poo/</guid>
+      <description>Commençons par donner quelques rappels des notions de POO que vous avez pu voir l&amp;rsquo;an dernier.
+ Objet Dans un programme, un objet est un élément constitué d&amp;rsquo;un état, et disposant d&amp;rsquo;une interface permettant d&amp;rsquo;intéragir avec cet état.
+Classe Un objet est généralement créé à partir d&amp;rsquo;un modèle, que l&amp;rsquo;on appelle classe. Un objet créé à partir d&amp;rsquo;une classe constitue une instance de cette classe.
+Etat L&amp;rsquo;état d&amp;rsquo;un objet est composé de valeurs, pouvant ou non varier au cours de l&amp;rsquo;exécution du programme.</description>
+    </item>
+    
+    <item>
       <title>Compilateur</title>
       <link>https://laefy.github.io/CPP_Learning/chapter0/1-compiler/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -52,6 +64,20 @@ Si l&amp;rsquo;installeur vous propose d&amp;rsquo;installer git, vous pouvez ac
     </item>
     
     <item>
+      <title>✨ Première classe</title>
+      <link>https://laefy.github.io/CPP_Learning/chapter2/2-first-class/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://laefy.github.io/CPP_Learning/chapter2/2-first-class/</guid>
+      <description>C&amp;rsquo;est parti pour la pratique ! Vous allez ici apprendre à définir une classe en C++ et à l&amp;rsquo;instancier.
+ Pour cet exercice, vous modifierez le fichier :
+- chap-02/1-first_class.cpp
+La cible à compiler est c2-1-first_class.
+ Méthodologie Pour cet exercice, on vous fournit le code de la fonction main.
+int main() { // Person p;  // p.set_name(&amp;#34;Batman&amp;#34;);  // p.set_age(23);  // std::cout &amp;lt;&amp;lt; &amp;#34;Person named &amp;#39;&amp;#34; &amp;lt;&amp;lt; p.</description>
+    </item>
+    
+    <item>
       <title>🦜 Perroquet</title>
       <link>https://laefy.github.io/CPP_Learning/chapter1/2-practice/2-parrot/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -92,6 +118,20 @@ La cible à compiler est c1-3-array.
     </item>
     
     <item>
+      <title>🔨 Constructeur</title>
+      <link>https://laefy.github.io/CPP_Learning/chapter2/3-constructor/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://laefy.github.io/CPP_Learning/chapter2/3-constructor/</guid>
+      <description>Dans cet exercice, vous apprendrez à paramétrer la construction de vos objets.
+ Pour cet exercice, vous modifierez le fichier :
+- chap-02/2-constructor.cpp
+La cible à compiler est c2-2-constructor.
+ Constructeur à paramètres Reprenez le code de l&amp;rsquo;exercice précédent.
+Vous aviez implémenté une fonction-membre set_name dans la classe Person pour initialiser l&amp;rsquo;attribut _name. Or, ce serait bien d&amp;rsquo;une part de réellement pouvoir initialiser cet attribut plutôt que de le modifier après l&amp;rsquo;instanciation, et d&amp;rsquo;autre part, de supprimer ce setter, afin qu&amp;rsquo;une fois initialisé, il ne soit plus possible de modifier _name.</description>
+    </item>
+    
+    <item>
       <title>Git</title>
       <link>https://laefy.github.io/CPP_Learning/chapter0/4-git/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -100,6 +140,20 @@ La cible à compiler est c1-3-array.
       <description>Pour le gestionnaire de version, nous utiliserons git. Vous pourrez ensuite héberger votre dépôt pour les TPs et le projet sur la plateforme de votre choix (Github, Gitlab, Bitbucket, votre serveur perso, peu importe), du moment que l&amp;rsquo;on peut y avoir accès pour l&amp;rsquo;évaluation.
  Installation Si vous êtes sous Unix, vous devriez pouvoir installer git depuis votre gestionnaire de paquets.
 Si vous êtes sous Windows, vous pouvez télécharger l&amp;rsquo;outil depuis cette page.</description>
+    </item>
+    
+    <item>
+      <title>🧬 Clône</title>
+      <link>https://laefy.github.io/CPP_Learning/chapter2/4-clone/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://laefy.github.io/CPP_Learning/chapter2/4-clone/</guid>
+      <description>Dans cet exercice, vous verrez comment implémenter un constructeur de copie et un opérateur d&amp;rsquo;assignation.
+Nous en profiterons aussi pour vous montrer comment surcharger l&amp;rsquo;opérateur &amp;lt;&amp;lt;.
+ Pour cet exercice, vous modifierez le fichier :
+- chap-02/3-clone.cpp
+La cible à compiler est c2-3-clone.
+ Constructeur de copie Dans la fonction main, instanciez à la suite du code existant une nouvelle instance de Person et initialisée là à partir de la variable batman.</description>
     </item>
     
     <item>
@@ -129,6 +183,21 @@ Comme le C++ est un langage avec une syntaxe un peu lourde, utiliser ce type d&a
     </item>
     
     <item>
+      <title>🔳 Rectangle</title>
+      <link>https://laefy.github.io/CPP_Learning/chapter2/5-rectangle/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://laefy.github.io/CPP_Learning/chapter2/5-rectangle/</guid>
+      <description>Cet exercice vous permettra de découvrir :
+ comment écrire des headers en C++, comment extraire l&amp;rsquo;implémentation des fonctions d&amp;rsquo;une classe en dehors de cette classe, à quoi correspondent les membres statiques d&amp;rsquo;une classe et comment les définir, comment déléguer un appel à un autre constructeur.   Pour cet exercice, vous modifierez les fichiers :
+- chap-02/4-rectangle/main.cpp
+- chap-02/4-rectangle/Rectangle.cpp
+- chap-02/4-rectangle/Rectangle.h
+La cible à compiler est c2-4-rectangle.
+ Header en C++ Vous commencez l&amp;rsquo;exercice avec une fonction main dans le fichier main.</description>
+    </item>
+    
+    <item>
       <title>Astuces</title>
       <link>https://laefy.github.io/CPP_Learning/chapter0/6-tips/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -142,12 +211,42 @@ clang++f1.cpp f2.cpp f3.cpp -o program Vous pouvez ajouter des options de compil
     </item>
     
     <item>
+      <title>💠 Polygône</title>
+      <link>https://laefy.github.io/CPP_Learning/chapter2/6-polygon/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://laefy.github.io/CPP_Learning/chapter2/6-polygon/</guid>
+      <description>Dans cet exercice, vous découvrirez la notion d&amp;rsquo;alias et le mécanisme d&amp;rsquo;amitié.
+Pour terminer, vous serez confronté à votre première &amp;ldquo;dangling reference&amp;rdquo;.
+ Pour cet exercice, vous modifierez les fichiers :
+- chap-02/5-polygon/main.cpp
+- chap-02/CMakeLists.txt
+Et vous ajouterez les fichiers :
+- chap-02/5-polygon/Polygon.h
+- chap-02/5-polygon/Polygon.cpp
+La cible à compiler est c2-5-polygon.
+ Présentation de l&amp;rsquo;exercice Pour cet exercice, vous utiliserez la même méthodologie que pour l&amp;rsquo;exercice first-class :
+ Décommenter la prochaine ligne du main.</description>
+    </item>
+    
+    <item>
       <title>Questionnaire !</title>
       <link>https://laefy.github.io/CPP_Learning/chapter1/test/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://laefy.github.io/CPP_Learning/chapter1/test/</guid>
       <description>Félicitations !! Vous avez enfin terminé le Chapitre 1 ! Vous aviez l&amp;rsquo;impression qu&amp;rsquo;il n&amp;rsquo;en finirait jamais, qu&amp;rsquo;il aspirerait votre âme dans des méandres ténébreux, mais c&amp;rsquo;est bon, vous l&amp;rsquo;avez terrassé 🥳🎉
+ Avant de nous quitter pour aller savourer ce moment, vous devriez profiter que le chapitre soit bien frais dans votre tête pour répondre au questionnaire ci-dessous. Nous vous rappelons que si vous êtes en M1 à l&amp;rsquo;UGE, il participera à votre notation.</description>
+    </item>
+    
+    <item>
+      <title>Questionnaire !</title>
+      <link>https://laefy.github.io/CPP_Learning/chapter2/test/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://laefy.github.io/CPP_Learning/chapter2/test/</guid>
+      <description>Vous pensiez que le Chapitre 2 serait plus léger que le Chapitre 1 ? Désolée de vous avoir déçus 😅
+Mais bon, vous l&amp;rsquo;avez enfin terminé, donc vous pouvez être fiers de vous ! 😀
  Avant de nous quitter pour aller savourer ce moment, vous devriez profiter que le chapitre soit bien frais dans votre tête pour répondre au questionnaire ci-dessous. Nous vous rappelons que si vous êtes en M1 à l&amp;rsquo;UGE, il participera à votre notation.</description>
     </item>
     
@@ -168,6 +267,15 @@ clang++f1.cpp f2.cpp f3.cpp -o program Vous pouvez ajouter des options de compil
       
       <guid>https://laefy.github.io/CPP_Learning/chapter1/summary/</guid>
       <description>Ce qu&amp;rsquo;il faut retenir Théorie  C++ est un langage compilé, performant, documenté, standardisé et disposant d&amp;rsquo;une large communauté. Il est verbeux et sa syntaxe font qu&amp;rsquo;il ne s&amp;rsquo;agit pas du langage le plus agréable à lire. Une référence est une variable que permet d&amp;rsquo;aliaser une autre variable. Les deux variables font donc référence au même espace dans la mémoire.  Méthodologie  Lorsqu&amp;rsquo;on a besoin d&amp;rsquo;une fonction, on commence par aller voir sur Internet si elle n&amp;rsquo;existe pas déjà dans la librairie standard.</description>
+    </item>
+    
+    <item>
+      <title>Synthèse</title>
+      <link>https://laefy.github.io/CPP_Learning/chapter2/summary/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://laefy.github.io/CPP_Learning/chapter2/summary/</guid>
+      <description>Ce qu&amp;rsquo;il faut retenir Théorie  A quoi correspondent les termes attributs et fonction-membres constructeur = fonction appelée à l&amp;rsquo;instanciation d&amp;rsquo;une classe constructeur par défaut = constructeur à 0 paramètre implémentation par défaut = implémentation d&amp;rsquo;une fonction générée par le compilateur dans certaines conditions opérateur d&amp;rsquo;assignation = fonction appelée lorsque l&amp;rsquo;on écrit a = ...;, sachant que a a été instancié plus tôt surcharge = fonction de même nom, acceptant un nombre différent de paramètres et/ou des paramètres de types différents Lorsque la variable référencée par une référence est détruite, on a une dangling reference  Pratique  Utiliser this pour faire référence à l&amp;rsquo;instance courante Comparer this et &amp;amp;other au début de l&amp;rsquo;opérateur d&amp;rsquo;assignation Utiliser const aussi souvent que possible   Ce qu&amp;rsquo;il faut savoir faire Langage  Définir une classe : class A {}; (sans oublier le point-virgule) Définir des attributs et des fonctions-membres Indiquer la visibilité d&amp;rsquo;un ou plusieurs membres : public: - private: Définir un constructeur : ClassName(int p1, char p2) : _a1 { p1 }, _a2 { p2 } { } Déléguer la construction à un autre constructeur : ClassName(int p) : ClassName { p, p } {} Définir un constructeur de copie : ClassName(const ClassName&amp;amp; other) : _a1 { other.</description>
     </item>
     
     <item>
@@ -196,6 +304,15 @@ clang++f1.cpp f2.cpp f3.cpp -o program Vous pouvez ajouter des options de compil
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://laefy.github.io/CPP_Learning/chapter1/test_done/</guid>
+      <description>Vos réponses nous ont bien été communiquées 😃 Retourner à la synthèse du Chapitre</description>
+    </item>
+    
+    <item>
+      <title>Merci !</title>
+      <link>https://laefy.github.io/CPP_Learning/chapter2/test_done/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://laefy.github.io/CPP_Learning/chapter2/test_done/</guid>
       <description>Vos réponses nous ont bien été communiquées 😃 Retourner à la synthèse du Chapitre</description>
     </item>
     

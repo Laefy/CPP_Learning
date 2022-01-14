@@ -9,7 +9,7 @@
 
     <link rel="icon" href="/CPP_Learning/images/favicon.png" type="image/png">
 
-    <title>🔢 Tableau Numérique :: Cours de C&#43;&#43; - Niveau Master</title>
+    <title>✨ Première classe :: Cours de C&#43;&#43; - Niveau Master</title>
 
     
     <link href="/CPP_Learning/css/nucleus.css?1642122209" rel="stylesheet">
@@ -40,7 +40,7 @@
     </style>
     
   </head>
-  <body class="" data-url="/CPP_Learning/chapter1/2-practice/3-array/">
+  <body class="" data-url="/CPP_Learning/chapter2/2-first-class/">
     <nav id="sidebar" class="showVisitedLinks">
 
 
@@ -269,7 +269,7 @@
   
     
     <li data-nav-id="/CPP_Learning/chapter1/" title="Introduction au C&#43;&#43;" class="dd-item 
-        parent
+        
         
         
         ">
@@ -321,7 +321,7 @@
   
     
     <li data-nav-id="/CPP_Learning/chapter1/2-practice/" title="Premiers programmes" class="dd-item 
-        parent
+        
         
         
         ">
@@ -391,7 +391,7 @@
  
   
     
-      <li data-nav-id="/CPP_Learning/chapter1/2-practice/3-array/" title="🔢 Tableau Numérique" class="dd-item active">
+      <li data-nav-id="/CPP_Learning/chapter1/2-practice/3-array/" title="🔢 Tableau Numérique" class="dd-item ">
         <a href="/CPP_Learning/chapter1/2-practice/3-array/">
         🔢 Tableau Numérique
         <i class="fas fa-check read-icon"></i>
@@ -495,7 +495,7 @@
   
     
     <li data-nav-id="/CPP_Learning/chapter2/" title="Classes" class="dd-item 
-        
+        parent
         
         
         ">
@@ -544,7 +544,7 @@
  
   
     
-      <li data-nav-id="/CPP_Learning/chapter2/2-first-class/" title="✨ Première classe" class="dd-item ">
+      <li data-nav-id="/CPP_Learning/chapter2/2-first-class/" title="✨ Première classe" class="dd-item active">
         <a href="/CPP_Learning/chapter2/2-first-class/">
         ✨ Première classe
         <i class="fas fa-check read-icon"></i>
@@ -779,13 +779,7 @@
             
           
           
-            
-            
-          
-          
-            <a href='/CPP_Learning/'>Accueil</a> > <a href='/CPP_Learning/chapter1/'>Introduction au C++</a> > <a href='/CPP_Learning/chapter1/2-practice/'>Premiers programmes</a> > 🔢 Tableau Numérique
-          
-        
+            <a href='/CPP_Learning/'>Accueil</a> > <a href='/CPP_Learning/chapter2/'>Classes</a> > ✨ Première classe
           
         
           
@@ -802,10 +796,11 @@
   <ul>
     <li>
       <ul>
-        <li><a href="#tableau-statique">Tableau statique</a></li>
-        <li><a href="#passage-darguments-au-programme">Passage d&rsquo;arguments au programme</a></li>
-        <li><a href="#conversion-dune-chaîne-en-entier">Conversion d&rsquo;une chaîne en entier</a></li>
-        <li><a href="#tableau-dynamique">Tableau dynamique</a></li>
+        <li><a href="#méthodologie">Méthodologie</a></li>
+        <li><a href="#définition-dune-classe">Définition d&rsquo;une classe</a></li>
+        <li><a href="#définition-des-membres-attributs-et-fonctions-membres">Définition des membres (attributs et fonctions-membres)</a></li>
+        <li><a href="#initialisation-dun-attribut">Initialisation d&rsquo;un attribut</a></li>
+        <li><a href="#fonction-membre-constante">Fonction-membre constante</a></li>
       </ul>
     </li>
   </ul>
@@ -825,145 +820,113 @@
           
             <h1>
               
-              🔢 Tableau Numérique
+              ✨ Première classe
             </h1>
           
 
         
 
 
-<p>Le but de cet exercice est de voir comment manipuler les tableaux en C++ et passer des arguments au programme. Votre objectif sera d&rsquo;afficher un tableau de nombres, dont la taille sera définie par les paramètres passés au programme.</p>
+<p>C&rsquo;est parti pour la pratique ! Vous allez ici apprendre à définir une classe en C++ et à l&rsquo;instancier.</p>
 <hr>
 <p>Pour cet exercice, vous modifierez le fichier :<br>
-- <code>chap-01/3-array.cpp</code></p>
-<p>La cible à compiler est <code>c1-3-array</code>.</p>
+- <code>chap-02/1-first_class.cpp</code></p>
+<p>La cible à compiler est <code>c2-1-first_class</code>.</p>
 <hr>
-<h3 id="tableau-statique">Tableau statique</h3>
-<p>Le code initial de l&rsquo;exercice vous est fourni. Le voici :</p>
-<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp">
-</span><span class="cp"></span>
-<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
+<h3 id="méthodologie">Méthodologie</h3>
+<p>Pour cet exercice, on vous fournit le code de la fonction <code>main</code>.</p>
+<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
 <span class="p">{</span>
-    <span class="kt">int</span> <span class="n">array</span><span class="p">[]</span> <span class="o">=</span> <span class="p">{</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span> <span class="p">};</span>
-
-    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">4</span><span class="p">;</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span>
-    <span class="p">{</span>
-        <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">array</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
-    <span class="p">}</span>
-
-    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
-<span class="p">}</span>
-</code></pre></div><p>Ce programme permet d&rsquo;instancier un tableau d&rsquo;entiers contenant les valeurs 0, 1, 2 et 3, et d&rsquo;afficher ses valeurs. La taille du tableau n&rsquo;étant pas spécifié dans les crochets <code>[]</code>, elle est déduite automatiquement à partir du nombre de valeurs fournies dans les accolades <code>{}</code>. Ce qui n&rsquo;est pas très élégant ici, c&rsquo;est que l&rsquo;on doit fournir cette taille dans la boucle juste en dessous. Si on ajoute une nouvelle valeur dans les accolades ou que l&rsquo;on en retire une, il faut donc penser à mettre à jour la condition d&rsquo;arrêt de la boucle.</p>
-<p>Pour ne plus avoir ce problème, vous allez remplacer votre boucle <code>for</code>, par une boucle <strong>foreach</strong>. La syntaxe est similaire au Java :</p>
-<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="nl">value</span> <span class="p">:</span> <span class="n">values</span><span class="p">)</span>
-</code></pre></div><p>Effectuez le changement et les modifications associées, et testez que votre programme fonctionne toujours.</p>
-
-<div class="expand">
-    <div class="expand-label" style="cursor: pointer;" onclick="$h = $(this);$h.next('div').slideToggle(100,function () {$h.children('i').attr('class',function () {return $h.next('div').is(':visible') ? 'fas fa-chevron-down' : 'fas fa-chevron-right';});});">
-        <i style="font-size:x-small;" class="fas fa-chevron-right"></i>
-        <span>
-        
-    	
-    	Solution
-    	
-    	</span>
-    </div>
-    <div class="expand-content" style="display: none;">
-        <div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="nl">value</span> <span class="p">:</span> <span class="n">array</span><span class="p">)</span>
-<span class="p">{</span>
-    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">value</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
-<span class="p">}</span>
-</code></pre></div>
-    </div>
-</div>
-<p>Vous souhaiteriez maintenant avoir dans votre tableau les nombres de 1 à 50. Mais vous n&rsquo;avez pas très envie d&rsquo;écrire cette suite à la main dans les accolades. Vous allez donc utiliser les crochets <code>[]</code> pour spécifiez la nouvelle taille du tableau, ainsi qu&rsquo;une boucle <code>for</code> pour intialiser votre tableau. N&rsquo;oubliez pas de définir votre tableau avec <code>= {}</code>. Cela permettra de remplir dans un premier temps le tableau de 0, plutôt que de valeurs aléatoires. Vérifiez que vous obtenez les bonnes valeurs dans la sortie du programme.</p>
-
-<div class="expand">
-    <div class="expand-label" style="cursor: pointer;" onclick="$h = $(this);$h.next('div').slideToggle(100,function () {$h.children('i').attr('class',function () {return $h.next('div').is(':visible') ? 'fas fa-chevron-down' : 'fas fa-chevron-right';});});">
-        <i style="font-size:x-small;" class="fas fa-chevron-right"></i>
-        <span>
-        
-    	
-    	Solution
-    	
-    	</span>
-    </div>
-    <div class="expand-content" style="display: none;">
-        <div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="kt">int</span> <span class="n">array</span><span class="p">[</span><span class="mi">50</span><span class="p">]</span> <span class="o">=</span> <span class="p">{};</span>
-
-<span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">50</span><span class="p">;</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span>
-<span class="p">{</span>
-    <span class="c1">// Array indices start at 0, so we need to use (i+1) if we want the series to start at 1.
-</span><span class="c1"></span>    <span class="n">array</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">;</span>
-<span class="p">}</span>
-</code></pre></div>
-    </div>
-</div>
-<hr>
-<h3 id="passage-darguments-au-programme">Passage d&rsquo;arguments au programme</h3>
-<p>Nous souhaiterions maintenant avoir un tableau de taille variable, donc la taille serait spécifiée en utilisant le premier argument du programme.
-Pour cela, nous allons modifier la <strong>signature</strong> de la fonction <code>main</code> par :</p>
-<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="kt">int</span> <span class="n">main</span><span class="p">(</span><span class="kt">int</span> <span class="n">argc</span><span class="p">,</span> <span class="kt">char</span><span class="o">**</span> <span class="n">argv</span><span class="p">)</span>
-</code></pre></div>
-<div class="notices tip" ><p><code>argc</code> signifie &lsquo;arguments count&rsquo;, et <code>argv</code> &lsquo;arguments values&rsquo;. Il n&rsquo;est pas nécessaire de les nommer de cette façon, mais par convention, c&rsquo;est plus propre de le faire.</p>
-</div>
-
-<p>Si l&rsquo;argument n&rsquo;est pas fourni, affichez un message d&rsquo;erreur en écrivant dans <code>std::cerr</code> et sortez du programme avec le code d&rsquo;erreur -1. Sinon, affichez le contenu de l&rsquo;argument. Vous pouvez commenter le restant du code avec le tableau, en utilisant <code>/* code */</code> ou bien <code>// code</code> sur chaque ligne.</p>
-<p>Afin de tester le passage d&rsquo;arguments à votre programme, vous avez 2 possibilités :</p>
-<ol>
-<li>Vous pouvez le lancer depuis un terminal.
-L&rsquo;exécutable devrait avoir été généré quelque part dans le dossier <code>build/chap-01/</code>.</li>
-</ol>
-<div class="highlight"><pre class="chroma"><code class="language-b" data-lang="b"><span class="c">## Unix
-</span><span class="c"></span><span class="nt">.</span><span class="c">/build/chap</span><span class="nb">-</span><span class="c">01/c1</span><span class="nb">-</span><span class="c">3</span><span class="nb">-</span><span class="c">array arg1 arg2
-</span><span class="c">
-</span><span class="c">## Windows
-</span><span class="c"></span><span class="nt">.</span><span class="c">/build/chap</span><span class="nb">-</span><span class="c">01/c1</span><span class="nb">-</span><span class="c">3</span><span class="nb">-</span><span class="c">array</span><span class="nt">.</span><span class="c">exe arg1 arg2
-</span></code></pre></div><ol start="2">
-<li>Vous pouvez générer un fichier <code>launch.json</code> depuis VSCode.<br>
-Pour cela, allez dans le menu <code>Run</code> et sélectionnez <code>Add Configuration...</code>.
-Si VSCode vous propose plusieurs options, choisissez &lsquo;C++ (GDB/LLDB)&rsquo;.<br>
-Enfin, modifiez les champs <code>&quot;program&quot;</code> et <code>&quot;args&quot;</code> dans le fichier qui vient de s&rsquo;ouvrir :</li>
-</ol>
-<div class="highlight"><pre class="chroma"><code class="language-json" data-lang="json"><span class="s2">&#34;program&#34;</span><span class="err">:</span> <span class="s2">&#34;${command:cmake.launchTargetPath}&#34;</span><span class="err">,</span> <span class="err">//</span> <span class="err">copiez-collez</span> <span class="err">la</span> <span class="err">ligne</span> <span class="err">telle</span> <span class="err">quelle</span>
-<span class="s2">&#34;args&#34;</span><span class="err">:</span> <span class="p">[</span><span class="s2">&#34;voici&#34;</span><span class="p">,</span> <span class="s2">&#34;3&#34;</span><span class="p">,</span> <span class="s2">&#34;arguments&#34;</span><span class="p">]</span><span class="err">,</span>            <span class="err">//</span> <span class="err">fournissez</span> <span class="err">les</span> <span class="err">arguments</span> <span class="err">de</span> <span class="err">votre</span> <span class="err">choix</span> <span class="err">ici</span>
-</code></pre></div><p><br>
-
-<div class="expand">
-    <div class="expand-label" style="cursor: pointer;" onclick="$h = $(this);$h.next('div').slideToggle(100,function () {$h.children('i').attr('class',function () {return $h.next('div').is(':visible') ? 'fas fa-chevron-down' : 'fas fa-chevron-right';});});">
-        <i style="font-size:x-small;" class="fas fa-chevron-right"></i>
-        <span>
-        
-    	
-    	Solution
-    	
-    	</span>
-    </div>
-    <div class="expand-content" style="display: none;">
-        <div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="kt">int</span> <span class="nf">main</span><span class="p">(</span><span class="kt">int</span> <span class="n">argc</span><span class="p">,</span> <span class="kt">char</span><span class="o">**</span> <span class="n">argv</span><span class="p">)</span>
-<span class="p">{</span>
-    <span class="c1">// First argument is always the command name used to launch the program.
-</span><span class="c1"></span>    <span class="k">if</span> <span class="p">(</span><span class="n">argc</span> <span class="o">&lt;</span> <span class="mi">2</span><span class="p">)</span>
-    <span class="p">{</span>
-        <span class="n">std</span><span class="o">::</span><span class="n">cerr</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;Expected argument for array size.&#34;</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
-        <span class="k">return</span> <span class="o">-</span><span class="mi">1</span><span class="p">;</span>
-    <span class="p">}</span>
-
-    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">argv</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
-
-    <span class="c1">// Commented
-</span><span class="c1"></span>    <span class="c1">// code
-</span><span class="c1"></span>    <span class="c1">// ...
+    <span class="c1">// Person p;
+</span><span class="c1"></span>
+    <span class="c1">// p.set_name(&#34;Batman&#34;);
+</span><span class="c1"></span>    <span class="c1">// p.set_age(23);
+</span><span class="c1"></span>
+    <span class="c1">// std::cout &lt;&lt; &#34;Person named &#39;&#34; &lt;&lt; p.get_name() &lt;&lt; &#34;&#39; is &#34; &lt;&lt; p.get_age() &lt;&lt; &#34; years old.&#34; &lt;&lt; std::endl;
 </span><span class="c1"></span>
     <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
 <span class="p">}</span>
+</code></pre></div><p>Vous allez procéder ici en suivant plus ou moins la méthodologie <strong>Test Driven Development</strong> (ou TDD),
+qui consiste à écrire le code des tests avant d&rsquo;écrire le code appelé. Dans votre cas, il ne s&rsquo;agira pas réellement de TDD (si vous voulez vraiment voir en quoi cela consiste, vous pouvez trouver plein d&rsquo;exemples sur Internet), mais vous suivrez les étapes ci-dessous afin de vous habituer à écrire le code appelé uniquement à partir de ce que le code appelant requiert :</p>
+<ol>
+<li>Décommenter la prochaine ligne du <code>main</code>.</li>
+<li>Ecrire le code permettant de la faire compiler.</li>
+<li>Compiler et tester.</li>
+<li>Si ça ne fonctionne pas, modifier le code, et recommencer à partir de l&rsquo;étape 3.</li>
+<li>Si ça fonctionne, recommencer à partir de l&rsquo;étape 1, jusqu&rsquo;à ce que tout le code du <code>main</code> soit décommenté.</li>
+</ol>
+
+<div class="notices note" ><p>Pourquoi vous faire faire l&rsquo;exercice de cette manière ? Déjà, cela vous permet de découvrir un peu des méthodologies qui sont employées en entreprise. Ensuite, parce que le TDD a de gros avantages :<br>
+- vous n&rsquo;implémentez que du code utile : pas besoin de réfléchir à ce que vous devez fournir, puisque le code appelant vous dit quoi fournir, et vous perdez moins de temps à écrire du code qui au final ne sert à rien (= <strong>code mort</strong>),<br>
+- vous ne déliverez que du code testé,<br>
+- vous avez moins d&rsquo;opportunités de <strong>régression</strong>, c&rsquo;est-à-dire d&rsquo;introduire des bugs dans du code qui fonctionnait à la base, lors d&rsquo;un refacto par exemple.</p>
+</div>
+
+<hr>
+<h3 id="définition-dune-classe">Définition d&rsquo;une classe</h3>
+<p>Voici la syntaxe permettant de définir une classe <code>A</code> :</p>
+<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="k">class</span> <span class="nc">A</span>
+<span class="p">{</span>
+<span class="p">};</span>
+</code></pre></div><p>Attention à ne pas oublier le point virgule <code>;</code> après l&rsquo;accolade fermante. Il s&rsquo;agit d&rsquo;une erreur classique.</p>
+<p>Décommentez la première instruction du <code>main</code>, permettant d&rsquo;instancier une variable <code>p</code> de type <code>Person</code>, et définissez la classe correspondante juste au-dessus du <code>main</code>.<br>
+Compilez et testez que le programme se lance correctement.</p>
+
+<div class="expand">
+    <div class="expand-label" style="cursor: pointer;" onclick="$h = $(this);$h.next('div').slideToggle(100,function () {$h.children('i').attr('class',function () {return $h.next('div').is(':visible') ? 'fas fa-chevron-down' : 'fas fa-chevron-right';});});">
+        <i style="font-size:x-small;" class="fas fa-chevron-right"></i>
+        <span>
+        
+    	
+    	Solution
+    	
+    	</span>
+    </div>
+    <div class="expand-content" style="display: none;">
+        <div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="cp">#include</span> <span class="cpf">...</span><span class="cp">
+</span><span class="cp"></span>
+<span class="k">class</span> <span class="nc">Person</span>
+<span class="p">{</span>
+<span class="p">};</span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="n">Person</span> <span class="n">p</span><span class="p">;</span>
+    <span class="p">...</span>
+<span class="p">}</span>
 </code></pre></div>
     </div>
-</div></p>
+</div>
 <hr>
-<h3 id="conversion-dune-chaîne-en-entier">Conversion d&rsquo;une chaîne en entier</h3>
-<p>Nous pouvons bien récupérer la taille attendue pour le tableau, mais hélas, il s&rsquo;agit d&rsquo;une chaîne de caractères, et non d&rsquo;un entier.
-Recherchez sur Internet s&rsquo;il n&rsquo;existe pas une fonction dans la librairie standard permettant de réaliser cette conversion, et utilisez-la pour récupérer cette valeur dans une variable <code>array_size</code>.</p>
+<h3 id="définition-des-membres-attributs-et-fonctions-membres">Définition des membres (attributs et fonctions-membres)</h3>
+<p>Pour définir des membres dans une classe, il faut dans un premier temps choisir leur visibilité. En C++, cela se fait à l&rsquo;aide des mots-clefs <code>public</code>, <code>private</code> et <code>protected</code>. Dans ce chapitre, nous n&rsquo;utiliserons que les deux premiers.</p>
+<p>Voici un exemple de classe définissant des fonctions-membres publiques et des attributs privés :</p>
+<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="k">class</span> <span class="nc">SomeClass</span>
+<span class="p">{</span>
+<span class="k">public</span><span class="o">:</span>
+    <span class="kt">void</span> <span class="n">fcn1</span><span class="p">(</span><span class="kt">int</span> <span class="n">p1</span><span class="p">,</span> <span class="kt">int</span> <span class="n">p2</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="c1">// code
+</span><span class="c1"></span>    <span class="p">}</span>
+
+    <span class="kt">int</span> <span class="nf">fcn2</span><span class="p">(</span><span class="kt">bool</span> <span class="n">p1</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="c1">// code
+</span><span class="c1"></span>    <span class="p">}</span>
+
+<span class="k">private</span><span class="o">:</span>
+    <span class="kt">int</span>         <span class="n">_member1</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">_member2</span><span class="p">;</span>
+<span class="p">};</span>
+</code></pre></div>
+<div class="notices note" ><p>- Nous avons mis la partie publique avant la partie privée, mais on peut très bien faire l&rsquo;inverse. Il est même possible d&rsquo;écrire un nouveau bloc public derrière le bloc privé.<br>
+- Ici, toutes les fonctions sont publiques, et tous les attributs sont privés, mais on peut très bien mettre la définition d&rsquo;une fonction dans le bloc privé ou la définition d&rsquo;un attribut dans le bloc public.<br>
+- Nous avons préfixé les attributs avec <code>_</code>. Ce n&rsquo;est ni obligatoire de préfixer, ni d&rsquo;utiliser <code>_</code> comme préfixe (certains utilisent <code>m_</code> ou <code>my</code>), mais c&rsquo;est toujours pratique de le faire pour distinguer les attributs des paramètres de même nom.</p>
+</div>
+
+<p>Vous allez maintenant décommenter l&rsquo;instruction permettant d&rsquo;appeler la fonction <code>set_name</code> sur <code>p</code>. Ajoutez ensuite un attribut <code>_name</code> à la classe <code>Person</code> et implémentez la fonction-membre <code>set_name</code> permettant de modifier cet attribut.<br>
+Quel type allez-vous utiliser pour <code>_name</code> ? Quel est la signature la plus appropriée pour <code>set_name</code> ?</p>
+<p>Compilez et testez que le code s&rsquo;exécute correctement.</p>
 
 <div class="expand">
     <div class="expand-label" style="cursor: pointer;" onclick="$h = $(this);$h.next('div').slideToggle(100,function () {$h.children('i').attr('class',function () {return $h.next('div').is(':visible') ? 'fas fa-chevron-down' : 'fas fa-chevron-right';});});">
@@ -976,33 +939,44 @@ Recherchez sur Internet s&rsquo;il n&rsquo;existe pas une fonction dans la libra
     	</span>
     </div>
     <div class="expand-content" style="display: none;">
-        <p>Vous pouvez utiliser la fonction <code>std::stoi</code> (définie dans <code>&lt;string&gt;</code>) ou éventuellement la fonction C <code>std::atoi</code> (définie dans <code>&lt;cstdlib&gt;</code>).</p>
-<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="kt">int</span> <span class="n">array_size</span> <span class="o">=</span> <span class="n">std</span><span class="o">::</span><span class="n">stoi</span><span class="p">(</span><span class="n">argv</span><span class="p">[</span><span class="mi">1</span><span class="p">]);</span>
-<span class="k">if</span> <span class="p">(</span><span class="n">array_size</span> <span class="o">&lt;=</span> <span class="mi">0</span><span class="p">)</span>
+        <p>Pour <code>_name</code>, il est préférable d&rsquo;utiliser <code>std::string</code>. On aurait pu prendre <code>const char*</code>, mais ça voudrait dire qu&rsquo;il faut s&rsquo;occuper d&rsquo;allouer et de libérer la mémoire pour les caractères (<code>char*</code> n&rsquo;étant qu&rsquo;un pointeur).
+Autant utiliser une classe qui s&rsquo;en charge déjà pour nous 🙂</p>
+<p>La signature la plus appropriée pour <code>set_name</code> avec ce que l&rsquo;on a vu jusqu&rsquo;ici est : <code>void set_name(const std::string&amp; name)</code>. Les copies de <code>std::string</code> étant coûteuses (allocation mémoire), on passera par référence constante plutôt que par copie.</p>
+<p>Enfin, pour les visibilités, <code>_name</code> doit être privé, car on y accède uniquement depuis une fonction-membre. En revanche, <code>set_name</code> doit être publique, car on l&rsquo;utilise depuis le <code>main</code>, donc en dehors de la définition de la classe.</p>
+<p>Voici le nouveau code de la classe <code>Person</code> :</p>
+<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="k">class</span> <span class="nc">Person</span>
 <span class="p">{</span>
-    <span class="n">std</span><span class="o">::</span><span class="n">cerr</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;Expected strictly positive value for array size.&#34;</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
-    <span class="k">return</span> <span class="o">-</span><span class="mi">1</span><span class="p">;</span>
-<span class="p">}</span>
+<span class="k">public</span><span class="o">:</span>
+    <span class="kt">void</span> <span class="n">set_name</span><span class="p">(</span><span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&amp;</span> <span class="n">name</span><span class="p">)</span> <span class="p">{</span> <span class="n">_name</span> <span class="o">=</span> <span class="n">name</span><span class="p">;</span> <span class="p">}</span>
 
-<span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">array_size</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
-</code></pre></div><div class="notices note" ><p>Si vous utilisez <code>std::stoi</code> et que la chaîne fournie ne commence pas par un entier, le programme va lever une exception.
-Nous verrons comment traiter les exceptions plus tard dans le cours.
-Considérez pour le moment que l&rsquo;utilisateur vous fournit toujours bien un nombre.</p>
-</div>
-
+<span class="k">private</span><span class="o">:</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">_name</span><span class="p">;</span>
+<span class="p">};</span>
+</code></pre></div>
     </div>
 </div>
 <hr>
-<h3 id="tableau-dynamique">Tableau dynamique</h3>
-<p>Vous pouvez maintenant décommenter le code de manipulation du tableau, que vous allez transformer en tableau dynamique.
-La classe proposée par la librairie standard pour définir ce type de conteneur est <code>std::vector</code>.</p>
-<p>Afin de générer un <code>std::vector</code> initialement vide qui contiendra des entiers, on utilise l&rsquo;instruction suivante :</p>
-<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">array</span><span class="p">;</span>
-</code></pre></div><p>Pour ajouter de nouvelles valeurs à ce tableau (par exemple, 8, 5 et -3), on utilise la <strong>fonction membre</strong> <code>emplace_back</code>. Pour accéder à une fonction membre en C++, on utilise la même syntaxe que pour accéder à une méthode en Java :</p>
-<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="n">array</span><span class="p">.</span><span class="n">emplace_back</span><span class="p">(</span><span class="mi">8</span><span class="p">);</span>
-<span class="n">array</span><span class="p">.</span><span class="n">emplace_back</span><span class="p">(</span><span class="mi">5</span><span class="p">);</span>
-<span class="n">array</span><span class="p">.</span><span class="n">emplace_back</span><span class="p">(</span><span class="o">-</span><span class="mi">3</span><span class="p">);</span>
-</code></pre></div><p>Modifiez votre code de façon à utiliser un <code>std::vector</code> plutôt que le tableau de taille statique et testez que tout fonctionne correctement.</p>
+<p><strong>Comment s&rsquo;assurer que le code est juste, sachant que la ligne qui affiche le résultat est toujours commentée ?</strong></p>
+<p>C&rsquo;est la raison pour laquelle je vous ai demandé d&rsquo;installer un vrai IDE. Nous allons voir comment inspecter les valeurs du programme au cours de l&rsquo;exécution à l&rsquo;aide du débuggeur.</p>
+<p>Déjà, il faut placer un <strong>breakpoint</strong>. Cela permet au programme de se mettre en pause, juste avant l&rsquo;exécution d&rsquo;une instruction particulière. Nous allons placer le breakpoint sur l&rsquo;instruction <code>return 0;</code> du <code>main</code>. 
+Pour faire cela dans VSCode, placez votre curseur sur la ligne en question et appuyer sur F9. Vous pouvez aussi cliquer directement dans l&rsquo;espace juste avant le numéro de ligne.
+<img src="/CPP_Learning/images/vscode-breakpoint.png" alt=""></p>
+<p>Lancez maintenant le programme via la commande <code>CMake: Debug</code> (c&rsquo;est le plus simple ici, sachant que via le terminal intégré, ça ne fonctionnera pas). L&rsquo;éditeur devrait prendre cette apparence, indiquant que le programme est en pause à l&rsquo;instruction surlignée :
+<img src="/CPP_Learning/images/vscode-breaking.png" alt=""></p>
+<p>Ouvrez maintenant le panneau d&rsquo;exécution en allant dans <code>View &gt; Run</code>.
+<img src="/CPP_Learning/images/vscode-locals.png" alt=""></p>
+<p>Ce panneau contient 3 sections :</p>
+<ul>
+<li>La section Variables, dans laquelle vous pouvez voir le contenu de chacune des variables locales à votre fonction.</li>
+<li>La section Watch, qui vous permet d&rsquo;entrer des expressions pour en récupérer le contenu. Vous pouvez par exemple entrer &ldquo;8+3*5&rdquo; pour obtenir le résultat du calcul, ou &ldquo;p._name&rdquo; pour obtenir la valeur de <code>p.name</code>, ou encore &ldquo;&amp;p&rdquo; pour récupérer l&rsquo;adresse de <code>p</code>.</li>
+<li>La section Call Stack, qui vous permet de remonter les appels de fonction pour vous placer à un endroit particulier de la pile d&rsquo;appel. Ici, vu qu&rsquo;on a que le <code>main</code>, ce n&rsquo;est pas très intéressant pour nous, mais nous y reviendrons.</li>
+</ul>
+<p>Si dans la section des Variables, vous pouvez constater comme sur le screenshot que <code>p._name</code> vaut bien <code>&quot;Batman&quot;</code>, alors c&rsquo;est que votre code est correct.</p>
+<p>Appuyez ensuite sur F5 pour reprendre l&rsquo;exécution du programme.</p>
+<hr>
+<h3 id="initialisation-dun-attribut">Initialisation d&rsquo;un attribut</h3>
+<p>Décommentez l&rsquo;instruction faisant l&rsquo;appel à <code>set_age</code>, et définissez la fonction ainsi que l&rsquo;attribut correspondants.<br>
+Quel type avez-vous utiliser pour l&rsquo;âge de Batman ? Avez-vous passé le paramètre de la fonction <code>set_age</code> par valeur, référence ou référence constante ?</p>
 
 <div class="expand">
     <div class="expand-label" style="cursor: pointer;" onclick="$h = $(this);$h.next('div').slideToggle(100,function () {$h.children('i').attr('class',function () {return $h.next('div').is(':visible') ? 'fas fa-chevron-down' : 'fas fa-chevron-right';});});">
@@ -1015,19 +989,117 @@ La classe proposée par la librairie standard pour définir ce type de conteneur
     	</span>
     </div>
     <div class="expand-content" style="display: none;">
-        <p>Commencez par inclure le header <code>&lt;vector&gt;</code>.
-Dans votre fonction, vous devriez avoir le code suivant.</p>
-<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">array</span><span class="p">;</span>
-
-<span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">array_size</span><span class="p">;</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span>
+        <p>Pour <code>_age</code>, le mieux est d&rsquo;utilisé un entier non-signé. En effet, ce n&rsquo;est pas possible d&rsquo;avoir un âge négatif, donc utiliser un <code>unsigned int</code> plutôt qu&rsquo;un <code>int</code> permet de réduire la possibilité d&rsquo;avoir un mauvais usage. Vous pouvez également décider d&rsquo;utiliser un <code>unsigned short</code>, plutôt que <code>unsigned int</code>, puisque même Batman ne vivra pas si vieux.</p>
+<div class="notices tip" ><p>Je déconseille l&rsquo;utilisation de <code>unsigned char</code> cependant, car <code>char</code> est associé à la notion de caractères. Donc bien que l&rsquo;espace soit suffisant pour contenir un âge humain, il est plus clair d&rsquo;utiliser un vrai type entier.<br>
+Evidemment, ce genre de bonne pratique ne peut s&rsquo;appliquer que dans le cas où il n&rsquo;y a pas de contrainte critique d&rsquo;utilisation de la mémoire.</p>
+</div>
+<p>Pour <code>set_age</code>, il est préférable de passer la paramètre par valeur (ou copie). En effet, pour des types primitifs ou des petits objets qui n&rsquo;allouent rien à leur construction, passer par valeur plutôt que par const-ref permet au compilateur d&rsquo;optimiser le code comme il le souhaite.</p>
+<p>Voici le nouveau code :</p>
+<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="k">class</span> <span class="nc">Person</span>
 <span class="p">{</span>
-    <span class="n">array</span><span class="p">.</span><span class="n">emplace_back</span><span class="p">(</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">);</span>
-<span class="p">}</span>
+<span class="k">public</span><span class="o">:</span>
+    <span class="kt">void</span> <span class="n">set_name</span><span class="p">(</span><span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&amp;</span> <span class="n">name</span><span class="p">)</span> <span class="p">{</span> <span class="n">_name</span> <span class="o">=</span> <span class="n">name</span><span class="p">;</span> <span class="p">}</span>
+    <span class="kt">void</span> <span class="nf">set_age</span><span class="p">(</span><span class="kt">unsigned</span> <span class="kt">int</span> <span class="n">age</span><span class="p">)</span> <span class="p">{</span> <span class="n">_age</span> <span class="o">=</span> <span class="n">age</span><span class="p">;</span> <span class="p">}</span>
 
-<span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="nl">value</span> <span class="p">:</span> <span class="n">array</span><span class="p">)</span>
+<span class="k">private</span><span class="o">:</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">string</span>  <span class="n">_name</span><span class="p">;</span>
+    <span class="kt">unsigned</span> <span class="kt">int</span> <span class="n">_age</span><span class="p">;</span>
+<span class="p">};</span>
+</code></pre></div>
+    </div>
+</div>
+<p>Testez à nouveau votre code avec le débuggeur. En plus du breakpoint final, ajoutez un breakpoint suppplémentaire de manière à vous arrêter juste après l&rsquo;exécution du <code>set_name</code> et juste avant l&rsquo;exécution du <code>set_age</code>.</p>
+
+<div class="expand">
+    <div class="expand-label" style="cursor: pointer;" onclick="$h = $(this);$h.next('div').slideToggle(100,function () {$h.children('i').attr('class',function () {return $h.next('div').is(':visible') ? 'fas fa-chevron-down' : 'fas fa-chevron-right';});});">
+        <i style="font-size:x-small;" class="fas fa-chevron-right"></i>
+        <span>
+        
+    	
+    	Solution
+    	
+    	</span>
+    </div>
+    <div class="expand-content" style="display: none;">
+        <p>Pour s&rsquo;arrêter au bon endroit, il faut placer le breakpoint sur la ligne de l&rsquo;instruction <code>p.set_age(23);</code>.
+<img src="/CPP_Learning/images/chap2-ex1-break.png" alt=""></p>
+
+    </div>
+</div>
+<p>Si vous inspectez la valeur de <code>p._age</code> avant l&rsquo;exécution de <code>set_age</code>, vous devriez constater que celle-ci est complètement aléatoire. Eh oui, de la même manière que les variables locales de type primitif, il faut également initialiser les attributs de type primitifs de vos classes. Faites les changements nécessaires pour que l&rsquo;âge de Batman vaille 0 tant que celui-ci n&rsquo;a pas été modifié. Testez à nouveau.</p>
+
+<div class="expand">
+    <div class="expand-label" style="cursor: pointer;" onclick="$h = $(this);$h.next('div').slideToggle(100,function () {$h.children('i').attr('class',function () {return $h.next('div').is(':visible') ? 'fas fa-chevron-down' : 'fas fa-chevron-right';});});">
+        <i style="font-size:x-small;" class="fas fa-chevron-right"></i>
+        <span>
+        
+    	
+    	Solution
+    	
+    	</span>
+    </div>
+    <div class="expand-content" style="display: none;">
+        <div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="k">private</span><span class="o">:</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">string</span>  <span class="n">_name</span><span class="p">;</span>
+    <span class="kt">unsigned</span> <span class="kt">int</span> <span class="n">_age</span> <span class="o">=</span> <span class="mi">0u</span><span class="p">;</span>
+</code></pre></div><div class="notices info" ><p><code>0u</code> permet de faire référence au <code>0</code> entier non-signé. Cela n&rsquo;a pas beaucoup d&rsquo;importance d&rsquo;ici, puisque <code>_age</code> est explicitement typé, mais si on écrivait dans une fonction <code>auto v = 0u;</code> alors <code>v</code> serait de type <code>unsigned int</code> plutôt que de type <code>int</code>.</p>
+</div>
+
+    </div>
+</div>
+<hr>
+<h3 id="fonction-membre-constante">Fonction-membre constante</h3>
+<p>Il ne reste plus qu&rsquo;une seule ligne à décommenter. Vous devrez ici implémenter deux <strong>accesseurs</strong> (ou <strong>getters</strong>), un pour le nom et un pour l&rsquo;âge.</p>
+<p>Les accesseurs sont des fonctions qui ne sont pas censées modifier l&rsquo;état de l&rsquo;objet lorsqu&rsquo;elles sont appelées. En C++, on spécifie cette garantie en plaçant le mot-clef <code>const</code> à la fin de la signature de la fonction.</p>
+<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="k">public</span><span class="o">:</span>
+    <span class="kt">int</span> <span class="n">get_value</span><span class="p">()</span> <span class="k">const</span> <span class="p">{</span> <span class="k">return</span> <span class="n">_value</span><span class="p">;</span> <span class="p">}</span>
+</code></pre></div><p>Dès lors qu&rsquo;une fonction-membre est marquée <code>const</code>, le compilateur va vérifier qu&rsquo;aucune modification n&rsquo;est effectué sur les attributs de l&rsquo;objet. Le code suivant ne compilera donc pas :<br>
+<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="k">class</span> <span class="nc">SomeClass</span>
 <span class="p">{</span>
-    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">value</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
-<span class="p">}</span>
+<span class="k">public</span><span class="o">:</span>
+    <span class="kt">int</span> <span class="n">set_and_get</span><span class="p">(</span><span class="kt">int</span> <span class="n">value</span><span class="p">)</span> <span class="k">const</span>
+    <span class="p">{</span>
+<span class="hl">        <span class="n">_value</span> <span class="o">=</span> <span class="n">value</span><span class="p">;</span>
+</span>        <span class="k">return</span> <span class="n">_value</span><span class="p">;</span>
+    <span class="p">}</span>
+
+<span class="k">private</span><span class="o">:</span>
+    <span class="kt">int</span> <span class="n">_value</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">};</span>
+</code></pre></div></p>
+<p>Aussi, seules les fonctions-membres constantes peuvent être appelées sur des objets constants ou des références constantes. Le code suivant ne compilera que si la fonction <code>Obj::get</code> a bien été marquée <code>const</code>.</p>
+<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="kt">void</span> <span class="nf">fcn</span><span class="p">(</span><span class="k">const</span> <span class="n">Obj</span><span class="o">&amp;</span> <span class="n">param</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">param</span><span class="p">.</span><span class="n">get</span><span class="p">();</span>
+
+    <span class="k">const</span> <span class="n">Obj</span> <span class="n">var</span><span class="p">;</span>
+    <span class="n">var</span><span class="p">.</span><span class="n">get</span><span class="p">();</span>
+<span class="p">};</span>
+</code></pre></div>
+<div class="notices warning" ><p>Il est extrêmement important de s&rsquo;assurer de la <strong>const-correctness</strong> de votre code. Le mot-clef <code>const</code> doit être placé sur les variables, références et attributs qui ne vont pas être modifiés, ainsi que sur les fonctions-membres qui ne vont pas modifier l&rsquo;état de l&rsquo;objet.<br>
+Une bonne partie des <code>const</code> n&rsquo;est pas nécessaire pour faire compiler et fonctionner le programme, et c&rsquo;est donc difficile, surtout au début, de prendre l&rsquo;habitude de les mettre partout où ils devraient être. Cependant, même si le compilateur peut parfois s&rsquo;en passer, il s&rsquo;agit d&rsquo;une information très utile pour le programmeur qui va lire votre code, car cela permet d&rsquo;identifier très vite ce qui peut bouger et ce qui ne bougera jamais au cours de l&rsquo;exécution.<br>
+Donc demandez-vous autant que possible si vous avez bien placé les <code>const</code> partout où vous pouvez, et faites-le si ce n&rsquo;est le cas 💪</p>
+</div>
+
+<p>Revenons à notre exercice. Décommentez la dernière instruction du <code>main</code>, implémentez les deux accesseurs nécessaires (sans oublier leur <code>const</code> 🙃) et vérifiez que le programme fonctionne.</p>
+
+<div class="expand">
+    <div class="expand-label" style="cursor: pointer;" onclick="$h = $(this);$h.next('div').slideToggle(100,function () {$h.children('i').attr('class',function () {return $h.next('div').is(':visible') ? 'fas fa-chevron-down' : 'fas fa-chevron-right';});});">
+        <i style="font-size:x-small;" class="fas fa-chevron-right"></i>
+        <span>
+        
+    	
+    	Solution
+    	
+    	</span>
+    </div>
+    <div class="expand-content" style="display: none;">
+        <p>Pour les types de retour, c&rsquo;est pareil que pour les paramètres en entrée, on peut renvoyer des const-ref pour éviter les copies coûteuses de <code>string</code>.</p>
+<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="k">public</span><span class="o">:</span>
+    <span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&amp;</span> <span class="n">get_name</span><span class="p">()</span> <span class="k">const</span> <span class="p">{</span> <span class="k">return</span> <span class="n">_name</span><span class="p">;</span> <span class="p">}</span>
+    <span class="kt">unsigned</span> <span class="kt">int</span>       <span class="nf">get_age</span><span class="p">()</span> <span class="k">const</span>  <span class="p">{</span> <span class="k">return</span> <span class="n">_age</span><span class="p">;</span> <span class="p">}</span>
+
+    <span class="p">...</span>
 </code></pre></div>
     </div>
 </div>
@@ -1204,7 +1276,6 @@ Dans votre fonction, vous devriez avoir le code suivant.</p>
             
                 
                     
-                    
                 
                 
 
@@ -1219,9 +1290,6 @@ Dans votre fonction, vous devriez avoir le code suivant.</p>
             
             
                 
-                    
-                        
-                        
                     
                 
                 
@@ -1239,7 +1307,6 @@ Dans votre fonction, vous devriez avoir le code suivant.</p>
             
                 
                     
-                    
                 
                 
 
@@ -1252,9 +1319,6 @@ Dans votre fonction, vous devriez avoir le code suivant.</p>
             
             
                 
-                    
-                        
-                        
                     
                 
                 
@@ -1288,7 +1352,6 @@ Dans votre fonction, vous devriez avoir le code suivant.</p>
             
                 
                     
-                    
                 
                 
 
@@ -1304,9 +1367,6 @@ Dans votre fonction, vous devriez avoir le code suivant.</p>
             
             
                 
-                    
-                        
-                        
                     
                 
                 
@@ -1367,6 +1427,7 @@ Dans votre fonction, vous devriez avoir le code suivant.</p>
             
                 
                     
+                    
                 
                 
 
@@ -1379,6 +1440,9 @@ Dans votre fonction, vous devriez avoir le code suivant.</p>
             
             
                 
+                    
+                        
+                        
                     
                 
                 
@@ -1396,6 +1460,7 @@ Dans votre fonction, vous devriez avoir le code suivant.</p>
             
                 
                     
+                    
                 
                 
 
@@ -1411,6 +1476,9 @@ Dans votre fonction, vous devriez avoir le code suivant.</p>
             
             
                 
+                    
+                        
+                        
                     
                 
                 
@@ -1520,10 +1588,10 @@ Dans votre fonction, vous devriez avoir le code suivant.</p>
 	 
 	 
 		
-			<a class="nav nav-prev" href="/CPP_Learning/chapter1/2-practice/2-parrot/" title="🦜 Perroquet"> <i class="fa fa-chevron-left"></i></a>
+			<a class="nav nav-prev" href="/CPP_Learning/chapter2/1-poo/" title="C&#39;est quoi un objet déjà ?"> <i class="fa fa-chevron-left"></i></a>
 		
 		
-			<a class="nav nav-next" href="/CPP_Learning/chapter1/2-practice/4-calculator/" title="🧮 Calculette" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+			<a class="nav nav-next" href="/CPP_Learning/chapter2/3-constructor/" title="🔨 Constructeur" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
 		
 	
     </div>

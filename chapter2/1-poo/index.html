@@ -9,7 +9,7 @@
 
     <link rel="icon" href="/CPP_Learning/images/favicon.png" type="image/png">
 
-    <title>Tags :: Cours de C&#43;&#43; - Niveau Master</title>
+    <title>C&#39;est quoi un objet déjà ? :: Cours de C&#43;&#43; - Niveau Master</title>
 
     
     <link href="/CPP_Learning/css/nucleus.css?1642122209" rel="stylesheet">
@@ -40,7 +40,7 @@
     </style>
     
   </head>
-  <body class="" data-url="/CPP_Learning/tags/">
+  <body class="" data-url="/CPP_Learning/chapter2/1-poo/">
     <nav id="sidebar" class="showVisitedLinks">
 
 
@@ -495,7 +495,7 @@
   
     
     <li data-nav-id="/CPP_Learning/chapter2/" title="Classes" class="dd-item 
-        
+        parent
         
         
         ">
@@ -523,7 +523,7 @@
  
   
     
-      <li data-nav-id="/CPP_Learning/chapter2/1-poo/" title="C&#39;est quoi un objet déjà ?" class="dd-item ">
+      <li data-nav-id="/CPP_Learning/chapter2/1-poo/" title="C&#39;est quoi un objet déjà ?" class="dd-item active">
         <a href="/CPP_Learning/chapter2/1-poo/">
         C&#39;est quoi un objet déjà ?
         <i class="fas fa-check read-icon"></i>
@@ -775,7 +775,13 @@
             
           
           
-            <a href='/CPP_Learning/'>Accueil</a> > Tags
+            
+            
+          
+          
+            <a href='/CPP_Learning/'>Accueil</a> > <a href='/CPP_Learning/chapter2/'>Classes</a> > C'est quoi un objet déjà ?
+          
+        
           
         
           
@@ -786,7 +792,15 @@
                 
                     <div class="progress">
     <div class="wrapper">
-
+<nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
     </div>
 </div>
 
@@ -802,24 +816,47 @@
           
             <h1>
               
-                taxonomy ::
-              
-              Tags
+              C&#39;est quoi un objet déjà ?
             </h1>
           
 
         
 
 
+<p>Commençons par donner quelques rappels des notions de POO que vous avez pu voir l&rsquo;an dernier.</p>
+<hr>
+<h4 id="objet">Objet</h4>
+<p>Dans un programme, un <strong>objet</strong> est un élément constitué d&rsquo;un <strong>état</strong>, et disposant d&rsquo;une <strong>interface</strong> permettant d&rsquo;intéragir avec cet état.</p>
+<h4 id="classe">Classe</h4>
+<p>Un objet est généralement créé à partir d&rsquo;un modèle, que l&rsquo;on appelle <strong>classe</strong>. Un objet créé à partir d&rsquo;une classe constitue une <strong>instance</strong> de cette classe.</p>
+<h4 id="etat">Etat</h4>
+<p>L&rsquo;état d&rsquo;un objet est composé de valeurs, pouvant ou non varier au cours de l&rsquo;exécution du programme.</p>
+<h4 id="attributs">Attributs</h4>
+<p>Les <strong>attributs</strong> sont les propriétés définies par une classe à partir desquelles on construit l&rsquo;état des instances.<br>
+Si une classe Personne définit deux attributs <code>nom</code> et <code>âge</code>, alors l&rsquo;état de chaque instance de Personne sera composée d&rsquo;une valeur pour le nom, et d&rsquo;une pour l&rsquo;age.</p>
+<h4 id="interface">Interface</h4>
+<p>L&rsquo;interface est l&rsquo;ensemble des procédés permettant d&rsquo;accéder à l&rsquo;état d&rsquo;un objet ou de le modifier.<br>
+Selon les langages, elle ne se présente pas de la même manière. En C++, elle se compose des <strong>fonctions-membres</strong> de la classe, ainsi que de ses éventuels attributs publiques.</p>
+<h4 id="invariant-de-classe">Invariant de classe</h4>
+<p>Un <strong>invariant de classe</strong> est une condition que toutes les instances de cette classe doivent vérifier.<br>
+Un des invariants de la classe Carré est qu&rsquo;il faut qu&rsquo;à tout moment, les 4 côtés d&rsquo;une instance soient de même longueur.<br>
+Un des invariants de la classe Fraction est que le dénominateur de chacune de ses instances ne peut pas être nul.<br>
+Un des invariants de la classe ListeCroissante est que les éléments sont toujours par ordre croissant.</p>
+<p>Lorsqu&rsquo;une fonction-membre publique est appelée, on peut toujours supposer qu&rsquo;à son entrée, les invariants sont assurés.
+En contre-partie, il faut que l&rsquo;implémentation de la fonction garantissent que les invariants sont toujours vrais en sortie.<br>
+Par exemple, la fonction <code>SortedList::insert()</code> n&rsquo;a pas besoin de vérifier que la liste est triée au début, car on part du principe que l&rsquo;invariant est forcément vrai.
+On peut donc utiliser la recherche dichotomique pour trouver où doit être inséré le nouvel élément, ce qui est moins coûteux que si on avait à faire une recherche linéaire.<br>
+L&rsquo;invariant permet donc ici de gagner en temps de calcul.</p>
+<h4 id="encapsulation">Encapsulation</h4>
+<p>L'<strong>encapsulation</strong> est le principe déclarant que pour pour accéder/modifier l&rsquo;état d&rsquo;un objet, il faut passer par des &ldquo;routines&rdquo; (fonction-membre en C++, méthode en Java, &hellip;). Il s&rsquo;accompagne souvent du masquage de l&rsquo;état des objets, c&rsquo;est-à-dire que l&rsquo;on déclare les attributs dans la partie privée de la classe.<br>
+Respecter le principe d&rsquo;encapsulation permet de garantir les invariants de classe plus facilement.</p>
+<p>Reprenons l&rsquo;exemple de la classe <code>SortedList</code>.
+On ne laissera pas l&rsquo;utilisateur accéder directement au tableau contenant les valeurs.
+Il pourrait ajouter un élément à la fin, ce qui aurait de grande chance de briser l&rsquo;invariant de classe.
+S&rsquo;il veut ajouter un élément, on le forcera à passer par notre fonction-membre qui fera respecter l&rsquo;invariant de classe.</p>
 
 
-
-<ul>
-	
-</ul>
-
-
-<footer class=" footline" >
+<footer class="footline">
 	
 </footer>
 
@@ -1141,6 +1178,7 @@
             
                 
                     
+                    
                 
                 
 
@@ -1153,6 +1191,7 @@
             
             
                 
+                    
                     
                 
                 
@@ -1169,6 +1208,9 @@
             
             
                 
+                    
+                        
+                        
                     
                 
                 
@@ -1294,8 +1336,10 @@
 	 
 	 
 		
+			<a class="nav nav-prev" href="/CPP_Learning/chapter2/" title="Classes"> <i class="fa fa-chevron-left"></i></a>
 		
-			<a class="nav nav-next" href="/CPP_Learning/chapter0/" title="Mise en place" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+		
+			<a class="nav nav-next" href="/CPP_Learning/chapter2/2-first-class/" title="✨ Première classe" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
 		
 	
     </div>
@@ -1325,3 +1369,4 @@
 
   </body>
 </html>
+

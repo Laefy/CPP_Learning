@@ -9,7 +9,7 @@
 
     <link rel="icon" href="/CPP_Learning/images/favicon.png" type="image/png">
 
-    <title>🔢 Tableau Numérique :: Cours de C&#43;&#43; - Niveau Master</title>
+    <title>🧬 Clône :: Cours de C&#43;&#43; - Niveau Master</title>
 
     
     <link href="/CPP_Learning/css/nucleus.css?1642122209" rel="stylesheet">
@@ -40,7 +40,7 @@
     </style>
     
   </head>
-  <body class="" data-url="/CPP_Learning/chapter1/2-practice/3-array/">
+  <body class="" data-url="/CPP_Learning/chapter2/4-clone/">
     <nav id="sidebar" class="showVisitedLinks">
 
 
@@ -269,7 +269,7 @@
   
     
     <li data-nav-id="/CPP_Learning/chapter1/" title="Introduction au C&#43;&#43;" class="dd-item 
-        parent
+        
         
         
         ">
@@ -321,7 +321,7 @@
   
     
     <li data-nav-id="/CPP_Learning/chapter1/2-practice/" title="Premiers programmes" class="dd-item 
-        parent
+        
         
         
         ">
@@ -391,7 +391,7 @@
  
   
     
-      <li data-nav-id="/CPP_Learning/chapter1/2-practice/3-array/" title="🔢 Tableau Numérique" class="dd-item active">
+      <li data-nav-id="/CPP_Learning/chapter1/2-practice/3-array/" title="🔢 Tableau Numérique" class="dd-item ">
         <a href="/CPP_Learning/chapter1/2-practice/3-array/">
         🔢 Tableau Numérique
         <i class="fas fa-check read-icon"></i>
@@ -495,7 +495,7 @@
   
     
     <li data-nav-id="/CPP_Learning/chapter2/" title="Classes" class="dd-item 
-        
+        parent
         
         
         ">
@@ -586,7 +586,7 @@
  
   
     
-      <li data-nav-id="/CPP_Learning/chapter2/4-clone/" title="🧬 Clône" class="dd-item ">
+      <li data-nav-id="/CPP_Learning/chapter2/4-clone/" title="🧬 Clône" class="dd-item active">
         <a href="/CPP_Learning/chapter2/4-clone/">
         🧬 Clône
         <i class="fas fa-check read-icon"></i>
@@ -779,13 +779,7 @@
             
           
           
-            
-            
-          
-          
-            <a href='/CPP_Learning/'>Accueil</a> > <a href='/CPP_Learning/chapter1/'>Introduction au C++</a> > <a href='/CPP_Learning/chapter1/2-practice/'>Premiers programmes</a> > 🔢 Tableau Numérique
-          
-        
+            <a href='/CPP_Learning/'>Accueil</a> > <a href='/CPP_Learning/chapter2/'>Classes</a> > 🧬 Clône
           
         
           
@@ -802,10 +796,9 @@
   <ul>
     <li>
       <ul>
-        <li><a href="#tableau-statique">Tableau statique</a></li>
-        <li><a href="#passage-darguments-au-programme">Passage d&rsquo;arguments au programme</a></li>
-        <li><a href="#conversion-dune-chaîne-en-entier">Conversion d&rsquo;une chaîne en entier</a></li>
-        <li><a href="#tableau-dynamique">Tableau dynamique</a></li>
+        <li><a href="#constructeur-de-copie">Constructeur de copie</a></li>
+        <li><a href="#opérateur-">Opérateur <code>&lt;&lt;</code></a></li>
+        <li><a href="#opérateur-dassignation">Opérateur d&rsquo;assignation</a></li>
       </ul>
     </li>
   </ul>
@@ -825,38 +818,23 @@
           
             <h1>
               
-              🔢 Tableau Numérique
+              🧬 Clône
             </h1>
           
 
         
 
 
-<p>Le but de cet exercice est de voir comment manipuler les tableaux en C++ et passer des arguments au programme. Votre objectif sera d&rsquo;afficher un tableau de nombres, dont la taille sera définie par les paramètres passés au programme.</p>
+<p>Dans cet exercice, vous verrez comment implémenter un constructeur de copie et un opérateur d&rsquo;assignation.<br>
+Nous en profiterons aussi pour vous montrer comment surcharger l&rsquo;opérateur <code>&lt;&lt;</code>.</p>
 <hr>
 <p>Pour cet exercice, vous modifierez le fichier :<br>
-- <code>chap-01/3-array.cpp</code></p>
-<p>La cible à compiler est <code>c1-3-array</code>.</p>
+- <code>chap-02/3-clone.cpp</code></p>
+<p>La cible à compiler est <code>c2-3-clone</code>.</p>
 <hr>
-<h3 id="tableau-statique">Tableau statique</h3>
-<p>Le code initial de l&rsquo;exercice vous est fourni. Le voici :</p>
-<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp">
-</span><span class="cp"></span>
-<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
-<span class="p">{</span>
-    <span class="kt">int</span> <span class="n">array</span><span class="p">[]</span> <span class="o">=</span> <span class="p">{</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span> <span class="p">};</span>
-
-    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">4</span><span class="p">;</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span>
-    <span class="p">{</span>
-        <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">array</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
-    <span class="p">}</span>
-
-    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
-<span class="p">}</span>
-</code></pre></div><p>Ce programme permet d&rsquo;instancier un tableau d&rsquo;entiers contenant les valeurs 0, 1, 2 et 3, et d&rsquo;afficher ses valeurs. La taille du tableau n&rsquo;étant pas spécifié dans les crochets <code>[]</code>, elle est déduite automatiquement à partir du nombre de valeurs fournies dans les accolades <code>{}</code>. Ce qui n&rsquo;est pas très élégant ici, c&rsquo;est que l&rsquo;on doit fournir cette taille dans la boucle juste en dessous. Si on ajoute une nouvelle valeur dans les accolades ou que l&rsquo;on en retire une, il faut donc penser à mettre à jour la condition d&rsquo;arrêt de la boucle.</p>
-<p>Pour ne plus avoir ce problème, vous allez remplacer votre boucle <code>for</code>, par une boucle <strong>foreach</strong>. La syntaxe est similaire au Java :</p>
-<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="nl">value</span> <span class="p">:</span> <span class="n">values</span><span class="p">)</span>
-</code></pre></div><p>Effectuez le changement et les modifications associées, et testez que votre programme fonctionne toujours.</p>
+<h3 id="constructeur-de-copie">Constructeur de copie</h3>
+<p>Dans la fonction <code>main</code>, instanciez à la suite du code existant une nouvelle instance de <code>Person</code> et initialisée là à partir de la variable <code>batman</code>. Cela se fait exactement de la même manière que si vous souhaitiez créer une copie d&rsquo;une variable de type <code>int</code>.<br>
+Affichez ensuite le contenu de cet objet, en copiant-collant l&rsquo;instruction permettant d&rsquo;afficher le contenu de <code>batman</code>.</p>
 
 <div class="expand">
     <div class="expand-label" style="cursor: pointer;" onclick="$h = $(this);$h.next('div').slideToggle(100,function () {$h.children('i').attr('class',function () {return $h.next('div').is(':visible') ? 'fas fa-chevron-down' : 'fas fa-chevron-right';});});">
@@ -869,14 +847,39 @@
     	</span>
     </div>
     <div class="expand-content" style="display: none;">
-        <div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="nl">value</span> <span class="p">:</span> <span class="n">array</span><span class="p">)</span>
-<span class="p">{</span>
-    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">value</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
-<span class="p">}</span>
+        <div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="n">Person</span> <span class="n">copy</span> <span class="o">=</span> <span class="n">batman</span><span class="p">;</span>
+<span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;Person named &#39;&#34;</span> <span class="o">&lt;&lt;</span> <span class="n">copy</span><span class="p">.</span><span class="n">get_full_name</span><span class="p">()</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;&#39; is &#34;</span> <span class="o">&lt;&lt;</span> <span class="n">copy</span><span class="p">.</span><span class="n">get_age</span><span class="p">()</span> <span class="o">&lt;&lt;</span> <span class="s">&#34; years old.&#34;</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
 </code></pre></div>
     </div>
 </div>
-<p>Vous souhaiteriez maintenant avoir dans votre tableau les nombres de 1 à 50. Mais vous n&rsquo;avez pas très envie d&rsquo;écrire cette suite à la main dans les accolades. Vous allez donc utiliser les crochets <code>[]</code> pour spécifiez la nouvelle taille du tableau, ainsi qu&rsquo;une boucle <code>for</code> pour intialiser votre tableau. N&rsquo;oubliez pas de définir votre tableau avec <code>= {}</code>. Cela permettra de remplir dans un premier temps le tableau de 0, plutôt que de valeurs aléatoires. Vérifiez que vous obtenez les bonnes valeurs dans la sortie du programme.</p>
+<p>Vous devriez obtenir le même résultat en sortie pour Batman et sa copie.</p>
+<p>Nous aimerions maintenant avoir un clône plutôt qu&rsquo;une copie. C&rsquo;est-à-dire qu&rsquo;au moment de l&rsquo;instanciation du clône, ce serait bien qu&rsquo;il vienne de naître, plutôt qu&rsquo;il ait déjà 23 ans.</p>
+<p>Pour ce faire, vous allez devoir redéfinir votre propre constructeur de copie. Je dis &ldquo;redéfinir&rdquo;, car le compilateur (qui est gentil des fois) en a déjà défini un pour vous. Sans ça, l&rsquo;instruction <code>Person clone = batman;</code> n&rsquo;aurait pas pu compiler.</p>
+
+<div class="notices note" ><p>Le compilateur défini un constructeur de copie uniquement si vous n&rsquo;en définissez pas un vous-même, et que chacun des attributs de votre classe est <strong>copiable</strong> (= disposant d&rsquo;un constructeur de copie).<br>
+Dans ce cas, l'<strong>implémentation par défaut du constructeur de copie</strong> appelera pour chacun des attributs de la classe son propre constructeur de copie.</p>
+</div>
+
+<p>Voici la syntaxe permettant de définir un constructeur de copie :</p>
+<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="k">class</span> <span class="nc">ClassName</span>
+<span class="p">{</span>
+<span class="k">public</span><span class="o">:</span>
+    <span class="n">ClassName</span><span class="p">(</span><span class="k">const</span> <span class="n">ClassName</span><span class="o">&amp;</span> <span class="n">other</span><span class="p">)</span>
+        <span class="o">:</span> <span class="n">_attribute_1</span> <span class="p">{</span> <span class="cm">/* probably other._attribute_1 */</span> <span class="p">}</span>
+        <span class="p">,</span> <span class="n">_attribute_2</span> <span class="p">{</span> <span class="cm">/* probably other._attribute_2 */</span> <span class="p">}</span>
+        <span class="p">,</span> <span class="p">...</span>
+    <span class="p">{</span>
+        <span class="c1">// some optional code
+</span><span class="c1"></span>    <span class="p">}</span>
+
+<span class="k">private</span><span class="o">:</span>
+    <span class="n">type</span> <span class="n">_attribute_1</span><span class="p">;</span>
+    <span class="n">type</span> <span class="n">_attribute_2</span><span class="p">;</span>
+    <span class="p">...</span>
+<span class="p">};</span>
+</code></pre></div><p>Au final, il s&rsquo;agit simplement d&rsquo;un constructeur à 1 paramètre, ce paramètre étant une const-ref sur la classe courante.</p>
+<p>Essayez de définir un constructeur de copie pour la classe <code>Person</code>, qui effectue la copie de l&rsquo;ensemble des attributs de la classe.<br>
+Vérifiez que vous obtenez le même résultat que précédemment.</p>
 
 <div class="expand">
     <div class="expand-label" style="cursor: pointer;" onclick="$h = $(this);$h.next('div').slideToggle(100,function () {$h.children('i').attr('class',function () {return $h.next('div').is(':visible') ? 'fas fa-chevron-down' : 'fas fa-chevron-right';});});">
@@ -889,45 +892,74 @@
     	</span>
     </div>
     <div class="expand-content" style="display: none;">
-        <div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="kt">int</span> <span class="n">array</span><span class="p">[</span><span class="mi">50</span><span class="p">]</span> <span class="o">=</span> <span class="p">{};</span>
+        <div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="n">Person</span><span class="p">(</span><span class="k">const</span> <span class="n">Person</span><span class="o">&amp;</span> <span class="n">other</span><span class="p">)</span>
+    <span class="o">:</span> <span class="n">_name</span> <span class="p">{</span> <span class="n">other</span><span class="p">.</span><span class="n">_name</span> <span class="p">}</span>
+    <span class="p">,</span> <span class="n">_surname</span> <span class="p">{</span> <span class="n">other</span><span class="p">.</span><span class="n">_surname</span> <span class="p">}</span>
+    <span class="p">,</span> <span class="n">_age</span> <span class="p">{</span> <span class="n">other</span><span class="p">.</span><span class="n">_age</span> <span class="p">}</span>
+<span class="p">{}</span>
+</code></pre></div>
+    </div>
+</div>
+<p>Supprimez l&rsquo;initialisation de l&rsquo;attribut <code>_age</code> de la liste d&rsquo;initialisation. De cette manière, le compilateur réalisera l&rsquo;initialisation de <code>_age</code> à partir de son class-initializer (c&rsquo;est-à-dire le <code>= 0u</code>).<br>
+Testez le programme pour vous assurer que le clône a bien 0 an après son instanciation.</p>
 
-<span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">50</span><span class="p">;</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span>
+<div class="expand">
+    <div class="expand-label" style="cursor: pointer;" onclick="$h = $(this);$h.next('div').slideToggle(100,function () {$h.children('i').attr('class',function () {return $h.next('div').is(':visible') ? 'fas fa-chevron-down' : 'fas fa-chevron-right';});});">
+        <i style="font-size:x-small;" class="fas fa-chevron-right"></i>
+        <span>
+        
+    	
+    	Solution
+    	
+    	</span>
+    </div>
+    <div class="expand-content" style="display: none;">
+        <div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="k">class</span> <span class="nc">Person</span>
 <span class="p">{</span>
-    <span class="c1">// Array indices start at 0, so we need to use (i+1) if we want the series to start at 1.
-</span><span class="c1"></span>    <span class="n">array</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">;</span>
+<span class="k">public</span><span class="o">:</span>
+    <span class="p">...</span>
+
+    <span class="n">Person</span><span class="p">(</span><span class="k">const</span> <span class="n">Person</span><span class="o">&amp;</span> <span class="n">other</span><span class="p">)</span>
+        <span class="o">:</span> <span class="n">_name</span> <span class="p">{</span> <span class="n">other</span><span class="p">.</span><span class="n">_name</span> <span class="p">}</span>
+        <span class="p">,</span> <span class="n">_surname</span> <span class="p">{</span> <span class="n">other</span><span class="p">.</span><span class="n">_surname</span> <span class="p">}</span>
+    <span class="p">{}</span>
+
+    <span class="p">...</span>
+
+<span class="k">private</span><span class="o">:</span>
+    <span class="p">...</span>
+    <span class="kt">unsigned</span> <span class="kt">int</span> <span class="n">_age</span> <span class="o">=</span> <span class="mi">0u</span><span class="p">;</span>
 <span class="p">}</span>
 </code></pre></div>
     </div>
 </div>
 <hr>
-<h3 id="passage-darguments-au-programme">Passage d&rsquo;arguments au programme</h3>
-<p>Nous souhaiterions maintenant avoir un tableau de taille variable, donc la taille serait spécifiée en utilisant le premier argument du programme.
-Pour cela, nous allons modifier la <strong>signature</strong> de la fonction <code>main</code> par :</p>
-<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="kt">int</span> <span class="n">main</span><span class="p">(</span><span class="kt">int</span> <span class="n">argc</span><span class="p">,</span> <span class="kt">char</span><span class="o">**</span> <span class="n">argv</span><span class="p">)</span>
-</code></pre></div>
-<div class="notices tip" ><p><code>argc</code> signifie &lsquo;arguments count&rsquo;, et <code>argv</code> &lsquo;arguments values&rsquo;. Il n&rsquo;est pas nécessaire de les nommer de cette façon, mais par convention, c&rsquo;est plus propre de le faire.</p>
-</div>
+<h3 id="opérateur-">Opérateur <code>&lt;&lt;</code></h3>
+<p>Nous vous avons précédemment demandé de copier-coller l&rsquo;instruction pour afficher le contenu de votre objet. Si vous l&rsquo;avez fait, sachez que vous devriez avoir honte 😳</p>
+<p>Afin de réaliser l&rsquo;affichage en bonne-et-due forme de votre objet, vous allez implémenter une surcharge de l&rsquo;opérateur <code>&lt;&lt;</code>.</p>
+<p><strong>Qu&rsquo;est-ce qu&rsquo;un opérateur ?</strong><br>
+C&rsquo;est simplement une fonction avec un nom bizarre : <code>operator¤</code>, et pouvant être appelée en utilisant <code>¤</code> au lieu des parenthèses <code>()</code>.<br>
+Supposons une classe <code>SomeClass</code>, avec un seul attribut <code>value</code> de type <code>int</code>. On peut alors définir un opérateur binaire <code>+</code> et l&rsquo;utiliser de la manière suivante :</p>
+<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="c1">// Definition
+</span><span class="c1"></span><span class="kt">int</span> <span class="k">operator</span><span class="o">+</span><span class="p">(</span><span class="k">const</span> <span class="n">SomeClass</span><span class="o">&amp;</span> <span class="n">p1</span><span class="p">,</span> <span class="k">const</span> <span class="n">SomeClass</span><span class="o">&amp;</span> <span class="n">p2</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="k">return</span> <span class="n">p1</span><span class="p">.</span><span class="n">value</span> <span class="o">+</span> <span class="n">p2</span><span class="p">.</span><span class="n">value</span><span class="p">;</span>
+<span class="p">}</span>
 
-<p>Si l&rsquo;argument n&rsquo;est pas fourni, affichez un message d&rsquo;erreur en écrivant dans <code>std::cerr</code> et sortez du programme avec le code d&rsquo;erreur -1. Sinon, affichez le contenu de l&rsquo;argument. Vous pouvez commenter le restant du code avec le tableau, en utilisant <code>/* code */</code> ou bien <code>// code</code> sur chaque ligne.</p>
-<p>Afin de tester le passage d&rsquo;arguments à votre programme, vous avez 2 possibilités :</p>
-<ol>
-<li>Vous pouvez le lancer depuis un terminal.
-L&rsquo;exécutable devrait avoir été généré quelque part dans le dossier <code>build/chap-01/</code>.</li>
-</ol>
-<div class="highlight"><pre class="chroma"><code class="language-b" data-lang="b"><span class="c">## Unix
-</span><span class="c"></span><span class="nt">.</span><span class="c">/build/chap</span><span class="nb">-</span><span class="c">01/c1</span><span class="nb">-</span><span class="c">3</span><span class="nb">-</span><span class="c">array arg1 arg2
-</span><span class="c">
-</span><span class="c">## Windows
-</span><span class="c"></span><span class="nt">.</span><span class="c">/build/chap</span><span class="nb">-</span><span class="c">01/c1</span><span class="nb">-</span><span class="c">3</span><span class="nb">-</span><span class="c">array</span><span class="nt">.</span><span class="c">exe arg1 arg2
-</span></code></pre></div><ol start="2">
-<li>Vous pouvez générer un fichier <code>launch.json</code> depuis VSCode.<br>
-Pour cela, allez dans le menu <code>Run</code> et sélectionnez <code>Add Configuration...</code>.
-Si VSCode vous propose plusieurs options, choisissez &lsquo;C++ (GDB/LLDB)&rsquo;.<br>
-Enfin, modifiez les champs <code>&quot;program&quot;</code> et <code>&quot;args&quot;</code> dans le fichier qui vient de s&rsquo;ouvrir :</li>
-</ol>
-<div class="highlight"><pre class="chroma"><code class="language-json" data-lang="json"><span class="s2">&#34;program&#34;</span><span class="err">:</span> <span class="s2">&#34;${command:cmake.launchTargetPath}&#34;</span><span class="err">,</span> <span class="err">//</span> <span class="err">copiez-collez</span> <span class="err">la</span> <span class="err">ligne</span> <span class="err">telle</span> <span class="err">quelle</span>
-<span class="s2">&#34;args&#34;</span><span class="err">:</span> <span class="p">[</span><span class="s2">&#34;voici&#34;</span><span class="p">,</span> <span class="s2">&#34;3&#34;</span><span class="p">,</span> <span class="s2">&#34;arguments&#34;</span><span class="p">]</span><span class="err">,</span>            <span class="err">//</span> <span class="err">fournissez</span> <span class="err">les</span> <span class="err">arguments</span> <span class="err">de</span> <span class="err">votre</span> <span class="err">choix</span> <span class="err">ici</span>
-</code></pre></div><p><br>
+<span class="c1">// Call
+</span><span class="c1"></span><span class="n">SomeClass</span> <span class="n">c1</span> <span class="p">{</span> <span class="mi">3</span> <span class="p">};</span>
+<span class="n">SomeClass</span> <span class="n">c2</span> <span class="p">{</span> <span class="mi">6</span> <span class="p">};</span>
+<span class="kt">int</span> <span class="n">res</span> <span class="o">=</span> <span class="n">c1</span> <span class="o">+</span> <span class="n">c2</span><span class="p">;</span> <span class="c1">// -&gt; 9
+</span></code></pre></div><p><strong>C&rsquo;est quoi une surcharge ?</strong><br>
+En C++, on peut définir des fonctions qui ont le même nom, du moment qu&rsquo;elles ne prennent pas le même nombre de paramètres, ou bien que ces paramètres sont de types différents. Il s&rsquo;agit du mécanisme de <strong>surcharge</strong> de fonctions.</p>
+<p>L&rsquo;opérateur <code>&lt;&lt;</code> a déjà été défini, puisque vous l&rsquo;avez utilisé afin d&rsquo;afficher des <code>string</code> et des <code>int</code> dans le flux <code>cout</code>.<br>
+Votre objectif est de surcharger cet opérateur, de manière à pouvoir écrire :</p>
+<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">batman</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+</code></pre></div><p>Votre surcharge acceptera deux paramètres, car <code>&lt;&lt;</code> est un opérateur binaire :<br>
+- le premier doit être du même type que <code>std::cout</code>. Recherchez dans la documentation de la librairie standard le type de cette variable.<br>
+- le second doit être du même type que <code>batman</code>, c&rsquo;est-à-dire de type <code>Person</code>.<br>
+Pour le type de retour, vous devez utiliser <code>std::ostream&amp;</code>, car c&rsquo;est ce qui vous permet de concaténer plusieurs <code>&lt;&lt;</code> dans la même instruction.</p>
+<p>Sachant que vous utiliserez un passage par référence pour le premier argument et par const-ref pour le deuxième, quel sera la signature de votre surcharge ?
 
 <div class="expand">
     <div class="expand-label" style="cursor: pointer;" onclick="$h = $(this);$h.next('div').slideToggle(100,function () {$h.children('i').attr('class',function () {return $h.next('div').is(':visible') ? 'fas fa-chevron-down' : 'fas fa-chevron-right';});});">
@@ -940,30 +972,11 @@ Enfin, modifiez les champs <code>&quot;program&quot;</code> et <code>&quot;args&
     	</span>
     </div>
     <div class="expand-content" style="display: none;">
-        <div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="kt">int</span> <span class="nf">main</span><span class="p">(</span><span class="kt">int</span> <span class="n">argc</span><span class="p">,</span> <span class="kt">char</span><span class="o">**</span> <span class="n">argv</span><span class="p">)</span>
-<span class="p">{</span>
-    <span class="c1">// First argument is always the command name used to launch the program.
-</span><span class="c1"></span>    <span class="k">if</span> <span class="p">(</span><span class="n">argc</span> <span class="o">&lt;</span> <span class="mi">2</span><span class="p">)</span>
-    <span class="p">{</span>
-        <span class="n">std</span><span class="o">::</span><span class="n">cerr</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;Expected argument for array size.&#34;</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
-        <span class="k">return</span> <span class="o">-</span><span class="mi">1</span><span class="p">;</span>
-    <span class="p">}</span>
-
-    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">argv</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
-
-    <span class="c1">// Commented
-</span><span class="c1"></span>    <span class="c1">// code
-</span><span class="c1"></span>    <span class="c1">// ...
-</span><span class="c1"></span>
-    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
-<span class="p">}</span>
+        <div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="n">std</span><span class="o">::</span><span class="n">ostream</span><span class="o">&amp;</span> <span class="k">operator</span><span class="o">&lt;&lt;</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">ostream</span><span class="o">&amp;</span> <span class="n">stream</span><span class="p">,</span> <span class="k">const</span> <span class="n">Person</span><span class="o">&amp;</span> <span class="n">person</span><span class="p">)</span>
 </code></pre></div>
     </div>
 </div></p>
-<hr>
-<h3 id="conversion-dune-chaîne-en-entier">Conversion d&rsquo;une chaîne en entier</h3>
-<p>Nous pouvons bien récupérer la taille attendue pour le tableau, mais hélas, il s&rsquo;agit d&rsquo;une chaîne de caractères, et non d&rsquo;un entier.
-Recherchez sur Internet s&rsquo;il n&rsquo;existe pas une fonction dans la librairie standard permettant de réaliser cette conversion, et utilisez-la pour récupérer cette valeur dans une variable <code>array_size</code>.</p>
+<p>Définissez le code de cette fonction entre la classe <code>Person</code> et la fonction <code>main</code>. Vous pouvez utiliser le premier argument comme valeur de retour.</p>
 
 <div class="expand">
     <div class="expand-label" style="cursor: pointer;" onclick="$h = $(this);$h.next('div').slideToggle(100,function () {$h.children('i').attr('class',function () {return $h.next('div').is(':visible') ? 'fas fa-chevron-down' : 'fas fa-chevron-right';});});">
@@ -976,33 +989,16 @@ Recherchez sur Internet s&rsquo;il n&rsquo;existe pas une fonction dans la libra
     	</span>
     </div>
     <div class="expand-content" style="display: none;">
-        <p>Vous pouvez utiliser la fonction <code>std::stoi</code> (définie dans <code>&lt;string&gt;</code>) ou éventuellement la fonction C <code>std::atoi</code> (définie dans <code>&lt;cstdlib&gt;</code>).</p>
-<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="kt">int</span> <span class="n">array_size</span> <span class="o">=</span> <span class="n">std</span><span class="o">::</span><span class="n">stoi</span><span class="p">(</span><span class="n">argv</span><span class="p">[</span><span class="mi">1</span><span class="p">]);</span>
-<span class="k">if</span> <span class="p">(</span><span class="n">array_size</span> <span class="o">&lt;=</span> <span class="mi">0</span><span class="p">)</span>
+        <div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="n">std</span><span class="o">::</span><span class="n">ostream</span><span class="o">&amp;</span> <span class="k">operator</span><span class="o">&lt;&lt;</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">ostream</span><span class="o">&amp;</span> <span class="n">stream</span><span class="p">,</span> <span class="k">const</span> <span class="n">Person</span><span class="o">&amp;</span> <span class="n">person</span><span class="p">)</span>
 <span class="p">{</span>
-    <span class="n">std</span><span class="o">::</span><span class="n">cerr</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;Expected strictly positive value for array size.&#34;</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
-    <span class="k">return</span> <span class="o">-</span><span class="mi">1</span><span class="p">;</span>
+    <span class="k">return</span> <span class="n">stream</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;Person named &#39;&#34;</span> <span class="o">&lt;&lt;</span> <span class="n">person</span><span class="p">.</span><span class="n">get_full_name</span><span class="p">()</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;&#39; is &#34;</span> <span class="o">&lt;&lt;</span> <span class="n">person</span><span class="p">.</span><span class="n">get_age</span><span class="p">()</span> <span class="o">&lt;&lt;</span> <span class="s">&#34; years old.&#34;</span><span class="p">;</span>
 <span class="p">}</span>
-
-<span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">array_size</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
-</code></pre></div><div class="notices note" ><p>Si vous utilisez <code>std::stoi</code> et que la chaîne fournie ne commence pas par un entier, le programme va lever une exception.
-Nous verrons comment traiter les exceptions plus tard dans le cours.
-Considérez pour le moment que l&rsquo;utilisateur vous fournit toujours bien un nombre.</p>
+</code></pre></div><div class="notices note" ><p>Afin de pouvoir être utilisé en série, l&rsquo;opérateur <code>&lt;&lt;</code> est toujours supposé retourner son premier paramètre. Le résultat de <code>(stream &lt;&lt; ... &lt;&lt; ... )</code> devrait donc être <code>stream</code>. Il est donc possible (mais pas nécessaire) d&rsquo;écrire <code>return stream &lt;&lt; ... &lt;&lt; ...;</code> directement, au lieu de faire le <code>return stream;</code> sur une ligne séparée.</p>
 </div>
 
     </div>
 </div>
-<hr>
-<h3 id="tableau-dynamique">Tableau dynamique</h3>
-<p>Vous pouvez maintenant décommenter le code de manipulation du tableau, que vous allez transformer en tableau dynamique.
-La classe proposée par la librairie standard pour définir ce type de conteneur est <code>std::vector</code>.</p>
-<p>Afin de générer un <code>std::vector</code> initialement vide qui contiendra des entiers, on utilise l&rsquo;instruction suivante :</p>
-<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">array</span><span class="p">;</span>
-</code></pre></div><p>Pour ajouter de nouvelles valeurs à ce tableau (par exemple, 8, 5 et -3), on utilise la <strong>fonction membre</strong> <code>emplace_back</code>. Pour accéder à une fonction membre en C++, on utilise la même syntaxe que pour accéder à une méthode en Java :</p>
-<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="n">array</span><span class="p">.</span><span class="n">emplace_back</span><span class="p">(</span><span class="mi">8</span><span class="p">);</span>
-<span class="n">array</span><span class="p">.</span><span class="n">emplace_back</span><span class="p">(</span><span class="mi">5</span><span class="p">);</span>
-<span class="n">array</span><span class="p">.</span><span class="n">emplace_back</span><span class="p">(</span><span class="o">-</span><span class="mi">3</span><span class="p">);</span>
-</code></pre></div><p>Modifiez votre code de façon à utiliser un <code>std::vector</code> plutôt que le tableau de taille statique et testez que tout fonctionne correctement.</p>
+<p>Modifiez la fonction <code>main</code> afin qu&rsquo;elle utilise l&rsquo;opérateur <code>&lt;&lt;</code> que vous venez de définir et testez que le programme fonctionne comme avant.</p>
 
 <div class="expand">
     <div class="expand-label" style="cursor: pointer;" onclick="$h = $(this);$h.next('div').slideToggle(100,function () {$h.children('i').attr('class',function () {return $h.next('div').is(':visible') ? 'fas fa-chevron-down' : 'fas fa-chevron-right';});});">
@@ -1015,18 +1011,78 @@ La classe proposée par la librairie standard pour définir ce type de conteneur
     	</span>
     </div>
     <div class="expand-content" style="display: none;">
-        <p>Commencez par inclure le header <code>&lt;vector&gt;</code>.
-Dans votre fonction, vous devriez avoir le code suivant.</p>
-<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">array</span><span class="p">;</span>
+        <div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="n">Person</span> <span class="n">batman</span> <span class="p">{</span> <span class="s">&#34;Bruce&#34;</span><span class="p">,</span> <span class="s">&#34;Wayne&#34;</span> <span class="p">};</span>
+<span class="n">batman</span><span class="p">.</span><span class="n">wait</span><span class="p">(</span><span class="mi">23</span><span class="p">);</span>
+<span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">batman</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
 
-<span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">array_size</span><span class="p">;</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span>
+<span class="n">Person</span> <span class="n">clone</span> <span class="o">=</span> <span class="n">batman</span><span class="p">;</span>
+<span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">clone</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+</code></pre></div>
+    </div>
+</div>
+<hr>
+<h3 id="opérateur-dassignation">Opérateur d&rsquo;assignation</h3>
+<p>Lorsqu&rsquo;on rédéfinit le constructeur de copie, il est souvent nécessaire de redéfinir également l&rsquo;opérateur d&rsquo;assignation.<br>
+&ldquo;Redéfinir&rdquo;, car ici encore, le compilateur fournit une implémentation par défaut de cette fonction.</p>
+<p>Ajoutez le code suivant à votre <code>main</code>:</p>
+<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="n">Person</span> <span class="n">assigned_clone</span> <span class="p">{</span> <span class="s">&#34;Batman&#34;</span><span class="p">,</span> <span class="s">&#34;2&#34;</span> <span class="p">};</span>
+<span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">assigned_clone</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+
+<span class="n">assigned_clone</span> <span class="o">=</span> <span class="n">batman</span><span class="p">;</span>
+<span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">assigned_clone</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+</code></pre></div><p>Si vous essayez de compiler, vous devriez constater que ça ne fonctionne pas&hellip;<br>
+Rappelez-vous, nous avions modifié les variables membres <code>_name</code> et <code>_surname</code> afin d&rsquo;indiquer qu&rsquo;elles étaient constantes.<br>
+Puisque l&rsquo;on veut maintenant avoir la possibilité de réassigner le contenu d&rsquo;une personne, il faut commencer par retirer les const sur ses variables membre.</p>
+
+<div class="notices tip" ><p>Vous vous dites peut-être que ce n&rsquo;est pas très gentil de vous faire ajouter des const pour les retirer ensuite.<br>
+En réalité, il est préférable de toujours réadapté le code au besoin que nous avons à un instant T, c&rsquo;est-à-dire ne pas trop anticipé.<br>
+C&rsquo;est seulement au moment où le besoin évolue (ici, on décide que l&rsquo;on veut maintenant pouvoir réassigner une personne) que l&rsquo;on doit mettre à jour le code et si besoin modifier les invariants (désormais, le nom et le prénom d&rsquo;une personne peuvent changer au cours de l&rsquo;exécution du programme).</p>
+</div>
+
+<p>Recompilez et lancez le programme. Vous devriez constater que l&rsquo;âge de <code>assigned_clone</code> est de 23 ans.</p>
+<p>Pour être cohérent avec ce que nous avons fait précédemment, nous allons dire que l&rsquo;âge d&rsquo;une instance de <code>Person</code> n&rsquo;est pas modifiée au moment de sa réassignation.<br>
+Seul son nom change. 
+Puisque l'<strong>implémentation par défaut de l&rsquo;opérateur d&rsquo;assignation</strong> modifie l&rsquo;âge de notre instance, nous allons le redéfinir.</p>
+<p>Voici le code permettant de redéfinir l&rsquo;opérateur d&rsquo;assignation d&rsquo;une classe :</p>
+<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="n">ClassName</span><span class="o">&amp;</span> <span class="k">operator</span><span class="o">=</span><span class="p">(</span><span class="k">const</span> <span class="n">ClassName</span><span class="o">&amp;</span> <span class="n">other</span><span class="p">)</span>
 <span class="p">{</span>
-    <span class="n">array</span><span class="p">.</span><span class="n">emplace_back</span><span class="p">(</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">);</span>
+    <span class="k">if</span> <span class="p">(</span><span class="k">this</span> <span class="o">!=</span> <span class="o">&amp;</span><span class="n">other</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">_attribute_1</span> <span class="o">=</span> <span class="cm">/* probably other._attribute_1; */</span>
+        <span class="n">_attribute_2</span> <span class="o">=</span> <span class="cm">/* probably other._attribute_2; */</span>
+        <span class="p">...</span>
+    <span class="p">}</span>
+
+    <span class="k">return</span> <span class="o">*</span><span class="k">this</span><span class="p">;</span>
 <span class="p">}</span>
+</code></pre></div><p><strong>Qui est <code>this</code> ?</strong><br>
+Comme en Java, <code>this</code> fait référence à l&rsquo;instance courante de la classe. Attention cependant, en C++, <code>this</code> est un pointeur. C&rsquo;est d&rsquo;ailleurs pour cela qu&rsquo;on renvoie <code>*this</code> et non <code>this</code>.</p>
+<p><strong>Pourquoi la comparaison entre <code>this</code> et <code>&amp;other</code> ?</strong><br>
+Il est très important de réaliser cette comparaison, en particulier dans le cas ou l&rsquo;un des attributs de la classe est un objet alloué dynamiquement.<br>
+En effet, pour réaliser la copie de <code>other._attr</code>, vous allez devoir allouer de la mémoire supplémentaire et stocker son pointeur dans <code>this-&gt;_attr</code>. Sauf que si <code>this</code> et <code>other</code> font référence au même objet, en modifiant <code>this-&gt;_attr</code>, vous allez également écraser <code>other._attr</code> et donc perdre l&rsquo;adresse du bloc alloué dans <code>other._attr</code>.<br>
+C&rsquo;est comme ça qu&rsquo;on se retrouve avec des fuites de mémoire et un PC qui rame.</p>
+<p>Implémentez l&rsquo;opérateur d&rsquo;assignation de manière à ne copier que les attributs <code>_name</code> et <code>_surname</code>. Testez que le programme fonctionne comme prévu.</p>
 
-<span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="nl">value</span> <span class="p">:</span> <span class="n">array</span><span class="p">)</span>
+<div class="expand">
+    <div class="expand-label" style="cursor: pointer;" onclick="$h = $(this);$h.next('div').slideToggle(100,function () {$h.children('i').attr('class',function () {return $h.next('div').is(':visible') ? 'fas fa-chevron-down' : 'fas fa-chevron-right';});});">
+        <i style="font-size:x-small;" class="fas fa-chevron-right"></i>
+        <span>
+        
+    	
+    	Solution
+    	
+    	</span>
+    </div>
+    <div class="expand-content" style="display: none;">
+        <div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="n">Person</span><span class="o">&amp;</span> <span class="k">operator</span><span class="o">=</span><span class="p">(</span><span class="k">const</span> <span class="n">Person</span><span class="o">&amp;</span> <span class="n">other</span><span class="p">)</span>
 <span class="p">{</span>
-    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">value</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+    <span class="k">if</span> <span class="p">(</span><span class="k">this</span> <span class="o">!=</span> <span class="o">&amp;</span><span class="n">other</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">_name</span> <span class="o">=</span> <span class="n">other</span><span class="p">.</span><span class="n">_name</span><span class="p">;</span>
+        <span class="n">_surname</span> <span class="o">=</span> <span class="n">other</span><span class="p">.</span><span class="n">_surname</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="k">return</span> <span class="o">*</span><span class="k">this</span><span class="p">;</span>
 <span class="p">}</span>
 </code></pre></div>
     </div>
@@ -1204,7 +1260,6 @@ Dans votre fonction, vous devriez avoir le code suivant.</p>
             
                 
                     
-                    
                 
                 
 
@@ -1220,9 +1275,6 @@ Dans votre fonction, vous devriez avoir le code suivant.</p>
             
                 
                     
-                        
-                        
-                    
                 
                 
 
@@ -1230,134 +1282,6 @@ Dans votre fonction, vous devriez avoir le code suivant.</p>
                     
                     
 
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-                        
-            
-            
-                
-                    
-                        
-                        
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                        
-                        
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-        
                     
             
         
@@ -1439,10 +1363,138 @@ Dans votre fonction, vous devriez avoir le code suivant.</p>
             
         
                     
+            
+        
+                    
                         
             
             
                 
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
                     
                 
                 
@@ -1520,10 +1572,10 @@ Dans votre fonction, vous devriez avoir le code suivant.</p>
 	 
 	 
 		
-			<a class="nav nav-prev" href="/CPP_Learning/chapter1/2-practice/2-parrot/" title="🦜 Perroquet"> <i class="fa fa-chevron-left"></i></a>
+			<a class="nav nav-prev" href="/CPP_Learning/chapter2/3-constructor/" title="🔨 Constructeur"> <i class="fa fa-chevron-left"></i></a>
 		
 		
-			<a class="nav nav-next" href="/CPP_Learning/chapter1/2-practice/4-calculator/" title="🧮 Calculette" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+			<a class="nav nav-next" href="/CPP_Learning/chapter2/5-rectangle/" title="🔳 Rectangle" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
 		
 	
     </div>

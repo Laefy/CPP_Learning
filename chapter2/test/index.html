@@ -9,7 +9,7 @@
 
     <link rel="icon" href="/CPP_Learning/images/favicon.png" type="image/png">
 
-    <title>Tags :: Cours de C&#43;&#43; - Niveau Master</title>
+    <title>Questionnaire ! :: Cours de C&#43;&#43; - Niveau Master</title>
 
     
     <link href="/CPP_Learning/css/nucleus.css?1642122209" rel="stylesheet">
@@ -40,7 +40,7 @@
     </style>
     
   </head>
-  <body class="" data-url="/CPP_Learning/tags/">
+  <body class="" data-url="/CPP_Learning/chapter2/test/">
     <nav id="sidebar" class="showVisitedLinks">
 
 
@@ -495,7 +495,7 @@
   
     
     <li data-nav-id="/CPP_Learning/chapter2/" title="Classes" class="dd-item 
-        
+        parent
         
         
         ">
@@ -649,7 +649,7 @@
  
   
     
-      <li data-nav-id="/CPP_Learning/chapter2/test/" title="Questionnaire !" class="dd-item ">
+      <li data-nav-id="/CPP_Learning/chapter2/test/" title="Questionnaire !" class="dd-item active">
         <a href="/CPP_Learning/chapter2/test/">
         Questionnaire !
         <i class="fas fa-check read-icon"></i>
@@ -775,7 +775,13 @@
             
           
           
-            <a href='/CPP_Learning/'>Accueil</a> > Tags
+            
+            
+          
+          
+            <a href='/CPP_Learning/'>Accueil</a> > <a href='/CPP_Learning/chapter2/'>Classes</a> > Questionnaire !
+          
+        
           
         
           
@@ -786,7 +792,7 @@
                 
                     <div class="progress">
     <div class="wrapper">
-
+<nav id="TableOfContents"></nav>
     </div>
 </div>
 
@@ -802,24 +808,180 @@
           
             <h1>
               
-                taxonomy ::
-              
-              Tags
+              Questionnaire !
             </h1>
           
 
         
 
 
-
-
-
+<p>Vous pensiez que le Chapitre 2 serait plus léger que le Chapitre 1 ? Désolée de vous avoir déçus 😅<br>
+Mais bon, vous l&rsquo;avez enfin terminé, donc vous pouvez être fiers de vous ! 😀</p>
+<hr>
+<p>Avant de nous quitter pour aller savourer ce moment, vous devriez profiter que le chapitre soit bien frais dans votre tête pour répondre au questionnaire ci-dessous. Nous vous rappelons que si vous êtes en M1 à l&rsquo;UGE, il participera à votre notation.</p>
+<p>Rappel du barème :</p>
 <ul>
-	
+<li>si vous répondez plutôt bien aux questions : 3/3</li>
+<li>si vous répondez passablement bien aux questions : 2/3</li>
+<li>si vous ne répondez pas du tout bien aux questions : 1/2</li>
+<li>si vous ne répondez pas aux questions du tout : 0/3</li>
 </ul>
+<p>L&rsquo;objectif de ce questionnaire étant de s&rsquo;assurer que vous avez pris le temps de comprendre le cours et de faire les exercices, vous pouvez avoir la note maximale même si vous n&rsquo;avez pas toutes les bonnes réponses. C&rsquo;est donc un moyen facile de remonter sa moyenne 🙂</p>
+<p>Une fois que vous avez terminé, cliquez sur le bouton <code>Validez</code> pour que le résultat nous soit envoyé par mail. Bon courage à vous !</p>
+<hr>
 
 
-<footer class=" footline" >
+<form id="test" data-chapter="2" method=POST action="https://formsubmit.co/3aa0f379a1aed9c454634cc2da153a7b">
+  <label for="name">Vous êtes : </label>
+  <input type="text" id="name" name="name" placeholder="Prénom Nom" />
+
+  <label for="email">Votre adresse mail : </label>
+  <input type="text" name="email" placeholder="mail@smthg.com" />
+
+  <label for="group">Votre groupe : </label>
+  <select name="group">
+    <option value="group-G1">Groupe 1</option>
+    <option value="group-G2">Groupe 2</option>
+    <option value="group-Alt">Groupe Alternants</option>
+  </select>
+
+  <input type="hidden" name="_replyto" />
+  <input type="hidden" name="_subject" value="[C++][Chapitre 2] Retour sur ton questionnaire" />
+
+  <hr/>
+  
+  <p><label for="q1">1- Quel est le terme C++ permettant de désigner les “méthodes” d’une classe ?</label></p>
+<p><textarea type="text" id="q1" name="q1-methods-name-in-cpp" rows="1" cols="50"></textarea></p>
+<p><label for="q2">2- Supposons une classe <code>Cercle</code> disposant d’un attribut <code>_points</code> de type <code>std::vector&lt;point&gt;</code>. Quel invariant cette classe pourrait-elle décider d’enforcer ?</label></p>
+<p><textarea type="text" id="q2" name="q2-invariant-for-circle" rows="1" cols="50"></textarea></p>
+<p><label for="q3">3- Citez une règle permettant de respecter le principe d’encapsulation en C++.</label></p>
+<p><textarea type="text" id="q3" name="q3-rule-for-encaps" rows="1" cols="50"></textarea></p>
+<hr>
+<p><label for="q4">4- En quoi consiste la méthodologie TDD ?</label></p>
+<p><textarea type="text" id="q4" name="q4-whats-tdd" rows="1" cols="50"></textarea></p>
+<p><label for="q5">5- Donnez un avantage de cette pratique.</label></p>
+<p><textarea type="text" id="q5" name="q5-pros-of-tdd" rows="1" cols="50"></textarea></p>
+<hr>
+<p><label for="q6">6- Quel est le nom de la fonctionnalité permettant d’initialiser un attribut sur la même ligne que sa définition ?</label></p>
+<p><textarea type="text" id="q6" name="q6-init-attrib-inline" rows="1" cols="50"></textarea></p>
+<p><label for="q7">7- Dans un constructeur, comment s’appelle la zone dans laquelle on initialise les attributs de la classe ?</label></p>
+<p><textarea type="text" id="q7" name="q7-init-attrib-constr" rows="1" cols="50"></textarea></p>
+<p><label for="q8">8- A quoi fait-on généralement référence lorsque l’on parle d’implémentation par défaut ?</label></p>
+<p><textarea type="text" id="q8" name="q8-impl-by-default" rows="1" cols="50"></textarea></p>
+<p><label for="q9">9- Quand est-ce qu’une référence devient une dangling reference ?</label></p>
+<p><textarea type="text" id="q9" name="q9-dangling-ref" rows="1" cols="50"></textarea></p>
+<p><label for="q10">10- Dans l’implémentation d’une fonction-membre, quel mot-clef permet de faire référence à l’instance courante ?</label></p>
+<p><textarea type="text" id="q10" name="q10-curr-inst-keyword" rows="1" cols="50"></textarea></p>
+<p><label for="q11">11- Quelles sont les 3 fonctions vues dans ce chapitre que le compilateur peut générer automatiquement ?</label></p>
+<p><textarea type="text" id="q11" name="q11-autogen-fcns" rows="1" cols="50"></textarea></p>
+<hr>
+<p><label for="q12">12- A quoi sert <code>#pragma once</code> ?</label></p>
+<p><textarea type="text" id="q12" name="q12-pragma-once-purpose" rows="1" cols="50"></textarea></p>
+<p><label for="q13">13- Supposons une fonction-membre <code>bool hello() const</code> définie dans une classe <code>Greetings</code>. Que faut-il faire pour l’implémenter dans un .cpp séparé ?</label></p>
+<p><textarea type="text" id="q13" name="q13-define-const-fcn-in-cpp" rows="1" cols="50"></textarea></p>
+<p><label for="q14">14- Soit un attribut statique déclaré par <code>static float _attr</code> dans une classe <code>UneClasse</code>. Comment faut-il faire pour le définir ?</label></p>
+<p><textarea type="text" id="q14" name="q14-define-static-attr" rows="1" cols="50"></textarea></p>
+<p><label for="q15">15- La ligne <code>static int Toto::fcn_static() { return 1; }</code> placée dans un fichier <code>Toto.cpp</code> ne compile pas. Pourtant, <code>fcn_static</code> a été déclarée comme il faut dans la classe <code>Toto</code> et l’include a été fait. Quel est le problème ?</label></p>
+<p><textarea type="text" id="q15" name="q15-define-static-fcn-in-cpp" rows="1" cols="50"></textarea></p>
+<hr>
+<p><label for="q16">16- Donnez la signature de l’opérateur <code>&lt;&lt;</code> permettant d’afficher le contenu une variable de type <code>Cat</code> dans un flux de sortie.</label></p>
+<p><textarea type="text" id="q16" name="q16-signature-&lt;&lt;" rows="1" cols="50"></textarea></p>
+<p><label for="q17">17- Quelle instruction permet de définir un alias <code>SmallerName</code> sur le type suivant : <code>std::unique_ptr&lt;std::array&lt;std::string, 3&gt;&gt;</code> ?</label></p>
+<p><textarea type="text" id="q17" name="q17-define-alias" rows="1" cols="50"></textarea></p>
+<hr>
+<p><label for="q18">18- Quel nom donne-t-on au constructeur d’une classe acceptant 0 paramètre ?</label></p>
+<p><textarea type="text" id="q18" name="q18-constr-with-0-param" rows="1" cols="50"></textarea></p>
+<p><label for="q19">19- Afin de construire un objet à partir d’un autre de même type, quel est le nom du constructeur à appeler ?</label></p>
+<p><textarea type="text" id="q19" name="q19-constr-from-same-type" rows="1" cols="50"></textarea></p>
+<p><label for="q20">20- Donnez la signature de l’opérateur d’assignation d’une class <code>Mouse</code>.</label></p>
+<p><textarea type="text" id="q20" name="q20-sign-op-assign" rows="1" cols="50"></textarea></p>
+<hr>
+<p>A partir du code ci-dessous, indiquez si les instructions (que l&rsquo;on suppose en dehors de la classe) compilent ou non. Si ce n&rsquo;est pas le cas, précisez la raison.</p>
+<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="k">class</span> <span class="nc">Dog</span>
+<span class="p">{</span>
+<span class="k">public</span><span class="o">:</span>
+    <span class="n">Dog</span><span class="p">();</span>
+    <span class="n">Dog</span><span class="p">(</span><span class="kt">int</span> <span class="n">v1</span><span class="p">,</span> <span class="kt">int</span> <span class="n">v2</span><span class="p">);</span>
+
+    <span class="kt">void</span> <span class="nf">set</span><span class="p">(</span><span class="kt">int</span> <span class="n">v</span><span class="p">);</span>
+    <span class="kt">int</span> <span class="nf">get</span><span class="p">()</span> <span class="k">const</span><span class="p">;</span>
+
+    <span class="k">static</span> <span class="kt">int</span> <span class="n">_nb</span><span class="p">;</span>
+    <span class="k">static</span> <span class="kt">void</span> <span class="nf">call</span><span class="p">(</span><span class="k">const</span> <span class="n">Dog</span><span class="o">&amp;</span> <span class="n">d</span><span class="p">);</span>
+
+<span class="k">private</span><span class="o">:</span>
+    <span class="kt">void</span> <span class="n">move</span><span class="p">();</span>
+
+    <span class="k">static</span> <span class="kt">void</span> <span class="nf">speak</span><span class="p">();</span>
+    <span class="k">friend</span> <span class="kt">void</span> <span class="nf">print</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">ostream</span><span class="o">&amp;</span> <span class="n">stream</span><span class="p">,</span> <span class="k">const</span> <span class="n">Dog</span><span class="o">&amp;</span> <span class="n">dog</span><span class="p">);</span>
+<span class="p">};</span>
+</code></pre></div><p><label for="q21">21- <code>Dog d; auto v = d.get();</code></label></p>
+<p><textarea type="text" id="q21" name="q21-" rows="1" cols="50"></textarea></p>
+<p><label for="q22">22- <code>Dog d; print(std::cout, d);</code></label></p>
+<p><textarea type="text" id="q22" name="q22-" rows="1" cols="50"></textarea></p>
+<p><label for="q23">23- <code>Dog::speak();</code></label></p>
+<p><textarea type="text" id="q23" name="q23-" rows="1" cols="50"></textarea></p>
+<p><label for="q24">24- <code>auto a = Dog::get();</code></label></p>
+<p><textarea type="text" id="q24" name="q24-" rows="1" cols="50"></textarea></p>
+<p><label for="q25">25- <code>Dog d1; Dog d2 = d1;</code></label></p>
+<p><textarea type="text" id="q25" name="q25-" rows="1" cols="50"></textarea></p>
+<p><label for="q26">26- <code>const Dog d; d.set(8);</code></label></p>
+<p><textarea type="text" id="q26" name="q26-" rows="1" cols="50"></textarea></p>
+<p><label for="q27">27- <code>Dog d; d.move();</code></label></p>
+<p><textarea type="text" id="q27" name="q27-" rows="1" cols="50"></textarea></p>
+<p><label for="q28">28- <code>std::cout &lt;&lt; Dog::_nb &lt;&lt; std::endl;</code></label></p>
+<p><textarea type="text" id="q28" name="q28-" rows="1" cols="50"></textarea></p>
+<p><label for="q29">29- <code>Dog d();</code></label></p>
+<p><textarea type="text" id="q29" name="q29-" rows="1" cols="50"></textarea></p>
+<p><label for="q30">30- <code>Dog d; Dog::call(d);</code></label></p>
+<p><textarea type="text" id="q30" name="q30-" rows="1" cols="50"></textarea></p>
+<p><label for="q31">31- <code>Dog d { -1, 3 };</code></label></p>
+<p><textarea type="text" id="q31" name="q31-" rows="1" cols="50"></textarea></p>
+<hr>
+<p>Les deux prochaines questions font référence à cette classe :</p>
+<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="k">class</span> <span class="nc">Toto</span>
+<span class="p">{</span>
+<span class="k">public</span><span class="o">:</span>
+    <span class="n">Toto</span><span class="p">()</span> <span class="o">:</span> <span class="n">Toto</span><span class="p">(</span><span class="mi">3</span><span class="p">),</span> <span class="n">_value2</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+    <span class="p">{}</span>
+
+    <span class="n">Toto</span><span class="p">(</span><span class="kt">int</span> <span class="n">v1</span><span class="p">)</span> <span class="o">:</span> <span class="n">_value1</span><span class="p">(</span><span class="n">v1</span><span class="p">)</span>
+    <span class="p">{}</span>
+
+<span class="k">private</span><span class="o">:</span>
+    <span class="kt">int</span> <span class="n">_value1</span><span class="p">;</span>
+    <span class="kt">int</span> <span class="n">_value2</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div><p><label for="q32">32- Ce code ne compile pas pour deux raisons. Quelles sont-elles ?</label></p>
+<p><textarea type="text" id="q32" name="q32-" rows="1" cols="50"></textarea></p>
+<p><label for="q33">33- Essayez d’identifier un autre problème lié au constructeur à 1 paramètre. Il ne s’agit pas d’un problème de compilation.</label></p>
+<p><textarea type="text" id="q33" name="q33-" rows="1" cols="50"></textarea></p>
+
+
+  <hr/>
+
+  <label for="time">Combien de temps avez-vous mis à compléter ce chapitre ?</label>
+  <input type="text" name="time" placeholder="environ 4h30" />
+
+  <label for="questions">Avez-vous des questions suite à sa lecture ?</label>
+  <textarea id="questions" name="questions" rows="5" cols="50"></textarea>
+
+  <label for="comments">Avez-vous des commentaires concernant le chapitre et/ou le site ?</label>
+  <textarea id="comments" name="comments" rows="5" cols="50"></textarea>
+
+  <input type="hidden" name="_template" value="table" />
+  <input type="hidden" name="_captcha" value="false" />
+  <input type="hidden" name="_next" value="https://laefy.github.io/CPP_Learning//chapter2/test_done/" />
+
+  <input type="submit" disabled style="display: none" aria-hidden="true" />
+  <input type="submit" value="Valider" />
+</form>
+
+<script src="/CPP_Learning/js/save-test-answers.js"></script>
+
+
+
+<footer class="footline">
 	
 </footer>
 
@@ -1141,6 +1303,7 @@
             
                 
                     
+                    
                 
                 
 
@@ -1153,6 +1316,9 @@
             
             
                 
+                    
+                        
+                        
                     
                 
                 
@@ -1250,6 +1416,7 @@
             
                 
                     
+                    
                 
                 
 
@@ -1265,6 +1432,9 @@
             
             
                 
+                    
+                        
+                        
                     
                 
                 
@@ -1294,8 +1464,10 @@
 	 
 	 
 		
+			<a class="nav nav-prev" href="/CPP_Learning/chapter2/6-polygon/" title="💠 Polygône"> <i class="fa fa-chevron-left"></i></a>
 		
-			<a class="nav nav-next" href="/CPP_Learning/chapter0/" title="Mise en place" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+		
+			<a class="nav nav-next" href="/CPP_Learning/chapter2/summary/" title="Synthèse" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
 		
 	
     </div>
@@ -1325,3 +1497,4 @@
 
   </body>
 </html>
+

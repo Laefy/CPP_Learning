@@ -3,6 +3,10 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://laefy.github.io/CPP_Learning/chapter2/1-poo/</loc>
+  </url>
+  
+  <url>
     <loc>https://laefy.github.io/CPP_Learning/chapter0/1-compiler/</loc>
   </url>
   
@@ -31,7 +35,15 @@
   </url>
   
   <url>
+    <loc>https://laefy.github.io/CPP_Learning/chapter2/2-first-class/</loc>
+  </url>
+  
+  <url>
     <loc>https://laefy.github.io/CPP_Learning/chapter1/2-practice/2-parrot/</loc>
+  </url>
+  
+  <url>
+    <loc>https://laefy.github.io/CPP_Learning/chapter2/</loc>
   </url>
   
   <url>
@@ -43,7 +55,15 @@
   </url>
   
   <url>
+    <loc>https://laefy.github.io/CPP_Learning/chapter2/3-constructor/</loc>
+  </url>
+  
+  <url>
     <loc>https://laefy.github.io/CPP_Learning/chapter0/4-git/</loc>
+  </url>
+  
+  <url>
+    <loc>https://laefy.github.io/CPP_Learning/chapter2/4-clone/</loc>
   </url>
   
   <url>
@@ -55,11 +75,23 @@
   </url>
   
   <url>
+    <loc>https://laefy.github.io/CPP_Learning/chapter2/5-rectangle/</loc>
+  </url>
+  
+  <url>
     <loc>https://laefy.github.io/CPP_Learning/chapter0/6-tips/</loc>
   </url>
   
   <url>
+    <loc>https://laefy.github.io/CPP_Learning/chapter2/6-polygon/</loc>
+  </url>
+  
+  <url>
     <loc>https://laefy.github.io/CPP_Learning/chapter1/test/</loc>
+  </url>
+  
+  <url>
+    <loc>https://laefy.github.io/CPP_Learning/chapter2/test/</loc>
   </url>
   
   <url>
@@ -68,6 +100,10 @@
   
   <url>
     <loc>https://laefy.github.io/CPP_Learning/chapter1/summary/</loc>
+  </url>
+  
+  <url>
+    <loc>https://laefy.github.io/CPP_Learning/chapter2/summary/</loc>
   </url>
   
   <url>
@@ -108,6 +144,10 @@
   
   <url>
     <loc>https://laefy.github.io/CPP_Learning/chapter1/test_done/</loc>
+  </url>
+  
+  <url>
+    <loc>https://laefy.github.io/CPP_Learning/chapter2/test_done/</loc>
   </url>
   
   <url>

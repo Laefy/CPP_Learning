@@ -9,7 +9,7 @@
 
     <link rel="icon" href="/CPP_Learning/images/favicon.png" type="image/png">
 
-    <title>Tags :: Cours de C&#43;&#43; - Niveau Master</title>
+    <title>Synthèse :: Cours de C&#43;&#43; - Niveau Master</title>
 
     
     <link href="/CPP_Learning/css/nucleus.css?1642122209" rel="stylesheet">
@@ -40,7 +40,7 @@
     </style>
     
   </head>
-  <body class="" data-url="/CPP_Learning/tags/">
+  <body class="" data-url="/CPP_Learning/chapter2/summary/">
     <nav id="sidebar" class="showVisitedLinks">
 
 
@@ -495,7 +495,7 @@
   
     
     <li data-nav-id="/CPP_Learning/chapter2/" title="Classes" class="dd-item 
-        
+        parent
         
         
         ">
@@ -670,7 +670,7 @@
  
   
     
-      <li data-nav-id="/CPP_Learning/chapter2/summary/" title="Synthèse" class="dd-item ">
+      <li data-nav-id="/CPP_Learning/chapter2/summary/" title="Synthèse" class="dd-item active">
         <a href="/CPP_Learning/chapter2/summary/">
         Synthèse
         <i class="fas fa-check read-icon"></i>
@@ -775,7 +775,13 @@
             
           
           
-            <a href='/CPP_Learning/'>Accueil</a> > Tags
+            
+            
+          
+          
+            <a href='/CPP_Learning/'>Accueil</a> > <a href='/CPP_Learning/chapter2/'>Classes</a> > Synthèse
+          
+        
           
         
           
@@ -786,7 +792,17 @@
                 
                     <div class="progress">
     <div class="wrapper">
-
+<nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#ce-quil-faut-retenir">Ce qu&rsquo;il faut retenir</a></li>
+        <li><a href="#ce-quil-faut-savoir-faire">Ce qu&rsquo;il faut savoir faire</a></li>
+        <li><a href="#ce-dont-il-faut-à-peu-près-se-souvenir">Ce dont il faut à peu près se souvenir</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
     </div>
 </div>
 
@@ -802,24 +818,81 @@
           
             <h1>
               
-                taxonomy ::
-              
-              Tags
+              Synthèse
             </h1>
           
 
         
 
 
-
-
-
+<hr>
+<h3 id="ce-quil-faut-retenir">Ce qu&rsquo;il faut retenir</h3>
+<h5 id="théorie">Théorie</h5>
 <ul>
-	
+<li>A quoi correspondent les termes <strong>attributs</strong> et <strong>fonction-membres</strong></li>
+<li><strong>constructeur</strong> = fonction appelée à l&rsquo;instanciation d&rsquo;une classe</li>
+<li><strong>constructeur par défaut</strong> = constructeur à 0 paramètre</li>
+<li><strong>implémentation par défaut</strong> = implémentation d&rsquo;une fonction générée par le compilateur dans certaines conditions</li>
+<li><strong>opérateur d&rsquo;assignation</strong> = fonction appelée lorsque l&rsquo;on écrit <code>a = ...;</code>, sachant que <code>a</code> a été instancié plus tôt</li>
+<li><strong>surcharge</strong> = fonction de même nom, acceptant un nombre différent de paramètres et/ou des paramètres de types différents</li>
+<li>Lorsque la variable référencée par une référence est détruite, on a une dangling reference</li>
+</ul>
+<h5 id="pratique">Pratique</h5>
+<ul>
+<li>Utiliser <code>this</code> pour faire référence à l&rsquo;instance courante</li>
+<li>Comparer <code>this</code> et <code>&amp;other</code> au début de l&rsquo;opérateur d&rsquo;assignation</li>
+<li>Utiliser <code>const</code> aussi souvent que possible</li>
+</ul>
+<hr>
+<h3 id="ce-quil-faut-savoir-faire">Ce qu&rsquo;il faut savoir faire</h3>
+<h5 id="langage">Langage</h5>
+<ul>
+<li>Définir une classe : <code>class A {};</code> (sans oublier le point-virgule)</li>
+<li>Définir des attributs et des fonctions-membres</li>
+<li>Indiquer la visibilité d&rsquo;un ou plusieurs membres : <code>public:</code> - <code>private:</code></li>
+<li>Définir un constructeur : <code>ClassName(int p1, char p2) : _a1 { p1 }, _a2 { p2 } { }</code></li>
+<li>Déléguer la construction à un autre constructeur : <code>ClassName(int p) : ClassName { p, p } {}</code></li>
+<li>Définir un constructeur de copie : <code>ClassName(const ClassName&amp; other) : _a1 { other._a1 }, _a2 { other._a2 } {}</code></li>
+<li>Définir l&rsquo;opérateur d&rsquo;assignation par copie : <code>ClassName&amp; operator=(const ClassName&amp; other) { ...; return *this; }</code></li>
+<li>Définir des fonctions-membres constantes : <code>int get() const { return _attr; }</code></li>
+<li>Référencer un symbole d&rsquo;une classe en dehors de cette classe (attributs / fonctions statiques, définition fonction-membres, etc): <code>ClassName::symbol</code></li>
+<li>Déclarer des attributs statiques : <code>static int _attr;</code></li>
+<li>Définir et initialiser des attributs statiques : <code>int ClassName::_attr = 1;</code> forcément dans un cpp, en dehors de toute classe ou fonction</li>
+<li>Déclarer une fonction amie : <code>friend void fcn();</code> n&rsquo;importe où dans la définition d&rsquo;une classe</li>
+<li>Instancier des objets avec ou sans paramètre : <code>Toto toto;</code> -  <code>Toto toto { 1, 2, 3 };</code></li>
+<li>Accéder à un membre: <code>toto._attr</code> - <code>toto.fcn()</code></li>
+<li>Accéder à des membres statiques: <code>Toto::_attr_s</code> - <code>Toto::fcn_s()</code></li>
+<li>Définir des alias : <code>using Alias = type_pas_clair;</code></li>
+</ul>
+<h5 id="librairie-standard">Librairie standard</h5>
+<ul>
+<li>Surcharger l&rsquo;opérateur <code>&lt;&lt;</code> pour afficher des données dans un flux : <code>std::ostream&amp; operator&lt;&lt;(std::ostream&amp; s, const SomeClass&amp; c) { return s &lt;&lt; c.get() &lt;&lt; std::endl; }</code></li>
+</ul>
+<h5 id="debugging">Debugging</h5>
+<ul>
+<li>Placer des breakpoints.</li>
+<li>Inspecter les valeurs des variables.</li>
+<li>Itérer dans l&rsquo;exécution du programme.</li>
+</ul>
+<hr>
+<h3 id="ce-dont-il-faut-à-peu-près-se-souvenir">Ce dont il faut à peu près se souvenir</h3>
+<h5 id="théorie-1">Théorie</h5>
+<ul>
+<li>Il y a plein de syntaxes différentes pour appeler le constructeur d&rsquo;une variable : <code>type v = p</code>, <code>type v { p1, p2, ... }</code>, <code>type v(p1, p2, p3)</code>, etc.</li>
+</ul>
+<h5 id="librairie-standard-1">Librairie standard</h5>
+<ul>
+<li><code>std::pair&lt;type1, type2&gt;</code></li>
+</ul>
+<h5 id="méthodologie">Méthodologie</h5>
+<ul>
+<li>Ecrire le code appelant avant le code appelé permet de ne pas coder des fonctions inutiles.</li>
+<li>TDD = Test Driven Development : on code les tests avant tout le reste.</li>
+<li>Réfléchir aux invariants de classe avant de définir plein de setters et de getters.</li>
 </ul>
 
 
-<footer class=" footline" >
+<footer class="footline">
 	
 </footer>
 
@@ -1141,6 +1214,7 @@
             
                 
                     
+                    
                 
                 
 
@@ -1153,6 +1227,9 @@
             
             
                 
+                    
+                        
+                        
                     
                 
                 
@@ -1265,6 +1342,7 @@
             
             
                 
+                    
                     
                 
                 
@@ -1294,8 +1372,10 @@
 	 
 	 
 		
+			<a class="nav nav-prev" href="/CPP_Learning/chapter2/test/" title="Questionnaire !"> <i class="fa fa-chevron-left"></i></a>
 		
-			<a class="nav nav-next" href="/CPP_Learning/chapter0/" title="Mise en place" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+		
+			<a class="nav nav-next" href="/CPP_Learning/chapter2/1-poo/" title="C&#39;est quoi un objet déjà ?" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
 		
 	
     </div>
@@ -1325,3 +1405,4 @@
 
   </body>
 </html>
+
