@@ -14,7 +14,6 @@ weight: 101
 - **constructeur par défaut** = constructeur à 0 paramètre
 - **implémentation par défaut** = implémentation d'une fonction générée par le compilateur dans certaines conditions
 - **opérateur d'assignation** = fonction appelée lorsque l'on écrit `a = ...;`, sachant que `a` a été instancié plus tôt
-- **destructeur** = fonction appelée à la destruction d'un objet
 - **surcharge** = fonction de même nom, acceptant un nombre différent de paramètres et/ou des paramètres de types différents
 - Lorsque la variable référencée par une référence est détruite, on a une dangling reference
 
@@ -37,7 +36,6 @@ weight: 101
 - Déléguer la construction à un autre constructeur : `ClassName(int p) : ClassName { p, p } {}`
 - Définir un constructeur de copie : `ClassName(const ClassName& other) : _a1 { other._a1 }, _a2 { other._a2 } {}`
 - Définir l'opérateur d'assignation par copie : `ClassName& operator=(const ClassName& other) { ...; return *this; }`
-- Définir le destructeur d'une classe : `~ClassName() { ... }`
 - Définir des fonctions-membres constantes : `int get() const { return _attr; }`
 - Référencer un symbole d'une classe en dehors de cette classe (attributs / fonctions statiques, définition fonction-membres, etc): `ClassName::symbol`
 - Déclarer des attributs statiques : `static int _attr;`

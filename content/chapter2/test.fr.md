@@ -35,22 +35,21 @@ Une fois que vous avez terminé, cliquez sur le bouton `Validez` pour que le ré
 {{% test_item id=8 desc="impl-by-default" %}}A quoi fait-on généralement référence lorsque l'on parle d'implémentation par défaut ?{{% /test_item %}}
 {{% test_item id=9 desc="dangling-ref" %}}Quand est-ce qu'une référence devient une dangling reference ?{{% /test_item %}}
 {{% test_item id=10 desc="curr-inst-keyword" %}}Dans l'implémentation d'une fonction-membre, quel mot-clef permet de faire référence à l'instance courante ?{{% /test_item %}}
-{{% test_item id=11 desc="autogen-fcns" %}}Quelles sont les 4 fonctions vues dans ce chapitre que le compilateur peut générer automatiquement ?{{% /test_item %}}
+{{% test_item id=11 desc="autogen-fcns" %}}Quelles sont les 3 fonctions vues dans ce chapitre que le compilateur peut générer automatiquement ?{{% /test_item %}}
 ---
 {{% test_item id=12 desc="pragma-once-purpose" %}}A quoi sert `#pragma once` ?{{% /test_item %}}
 {{% test_item id=13 desc="define-const-fcn-in-cpp" %}}Supposons une fonction-membre `bool hello() const` définie dans une classe `Greetings`. Que faut-il faire pour l'implémenter dans un .cpp séparé ?{{% /test_item %}}
 {{% test_item id=14 desc="define-static-attr" %}}Soit un attribut statique déclaré par `static float _attr` dans une classe `UneClasse`. Comment faut-il faire pour le définir ?{{% /test_item %}}
-{{% test_item id=15 desc="define-static-fcn-in-cpp" %}}La ligne `static int Toto::fcn_static() { return 1; }` placée dans un fichier `Toto.cpp` ne compile. Pourtant, `fcn_static` a été déclarée comme il faut dans la classe `Toto` et l'include a été fait. Quel est le problème ?{{% /test_item %}}
+{{% test_item id=15 desc="define-static-fcn-in-cpp" %}}La ligne `static int Toto::fcn_static() { return 1; }` placée dans un fichier `Toto.cpp` ne compile pas. Pourtant, `fcn_static` a été déclarée comme il faut dans la classe `Toto` et l'include a été fait. Quel est le problème ?{{% /test_item %}}
 ---
 {{% test_item id=16 desc="signature-<<" %}}Donnez la signature de l'opérateur `<<` permettant d'afficher le contenu une variable de type `Cat` dans un flux de sortie.{{% /test_item %}}
 {{% test_item id=17 desc="define-alias" %}}Quelle instruction permet de définir un alias `SmallerName` sur le type suivant : `std::unique_ptr<std::array<std::string, 3>>` ?{{% /test_item %}}
 ---
-{{% test_item id=18 desc="constr-with-0-param" %}}Comment désigne-t-on le constructeur d'une classe acceptant 0 paramètre ?{{% /test_item %}}
+{{% test_item id=18 desc="constr-with-0-param" %}}Quel nom donne-t-on au constructeur d'une classe acceptant 0 paramètre ?{{% /test_item %}}
 {{% test_item id=19 desc="constr-from-same-type" %}}Afin de construire un objet à partir d'un autre de même type, quel est le nom du constructeur à appeler ?{{% /test_item %}}
 {{% test_item id=20 desc="sign-op-assign" %}}Donnez la signature de l'opérateur d'assignation d'une class `Mouse`.{{% /test_item %}}
-{{% test_item id=21 desc="sign-destr" %}}Donnez la signature du destructeur d'une classe `Dying`.{{% /test_item %}}
 ---
-A partir du code ci-dessous, indiquez si les instructions (que l'on suppose hors de la classe) compilent ou non. Si ce n'est pas le cas, précisez la raison.
+A partir du code ci-dessous, indiquez si les instructions (que l'on suppose en dehors de la classe) compilent ou non. Si ce n'est pas le cas, précisez la raison.
 ```cpp
 class Dog
 {
@@ -72,13 +71,14 @@ private:
 };
 ```
 
-{{% test_item id=22 %}}`Dog d; auto v = d.get();`{{% /test_item %}}
-{{% test_item id=23 %}}`Dog d; print(std::cout, d);`{{% /test_item %}}
-{{% test_item id=24 %}}`Dog::speak();`{{% /test_item %}}
+{{% test_item id=21 %}}`Dog d; auto v = d.get();`{{% /test_item %}}
+{{% test_item id=22 %}}`Dog d; print(std::cout, d);`{{% /test_item %}}
+{{% test_item id=23 %}}`Dog::speak();`{{% /test_item %}}
+{{% test_item id=24 %}}`auto a = Dog::get();`{{% /test_item %}}
 {{% test_item id=25 %}}`Dog d1; Dog d2 = d1;`{{% /test_item %}}
 {{% test_item id=26 %}}`const Dog d; d.set(8);`{{% /test_item %}}
 {{% test_item id=27 %}}`Dog d; d.move();`{{% /test_item %}}
-{{% test_item id=28 %}}`Dog d; std::cout << d._nb << std::endl;`{{% /test_item %}}
+{{% test_item id=28 %}}`std::cout << Dog::_nb << std::endl;`{{% /test_item %}}
 {{% test_item id=29 %}}`Dog d();`{{% /test_item %}}
 {{% test_item id=30 %}}`Dog d; Dog::call(d);`{{% /test_item %}}
 {{% test_item id=31 %}}`Dog d { -1, 3 };`{{% /test_item %}}
@@ -100,6 +100,6 @@ private:
 }
 ```
 {{% test_item id=32 %}}Ce code ne compile pas pour deux raisons. Quelles sont-elles ?{{% /test_item %}}
-{{% test_item id=33 %}}Que pouvez-vous faire pour que le constructeur à 1 paramètre soit déterministe ?{{% /test_item %}}
+{{% test_item id=33 %}}Essayez d'identifier un autre problème lié au constructeur à 1 paramètre. Il ne s'agit pas d'un problème de compilation.{{% /test_item %}}
 
 {{% /test %}}
