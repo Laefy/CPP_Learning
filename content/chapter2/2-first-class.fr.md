@@ -148,7 +148,10 @@ Déjà, il faut placer un **breakpoint**. Cela permet au programme de se mettre 
 Pour faire cela dans VSCode, placez votre curseur sur la ligne en question et appuyer sur F9. Vous pouvez aussi cliquer directement dans l'espace juste avant le numéro de ligne.
 ![](/CPP_Learning/images/vscode-breakpoint.png)
 
-Lancez maintenant le programme via la commande `CMake: Debug` (c'est le plus simple ici, sachant que via le terminal intégré, ça ne fonctionnera pas). L'éditeur devrait prendre cette apparence, indiquant que le programme est en pause à l'instruction surlignée :
+Afin de pouvoir lancer le programme, il faudra préalablement avoir configuré votre fichier `launch.json`.\
+Si ce n'est pas encore fait, rendez vous sur [cette page](/CPP_Learning/chapter0/6-tips/2-vscode/#configuration-du-fichier-launchjson) pour le faire.\
+Utilisez ensuite F5 pour lancer le programme.
+L'éditeur devrait prendre cette apparence, indiquant que le programme est en pause à l'instruction surlignée :
 ![](/CPP_Learning/images/vscode-breaking.png)
 
 Ouvrez maintenant le panneau d'exécution en allant dans `View > Run`.

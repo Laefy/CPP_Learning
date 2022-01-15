@@ -155,7 +155,7 @@ Afin de vérifier que le programme fonctionne correctement, vous allez placer un
 Placez pour cela votre curseur sur la colonne à gauche des numéros de lignes et cliquez.
 ![](/CPP_Learning/images/chapter2/6-breakpoint.png)
 
-Lancez ensuite le programme en mode Debug en utilisant le bouton dans la barre bleue en bas de l'éditeur, ou avec le shortcut Ctrl+F5.\
+Lancez ensuite le programme avec F5.\
 Votre vue devrait désormais ressembler à celle-ci si vous vous placez dans l'onglet 'Exécution' à gauche :
 ![](/CPP_Learning/images/chapter2/6-execution.png)
 
