@@ -9,7 +9,7 @@
 
     <link rel="icon" href="/CPP_Learning/images/favicon.png" type="image/png">
 
-    <title>Retours ? :: Cours de C&#43;&#43; - Niveau Master</title>
+    <title>Options de compilation :: Cours de C&#43;&#43; - Niveau Master</title>
 
     
     <link href="/CPP_Learning/css/nucleus.css?1642273332" rel="stylesheet">
@@ -40,7 +40,7 @@
     </style>
     
   </head>
-  <body class="" data-url="/CPP_Learning/chapter0/test/">
+  <body class="" data-url="/CPP_Learning/chapter0/6-tips/4-options/">
     <nav id="sidebar" class="showVisitedLinks">
 
 
@@ -219,7 +219,7 @@
   
     
     <li data-nav-id="/CPP_Learning/chapter0/6-tips/" title="Astuces" class="dd-item 
-        
+        parent
         
         
         ">
@@ -310,7 +310,7 @@
  
   
     
-      <li data-nav-id="/CPP_Learning/chapter0/6-tips/4-options/" title="Options de compilation" class="dd-item ">
+      <li data-nav-id="/CPP_Learning/chapter0/6-tips/4-options/" title="Options de compilation" class="dd-item active">
         <a href="/CPP_Learning/chapter0/6-tips/4-options/">
         Options de compilation
         <i class="fas fa-check read-icon"></i>
@@ -340,7 +340,7 @@
  
   
     
-      <li data-nav-id="/CPP_Learning/chapter0/test/" title="Retours ?" class="dd-item active">
+      <li data-nav-id="/CPP_Learning/chapter0/test/" title="Retours ?" class="dd-item ">
         <a href="/CPP_Learning/chapter0/test/">
         Retours ?
         <i class="fas fa-check read-icon"></i>
@@ -882,7 +882,13 @@
             
           
           
-            <a href='/CPP_Learning/'>Accueil</a> > <a href='/CPP_Learning/chapter0/'>Mise en place</a> > Retours ?
+            
+            
+          
+          
+            <a href='/CPP_Learning/'>Accueil</a> > <a href='/CPP_Learning/chapter0/'>Mise en place</a> > <a href='/CPP_Learning/chapter0/6-tips/'>Astuces</a> > Options de compilation
+          
+        
           
         
           
@@ -911,64 +917,23 @@
           
             <h1>
               
-              Retours ?
+              Options de compilation
             </h1>
           
 
         
 
 
-<p>Si vous avez rencontré des problèmes lors de l&rsquo;installation d&rsquo;un des logiciels, n&rsquo;hésitez pas à nous l&rsquo;indiquer, afin que nous puissions améliorer nos explications.
-Merci d&rsquo;avance ! 🙂</p>
-<hr>
-
-
-<form id="test" data-chapter="0" method=POST action="https://formsubmit.co/3aa0f379a1aed9c454634cc2da153a7b">
-  <label for="name">Vous êtes : </label>
-  <input type="text" id="name" name="name" placeholder="Prénom Nom" />
-
-  <label for="email">Votre adresse mail : </label>
-  <input type="text" name="email" placeholder="mail@smthg.com" />
-
-  <label for="group">Votre groupe : </label>
-  <select name="group">
-    <option value="group-G1">Groupe 1</option>
-    <option value="group-G2">Groupe 2</option>
-    <option value="group-Alt">Groupe Alternants</option>
-  </select>
-
-  <input type="hidden" name="_replyto" />
-  <input type="hidden" name="_subject" value="[C++][Chapitre 0] Retour sur ton questionnaire" />
-
-  <hr/>
-  
-  <p><label for="q1">1- Avez-vous rencontré des difficultés lors de l’installation d’un des composants ? Si oui, du ou desquels s’agit-il ?</label></p>
-<p><textarea type="text" id="q1" name="q1-pb" rows="1" cols="50"></textarea></p>
-<p><label for="q2">2- Si une erreur est survenue à un moment, pouvez-vous la copier-coller ci-dessous et indiquer le contexte dans lequel celle-ci a eu lieu ?</label></p>
-<p><textarea id="q2" name="q2-info" rows="4" cols="50"></textarea></p>
-
-
-  <hr/>
-
-  <label for="time">Combien de temps avez-vous mis à compléter ce chapitre ?</label>
-  <input type="text" name="time" placeholder="environ 4h30" />
-
-  <label for="questions">Avez-vous des questions suite à sa lecture ?</label>
-  <textarea id="questions" name="questions" rows="5" cols="50"></textarea>
-
-  <label for="comments">Avez-vous des commentaires concernant le chapitre et/ou le site ?</label>
-  <textarea id="comments" name="comments" rows="5" cols="50"></textarea>
-
-  <input type="hidden" name="_template" value="table" />
-  <input type="hidden" name="_captcha" value="false" />
-  <input type="hidden" name="_next" value="https://laefy.github.io/CPP_Learning//chapter0/test_done/" />
-
-  <input type="submit" disabled style="display: none" aria-hidden="true" />
-  <input type="submit" value="Valider" />
-</form>
-
-<script src="/CPP_Learning/js/save-test-answers.js"></script>
-
+<p>Si vous compilez via le terminal ou avec <a href="https://godbolt.org/">Compiler Explorer</a>, nous vous conseillons d&rsquo;utiliser les options ci-dessous, car nous les activerons pour vos rendus de projet :</p>
+<ul>
+<li><code>-std=c++17</code> : spécifie que le projet sera compilé en C++17</li>
+<li><code>-Wall -W</code> : permet d&rsquo;activer un certain nombre de warnings</li>
+<li><code>-Werror</code> : transforme les warnings en erreurs, donc tant qu&rsquo;il y a des warnings, le programme ne compile pas</li>
+</ul>
+<p>Sachez par ailleurs que vous pouvez également utiliser :</p>
+<ul>
+<li><code>-g</code> : ajoute des informations supplémentaires à l&rsquo;exécutable, afin de pouvoir le débugger plus facilement</li>
+</ul>
 
 
 <footer class="footline">
@@ -1105,6 +1070,7 @@ Merci d&rsquo;avance ! 🙂</p>
             
                 
                     
+                    
                 
                 
 
@@ -1117,6 +1083,9 @@ Merci d&rsquo;avance ! 🙂</p>
             
             
                 
+                    
+                        
+                        
                     
                 
                 
@@ -1166,25 +1135,6 @@ Merci d&rsquo;avance ! 🙂</p>
             
                 
                     
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
                     
                 
                 
@@ -1197,6 +1147,28 @@ Merci d&rsquo;avance ! 🙂</p>
             
         
                     
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
                         
             
             
@@ -1209,9 +1181,6 @@ Merci d&rsquo;avance ! 🙂</p>
             
             
                 
-                    
-                        
-                        
                     
                 
                 
@@ -1517,10 +1486,10 @@ Merci d&rsquo;avance ! 🙂</p>
 	 
 	 
 		
-			<a class="nav nav-prev" href="/CPP_Learning/chapter0/6-tips/4-options/" title="Options de compilation"> <i class="fa fa-chevron-left"></i></a>
+			<a class="nav nav-prev" href="/CPP_Learning/chapter0/6-tips/3-keybinds-commands/" title="Raccourcis &amp; Commandes"> <i class="fa fa-chevron-left"></i></a>
 		
 		
-			<a class="nav nav-next" href="/CPP_Learning/chapter1/" title="Introduction au C&#43;&#43;" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+			<a class="nav nav-next" href="/CPP_Learning/chapter0/test/" title="Retours ?" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
 		
 	
     </div>

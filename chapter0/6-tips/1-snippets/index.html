@@ -9,7 +9,7 @@
 
     <link rel="icon" href="/CPP_Learning/images/favicon.png" type="image/png">
 
-    <title>Retours ? :: Cours de C&#43;&#43; - Niveau Master</title>
+    <title>Petits programmes :: Cours de C&#43;&#43; - Niveau Master</title>
 
     
     <link href="/CPP_Learning/css/nucleus.css?1642273332" rel="stylesheet">
@@ -40,7 +40,7 @@
     </style>
     
   </head>
-  <body class="" data-url="/CPP_Learning/chapter0/test/">
+  <body class="" data-url="/CPP_Learning/chapter0/6-tips/1-snippets/">
     <nav id="sidebar" class="showVisitedLinks">
 
 
@@ -219,7 +219,7 @@
   
     
     <li data-nav-id="/CPP_Learning/chapter0/6-tips/" title="Astuces" class="dd-item 
-        
+        parent
         
         
         ">
@@ -247,7 +247,7 @@
  
   
     
-      <li data-nav-id="/CPP_Learning/chapter0/6-tips/1-snippets/" title="Petits programmes" class="dd-item ">
+      <li data-nav-id="/CPP_Learning/chapter0/6-tips/1-snippets/" title="Petits programmes" class="dd-item active">
         <a href="/CPP_Learning/chapter0/6-tips/1-snippets/">
         Petits programmes
         <i class="fas fa-check read-icon"></i>
@@ -340,7 +340,7 @@
  
   
     
-      <li data-nav-id="/CPP_Learning/chapter0/test/" title="Retours ?" class="dd-item active">
+      <li data-nav-id="/CPP_Learning/chapter0/test/" title="Retours ?" class="dd-item ">
         <a href="/CPP_Learning/chapter0/test/">
         Retours ?
         <i class="fas fa-check read-icon"></i>
@@ -882,7 +882,13 @@
             
           
           
-            <a href='/CPP_Learning/'>Accueil</a> > <a href='/CPP_Learning/chapter0/'>Mise en place</a> > Retours ?
+            
+            
+          
+          
+            <a href='/CPP_Learning/'>Accueil</a> > <a href='/CPP_Learning/chapter0/'>Mise en place</a> > <a href='/CPP_Learning/chapter0/6-tips/'>Astuces</a> > Petits programmes
+          
+        
           
         
           
@@ -895,7 +901,16 @@
                 
                     <div class="progress">
     <div class="wrapper">
-<nav id="TableOfContents"></nav>
+<nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#compiler-explorer">Compiler Explorer</a></li>
+        <li><a href="#depuis-un-terminal">Depuis un terminal</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
     </div>
 </div>
 
@@ -911,65 +926,30 @@
           
             <h1>
               
-              Retours ?
+              Petits programmes
             </h1>
           
 
         
 
 
-<p>Si vous avez rencontré des problèmes lors de l&rsquo;installation d&rsquo;un des logiciels, n&rsquo;hésitez pas à nous l&rsquo;indiquer, afin que nous puissions améliorer nos explications.
-Merci d&rsquo;avance ! 🙂</p>
+<p>Voici 2 solutions permettant de compiler et de tester rapidement des petits programme.</p>
 <hr>
-
-
-<form id="test" data-chapter="0" method=POST action="https://formsubmit.co/3aa0f379a1aed9c454634cc2da153a7b">
-  <label for="name">Vous êtes : </label>
-  <input type="text" id="name" name="name" placeholder="Prénom Nom" />
-
-  <label for="email">Votre adresse mail : </label>
-  <input type="text" name="email" placeholder="mail@smthg.com" />
-
-  <label for="group">Votre groupe : </label>
-  <select name="group">
-    <option value="group-G1">Groupe 1</option>
-    <option value="group-G2">Groupe 2</option>
-    <option value="group-Alt">Groupe Alternants</option>
-  </select>
-
-  <input type="hidden" name="_replyto" />
-  <input type="hidden" name="_subject" value="[C++][Chapitre 0] Retour sur ton questionnaire" />
-
-  <hr/>
-  
-  <p><label for="q1">1- Avez-vous rencontré des difficultés lors de l’installation d’un des composants ? Si oui, du ou desquels s’agit-il ?</label></p>
-<p><textarea type="text" id="q1" name="q1-pb" rows="1" cols="50"></textarea></p>
-<p><label for="q2">2- Si une erreur est survenue à un moment, pouvez-vous la copier-coller ci-dessous et indiquer le contexte dans lequel celle-ci a eu lieu ?</label></p>
-<p><textarea id="q2" name="q2-info" rows="4" cols="50"></textarea></p>
-
-
-  <hr/>
-
-  <label for="time">Combien de temps avez-vous mis à compléter ce chapitre ?</label>
-  <input type="text" name="time" placeholder="environ 4h30" />
-
-  <label for="questions">Avez-vous des questions suite à sa lecture ?</label>
-  <textarea id="questions" name="questions" rows="5" cols="50"></textarea>
-
-  <label for="comments">Avez-vous des commentaires concernant le chapitre et/ou le site ?</label>
-  <textarea id="comments" name="comments" rows="5" cols="50"></textarea>
-
-  <input type="hidden" name="_template" value="table" />
-  <input type="hidden" name="_captcha" value="false" />
-  <input type="hidden" name="_next" value="https://laefy.github.io/CPP_Learning//chapter0/test_done/" />
-
-  <input type="submit" disabled style="display: none" aria-hidden="true" />
-  <input type="submit" value="Valider" />
-</form>
-
-<script src="/CPP_Learning/js/save-test-answers.js"></script>
-
-
+<h3 id="compiler-explorer">Compiler Explorer</h3>
+<p>Vous pouvez utiliser <a href="godbolt.org">Compiler Explorer</a> pour compiler du code avec à peu près tous les compilateurs de la Terre.<br>
+Cet utilitaire vous permet également d&rsquo;exécuter directement votre programme.</p>
+<hr>
+<h3 id="depuis-un-terminal">Depuis un terminal</h3>
+<h5 id="pour-compiler">Pour compiler</h5>
+<p>Avec g++ :</p>
+<div class="highlight"><pre class="chroma"><code class="language-b" data-lang="b"><span class="c">g</span><span class="nb">++</span><span class="c"> f1</span><span class="nt">.</span><span class="c">cpp f2</span><span class="nt">.</span><span class="c">cpp f3</span><span class="nt">.</span><span class="c">cpp </span><span class="nb">-</span><span class="c">o program
+</span></code></pre></div><p>Avec clang :</p>
+<div class="highlight"><pre class="chroma"><code class="language-b" data-lang="b"><span class="c">clang</span><span class="nb">++</span><span class="c"> f1</span><span class="nt">.</span><span class="c">cpp f2</span><span class="nt">.</span><span class="c">cpp f3</span><span class="nt">.</span><span class="c">cpp </span><span class="nb">-</span><span class="c">o program
+</span></code></pre></div><p>Vous pouvez ajouter des <a href="4-options">options de compilation</a> à la fin de la ligne de commande.</p>
+<h5 id="pour-exécuter">Pour exécuter</h5>
+<p>Utiliser simplement :</p>
+<div class="highlight"><pre class="chroma"><code class="language-b" data-lang="b"><span class="nt">.</span><span class="c">/program arg1 arg2
+</span></code></pre></div>
 
 <footer class="footline">
 	
@@ -1105,6 +1085,7 @@ Merci d&rsquo;avance ! 🙂</p>
             
                 
                     
+                    
                 
                 
 
@@ -1117,6 +1098,26 @@ Merci d&rsquo;avance ! 🙂</p>
             
             
                 
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
                     
                 
                 
@@ -1161,22 +1162,6 @@ Merci d&rsquo;avance ! 🙂</p>
             
         
                     
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
             
         
                     
@@ -1184,7 +1169,6 @@ Merci d&rsquo;avance ! 🙂</p>
             
             
                 
-                    
                     
                 
                 
@@ -1209,9 +1193,6 @@ Merci d&rsquo;avance ! 🙂</p>
             
             
                 
-                    
-                        
-                        
                     
                 
                 
@@ -1517,10 +1498,10 @@ Merci d&rsquo;avance ! 🙂</p>
 	 
 	 
 		
-			<a class="nav nav-prev" href="/CPP_Learning/chapter0/6-tips/4-options/" title="Options de compilation"> <i class="fa fa-chevron-left"></i></a>
+			<a class="nav nav-prev" href="/CPP_Learning/chapter0/6-tips/" title="Astuces"> <i class="fa fa-chevron-left"></i></a>
 		
 		
-			<a class="nav nav-next" href="/CPP_Learning/chapter1/" title="Introduction au C&#43;&#43;" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+			<a class="nav nav-next" href="/CPP_Learning/chapter0/6-tips/2-vscode/" title="Projets VSCode" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
 		
 	
     </div>
