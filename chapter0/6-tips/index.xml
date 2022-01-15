@@ -41,17 +41,19 @@ cmake_minimum_required(VERSION 3.1)project(my_project)add_executable(my_execut
 Ctrl+Shift+P
  Configuration, Compilation, Exécution Configurer le projet :
 CMake: Configure
- Compiler un programme :
-CMake: Build Target (Shift+F7)
- Changer le programme à exécuter :
+Compiler un programme :
+Shift+F7 ou CMake: Build Target
+Changer le programme à exécuter :
 CMake: Set Debug Target
- Lancer le programme :
-Debug: Start Debugging (F5)
+Lancer le programme :
+F5 ou Debug: Start Debugging
  Debugging Placer un breakpoint à la ligne du curseur :
 F9
- Reprendre l&amp;rsquo;exécution :
+Reprendre l&amp;rsquo;exécution :
 F5
- Exécuter l&amp;rsquo;instruction suivante :</description>
+Exécuter l&amp;rsquo;instruction suivante :
+F10
+Entrer dans la fonction :</description>
     </item>
     
     <item>
