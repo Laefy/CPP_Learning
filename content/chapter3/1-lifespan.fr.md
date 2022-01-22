@@ -2,213 +2,287 @@
 title: "Durée de vie"
 weight: 1
 ---
+--- 
+
+### Portée d'une variable locale
+
+Afin de parler de durée de vie, nous allons commencer par parler de la portée de nos variables.
+Comme vous le savez peut-être, la portée d'une variable définit la portion de code dans laquelle le compilateur nous permet de l'utiliser.
+
+Si on définit une variable dans une fonction, la portée de celle-ci démarre à sa définition et se termine à la fin du bloc dans lequel celle-ci a été définie.
+
+{{< highlight cpp "linenos=inline" >}}
+ void fcn(int a)
+ {
+     if (a == 0)
+     {
+         char b = '0';
+         std::cout << b << std::endl;
+     }
+     else
+     {
+         char c = '1';
+         std::cout << c << std::endl;
+     }
+ }
+{{< /highlight >}}
+
+Dans le code ci-dessus :
+- la portée de `a` démarre à la ligne 1 et termine à la ligne 13,
+- la portée de `b` démarre à la ligne 5 et termine à la ligne 7,
+- la portée de `c` démarre à la ligne 10 et termine à la ligne 12.
 
 ---
 
-Pour cet exercice, vous modifierez les fichiers :\
-\- `chap-03/1-teachers/DataBase.cpp`\
-\- `chap-03/1-teachers/DataBase.h`
+### Destruction d'un objet
 
-La cible à compiler est `c3-1-teachers`.
+Supposons que nous ayions une classe `Class` et que l'on déclare une variable de ce type.
 
----
-
-### Définition
-
-La durée de vie d'une ressource (bloc de mémoire, flux, connection réseau, etc) correspond à la période durant laquelle cette ressource est valide.
-
-Le C++ est un langage dans lequel nous avons la main sur la durée de vie de nos ressources.
-Dans le cas d'un objet, sa durée de vie s'étend de sa construction à sa destruction.
-Ce qu'il est important de noter, c'est que cette durée de vie ne coïncide pas toujours avec la portée de la variable référençant l'objet.
-
+Lorsque cette variable sort du scope, une fonction spéciale de `Class` est appelée.\
+On appelle celle-ci le **destructeur** de l'objet.\
+Le nom de cette fonction est le nom de la classe précédé d'un tilde et acceptant 0 paramètre :
 ```cpp
-void lifespan()
+// dans le header
+class Class
 {
-    int* five = new int { 5 };
-    int& five_ref = *five;
-    {
-        int three = 3;
-        delete five;
-    }
-    int ten = 10;
+public:
+    // ...
+    ~Class();  // destructeur de Class.
+
+    // ...
+};
+
+// dans le cpp
+Class::~Class()
+{
+    // implémentation du destructeur de Class.
 }
 ```
 
-Dans le code ci-dessus, la portée de la variable `five_ref` s'étend de la ligne 4 à la ligne 10 (= l'accolade fermante de `lifespan`).
-En revanche, la durée de vie de l'objet référencé par `five_ref` s'étend de la ligne 3 (construction du `int`) jusqu'à la ligne 7 (destruction de ce `int`).\
-La variable `five_ref` est donc une dangling reference de la ligne 8 et la ligne 10. Il ne faut surtout pas s'en servir dans cette section du programme.
-
-Réorganisez les instructions afin que la portée des variables n'excèdent pas (ou presque pas) la durée de vie des ressources qui leur sont associées. 
-
-{{% expand "Solution" %}}
-Il faut s'arranger pour que `delete five` soit exécuté juste avant la fin du bloc dans lequel `five` et `five_ref` sont définies.\
-Par exemple : 
-```cpp
-void lifespan()
-{
-    {
-        int* five = new int { 5 };
-        int& five_ref = *five;
-        delete five;
-    }
-    int three = 3;
-    int ten = 10;
-}
-```
-{{% /expand %}}
-
-{{% notice tip %}}
-Autant que possible, arrangez-vous pour que les portées de vos variables correspondent à la durée de vie des objets qu'elles référencent.
-Evitez par exemple d'écrire un `delete` en plein milieu d'un bloc.
-{{% /notice %}}
+Comme pour le constructeur par défaut, le constructeur de copie ou l'opérateur d'assignation, le compilateur définit une implémentation par défaut du destructeur de chaque classe.\
+Ainsi, même si nous n'avons jusqu'ici jamais eu à définir de destructeur pour nos classes, le destructeur existait bel et bien et était appelé à chaque fois qu'il le devait.
 
 ---
 
-### Destruction intempestive
+### Durée de vie d'un objet
 
-Le programme `c5-1-teachers` sert à générer une base de données référençant les différentes matières d'un cursus et les professeurs qui les enseignent.
-Cette base dispose des contraintes suivantes :
-- Un cursus peut avoir plusieurs matières.
-- Une matière n'apparaît que dans un seul cursus.
-- Une matière est enseignée par différents professeurs.
-- Un professeur peut enseigner plusieurs matières.
+Revenons à la notion de durée de vie.
+La durée de vie d'un objet démarre de l'appel de son constructeur et termine à l'appel de son destructeur.
 
-Commencez par ajouter ce qu'il manque pour que le programme compile et remplisse son rôle.
+Lorsque l'on définit une variable locale contenant une instance d'objet, sa durée de vie correspond par conséquent à la portée de la variable dans laquelle celui-ci est placé.
 
-{{% expand "Indices" %}}
-- Il n'est pas possible de stocker directement des références dans les conteneurs de la STL, car les références ne sont pas réassignables.\
-Que pouvez-vous utiliser à la place ?
-- `std::find` est appliqué sur un `vector` de `Teacher*` (resp. `Curriculum*`) et une `string`.\
-Quelle surcharge devez-vous fournir à l'opérateur pour que l'instruction compile ?\
-Pensez-vous par conséquent pouvoir définir cette surcharge comme fonction-membre de `Teacher` (resp. `Curriculum`) ? 
-{{% /expand %}}
+{{< highlight cpp "linenos=inline" >}}
+ void fcn(std::string param)                // construction de param
+ {
+     if (s.empty())
+     {
+         std::string empty = "empty";       // construction de empty
+         std::cout << empty << std::endl;
+     }                                      // destruction de empty
+     else
+     {
+         std::string filled = "filled";     // construction de filled
+         std::cout << filled << std::endl;
+     }                                      // destruction de filled
+ }                                          // destruction de param
+{{< /highlight >}}
 
-{{% expand "Solution" %}}
-Pour les attributs `Subject::_teachers` et `Curriculum::_subjects`, on peut utiliser respectivement un `std::set<const Teacher*>` et un `std::set<const Subject*>`.
-L'insertion se fait avec `_teachers.insert(&teacher)` et `_subjects.insert(&subject)` (on récupère l'adresse de la référence pour créer un pointeur).
+Dans le code ci-dessus :
+- la portée et la durée de vie de `param` démarre à la ligne 1 et termine à la ligne 13,
+- la portée et la durée de vie de `empty` démarre à la ligne 5 et termine à la ligne 7,
+- la portée et la durée de vie de `filled` démarre à la ligne 10 et termine à la ligne 12.
 
-Pour l'opérateur d'égalité, on est obligé de définir un opérateur libre, car le premier paramètre n'est pas un `const Teacher&` (resp. `const Curriculum&`) mais un `const Teacher*` (resp. `const Curriculum*`).
-On peut néanmoins le déclarer ami de `Teacher` (resp. `Curriculum`) afin d'accéder à ses attributs privés.
-```cpp
-class Teacher
-{
-public:
-    ...
-    friend bool operator==(const Teacher* teacher, const std::string& name)
-    {
-        return teacher->_name == name;
-    }
-    ...
-};
+**Qu'en est-il de la durée de vie d'un objet défini en tant qu'attribut d'une autre classe ?**
 
-class Curriculum
-{
-public:
-    ...
-    friend bool operator==(const Curriculum* curriculum, const std::string& name)
-    {
-        return curriculum->_name == name;
-    }
-    ...
-};
-```
+Pour le déterminer, vous allez modifier le code du programme `c3-1-box`.
 
-Enfin, pour l'affichage, on peut simplement accéder aux éléments de chaque `set` en bouclant dessus et en déréférençant les pointeurs :
-```cpp
-class Subject
-{
-public:
-    ...
-    friend std::ostream& operator<<(std::ostream& stream, const Subject& subject)
-    {
-        stream << "-> Subject " << subject._name << " teached by: ";
-
-        for (const auto* teacher : subject._teachers)
-        {
-            stream << *teacher << ", ";
-        }
-
-        return stream;
-    }
-    ...
-};
-
-class Curriculum
-{
-public:
-    ...
-    friend std::ostream& operator<<(std::ostream& stream, const Curriculum& curriculum)
-    {
-        stream << "Curriculum <" << curriculum._name << ">";
-
-        for (const auto* subject : curriculum._subjects)
-        {
-            stream << *subject << std::endl;
-        }
-
-        return stream;
-    }
-    ...
-};
-```
-{{% /expand %}}
-
-Comme de temps en temps, les professeurs partent à la retraite, rajoutez une fonctionnalité permettant de supprimer un professeur de la base.
+Modifiez le constructeur de la classe `Box` et redéfinissez son destructeur afin qu'ils affichent `Box created` et `Box destroyed`.\
+Faites de même pour `Content` et testez le programme.\
+Pouvez-vous en déduire à quel moment la durée de vie de `_content` démarre, et à quel moment celle-ci termine ?
 
 {{% expand "Solution" %}}
 ```cpp
-else if (command == "r")
+struct Content
 {
+    Content(const std::string& name)
+        : name { name }
+    {
+        std::cout << "Content created" << std::endl;
+    }
+
+    ~Content() { std::cout << "Content destroyed" << std::endl; }
+
     std::string name;
-    std::cin >> name;
+};
 
-    const auto teacher_it = std::find(teachers.begin(), teachers.end(), name);
-    if (teacher_it == teachers.end())
+class Box
+{
+public:
+    Box(const std::string& name)
+        : _content { name }
     {
-        continue;
+        std::cout << "Box created" << std::endl;
     }
 
-    auto* teacher = *teacher_it;
-    teachers.erase(teacher_it);
-    delete teacher;
-}
+    ~Box() { std::cout << "Box destroyed" << std::endl; }
+    
+    Content& get_content() { return _content; }
+
+private:
+    Content _content { "thing" };
+};
 ```
 
-{{% notice info %}}
-Il ne faut pas écrire `teachers.erase(teacher_it)` suivi de `delete *teacher_it`, car `erase` invalide `teacher_it`. Il n'est donc plus valide de le déréférencer ensuite.\
-Il est également déconseillé de faire l'inverse : `delete *teacher_it` suivi de `teachers.erase(teacher_it)`, car `teachers` contient alors une dangling reference, ce qui pourrait constituer une faille si quelqu'un venait rajouter du code entre ces deux lignes.\
-La bonne solution est de créer une variable temporaire pour déréférencer l'itérateur avant son invalidation et libérer la mémoire seulement après avoir supprimé la référence du tableau.
-{{% /notice %}}
+On obtient la sortie suivante :
+```b
+box1 block begin
+Content created
+Box created
+Box destroyed
+Content destroyed
+----------------
+box2 block begin
+Content created
+Box created
+Box destroyed
+Content destroyed
+box2 block end
+```
 
+On peut en déduire que `Box::_content` :\
+\- est construit pendant l'appel du constructeur de `Box`, juste avant de rentrer dans le corps de la fonction,\
+\- est détruit pendant l'appel du destructeur `Box`, juste après être sorti du corps de la fonction.
 {{% /expand %}}
 
-Que se passe-t-il si vous essayiez d'afficher le contenu d'une matière qu'un professeur retraité enseignait ?\
-Que faut-il que vous ajoutiez à la classe `Subject` pour avoir la possibilité de supprimer un professeur de la base de manière sûre ?
+---
+
+### Validité d'un objet
+
+La durée de vie d'un objet détermine la période durant laquelle il est valide d'utiliser cet objet et son contenu.
+
+En C++, il est possible de créer des objets dynamiquement avec les mots-clefs `new` et `delete`.\
+Testez le code suivant et déterminez les durées de vie des objets `box` et `box->_content` à partir de l'output du programme.
+{{< highlight cpp "linenos=inline" >}}
+ int main()
+ {
+     std::cout << "Main begin" << std::endl;
+ 
+     Box* box = new Box("gift");
+     std::cout << box->get_content().name << std::endl;
+     delete box;
+ 
+     std::cout << "Main end" << std::endl;
+     return 0;
+ }
+{{< /highlight >}}
 
 {{% expand "Solution" %}}
-Lorsque cette situation se produit, le programme rentre dans un état instable, résultant d'un accès à de la mémoire libérée.
-En effet, au moment d'afficher le contenu de la matière, on tente d'accéder à chacun des éléments de `_teachers` alors que l'un d'entre eux vient d'être détruit (= dangling reference).
-
-Pour régler ce problème, il faudrait que `Subject` propose une fonction permettant de retirer l'un de ses professeurs, et que l'on appelle cette fonction sur toutes les matières avant de détruire le contenu de `teacher`.
-
-Dans `Subject` :
-```cpp
-void remove_teacher(const Teacher& teacher)
-{
-    _teachers.erase(&teacher);
-}
+```b
+Main begin
+Content created
+Box created
+gift
+Box destroyed
+Content destroyed
+Main end
 ```
 
-Dans le `main` :
-```cpp
-auto* teacher = *teacher_it;
-for (auto* subject : subjects)
-{
-    subject->remove_teacher(*teacher);
-}
-
-teachers.erase(teacher_it);
-delete teacher;
-```
-
+Les durées de vie des objets `box` et `box->_content` démarrent à la ligne 5 (`new`) et s'achèvent à la ligne 7 (`delete`).
 {{% /expand %}}
+
+Analysez maintenant le code ci-dessous.\
+Quelle est selon vous la durée de vie de la variable `content` ?
+{{< highlight cpp "linenos=inline" >}}
+ int main()
+ {
+     std::cout << "Main start" << std::endl;
+ 
+     Box* box        = new Box("gift");
+     Content content = box->get_content();
+ 
+     std::cout << content.name << std::endl;
+ 
+     delete box;
+ 
+     content.name = "chocolate";
+     std::cout << content.name << std::endl;
+ 
+     std::cout << "Main end" << std::endl;
+     return 0;
+ }
+{{< /highlight >}}
+
+Testez le code pour vérifier ce qu'il se passe réellement.
+
+Pour mieux comprendre, vous allez redéfinir le constructeur de copie de `Content` afin qu'il affiche `Content copied`.
+Combien d'objets de type `Content` ont donc été créés par le programme précédent ? Quelles étaient leurs durées de vie respectives ?
+
+{{% expand "Solution" %}}
+```b
+Main start
+Content created
+Box created
+Content copied
+gift
+Box destroyed
+Content destroyed
+chocolate
+Main end
+Content destroyed
+```
+
+Deux objets de type `Content` ont été créés par le programme.\
+La durée de vie du premier, `box->_content`, démarre à la ligne 5 (construction de `*box`) et termine à la ligne 10 (destruction de `*box`).\
+La durée de vie du second, `content`, démarre à la ligne 6 (copie de `box->_content`) et termine à la ligne 17 (sortie du `main`).
+{{% /expand %}}
+
+Analysez enfin le code suivant.\
+Quelle est maintenant la durée de vie de `content_ref` ? A votre avis, que peut-il se passer lors de l'exécution de la ligne 12 ?\
+Commentez ensuite la ligne 12 et retestez une dernière fois le programme.
+{{< highlight cpp "linenos=inline" >}}
+ int main()
+ {
+     std::cout << "Main start" << std::endl;
+ 
+     Box* box             = new Box("gift");
+     Content& content_ref = box->get_content();
+ 
+     std::cout << content_ref.name << std::endl;
+ 
+     delete box;
+ 
+     content_ref.name = "chocolate";
+     std::cout << content_ref.name << std::endl;
+ 
+     std::cout << "Main end" << std::endl;
+     return 0;
+ }
+{{< /highlight >}}
+
+{{% expand "Solution" %}}
+Comme `content_ref` est une référence, la variable correspond au même objet que `box->_content`.
+Sa durée de vie s'étend donc de la ligne 5 à la ligne 10 du programme.
+
+De mon côté, le programme déclenche forcément une segfault.\
+Lorsque la ligne 12 est commentée, le programme crashe sur la ligne 13 (accès à `content_ref.name`) et lorsqu'elle est décommenté, il crashe à la sortie du programme.
+
+En réalité, on est dans une situation qualifiée d'**undefined behavior**.
+Le comportement exact du programme dépendra donc de votre compilateur et de la manière dont votre système d'exploitation gère les accès mémoire.
+{{% /expand %}}
+
+
+Les différents tests effectués nous permettent de conclure les points suivants.\
+Tant qu'on manipule des objets via des variables qui ne sont pas des références, ces objets existent forcément au moment de l'utilisation et il n'y a aucun risque d'avoir un problème.\
+En revanche, dès lors que l'on manipule des objets via des références, il est nécessaire d'être prudent, car la portée de la variable ne correspondra pas nécessairement à la durée de vie de l'objet référencé.
+
+---
+
+### Lien avec la mémoire
+
+La durée de vie d'un objet est étroitement liée à la mémoire du programme.
+
+Lorsqu'on construit un objet dynamiquement, le programme demande au système d'exploitation de réserver une zone dans la mémoire qui servira à contenir les données de l'objet.
+Lorsque cet objet est détruit, le programme rend la mémoire au système, qui pourra la réattribuée à un autre processus.
+Pour éviter de corrompre les données des autres programmes, le système devrait empêcher votre programme d'aller écrire dans de la mémoire libérée en déclenchant une segfault.
+
+C'est donc pour cette raison que l'on peut considérer que la durée de vie de l'objet définit la région du code dans laquelle il est valide de l'utiliser.

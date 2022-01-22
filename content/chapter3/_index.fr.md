@@ -1,10 +1,9 @@
 ---
-title: "Gestion des ressources"
+title: "Gestion mémoire"
 chapter: true
 chapterName: Chapitre 3
 pre: "<b>3- </b>"
 weight: 4
-draft: true
 ---
 
 Il existe beaucoup de langages dans lequel le concept de propriété n'existe pas.
@@ -16,9 +15,8 @@ Dès qu'un objet n'est plus référencé nulle part, il est ajouté à la liste 
 
 Lorsque les performances ne sont pas critiques, disposer de ce genre d'outil est très pratique, puisque cela permet d'une part de ne pas avoir à libérer la mémoire soi-même, mais aussi et surtout d'éviter de libérer malencontreusement des ressources qui pourraient encore être utilisées.
 Vous savez que l'un des atouts majeurs du C++, c'est les performances qu'il apporte.
-C'est pour cela que la gestion de la mémoire est manuelle dans ce langage, et que l'on se retrouve parfois avec des problèmes de dangling references (comme nous l'avions vu au Chapitre 2) ou des fuites de mémoire.
+C'est pour cela que la gestion de la mémoire est manuelle dans ce langage, et que l'on se retrouve parfois avec des problèmes de dangling references ou des fuites de mémoire.
 
-Ce chapitre sera dédié à la gestion des ressources en C++.
-Nous commencerons donc par présenter les concepts de durée de vie (ou **lifespan**) et d'**ownership** (ou propriété en français) d'une ressource.
-Nous verrons ensuite en pratique ce que le C++ propose pour expliciter l'ownership d'une ressource et compenser l'absence de garbage-collector.
-Nous vous présenterons enfin la syntaxe introduite en C++11 pour traduire la transmission de l'ownership.
+Ce chapitre sera dédié à la gestion mémoire en C++.
+Nous commencerons par présenter les concepts de durée de vie (ou **lifespan**) et d'**ownership** (ou propriété en français) d'un objet.
+Nous verrons ensuite comment éviter les problèmes récurrents liés à une mauvaise gestion de la mémoire, comme les fuites mémoires ou les dangling references.

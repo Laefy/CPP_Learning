@@ -9,17 +9,16 @@ weight: 101
 
 ##### Théorie
 
-- Une ressource est généralement une entité que l'on demande à l'OS de nous "prêter", comme un bloc de mémoire, un fichier ou encore une connection réseau.\
-Certains objets du programme peuvent également être considérés comme des ressources.
-- Une ressource est valide de son acquisition à sa libération. La durée de vie d'une ressource fait référence est cette période de validité. 
-- RAII : technique qui consiste à s'assurer qu'une ressource sera bien libérée, en l'associant à un objet (smart pointer, conteneur STL, ...).
-Cet objet réalise alors la libération de la ressource dans son destructeur.
-- Le propriétaire d'une ressource, c'est le composant (objet, fonction, variable) responsable de la durée de vie de cette ressource. 
+- La durée de vie d'un objet s'étend de sa construction à sa destruction.
+- Lorsque la durée de vie d'un objet s'achève, il n'est plus valide de l'utiliser.
+- La portée d'une référence peut excéder la durée de vie de l'objet référencé (=> dangling reference).
+- Un objet A est propriétaire d'un objet B si la destruction de A entraîne celle de B.
+- Aucune copie n'est faite lorsqu'on initialise une variable avec la valeur de retour d'une fonction (mandatory copy-elision)
 
 ##### Pratique
 
-- La composition (= on est propriétaire) s'exprime avec `Obj object` ou `std::unique_ptr<Obj> object`.
-- L'aggrégation (= on n'est pas propriétaire) s'exprime avec des références `Obj& object` ou (`Obj* object` si optionnel).
+- Un `unique_ptr` n'est pas copiable.
+- `nullptr` au lieu de `NULL` ou `null`
 
 ---
 
@@ -27,35 +26,18 @@ Cet objet réalise alors la libération de la ressource dans son destructeur.
 
 ##### Méthodologie
 
-- Il faut déterminer qui sera owner de qui avant de commencer à coder, afin de définir correctement l'architecture de ses classes.
-- Il faut aussi définir qui aura le droit d'utiliser une ressource sans en être propriétaire.
+- Déterminer les relations d'ownership entre les objets d'un programme.
+- Déterminer les durées de vie des objets d'un programme.
+- Identifiez les objets qui peuvent provoquer des réallocations intempestives (`std::vector`, `std::string`, etc).
 
 ##### Librairie standard
 
-- Inclure les smart pointers : `#include <memory>`
+- Header pour `unique_ptr` et `make_unique` : `<memory>`
+- Header pour `move` : `<utility>`
 - Créer un `unique_ptr<T>` : `std::make_unique<T>(p1, p2, ...)`.
-- Transférer un `unique_ptr` (non-copiable) : `auto new_owner = std::move(ptr)` / `fcn(std::move(ptr))` 
-- Savoir si un `unique_ptr` fait référence à un objet précis : `ptr->get() == &ref`
-- Accéder au contenu d'un `unique_ptr` : `auto& obj = *ptr` / `*ptr->obj_fcn()`
-- Créer des `shared_ptr<T>` : `std::make_shared<T>(p1, p2, ...)`
-- Inverser deux objets : `std::swap(obj1, obj2)` dans `<utility>`
-
-##### Langage
-
-- `[[nodiscard]]` pour être sûr que la valeur de retour d'une fonction n'est pas ignorée.
+- Déplacer le contenu d'un `unique_ptr` dans un autre : `auto target_ptr = std::move(ptr)` / `fcn(std::move(ptr))` 
+- Accéder au contenu d'un `unique_ptr` : `auto& obj = *ptr` / `ptr->member_fcn()`
 
 ##### Pratique
 
-- Prévenir tous les composants qui ont une référence sur un objet avant de procéder à sa destruction.
-- Ecrire `[[nodiscard]]` sur les fonctions destinées à transférer l'ownership d'une ressource.
-C'est d'autant plus important de le faire lorsque le type de retour ne réalise pas la libération de la ressource à sa destruction (= sans RAII), comme les raw pointers.
-
----
-
-### Ce dont il faut à peu près se souvenir
-
-##### Librairie standard
-
-- Utiliser un `std::reference_wrapper<T>`
-- Créer des `weak_ptr<T>` : `std::weak_ptr<T> weak { some_shared_ptr }`
-- Créer un `shared_ptr<T>` si utilisé avec des `weak_ptr` : `std::shared_ptr<T> p { new T { p1, p2, ... } }`
+- Définir un destructeur : `~Class() { ... }` (éventuellement préfixé par `Class::` si défini en dehors de la classe).

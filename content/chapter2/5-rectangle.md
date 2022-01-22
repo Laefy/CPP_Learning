@@ -215,7 +215,7 @@ public:
 
 A ce stade, vous ne devriez plus pouvoir compiler, car le linker n'arrive pas à trouver de référence pour `_default_size`.
 
-En fait, vous n'avez fait que la moitié du travail. Vous avez déclaré l'attribut statique, mais vous ne l'avez pas défini. Pour cela, il faut aller dans un .cpp afin d'y ajouter la ligne suivante : `type ClassName::attribute;`. Notez qu'à cet endroit, on ne remet pas le mot-clef `static`, mais on préfixe par contre l'attribut avec `ClassName::`.
+En fait, vous n'avez fait que la moitié du travail. Vous avez déclaré l'attribut statique, mais vous ne l'avez pas défini. Pour cela, il faut aller dans un .cpp afin d'y ajouter la ligne suivante en dehors de toute fonction : `type ClassName::attribute;`. Notez qu'à cet endroit, on ne remet pas le mot-clef `static`, mais on préfixe par contre l'attribut avec `ClassName::`.
 
 Ajoutez la définition de l'attribut `_default_size` dans le fichier `Rectangle.cpp`.
 C'est au niveau de la définition d'un attribut que vous pouvez spécifier un initializer.
