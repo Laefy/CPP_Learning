@@ -9,7 +9,7 @@
 
     <link rel="icon" href="/CPP_Learning/images/favicon.png" type="image/png">
 
-    <title>🦜 Perroquet :: Cours de C&#43;&#43; - Niveau Master</title>
+    <title>Durée de vie :: Cours de C&#43;&#43; - Niveau Master</title>
 
     
     <link href="/CPP_Learning/css/nucleus.css?1642825535" rel="stylesheet">
@@ -40,7 +40,7 @@
     </style>
     
   </head>
-  <body class="" data-url="/CPP_Learning/chapter1/2-practice/2-parrot/">
+  <body class="" data-url="/CPP_Learning/chapter3/1-lifespan/">
     <nav id="sidebar" class="showVisitedLinks">
 
 
@@ -372,7 +372,7 @@
   
     
     <li data-nav-id="/CPP_Learning/chapter1/" title="Introduction au C&#43;&#43;" class="dd-item 
-        parent
+        
         
         
         ">
@@ -424,7 +424,7 @@
   
     
     <li data-nav-id="/CPP_Learning/chapter1/2-practice/" title="Premiers programmes" class="dd-item 
-        parent
+        
         
         
         ">
@@ -473,7 +473,7 @@
  
   
     
-      <li data-nav-id="/CPP_Learning/chapter1/2-practice/2-parrot/" title="🦜 Perroquet" class="dd-item active">
+      <li data-nav-id="/CPP_Learning/chapter1/2-practice/2-parrot/" title="🦜 Perroquet" class="dd-item ">
         <a href="/CPP_Learning/chapter1/2-practice/2-parrot/">
         🦜 Perroquet
         <i class="fas fa-check read-icon"></i>
@@ -805,7 +805,7 @@
   
     
     <li data-nav-id="/CPP_Learning/chapter3/" title="Gestion mémoire" class="dd-item 
-        
+        parent
         
         
         ">
@@ -833,7 +833,7 @@
  
   
     
-      <li data-nav-id="/CPP_Learning/chapter3/1-lifespan/" title="Durée de vie" class="dd-item ">
+      <li data-nav-id="/CPP_Learning/chapter3/1-lifespan/" title="Durée de vie" class="dd-item active">
         <a href="/CPP_Learning/chapter3/1-lifespan/">
         Durée de vie
         <i class="fas fa-check read-icon"></i>
@@ -1047,13 +1047,7 @@
             
           
           
-            
-            
-          
-          
-            <a href='/CPP_Learning/'>Accueil</a> > <a href='/CPP_Learning/chapter1/'>Introduction au C++</a> > <a href='/CPP_Learning/chapter1/2-practice/'>Premiers programmes</a> > 🦜 Perroquet
-          
-        
+            <a href='/CPP_Learning/'>Accueil</a> > <a href='/CPP_Learning/chapter3/'>Gestion mémoire</a> > Durée de vie
           
         
           
@@ -1070,10 +1064,11 @@
   <ul>
     <li>
       <ul>
-        <li><a href="#lire-un-entier">Lire un entier</a></li>
-        <li><a href="#faire-une-boucle">Faire une boucle</a></li>
-        <li><a href="#les-chaînes-de-caractères">Les chaînes de caractères</a></li>
-        <li><a href="#omettre-std">Omettre <code>std</code></a></li>
+        <li><a href="#portée-dune-variable-locale">Portée d&rsquo;une variable locale</a></li>
+        <li><a href="#destruction-dun-objet">Destruction d&rsquo;un objet</a></li>
+        <li><a href="#durée-de-vie-dun-objet">Durée de vie d&rsquo;un objet</a></li>
+        <li><a href="#validité-dun-objet">Validité d&rsquo;un objet</a></li>
+        <li><a href="#lien-avec-la-mémoire">Lien avec la mémoire</a></li>
       </ul>
     </li>
   </ul>
@@ -1093,33 +1088,91 @@
           
             <h1>
               
-              🦜 Perroquet
+              Durée de vie
             </h1>
           
 
         
 
 
-<p>Vous allez maintenant implémenter un perroquet, qui répète ce que vous dites dans la console.</p>
 <hr>
-<p>Pour cet exercice, vous modifierez le fichier :<br>
-- <code>chap-01/2-parrot.cpp</code></p>
-<p>La cible à compiler est <code>c1-2-parrot</code>.</p>
-<hr>
-<h3 id="lire-un-entier">Lire un entier</h3>
-<p>Commencez par écrire une fonction <code>main</code> qui ne fait rien, comme dans l&rsquo;exercice précédent.
-Compilez et exécutez le programme, pour être sûr que tout est bien configuré.</p>
-<p>Ensuite, vous allez déclarer une variable de type <code>int</code>. Cela se fait de la même manière qu&rsquo;en C.</p>
-<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="kt">int</span> <span class="n">number</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+<h3 id="portée-dune-variable-locale">Portée d&rsquo;une variable locale</h3>
+<p>Afin de parler de durée de vie, nous allons commencer par parler de la portée de nos variables.
+Comme vous le savez peut-être, la portée d&rsquo;une variable définit la portion de code dans laquelle le compilateur nous permet de l&rsquo;utiliser.</p>
+<p>Si on définit une variable dans une fonction, la portée de celle-ci démarre à sa définition et se termine à la fin du bloc dans lequel celle-ci a été définie.</p>
+<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="ln"> 1</span> <span class="kt">void</span> <span class="nf">fcn</span><span class="p">(</span><span class="kt">int</span> <span class="n">a</span><span class="p">)</span>
+<span class="ln"> 2</span> <span class="p">{</span>
+<span class="ln"> 3</span>     <span class="k">if</span> <span class="p">(</span><span class="n">a</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span>
+<span class="ln"> 4</span>     <span class="p">{</span>
+<span class="ln"> 5</span>         <span class="kt">char</span> <span class="n">b</span> <span class="o">=</span> <span class="sc">&#39;0&#39;</span><span class="p">;</span>
+<span class="ln"> 6</span>         <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">b</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+<span class="ln"> 7</span>     <span class="p">}</span>
+<span class="ln"> 8</span>     <span class="k">else</span>
+<span class="ln"> 9</span>     <span class="p">{</span>
+<span class="ln">10</span>         <span class="kt">char</span> <span class="n">c</span> <span class="o">=</span> <span class="sc">&#39;1&#39;</span><span class="p">;</span>
+<span class="ln">11</span>         <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">c</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+<span class="ln">12</span>     <span class="p">}</span>
+<span class="ln">13</span> <span class="p">}</span>
 </code></pre></div>
-<div class="notices tip" ><p>Il faut toujours initialiser vos variables de types primitifs (c&rsquo;est-à-dire les variables qui ne sont pas des instances de classe). Cela permet d&rsquo;éviter d&rsquo;avoir des crashes ou des bugs aléatoires. Parce que quand un bug ne se produit qu&rsquo;une fois sur dix, il y a des chances que ce soit le correcteur du TP qui se le prenne, alors que tout c&rsquo;était bien passé la dernière fois que vous avez testé le programme.<br>
-Et plus sérieusement, quand vous serez en entreprise, et que vous vous arracherez les cheveux à relancer 341 fois le même programme pour essayer de reproduire un bug (qu&rsquo;il faut bien corriger, même s&rsquo;il n&rsquo;arrive qu&rsquo;une fois sur 341), vous vous rappelerez que faire en sorte que vos programmes soient déterministes, ça aide à ne pas devenir chauve.</p>
-</div>
+<p>Dans le code ci-dessus :</p>
+<ul>
+<li>la portée de <code>a</code> démarre à la ligne 1 et termine à la ligne 13,</li>
+<li>la portée de <code>b</code> démarre à la ligne 5 et termine à la ligne 7,</li>
+<li>la portée de <code>c</code> démarre à la ligne 10 et termine à la ligne 12.</li>
+</ul>
+<hr>
+<h3 id="destruction-dun-objet">Destruction d&rsquo;un objet</h3>
+<p>Supposons que nous ayions une classe <code>Class</code> et que l&rsquo;on déclare une variable de ce type.</p>
+<p>Lorsque cette variable sort du scope, une fonction spéciale de <code>Class</code> est appelée.<br>
+On appelle celle-ci le <strong>destructeur</strong> de l&rsquo;objet.<br>
+Le nom de cette fonction est le nom de la classe précédé d&rsquo;un tilde et acceptant 0 paramètre :</p>
+<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="c1">// dans le header
+</span><span class="c1"></span><span class="k">class</span> <span class="nc">Class</span>
+<span class="p">{</span>
+<span class="k">public</span><span class="o">:</span>
+    <span class="c1">// ...
+</span><span class="c1"></span>    <span class="o">~</span><span class="n">Class</span><span class="p">();</span>  <span class="c1">// destructeur de Class.
+</span><span class="c1"></span>
+    <span class="c1">// ...
+</span><span class="c1"></span><span class="p">};</span>
 
-<p>Utilisez ensuite l&rsquo;instruction suivante pour lire un nombre depuis l&rsquo;entrée standard.
-Vous conviendrez que la seule différence avec l&rsquo;instruction pour écrire sur la sortie standard, c&rsquo;est qu&rsquo;on utilise <code>cin</code> plutôt que <code>cout</code>, et que les chevrons sont dans l&rsquo;autre sens.</p>
-<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="n">std</span><span class="o">::</span><span class="n">cin</span> <span class="o">&gt;&gt;</span> <span class="n">number</span><span class="p">;</span>
-</code></pre></div><p>Ecrivez ensuite <code>number</code> sur la sortie standard et testez votre programme. Si vous exécutez depuis VSCode, utilisez <code>CMake: Run Without Debugging</code> (Shift+F7) plutôt que <code>CMake: Debug</code> (Ctrl+F7), afin que le programme s&rsquo;exécute dans le terminal intégré pour pouvoir y entrer vos valeurs.</p>
+<span class="c1">// dans le cpp
+</span><span class="c1"></span><span class="n">Class</span><span class="o">::~</span><span class="n">Class</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="c1">// implémentation du destructeur de Class.
+</span><span class="c1"></span><span class="p">}</span>
+</code></pre></div><p>Comme pour le constructeur par défaut, le constructeur de copie ou l&rsquo;opérateur d&rsquo;assignation, le compilateur définit une implémentation par défaut du destructeur de chaque classe.<br>
+Ainsi, même si nous n&rsquo;avons jusqu&rsquo;ici jamais eu à définir de destructeur pour nos classes, le destructeur existait bel et bien et était appelé à chaque fois qu&rsquo;il le devait.</p>
+<hr>
+<h3 id="durée-de-vie-dun-objet">Durée de vie d&rsquo;un objet</h3>
+<p>Revenons à la notion de durée de vie.
+La durée de vie d&rsquo;un objet démarre de l&rsquo;appel de son constructeur et termine à l&rsquo;appel de son destructeur.</p>
+<p>Lorsque l&rsquo;on définit une variable locale contenant une instance d&rsquo;objet, sa durée de vie correspond par conséquent à la portée de la variable dans laquelle celui-ci est placé.</p>
+<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="ln"> 1</span> <span class="kt">void</span> <span class="nf">fcn</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">param</span><span class="p">)</span>                <span class="c1">// construction de param
+</span><span class="ln"> 2</span><span class="c1"></span> <span class="p">{</span>
+<span class="ln"> 3</span>     <span class="k">if</span> <span class="p">(</span><span class="n">s</span><span class="p">.</span><span class="n">empty</span><span class="p">())</span>
+<span class="ln"> 4</span>     <span class="p">{</span>
+<span class="ln"> 5</span>         <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">empty</span> <span class="o">=</span> <span class="s">&#34;empty&#34;</span><span class="p">;</span>       <span class="c1">// construction de empty
+</span><span class="ln"> 6</span><span class="c1"></span>         <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">empty</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+<span class="ln"> 7</span>     <span class="p">}</span>                                      <span class="c1">// destruction de empty
+</span><span class="ln"> 8</span><span class="c1"></span>     <span class="k">else</span>
+<span class="ln"> 9</span>     <span class="p">{</span>
+<span class="ln">10</span>         <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">filled</span> <span class="o">=</span> <span class="s">&#34;filled&#34;</span><span class="p">;</span>     <span class="c1">// construction de filled
+</span><span class="ln">11</span><span class="c1"></span>         <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">filled</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+<span class="ln">12</span>     <span class="p">}</span>                                      <span class="c1">// destruction de filled
+</span><span class="ln">13</span><span class="c1"></span> <span class="p">}</span>                                          <span class="c1">// destruction de param
+</span></code></pre></div>
+<p>Dans le code ci-dessus :</p>
+<ul>
+<li>la portée et la durée de vie de <code>param</code> démarre à la ligne 1 et termine à la ligne 13,</li>
+<li>la portée et la durée de vie de <code>empty</code> démarre à la ligne 5 et termine à la ligne 7,</li>
+<li>la portée et la durée de vie de <code>filled</code> démarre à la ligne 10 et termine à la ligne 12.</li>
+</ul>
+<p><strong>Qu&rsquo;en est-il de la durée de vie d&rsquo;un objet défini en tant qu&rsquo;attribut d&rsquo;une autre classe ?</strong></p>
+<p>Pour le déterminer, vous allez modifier le code du programme <code>c3-1-box</code>.</p>
+<p>Modifiez le constructeur de la classe <code>Box</code> et redéfinissez son destructeur afin qu&rsquo;ils affichent <code>Box created</code> et <code>Box destroyed</code>.<br>
+Faites de même pour <code>Content</code> et testez le programme.<br>
+Pouvez-vous en déduire à quel moment la durée de vie de <code>_content</code> démarre, et à quel moment celle-ci termine ?</p>
 
 <div class="expand">
     <div class="expand-label" style="cursor: pointer;" onclick="$h = $(this);$h.next('div').slideToggle(100,function () {$h.children('i').attr('class',function () {return $h.next('div').is(':visible') ? 'fas fa-chevron-down' : 'fas fa-chevron-right';});});">
@@ -1132,128 +1185,71 @@ Vous conviendrez que la seule différence avec l&rsquo;instruction pour écrire 
     	</span>
     </div>
     <div class="expand-content" style="display: none;">
-        <div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp">
-</span><span class="cp"></span>
-<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
+        <div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="k">struct</span> <span class="nc">Content</span>
 <span class="p">{</span>
-    <span class="kt">int</span> <span class="n">number</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
-    <span class="n">std</span><span class="o">::</span><span class="n">cin</span> <span class="o">&gt;&gt;</span> <span class="n">number</span><span class="p">;</span>
-    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;Craow &#34;</span> <span class="o">&lt;&lt;</span> <span class="n">number</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;!&#34;</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
-    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
-<span class="p">}</span>
-</code></pre></div>
-    </div>
-</div>
-<hr>
-<h3 id="faire-une-boucle">Faire une boucle</h3>
-<p>Vous allez maintenant utilisez une boucle <code>while</code> afin d&rsquo;exécuter vos instructions à l&rsquo;infini. Placez <code>true</code> en condition du <code>while</code>.</p>
-
-<div class="expand">
-    <div class="expand-label" style="cursor: pointer;" onclick="$h = $(this);$h.next('div').slideToggle(100,function () {$h.children('i').attr('class',function () {return $h.next('div').is(':visible') ? 'fas fa-chevron-down' : 'fas fa-chevron-right';});});">
-        <i style="font-size:x-small;" class="fas fa-chevron-right"></i>
-        <span>
-        
-    	
-    	Solution
-    	
-    	</span>
-    </div>
-    <div class="expand-content" style="display: none;">
-        <div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="k">while</span> <span class="p">(</span><span class="nb">true</span><span class="p">)</span>
-<span class="p">{</span>
-    <span class="kt">int</span> <span class="n">number</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
-    <span class="n">std</span><span class="o">::</span><span class="n">cin</span> <span class="o">&gt;&gt;</span> <span class="n">number</span><span class="p">;</span>
-    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;Craow &#34;</span> <span class="o">&lt;&lt;</span> <span class="n">number</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;!&#34;</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
-<span class="p">}</span>
-</code></pre></div>
-    </div>
-</div>
-<p>Afin de pouvoir terminer le programme un peu plus proprement qu&rsquo;avec Ctrl+C, ajoutez une condition pour sortir de la boucle si le nombre entré est -1. Cela se fait de la même manière qu&rsquo;en C.</p>
-
-<div class="expand">
-    <div class="expand-label" style="cursor: pointer;" onclick="$h = $(this);$h.next('div').slideToggle(100,function () {$h.children('i').attr('class',function () {return $h.next('div').is(':visible') ? 'fas fa-chevron-down' : 'fas fa-chevron-right';});});">
-        <i style="font-size:x-small;" class="fas fa-chevron-right"></i>
-        <span>
-        
-    	
-    	Solution
-    	
-    	</span>
-    </div>
-    <div class="expand-content" style="display: none;">
-        <div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="k">while</span> <span class="p">(</span><span class="nb">true</span><span class="p">)</span>
-<span class="p">{</span>
-    <span class="kt">int</span> <span class="n">number</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
-    <span class="n">std</span><span class="o">::</span><span class="n">cin</span> <span class="o">&gt;&gt;</span> <span class="n">number</span><span class="p">;</span>
-    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;Craow &#34;</span> <span class="o">&lt;&lt;</span> <span class="n">number</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;!&#34;</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
-
-    <span class="k">if</span> <span class="p">(</span><span class="n">number</span> <span class="o">==</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+    <span class="n">Content</span><span class="p">(</span><span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&amp;</span> <span class="n">name</span><span class="p">)</span>
+        <span class="o">:</span> <span class="n">name</span> <span class="p">{</span> <span class="n">name</span> <span class="p">}</span>
     <span class="p">{</span>
-        <span class="k">break</span><span class="p">;</span>
+        <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;Content created&#34;</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
     <span class="p">}</span>
-<span class="p">}</span>
-</code></pre></div>
-    </div>
-</div>
-<p>Essayez de remplacer votre <code>while</code> par une boucle <code>do ... while</code>, de manière à supprimer le <code>if</code>.</p>
 
-<div class="expand">
-    <div class="expand-label" style="cursor: pointer;" onclick="$h = $(this);$h.next('div').slideToggle(100,function () {$h.children('i').attr('class',function () {return $h.next('div').is(':visible') ? 'fas fa-chevron-down' : 'fas fa-chevron-right';});});">
-        <i style="font-size:x-small;" class="fas fa-chevron-right"></i>
-        <span>
-        
-    	
-    	Solution
-    	
-    	</span>
-    </div>
-    <div class="expand-content" style="display: none;">
-        <div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="kt">int</span> <span class="n">number</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="o">~</span><span class="n">Content</span><span class="p">()</span> <span class="p">{</span> <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;Content destroyed&#34;</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span> <span class="p">}</span>
 
-<span class="k">do</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">name</span><span class="p">;</span>
+<span class="p">};</span>
+
+<span class="k">class</span> <span class="nc">Box</span>
 <span class="p">{</span>
-    <span class="n">std</span><span class="o">::</span><span class="n">cin</span> <span class="o">&gt;&gt;</span> <span class="n">number</span><span class="p">;</span>
-    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;Craow &#34;</span> <span class="o">&lt;&lt;</span> <span class="n">number</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;!&#34;</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
-<span class="p">}</span>
-<span class="k">while</span> <span class="p">(</span><span class="n">number</span> <span class="o">!=</span> <span class="o">-</span><span class="mi">1</span><span class="p">);</span>
-</code></pre></div>
+<span class="k">public</span><span class="o">:</span>
+    <span class="n">Box</span><span class="p">(</span><span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&amp;</span> <span class="n">name</span><span class="p">)</span>
+        <span class="o">:</span> <span class="n">_content</span> <span class="p">{</span> <span class="n">name</span> <span class="p">}</span>
+    <span class="p">{</span>
+        <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;Box created&#34;</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="o">~</span><span class="n">Box</span><span class="p">()</span> <span class="p">{</span> <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;Box destroyed&#34;</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span> <span class="p">}</span>
+    
+    <span class="n">Content</span><span class="o">&amp;</span> <span class="n">get_content</span><span class="p">()</span> <span class="p">{</span> <span class="k">return</span> <span class="n">_content</span><span class="p">;</span> <span class="p">}</span>
+
+<span class="k">private</span><span class="o">:</span>
+    <span class="n">Content</span> <span class="n">_content</span> <span class="p">{</span> <span class="s">&#34;thing&#34;</span> <span class="p">};</span>
+<span class="p">};</span>
+</code></pre></div><p>On obtient la sortie suivante :</p>
+<div class="highlight"><pre class="chroma"><code class="language-b" data-lang="b"><span class="c">box1 block begin
+</span><span class="c">Content created
+</span><span class="c">Box created
+</span><span class="c">Box destroyed
+</span><span class="c">Content destroyed
+</span><span class="c"></span><span class="nb">----------------</span><span class="c">
+</span><span class="c">box2 block begin
+</span><span class="c">Content created
+</span><span class="c">Box created
+</span><span class="c">Box destroyed
+</span><span class="c">Content destroyed
+</span><span class="c">box2 block end
+</span></code></pre></div><p>On peut en déduire que <code>Box::_content</code> :<br>
+- est construit pendant l&rsquo;appel du constructeur de <code>Box</code>, juste avant de rentrer dans le corps de la fonction,<br>
+- est détruit pendant l&rsquo;appel du destructeur <code>Box</code>, juste après être sorti du corps de la fonction.</p>
+
     </div>
 </div>
-<p>Supposons maintenant que notre perroquet a une durée de vie de 10 allocutions. Remplacez le <code>do ... while</code> par une boucle <code>for</code> de dix itérations.</p>
-
-<div class="expand">
-    <div class="expand-label" style="cursor: pointer;" onclick="$h = $(this);$h.next('div').slideToggle(100,function () {$h.children('i').attr('class',function () {return $h.next('div').is(':visible') ? 'fas fa-chevron-down' : 'fas fa-chevron-right';});});">
-        <i style="font-size:x-small;" class="fas fa-chevron-right"></i>
-        <span>
-        
-    	
-    	Solution
-    	
-    	</span>
-    </div>
-    <div class="expand-content" style="display: none;">
-        <div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">10</span><span class="p">;</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span>
-<span class="p">{</span>
-    <span class="kt">int</span> <span class="n">number</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
-    <span class="n">std</span><span class="o">::</span><span class="n">cin</span> <span class="o">&gt;&gt;</span> <span class="n">number</span><span class="p">;</span>
-    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;Craow &#34;</span> <span class="o">&lt;&lt;</span> <span class="n">number</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;!&#34;</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
-<span class="p">}</span>
-</code></pre></div>
-    </div>
-</div>
-
-<div class="notices tip" ><p>En C++, il est tout à fait valide et même conseillé de définir son indice d&rsquo;itérations directement dans l&rsquo;instruction <code>for</code>.
-Cela permet de limiter le <strong>scope</strong> (ou portée) de la variable à la boucle dans laquelle elle est définie.<br>
-On écrira donc <code>for (int i = 0; i &lt; 10; ++ i) { ... }</code> plutôt que <code>int i; for (i = 0; i &lt; 10; ++i) { ... }</code>.</p>
-</div>
-
 <hr>
-<h3 id="les-chaînes-de-caractères">Les chaînes de caractères</h3>
-<p>Jusqu&rsquo;ici, notre perroquet ne sait dire que &ldquo;Craow&rdquo; et compter. D&rsquo;ailleurs, si vous lui dites autre chose qu&rsquo;un nombre, il a tendance à s&rsquo;étrangler.<br>
-Nous allons donc lui apprendre à faire des vraies phrases.</p>
-<p>La librairie standard du C++ définit la classe <code>std::string</code>.<br>
-Cherchez d&rsquo;abord sur <a href="https://en.cppreference.com/w/">cpp-reference</a> quel header inclure pour pouvoir l&rsquo;utiliser et ajoutez-le à votre programmme.<br>
-Remplacez ensuite votre variable <code>number</code> de type <code>int</code> par une variable <code>word</code> de type <code>std::string</code>.</p>
+<h3 id="validité-dun-objet">Validité d&rsquo;un objet</h3>
+<p>La durée de vie d&rsquo;un objet détermine la période durant laquelle il est valide d&rsquo;utiliser cet objet et son contenu.</p>
+<p>En C++, il est possible de créer des objets dynamiquement avec les mots-clefs <code>new</code> et <code>delete</code>.<br>
+Testez le code suivant et déterminez les durées de vie des objets <code>box</code> et <code>box-&gt;_content</code> à partir de l&rsquo;output du programme.
+<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="ln"> 1</span> <span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
+<span class="ln"> 2</span> <span class="p">{</span>
+<span class="ln"> 3</span>     <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;Main begin&#34;</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+<span class="ln"> 4</span> 
+<span class="ln"> 5</span>     <span class="n">Box</span><span class="o">*</span> <span class="n">box</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Box</span><span class="p">(</span><span class="s">&#34;gift&#34;</span><span class="p">);</span>
+<span class="ln"> 6</span>     <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">box</span><span class="o">-&gt;</span><span class="n">get_content</span><span class="p">().</span><span class="n">name</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+<span class="ln"> 7</span>     <span class="k">delete</span> <span class="n">box</span><span class="p">;</span>
+<span class="ln"> 8</span> 
+<span class="ln"> 9</span>     <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;Main end&#34;</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+<span class="ln">10</span>     <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="ln">11</span> <span class="p">}</span>
+</code></pre></div></p>
 
 <div class="expand">
     <div class="expand-label" style="cursor: pointer;" onclick="$h = $(this);$h.next('div').slideToggle(100,function () {$h.children('i').attr('class',function () {return $h.next('div').is(':visible') ? 'fas fa-chevron-down' : 'fas fa-chevron-right';});});">
@@ -1266,52 +1262,120 @@ Remplacez ensuite votre variable <code>number</code> de type <code>int</code> pa
     	</span>
     </div>
     <div class="expand-content" style="display: none;">
-        <div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">10</span><span class="p">;</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span>
-<span class="p">{</span>
-    <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">word</span><span class="p">;</span>
-    <span class="n">std</span><span class="o">::</span><span class="n">cin</span> <span class="o">&gt;&gt;</span> <span class="n">word</span><span class="p">;</span>
-    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;Craow &#34;</span> <span class="o">&lt;&lt;</span> <span class="n">word</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;!&#34;</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
-<span class="p">}</span>
-</code></pre></div>
+        <div class="highlight"><pre class="chroma"><code class="language-b" data-lang="b"><span class="c">Main begin
+</span><span class="c">Content created
+</span><span class="c">Box created
+</span><span class="c">gift
+</span><span class="c">Box destroyed
+</span><span class="c">Content destroyed
+</span><span class="c">Main end
+</span></code></pre></div><p>Les durées de vie des objets <code>box</code> et <code>box-&gt;_content</code> démarrent à la ligne 5 (<code>new</code>) et s&rsquo;achèvent à la ligne 7 (<code>delete</code>).</p>
+
     </div>
 </div>
+<p>Analysez maintenant le code ci-dessous.<br>
+Quelle est selon vous la durée de vie de la variable <code>content</code> ?
+<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="ln"> 1</span> <span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
+<span class="ln"> 2</span> <span class="p">{</span>
+<span class="ln"> 3</span>     <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;Main start&#34;</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+<span class="ln"> 4</span> 
+<span class="ln"> 5</span>     <span class="n">Box</span><span class="o">*</span> <span class="n">box</span>        <span class="o">=</span> <span class="k">new</span> <span class="n">Box</span><span class="p">(</span><span class="s">&#34;gift&#34;</span><span class="p">);</span>
+<span class="ln"> 6</span>     <span class="n">Content</span> <span class="n">content</span> <span class="o">=</span> <span class="n">box</span><span class="o">-&gt;</span><span class="n">get_content</span><span class="p">();</span>
+<span class="ln"> 7</span> 
+<span class="ln"> 8</span>     <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">content</span><span class="p">.</span><span class="n">name</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+<span class="ln"> 9</span> 
+<span class="ln">10</span>     <span class="k">delete</span> <span class="n">box</span><span class="p">;</span>
+<span class="ln">11</span> 
+<span class="ln">12</span>     <span class="n">content</span><span class="p">.</span><span class="n">name</span> <span class="o">=</span> <span class="s">&#34;chocolate&#34;</span><span class="p">;</span>
+<span class="ln">13</span>     <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">content</span><span class="p">.</span><span class="n">name</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+<span class="ln">14</span> 
+<span class="ln">15</span>     <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;Main end&#34;</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+<span class="ln">16</span>     <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="ln">17</span> <span class="p">}</span>
+</code></pre></div></p>
+<p>Testez le code pour vérifier ce qu&rsquo;il se passe réellement.</p>
+<p>Pour mieux comprendre, vous allez redéfinir le constructeur de copie de <code>Content</code> afin qu&rsquo;il affiche <code>Content copied</code>.
+Combien d&rsquo;objets de type <code>Content</code> ont donc été créés par le programme précédent ? Quelles étaient leurs durées de vie respectives ?</p>
 
-<div class="notices tip" ><p>Vous n&rsquo;avez pas besoin ici d&rsquo;initialiser <code>word</code> en écrivant <code>= &quot;&quot;</code>. En effet, <code>std::string</code> est une classe, et par défaut, les instances de cette classe sont déjà initialisées avec la chaîne vide.</p>
+<div class="expand">
+    <div class="expand-label" style="cursor: pointer;" onclick="$h = $(this);$h.next('div').slideToggle(100,function () {$h.children('i').attr('class',function () {return $h.next('div').is(':visible') ? 'fas fa-chevron-down' : 'fas fa-chevron-right';});});">
+        <i style="font-size:x-small;" class="fas fa-chevron-right"></i>
+        <span>
+        
+    	
+    	Solution
+    	
+    	</span>
+    </div>
+    <div class="expand-content" style="display: none;">
+        <div class="highlight"><pre class="chroma"><code class="language-b" data-lang="b"><span class="c">Main start
+</span><span class="c">Content created
+</span><span class="c">Box created
+</span><span class="c">Content copied
+</span><span class="c">gift
+</span><span class="c">Box destroyed
+</span><span class="c">Content destroyed
+</span><span class="c">chocolate
+</span><span class="c">Main end
+</span><span class="c">Content destroyed
+</span></code></pre></div><p>Deux objets de type <code>Content</code> ont été créés par le programme.<br>
+La durée de vie du premier, <code>box-&gt;_content</code>, démarre à la ligne 5 (construction de <code>*box</code>) et termine à la ligne 10 (destruction de <code>*box</code>).<br>
+La durée de vie du second, <code>content</code>, démarre à la ligne 6 (copie de <code>box-&gt;_content</code>) et termine à la ligne 17 (sortie du <code>main</code>).</p>
+
+    </div>
 </div>
+<p>Analysez enfin le code suivant.<br>
+Quelle est maintenant la durée de vie de <code>content_ref</code> ? A votre avis, que peut-il se passer lors de l&rsquo;exécution de la ligne 12 ?<br>
+Commentez ensuite la ligne 12 et retestez une dernière fois le programme.
+<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="ln"> 1</span> <span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
+<span class="ln"> 2</span> <span class="p">{</span>
+<span class="ln"> 3</span>     <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;Main start&#34;</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+<span class="ln"> 4</span> 
+<span class="ln"> 5</span>     <span class="n">Box</span><span class="o">*</span> <span class="n">box</span>             <span class="o">=</span> <span class="k">new</span> <span class="n">Box</span><span class="p">(</span><span class="s">&#34;gift&#34;</span><span class="p">);</span>
+<span class="ln"> 6</span>     <span class="n">Content</span><span class="o">&amp;</span> <span class="n">content_ref</span> <span class="o">=</span> <span class="n">box</span><span class="o">-&gt;</span><span class="n">get_content</span><span class="p">();</span>
+<span class="ln"> 7</span> 
+<span class="ln"> 8</span>     <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">content_ref</span><span class="p">.</span><span class="n">name</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+<span class="ln"> 9</span> 
+<span class="ln">10</span>     <span class="k">delete</span> <span class="n">box</span><span class="p">;</span>
+<span class="ln">11</span> 
+<span class="ln">12</span>     <span class="n">content_ref</span><span class="p">.</span><span class="n">name</span> <span class="o">=</span> <span class="s">&#34;chocolate&#34;</span><span class="p">;</span>
+<span class="ln">13</span>     <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">content_ref</span><span class="p">.</span><span class="n">name</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+<span class="ln">14</span> 
+<span class="ln">15</span>     <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;Main end&#34;</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+<span class="ln">16</span>     <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="ln">17</span> <span class="p">}</span>
+</code></pre></div></p>
 
+<div class="expand">
+    <div class="expand-label" style="cursor: pointer;" onclick="$h = $(this);$h.next('div').slideToggle(100,function () {$h.children('i').attr('class',function () {return $h.next('div').is(':visible') ? 'fas fa-chevron-down' : 'fas fa-chevron-right';});});">
+        <i style="font-size:x-small;" class="fas fa-chevron-right"></i>
+        <span>
+        
+    	
+    	Solution
+    	
+    	</span>
+    </div>
+    <div class="expand-content" style="display: none;">
+        <p>Comme <code>content_ref</code> est une référence, la variable correspond au même objet que <code>box-&gt;_content</code>.
+Sa durée de vie s&rsquo;étend donc de la ligne 5 à la ligne 10 du programme.</p>
+<p>De mon côté, le programme déclenche forcément une segfault.<br>
+Lorsque la ligne 12 est commentée, le programme crashe sur la ligne 13 (accès à <code>content_ref.name</code>) et lorsqu&rsquo;elle est décommenté, il crashe à la sortie du programme.</p>
+<p>En réalité, on est dans une situation qualifiée d'<strong>undefined behavior</strong>.
+Le comportement exact du programme dépendra donc de votre compilateur et de la manière dont votre système d&rsquo;exploitation gère les accès mémoire.</p>
+
+    </div>
+</div>
+<p>Les différents tests effectués nous permettent de conclure les points suivants.<br>
+Tant qu&rsquo;on manipule des objets via des variables qui ne sont pas des références, ces objets existent forcément au moment de l&rsquo;utilisation et il n&rsquo;y a aucun risque d&rsquo;avoir un problème.<br>
+En revanche, dès lors que l&rsquo;on manipule des objets via des références, il est nécessaire d&rsquo;être prudent, car la portée de la variable ne correspondra pas nécessairement à la durée de vie de l&rsquo;objet référencé.</p>
 <hr>
-<h3 id="omettre-std">Omettre <code>std</code></h3>
-<p>Vous en avez marre de devoir écrire <code>std::</code> partout ? Il est possible de ne pas avoir à le faire en écrivant l&rsquo;instruction suivante juste après vos includes dans le cpp, ou alors dans le corps d&rsquo;une fonction :</p>
-<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
-</code></pre></div><p>Placez cette instruction au début de votre fonction <code>main</code>, retirez tous les <code>std::</code> devant les symboles de la librairie standard et vérifiez que votre programme compile toujours.</p>
-
-<div class="expand">
-    <div class="expand-label" style="cursor: pointer;" onclick="$h = $(this);$h.next('div').slideToggle(100,function () {$h.children('i').attr('class',function () {return $h.next('div').is(':visible') ? 'fas fa-chevron-down' : 'fas fa-chevron-right';});});">
-        <i style="font-size:x-small;" class="fas fa-chevron-right"></i>
-        <span>
-        
-    	
-    	Solution
-    	
-    	</span>
-    </div>
-    <div class="expand-content" style="display: none;">
-        <div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span> 
-
-<span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">10</span><span class="p">;</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span>
-<span class="p">{</span>
-    <span class="n">string</span> <span class="n">word</span><span class="p">;</span>
-    <span class="n">cin</span> <span class="o">&gt;&gt;</span> <span class="n">word</span><span class="p">;</span>
-    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;Craow &#34;</span> <span class="o">&lt;&lt;</span> <span class="n">word</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;!&#34;</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
-<span class="p">}</span>
-</code></pre></div>
-    </div>
-</div>
-
-<div class="notices info" ><p>Lorsqu&rsquo;on utilise <code>using namespace</code> dans un bloc d&rsquo;instructions (fonction, boucle, condition, etc), il faut savoir que son effet est limité à ce bloc.<br>
-Autre point important, il faut éviter d&rsquo;utiliser des <code>using namespace</code> à l&rsquo;intérieur de headers. Comme vous le savez peut-être, lorsque l&rsquo;on fait un include depuis un .cpp, le fichier inclus est en fait copié-collé dedans. Si on inclut un fichier qui réalise un <code>using namespace</code>, puis que l&rsquo;on inclut un autre header derrière (librairie standard par exemple), le <code>using namespace</code> du premier header risque d&rsquo;impacter le code du second header&hellip;</p>
-</div>
-
+<h3 id="lien-avec-la-mémoire">Lien avec la mémoire</h3>
+<p>La durée de vie d&rsquo;un objet est étroitement liée à la mémoire du programme.</p>
+<p>Lorsqu&rsquo;on construit un objet dynamiquement, le programme demande au système d&rsquo;exploitation de réserver une zone dans la mémoire qui servira à contenir les données de l&rsquo;objet.
+Lorsque cet objet est détruit, le programme rend la mémoire au système, qui pourra la réattribuée à un autre processus.
+Pour éviter de corrompre les données des autres programmes, le système devrait empêcher votre programme d&rsquo;aller écrire dans de la mémoire libérée en déclenchant une segfault.</p>
+<p>C&rsquo;est donc pour cette raison que l&rsquo;on peut considérer que la durée de vie de l&rsquo;objet définit la région du code dans laquelle il est valide de l&rsquo;utiliser.</p>
 
 
 <footer class="footline">
@@ -1551,7 +1615,6 @@ Autre point important, il faut éviter d&rsquo;utiliser des <code>using namespac
             
                 
                     
-                    
                 
                 
 
@@ -1566,9 +1629,6 @@ Autre point important, il faut éviter d&rsquo;utiliser des <code>using namespac
             
             
                 
-                    
-                        
-                        
                     
                 
                 
@@ -1586,7 +1646,6 @@ Autre point important, il faut éviter d&rsquo;utiliser des <code>using namespac
             
                 
                     
-                    
                 
                 
 
@@ -1599,26 +1658,6 @@ Autre point important, il faut éviter d&rsquo;utiliser des <code>using namespac
             
             
                 
-                    
-                        
-                        
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
                     
                 
                 
@@ -1636,8 +1675,21 @@ Autre point important, il faut éviter d&rsquo;utiliser des <code>using namespac
             
                 
                     
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
                         
-                        
+            
+            
+                
                     
                 
                 
@@ -1863,6 +1915,7 @@ Autre point important, il faut éviter d&rsquo;utiliser des <code>using namespac
             
                 
                     
+                    
                 
                 
 
@@ -1875,6 +1928,7 @@ Autre point important, il faut éviter d&rsquo;utiliser des <code>using namespac
             
             
                 
+                    
                     
                 
                 
@@ -1891,6 +1945,9 @@ Autre point important, il faut éviter d&rsquo;utiliser des <code>using namespac
             
             
                 
+                    
+                        
+                        
                     
                 
                 
@@ -1984,10 +2041,10 @@ Autre point important, il faut éviter d&rsquo;utiliser des <code>using namespac
 	 
 	 
 		
-			<a class="nav nav-prev" href="/CPP_Learning/chapter1/2-practice/1-hello-world/" title="👋 Hello World"> <i class="fa fa-chevron-left"></i></a>
+			<a class="nav nav-prev" href="/CPP_Learning/chapter3/" title="Gestion mémoire"> <i class="fa fa-chevron-left"></i></a>
 		
 		
-			<a class="nav nav-next" href="/CPP_Learning/chapter1/2-practice/3-array/" title="🔢 Tableau Numérique" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+			<a class="nav nav-next" href="/CPP_Learning/chapter3/2-ownership/" title="Ownership" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
 		
 	
     </div>

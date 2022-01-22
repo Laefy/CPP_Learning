@@ -1,0 +1,2093 @@
+<!DOCTYPE html>
+<html lang="fr" class="js csstransforms3d">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="Hugo 0.76.5" />
+    <meta name="description" content="">
+
+
+    <link rel="icon" href="/CPP_Learning/images/favicon.png" type="image/png">
+
+    <title>Déplacement :: Cours de C&#43;&#43; - Niveau Master</title>
+
+    
+    <link href="/CPP_Learning/css/nucleus.css?1642825535" rel="stylesheet">
+    <link href="/CPP_Learning/css/fontawesome-all.min.css?1642825535" rel="stylesheet">
+    <link href="/CPP_Learning/css/hybrid.css?1642825535" rel="stylesheet">
+    <link href="/CPP_Learning/css/featherlight.min.css?1642825535" rel="stylesheet">
+    <link href="/CPP_Learning/css/perfect-scrollbar.min.css?1642825535" rel="stylesheet">
+    <link href="/CPP_Learning/css/auto-complete.css?1642825535" rel="stylesheet">
+    <link href="/CPP_Learning/css/atom-one-dark-reasonable.css?1642825535" rel="stylesheet">
+    <link href="/CPP_Learning/css/theme.css?1642825535" rel="stylesheet">
+    <link href="/CPP_Learning/css/hugo-theme.css?1642825535" rel="stylesheet">
+    
+    <link href="/CPP_Learning/css/theme-mine.css?1642825535" rel="stylesheet">
+    
+    <link href="/CPP_Learning/css/syntax.css?1642825535" rel="stylesheet">
+
+    <script src="/CPP_Learning/js/jquery-3.3.1.min.js?1642825535"></script>
+
+    <style>
+      :root #header + #content > #left > #rlblock_left{
+          display:none !important;
+      }
+      
+        :not(pre) > code + span.copy-to-clipboard {
+            display: none;
+        }
+      
+    </style>
+    
+  </head>
+  <body class="" data-url="/CPP_Learning/chapter3/4-move-sem/">
+    <nav id="sidebar" class="showVisitedLinks">
+
+
+
+  <div id="header-wrapper">
+    <div id="header">
+      <a id="logo" href="https://laefy.github.io/CPP_Learning/">🎄 C++ 🎄</a>
+
+    </div>
+    
+        <div class="searchbox">
+    <label for="search-by"><i class="fas fa-search"></i></label>
+    <input data-search-input id="search-by" type="search" placeholder="Rechercher...">
+    <span data-search-clear=""><i class="fas fa-times"></i></span>
+</div>
+
+<script type="text/javascript" src="/CPP_Learning/js/lunr.min.js?1642825535"></script>
+<script type="text/javascript" src="/CPP_Learning/js/auto-complete.js?1642825535"></script>
+<script type="text/javascript">
+    
+        var baseurl = "https:\/\/laefy.github.io\/CPP_Learning\/";
+    
+</script>
+<script type="text/javascript" src="/CPP_Learning/js/search.js?1642825535"></script>
+
+    
+  </div>
+
+    <div class="highlightable">
+    <ul class="topics">
+
+        
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/CPP_Learning/chapter0/" title="Mise en place" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/CPP_Learning/chapter0/">
+          <b>0- </b>Mise en place
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+          
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/CPP_Learning/chapter0/1-compiler/" title="Compilateur" class="dd-item ">
+        <a href="/CPP_Learning/chapter0/1-compiler/">
+        Compilateur
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/CPP_Learning/chapter0/2-vscode/" title="Visual Studio Code" class="dd-item ">
+        <a href="/CPP_Learning/chapter0/2-vscode/">
+        Visual Studio Code
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/CPP_Learning/chapter0/3-cmake/" title="CMake" class="dd-item ">
+        <a href="/CPP_Learning/chapter0/3-cmake/">
+        CMake
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/CPP_Learning/chapter0/4-git/" title="Git" class="dd-item ">
+        <a href="/CPP_Learning/chapter0/4-git/">
+        Git
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/CPP_Learning/chapter0/5-clang-format/" title="Clang-Format" class="dd-item ">
+        <a href="/CPP_Learning/chapter0/5-clang-format/">
+        Clang-Format
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/CPP_Learning/chapter0/6-tips/" title="Astuces" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/CPP_Learning/chapter0/6-tips/">
+          Astuces
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/CPP_Learning/chapter0/6-tips/1-snippets/" title="Petits programmes" class="dd-item ">
+        <a href="/CPP_Learning/chapter0/6-tips/1-snippets/">
+        Petits programmes
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/CPP_Learning/chapter0/6-tips/2-vscode/" title="Projets VSCode" class="dd-item ">
+        <a href="/CPP_Learning/chapter0/6-tips/2-vscode/">
+        Projets VSCode
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/CPP_Learning/chapter0/6-tips/3-keybinds-commands/" title="Raccourcis &amp; Commandes" class="dd-item ">
+        <a href="/CPP_Learning/chapter0/6-tips/3-keybinds-commands/">
+        Raccourcis &amp; Commandes
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/CPP_Learning/chapter0/6-tips/4-options/" title="Options de compilation" class="dd-item ">
+        <a href="/CPP_Learning/chapter0/6-tips/4-options/">
+        Options de compilation
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/CPP_Learning/chapter0/test/" title="Retours ?" class="dd-item ">
+        <a href="/CPP_Learning/chapter0/test/">
+        Retours ?
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+             
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/CPP_Learning/chapter1/" title="Introduction au C&#43;&#43;" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/CPP_Learning/chapter1/">
+          <b>1- </b>Introduction au C&#43;&#43;
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+          
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/CPP_Learning/chapter1/1-language/" title="Présentation du langage" class="dd-item ">
+        <a href="/CPP_Learning/chapter1/1-language/">
+        Présentation du langage
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/CPP_Learning/chapter1/2-practice/" title="Premiers programmes" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/CPP_Learning/chapter1/2-practice/">
+          Premiers programmes
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/CPP_Learning/chapter1/2-practice/1-hello-world/" title="👋 Hello World" class="dd-item ">
+        <a href="/CPP_Learning/chapter1/2-practice/1-hello-world/">
+        👋 Hello World
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/CPP_Learning/chapter1/2-practice/2-parrot/" title="🦜 Perroquet" class="dd-item ">
+        <a href="/CPP_Learning/chapter1/2-practice/2-parrot/">
+        🦜 Perroquet
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/CPP_Learning/chapter1/2-practice/3-array/" title="🔢 Tableau Numérique" class="dd-item ">
+        <a href="/CPP_Learning/chapter1/2-practice/3-array/">
+        🔢 Tableau Numérique
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/CPP_Learning/chapter1/2-practice/4-calculator/" title="🧮 Calculette" class="dd-item ">
+        <a href="/CPP_Learning/chapter1/2-practice/4-calculator/">
+        🧮 Calculette
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/CPP_Learning/chapter1/test/" title="Questionnaire !" class="dd-item ">
+        <a href="/CPP_Learning/chapter1/test/">
+        Questionnaire !
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/CPP_Learning/chapter1/summary/" title="Synthèse" class="dd-item ">
+        <a href="/CPP_Learning/chapter1/summary/">
+        Synthèse
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+             
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/CPP_Learning/chapter2/" title="Classes" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/CPP_Learning/chapter2/">
+          <b>2- </b>Classes
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/CPP_Learning/chapter2/1-poo/" title="C&#39;est quoi un objet déjà ?" class="dd-item ">
+        <a href="/CPP_Learning/chapter2/1-poo/">
+        C&#39;est quoi un objet déjà ?
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/CPP_Learning/chapter2/2-first-class/" title="✨ Première classe" class="dd-item ">
+        <a href="/CPP_Learning/chapter2/2-first-class/">
+        ✨ Première classe
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/CPP_Learning/chapter2/3-constructor/" title="🔨 Constructeur" class="dd-item ">
+        <a href="/CPP_Learning/chapter2/3-constructor/">
+        🔨 Constructeur
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/CPP_Learning/chapter2/4-clone/" title="🧬 Clône" class="dd-item ">
+        <a href="/CPP_Learning/chapter2/4-clone/">
+        🧬 Clône
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/CPP_Learning/chapter2/5-rectangle/" title="🔳 Rectangle" class="dd-item ">
+        <a href="/CPP_Learning/chapter2/5-rectangle/">
+        🔳 Rectangle
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/CPP_Learning/chapter2/6-polygon/" title="💠 Polygône" class="dd-item ">
+        <a href="/CPP_Learning/chapter2/6-polygon/">
+        💠 Polygône
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/CPP_Learning/chapter2/test/" title="Questionnaire !" class="dd-item ">
+        <a href="/CPP_Learning/chapter2/test/">
+        Questionnaire !
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/CPP_Learning/chapter2/summary/" title="Synthèse" class="dd-item ">
+        <a href="/CPP_Learning/chapter2/summary/">
+        Synthèse
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+             
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/CPP_Learning/chapter3/" title="Gestion mémoire" class="dd-item 
+        parent
+        
+        
+        ">
+      <a href="/CPP_Learning/chapter3/">
+          <b>3- </b>Gestion mémoire
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/CPP_Learning/chapter3/1-lifespan/" title="Durée de vie" class="dd-item ">
+        <a href="/CPP_Learning/chapter3/1-lifespan/">
+        Durée de vie
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/CPP_Learning/chapter3/2-ownership/" title="Ownership" class="dd-item ">
+        <a href="/CPP_Learning/chapter3/2-ownership/">
+        Ownership
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/CPP_Learning/chapter3/3-allocation/" title="Allocation dynamique" class="dd-item ">
+        <a href="/CPP_Learning/chapter3/3-allocation/">
+        Allocation dynamique
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/CPP_Learning/chapter3/4-move-sem/" title="Déplacement" class="dd-item active">
+        <a href="/CPP_Learning/chapter3/4-move-sem/">
+        Déplacement
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/CPP_Learning/chapter3/test/" title="Questionnaire !" class="dd-item ">
+        <a href="/CPP_Learning/chapter3/test/">
+        Questionnaire !
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/CPP_Learning/chapter3/summary/" title="Synthèse" class="dd-item ">
+        <a href="/CPP_Learning/chapter3/summary/">
+        Synthèse
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+             
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+         
+    </ul>
+
+    
+    
+      <section id="shortcuts">
+        <h3>Accès rapide</h3>
+        <ul>
+          
+              <li> 
+                  <a class="padding" href="https://github.com/Laefy/CPP_Learning_Code/"><i class='fab fa-github'></i> Dépôt GitHub</a>
+              </li>
+          
+              <li> 
+                  <a class="padding" href="https://laefy.github.io/CPP_Learning/workflow"><i class='far fa-list-alt'></i> Workflow</a>
+              </li>
+          
+              <li> 
+                  <a class="padding" href="https://laefy.github.io/CPP_Learning/faq"><i class='fas fa-question-circle'></i> FAQ</a>
+              </li>
+          
+              <li> 
+                  <a class="padding" href="https://laefy.github.io/CPP_Learning/chapter0/6-tips/"><i class='fa fa-rocket'></i> Astuces</a>
+              </li>
+          
+              <li> 
+                  <a class="padding" href="https://en.cppreference.com/w/"><i class='fas fa-passport'></i> CPP-Ref</a>
+              </li>
+          
+        </ul>
+      </section>
+    
+
+    
+    <section id="prefooter">
+      <hr/>
+      <ul>
+      
+      
+      
+        <li><a class="padding" href="#" data-clear-history-toggle=""><i class="fas fa-history fa-fw"></i> Supprimer l&#39;historique</a></li>
+      
+      </ul>
+    </section>
+    
+    <section id="footer">
+      <p>Built with <a href="https://github.com/matcornic/hugo-theme-learn"><i class="fas fa-heart"></i></a> from <a href="https://getgrav.org">Grav</a> and <a href="https://gohugo.io/">Hugo</a></p>
+
+    </section>
+  </div>
+</nav>
+
+
+
+
+        <section id="body">
+        <div id="overlay"></div>
+        <div class="padding highlightable">
+              
+              <div>
+                <div id="top-bar">
+                
+                
+                <div id="breadcrumbs" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
+                    <span id="sidebar-toggle-span">
+                        <a href="#" id="sidebar-toggle" data-sidebar-toggle="">
+                          <i class="fas fa-bars"></i>
+                        </a>
+                    </span>
+                  
+                  <span id="toc-menu"><i class="fas fa-list-alt"></i></span>
+                  
+                  <span class="links">
+                 
+                 
+                    
+          
+          
+            
+            
+          
+          
+            
+            
+          
+          
+            <a href='/CPP_Learning/'>Accueil</a> > <a href='/CPP_Learning/chapter3/'>Gestion mémoire</a> > Déplacement
+          
+        
+          
+        
+          
+        
+                 
+                  </span>
+                </div>
+                
+                    <div class="progress">
+    <div class="wrapper">
+<nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#construction-sur-place">Construction sur place</a></li>
+        <li><a href="#déplacement">Déplacement</a></li>
+        <li><a href="#un-peu-de-pratique">Un peu de pratique</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+    </div>
+</div>
+
+                
+              </div>
+            </div>
+            
+        <div id="head-tags">
+        
+        </div>
+        
+        <div id="body-inner">
+          
+            <h1>
+              
+              Déplacement
+            </h1>
+          
+
+        
+
+
+<p>Nous avons vu précédement que les <code>unique_ptr</code> ne pouvaient pas être copiés.
+Cependant, le <code>vector</code> a réussi à provoquer leur &ldquo;déplacement&rdquo; en mémoire pour effectuer sa réallocation.<br>
+Nous allons voir comment faire de même afin de pouvoir manipuler les <code>unique_ptr</code> avec un peu plus de souplesse.</p>
+<hr>
+<h3 id="construction-sur-place">Construction sur place</h3>
+<p>Lorsqu&rsquo;une fonction retourne un objet et que celui-ci est utilisé pour initialiser une variable, aucune copie n&rsquo;a lieu.
+L&rsquo;objet est directement construit à l&rsquo;adresse mémoire qui lui était réservée dans le code appelant.</p>
+<p>Vous pouvez vérifier en exécutant le programme <code>c3-4-inplace</code> :</p>
+<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp">
+</span><span class="cp"></span>
+<span class="k">struct</span> <span class="nc">Test</span>
+<span class="p">{</span>
+    <span class="n">Test</span><span class="p">(</span><span class="kt">int</span> <span class="n">v</span><span class="p">)</span>
+        <span class="o">:</span> <span class="n">value</span> <span class="p">{</span> <span class="n">v</span> <span class="p">}</span>
+    <span class="p">{</span>
+        <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;Constructor was called with &#34;</span> <span class="o">&lt;&lt;</span> <span class="n">v</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;.&#34;</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="n">Test</span><span class="p">(</span><span class="k">const</span> <span class="n">Test</span><span class="o">&amp;</span> <span class="n">other</span><span class="p">)</span>
+        <span class="o">:</span> <span class="n">value</span> <span class="p">{</span> <span class="n">other</span><span class="p">.</span><span class="n">value</span> <span class="p">}</span>
+    <span class="p">{</span>
+        <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;Copy constructor was called.&#34;</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="kt">int</span> <span class="n">value</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">};</span>
+
+<span class="n">Test</span> <span class="nf">create_test</span><span class="p">(</span><span class="kt">int</span> <span class="n">value</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">Test</span> <span class="n">result</span> <span class="p">{</span> <span class="n">value</span> <span class="p">};</span>
+    <span class="k">return</span> <span class="n">result</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="n">Test</span> <span class="n">test</span> <span class="o">=</span> <span class="n">create_test</span><span class="p">(</span><span class="mi">3</span><span class="p">);</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">test</span><span class="p">.</span><span class="n">value</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+
+    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div><p>Comme vous pouvez le constater, seul le constructeur à 1 paramètre est appelé.
+La première ligne du <code>main</code> ne nécessite donc pas la présence du constructeur de copie.</p>
+
+<div class="notices note" ><p>Veuillez noter que ce n&rsquo;est qu&rsquo;à partir de C++17 que le standard garantit qu&rsquo;aucune construction supplémentaire n&rsquo;a lieu dans ce genre de cas.<br>
+Avant, il s&rsquo;agissait d&rsquo;une optimisation que certains compilateurs fournissait sous le nom de <strong>copy-elision</strong>.<br>
+Désormais, les compilateurs doivent l&rsquo;implémenter et on parle de <strong>mandatory copy-elision</strong>.</p>
+</div>
+
+<p>Vous pouvez également essayer d&rsquo;enchaîner les appels, il n&rsquo;y aura pas de copie :</p>
+<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="n">Test</span> <span class="nf">create_test</span><span class="p">(</span><span class="kt">int</span> <span class="n">value</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">Test</span> <span class="n">result</span> <span class="p">{</span> <span class="n">value</span> <span class="p">};</span>
+    <span class="k">return</span> <span class="n">result</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="n">Test</span> <span class="nf">create_test_double</span><span class="p">(</span><span class="kt">int</span> <span class="n">value</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">Test</span> <span class="n">result</span> <span class="o">=</span> <span class="n">create_test</span><span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="n">value</span><span class="p">);</span>
+    <span class="k">return</span> <span class="n">result</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="n">Test</span> <span class="n">test</span> <span class="o">=</span> <span class="n">create_test_double</span><span class="p">(</span><span class="mi">3</span><span class="p">);</span>          <span class="c1">// -&gt; pas de copie non plus
+</span><span class="c1"></span>    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">test</span><span class="p">.</span><span class="n">value</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+
+    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div><p>Cela s&rsquo;applique également si vous essayez d&rsquo;imbriquer directement des appels au constructeur de copie :</p>
+<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="n">Test</span> <span class="n">test</span> <span class="o">=</span> <span class="n">Test</span> <span class="p">{</span> <span class="n">Test</span> <span class="p">{</span> <span class="n">Test</span> <span class="p">{</span> <span class="mi">3</span> <span class="p">}</span> <span class="p">}</span> <span class="p">};</span>   <span class="c1">// -&gt; toujours aucune copie
+</span><span class="c1"></span>    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">test</span><span class="p">.</span><span class="n">value</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+
+    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div><p>En ce qui concerne l&rsquo;initialisation des <code>unique_ptr</code> avec <code>make_unique</code>, c&rsquo;est exactement le même principe.<br>
+Bien que le <code>unique_ptr</code> ne puisse pas être copié, il est valide d&rsquo;écrire le code ci-dessous, puisqu&rsquo;aucune copie n&rsquo;a lieu :</p>
+<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="n">std</span><span class="o">::</span><span class="n">unique_ptr</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">ptr</span> <span class="o">=</span> <span class="n">std</span><span class="o">::</span><span class="n">make_unique</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="p">(</span><span class="mi">3</span><span class="p">);</span>
+</code></pre></div><p>Il est également valide de définir soi-même une fonction qui renvoie un <code>unique_ptr</code> et d&rsquo;assigner le résultat à une variable :</p>
+<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="cp">#include</span> <span class="cpf">&lt;memory&gt;</span><span class="cp">
+</span><span class="cp"></span>
+<span class="n">std</span><span class="o">::</span><span class="n">unique_ptr</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">dynamic_add</span><span class="p">(</span><span class="kt">int</span> <span class="n">a</span><span class="p">,</span> <span class="kt">int</span> <span class="n">b</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">unique_ptr</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">result</span> <span class="o">=</span> <span class="n">std</span><span class="o">::</span><span class="n">make_unique</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="p">(</span><span class="n">a</span> <span class="o">+</span> <span class="n">b</span><span class="p">);</span>
+    <span class="k">return</span> <span class="n">result</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">unique_ptr</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">sum</span> <span class="o">=</span> <span class="n">dynamic_add</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">12</span><span class="p">);</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="o">*</span><span class="n">sum</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+
+    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div><hr>
+<h3 id="déplacement">Déplacement</h3>
+<p>La copy-elision, c&rsquo;est bien, mais cela reste un peu limité pour manipuler aisément les <code>unique_ptr</code>&hellip;</p>
+<p>Par exemple, il n&rsquo;est toujours pas possible d&rsquo;écrire directement :</p>
+<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">unique_ptr</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;&gt;</span> <span class="n">many_ints</span><span class="p">;</span>
+
+<span class="n">std</span><span class="o">::</span><span class="n">unique_ptr</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">value</span> <span class="o">=</span> <span class="n">std</span><span class="o">::</span><span class="n">make_unique</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="p">(</span><span class="mi">3</span><span class="p">);</span>
+<span class="n">many_ints</span><span class="p">.</span><span class="n">emplace_back</span><span class="p">(</span><span class="n">value</span><span class="p">);</span> <span class="c1">// -&gt; tentative de copie
+</span></code></pre></div><p>On est obligé d&rsquo;imbriquer les appels, ce qui n&rsquo;est pas toujours très facile à lire :</p>
+<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">unique_ptr</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;&gt;</span> <span class="n">many_ints</span><span class="p">;</span>
+<span class="n">many_ints</span><span class="p">.</span><span class="n">emplace_back</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">make_unique</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="p">(</span><span class="mi">3</span><span class="p">));</span> <span class="c1">// -&gt; ok, mais ça fait beaucoup de parenthèses à lire...
+</span></code></pre></div><p>Nous allons donc vous montrez comment déplacer un <code>unique_ptr</code>.<br>
+Cela se fait en utilisant la fonction <code>std::move</code>, contenu dans le header <code>&lt;utility&gt;</code> :</p>
+<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">unique_ptr</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;&gt;</span> <span class="n">many_ints</span><span class="p">;</span>
+
+<span class="n">std</span><span class="o">::</span><span class="n">unique_ptr</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">value</span> <span class="o">=</span> <span class="n">std</span><span class="o">::</span><span class="n">make_unique</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="p">(</span><span class="mi">3</span><span class="p">);</span>
+<span class="n">many_ints</span><span class="p">.</span><span class="n">emplace_back</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">move</span><span class="p">(</span><span class="n">value</span><span class="p">));</span> <span class="c1">// -&gt; ça fonctionne !
+</span></code></pre></div><p>Dans le code ci-dessus, le <code>unique_ptr</code> n&rsquo;a pas été copié.
+Il a été déplacé à l&rsquo;intérieur du tableau <code>many_ints</code>.
+Pour vous en convaincre, testez le code suivant :</p>
+<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp">
+</span><span class="cp">#include</span> <span class="cpf">&lt;memory&gt;</span><span class="cp">
+</span><span class="cp">#include</span> <span class="cpf">&lt;utility&gt;</span><span class="cp">
+</span><span class="cp">#include</span> <span class="cpf">&lt;vector&gt;</span><span class="cp">
+</span><span class="cp"></span>
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">unique_ptr</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;&gt;</span> <span class="n">many_ints</span><span class="p">;</span>
+
+    <span class="k">auto</span> <span class="n">value</span> <span class="o">=</span> <span class="n">std</span><span class="o">::</span><span class="n">make_unique</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="p">(</span><span class="mi">3</span><span class="p">);</span>
+
+    <span class="k">if</span> <span class="p">(</span><span class="n">value</span> <span class="o">!=</span> <span class="k">nullptr</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;value is &#34;</span> <span class="o">&lt;&lt;</span> <span class="o">*</span><span class="n">value</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="k">else</span>
+    <span class="p">{</span>
+        <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;value is empty&#34;</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="n">many_ints</span><span class="p">.</span><span class="n">emplace_back</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">move</span><span class="p">(</span><span class="n">value</span><span class="p">));</span>
+    
+    <span class="k">if</span> <span class="p">(</span><span class="n">value</span> <span class="o">!=</span> <span class="k">nullptr</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;value is &#34;</span> <span class="o">&lt;&lt;</span> <span class="o">*</span><span class="n">value</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="k">else</span>
+    <span class="p">{</span>
+        <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;value is empty&#34;</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="k">if</span> <span class="p">(</span><span class="n">many_ints</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">!=</span> <span class="k">nullptr</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;many_ints[0] is &#34;</span> <span class="o">&lt;&lt;</span> <span class="o">*</span><span class="n">many_ints</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="k">else</span>
+    <span class="p">{</span>
+        <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;many_ints[0] is empty&#34;</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div><p>Comme vous pouvez le voir, une fois le <code>emplace_back</code> exécuté, le contenu de <code>value</code> a été transféré dans <code>many_ints[0]</code>.<br>
+<code>value</code> est désormais vide, ce qui signifie bien qu&rsquo;il n&rsquo;y a pas eu de copie.</p>
+<p>Il est donc possible de transférer des données d&rsquo;une variable à une autre en utilisant <code>std::move</code>.<br>
+Remplacez les <code>unique_ptr&lt;int&gt;</code> par des <code>string</code> et adaptez le restant du programme pour vérifier que les <code>string</code> peuvent également être déplacées.</p>
+
+<div class="expand">
+    <div class="expand-label" style="cursor: pointer;" onclick="$h = $(this);$h.next('div').slideToggle(100,function () {$h.children('i').attr('class',function () {return $h.next('div').is(':visible') ? 'fas fa-chevron-down' : 'fas fa-chevron-right';});});">
+        <i style="font-size:x-small;" class="fas fa-chevron-right"></i>
+        <span>
+        
+    	
+    	Solution
+    	
+    	</span>
+    </div>
+    <div class="expand-content" style="display: none;">
+        <p>Attention à bien spécifier que l&rsquo;on construit une <code>std::string</code> et pas un <code>const char*</code> en remplaçant le <code>auto</code> ou bien en écrivant le type à droite du <code>=</code>.</p>
+<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp">
+</span><span class="cp">#include</span> <span class="cpf">&lt;string&gt;</span><span class="cp">
+</span><span class="cp">#include</span> <span class="cpf">&lt;utility&gt;</span><span class="cp">
+</span><span class="cp">#include</span> <span class="cpf">&lt;vector&gt;</span><span class="cp">
+</span><span class="cp"></span>
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&gt;</span> <span class="n">many_strings</span><span class="p">;</span>
+
+    <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">value</span> <span class="o">=</span> <span class="s">&#34;will I move?&#34;</span><span class="p">;</span>
+    <span class="c1">// auto value = std::string { &#34;will I move?&#34; };
+</span><span class="c1"></span>
+    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;value is &#39;&#34;</span> <span class="o">&lt;&lt;</span> <span class="n">value</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;&#39;&#34;</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+
+    <span class="n">many_strings</span><span class="p">.</span><span class="n">emplace_back</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">move</span><span class="p">(</span><span class="n">value</span><span class="p">));</span>
+    
+    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;value is &#39;&#34;</span> <span class="o">&lt;&lt;</span> <span class="n">value</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;&#39;&#34;</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;many_strings[0] is &#39;&#34;</span> <span class="o">&lt;&lt;</span> <span class="n">many_strings</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;&#39;&#34;</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+
+    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+    </div>
+</div>
+<hr>
+<h3 id="un-peu-de-pratique">Un peu de pratique</h3>
+<p>Entraînez-vous maintenant à déplacer des <code>unique_ptr</code> en écrivant un petit programme qui :</p>
+<ol>
+<li>initialise deux variables <code>i1</code> et <code>i2</code> de type <code>std::unique_ptr&lt;int&gt;</code> avec <code>make_unique</code>,</li>
+<li>transfère <code>i1</code> à une fonction <code>passthrough</code> qui attend un <code>std::unique_ptr&lt;int&gt;</code> (sans référence),</li>
+<li>le paramètre de <code>passthrough</code> est ensuite déplacé dans une variable locale,</li>
+<li>cette variable est renvoyée par la fonction,</li>
+<li>ce résultat est ensuite réassigné à <code>i2</code>.</li>
+</ol>
+<p>Pour vérifier ce qu&rsquo;il se passe au cours de l&rsquo;exécution du programme, vous implémenterez également une fonction qui affiche le nom d&rsquo;une variable et son contenu (si le pointeur n&rsquo;est pas vide).
+Voici sa signature :</p>
+<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="kt">void</span> <span class="nf">display</span><span class="p">(</span><span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&amp;</span> <span class="n">variable_name</span><span class="p">,</span> <span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">unique_ptr</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;&amp;</span> <span class="n">variable</span><span class="p">);</span>
+</code></pre></div><p>Il faudra que vous puissiez l&rsquo;utiliser de cette manière :</p>
+<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="n">display</span><span class="p">(</span><span class="s">&#34;i1&#34;</span><span class="p">,</span> <span class="n">i1</span><span class="p">);</span> <span class="c1">// -&gt; affiche &#34;i1 contains X&#34; ou &#34;i1 is empty&#34;
+</span></code></pre></div>
+<div class="expand">
+    <div class="expand-label" style="cursor: pointer;" onclick="$h = $(this);$h.next('div').slideToggle(100,function () {$h.children('i').attr('class',function () {return $h.next('div').is(':visible') ? 'fas fa-chevron-down' : 'fas fa-chevron-right';});});">
+        <i style="font-size:x-small;" class="fas fa-chevron-right"></i>
+        <span>
+        
+    	
+    	Solution
+    	
+    	</span>
+    </div>
+    <div class="expand-content" style="display: none;">
+        <div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp">
+</span><span class="cp">#include</span> <span class="cpf">&lt;memory&gt;</span><span class="cp">
+</span><span class="cp">#include</span> <span class="cpf">&lt;utility&gt;</span><span class="cp">
+</span><span class="cp"></span>
+<span class="kt">void</span> <span class="nf">display</span><span class="p">(</span><span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&amp;</span> <span class="n">variable_name</span><span class="p">,</span> <span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">unique_ptr</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;&amp;</span> <span class="n">variable</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">variable</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">variable_name</span> <span class="o">&lt;&lt;</span> <span class="s">&#34; contains &#34;</span> <span class="o">&lt;&lt;</span> <span class="o">*</span><span class="n">variable</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="k">else</span>
+    <span class="p">{</span>
+        <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">variable_name</span> <span class="o">&lt;&lt;</span> <span class="s">&#34; is empty&#34;</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="n">std</span><span class="o">::</span><span class="n">unique_ptr</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">passthrough</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">unique_ptr</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">ptr</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;Before move in passthrough&#34;</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+    <span class="n">display</span><span class="p">(</span><span class="s">&#34;ptr&#34;</span><span class="p">,</span> <span class="n">ptr</span><span class="p">);</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;--------------------------&#34;</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+
+    <span class="k">auto</span> <span class="n">moved_ptr</span> <span class="o">=</span> <span class="n">std</span><span class="o">::</span><span class="n">move</span><span class="p">(</span><span class="n">ptr</span><span class="p">);</span>
+
+    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;After move in passthrough&#34;</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+    <span class="n">display</span><span class="p">(</span><span class="s">&#34;moved_ptr&#34;</span><span class="p">,</span> <span class="n">moved_ptr</span><span class="p">);</span>
+    <span class="n">display</span><span class="p">(</span><span class="s">&#34;ptr&#34;</span><span class="p">,</span> <span class="n">ptr</span><span class="p">);</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;--------------------------&#34;</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+
+    <span class="k">return</span> <span class="n">moved_ptr</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="k">auto</span> <span class="n">i1</span> <span class="o">=</span> <span class="n">std</span><span class="o">::</span><span class="n">make_unique</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="p">(</span><span class="mi">3</span><span class="p">);</span>
+    <span class="k">auto</span> <span class="n">i2</span> <span class="o">=</span> <span class="n">std</span><span class="o">::</span><span class="n">make_unique</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="p">(</span><span class="mi">8</span><span class="p">);</span>
+
+    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;Before passthrough call&#34;</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+    <span class="n">display</span><span class="p">(</span><span class="s">&#34;i1&#34;</span><span class="p">,</span> <span class="n">i1</span><span class="p">);</span>
+    <span class="n">display</span><span class="p">(</span><span class="s">&#34;i2&#34;</span><span class="p">,</span> <span class="n">i2</span><span class="p">);</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;--------------------------&#34;</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+
+    <span class="n">i2</span> <span class="o">=</span> <span class="n">passthrough</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">move</span><span class="p">(</span><span class="n">i1</span><span class="p">));</span>
+
+    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;After passthrough call&#34;</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+    <span class="n">display</span><span class="p">(</span><span class="s">&#34;i1&#34;</span><span class="p">,</span> <span class="n">i1</span><span class="p">);</span>
+    <span class="n">display</span><span class="p">(</span><span class="s">&#34;i2&#34;</span><span class="p">,</span> <span class="n">i2</span><span class="p">);</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;--------------------------&#34;</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+
+    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div><p>La sortie du programme est la suivante :</p>
+<div class="highlight"><pre class="chroma"><code class="language-b" data-lang="b"><span class="nb">--------------------------</span><span class="c">
+</span><span class="c">Before passthrough call
+</span><span class="c">i1 contains 3
+</span><span class="c">i2 contains 8
+</span><span class="c"></span><span class="nb">--------------------------</span><span class="c">
+</span><span class="c">Before move in passthrough
+</span><span class="c">ptr contains 3
+</span><span class="c"></span><span class="nb">--------------------------</span><span class="c">
+</span><span class="c">After move in passthrough
+</span><span class="c">moved_ptr contains 3
+</span><span class="c">ptr is empty
+</span><span class="c"></span><span class="nb">--------------------------</span><span class="c">
+</span><span class="c">After passthrough call
+</span><span class="c">i1 is empty
+</span><span class="c">i2 contains 3
+</span><span class="c"></span><span class="nb">--------------------------</span><span class="c">
+</span></code></pre></div>
+    </div>
+</div>
+
+
+<footer class="footline">
+	
+</footer>
+
+        
+        </div> 
+        
+
+      </div>
+
+    <div id="navigation">
+        
+        
+        
+        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+        
+                    
+            
+        
+                    
+            
+        
+        
+        
+
+
+	 
+	 
+		
+			<a class="nav nav-prev" href="/CPP_Learning/chapter3/3-allocation/" title="Allocation dynamique"> <i class="fa fa-chevron-left"></i></a>
+		
+		
+			<a class="nav nav-next" href="/CPP_Learning/chapter3/test/" title="Questionnaire !" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+		
+	
+    </div>
+
+    </section>
+    
+    <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
+      <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
+    </div>
+    <script src="/CPP_Learning/js/clipboard.min.js?1642825535"></script>
+    <script src="/CPP_Learning/js/perfect-scrollbar.min.js?1642825535"></script>
+    <script src="/CPP_Learning/js/perfect-scrollbar.jquery.min.js?1642825535"></script>
+    <script src="/CPP_Learning/js/jquery.sticky.js?1642825535"></script>
+    <script src="/CPP_Learning/js/featherlight.min.js?1642825535"></script>
+    <script src="/CPP_Learning/js/highlight.pack.js?1642825535"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <script src="/CPP_Learning/js/modernizr.custom-3.6.0.js?1642825535"></script>
+    <script src="/CPP_Learning/js/learn.js?1642825535"></script>
+    <script src="/CPP_Learning/js/hugo-learn.js?1642825535"></script>
+
+    <link href="/CPP_Learning/mermaid/mermaid.css?1642825535" rel="stylesheet" />
+    <script src="/CPP_Learning/mermaid/mermaid.js?1642825535"></script>
+    <script>
+        mermaid.initialize({ startOnLoad: true });
+    </script>
+    
+
+  </body>
+</html>
+

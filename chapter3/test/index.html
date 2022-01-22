@@ -9,7 +9,7 @@
 
     <link rel="icon" href="/CPP_Learning/images/favicon.png" type="image/png">
 
-    <title>🦜 Perroquet :: Cours de C&#43;&#43; - Niveau Master</title>
+    <title>Questionnaire ! :: Cours de C&#43;&#43; - Niveau Master</title>
 
     
     <link href="/CPP_Learning/css/nucleus.css?1642825535" rel="stylesheet">
@@ -40,7 +40,7 @@
     </style>
     
   </head>
-  <body class="" data-url="/CPP_Learning/chapter1/2-practice/2-parrot/">
+  <body class="" data-url="/CPP_Learning/chapter3/test/">
     <nav id="sidebar" class="showVisitedLinks">
 
 
@@ -372,7 +372,7 @@
   
     
     <li data-nav-id="/CPP_Learning/chapter1/" title="Introduction au C&#43;&#43;" class="dd-item 
-        parent
+        
         
         
         ">
@@ -424,7 +424,7 @@
   
     
     <li data-nav-id="/CPP_Learning/chapter1/2-practice/" title="Premiers programmes" class="dd-item 
-        parent
+        
         
         
         ">
@@ -473,7 +473,7 @@
  
   
     
-      <li data-nav-id="/CPP_Learning/chapter1/2-practice/2-parrot/" title="🦜 Perroquet" class="dd-item active">
+      <li data-nav-id="/CPP_Learning/chapter1/2-practice/2-parrot/" title="🦜 Perroquet" class="dd-item ">
         <a href="/CPP_Learning/chapter1/2-practice/2-parrot/">
         🦜 Perroquet
         <i class="fas fa-check read-icon"></i>
@@ -805,7 +805,7 @@
   
     
     <li data-nav-id="/CPP_Learning/chapter3/" title="Gestion mémoire" class="dd-item 
-        
+        parent
         
         
         ">
@@ -917,7 +917,7 @@
  
   
     
-      <li data-nav-id="/CPP_Learning/chapter3/test/" title="Questionnaire !" class="dd-item ">
+      <li data-nav-id="/CPP_Learning/chapter3/test/" title="Questionnaire !" class="dd-item active">
         <a href="/CPP_Learning/chapter3/test/">
         Questionnaire !
         <i class="fas fa-check read-icon"></i>
@@ -1047,13 +1047,7 @@
             
           
           
-            
-            
-          
-          
-            <a href='/CPP_Learning/'>Accueil</a> > <a href='/CPP_Learning/chapter1/'>Introduction au C++</a> > <a href='/CPP_Learning/chapter1/2-practice/'>Premiers programmes</a> > 🦜 Perroquet
-          
-        
+            <a href='/CPP_Learning/'>Accueil</a> > <a href='/CPP_Learning/chapter3/'>Gestion mémoire</a> > Questionnaire !
           
         
           
@@ -1066,18 +1060,7 @@
                 
                     <div class="progress">
     <div class="wrapper">
-<nav id="TableOfContents">
-  <ul>
-    <li>
-      <ul>
-        <li><a href="#lire-un-entier">Lire un entier</a></li>
-        <li><a href="#faire-une-boucle">Faire une boucle</a></li>
-        <li><a href="#les-chaînes-de-caractères">Les chaînes de caractères</a></li>
-        <li><a href="#omettre-std">Omettre <code>std</code></a></li>
-      </ul>
-    </li>
-  </ul>
-</nav>
+<nav id="TableOfContents"></nav>
     </div>
 </div>
 
@@ -1093,224 +1076,136 @@
           
             <h1>
               
-              🦜 Perroquet
+              Questionnaire !
             </h1>
           
 
         
 
 
-<p>Vous allez maintenant implémenter un perroquet, qui répète ce que vous dites dans la console.</p>
+<p>C&rsquo;est l&rsquo;heure du test ! Bon courage 🙂</p>
 <hr>
-<p>Pour cet exercice, vous modifierez le fichier :<br>
-- <code>chap-01/2-parrot.cpp</code></p>
-<p>La cible à compiler est <code>c1-2-parrot</code>.</p>
+
+
+<form id="test" data-chapter="3" method=POST action="https://formsubmit.co/3aa0f379a1aed9c454634cc2da153a7b">
+  <label for="name">Vous êtes : </label>
+  <input type="text" id="name" name="name" placeholder="Prénom Nom" />
+
+  <label for="email">Votre adresse mail : </label>
+  <input type="text" name="email" placeholder="mail@smthg.com" />
+
+  <label for="group">Votre groupe : </label>
+  <select name="group">
+    <option value="group-G1">Groupe 1</option>
+    <option value="group-G2">Groupe 2</option>
+    <option value="group-Alt">Groupe Alternants</option>
+  </select>
+
+  <input type="hidden" name="_replyto" />
+  <input type="hidden" name="_subject" value="[C++][Chapitre 3] Retour sur ton questionnaire" />
+
+  <hr/>
+  
+  <p><label for="q1">1- Comment définir la période de validité d’un objet ?</label></p>
+<p><textarea id="q1" name="q1-lifespan" rows="1" cols="50"></textarea></p>
+<p><label for="q2">2- Citez une bonne raison d’allouer de la mémoire via un <code>unique_ptr</code> plutôt que via un pointeur simple (avec <code>new</code>).</label></p>
+<p><textarea id="q2" name="q2-unique_ptr" rows="2" cols="50"></textarea></p>
+<p><label for="q3">3- Quelle fonction de la librarie standard permet de transférer le contenu d’un objet dans un autre ?</label></p>
+<p><textarea id="q3" name="q3-transfert" rows="1" cols="50"></textarea></p>
 <hr>
-<h3 id="lire-un-entier">Lire un entier</h3>
-<p>Commencez par écrire une fonction <code>main</code> qui ne fait rien, comme dans l&rsquo;exercice précédent.
-Compilez et exécutez le programme, pour être sûr que tout est bien configuré.</p>
-<p>Ensuite, vous allez déclarer une variable de type <code>int</code>. Cela se fait de la même manière qu&rsquo;en C.</p>
-<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="kt">int</span> <span class="n">number</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
-</code></pre></div>
-<div class="notices tip" ><p>Il faut toujours initialiser vos variables de types primitifs (c&rsquo;est-à-dire les variables qui ne sont pas des instances de classe). Cela permet d&rsquo;éviter d&rsquo;avoir des crashes ou des bugs aléatoires. Parce que quand un bug ne se produit qu&rsquo;une fois sur dix, il y a des chances que ce soit le correcteur du TP qui se le prenne, alors que tout c&rsquo;était bien passé la dernière fois que vous avez testé le programme.<br>
-Et plus sérieusement, quand vous serez en entreprise, et que vous vous arracherez les cheveux à relancer 341 fois le même programme pour essayer de reproduire un bug (qu&rsquo;il faut bien corriger, même s&rsquo;il n&rsquo;arrive qu&rsquo;une fois sur 341), vous vous rappelerez que faire en sorte que vos programmes soient déterministes, ça aide à ne pas devenir chauve.</p>
-</div>
+<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="k">class</span> <span class="nc">A</span>
+<span class="p">{</span>
+<span class="k">public</span><span class="o">:</span>
+    <span class="p">...</span>
 
-<p>Utilisez ensuite l&rsquo;instruction suivante pour lire un nombre depuis l&rsquo;entrée standard.
-Vous conviendrez que la seule différence avec l&rsquo;instruction pour écrire sur la sortie standard, c&rsquo;est qu&rsquo;on utilise <code>cin</code> plutôt que <code>cout</code>, et que les chevrons sont dans l&rsquo;autre sens.</p>
-<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="n">std</span><span class="o">::</span><span class="n">cin</span> <span class="o">&gt;&gt;</span> <span class="n">number</span><span class="p">;</span>
-</code></pre></div><p>Ecrivez ensuite <code>number</code> sur la sortie standard et testez votre programme. Si vous exécutez depuis VSCode, utilisez <code>CMake: Run Without Debugging</code> (Shift+F7) plutôt que <code>CMake: Debug</code> (Ctrl+F7), afin que le programme s&rsquo;exécute dans le terminal intégré pour pouvoir y entrer vos valeurs.</p>
+<span class="k">private</span><span class="o">:</span>
+    <span class="n">B</span><span class="o">&amp;</span>                 <span class="n">_b</span><span class="p">;</span>
+    <span class="k">const</span> <span class="n">C</span><span class="o">&amp;</span>           <span class="n">_c</span><span class="p">;</span>
+    <span class="n">D</span>                  <span class="n">_d</span><span class="p">;</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">unique_ptr</span><span class="o">&lt;</span><span class="n">E</span><span class="o">&gt;</span> <span class="n">_e</span><span class="p">;</span>
+<span class="p">};</span>
 
-<div class="expand">
-    <div class="expand-label" style="cursor: pointer;" onclick="$h = $(this);$h.next('div').slideToggle(100,function () {$h.children('i').attr('class',function () {return $h.next('div').is(':visible') ? 'fas fa-chevron-down' : 'fas fa-chevron-right';});});">
-        <i style="font-size:x-small;" class="fas fa-chevron-right"></i>
-        <span>
-        
-    	
-    	Solution
-    	
-    	</span>
-    </div>
-    <div class="expand-content" style="display: none;">
-        <div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp">
-</span><span class="cp"></span>
 <span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
 <span class="p">{</span>
-    <span class="kt">int</span> <span class="n">number</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
-    <span class="n">std</span><span class="o">::</span><span class="n">cin</span> <span class="o">&gt;&gt;</span> <span class="n">number</span><span class="p">;</span>
-    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;Craow &#34;</span> <span class="o">&lt;&lt;</span> <span class="n">number</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;!&#34;</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+    <span class="n">A</span> <span class="n">a</span><span class="p">;</span>
     <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
 <span class="p">}</span>
-</code></pre></div>
-    </div>
-</div>
+</code></pre></div><p><label for="q4">4- De quel(s) objet(s) <code>a</code> est-il propriétaire parmis <code>a._b</code>, <code>a._c</code>, <code>a._d</code> et <code>a._e</code> ?</label></p>
+<p><textarea id="q4" name="q4-owner" rows="1" cols="50"></textarea></p>
+<p><label for="q5">5- <code>a</code> est-il propriétaire de <code>*a._e</code> ? Justifiez.</label></p>
+<p><textarea id="q5" name="q5-owner-trv" rows="2" cols="50"></textarea></p>
 <hr>
-<h3 id="faire-une-boucle">Faire une boucle</h3>
-<p>Vous allez maintenant utilisez une boucle <code>while</code> afin d&rsquo;exécuter vos instructions à l&rsquo;infini. Placez <code>true</code> en condition du <code>while</code>.</p>
-
-<div class="expand">
-    <div class="expand-label" style="cursor: pointer;" onclick="$h = $(this);$h.next('div').slideToggle(100,function () {$h.children('i').attr('class',function () {return $h.next('div').is(':visible') ? 'fas fa-chevron-down' : 'fas fa-chevron-right';});});">
-        <i style="font-size:x-small;" class="fas fa-chevron-right"></i>
-        <span>
-        
-    	
-    	Solution
-    	
-    	</span>
-    </div>
-    <div class="expand-content" style="display: none;">
-        <div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="k">while</span> <span class="p">(</span><span class="nb">true</span><span class="p">)</span>
+<p>Les questions 6 à 10 font référence au code ci-dessous :</p>
+<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="cp">#include</span> <span class="cpf">&lt;string&gt;</span><span class="cp">
+</span><span class="cp">#include</span> <span class="cpf">&lt;vector&gt;</span><span class="cp">
+</span><span class="cp"></span>
+<span class="k">struct</span> <span class="nc">Resource</span>
 <span class="p">{</span>
-    <span class="kt">int</span> <span class="n">number</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
-    <span class="n">std</span><span class="o">::</span><span class="n">cin</span> <span class="o">&gt;&gt;</span> <span class="n">number</span><span class="p">;</span>
-    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;Craow &#34;</span> <span class="o">&lt;&lt;</span> <span class="n">number</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;!&#34;</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
-<span class="p">}</span>
-</code></pre></div>
-    </div>
-</div>
-<p>Afin de pouvoir terminer le programme un peu plus proprement qu&rsquo;avec Ctrl+C, ajoutez une condition pour sortir de la boucle si le nombre entré est -1. Cela se fait de la même manière qu&rsquo;en C.</p>
+    <span class="n">Resource</span><span class="p">(</span><span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&amp;</span> <span class="n">content</span><span class="p">)</span>
+        <span class="o">:</span> <span class="n">_content</span> <span class="p">{</span> <span class="n">content</span> <span class="p">}</span>
+    <span class="p">{}</span>
 
-<div class="expand">
-    <div class="expand-label" style="cursor: pointer;" onclick="$h = $(this);$h.next('div').slideToggle(100,function () {$h.children('i').attr('class',function () {return $h.next('div').is(':visible') ? 'fas fa-chevron-down' : 'fas fa-chevron-right';});});">
-        <i style="font-size:x-small;" class="fas fa-chevron-right"></i>
-        <span>
-        
-    	
-    	Solution
-    	
-    	</span>
-    </div>
-    <div class="expand-content" style="display: none;">
-        <div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="k">while</span> <span class="p">(</span><span class="nb">true</span><span class="p">)</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">_content</span><span class="p">;</span>
+<span class="p">};</span>
+
+<span class="c1">// Index objects of type Resource and handle their lifespans.
+</span><span class="c1"></span><span class="k">class</span> <span class="nc">ResourceManager</span>
 <span class="p">{</span>
-    <span class="kt">int</span> <span class="n">number</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
-    <span class="n">std</span><span class="o">::</span><span class="n">cin</span> <span class="o">&gt;&gt;</span> <span class="n">number</span><span class="p">;</span>
-    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;Craow &#34;</span> <span class="o">&lt;&lt;</span> <span class="n">number</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;!&#34;</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+<span class="k">public</span><span class="o">:</span>
+    <span class="c1">// Create a new resource.
+</span><span class="c1"></span>    <span class="c1">// Return the index where the resource was created.
+</span><span class="c1"></span>    <span class="n">size_t</span> <span class="n">create</span><span class="p">(</span><span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&amp;</span> <span class="n">content</span><span class="p">);</span>
 
-    <span class="k">if</span> <span class="p">(</span><span class="n">number</span> <span class="o">==</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span>
-    <span class="p">{</span>
-        <span class="k">break</span><span class="p">;</span>
-    <span class="p">}</span>
-<span class="p">}</span>
-</code></pre></div>
-    </div>
-</div>
-<p>Essayez de remplacer votre <code>while</code> par une boucle <code>do ... while</code>, de manière à supprimer le <code>if</code>.</p>
+    <span class="c1">// Destroy the resource at the given index.
+</span><span class="c1"></span>    <span class="c1">// The other elements keep the same index, we do not reorganize the array.
+</span><span class="c1"></span>    <span class="kt">void</span> <span class="nf">destroy</span><span class="p">(</span><span class="n">size_t</span> <span class="n">index</span><span class="p">);</span>
 
-<div class="expand">
-    <div class="expand-label" style="cursor: pointer;" onclick="$h = $(this);$h.next('div').slideToggle(100,function () {$h.children('i').attr('class',function () {return $h.next('div').is(':visible') ? 'fas fa-chevron-down' : 'fas fa-chevron-right';});});">
-        <i style="font-size:x-small;" class="fas fa-chevron-right"></i>
-        <span>
-        
-    	
-    	Solution
-    	
-    	</span>
-    </div>
-    <div class="expand-content" style="display: none;">
-        <div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="kt">int</span> <span class="n">number</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="c1">// Take the ownership of an existing resource.
+</span><span class="c1"></span>    <span class="c1">// Return the index where the resource was placed.
+</span><span class="c1"></span>    <span class="n">size</span> <span class="nf">acquire</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">unique_ptr</span><span class="o">&lt;</span><span class="n">Resource</span><span class="o">&gt;</span> <span class="n">resource</span><span class="p">);</span>
 
-<span class="k">do</span>
-<span class="p">{</span>
-    <span class="n">std</span><span class="o">::</span><span class="n">cin</span> <span class="o">&gt;&gt;</span> <span class="n">number</span><span class="p">;</span>
-    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;Craow &#34;</span> <span class="o">&lt;&lt;</span> <span class="n">number</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;!&#34;</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
-<span class="p">}</span>
-<span class="k">while</span> <span class="p">(</span><span class="n">number</span> <span class="o">!=</span> <span class="o">-</span><span class="mi">1</span><span class="p">);</span>
-</code></pre></div>
-    </div>
-</div>
-<p>Supposons maintenant que notre perroquet a une durée de vie de 10 allocutions. Remplacez le <code>do ... while</code> par une boucle <code>for</code> de dix itérations.</p>
+    <span class="c1">// Transfer the resource at the given index to the caller.
+</span><span class="c1"></span>    <span class="n">std</span><span class="o">::</span><span class="n">unique_ptr</span><span class="o">&lt;</span><span class="n">Resource</span><span class="o">&gt;</span> <span class="n">yield</span><span class="p">(</span><span class="n">size_t</span> <span class="n">index</span><span class="p">);</span>
 
-<div class="expand">
-    <div class="expand-label" style="cursor: pointer;" onclick="$h = $(this);$h.next('div').slideToggle(100,function () {$h.children('i').attr('class',function () {return $h.next('div').is(':visible') ? 'fas fa-chevron-down' : 'fas fa-chevron-right';});});">
-        <i style="font-size:x-small;" class="fas fa-chevron-right"></i>
-        <span>
-        
-    	
-    	Solution
-    	
-    	</span>
-    </div>
-    <div class="expand-content" style="display: none;">
-        <div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">10</span><span class="p">;</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span>
-<span class="p">{</span>
-    <span class="kt">int</span> <span class="n">number</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
-    <span class="n">std</span><span class="o">::</span><span class="n">cin</span> <span class="o">&gt;&gt;</span> <span class="n">number</span><span class="p">;</span>
-    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;Craow &#34;</span> <span class="o">&lt;&lt;</span> <span class="n">number</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;!&#34;</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
-<span class="p">}</span>
-</code></pre></div>
-    </div>
-</div>
+    <span class="c1">// Provide access to the resource at the given index.
+</span><span class="c1"></span>    <span class="n">Resource</span><span class="o">&amp;</span> <span class="n">get</span><span class="p">(</span><span class="n">size_t</span> <span class="n">index</span><span class="p">)</span> <span class="k">const</span><span class="p">;</span>
 
-<div class="notices tip" ><p>En C++, il est tout à fait valide et même conseillé de définir son indice d&rsquo;itérations directement dans l&rsquo;instruction <code>for</code>.
-Cela permet de limiter le <strong>scope</strong> (ou portée) de la variable à la boucle dans laquelle elle est définie.<br>
-On écrira donc <code>for (int i = 0; i &lt; 10; ++ i) { ... }</code> plutôt que <code>int i; for (i = 0; i &lt; 10; ++i) { ... }</code>.</p>
-</div>
+<span class="k">private</span><span class="o">:</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">unique_ptr</span><span class="o">&lt;</span><span class="n">Resource</span><span class="o">&gt;&gt;</span> <span class="n">_resources</span><span class="p">;</span>
+<span class="p">};</span>
+</code></pre></div><p>Pensez à implémenter vos fonctions dans GodBolt pour vous assurez qu&rsquo;elles compilent avant de soumettre le questionnaire.</p>
+<p><label for="q6">6- Implémentez le contenu de <code>create</code>.</label></p>
+<p><textarea id="q6" name="q6-create" rows="3" cols="50"></textarea></p>
+<p><label for="q7">7- Implémentez le contenu de <code>destroy</code>.</label></p>
+<p><textarea id="q7" name="q7-destroy" rows="3" cols="50"></textarea></p>
+<p><label for="q8">8- Implémentez le contenu de <code>acquire_resource</code>.</label></p>
+<p><textarea id="q8" name="q8-acquire" rows="3" cols="50"></textarea></p>
+<p><label for="q9">9- Implémentez le contenu de <code>yield</code>.</label></p>
+<p><textarea id="q9" name="q9-yield" rows="3" cols="50"></textarea></p>
+<p><label for="q10">10- Implémentez le contenu de <code>get</code>.</label></p>
+<p><textarea id="q10" name="q10-get" rows="3" cols="50"></textarea></p>
 
-<hr>
-<h3 id="les-chaînes-de-caractères">Les chaînes de caractères</h3>
-<p>Jusqu&rsquo;ici, notre perroquet ne sait dire que &ldquo;Craow&rdquo; et compter. D&rsquo;ailleurs, si vous lui dites autre chose qu&rsquo;un nombre, il a tendance à s&rsquo;étrangler.<br>
-Nous allons donc lui apprendre à faire des vraies phrases.</p>
-<p>La librairie standard du C++ définit la classe <code>std::string</code>.<br>
-Cherchez d&rsquo;abord sur <a href="https://en.cppreference.com/w/">cpp-reference</a> quel header inclure pour pouvoir l&rsquo;utiliser et ajoutez-le à votre programmme.<br>
-Remplacez ensuite votre variable <code>number</code> de type <code>int</code> par une variable <code>word</code> de type <code>std::string</code>.</p>
 
-<div class="expand">
-    <div class="expand-label" style="cursor: pointer;" onclick="$h = $(this);$h.next('div').slideToggle(100,function () {$h.children('i').attr('class',function () {return $h.next('div').is(':visible') ? 'fas fa-chevron-down' : 'fas fa-chevron-right';});});">
-        <i style="font-size:x-small;" class="fas fa-chevron-right"></i>
-        <span>
-        
-    	
-    	Solution
-    	
-    	</span>
-    </div>
-    <div class="expand-content" style="display: none;">
-        <div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">10</span><span class="p">;</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span>
-<span class="p">{</span>
-    <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">word</span><span class="p">;</span>
-    <span class="n">std</span><span class="o">::</span><span class="n">cin</span> <span class="o">&gt;&gt;</span> <span class="n">word</span><span class="p">;</span>
-    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;Craow &#34;</span> <span class="o">&lt;&lt;</span> <span class="n">word</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;!&#34;</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
-<span class="p">}</span>
-</code></pre></div>
-    </div>
-</div>
+  <hr/>
 
-<div class="notices tip" ><p>Vous n&rsquo;avez pas besoin ici d&rsquo;initialiser <code>word</code> en écrivant <code>= &quot;&quot;</code>. En effet, <code>std::string</code> est une classe, et par défaut, les instances de cette classe sont déjà initialisées avec la chaîne vide.</p>
-</div>
+  <label for="time">Combien de temps avez-vous mis à compléter ce chapitre ?</label>
+  <input type="text" name="time" placeholder="environ 4h30" />
 
-<hr>
-<h3 id="omettre-std">Omettre <code>std</code></h3>
-<p>Vous en avez marre de devoir écrire <code>std::</code> partout ? Il est possible de ne pas avoir à le faire en écrivant l&rsquo;instruction suivante juste après vos includes dans le cpp, ou alors dans le corps d&rsquo;une fonction :</p>
-<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
-</code></pre></div><p>Placez cette instruction au début de votre fonction <code>main</code>, retirez tous les <code>std::</code> devant les symboles de la librairie standard et vérifiez que votre programme compile toujours.</p>
+  <label for="questions">Avez-vous des questions suite à sa lecture ?</label>
+  <textarea id="questions" name="questions" rows="5" cols="50"></textarea>
 
-<div class="expand">
-    <div class="expand-label" style="cursor: pointer;" onclick="$h = $(this);$h.next('div').slideToggle(100,function () {$h.children('i').attr('class',function () {return $h.next('div').is(':visible') ? 'fas fa-chevron-down' : 'fas fa-chevron-right';});});">
-        <i style="font-size:x-small;" class="fas fa-chevron-right"></i>
-        <span>
-        
-    	
-    	Solution
-    	
-    	</span>
-    </div>
-    <div class="expand-content" style="display: none;">
-        <div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span> 
+  <label for="comments">Avez-vous des commentaires concernant le chapitre et/ou le site ?</label>
+  <textarea id="comments" name="comments" rows="5" cols="50"></textarea>
 
-<span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">10</span><span class="p">;</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span>
-<span class="p">{</span>
-    <span class="n">string</span> <span class="n">word</span><span class="p">;</span>
-    <span class="n">cin</span> <span class="o">&gt;&gt;</span> <span class="n">word</span><span class="p">;</span>
-    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;Craow &#34;</span> <span class="o">&lt;&lt;</span> <span class="n">word</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;!&#34;</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
-<span class="p">}</span>
-</code></pre></div>
-    </div>
-</div>
+  <input type="hidden" name="_template" value="table" />
+  <input type="hidden" name="_captcha" value="false" />
+  <input type="hidden" name="_next" value="https://laefy.github.io/CPP_Learning//chapter3/test_done/" />
 
-<div class="notices info" ><p>Lorsqu&rsquo;on utilise <code>using namespace</code> dans un bloc d&rsquo;instructions (fonction, boucle, condition, etc), il faut savoir que son effet est limité à ce bloc.<br>
-Autre point important, il faut éviter d&rsquo;utiliser des <code>using namespace</code> à l&rsquo;intérieur de headers. Comme vous le savez peut-être, lorsque l&rsquo;on fait un include depuis un .cpp, le fichier inclus est en fait copié-collé dedans. Si on inclut un fichier qui réalise un <code>using namespace</code>, puis que l&rsquo;on inclut un autre header derrière (librairie standard par exemple), le <code>using namespace</code> du premier header risque d&rsquo;impacter le code du second header&hellip;</p>
-</div>
+  <input type="submit" disabled style="display: none" aria-hidden="true" />
+  <input type="submit" value="Valider" />
+</form>
+
+<script src="/CPP_Learning/js/save-test-answers.js"></script>
 
 
 
@@ -1551,7 +1446,6 @@ Autre point important, il faut éviter d&rsquo;utiliser des <code>using namespac
             
                 
                     
-                    
                 
                 
 
@@ -1566,9 +1460,6 @@ Autre point important, il faut éviter d&rsquo;utiliser des <code>using namespac
             
             
                 
-                    
-                        
-                        
                     
                 
                 
@@ -1586,7 +1477,6 @@ Autre point important, il faut éviter d&rsquo;utiliser des <code>using namespac
             
                 
                     
-                    
                 
                 
 
@@ -1599,26 +1489,6 @@ Autre point important, il faut éviter d&rsquo;utiliser des <code>using namespac
             
             
                 
-                    
-                        
-                        
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
                     
                 
                 
@@ -1636,8 +1506,21 @@ Autre point important, il faut éviter d&rsquo;utiliser des <code>using namespac
             
                 
                     
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
                         
-                        
+            
+            
+                
                     
                 
                 
@@ -1863,6 +1746,7 @@ Autre point important, il faut éviter d&rsquo;utiliser des <code>using namespac
             
                 
                     
+                    
                 
                 
 
@@ -1875,6 +1759,9 @@ Autre point important, il faut éviter d&rsquo;utiliser des <code>using namespac
             
             
                 
+                    
+                        
+                        
                     
                 
                 
@@ -1940,6 +1827,7 @@ Autre point important, il faut éviter d&rsquo;utiliser des <code>using namespac
             
                 
                     
+                    
                 
                 
 
@@ -1955,6 +1843,9 @@ Autre point important, il faut éviter d&rsquo;utiliser des <code>using namespac
             
             
                 
+                    
+                        
+                        
                     
                 
                 
@@ -1984,10 +1875,10 @@ Autre point important, il faut éviter d&rsquo;utiliser des <code>using namespac
 	 
 	 
 		
-			<a class="nav nav-prev" href="/CPP_Learning/chapter1/2-practice/1-hello-world/" title="👋 Hello World"> <i class="fa fa-chevron-left"></i></a>
+			<a class="nav nav-prev" href="/CPP_Learning/chapter3/4-move-sem/" title="Déplacement"> <i class="fa fa-chevron-left"></i></a>
 		
 		
-			<a class="nav nav-next" href="/CPP_Learning/chapter1/2-practice/3-array/" title="🔢 Tableau Numérique" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+			<a class="nav nav-next" href="/CPP_Learning/chapter3/summary/" title="Synthèse" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
 		
 	
     </div>

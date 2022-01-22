@@ -29,6 +29,16 @@ Etat L&amp;rsquo;état d&amp;rsquo;un objet est composé de valeurs, pouvant ou 
     </item>
     
     <item>
+      <title>Durée de vie</title>
+      <link>https://laefy.github.io/CPP_Learning/chapter3/1-lifespan/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://laefy.github.io/CPP_Learning/chapter3/1-lifespan/</guid>
+      <description>Portée d&amp;rsquo;une variable locale Afin de parler de durée de vie, nous allons commencer par parler de la portée de nos variables. Comme vous le savez peut-être, la portée d&amp;rsquo;une variable définit la portion de code dans laquelle le compilateur nous permet de l&amp;rsquo;utiliser.
+Si on définit une variable dans une fonction, la portée de celle-ci démarre à sa définition et se termine à la fin du bloc dans lequel celle-ci a été définie.</description>
+    </item>
+    
+    <item>
       <title>Petits programmes</title>
       <link>https://laefy.github.io/CPP_Learning/chapter0/6-tips/1-snippets/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -102,6 +112,18 @@ La cible à compiler est c1-1-hello_world.
     </item>
     
     <item>
+      <title>Ownership</title>
+      <link>https://laefy.github.io/CPP_Learning/chapter3/2-ownership/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://laefy.github.io/CPP_Learning/chapter3/2-ownership/</guid>
+      <description>Ownership On dit qu&amp;rsquo;un objet A est le propriétaire, ou le owner, d&amp;rsquo;un objet B lorsque la destruction de A entraîne la destruction de B.
+Dans l&amp;rsquo;exercice précédent, on peut donc dire que box était propriétaire de box._content.
+Considérons un autre exemple :
+std::vector&amp;lt;Box&amp;gt; boxes; boxes.emplace_back(&amp;#34;gift1&amp;#34;); Box&amp;amp; gift2 = boxes.emplace_back(&amp;#34;gift2&amp;#34;); Box gift3 = boxes.emplace_back(&amp;#34;gift3&amp;#34;); Ici, le tableau boxes est le propriétaire des objets boxes[0], boxes[1] et boxes[2]. Il est également propriétaire de l&amp;rsquo;objet gift2, puisqu&amp;rsquo;il s&amp;rsquo;agit d&amp;rsquo;une référence sur boxes[1].</description>
+    </item>
+    
+    <item>
       <title>Visual Studio Code</title>
       <link>https://laefy.github.io/CPP_Learning/chapter0/2-vscode/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -142,6 +164,18 @@ Ensuite, vous allez déclarer une variable de type int.</description>
     </item>
     
     <item>
+      <title>Allocation dynamique</title>
+      <link>https://laefy.github.io/CPP_Learning/chapter3/3-allocation/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://laefy.github.io/CPP_Learning/chapter3/3-allocation/</guid>
+      <description>Nous allons maintenant voir comment il est possible d&amp;rsquo;allouer de la mémoire simplement, en particulier sans avoir à se soucier des fuites mémoire.
+ Allocation d&amp;rsquo;une primitive Pour créer un objet sur le tas, nous allons nous servir d&amp;rsquo;un petit utilitaire appelé std::unique_ptr et de la fonction std::make_unique. Ces deux symboles se trouvent dans le header &amp;lt;memory&amp;gt;.
+Voici la syntaxe permettant d&amp;rsquo;allouer de la mémoire pour un entier :
+#include &amp;lt;iostream&amp;gt;#include &amp;lt;memory&amp;gt; void fcn() { std::unique_ptr&amp;lt;int&amp;gt; int_on_heap = std::make_unique&amp;lt;int&amp;gt;(3); std::cout &amp;lt;&amp;lt; *int_on_heap &amp;lt;&amp;lt; std::endl; // affiche 3  *int_on_heap = 5; std::cout &amp;lt;&amp;lt; *int_on_heap &amp;lt;&amp;lt; std::endl; // affiche 5 } La classe unique_ptr est donc un symbole que l&amp;rsquo;on template par le type qu&amp;rsquo;il doit contenir.</description>
+    </item>
+    
+    <item>
       <title>CMake</title>
       <link>https://laefy.github.io/CPP_Learning/chapter0/3-cmake/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -178,6 +212,17 @@ La cible à compiler est c1-3-array.
 La cible à compiler est c2-2-constructor.
  Constructeur à paramètres Reprenez le code de l&amp;rsquo;exercice précédent.
 Vous aviez implémenté une fonction-membre set_name dans la classe Person pour initialiser l&amp;rsquo;attribut _name. Or, ce serait bien d&amp;rsquo;une part de réellement pouvoir initialiser cet attribut plutôt que de le modifier après l&amp;rsquo;instanciation, et d&amp;rsquo;autre part, de supprimer ce setter, afin qu&amp;rsquo;une fois initialisé, il ne soit plus possible de modifier _name.</description>
+    </item>
+    
+    <item>
+      <title>Déplacement</title>
+      <link>https://laefy.github.io/CPP_Learning/chapter3/4-move-sem/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://laefy.github.io/CPP_Learning/chapter3/4-move-sem/</guid>
+      <description>Nous avons vu précédement que les unique_ptr ne pouvaient pas être copiés. Cependant, le vector a réussi à provoquer leur &amp;ldquo;déplacement&amp;rdquo; en mémoire pour effectuer sa réallocation.
+Nous allons voir comment faire de même afin de pouvoir manipuler les unique_ptr avec un peu plus de souplesse.
+ Construction sur place Lorsqu&amp;rsquo;une fonction retourne un objet et que celui-ci est utilisé pour initialiser une variable, aucune copie n&amp;rsquo;a lieu. L&amp;rsquo;objet est directement construit à l&amp;rsquo;adresse mémoire qui lui était réservée dans le code appelant.</description>
     </item>
     
     <item>
@@ -297,6 +342,20 @@ Mais bon, vous l&amp;rsquo;avez enfin terminé, donc vous pouvez être fiers de 
     </item>
     
     <item>
+      <title>Questionnaire !</title>
+      <link>https://laefy.github.io/CPP_Learning/chapter3/test/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://laefy.github.io/CPP_Learning/chapter3/test/</guid>
+      <description>C&amp;rsquo;est l&amp;rsquo;heure du test ! Bon courage 🙂
+ Vous êtes : Votre adresse mail : Votre groupe : Groupe 1Groupe 2Groupe Alternants1- Comment définir la période de validité d’un objet ?
+
+2- Citez une bonne raison d’allouer de la mémoire via un unique_ptr plutôt que via un pointeur simple (avec new).
+
+3- Quelle fonction de la librarie standard permet de transférer le contenu d’un objet dans un autre ?</description>
+    </item>
+    
+    <item>
       <title>Retours ?</title>
       <link>https://laefy.github.io/CPP_Learning/chapter0/test/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -322,6 +381,15 @@ Mais bon, vous l&amp;rsquo;avez enfin terminé, donc vous pouvez être fiers de 
       
       <guid>https://laefy.github.io/CPP_Learning/chapter2/summary/</guid>
       <description>Ce qu&amp;rsquo;il faut retenir Théorie  A quoi correspondent les termes attributs et fonction-membres constructeur = fonction appelée à l&amp;rsquo;instanciation d&amp;rsquo;une classe constructeur par défaut = constructeur à 0 paramètre implémentation par défaut = implémentation d&amp;rsquo;une fonction générée par le compilateur dans certaines conditions opérateur d&amp;rsquo;assignation = fonction appelée lorsque l&amp;rsquo;on écrit a = ...;, sachant que a a été instancié plus tôt surcharge = fonction de même nom, acceptant un nombre différent de paramètres et/ou des paramètres de types différents Lorsque la variable référencée par une référence est détruite, on a une dangling reference  Pratique  Utiliser this pour faire référence à l&amp;rsquo;instance courante Comparer this et &amp;amp;other au début de l&amp;rsquo;opérateur d&amp;rsquo;assignation Utiliser const aussi souvent que possible   Ce qu&amp;rsquo;il faut savoir faire Langage  Définir une classe : class A {}; (sans oublier le point-virgule) Définir des attributs et des fonctions-membres Indiquer la visibilité d&amp;rsquo;un ou plusieurs membres : public: - private: Définir un constructeur : ClassName(int p1, char p2) : _a1 { p1 }, _a2 { p2 } { } Déléguer la construction à un autre constructeur : ClassName(int p) : ClassName { p, p } {} Définir un constructeur de copie : ClassName(const ClassName&amp;amp; other) : _a1 { other.</description>
+    </item>
+    
+    <item>
+      <title>Synthèse</title>
+      <link>https://laefy.github.io/CPP_Learning/chapter3/summary/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://laefy.github.io/CPP_Learning/chapter3/summary/</guid>
+      <description>Ce qu&amp;rsquo;il faut retenir Théorie  La durée de vie d&amp;rsquo;un objet s&amp;rsquo;étend de sa construction à sa destruction. Lorsque la durée de vie d&amp;rsquo;un objet s&amp;rsquo;achève, il n&amp;rsquo;est plus valide de l&amp;rsquo;utiliser. La portée d&amp;rsquo;une référence peut excéder la durée de vie de l&amp;rsquo;objet référencé (=&amp;gt; dangling reference). Un objet A est propriétaire d&amp;rsquo;un objet B si la destruction de A entraîne celle de B. Aucune copie n&amp;rsquo;est faite lorsqu&amp;rsquo;on initialise une variable avec la valeur de retour d&amp;rsquo;une fonction (mandatory copy-elision)  Pratique  Un unique_ptr n&amp;rsquo;est pas copiable.</description>
     </item>
     
     <item>
@@ -359,6 +427,15 @@ Mais bon, vous l&amp;rsquo;avez enfin terminé, donc vous pouvez être fiers de 
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://laefy.github.io/CPP_Learning/chapter2/test_done/</guid>
+      <description>Vos réponses nous ont bien été communiquées 😃 Retourner à la synthèse du Chapitre</description>
+    </item>
+    
+    <item>
+      <title>Merci !</title>
+      <link>https://laefy.github.io/CPP_Learning/chapter3/test_done/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://laefy.github.io/CPP_Learning/chapter3/test_done/</guid>
       <description>Vos réponses nous ont bien été communiquées 😃 Retourner à la synthèse du Chapitre</description>
     </item>
     
