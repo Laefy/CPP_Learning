@@ -12,21 +12,21 @@
     <title>Questionnaire ! :: Cours de C&#43;&#43; - Niveau Master</title>
 
     
-    <link href="/CPP_Learning/css/nucleus.css?1642825535" rel="stylesheet">
-    <link href="/CPP_Learning/css/fontawesome-all.min.css?1642825535" rel="stylesheet">
-    <link href="/CPP_Learning/css/hybrid.css?1642825535" rel="stylesheet">
-    <link href="/CPP_Learning/css/featherlight.min.css?1642825535" rel="stylesheet">
-    <link href="/CPP_Learning/css/perfect-scrollbar.min.css?1642825535" rel="stylesheet">
-    <link href="/CPP_Learning/css/auto-complete.css?1642825535" rel="stylesheet">
-    <link href="/CPP_Learning/css/atom-one-dark-reasonable.css?1642825535" rel="stylesheet">
-    <link href="/CPP_Learning/css/theme.css?1642825535" rel="stylesheet">
-    <link href="/CPP_Learning/css/hugo-theme.css?1642825535" rel="stylesheet">
+    <link href="/CPP_Learning/css/nucleus.css?1643067484" rel="stylesheet">
+    <link href="/CPP_Learning/css/fontawesome-all.min.css?1643067484" rel="stylesheet">
+    <link href="/CPP_Learning/css/hybrid.css?1643067484" rel="stylesheet">
+    <link href="/CPP_Learning/css/featherlight.min.css?1643067484" rel="stylesheet">
+    <link href="/CPP_Learning/css/perfect-scrollbar.min.css?1643067484" rel="stylesheet">
+    <link href="/CPP_Learning/css/auto-complete.css?1643067484" rel="stylesheet">
+    <link href="/CPP_Learning/css/atom-one-dark-reasonable.css?1643067484" rel="stylesheet">
+    <link href="/CPP_Learning/css/theme.css?1643067484" rel="stylesheet">
+    <link href="/CPP_Learning/css/hugo-theme.css?1643067484" rel="stylesheet">
     
-    <link href="/CPP_Learning/css/theme-mine.css?1642825535" rel="stylesheet">
+    <link href="/CPP_Learning/css/theme-mine.css?1643067484" rel="stylesheet">
     
-    <link href="/CPP_Learning/css/syntax.css?1642825535" rel="stylesheet">
+    <link href="/CPP_Learning/css/syntax.css?1643067484" rel="stylesheet">
 
-    <script src="/CPP_Learning/js/jquery-3.3.1.min.js?1642825535"></script>
+    <script src="/CPP_Learning/js/jquery-3.3.1.min.js?1643067484"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -57,14 +57,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/CPP_Learning/js/lunr.min.js?1642825535"></script>
-<script type="text/javascript" src="/CPP_Learning/js/auto-complete.js?1642825535"></script>
+<script type="text/javascript" src="/CPP_Learning/js/lunr.min.js?1643067484"></script>
+<script type="text/javascript" src="/CPP_Learning/js/auto-complete.js?1643067484"></script>
 <script type="text/javascript">
     
         var baseurl = "https:\/\/laefy.github.io\/CPP_Learning\/";
     
 </script>
-<script type="text/javascript" src="/CPP_Learning/js/search.js?1642825535"></script>
+<script type="text/javascript" src="/CPP_Learning/js/search.js?1643067484"></script>
 
     
   </div>
@@ -1136,7 +1136,8 @@
 <p><textarea id="q5" name="q5-owner-trv" rows="2" cols="50"></textarea></p>
 <hr>
 <p>Les questions 6 à 10 font référence au code ci-dessous :</p>
-<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="cp">#include</span> <span class="cpf">&lt;string&gt;</span><span class="cp">
+<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="cp">#include</span> <span class="cpf">&lt;memory&gt;</span><span class="cp">
+</span><span class="cp">#include</span> <span class="cpf">&lt;string&gt;</span><span class="cp">
 </span><span class="cp">#include</span> <span class="cpf">&lt;vector&gt;</span><span class="cp">
 </span><span class="cp"></span>
 <span class="k">struct</span> <span class="nc">Resource</span>
@@ -1162,7 +1163,7 @@
 
     <span class="c1">// Take the ownership of an existing resource.
 </span><span class="c1"></span>    <span class="c1">// Return the index where the resource was placed.
-</span><span class="c1"></span>    <span class="n">size</span> <span class="nf">acquire</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">unique_ptr</span><span class="o">&lt;</span><span class="n">Resource</span><span class="o">&gt;</span> <span class="n">resource</span><span class="p">);</span>
+</span><span class="c1"></span>    <span class="n">size_t</span> <span class="nf">acquire</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">unique_ptr</span><span class="o">&lt;</span><span class="n">Resource</span><span class="o">&gt;</span> <span class="n">resource</span><span class="p">);</span>
 
     <span class="c1">// Transfer the resource at the given index to the caller.
 </span><span class="c1"></span>    <span class="n">std</span><span class="o">::</span><span class="n">unique_ptr</span><span class="o">&lt;</span><span class="n">Resource</span><span class="o">&gt;</span> <span class="n">yield</span><span class="p">(</span><span class="n">size_t</span> <span class="n">index</span><span class="p">);</span>
@@ -1888,19 +1889,19 @@
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/CPP_Learning/js/clipboard.min.js?1642825535"></script>
-    <script src="/CPP_Learning/js/perfect-scrollbar.min.js?1642825535"></script>
-    <script src="/CPP_Learning/js/perfect-scrollbar.jquery.min.js?1642825535"></script>
-    <script src="/CPP_Learning/js/jquery.sticky.js?1642825535"></script>
-    <script src="/CPP_Learning/js/featherlight.min.js?1642825535"></script>
-    <script src="/CPP_Learning/js/highlight.pack.js?1642825535"></script>
+    <script src="/CPP_Learning/js/clipboard.min.js?1643067484"></script>
+    <script src="/CPP_Learning/js/perfect-scrollbar.min.js?1643067484"></script>
+    <script src="/CPP_Learning/js/perfect-scrollbar.jquery.min.js?1643067484"></script>
+    <script src="/CPP_Learning/js/jquery.sticky.js?1643067484"></script>
+    <script src="/CPP_Learning/js/featherlight.min.js?1643067484"></script>
+    <script src="/CPP_Learning/js/highlight.pack.js?1643067484"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/CPP_Learning/js/modernizr.custom-3.6.0.js?1642825535"></script>
-    <script src="/CPP_Learning/js/learn.js?1642825535"></script>
-    <script src="/CPP_Learning/js/hugo-learn.js?1642825535"></script>
+    <script src="/CPP_Learning/js/modernizr.custom-3.6.0.js?1643067484"></script>
+    <script src="/CPP_Learning/js/learn.js?1643067484"></script>
+    <script src="/CPP_Learning/js/hugo-learn.js?1643067484"></script>
 
-    <link href="/CPP_Learning/mermaid/mermaid.css?1642825535" rel="stylesheet" />
-    <script src="/CPP_Learning/mermaid/mermaid.js?1642825535"></script>
+    <link href="/CPP_Learning/mermaid/mermaid.css?1643067484" rel="stylesheet" />
+    <script src="/CPP_Learning/mermaid/mermaid.js?1643067484"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>
