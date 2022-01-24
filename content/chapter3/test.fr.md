@@ -43,6 +43,7 @@ int main()
 Les questions 6 à 10 font référence au code ci-dessous :
 
 ```cpp
+#include <memory>
 #include <string>
 #include <vector>
 
@@ -69,7 +70,7 @@ public:
 
     // Take the ownership of an existing resource.
     // Return the index where the resource was placed.
-    size acquire(std::unique_ptr<Resource> resource);
+    size_t acquire(std::unique_ptr<Resource> resource);
 
     // Transfer the resource at the given index to the caller.
     std::unique_ptr<Resource> yield(size_t index);
