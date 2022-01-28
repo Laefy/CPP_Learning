@@ -32,10 +32,10 @@ weight: 101
 ##### Pratique
 
 - Lorsqu'on copie un objet, on perd sa virtual table, et on ne peut donc plus garantir que les redéfinitions de fonctions seront bien appelées pendant les appels virtuels.\
-Il faut donc toujours passer les objets polymorphes aux fonctions par référence.
+Il faut donc toujours passer les objets polymorphes aux fonctions par référence ou pointeur.
 - Il faut **toujours** déclarer un **destructeur virtuel** (même s'il ne fait rien) dans une classe de base polymorphe.
 - Pour modéliser une classe abstraite, on peut mettre son constructeur dans la partie `protected` ou déclarer certaines de ces fonctions comme étant virtuelles pures.
-- Il n'est pas possible d'instancier une classe si elle contient des fonctions virtuelles pures, ou qu'elle hérite de fonctions virtuelles pures qu'elle ne redéfinit pas.
+- Il n'est pas possible d'instancier une classe si elle contient des fonctions virtuelles pures, ni si elle hérite de fonctions virtuelles pures qu'elle ne redéfinit pas.
 
 ##### Librairie standard
 
@@ -51,4 +51,4 @@ Il faut donc toujours passer les objets polymorphes aux fonctions par référenc
 
 ##### Pratique
 
-- Il est possible de créer des relations de parenté privées, mais il est très rare d'en avoir véritablement besoin.
+- Il est possible de créer des relations de parenté privées, mais il est assez rare d'en avoir véritablement besoin.

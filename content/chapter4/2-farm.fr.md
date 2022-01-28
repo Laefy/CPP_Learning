@@ -205,7 +205,7 @@ Le souci, c'est qu'écrire `vector<Animal&>` ne compilera pas.
 En effet, d'après la documentation de `vector`, le type des éléments doit être assignable par copie.
 Or, les références ne sont pas réassignables...
 
-Du coup, à défaut de pouvoir utiliser des références, **vous allez devoir passer par des pointeurs**.
+Du coup, à défaut de pouvoir utiliser des références, **vous allez devoir passer par des pointeurs**.\
 Modifiez votre code pour de manière à remplacer le `vector<Animal>` par un `vector<Animal*>` et vérifiez que le programme fonctionne maintenant comme il faut.
 
 {{% expand "Solution" %}}
@@ -244,17 +244,16 @@ int main()
 Vous allez maintenant créer une nouvelle classe `Opera`, contenant un tableau d'animaux.
 Contrairement à tout à l'heure, ce tableau sera propriétaire de la mémoire des animaux qu'il contient.
 
-Pour faire cela, plutôt qu'insérer dans le tableau des pointeurs sur des objets déjà existants, vous allez lui donner des pointeurs sur des objets alloués dynamiquement :
+Pour faire cela, plutôt qu'insérer dans le tableau des pointeurs sur des objets déjà existants, vous allez créer et placer des `unique_ptr` dans le tableau :
 ```cpp
-std::vector<Animal*> animals;
-animals.emplace_back(new Dog {});
-animals.emplace_back(new Cat {});
-animals.emplace_back(new Chicken {});
+std::vector<std::unique_ptr<Animal>> animals;
+animals.emplace_back(std::make_unique<Dog>());
+animals.emplace_back(std::make_unique<Cat>());
+animals.emplace_back(std::make_unique<Chicken>());
 ```
 
 Définissez la classe `Opera` en respectant les contraintes suivantes :\
 \- une fois le constructeur appelé, les instances de `Opera` doivent contenir un animal de chaque type,\
-\- lorsqu'une instance est détruite, toute la mémoire allouée par cette instance est libérée,\
 \- il est possible d'appeler une fonction `sing` sur une instance, qui exécute alors la fonction `sing` de chacun des animaux qu'elle contient.
 
 Instanciez et utiliser cette classe dans le `main` pour vérifier que tout fonctionne.
@@ -271,6 +270,7 @@ Opera.h
 #include "Dog.h"
 
 #include <iostream>
+#include <memory>
 #include <vector>
 
 class Opera
@@ -278,23 +278,15 @@ class Opera
 public:
     Opera()
     {
-        _animals.emplace_back(new Cat {});
-        _animals.emplace_back(new Chicken {});
-        _animals.emplace_back(new Cow {});
-        _animals.emplace_back(new Dog {});
-    }
-
-    ~Opera()
-    {
-        for (auto* animal: _animals)
-        {
-            delete animal;
-        }
+        _animals.emplace_back(std::make_unique<Cat>());
+        _animals.emplace_back(std::make_unique<Chicken>());
+        _animals.emplace_back(std::make_unique<Cow>());
+        _animals.emplace_back(std::make_unique<Dog>());
     }
 
     void sing() const
     {
-        for (const auto* animal: _animals)
+        for (const auto& animal: _animals)
         {
             animal->sing(' ');
         }
@@ -303,7 +295,7 @@ public:
     }
 
 private:
-    std::vector<Animal*> _animals;
+    std::vector<std::unique_ptr<Animal>> _animals;
 };
 ```
 
@@ -367,6 +359,14 @@ Chicken* chicken = new Chicken {};
 delete chicken; // le destructeur de chicken est appelé sur cette ligne.
 ```
 
+Dans le cas d'un `unique_ptr<T>`, il appelle `delete` sur son pointeur interne. 
+```cpp
+{
+    std::unique_ptr<Chicken> chicken = std::make_unique<Chicken>();
+    ...
+} // le destructeur de std::unique_ptr est appelé à la sortie du bloc, et celui-ci appelle `delete` sur son pointeur interne, de type Chicken*.
+```
+
 Le problème de `delete`, c'est qu'il regarde le type du pointeur pour déterminer le destructeur à appeler.
 ```cpp
 Chicken* chicken = new Chicken {};
@@ -376,16 +376,23 @@ Animal* dog = new Dog {};
 delete dog; // appelle ~Animal, car dog est de type Animal*
 ```
 
+Le code suivant appelera par conséquent le destructeur de `Animal` plutôt que le destructeur de `Chicken`.
+```cpp
+{
+    std::unique_ptr<Animal> chicken = std::make_unique<Chicken>();
+    ...
+} // ~Animal() est appelé au lieu de ~Chicken()...
+```
+
 Or, nous avons vu au début de cette page que, lorsque le programme doit appeler une fonction, il recherche une redéfinition dans les classes-filles seulement si la fonction est déclarée virtuelle dans la classe-mère.
 Eh bien, c'est exactement pour cela que `~Chicken` n'est pas appelé pendant la destruction de la classe `Opera`.
 
-Dans la classe `Opera`, vous avez libéré la mémoire de chacun des animaux du tableau en utilisant `delete`.
-Comme ces éléments sont de type `Animal*`, le compilateur commence par regarder le prototype de `~Animal`.
-Comme vous n'avez pas défini le destructeur vous-même, il tombe sur le destructeur généré par défaut.
-L'implémentation par défaut du destructeur n'étant pas virtuelle, le compilateur détermine qu'il n'y aura pas besoin de rechercher de redéfinition dans les classe-filles au moment de l'exécution du programme.
-L'instruction `delete animal` est donc résolue en appelant `~Animal`.
+Dans la classe `Opera`, pour appeler le `delete` sur les animaux contenus dans les `unique_ptr`, le compilateur commence par regarder le prototype de `~Animal`.
+Comme vous n'avez pas défini le destructeur vous-même, il tombe sur le destructeur généré par défaut.\
+L'implémentation par défaut du destructeur n'étant pas virtuelle, le compilateur détermine qu'il n'aura pas besoin de rechercher de redéfinition dans les classe-filles au moment de l'exécution du programme.
+C'est donc `~Animal` qui est appelé pour chacun des animaux.
 
-Du coup, afin que le destructeur `~Chicken` soit toujours appelé lors de la destruction d'un objet de type `Chicken`, il faut que vous définissiez explicitement le destructeur de `Animal` de manière à pouvoir le déclarer virtuel.
+Du coup, afin que le destructeur `~Chicken` soit toujours appelé lors de la destruction d'un objet de type `Chicken`, il faut que vous redéfinissiez explicitement le destructeur de `Animal` pour le déclarer virtuel.\
 N'oubliez pas d'ajouter le `override` sur `~Chicken`, pour indiquer au compilateur, mais surtout à vous-même, que vous êtes en train de redéfinir un destructeur virtuel.
 
 Testez le programme pour vérifier que désormais, `~Chicken` est bien appelé durant la destruction de la variable `opera`.
@@ -431,14 +438,14 @@ une fois que c'est virtuel, c'est virtuel à tout jamais.
 2. Lorsqu'on rédéfinit une fonction dans une classe-fille, on place le mot-clef `override` à la fin de son prototype.
 Cela force le compilateur à vérifier qu'on est effectivement en train de redéfinir une fonction d'une classe de base.
 
-3. Lorsqu'on fait de l'héritage "dynamique", c'est-à-dire qu'on a une ou plusieurs fonction virtuelle, ou bien que l'on compte stocker des objets de type `Child` dans des pointeurs de type `Parent*`,
-on définit **TOUJOURS** explicitement le destructeur de `Parent` pour le rendre virtuel. **TOUJOURS !**
+3. Lorsqu'on fait de l'héritage "dynamique", c'est-à-dire qu'on a une ou plusieurs fonction virtuelle, ou bien que l'on compte stocker des objets de type `Child` dans des pointeurs `Parent` **ownant** (c'est-ç-dire qui peuvent détruire l'objet, comme `unique_ptr`), on définit **TOUJOURS** explicitement le destructeur de `Parent` pour le rendre virtuel. **TOUJOURS !**
 
-4. Si vous copiez un objet `Child` dans une variable `parent` de type `Parent`, vous ne pourrez pas appeler les redéfinitions de fonctions définies dans `Child`.
-Si vous souhaitez appeler des fonctions redéfinie dans une classe-fille, il faut que la variable soit un objet de type `Child` ou pointe sur un objet de type `Child`.
+4. Si vous copiez un objet `Child` dans une variable `parent` de type `Parent`, vous ne pourrez pas appeler les redéfinitions de fonctions définies dans `Child`.\
+Si vous souhaitez appeler des fonctions redéfinie dans une classe-fille, il faut donc que la variable soit un objet de type `Child`, ou bien qu'elle référence (via une référence ou un pointeur) un objet de type `Child`.
 ```cpp
-Child c;
-Child& ref = c;
-Parent& p = c;
-Parent* p = &c;
+Child                   c;
+Child&                  ref = c;
+Parent&                 p   = c;
+Parent*                 p   = &c;
+std::unique_ptr<Parent> p   = std::make_unique<Child>();
 ```

@@ -63,11 +63,13 @@ int main()
 
 ---
 
+Pour les questions 7 et 8, vous pouvez partir de [là](https://godbolt.org/z/nzsWWszvP) pour tester votre code.
 {{% test_item id=7 lines=10 desc="some-code" %}}Définissez une classe `SharedStuff` contenant un attribut `_value` accessible uniquement depuis ses classes dérivées. Ajoutez un constructeur à 1 paramètre pour initialiser ce membre.{{% /test_item %}}
 {{% test_item id=8 lines=10 desc="some-code" %}}Définissez une classe `MoreStuff` héritant de `SharedStuff` et contenant un attribut `_value2`. Définissez les fonctions nécessaires permettant d'instancier un objet de ce type, et d'afficher les valeurs de ses deux membres dans la console.{{% /test_item %}}
 
 ---
 
+Pour les questions 9 et 10, vous pouvez partir de [là](https://godbolt.org/z/vfzzGTsTT) pour tester votre code.
 {{% test_item id=9 lines=10 desc="some-code" %}}Définissez une classe `Food` contenant une fonction virtuelle pure `miam_miam`. Cette fonction doit servir à afficher le nom de l'aliment dans la console.{{% /test_item %}}
 {{% test_item id=10 lines=10 desc="some-code" %}}Définissez une classe `Nutella` héritant de `Food`. Ajoutez ce qu'il faut pour rendre cette classe instanciable.{{% /test_item %}}
 

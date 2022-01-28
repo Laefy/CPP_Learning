@@ -205,7 +205,7 @@ class FlyingCar : public Car
 
 Avec le code actuel, il est tout à fait possible d'instancier des classes `Vehicle`.
 Cependant, cette classe ne devrait pas être instanciable, puisqu'elle est juste là pour définir l'interface que tous les véhicules doivent implémenter.
-En Java, vous auriez d'ailleurs probablement définir le type `Vehicle` en utilisant une interface, ou éventuellement une classe abstraite.
+En Java, vous auriez d'ailleurs probablement défini le type `Vehicle` en utilisant une interface, ou éventuellement une classe abstraite.
 
 En C++, il n'existe pas pas de mot-clef permettant de définir des interfaces ou des classes abstraites.
 Vous pouvez néanmoins empêcher un utilisateur d'instancier une classe qui ne devrait pas l'être via deux mécanismes.
@@ -272,8 +272,8 @@ public:
 };
 ```
 
-
-Supprimez l'implémentation de `Vehicle::drive` et transformez-la en fonction virtuelle pure. Quelles erreurs de compilation obtenez-vous maintenant ?
+Remettez le constructeur de `Vehicle` dans la partie publique, puis supprimez l'implémentation de `Vehicle::drive` et transformez-la en fonction virtuelle pure.\
+Quelles erreurs de compilation obtenez-vous maintenant ?
 
 {{% expand "Solution" %}}
 ```cpp
@@ -299,8 +299,5 @@ A l'instanciation, on obtient quelque chose comme :
 see declaration of 'Vehicle'
 due to following members:
 'unsigned int Vehicle::drive(void) const': is abstract
-...
-...
-'Vehicle::Vehicle': cannot access protected member declared in class 'Vehicle'
 ```
 {{% /expand %}}

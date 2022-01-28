@@ -25,7 +25,7 @@ La cible à compiler est `c4-1-hierarchy`.
 Commencez par jeter un coup d'oeil à chacun des fichiers fournis.\
 Comme vous pouvez le constater, les différentes classes partagent beaucoup de code.
 
-Vous allez donc commencer par créer une classe contenant l'ensemble du code dupliqué par les autres classes.
+Vous allez commencer par créer une classe contenant l'ensemble du code dupliqué par les autres classes.
 Placez-la dans un ou des fichiers séparés et modifiez le CMakeLists.txt (celui dans chap-04) pour qu'il les ajoute bien à la compilation de l'exécutable.
 Pour le nom de la classe, essayez de trouver quelque chose qui soit digne de son contenu.
 
@@ -227,13 +227,48 @@ Tout simplement parce qu'en faisant de l'héritage, vous allez vous retrouver au
 error: 'some variable or function' is inaccessible within this context
 ```
 
-Au cours du chapitre 2, nous vous avions indiqué que la différence entre une `class` et une `struct`, c'était la visibilité par défaut.\
-Eh bien cette visibilité par défaut s'applique également à la relation d'héritage.
+La visibilité par défaut dans une `class` est privée.
+Cela signifie que si vous ne spécifiez par la visibilité au début de la définition de la classe, tout ce qui se trouve derrière est privée :
+```cpp
+class A
+{
+    int _a;                             // -> private by default
+    int get_a() const { return _a; }    // -> private by default
+
+public:
+    int _b;                             // -> public
+    int get_b() const { return _b; }    // -> public
+    
+private:
+    int _b;                             // -> private
+    int get_b() const { return _b; }    // -> private
+}
+```
+
+En C++, on peut aussi utiliser des `struct`.
+La seule différence syntaxique avec `class`, c'est que la visibilité par défaut est publique :
+```cpp
+struct B
+{
+    int _a;                             // -> public by default
+    int get_a() const { return _a; }    // -> public by default
+
+public:
+    int _b;                             // -> public
+    int get_b() const { return _b; }    // -> public
+    
+private:
+    int _b;                             // -> private
+    int get_b() const { return _b; }    // -> private
+}
+```
+
+Cette visibilité par défaut s'applique également à la relation d'héritage.
 
 ```cpp
 class A  : B {};    // private inheritance, because the default visibility for a class is 'private'
 struct A : B {};    // public inheritance, because the default visibility for a struct is 'public'
 ```
 
-Donc lorsque vous faites de l'héritage avec des `class`, **n'oubliez pas de placer le mot-clef `public` devant le nom de la classe-mère**.
+Donc lorsque vous faites de l'héritage avec des `class`, **n'oubliez pas de placer le mot-clef `public` devant le nom de la classe-mère**.\
 Autrement, la relation d'héritage sera privée et le compilateur ne vous laissera pas accéder aux fonctions-membres du parent en dehors de la classe.

@@ -104,11 +104,13 @@ GrandFather& son_as_grand_father    = real_son;
 GrandFather& father_as_grand_father = real_father;
 ```
 
-Considérons la variable `real_father`.
-Son type statique est `Father`, puisque la variable est de type `Father`, et son type dynamique est `Father`, puisque l'objet a été construit en tant que `Father`.
+Considérons l'objet `real_father`.\
+Le type statique est `Father`, puisque la variable est de type `Father`.\
+Le type dynamique est `Father`, puisqu'il a été construit en tant que `Father`.
 
-Considérons maintenant `son_as_father`.
-Ici, son type statique est toujours `Father`, puisque la variable est de type `Father&`, mais son type dynamique est `Son`, puisque l'objet référencé par `son_as_father` est `real_son`, qui a été construit en tant que `Son`.
+Considérons maintenant `son_as_father`.\
+Le type statique est toujours `Father`, puisque la variable est de type `Father&`.\
+En revanche, le type dynamique est `Son`, puisque l'objet référencé par `son_as_father` est `real_son`, qui a été construit en tant que `Son`.
 
 La résolution d'un appel de fonction se fait en 3 étapes :
 1. Le compilateur recherche la fonction appelée dans le type statique de l'objet. S'il ne trouve pas la fonction, il remonte dans la classe du parent, et ainsi de suite.
@@ -211,5 +213,6 @@ Comme `son_cref` est une référence constante, on ne peut pas appeler `Son::fcn
 La résolution statique identifie `fcn_c() const` dans `GrandFather`, et celle-ci étant virtuelle, la VTable de `Son` nous renvoie à `GrandFather::fcn_c() const`.
 
 6/ `Father::fcn_d()`\
-La résolution statique identifie `fcn_d()` dans `Father`. Comme `grand_son_copy_as_father` n'est pas une référence, il n'y a pas besoin de résolution dynamique : le compilateur peut déduire immédiatement qu'il faut appeler `Father::fcn_d()`.  
+La résolution statique identifie `fcn_d()` dans `Father`.
+Comme `grand_son_copy_as_father` n'est pas une référence, il n'y a pas besoin de résolution dynamique : le compilateur peut déduire immédiatement qu'il faut appeler `Father::fcn_d()`.
 {{% /expand %}}
