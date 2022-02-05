@@ -156,8 +156,8 @@ for (auto it = values.begin(); it != values.end(); ++it)
 Les itérateurs ont souvent des types compliqués à écrire et à lire, c'est donc un bon prétexte pour utiliser `auto`. 
 {{% /notice %}}
 
-
-En utilisant une fonction d'insertion, faites en sorte de dupliquer chacun des éléments de votre tableau. Par exemple, `{ 1, 2, 3 }` devrait devenir `{ 1, 1, 2, 2, 3, 3 }`.
+En utilisant une fonction d'insertion, faites en sorte de dupliquer chacun des éléments de votre tableau. Par exemple, `{ 1, 2, 3 }` devrait devenir `{ 1, 1, 2, 2, 3, 3 }`.\
+**Prenez garde à l'invalidation des itérateurs !**
 
 {{% expand "Solution" %}}
 ```cpp
@@ -181,8 +181,8 @@ C'est pour cela que l'on doit assigner le résultat de `insert` à `it` à chaqu
 Vous allez maintenant apprendre à supprimer des éléments d'un `vector`.
 
 La fonction la plus simple à utiliser est celle permettant de retirer le dernier élément du tableau.\
-Cherchez de quelle fonction il s'agit, et utilisez-la sur votre tableau jusqu'à ce que celui-ci soit vide.\
-Comment comptez-vous vérifier si tableau est vide ?
+Cherchez de quelle fonction il s'agit, et utilisez-la sur votre tableau à l'intérieur d'une boucle `while` jusqu'à ce que celui-ci soit vide.\
+Quelle fonction allez-vous utiliser dans la condition du `while` pour savoir si le tableau est vide ?
 
 {{% expand "Solution" %}}
 ```cpp
@@ -207,7 +207,7 @@ v.erase(v.begin() + 3);
 {{% /expand %}}
 
 Utilisez maintenant `erase` pour supprimer les éléments allant de l'indice 2 à l'indice 6 inclus d'un tableau contenant initialement `{ 0, 1, ..., 10 }`.\
-Faites le nécessaire pour que `erase` ne soit appelé qu'une seule fois par votre programme.
+Faites le nécessaire pour que `erase` ne soit appelé qu'une seule fois par votre programme (=> pas le droit de faire de boucles).
 
 {{% expand "Solution" %}}
 `erase` dispose d'une surcharge acceptant deux itérateurs, qui permet de supprimer tous les éléments présents entre ces deux itérateurs.\

@@ -36,7 +36,7 @@ On trouve ensuite une description plus détaillée, dans laquelle il est possibl
 
 Les paramètres de templates correspondent aux éléments que vous devez indiquer dans les `<...>` de `vector`. Ces éléments doivent parfois respecter des contraintes, et cette section de la documentation permet d'en prendre connaissance. 
 
-On peut ici voir que pour utiliser un `vector<T>`, il faut que `T` soit constructible par copie (= contructeur par copie disponible) et assignable par copie (= opérateur d'assignation par copie disponible).
+On peut ici voir que pour utiliser un `vector<T>` avec une version inférieure à C++11, il faut que `T` soit constructible par copie (= contructeur de copie disponible) et assignable par copie (= opérateur d'assignation par copie disponible).
 
 **Qu'en est-il d'`Allocator` ? Pourquoi n'avons nous pas eu à fournir de valeur pour ce paramètre à `vector` ?**\
 Nous n'étudierons pas dans ce cours le rôle du paramètre `Allocator`. Cependant, sachez que si vous avez pu écrire `vector<int>` plutôt que `vector<int, allocator>` jusqu'ici, c'est parce que ce paramètre a une valeur par défaut. Pour connaître la valeur par défaut éventuelle d'un paramètre de template, vous pouvez retourner voir [l'en-tête](./#1-en-tête) de la page.
@@ -47,11 +47,46 @@ Sur cette page, on vous dit que si vous utilisez des `vector<bool>`, alors l'imp
 
 #### 3. Invalidation d'itérateurs
 
-On trouve ensuite la liste des fonctions qui, lorsqu'elles sont appelées, invalident les itérateurs. Nous étudierons les itérateurs et leur invalidation dans le [Chapitre 6](/chapter6).
+On trouve ensuite la liste des fonctions qui, lorsqu'elles sont appelées, invalident les itérateurs.
 ![](/CPP_Learning/images/chapter5/doc-vector-it.png)
 
-{{% notice warning %}}
+Prenons l'exemple suivant :
+```cpp
+std::vector<int> values { 0, 1, 2 };
 
+auto begin_it = values.begin();         // <- begin retourne un itérateur pointeur sur le premier élément du tableau.
+std::cout << *begin_it << std::endl;    // <- *begin_it permet d'accéder à l'élément pointé par begin_it, donc affiche 0.
+
+values.emplace_back(3);                 // <- d'après la documentation, emplace_back invalide tous les itérateurs.
+std::cout << *begin_it << std::endl;    // <- il est donc invalide d'utiliser begin_it dans cette instruction.
+```
+
+En effet, comme `emplace_back()` peut provoquer des réallocations mémoires, le bloc mémoire sur lequel l'itérateur pointait peut avoir été libéré.
+Il n'est donc plus valide d'utiliser l'itérateur, et c'est ce que la documentation nous indique ici.
+
+Plus généralement, lorsqu'un itérateur est invalidé, ce n'est pas seulement l'accès au contenu de l'itérateur qui doit être évité, mais toutes les opérations qui peuvent être exécutée dessus.
+Seule la réassignation de l'itérateur est possible.
+
+```cpp
+std::vector<int> values { 0, 1, 2, 3 };
+
+auto it0 = values.begin();   // 0
+auto it1 = it0 + 1;          // 1
+auto it2 = it1 + 1;          // 2
+
+values.erase(it1);           // <- invalide it_1 et it_2 mais pas it_0
+auto v1  = *it1;             // INVALIDE car on utilise it1
+auto it3 = it2 + 1;          // INVALIDE car on utilise it2
+++it2;                       // INVALIDE car on utilise it2
+
+it2 = it0 + 2;               // OK car it0 est toujours valide et on réassigne it2 (qui est maintenant valide également)
+auto v2 = *it2;              // OK car it2 est valide depuis l'instruction précédente.
+```
+
+
+
+
+{{% notice warning %}}
 Sachez que si vous êtes en train de parcourir un conteneur au moyen d'une boucle **foreach**, vous ne devez utiliser aucune fonction pouvant invalider l'itérateur `end()`.\
 Dans le cas du `vector`, si vous regardez le tableau, cela élimine donc toutes les fonctions qui ne sont pas des opérations de lecture seule.
 {{% /notice %}}
@@ -73,7 +108,6 @@ Sur chaque ligne est indiquée le nom de la fonction, une brève description de 
 
 Tout en bas de la page, vous trouvez généralement un exemple permettant de comprendre très rapidement comme la classe peut s'utiliser.
 ![](/CPP_Learning/images/chapter5/doc-vector-ex.png)
-
 
 ---
 
@@ -124,7 +158,7 @@ Pour `emplace_back`, on voit que si une exception est lancée par le move constr
 En fin de page, vous trouverez finalement le ou les exemples d'utilisation de la fonction.
 
 {{% notice tip %}}
-Le premier réflexe à avoir lorsque vous voulez savoir comment utiliser une fonction, c'est d'aller voir les exemples. Vous pourrez généralement récupérer et adapter le code qui vous est présenté à votre cas d'utilisation personnel.   
+**Le premier réflexe à avoir lorsque vous voulez savoir comment utiliser une fonction, c'est d'aller voir les exemples.** Vous pourrez généralement récupérer et adapter le code qui vous est présenté à votre propre cas d'utilisation.   
 {{% /notice %}}
 
 ---

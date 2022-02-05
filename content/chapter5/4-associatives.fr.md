@@ -37,7 +37,7 @@ Contraintes :
 Dans les fichiers de l'exercice, on vous fournit deux classes `ComparableDog` et `HashableDog`. Ces deux classes sont pour le moment identique : elles contiennent deux attributs `_name` et `_species`.\
 Votre objectif sera d'ajouter les fonctions nécessaires pour utiliser ces classes dans des sets.
 
-#### 1. `std::set`
+#### `std::set`
 
 Pour pouvoir placer des éléments dans un `set`, nous avons dit qu'ils devaient être comparables. Le plus simple pour cela, c'est de créer un `operator<` pour la classe. Les opérateurs de comparaison peuvent être définis soit en tant que fonction-membre, soit en tant que fonction libre.
 
@@ -158,11 +158,11 @@ Votre `set` ne devrait contenir que 2 éléments, car par définition, dans un s
 Si ce n'est pas le cas chez vous et que la copie est ajoutée malgré tout, c'est probablement que l'implémentation de votre opérateur de comparaison est un peu bancale.
 {{% /expand %}}
 
-#### 2. `std::unordered_set`
+#### `std::unordered_set`
 
 Vous allez maintenant faire le même exercice, mais avec un `std::unordered_set` plutôt qu'un `set`.
 
-Commencez du coup par définir un `unordered_set` contenant des `HashableDog` dans la fonction `main` et essayez de compiler. Vous devriez vous retrouver avec un paquet d'erreurs.\
+Commencez par définir un `unordered_set` contenant des `HashableDog` dans la fonction `main` et essayez de compiler. Vous devriez vous retrouver avec un paquet d'erreurs.\
 Comme tout à l'heure, essayez d'identifier la cause de leur déclenchement.
 
 {{% expand "Solution" %}}

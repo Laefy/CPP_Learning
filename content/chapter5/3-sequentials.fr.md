@@ -55,7 +55,7 @@ fruit_names[Raspberry] = "raspberry";
 Une partie de la réponse est dans la question : en programmation, faire plus, c'est rarement synonyme de faire mieux...\
 Lorsqu'une classe permet de répondre exactement à un besoin, il vaut mieux utiliser cette classe là plutôt qu'en utiliser une autre qui répond aussi au besoin, mais vous permet en plus de faire le café, nettoyer les toilettes et détruire le monde. Pourquoi ? Tout simplement parce que moins il y a de code à devoir supporter, plus c'est simple de maintenir ses programmes et de les faire évoluer.
 
-Une autre raison de préférer l'usage d'un `array` à un `vector` est de réduire le nombre d'allocations dynamiques du programme. En effet, contrairement aux `vector`, l'espace de stockage des `array` peut être placé sur la pile. C'est donc toujours intéressant de s'économiser des opérations coûteuses lorsqu'on en a la possibilité.
+Une autre raison de préférer l'usage d'un `array` à un `vector` est de réduire le nombre d'allocations dynamiques du programme. En effet, contrairement aux `vector`, l'espace de stockage des `array` peut être placé sur la pile. C'est toujours intéressant de s'économiser des opérations coûteuses lorsqu'on en a la possibilité.
 
 ---
 
@@ -103,7 +103,7 @@ l1.splice(mid, l3);
 
 **Concrètement, que peut-on faire avec une `list` que l'on ne peut pas faire avec une `forward_list` ?**
 
-Dans une `forward_list`, on ne connaît que le début de la liste. Il faut donc la parcourir en entière si on veut accéder à la fin. Il n'est aussi pas possible de la parcourir à l'envers.\
+Dans une `forward_list`, on ne connaît que le début de la liste. Il faut donc la parcourir en entier si on veut accéder à la fin. Il n'est aussi pas possible de la parcourir à l'envers.\
 A part cela, les autres opérations sont disponibles avec la même complexité.
 
 ---
@@ -157,5 +157,5 @@ error: 'begin' was not declared in this scope
 error: 'end' was not declared in this scope
 ```
 
-On peut donc en déduire que pour qu'une classe soit itérable via une boucle foreach, il semblerait qu'elle doive fournir deux fonctions appelées `begin` et `end`. Nous y reviendrons au cours du [Chapitre 6](/chapter6/). 
+On peut donc en déduire que pour qu'une classe soit itérable via une boucle foreach, il semblerait qu'elle doive fournir deux fonctions appelées `begin` et `end`.
 {{% /expand %}}

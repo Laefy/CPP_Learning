@@ -87,7 +87,8 @@ Pour ne pas avoir à choisir entre sécurité et performances, le type `string_v
 Il s'agit d'une toute petite classe qui ne contient que deux membres : un pointeur sur une chaîne de caractère et la taille de cette chaîne. Cette classe permet donc de référencer une chaîne de caractère existante (qu'il s'agisse d'une `string` ou d'un `const char*`) sans allouer de mémoire supplémentaire. Enfin, elle dispose d'un certain nombre de fonctions permettant de simplifier sa manipulation (`substr`, `find`, `contains`, etc). 
 
 {{% notice warning %}}
-Attention, lorsqu'on utilise des `string_view`, il faut faire attention à la durée de vie des objets. Si une `string` référencée par une `string_view` est détruite, et que l'on essaye d'utiliser la `string_view` ensuite, on se retrouve avec des problèmes du même style que les dangling references.
+Attention, lorsqu'on utilise des `string_view`, il faut faire attention à la durée de vie de la chaîne sur laquelle elle pointe.
+Si une `string` référencée par une `string_view` est détruite, et que l'on essaye d'utiliser la `string_view` ensuite, on se retrouve avec une dangling references.
 {{% /notice %}}
 
 Modifiez la signature de la fonction `print_in_console` de manière à utiliser une `string_view`. Comme `string_view` est une classe peu coûteuse à copier, il est préférable de la passer par valeur plutôt que référence.
