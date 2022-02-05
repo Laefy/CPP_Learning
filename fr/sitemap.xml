@@ -35,6 +35,10 @@
   </url>
   
   <url>
+    <loc>https://laefy.github.io/CPP_Learning/chapter5/1-doc/</loc>
+  </url>
+  
+  <url>
     <loc>https://laefy.github.io/CPP_Learning/chapter1/2-practice/1-hello-world/</loc>
   </url>
   
@@ -52,6 +56,10 @@
   
   <url>
     <loc>https://laefy.github.io/CPP_Learning/chapter1/2-practice/</loc>
+  </url>
+  
+  <url>
+    <loc>https://laefy.github.io/CPP_Learning/chapter5/2-vectors/</loc>
   </url>
   
   <url>
@@ -75,6 +83,10 @@
   </url>
   
   <url>
+    <loc>https://laefy.github.io/CPP_Learning/chapter5/3-sequentials/</loc>
+  </url>
+  
+  <url>
     <loc>https://laefy.github.io/CPP_Learning/chapter2/</loc>
   </url>
   
@@ -92,6 +104,10 @@
   
   <url>
     <loc>https://laefy.github.io/CPP_Learning/chapter2/3-constructor/</loc>
+  </url>
+  
+  <url>
+    <loc>https://laefy.github.io/CPP_Learning/chapter5/4-associatives/</loc>
   </url>
   
   <url>
@@ -131,6 +147,10 @@
   </url>
   
   <url>
+    <loc>https://laefy.github.io/CPP_Learning/chapter5/5-strings/</loc>
+  </url>
+  
+  <url>
     <loc>https://laefy.github.io/CPP_Learning/chapter2/5-rectangle/</loc>
   </url>
   
@@ -140,6 +160,14 @@
   
   <url>
     <loc>https://laefy.github.io/CPP_Learning/chapter0/6-tips/</loc>
+  </url>
+  
+  <url>
+    <loc>https://laefy.github.io/CPP_Learning/chapter5/</loc>
+  </url>
+  
+  <url>
+    <loc>https://laefy.github.io/CPP_Learning/chapter5/6-tuples/</loc>
   </url>
   
   <url>
@@ -163,6 +191,10 @@
   </url>
   
   <url>
+    <loc>https://laefy.github.io/CPP_Learning/chapter5/test/</loc>
+  </url>
+  
+  <url>
     <loc>https://laefy.github.io/CPP_Learning/chapter0/test/</loc>
   </url>
   
@@ -180,6 +212,10 @@
   
   <url>
     <loc>https://laefy.github.io/CPP_Learning/chapter4/summary/</loc>
+  </url>
+  
+  <url>
+    <loc>https://laefy.github.io/CPP_Learning/chapter5/summary/</loc>
   </url>
   
   <url>
@@ -232,6 +268,10 @@
   
   <url>
     <loc>https://laefy.github.io/CPP_Learning/chapter4/test_done/</loc>
+  </url>
+  
+  <url>
+    <loc>https://laefy.github.io/CPP_Learning/chapter5/test_done/</loc>
   </url>
   
   <url>

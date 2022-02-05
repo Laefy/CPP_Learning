@@ -1,0 +1,2606 @@
+<!DOCTYPE html>
+<html lang="fr" class="js csstransforms3d">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="Hugo 0.76.5" />
+    <meta name="description" content="">
+
+
+    <link rel="icon" href="/CPP_Learning/images/favicon.png" type="image/png">
+
+    <title>Un peu de doc... :: Cours de C&#43;&#43; - Niveau Master</title>
+
+    
+    <link href="/CPP_Learning/css/nucleus.css?1644060968" rel="stylesheet">
+    <link href="/CPP_Learning/css/fontawesome-all.min.css?1644060968" rel="stylesheet">
+    <link href="/CPP_Learning/css/hybrid.css?1644060968" rel="stylesheet">
+    <link href="/CPP_Learning/css/featherlight.min.css?1644060968" rel="stylesheet">
+    <link href="/CPP_Learning/css/perfect-scrollbar.min.css?1644060968" rel="stylesheet">
+    <link href="/CPP_Learning/css/auto-complete.css?1644060968" rel="stylesheet">
+    <link href="/CPP_Learning/css/atom-one-dark-reasonable.css?1644060968" rel="stylesheet">
+    <link href="/CPP_Learning/css/theme.css?1644060968" rel="stylesheet">
+    <link href="/CPP_Learning/css/hugo-theme.css?1644060968" rel="stylesheet">
+    
+    <link href="/CPP_Learning/css/theme-mine.css?1644060968" rel="stylesheet">
+    
+    <link href="/CPP_Learning/css/syntax.css?1644060968" rel="stylesheet">
+
+    <script src="/CPP_Learning/js/jquery-3.3.1.min.js?1644060968"></script>
+
+    <style>
+      :root #header + #content > #left > #rlblock_left{
+          display:none !important;
+      }
+      
+        :not(pre) > code + span.copy-to-clipboard {
+            display: none;
+        }
+      
+    </style>
+    
+  </head>
+  <body class="" data-url="/CPP_Learning/chapter5/1-doc/">
+    <nav id="sidebar" class="showVisitedLinks">
+
+
+
+  <div id="header-wrapper">
+    <div id="header">
+      <a id="logo" href="https://laefy.github.io/CPP_Learning/">🎄 C++ 🎄</a>
+
+    </div>
+    
+        <div class="searchbox">
+    <label for="search-by"><i class="fas fa-search"></i></label>
+    <input data-search-input id="search-by" type="search" placeholder="Rechercher...">
+    <span data-search-clear=""><i class="fas fa-times"></i></span>
+</div>
+
+<script type="text/javascript" src="/CPP_Learning/js/lunr.min.js?1644060968"></script>
+<script type="text/javascript" src="/CPP_Learning/js/auto-complete.js?1644060968"></script>
+<script type="text/javascript">
+    
+        var baseurl = "https:\/\/laefy.github.io\/CPP_Learning\/";
+    
+</script>
+<script type="text/javascript" src="/CPP_Learning/js/search.js?1644060968"></script>
+
+    
+  </div>
+
+    <div class="highlightable">
+    <ul class="topics">
+
+        
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/CPP_Learning/chapter0/" title="Mise en place" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/CPP_Learning/chapter0/">
+          <b>0- </b>Mise en place
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+          
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/CPP_Learning/chapter0/1-compiler/" title="Compilateur" class="dd-item ">
+        <a href="/CPP_Learning/chapter0/1-compiler/">
+        Compilateur
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/CPP_Learning/chapter0/2-vscode/" title="Visual Studio Code" class="dd-item ">
+        <a href="/CPP_Learning/chapter0/2-vscode/">
+        Visual Studio Code
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/CPP_Learning/chapter0/3-cmake/" title="CMake" class="dd-item ">
+        <a href="/CPP_Learning/chapter0/3-cmake/">
+        CMake
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/CPP_Learning/chapter0/4-git/" title="Git" class="dd-item ">
+        <a href="/CPP_Learning/chapter0/4-git/">
+        Git
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/CPP_Learning/chapter0/5-clang-format/" title="Clang-Format" class="dd-item ">
+        <a href="/CPP_Learning/chapter0/5-clang-format/">
+        Clang-Format
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/CPP_Learning/chapter0/6-tips/" title="Astuces" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/CPP_Learning/chapter0/6-tips/">
+          Astuces
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/CPP_Learning/chapter0/6-tips/1-snippets/" title="Petits programmes" class="dd-item ">
+        <a href="/CPP_Learning/chapter0/6-tips/1-snippets/">
+        Petits programmes
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/CPP_Learning/chapter0/6-tips/2-vscode/" title="Projets VSCode" class="dd-item ">
+        <a href="/CPP_Learning/chapter0/6-tips/2-vscode/">
+        Projets VSCode
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/CPP_Learning/chapter0/6-tips/3-keybinds-commands/" title="Raccourcis &amp; Commandes" class="dd-item ">
+        <a href="/CPP_Learning/chapter0/6-tips/3-keybinds-commands/">
+        Raccourcis &amp; Commandes
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/CPP_Learning/chapter0/6-tips/4-options/" title="Options de compilation" class="dd-item ">
+        <a href="/CPP_Learning/chapter0/6-tips/4-options/">
+        Options de compilation
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/CPP_Learning/chapter0/test/" title="Retours ?" class="dd-item ">
+        <a href="/CPP_Learning/chapter0/test/">
+        Retours ?
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+             
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/CPP_Learning/chapter1/" title="Introduction au C&#43;&#43;" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/CPP_Learning/chapter1/">
+          <b>1- </b>Introduction au C&#43;&#43;
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+          
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/CPP_Learning/chapter1/1-language/" title="Présentation du langage" class="dd-item ">
+        <a href="/CPP_Learning/chapter1/1-language/">
+        Présentation du langage
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/CPP_Learning/chapter1/2-practice/" title="Premiers programmes" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/CPP_Learning/chapter1/2-practice/">
+          Premiers programmes
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/CPP_Learning/chapter1/2-practice/1-hello-world/" title="👋 Hello World" class="dd-item ">
+        <a href="/CPP_Learning/chapter1/2-practice/1-hello-world/">
+        👋 Hello World
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/CPP_Learning/chapter1/2-practice/2-parrot/" title="🦜 Perroquet" class="dd-item ">
+        <a href="/CPP_Learning/chapter1/2-practice/2-parrot/">
+        🦜 Perroquet
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/CPP_Learning/chapter1/2-practice/3-array/" title="🔢 Tableau Numérique" class="dd-item ">
+        <a href="/CPP_Learning/chapter1/2-practice/3-array/">
+        🔢 Tableau Numérique
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/CPP_Learning/chapter1/2-practice/4-calculator/" title="🧮 Calculette" class="dd-item ">
+        <a href="/CPP_Learning/chapter1/2-practice/4-calculator/">
+        🧮 Calculette
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/CPP_Learning/chapter1/test/" title="Questionnaire !" class="dd-item ">
+        <a href="/CPP_Learning/chapter1/test/">
+        Questionnaire !
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/CPP_Learning/chapter1/summary/" title="Synthèse" class="dd-item ">
+        <a href="/CPP_Learning/chapter1/summary/">
+        Synthèse
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+             
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/CPP_Learning/chapter2/" title="Classes" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/CPP_Learning/chapter2/">
+          <b>2- </b>Classes
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/CPP_Learning/chapter2/1-poo/" title="C&#39;est quoi un objet déjà ?" class="dd-item ">
+        <a href="/CPP_Learning/chapter2/1-poo/">
+        C&#39;est quoi un objet déjà ?
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/CPP_Learning/chapter2/2-first-class/" title="✨ Première classe" class="dd-item ">
+        <a href="/CPP_Learning/chapter2/2-first-class/">
+        ✨ Première classe
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/CPP_Learning/chapter2/3-constructor/" title="🔨 Constructeur" class="dd-item ">
+        <a href="/CPP_Learning/chapter2/3-constructor/">
+        🔨 Constructeur
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/CPP_Learning/chapter2/4-clone/" title="🧬 Clône" class="dd-item ">
+        <a href="/CPP_Learning/chapter2/4-clone/">
+        🧬 Clône
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/CPP_Learning/chapter2/5-rectangle/" title="🔳 Rectangle" class="dd-item ">
+        <a href="/CPP_Learning/chapter2/5-rectangle/">
+        🔳 Rectangle
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/CPP_Learning/chapter2/6-polygon/" title="💠 Polygône" class="dd-item ">
+        <a href="/CPP_Learning/chapter2/6-polygon/">
+        💠 Polygône
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/CPP_Learning/chapter2/test/" title="Questionnaire !" class="dd-item ">
+        <a href="/CPP_Learning/chapter2/test/">
+        Questionnaire !
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/CPP_Learning/chapter2/summary/" title="Synthèse" class="dd-item ">
+        <a href="/CPP_Learning/chapter2/summary/">
+        Synthèse
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+             
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/CPP_Learning/chapter3/" title="Gestion mémoire" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/CPP_Learning/chapter3/">
+          <b>3- </b>Gestion mémoire
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/CPP_Learning/chapter3/1-lifespan/" title="Durée de vie" class="dd-item ">
+        <a href="/CPP_Learning/chapter3/1-lifespan/">
+        Durée de vie
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/CPP_Learning/chapter3/2-ownership/" title="Ownership" class="dd-item ">
+        <a href="/CPP_Learning/chapter3/2-ownership/">
+        Ownership
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/CPP_Learning/chapter3/3-allocation/" title="Allocation dynamique" class="dd-item ">
+        <a href="/CPP_Learning/chapter3/3-allocation/">
+        Allocation dynamique
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/CPP_Learning/chapter3/4-move-sem/" title="Déplacement" class="dd-item ">
+        <a href="/CPP_Learning/chapter3/4-move-sem/">
+        Déplacement
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/CPP_Learning/chapter3/test/" title="Questionnaire !" class="dd-item ">
+        <a href="/CPP_Learning/chapter3/test/">
+        Questionnaire !
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/CPP_Learning/chapter3/summary/" title="Synthèse" class="dd-item ">
+        <a href="/CPP_Learning/chapter3/summary/">
+        Synthèse
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+             
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/CPP_Learning/chapter4/" title="Héritage" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/CPP_Learning/chapter4/">
+          <b>4- </b>Héritage
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/CPP_Learning/chapter4/1-hierarchy/" title="💼 Hiérarchie professionnelle" class="dd-item ">
+        <a href="/CPP_Learning/chapter4/1-hierarchy/">
+        💼 Hiérarchie professionnelle
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/CPP_Learning/chapter4/2-farm/" title="🐮 Concerto animalier" class="dd-item ">
+        <a href="/CPP_Learning/chapter4/2-farm/">
+        🐮 Concerto animalier
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/CPP_Learning/chapter4/3-virtual/" title="Résolution d&#39;appel virtuel" class="dd-item ">
+        <a href="/CPP_Learning/chapter4/3-virtual/">
+        Résolution d&#39;appel virtuel
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/CPP_Learning/chapter4/4-polymorphism/" title="Polymorphisme" class="dd-item ">
+        <a href="/CPP_Learning/chapter4/4-polymorphism/">
+        Polymorphisme
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/CPP_Learning/chapter4/5-vehicles/" title="🚗 Véhicule partagé" class="dd-item ">
+        <a href="/CPP_Learning/chapter4/5-vehicles/">
+        🚗 Véhicule partagé
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/CPP_Learning/chapter4/test/" title="Questionnaire !" class="dd-item ">
+        <a href="/CPP_Learning/chapter4/test/">
+        Questionnaire !
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/CPP_Learning/chapter4/summary/" title="Synthèse" class="dd-item ">
+        <a href="/CPP_Learning/chapter4/summary/">
+        Synthèse
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+             
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/CPP_Learning/chapter5/" title="Librairie standard" class="dd-item 
+        parent
+        
+        
+        ">
+      <a href="/CPP_Learning/chapter5/">
+          <b>5- </b>Librairie standard
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/CPP_Learning/chapter5/1-doc/" title="Un peu de doc..." class="dd-item active">
+        <a href="/CPP_Learning/chapter5/1-doc/">
+        Un peu de doc...
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/CPP_Learning/chapter5/2-vectors/" title="Tableaux dynamiques" class="dd-item ">
+        <a href="/CPP_Learning/chapter5/2-vectors/">
+        Tableaux dynamiques
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/CPP_Learning/chapter5/3-sequentials/" title="Autres conteneurs séquentiels" class="dd-item ">
+        <a href="/CPP_Learning/chapter5/3-sequentials/">
+        Autres conteneurs séquentiels
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/CPP_Learning/chapter5/4-associatives/" title="Conteneurs associatifs" class="dd-item ">
+        <a href="/CPP_Learning/chapter5/4-associatives/">
+        Conteneurs associatifs
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/CPP_Learning/chapter5/5-strings/" title="Manipulation de chaînes" class="dd-item ">
+        <a href="/CPP_Learning/chapter5/5-strings/">
+        Manipulation de chaînes
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/CPP_Learning/chapter5/6-tuples/" title="Paires et tuples" class="dd-item ">
+        <a href="/CPP_Learning/chapter5/6-tuples/">
+        Paires et tuples
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/CPP_Learning/chapter5/test/" title="Questionnaire !" class="dd-item ">
+        <a href="/CPP_Learning/chapter5/test/">
+        Questionnaire !
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/CPP_Learning/chapter5/summary/" title="Synthèse" class="dd-item ">
+        <a href="/CPP_Learning/chapter5/summary/">
+        Synthèse
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+             
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+         
+    </ul>
+
+    
+    
+      <section id="shortcuts">
+        <h3>Accès rapide</h3>
+        <ul>
+          
+              <li> 
+                  <a class="padding" href="https://github.com/Laefy/CPP_Learning_Code/"><i class='fab fa-github'></i> Dépôt GitHub</a>
+              </li>
+          
+              <li> 
+                  <a class="padding" href="https://laefy.github.io/CPP_Learning/workflow"><i class='far fa-list-alt'></i> Workflow</a>
+              </li>
+          
+              <li> 
+                  <a class="padding" href="https://laefy.github.io/CPP_Learning/faq"><i class='fas fa-question-circle'></i> FAQ</a>
+              </li>
+          
+              <li> 
+                  <a class="padding" href="https://laefy.github.io/CPP_Learning/chapter0/6-tips/"><i class='fa fa-rocket'></i> Astuces</a>
+              </li>
+          
+              <li> 
+                  <a class="padding" href="https://en.cppreference.com/w/"><i class='fas fa-passport'></i> CPP-Ref</a>
+              </li>
+          
+        </ul>
+      </section>
+    
+
+    
+    <section id="prefooter">
+      <hr/>
+      <ul>
+      
+      
+      
+        <li><a class="padding" href="#" data-clear-history-toggle=""><i class="fas fa-history fa-fw"></i> Supprimer l&#39;historique</a></li>
+      
+      </ul>
+    </section>
+    
+    <section id="footer">
+      <p>Built with <a href="https://github.com/matcornic/hugo-theme-learn"><i class="fas fa-heart"></i></a> from <a href="https://getgrav.org">Grav</a> and <a href="https://gohugo.io/">Hugo</a></p>
+
+    </section>
+  </div>
+</nav>
+
+
+
+
+        <section id="body">
+        <div id="overlay"></div>
+        <div class="padding highlightable">
+              
+              <div>
+                <div id="top-bar">
+                
+                
+                <div id="breadcrumbs" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
+                    <span id="sidebar-toggle-span">
+                        <a href="#" id="sidebar-toggle" data-sidebar-toggle="">
+                          <i class="fas fa-bars"></i>
+                        </a>
+                    </span>
+                  
+                  <span id="toc-menu"><i class="fas fa-list-alt"></i></span>
+                  
+                  <span class="links">
+                 
+                 
+                    
+          
+          
+            
+            
+          
+          
+            
+            
+          
+          
+            <a href='/CPP_Learning/'>Accueil</a> > <a href='/CPP_Learning/chapter5/'>Librairie standard</a> > Un peu de doc...
+          
+        
+          
+        
+          
+        
+                 
+                  </span>
+                </div>
+                
+                    <div class="progress">
+    <div class="wrapper">
+<nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#documentation-dune-classe">Documentation d&rsquo;une classe</a></li>
+        <li><a href="#documentation-dune-fonction">Documentation d&rsquo;une fonction</a></li>
+        <li><a href="#mission-de-recherche">Mission de recherche</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+    </div>
+</div>
+
+                
+              </div>
+            </div>
+            
+        <div id="head-tags">
+        
+        </div>
+        
+        <div id="body-inner">
+          
+            <h1>
+              
+              Un peu de doc...
+            </h1>
+          
+
+        
+
+
+<p>Pour démarrez ce chapitre, nous allons vous expliquer comment parcourir la documentation que vous trouverez sur le site 
+<a href="https://en.cppreference.com/w/" target="_blank" rel="noopener noreferrer">cppreference</a>.</p>
+<p>Commencez par ouvrir 
+<a href="https://en.cppreference.com/w/cpp/container/vector" target="_blank" rel="noopener noreferrer">cette page</a>. Vous y trouverez la documentation de la classe <code>vector</code>.<br>
+A première vue, son contenu peut paraître indigeste. Nous allons donc vous expliquer comment il est structuré afin que vous puissiez vous y repérer plus facilement.</p>
+<hr>
+<h3 id="documentation-dune-classe">Documentation d&rsquo;une classe</h3>
+<h4 id="1-en-tête">1. En-tête</h4>
+<p><img src="/CPP_Learning/images/chapter5/doc-vector-header.png" alt=""></p>
+<p>Dans l&rsquo;en-tête de la documentation, vous trouverez le nom de la classe, suivi du header à inclure afin de pouvoir l&rsquo;utiliser.<br>
+Une phrase décrit ensuite brièvement le rôle de la classe : on nous dit par exemple que <code>vector</code> est un conteneur séquentiel de taille dynamique.</p>
+
+<div class="notices note" ><p>Un conteneur séquentiel est un conteneur &ldquo;linéaire&rdquo;, comme un tableau ou une liste. Les arbres et les graphes ne sont donc pas des conteneur séquentiels.</p>
+</div>
+
+<p>On trouve ensuite une description plus détaillée, dans laquelle il est possible d&rsquo;obtenir des informations sur comment le conteneur est implémenté :</p>
+<ul>
+<li>Comment les éléments sont organisés en mémoire ? (contigûs comme dans un tableau, éparpillés comme dans une liste chaînée, &hellip;)</li>
+<li>Si l&rsquo;utilisateur doit penser à allouer ou libérer de la mémoire. Dans le cas du <code>vector</code>, tout est géré automatiquement par la classe.</li>
+<li>La complexité des opérations classiques (accès, insertions, suppressions, etc),</li>
+<li>&hellip;</li>
+</ul>
+<h4 id="2-paramètres-de-template--spécialisations">2. Paramètres de template / Spécialisations</h4>
+<p><img src="/CPP_Learning/images/chapter5/doc-vector-params.png" alt=""></p>
+<p>Les paramètres de templates correspondent aux éléments que vous devez indiquer dans les <code>&lt;...&gt;</code> de <code>vector</code>. Ces éléments doivent parfois respecter des contraintes, et cette section de la documentation permet d&rsquo;en prendre connaissance.</p>
+<p>On peut ici voir que pour utiliser un <code>vector&lt;T&gt;</code> avec une version inférieure à C++11, il faut que <code>T</code> soit constructible par copie (= contructeur de copie disponible) et assignable par copie (= opérateur d&rsquo;assignation par copie disponible).</p>
+<p><strong>Qu&rsquo;en est-il d'<code>Allocator</code> ? Pourquoi n&rsquo;avons nous pas eu à fournir de valeur pour ce paramètre à <code>vector</code> ?</strong><br>
+Nous n&rsquo;étudierons pas dans ce cours le rôle du paramètre <code>Allocator</code>. Cependant, sachez que si vous avez pu écrire <code>vector&lt;int&gt;</code> plutôt que <code>vector&lt;int, allocator&gt;</code> jusqu&rsquo;ici, c&rsquo;est parce que ce paramètre a une valeur par défaut. Pour connaître la valeur par défaut éventuelle d&rsquo;un paramètre de template, vous pouvez retourner voir <a href="./#1-en-t%C3%AAte">l&rsquo;en-tête</a> de la page.</p>
+<p>Juste après les paramètres, vous trouvez des informations sur les éventuelles spécialisations de la classe.<br>
+Une spécialisation est une version un peu modifiée de la classe, qui sera utilisée à la place de la version de base si on lui donne  des paramètres de template particuliers.<br>
+Sur cette page, on vous dit que si vous utilisez des <code>vector&lt;bool&gt;</code>, alors l&rsquo;implémentation de la classe est adaptée de manière à occuper moins d&rsquo;espace en mémoire.</p>
+<h4 id="3-invalidation-ditérateurs">3. Invalidation d&rsquo;itérateurs</h4>
+<p>On trouve ensuite la liste des fonctions qui, lorsqu&rsquo;elles sont appelées, invalident les itérateurs.
+<img src="/CPP_Learning/images/chapter5/doc-vector-it.png" alt=""></p>
+<p>Prenons l&rsquo;exemple suivant :</p>
+<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">values</span> <span class="p">{</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span> <span class="p">};</span>
+
+<span class="k">auto</span> <span class="n">begin_it</span> <span class="o">=</span> <span class="n">values</span><span class="p">.</span><span class="n">begin</span><span class="p">();</span>         <span class="c1">// &lt;- begin retourne un itérateur pointeur sur le premier élément du tableau.
+</span><span class="c1"></span><span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="o">*</span><span class="n">begin_it</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>    <span class="c1">// &lt;- *begin_it permet d&#39;accéder à l&#39;élément pointé par begin_it, donc affiche 0.
+</span><span class="c1"></span>
+<span class="n">values</span><span class="p">.</span><span class="n">emplace_back</span><span class="p">(</span><span class="mi">3</span><span class="p">);</span>                 <span class="c1">// &lt;- d&#39;après la documentation, emplace_back invalide tous les itérateurs.
+</span><span class="c1"></span><span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="o">*</span><span class="n">begin_it</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>    <span class="c1">// &lt;- il est donc invalide d&#39;utiliser begin_it dans cette instruction.
+</span></code></pre></div><p>En effet, comme <code>emplace_back()</code> peut provoquer des réallocations mémoires, le bloc mémoire sur lequel l&rsquo;itérateur pointait peut avoir été libéré.
+Il n&rsquo;est donc plus valide d&rsquo;utiliser l&rsquo;itérateur, et c&rsquo;est ce que la documentation nous indique ici.</p>
+<p>Plus généralement, lorsqu&rsquo;un itérateur est invalidé, ce n&rsquo;est pas seulement l&rsquo;accès au contenu de l&rsquo;itérateur qui doit être évité, mais toutes les opérations qui peuvent être exécutée dessus.
+Seule la réassignation de l&rsquo;itérateur est possible.</p>
+<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">values</span> <span class="p">{</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span> <span class="p">};</span>
+
+<span class="k">auto</span> <span class="n">it0</span> <span class="o">=</span> <span class="n">values</span><span class="p">.</span><span class="n">begin</span><span class="p">();</span>   <span class="c1">// 0
+</span><span class="c1"></span><span class="k">auto</span> <span class="n">it1</span> <span class="o">=</span> <span class="n">it0</span> <span class="o">+</span> <span class="mi">1</span><span class="p">;</span>          <span class="c1">// 1
+</span><span class="c1"></span><span class="k">auto</span> <span class="n">it2</span> <span class="o">=</span> <span class="n">it1</span> <span class="o">+</span> <span class="mi">1</span><span class="p">;</span>          <span class="c1">// 2
+</span><span class="c1"></span>
+<span class="n">values</span><span class="p">.</span><span class="n">erase</span><span class="p">(</span><span class="n">it1</span><span class="p">);</span>           <span class="c1">// &lt;- invalide it_1 et it_2 mais pas it_0
+</span><span class="c1"></span><span class="k">auto</span> <span class="n">v1</span>  <span class="o">=</span> <span class="o">*</span><span class="n">it1</span><span class="p">;</span>             <span class="c1">// INVALIDE car on utilise it1
+</span><span class="c1"></span><span class="k">auto</span> <span class="n">it3</span> <span class="o">=</span> <span class="n">it2</span> <span class="o">+</span> <span class="mi">1</span><span class="p">;</span>          <span class="c1">// INVALIDE car on utilise it2
+</span><span class="c1"></span><span class="o">++</span><span class="n">it2</span><span class="p">;</span>                       <span class="c1">// INVALIDE car on utilise it2
+</span><span class="c1"></span>
+<span class="n">it2</span> <span class="o">=</span> <span class="n">it0</span> <span class="o">+</span> <span class="mi">2</span><span class="p">;</span>               <span class="c1">// OK car it0 est toujours valide et on réassigne it2 (qui est maintenant valide également)
+</span><span class="c1"></span><span class="k">auto</span> <span class="n">v2</span> <span class="o">=</span> <span class="o">*</span><span class="n">it2</span><span class="p">;</span>              <span class="c1">// OK car it2 est valide depuis l&#39;instruction précédente.
+</span></code></pre></div>
+<div class="notices warning" ><p>Sachez que si vous êtes en train de parcourir un conteneur au moyen d&rsquo;une boucle <strong>foreach</strong>, vous ne devez utiliser aucune fonction pouvant invalider l&rsquo;itérateur <code>end()</code>.<br>
+Dans le cas du <code>vector</code>, si vous regardez le tableau, cela élimine donc toutes les fonctions qui ne sont pas des opérations de lecture seule.</p>
+</div>
+
+<h4 id="4-types-membres">4. Types membres</h4>
+<p>La section suivante donne la liste des types définis à l&rsquo;intérieur de la classe. On ne s&rsquo;intéressera pas à son contenu pour le moment.
+<img src="/CPP_Learning/images/chapter5/doc-vector-types.png" alt=""></p>
+<h4 id="5-fonctions">5. Fonctions</h4>
+<p>On trouve enfin la liste des fonctions que l&rsquo;on va pouvoir utiliser sur la classe. C&rsquo;est cette partie que vous consulterez le plus souvent.
+<img src="/CPP_Learning/images/chapter5/doc-vector-fcns.png" alt=""></p>
+<p>Cette liste est organisée en catégories, dont la première contient toujours le constructeur, le destructeur et l&rsquo;opérateur d&rsquo;assignation (et parfois quelques autres fonctions).
+Sur chaque ligne est indiquée le nom de la fonction, une brève description de ce qu&rsquo;elle fait, la version à partir de laquelle elle est disponible et sa visibilité.</p>
+<h4 id="6-exemple">6. Exemple</h4>
+<p>Tout en bas de la page, vous trouvez généralement un exemple permettant de comprendre très rapidement comme la classe peut s&rsquo;utiliser.
+<img src="/CPP_Learning/images/chapter5/doc-vector-ex.png" alt=""></p>
+<hr>
+<h3 id="documentation-dune-fonction">Documentation d&rsquo;une fonction</h3>
+<p>Cliquez maintenant sur la fonction <code>emplace_back</code>, afin d&rsquo;ouvrir la page contenant sa documentation. Nous détaillerons seulement les sections les plus importantes.</p>
+<h4 id="1-en-tête-1">1. En-tête</h4>
+<p><img src="/CPP_Learning/images/chapter5/doc-fcn-header.png" alt=""></p>
+<p>Dans l&rsquo;en-tête des pages de documentation de fonctions, vous trouverez les signatures des différentes surcharges de la fonction, ainsi que les versions pour lesquelles elles sont disponibles.<br>
+Vous pouvez par exemple voir qu&rsquo;initialement, <code>emplace_back</code> ne retournait rien, et qu&rsquo;à partir de C++17, elle retourne une référence.</p>
+<p>En-dessous des signatures des surcharges, vous trouvez le détail ce que la fonction fait pendant son appel.</p>
+<h4 id="2-paramètres">2. Paramètres</h4>
+<p><img src="/CPP_Learning/images/chapter5/doc-fcn-params.png" alt=""></p>
+<p>Vous trouvez ici pour chaque paramètre attendu par la fonction, ce que celle-ci compte en faire. Notez par exemple que dans le cas de <code>emplace_back</code>, les arguments sont directement transmis au constructeur de l&rsquo;élément à insérer.<br>
+Si vous avez une classe <code>Person</code> dont le constructeur attend un prénom et un nom, vous pouvez donc écrire le code suivant :</p>
+<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">Person</span><span class="o">&gt;</span> <span class="n">persons</span><span class="p">;</span>
+<span class="n">persons</span><span class="p">.</span><span class="n">emplace_back</span><span class="p">(</span><span class="s">&#34;Bruce&#34;</span><span class="p">,</span> <span class="s">&#34;Wayne&#34;</span><span class="p">);</span>
+<span class="n">persons</span><span class="p">.</span><span class="n">emplace_back</span><span class="p">(</span><span class="s">&#34;Clark&#34;</span><span class="p">,</span> <span class="s">&#34;Kent&#34;</span><span class="p">);</span>
+</code></pre></div><p>En dessous des paramètres de la fonction, on vous indique les éventuelles contraintes sur les paramètres de template. Si on souhaite appeler <code>emplace_back</code> sur un <code>std::vector&lt;Person&gt;</code>, il faut que <code>Person</code> soit <code>MoveInsertable</code> et <code>EmplaceConstructible</code>. Vous pouvez cliquer sur chacune de ces contraintes si vous désirez savoir ce qu&rsquo;elles impliquent.</p>
+<h4 id="3-valeur-de-retour">3. Valeur de retour</h4>
+<p><img src="/CPP_Learning/images/chapter5/doc-fcn-return.png" alt=""></p>
+<p>On vous indique simplement ce que la fonction vous renvoie.</p>
+<h4 id="4-exceptions">4. Exceptions</h4>
+<p><img src="/CPP_Learning/images/chapter5/doc-fcn-exceptions.png" alt=""></p>
+<p>Il est possible de lancer des exceptions en C++. Cette section indique la liste des exceptions que la fonction peut lancer et ce qu&rsquo;il se passe dans ce cas-là.<br>
+Pour <code>emplace_back</code>, on voit que si une exception est lancée par le move constructor de l&rsquo;élément, alors le comportement de la fonction est indéfini (undefined behavior).</p>
+<h4 id="5-exemples">5. Exemples</h4>
+<p><img src="/CPP_Learning/images/chapter5/doc-fcn-ex.png" alt=""></p>
+<p>En fin de page, vous trouverez finalement le ou les exemples d&rsquo;utilisation de la fonction.</p>
+
+<div class="notices tip" ><p><strong>Le premier réflexe à avoir lorsque vous voulez savoir comment utiliser une fonction, c&rsquo;est d&rsquo;aller voir les exemples.</strong> Vous pourrez généralement récupérer et adapter le code qui vous est présenté à votre propre cas d&rsquo;utilisation.</p>
+</div>
+
+<hr>
+<h3 id="mission-de-recherche">Mission de recherche</h3>
+<p>Vous allez maintenant partir en mission. Votre objectif est de collecter les renseignements nécessaires pour répondre aux questions suivantes :</p>
+<ol>
+<li>Quelle est la complexité d&rsquo;insertion dans une <code>std::map</code> ?</li>
+<li>Quelles différences y a-t-il entre les fonctions <code>push_back()</code> et <code>emplace_back()</code> de la classe <code>std::vector</code> ?</li>
+<li>Quelle fonction permet de savoir si un conteneur est vide ?</li>
+<li>Quelle est la différence entre <code>std::vector::size()</code> et <code>std::vector::capacity()</code> ?</li>
+<li>A quoi sert la classe <code>std::stack</code> ?</li>
+<li>Quelle fonction permet de retirer le dernier élément d&rsquo;un objet de type <code>std::queue</code> ?</li>
+</ol>
+
+<div class="expand">
+    <div class="expand-label" style="cursor: pointer;" onclick="$h = $(this);$h.next('div').slideToggle(100,function () {$h.children('i').attr('class',function () {return $h.next('div').is(':visible') ? 'fas fa-chevron-down' : 'fas fa-chevron-right';});});">
+        <i style="font-size:x-small;" class="fas fa-chevron-right"></i>
+        <span>
+        
+    	
+    	Solution
+    	
+    	</span>
+    </div>
+    <div class="expand-content" style="display: none;">
+        <p>1/ On peut trouver ce genre d&rsquo;information dans l&rsquo;en-tête de la documentation de la classe <code>map</code>. Il y est indiqué que les opérations de recherche, suppression et insertion sont de complexité logarithmique.</p>
+<p>2/ En comparant les signatures de <code>push_back</code> et <code>emplace_back</code>, on se rend compte qu&rsquo;il faut fournir directement à <code>push_back</code> l&rsquo;élément à insérer (un seul élément de type <code>T</code>), alors qu&rsquo;on peut fournir à <code>emplace_back</code> les paramètres permettant de construire le nouvel élément.</p>
+<p>3/ En regardant sur les pages de différentes classes de conteneurs (<code>vector</code>, <code>array</code>, <code>map</code>, <code>set</code>, etc), on se rend qu&rsquo;elles ont toutes une fonction membre <code>empty()</code>, qui renvoie <code>true</code> si le conteneur est vide.</p>
+<p>4/ Il suffit de lire la description des deux fonctions pour se rendre compte que <code>size()</code> renvoie le nombre d&rsquo;éléments du tableau, tandis que <code>capacity()</code> renvoie le nombre d&rsquo;éléments pouvant tenir dans l&rsquo;espace mémoire actuellement alloué par le tableau. L&rsquo;exemple fourni sur la page de <code>capacity()</code> met bien en valeur cette distinction.</p>
+<p>5/ D&rsquo;après la description dans l&rsquo;en-tête de <code>stack</code>, il s&rsquo;agit d&rsquo;une pile LIFO (last-in-first-out).</p>
+<p>6/ En parcourant la liste des fonctions sur la page de <code>std::queue</code>, on se rend compte qu&rsquo;il n&rsquo;existe pas de fonction permettant de retirer son dernier élément.</p>
+
+    </div>
+</div>
+
+
+<footer class="footline">
+	
+</footer>
+
+        
+        </div> 
+        
+
+      </div>
+
+    <div id="navigation">
+        
+        
+        
+        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+        
+                    
+            
+        
+                    
+            
+        
+        
+        
+
+
+	 
+	 
+		
+			<a class="nav nav-prev" href="/CPP_Learning/chapter5/" title="Librairie standard"> <i class="fa fa-chevron-left"></i></a>
+		
+		
+			<a class="nav nav-next" href="/CPP_Learning/chapter5/2-vectors/" title="Tableaux dynamiques" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+		
+	
+    </div>
+
+    </section>
+    
+    <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
+      <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
+    </div>
+    <script src="/CPP_Learning/js/clipboard.min.js?1644060968"></script>
+    <script src="/CPP_Learning/js/perfect-scrollbar.min.js?1644060968"></script>
+    <script src="/CPP_Learning/js/perfect-scrollbar.jquery.min.js?1644060968"></script>
+    <script src="/CPP_Learning/js/jquery.sticky.js?1644060968"></script>
+    <script src="/CPP_Learning/js/featherlight.min.js?1644060968"></script>
+    <script src="/CPP_Learning/js/highlight.pack.js?1644060968"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <script src="/CPP_Learning/js/modernizr.custom-3.6.0.js?1644060968"></script>
+    <script src="/CPP_Learning/js/learn.js?1644060968"></script>
+    <script src="/CPP_Learning/js/hugo-learn.js?1644060968"></script>
+
+    <link href="/CPP_Learning/mermaid/mermaid.css?1644060968" rel="stylesheet" />
+    <script src="/CPP_Learning/mermaid/mermaid.js?1644060968"></script>
+    <script>
+        mermaid.initialize({ startOnLoad: true });
+    </script>
+    
+
+  </body>
+</html>
+
