@@ -4,7 +4,6 @@ chapter: true
 chapterName: Chapitre 6
 pre: "<b>6- </b>"
 weight: 7
-draft: true
 ---
 
 Comme vous le savez déjà, la STL fournit tout un tas de conteneurs pour répondre à différents usages.
