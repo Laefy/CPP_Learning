@@ -77,7 +77,7 @@ for (const auto v: part)
 }
 
 std::vector<int> full(array, array + 6);
-for (const auto v: part)
+for (const auto v: full)
 {
     std::cout << v << std::endl;
 }
