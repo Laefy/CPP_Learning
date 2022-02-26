@@ -221,7 +221,9 @@ Contrairement à l'initialisation des variables, on peut par contre écrire `: _
 L'ajout de votre constructeur vous a permis de supprimer le setter pour `_name`, afin que l'on ne puisse pas modifier l'attribut après son initialisation.\
 Il reste le setter pour `_age`, qui ne pose pas spécialement de problème, si ce n'est qu'on peut remonter le temps avec. Et là, c'est *Batman*, pas *Retour vers le futur* 🦇
 
-Vous allez donc remplacer votre fonction `set_age` par une fonction `wait`, qui permet uniquement d'augmenter l'âge de votre objet. Testez que votre programme fonctionne correctement.
+Vous allez donc remplacer votre fonction `set_age` par une fonction `wait`, qui permet d'augmenter l'âge de votre objet.
+Celle-ci prendra en paramètre le nombre d'années à attendre.
+Testez que votre programme fonctionne correctement.
 
 {{% expand "Solution" %}}
 Appel :
