@@ -7,6 +7,17 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language><atom:link href="https://laefy.github.io/CPP_Learning/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>Assertions</title>
+      <link>https://laefy.github.io/CPP_Learning/chapter8/1-assertions/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://laefy.github.io/CPP_Learning/chapter8/1-assertions/</guid>
+      <description>Types d&amp;rsquo;erreurs Lorsqu&amp;rsquo;une erreur se produit dans un logiciel, il s&amp;rsquo;agit soit d&amp;rsquo;une erreur de programmation, soit d&amp;rsquo;une erreur d&amp;rsquo;utilisation du logiciel.
+Voici quelques exemples :
+ Un pointeur null a été déréférencé : erreur de programmation. Le programme a demandé à l&amp;rsquo;utilisateur de rentrer une image, mais celui-ci a fournit un fichier texte : erreur d&amp;rsquo;utilisation. On a écrit dans la case array.size() de array : erreur de programmation.</description>
+    </item>
+    
+    <item>
       <title>C&#39;est quoi un objet déjà ?</title>
       <link>https://laefy.github.io/CPP_Learning/chapter2/1-poo/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -151,6 +162,16 @@ Nous ne parlerons sur cette page que d&amp;rsquo;héritage dit &amp;ldquo;statiq
 - chap-04/1-hierarchy/Intern.h
 La cible à compiler est c4-1-hierarchy.
  Définir une classe-mère Commencez par jeter un coup d&amp;rsquo;oeil à chacun des fichiers fournis.</description>
+    </item>
+    
+    <item>
+      <title>Exceptions</title>
+      <link>https://laefy.github.io/CPP_Learning/chapter8/2-exceptions/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://laefy.github.io/CPP_Learning/chapter8/2-exceptions/</guid>
+      <description>Qu&amp;rsquo;est-ce qu&amp;rsquo;une exception ? En C++, une exception sert à interrompre le flot classique d&amp;rsquo;exécution du programme lorsqu&amp;rsquo;un événement particulier se produit. Lorsqu&amp;rsquo;une exception est lancée, on sort du bloc courant, et on remonte la callstack autant que nécessaire, jusqu&amp;rsquo;à atteindre un bloc capable de traiter l&amp;rsquo;exception.
+C&amp;rsquo;est donc un mécanisme extrêmement utilisé pour le traitement des erreurs (autant de programmation que d&amp;rsquo;utilisation), puisque l&amp;rsquo;erreur est remontée automatiquement jusqu&amp;rsquo;à l&amp;rsquo;endroit qui peut la traiter, sans avoir besoin de toucher au code des fonctions intermédiaires.</description>
     </item>
     
     <item>
@@ -588,6 +609,19 @@ Bon courage à vous 🙂
     </item>
     
     <item>
+      <title>Questionnaire !</title>
+      <link>https://laefy.github.io/CPP_Learning/chapter8/test/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://laefy.github.io/CPP_Learning/chapter8/test/</guid>
+      <description>C&amp;rsquo;est l&amp;rsquo;heure du test ! N&amp;rsquo;oubliez pas que vous pouvez utiliser Godbolt pour compiler et tester des petits bouts de code.
+Bon courage à vous 🙂
+ Vous êtes : Votre adresse mail : Votre groupe : Groupe 1Groupe 2Groupe Alternants1- A quoi sert une assertion ?
+
+2- Pourquoi ne faut-il pas utiliser d’assertions pour traiter une erreur d’utilisation d’un logiciel ?</description>
+    </item>
+    
+    <item>
       <title>Retours ?</title>
       <link>https://laefy.github.io/CPP_Learning/chapter0/test/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -713,6 +747,15 @@ Bon courage à vous 🙂
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://laefy.github.io/CPP_Learning/chapter6/test_done/</guid>
+      <description>Vos réponses nous ont bien été communiquées 😃 Retourner à la synthèse du Chapitre</description>
+    </item>
+    
+    <item>
+      <title>Merci !</title>
+      <link>https://laefy.github.io/CPP_Learning/chapter8/test_done/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://laefy.github.io/CPP_Learning/chapter8/test_done/</guid>
       <description>Vos réponses nous ont bien été communiquées 😃 Retourner à la synthèse du Chapitre</description>
     </item>
     

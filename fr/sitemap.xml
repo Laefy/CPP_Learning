@@ -3,6 +3,10 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://laefy.github.io/CPP_Learning/chapter8/1-assertions/</loc>
+  </url>
+  
+  <url>
     <loc>https://laefy.github.io/CPP_Learning/chapter2/1-poo/</loc>
   </url>
   
@@ -48,6 +52,10 @@
   
   <url>
     <loc>https://laefy.github.io/CPP_Learning/chapter4/1-hierarchy/</loc>
+  </url>
+  
+  <url>
+    <loc>https://laefy.github.io/CPP_Learning/chapter8/2-exceptions/</loc>
   </url>
   
   <url>
@@ -195,6 +203,10 @@
   </url>
   
   <url>
+    <loc>https://laefy.github.io/CPP_Learning/chapter8/</loc>
+  </url>
+  
+  <url>
     <loc>https://laefy.github.io/CPP_Learning/chapter1/test/</loc>
   </url>
   
@@ -216,6 +228,10 @@
   
   <url>
     <loc>https://laefy.github.io/CPP_Learning/chapter6/test/</loc>
+  </url>
+  
+  <url>
+    <loc>https://laefy.github.io/CPP_Learning/chapter8/test/</loc>
   </url>
   
   <url>
@@ -300,6 +316,10 @@
   
   <url>
     <loc>https://laefy.github.io/CPP_Learning/chapter6/test_done/</loc>
+  </url>
+  
+  <url>
+    <loc>https://laefy.github.io/CPP_Learning/chapter8/test_done/</loc>
   </url>
   
   <url>
