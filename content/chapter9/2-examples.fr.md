@@ -308,11 +308,11 @@ Si on avait utilisé des `if` non constexpr, alors, la fonction générée aurai
 ```cpp
 bool has_wings(const Chicken& animal)
 {
-    if constexpr (Chicken::category == Category::Bird)
+    if (Chicken::category == Category::Bird)
     {
         return true;
     }
-    else if constexpr (Chicken::category == Category::Insect || Chicken::category == Category::Mythical)
+    else if (Chicken::category == Category::Insect || Chicken::category == Category::Mythical)
     {
         return animal.can_fly(); // Erreur : la classe Chicken n'a pas de fonction-membre `can_fly`.
     }

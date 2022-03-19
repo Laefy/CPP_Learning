@@ -46,8 +46,6 @@ Nous reviendrons plus en détail sur ces étapes de génération de code et de d
 Ce qu'il faut néanmoins retenir ici, c'est qu'au moment où vous faites appel à un type ou une fonction templatée, le compilateur aura besoin du template pour générer le code dont il a besoin.
 La conséquence de cela, c'est que dans 90% des cas, **vous devrez définir l'ensemble du contenu de vos templates dans les headers**, afin que le compilateur puisse y avoir accès.
 
-Nous verrons un peu plus tard comment faire si vous voulez vraiment placer l'implémentation des fonctions-template et des fonctions-membres de classes-template dans un fichier séparé.
-
 ---
 
 ### Conclusion
