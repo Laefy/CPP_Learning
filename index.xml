@@ -50,6 +50,17 @@ Si on définit une variable dans une fonction, la portée de celle-ci démarre �
     </item>
     
     <item>
+      <title>Introduction</title>
+      <link>https://laefy.github.io/CPP_Learning/chapter9/1-introduction/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://laefy.github.io/CPP_Learning/chapter9/1-introduction/</guid>
+      <description>Qu&amp;rsquo;est-ce qu&amp;rsquo;un template ? Les templates sont un mécanisme du C++ permettant de faire de la programmation générique.
+Le terme &amp;ldquo;template&amp;rdquo; se traduit littéralement par &amp;ldquo;patron&amp;rdquo; en français (au sens patron de vêtement, pas patron d&amp;rsquo;entreprise). Les templates vont donc permettre de construire un modèle de classe (ou de fonction) à partir duquel le compilateur pourra de générer de véritables classes (ou fonctions).
+Notez donc bien que malgré le terme, une classe-template n&amp;rsquo;est pas une classe.</description>
+    </item>
+    
+    <item>
       <title>Parcours et recherches</title>
       <link>https://laefy.github.io/CPP_Learning/chapter6/1-searches/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -172,6 +183,18 @@ La cible à compiler est c4-1-hierarchy.
       <guid>https://laefy.github.io/CPP_Learning/chapter8/2-exceptions/</guid>
       <description>Qu&amp;rsquo;est-ce qu&amp;rsquo;une exception ? En C++, une exception sert à interrompre le flot classique d&amp;rsquo;exécution du programme lorsqu&amp;rsquo;un événement particulier se produit. Lorsqu&amp;rsquo;une exception est lancée, on sort du bloc courant, et on remonte la callstack autant que nécessaire, jusqu&amp;rsquo;à atteindre un bloc capable de traiter l&amp;rsquo;exception.
 C&amp;rsquo;est donc un mécanisme extrêmement utilisé pour le traitement des erreurs (autant de programmation que d&amp;rsquo;utilisation), puisque l&amp;rsquo;erreur est remontée automatiquement jusqu&amp;rsquo;à l&amp;rsquo;endroit qui peut la traiter, sans avoir besoin de toucher au code des fonctions intermédiaires.</description>
+    </item>
+    
+    <item>
+      <title>Exemples</title>
+      <link>https://laefy.github.io/CPP_Learning/chapter9/2-examples/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://laefy.github.io/CPP_Learning/chapter9/2-examples/</guid>
+      <description>Nous allons maintenant rentrer dans le vif du sujet en vous présentant le code de différents templates.
+Nous détaillerons ensuite chacun des éléments de la syntaxe, afin que vous puissiez les comprendre pour les réutiliser dans votre propre code.
+ Premier exemple de classe-template Cet exemple consiste en l&amp;rsquo;implémentation d&amp;rsquo;un tableau de taille statique (un peu comme la classe std::array).
+#include &amp;lt;algorithm&amp;gt;#include &amp;lt;cassert&amp;gt;#include &amp;lt;iostream&amp;gt; template &amp;lt;typename ElementType, size_t Size&amp;gt; class StaticArray { public: // Rappel: l&amp;#39;implémentation par défaut du constructeur par défaut disparaît lorsqu&amp;#39;on  // définit explicitement un autre constructeur (ce qui est le cas ici).</description>
     </item>
     
     <item>
@@ -301,6 +324,18 @@ Du coup, pour pallier à ce problème, il est possible d&amp;rsquo;utiliser la c
  Installation Si vous êtes sous Unix, vous devriez pouvoir installer CMake depuis votre gestionnaire de paquets.
 Si vous êtes sous Windows, vous pouvez utiliser l&amp;rsquo;installeur que vous trouverez sur cette page. Notez également l&amp;rsquo;emplacement où celui-ci a été installé, car vous en aurez besoin à l&amp;rsquo;étape suivante.
  Intégration à VSCode Afin de pouvoir utiliser CMake facilement depuis VSCode, il faut installer les extensions CMake et CMakeTools.</description>
+    </item>
+    
+    <item>
+      <title>Débrief</title>
+      <link>https://laefy.github.io/CPP_Learning/chapter9/3-syntaxe/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://laefy.github.io/CPP_Learning/chapter9/3-syntaxe/</guid>
+      <description>Définition d&amp;rsquo;un template Pour définir un template, il faut écrire template &amp;lt;...&amp;gt; devant la définition de la classe ou fonction templatée.
+Les chevrons contiennent la liste des paramètres du template. Chaque paramètre est typé par :
+- typename : il faut donc passer un nom de type en paramètre,
+- un type intégral, comme size_t, char, int, &amp;hellip; : il faut passer une expression du bon type évaluable à la compilation,</description>
     </item>
     
     <item>
@@ -622,6 +657,17 @@ Bon courage à vous 🙂
     </item>
     
     <item>
+      <title>Questionnaire !</title>
+      <link>https://laefy.github.io/CPP_Learning/chapter9/test/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://laefy.github.io/CPP_Learning/chapter9/test/</guid>
+      <description>C&amp;rsquo;est l&amp;rsquo;heure du test ! N&amp;rsquo;oubliez pas que vous pouvez utiliser Godbolt pour compiler et tester des petits bouts de code.
+Bon courage à vous 🙂
+ Vous êtes : Votre adresse mail : Votre groupe : Groupe 1Groupe 2Groupe Alternants1- Que faut-il écrire juste avant la définition d’une classe (ou fonction) pour en faire une classe (ou fonction) templatée ?</description>
+    </item>
+    
+    <item>
       <title>Retours ?</title>
       <link>https://laefy.github.io/CPP_Learning/chapter0/test/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -756,6 +802,15 @@ Bon courage à vous 🙂
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://laefy.github.io/CPP_Learning/chapter8/test_done/</guid>
+      <description>Vos réponses nous ont bien été communiquées 😃 Retourner à la synthèse du Chapitre</description>
+    </item>
+    
+    <item>
+      <title>Merci !</title>
+      <link>https://laefy.github.io/CPP_Learning/chapter9/test_done/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://laefy.github.io/CPP_Learning/chapter9/test_done/</guid>
       <description>Vos réponses nous ont bien été communiquées 😃 Retourner à la synthèse du Chapitre</description>
     </item>
     
