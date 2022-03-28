@@ -491,12 +491,13 @@ Dans ce chapitre, nous nous sommes intéressés à deux manières de mettre-en-o
     
     <item>
       <title>SFINAE</title>
-      <link>https://laefy.github.io/CPP_Learning/chapter10/4-sfinae-ph/</link>
+      <link>https://laefy.github.io/CPP_Learning/chapter10/4-sfinae/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://laefy.github.io/CPP_Learning/chapter10/4-sfinae-ph/</guid>
-      <description>Bientôt disponible&amp;hellip;&amp;hellip;. // 🚧🚥🔨 //
- </description>
+      <guid>https://laefy.github.io/CPP_Learning/chapter10/4-sfinae/</guid>
+      <description>Nous allons maintenant vous expliquer ce que signifie SFINAE, le besoin auquel ce mécanisme répond et comment le mettre en oeuvre dans votre code.
+ Le besoin Supposons que nous souhaitions pouvoir récupérer une clef pour différents type à l&amp;rsquo;aide d&amp;rsquo;une fonction get_key(const Type&amp;amp;), en utilisant des overloads.
+class Person { public: Person(const std::string&amp;amp; name) : _name { name } {} const std::string&amp;amp; get_name() const { return _name; } private: const std::string _name; }; // Overload pour notre classe Person.</description>
     </item>
     
     <item>
