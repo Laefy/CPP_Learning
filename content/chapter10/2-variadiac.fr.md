@@ -241,7 +241,7 @@ void print(const Ts&... params)
 {{% notice tip %}}
 L'avant-dernier snippet n'est pas un exemple de bonne pratique, au contraire.
 Le but est juste de vous montrez les étapes pour passer de N instructions à 1 instruction, afin d'arriver au code du template variadique.\
-Retenez qu'en général l'opérateur comma est utilisé pour implémenter du code de template variadique, ou éventuellement pour obsfusquer du code (il y a notamment des concours, dont le but est d'écrire le code le plus illisible possible).
+Retenez qu'en général l'opérateur comma est utilisé pour implémenter du code de template variadique, ou éventuellement pour offusquer du code (il y a notamment des concours, dont le but est d'écrire le code le plus illisible possible).
 {{% /notice %}}
 
 ---

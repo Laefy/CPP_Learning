@@ -31,7 +31,7 @@ Par exemple, dans la première ligne, `(a + b) / 3` est une expression composée
 
 La plupart des expressions peuvent être catégorisées en tant que l-value ou r-value.
 Pour faire la différence entre une l-value et une r-value, il suffit de se poser deux questions.
-1. Est-ce que l'expression fait référence à un objet précis en mémoire ?
+1. Est-ce que l'expression fait référence à un objet précis stocké en mémoire ?
 Si oui, on passe à la question 2, si non, c'est une r-value.
 2. Est-ce cet objet risque d'être détruit ou invalidé si le résultat n'est pas stocké dans une variable avant la fin de l'instruction ?
 Si oui, c'est une r-value, si non, c'est une l-value.
@@ -75,7 +75,7 @@ int main()
     // `value`
     // `3+4`
     // `"tata"`
-    // `std::string{"toto"}`
+    // `std::string { "toto" }`
     // `std::move(value)`
     // `&value`
     // `return_3()`
@@ -96,14 +96,14 @@ On pourrait penser qu'il s'agit d'une r-value, mais c'est en fait une l-value.
 En effet, contrairement aux litéraux de type `int`, `char` ou `bool`, les chaînes de caractères en dur sont enregistrées dans la mémoire statique du programme au moment de la compilation.
 Donc si vous écrivez `"tata"` sans placer le résultat dans une variable, cet objet continuera d'exister quand même.
 Pour vous en convaincre, vous pouvez placer cette chaîne dans plusieurs `const char*` et affichez le contenu des pointeurs (c'est-à-dire les adresses, pas la chaîne).
-Vous pourez constaterez qu'ils pointent tous sur la même case de la mémoire.
+Vous pourrez constatez qu'ils pointent tous sur la même case de la mémoire.
 
-4. `std::string {"toto"}`\
+4. `std::string { "toto" }`\
 Ici, il s'agit par contre d'une r-value.
 Si cette `std::string` n'est pas placée dans une variable, alors elle sera détruite une fois l'instruction terminée.
 
 5. `std::move(value)`\
-Il s'agit d'une r-value, pour la simple et bonne raison que le rôle de `std::move`, c'est de faire passer des l-values pour des r-values.
+Il s'agit d'une r-value, car le rôle de `std::move` est en fait de transformer des l-values en r-values afin de pouvoir déplacer les objets.
 
 6. `&value`\
 Il s'agit d'une r-value.
@@ -120,7 +120,7 @@ Ne pas stocker cette référence ne conduira pas à la destruction de l'objet r�
 
 9. `return_copy(value)`\
 Cette expression est une r-value, puisqu'on retourne une copie temporaire de l'objet passé en paramètre.
-Si celui-ci n'est pas stocké, il sera détruit.
+Si celle-ci n'est pas stockée, elle sera détruit.
 
 {{% /expand %}}
 
@@ -161,10 +161,10 @@ int main()
 ```
 
 Bien sûr, si vous retirez la surcharge `fcn(std::string&&)`, le programme continuera de compiler puisque jusqu'ici, vos programmes ont compilés (enfin j'espère) sans que vous ayiez eu besoin d'écrire `&&`.
-En effet, si le compilateur ne trouve pas de surcharge prenant une r-value reference de `T`, alors il se rabattera sur une surcharge acceptant un `T&`, `const T&` ou `T`.
+En effet, si le compilateur ne trouve pas de surcharge acceptant une `T&&`, alors il se rabattera sur une surcharge acceptant un `T` ou un `const T&`.
 
-En revanche, le compilateur ne fera jamais l'inverse.
-Si votre fonction attend une r-value et que vous n'avez pas défini de surcharge acceptant de l-value, vous ne pourrez pas compiler un appel dans lequel vous fournissez une l-value.
+Bien qu'une r-value puisse être convertie en const l-value, sachez que l'inverse n'est pas possible.
+Si le seul overload de votre fonction attend une r-value, vous ne pourrez pas compiler un appel fournissant une l-value.
 Essayez donc de commenter la surcharge `fcn(const std::string&)` dans le snippet de code ci-dessus.
 L'instruction `fcn(str)` ne devrait plus compiler, alors que `fcn(std::string { "tata" })` ne posera pas de problème.
 
@@ -172,13 +172,10 @@ L'instruction `fcn(str)` ne devrait plus compiler, alors que `fcn(std::string { 
 
 Revenons sur votre chapitre préféré : l'ownership 😈
 
-J'avais indiqué en introduction que je vous parlerais à la fin de la syntaxe permettant de représenter un transfert d'ownership.
-Chose que je n'avais pas fait, mais que j'ai corrigé avec le paragraphe précédent.
-
 En fait, lorsque vous définissez une fonction qui attend une r-value, vous êtes en train d'indiquer à l'appelant que vous souhaiteriez voler l'argument qu'il vous envoie.
 L'intérêt est d'éviter des copies coûteuse, puisque quand on vole / déplace quelque chose, on ne le copie pas.
 
-Dans le cas où l'appelant vous envoie une r-value directement, cela n'a donc pas d'importance, parce qu'il n'avait pas encore stocké cet objet de son côté.
+Dans le cas où l'appelant vous envoie une r-value directement, cela n'a pas d'importance, parce qu'il n'avait pas encore stocké cet objet de son côté.
 En revanche, s'il cherchait à passer une l-value, il serait obligé d'utiliser `std::move` pour indiquer qu'il est prêt à céder cet objet à la fonction appelante et à ne plus le réutiliser ensuite.
 
 ```cpp
@@ -204,8 +201,7 @@ int main()
 ```
 
 {{% notice tip %}}
-Après avoir `std::move` un objet, il faut considérer qu'il n'est plus valide d'essayer de l'utiliser.
-En effet, celui à qui on l'a donné l'a probablement démembré et il serait cruel de tenter de faire marcher quelque chose qui n'a plus de jambes...
+Après avoir `std::move` un objet, il faut être prudent, car son contenu a probablement été extrait par la fonction à laquelle il a été passé.
 {{% /notice %}}
 
 Un autre intérêt des r-values, c'est de pouvoir manipuler certains objets non-copiables.
