@@ -47,6 +47,10 @@
   </url>
   
   <url>
+    <loc>https://laefy.github.io/CPP_Learning/chapter10/1-universal-ref/</loc>
+  </url>
+  
+  <url>
     <loc>https://laefy.github.io/CPP_Learning/chapter5/1-doc/</loc>
   </url>
   
@@ -80,6 +84,10 @@
   
   <url>
     <loc>https://laefy.github.io/CPP_Learning/chapter5/2-vectors/</loc>
+  </url>
+  
+  <url>
+    <loc>https://laefy.github.io/CPP_Learning/chapter10/2-variadiac/</loc>
   </url>
   
   <url>
@@ -131,6 +139,10 @@
   </url>
   
   <url>
+    <loc>https://laefy.github.io/CPP_Learning/chapter10/3-specializations/</loc>
+  </url>
+  
+  <url>
     <loc>https://laefy.github.io/CPP_Learning/chapter1/2-practice/3-array/</loc>
   </url>
   
@@ -164,6 +176,10 @@
   
   <url>
     <loc>https://laefy.github.io/CPP_Learning/chapter4/4-polymorphism/</loc>
+  </url>
+  
+  <url>
+    <loc>https://laefy.github.io/CPP_Learning/chapter10/4-sfinae-ph/</loc>
   </url>
   
   <url>
@@ -223,6 +239,14 @@
   </url>
   
   <url>
+    <loc>https://laefy.github.io/CPP_Learning/chapter10/</loc>
+  </url>
+  
+  <url>
+    <loc>https://laefy.github.io/CPP_Learning/chapter10/test/</loc>
+  </url>
+  
+  <url>
     <loc>https://laefy.github.io/CPP_Learning/chapter1/test/</loc>
   </url>
   
@@ -256,6 +280,10 @@
   
   <url>
     <loc>https://laefy.github.io/CPP_Learning/chapter0/test/</loc>
+  </url>
+  
+  <url>
+    <loc>https://laefy.github.io/CPP_Learning/chapter10/summary/</loc>
   </url>
   
   <url>
@@ -312,6 +340,10 @@
   
   <url>
     <loc>https://laefy.github.io/CPP_Learning/chapter0/test_done/</loc>
+  </url>
+  
+  <url>
+    <loc>https://laefy.github.io/CPP_Learning/chapter10/test_done/</loc>
   </url>
   
   <url>

@@ -1,0 +1,3608 @@
+<!DOCTYPE html>
+<html lang="fr" class="js csstransforms3d">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="Hugo 0.76.5" />
+    <meta name="description" content="">
+
+
+    <link rel="icon" href="/CPP_Learning/images/favicon.png" type="image/png">
+
+    <title>Template variadique :: Cours de C&#43;&#43; - Niveau Master</title>
+
+    
+    <link href="/CPP_Learning/css/nucleus.css?1648450375" rel="stylesheet">
+    <link href="/CPP_Learning/css/fontawesome-all.min.css?1648450375" rel="stylesheet">
+    <link href="/CPP_Learning/css/hybrid.css?1648450375" rel="stylesheet">
+    <link href="/CPP_Learning/css/featherlight.min.css?1648450375" rel="stylesheet">
+    <link href="/CPP_Learning/css/perfect-scrollbar.min.css?1648450375" rel="stylesheet">
+    <link href="/CPP_Learning/css/auto-complete.css?1648450375" rel="stylesheet">
+    <link href="/CPP_Learning/css/atom-one-dark-reasonable.css?1648450375" rel="stylesheet">
+    <link href="/CPP_Learning/css/theme.css?1648450375" rel="stylesheet">
+    <link href="/CPP_Learning/css/hugo-theme.css?1648450375" rel="stylesheet">
+    
+    <link href="/CPP_Learning/css/theme-mine.css?1648450375" rel="stylesheet">
+    
+    <link href="/CPP_Learning/css/syntax.css?1648450375" rel="stylesheet">
+
+    <script src="/CPP_Learning/js/jquery-3.3.1.min.js?1648450375"></script>
+
+    <style>
+      :root #header + #content > #left > #rlblock_left{
+          display:none !important;
+      }
+      
+        :not(pre) > code + span.copy-to-clipboard {
+            display: none;
+        }
+      
+    </style>
+    
+  </head>
+  <body class="" data-url="/CPP_Learning/chapter10/2-variadiac/">
+    <nav id="sidebar" class="showVisitedLinks">
+
+
+
+  <div id="header-wrapper">
+    <div id="header">
+      <a id="logo" href="https://laefy.github.io/CPP_Learning/">🎄 C++ 🎄</a>
+
+    </div>
+    
+        <div class="searchbox">
+    <label for="search-by"><i class="fas fa-search"></i></label>
+    <input data-search-input id="search-by" type="search" placeholder="Rechercher...">
+    <span data-search-clear=""><i class="fas fa-times"></i></span>
+</div>
+
+<script type="text/javascript" src="/CPP_Learning/js/lunr.min.js?1648450375"></script>
+<script type="text/javascript" src="/CPP_Learning/js/auto-complete.js?1648450375"></script>
+<script type="text/javascript">
+    
+        var baseurl = "https:\/\/laefy.github.io\/CPP_Learning\/";
+    
+</script>
+<script type="text/javascript" src="/CPP_Learning/js/search.js?1648450375"></script>
+
+    
+  </div>
+
+    <div class="highlightable">
+    <ul class="topics">
+
+        
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/CPP_Learning/chapter0/" title="Mise en place" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/CPP_Learning/chapter0/">
+          <b>0- </b>Mise en place
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+          
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/CPP_Learning/chapter0/1-compiler/" title="Compilateur" class="dd-item ">
+        <a href="/CPP_Learning/chapter0/1-compiler/">
+        Compilateur
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/CPP_Learning/chapter0/2-vscode/" title="Visual Studio Code" class="dd-item ">
+        <a href="/CPP_Learning/chapter0/2-vscode/">
+        Visual Studio Code
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/CPP_Learning/chapter0/3-cmake/" title="CMake" class="dd-item ">
+        <a href="/CPP_Learning/chapter0/3-cmake/">
+        CMake
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/CPP_Learning/chapter0/4-git/" title="Git" class="dd-item ">
+        <a href="/CPP_Learning/chapter0/4-git/">
+        Git
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/CPP_Learning/chapter0/5-clang-format/" title="Clang-Format" class="dd-item ">
+        <a href="/CPP_Learning/chapter0/5-clang-format/">
+        Clang-Format
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/CPP_Learning/chapter0/6-tips/" title="Astuces" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/CPP_Learning/chapter0/6-tips/">
+          Astuces
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/CPP_Learning/chapter0/6-tips/1-snippets/" title="Petits programmes" class="dd-item ">
+        <a href="/CPP_Learning/chapter0/6-tips/1-snippets/">
+        Petits programmes
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/CPP_Learning/chapter0/6-tips/2-vscode/" title="Projets VSCode" class="dd-item ">
+        <a href="/CPP_Learning/chapter0/6-tips/2-vscode/">
+        Projets VSCode
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/CPP_Learning/chapter0/6-tips/3-keybinds-commands/" title="Raccourcis &amp; Commandes" class="dd-item ">
+        <a href="/CPP_Learning/chapter0/6-tips/3-keybinds-commands/">
+        Raccourcis &amp; Commandes
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/CPP_Learning/chapter0/6-tips/4-options/" title="Options de compilation" class="dd-item ">
+        <a href="/CPP_Learning/chapter0/6-tips/4-options/">
+        Options de compilation
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/CPP_Learning/chapter0/test/" title="Retours ?" class="dd-item ">
+        <a href="/CPP_Learning/chapter0/test/">
+        Retours ?
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+             
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/CPP_Learning/chapter1/" title="Introduction au C&#43;&#43;" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/CPP_Learning/chapter1/">
+          <b>1- </b>Introduction au C&#43;&#43;
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+          
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/CPP_Learning/chapter1/1-language/" title="Présentation du langage" class="dd-item ">
+        <a href="/CPP_Learning/chapter1/1-language/">
+        Présentation du langage
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/CPP_Learning/chapter1/2-practice/" title="Premiers programmes" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/CPP_Learning/chapter1/2-practice/">
+          Premiers programmes
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/CPP_Learning/chapter1/2-practice/1-hello-world/" title="👋 Hello World" class="dd-item ">
+        <a href="/CPP_Learning/chapter1/2-practice/1-hello-world/">
+        👋 Hello World
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/CPP_Learning/chapter1/2-practice/2-parrot/" title="🦜 Perroquet" class="dd-item ">
+        <a href="/CPP_Learning/chapter1/2-practice/2-parrot/">
+        🦜 Perroquet
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/CPP_Learning/chapter1/2-practice/3-array/" title="🔢 Tableau Numérique" class="dd-item ">
+        <a href="/CPP_Learning/chapter1/2-practice/3-array/">
+        🔢 Tableau Numérique
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/CPP_Learning/chapter1/2-practice/4-calculator/" title="🧮 Calculette" class="dd-item ">
+        <a href="/CPP_Learning/chapter1/2-practice/4-calculator/">
+        🧮 Calculette
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/CPP_Learning/chapter1/test/" title="Questionnaire !" class="dd-item ">
+        <a href="/CPP_Learning/chapter1/test/">
+        Questionnaire !
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/CPP_Learning/chapter1/summary/" title="Synthèse" class="dd-item ">
+        <a href="/CPP_Learning/chapter1/summary/">
+        Synthèse
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+             
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/CPP_Learning/chapter2/" title="Classes" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/CPP_Learning/chapter2/">
+          <b>2- </b>Classes
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/CPP_Learning/chapter2/1-poo/" title="C&#39;est quoi un objet déjà ?" class="dd-item ">
+        <a href="/CPP_Learning/chapter2/1-poo/">
+        C&#39;est quoi un objet déjà ?
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/CPP_Learning/chapter2/2-first-class/" title="✨ Première classe" class="dd-item ">
+        <a href="/CPP_Learning/chapter2/2-first-class/">
+        ✨ Première classe
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/CPP_Learning/chapter2/3-constructor/" title="🔨 Constructeur" class="dd-item ">
+        <a href="/CPP_Learning/chapter2/3-constructor/">
+        🔨 Constructeur
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/CPP_Learning/chapter2/4-clone/" title="🧬 Clône" class="dd-item ">
+        <a href="/CPP_Learning/chapter2/4-clone/">
+        🧬 Clône
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/CPP_Learning/chapter2/5-rectangle/" title="🔳 Rectangle" class="dd-item ">
+        <a href="/CPP_Learning/chapter2/5-rectangle/">
+        🔳 Rectangle
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/CPP_Learning/chapter2/6-polygon/" title="💠 Polygône" class="dd-item ">
+        <a href="/CPP_Learning/chapter2/6-polygon/">
+        💠 Polygône
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/CPP_Learning/chapter2/test/" title="Questionnaire !" class="dd-item ">
+        <a href="/CPP_Learning/chapter2/test/">
+        Questionnaire !
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/CPP_Learning/chapter2/summary/" title="Synthèse" class="dd-item ">
+        <a href="/CPP_Learning/chapter2/summary/">
+        Synthèse
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+             
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/CPP_Learning/chapter3/" title="Gestion mémoire" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/CPP_Learning/chapter3/">
+          <b>3- </b>Gestion mémoire
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/CPP_Learning/chapter3/1-lifespan/" title="Durée de vie" class="dd-item ">
+        <a href="/CPP_Learning/chapter3/1-lifespan/">
+        Durée de vie
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/CPP_Learning/chapter3/2-ownership/" title="Ownership" class="dd-item ">
+        <a href="/CPP_Learning/chapter3/2-ownership/">
+        Ownership
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/CPP_Learning/chapter3/3-allocation/" title="Allocation dynamique" class="dd-item ">
+        <a href="/CPP_Learning/chapter3/3-allocation/">
+        Allocation dynamique
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/CPP_Learning/chapter3/4-move-sem/" title="Déplacement" class="dd-item ">
+        <a href="/CPP_Learning/chapter3/4-move-sem/">
+        Déplacement
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/CPP_Learning/chapter3/test/" title="Questionnaire !" class="dd-item ">
+        <a href="/CPP_Learning/chapter3/test/">
+        Questionnaire !
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/CPP_Learning/chapter3/summary/" title="Synthèse" class="dd-item ">
+        <a href="/CPP_Learning/chapter3/summary/">
+        Synthèse
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+             
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/CPP_Learning/chapter4/" title="Héritage" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/CPP_Learning/chapter4/">
+          <b>4- </b>Héritage
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/CPP_Learning/chapter4/1-hierarchy/" title="💼 Hiérarchie professionnelle" class="dd-item ">
+        <a href="/CPP_Learning/chapter4/1-hierarchy/">
+        💼 Hiérarchie professionnelle
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/CPP_Learning/chapter4/2-farm/" title="🐮 Concerto animalier" class="dd-item ">
+        <a href="/CPP_Learning/chapter4/2-farm/">
+        🐮 Concerto animalier
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/CPP_Learning/chapter4/3-virtual/" title="Résolution d&#39;appel virtuel" class="dd-item ">
+        <a href="/CPP_Learning/chapter4/3-virtual/">
+        Résolution d&#39;appel virtuel
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/CPP_Learning/chapter4/4-polymorphism/" title="Polymorphisme" class="dd-item ">
+        <a href="/CPP_Learning/chapter4/4-polymorphism/">
+        Polymorphisme
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/CPP_Learning/chapter4/5-vehicles/" title="🚗 Véhicule partagé" class="dd-item ">
+        <a href="/CPP_Learning/chapter4/5-vehicles/">
+        🚗 Véhicule partagé
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/CPP_Learning/chapter4/test/" title="Questionnaire !" class="dd-item ">
+        <a href="/CPP_Learning/chapter4/test/">
+        Questionnaire !
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/CPP_Learning/chapter4/summary/" title="Synthèse" class="dd-item ">
+        <a href="/CPP_Learning/chapter4/summary/">
+        Synthèse
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+             
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/CPP_Learning/chapter5/" title="Librairie standard" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/CPP_Learning/chapter5/">
+          <b>5- </b>Librairie standard
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/CPP_Learning/chapter5/1-doc/" title="Un peu de doc..." class="dd-item ">
+        <a href="/CPP_Learning/chapter5/1-doc/">
+        Un peu de doc...
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/CPP_Learning/chapter5/2-vectors/" title="Tableaux dynamiques" class="dd-item ">
+        <a href="/CPP_Learning/chapter5/2-vectors/">
+        Tableaux dynamiques
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/CPP_Learning/chapter5/3-sequentials/" title="Autres conteneurs séquentiels" class="dd-item ">
+        <a href="/CPP_Learning/chapter5/3-sequentials/">
+        Autres conteneurs séquentiels
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/CPP_Learning/chapter5/4-associatives/" title="Conteneurs associatifs" class="dd-item ">
+        <a href="/CPP_Learning/chapter5/4-associatives/">
+        Conteneurs associatifs
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/CPP_Learning/chapter5/5-strings/" title="Manipulation de chaînes" class="dd-item ">
+        <a href="/CPP_Learning/chapter5/5-strings/">
+        Manipulation de chaînes
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/CPP_Learning/chapter5/6-tuples/" title="Paires et tuples" class="dd-item ">
+        <a href="/CPP_Learning/chapter5/6-tuples/">
+        Paires et tuples
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/CPP_Learning/chapter5/test/" title="Questionnaire !" class="dd-item ">
+        <a href="/CPP_Learning/chapter5/test/">
+        Questionnaire !
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/CPP_Learning/chapter5/summary/" title="Synthèse" class="dd-item ">
+        <a href="/CPP_Learning/chapter5/summary/">
+        Synthèse
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+             
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/CPP_Learning/chapter6/" title="Algorithmes" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/CPP_Learning/chapter6/">
+          <b>6- </b>Algorithmes
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/CPP_Learning/chapter6/1-searches/" title="Parcours et recherches" class="dd-item ">
+        <a href="/CPP_Learning/chapter6/1-searches/">
+        Parcours et recherches
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/CPP_Learning/chapter6/2-transformations/" title="Transformations" class="dd-item ">
+        <a href="/CPP_Learning/chapter6/2-transformations/">
+        Transformations
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/CPP_Learning/chapter6/3-iterators/" title="Itérateurs" class="dd-item ">
+        <a href="/CPP_Learning/chapter6/3-iterators/">
+        Itérateurs
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/CPP_Learning/chapter6/4-lambdas/" title="Lambdas" class="dd-item ">
+        <a href="/CPP_Learning/chapter6/4-lambdas/">
+        Lambdas
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/CPP_Learning/chapter6/test/" title="Questionnaire !" class="dd-item ">
+        <a href="/CPP_Learning/chapter6/test/">
+        Questionnaire !
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+             
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/CPP_Learning/chapter8/" title="Traitement d&#39;erreurs" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/CPP_Learning/chapter8/">
+          <b>8- </b>Traitement d&#39;erreurs
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/CPP_Learning/chapter8/1-assertions/" title="Assertions" class="dd-item ">
+        <a href="/CPP_Learning/chapter8/1-assertions/">
+        Assertions
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/CPP_Learning/chapter8/2-exceptions/" title="Exceptions" class="dd-item ">
+        <a href="/CPP_Learning/chapter8/2-exceptions/">
+        Exceptions
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/CPP_Learning/chapter8/test/" title="Questionnaire !" class="dd-item ">
+        <a href="/CPP_Learning/chapter8/test/">
+        Questionnaire !
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+             
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/CPP_Learning/chapter9/" title="Templates" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/CPP_Learning/chapter9/">
+          <b>9- </b>Templates
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/CPP_Learning/chapter9/1-introduction/" title="Introduction" class="dd-item ">
+        <a href="/CPP_Learning/chapter9/1-introduction/">
+        Introduction
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/CPP_Learning/chapter9/2-examples/" title="Exemples" class="dd-item ">
+        <a href="/CPP_Learning/chapter9/2-examples/">
+        Exemples
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/CPP_Learning/chapter9/3-syntaxe/" title="Débrief" class="dd-item ">
+        <a href="/CPP_Learning/chapter9/3-syntaxe/">
+        Débrief
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/CPP_Learning/chapter9/test/" title="Questionnaire !" class="dd-item ">
+        <a href="/CPP_Learning/chapter9/test/">
+        Questionnaire !
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+             
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/CPP_Learning/chapter10/" title="Paramètres de templates" class="dd-item 
+        parent
+        
+        
+        ">
+      <a href="/CPP_Learning/chapter10/">
+          <b>10- </b>Paramètres de templates
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/CPP_Learning/chapter10/1-universal-ref/" title="Référence universelle" class="dd-item ">
+        <a href="/CPP_Learning/chapter10/1-universal-ref/">
+        Référence universelle
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/CPP_Learning/chapter10/2-variadiac/" title="Template variadique" class="dd-item active">
+        <a href="/CPP_Learning/chapter10/2-variadiac/">
+        Template variadique
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/CPP_Learning/chapter10/3-specializations/" title="Spécialisations" class="dd-item ">
+        <a href="/CPP_Learning/chapter10/3-specializations/">
+        Spécialisations
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/CPP_Learning/chapter10/4-sfinae-ph/" title="SFINAE" class="dd-item ">
+        <a href="/CPP_Learning/chapter10/4-sfinae-ph/">
+        SFINAE
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/CPP_Learning/chapter10/test/" title="Questionnaire !" class="dd-item ">
+        <a href="/CPP_Learning/chapter10/test/">
+        Questionnaire !
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/CPP_Learning/chapter10/summary/" title="Synthèse" class="dd-item ">
+        <a href="/CPP_Learning/chapter10/summary/">
+        Synthèse
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+             
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+         
+    </ul>
+
+    
+    
+      <section id="shortcuts">
+        <h3>Accès rapide</h3>
+        <ul>
+          
+              <li> 
+                  <a class="padding" href="https://github.com/Laefy/CPP_Learning_Code/"><i class='fab fa-github'></i> Dépôt GitHub</a>
+              </li>
+          
+              <li> 
+                  <a class="padding" href="https://laefy.github.io/CPP_Learning/workflow"><i class='far fa-list-alt'></i> Workflow</a>
+              </li>
+          
+              <li> 
+                  <a class="padding" href="https://laefy.github.io/CPP_Learning/faq"><i class='fas fa-question-circle'></i> FAQ</a>
+              </li>
+          
+              <li> 
+                  <a class="padding" href="https://laefy.github.io/CPP_Learning/chapter0/6-tips/"><i class='fa fa-rocket'></i> Astuces</a>
+              </li>
+          
+              <li> 
+                  <a class="padding" href="https://en.cppreference.com/w/"><i class='fas fa-passport'></i> CPP-Ref</a>
+              </li>
+          
+        </ul>
+      </section>
+    
+
+    
+    <section id="prefooter">
+      <hr/>
+      <ul>
+      
+      
+      
+        <li><a class="padding" href="#" data-clear-history-toggle=""><i class="fas fa-history fa-fw"></i> Supprimer l&#39;historique</a></li>
+      
+      </ul>
+    </section>
+    
+    <section id="footer">
+      <p>Built with <a href="https://github.com/matcornic/hugo-theme-learn"><i class="fas fa-heart"></i></a> from <a href="https://getgrav.org">Grav</a> and <a href="https://gohugo.io/">Hugo</a></p>
+
+    </section>
+  </div>
+</nav>
+
+
+
+
+        <section id="body">
+        <div id="overlay"></div>
+        <div class="padding highlightable">
+              
+              <div>
+                <div id="top-bar">
+                
+                
+                <div id="breadcrumbs" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
+                    <span id="sidebar-toggle-span">
+                        <a href="#" id="sidebar-toggle" data-sidebar-toggle="">
+                          <i class="fas fa-bars"></i>
+                        </a>
+                    </span>
+                  
+                  <span id="toc-menu"><i class="fas fa-list-alt"></i></span>
+                  
+                  <span class="links">
+                 
+                 
+                    
+          
+          
+            
+            
+          
+          
+            
+            
+          
+          
+            <a href='/CPP_Learning/'>Accueil</a> > <a href='/CPP_Learning/chapter10/'>Paramètres de templates</a> > Template variadique
+          
+        
+          
+        
+          
+        
+                 
+                  </span>
+                </div>
+                
+                    <div class="progress">
+    <div class="wrapper">
+<nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#parameter-packs-et-substitutions">Parameter packs et substitutions</a></li>
+        <li><a href="#pack-expansion">Pack expansion</a></li>
+        <li><a href="#fold-expressions">Fold expressions</a></li>
+        <li><a href="#position-du-pack">Position du pack</a></li>
+        <li><a href="#exercices">Exercices</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+    </div>
+</div>
+
+                
+              </div>
+            </div>
+            
+        <div id="head-tags">
+        
+        </div>
+        
+        <div id="body-inner">
+          
+            <h1>
+              
+              Template variadique
+            </h1>
+          
+
+        
+
+
+<p>Un template variadique, c&rsquo;est un template qui attend un nombre variable de paramètres. 
+Vous en avez déjà utilisé plusieurs, comme :<br>
+- la fonction-template <code>emplace_back</code> de <code>std::vector</code>, qui attend n&rsquo;importe quels nombres et types d&rsquo;arguments, et les utilisent pour construire le nouvel élément,<br>
+- la fonction-template <code>std::make_unique</code>, qui fonctionne sur le même principe,<br>
+- la classe-template <code>std::tuple</code>, qui permet de représenter un N-uplet contenant n&rsquo;importe quels types.</p>
+<p>L&rsquo;objectif de cette section sera de vous apprendre à définir vos propres templates variadiques.</p>
+<hr>
+<h3 id="parameter-packs-et-substitutions">Parameter packs et substitutions</h3>
+<p>Commençons par la syntaxe permettant d&rsquo;indiquer qu&rsquo;un template peut recevoir un nombre variable de paramètres.</p>
+<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span><span class="p">...</span> <span class="n">Ts</span><span class="o">&gt;</span>   <span class="c1">// -&gt; on écrit `...` entre le type (ici typename) et le nom du paramètre (ici T)
+</span><span class="c1"></span><span class="kt">void</span> <span class="n">fcn</span><span class="p">(</span><span class="n">Ts</span><span class="p">...</span> <span class="n">params</span><span class="p">)</span>      <span class="c1">// -&gt; on écrit encore `...` entre le type (ici Ts) et le nom du paramètre (ici params) 
+</span></code></pre></div><p>On parlera de <strong>parameter pack de template</strong> pour désigner <code>Ts</code> et de <strong>parameter pack de fonction</strong> pour désigner <code>params</code>.</p>
+<p>Comme n&rsquo;importe quel paramètre de fonction-template, il est possible de qualifier <code>Ts</code> avec <code>&amp;</code> (l-value non-constante), <code>const &amp;</code> (l-value constante) ou <code>&amp;&amp;</code> (référence universelle) :</p>
+<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span><span class="p">...</span> <span class="n">Ts</span><span class="o">&gt;</span>
+<span class="kt">void</span> <span class="n">fcn_ref</span><span class="p">(</span><span class="n">Ts</span><span class="o">&amp;</span><span class="p">...</span> <span class="n">params</span><span class="p">)</span>
+
+<span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span><span class="p">...</span> <span class="n">Ts</span><span class="o">&gt;</span>
+<span class="kt">void</span> <span class="n">fcn_const_ref</span><span class="p">(</span><span class="k">const</span> <span class="n">Ts</span><span class="o">&amp;</span><span class="p">...</span> <span class="n">params</span><span class="p">)</span>
+
+<span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span><span class="p">...</span> <span class="n">Ts</span><span class="o">&gt;</span>
+<span class="kt">void</span> <span class="n">fcn_universal_ref</span><span class="p">(</span><span class="n">Ts</span><span class="o">&amp;&amp;</span><span class="p">...</span> <span class="n">params</span><span class="p">)</span>
+</code></pre></div><p>Cela impactera bien sûr la possibilité pour le compilateur de générer une fonction à partir d&rsquo;un appel donné, ainsi que la signature de l&rsquo;éventuelle fonction générée :</p>
+<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="kt">int</span> <span class="n">v1</span> <span class="o">=</span> <span class="mi">3</span><span class="p">;</span>
+<span class="kt">char</span> <span class="n">v2</span> <span class="o">=</span> <span class="sc">&#39;A&#39;</span><span class="p">;</span>
+<span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">v3</span> <span class="o">=</span> <span class="s">&#34;toto&#34;</span><span class="p">;</span>
+
+<span class="c1">// Il est toujours possible de substituer Ts&amp;... / const Ts&amp;... / Ts&amp;&amp;... avec &#34;rien&#34;. 
+</span><span class="c1"></span><span class="n">fcn_ref</span><span class="p">();</span>
+<span class="n">fcn_const_ref</span><span class="p">();</span>
+<span class="n">fcn_universal_ref</span><span class="p">();</span>
+
+<span class="c1">// Ts&amp;... ne peut être substitué que par des l-values (constantes ou pas)
+</span><span class="c1"></span><span class="n">fcn_ref</span><span class="p">(</span><span class="n">v1</span><span class="p">,</span> <span class="n">v2</span><span class="p">);</span> <span class="c1">// ok : Ts&amp;... -&gt; int&amp;, char&amp;
+</span><span class="c1"></span><span class="n">fcn_ref</span><span class="p">(</span><span class="n">v1</span><span class="p">,</span> <span class="mi">3</span><span class="p">);</span>  <span class="c1">// pas ok, car 3 est une r-value
+</span><span class="c1"></span><span class="n">fcn_ref</span><span class="p">(</span><span class="n">v3</span><span class="p">);</span>     <span class="c1">// ok : Ts&amp;... -&gt; const std::string&amp;
+</span><span class="c1"></span>
+<span class="c1">// const Ts&amp;... peut être substitué par n&#39;importe quoi (les r-value et l-value non-const seront converties en l-value const si nécessaires)
+</span><span class="c1"></span><span class="n">fcn_const_ref</span><span class="p">(</span><span class="n">v1</span><span class="p">,</span> <span class="n">v2</span><span class="p">);</span> <span class="c1">// ok : Ts&amp;... -&gt; const int&amp;, const char&amp;
+</span><span class="c1"></span><span class="n">fcn_const_ref</span><span class="p">(</span><span class="n">v1</span><span class="p">,</span> <span class="mi">3</span><span class="p">);</span>  <span class="c1">// ok : Ts&amp;... -&gt; const int&amp;, const int&amp;
+</span><span class="c1"></span><span class="n">fcn_const_ref</span><span class="p">(</span><span class="n">v3</span><span class="p">);</span>     <span class="c1">// ok : Ts&amp;... -&gt; const std::string&amp;
+</span><span class="c1"></span>
+<span class="c1">// Ts&amp;&amp;... peut évident être subtitué par n&#39;importe quoi (c&#39;est le principe de la référence universelle)
+</span><span class="c1"></span><span class="n">fcn_universal_ref</span><span class="p">(</span><span class="n">v1</span><span class="p">,</span> <span class="n">v2</span><span class="p">);</span> <span class="c1">// ok : Ts&amp;... -&gt; int&amp;, char&amp;
+</span><span class="c1"></span><span class="n">fcn_universal_ref</span><span class="p">(</span><span class="n">v1</span><span class="p">,</span> <span class="mi">3</span><span class="p">);</span>  <span class="c1">// ok : Ts&amp;... -&gt; int&amp;, int&amp;&amp;
+</span><span class="c1"></span><span class="n">fcn_universal_ref</span><span class="p">(</span><span class="n">v3</span><span class="p">);</span>     <span class="c1">// ok : Ts&amp;... -&gt; const std::string&amp;
+</span></code></pre></div><p>Un petit point à noter : il n&rsquo;est pas possible de restreindre les paramètres d&rsquo;un pack à un type donné.<br>
+Le code suivant n&rsquo;est du coup pas valide :</p>
+<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="kt">void</span> <span class="nf">give_me_some_ints</span><span class="p">(</span><span class="kt">int</span><span class="p">...</span> <span class="n">params</span><span class="p">)</span>
+<span class="p">{</span> <span class="cm">/* ... */</span> <span class="p">}</span>
+</code></pre></div><p>Il existe différentes méthodes permettant d&rsquo;obtenir ce genre de comportement.
+Nous détaillerons l&rsquo;une d&rsquo;entre elles dans la dernière partie de ce chapitre.</p>
+<hr>
+<h3 id="pack-expansion">Pack expansion</h3>
+<p>Bon, c&rsquo;est bien de pouvoir définir des parameter packs, mais ce serait mieux de pouvoir aussi s&rsquo;en servir&hellip;</p>
+<p>La première façon d&rsquo;utiliser un parameter pack, c&rsquo;est de le passer à un autre template ou fonction.
+On parlera dans ce cas de <strong>pack expansion</strong>.</p>
+<p>Voici un exemple dans lequel on passe notre parameter pack de template à une autre classe-template :</p>
+<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span><span class="p">...</span> <span class="n">Ts</span><span class="o">&gt;</span>
+<span class="k">class</span> <span class="nc">SomeStuff</span>
+<span class="p">{</span>
+<span class="k">public</span><span class="o">:</span>
+    <span class="cm">/* ... */</span>
+
+<span class="k">private</span><span class="o">:</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">tuple</span><span class="o">&lt;</span><span class="n">Ts</span><span class="p">...</span><span class="o">&gt;</span> <span class="n">_tuple</span><span class="p">;</span> <span class="c1">// -&gt; pack expansion : `Ts...`
+</span><span class="c1"></span><span class="p">};</span>
+
+<span class="c1">// En utilisant SomeStuff&lt;int, char, double&gt;, la génération du pack expansion donne :
+</span><span class="c1">// std::tuple&lt;int, char, double&gt; _tuple;
+</span></code></pre></div><p>Et voici un exemple dans lequel on transfère notre parameter pack de fonction dans un autre appel de fonction :</p>
+<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span> <span class="n">Ctn</span><span class="p">,</span> <span class="k">typename</span><span class="p">...</span> <span class="n">Args</span><span class="o">&gt;</span>
+<span class="kt">void</span> <span class="n">copy_to</span><span class="p">(</span><span class="n">Ctn</span><span class="o">&amp;</span> <span class="n">ctn</span><span class="p">,</span> <span class="k">const</span> <span class="n">Args</span><span class="o">&amp;</span><span class="p">...</span> <span class="n">args</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">ctn</span><span class="p">.</span><span class="n">emplace_back</span><span class="p">(</span><span class="n">args</span><span class="p">...);</span> <span class="c1">// -&gt; pack expansion : `args...` 
+</span><span class="c1"></span><span class="p">}</span>
+
+<span class="c1">// En appelant copy_to(persons, 3, name), le compilateur pourrait générer quelque chose comme :
+</span><span class="c1">// void copy_to(std::vector&lt;Person&gt;&amp; ctn, const int&amp; p1, const std::string&amp; p2)
+</span><span class="c1">// {
+</span><span class="c1">//     ctn.emplace_back(p1, p2); 
+</span><span class="c1">// }
+</span></code></pre></div><p>Dans les 2 exemples ci-dessus, le motif répété par le pack expansion correspondait uniquement aux paramètres du pack.
+Mais il est possible d&rsquo;élargir le motif à répéter, en plaçant les <code>...</code> ailleurs que juste après le nom du pack.</p>
+<p>Reprenons <code>generic_emplace</code> pour voir ce que cela donne avec le perfect forwarding :</p>
+<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span> <span class="n">Ctn</span><span class="p">,</span> <span class="k">typename</span><span class="p">...</span> <span class="n">Args</span><span class="o">&gt;</span>
+<span class="kt">void</span> <span class="n">generic_emplace</span><span class="p">(</span><span class="n">Ctn</span><span class="o">&amp;</span> <span class="n">ctn</span><span class="p">,</span> <span class="n">Args</span><span class="o">&amp;&amp;</span><span class="p">...</span> <span class="n">args</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">ctn</span><span class="p">.</span><span class="n">emplace_back</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">forward</span><span class="o">&lt;</span><span class="n">Args</span><span class="o">&gt;</span><span class="p">(</span><span class="n">args</span><span class="p">)...);</span>
+<span class="p">}</span>
+
+<span class="c1">// En plaçant les ... derrière l&#39;appel à `forward` plutôt que derrière `args`, la génération du parameter pack donnerait :
+</span><span class="c1">// `std::forward&lt;A1&gt;(a1), std::forward&lt;A2&gt;(a2), ...` dans l&#39;appel à `emplace_back`
+</span><span class="c1">// plutôt que :
+</span><span class="c1">// `a1, a2, ...` dans l&#39;appel à `forward`.
+</span></code></pre></div><p>Voici un autre exemple, qui ajoute 3 à chacun des paramètres, les sérialisent et les regroupent dans un <code>vector</code> :</p>
+<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span><span class="p">...</span> <span class="n">Values</span><span class="o">&gt;</span>
+<span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&gt;</span> <span class="n">add_3_and_stringify</span><span class="p">(</span><span class="k">const</span> <span class="n">Values</span><span class="o">&amp;</span><span class="p">...</span> <span class="n">values</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="k">return</span> <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&gt;</span> <span class="p">{</span> <span class="n">std</span><span class="o">::</span><span class="n">to_string</span><span class="p">(</span><span class="n">values</span> <span class="o">+</span> <span class="mi">3</span><span class="p">)...</span> <span class="p">};</span>
+<span class="p">}</span>
+
+<span class="c1">// Ici, le parameter pack expansion donnera quelque chose comme :
+</span><span class="c1">// return std::vector&lt;std::string&gt; { std::to_string(v1 + 3), std::to_string(v2 + 3), ... };
+</span></code></pre></div><hr>
+<h3 id="fold-expressions">Fold expressions</h3>
+<p>Les fold expressions constituent la deuxième manière d&rsquo;utiliser les parameter packs.</p>
+<p>Avec les pack expansions, on peut générer un motif <code>arg1, arg2, ..., argN</code> à passer en paramètre de template ou de fonctions.<br>
+Avec les fold expressions, on va pouvoir générer ce même type de motifs, mais en utilisant des opérateurs binaire (<code>+</code>, <code>-</code>, <code>&amp;&amp;</code>, &hellip;) au lieu de la virgule de séparations d&rsquo;arguments.
+Les fold expressions permettent donc de réaliser des réductions sur des parameter packs.</p>
+<p>En supposant que <code>op</code> est un opérateur binaire quelconque, voici la syntaxe d&rsquo;une fold expression :</p>
+<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="p">(</span><span class="n">args</span> <span class="n">op</span> <span class="p">...)</span> <span class="c1">// -&gt; associativité droite -&gt; gauche : a1 op (a2 op (... op (aN-1 op aN)))
+</span><span class="c1"></span><span class="p">(...</span> <span class="n">op</span> <span class="n">args</span><span class="p">)</span> <span class="c1">// -&gt; associativité gauche -&gt; droite : (((a1 op a2) op ...) op aN-1) op aN
+</span></code></pre></div>
+<div class="notices info" ><p>Notez bien que les parenthèses englobant la fold expression sont nécessaires.
+Sans elles, le programme ne compilera pas.</p>
+</div>
+
+<p>On peut donc réaliser une somme simplement en écrivant :</p>
+<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span><span class="p">...</span> <span class="n">Values</span><span class="o">&gt;</span>
+<span class="k">auto</span> <span class="n">sum</span><span class="p">(</span><span class="k">const</span> <span class="n">Values</span><span class="o">&amp;</span><span class="p">...</span> <span class="n">values</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="k">return</span> <span class="p">(</span><span class="n">values</span> <span class="o">+</span> <span class="p">...);</span>
+<span class="p">}</span>
+</code></pre></div><p>Il est également possible de spécifier l&rsquo;élément neutre de la réduction en l&rsquo;ajoutant de l&rsquo;autre côté des <code>...</code> :</p>
+<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span><span class="p">...</span> <span class="n">Values</span><span class="o">&gt;</span>
+<span class="k">auto</span> <span class="n">sum_starting_at_10</span><span class="p">(</span><span class="k">const</span> <span class="n">Values</span><span class="o">&amp;</span><span class="p">...</span> <span class="n">values</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="k">return</span> <span class="p">(</span><span class="n">values</span> <span class="o">+</span> <span class="p">...</span> <span class="o">+</span> <span class="mi">10</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div><p>Lorsqu&rsquo;on commence à utiliser les fold expressions, il devient très intéressant d&rsquo;introduire l&rsquo;opérateur binaire <code>,</code> (aussi appelé opérateur <strong>comma</strong>).<br>
+Celui-ci permet d&rsquo;évaluer des expressions de gauche à droite et de récupérer la valeur de la dernière expression.</p>
+<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="kt">int</span> <span class="nf">print_and_return</span><span class="p">(</span><span class="kt">int</span> <span class="n">value</span><span class="p">)</span> <span class="p">{</span> <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">value</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span> <span class="p">}</span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="kt">int</span> <span class="n">last</span> <span class="o">=</span> <span class="p">(</span><span class="n">print_and_return</span><span class="p">(</span><span class="mi">1</span><span class="p">),</span> <span class="n">print_and_return</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">),</span> <span class="n">print_and_return</span><span class="p">(</span><span class="mi">3</span><span class="p">));</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;Last is &#34;</span> <span class="o">&lt;&lt;</span> <span class="n">last</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="c1">// Ce programme affiche :
+</span><span class="c1">// 1
+</span><span class="c1">// -1
+</span><span class="c1">// 3
+</span><span class="c1">// Last is 3
+</span></code></pre></div>
+<div class="notices info" ><p>Encore une fois, on a affaire à un affreux cas de recyclage de syntaxe.<br>
+Notez bien que le compilateur interprétera le symbole <code>,</code> à l&rsquo;intérieur de <code>fcn(p1, p2, ...)</code> comme le séparateur d&rsquo;arguments dans l&rsquo;appel à une fonction <code>fcn</code>.<br>
+Par contre, dans l&rsquo;expression <code>(p1, p2, ...)</code> (avec &ldquo;rien&rdquo; devant la parenthèse) ou l&rsquo;instruction <code>p1, p2, ...;</code>, il l&rsquo;interprétera comme l&rsquo;opérateur comma.</p>
+</div>
+
+<p>Pour en revenir aux templates variadiques, les fold expressions et les pack expansions permettent de générer des motifs à l&rsquo;intérieur d&rsquo;une même instruction.
+Or, comme l&rsquo;opérateur comma permet de réécrire plusieurs instructions sous la forme d&rsquo;une seule, cela va permettre d&rsquo;écrire le code des templates variadiques beaucoup plus facilement.</p>
+<p>Supposons que l&rsquo;on veuille écrire une fonction qui affiche tous les paramètres de notre fonction dans la console.
+Si on travaillait avec une fonction normale à N paramètres, on pourrait avoir quelque chose comme :</p>
+<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="kt">void</span> <span class="nf">print</span><span class="p">(</span><span class="kt">int</span> <span class="n">p1</span><span class="p">,</span> <span class="kt">char</span> <span class="n">p2</span><span class="p">,</span> <span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&amp;</span> <span class="n">p3</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">p1</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">p2</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">p3</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div><p>On pourrait ensuite réécrire cette fonction avec l&rsquo;opérateur comma, pour n&rsquo;avoir qu&rsquo;une seule instruction,</p>
+<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="kt">void</span> <span class="nf">print</span><span class="p">(</span><span class="kt">int</span> <span class="n">p1</span><span class="p">,</span> <span class="kt">char</span> <span class="n">p2</span><span class="p">,</span> <span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&amp;</span> <span class="n">p3</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">p1</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">),</span> <span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">p2</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">),</span> <span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">p3</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div><p>Enfin, pour généraliser cette fonction à n&rsquo;importe quel nombre de paramètres, on remplacerait par :</p>
+<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span><span class="p">...</span> <span class="n">Ts</span><span class="o">&gt;</span>
+<span class="kt">void</span> <span class="n">print</span><span class="p">(</span><span class="k">const</span> <span class="n">Ts</span><span class="o">&amp;</span><span class="p">...</span> <span class="n">params</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="p">((</span><span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">params</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">),</span> <span class="p">...);</span>
+    <span class="c1">// Encore une fois, il ne faut pas oublier les parenthèses autour de la fold expression, ainsi
+</span><span class="c1"></span>    <span class="c1">// qu&#39;autour du motif à répéter (car il n&#39;y a pas qu&#39;un seul symbole dans cette expression).
+</span><span class="c1"></span><span class="p">}</span>
+</code></pre></div>
+<div class="notices tip" ><p>L&rsquo;avant-dernier snippet n&rsquo;est pas un exemple de bonne pratique, au contraire.
+Le but est juste de vous montrez les étapes pour passer de N instructions à 1 instruction, afin d&rsquo;arriver au code du template variadique.<br>
+Retenez qu&rsquo;en général l&rsquo;opérateur comma est utilisé pour implémenter du code de template variadique, ou éventuellement pour offusquer du code (il y a notamment des concours, dont le but est d&rsquo;écrire le code le plus illisible possible).</p>
+</div>
+
+<hr>
+<h3 id="position-du-pack">Position du pack</h3>
+<p>Dans un template variadique de classe, le paramètre pack doit nécessairement se trouver en dernière position :</p>
+<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span> <span class="n">T1</span><span class="p">,</span> <span class="k">typename</span> <span class="n">T2</span><span class="p">,</span> <span class="k">typename</span><span class="p">...</span> <span class="n">Others</span><span class="o">&gt;</span> <span class="c1">// OK
+</span><span class="c1"></span><span class="k">class</span> <span class="nc">C</span>
+<span class="p">{</span> <span class="cm">/* ... */</span> <span class="p">};</span>
+
+<span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span> <span class="n">T1</span><span class="p">,</span> <span class="k">typename</span><span class="p">...</span> <span class="n">Others</span><span class="p">,</span> <span class="k">typename</span> <span class="n">T2</span><span class="o">&gt;</span> <span class="c1">// Pas OK
+</span><span class="c1"></span><span class="k">class</span> <span class="nc">C</span>
+<span class="p">{</span> <span class="cm">/* ... */</span> <span class="p">};</span>
+</code></pre></div><p>Dans le cas d&rsquo;un template de fonction, il peut se trouver ailleurs qu&rsquo;à la dernière position uniquement si les paramètres spécifiés derrière le pack &hellip;<br>
+- &hellip; peuvent être déduits à partir des paramètres passés à la fonction,<br>
+- &hellip; ou possèdent une valeur par défaut.</p>
+<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span> <span class="n">Res</span><span class="p">,</span> <span class="k">typename</span><span class="p">...</span> <span class="n">Args</span><span class="o">&gt;</span> <span class="c1">// OK
+</span><span class="c1"></span><span class="n">Res</span> <span class="n">fcn</span><span class="p">(</span><span class="n">Args</span><span class="o">&amp;&amp;</span><span class="p">...</span> <span class="n">args</span><span class="p">)</span>
+<span class="p">{</span> <span class="cm">/* ... */</span> <span class="p">}</span>
+
+<span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span> <span class="n">Res</span><span class="p">,</span> <span class="k">typename</span><span class="p">...</span> <span class="n">Args</span><span class="p">,</span> <span class="k">typename</span> <span class="n">Ctn</span> <span class="o">=</span> <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">Res</span><span class="o">&gt;&gt;</span> <span class="c1">// OK car Ctn a une valeur par défaut
+</span><span class="c1"></span><span class="n">Res</span> <span class="n">fcn</span><span class="p">(</span><span class="n">Args</span><span class="o">&amp;&amp;</span><span class="p">...</span> <span class="n">args</span><span class="p">)</span>
+<span class="p">{</span> <span class="cm">/* ... */</span> <span class="p">}</span>
+
+<span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span> <span class="n">Res</span><span class="p">,</span> <span class="k">typename</span><span class="p">...</span> <span class="n">Args</span><span class="p">,</span> <span class="k">typename</span> <span class="n">Arg1</span><span class="o">&gt;</span> <span class="c1">// OK car Arg1 peut être déduit du type du paramètre `arg1`
+</span><span class="c1"></span><span class="n">Res</span> <span class="n">fcn</span><span class="p">(</span><span class="n">Arg1</span> <span class="n">arg1</span><span class="p">,</span> <span class="n">Args</span><span class="o">&amp;&amp;</span><span class="p">...</span> <span class="n">other_args</span><span class="p">)</span>
+<span class="p">{</span> <span class="cm">/* ... */</span> <span class="p">}</span>
+
+<span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span><span class="p">...</span> <span class="n">Args</span><span class="p">,</span> <span class="k">typename</span> <span class="n">Res</span><span class="o">&gt;</span> <span class="c1">// Pas OK car Res n&#39;a pas de valeur par défaut et ne peut pas non plus être déduit des paramètres de la fonction
+</span><span class="c1"></span><span class="n">Res</span> <span class="n">fcn</span><span class="p">(</span><span class="n">Args</span><span class="o">&amp;&amp;</span><span class="p">...</span> <span class="n">args</span><span class="p">)</span>
+<span class="p">{</span> <span class="cm">/* ... */</span> <span class="p">}</span>
+</code></pre></div><p>Enfin, pour les parameter packs de fonction, ceux-ci doivent toujours se trouver en dernière position, même si les paramètres suivants ont des valeurs par défaut.</p>
+<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span><span class="p">...</span> <span class="n">Args</span><span class="o">&gt;</span>
+<span class="kt">void</span> <span class="n">fcn</span><span class="p">(</span><span class="kt">int</span> <span class="n">p1</span><span class="p">,</span> <span class="n">Args</span><span class="o">&amp;&amp;</span><span class="p">...</span> <span class="n">args</span><span class="p">)</span> <span class="c1">// OK
+</span><span class="c1"></span><span class="p">{</span> <span class="cm">/* ... */</span> <span class="p">}</span>
+
+<span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span><span class="p">...</span> <span class="n">Args</span><span class="o">&gt;</span>
+<span class="kt">void</span> <span class="n">fcn</span><span class="p">(</span><span class="kt">int</span> <span class="n">p1</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">Args</span><span class="o">&amp;&amp;</span><span class="p">...</span> <span class="n">args</span><span class="p">)</span> <span class="c1">// OK aussi
+</span><span class="c1"></span><span class="p">{</span> <span class="cm">/* ... */</span> <span class="p">}</span>
+
+<span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span><span class="p">...</span> <span class="n">Args</span><span class="o">&gt;</span>
+<span class="kt">void</span> <span class="n">fcn</span><span class="p">(</span><span class="n">Args</span><span class="o">&amp;&amp;</span><span class="p">...</span> <span class="n">args</span><span class="p">,</span> <span class="kt">int</span> <span class="n">pn</span> <span class="o">=</span> <span class="mi">0</span><span class="p">)</span> <span class="c1">// Pas OK car le parameter pack doit être en dernière position
+</span><span class="c1"></span><span class="p">{</span> <span class="cm">/* ... */</span> <span class="p">}</span>
+</code></pre></div><hr>
+<h3 id="exercices">Exercices</h3>
+<p>Entraînez-vous en implémentant les fonctions suivantes :</p>
+<ul>
+<li><code>concat</code> : reçoit un ensemble de paramètres, les convertit en <code>string</code> et les concatène</li>
+<li><code>product</code> : reçoit un ensemble de paramètres et calcule leurs produits</li>
+<li><code>emplace_many</code> : ajoute des éléments dans un conteneur (N paramètres dans le pack =&gt; N éléments en plus dans le conteneur)</li>
+</ul>
+
+
+<footer class="footline">
+	
+</footer>
+
+        
+        </div> 
+        
+
+      </div>
+
+    <div id="navigation">
+        
+        
+        
+        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+        
+                    
+            
+        
+                    
+            
+        
+        
+        
+
+
+	 
+	 
+		
+			<a class="nav nav-prev" href="/CPP_Learning/chapter10/1-universal-ref/" title="Référence universelle"> <i class="fa fa-chevron-left"></i></a>
+		
+		
+			<a class="nav nav-next" href="/CPP_Learning/chapter10/3-specializations/" title="Spécialisations" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+		
+	
+    </div>
+
+    </section>
+    
+    <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
+      <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
+    </div>
+    <script src="/CPP_Learning/js/clipboard.min.js?1648450375"></script>
+    <script src="/CPP_Learning/js/perfect-scrollbar.min.js?1648450375"></script>
+    <script src="/CPP_Learning/js/perfect-scrollbar.jquery.min.js?1648450375"></script>
+    <script src="/CPP_Learning/js/jquery.sticky.js?1648450375"></script>
+    <script src="/CPP_Learning/js/featherlight.min.js?1648450375"></script>
+    <script src="/CPP_Learning/js/highlight.pack.js?1648450375"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <script src="/CPP_Learning/js/modernizr.custom-3.6.0.js?1648450375"></script>
+    <script src="/CPP_Learning/js/learn.js?1648450375"></script>
+    <script src="/CPP_Learning/js/hugo-learn.js?1648450375"></script>
+
+    <link href="/CPP_Learning/mermaid/mermaid.css?1648450375" rel="stylesheet" />
+    <script src="/CPP_Learning/mermaid/mermaid.js?1648450375"></script>
+    <script>
+        mermaid.initialize({ startOnLoad: true });
+    </script>
+    
+
+  </body>
+</html>
+

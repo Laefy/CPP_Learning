@@ -132,6 +132,18 @@ Entrer dans la fonction :</description>
     </item>
     
     <item>
+      <title>Référence universelle</title>
+      <link>https://laefy.github.io/CPP_Learning/chapter10/1-universal-ref/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://laefy.github.io/CPP_Learning/chapter10/1-universal-ref/</guid>
+      <description>Dans cette première section, nous commencerons par introduire les concepts de l-value et r-value.
+Cela nous conduira à vous présenter la notion de référence universelle. Nous vous expliquerons ensuite quand et comment vous en servir dans votre code.
+ l-value / r-value Avant de parler concrètement des références universelles, il faut aborder un point essentiel à leur compréhension.
+En C++, une expression est une suite d&amp;rsquo;opérateurs et d&amp;rsquo;opérandes pouvant être évaluée.</description>
+    </item>
+    
+    <item>
       <title>Un peu de doc...</title>
       <link>https://laefy.github.io/CPP_Learning/chapter5/1-doc/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -220,6 +232,19 @@ std::vector&amp;lt;Box&amp;gt; boxes; boxes.emplace_back(&amp;#34;gift1&amp;#34;
 - chap-05/1-vectors.cpp
 La cible à compiler est c5-1-vectors.
  Construction Au chapitre précédent, nous vous avions présenté différentes syntaxes permettant d&amp;rsquo;instancier une classe. Nous vous avions en particulier indiquer qu&amp;rsquo;il était possible d&amp;rsquo;utiliser la syntaxe Class c { p1, p2 }; ou bien la syntaxe Class c(p1, p2);.</description>
+    </item>
+    
+    <item>
+      <title>Template variadique</title>
+      <link>https://laefy.github.io/CPP_Learning/chapter10/2-variadiac/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://laefy.github.io/CPP_Learning/chapter10/2-variadiac/</guid>
+      <description>Un template variadique, c&amp;rsquo;est un template qui attend un nombre variable de paramètres. Vous en avez déjà utilisé plusieurs, comme :
+- la fonction-template emplace_back de std::vector, qui attend n&amp;rsquo;importe quels nombres et types d&amp;rsquo;arguments, et les utilisent pour construire le nouvel élément,
+- la fonction-template std::make_unique, qui fonctionne sur le même principe,
+- la classe-template std::tuple, qui permet de représenter un N-uplet contenant n&amp;rsquo;importe quels types.
+L&amp;rsquo;objectif de cette section sera de vous apprendre à définir vos propres templates variadiques.</description>
     </item>
     
     <item>
@@ -359,6 +384,18 @@ Les chevrons contiennent la liste des paramètres du template. Chaque paramètre
     </item>
     
     <item>
+      <title>Spécialisations</title>
+      <link>https://laefy.github.io/CPP_Learning/chapter10/3-specializations/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://laefy.github.io/CPP_Learning/chapter10/3-specializations/</guid>
+      <description>Cette section sera consacrée à la spécialisation de templates de fonctions et de classes.
+Une spécialisation est la redéfinition d&amp;rsquo;une entitée templatée, qui va s&amp;rsquo;appliquer pour des paramètres particuliers. Il y a de nombreux cas d&amp;rsquo;utilisation des spécialisation, l&amp;rsquo;un d&amp;rsquo;entre eux étant de définir de traiter des cas particuliers.
+ Spécialisation de fonctions Soit la fonction templatée suivante, permettant d&amp;rsquo;afficher des valeurs dans le terminal :
+template &amp;lt;typename T&amp;gt; void print(const T&amp;amp; value) { std::cout &amp;lt;&amp;lt; value &amp;lt;&amp;lt; std::endl; } Si on lui passe des booléens, cette fonction affichera 0 ou 1.</description>
+    </item>
+    
+    <item>
       <title>🔢 Tableau Numérique</title>
       <link>https://laefy.github.io/CPP_Learning/chapter1/2-practice/3-array/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -450,6 +487,16 @@ Si vous êtes sous Windows, vous pouvez télécharger l&amp;rsquo;outil depuis c
       <guid>https://laefy.github.io/CPP_Learning/chapter4/4-polymorphism/</guid>
       <description>Vous avez probablement déjà entendu le terme polymorphisme, vous l&amp;rsquo;avez peut-être même déjà utilisé, mais quand vous y réfléchissez, si on vous demandait de le définir clairement, vous ne sauriez pas forcément quoi répondre. Cette page sera donc l&amp;rsquo;occasion de revenir sur sa définition.
 Dans ce chapitre, nous nous sommes intéressés à deux manières de mettre-en-ouvre le polymorphisme en C++ : l&amp;rsquo;héritage statique et l&amp;rsquo;héritage dynamique. Nous détaillerons les différences entre les deux et dans quels cas utiliser l&amp;rsquo;un ou l&amp;rsquo;autre.</description>
+    </item>
+    
+    <item>
+      <title>SFINAE</title>
+      <link>https://laefy.github.io/CPP_Learning/chapter10/4-sfinae-ph/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://laefy.github.io/CPP_Learning/chapter10/4-sfinae-ph/</guid>
+      <description>Bientôt disponible&amp;hellip;&amp;hellip;. // 🚧🚥🔨 //
+ </description>
     </item>
     
     <item>
@@ -572,6 +619,17 @@ La cible à compiler est c2-5-polygon.
     
     <item>
       <title>Questionnaire !</title>
+      <link>https://laefy.github.io/CPP_Learning/chapter10/test/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://laefy.github.io/CPP_Learning/chapter10/test/</guid>
+      <description>Pas de questionnaire cette semaine, parce que mis en ligne trop tard.
+N&amp;rsquo;hésitez néanmoins pas à utiliser le formulaire pour envoyer vos questions.
+ Vous êtes : Votre adresse mail : Votre groupe : Groupe 1Groupe 2Groupe AlternantsCombien de temps avez-vous mis à compléter ce chapitre ?Avez-vous des questions suite à sa lecture ?Avez-vous des commentaires concernant le chapitre et/ou le site ?</description>
+    </item>
+    
+    <item>
+      <title>Questionnaire !</title>
       <link>https://laefy.github.io/CPP_Learning/chapter1/test/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
@@ -679,6 +737,15 @@ Bon courage à vous 🙂
     
     <item>
       <title>Synthèse</title>
+      <link>https://laefy.github.io/CPP_Learning/chapter10/summary/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://laefy.github.io/CPP_Learning/chapter10/summary/</guid>
+      <description>// 🚧🚥🔨 //</description>
+    </item>
+    
+    <item>
+      <title>Synthèse</title>
       <link>https://laefy.github.io/CPP_Learning/chapter1/summary/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
@@ -739,6 +806,15 @@ Bon courage à vous 🙂
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://laefy.github.io/CPP_Learning/chapter0/test_done/</guid>
+      <description>Vos réponses nous ont bien été communiquées 😃 Retourner à la synthèse du Chapitre</description>
+    </item>
+    
+    <item>
+      <title>Merci !</title>
+      <link>https://laefy.github.io/CPP_Learning/chapter10/test_done/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://laefy.github.io/CPP_Learning/chapter10/test_done/</guid>
       <description>Vos réponses nous ont bien été communiquées 😃 Retourner à la synthèse du Chapitre</description>
     </item>
     
