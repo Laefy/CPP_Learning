@@ -172,7 +172,7 @@ const ElementType& operator[](size_t index) const
 
 Vous pouvez retrouver le code de `StaticArray` sur {{% open_in_new_tab "https://www.godbolt.org/z/aEcGxzn5b" "GodBolt" /%}}.
 
-Essayez maintenant de définir une toute petite structure templatée `Triple`, contenant trois éléments `first`, `second` et `triple` qui n'ont pas forcément le même type.
+Essayez maintenant de définir une toute petite structure templatée `Triple`, contenant trois éléments `first`, `second` et `third` qui n'ont pas forcément le même type.
 Il s'agira donc en quelque sorte d'une généralisation de `std::pair`.\
 Votre classe devra comporter un constructeur par défaut, et un constructeur à trois paramètres permettant d'initialiser chacun des éléments du triplet.
 
