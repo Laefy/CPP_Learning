@@ -11,37 +11,70 @@ Sur ce site, vous trouverez le cours de C++ destiné à l'enseignement des Maste
 
 ---
 
-### Déroulement du cours
+### Déroulement du module
 
-Ce cours sera organisé comme un cours inversé. C'est-à-dire que vous devrez lire et avoir compris le chapitre du cours avant d'arriver à la séance de TP associée.\
-Ce choix a été pris en raison des arguments suivants : 
-- d'après mon expérience personnelle d'étudiante, les cours magistraux de code sont en général peu utiles. On écoute du blabla pendant 2h (c'est long, ça donne envie de dormir ou de faire autre chose sur son téléphone), et d'ici à ce qu'on arrive en TP, on a oublié les trois-quarts. Du coup, on passe la moitié de la séance à relire le poly de cours plutôt qu'à coder.
-- le nombre d'heures allouées à l'enseignement étant limité, nous avons décidé avec les autres enseignants de les consacrer entièrement aux réponses à vos questions et à la pratique.
+Le module sera constitué de 4 séances de cours magistraux, 12 séances de travaux pratiques et 3 séances d'évaluation.
 
-Le cours sera organisé en une dizaine de chapitres. Chaque chapitre contiendra des exercices guidés avec leurs solutions, qui vous permettrons de travailler et d'assimiler les notions du cours. À la fin du chapitre, vous trouverez un questionnaire à remplir, et une page de synthèse.
+Le planning est le suivant :
+| Date | Séance | Description | Chapitres | Format |
+| - | - | - | - | - |
+| 11/01 | Cours 1 | * Introduction au langage | [Chapitre 0](/CPP_Learning/chapter0) |
+| 12/01 | TP 1 | * Premier programme<br>* Prise en main des outils | [Chapitre 0](/CPP_Learning/chapter0)<br>[Chapitre 1](/CPP_Learning/chapter1) |
+| 17/01<br>19/01 | TP 2 | * Librarie standard<br>* Fonctions libres<br>* Références | [Chapitre 1](/CPP_Learning/chapter1)<br>[Chapitre 5](/CPP_Learning/chapter5) |
+| 24/01<br>26/01 | TP 3 | * Classes<br>* TDD | [Chapitre 2](/CPP_Learning/chapter2) |
+| 31/01<br>02/02 | TP noté 1 | **TBD** | [Chapitre 0](/CPP_Learning/chapter0)<br>[Chapitre 1](/CPP_Learning/chapter1)<br>[Chapitre 2](/CPP_Learning/chapter2)<br>[Chapitre 5](/CPP_Learning/chapter5) | Mode exam<br>En groupe<br>2h |
+| 03/02 | Cours 2 | * Ownership<br>* Gestion mémoire<br>* Héritage et polymorphisme | [Chapitre 2](/CPP_Learning/chapter2) |
+| 07/02<br>09/02 | TP 4 | * Ownership<br>* Durée de vie<br>* Validité<br>* Déplacement | [Chapitre 3](/CPP_Learning/chapter3) |
+| 14/02<br>16/02 | TP 5 | * Héritage<br>* Typage statique / dynamique | [Chapitre 2](/CPP_Learning/chapter2)<br>[Chapitre 4](/CPP_Learning/chapter4) |
+| 21/02<br>23/02 | TP 6 | * Classes polymorphes<br>* Redéfinition et appels virtuels<br>* Casts dynamiques | [Chapitre 4](/CPP_Learning/chapter4) |
+| 28/02<br>02/03 | TP 7 | * Ownership<br>* Smart pointers | [Chapitre 3](/CPP_Learning/chapter3)<br>[Chapitre 4](/CPP_Learning/chapter4) |
+| 03/03 | TP noté 2 | **TBD** | [Chapitre 2](/CPP_Learning/chapter2)<br>[Chapitre 3](/CPP_Learning/chapter3)<br>[Chapitre 4](/CPP_Learning/chapter4) | Mode exam<br>Commun<br>2h |
+| 10/03 | Cours 3 | * Programmation fonctionnelle<br>* Opérateurs<br>* Attributs et fonctions statiques<br>* Casts<br>* Gestion d'erreurs | [Chapitre 5](/CPP_Learning/chapter5) |
+| 14/03<br>16/03 | TP 8 | * Lambdas<br>* Algorithmes de la librairie standard | [Chapitre 5](/CPP_Learning/chapter5)<br>[Chapitre 6](/CPP_Learning/chapter6) |
+| 20/03<br>21/03<br>22/03 | TP 9 | * Opérateurs<br>* Attributs et fonctions statiques<br>* Casts<br>* Gestion d'erreurs | [Chapitre 8](/CPP_Learning/chapter8) |
+| 24/03 | Cours 4 | * Templates<br>* SFINAE<br>* l-value / r-value<br>* Constructeurs de copie et de déplacement |
+| 28/03<br>29/03 | TP 10 | * Fonctions templates<br>* Classes templates | [Chapitre 9](/CPP_Learning/chapter9) |
+| 04/04<br>**TBD** | TP 11 | * Constructeurs de copie et de déplacement<br>* Spécialisations<br>* SFINAE | [Chapitre 9](/CPP_Learning/chapter9)<br>[Chapitre 10](/CPP_Learning/chapter10) |
+| 11/04<br>**TBD** | TP 12 | * Révisions | Tout |
+| 17/04 | TP noté 3 | **TBD** | Tout | Mode exam<br>Commun<br>3hs |
 
-#### Exercices
+Avant chaque séance, vous devrez aller lire et comprendre les chapitres indiquées dans la colonne Chapitres.
+Chaque chapitre contient des exercices guidés avec leurs solutions, qui vous permettrons de travailler et d'assimiler les notions du cours.
+À la fin, vous trouverez un questionnaire à remplir et une page de synthèse.
+Les étudiants remplissant correctement les questionnaires se verront attribuer un petit bonus à la fin de l'année 🎁
 
-Pour réaliser ces exercices, vous devrez partir du code contenu dans le dépôt git suivant : https://github.com/Laefy/CPP_Learning_Code.
+En ce qui concerne le format des TPs notés, il s'agira d'exercices pratiques présentés au format TDD (test-driven-development), c'est-à-dire que vous aurez une série de tests unitaires à faire compiler et fonctionner.
+
+**Veuillez noter que la liste ci-dessous est donnée à titre informative.**
+**Celle-ci est suceptible d'évoluer en fonction du rythme des étudiants.**
+
+#### Exercices des chapitres
+
+Pour réaliser les exercices proposés dans les chapitres de ce site, vous devrez partir du code contenu dans le dépôt git suivant : https://github.com/Laefy/CPP_Learning_Code.
 
 Il est recommandé d'essayer de les faire dans un premier temps sans regarder les solutions.
-Si vous êtes bloqués, rechercher d'abord de l'aide sur Internet ou en demandant à vos camarades de classe.
+Si vous êtes bloqués, recherchez d'abord de l'aide sur Internet ou en demandant à vos camarades de classe.
 
-Une fois que vous avez quelque chose qui à l'air de fonctionner, regardez la solution pour vérifier que ce que vous avez fait est correct. Si votre code n'est pas identique, c'est probablement parce qu'il n'y a pas qu'une seule bonne réponse. Et si vous n'êtes vraiment pas sûr(e)s de votre solution, n'hésitez pas à m'envoyer ce que vous avez fait par mail ou Discord, ou à l'indiquer dans le formulaire de fin de chapitre, afin que je vous donne un retour.
+Une fois que vous avez quelque chose qui a l'air de fonctionner, regardez la solution pour vérifier que ce que vous avez fait est correct.
+Si votre code n'est pas identique, c'est probablement parce qu'il n'y a pas qu'une seule bonne réponse.
+Et si vous n'êtes vraiment pas sûr(e)s de votre solution, n'hésitez pas à m'envoyer ce que vous avez fait par mail ou Discord, ou à l'indiquer dans le formulaire de fin de chapitre afin que je vous donne un retour.
 
 #### Questionnaire
 
 Le questionnaire de fin de chapitre sera composé comme suit :
-- nom et prénom (car **ces questionnaires participeront à votre évaluation** 😬)
+- nom et prénom,
+- adresse mail,
 - des questions sur le contenu du chapitre,
-- un champ pour entrer vos propres questions (on y répondra soit par mail, soit en début de TP),
+- un champ pour entrer vos propres questions (nous enverrons les réponses au mail indiqué plus haut),
 - un champ pour laisser des commentaires sur le format du cours et me prévenir si j'ai écrit des bêtises.
 
-N'hésitez vraiment surtout pas à poser vos questions dans le formulaire, mais aussi à me les envoyez par mail ou Discord, si cela vous bloque pour avancer. Si vous ne comprenez pas bien le cours, ça veut dire que le cours est mal écrit 😯
+N'hésitez vraiment surtout pas à poser vos questions dans le formulaire, mais aussi à me les envoyez directement par mail ou Discord, en particulier si cela vous bloque pour avancer.
+Si vous ne comprenez pas bien le cours, c'est que je peux l'améliorer pour le rendre plus compréhensible 😯
 
 #### Synthèse
 
-Ce sera l'endroit où seront rappelés les éléments vraiment importants à retenir, pour que vous puissiez programmer efficacement sans avoir à consulter Internet ou le cours toutes les 10s. Essayez du coup de faire un effort pour les mémoriser, que ce soit en refaisant les exercices 3x, ou en mettant un post-it dans vos toilettes.
+C'est l'endroit où sont rappelés les éléments vraiment importants à retenir, pour que vous puissiez programmer efficacement sans avoir à consulter Internet ou le cours toutes les 10s.
+Essayez par conséquent de faire un effort pour les mémoriser, que ce soit en refaisant les exercices 3x, ou en mettant un post-it dans vos toilettes.
 
 Le restant du cours n'est pas à connaître par coeur, mais c'est toujours utile de pouvoir reconsulter le chapitre par la suite si vous en avez besoin.
 
@@ -56,25 +89,8 @@ Le reste de la séance sera consacrée à la réalisation de ce TP.
 
 #### Enoncés
 
-Vous pourrez récupérer les énoncés de TP au format Markdown sur le même {{% open_in_new_tab "https://github.com/Laefy/CPP_Learning_Code" "dépôt" /%}} que les exercices du cours.
-
-Les premiers TPs contiennent une série d'exercices très classiques, pour vous apprendre à maîtriser chaque notion séparément.
-Ces TPs pourront être réalisé seuls ou en binôme, et ne seront pas notés.
-
-Par la suite, les séances de TPs seront dédiées à avancer sur le projet sur lequel vous serez évalués individuellement.
-Une base de code vous sera fournie, et vous devrez la modifier pour y ajouter des fonctionnalités, corriger des bugs et améliorer le code.\
-Etant donné que vous intégrerez votre code dans un projet existant, vous devrez vous adapter aux conventions d'écriture déjà présentes (snake_case / CamelCase, spacing, etc).
-
-Les questions de chaque TP feront référence aux notions abordées durant le dernier chapitre de cours.
-Si vous n'avez pas terminé le TP durant la dernière séance, vous devrez donc le terminer chez vous, pour passer au TP suivant à la prochaine séance et ne pas prendre de retard.
-
-{{% notice note %}}
-Si pour une raison quelconque, vous n'avez pas réussi à terminer le dernier TP avant la séance suivante, commencez le nouveau TP quoi qu'il arrive.
-Nous essayerons de faire en sorte que chaque TP soit relativement indépendant, que vous puissiez les faire même si vous n'avez pas fini les questions du dernier.\
-Bien entendu, si vous ne terminez jamais vos TPs, vous accumulerez un retard de connaissances, qui sera difficile à compenser sur le long terme. 
-{{% /notice %}}
-
-Si vous finissez un TP avant la fin de la séance, vous pouvez commencer à regarder le prochain chapitre du cours.
+Cette année, vous pourrez récupérer les énoncés de TP au format Markdown sur {{% open_in_new_tab "https://github.com/Laefy/CPP_Exercises" "ce dépôt" /%}}.
+Chaque TP sera disponible dans une branche qui lui est dédiée.
 
 #### Questions
 
@@ -85,15 +101,8 @@ Si vous n'avez pas terminé le TP avant la fin de la séance, et que vous avez d
 
 ### Notation
 
-Votre note finale sera composée de deux notes, coefficient 0.5 chacune :
-
-1. La note de suivi, basée sur les formulaires à remplir à la fin de chaque chapitre : 
-	- si vous avez plutôt bien répondu aux questions : 3/3
-	- si vous avez passablement bien répondu aux questions : 2/3
-	- si vous n'avez pas du tout bien répondu aux questions : 1/2
-	- si vous n'avez pas répondu aux questions du tout : 0/3
-
-2. La note de projet, qui sera à remettre à la fin du semestre. Le barème sera communiqué dans son énoncé.
+Votre note finale sera composée des notes obtenues aux trois séances de TPs notés.
+La pondération sera établie et communiquée une fois l'ensemble des rendus corrigés.
 
 ---
 
@@ -106,17 +115,15 @@ Au final, ce cours a pour objectif les points suivants :
 - que vous appreniez à utiliser des outils pour vous aider à débugger vos programmes (`printf` c'est sympa, mais un peu limité),
 - que vous acquiériez l'autonomie et les réflexes indispensables permettant de vous débloquer lorsque vous rencontrez un problème. 
 
-Bien entendu, comme n'importe quel autre cours que vous trouverez sur Internet, vous aurez à fournir un minimum d'investissement si vous souhaitez en tirer quoi que ce soit. N'hésitez pas à prendre connaissance du paragraphe (volontairement moralisateur 💩) ci-dessous.
+Bien entendu, comme n'importe quel autre cours que vous trouverez sur Internet, vous aurez à fournir un minimum d'investissement si vous souhaitez en tirer quoi que ce soit.
+N'hésitez pas à prendre connaissance du paragraphe (volontairement moralisateur 💩) ci-dessous.
 
 {{% notice warning %}}
 Si cela ne vous intéresse vraiment pas, je ne souhaite pas vous forcer à travailler et je vous conseille grandement d'aller acquérir vos crédits universitaires dans d'autres matières.
-Le C++ n'étant pas un langage facile à aborder, sachez que la méthode : "je lis le chapitre vite fait la veille du TP", ne vous suffira pas à avoir une note potable à la fin du semestre.
-Je préfère donc vous prévenir à l'avance que si vous souhaitez effectivement apprendre le langage via ce cours, il faudra accepter d'y consacrer le temps nécessaire : 3h par chapitre et les 2h de TP en classe me paraîssent être le minimum.
-Si vous ne finissez pas le TP en classe, vous devrez probablement accorder 1 ou 2h de travail supplémentaire.
+Le C++ n'étant pas un langage facile à aborder, sachez que la méthode : "je lis le chapitre vite fait la veille du TP noté", ne vous suffira pas à avoir une note potable à la fin du semestre.
+Je préfère donc vous prévenir à l'avance que si vous souhaitez effectivement apprendre le langage via ce cours, il faudra accepter d'y consacrer le temps nécessaire : 6h par semaine me paraîssent être le minimum à consacrer à cette matière.
 Réservez-vous donc à l'avance des créneaux sur votre emploi du temps pour pouvoir travailler et apprendre dans de bonnes conditions.
 {{% /notice %}}
-
-Par contre, si vous avez l'impression de galérer, alors que vous êtes effectivement motivés, il faudra vraiment me le dire (même si vous êtes super timides) que je modifie le cours pour le rendre plus compréhensible.
 
 Cette introduction étant terminée, j'espère que vous vous amuserez et que vous apprendrez plein de choses. Très bon courage pour la suite ! 😊🎉
 
@@ -124,7 +131,7 @@ Cette introduction étant terminée, j'espère que vous vous amuserez et que vou
 
 ### Qui suis-je ?
 
-Je m'appelle Céline Noël et je suis programmeuse chez Dental Monitoring depuis environ 3 mois.
+Je m'appelle Céline Noël et je suis programmeuse chez Dental Monitoring depuis un peu plus d'un an.
 Avant cela, j'ai travaillé 4 ans pour Ubisoft.
 
 J'ai terminé mes études à l'UGE (anciennement UPEM ⚰️) en 2017, durant lesquelles j'ai effectué un Master Informatique en double-cursus avec un cycle d'ingénieur à l'IMAC.
