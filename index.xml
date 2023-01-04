@@ -626,7 +626,7 @@ La cible à compiler est c2-5-polygon.
       <guid>https://laefy.github.io/CPP_Learning/chapter10/test/</guid>
       <description>Pas de questionnaire cette semaine, parce que mis en ligne trop tard.
 N&amp;rsquo;hésitez néanmoins pas à utiliser le formulaire pour envoyer vos questions.
- Vous êtes : Votre adresse mail : Votre groupe : Groupe 1Groupe 2Groupe AlternantsCombien de temps avez-vous mis à compléter ce chapitre ?Avez-vous des questions suite à sa lecture ?Avez-vous des commentaires concernant le chapitre et/ou le site ?</description>
+ Vous êtes : Votre adresse mail : Votre groupe : Initiaux 1Initiaux 2Alternants 1Alternants 2Combien de temps avez-vous mis à compléter ce chapitre ?Avez-vous des questions suite à sa lecture ?Avez-vous des commentaires concernant le chapitre et/ou le site ?</description>
     </item>
     
     <item>
@@ -657,7 +657,7 @@ Mais bon, vous l&amp;rsquo;avez enfin terminé, donc vous pouvez être fiers de 
       
       <guid>https://laefy.github.io/CPP_Learning/chapter3/test/</guid>
       <description>C&amp;rsquo;est l&amp;rsquo;heure du test ! Bon courage 🙂
- Vous êtes : Votre adresse mail : Votre groupe : Groupe 1Groupe 2Groupe Alternants1- Comment définir la période de validité d’un objet ?
+ Vous êtes : Votre adresse mail : Votre groupe : Initiaux 1Initiaux 2Alternants 1Alternants 21- Comment définir la période de validité d’un objet ?
 
 2- Citez une bonne raison d’allouer de la mémoire via un unique_ptr plutôt que via un pointeur simple (avec new).
 
@@ -672,7 +672,7 @@ Mais bon, vous l&amp;rsquo;avez enfin terminé, donc vous pouvez être fiers de 
       <guid>https://laefy.github.io/CPP_Learning/chapter4/test/</guid>
       <description>Vous avez terminé le Chapitre 4 ! C&amp;rsquo;est donc maintenant le moment de connecter vos neurones pour répondre aux questions suivantes.
 Bon courage à vous 🙂
- Vous êtes : Votre adresse mail : Votre groupe : Groupe 1Groupe 2Groupe Alternants1- Qu’est-ce qu’une classe polymorphe ?
+ Vous êtes : Votre adresse mail : Votre groupe : Initiaux 1Initiaux 2Alternants 1Alternants 21- Qu’est-ce qu’une classe polymorphe ?
 
 2- Définissez une classe polymorphe Nothing qui ne fait rien.
 
@@ -697,7 +697,7 @@ Il avait également un deuxième objectif, qui était en quelque sorte de vous a
       <guid>https://laefy.github.io/CPP_Learning/chapter6/test/</guid>
       <description>C&amp;rsquo;est l&amp;rsquo;heure du test ! N&amp;rsquo;oubliez pas que vous pouvez utiliser Godbolt pour compiler et tester des petits bouts de code.
 Bon courage à vous 🙂
- Vous êtes : Votre adresse mail : Votre groupe : Groupe 1Groupe 2Groupe Alternants1- Quel type de boucle faut-il utiliser pour modifier la structure d’un conteneur lors d’un parcours ?
+ Vous êtes : Votre adresse mail : Votre groupe : Initiaux 1Initiaux 2Alternants 1Alternants 21- Quel type de boucle faut-il utiliser pour modifier la structure d’un conteneur lors d’un parcours ?
 
 2- Dans quel cas peut-il être intéressant d’utiliser la fonction std::for_each ?</description>
     </item>
@@ -710,7 +710,7 @@ Bon courage à vous 🙂
       <guid>https://laefy.github.io/CPP_Learning/chapter8/test/</guid>
       <description>C&amp;rsquo;est l&amp;rsquo;heure du test ! N&amp;rsquo;oubliez pas que vous pouvez utiliser Godbolt pour compiler et tester des petits bouts de code.
 Bon courage à vous 🙂
- Vous êtes : Votre adresse mail : Votre groupe : Groupe 1Groupe 2Groupe Alternants1- A quoi sert une assertion ?
+ Vous êtes : Votre adresse mail : Votre groupe : Initiaux 1Initiaux 2Alternants 1Alternants 21- A quoi sert une assertion ?
 
 2- Pourquoi ne faut-il pas utiliser d’assertions pour traiter une erreur d’utilisation d’un logiciel ?</description>
     </item>
@@ -723,7 +723,7 @@ Bon courage à vous 🙂
       <guid>https://laefy.github.io/CPP_Learning/chapter9/test/</guid>
       <description>C&amp;rsquo;est l&amp;rsquo;heure du test ! N&amp;rsquo;oubliez pas que vous pouvez utiliser Godbolt pour compiler et tester des petits bouts de code.
 Bon courage à vous 🙂
- Vous êtes : Votre adresse mail : Votre groupe : Groupe 1Groupe 2Groupe Alternants1- Que faut-il écrire juste avant la définition d’une classe (ou fonction) pour en faire une classe (ou fonction) templatée ?</description>
+ Vous êtes : Votre adresse mail : Votre groupe : Initiaux 1Initiaux 2Alternants 1Alternants 21- Que faut-il écrire juste avant la définition d’une classe (ou fonction) pour en faire une classe (ou fonction) templatée ?</description>
     </item>
     
     <item>
@@ -733,7 +733,7 @@ Bon courage à vous 🙂
       
       <guid>https://laefy.github.io/CPP_Learning/chapter0/test/</guid>
       <description>Si vous avez rencontré des problèmes lors de l&amp;rsquo;installation d&amp;rsquo;un des logiciels, n&amp;rsquo;hésitez pas à nous l&amp;rsquo;indiquer, afin que nous puissions améliorer nos explications. Merci d&amp;rsquo;avance ! 🙂
- Vous êtes : Votre adresse mail : Votre groupe : Groupe 1Groupe 2Groupe Alternants1- Avez-vous rencontré des difficultés lors de l’installation d’un des composants ? Si oui, du ou desquels s’agit-il ?</description>
+ Vous êtes : Votre adresse mail : Votre groupe : Initiaux 1Initiaux 2Alternants 1Alternants 21- Avez-vous rencontré des difficultés lors de l’installation d’un des composants ? Si oui, du ou desquels s’agit-il ?</description>
     </item>
     
     <item>
