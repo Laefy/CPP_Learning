@@ -9,7 +9,7 @@ Afin de générer les artéfacts pour la compilation, nous utiliserons {{< open_
 
 ### Installation
 
-Si vous êtes sous Unix, vous devriez pouvoir installer CMake depuis votre gestionnaire de paquets.\
+Si vous êtes sous Unix (Linux / MacOS), vous devriez pouvoir installer CMake depuis votre gestionnaire de paquets.\
 Si vous êtes sous Windows, vous pouvez utiliser l'installeur que vous trouverez sur {{< open_in_new_tab "https://cmake.org/download/" "cette page" />}}.
 Notez également l'emplacement où celui-ci a été installé, car vous en aurez besoin à l'étape suivante.
 
@@ -73,13 +73,15 @@ Celle-ci sera à refaire chaque fois que vous créérez un nouveau projet.
 2. Une fois ce fichier créé, ouvrez-le et cliquez sur le bouton `Add Configuration`.
 ![](/CPP_Learning/images/chapter0/add-conf.png)
 3. Sélectionnez ensuite la configuration `C/C++: (XXX) Launch` adéquate.\
-Windows et Linux devraient vous proposez GDB et MacOS devrait vous fournir LLVM.
+Windows et Linux devraient vous proposez GDB et MacOS devrait vous fournir LLDB.
 ![](/CPP_Learning/images/chapter0/launch-conf.png)
 4. Remplacez les variables `program` et `cwd` par les valeurs ci-dessous :
 ```json
 "program": "${command:cmake.launchTargetPath}",
 "cwd": "${workspaceFolder}",
 ```
-5. Si vous êtes sous Windows, renseignez également `"miDebuggerPath"` avec `C:\\msys64\\mingw64\\bin\\gdb.exe`.
+5. Si vous êtes sous Windows, renseignez également `"miDebuggerPath"` avec `"C:\\msys64\\mingw64\\bin\\gdb.exe"`.
 
-Essayez maintenant de lancer le programme avec la commande `Start Debugging` (F5).
+Ajoutez un breakpoint sur la ligne 5 en cliquant devant le numéro de ligne, puis essayez de lancer le programme avec la commande `Start Debugging` (F5).\
+Votre programme devrait se lancer puis mettre en pause son exécution sur la ligne 5.
+![](/CPP_Learning/images/chapter0/cmake-breakpoint.png)

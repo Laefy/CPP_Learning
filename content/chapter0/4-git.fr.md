@@ -3,13 +3,29 @@ title: "Git"
 weight: 4
 ---
 
-Pour le gestionnaire de version, nous utiliserons {{< open_in_new_tab "https://git-scm.com/" "git" />}}. Vous pourrez ensuite héberger votre dépôt pour les TPs et le projet sur la plateforme de votre choix (Github, Gitlab, Bitbucket, votre serveur perso, peu importe), du moment que l'on peut y avoir accès pour l'évaluation.
+Pour le gestionnaire de version, nous utiliserons {{< open_in_new_tab "https://git-scm.com/" "git" />}} et nous utiliserons GitHub pour l'hébergement des dépôts.
+
+---
+
+### GitHub
+
+#### Création de compte
+
+Commencez par créer un compte si vous n'en avez pas déjà un.
+
+#### Génération de clef SSHs
+
+Depuis quelques années, pour pouvoir push sur un dépôt, il est nécessaire de passer par la méthode SSH (HTML ne permet plus d'éditer, juste de consulter).
+
+Pour associer une nouvelle clef SSH à votre machine, suivez les instructions du paragraphe ["Generating a new SSH key"](https://docs.github.com/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent#generating-a-new-ssh-key) et enregistrez la clef à l'emplacement par défaut (c'est-à-dire sans spécifier de chemin de sauvegarde).
+
+Ensuite, pour référencer votre clef nouvellement générée sur votre compte GitHub, vous pouvez suivre les instructions disponible [ici](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account).
 
 ---
 
 ### Installation
 
-Si vous êtes sous Unix, vous devriez pouvoir installer git depuis votre gestionnaire de paquets.\
+Si vous êtes sous Unix (Linux / MacOS), vous devriez pouvoir installer git depuis votre gestionnaire de paquets.\
 Si vous êtes sous Windows, vous pouvez télécharger l'outil depuis {{< open_in_new_tab "https://git-scm.com/download/win/" "cette page" />}}.
 
 ---
@@ -68,5 +84,7 @@ int main()
 ![](/CPP_Learning/images/vscode-git-clone-stage.png)
 8. Entrez un message et cliquez sur la coche pour committer vos changements.
 ![](/CPP_Learning/images/vscode-git-clone-commit.png)
-9. Si vous avez utilisé votre propre compte pour cloner le dépôt, vous pouvez maintenant y pusher votre commit en utilisant la commande `Git: Push`.
+9. Si vous avez utilisé votre propre compte pour cloner le dépôt, vous pouvez maintenant y pusher votre commit en utilisant la commande `Git: Push`.\
+Une popup vous demandera de vous connecter à votre compte GitHub si vous ne l'avez pas encore fait.
 ![](/CPP_Learning/images/vscode-git-push.png)
+10.  Ouvrez un navigateur web et rendez-vous sur la page de votre dépôt GitHub pour vérifier que vos modifications ont bien été poussées.

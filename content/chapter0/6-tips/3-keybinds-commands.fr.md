@@ -1,5 +1,5 @@
 ---
-title: "Raccourcis & Commandes"
+title: "Raccourcis VSCode"
 weight: 1
 ---
 
