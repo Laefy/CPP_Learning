@@ -12,21 +12,21 @@
     <title>Git :: Cours de C&#43;&#43; - Niveau Master</title>
 
     
-    <link href="/CPP_Learning/css/nucleus.css?1672790476" rel="stylesheet">
-    <link href="/CPP_Learning/css/fontawesome-all.min.css?1672790476" rel="stylesheet">
-    <link href="/CPP_Learning/css/hybrid.css?1672790476" rel="stylesheet">
-    <link href="/CPP_Learning/css/featherlight.min.css?1672790476" rel="stylesheet">
-    <link href="/CPP_Learning/css/perfect-scrollbar.min.css?1672790476" rel="stylesheet">
-    <link href="/CPP_Learning/css/auto-complete.css?1672790476" rel="stylesheet">
-    <link href="/CPP_Learning/css/atom-one-dark-reasonable.css?1672790476" rel="stylesheet">
-    <link href="/CPP_Learning/css/theme.css?1672790476" rel="stylesheet">
-    <link href="/CPP_Learning/css/hugo-theme.css?1672790476" rel="stylesheet">
+    <link href="/CPP_Learning/css/nucleus.css?1673172070" rel="stylesheet">
+    <link href="/CPP_Learning/css/fontawesome-all.min.css?1673172070" rel="stylesheet">
+    <link href="/CPP_Learning/css/hybrid.css?1673172070" rel="stylesheet">
+    <link href="/CPP_Learning/css/featherlight.min.css?1673172070" rel="stylesheet">
+    <link href="/CPP_Learning/css/perfect-scrollbar.min.css?1673172070" rel="stylesheet">
+    <link href="/CPP_Learning/css/auto-complete.css?1673172070" rel="stylesheet">
+    <link href="/CPP_Learning/css/atom-one-dark-reasonable.css?1673172070" rel="stylesheet">
+    <link href="/CPP_Learning/css/theme.css?1673172070" rel="stylesheet">
+    <link href="/CPP_Learning/css/hugo-theme.css?1673172070" rel="stylesheet">
     
-    <link href="/CPP_Learning/css/theme-mine.css?1672790476" rel="stylesheet">
+    <link href="/CPP_Learning/css/theme-mine.css?1673172070" rel="stylesheet">
     
-    <link href="/CPP_Learning/css/syntax.css?1672790476" rel="stylesheet">
+    <link href="/CPP_Learning/css/syntax.css?1673172070" rel="stylesheet">
 
-    <script src="/CPP_Learning/js/jquery-3.3.1.min.js?1672790476"></script>
+    <script src="/CPP_Learning/js/jquery-3.3.1.min.js?1673172070"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -57,14 +57,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/CPP_Learning/js/lunr.min.js?1672790476"></script>
-<script type="text/javascript" src="/CPP_Learning/js/auto-complete.js?1672790476"></script>
+<script type="text/javascript" src="/CPP_Learning/js/lunr.min.js?1673172070"></script>
+<script type="text/javascript" src="/CPP_Learning/js/auto-complete.js?1673172070"></script>
 <script type="text/javascript">
     
         var baseurl = "https:\/\/laefy.github.io\/CPP_Learning\/";
     
 </script>
-<script type="text/javascript" src="/CPP_Learning/js/search.js?1672790476"></script>
+<script type="text/javascript" src="/CPP_Learning/js/search.js?1673172070"></script>
 
     
   </div>
@@ -289,9 +289,9 @@
  
   
     
-      <li data-nav-id="/CPP_Learning/chapter0/6-tips/3-keybinds-commands/" title="Raccourcis &amp; Commandes" class="dd-item ">
+      <li data-nav-id="/CPP_Learning/chapter0/6-tips/3-keybinds-commands/" title="Raccourcis VSCode" class="dd-item ">
         <a href="/CPP_Learning/chapter0/6-tips/3-keybinds-commands/">
-        Raccourcis &amp; Commandes
+        Raccourcis VSCode
         <i class="fas fa-check read-icon"></i>
         </a>
     </li>
@@ -310,9 +310,9 @@
  
   
     
-      <li data-nav-id="/CPP_Learning/chapter0/6-tips/4-options/" title="Options de compilation" class="dd-item ">
-        <a href="/CPP_Learning/chapter0/6-tips/4-options/">
-        Options de compilation
+      <li data-nav-id="/CPP_Learning/chapter0/6-tips/4-terminal/" title="Compilation en terminal" class="dd-item ">
+        <a href="/CPP_Learning/chapter0/6-tips/4-terminal/">
+        Compilation en terminal
         <i class="fas fa-check read-icon"></i>
         </a>
     </li>
@@ -1991,6 +1991,7 @@
   <ul>
     <li>
       <ul>
+        <li><a href="#github">GitHub</a></li>
         <li><a href="#installation">Installation</a></li>
         <li><a href="#manipulation-dun-dépôt-depuis-vscode">Manipulation d&rsquo;un dépôt depuis VSCode</a></li>
       </ul>
@@ -2020,10 +2021,18 @@
 
 
 <p>Pour le gestionnaire de version, nous utiliserons 
-<a href="https://git-scm.com/" target="_blank" rel="noopener noreferrer">git</a>. Vous pourrez ensuite héberger votre dépôt pour les TPs et le projet sur la plateforme de votre choix (Github, Gitlab, Bitbucket, votre serveur perso, peu importe), du moment que l&rsquo;on peut y avoir accès pour l&rsquo;évaluation.</p>
+<a href="https://git-scm.com/" target="_blank" rel="noopener noreferrer">git</a> et nous utiliserons GitHub pour l&rsquo;hébergement des dépôts.</p>
+<hr>
+<h3 id="github">GitHub</h3>
+<h4 id="création-de-compte">Création de compte</h4>
+<p>Commencez par créer un compte si vous n&rsquo;en avez pas déjà un.</p>
+<h4 id="génération-de-clef-sshs">Génération de clef SSHs</h4>
+<p>Depuis quelques années, pour pouvoir push sur un dépôt, il est nécessaire de passer par la méthode SSH (HTML ne permet plus d&rsquo;éditer, juste de consulter).</p>
+<p>Pour associer une nouvelle clef SSH à votre machine, suivez les instructions du paragraphe <a href="https://docs.github.com/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent#generating-a-new-ssh-key">&ldquo;Generating a new SSH key&rdquo;</a> et enregistrez la clef à l&rsquo;emplacement par défaut (c&rsquo;est-à-dire sans spécifier de chemin de sauvegarde).</p>
+<p>Ensuite, pour référencer votre clef nouvellement générée sur votre compte GitHub, vous pouvez suivre les instructions disponible <a href="https://docs.github.com/en/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account">ici</a>.</p>
 <hr>
 <h3 id="installation">Installation</h3>
-<p>Si vous êtes sous Unix, vous devriez pouvoir installer git depuis votre gestionnaire de paquets.<br>
+<p>Si vous êtes sous Unix (Linux / MacOS), vous devriez pouvoir installer git depuis votre gestionnaire de paquets.<br>
 Si vous êtes sous Windows, vous pouvez télécharger l&rsquo;outil depuis 
 <a href="https://git-scm.com/download/win/" target="_blank" rel="noopener noreferrer">cette page</a>.</p>
 <hr>
@@ -2078,8 +2087,10 @@ Créez ce fichier à la racine de votre dossier et copiez-collez dedans les lign
 <img src="/CPP_Learning/images/vscode-git-clone-stage.png" alt=""></li>
 <li>Entrez un message et cliquez sur la coche pour committer vos changements.
 <img src="/CPP_Learning/images/vscode-git-clone-commit.png" alt=""></li>
-<li>Si vous avez utilisé votre propre compte pour cloner le dépôt, vous pouvez maintenant y pusher votre commit en utilisant la commande <code>Git: Push</code>.
+<li>Si vous avez utilisé votre propre compte pour cloner le dépôt, vous pouvez maintenant y pusher votre commit en utilisant la commande <code>Git: Push</code>.<br>
+Une popup vous demandera de vous connecter à votre compte GitHub si vous ne l&rsquo;avez pas encore fait.
 <img src="/CPP_Learning/images/vscode-git-push.png" alt=""></li>
+<li>Ouvrez un navigateur web et rendez-vous sur la page de votre dépôt GitHub pour vérifier que vos modifications ont bien été poussées.</li>
 </ol>
 
 
@@ -3413,19 +3424,19 @@ Créez ce fichier à la racine de votre dossier et copiez-collez dedans les lign
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/CPP_Learning/js/clipboard.min.js?1672790476"></script>
-    <script src="/CPP_Learning/js/perfect-scrollbar.min.js?1672790476"></script>
-    <script src="/CPP_Learning/js/perfect-scrollbar.jquery.min.js?1672790476"></script>
-    <script src="/CPP_Learning/js/jquery.sticky.js?1672790476"></script>
-    <script src="/CPP_Learning/js/featherlight.min.js?1672790476"></script>
-    <script src="/CPP_Learning/js/highlight.pack.js?1672790476"></script>
+    <script src="/CPP_Learning/js/clipboard.min.js?1673172070"></script>
+    <script src="/CPP_Learning/js/perfect-scrollbar.min.js?1673172070"></script>
+    <script src="/CPP_Learning/js/perfect-scrollbar.jquery.min.js?1673172070"></script>
+    <script src="/CPP_Learning/js/jquery.sticky.js?1673172070"></script>
+    <script src="/CPP_Learning/js/featherlight.min.js?1673172070"></script>
+    <script src="/CPP_Learning/js/highlight.pack.js?1673172070"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/CPP_Learning/js/modernizr.custom-3.6.0.js?1672790476"></script>
-    <script src="/CPP_Learning/js/learn.js?1672790476"></script>
-    <script src="/CPP_Learning/js/hugo-learn.js?1672790476"></script>
+    <script src="/CPP_Learning/js/modernizr.custom-3.6.0.js?1673172070"></script>
+    <script src="/CPP_Learning/js/learn.js?1673172070"></script>
+    <script src="/CPP_Learning/js/hugo-learn.js?1673172070"></script>
 
-    <link href="/CPP_Learning/mermaid/mermaid.css?1672790476" rel="stylesheet" />
-    <script src="/CPP_Learning/mermaid/mermaid.js?1672790476"></script>
+    <link href="/CPP_Learning/mermaid/mermaid.css?1673172070" rel="stylesheet" />
+    <script src="/CPP_Learning/mermaid/mermaid.js?1673172070"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

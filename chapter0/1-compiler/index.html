@@ -12,21 +12,21 @@
     <title>Compilateur :: Cours de C&#43;&#43; - Niveau Master</title>
 
     
-    <link href="/CPP_Learning/css/nucleus.css?1672790476" rel="stylesheet">
-    <link href="/CPP_Learning/css/fontawesome-all.min.css?1672790476" rel="stylesheet">
-    <link href="/CPP_Learning/css/hybrid.css?1672790476" rel="stylesheet">
-    <link href="/CPP_Learning/css/featherlight.min.css?1672790476" rel="stylesheet">
-    <link href="/CPP_Learning/css/perfect-scrollbar.min.css?1672790476" rel="stylesheet">
-    <link href="/CPP_Learning/css/auto-complete.css?1672790476" rel="stylesheet">
-    <link href="/CPP_Learning/css/atom-one-dark-reasonable.css?1672790476" rel="stylesheet">
-    <link href="/CPP_Learning/css/theme.css?1672790476" rel="stylesheet">
-    <link href="/CPP_Learning/css/hugo-theme.css?1672790476" rel="stylesheet">
+    <link href="/CPP_Learning/css/nucleus.css?1673172070" rel="stylesheet">
+    <link href="/CPP_Learning/css/fontawesome-all.min.css?1673172070" rel="stylesheet">
+    <link href="/CPP_Learning/css/hybrid.css?1673172070" rel="stylesheet">
+    <link href="/CPP_Learning/css/featherlight.min.css?1673172070" rel="stylesheet">
+    <link href="/CPP_Learning/css/perfect-scrollbar.min.css?1673172070" rel="stylesheet">
+    <link href="/CPP_Learning/css/auto-complete.css?1673172070" rel="stylesheet">
+    <link href="/CPP_Learning/css/atom-one-dark-reasonable.css?1673172070" rel="stylesheet">
+    <link href="/CPP_Learning/css/theme.css?1673172070" rel="stylesheet">
+    <link href="/CPP_Learning/css/hugo-theme.css?1673172070" rel="stylesheet">
     
-    <link href="/CPP_Learning/css/theme-mine.css?1672790476" rel="stylesheet">
+    <link href="/CPP_Learning/css/theme-mine.css?1673172070" rel="stylesheet">
     
-    <link href="/CPP_Learning/css/syntax.css?1672790476" rel="stylesheet">
+    <link href="/CPP_Learning/css/syntax.css?1673172070" rel="stylesheet">
 
-    <script src="/CPP_Learning/js/jquery-3.3.1.min.js?1672790476"></script>
+    <script src="/CPP_Learning/js/jquery-3.3.1.min.js?1673172070"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -57,14 +57,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/CPP_Learning/js/lunr.min.js?1672790476"></script>
-<script type="text/javascript" src="/CPP_Learning/js/auto-complete.js?1672790476"></script>
+<script type="text/javascript" src="/CPP_Learning/js/lunr.min.js?1673172070"></script>
+<script type="text/javascript" src="/CPP_Learning/js/auto-complete.js?1673172070"></script>
 <script type="text/javascript">
     
         var baseurl = "https:\/\/laefy.github.io\/CPP_Learning\/";
     
 </script>
-<script type="text/javascript" src="/CPP_Learning/js/search.js?1672790476"></script>
+<script type="text/javascript" src="/CPP_Learning/js/search.js?1673172070"></script>
 
     
   </div>
@@ -289,9 +289,9 @@
  
   
     
-      <li data-nav-id="/CPP_Learning/chapter0/6-tips/3-keybinds-commands/" title="Raccourcis &amp; Commandes" class="dd-item ">
+      <li data-nav-id="/CPP_Learning/chapter0/6-tips/3-keybinds-commands/" title="Raccourcis VSCode" class="dd-item ">
         <a href="/CPP_Learning/chapter0/6-tips/3-keybinds-commands/">
-        Raccourcis &amp; Commandes
+        Raccourcis VSCode
         <i class="fas fa-check read-icon"></i>
         </a>
     </li>
@@ -310,9 +310,9 @@
  
   
     
-      <li data-nav-id="/CPP_Learning/chapter0/6-tips/4-options/" title="Options de compilation" class="dd-item ">
-        <a href="/CPP_Learning/chapter0/6-tips/4-options/">
-        Options de compilation
+      <li data-nav-id="/CPP_Learning/chapter0/6-tips/4-terminal/" title="Compilation en terminal" class="dd-item ">
+        <a href="/CPP_Learning/chapter0/6-tips/4-terminal/">
+        Compilation en terminal
         <i class="fas fa-check read-icon"></i>
         </a>
     </li>
@@ -2035,7 +2035,7 @@ MSYS2 contient en particulier MinGW, qui est l&rsquo;équivalent du compilateur 
 <img src="/CPP_Learning/images/chapter0/add-path.png" alt=""></li>
 <li>Si vous aviez une autre version de MinGW d&rsquo;installée (en général dans C:\mingw), c&rsquo;est <strong>très important</strong> que vous supprimiez son répertoire bin/ du <code>Path</code> utilisateur <strong>et</strong> du <code>Path</code> système.
 <img src="/CPP_Learning/images/chapter0/rm-path.png" alt=""></li>
-<li>Ouvrez un terminal Window et exécutez <code>g++ -v</code>.<br>
+<li>Ouvrez un terminal Window et exécutez <code>g++ -v</code><br>
 La dernière ligne devrait maintenant indiquer une version de gcc &gt;= 9.</li>
 </ol>
 <p>Testez maintenant que tout fonctionne en suivant les étapes ci-dessous.</p>
@@ -2044,7 +2044,7 @@ La dernière ligne devrait maintenant indiquer une version de gcc &gt;= 9.</li>
 <a href="/CPP_Learning/code/helloworld.cpp" target="_blank" rel="noopener noreferrer">ce fichier</a>.</li>
 <li>Ouvrez une fenêtre Powershell dans le répertoire contenant le fichier (vous pouvez utiliser Shift+RClick depuis l&rsquo;explorateur de fichiers pour faire apparaître l&rsquo;option dans le menu contextuel).
 <img src="/CPP_Learning/images/chapter0/powershell.png" alt=""></li>
-<li>Exécutez la commande <code>g++ .\helloworld.cpp -o hello</code>.<br>
+<li>Exécutez la commande <code>g++ .\helloworld.cpp -o hello</code><br>
 Un fichier hello.exe devrait avoir été généré.</li>
 <li>Exécutez <code>.\hello.exe</code>.
 Le programme devrait vous répondre &ldquo;Hello!&rdquo;.</li>
@@ -2054,16 +2054,16 @@ Le programme devrait vous répondre &ldquo;Hello!&rdquo;.</li>
 <ol>
 <li>Ouvrez un terminal et exécutez <code>g++ -v</code>.
 Assurez-vous que la dernière ligne indique bien une version de gcc &gt;= 9.</li>
-<li>Si ce n&rsquo;est pas le cas, mettez à jour vos paquets avec <code>sudo apt-get update</code> et vérifiez à nouveau la version de g++.</li>
-<li>Si ce n&rsquo;est toujours pas le cas, vous allez avoir besoin de mettre à jour votre système. Cela se fait normalement avec <code>sudo apt-get upgrade</code>, mais renseignez-vous avant de faire n&rsquo;importe quoi avec votre machine&hellip;<br>
+<li>Si ce n&rsquo;est pas le cas, mettez à jour vos paquets à l&rsquo;aide de votre gestionnaire de paquets (<code>sudo apt-get update</code> sous Debian) et vérifiez à nouveau la version de g++.</li>
+<li>Si ce n&rsquo;est toujours pas le cas, vous allez avoir besoin de mettre à jour votre système. Sur Debian, cela se fait avec <code>sudo apt-get upgrade</code>, mais renseignez-vous avant de faire n&rsquo;importe quoi avec votre machine&hellip;<br>
 Vérifiez une nouvelle fois que votre g++ est bien à jour.</li>
 </ol>
 <p>Testez maintenant que tout fonctionne en suivant les étapes ci-dessous.</p>
 <ol>
 <li>Téléchargez 
 <a href="/CPP_Learning/code/helloworld.cpp" target="_blank" rel="noopener noreferrer">ce fichier</a>.</li>
-<li>Ouvrez un terminal et placez-vous dans le répertoire contenant le fichier téléchargé : <code>cd path/to/folder</code>.</li>
-<li>Exécutez la commande <code>g++ ./helloworld.cpp -o hello</code>.<br>
+<li>Ouvrez un terminal et placez-vous dans le répertoire contenant le fichier téléchargé : <code>cd path/to/folder</code></li>
+<li>Exécutez la commande <code>g++ ./helloworld.cpp -o hello</code><br>
 Un fichier hello devrait avoir été généré.</li>
 <li>Exécutez <code>./hello</code>.
 Le programme devrait vous répondre &ldquo;Hello!&rdquo;.</li>
@@ -2071,15 +2071,15 @@ Le programme devrait vous répondre &ldquo;Hello!&rdquo;.</li>
 <hr>
 <h3 id="macos">MacOS</h3>
 <ol>
-<li>Ouvrez un terminal et exécuter <code>clang --version</code>.</li>
-<li>Si la commande échoue, installez clang en exécutant <code>xcode-select --install</code>.</li>
+<li>Ouvrez un terminal et exécuter <code>clang --version</code></li>
+<li>Si la commande échoue, installez clang en exécutant <code>xcode-select --install</code></li>
 </ol>
 <p>Testez maintenant que tout fonctionne en suivant les étapes ci-dessous.</p>
 <ol>
 <li>Téléchargez 
 <a href="/CPP_Learning/code/helloworld.cpp" target="_blank" rel="noopener noreferrer">ce fichier</a>.</li>
-<li>Ouvrez un terminal et placez-vous dans le répertoire contenant le fichier téléchargé : <code>cd path/to/folder</code>.</li>
-<li>Exécutez la commande <code>clang++ ./helloworld.cpp -o hello</code>.<br>
+<li>Ouvrez un terminal et placez-vous dans le répertoire contenant le fichier téléchargé : <code>cd path/to/folder</code></li>
+<li>Exécutez la commande <code>clang++ ./helloworld.cpp -o hello</code><br>
 Un fichier hello devrait avoir été généré.</li>
 <li>Exécutez <code>./hello</code>.
 Le programme devrait vous répondre &ldquo;Hello!&rdquo;.</li>
@@ -3413,19 +3413,19 @@ Le programme devrait vous répondre &ldquo;Hello!&rdquo;.</li>
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/CPP_Learning/js/clipboard.min.js?1672790476"></script>
-    <script src="/CPP_Learning/js/perfect-scrollbar.min.js?1672790476"></script>
-    <script src="/CPP_Learning/js/perfect-scrollbar.jquery.min.js?1672790476"></script>
-    <script src="/CPP_Learning/js/jquery.sticky.js?1672790476"></script>
-    <script src="/CPP_Learning/js/featherlight.min.js?1672790476"></script>
-    <script src="/CPP_Learning/js/highlight.pack.js?1672790476"></script>
+    <script src="/CPP_Learning/js/clipboard.min.js?1673172070"></script>
+    <script src="/CPP_Learning/js/perfect-scrollbar.min.js?1673172070"></script>
+    <script src="/CPP_Learning/js/perfect-scrollbar.jquery.min.js?1673172070"></script>
+    <script src="/CPP_Learning/js/jquery.sticky.js?1673172070"></script>
+    <script src="/CPP_Learning/js/featherlight.min.js?1673172070"></script>
+    <script src="/CPP_Learning/js/highlight.pack.js?1673172070"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/CPP_Learning/js/modernizr.custom-3.6.0.js?1672790476"></script>
-    <script src="/CPP_Learning/js/learn.js?1672790476"></script>
-    <script src="/CPP_Learning/js/hugo-learn.js?1672790476"></script>
+    <script src="/CPP_Learning/js/modernizr.custom-3.6.0.js?1673172070"></script>
+    <script src="/CPP_Learning/js/learn.js?1673172070"></script>
+    <script src="/CPP_Learning/js/hugo-learn.js?1673172070"></script>
 
-    <link href="/CPP_Learning/mermaid/mermaid.css?1672790476" rel="stylesheet" />
-    <script src="/CPP_Learning/mermaid/mermaid.js?1672790476"></script>
+    <link href="/CPP_Learning/mermaid/mermaid.css?1673172070" rel="stylesheet" />
+    <script src="/CPP_Learning/mermaid/mermaid.js?1673172070"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>
