@@ -26,19 +26,24 @@ weight = 2
 languageName = "English"
 
 [[menu.shortcuts]]
-name = "<i class='fab fa-github'></i> Dépôt GitHub"
+name = "<i class='fab fa-github'></i> Dépôt Cours"
 url = "https://github.com/Laefy/CPP_Learning_Code/"
 weight = 1
 
 [[menu.shortcuts]]
+name = "<i class='fab fa-github'></i> Dépôt TPs"
+url = "https://github.com/Laefy/CPP_Exercises/"
+weight = 2
+
+[[menu.shortcuts]]
 name = "<i class='far fa-list-alt'></i> Workflow"
 url = "/workflow"
-weight = 2
+weight = 3
 
 [[menu.shortcuts]]
 name = "<i class='fas fa-question-circle'></i> FAQ"
 url = "/faq"
-weight = 3
+weight = 4
 
 [[menu.shortcuts]]
 name = "<i class='fa fa-rocket'></i> Astuces"
