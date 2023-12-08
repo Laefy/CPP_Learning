@@ -356,3 +356,4 @@ std::ostream& operator<<(std::ostream& stream, const Rectangle& rect)
     return stream << "{ L: " << rect.get_length() << ", W: " << rect.get_width() << " }";
 }
 ```
+{{% /expand %}}
