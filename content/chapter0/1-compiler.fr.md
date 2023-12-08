@@ -13,13 +13,17 @@ Pour le compilateur, vous devrez utiliser g++ (version >= 9) si vous êtes sous 
 Si la commande réussit, assurez-vous que la dernière ligne indique bien une version de gcc >= 9.
 2. Si ce n'est pas le cas, installez le gestionnaire de paquet MSYS2 en suivant les instructions sur {{< open_in_new_tab "https://www.msys2.org" "cette page" />}}.\
 MSYS2 contient en particulier MinGW, qui est l'équivalent du compilateur gcc/g++ pour Windows.
-3. Ouvrez l'éditeur de variables d'environnement Windows.
+3. Réouvrez un terminal MSYS2 UCRT64 si vous l'avez fermé, et installez le paquet `gdb` avec l'instruction :
+   ```sh
+   pacman -S mingw-w64-ucrt-x86_64-gdb
+   ```
+4. Ouvrez l'éditeur de variables d'environnement Windows.
 ![](/CPP_Learning/images/chapter0/env-var.png)
-4. Dans la variable `Path` (utilisateur ou système, peu importe), ajoutez "C:\msys64\mingw64\bin".
-![](/CPP_Learning/images/chapter0/add-path.png)
-5. Si vous aviez une autre version de MinGW d'installée (en général dans C:\mingw), c'est **très important** que vous supprimiez son répertoire bin/ du `Path` utilisateur **et** du `Path` système.
-![](/CPP_Learning/images/chapter0/rm-path.png)
-6. Ouvrez un terminal Window et exécutez `g++ -v`\
+5. Dans la variable `Path` (utilisateur ou système, peu importe), ajoutez "C:\msys64\ucrt64\bin".
+![](/CPP_Learning/images/chapter0/add-path-v2.png)
+6. Si vous aviez une autre version de MinGW d'installée (en général dans C:\mingw), c'est **très important** que vous supprimiez son répertoire bin/ du `Path` utilisateur **et** du `Path` système.
+![](/CPP_Learning/images/chapter0/rm-path-v2.png)
+7. Ouvrez un terminal Window et exécutez `g++ -v`\
 La dernière ligne devrait maintenant indiquer une version de gcc >= 9.
 
 Testez maintenant que tout fonctionne en suivant les étapes ci-dessous.

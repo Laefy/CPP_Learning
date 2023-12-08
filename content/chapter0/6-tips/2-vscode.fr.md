@@ -44,7 +44,7 @@ Windows et Linux devraient vous proposez GDB et MacOS devrait vous fournir LLVM.
 "program": "${command:cmake.launchTargetPath}",
 "cwd": "${workspaceFolder}",
 ```
-5. Si vous êtes sous Windows, renseignez également `"miDebuggerPath"` avec `C:\\msys64\\mingw64\\bin\\gdb.exe`.
+5. Si vous êtes sous Windows, supprimez la ligne contenant `"miDebuggerPath"`.
 
 ---
 
