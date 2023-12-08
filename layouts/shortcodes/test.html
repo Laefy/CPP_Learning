@@ -1,18 +1,17 @@
 {{ $_hugo_config := `{ "version": 1 }` }}
 
-<form id="test" data-chapter="{{ .Params.chapter }}" method=POST action="https://formsubmit.co/3aa0f379a1aed9c454634cc2da153a7b">
+<form id="test" data-chapter="{{ .Params.chapter }}" data-year="2024" method=POST action="https://formsubmit.co/3aa0f379a1aed9c454634cc2da153a7b">
   <label for="name">Vous êtes : </label>
-  <input type="text" id="name" name="name" placeholder="Prénom Nom" />
+  <input type="text" id="name" name="name" placeholder="Prénom Nom" required />
 
   <label for="email">Votre adresse mail : </label>
-  <input type="text" name="email" placeholder="mail@smthg.com" />
+  <input type="text" name="email" placeholder="mail@smthg.com" required />
 
   <label for="group">Votre groupe : </label>
   <select name="group">
     <option value="group-I1">Initiaux 1</option>
     <option value="group-I2">Initiaux 2</option>
-    <option value="group-A1">Alternants 1</option>
-    <option value="group-A2">Alternants 2</option>
+    <option value="group-Alt">Alternants</option>
   </select>
 
   <input type="hidden" name="_replyto" />
@@ -41,4 +40,4 @@
   <input type="submit" value="Valider" />
 </form>
 
-<script src="{{"js/save-test-answers.js"| relURL}}"></script>
+<script src="{{"js/save-test-answers-v2.js"| relURL}}"></script>
