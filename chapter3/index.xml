@@ -58,7 +58,7 @@ Nous allons voir comment faire de même afin de pouvoir manipuler les unique_ptr
       
       <guid>https://laefy.github.io/CPP_Learning/chapter3/test/</guid>
       <description>C&amp;rsquo;est l&amp;rsquo;heure du test ! Bon courage 🙂
- Vous êtes : Votre adresse mail : Votre groupe : Initiaux 1Initiaux 2Alternants 1Alternants 21- Comment définir la période de validité d’un objet ?
+ Vous êtes : Votre adresse mail : Votre groupe : Initiaux 1Initiaux 2Alternants1- Comment définir la période de validité d’un objet ?
 
 2- Citez une bonne raison d’allouer de la mémoire via un unique_ptr plutôt que via un pointeur simple (avec new).
 

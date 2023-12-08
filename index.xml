@@ -346,9 +346,7 @@ Du coup, pour pallier à ce problème, il est possible d&amp;rsquo;utiliser la c
       
       <guid>https://laefy.github.io/CPP_Learning/chapter0/3-cmake/</guid>
       <description>Afin de générer les artéfacts pour la compilation, nous utiliserons CMake.
- Installation Si vous êtes sous Unix (Linux / MacOS), vous devriez pouvoir installer CMake depuis votre gestionnaire de paquets.
-Si vous êtes sous Windows, vous pouvez utiliser l&amp;rsquo;installeur que vous trouverez sur cette page. Notez également l&amp;rsquo;emplacement où celui-ci a été installé, car vous en aurez besoin à l&amp;rsquo;étape suivante.
- Intégration à VSCode Afin de pouvoir utiliser CMake facilement depuis VSCode, il faut installer les extensions CMake et CMakeTools.</description>
+ Installation Windows  Ouvrez un terminal MSYS2 UCRT64. Installez les paquets cmake et make avec l&amp;rsquo;instruction suivante : pacman -S mingw-w64-ucrt-x86_64-cmake mingw-w64-ucrt-x86_64-make   Linux / MacOS  Ouvrez un terminal. Utilisez votre gestionnaire de package afin d&amp;rsquo;installer cmake.   Intégration à VSCode Afin de pouvoir utiliser CMake facilement depuis VSCode, il faut installer les extensions CMake et CMakeTools.</description>
     </item>
     
     <item>
@@ -627,7 +625,7 @@ La cible à compiler est c2-5-polygon.
       <guid>https://laefy.github.io/CPP_Learning/chapter10/test/</guid>
       <description>Pas de questionnaire cette semaine, parce que mis en ligne trop tard.
 N&amp;rsquo;hésitez néanmoins pas à utiliser le formulaire pour envoyer vos questions.
- Vous êtes : Votre adresse mail : Votre groupe : Initiaux 1Initiaux 2Alternants 1Alternants 2Combien de temps avez-vous mis à compléter ce chapitre ?Avez-vous des questions suite à sa lecture ?Avez-vous des commentaires concernant le chapitre et/ou le site ?</description>
+ Vous êtes : Votre adresse mail : Votre groupe : Initiaux 1Initiaux 2AlternantsCombien de temps avez-vous mis à compléter ce chapitre ?Avez-vous des questions suite à sa lecture ?Avez-vous des commentaires concernant le chapitre et/ou le site ?</description>
     </item>
     
     <item>
@@ -658,7 +656,7 @@ Mais bon, vous l&amp;rsquo;avez enfin terminé, donc vous pouvez être fiers de 
       
       <guid>https://laefy.github.io/CPP_Learning/chapter3/test/</guid>
       <description>C&amp;rsquo;est l&amp;rsquo;heure du test ! Bon courage 🙂
- Vous êtes : Votre adresse mail : Votre groupe : Initiaux 1Initiaux 2Alternants 1Alternants 21- Comment définir la période de validité d’un objet ?
+ Vous êtes : Votre adresse mail : Votre groupe : Initiaux 1Initiaux 2Alternants1- Comment définir la période de validité d’un objet ?
 
 2- Citez une bonne raison d’allouer de la mémoire via un unique_ptr plutôt que via un pointeur simple (avec new).
 
@@ -673,7 +671,7 @@ Mais bon, vous l&amp;rsquo;avez enfin terminé, donc vous pouvez être fiers de 
       <guid>https://laefy.github.io/CPP_Learning/chapter4/test/</guid>
       <description>Vous avez terminé le Chapitre 4 ! C&amp;rsquo;est donc maintenant le moment de connecter vos neurones pour répondre aux questions suivantes.
 Bon courage à vous 🙂
- Vous êtes : Votre adresse mail : Votre groupe : Initiaux 1Initiaux 2Alternants 1Alternants 21- Qu’est-ce qu’une classe polymorphe ?
+ Vous êtes : Votre adresse mail : Votre groupe : Initiaux 1Initiaux 2Alternants1- Qu’est-ce qu’une classe polymorphe ?
 
 2- Définissez une classe polymorphe Nothing qui ne fait rien.
 
@@ -698,7 +696,7 @@ Il avait également un deuxième objectif, qui était en quelque sorte de vous a
       <guid>https://laefy.github.io/CPP_Learning/chapter6/test/</guid>
       <description>C&amp;rsquo;est l&amp;rsquo;heure du test ! N&amp;rsquo;oubliez pas que vous pouvez utiliser Godbolt pour compiler et tester des petits bouts de code.
 Bon courage à vous 🙂
- Vous êtes : Votre adresse mail : Votre groupe : Initiaux 1Initiaux 2Alternants 1Alternants 21- Quel type de boucle faut-il utiliser pour modifier la structure d’un conteneur lors d’un parcours ?
+ Vous êtes : Votre adresse mail : Votre groupe : Initiaux 1Initiaux 2Alternants1- Quel type de boucle faut-il utiliser pour modifier la structure d’un conteneur lors d’un parcours ?
 
 2- Dans quel cas peut-il être intéressant d’utiliser la fonction std::for_each ?</description>
     </item>
@@ -711,7 +709,7 @@ Bon courage à vous 🙂
       <guid>https://laefy.github.io/CPP_Learning/chapter8/test/</guid>
       <description>C&amp;rsquo;est l&amp;rsquo;heure du test ! N&amp;rsquo;oubliez pas que vous pouvez utiliser Godbolt pour compiler et tester des petits bouts de code.
 Bon courage à vous 🙂
- Vous êtes : Votre adresse mail : Votre groupe : Initiaux 1Initiaux 2Alternants 1Alternants 21- A quoi sert une assertion ?
+ Vous êtes : Votre adresse mail : Votre groupe : Initiaux 1Initiaux 2Alternants1- A quoi sert une assertion ?
 
 2- Pourquoi ne faut-il pas utiliser d’assertions pour traiter une erreur d’utilisation d’un logiciel ?</description>
     </item>
@@ -724,7 +722,9 @@ Bon courage à vous 🙂
       <guid>https://laefy.github.io/CPP_Learning/chapter9/test/</guid>
       <description>C&amp;rsquo;est l&amp;rsquo;heure du test ! N&amp;rsquo;oubliez pas que vous pouvez utiliser Godbolt pour compiler et tester des petits bouts de code.
 Bon courage à vous 🙂
- Vous êtes : Votre adresse mail : Votre groupe : Initiaux 1Initiaux 2Alternants 1Alternants 21- Que faut-il écrire juste avant la définition d’une classe (ou fonction) pour en faire une classe (ou fonction) templatée ?</description>
+ Vous êtes : Votre adresse mail : Votre groupe : Initiaux 1Initiaux 2Alternants1- Que faut-il écrire juste avant la définition d’une classe (ou fonction) pour en faire une classe (ou fonction) templatée ?
+
+2- Pourquoi n’est-il pas toujours possible de placer l’implémentation des fonctions-membres d’une classe-template dans un .</description>
     </item>
     
     <item>
@@ -734,7 +734,9 @@ Bon courage à vous 🙂
       
       <guid>https://laefy.github.io/CPP_Learning/chapter0/test/</guid>
       <description>Si vous avez rencontré des problèmes lors de l&amp;rsquo;installation d&amp;rsquo;un des logiciels, n&amp;rsquo;hésitez pas à nous l&amp;rsquo;indiquer, afin que nous puissions améliorer nos explications. Merci d&amp;rsquo;avance ! 🙂
- Vous êtes : Votre adresse mail : Votre groupe : Initiaux 1Initiaux 2Alternants 1Alternants 21- Avez-vous rencontré des difficultés lors de l’installation d’un des composants ? Si oui, du ou desquels s’agit-il ?</description>
+ Vous êtes : Votre adresse mail : Votre groupe : Initiaux 1Initiaux 2Alternants1- Avez-vous rencontré des difficultés lors de l’installation d’un des composants ? Si oui, du ou desquels s’agit-il ?
+
+2- Si une erreur est survenue à un moment, pouvez-vous la copier-coller ci-dessous et indiquer le contexte dans lequel celle-ci a eu lieu ?</description>
     </item>
     
     <item>

@@ -49,7 +49,9 @@ Les chevrons contiennent la liste des paramètres du template. Chaque paramètre
       <guid>https://laefy.github.io/CPP_Learning/chapter9/test/</guid>
       <description>C&amp;rsquo;est l&amp;rsquo;heure du test ! N&amp;rsquo;oubliez pas que vous pouvez utiliser Godbolt pour compiler et tester des petits bouts de code.
 Bon courage à vous 🙂
- Vous êtes : Votre adresse mail : Votre groupe : Initiaux 1Initiaux 2Alternants 1Alternants 21- Que faut-il écrire juste avant la définition d’une classe (ou fonction) pour en faire une classe (ou fonction) templatée ?</description>
+ Vous êtes : Votre adresse mail : Votre groupe : Initiaux 1Initiaux 2Alternants1- Que faut-il écrire juste avant la définition d’une classe (ou fonction) pour en faire une classe (ou fonction) templatée ?
+
+2- Pourquoi n’est-il pas toujours possible de placer l’implémentation des fonctions-membres d’une classe-template dans un .</description>
     </item>
     
     <item>

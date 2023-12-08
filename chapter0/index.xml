@@ -35,9 +35,7 @@ Si l&amp;rsquo;installeur vous propose d&amp;rsquo;installer git, vous pouvez ac
       
       <guid>https://laefy.github.io/CPP_Learning/chapter0/3-cmake/</guid>
       <description>Afin de générer les artéfacts pour la compilation, nous utiliserons CMake.
- Installation Si vous êtes sous Unix (Linux / MacOS), vous devriez pouvoir installer CMake depuis votre gestionnaire de paquets.
-Si vous êtes sous Windows, vous pouvez utiliser l&amp;rsquo;installeur que vous trouverez sur cette page. Notez également l&amp;rsquo;emplacement où celui-ci a été installé, car vous en aurez besoin à l&amp;rsquo;étape suivante.
- Intégration à VSCode Afin de pouvoir utiliser CMake facilement depuis VSCode, il faut installer les extensions CMake et CMakeTools.</description>
+ Installation Windows  Ouvrez un terminal MSYS2 UCRT64. Installez les paquets cmake et make avec l&amp;rsquo;instruction suivante : pacman -S mingw-w64-ucrt-x86_64-cmake mingw-w64-ucrt-x86_64-make   Linux / MacOS  Ouvrez un terminal. Utilisez votre gestionnaire de package afin d&amp;rsquo;installer cmake.   Intégration à VSCode Afin de pouvoir utiliser CMake facilement depuis VSCode, il faut installer les extensions CMake et CMakeTools.</description>
     </item>
     
     <item>
@@ -71,7 +69,9 @@ Comme le C++ est un langage avec une syntaxe un peu lourde, utiliser ce type d&a
       
       <guid>https://laefy.github.io/CPP_Learning/chapter0/test/</guid>
       <description>Si vous avez rencontré des problèmes lors de l&amp;rsquo;installation d&amp;rsquo;un des logiciels, n&amp;rsquo;hésitez pas à nous l&amp;rsquo;indiquer, afin que nous puissions améliorer nos explications. Merci d&amp;rsquo;avance ! 🙂
- Vous êtes : Votre adresse mail : Votre groupe : Initiaux 1Initiaux 2Alternants 1Alternants 21- Avez-vous rencontré des difficultés lors de l’installation d’un des composants ? Si oui, du ou desquels s’agit-il ?</description>
+ Vous êtes : Votre adresse mail : Votre groupe : Initiaux 1Initiaux 2Alternants1- Avez-vous rencontré des difficultés lors de l’installation d’un des composants ? Si oui, du ou desquels s’agit-il ?
+
+2- Si une erreur est survenue à un moment, pouvez-vous la copier-coller ci-dessous et indiquer le contexte dans lequel celle-ci a eu lieu ?</description>
     </item>
     
     <item>

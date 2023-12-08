@@ -62,7 +62,7 @@ class Person { public: Person(const std::string&amp;amp; name) : _name { name } 
       <guid>https://laefy.github.io/CPP_Learning/chapter10/test/</guid>
       <description>Pas de questionnaire cette semaine, parce que mis en ligne trop tard.
 N&amp;rsquo;hésitez néanmoins pas à utiliser le formulaire pour envoyer vos questions.
- Vous êtes : Votre adresse mail : Votre groupe : Initiaux 1Initiaux 2Alternants 1Alternants 2Combien de temps avez-vous mis à compléter ce chapitre ?Avez-vous des questions suite à sa lecture ?Avez-vous des commentaires concernant le chapitre et/ou le site ?</description>
+ Vous êtes : Votre adresse mail : Votre groupe : Initiaux 1Initiaux 2AlternantsCombien de temps avez-vous mis à compléter ce chapitre ?Avez-vous des questions suite à sa lecture ?Avez-vous des commentaires concernant le chapitre et/ou le site ?</description>
     </item>
     
     <item>

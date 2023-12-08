@@ -12,21 +12,21 @@
     <title>Compilateur :: Cours de C&#43;&#43; - Niveau Master</title>
 
     
-    <link href="/CPP_Learning/css/nucleus.css?1673339665" rel="stylesheet">
-    <link href="/CPP_Learning/css/fontawesome-all.min.css?1673339665" rel="stylesheet">
-    <link href="/CPP_Learning/css/hybrid.css?1673339665" rel="stylesheet">
-    <link href="/CPP_Learning/css/featherlight.min.css?1673339665" rel="stylesheet">
-    <link href="/CPP_Learning/css/perfect-scrollbar.min.css?1673339665" rel="stylesheet">
-    <link href="/CPP_Learning/css/auto-complete.css?1673339665" rel="stylesheet">
-    <link href="/CPP_Learning/css/atom-one-dark-reasonable.css?1673339665" rel="stylesheet">
-    <link href="/CPP_Learning/css/theme.css?1673339665" rel="stylesheet">
-    <link href="/CPP_Learning/css/hugo-theme.css?1673339665" rel="stylesheet">
+    <link href="/CPP_Learning/css/nucleus.css?1702073731" rel="stylesheet">
+    <link href="/CPP_Learning/css/fontawesome-all.min.css?1702073731" rel="stylesheet">
+    <link href="/CPP_Learning/css/hybrid.css?1702073731" rel="stylesheet">
+    <link href="/CPP_Learning/css/featherlight.min.css?1702073731" rel="stylesheet">
+    <link href="/CPP_Learning/css/perfect-scrollbar.min.css?1702073731" rel="stylesheet">
+    <link href="/CPP_Learning/css/auto-complete.css?1702073731" rel="stylesheet">
+    <link href="/CPP_Learning/css/atom-one-dark-reasonable.css?1702073731" rel="stylesheet">
+    <link href="/CPP_Learning/css/theme.css?1702073731" rel="stylesheet">
+    <link href="/CPP_Learning/css/hugo-theme.css?1702073731" rel="stylesheet">
     
-    <link href="/CPP_Learning/css/theme-mine.css?1673339665" rel="stylesheet">
+    <link href="/CPP_Learning/css/theme-mine.css?1702073731" rel="stylesheet">
     
-    <link href="/CPP_Learning/css/syntax.css?1673339665" rel="stylesheet">
+    <link href="/CPP_Learning/css/syntax.css?1702073731" rel="stylesheet">
 
-    <script src="/CPP_Learning/js/jquery-3.3.1.min.js?1673339665"></script>
+    <script src="/CPP_Learning/js/jquery-3.3.1.min.js?1702073731"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -57,14 +57,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/CPP_Learning/js/lunr.min.js?1673339665"></script>
-<script type="text/javascript" src="/CPP_Learning/js/auto-complete.js?1673339665"></script>
+<script type="text/javascript" src="/CPP_Learning/js/lunr.min.js?1702073731"></script>
+<script type="text/javascript" src="/CPP_Learning/js/auto-complete.js?1702073731"></script>
 <script type="text/javascript">
     
         var baseurl = "https:\/\/laefy.github.io\/CPP_Learning\/";
     
 </script>
-<script type="text/javascript" src="/CPP_Learning/js/search.js?1673339665"></script>
+<script type="text/javascript" src="/CPP_Learning/js/search.js?1702073731"></script>
 
     
   </div>
@@ -2033,12 +2033,15 @@ Si la commande réussit, assurez-vous que la dernière ligne indique bien une ve
 <li>Si ce n&rsquo;est pas le cas, installez le gestionnaire de paquet MSYS2 en suivant les instructions sur 
 <a href="https://www.msys2.org" target="_blank" rel="noopener noreferrer">cette page</a>.<br>
 MSYS2 contient en particulier MinGW, qui est l&rsquo;équivalent du compilateur gcc/g++ pour Windows.</li>
+<li>Réouvrez un terminal MSYS2 UCRT64 si vous l&rsquo;avez fermé, et installez le paquet <code>gdb</code> avec l&rsquo;instruction :
+<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">pacman -S mingw-w64-ucrt-x86_64-gdb
+</code></pre></div></li>
 <li>Ouvrez l&rsquo;éditeur de variables d&rsquo;environnement Windows.
 <img src="/CPP_Learning/images/chapter0/env-var.png" alt=""></li>
-<li>Dans la variable <code>Path</code> (utilisateur ou système, peu importe), ajoutez &ldquo;C:\msys64\mingw64\bin&rdquo;.
-<img src="/CPP_Learning/images/chapter0/add-path.png" alt=""></li>
+<li>Dans la variable <code>Path</code> (utilisateur ou système, peu importe), ajoutez &ldquo;C:\msys64\ucrt64\bin&rdquo;.
+<img src="/CPP_Learning/images/chapter0/add-path-v2.png" alt=""></li>
 <li>Si vous aviez une autre version de MinGW d&rsquo;installée (en général dans C:\mingw), c&rsquo;est <strong>très important</strong> que vous supprimiez son répertoire bin/ du <code>Path</code> utilisateur <strong>et</strong> du <code>Path</code> système.
-<img src="/CPP_Learning/images/chapter0/rm-path.png" alt=""></li>
+<img src="/CPP_Learning/images/chapter0/rm-path-v2.png" alt=""></li>
 <li>Ouvrez un terminal Window et exécutez <code>g++ -v</code><br>
 La dernière ligne devrait maintenant indiquer une version de gcc &gt;= 9.</li>
 </ol>
@@ -3417,19 +3420,19 @@ Le programme devrait vous répondre &ldquo;Hello!&rdquo;.</li>
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/CPP_Learning/js/clipboard.min.js?1673339665"></script>
-    <script src="/CPP_Learning/js/perfect-scrollbar.min.js?1673339665"></script>
-    <script src="/CPP_Learning/js/perfect-scrollbar.jquery.min.js?1673339665"></script>
-    <script src="/CPP_Learning/js/jquery.sticky.js?1673339665"></script>
-    <script src="/CPP_Learning/js/featherlight.min.js?1673339665"></script>
-    <script src="/CPP_Learning/js/highlight.pack.js?1673339665"></script>
+    <script src="/CPP_Learning/js/clipboard.min.js?1702073731"></script>
+    <script src="/CPP_Learning/js/perfect-scrollbar.min.js?1702073731"></script>
+    <script src="/CPP_Learning/js/perfect-scrollbar.jquery.min.js?1702073731"></script>
+    <script src="/CPP_Learning/js/jquery.sticky.js?1702073731"></script>
+    <script src="/CPP_Learning/js/featherlight.min.js?1702073731"></script>
+    <script src="/CPP_Learning/js/highlight.pack.js?1702073731"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/CPP_Learning/js/modernizr.custom-3.6.0.js?1673339665"></script>
-    <script src="/CPP_Learning/js/learn.js?1673339665"></script>
-    <script src="/CPP_Learning/js/hugo-learn.js?1673339665"></script>
+    <script src="/CPP_Learning/js/modernizr.custom-3.6.0.js?1702073731"></script>
+    <script src="/CPP_Learning/js/learn.js?1702073731"></script>
+    <script src="/CPP_Learning/js/hugo-learn.js?1702073731"></script>
 
-    <link href="/CPP_Learning/mermaid/mermaid.css?1673339665" rel="stylesheet" />
-    <script src="/CPP_Learning/mermaid/mermaid.js?1673339665"></script>
+    <link href="/CPP_Learning/mermaid/mermaid.css?1702073731" rel="stylesheet" />
+    <script src="/CPP_Learning/mermaid/mermaid.js?1702073731"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

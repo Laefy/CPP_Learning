@@ -12,21 +12,21 @@
     <title>CMake :: Cours de C&#43;&#43; - Niveau Master</title>
 
     
-    <link href="/CPP_Learning/css/nucleus.css?1673339665" rel="stylesheet">
-    <link href="/CPP_Learning/css/fontawesome-all.min.css?1673339665" rel="stylesheet">
-    <link href="/CPP_Learning/css/hybrid.css?1673339665" rel="stylesheet">
-    <link href="/CPP_Learning/css/featherlight.min.css?1673339665" rel="stylesheet">
-    <link href="/CPP_Learning/css/perfect-scrollbar.min.css?1673339665" rel="stylesheet">
-    <link href="/CPP_Learning/css/auto-complete.css?1673339665" rel="stylesheet">
-    <link href="/CPP_Learning/css/atom-one-dark-reasonable.css?1673339665" rel="stylesheet">
-    <link href="/CPP_Learning/css/theme.css?1673339665" rel="stylesheet">
-    <link href="/CPP_Learning/css/hugo-theme.css?1673339665" rel="stylesheet">
+    <link href="/CPP_Learning/css/nucleus.css?1702073731" rel="stylesheet">
+    <link href="/CPP_Learning/css/fontawesome-all.min.css?1702073731" rel="stylesheet">
+    <link href="/CPP_Learning/css/hybrid.css?1702073731" rel="stylesheet">
+    <link href="/CPP_Learning/css/featherlight.min.css?1702073731" rel="stylesheet">
+    <link href="/CPP_Learning/css/perfect-scrollbar.min.css?1702073731" rel="stylesheet">
+    <link href="/CPP_Learning/css/auto-complete.css?1702073731" rel="stylesheet">
+    <link href="/CPP_Learning/css/atom-one-dark-reasonable.css?1702073731" rel="stylesheet">
+    <link href="/CPP_Learning/css/theme.css?1702073731" rel="stylesheet">
+    <link href="/CPP_Learning/css/hugo-theme.css?1702073731" rel="stylesheet">
     
-    <link href="/CPP_Learning/css/theme-mine.css?1673339665" rel="stylesheet">
+    <link href="/CPP_Learning/css/theme-mine.css?1702073731" rel="stylesheet">
     
-    <link href="/CPP_Learning/css/syntax.css?1673339665" rel="stylesheet">
+    <link href="/CPP_Learning/css/syntax.css?1702073731" rel="stylesheet">
 
-    <script src="/CPP_Learning/js/jquery-3.3.1.min.js?1673339665"></script>
+    <script src="/CPP_Learning/js/jquery-3.3.1.min.js?1702073731"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -57,14 +57,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/CPP_Learning/js/lunr.min.js?1673339665"></script>
-<script type="text/javascript" src="/CPP_Learning/js/auto-complete.js?1673339665"></script>
+<script type="text/javascript" src="/CPP_Learning/js/lunr.min.js?1702073731"></script>
+<script type="text/javascript" src="/CPP_Learning/js/auto-complete.js?1702073731"></script>
 <script type="text/javascript">
     
         var baseurl = "https:\/\/laefy.github.io\/CPP_Learning\/";
     
 </script>
-<script type="text/javascript" src="/CPP_Learning/js/search.js?1673339665"></script>
+<script type="text/javascript" src="/CPP_Learning/js/search.js?1702073731"></script>
 
     
   </div>
@@ -2028,10 +2028,18 @@
 <a href="https://cmake.org/" target="_blank" rel="noopener noreferrer">CMake</a>.</p>
 <hr>
 <h3 id="installation">Installation</h3>
-<p>Si vous êtes sous Unix (Linux / MacOS), vous devriez pouvoir installer CMake depuis votre gestionnaire de paquets.<br>
-Si vous êtes sous Windows, vous pouvez utiliser l&rsquo;installeur que vous trouverez sur 
-<a href="https://cmake.org/download/" target="_blank" rel="noopener noreferrer">cette page</a>.
-Notez également l&rsquo;emplacement où celui-ci a été installé, car vous en aurez besoin à l&rsquo;étape suivante.</p>
+<h4 id="windows">Windows</h4>
+<ol>
+<li>Ouvrez un terminal MSYS2 UCRT64.</li>
+<li>Installez les paquets <code>cmake</code> et <code>make</code> avec l&rsquo;instruction suivante :
+<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">pacman -S mingw-w64-ucrt-x86_64-cmake mingw-w64-ucrt-x86_64-make
+</code></pre></div></li>
+</ol>
+<h4 id="linux--macos">Linux / MacOS</h4>
+<ol>
+<li>Ouvrez un terminal.</li>
+<li>Utilisez votre gestionnaire de package afin d&rsquo;installer <code>cmake</code>.</li>
+</ol>
 <hr>
 <h3 id="intégration-à-vscode">Intégration à VSCode</h3>
 <p>Afin de pouvoir utiliser CMake facilement depuis VSCode, il faut installer les extensions CMake et CMakeTools.</p>
@@ -2049,29 +2057,6 @@ Notez également l&rsquo;emplacement où celui-ci a été installé, car vous en
 <a href="/CPP_Learning/code/hello.zip" target="_blank" rel="noopener noreferrer">cette archive</a> dans un nouveau dossier.</li>
 <li>Ouvrez ce dossier depuis VSCode.
 <img src="/CPP_Learning/images/chapter0/folder-vscode.png" alt=""></li>
-</ol>
-<p><strong>Si vous êtes sous Unix</strong>, vous pouvez passer à l&rsquo;étape 11.<br>
-<strong>Sinon, si vous êtes sous Windows</strong></p>
-<ol start="3">
-<li>Exécutez la commande <code>Preferences: Open User Settings</code>.</li>
-<li>Recherchez l&rsquo;option <code>Cmake Path</code> et indiquez le chemin où l&rsquo;exécutable <code>cmake.exe</code> a été installé.
-<img src="/CPP_Learning/images/chapter0/cmake-path.png" alt=""></li>
-<li>Recherchez l&rsquo;option <code>MinGW Search Dirs</code> et ajoutez-y &ldquo;C:\msys64\mingw64&rdquo;.
-<img src="/CPP_Learning/images/chapter0/mingw-vscode.png" alt=""></li>
-<li>Redémarrez VSCode et réouvrez le dossier hello.</li>
-<li>Exécutez la commande <code>CMake: Scan For Kits</code>.</li>
-<li>Exécutez ensuite <code>CMake: Edit User-Local CMake Kits</code>.</li>
-<li>Copiez le code suivant dans les entrées JSON correspondant aux compilateurs installés par MSYS2 (n&rsquo;oubliez pas de rajouter une virgule sur les lignes précédentes):</li>
-</ol>
-<div class="highlight"><pre class="chroma"><code class="language-json" data-lang="json"><span class="s2">&#34;preferredGenerator&#34;</span><span class="err">:</span> <span class="p">{</span>
-  <span class="nt">&#34;name&#34;</span><span class="p">:</span> <span class="s2">&#34;MinGW Makefiles&#34;</span>
-<span class="p">}</span><span class="err">,</span>
-<span class="s2">&#34;environmentVariables&#34;</span><span class="err">:</span> <span class="p">{</span>
-  <span class="nt">&#34;CMT_MINGW_PATH&#34;</span><span class="p">:</span> <span class="s2">&#34;C:\\msys64\\mingw64\\bin&#34;</span>
-<span class="p">}</span>
-</code></pre></div><p><img src="/CPP_Learning/images/chapter0/cmake-kits.png" alt=""></p>
-<ol start="10">
-<li>Sauvegardez et fermez le fichier de configuration des kits CMake.</li>
 <li>Exécutez la commande <code>CMake: Configure</code>.</li>
 <li>Sélectionnez le compilateur g++ ou clang++ le plus récent dans la liste proposée.</li>
 <li>La configuration et la génération des fichiers de build devraient avoir lieu.
@@ -2096,7 +2081,7 @@ Windows et Linux devraient vous proposez GDB et MacOS devrait vous fournir LLDB.
 <div class="highlight"><pre class="chroma"><code class="language-json" data-lang="json"><span class="s2">&#34;program&#34;</span><span class="err">:</span> <span class="s2">&#34;${command:cmake.launchTargetPath}&#34;</span><span class="err">,</span>
 <span class="s2">&#34;cwd&#34;</span><span class="err">:</span> <span class="s2">&#34;${workspaceFolder}&#34;</span><span class="err">,</span>
 </code></pre></div><ol start="5">
-<li>Si vous êtes sous Windows, renseignez également <code>&quot;miDebuggerPath&quot;</code> avec <code>&quot;C:\\msys64\\mingw64\\bin\\gdb.exe&quot;</code>.</li>
+<li>Si vous êtes sous Windows, supprimez la ligne contenant <code>&quot;miDebuggerPath&quot;</code>.</li>
 </ol>
 <p>Ajoutez un breakpoint sur la ligne 5 en cliquant devant le numéro de ligne, puis essayez de lancer le programme avec la commande <code>Start Debugging</code> (F5).<br>
 Votre programme devrait se lancer puis mettre en pause son exécution sur la ligne 5.
@@ -3433,19 +3418,19 @@ Votre programme devrait se lancer puis mettre en pause son exécution sur la lig
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/CPP_Learning/js/clipboard.min.js?1673339665"></script>
-    <script src="/CPP_Learning/js/perfect-scrollbar.min.js?1673339665"></script>
-    <script src="/CPP_Learning/js/perfect-scrollbar.jquery.min.js?1673339665"></script>
-    <script src="/CPP_Learning/js/jquery.sticky.js?1673339665"></script>
-    <script src="/CPP_Learning/js/featherlight.min.js?1673339665"></script>
-    <script src="/CPP_Learning/js/highlight.pack.js?1673339665"></script>
+    <script src="/CPP_Learning/js/clipboard.min.js?1702073731"></script>
+    <script src="/CPP_Learning/js/perfect-scrollbar.min.js?1702073731"></script>
+    <script src="/CPP_Learning/js/perfect-scrollbar.jquery.min.js?1702073731"></script>
+    <script src="/CPP_Learning/js/jquery.sticky.js?1702073731"></script>
+    <script src="/CPP_Learning/js/featherlight.min.js?1702073731"></script>
+    <script src="/CPP_Learning/js/highlight.pack.js?1702073731"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/CPP_Learning/js/modernizr.custom-3.6.0.js?1673339665"></script>
-    <script src="/CPP_Learning/js/learn.js?1673339665"></script>
-    <script src="/CPP_Learning/js/hugo-learn.js?1673339665"></script>
+    <script src="/CPP_Learning/js/modernizr.custom-3.6.0.js?1702073731"></script>
+    <script src="/CPP_Learning/js/learn.js?1702073731"></script>
+    <script src="/CPP_Learning/js/hugo-learn.js?1702073731"></script>
 
-    <link href="/CPP_Learning/mermaid/mermaid.css?1673339665" rel="stylesheet" />
-    <script src="/CPP_Learning/mermaid/mermaid.js?1673339665"></script>
+    <link href="/CPP_Learning/mermaid/mermaid.css?1702073731" rel="stylesheet" />
+    <script src="/CPP_Learning/mermaid/mermaid.js?1702073731"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>
