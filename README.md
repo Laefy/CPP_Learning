@@ -51,4 +51,7 @@ git add .
 git commit -m "Generated site from ${hash} (${branch}) | ${desc}"
 ```
 
-
+Alternatively, you can use the provided [do_publish.sh](./do_publish.sh) to do all of this for you:
+```b
+./do_publish.sh
+```
