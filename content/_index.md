@@ -13,89 +13,70 @@ Sur ce site, vous trouverez le cours de C++ destiné à l'enseignement des Maste
 
 ### Déroulement du module
 
-Le module sera constitué de 4 séances de cours magistraux, 12 séances de travaux pratiques et 3 séances d'évaluation.
+Le module sera constitué de 3 séances de cours magistraux, 12 séances de travaux pratiques et 3 séances d'évaluation.
 
 Le planning est le suivant :
-| Date | Séance | Description | Chapitres | Format |
-| - | - | - | - | - |
-| 11/01 | Cours 1 | * Introduction au langage | [Chapitre 0](/CPP_Learning/chapter0) |
-| 12/01 | TP 1 | * Premier programme<br>* Prise en main des outils | [Chapitre 0](/CPP_Learning/chapter0)<br>[Chapitre 1](/CPP_Learning/chapter1) |
-| 17/01<br>19/01 | TP 2 | * Librarie standard<br>* Fonctions libres<br>* Références | [Chapitre 1](/CPP_Learning/chapter1)<br>[Chapitre 5](/CPP_Learning/chapter5) |
-| 24/01<br>26/01 | TP 3 | * Classes<br>* TDD | [Chapitre 2](/CPP_Learning/chapter2) |
-| 31/01<br>02/02 | TP noté 1 | **TBD** | [Chapitre 0](/CPP_Learning/chapter0)<br>[Chapitre 1](/CPP_Learning/chapter1)<br>[Chapitre 2](/CPP_Learning/chapter2)<br>[Chapitre 5](/CPP_Learning/chapter5) | Mode exam<br>En groupe<br>2h |
-| 03/02 | Cours 2 | * Ownership<br>* Gestion mémoire<br>* Héritage et polymorphisme | [Chapitre 2](/CPP_Learning/chapter2) |
-| 07/02<br>09/02 | TP 4 | * Ownership<br>* Durée de vie<br>* Validité<br>* Déplacement | [Chapitre 3](/CPP_Learning/chapter3) |
-| 14/02<br>16/02 | TP 5 | * Héritage<br>* Typage statique / dynamique | [Chapitre 2](/CPP_Learning/chapter2)<br>[Chapitre 4](/CPP_Learning/chapter4) |
-| 21/02<br>23/02 | TP 6 | * Classes polymorphes<br>* Redéfinition et appels virtuels<br>* Casts dynamiques | [Chapitre 4](/CPP_Learning/chapter4) |
-| 28/02<br>02/03 | TP 7 | * Ownership<br>* Smart pointers | [Chapitre 3](/CPP_Learning/chapter3)<br>[Chapitre 4](/CPP_Learning/chapter4) |
-| 03/03 | TP noté 2 | **TBD** | [Chapitre 2](/CPP_Learning/chapter2)<br>[Chapitre 3](/CPP_Learning/chapter3)<br>[Chapitre 4](/CPP_Learning/chapter4) | Mode exam<br>Commun<br>2h |
-| 10/03 | Cours 3 | * Programmation fonctionnelle<br>* Opérateurs<br>* Attributs et fonctions statiques<br>* Casts<br>* Gestion d'erreurs | [Chapitre 5](/CPP_Learning/chapter5) |
-| 14/03<br>16/03 | TP 8 | * Lambdas<br>* Algorithmes de la librairie standard | [Chapitre 5](/CPP_Learning/chapter5)<br>[Chapitre 6](/CPP_Learning/chapter6) |
-| 20/03<br>21/03<br>22/03 | TP 9 | * Opérateurs<br>* Attributs et fonctions statiques<br>* Casts<br>* Gestion d'erreurs | [Chapitre 8](/CPP_Learning/chapter8) |
-| 24/03 | Cours 4 | * Templates<br>* SFINAE<br>* l-value / r-value<br>* Constructeurs de copie et de déplacement |
-| 28/03<br>29/03 | TP 10 | * Fonctions templates<br>* Classes templates | [Chapitre 9](/CPP_Learning/chapter9) |
-| 04/04<br>**TBD** | TP 11 | * Constructeurs de copie et de déplacement<br>* Spécialisations<br>* SFINAE | [Chapitre 9](/CPP_Learning/chapter9)<br>[Chapitre 10](/CPP_Learning/chapter10) |
-| 11/04<br>**TBD** | TP 12 | * Révisions | Tout |
-| 17/04 | TP noté 3 | **TBD** | Tout | Mode exam<br>Commun<br>3hs |
+| Séance | Date | Description |
+| - | - | - | - |
+| Cours 1 | 17/01 | |
+| TP 1 | Groupe I1 - 19/01<br/>Groupe I2 - 22/01<br/>Groupe Alt - 19/01 | * Compilation<br/>* Entrée / sortie<br/>* std::string et std::vector<br/>* Classes<br/>* Références |
+| TP 2 | Groupe I1 - 26/01<br/>Groupe I2 - 29/01<br/>Groupe Alt - 26/01 | TBD |
+| TP 3 | Groupe I1 - 02/02<br/>Groupe I2 - 05/02<br/>Groupe Alt - 02/02 | TBD |
+| TP 4 | Groupe I1 - 09/02<br/>Groupe I2 - 12/02<br/>Groupe Alt - 09/02 | TBD |
+| TP noté 1 | 21/02 | TBD |
+| Cours 2 | 21/02 | |
+| TP 5 | Groupe I1 - 23/02<br/>Groupe I2 - 26/02<br/>Groupe Alt - 23/02 | TBD |
+| TP 6 | Groupe I1 - 29/02<br/>Groupe I2 - 04/03<br/>Groupe Alt - 29/02 | TBD |
+| TP 7 | Groupe I1 - 08/03<br/>Groupe I2 - 11/03<br/>Groupe Alt - 08/03 | TBD |
+| TP 8 | Groupe I1 - 15/03<br/>Groupe I2 - 18/03<br/>Groupe Alt - 15/03 | TBD |
+| TP noté 2 | 21/03 | TBD |
+| Cours 3 | 21/03 | |
+| TP 9 | Groupe I1 - 29/03<br/>Groupe I2 - 25/03<br/>Groupe Alt - 29/03 | TBD |
+| TP 10 | Groupe I1 - 04/04<br/>Groupe I2 - 02/04<br/>Groupe Alt - 04/04 | TBD |
+| TP 11 | Groupe I1 - 11/04<br/>Groupe I2 - 08/04<br/>Groupe Alt - 18/04 | TBD |
+| TP 12 | Groupe I1 - 18/04<br/>Groupe I2 - 15/04<br/>Groupe Alt - 18/04 | TBD |
+| TP noté 3 | 22/04 | TBD |
 
-Avant chaque séance, vous devrez aller lire et comprendre les chapitres indiquées dans la colonne Chapitres.
-Chaque chapitre contient des exercices guidés avec leurs solutions, qui vous permettrons de travailler et d'assimiler les notions du cours.
-À la fin, vous trouverez un questionnaire à remplir et une page de synthèse.
-Les étudiants remplissant correctement les questionnaires se verront attribuer un petit bonus à la fin de l'année 🎁
+#### Cours magistraux
 
-En ce qui concerne le format des TPs notés, il s'agira d'exercices pratiques présentés au format TDD (test-driven-development), c'est-à-dire que vous aurez une série de tests unitaires à faire compiler et fonctionner.
+Les cours magistraux sont l'occasion d'aborder les notions que vous pourreéz revoir et creuser dans les chapitres du cours en ligne.  
+C'est également un bon moment pour poser des questions sur le cours ou les TPs précédents.
 
-**Veuillez noter que la liste ci-dessous est donnée à titre informative.**
-**Celle-ci est suceptible d'évoluer en fonction du rythme des étudiants.**
+#### Cours en ligne
 
-#### Exercices des chapitres
+Chaque semaine, **avant votre séance de TP**, vous devrez lire et comprendre le chapitre associé du cours en ligne.
 
-Pour réaliser les exercices proposés dans les chapitres de ce site, vous devrez partir du code contenu dans le dépôt git suivant : https://github.com/Laefy/CPP_Learning_Code.
-
-Il est recommandé d'essayer de les faire dans un premier temps sans regarder les solutions.
+Il faudra également réaliser les exercices proposés, afin d'assimiler rapidement ce que vous aurez lu. Pour cela, vous devrez partir du contenu de ce {{% open_in_new_tab "https://github.com/Laefy/CPP_Learning_Code" "dépôt git" /%}}.
+Il est recommandé d'essayer de faire les exercices une première fois sans regarder les solutions.
 Si vous êtes bloqués, recherchez d'abord de l'aide sur Internet ou en demandant à vos camarades de classe.
 
 Une fois que vous avez quelque chose qui a l'air de fonctionner, regardez la solution pour vérifier que ce que vous avez fait est correct.
 Si votre code n'est pas identique, c'est probablement parce qu'il n'y a pas qu'une seule bonne réponse.
-Et si vous n'êtes vraiment pas sûr(e)s de votre solution, n'hésitez pas à m'envoyer ce que vous avez fait par mail ou Discord, ou à l'indiquer dans le formulaire de fin de chapitre afin que je vous donne un retour.
+Et si vous n'êtes vraiment pas sûr(e)s de votre solution, n'hésitez pas à m'envoyer ce que vous avez fait par mail ou Discord, ou à l'indiquer dans le formulaire de fin de chapitre afin que l'on vous donne un retour.
 
-#### Questionnaire
+#### Questionnaires
 
 Le questionnaire de fin de chapitre sera composé comme suit :
 - nom et prénom,
 - adresse mail,
 - des questions sur le contenu du chapitre,
 - un champ pour entrer vos propres questions (nous enverrons les réponses au mail indiqué plus haut),
-- un champ pour laisser des commentaires sur le format du cours et me prévenir si j'ai écrit des bêtises.
+- un champ pour laisser des commentaires sur le format du cours et me prévenir si j'ai écrit des bêtises
 
 N'hésitez vraiment surtout pas à poser vos questions dans le formulaire, mais aussi à me les envoyez directement par mail ou Discord, en particulier si cela vous bloque pour avancer.
-Si vous ne comprenez pas bien le cours, c'est que je peux l'améliorer pour le rendre plus compréhensible 😯
+Si vous ne comprenez pas bien le cours, c'est que je peux l'améliorer pour le rendre plus compréhensible.
 
-#### Synthèse
+### Séances de TP
 
-C'est l'endroit où sont rappelés les éléments vraiment importants à retenir, pour que vous puissiez programmer efficacement sans avoir à consulter Internet ou le cours toutes les 10s.
-Essayez par conséquent de faire un effort pour les mémoriser, que ce soit en refaisant les exercices 3x, ou en mettant un post-it dans vos toilettes.
+L'énoncé pour chaque séance de TP sera disponible au format PDF sur {{% open_in_new_tab "https://github.com/Laefy/CPP_Exercises" "ce dépôt" /%}}.
 
-Le restant du cours n'est pas à connaître par coeur, mais c'est toujours utile de pouvoir reconsulter le chapitre par la suite si vous en avez besoin.
-
----
-
-### Déroulement des séances de TP
-
-Le début des TPs sera un moment consacré à l'échange entre le chargé de TP et ses étudiants. Le chargé répondra dans un premier temps aux questions qui auront été posées via le questionnaire du cours, et vous pourrez poser des questions supplémentaires si vous en avez, que cela soit lié au dernier chapitre ou à la programmation en général.
-
-Le chargé de TP introduira ensuite le sujet du TP et les objectifs attendus de la séance.
-Le reste de la séance sera consacrée à la réalisation de ce TP.
-
-#### Enoncés
-
-Cette année, vous pourrez récupérer les énoncés de TP au format Markdown sur {{% open_in_new_tab "https://github.com/Laefy/CPP_Exercises" "ce dépôt" /%}}.
-Chaque TP sera disponible dans une branche qui lui est dédiée.
+Certaines parties de la séance seront à réaliser en autonomie, tandis que d'autres parties devront se faire avec l'ensemble du groupe, de manière à ce que la correction puisse être comprise par tous. 
 
 #### Questions
 
-Si vous avez des questions sur le TP, le meilleur moment pour les poser est pendant les séances, puisque le chargé sera disponible.
-Si vous n'avez pas terminé le TP avant la fin de la séance, et que vous avez des questions pendant que vous êtes en train de le terminer chez vous, vous pouvez contacter votre chargé de TP par mail. Vous pouvez également demander de l'aide à vos camarades de classe, car c'est toujours intéressant de travailler en groupe.
+Si vous avez des questions sur le TP ou le cours, le meilleur moment pour les poser est pendant les séances de TP.
+
+Si vous n'avez pas terminé le TP avant la fin de la séance, et que vous avez des questions pendant que vous êtes en train de le terminer chez vous, vous pouvez contacter votre chargé de TP par mail ou sur Discord. Vous pouvez également demander de l'aide à vos camarades de classe, car c'est toujours intéressant de travailler en groupe.
 
 ---
 
@@ -112,8 +93,7 @@ Au final, ce cours a pour objectif les points suivants :
 - que vous soyiez capables de comprendre la plupart des bouts de code auxquels vous pourrez être confrontés dans le futur,
 - que vous appreniez à programmer à peu près tout ce dont vous avez envie, sans être obligé(e)s de consulter Internet en permanence,
 - que vous puissiez éviter les erreurs de compilation et de programmation classiques,
-- que vous appreniez à utiliser des outils pour vous aider à débugger vos programmes (`printf` c'est sympa, mais un peu limité),
-- que vous acquiériez l'autonomie et les réflexes indispensables permettant de vous débloquer lorsque vous rencontrez un problème. 
+- que vous acquiériez l'autonomie et les réflexes indispensables permettant de vous débloquer lorsque vous rencontrez un problème.
 
 Bien entendu, comme n'importe quel autre cours que vous trouverez sur Internet, vous aurez à fournir un minimum d'investissement si vous souhaitez en tirer quoi que ce soit.
 N'hésitez pas à prendre connaissance du paragraphe (volontairement moralisateur 💩) ci-dessous.
@@ -125,14 +105,13 @@ Je préfère donc vous prévenir à l'avance que si vous souhaitez effectivement
 Réservez-vous donc à l'avance des créneaux sur votre emploi du temps pour pouvoir travailler et apprendre dans de bonnes conditions.
 {{% /notice %}}
 
-Cette introduction étant terminée, j'espère que vous vous amuserez et que vous apprendrez plein de choses. Très bon courage pour la suite ! 😊🎉
+Cette introduction étant terminée, j'espère que vous vous amuserez et que vous apprendrez plein de choses. Bon courage pour la suite ! 😊🎉
 
 ---
 
 ### Qui suis-je ?
 
-Je m'appelle Céline Noël et je suis programmeuse chez Dental Monitoring depuis un peu plus d'un an.
-Avant cela, j'ai travaillé 4 ans pour Ubisoft.
+Je m'appelle Céline Noël et je suis en ce moment programmeuse pour SLB (ils font des trucs de pétrole, c'est pas bien, mais la boîte et l'environnement de travail sont vraiment sympas). Avant cela, j'ai travaillé un an pour Dental Monitoring (eux c'est une start-up, ils font des trucs dans l'orthodontie, aux dernières nouvelles, la politique de management est toujours nulle chez eux, donc je ne conseille pas). Et enfin, encore avant, j'ai travaillé 4 ans pour Ubisoft (pour le coup, je conseille, c'est difficile de rentrer, mais l'environnement de travail à Paris est très chouette et on apprend plein de choses).
 
 J'ai terminé mes études à l'UGE (anciennement UPEM ⚰️) en 2017, durant lesquelles j'ai effectué un Master Informatique en double-cursus avec un cycle d'ingénieur à l'IMAC.
 
