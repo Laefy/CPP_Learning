@@ -1,0 +1,19 @@
+<button id="footer-question-btn" disabled><i class="fas fa-question-circle"></i></button>
+
+<script>
+
+function updateQuestionButtonState() {
+    var body = document.getElementById("body-inner");
+    var selection = window.getSelection();
+
+    document.getElementById("footer-question-btn").disabled = 
+        selection.isCollapsed ||
+        body == null ||
+        body.contains(selection.anchorNode) == false ||
+        body.contains(selection.focusNode) == false;
+}
+
+document.onmouseup = document.onkeyup = document.onselectionchange = updateQuestionButtonState;
+updateQuestionButtonState();
+
+</script>

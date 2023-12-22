@@ -13,7 +13,7 @@
     --RED-LIGHT: #E01010;
     --RED-HIGHLIGHT: #FF290B;
     --RED-DARK: #9E0000;
-    
+
     --MAIN-TEXT-color: var(--GREY-DARKER);
     /* Color of text by default */
     --MAIN-TITLES-TEXT-color: var(--GREY-DARK);
@@ -54,7 +54,7 @@
     /* Color of 'page visited' icons in menu */
     --MENU-SECTION-HR-color: var(--GREY);
     /* Color of <hr> separator in menu */
-    
+
 }
 
 body {
@@ -88,7 +88,7 @@ a:hover {
 }
 
 #sidebar ul li.visited>a .read-icon {
-	color: var(--MENU-VISITED-color);
+    color: var(--MENU-VISITED-color);
 }
 
 #body a.highlight:after {
@@ -104,7 +104,7 @@ a:hover {
 }
 
 #sidebar {
-	background-color: var(--MENU-SECTIONS-BG-color);
+    background-color: var(--MENU-SECTIONS-BG-color);
 }
 
 #sidebar #header-wrapper {
@@ -114,7 +114,7 @@ a:hover {
 }
 
 #sidebar .searchbox {
-	border-color: var(--MENU-SEARCH-BOX-color);
+    border-color: var(--MENU-SEARCH-BOX-color);
     background: var(--MENU-SEARCH-BG-color);
 }
 
@@ -270,3 +270,19 @@ div.hidden-solution-content>:last-child {
     margin-bottom: 0;
 }
 
+#footer-question-btn {
+    display: block;
+    position: fixed;
+    border-radius: 50%;
+    bottom: 10px;
+    right: 10px;
+    font-size: 3em;
+    padding: 0px;
+    line-height: 0px;
+    color: rgb(236, 139, 139);
+    background-color: white;
+}
+
+#footer-question-btn:disabled {
+    display: none;
+}
