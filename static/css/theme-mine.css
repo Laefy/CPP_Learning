@@ -162,6 +162,9 @@ div.notices.tip p:first-child:after {
     content: 'Conseil';
 }
 
+div.notices.warning p:first-child:after {
+    content: 'Attention';
+}
 
 /* {{% expand }%} */
 .expand-content {
