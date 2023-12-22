@@ -207,3 +207,11 @@ input[type="submit"]:focus {
 
     outline: none;
 }
+
+#body .nav {
+    top: 50%;
+    height: initial;
+    padding-top: 0.2em;
+    padding-bottom: 0.2em;
+    margin-top: -0.8em;
+}
