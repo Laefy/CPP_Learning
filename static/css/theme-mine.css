@@ -14,28 +14,46 @@
     --RED-HIGHLIGHT: #FF290B;
     --RED-DARK: #9E0000;
     
-    --MAIN-TEXT-color:        var(--GREY-DARKER);   /* Color of text by default */
-    --MAIN-TITLES-TEXT-color: var(--GREY-DARK);     /* Color of titles h2-h3-h4-h5 */
-    --MAIN-LINK-color:        var(--RED-LIGHT);     /* Color of links */
-    --MAIN-LINK-HOVER-color:  var(--RED);           /* Color of hovered links */
-    --MAIN-ANCHOR-color:      var(--RED-LIGHT);     /* Color of anchors on titles */
+    --MAIN-TEXT-color: var(--GREY-DARKER);
+    /* Color of text by default */
+    --MAIN-TITLES-TEXT-color: var(--GREY-DARK);
+    /* Color of titles h2-h3-h4-h5 */
+    --MAIN-LINK-color: var(--RED-LIGHT);
+    /* Color of links */
+    --MAIN-LINK-HOVER-color: var(--RED);
+    /* Color of hovered links */
+    --MAIN-ANCHOR-color: var(--RED-LIGHT);
+    /* Color of anchors on titles */
 
-    --MENU-HEADER-BG-color:     var(--RED);           /* Background color of menu header */
-    --MENU-HEADER-BORDER-color: var(--RED-HIGHLIGHT); /*Color of menu header border */ 
+    --MENU-HEADER-BG-color: var(--RED);
+    /* Background color of menu header */
+    --MENU-HEADER-BORDER-color: var(--RED-HIGHLIGHT);
+    /*Color of menu header border */
 
-    --MENU-SEARCH-BG-color:         var(--RED-DARK);      /* Search field background color (by default borders + icons) */
-    --MENU-SEARCH-BOX-color:        var(--RED-HIGHLIGHT); /* Override search field border color */
-    --MENU-SEARCH-BOX-ICONS-color:  var(--GREY-LIGHTER);  /* Override search field icons color */
+    --MENU-SEARCH-BG-color: var(--RED-DARK);
+    /* Search field background color (by default borders + icons) */
+    --MENU-SEARCH-BOX-color: var(--RED-HIGHLIGHT);
+    /* Override search field border color */
+    --MENU-SEARCH-BOX-ICONS-color: var(--GREY-LIGHTER);
+    /* Override search field icons color */
 
-    --MENU-SECTIONS-ACTIVE-BG-color:            var(--GREY);         /* Background color of the active section and its childs */
-    --MENU-SECTIONS-BG-color:                   var(--GREY);         /* Background color of other sections */
-    --MENU-SECTIONS-LINK-color:                 var(--GREY-LIGHTER); /* Color of links in menu */
-    --MENU-SECTIONS-LINK-HOVER-color:           var(--WHITE);        /* Color of links in menu, when hovered */
-    --MENU-SECTION-ACTIVE-CATEGORY-color:       var(--WHITE); /* Color of active category text */
-    --MENU-SECTION-ACTIVE-CATEGORY-BG-color:    var(--GREY-LIGHT);   /* Color of background for the active category (only) */
+    --MENU-SECTIONS-ACTIVE-BG-color: var(--GREY);
+    /* Background color of the active section and its childs */
+    --MENU-SECTIONS-BG-color: var(--GREY);
+    /* Background color of other sections */
+    --MENU-SECTIONS-LINK-color: var(--GREY-LIGHTER);
+    /* Color of links in menu */
+    --MENU-SECTIONS-LINK-HOVER-color: var(--WHITE);
+    /* Color of links in menu, when hovered */
+    --MENU-SECTION-ACTIVE-CATEGORY-color: var(--WHITE);
+    /* Color of active category text */
+    --MENU-SECTION-ACTIVE-CATEGORY-BG-color: var(--GREY-LIGHT);
+    /* Color of background for the active category (only) */
 
-    --MENU-VISITED-color:       var(--RED-HIGHLIGHT);   /* Color of 'page visited' icons in menu */
-    --MENU-SECTION-HR-color:    var(--GREY);            /* Color of <hr> separator in menu */
+    --MENU-VISITED-color: var(--RED-HIGHLIGHT);
+    /* Color of 'page visited' icons in menu */
+    --MENU-SECTION-HR-color: var(--GREY);
+    /* Color of <hr> separator in menu */
     
 }
 
@@ -50,7 +68,10 @@ input[type="text"]:focus {
     box-shadow: none;
 }
 
-h2, h3, h4, h5 {
+h2,
+h3,
+h4,
+h5 {
     color: var(--MAIN-TITLES-TEXT-color) !important;
 }
 
@@ -66,7 +87,7 @@ a:hover {
     color: var(--MAIN-LINK-HOVER-color);
 }
 
-#sidebar ul li.visited > a .read-icon {
+#sidebar ul li.visited>a .read-icon {
 	color: var(--MENU-VISITED-color);
 }
 
@@ -97,8 +118,8 @@ a:hover {
     background: var(--MENU-SEARCH-BG-color);
 }
 
-#sidebar ul.topics > li.parent,
-#sidebar ul.topics > li.active {
+#sidebar ul.topics>li.parent,
+#sidebar ul.topics>li.active {
     background: var(--MENU-SECTIONS-ACTIVE-BG-color);
 }
 
@@ -114,7 +135,7 @@ a:hover {
     color: var(--MENU-SECTIONS-LINK-HOVER-color);
 }
 
-#sidebar ul li.active > a {
+#sidebar ul li.active>a {
     background: var(--MENU-SECTION-ACTIVE-CATEGORY-BG-color);
     color: var(--MENU-SECTION-ACTIVE-CATEGORY-color) !important;
 }
@@ -143,17 +164,17 @@ h4 {
     margin-top: 2rem
 }
 
-h3 + h4 {
+h3+h4 {
     margin-top: 1.5rem
 }
 
 /* Lists */
 ul,
-p + ol {
+p+ol {
     margin-top: 0;
 }
 
-p + ul {
+p+ul {
     margin-top: -0.5rem;
 }
 
@@ -171,15 +192,15 @@ div.notices.warning p:first-child:after {
     margin-left: 1.5rem;
 }
 
-.expand-content > p:first-child {
+.expand-content>p:first-child {
     margin-top: 0.5rem;
 }
 
-.expand-content > p + div.highlight {
+.expand-content>p+div.highlight {
     margin-top: -0.8rem;
 }
 
-.expand-content > ol {
+.expand-content>ol {
     margin-top: 0;
     list-style-type: '- ';
 }
@@ -215,3 +236,37 @@ input[type="submit"]:focus {
     padding-bottom: 0.2em;
     margin-top: -0.8em;
 }
+
+.hidden-solution>.off {
+    display: none;
+}
+
+.show-solution-btn,
+.hide-solution-btn {
+    width: 100%;
+    background-color: rgb(4, 170, 109);
+    color: white;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+div.hidden-solution-content {
+    border-color: rgb(217, 238, 225);
+    border-left-width: 1em;
+    border-right-width: 1em;
+    border-left-style: solid;
+    border-right-style: solid;
+    padding-left: 1em;
+    padding-right: 1em;
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
+}
+
+div.hidden-solution-content>:first-child {
+    margin-top: 0;
+}
+
+div.hidden-solution-content>:last-child {
+    margin-bottom: 0;
+}
+

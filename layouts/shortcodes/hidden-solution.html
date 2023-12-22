@@ -1,0 +1,18 @@
+{{ $_hugo_config := `{ "version": 1 }` }}
+<div class="hidden-solution">
+
+    <button class="show-solution-btn" onclick="$(this).addClass('off'); $(this).next().removeClass('off');">
+        ⮟ Afficher la solution ⮟
+    </button>
+
+    <div class="off">
+        <button class="hide-solution-btn" onclick="$(this).parent().addClass('off'); $(this).parent().prev().removeClass('off');">
+            ⮝ Masquer la solution ⮝
+        </button>
+
+        <div class="hidden-solution-content">
+            {{.Inner | safeHTML}}
+        </div>
+    </div>
+
+</div>
