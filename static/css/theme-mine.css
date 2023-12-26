@@ -286,3 +286,7 @@ div.hidden-solution-content>:last-child {
 #footer-question-btn:disabled {
     display: none;
 }
+
+pre.mermaid {
+    background-color: transparent;
+}

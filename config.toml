@@ -8,7 +8,9 @@ pygmentsUseClasses = true
   themeVariant = "mine"
   showVisitedLinks = true
   disableInlineCopyToClipBoard = true
+  disableLandingPageButton = true
   disableLanguageSwitchingButton = true
+  disableSearch = true
   custom_css = ["css/syntax.css"]
 
 [markup.goldmark.renderer]
