@@ -270,6 +270,13 @@ div.hidden-solution-content>:last-child {
     margin-bottom: 0;
 }
 
+/* Question widget */
+
+#footer-question-btn:disabled,
+#footer-question-window[disabled] {
+    display: none;
+}
+
 #footer-question-btn {
     display: block;
     position: fixed;
@@ -283,8 +290,38 @@ div.hidden-solution-content>:last-child {
     background-color: white;
 }
 
-#footer-question-btn:disabled {
-    display: none;
+#footer-question-window {
+    display: block;
+    position: fixed;
+    padding: 10px;
+    border: red;
+    border-width: 4px;
+    border-radius: 5px;
+    bottom: 10px;
+    right: 10px;
+    background-color: var(--GREY-DARK);
+}
+
+#footer-question-window textarea {
+    resize: none;
+}
+
+#footer-question-window input[type="submit"] {
+    float: right;
+    font-size: 1.1rem;
+    margin-top: -10px;
+}
+
+#footer-question-window input[type="submit"] {
+    float: right;
+    font-size: 1.1rem;
+}
+
+iframe.hidden {
+    position: absolute;
+    width: 0;
+    height: 0;
+    border: 0;
 }
 
 pre.mermaid {

@@ -1,19 +1,57 @@
-<button id="footer-question-btn" disabled><i class="fas fa-question-circle"></i></button>
+{{ if le .Page.Weight 100 }}
+
+<button id="footer-question-btn" onclick="openQuestionForm()" disabled><i class="fas fa-question-circle"></i></button>
+
+<div id="footer-question-window" disabled>
+    <form id="question" method=POST action="https://formsubmit.co/3aa0f379a1aed9c454634cc2da153a7b" target="question-submitted">
+        <input type="email" name="email" placeholder="mon_email@smthg.com" required />
+        <textarea name="question" rows="7" cols="30" placeholder="ma question..."></textarea>
+        <input id="question-topic" type="hidden" name="selection" />
+
+        <input type="hidden" name="_replyto" />
+        <input type="hidden" name="_subject" value="[C++][Chapitre {{ .Page.Params.chapter }}] Question sur le cours" />
+        <input type="hidden" name="_template" value="box" />
+        <input type="hidden" name="_captcha" value="false" />
+        <input type="hidden" name="_next" value="{{ .Site.BaseURL }}/question-submitted/" />
+
+        <input type="submit" disabled style="display: none" aria-hidden="true" />
+        <input type="submit" value="Envoyer" />
+    </form>
+
+    <iframe id="question-submitted" class="hidden" name="question-submitted" src=""></iframe>
+</div>
 
 <script>
 
-function updateQuestionButtonState() {
-    var body = document.getElementById("body-inner");
-    var selection = window.getSelection();
+    function openQuestionForm() {
+        var window = document.getElementById("footer-question-window").removeAttribute("disabled");
 
-    document.getElementById("footer-question-btn").disabled = 
-        selection.isCollapsed ||
-        body == null ||
-        body.contains(selection.anchorNode) == false ||
-        body.contains(selection.focusNode) == false;
-}
+        var selection = window.getSelection().toString();
+        document.getElementById("question-topic").value = selection
+    }
 
-document.onmouseup = document.onkeyup = document.onselectionchange = updateQuestionButtonState;
-updateQuestionButtonState();
+    function updateQuestionWidgetState(event) {
+        var body = document.getElementById("body-inner");
+        var selection = window.getSelection();
+        var question_window = document.getElementById("footer-question-window");
+
+        document.getElementById("footer-question-btn").disabled =
+            selection.isCollapsed ||
+            body == null ||
+            body.contains(selection.anchorNode) == false ||
+            body.contains(selection.focusNode) == false;
+
+        if (event !== undefined
+            && event.type == "mouseup"
+            && question_window.contains(event.target) == false
+            && question_window.contains(document.activeElement) == false) {
+            question_window.setAttribute("disabled", true);
+        }
+    }
+
+    document.onmouseup = document.onkeyup = document.onselectionchange = updateQuestionWidgetState;
+    updateQuestionWidgetState();
 
 </script>
+
+{{ end }}
