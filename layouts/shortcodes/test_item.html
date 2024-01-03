@@ -1,10 +1,17 @@
 {{ $_hugo_config := `{ "version": 1 }` }}
-{{ $id := .Params.id }}
-{{ $desc := .Params.desc }}
 
-<label for="q{{ $id }}">{{ $id }}- {{ .Inner }}</label>
-{{ if isset .Params "lines" }}
-<textarea id="q{{ $id }}" name="q{{ $id }}-{{ $desc }}" rows="{{ .Params.lines }}" cols="50"></textarea>
+{{ with .Page.Scratch.Get "counter" }}
+  {{ $.Page.Scratch.Set "counter" (add . 1) }}
 {{ else }}
-<textarea type="text" id="q{{ $id }}" name="q{{ $id }}-{{ $desc }}" rows="1" cols="50"></textarea>
+  {{ .Page.Scratch.Set "counter" 1 }}
 {{ end }}
+
+{{ $counter := .Page.Scratch.Get "counter"}}
+
+{{ $rows := 1 }}
+{{ with .Get "lines" }}
+  {{ $rows = . }}
+{{ end }}
+
+<label for="q{{ $counter }}">{{ $counter }}- {{ .Inner | markdownify }}</label>
+<textarea id="q{{ $counter }}" name="{{ .Inner }}" rows="{{ $rows }}" cols="50"></textarea>

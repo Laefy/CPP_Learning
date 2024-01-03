@@ -18,7 +18,7 @@
   <input type="hidden" name="_subject" value="[C++][Chapitre {{ .Params.chapter }}] Retour sur ton questionnaire" />
 
   <hr/>
-  
+
   {{ .Inner }}
 
   <hr/>
@@ -32,7 +32,7 @@
   <label for="comments">Avez-vous des commentaires concernant le chapitre et/ou le site ?</label>
   <textarea id="comments" name="comments" rows="5" cols="50"></textarea>
 
-  <input type="hidden" name="_template" value="table" />
+  <input type="hidden" name="_template" value="box" />
   <input type="hidden" name="_captcha" value="false" />
   <input type="hidden" name="_next" value="{{ .Site.BaseURL }}/chapter{{ .Params.chapter }}/test_done/" />
 
