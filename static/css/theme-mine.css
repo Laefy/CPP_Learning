@@ -324,6 +324,32 @@ iframe.hidden {
     border: 0;
 }
 
+/* Code blocks */
+table.lntable>tbody>tr,
+td.lntd,
+td.lntd>pre,
+td.lntd>pre>code {
+    border: 0;
+    border-radius: 0;
+}
+
+td.lntd {
+    padding: 0;
+}
+
+td.lntd:first-child {
+    width: 0;
+}
+
+td.lntd:first-child .copy-to-clipboard {
+    display: none;
+}
+
+.highlight span.line.hl {
+    width: 100%;
+    display: block;
+}
+
 pre.mermaid {
     background-color: transparent;
 }
