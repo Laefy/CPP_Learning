@@ -5,63 +5,42 @@
     <link>https://laefy.github.io/CPP_Learning/chapter9/</link>
     <description>Recent content in Templates on Cours de C&#43;&#43; - Niveau Master</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language><atom:link href="https://laefy.github.io/CPP_Learning/chapter9/index.xml" rel="self" type="application/rss+xml" />
+    <language>fr</language>
+    <atom:link href="https://laefy.github.io/CPP_Learning/chapter9/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Introduction</title>
       <link>https://laefy.github.io/CPP_Learning/chapter9/1-introduction/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
       <guid>https://laefy.github.io/CPP_Learning/chapter9/1-introduction/</guid>
-      <description>Qu&amp;rsquo;est-ce qu&amp;rsquo;un template ? Les templates sont un mécanisme du C++ permettant de faire de la programmation générique.
-Le terme &amp;ldquo;template&amp;rdquo; se traduit littéralement par &amp;ldquo;patron&amp;rdquo; en français (au sens patron de vêtement, pas patron d&amp;rsquo;entreprise). Les templates vont donc permettre de construire un modèle de classe (ou de fonction) à partir duquel le compilateur pourra de générer de véritables classes (ou fonctions).
-Notez donc bien que malgré le terme, une classe-template n&amp;rsquo;est pas une classe.</description>
+      <description>Qu&amp;rsquo;est-ce qu&amp;rsquo;un template ? Les templates sont un mécanisme du C++ permettant de faire de la programmation générique.&#xA;Le terme &amp;ldquo;template&amp;rdquo; se traduit littéralement par &amp;ldquo;patron&amp;rdquo; en français (au sens patron de vêtement, pas patron d&amp;rsquo;entreprise). Les templates vont donc permettre de construire un modèle de classe (ou de fonction) à partir duquel le compilateur pourra de générer de véritables classes (ou fonctions).&#xA;Notez donc bien que malgré le terme, une classe-template n&amp;rsquo;est pas une classe.</description>
     </item>
-    
     <item>
       <title>Exemples</title>
       <link>https://laefy.github.io/CPP_Learning/chapter9/2-examples/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
       <guid>https://laefy.github.io/CPP_Learning/chapter9/2-examples/</guid>
-      <description>Nous allons maintenant rentrer dans le vif du sujet en vous présentant le code de différents templates.
-Nous détaillerons ensuite chacun des éléments de la syntaxe, afin que vous puissiez les comprendre pour les réutiliser dans votre propre code.
- Premier exemple de classe-template Cet exemple consiste en l&amp;rsquo;implémentation d&amp;rsquo;un tableau de taille statique (un peu comme la classe std::array).
-#include &amp;lt;algorithm&amp;gt;#include &amp;lt;cassert&amp;gt;#include &amp;lt;iostream&amp;gt; template &amp;lt;typename ElementType, size_t Size&amp;gt; class StaticArray { public: // Rappel: l&amp;#39;implémentation par défaut du constructeur par défaut disparaît lorsqu&amp;#39;on  // définit explicitement un autre constructeur (ce qui est le cas ici).</description>
+      <description>Nous allons maintenant rentrer dans le vif du sujet en vous présentant le code de différents templates.&#xA;Nous détaillerons ensuite chacun des éléments de la syntaxe, afin que vous puissiez les comprendre pour les réutiliser dans votre propre code.&#xA;Premier exemple de classe-template Cet exemple consiste en l&amp;rsquo;implémentation d&amp;rsquo;un tableau de taille statique (un peu comme la classe std::array).&#xA;#include &amp;lt;algorithm&amp;gt; #include &amp;lt;cassert&amp;gt; #include &amp;lt;iostream&amp;gt; template &amp;lt;typename ElementType, size_t Size&amp;gt; class StaticArray { public: // Rappel: l&amp;#39;implémentation par défaut du constructeur par défaut disparaît lorsqu&amp;#39;on // définit explicitement un autre constructeur (ce qui est le cas ici).</description>
     </item>
-    
     <item>
       <title>Débrief</title>
       <link>https://laefy.github.io/CPP_Learning/chapter9/3-syntaxe/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
       <guid>https://laefy.github.io/CPP_Learning/chapter9/3-syntaxe/</guid>
-      <description>Définition d&amp;rsquo;un template Pour définir un template, il faut écrire template &amp;lt;...&amp;gt; devant la définition de la classe ou fonction templatée.
-Les chevrons contiennent la liste des paramètres du template. Chaque paramètre est typé par :
-- typename : il faut donc passer un nom de type en paramètre,
-- un type intégral, comme size_t, char, int, &amp;hellip; : il faut passer une expression du bon type évaluable à la compilation,</description>
+      <description>Définition d&amp;rsquo;un template Pour définir un template, il faut écrire template &amp;lt;...&amp;gt; devant la définition de la classe ou fonction templatée.&#xA;Les chevrons contiennent la liste des paramètres du template. Chaque paramètre est typé par :&#xA;- typename : il faut donc passer un nom de type en paramètre,&#xA;- un type intégral, comme size_t, char, int, &amp;hellip; : il faut passer une expression du bon type évaluable à la compilation,</description>
     </item>
-    
     <item>
       <title>Questionnaire !</title>
       <link>https://laefy.github.io/CPP_Learning/chapter9/test/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
       <guid>https://laefy.github.io/CPP_Learning/chapter9/test/</guid>
-      <description>C&amp;rsquo;est l&amp;rsquo;heure du test ! N&amp;rsquo;oubliez pas que vous pouvez utiliser Godbolt pour compiler et tester des petits bouts de code.
-Bon courage à vous 🙂
- Vous êtes : Votre adresse mail : Votre groupe : Initiaux 1Initiaux 2Alternants1- Que faut-il écrire juste avant la définition d’une classe (ou fonction) pour en faire une classe (ou fonction) templatée ?
-
-2- Pourquoi n’est-il pas toujours possible de placer l’implémentation des fonctions-membres d’une classe-template dans un .</description>
+      <description>C&amp;rsquo;est l&amp;rsquo;heure du test ! N&amp;rsquo;oubliez pas que vous pouvez utiliser Godbolt pour compiler et tester des petits bouts de code.&#xA;Bon courage à vous 🙂&#xA;Vous êtes : Votre adresse mail : Votre groupe : Initiaux 1&#xD;Initiaux 2&#xD;Alternants&#xD;1- Que faut-il écrire juste avant la définition d’une classe (ou fonction) pour en faire une classe (ou fonction) templatée ?&#xA;2- Pourquoi n’est-il pas toujours possible de placer l’implémentation des fonctions-membres d’une classe-template dans un .</description>
     </item>
-    
     <item>
       <title>Merci !</title>
       <link>https://laefy.github.io/CPP_Learning/chapter9/test_done/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
       <guid>https://laefy.github.io/CPP_Learning/chapter9/test_done/</guid>
-      <description>Vos réponses nous ont bien été communiquées 😃 Retourner à la synthèse du Chapitre</description>
+      <description>&#xD;Vos réponses nous ont bien été communiquées 😃&#xD;N&#39;hésitez pas à nous relancer si vous n&#39;avez pas eu de nouvelles après une semaine !&#xD;</description>
     </item>
-    
   </channel>
 </rss>

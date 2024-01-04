@@ -5,83 +5,56 @@
     <link>https://laefy.github.io/CPP_Learning/chapter10/</link>
     <description>Recent content in Paramètres de templates on Cours de C&#43;&#43; - Niveau Master</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language><atom:link href="https://laefy.github.io/CPP_Learning/chapter10/index.xml" rel="self" type="application/rss+xml" />
+    <language>fr</language>
+    <atom:link href="https://laefy.github.io/CPP_Learning/chapter10/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Référence universelle</title>
       <link>https://laefy.github.io/CPP_Learning/chapter10/1-universal-ref/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
       <guid>https://laefy.github.io/CPP_Learning/chapter10/1-universal-ref/</guid>
-      <description>Dans cette première section, nous commencerons par introduire les concepts de l-value et r-value.
-Cela nous conduira à vous présenter la notion de référence universelle. Nous vous expliquerons ensuite quand et comment vous en servir dans votre code.
- l-value / r-value Avant de parler concrètement des références universelles, il faut aborder un point essentiel à leur compréhension.
-En C++, une expression est une suite d&amp;rsquo;opérateurs et d&amp;rsquo;opérandes pouvant être évaluée.</description>
+      <description>Dans cette première section, nous commencerons par introduire les concepts de l-value et r-value.&#xA;Cela nous conduira à vous présenter la notion de référence universelle. Nous vous expliquerons ensuite quand et comment vous en servir dans votre code.&#xA;l-value / r-value Avant de parler concrètement des références universelles, il faut aborder un point essentiel à leur compréhension.&#xA;En C++, une expression est une suite d&amp;rsquo;opérateurs et d&amp;rsquo;opérandes pouvant être évaluée. L&amp;rsquo;évaluation d&amp;rsquo;une expression peut parfois produire une valeur.</description>
     </item>
-    
     <item>
       <title>Template variadique</title>
       <link>https://laefy.github.io/CPP_Learning/chapter10/2-variadiac/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
       <guid>https://laefy.github.io/CPP_Learning/chapter10/2-variadiac/</guid>
-      <description>Un template variadique, c&amp;rsquo;est un template qui attend un nombre variable de paramètres. Vous en avez déjà utilisé plusieurs, comme :
-- la fonction-template emplace_back de std::vector, qui attend n&amp;rsquo;importe quels nombres et types d&amp;rsquo;arguments, et les utilisent pour construire le nouvel élément,
-- la fonction-template std::make_unique, qui fonctionne sur le même principe,
-- la classe-template std::tuple, qui permet de représenter un N-uplet contenant n&amp;rsquo;importe quels types.
-L&amp;rsquo;objectif de cette section sera de vous apprendre à définir vos propres templates variadiques.</description>
+      <description>Un template variadique, c&amp;rsquo;est un template qui attend un nombre variable de paramètres. Vous en avez déjà utilisé plusieurs, comme :&#xA;- la fonction-template emplace_back de std::vector, qui attend n&amp;rsquo;importe quels nombres et types d&amp;rsquo;arguments, et les utilisent pour construire le nouvel élément,&#xA;- la fonction-template std::make_unique, qui fonctionne sur le même principe,&#xA;- la classe-template std::tuple, qui permet de représenter un N-uplet contenant n&amp;rsquo;importe quels types.&#xA;L&amp;rsquo;objectif de cette section sera de vous apprendre à définir vos propres templates variadiques.</description>
     </item>
-    
     <item>
       <title>Spécialisations</title>
       <link>https://laefy.github.io/CPP_Learning/chapter10/3-specializations/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
       <guid>https://laefy.github.io/CPP_Learning/chapter10/3-specializations/</guid>
-      <description>Cette section sera consacrée à la spécialisation de templates de fonctions et de classes.
-Une spécialisation est la redéfinition d&amp;rsquo;une entitée templatée, qui va s&amp;rsquo;appliquer pour des paramètres particuliers. Il y a de nombreux cas d&amp;rsquo;utilisation des spécialisation, l&amp;rsquo;un d&amp;rsquo;entre eux étant de définir de traiter des cas particuliers.
- Spécialisation de fonctions Soit la fonction templatée suivante, permettant d&amp;rsquo;afficher des valeurs dans le terminal :
-template &amp;lt;typename T&amp;gt; void print(const T&amp;amp; value) { std::cout &amp;lt;&amp;lt; value &amp;lt;&amp;lt; std::endl; } Si on lui passe des booléens, cette fonction affichera 0 ou 1.</description>
+      <description>Cette section sera consacrée à la spécialisation de templates de fonctions et de classes.&#xA;Une spécialisation est la redéfinition d&amp;rsquo;une entitée templatée, qui va s&amp;rsquo;appliquer pour des paramètres particuliers. Il y a de nombreux cas d&amp;rsquo;utilisation des spécialisation, l&amp;rsquo;un d&amp;rsquo;entre eux étant de définir de traiter des cas particuliers.&#xA;Spécialisation de fonctions Soit la fonction templatée suivante, permettant d&amp;rsquo;afficher des valeurs dans le terminal :&#xA;template &amp;lt;typename T&amp;gt; void print(const T&amp;amp; value) { std::cout &amp;lt;&amp;lt; value &amp;lt;&amp;lt; std::endl; } Si on lui passe des booléens, cette fonction affichera 0 ou 1.</description>
     </item>
-    
     <item>
       <title>SFINAE</title>
       <link>https://laefy.github.io/CPP_Learning/chapter10/4-sfinae/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
       <guid>https://laefy.github.io/CPP_Learning/chapter10/4-sfinae/</guid>
-      <description>Nous allons maintenant vous expliquer ce que signifie SFINAE, le besoin auquel ce mécanisme répond et comment le mettre en oeuvre dans votre code.
- Le besoin Supposons que nous souhaitions pouvoir récupérer une clef pour différents type à l&amp;rsquo;aide d&amp;rsquo;une fonction get_key(const Type&amp;amp;), en utilisant des overloads.
-class Person { public: Person(const std::string&amp;amp; name) : _name { name } {} const std::string&amp;amp; get_name() const { return _name; } private: const std::string _name; }; // Overload pour notre classe Person.</description>
+      <description>Nous allons maintenant vous expliquer ce que signifie SFINAE, le besoin auquel ce mécanisme répond et comment le mettre en oeuvre dans votre code.&#xA;Le besoin Supposons que nous souhaitions pouvoir récupérer une clef pour différents type à l&amp;rsquo;aide d&amp;rsquo;une fonction get_key(const Type&amp;amp;), en utilisant des overloads.&#xA;class Person { public: Person(const std::string&amp;amp; name) : _name { name } {} const std::string&amp;amp; get_name() const { return _name; } private: const std::string _name; }; // Overload pour notre classe Person.</description>
     </item>
-    
     <item>
       <title>Questionnaire !</title>
       <link>https://laefy.github.io/CPP_Learning/chapter10/test/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
       <guid>https://laefy.github.io/CPP_Learning/chapter10/test/</guid>
-      <description>Pas de questionnaire cette semaine, parce que mis en ligne trop tard.
-N&amp;rsquo;hésitez néanmoins pas à utiliser le formulaire pour envoyer vos questions.
- Vous êtes : Votre adresse mail : Votre groupe : Initiaux 1Initiaux 2AlternantsCombien de temps avez-vous mis à compléter ce chapitre ?Avez-vous des questions suite à sa lecture ?Avez-vous des commentaires concernant le chapitre et/ou le site ?</description>
+      <description>Pas de questionnaire cette semaine, parce que mis en ligne trop tard.&#xA;N&amp;rsquo;hésitez néanmoins pas à utiliser le formulaire pour envoyer vos questions.&#xA;Vous êtes : Votre adresse mail : Votre groupe : Initiaux 1&#xD;Initiaux 2&#xD;Alternants&#xD;Combien de temps avez-vous mis à compléter ce chapitre ?&#xD;Avez-vous des questions suite à sa lecture ?&#xD;Avez-vous des commentaires concernant le chapitre et/ou le site ?&#xD;</description>
     </item>
-    
     <item>
       <title>Synthèse</title>
       <link>https://laefy.github.io/CPP_Learning/chapter10/summary/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
       <guid>https://laefy.github.io/CPP_Learning/chapter10/summary/</guid>
       <description>// 🚧🚥🔨 //</description>
     </item>
-    
     <item>
       <title>Merci !</title>
       <link>https://laefy.github.io/CPP_Learning/chapter10/test_done/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
       <guid>https://laefy.github.io/CPP_Learning/chapter10/test_done/</guid>
-      <description>Vos réponses nous ont bien été communiquées 😃 Retourner à la synthèse du Chapitre</description>
+      <description>&#xD;Vos réponses nous ont bien été communiquées 😃&#xD;N&#39;hésitez pas à nous relancer si vous n&#39;avez pas eu de nouvelles après une semaine !&#xD;</description>
     </item>
-    
   </channel>
 </rss>

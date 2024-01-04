@@ -5,60 +5,35 @@
     <link>https://laefy.github.io/CPP_Learning/chapter1/2-practice/</link>
     <description>Recent content in Premiers programmes on Cours de C&#43;&#43; - Niveau Master</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language><atom:link href="https://laefy.github.io/CPP_Learning/chapter1/2-practice/index.xml" rel="self" type="application/rss+xml" />
+    <language>fr</language>
+    <atom:link href="https://laefy.github.io/CPP_Learning/chapter1/2-practice/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>👋 Hello World</title>
       <link>https://laefy.github.io/CPP_Learning/chapter1/2-practice/1-hello-world/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
       <guid>https://laefy.github.io/CPP_Learning/chapter1/2-practice/1-hello-world/</guid>
-      <description>Pour votre premier programme, on ne va pas trop faire dans l&amp;rsquo;originalité, il s&amp;rsquo;agira d&amp;rsquo;un Hello World. Vous l&amp;rsquo;avez d&amp;rsquo;ailleurs déjà probablement vu dans la rubrique précédente, pour tester vos outils.
- Pour cet exercice, vous modifierez le fichier :
-- chap-01/1-hello_world.cpp
-La cible à compiler est c1-1-hello_world.
- La fonction main Tout d&amp;rsquo;abord, commençons par écrire la fonction qui est appelée lorsqu&amp;rsquo;on lance le programme. On parle de point d&amp;rsquo;entrée.</description>
+      <description>Pour votre premier programme, on ne va pas trop faire dans l&amp;rsquo;originalité, il s&amp;rsquo;agira d&amp;rsquo;un Hello World. Vous l&amp;rsquo;avez d&amp;rsquo;ailleurs déjà probablement vu dans la rubrique précédente, pour tester vos outils.&#xA;Pour cet exercice, vous modifierez le fichier :&#xA;- chap-01/1-hello_world.cpp&#xA;La cible à compiler est c1-1-hello_world.&#xA;La fonction main Tout d&amp;rsquo;abord, commençons par écrire la fonction qui est appelée lorsqu&amp;rsquo;on lance le programme. On parle de point d&amp;rsquo;entrée. Comme en C, cette fonction doit s&amp;rsquo;appeler main et renvoyer une valeur de type int.</description>
     </item>
-    
     <item>
       <title>🦜 Perroquet</title>
       <link>https://laefy.github.io/CPP_Learning/chapter1/2-practice/2-parrot/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
       <guid>https://laefy.github.io/CPP_Learning/chapter1/2-practice/2-parrot/</guid>
-      <description>Vous allez maintenant implémenter un perroquet, qui répète ce que vous dites dans la console.
- Pour cet exercice, vous modifierez le fichier :
-- chap-01/2-parrot.cpp
-La cible à compiler est c1-2-parrot.
- Lire un entier Commencez par écrire une fonction main qui ne fait rien, comme dans l&amp;rsquo;exercice précédent. Compilez et exécutez le programme, pour être sûr que tout est bien configuré.
-Ensuite, vous allez déclarer une variable de type int.</description>
+      <description>Vous allez maintenant implémenter un perroquet, qui répète ce que vous dites dans la console.&#xA;Pour cet exercice, vous modifierez le fichier :&#xA;- chap-01/2-parrot.cpp&#xA;La cible à compiler est c1-2-parrot.&#xA;Lire un entier Commencez par écrire une fonction main qui ne fait rien, comme dans l&amp;rsquo;exercice précédent. Compilez et exécutez le programme, pour être sûr que tout est bien configuré.&#xA;Ensuite, vous allez déclarer une variable de type int. Cela se fait de la même manière qu&amp;rsquo;en C.</description>
     </item>
-    
     <item>
       <title>🔢 Tableau Numérique</title>
       <link>https://laefy.github.io/CPP_Learning/chapter1/2-practice/3-array/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
       <guid>https://laefy.github.io/CPP_Learning/chapter1/2-practice/3-array/</guid>
-      <description>Le but de cet exercice est de voir comment manipuler les tableaux en C++ et passer des arguments au programme. Votre objectif sera d&amp;rsquo;afficher un tableau de nombres, dont la taille sera définie par les paramètres passés au programme.
- Pour cet exercice, vous modifierez le fichier :
-- chap-01/3-array.cpp
-La cible à compiler est c1-3-array.
- Tableau statique Le code initial de l&amp;rsquo;exercice vous est fourni. Le voici :</description>
+      <description>Le but de cet exercice est de voir comment manipuler les tableaux en C++ et passer des arguments au programme. Votre objectif sera d&amp;rsquo;afficher un tableau de nombres, dont la taille sera définie par les paramètres passés au programme.&#xA;Pour cet exercice, vous modifierez le fichier :&#xA;- chap-01/3-array.cpp&#xA;La cible à compiler est c1-3-array.&#xA;Tableau statique Le code initial de l&amp;rsquo;exercice vous est fourni. Le voici :&#xA;#include &amp;lt;iostream&amp;gt; int main() { int array[] = { 0, 1, 2, 3 }; for (int i = 0; i &amp;lt; 4; ++i) { std::cout &amp;lt;&amp;lt; array[i] &amp;lt;&amp;lt; std::endl; } return 0; } Ce programme permet d&amp;rsquo;instancier un tableau d&amp;rsquo;entiers contenant les valeurs 0, 1, 2 et 3, et d&amp;rsquo;afficher ses valeurs.</description>
     </item>
-    
     <item>
       <title>🧮 Calculette</title>
       <link>https://laefy.github.io/CPP_Learning/chapter1/2-practice/4-calculator/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
       <guid>https://laefy.github.io/CPP_Learning/chapter1/2-practice/4-calculator/</guid>
-      <description>Dans cet exercice, vous refactoriserez le code d&amp;rsquo;une mini-calculette. Cela sera l&amp;rsquo;occasion de voir l&amp;rsquo;instruction switch, les fonctions et le passage de paramètres par référence.
- Pour cet exercice, vous modifierez le fichier :
-- chap-01/4-calculator.cpp
-La cible à compiler est c1-4-calculator.
- Comprendre le code existant Commençons par parcourir le code fourni, afin de comprendre ce qu&amp;rsquo;il s&amp;rsquo;y passe.
-int main(int argc, char** argv) { // Parsing program parameters.  some code.</description>
+      <description>Dans cet exercice, vous refactoriserez le code d&amp;rsquo;une mini-calculette. Cela sera l&amp;rsquo;occasion de voir l&amp;rsquo;instruction switch, les fonctions et le passage de paramètres par référence.&#xA;Pour cet exercice, vous modifierez le fichier :&#xA;- chap-01/4-calculator.cpp&#xA;La cible à compiler est c1-4-calculator.&#xA;Comprendre le code existant Commençons par parcourir le code fourni, afin de comprendre ce qu&amp;rsquo;il s&amp;rsquo;y passe.&#xA;int main(int argc, char** argv) { // Parsing program parameters. some code... // Process operation, depending on the operator.</description>
     </item>
-    
   </channel>
 </rss>

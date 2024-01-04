@@ -5,110 +5,63 @@
     <link>https://laefy.github.io/CPP_Learning/chapter4/</link>
     <description>Recent content in Héritage on Cours de C&#43;&#43; - Niveau Master</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language><atom:link href="https://laefy.github.io/CPP_Learning/chapter4/index.xml" rel="self" type="application/rss+xml" />
+    <language>fr</language>
+    <atom:link href="https://laefy.github.io/CPP_Learning/chapter4/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>💼 Hiérarchie professionnelle</title>
       <link>https://laefy.github.io/CPP_Learning/chapter4/1-hierarchy/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
       <guid>https://laefy.github.io/CPP_Learning/chapter4/1-hierarchy/</guid>
-      <description>Dans cette première partie, vous apprendrez comment définir des relations de parenté entre vos classes.
-Nous ne parlerons sur cette page que d&amp;rsquo;héritage dit &amp;ldquo;statique&amp;rdquo;, c&amp;rsquo;est-à-dire que nous ne chercherons pas à modifier dans les classes-fille le comportement hérité de la classe-mère.
- Pour cet exercice, vous modifierez les fichiers :
-- chap-04/1-hierarchy/Boss.cpp
-- chap-04/1-hierarchy/Boss.h
-- chap-04/1-hierarchy/Staff.cpp
-- chap-04/1-hierarchy/Staff.h
-- chap-04/1-hierarchy/Intern.cpp
-- chap-04/1-hierarchy/Intern.h
-La cible à compiler est c4-1-hierarchy.
- Définir une classe-mère Commencez par jeter un coup d&amp;rsquo;oeil à chacun des fichiers fournis.</description>
+      <description>Dans cette première partie, vous apprendrez comment définir des relations de parenté entre vos classes.&#xA;Nous ne parlerons sur cette page que d&amp;rsquo;héritage dit &amp;ldquo;statique&amp;rdquo;, c&amp;rsquo;est-à-dire que nous ne chercherons pas à modifier dans les classes-fille le comportement hérité de la classe-mère.&#xA;Pour cet exercice, vous modifierez les fichiers :&#xA;- chap-04/1-hierarchy/Boss.cpp&#xA;- chap-04/1-hierarchy/Boss.h&#xA;- chap-04/1-hierarchy/Staff.cpp&#xA;- chap-04/1-hierarchy/Staff.h&#xA;- chap-04/1-hierarchy/Intern.cpp&#xA;- chap-04/1-hierarchy/Intern.h&#xA;La cible à compiler est c4-1-hierarchy.&#xA;Définir une classe-mère Commencez par jeter un coup d&amp;rsquo;oeil à chacun des fichiers fournis.</description>
     </item>
-    
     <item>
       <title>🐮 Concerto animalier</title>
       <link>https://laefy.github.io/CPP_Learning/chapter4/2-farm/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
       <guid>https://laefy.github.io/CPP_Learning/chapter4/2-farm/</guid>
-      <description>Vous allez maintenant apprendre à définir des classes permettant à leurs enfants de spécialiser leur comportement. On parle alors de classe polymorphe.
-Nous ferons un petit récapitulatif en fin de page, pour rappelez les points essentiels auxquels il faut faire attention lorsque vous définissez des classes polymorphes pour éviter les bugs.
- Pour cet exercice, vous modifierez les fichiers :
-- chap-04/2-farm/FarmHouse.cpp
-- chap-04/2-farm/Animal.h
-- chap-04/2-farm/Dog.h
-- chap-04/2-farm/Cat.h
-- chap-04/2-farm/Chicken.h</description>
+      <description>Vous allez maintenant apprendre à définir des classes permettant à leurs enfants de spécialiser leur comportement. On parle alors de classe polymorphe.&#xA;Nous ferons un petit récapitulatif en fin de page, pour rappelez les points essentiels auxquels il faut faire attention lorsque vous définissez des classes polymorphes pour éviter les bugs.&#xA;Pour cet exercice, vous modifierez les fichiers :&#xA;- chap-04/2-farm/FarmHouse.cpp&#xA;- chap-04/2-farm/Animal.h&#xA;- chap-04/2-farm/Dog.h&#xA;- chap-04/2-farm/Cat.h&#xA;- chap-04/2-farm/Chicken.h&#xA;- chap-04/2-farm/Cow.</description>
     </item>
-    
     <item>
       <title>Résolution d&#39;appel virtuel</title>
       <link>https://laefy.github.io/CPP_Learning/chapter4/3-virtual/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
       <guid>https://laefy.github.io/CPP_Learning/chapter4/3-virtual/</guid>
-      <description>Nous allons maintenant rentrer dans les détails de ce qu&amp;rsquo;il se passe sous le manteau, lorsque le programme effectue un appel virtuel.
- Virtual table Lorsqu&amp;rsquo;une classe Parent contenant des fonctions virtuelles est compilée, le compilateur va générer pour l&amp;rsquo;ensemble des classes qui en dérivent une virtual table. Il s&amp;rsquo;agit d&amp;rsquo;une tableau qui contient, pour chaque fonction virtuelle de la classe, un pointeur sur la fonction qui sera vraiment appelée.</description>
+      <description>Nous allons maintenant rentrer dans les détails de ce qu&amp;rsquo;il se passe sous le manteau, lorsque le programme effectue un appel virtuel.&#xA;Virtual table Lorsqu&amp;rsquo;une classe Parent contenant des fonctions virtuelles est compilée, le compilateur va générer pour l&amp;rsquo;ensemble des classes qui en dérivent une virtual table. Il s&amp;rsquo;agit d&amp;rsquo;une tableau qui contient, pour chaque fonction virtuelle de la classe, un pointeur sur la fonction qui sera vraiment appelée.&#xA;Analysons la hiérarchie suivante :</description>
     </item>
-    
     <item>
       <title>Polymorphisme</title>
       <link>https://laefy.github.io/CPP_Learning/chapter4/4-polymorphism/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
       <guid>https://laefy.github.io/CPP_Learning/chapter4/4-polymorphism/</guid>
-      <description>Vous avez probablement déjà entendu le terme polymorphisme, vous l&amp;rsquo;avez peut-être même déjà utilisé, mais quand vous y réfléchissez, si on vous demandait de le définir clairement, vous ne sauriez pas forcément quoi répondre. Cette page sera donc l&amp;rsquo;occasion de revenir sur sa définition.
-Dans ce chapitre, nous nous sommes intéressés à deux manières de mettre-en-ouvre le polymorphisme en C++ : l&amp;rsquo;héritage statique et l&amp;rsquo;héritage dynamique. Nous détaillerons les différences entre les deux et dans quels cas utiliser l&amp;rsquo;un ou l&amp;rsquo;autre.</description>
+      <description>Vous avez probablement déjà entendu le terme polymorphisme, vous l&amp;rsquo;avez peut-être même déjà utilisé, mais quand vous y réfléchissez, si on vous demandait de le définir clairement, vous ne sauriez pas forcément quoi répondre. Cette page sera donc l&amp;rsquo;occasion de revenir sur sa définition.&#xA;Dans ce chapitre, nous nous sommes intéressés à deux manières de mettre-en-ouvre le polymorphisme en C++ : l&amp;rsquo;héritage statique et l&amp;rsquo;héritage dynamique. Nous détaillerons les différences entre les deux et dans quels cas utiliser l&amp;rsquo;un ou l&amp;rsquo;autre.</description>
     </item>
-    
     <item>
       <title>🚗 Véhicule partagé</title>
       <link>https://laefy.github.io/CPP_Learning/chapter4/5-vehicles/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
       <guid>https://laefy.github.io/CPP_Learning/chapter4/5-vehicles/</guid>
-      <description>Pour terminer ce chapitre, nous allons voir comment faire pour accéder directement aux attributs de votre classe de base, comment appeler la fonction parent depuis la rédéfinition de cette fonction dans la classe-fille et enfin, comment modéliser des classes abstraites.
- Pour cet exercice, vous modifierez les fichiers :
-- chap-04/3-vehicles/Program.cpp
-- chap-04/3-vehicles/Vehicle.h
-- chap-04/3-vehicles/Car.h
-- chap-04/3-vehicles/Scooter.h
-La cible à compiler est c4-3-vehicles.
- Introduction du permis Dans le programme que l&amp;rsquo;on vous fournit, n&amp;rsquo;importe qui peut conduire n&amp;rsquo;importe quoi.</description>
+      <description>Pour terminer ce chapitre, nous allons voir comment faire pour accéder directement aux attributs de votre classe de base, comment appeler la fonction parent depuis la rédéfinition de cette fonction dans la classe-fille et enfin, comment modéliser des classes abstraites.&#xA;Pour cet exercice, vous modifierez les fichiers :&#xA;- chap-04/3-vehicles/Program.cpp&#xA;- chap-04/3-vehicles/Vehicle.h&#xA;- chap-04/3-vehicles/Car.h&#xA;- chap-04/3-vehicles/Scooter.h&#xA;La cible à compiler est c4-3-vehicles.&#xA;Introduction du permis Dans le programme que l&amp;rsquo;on vous fournit, n&amp;rsquo;importe qui peut conduire n&amp;rsquo;importe quoi.</description>
     </item>
-    
     <item>
       <title>Questionnaire !</title>
       <link>https://laefy.github.io/CPP_Learning/chapter4/test/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
       <guid>https://laefy.github.io/CPP_Learning/chapter4/test/</guid>
-      <description>Vous avez terminé le Chapitre 4 ! C&amp;rsquo;est donc maintenant le moment de connecter vos neurones pour répondre aux questions suivantes.
-Bon courage à vous 🙂
- Vous êtes : Votre adresse mail : Votre groupe : Initiaux 1Initiaux 2Alternants1- Qu’est-ce qu’une classe polymorphe ?
-
-2- Définissez une classe polymorphe Nothing qui ne fait rien.
-
-3- Comment représenter une classe abstraite en C++ ?</description>
+      <description>Vous avez terminé le Chapitre 4 ! C&amp;rsquo;est donc maintenant le moment de connecter vos neurones pour répondre aux questions suivantes.&#xA;Bon courage à vous 🙂&#xA;Vous êtes : Votre adresse mail : Votre groupe : Initiaux 1&#xD;Initiaux 2&#xD;Alternants&#xD;1- Qu’est-ce qu’une classe polymorphe ?&#xA;2- Définissez une classe polymorphe Nothing qui ne fait rien.&#xA;3- Comment représenter une classe abstraite en C++ ?&#xA;Les questions 4 à 6 font référence au code suivant :</description>
     </item>
-    
     <item>
       <title>Synthèse</title>
       <link>https://laefy.github.io/CPP_Learning/chapter4/summary/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
       <guid>https://laefy.github.io/CPP_Learning/chapter4/summary/</guid>
-      <description>Ce qu&amp;rsquo;il faut savoir faire Langage  Définir une relation de parenté publique entre deux classes : class Child : public Parent { ... }; Définir un membre (fonction ou attribut) accessible uniquement depuis la classe courante et ses enfants : protected : int _a1 = 0; char _a2 = &#39;a&#39;; Appeler le constructeur de la classe parent : Child(int p1, int p2) : Parent { p1 }, _p2 { p2 } { .</description>
+      <description>Ce qu&amp;rsquo;il faut savoir faire Langage Définir une relation de parenté publique entre deux classes : class Child : public Parent { ... }; Définir un membre (fonction ou attribut) accessible uniquement depuis la classe courante et ses enfants : protected : int _a1 = 0; char _a2 = &#39;a&#39;; Appeler le constructeur de la classe parent : Child(int p1, int p2) : Parent { p1 }, _p2 { p2 } { .</description>
     </item>
-    
     <item>
       <title>Merci !</title>
       <link>https://laefy.github.io/CPP_Learning/chapter4/test_done/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
       <guid>https://laefy.github.io/CPP_Learning/chapter4/test_done/</guid>
-      <description>Vos réponses nous ont bien été communiquées 😃 Retourner à la synthèse du Chapitre</description>
+      <description>&#xD;Vos réponses nous ont bien été communiquées 😃&#xD;N&#39;hésitez pas à nous relancer si vous n&#39;avez pas eu de nouvelles après une semaine !&#xD;</description>
     </item>
-    
   </channel>
 </rss>
