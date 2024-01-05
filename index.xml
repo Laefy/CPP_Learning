@@ -8,13 +8,6 @@
     <language>fr</language>
     <atom:link href="https://laefy.github.io/CPP_Learning/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>👋 Hello World</title>
-      <link>https://laefy.github.io/CPP_Learning/chapter1/2-practice/1-hello-world/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://laefy.github.io/CPP_Learning/chapter1/2-practice/1-hello-world/</guid>
-      <description>Pour votre premier programme, on ne va pas trop faire dans l&amp;rsquo;originalité, il s&amp;rsquo;agira d&amp;rsquo;un Hello World. Vous l&amp;rsquo;avez d&amp;rsquo;ailleurs déjà probablement vu dans la rubrique précédente, pour tester vos outils.&#xA;Pour cet exercice, vous modifierez le fichier :&#xA;- chap-01/1-hello_world.cpp&#xA;La cible à compiler est c1-1-hello_world.&#xA;La fonction main Tout d&amp;rsquo;abord, commençons par écrire la fonction qui est appelée lorsqu&amp;rsquo;on lance le programme. On parle de point d&amp;rsquo;entrée. Comme en C, cette fonction doit s&amp;rsquo;appeler main et renvoyer une valeur de type int.</description>
-    </item>
-    <item>
       <title>💼 Hiérarchie professionnelle</title>
       <link>https://laefy.github.io/CPP_Learning/chapter4/1-hierarchy/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -134,6 +127,13 @@
       <description>Nous allons maintenant rentrer dans le vif du sujet en vous présentant le code de différents templates.&#xA;Nous détaillerons ensuite chacun des éléments de la syntaxe, afin que vous puissiez les comprendre pour les réutiliser dans votre propre code.&#xA;Premier exemple de classe-template Cet exemple consiste en l&amp;rsquo;implémentation d&amp;rsquo;un tableau de taille statique (un peu comme la classe std::array).&#xA;#include &amp;lt;algorithm&amp;gt; #include &amp;lt;cassert&amp;gt; #include &amp;lt;iostream&amp;gt; template &amp;lt;typename ElementType, size_t Size&amp;gt; class StaticArray { public: // Rappel: l&amp;#39;implémentation par défaut du constructeur par défaut disparaît lorsqu&amp;#39;on // définit explicitement un autre constructeur (ce qui est le cas ici).</description>
     </item>
     <item>
+      <title>Hello World 👋</title>
+      <link>https://laefy.github.io/CPP_Learning/chapter1/2-hello-world/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://laefy.github.io/CPP_Learning/chapter1/2-hello-world/</guid>
+      <description>Nous allons maintenant enfin pouvoir coder ! Dans la suite de ce chapitre, vous verrez comment :&#xA;écrire un programme, déclarer des variables, écrire sur la sortie standard, lire sur l&amp;rsquo;entrée standard, définir des fonctions, utilisez les structures de contrôle (conditions, boucles, switch, etc.), créer des tableaux et des chaînes de caractères, utiliser des références. Ça fait beaucoup hein ? 😈&#xA;En réalité, comme vous avez déjà fait du C et du Java, il y a pas mal de choses que vous connaissez déjà.</description>
+    </item>
+    <item>
       <title>Ownership</title>
       <link>https://laefy.github.io/CPP_Learning/chapter3/2-ownership/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -169,20 +169,6 @@
       <description>Pour l&amp;rsquo;IDE, nous vous conseillons d&amp;rsquo;utiliser Visual Studio Code, car celui-ci est disponible sur toutes les plateformes (contrairement à Visual Studio tout court), qu&amp;rsquo;il est très bien documenté et que vous pourrez trouvez de nombreux tutoriels en ligne pour apprendre à l&amp;rsquo;utiliser.&#xA;Vous trouverez ci-dessous les instructions permettant d&amp;rsquo;installer VSCode.&#xA;Windows Installez VSCode en suivant les instructions du paragraphe Installation. Si l&amp;rsquo;installeur vous propose d&amp;rsquo;installer git, vous pouvez acceptez, cela vous fera gagner du temps pour la suite.</description>
     </item>
     <item>
-      <title>🦜 Perroquet</title>
-      <link>https://laefy.github.io/CPP_Learning/chapter1/2-practice/2-parrot/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://laefy.github.io/CPP_Learning/chapter1/2-practice/2-parrot/</guid>
-      <description>Vous allez maintenant implémenter un perroquet, qui répète ce que vous dites dans la console.&#xA;Pour cet exercice, vous modifierez le fichier :&#xA;- chap-01/2-parrot.cpp&#xA;La cible à compiler est c1-2-parrot.&#xA;Lire un entier Commencez par écrire une fonction main qui ne fait rien, comme dans l&amp;rsquo;exercice précédent. Compilez et exécutez le programme, pour être sûr que tout est bien configuré.&#xA;Ensuite, vous allez déclarer une variable de type int. Cela se fait de la même manière qu&amp;rsquo;en C.</description>
-    </item>
-    <item>
-      <title>🔢 Tableau Numérique</title>
-      <link>https://laefy.github.io/CPP_Learning/chapter1/2-practice/3-array/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://laefy.github.io/CPP_Learning/chapter1/2-practice/3-array/</guid>
-      <description>Le but de cet exercice est de voir comment manipuler les tableaux en C++ et passer des arguments au programme. Votre objectif sera d&amp;rsquo;afficher un tableau de nombres, dont la taille sera définie par les paramètres passés au programme.&#xA;Pour cet exercice, vous modifierez le fichier :&#xA;- chap-01/3-array.cpp&#xA;La cible à compiler est c1-3-array.&#xA;Tableau statique Le code initial de l&amp;rsquo;exercice vous est fourni. Le voici :&#xA;#include &amp;lt;iostream&amp;gt; int main() { int array[] = { 0, 1, 2, 3 }; for (int i = 0; i &amp;lt; 4; ++i) { std::cout &amp;lt;&amp;lt; array[i] &amp;lt;&amp;lt; std::endl; } return 0; } Ce programme permet d&amp;rsquo;instancier un tableau d&amp;rsquo;entiers contenant les valeurs 0, 1, 2 et 3, et d&amp;rsquo;afficher ses valeurs.</description>
-    </item>
-    <item>
       <title>🔨 Constructeur</title>
       <link>https://laefy.github.io/CPP_Learning/chapter2/3-constructor/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -216,6 +202,13 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://laefy.github.io/CPP_Learning/chapter9/3-syntaxe/</guid>
       <description>Définition d&amp;rsquo;un template Pour définir un template, il faut écrire template &amp;lt;...&amp;gt; devant la définition de la classe ou fonction templatée.&#xA;Les chevrons contiennent la liste des paramètres du template. Chaque paramètre est typé par :&#xA;- typename : il faut donc passer un nom de type en paramètre,&#xA;- un type intégral, comme size_t, char, int, &amp;hellip; : il faut passer une expression du bon type évaluable à la compilation,</description>
+    </item>
+    <item>
+      <title>Eléments de syntaxe ✍</title>
+      <link>https://laefy.github.io/CPP_Learning/chapter1/3-syntax-elements/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://laefy.github.io/CPP_Learning/chapter1/3-syntax-elements/</guid>
+      <description>Nous allons vous présenter les éléments de syntaxe de base du langage.&#xA;Comme vous pourrez le constater, mise à part quelques subtilités, la plupart de ce que vous allez voir ici ne devrait pas vous dépayser de ce que vous avez déjà vu en C ou Java.&#xA;Variables et types fondamentaux Comme dans tous les langages ou presque, on retrouve :&#xA;les types entier (signés ou non-signés) : int, short, unsigned int, &amp;hellip; les types flottant : float, double les types caractère : char, unsigned char le type booléen : bool (et non pas boolean comme en Java ⚠️) Pour définir des variables, c&amp;rsquo;est comme d&amp;rsquo;habitude : &amp;lt;type&amp;gt; &amp;lt;nom&amp;gt; = &amp;lt;valeur&amp;gt;;</description>
     </item>
     <item>
       <title>Itérateurs</title>
@@ -274,6 +267,13 @@
       <description>Les lambdas sont des objets-fonction un peu spéciaux, que l&amp;rsquo;on peut facilement définir depuis le corps d&amp;rsquo;une fonction. Vous avez déjà dû voir de nombreux exemples d&amp;rsquo;utilisation de lambda tout au long de ce cours. Nous allons maintenant revenir plus en détail sur leur fonctionnement et vous montrez tout ce qu&amp;rsquo;il est possible de faire avec.&#xA;Syntaxe La définition d&amp;rsquo;une lambda est composée en général de trois parties :&#xA;[c1, c2, c3](int p1, int p2, int p3) { return c1 * p1 + c2 * p2 + c3 * p3; } La partie entre crochet s&amp;rsquo;appelle la capture.</description>
     </item>
     <item>
+      <title>Librairie standard 📚</title>
+      <link>https://laefy.github.io/CPP_Learning/chapter1/4-std-lib/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://laefy.github.io/CPP_Learning/chapter1/4-std-lib/</guid>
+      <description>Sur cette page, vous allez apprendre à utiliser quelques classes fournies par la librarie standard pour manipuler chaînes de caractères et tableaux. Vous verrez également comment écrire ou lire dans des flux pour intéragir avec l&amp;rsquo;utilisateur.&#xA;Chaînes de caractères Comme en C, const char* est le type fondamental associé à une chaîne de caractère littérale (c&amp;rsquo;est-à-dire écrite en dur, avec les guillemets autour) :&#xA;auto str = &amp;#34;hello&amp;#34;; // -&amp;gt; str est de type const char* Cependant, ce n&amp;rsquo;est pas du tout pratique pour faire des opérations comme des concaténations, des recherches, ou même simplement récupérer la taille de la chaîne.</description>
+    </item>
+    <item>
       <title>Polymorphisme</title>
       <link>https://laefy.github.io/CPP_Learning/chapter4/4-polymorphism/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -295,13 +295,6 @@
       <description>Dans cet exercice, vous verrez comment implémenter un constructeur de copie et un opérateur d&amp;rsquo;assignation.&#xA;Nous en profiterons aussi pour vous montrer comment surcharger l&amp;rsquo;opérateur &amp;lt;&amp;lt;.&#xA;Pour cet exercice, vous modifierez le fichier :&#xA;- chap-02/3-clone.cpp&#xA;La cible à compiler est c2-3-clone.&#xA;Constructeur de copie Dans la fonction main, instanciez à la suite du code existant une nouvelle instance de Person et initialisée là à partir de la variable batman. Cela se fait exactement de la même manière que si vous souhaitiez créer une copie d&amp;rsquo;une variable de type int.</description>
     </item>
     <item>
-      <title>🧮 Calculette</title>
-      <link>https://laefy.github.io/CPP_Learning/chapter1/2-practice/4-calculator/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://laefy.github.io/CPP_Learning/chapter1/2-practice/4-calculator/</guid>
-      <description>Dans cet exercice, vous refactoriserez le code d&amp;rsquo;une mini-calculette. Cela sera l&amp;rsquo;occasion de voir l&amp;rsquo;instruction switch, les fonctions et le passage de paramètres par référence.&#xA;Pour cet exercice, vous modifierez le fichier :&#xA;- chap-01/4-calculator.cpp&#xA;La cible à compiler est c1-4-calculator.&#xA;Comprendre le code existant Commençons par parcourir le code fourni, afin de comprendre ce qu&amp;rsquo;il s&amp;rsquo;y passe.&#xA;int main(int argc, char** argv) { // Parsing program parameters. some code... // Process operation, depending on the operator.</description>
-    </item>
-    <item>
       <title>🔳 Rectangle</title>
       <link>https://laefy.github.io/CPP_Learning/chapter2/5-rectangle/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -321,6 +314,13 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://laefy.github.io/CPP_Learning/chapter0/5-clang-format/</guid>
       <description>Clang-Format est un outil permettant de formatter automatiquement vos fichiers (indentation, espaces, retours à la ligne, etc).&#xA;Comme le C++ est un langage avec une syntaxe un peu lourde, utiliser ce type d&amp;rsquo;outils permet de faciliter la lecture du code.&#xA;Configuration de VSCode Clang-Format est déjà disponible dans l&amp;rsquo;extension C/C++ installée précédemment. Pour qu&amp;rsquo;il se lance automatiquement lorsque vous sauvegardez vos fichiers, suivez les instructions ci-dessous.&#xA;Ouvrez le panneau de commandes VSCode (Ctrl+Shift+P).</description>
+    </item>
+    <item>
+      <title>Compilation ⚙️</title>
+      <link>https://laefy.github.io/CPP_Learning/chapter1/5-compilation/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://laefy.github.io/CPP_Learning/chapter1/5-compilation/</guid>
+      <description>En théorie, le contenu de cette page ne devrait être qu&amp;rsquo;une redite de vos cours de C et de compilation de l&amp;rsquo;an dernier.&#xA;Cependant, je sais qu&amp;rsquo;à la réminiscence des moments passés à réviser ces matières, la plupart d&amp;rsquo;entre vous sentez la chaleur de vos larmes couler le long de vos joues.&#xA;Nous allons donc reprendre le sujet en douceur pour faire en sorte que vous compreniez un peu mieux ce qu&amp;rsquo;il se passe pendant la compilation et à quoi elle sert.</description>
     </item>
     <item>
       <title>Manipulation de chaînes</title>
@@ -349,13 +349,6 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://laefy.github.io/CPP_Learning/chapter10/test/</guid>
       <description>Pas de questionnaire cette semaine, parce que mis en ligne trop tard.&#xA;N&amp;rsquo;hésitez néanmoins pas à utiliser le formulaire pour envoyer vos questions.&#xA;Vous êtes : Votre adresse mail : Votre groupe : Initiaux 1&#xD;Initiaux 2&#xD;Alternants&#xD;Combien de temps avez-vous mis à compléter ce chapitre ?&#xD;Avez-vous des questions suite à sa lecture ?&#xD;Avez-vous des commentaires concernant le chapitre et/ou le site ?&#xD;</description>
-    </item>
-    <item>
-      <title>Questionnaire !</title>
-      <link>https://laefy.github.io/CPP_Learning/chapter1/test/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://laefy.github.io/CPP_Learning/chapter1/test/</guid>
-      <description>Félicitations !! Vous avez enfin terminé le Chapitre 1 ! Vous aviez l&amp;rsquo;impression qu&amp;rsquo;il n&amp;rsquo;en finirait jamais, qu&amp;rsquo;il aspirerait votre âme dans des méandres ténébreux, mais c&amp;rsquo;est bon, vous l&amp;rsquo;avez terrassé 🥳🎉&#xA;Avant de nous quitter pour aller savourer ce moment, vous devriez profiter que le chapitre soit bien frais dans votre tête pour répondre au questionnaire ci-dessous. Nous vous rappelons que si vous êtes en M1 à l&amp;rsquo;UGE, il participera à votre notation.</description>
     </item>
     <item>
       <title>Questionnaire !</title>
@@ -407,6 +400,13 @@
       <description>C&amp;rsquo;est l&amp;rsquo;heure du test ! N&amp;rsquo;oubliez pas que vous pouvez utiliser Godbolt pour compiler et tester des petits bouts de code.&#xA;Bon courage à vous 🙂&#xA;Vous êtes : Votre adresse mail : Votre groupe : Initiaux 1&#xD;Initiaux 2&#xD;Alternants&#xD;1- Que faut-il écrire juste avant la définition d’une classe (ou fonction) pour en faire une classe (ou fonction) templatée ?&#xA;2- Pourquoi n’est-il pas toujours possible de placer l’implémentation des fonctions-membres d’une classe-template dans un .</description>
     </item>
     <item>
+      <title>Questionnaire ☑</title>
+      <link>https://laefy.github.io/CPP_Learning/chapter1/test/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://laefy.github.io/CPP_Learning/chapter1/test/</guid>
+      <description>Félicitations !! Vous avez enfin terminé le Chapitre 1 ! 🥳🎉&#xA;Le questionnaire ci-dessous vous aidera à savoir si vous avez bien compris le cours ou non.&#xA;Il n&amp;rsquo;a donc pas vocation à vous évaluer, mais à vous donnez une idée de ce que vous auriez lu trop vite ou n&amp;rsquo;auriez pas assez pratiqué.&#xA;Dans tous les cas, si vous répondez à ce questionnaire et cliquez sur le bouton Valider, vos réponses nous seront envoyées par mail et nous vous ferons un petit retour sur ce que vous avez réussi ou non 😉</description>
+    </item>
+    <item>
       <title>Retours ?</title>
       <link>https://laefy.github.io/CPP_Learning/chapter0/test/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -419,13 +419,6 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://laefy.github.io/CPP_Learning/chapter10/summary/</guid>
       <description>// 🚧🚥🔨 //</description>
-    </item>
-    <item>
-      <title>Synthèse</title>
-      <link>https://laefy.github.io/CPP_Learning/chapter1/summary/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://laefy.github.io/CPP_Learning/chapter1/summary/</guid>
-      <description>Ce qu&amp;rsquo;il faut retenir Théorie C++ est un langage compilé, performant, documenté, standardisé et disposant d&amp;rsquo;une large communauté. Il est verbeux et sa syntaxe font qu&amp;rsquo;il ne s&amp;rsquo;agit pas du langage le plus agréable à lire. Une référence est une variable que permet d&amp;rsquo;aliaser une autre variable. Les deux variables font donc référence au même espace dans la mémoire. Méthodologie Lorsqu&amp;rsquo;on a besoin d&amp;rsquo;une fonction, on commence par aller voir sur Internet si elle n&amp;rsquo;existe pas déjà dans la librairie standard.</description>
     </item>
     <item>
       <title>Synthèse</title>

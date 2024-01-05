@@ -1,0 +1,4851 @@
+<!DOCTYPE html>
+<html lang="fr" class="js csstransforms3d">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="Hugo 0.121.0">
+    <meta name="description" content="">
+
+
+    <link rel="icon" href="/CPP_Learning/images/favicon.png" type="image/png">
+
+    <title>Compilation ⚙️ :: Cours de C&#43;&#43; - Niveau Master</title>
+
+    
+    <link href="/CPP_Learning/css/nucleus.css?1704493468" rel="stylesheet">
+    <link href="/CPP_Learning/css/fontawesome-all.min.css?1704493468" rel="stylesheet">
+    <link href="/CPP_Learning/css/hybrid.css?1704493468" rel="stylesheet">
+    <link href="/CPP_Learning/css/featherlight.min.css?1704493468" rel="stylesheet">
+    <link href="/CPP_Learning/css/perfect-scrollbar.min.css?1704493468" rel="stylesheet">
+    <link href="/CPP_Learning/css/auto-complete.css?1704493468" rel="stylesheet">
+    <link href="/CPP_Learning/css/atom-one-dark-reasonable.css?1704493468" rel="stylesheet">
+    <link href="/CPP_Learning/css/theme.css?1704493468" rel="stylesheet">
+    <link href="/CPP_Learning/css/tabs.css?1704493468" rel="stylesheet">
+    <link href="/CPP_Learning/css/hugo-theme.css?1704493468" rel="stylesheet">
+    
+    <link href="/CPP_Learning/css/theme-mine.css?1704493468" rel="stylesheet">
+    
+    <link href="/CPP_Learning/css/syntax.css?1704493468" rel="stylesheet">
+
+    <script src="/CPP_Learning/js/jquery-3.3.1.min.js?1704493468"></script>
+
+    <style>
+      :root #header + #content > #left > #rlblock_left{
+          display:none !important;
+      }
+      
+        :not(pre) > code + span.copy-to-clipboard {
+            display: none;
+        }
+      
+    </style>
+    
+  </head>
+  <body class="" data-url="/CPP_Learning/chapter1/5-compilation/">
+    <nav id="sidebar" class="showVisitedLinks">
+
+
+
+  <div id="header-wrapper">
+    <div id="header">
+      <a id="logo" href="https://laefy.github.io/CPP_Learning/">🎄 C++ 🎄</a>
+
+    </div>
+    
+  </div>
+  
+
+    <div class="highlightable">
+    <ul class="topics">
+
+        
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/CPP_Learning/chapter0/" title="Mise en place" class="dd-item
+        
+        
+        
+        ">
+      <a href="/CPP_Learning/chapter0/">
+          <b>0- </b>Mise en place
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/CPP_Learning/chapter0/1-compiler/" title="Compilateur" class="dd-item ">
+        <a href="/CPP_Learning/chapter0/1-compiler/">
+        Compilateur
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/CPP_Learning/chapter0/2-vscode/" title="Visual Studio Code" class="dd-item ">
+        <a href="/CPP_Learning/chapter0/2-vscode/">
+        Visual Studio Code
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/CPP_Learning/chapter0/3-cmake/" title="CMake" class="dd-item ">
+        <a href="/CPP_Learning/chapter0/3-cmake/">
+        CMake
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/CPP_Learning/chapter0/4-git/" title="Git" class="dd-item ">
+        <a href="/CPP_Learning/chapter0/4-git/">
+        Git
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/CPP_Learning/chapter0/5-clang-format/" title="Clang-Format" class="dd-item ">
+        <a href="/CPP_Learning/chapter0/5-clang-format/">
+        Clang-Format
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/CPP_Learning/chapter0/6-tips/" title="Astuces" class="dd-item
+        
+        
+        
+        ">
+      <a href="/CPP_Learning/chapter0/6-tips/">
+          Astuces
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/CPP_Learning/chapter0/6-tips/1-snippets/" title="Petits programmes" class="dd-item ">
+        <a href="/CPP_Learning/chapter0/6-tips/1-snippets/">
+        Petits programmes
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/CPP_Learning/chapter0/6-tips/2-vscode/" title="Projets VSCode" class="dd-item ">
+        <a href="/CPP_Learning/chapter0/6-tips/2-vscode/">
+        Projets VSCode
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/CPP_Learning/chapter0/6-tips/3-keybinds-commands/" title="Raccourcis VSCode" class="dd-item ">
+        <a href="/CPP_Learning/chapter0/6-tips/3-keybinds-commands/">
+        Raccourcis VSCode
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/CPP_Learning/chapter0/6-tips/4-terminal/" title="Compilation en terminal" class="dd-item ">
+        <a href="/CPP_Learning/chapter0/6-tips/4-terminal/">
+        Compilation en terminal
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+      
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/CPP_Learning/chapter0/test/" title="Retours ?" class="dd-item ">
+        <a href="/CPP_Learning/chapter0/test/">
+        Retours ?
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+          
+        
+        </ul>
+      
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/CPP_Learning/chapter1/" title="Introduction au C&#43;&#43;" class="dd-item
+        parent
+        
+        
+        ">
+      <a href="/CPP_Learning/chapter1/">
+          <b>1- </b>Introduction au C&#43;&#43;
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/CPP_Learning/chapter1/1-language/" title="Présentation du langage" class="dd-item ">
+        <a href="/CPP_Learning/chapter1/1-language/">
+        Présentation du langage
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/CPP_Learning/chapter1/2-hello-world/" title="Hello World 👋" class="dd-item ">
+        <a href="/CPP_Learning/chapter1/2-hello-world/">
+        Hello World 👋
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/CPP_Learning/chapter1/3-syntax-elements/" title="Eléments de syntaxe ✍" class="dd-item ">
+        <a href="/CPP_Learning/chapter1/3-syntax-elements/">
+        Eléments de syntaxe ✍
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/CPP_Learning/chapter1/4-std-lib/" title="Librairie standard 📚" class="dd-item ">
+        <a href="/CPP_Learning/chapter1/4-std-lib/">
+        Librairie standard 📚
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/CPP_Learning/chapter1/5-compilation/" title="Compilation ⚙️" class="dd-item active">
+        <a href="/CPP_Learning/chapter1/5-compilation/">
+        Compilation ⚙️
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/CPP_Learning/chapter1/test/" title="Questionnaire ☑" class="dd-item ">
+        <a href="/CPP_Learning/chapter1/test/">
+        Questionnaire ☑
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+          
+        
+        </ul>
+      
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/CPP_Learning/chapter2/" title="Classes" class="dd-item
+        
+        
+        
+        ">
+      <a href="/CPP_Learning/chapter2/">
+          <b>2- </b>Classes
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/CPP_Learning/chapter2/1-poo/" title="C&#39;est quoi un objet déjà ?" class="dd-item ">
+        <a href="/CPP_Learning/chapter2/1-poo/">
+        C&#39;est quoi un objet déjà ?
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/CPP_Learning/chapter2/2-first-class/" title="✨ Première classe" class="dd-item ">
+        <a href="/CPP_Learning/chapter2/2-first-class/">
+        ✨ Première classe
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/CPP_Learning/chapter2/3-constructor/" title="🔨 Constructeur" class="dd-item ">
+        <a href="/CPP_Learning/chapter2/3-constructor/">
+        🔨 Constructeur
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/CPP_Learning/chapter2/4-clone/" title="🧬 Clône" class="dd-item ">
+        <a href="/CPP_Learning/chapter2/4-clone/">
+        🧬 Clône
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/CPP_Learning/chapter2/5-rectangle/" title="🔳 Rectangle" class="dd-item ">
+        <a href="/CPP_Learning/chapter2/5-rectangle/">
+        🔳 Rectangle
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/CPP_Learning/chapter2/6-polygon/" title="💠 Polygône" class="dd-item ">
+        <a href="/CPP_Learning/chapter2/6-polygon/">
+        💠 Polygône
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/CPP_Learning/chapter2/test/" title="Questionnaire !" class="dd-item ">
+        <a href="/CPP_Learning/chapter2/test/">
+        Questionnaire !
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/CPP_Learning/chapter2/summary/" title="Synthèse" class="dd-item ">
+        <a href="/CPP_Learning/chapter2/summary/">
+        Synthèse
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+          
+        
+        </ul>
+      
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/CPP_Learning/chapter3/" title="Gestion mémoire" class="dd-item
+        
+        
+        
+        ">
+      <a href="/CPP_Learning/chapter3/">
+          <b>3- </b>Gestion mémoire
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/CPP_Learning/chapter3/1-lifespan/" title="Durée de vie" class="dd-item ">
+        <a href="/CPP_Learning/chapter3/1-lifespan/">
+        Durée de vie
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/CPP_Learning/chapter3/2-ownership/" title="Ownership" class="dd-item ">
+        <a href="/CPP_Learning/chapter3/2-ownership/">
+        Ownership
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/CPP_Learning/chapter3/3-allocation/" title="Allocation dynamique" class="dd-item ">
+        <a href="/CPP_Learning/chapter3/3-allocation/">
+        Allocation dynamique
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/CPP_Learning/chapter3/4-move-sem/" title="Déplacement" class="dd-item ">
+        <a href="/CPP_Learning/chapter3/4-move-sem/">
+        Déplacement
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/CPP_Learning/chapter3/test/" title="Questionnaire !" class="dd-item ">
+        <a href="/CPP_Learning/chapter3/test/">
+        Questionnaire !
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/CPP_Learning/chapter3/summary/" title="Synthèse" class="dd-item ">
+        <a href="/CPP_Learning/chapter3/summary/">
+        Synthèse
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+          
+        
+        </ul>
+      
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/CPP_Learning/chapter4/" title="Héritage" class="dd-item
+        
+        
+        
+        ">
+      <a href="/CPP_Learning/chapter4/">
+          <b>4- </b>Héritage
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/CPP_Learning/chapter4/1-hierarchy/" title="💼 Hiérarchie professionnelle" class="dd-item ">
+        <a href="/CPP_Learning/chapter4/1-hierarchy/">
+        💼 Hiérarchie professionnelle
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/CPP_Learning/chapter4/2-farm/" title="🐮 Concerto animalier" class="dd-item ">
+        <a href="/CPP_Learning/chapter4/2-farm/">
+        🐮 Concerto animalier
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/CPP_Learning/chapter4/3-virtual/" title="Résolution d&#39;appel virtuel" class="dd-item ">
+        <a href="/CPP_Learning/chapter4/3-virtual/">
+        Résolution d&#39;appel virtuel
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/CPP_Learning/chapter4/4-polymorphism/" title="Polymorphisme" class="dd-item ">
+        <a href="/CPP_Learning/chapter4/4-polymorphism/">
+        Polymorphisme
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/CPP_Learning/chapter4/5-vehicles/" title="🚗 Véhicule partagé" class="dd-item ">
+        <a href="/CPP_Learning/chapter4/5-vehicles/">
+        🚗 Véhicule partagé
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/CPP_Learning/chapter4/test/" title="Questionnaire !" class="dd-item ">
+        <a href="/CPP_Learning/chapter4/test/">
+        Questionnaire !
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/CPP_Learning/chapter4/summary/" title="Synthèse" class="dd-item ">
+        <a href="/CPP_Learning/chapter4/summary/">
+        Synthèse
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+          
+        
+        </ul>
+      
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/CPP_Learning/chapter5/" title="Librairie standard" class="dd-item
+        
+        
+        
+        ">
+      <a href="/CPP_Learning/chapter5/">
+          <b>5- </b>Librairie standard
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/CPP_Learning/chapter5/1-doc/" title="Un peu de doc..." class="dd-item ">
+        <a href="/CPP_Learning/chapter5/1-doc/">
+        Un peu de doc...
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/CPP_Learning/chapter5/2-vectors/" title="Tableaux dynamiques" class="dd-item ">
+        <a href="/CPP_Learning/chapter5/2-vectors/">
+        Tableaux dynamiques
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/CPP_Learning/chapter5/3-sequentials/" title="Autres conteneurs séquentiels" class="dd-item ">
+        <a href="/CPP_Learning/chapter5/3-sequentials/">
+        Autres conteneurs séquentiels
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/CPP_Learning/chapter5/4-associatives/" title="Conteneurs associatifs" class="dd-item ">
+        <a href="/CPP_Learning/chapter5/4-associatives/">
+        Conteneurs associatifs
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/CPP_Learning/chapter5/5-strings/" title="Manipulation de chaînes" class="dd-item ">
+        <a href="/CPP_Learning/chapter5/5-strings/">
+        Manipulation de chaînes
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/CPP_Learning/chapter5/6-tuples/" title="Paires et tuples" class="dd-item ">
+        <a href="/CPP_Learning/chapter5/6-tuples/">
+        Paires et tuples
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/CPP_Learning/chapter5/test/" title="Questionnaire !" class="dd-item ">
+        <a href="/CPP_Learning/chapter5/test/">
+        Questionnaire !
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/CPP_Learning/chapter5/summary/" title="Synthèse" class="dd-item ">
+        <a href="/CPP_Learning/chapter5/summary/">
+        Synthèse
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+          
+        
+        </ul>
+      
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/CPP_Learning/chapter6/" title="Algorithmes" class="dd-item
+        
+        
+        
+        ">
+      <a href="/CPP_Learning/chapter6/">
+          <b>6- </b>Algorithmes
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/CPP_Learning/chapter6/1-searches/" title="Parcours et recherches" class="dd-item ">
+        <a href="/CPP_Learning/chapter6/1-searches/">
+        Parcours et recherches
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/CPP_Learning/chapter6/2-transformations/" title="Transformations" class="dd-item ">
+        <a href="/CPP_Learning/chapter6/2-transformations/">
+        Transformations
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/CPP_Learning/chapter6/3-iterators/" title="Itérateurs" class="dd-item ">
+        <a href="/CPP_Learning/chapter6/3-iterators/">
+        Itérateurs
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/CPP_Learning/chapter6/4-lambdas/" title="Lambdas" class="dd-item ">
+        <a href="/CPP_Learning/chapter6/4-lambdas/">
+        Lambdas
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/CPP_Learning/chapter6/test/" title="Questionnaire !" class="dd-item ">
+        <a href="/CPP_Learning/chapter6/test/">
+        Questionnaire !
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+          
+        
+        </ul>
+      
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/CPP_Learning/chapter8/" title="Traitement d&#39;erreurs" class="dd-item
+        
+        
+        
+        ">
+      <a href="/CPP_Learning/chapter8/">
+          <b>8- </b>Traitement d&#39;erreurs
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/CPP_Learning/chapter8/1-assertions/" title="Assertions" class="dd-item ">
+        <a href="/CPP_Learning/chapter8/1-assertions/">
+        Assertions
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/CPP_Learning/chapter8/2-exceptions/" title="Exceptions" class="dd-item ">
+        <a href="/CPP_Learning/chapter8/2-exceptions/">
+        Exceptions
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/CPP_Learning/chapter8/test/" title="Questionnaire !" class="dd-item ">
+        <a href="/CPP_Learning/chapter8/test/">
+        Questionnaire !
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+          
+        
+        </ul>
+      
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/CPP_Learning/chapter9/" title="Templates" class="dd-item
+        
+        
+        
+        ">
+      <a href="/CPP_Learning/chapter9/">
+          <b>9- </b>Templates
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/CPP_Learning/chapter9/1-introduction/" title="Introduction" class="dd-item ">
+        <a href="/CPP_Learning/chapter9/1-introduction/">
+        Introduction
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/CPP_Learning/chapter9/2-examples/" title="Exemples" class="dd-item ">
+        <a href="/CPP_Learning/chapter9/2-examples/">
+        Exemples
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/CPP_Learning/chapter9/3-syntaxe/" title="Débrief" class="dd-item ">
+        <a href="/CPP_Learning/chapter9/3-syntaxe/">
+        Débrief
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/CPP_Learning/chapter9/test/" title="Questionnaire !" class="dd-item ">
+        <a href="/CPP_Learning/chapter9/test/">
+        Questionnaire !
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+          
+        
+        </ul>
+      
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/CPP_Learning/chapter10/" title="Paramètres de templates" class="dd-item
+        
+        
+        
+        ">
+      <a href="/CPP_Learning/chapter10/">
+          <b>10- </b>Paramètres de templates
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/CPP_Learning/chapter10/1-universal-ref/" title="Référence universelle" class="dd-item ">
+        <a href="/CPP_Learning/chapter10/1-universal-ref/">
+        Référence universelle
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/CPP_Learning/chapter10/2-variadiac/" title="Template variadique" class="dd-item ">
+        <a href="/CPP_Learning/chapter10/2-variadiac/">
+        Template variadique
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/CPP_Learning/chapter10/3-specializations/" title="Spécialisations" class="dd-item ">
+        <a href="/CPP_Learning/chapter10/3-specializations/">
+        Spécialisations
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/CPP_Learning/chapter10/4-sfinae/" title="SFINAE" class="dd-item ">
+        <a href="/CPP_Learning/chapter10/4-sfinae/">
+        SFINAE
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/CPP_Learning/chapter10/test/" title="Questionnaire !" class="dd-item ">
+        <a href="/CPP_Learning/chapter10/test/">
+        Questionnaire !
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/CPP_Learning/chapter10/summary/" title="Synthèse" class="dd-item ">
+        <a href="/CPP_Learning/chapter10/summary/">
+        Synthèse
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+          
+        
+        </ul>
+      
+    </li>
+  
+ 
+
+          
+        
+    </ul>
+
+    
+    
+      <section id="shortcuts">
+        <h3>Accès rapide</h3>
+        <ul>
+          
+              <li>
+                  <a class="padding" href="https://github.com/Laefy/CPP_Learning_Code/"><i class='fab fa-github'></i> Dépôt Cours</a>
+              </li>
+          
+              <li>
+                  <a class="padding" href="https://github.com/Laefy/CPP_Exercises/"><i class='fab fa-github'></i> Dépôt TPs</a>
+              </li>
+          
+              <li>
+                  <a class="padding" href="https://laefy.github.io/CPP_Learning/workflow"><i class='far fa-list-alt'></i> Workflow</a>
+              </li>
+          
+              <li>
+                  <a class="padding" href="https://laefy.github.io/CPP_Learning/chapter0/6-tips/"><i class='fa fa-rocket'></i> Astuces</a>
+              </li>
+          
+              <li>
+                  <a class="padding" href="https://laefy.github.io/CPP_Learning/faq"><i class='fas fa-question-circle'></i> FAQ</a>
+              </li>
+          
+              <li>
+                  <a class="padding" href="https://en.cppreference.com/w/"><i class='fas fa-passport'></i> CPP-Ref</a>
+              </li>
+          
+        </ul>
+      </section>
+    
+
+    
+    <section id="prefooter">
+      <hr/>
+      <ul>
+      
+
+      
+        <li><a class="padding" href="#" data-clear-history-toggle=""><i class="fas fa-history fa-fw"></i> Supprimer l&#39;historique</a></li>
+      
+      </ul>
+    </section>
+    
+    <section id="footer">
+      <p>Built with <a href="https://github.com/matcornic/hugo-theme-learn"><i class="fas fa-heart"></i></a> from <a href="https://getgrav.org">Grav</a> and <a href="https://gohugo.io/">Hugo</a></p>
+
+    </section>
+  </div>
+</nav>
+
+
+
+
+        <section id="body">
+        <div id="overlay"></div>
+        <div class="padding highlightable">
+              
+              <div>
+                <div id="top-bar">
+                
+                
+                <div id="breadcrumbs" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
+                    <span id="sidebar-toggle-span">
+                        <a href="#" id="sidebar-toggle" data-sidebar-toggle="">
+                          <i class="fas fa-bars"></i>
+                        </a>
+                    </span>
+                  
+                  <span id="toc-menu"><i class="fas fa-list-alt"></i></span>
+                  
+                  <span class="links">
+                 
+                 
+                    
+          
+          
+            
+            
+          
+          
+            
+            
+          
+          
+            <a href='/CPP_Learning/'>Accueil</a> > <a href='/CPP_Learning/chapter1/'>Introduction au C++</a> > Compilation ⚙️
+          
+        
+          
+        
+          
+        
+                 
+                  </span>
+                </div>
+                
+                    <div class="progress">
+    <div class="wrapper">
+<nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#compilation-dun-programme">Compilation d&rsquo;un programme</a></li>
+        <li><a href="#compilation">Compilation</a></li>
+        <li><a href="#mais-cest-quoi-cette-erreur--">Mais c&rsquo;est quoi cette erreur ?? 🤯</a></li>
+        <li><a href="#edition-des-liens">Edition des liens</a></li>
+        <li><a href="#encore-plus-derreurs--">Encore plus d&rsquo;erreurs ! 😭</a></li>
+        <li><a href="#synthèse">Synthèse</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+    </div>
+</div>
+
+                
+              </div>
+            </div>
+            
+        <div id="head-tags">
+        
+        </div>
+        
+        <div id="body-inner">
+          
+            <h1>
+              
+              Compilation ⚙️
+            </h1>
+          
+
+        
+
+
+<p>En théorie, le contenu de cette page ne devrait être qu&rsquo;une redite de vos cours de C et de compilation de l&rsquo;an dernier.<br>
+Cependant, je sais qu&rsquo;à la réminiscence des moments passés à réviser ces matières, la plupart d&rsquo;entre vous sentez la chaleur de vos larmes couler le long de vos joues.</p>
+<p>Nous allons donc reprendre le sujet en douceur pour faire en sorte que vous compreniez un peu mieux ce qu&rsquo;il se passe pendant la compilation et à quoi elle sert.<br>
+Cela vous aidera, j&rsquo;espère, à comprendre un peu mieux les injures du compilateur.</p>
+<hr>
+<h3 id="compilation-dun-programme">Compilation d&rsquo;un programme</h3>
+<p>La compilation désigne le procédé consistant à transformer du code-source en un code-objet (c&rsquo;est-à-dire des instructions machines) comme un fichier-objet, un programme ou une librairie.<br>
+Dans ce cours, on utilisera le terme de &ldquo;compilation&rdquo; pour faire référence soit à la génération complète d&rsquo;un exécutable (= compilation d&rsquo;un programme), soit à la génération d&rsquo;un fichier-objet (= compilation d&rsquo;un fichier-source).</p>
+<p>La <strong>compilation d&rsquo;un programme</strong> est constituée de deux phases bien distinctes :</p>
+<ol>
+<li>la <strong>compilation de chacun de vos .cpp</strong> en fichier-objet, réalisée par le compilateur,</li>
+<li>l&rsquo;<strong>édition des liens</strong>, qui permet de créer un exécutable à partir de tous vos fichiers-objet, réalisée par le linker.</li>
+</ol>
+<p><code>g++</code> est à la fois un compilateur et un linker.<br>
+Lorsque vous exécutez <code>g++ -o program.exe a.cpp b.cpp c.cpp</code>, l&rsquo;outil réalise donc 4 opérations :</p>
+<ol>
+<li>la compilation de a.cpp =&gt; <code>g++ -c a.cpp</code></li>
+<li>la compilation de b.cpp =&gt; <code>g++ -c b.cpp</code></li>
+<li>la compilation de c.cpp =&gt; <code>g++ -c c.cpp</code></li>
+<li>l&rsquo;édition des liens pour générer program.exe =&gt; <code>g++ -o program.exe a.o b.o c.o</code></li>
+</ol>
+<pre class="mermaid">flowchart TD;
+    L(Edition des liens)
+    C1(Compilation)
+    C2(Compilation)
+    C3(Compilation)
+    Acpp[a.cpp] --- C1 --> Ao[a.o]
+    Bcpp[b.cpp] --- C2 --> Bo[b.o]
+    Ccpp[c.cpp] --- C3 --> Co[c.o]
+    Ao --- L
+    Bo --- L
+    Co --- L
+    L --> E[program.exe]
+</pre>
+<hr>
+<h3 id="compilation">Compilation</h3>
+<p>Concentrons nous d&rsquo;abord sur la phase de compilation.</p>
+<p>Le compilateur attend en entrée un fichier .cpp et écrit le fichier-objet correspondant.
+Ce fichier est un binaire contenant les instructions des fonctions et l&rsquo;instanciation des variables globales définies dedans.</p>
+<p>Lorsque vous lancez la compilation, il y a tout d&rsquo;abord le préprocesseur qui lit et récrit le fichier.
+Il remplace notamment chaque instruction <code>#include</code> par le contenu du fichier inclus et toutes les occurrences de macros préprocesseur (<code>#define</code>) par leur définition.</p>
+<p>Ensuite, nous avons l&rsquo;analyse syntaxique et l&rsquo;analyse sémantique.<br>
+Plutôt qu&rsquo;expliquer précisément ce que fait le compilateur pour chacune d&rsquo;entre elles, nous allons décrire ce qu&rsquo;il se passe de façon plus globale et, j&rsquo;espère, plus intuitive.</p>
+<p>Le compilateur lit le fichier instruction par instruction, en partant du haut du fichier.<br>
+Si l&rsquo;instruction contient :</p>
+<ul>
+<li>une définition ou déclaration de symboles (variable, fonction ou type)<br>
+=&gt; le compilateur ajoute ce symbole à la table des symboles</li>
+<li>l&rsquo;utilisation d&rsquo;un symbole, comme un appel de fonction, la lecture ou l&rsquo;écriture d&rsquo;une variable<br>
+=&gt; le compilateur regarde dans la table des symboles <strong>s&rsquo;il existe</strong> et <strong>si le contexte d&rsquo;utilisation est cohérent</strong></li>
+<li>la fin d&rsquo;un bloc<br>
+=&gt; le compilateur supprime de la table des symboles tous ceux qui ont été définis dans ce bloc</li>
+</ul>
+<p>Au fur-et-à-mesure de l&rsquo;analyse, le compilateur ajoute également dans le fichier-objet les instructions binaires correspondant aux fonctions et aux variables globales définies dans le fichier.</p>
+<p>Supposons que l&rsquo;on a le code suivant dans <code>math.hpp</code> :</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="k">struct</span> <span class="nc">Fraction</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">int</span> <span class="n">num</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">int</span> <span class="n">den</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">};</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">Fraction</span> <span class="nf">add</span><span class="p">(</span><span class="n">Fraction</span> <span class="n">f1</span><span class="p">,</span> <span class="n">Fraction</span> <span class="n">f2</span><span class="p">);</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>Et ce code dans <code>main.cpp</code> :</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="cp">#include</span> <span class="cpf">&#34;math.hpp&#34;</span><span class="cp">
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span>
+</span></span><span class="line"><span class="cl"><span class="n">Fraction</span> <span class="n">half</span> <span class="p">{</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span> <span class="p">};</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="n">Fraction</span> <span class="n">third</span> <span class="p">{</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">3</span> <span class="p">};</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="n">Fraction</span> <span class="n">res</span> <span class="o">=</span> <span class="n">add</span><span class="p">(</span><span class="n">half</span><span class="p">,</span> <span class="n">third</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">res</span><span class="p">.</span><span class="n">num</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>Tout d&rsquo;abord, le préprocesseur copie-colle le contenu de <code>math.hpp</code> à la place de la directive d&rsquo;inclusion.
+On obtient donc :</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="k">struct</span> <span class="nc">Fraction</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">int</span> <span class="n">num</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">int</span> <span class="n">den</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">};</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">Fraction</span> <span class="nf">add</span><span class="p">(</span><span class="n">Fraction</span> <span class="n">f1</span><span class="p">,</span> <span class="n">Fraction</span> <span class="n">f2</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">Fraction</span> <span class="n">half</span> <span class="p">{</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span> <span class="p">};</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="n">Fraction</span> <span class="n">third</span> <span class="p">{</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">3</span> <span class="p">};</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="n">Fraction</span> <span class="n">res</span> <span class="o">=</span> <span class="n">add</span><span class="p">(</span><span class="n">half</span><span class="p">,</span> <span class="n">third</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">res</span><span class="p">.</span><span class="n">num</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>Puis le compilateur lit les instructions au fur-et-à-mesure :</p>
+<ul>
+<li>
+<p>ligne 1<br>
+📚 Ajout dans la table des symboles</p>
+<ul>
+<li><code>Fraction</code>: type partiellement défini</li>
+</ul>
+</li>
+<li>
+<p>ligne 3<br>
+📚 Ajout dans la table des symboles</p>
+<ul>
+<li><code>Fraction</code>: type partiellement défini</li>
+<li><code>Fraction.num</code>: variable <code>int</code></li>
+</ul>
+</li>
+<li>
+<p>ligne 4<br>
+📚 Ajout dans la table des symboles</p>
+<ul>
+<li><code>Fraction</code>: type partiellement défini</li>
+<li><code>Fraction.num</code>: variable <code>int</code></li>
+<li><code>Fraction.den</code>: variable <code>int</code></li>
+</ul>
+</li>
+<li>
+<p>ligne 4<br>
+📚 Modification de la table des symboles</p>
+<ul>
+<li><code>Fraction</code>: type défini avec deux attributs <code>int</code></li>
+<li><code>Fraction.num</code>: variable <code>int</code></li>
+<li><code>Fraction.den</code>: variable <code>int</code></li>
+</ul>
+</li>
+<li>
+<p>ligne 7<br>
+🧐 Utilisation de <code>Fraction</code> dans le cadre d&rsquo;une déclaration de fonction</p>
+<ul>
+<li><code>Fraction</code> est au moins partiellement défini dans la table des symboles</li>
+<li><code>Fraction</code> est bien utilisé en tant que type</li>
+</ul>
+<p>📚 Ajout dans la table des symboles</p>
+<ul>
+<li><code>Fraction</code>: type défini avec deux attributs <code>int</code></li>
+<li><code>Fraction.num</code>: variable <code>int</code></li>
+<li><code>Fraction.den</code>: variable <code>int</code></li>
+<li><code>add</code>: fonction <code>(Fraction, Fraction) -&gt; Fraction</code></li>
+</ul>
+</li>
+<li>
+<p>ligne 9<br>
+🧐 Utilisation de <code>Fraction</code> dans le cadre d&rsquo;une définition de variable globale</p>
+<ul>
+<li><code>Fraction</code> est entièrement défini dans la table des symboles</li>
+<li><code>Fraction</code> est bien utilisé en tant que type</li>
+<li>l&rsquo;instance est bien construite avec deux <code>int</code></li>
+</ul>
+<p>📚 Ajout dans la table des symboles</p>
+<ul>
+<li><code>Fraction</code>: type défini avec deux attributs <code>int</code></li>
+<li><code>Fraction.num</code>: variable <code>int</code></li>
+<li><code>Fraction.den</code>: variable <code>int</code></li>
+<li><code>add</code>: fonction <code>(Fraction, Fraction) -&gt; Fraction</code></li>
+<li><code>half</code>: variable <code>Fraction</code></li>
+</ul>
+<p>⚙️ Ecriture du fichier-objet</p>
+<ul>
+<li>Variable globale <code>half</code> de valeur <code>{ 1, 2 }</code></li>
+</ul>
+</li>
+<li>
+<p>ligne 13<br>
+🧐 Utilisation de <code>Fraction</code> dans le cadre d&rsquo;une définition de variable</p>
+<ul>
+<li><code>Fraction</code> est entièrement défini dans la table des symboles</li>
+<li><code>Fraction</code> est bien utilisé en tant que type</li>
+<li>l&rsquo;instance est bien construite avec deux <code>int</code></li>
+</ul>
+<p>📚 Ajout dans la table des symboles</p>
+<ul>
+<li><code>Fraction</code>: type défini avec deux attributs <code>int</code></li>
+<li><code>Fraction.num</code>: variable <code>int</code></li>
+<li><code>Fraction.den</code>: variable <code>int</code></li>
+<li><code>add</code>: fonction <code>(Fraction, Fraction) -&gt; Fraction</code></li>
+<li><code>half</code>: variable <code>Fraction</code></li>
+<li><code>third</code>: variable <code>Fraction</code></li>
+</ul>
+</li>
+<li>
+<p>ligne 13<br>
+🧐 Utilisation de <code>Fraction</code> dans le cadre d&rsquo;une définition de variable</p>
+<ul>
+<li><code>Fraction</code> est entièrement défini dans la table des symboles</li>
+<li><code>Fraction</code> est bien utilisé en tant que type</li>
+<li>l&rsquo;instance est bien construite avec deux <code>int</code></li>
+</ul>
+<p>📚 Ajout dans la table des symboles</p>
+<ul>
+<li><code>Fraction</code>: type défini avec deux attributs <code>int</code></li>
+<li><code>Fraction.num</code>: variable <code>int</code></li>
+<li><code>Fraction.den</code>: variable <code>int</code></li>
+<li><code>add</code>: fonction <code>(Fraction, Fraction) -&gt; Fraction</code></li>
+<li><code>half</code>: variable <code>Fraction</code></li>
+<li><code>third</code>: variable <code>Fraction</code></li>
+</ul>
+</li>
+<li>
+<p>ligne 15<br>
+🧐 Utilisation de <code>add</code> dans le cadre d&rsquo;un appel de fonction pour définir une variable</p>
+<ul>
+<li><code>add</code> est bien une fonction déclarée dans la table des symboles</li>
+<li>le type de retour est bien compatible avec le type de la variable</li>
+</ul>
+<p>🧐 Utilisation de <code>half</code> et <code>third</code> en tant qu&rsquo;arguments de type <code>int</code></p>
+<ul>
+<li><code>half</code> et <code>third</code> sont bien des variables déclarées dans la table des symboles</li>
+<li>elles sont de type <code>int</code> donc peuvent bien être passées à la fonction</li>
+</ul>
+<p>📚 Ajout dans la table des symboles</p>
+<ul>
+<li><code>Fraction</code>: type défini avec deux attributs <code>int</code></li>
+<li><code>Fraction.num</code>: variable <code>int</code></li>
+<li><code>Fraction.den</code>: variable <code>int</code></li>
+<li><code>add</code>: fonction <code>(Fraction, Fraction) -&gt; Fraction</code></li>
+<li><code>half</code>: variable <code>Fraction</code></li>
+<li><code>third</code>: variable <code>Fraction</code></li>
+<li><code>res</code>: variable <code>Fraction</code></li>
+</ul>
+</li>
+<li>
+<p>ligne 16<br>
+🧐 Utilisation de <code>res.num</code> dans le cadre d&rsquo;un retour de fonction</p>
+<ul>
+<li><code>res</code> est bien une variable déclarée dans la table des symboles</li>
+<li><code>res</code> est de type <code>Fraction</code>, qui est bien entièrement défini dans la table des symboles</li>
+<li><code>Fraction</code> contient bien un attribut <code>num</code></li>
+<li>le type de retour de la fonction et le type de <code>res.num</code> sont bien compatibles</li>
+</ul>
+</li>
+<li>
+<p>ligne 17<br>
+📚 Suppression des symboles définis dans le bloc</p>
+<ul>
+<li><code>Fraction</code>: type défini avec deux attributs <code>int</code></li>
+<li><code>Fraction.num</code>: variable <code>int</code></li>
+<li><code>Fraction.den</code>: variable <code>int</code></li>
+<li><code>add</code>: fonction <code>(Fraction, Fraction) -&gt; Fraction</code></li>
+<li><code>half</code>: variable <code>Fraction</code></li>
+<li><del><code>third</code>: variable <code>Fraction</code></del></li>
+<li><del><code>res</code>: variable <code>Fraction</code></del></li>
+</ul>
+<p>⚙️ Ecriture du fichier-objet</p>
+<ul>
+<li>Variable globale <code>half</code> de valeur <code>{ 1, 2 }</code></li>
+<li>Fonction <code>main()</code></li>
+</ul>
+</li>
+</ul>
+<p>Dans le cas ci-dessus, la compilation s&rsquo;est bien passée.<br>
+Le fichier-objet en sortie contient :</p>
+<ul>
+<li>une variable globale appelée <code>half</code> et les instructions binaires permettant de l&rsquo;initialiser à <code>{ 1, 2 }</code>,</li>
+<li>une fonction <code>main</code> qui n&rsquo;attend aucun paramètres et les instructions binaires qui la constituent.</li>
+</ul>
+<hr>
+<h3 id="mais-cest-quoi-cette-erreur--">Mais c&rsquo;est quoi cette erreur ?? 🤯</h3>
+<p>Il nous apparaît utile de faire un petit tour des situations d&rsquo;erreurs les plus courantes, afin que vous puissiez identifier les problèmes plus rapidement si vous les recontrez.</p>
+<p>Et vous les rencontrerez forcément, eheheh&hellip; 😈</p>
+<p>Commencez par vous placer dans le répertoire <code>chap-01/3-build-errors</code>, car c&rsquo;est là que vous devrez compiler les différents fichiers.</p>
+<h4 id="1-expected--after-class-definition">1. expected &lsquo;;&rsquo; after class definition</h4>
+<ol>
+<li>Essayez de compiler le fichier <code>1-structs.cpp</code> (et seulement de le compiler, pas de générer un exécutable).
+Celui-ci ne devrait pas compiler.</li>
+</ol>
+
+<div class="hidden-solution">
+
+    <button class="show-solution-btn" onclick="$(this).addClass('off'); $(this).next().removeClass('off');">
+        ⮟ Afficher la solution ⮟
+    </button>
+
+    <div class="off">
+        <button class="hide-solution-btn" onclick="$(this).parent().addClass('off'); $(this).parent().prev().removeClass('off');">
+            ⮝ Masquer la solution ⮝
+        </button>
+
+        <div class="hidden-solution-content">
+            <p>On doit ajouter l&rsquo;option <code>-c</code> pour s&rsquo;arrêter après la phase de compilation.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-b" data-lang="b"><span class="line"><span class="cl"><span class="c">g</span><span class="nb">++</span><span class="c"> </span><span class="nb">-</span><span class="c">std=c</span><span class="nb">++</span><span class="c">17 </span><span class="nb">-</span><span class="c">c 1</span><span class="nb">-</span><span class="c">structs</span><span class="nt">.</span><span class="c">cpp
+</span></span></span></code></pre></div>
+        </div>
+    </div>
+
+</div>
+<ol start="2">
+<li>Le compilateur devrait afficher l&rsquo;erreur suivante deux fois : <code>expected ';' after struct definition</code>.<br>
+Qu&rsquo;est-ce que cela signifie ? Que devez-vous faire pour que le fichier compile ?<br>
+Effectuez ces modifications et vérifiez que le fichier compile désormais.</li>
+</ol>
+
+<div class="hidden-solution">
+
+    <button class="show-solution-btn" onclick="$(this).addClass('off'); $(this).next().removeClass('off');">
+        ⮟ Afficher la solution ⮟
+    </button>
+
+    <div class="off">
+        <button class="hide-solution-btn" onclick="$(this).parent().addClass('off'); $(this).parent().prev().removeClass('off');">
+            ⮝ Masquer la solution ⮝
+        </button>
+
+        <div class="hidden-solution-content">
+            <p>Contrairement au Java, il faut penser à écrire <code>;</code> après la définition de tout type (<code>class</code>, <code>struct</code>, <code>enum</code>, etc).</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="k">struct</span> <span class="nc">A</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">int</span> <span class="n">a</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line hl"><span class="cl"><span class="p">};</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">struct</span> <span class="nc">B</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">int</span> <span class="n">b</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line hl"><span class="cl"><span class="p">};</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="nf">add</span><span class="p">(</span><span class="n">A</span> <span class="n">a</span><span class="p">,</span> <span class="n">B</span> <span class="n">b</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">a</span><span class="p">.</span><span class="n">a</span> <span class="o">+</span> <span class="n">b</span><span class="p">.</span><span class="n">b</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div>
+        </div>
+    </div>
+
+</div>
+<h4 id="2-bla-is-private-within-this-context">2. &lsquo;bla&rsquo; is private within this context</h4>
+<ol>
+<li>Essayez maintenant de compiler le fichier <code>2-class.cpp</code>.<br>
+Que signifie l&rsquo;erreur de compilation ? Pourquoi ne l&rsquo;avez vous pas rencontrer dans le fichier <code>1-structs.cpp</code> ?</li>
+</ol>
+
+<div class="hidden-solution">
+
+    <button class="show-solution-btn" onclick="$(this).addClass('off'); $(this).next().removeClass('off');">
+        ⮟ Afficher la solution ⮟
+    </button>
+
+    <div class="off">
+        <button class="hide-solution-btn" onclick="$(this).parent().addClass('off'); $(this).parent().prev().removeClass('off');">
+            ⮝ Masquer la solution ⮝
+        </button>
+
+        <div class="hidden-solution-content">
+            <p>L&rsquo;erreur signifie qu&rsquo;on essaye d&rsquo;accéder à un champ privé d&rsquo;une classe depuis l&rsquo;extérieur.<br>
+Lorsqu&rsquo;on ne spécifie pas de modificateur de visibilité, les champs sont privés dans une <code>class</code> et publics dans une <code>struct</code>.
+C&rsquo;est pour ça que nous n&rsquo;avons pas eu l&rsquo;erreur dans le fichier précédent.</p>
+
+        </div>
+    </div>
+
+</div>
+<ol start="2">
+<li>Modifiez le fichier pour corriger l&rsquo;erreur et recompilez.</li>
+</ol>
+
+<div class="hidden-solution">
+
+    <button class="show-solution-btn" onclick="$(this).addClass('off'); $(this).next().removeClass('off');">
+        ⮟ Afficher la solution ⮟
+    </button>
+
+    <div class="off">
+        <button class="hide-solution-btn" onclick="$(this).parent().addClass('off'); $(this).parent().prev().removeClass('off');">
+            ⮝ Masquer la solution ⮝
+        </button>
+
+        <div class="hidden-solution-content">
+            <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">A</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line hl"><span class="cl"><span class="k">public</span><span class="o">:</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">int</span> <span class="n">a</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">};</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="nf">get_a</span><span class="p">(</span><span class="n">A</span> <span class="n">a</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">a</span><span class="p">.</span><span class="n">a</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div>
+        </div>
+    </div>
+
+</div>
+<h4 id="3-bla-is-not-a-member-of-std">3. &lsquo;bla&rsquo; is not a member of &lsquo;std&rsquo;</h4>
+<ol>
+<li>Essayez de compiler le fichier <code>3-hello.cpp</code>.<br>
+Quelles sont les différentes erreurs obtenues ? Expliquez la cause de chacune d&rsquo;entre elles.</li>
+</ol>
+
+<div class="hidden-solution">
+
+    <button class="show-solution-btn" onclick="$(this).addClass('off'); $(this).next().removeClass('off');">
+        ⮟ Afficher la solution ⮟
+    </button>
+
+    <div class="off">
+        <button class="hide-solution-btn" onclick="$(this).parent().addClass('off'); $(this).parent().prev().removeClass('off');">
+            ⮝ Masquer la solution ⮝
+        </button>
+
+        <div class="hidden-solution-content">
+            <p>Le compilateur n&rsquo;a jamais rencontré les déclarations des symboles <code>std::cout</code>, <code>std::cin</code>, <code>std::endl</code> et <code>std::string</code>.
+Lorsqu&rsquo;il analyse les instructions qui les utilisent, il ne les trouve donc pas dans la table des symboles et émet donc des erreurs du style <code>'...' is not a member of 'std'</code>.</p>
+<p>On a également l&rsquo;erreur <code>'name' was not declared in this scope</code>.
+Celle-ci est plus étonnante, puisque <code>name</code> est bien définie une ligne plus haut.<br>
+Cependant, comme l&rsquo;instruction définissant la variable <code>name</code> n&rsquo;a pas compilée, elle n&rsquo;a pas pu être ajoutée à la table des symboles.
+Le compilateur ne la trouve donc pas au moment où il analyse l&rsquo;instruction <code>std::cin &gt;&gt; name;</code>, ce qui explique cette erreur.</p>
+
+        </div>
+    </div>
+
+</div>
+<ol start="2">
+<li>Ajoutez ce qu&rsquo;il faut au fichier pour corriger les erreurs et recompilez.</li>
+</ol>
+
+<div class="hidden-solution">
+
+    <button class="show-solution-btn" onclick="$(this).addClass('off'); $(this).next().removeClass('off');">
+        ⮟ Afficher la solution ⮟
+    </button>
+
+    <div class="off">
+        <button class="hide-solution-btn" onclick="$(this).parent().addClass('off'); $(this).parent().prev().removeClass('off');">
+            ⮝ Masquer la solution ⮝
+        </button>
+
+        <div class="hidden-solution-content">
+            <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line hl"><span class="cl"><span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp"> </span><span class="c1">// pour std::cin, std::cout et std::endl
+</span></span></span><span class="line hl"><span class="cl"><span class="c1"></span><span class="cp">#include</span> <span class="cpf">&lt;string&gt;</span><span class="cp">   </span><span class="c1">// pour std::string
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">name</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">std</span><span class="o">::</span><span class="n">cin</span> <span class="o">&gt;&gt;</span> <span class="n">name</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;Hello &#34;</span> <span class="o">&lt;&lt;</span> <span class="n">name</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div>
+        </div>
+    </div>
+
+</div>
+
+<div class="notices tip" ><p>Une erreur de compilation est parfois la conséquence d&rsquo;une autre erreur, ce qui peut rendre la sortie du compilateur très difficile à lire.<br>
+Il est possible de spécifier l&rsquo;option <code>-Wfatal-errors</code> à l&rsquo;invocation du compilateur pour s&rsquo;arrêter dès la première erreur et simplifier la compréhension du problème.</p>
+</div>
+
+<h4 id="4-redefinition-of-bla">4. redefinition of &lsquo;bla&rsquo;</h4>
+<ol>
+<li>Lancez la compilation de <code>4-main.cpp</code>.<br>
+Quelle est l&rsquo;erreur ? Essayez de l&rsquo;expliquer en imaginant le contenu du fichier après le passage du préprocesseur.</li>
+</ol>
+
+<div class="hidden-solution">
+
+    <button class="show-solution-btn" onclick="$(this).addClass('off'); $(this).next().removeClass('off');">
+        ⮟ Afficher la solution ⮟
+    </button>
+
+    <div class="off">
+        <button class="hide-solution-btn" onclick="$(this).parent().addClass('off'); $(this).parent().prev().removeClass('off');">
+            ⮝ Masquer la solution ⮝
+        </button>
+
+        <div class="hidden-solution-content">
+            <p>Après le passage du préprocesseur, le fichier devrait ressembler à :</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="c1">// =========================================//
+</span></span></span><span class="line"><span class="cl"><span class="c1">// Inclusion de 4-car.hpp depuis 4-main.cpp //
+</span></span></span><span class="line"><span class="cl"><span class="c1">// =========================================//
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>                                            <span class="c1">//
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="cm">/** le contenu de &lt;string&gt; **/</span>          <span class="c1">//
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>                                            <span class="c1">//
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="k">struct</span> <span class="nc">Car</span>                              <span class="c1">//
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="p">{</span>                                       <span class="c1">//
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">brand</span><span class="p">;</span>                  <span class="c1">//
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="p">};</span>                                      <span class="c1">//
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>                                            <span class="c1">//
+</span></span></span><span class="line"><span class="cl"><span class="c1">// =========================================//
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl"><span class="c1">// ================================================//
+</span></span></span><span class="line"><span class="cl"><span class="c1">// Inclusion de 4-driver.hpp depuis 4-main.cpp     //
+</span></span></span><span class="line"><span class="cl"><span class="c1">// ================================================//
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>                                                   <span class="c1">//
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="c1">// =========================================// //
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="c1">// Inclusion de 4-car.hpp depuis 4-main.cpp // //
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="c1">// =========================================// //
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>                                                <span class="c1">// //
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="cm">/** le contenu de &lt;string&gt; **/</span>          <span class="c1">// //
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>                                                <span class="c1">// //
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="k">struct</span> <span class="nc">Car</span>                              <span class="c1">// //
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="p">{</span>                                       <span class="c1">// //
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>            <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">brand</span><span class="p">;</span>                  <span class="c1">// //
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="p">};</span>                                      <span class="c1">// //
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>                                                <span class="c1">// //
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="c1">// =========================================// //
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>                                                   <span class="c1">//
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="cm">/** le contenu de &lt;iostream&gt; **/</span>               <span class="c1">//
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>                                                   <span class="c1">//
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="k">struct</span> <span class="nc">Driver</span>                                  <span class="c1">//
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="p">{</span>                                              <span class="c1">//
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="kt">void</span> <span class="nf">drive</span><span class="p">(</span><span class="n">Car</span> <span class="n">car</span><span class="p">)</span>                        <span class="c1">//
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="p">{</span>                                          <span class="c1">//
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>            <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;I&#39;m driving a &#34;</span>          <span class="c1">//
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>                      <span class="o">&lt;&lt;</span> <span class="n">car</span><span class="p">.</span><span class="n">brand</span>                 <span class="c1">//
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>                      <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>                <span class="c1">//
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="p">}</span>                                          <span class="c1">//
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="p">};</span>                                             <span class="c1">//
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>                                                   <span class="c1">//
+</span></span></span><span class="line"><span class="cl"><span class="c1">// ================================================//
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="n">Car</span> <span class="n">car</span> <span class="p">{</span> <span class="s">&#34;golf&#34;</span> <span class="p">};</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="n">Driver</span> <span class="n">driver</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">driver</span><span class="p">.</span><span class="n">drive</span><span class="p">(</span><span class="n">car</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><p>Lorsque le compilateur parcourt le fichier, il rencontre deux fois la définition du type <code>Car</code>.<br>
+Il est donc logique qu&rsquo;il émette l&rsquo;erreur <code>redefinition of 'Car'</code>.</p>
+
+        </div>
+    </div>
+
+</div>
+<ol start="2">
+<li>En C++, pour empêcher les inclusions multiples d&rsquo;un même header, il suffit d&rsquo;écrire <code>#pragma once</code> en faut du fichier.<br>
+Corrigez le code et assurez-vous que le fichier <code>4-main.cpp</code> compile désormais.</li>
+</ol>
+
+<div class="hidden-solution">
+
+    <button class="show-solution-btn" onclick="$(this).addClass('off'); $(this).next().removeClass('off');">
+        ⮟ Afficher la solution ⮟
+    </button>
+
+    <div class="off">
+        <button class="hide-solution-btn" onclick="$(this).parent().addClass('off'); $(this).parent().prev().removeClass('off');">
+            ⮝ Masquer la solution ⮝
+        </button>
+
+        <div class="hidden-solution-content">
+            <p>On modifie d&rsquo;abord <code>4-car.hpp</code>, puisque c&rsquo;est ce fichier qui est inclus en double.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line hl"><span class="cl"><span class="cp">#pragma once
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span>
+</span></span><span class="line"><span class="cl"><span class="cp">#include</span> <span class="cpf">&lt;string&gt;</span><span class="cp">
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span>
+</span></span><span class="line"><span class="cl"><span class="k">struct</span> <span class="nc">Car</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">brand</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">};</span>
+</span></span></code></pre></div><p>Une fois ce changement fait, on constate que le code compile.<br>
+Pour éviter que le problème ne se reproduise si on décidait d&rsquo;inclure <code>4-driver.hpp</code> dans un autre header, on modifie également ce dernier.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line hl"><span class="cl"><span class="cp">#pragma once
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span>
+</span></span><span class="line"><span class="cl"><span class="cp">#include</span> <span class="cpf">&#34;4-car.hpp&#34;</span><span class="cp">
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span>
+</span></span><span class="line"><span class="cl"><span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp">
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span>
+</span></span><span class="line"><span class="cl"><span class="k">struct</span> <span class="nc">Driver</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">void</span> <span class="nf">drive</span><span class="p">(</span><span class="n">Car</span> <span class="n">car</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;I&#39;m driving a &#34;</span> <span class="o">&lt;&lt;</span> <span class="n">car</span><span class="p">.</span><span class="n">brand</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span> 
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">};</span>
+</span></span></code></pre></div>
+        </div>
+    </div>
+
+</div>
+
+<div class="notices tip" ><p>Prenez l&rsquo;habitude de toujours placer la directive <code>#pragma once</code> au sommet de vos headers.
+Cela vous évitera quelques migraines.</p>
+</div>
+
+<h4 id="5-bla-has-not-been-declared">5. &lsquo;bla&rsquo; has not been declared</h4>
+<p>La plupart du temps, l&rsquo;erreur ci-dessus apparaît lorsque vous oubliez d&rsquo;inclure un header.<br>
+Cependant, elle peut également se produire dans la situation présentée ci-dessous, et est dans ce cas beaucoup plus difficile à identifier et corriger.</p>
+<ol>
+<li>Compilez le fichier <code>5-main.cpp</code> avec l&rsquo;option permettant de s&rsquo;arrêter dès la première erreur.</li>
+</ol>
+
+<div class="hidden-solution">
+
+    <button class="show-solution-btn" onclick="$(this).addClass('off'); $(this).next().removeClass('off');">
+        ⮟ Afficher la solution ⮟
+    </button>
+
+    <div class="off">
+        <button class="hide-solution-btn" onclick="$(this).parent().addClass('off'); $(this).parent().prev().removeClass('off');">
+            ⮝ Masquer la solution ⮝
+        </button>
+
+        <div class="hidden-solution-content">
+            <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-b" data-lang="b"><span class="line"><span class="cl"><span class="c">g</span><span class="nb">++</span><span class="c"> </span><span class="nb">-</span><span class="c">std=c</span><span class="nb">++</span><span class="c">17 </span><span class="nb">-</span><span class="c">Wfatal</span><span class="nb">-</span><span class="c">errors </span><span class="nb">-</span><span class="c">c 5</span><span class="nb">-</span><span class="c">main</span><span class="nt">.</span><span class="c">cpp 
+</span></span></span></code></pre></div>
+        </div>
+    </div>
+
+</div>
+<ol start="2">
+<li>Vous devriez obtenir l&rsquo;erreur : <code>5-tac.hpp:8:15: error: 'Tic' has not been declared</code>.<br>
+Pourtant, le header <code>5-tic.hpp</code> est bien inclus dans <code>5-tac.hpp</code>.<br>
+Pourquoi le compilateur n&rsquo;arrive pas à reconnaître le symbole <code>Tic</code> ?</li>
+</ol>
+
+<div class="hidden-solution">
+
+    <button class="show-solution-btn" onclick="$(this).addClass('off'); $(this).next().removeClass('off');">
+        ⮟ Afficher la solution ⮟
+    </button>
+
+    <div class="off">
+        <button class="hide-solution-btn" onclick="$(this).parent().addClass('off'); $(this).parent().prev().removeClass('off');">
+            ⮝ Masquer la solution ⮝
+        </button>
+
+        <div class="hidden-solution-content">
+            <p>Dans un premier temps, il faut savoir ce que le compilateur analyse une fois la précompilation terminée :</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="c1">// =====================================================//
+</span></span></span><span class="line"><span class="cl"><span class="c1">// Inclusion de 5-tic.hpp depuis 4-main.cpp             //
+</span></span></span><span class="line"><span class="cl"><span class="c1">// =====================================================//
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>                                                        <span class="c1">//
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="cp">#pragma once </span><span class="c1">// -&gt; 1e inclusion de 5-tic.hpp        //
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>                                                        <span class="c1">//
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="c1">// ==============================================// //
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="c1">// Inclusion de 5-tac.hpp depuis 5-tic.cpp ======// //
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="c1">// ==============================================// //
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>                                                     <span class="c1">// //
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="cp">#pragma once </span><span class="c1">// -&gt; 1e inclusion de 5-tac.hpp // //
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>                                                     <span class="c1">// //
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="c1">// =====================//                   // //
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="c1">// #include &#34;5-tic.hpp&#34; // -&gt; déjà inclus !  // //
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="c1">// ---------------------//                   // //
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>                                                     <span class="c1">// //
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="k">struct</span> <span class="nc">Tac</span>                                   <span class="c1">// //
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="p">{</span>                                            <span class="c1">// //
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>            <span class="c1">// Invert value with tic.                // //
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>            <span class="kt">void</span> <span class="nf">swap</span><span class="p">(</span><span class="n">Tic</span><span class="o">&amp;</span> <span class="n">tic</span><span class="p">);</span>                     <span class="c1">// //
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>                                                     <span class="c1">// //
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>            <span class="kt">int</span> <span class="n">value</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>                           <span class="c1">// //
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="p">};</span>                                           <span class="c1">// //
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>                                                     <span class="c1">// //
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="c1">// ==============================================// //
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>                                                        <span class="c1">//
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="k">struct</span> <span class="nc">Tic</span>                                          <span class="c1">//
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="p">{</span>                                                   <span class="c1">//
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="c1">// Invert value with tac.                       //
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="kt">void</span> <span class="nf">swap</span><span class="p">(</span><span class="n">Tac</span><span class="o">&amp;</span> <span class="n">tac</span><span class="p">);</span>                            <span class="c1">//
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>                                                        <span class="c1">//
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="kt">int</span> <span class="n">value</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>                                  <span class="c1">//
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="p">};</span>                                                  <span class="c1">//
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>                                                        <span class="c1">//
+</span></span></span><span class="line"><span class="cl"><span class="c1">// =====================================================//
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="n">Tic</span> <span class="n">tic</span> <span class="p">{</span> <span class="mi">1</span> <span class="p">};</span>
+</span></span><span class="line"><span class="cl">    <span class="n">Tac</span> <span class="n">tac</span> <span class="p">{</span> <span class="mi">5</span> <span class="p">};</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="n">tic</span><span class="p">.</span><span class="n">swap</span><span class="p">(</span><span class="n">tac</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="n">tac</span><span class="p">.</span><span class="n">swap</span><span class="p">(</span><span class="n">tic</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><p>Effectivement, lorsque le compilateur arrive à l&rsquo;instruction <code>void swap(Tic&amp; tic);</code>, la définition de <code>Tic</code> n&rsquo;a encore jamais été rencontrée.<br>
+Le symbole n&rsquo;existant pas encore dans la table des symboles, on obtient l&rsquo;erreur <code>'Tic' has not been declared</code>.</p>
+
+        </div>
+    </div>
+
+</div>
+<ol start="2">
+<li>Quel est le nom donné à ce type de situation ?</li>
+</ol>
+
+<div class="hidden-solution">
+
+    <button class="show-solution-btn" onclick="$(this).addClass('off'); $(this).next().removeClass('off');">
+        ⮟ Afficher la solution ⮟
+    </button>
+
+    <div class="off">
+        <button class="hide-solution-btn" onclick="$(this).parent().addClass('off'); $(this).parent().prev().removeClass('off');">
+            ⮝ Masquer la solution ⮝
+        </button>
+
+        <div class="hidden-solution-content">
+            <p>Il s&rsquo;agit d&rsquo;une <strong>inclusion cyclique</strong>.<br>
+Effectivement <code>5-tic.hpp</code> inclut <code>5-tac.hpp</code> qui inclut à son tour <code>5-tic.hpp</code> et ainsi de suite.</p>
+
+        </div>
+    </div>
+
+</div>
+<p>Pour indiquer au compilateur qu&rsquo;un type existe, on a deux possibilités : le définir ou le <strong>pré-déclarer</strong> (on employera plus communément le terme anglais <strong>forward-declare</strong>).<br>
+Il suffit pour cela d&rsquo;écrire :</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">A</span><span class="p">;</span>    <span class="c1">// forward-declare d&#39;une class A
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">struct</span> <span class="nc">B</span><span class="p">;</span>   <span class="c1">// forward-declare d&#39;une struct B
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">enum</span> <span class="nc">C</span><span class="p">;</span>     <span class="c1">// forward-declare d&#39;un enum C
+</span></span></span></code></pre></div><ol start="3">
+<li>Supprimez les directives d&rsquo;inclusions problématiques, et ajoutez des forward-declarations à la place.<br>
+Vérifiez que cela fixe bien le problème.</li>
+</ol>
+
+<div class="hidden-solution">
+
+    <button class="show-solution-btn" onclick="$(this).addClass('off'); $(this).next().removeClass('off');">
+        ⮟ Afficher la solution ⮟
+    </button>
+
+    <div class="off">
+        <button class="hide-solution-btn" onclick="$(this).parent().addClass('off'); $(this).parent().prev().removeClass('off');">
+            ⮝ Masquer la solution ⮝
+        </button>
+
+        <div class="hidden-solution-content">
+            <p>Les directives d&rsquo;inclusions problématiques sont celles situées dans les fichiers <code>5-tic.hpp</code> et <code>5-tac.hpp</code>.<br>
+On remplace donc le code de <code>5-tic.hpp</code> par :</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="cp">#pragma once
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span>
+</span></span><span class="line hl"><span class="cl"><span class="k">struct</span> <span class="nc">Tac</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">struct</span> <span class="nc">Tic</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">// Invert value with tac.
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="kt">void</span> <span class="nf">swap</span><span class="p">(</span><span class="n">Tac</span><span class="o">&amp;</span> <span class="n">tac</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="kt">int</span> <span class="n">value</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">};</span>
+</span></span></code></pre></div><p>Et celui de <code>5-tac.hpp</code> par :</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="cp">#pragma once
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span>
+</span></span><span class="line hl"><span class="cl"><span class="k">struct</span> <span class="nc">Tic</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">struct</span> <span class="nc">Tac</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">// Invert value with tic.
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="kt">void</span> <span class="nf">swap</span><span class="p">(</span><span class="n">Tic</span><span class="o">&amp;</span> <span class="n">tic</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="kt">int</span> <span class="n">value</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">};</span>
+</span></span></code></pre></div>
+        </div>
+    </div>
+
+</div>
+
+<div class="notices info" ><p>Certaines directives d&rsquo;inclusions peuvent être remplacées par des forward-declarations, mais pas toutes !<br>
+En effet, ici, cela fonctionne parce que dans le fichier <code>5-tac.hpp</code>, on ne fait que déclarer une référence de type <code>Tic</code>.<br>
+Si on avait voulu accéder à l&rsquo;un des champs de la classe, ou bien à sa taille pour réserver de l&rsquo;espace mémoire, la définition complète de <code>Tic</code>, et donc l&rsquo;inclusion du header, aurait été nécessaire.</p>
+</div>
+
+<hr>
+<h3 id="edition-des-liens">Edition des liens</h3>
+<p>Je vous conseille d&rsquo;abord de faire une pause, si vous venez de finir de lire tout ce qu&rsquo;il y avait au-dessus.<br>
+Idéalement, attendez même d&rsquo;avoir passé une bonne nuit de sommeil avant de reprendre la lecture 😴</p>
+<p>Une fois le fonctionnement du compilateur bien assimilé, il est temps de passer à celui du linker.<br>
+Dans le cadre de la génération d&rsquo;un programme, l&rsquo;objectif du linker est de regrouper, depuis les fichiers-objet fournis, les instructions strictement nécessaires à son exécution.</p>
+<p>Supposons que l&rsquo;on essaye de linker deux fichiers objets <code>main.o</code> et <code>math.o</code> avec la commande : <code>g++ -o program.exe main.o math.o</code>.<br>
+On suppose que <code>main.o</code> est le résultat de la compilation de :</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="cp">#include</span> <span class="cpf">&#34;math.hpp&#34;</span><span class="cp">
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span>
+</span></span><span class="line"><span class="cl"><span class="n">Fraction</span> <span class="n">half</span> <span class="o">=</span> <span class="n">create_half</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="n">Fraction</span> <span class="n">third</span> <span class="p">{</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">3</span> <span class="p">};</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="n">Fraction</span> <span class="n">res</span> <span class="o">=</span> <span class="n">mult</span><span class="p">(</span><span class="n">half</span><span class="p">,</span> <span class="n">third</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">res</span><span class="p">.</span><span class="n">num</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>que <code>math.o</code> est le résultat de :</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="cp">#include</span> <span class="cpf">&#34;math.hpp&#34;</span><span class="cp">
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span>
+</span></span><span class="line"><span class="cl"><span class="n">Fraction</span> <span class="nf">create_half</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="n">Fraction</span> <span class="n">f</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">f</span><span class="p">.</span><span class="n">num</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">f</span><span class="p">.</span><span class="n">den</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">f</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">Fraction</span> <span class="nf">mult</span><span class="p">(</span><span class="n">Fraction</span> <span class="n">f1</span><span class="p">,</span> <span class="n">Fraction</span> <span class="n">f2</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="n">Fraction</span> <span class="n">res</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">res</span><span class="p">.</span><span class="n">num</span> <span class="o">=</span> <span class="n">f1</span><span class="p">.</span><span class="n">num</span> <span class="o">*</span> <span class="n">f2</span><span class="p">.</span><span class="n">num</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">res</span><span class="p">.</span><span class="n">den</span> <span class="o">=</span> <span class="n">f1</span><span class="p">.</span><span class="n">den</span> <span class="o">*</span> <span class="n">f2</span><span class="p">.</span><span class="n">den</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">res</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">Fraction</span> <span class="nf">invert</span><span class="p">(</span><span class="n">Fraction</span> <span class="n">f</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="n">Fraction</span> <span class="n">res</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">res</span><span class="p">.</span><span class="n">num</span> <span class="o">=</span> <span class="n">f</span><span class="p">.</span><span class="n">den</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">res</span><span class="p">.</span><span class="n">den</span> <span class="o">=</span> <span class="n">f</span><span class="p">.</span><span class="n">num</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">res</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>et que <code>math.hpp</code> contient le code suivant :</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="cp">#pragma once
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span>
+</span></span><span class="line"><span class="cl"><span class="k">struct</span> <span class="nc">Fraction</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">int</span> <span class="n">num</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">int</span> <span class="n">den</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">};</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">Fraction</span> <span class="nf">create_half</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl"><span class="n">Fraction</span> <span class="nf">mult</span><span class="p">(</span><span class="n">Fraction</span> <span class="n">f1</span><span class="p">,</span> <span class="n">Fraction</span> <span class="n">f2</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="n">Fraction</span> <span class="nf">invert</span><span class="p">(</span><span class="n">Fraction</span> <span class="n">f</span><span class="p">);</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>Dans ce cas, <code>main.o</code> contient les instructions de la fonction <code>main()</code> et les instructions d&rsquo;initialisation de la variable globale <code>half</code>, tandis que <code>math.o</code> contient les instructions des fonctions <code>create_half()</code>, <code>mult(Fraction, Fraction)</code> et <code>invert(Fraction)</code>.</p>
+<style>
+    pre.mermaid {
+        display: inline-block;
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+</style>
+<pre class="mermaid">graph LR
+
+subgraph A[main.o]
+    main(["main()"])
+    half(["half: Fraction"])
+end
+</pre>
+<pre class="mermaid">graph LR
+
+subgraph B[math.o]
+    create_half(["create_half()"])
+    mult(["mult(Fraction, Fraction)"])
+    invert(["invert(Fraction)"])
+end
+</pre>
+<p>Le linker identifie les éléments dont les instructions seront exécutées quoi qu&rsquo;il arrive :</p>
+<ul>
+<li>le point d&rsquo;entrée du programme, c&rsquo;est-à-dire la fonction <code>main</code>,</li>
+<li>les instructions nécessaires à l&rsquo;initialisation des variables globales.</li>
+</ul>
+<pre class="mermaid">graph LR
+
+subgraph A[main.o]
+    main(["main()"])
+    half(["half: Fraction"])
+end
+
+classDef fat stroke-width:3px
+class main,half fat
+</pre>
+<pre class="mermaid">graph LR
+
+subgraph B[math.o]
+    create_half(["create_half()"])
+    mult(["mult(Fraction, Fraction)"])
+    invert(["invert(Fraction)"])
+end
+</pre>
+<p>Il analyse ensuite les instructions associées à chaque élément de manière à créer les liens vers les bonnes fonctions.</p>
+<pre class="mermaid">graph LR
+
+subgraph A[main.o]
+    main(["main()"])
+    half(["half: Fraction"])
+
+    main -.->|l.9| half
+end
+
+subgraph B[math.o]
+    create_half(["create_half()"])
+    mult(["mult(Fraction, Fraction)"])
+    invert(["invert(Fraction)"])
+end
+
+half -.->|l.3| create_half
+main -.->|l.9| mult
+
+classDef fat stroke-width:3px
+class main,half fat
+</pre>
+<p>Cela lui permet d&rsquo;identifier l&rsquo;ensemble des éléments à placer dans l&rsquo;exécutable final.</p>
+<pre class="mermaid">graph LR
+
+subgraph D[program.exe]
+    f_main(["main()"])
+    f_half(["half: Fraction"])
+    f_create_half(["create_half()"])
+    f_mult(["mult(Fraction, Fraction)"])
+end
+
+    subgraph A[main.o]
+        main(["main()"])
+        half(["half: Fraction"])
+    end
+
+    subgraph B[math.o]
+        create_half(["create_half()"])
+        mult(["mult(Fraction, Fraction)"])
+        invert(["invert(Fraction)"])
+    end
+
+main -.->|l.9| half
+half -.->|l.3| create_half
+main -.->|l.9| mult
+
+main ==> f_main
+half ==> f_half
+create_half ==> f_create_half
+mult ==> f_mult
+
+classDef fat stroke-width:3px
+class main,half,create_half,mult fat
+</pre>
+<p>L&rsquo;exécutable final ne contient donc que les symboles effectivement utilisés par le programme.<br>
+La fonction <code>invert(Fraction)</code> présente dans <code>math.o</code> et qui n&rsquo;est jamais appelée n&rsquo;en fait donc pas partie.</p>
+<hr>
+<h3 id="encore-plus-derreurs--">Encore plus d&rsquo;erreurs ! 😭</h3>
+<p>De la même façon que nous l&rsquo;avons fait avec les erreurs de compilation, nous allons vous présenter quelques situations d&rsquo;erreurs émises au cours l&rsquo;édition des liens.</p>
+<p>Commencez par vous placer dans le répertoire <code>chap-01/4-link-errors</code>.</p>
+<h4 id="1-undefined-reference-to-main">1. undefined reference to `main&rsquo;</h4>
+<ol>
+<li>Compilez le fichier <code>1-hello_wordl.cpp</code> pour en faire un fichier-objet, puis essayez de créer un programme à partir de ce fichier-objet.<br>
+Quel est le message d&rsquo;erreur ? Pouvez-vous identifier dans la sortie complète le nom du programme effectuant l&rsquo;édition des liens ?</li>
+</ol>
+
+<div class="hidden-solution">
+
+    <button class="show-solution-btn" onclick="$(this).addClass('off'); $(this).next().removeClass('off');">
+        ⮟ Afficher la solution ⮟
+    </button>
+
+    <div class="off">
+        <button class="hide-solution-btn" onclick="$(this).parent().addClass('off'); $(this).parent().prev().removeClass('off');">
+            ⮝ Masquer la solution ⮝
+        </button>
+
+        <div class="hidden-solution-content">
+            <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-b" data-lang="b"><span class="line"><span class="cl"><span class="c">g</span><span class="nb">++</span><span class="c"> </span><span class="nb">-</span><span class="c">std=c</span><span class="nb">++</span><span class="c">17 </span><span class="nb">-</span><span class="c">c 1</span><span class="nb">-</span><span class="c">hello_wordl</span><span class="nt">.</span><span class="c">cpp
+</span></span></span><span class="line"><span class="cl"><span class="c"># =</span><span class="nv">&gt;</span><span class="c"> Ok
+</span></span></span><span class="line"><span class="cl"><span class="c">g</span><span class="nb">++</span><span class="c"> </span><span class="nb">-</span><span class="c">o program 1</span><span class="nb">-</span><span class="c">hello_wordl</span><span class="nt">.</span><span class="c">o
+</span></span></span><span class="line"><span class="cl"><span class="c"># =</span><span class="nv">&gt;</span><span class="c"> undefined reference to `main&#39;
+</span></span></span></code></pre></div><p>On note également le message <code>ld returned 1 exit status</code> à la toute fin.<br>
+Le programme chargé de l&rsquo;édition des liens est donc <code>ld</code>.</p>
+
+        </div>
+    </div>
+
+</div>
+<ol start="2">
+<li>Corrigez le programme afin que le linker puisse trouver son point d&rsquo;entrée.</li>
+</ol>
+
+<div class="hidden-solution">
+
+    <button class="show-solution-btn" onclick="$(this).addClass('off'); $(this).next().removeClass('off');">
+        ⮟ Afficher la solution ⮟
+    </button>
+
+    <div class="off">
+        <button class="hide-solution-btn" onclick="$(this).parent().addClass('off'); $(this).parent().prev().removeClass('off');">
+            ⮝ Masquer la solution ⮝
+        </button>
+
+        <div class="hidden-solution-content">
+            <p>Il y a une typo dans le nom de la fonction <code>main</code>, ce qui empêche le linker de la trouver.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp">
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span>
+</span></span><span class="line hl"><span class="cl"><span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;Hello world!&#34;</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div>
+        </div>
+    </div>
+
+</div>
+
+<div class="notices tip" ><p>Lorsque la sortie d&rsquo;erreurs se termine par quelque chose comme <code>ld returned 1 exit status</code>, cela indique que l&rsquo;erreur se produit durant l&rsquo;édition des liens.</p>
+</div>
+
+<h4 id="2-undefined-reference-to-bla-1">2. undefined reference to `bla(&hellip;)&rsquo; #1</h4>
+<ol>
+<li>Que fait la commande <code>g++ -std=c++17 -o program 2-main.cpp</code> ?</li>
+</ol>
+
+<div class="hidden-solution">
+
+    <button class="show-solution-btn" onclick="$(this).addClass('off'); $(this).next().removeClass('off');">
+        ⮟ Afficher la solution ⮟
+    </button>
+
+    <div class="off">
+        <button class="hide-solution-btn" onclick="$(this).parent().addClass('off'); $(this).parent().prev().removeClass('off');">
+            ⮝ Masquer la solution ⮝
+        </button>
+
+        <div class="hidden-solution-content">
+            <p>La commande réalise d&rsquo;abord la compilation de <code>2-main.cpp</code> en fichier-objet, puis invoque le linker pour générer un exécutable à partir de ce fichier.</p>
+
+        </div>
+    </div>
+
+</div>
+<ol start="2">
+<li>Exécutez-la.<br>
+Quelle est la sortie du programme ? La compilation du fichier <code>2-main.cpp</code> en fichier-objet s&rsquo;est-elle bien passée ?</li>
+</ol>
+
+<div class="hidden-solution">
+
+    <button class="show-solution-btn" onclick="$(this).addClass('off'); $(this).next().removeClass('off');">
+        ⮟ Afficher la solution ⮟
+    </button>
+
+    <div class="off">
+        <button class="hide-solution-btn" onclick="$(this).parent().addClass('off'); $(this).parent().prev().removeClass('off');">
+            ⮝ Masquer la solution ⮝
+        </button>
+
+        <div class="hidden-solution-content">
+            <p>On obtient quelque chose comme :</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-b" data-lang="b"><span class="line"><span class="cl"><span class="c">2</span><span class="nb">-</span><span class="c">main</span><span class="nt">.</span><span class="c">cpp: undefined reference to `add(int</span><span class="nt">,</span><span class="c"> int)&#39;
+</span></span></span><span class="line"><span class="cl"><span class="c">error: ld returned 1 exit status
+</span></span></span></code></pre></div><p>La compilation du fichier <code>2-main.cpp</code> s&rsquo;est donc bien passée, puisque c&rsquo;est la phase d&rsquo;édition des liens (<code>ld</code>) qui échoue.</p>
+
+        </div>
+    </div>
+
+</div>
+<ol start="3">
+<li>Quels sont les symboles présents dans le ou les fichiers-objet passés à l&rsquo;édition des liens ?</li>
+</ol>
+
+<div class="hidden-solution">
+
+    <button class="show-solution-btn" onclick="$(this).addClass('off'); $(this).next().removeClass('off');">
+        ⮟ Afficher la solution ⮟
+    </button>
+
+    <div class="off">
+        <button class="hide-solution-btn" onclick="$(this).parent().addClass('off'); $(this).parent().prev().removeClass('off');">
+            ⮝ Masquer la solution ⮝
+        </button>
+
+        <div class="hidden-solution-content">
+            <p>Après la précompilation, le fichier <code>2-main.cpp</code> est transformé en :</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="cp">#pragma once
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span>
+</span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="nf">add</span><span class="p">(</span><span class="kt">int</span> <span class="n">a</span><span class="p">,</span> <span class="kt">int</span> <span class="n">b</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">add</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>A la suite de la compilation de ce fichier, <code>2-main.o</code> contient uniquement les instructions de la fonction <code>main</code>.<br>
+En effet, la ligne 3 est une déclaration de fonction.
+Le compilateur ne connaissant pas la définition de <code>add(int, int)</code>, il ne peut pas générer les instructions binaires qui lui serait associées.</p>
+
+        </div>
+    </div>
+
+</div>
+<ol start="4">
+<li>Que manque-t-il dans la ligne de commande pour que le programme compile ?</li>
+</ol>
+
+<div class="hidden-solution">
+
+    <button class="show-solution-btn" onclick="$(this).addClass('off'); $(this).next().removeClass('off');">
+        ⮟ Afficher la solution ⮟
+    </button>
+
+    <div class="off">
+        <button class="hide-solution-btn" onclick="$(this).parent().addClass('off'); $(this).parent().prev().removeClass('off');">
+            ⮝ Masquer la solution ⮝
+        </button>
+
+        <div class="hidden-solution-content">
+            <p>La définition de la fonction <code>add(int, int)</code> est présente dans le fichier <code>2-add.cpp</code>.<br>
+Il suffit donc d&rsquo;ajouter ce fichier à la ligne de commande :</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-b" data-lang="b"><span class="line"><span class="cl"><span class="c">g</span><span class="nb">++</span><span class="c"> </span><span class="nb">-</span><span class="c">std=c</span><span class="nb">++</span><span class="c">17 </span><span class="nb">-</span><span class="c">o program 2</span><span class="nb">-</span><span class="c">main</span><span class="nt">.</span><span class="c">cpp 2</span><span class="nb">-</span><span class="c">add</span><span class="nt">.</span><span class="c">cpp
+</span></span></span></code></pre></div>
+        </div>
+    </div>
+
+</div>
+<h4 id="3-undefined-reference-to-bla-2">3. undefined reference to `bla(&hellip;)&rsquo; #2</h4>
+<ol>
+<li>Exécutez maintenant <code>g++ -std=c++17 -o program 3-main.cpp 3-sub.cpp</code>.<br>
+Quelle est l&rsquo;erreur ? Que contient le fichier-objet <code>3-sub.o</code> ?</li>
+</ol>
+
+<div class="hidden-solution">
+
+    <button class="show-solution-btn" onclick="$(this).addClass('off'); $(this).next().removeClass('off');">
+        ⮟ Afficher la solution ⮟
+    </button>
+
+    <div class="off">
+        <button class="hide-solution-btn" onclick="$(this).parent().addClass('off'); $(this).parent().prev().removeClass('off');">
+            ⮝ Masquer la solution ⮝
+        </button>
+
+        <div class="hidden-solution-content">
+            <p>L&rsquo;erreur est la suivante, et il s&rsquo;agit à nouveau d&rsquo;une erreur de link.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-b" data-lang="b"><span class="line"><span class="cl"><span class="c">3</span><span class="nb">-</span><span class="c">main</span><span class="nt">.</span><span class="c">cpp: undefined reference to `sub(int</span><span class="nt">,</span><span class="c"> int)&#39;
+</span></span></span></code></pre></div><p>Après précompilation, le fichier <code>3-sub.cpp</code> contient :</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="cp">#pragma once
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span>
+</span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="nf">sub</span><span class="p">(</span><span class="kt">int</span> <span class="n">a</span><span class="p">,</span> <span class="kt">int</span> <span class="n">b</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kt">float</span> <span class="nf">sub</span><span class="p">(</span><span class="kt">float</span> <span class="n">a</span><span class="p">,</span> <span class="kt">float</span> <span class="n">b</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">a</span> <span class="o">-</span> <span class="n">b</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><p>Le fichier <code>3-sub.o</code> contient donc les instructions binaires de la fonction <code>sub(float, float)</code>, et non pas celles de <code>sub(int, int)</code>.</p>
+
+        </div>
+    </div>
+
+</div>
+<ol start="2">
+<li>Pourquoi la phase de compilation des fichiers <code>3-main.cpp</code> et <code>3-sub.cpp</code> ne produit pas d&rsquo;erreur ?</li>
+</ol>
+
+<div class="hidden-solution">
+
+    <button class="show-solution-btn" onclick="$(this).addClass('off'); $(this).next().removeClass('off');">
+        ⮟ Afficher la solution ⮟
+    </button>
+
+    <div class="off">
+        <button class="hide-solution-btn" onclick="$(this).parent().addClass('off'); $(this).parent().prev().removeClass('off');">
+            ⮝ Masquer la solution ⮝
+        </button>
+
+        <div class="hidden-solution-content">
+            <p>Le fichier <code>3-main.o</code> précompilé devrait avoir ce contenu :</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="cp">#pragma once
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span>
+</span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="nf">sub</span><span class="p">(</span><span class="kt">int</span> <span class="n">a</span><span class="p">,</span> <span class="kt">int</span> <span class="n">b</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">sub</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><p>Il n&rsquo;y a donc aucune raison qu&rsquo;il ne compile pas, puisque la fonction <code>sub(int, int)</code> est correctement déclarée avant son appel, et que les arguments fournis ont un type compatible avec la signature de la fonction.</p>
+<p>En ce qui concerne le fichier <code>3-sub.cpp</code>, nous avons :</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="cp">#pragma once
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span>
+</span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="nf">sub</span><span class="p">(</span><span class="kt">int</span> <span class="n">a</span><span class="p">,</span> <span class="kt">int</span> <span class="n">b</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kt">float</span> <span class="nf">sub</span><span class="p">(</span><span class="kt">float</span> <span class="n">a</span><span class="p">,</span> <span class="kt">float</span> <span class="n">b</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">a</span> <span class="o">-</span> <span class="n">b</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><p>Ici, on pourrait se demander pourquoi le compilateur accepte d&rsquo;avoir une déclaration de <code>sub</code> qui attend des <code>int</code>, et une définition de <code>sub</code> qui attend des <code>float</code>.<br>
+C&rsquo;est tout simplement parce qu&rsquo;en C++, la <strong>surcharge</strong> de fonctions est autorisée (comme en Java).</p>
+<p>On pourrait par exemple avoir dans un autre fichier-source, ou bien dans le même que celui-ci, une définition valide de <code>sub(int, int)</code>, en plus de la définition déjà existante de <code>sub(float, float)</code>.<br>
+En fonction du type des arguments passés à l&rsquo;appel, le compilateur choisirait la fonction avec la signature la plus proche.</p>
+
+        </div>
+    </div>
+
+</div>
+<ol start="3">
+<li>Comment pourriez-vous modifier le programme pour que celui-ci compile ?</li>
+</ol>
+
+<div class="hidden-solution">
+
+    <button class="show-solution-btn" onclick="$(this).addClass('off'); $(this).next().removeClass('off');">
+        ⮟ Afficher la solution ⮟
+    </button>
+
+    <div class="off">
+        <button class="hide-solution-btn" onclick="$(this).parent().addClass('off'); $(this).parent().prev().removeClass('off');">
+            ⮝ Masquer la solution ⮝
+        </button>
+
+        <div class="hidden-solution-content">
+            <p>Il y a plusieurs solutions possibles.</p>
+<ol>
+<li>Modifier la signature de <code>sub</code> dans <code>3-sub.cpp</code> pour qu&rsquo;elle accepte des <code>int</code> plutôt que des <code>float</code>.<br>
+Ainsi, le linker pourra trouver le symbole <code>sub(int, int)</code> dans <code>3-sub.o</code>.</li>
+<li>Modifier la déclaration de <code>sub</code> dans <code>3-sub.hpp</code> pour indiquer qu&rsquo;elle attend des <code>float</code>.<br>
+De cette manière, à la compilation de <code>3-main.cpp</code>, le symbole associé à <code>sub</code> dans la table des symboles aura pour signature <code>sub(float, float)</code> au lieu de <code>sub(int, int)</code>,</li>
+<li>Ajouter la déclaration de <code>sub(float, float)</code> dans <code>3-sub.hpp</code> et la définition de <code>sub(int, int)</code> dans <code>3-sub.cpp</code>, pour que les deux versions existent pendant la phase de link.</li>
+</ol>
+<p>L&rsquo;essentiel, c&rsquo;est de faire en sorte que les déclarations présentes dans le header correspondent bien aux définitions présentes dans le fichier-source.</p>
+
+        </div>
+    </div>
+
+</div>
+
+<div class="notices tip" ><p>Si vous rencontrez une erreur de type <code>undefined reference to ...</code>, commencez par vérifier que vous n&rsquo;avez pas oublier de compiler un fichier-source.<br>
+Si le problème ne vient pas de là, assurez-vous que la <strong>signature</strong> de votre fonction (nom + type des paramètres) est bien strictement la même dans sa définition et dans ses déclarations.</p>
+</div>
+
+<h4 id="4-multiple-definition-of-bla">4. multiple definition of `bla&rsquo;</h4>
+<ol>
+<li>Exécutez la commande <code>g++ -std=c++17 -o prog 4-main.cpp 4-sub.cpp 4-add.cpp</code>.<br>
+Quelle est l&rsquo;erreur ?</li>
+</ol>
+
+<div class="hidden-solution">
+
+    <button class="show-solution-btn" onclick="$(this).addClass('off'); $(this).next().removeClass('off');">
+        ⮟ Afficher la solution ⮟
+    </button>
+
+    <div class="off">
+        <button class="hide-solution-btn" onclick="$(this).parent().addClass('off'); $(this).parent().prev().removeClass('off');">
+            ⮝ Masquer la solution ⮝
+        </button>
+
+        <div class="hidden-solution-content">
+            <p>En supprimant tous les caractères bizarres de la sortie, on obtient ces erreurs :</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-b" data-lang="b"><span class="line"><span class="cl"><span class="c">4</span><span class="nb">-</span><span class="c">add</span><span class="nt">.</span><span class="c">cpp: multiple definition of `debug(char const*</span><span class="nt">,</span><span class="c"> int</span><span class="nt">,</span><span class="c"> int)&#39;
+</span></span></span><span class="line"><span class="cl"><span class="c">4</span><span class="nb">-</span><span class="c">sub</span><span class="nt">.</span><span class="c">cpp: first defined here
+</span></span></span></code></pre></div>
+        </div>
+    </div>
+
+</div>
+<ol start="2">
+<li>Quels sont les symboles présents dans les fichiers-objet <code>4-add.o</code> et <code>4-sub.o</code> ?</li>
+</ol>
+
+<div class="hidden-solution">
+
+    <button class="show-solution-btn" onclick="$(this).addClass('off'); $(this).next().removeClass('off');">
+        ⮟ Afficher la solution ⮟
+    </button>
+
+    <div class="off">
+        <button class="hide-solution-btn" onclick="$(this).parent().addClass('off'); $(this).parent().prev().removeClass('off');">
+            ⮝ Masquer la solution ⮝
+        </button>
+
+        <div class="hidden-solution-content">
+            <p>Après la précompilation de <code>4-add.cpp</code>, on a :</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="cp">#pragma once
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span>
+</span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="nf">add</span><span class="p">(</span><span class="kt">int</span> <span class="n">a</span><span class="p">,</span> <span class="kt">int</span> <span class="n">b</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">//-----------------------------
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl"><span class="cp">#pragma once
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span>
+</span></span><span class="line"><span class="cl"><span class="c1">// le contenu de &lt;iostream&gt;
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl"><span class="kt">void</span> <span class="nf">debug</span><span class="p">(</span><span class="k">const</span> <span class="kt">char</span><span class="o">*</span> <span class="n">fcn</span><span class="p">,</span> <span class="kt">int</span> <span class="n">p1</span><span class="p">,</span> <span class="kt">int</span> <span class="n">p2</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">fcn</span> <span class="o">&lt;&lt;</span> <span class="s">&#34; called with &#34;</span> <span class="o">&lt;&lt;</span> <span class="n">p1</span> <span class="o">&lt;&lt;</span> <span class="s">&#34; and &#34;</span> <span class="o">&lt;&lt;</span> <span class="n">p2</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">//-----------------------------
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="nf">add</span><span class="p">(</span><span class="kt">int</span> <span class="n">a</span><span class="p">,</span> <span class="kt">int</span> <span class="n">b</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="n">debug</span><span class="p">(</span><span class="s">&#34;add&#34;</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><p>Les symboles présents dans <code>4-add.o</code> sont donc :</p>
+<ul>
+<li><code>debug(const char*, int, int)</code></li>
+<li><code>add(int, int)</code></li>
+</ul>
+<p>Similairement, après la précompilation de <code>4-sub.cpp</code>, on a :</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="cp">#pragma once
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span>
+</span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="nf">sub</span><span class="p">(</span><span class="kt">int</span> <span class="n">a</span><span class="p">,</span> <span class="kt">int</span> <span class="n">b</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">//-----------------------------
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl"><span class="cp">#pragma once
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span>
+</span></span><span class="line"><span class="cl"><span class="c1">// le contenu de &lt;iostream&gt;
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl"><span class="kt">void</span> <span class="nf">debug</span><span class="p">(</span><span class="k">const</span> <span class="kt">char</span><span class="o">*</span> <span class="n">fcn</span><span class="p">,</span> <span class="kt">int</span> <span class="n">p1</span><span class="p">,</span> <span class="kt">int</span> <span class="n">p2</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">fcn</span> <span class="o">&lt;&lt;</span> <span class="s">&#34; called with &#34;</span> <span class="o">&lt;&lt;</span> <span class="n">p1</span> <span class="o">&lt;&lt;</span> <span class="s">&#34; and &#34;</span> <span class="o">&lt;&lt;</span> <span class="n">p2</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">//-----------------------------
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="nf">sub</span><span class="p">(</span><span class="kt">int</span> <span class="n">a</span><span class="p">,</span> <span class="kt">int</span> <span class="n">b</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="n">debug</span><span class="p">(</span><span class="s">&#34;sub&#34;</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">a</span> <span class="o">-</span> <span class="n">b</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><p>Les symboles présents dans <code>4-sub.o</code> sont donc :</p>
+<ul>
+<li><code>debug(const char*, int, int)</code></li>
+<li><code>sub(int, int)</code></li>
+</ul>
+<p>Le symbole <code>debug(const char*, int, int)</code> est bien présent deux fois, d&rsquo;où l&rsquo;erreur du linker.</p>
+
+        </div>
+    </div>
+
+</div>
+<ol start="3">
+<li>Proposez une solution qui pourrait régler le problème, mais ne l&rsquo;appliquez pas tout de suite.</li>
+</ol>
+
+<div class="hidden-solution">
+
+    <button class="show-solution-btn" onclick="$(this).addClass('off'); $(this).next().removeClass('off');">
+        ⮟ Afficher la solution ⮟
+    </button>
+
+    <div class="off">
+        <button class="hide-solution-btn" onclick="$(this).parent().addClass('off'); $(this).parent().prev().removeClass('off');">
+            ⮝ Masquer la solution ⮝
+        </button>
+
+        <div class="hidden-solution-content">
+            <p>On pourrait créer un fichier <code>4-debug.cpp</code> dans lequel on déplacerait la définition de <code>debug(const char*, int, int)</code>.
+Dans le fichier <code>4-debug.hpp</code>, on aurait uniquement la déclaration de la fonction.<br>
+Ainsi le symbole ne serait plus présent dans <code>4-add.o</code> ni <code>4-sub.o</code>, seulement dans <code>4-debug.o</code>.</p>
+
+        </div>
+    </div>
+
+</div>
+<p>Pour contraindre le linker a accepté qu&rsquo;un symbole soit présent dans plusieurs fichiers-objet, vous pouvez placer le mot-clef <code>inline</code> devant sa définition dans le code-source.<br>
+Dans ce cas, au moment d&rsquo;écrire le symbole dans l&rsquo;exécutable final, le linker utilisera la version trouvée dans n&rsquo;importe lequel des fichiers-objet.</p>
+<p>Cela vous permet donc de définir vos fonctions directement dans les headers.
+S&rsquo;ils sont inclus depuis plusieurs fichiers-source, le linker fera comme si les fonctions n&rsquo;étaient présentes que dans l&rsquo;un d&rsquo;entre eux et n&rsquo;émettera pas d&rsquo;erreurs.</p>
+<ol start="4">
+<li>Essayez de corriger le programme utilisant le mot-clef <code>inline</code>.</li>
+</ol>
+
+<div class="hidden-solution">
+
+    <button class="show-solution-btn" onclick="$(this).addClass('off'); $(this).next().removeClass('off');">
+        ⮟ Afficher la solution ⮟
+    </button>
+
+    <div class="off">
+        <button class="hide-solution-btn" onclick="$(this).parent().addClass('off'); $(this).parent().prev().removeClass('off');">
+            ⮝ Masquer la solution ⮝
+        </button>
+
+        <div class="hidden-solution-content">
+            <p>On remplace le contenu de <code>4-debug.hpp</code> par :</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="cp">#pragma once
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span>
+</span></span><span class="line"><span class="cl"><span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp">
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span>
+</span></span><span class="line hl"><span class="cl"><span class="kr">inline</span> <span class="kt">void</span> <span class="nf">debug</span><span class="p">(</span><span class="k">const</span> <span class="kt">char</span><span class="o">*</span> <span class="n">fcn</span><span class="p">,</span> <span class="kt">int</span> <span class="n">p1</span><span class="p">,</span> <span class="kt">int</span> <span class="n">p2</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">fcn</span> <span class="o">&lt;&lt;</span> <span class="s">&#34; called with &#34;</span> <span class="o">&lt;&lt;</span> <span class="n">p1</span> <span class="o">&lt;&lt;</span> <span class="s">&#34; and &#34;</span> <span class="o">&lt;&lt;</span> <span class="n">p2</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div>
+        </div>
+    </div>
+
+</div>
+<hr>
+<h3 id="synthèse">Synthèse</h3>
+<p>Il faut retenir que la compilation d&rsquo;un programme se fait en deux étapes : la compilation des fichiers-source suivie de l&rsquo;édition des liens.</p>
+<p>Durant la compilation, le compilateur :</p>
+<ul>
+<li>ajoute les symboles dans une table lorsqu&rsquo;il voit leurs définitions ou leurs déclarations,</li>
+<li>ajoute les instructions binaires des fonctions au fichier-objet lorsqu&rsquo;il parcourt leur définition,</li>
+<li>vérifie que les symboles sont utilisés dans le bon contexte, à l&rsquo;aide du contenu de la table des symboles.</li>
+</ul>
+<p>Durant l&rsquo;édition des liens, le linker :</p>
+<ul>
+<li>retrouve pour chaque appel de fonction sa définition dans les fichiers-objet,</li>
+<li>écrit l&rsquo;exécutable final en commençant par les instructions de la fonction <code>main</code>, et en ajoutant récursivement les instructions des fonctions appelées dedans.</li>
+</ul>
+<p>Quelques bonnes pratiques lorsqu&rsquo;on code <strong>le contenu d&rsquo;un header</strong> :</p>
+<ul>
+<li>on commence toujours par écrire <code>#pragma once</code>,</li>
+<li>on utilise des &ldquo;forward-declare&rdquo; plutôt que des inclusions lorsque cela est possible,</li>
+<li>on écrit <code>inline</code> devant les <strong>définitions</strong> de fonctions (pas les déclarations).</li>
+</ul>
+
+
+<footer class="footline">
+	
+</footer>
+
+        
+        </div>
+        
+
+      </div>
+
+    <div id="navigation">
+        
+        
+
+        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+        
+                    
+            
+        
+                    
+            
+        
+
+        
+
+
+	 
+	 
+		
+			<a class="nav nav-prev" href="/CPP_Learning/chapter1/4-std-lib/" title="Librairie standard 📚"> <i class="fa fa-chevron-left"></i></a>
+		
+		
+			<a class="nav nav-next" href="/CPP_Learning/chapter1/test/" title="Questionnaire ☑" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+		
+	
+    </div>
+
+    </section>
+
+    <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
+      <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
+    </div>
+    <script src="/CPP_Learning/js/clipboard.min.js?1704493468"></script>
+    <script src="/CPP_Learning/js/perfect-scrollbar.min.js?1704493468"></script>
+    <script src="/CPP_Learning/js/perfect-scrollbar.jquery.min.js?1704493468"></script>
+    <script src="/CPP_Learning/js/jquery.sticky.js?1704493468"></script>
+    <script src="/CPP_Learning/js/featherlight.min.js?1704493468"></script>
+    <script src="/CPP_Learning/js/highlight.pack.js?1704493468"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <script src="/CPP_Learning/js/modernizr.custom-3.6.0.js?1704493468"></script>
+    <script src="/CPP_Learning/js/learn.js?1704493468"></script>
+    <script src="/CPP_Learning/js/hugo-learn.js?1704493468"></script>
+    
+        
+            <script src="/CPP_Learning/mermaid/mermaid.js?1704493468"></script>
+        
+        <script>
+            mermaid.initialize({ startOnLoad: true });
+        </script>
+    
+    
+
+<button id="footer-question-btn" onclick="openQuestionForm()" disabled><i class="fas fa-question-circle"></i></button>
+
+<div id="footer-question-window" disabled>
+    <form id="question" method=POST action="https://formsubmit.co/3aa0f379a1aed9c454634cc2da153a7b" target="question-submitted">
+        <input type="email" name="email" placeholder="mon_email@smthg.com" required />
+        <textarea name="question" rows="7" cols="30" placeholder="ma question..."></textarea>
+        <input id="question-topic" type="hidden" name="selection" />
+
+        <input type="hidden" name="_replyto" />
+        <input type="hidden" name="_subject" value="[C++][Chapitre ] Question sur le cours" />
+        <input type="hidden" name="_template" value="box" />
+        <input type="hidden" name="_captcha" value="false" />
+        <input type="hidden" name="_next" value="https://laefy.github.io/CPP_Learning//question-submitted/" />
+
+        <input type="submit" disabled style="display: none" aria-hidden="true" />
+        <input type="submit" value="Envoyer" />
+    </form>
+
+    <iframe id="question-submitted" class="hidden" name="question-submitted" src=""></iframe>
+</div>
+
+<script>
+
+    function openQuestionForm() {
+        var window = document.getElementById("footer-question-window").removeAttribute("disabled");
+
+        var selection = window.getSelection().toString();
+        document.getElementById("question-topic").value = selection
+    }
+
+    function updateQuestionWidgetState(event) {
+        var body = document.getElementById("body-inner");
+        var selection = window.getSelection();
+        var question_window = document.getElementById("footer-question-window");
+
+        document.getElementById("footer-question-btn").disabled =
+            selection.isCollapsed ||
+            body == null ||
+            body.contains(selection.anchorNode) == false ||
+            body.contains(selection.focusNode) == false;
+
+        if (event !== undefined
+            && event.type == "mouseup"
+            && question_window.contains(event.target) == false
+            && question_window.contains(document.activeElement) == false) {
+            question_window.setAttribute("disabled", true);
+        }
+    }
+
+    document.onmouseup = document.onkeyup = document.onselectionchange = updateQuestionWidgetState;
+    updateQuestionWidgetState();
+
+</script>
+
+
+  </body>
+</html>
+
