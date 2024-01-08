@@ -6,7 +6,7 @@ weight: 100
 Félicitations !! Vous avez enfin terminé le Chapitre 1 ! 🥳🎉
 
 Le questionnaire ci-dessous vous aidera à savoir si vous avez bien compris le cours ou non.  
-Il n'a donc pas vocation à vous évaluer, mais à vous donnez une idée de ce que vous auriez lu trop vite ou n'auriez pas assez pratiqué.
+Il n'a donc pas vocation à vous évaluer, mais à vous donner une idée de ce que vous auriez lu trop vite ou n'auriez pas assez pratiqué.
 
 Dans tous les cas, si vous répondez à ce questionnaire et cliquez sur le bouton `Valider`, vos réponses nous seront envoyées par mail et nous vous ferons un petit retour sur ce que vous avez réussi ou non 😉
 

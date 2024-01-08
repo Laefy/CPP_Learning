@@ -17,7 +17,7 @@ auto str = "hello"; // -> str est de type const char*
 
 Cependant, ce n'est pas du tout pratique pour faire des opérations comme des concaténations, des recherches, ou même simplement récupérer la taille de la chaîne.
 
-Pour pouvoir faire ce genre de chose facilement, on utilise la classe `std::string` définie dans le header `<string>`.
+Pour pouvoir faire ce genre de choses facilement, on utilise la classe `std::string` définie dans le header `<string>`.
 ```cpp
 // Ex: on concatène les arguments passés au programme, puis on affiche le nombre total de lettres
 
@@ -31,7 +31,7 @@ int main(int argc, char** argv)
 
     for (auto i = 1; i < argc; ++i)
     {
-        // On caste argv[i] en std::string et on le concatène à word
+        // On construit une std::string à partir de argv[i] et on le concatène à word
         word += std::string { argv[i] };
     }
 
@@ -100,13 +100,16 @@ En plus des flux standards, vous pouvez écrire ou lire depuis des fichiers en u
 
 auto file = std::fstream { "text.txt" };
 
-if (file) // vérifie que le fichier existe et a pu être ouvert
+// On vérifie que le fichier existe et a pu être ouvert
+if (file)
 {
     std::string text;
 
-    while (!file.eof()) // vérifie si on a atteint la fin du fichier
+    // On vérifie si on a atteint la fin du fichier
+    while (!file.eof()) 
     {
-        file >> text; // lit le prochain "mot" du fichier
+        // On lit le prochain "mot" du fichier
+        file >> text;
         std::cout << text << std::endl;
     }
 }
@@ -153,7 +156,7 @@ Le programme devra écrire :
 > Craow Ca va ?
 
 1. Ouvrez le fichier `chap-01/2-parrot.cpp` dans VSCode.  
-Vérifiez qu'il compile et qu'il affiche "Craow" lorsque vous le lancer.
+Vérifiez qu'il compile et qu'il affiche "Craow" lorsque vous le lancez.
 
 {{% hidden-solution %}}
 Pour compiler, on peut ouvrir le terminal VSCode et écrire : `g++ -std=c++17 -o parrot 2-parrot.cpp` après s'être placé dans le bon répertoire avec `cd`.

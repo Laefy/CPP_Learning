@@ -111,8 +111,7 @@ Cette introduction étant terminée, j'espère que vous vous amuserez et que vou
 
 ### Qui suis-je ?
 
-Je m'appelle Céline Noël et je suis en ce moment programmeuse pour SLB (ils font des trucs de pétrole, c'est pas bien, mais la boîte et l'environnement de travail sont vraiment sympas). Avant cela, j'ai travaillé un an pour Dental Monitoring (eux c'est une start-up, ils font des trucs dans l'orthodontie, aux dernières nouvelles, la politique de management est toujours nulle chez eux, donc je ne conseille pas). Et enfin, encore avant, j'ai travaillé 4 ans pour Ubisoft (pour le coup, je conseille, c'est difficile de rentrer, mais l'environnement de travail à Paris est très chouette et on apprend plein de choses).
-
+Je m'appelle Céline Noël et je suis programmeuse depuis 8 ans.  
 J'ai terminé mes études à l'UGE (anciennement UPEM ⚰️) en 2017, durant lesquelles j'ai effectué un Master Informatique en double-cursus avec un cycle d'ingénieur à l'IMAC.
 
 En ce qui concerne l'enseignement, j'ai commencé à donner des TPs de Synthèse d'Images aux IMAC-1 durant ma dernière année d'étude, j'ai ensuite donné les TPs d'Algo aux INFO-1 à l'ESIPE, avant de repartir donner des TPs de Synthèse d'Images, mais aux IMAC-2. Pour finir, je suis aujourd'hui responsable des cours de C++ des Master 1 en Informatique à l'UGE.

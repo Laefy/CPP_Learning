@@ -232,7 +232,7 @@ Le fichier-objet en sortie contient :
 
 ### Mais c'est quoi cette erreur ?? 🤯
 
-Il nous apparaît utile de faire un petit tour des situations d'erreurs les plus courantes, afin que vous puissiez identifier les problèmes plus rapidement si vous les recontrez.  
+Il nous apparaît utile de faire un petit tour des situations d'erreurs les plus courantes, afin que vous puissiez identifier les problèmes plus rapidement si vous les rencontrez.  
 
 Et vous les rencontrerez forcément, eheheh... 😈
 
@@ -277,7 +277,7 @@ int add(A a, B b)
 #### 2. 'bla' is private within this context 
 
 1. Essayez maintenant de compiler le fichier `2-class.cpp`.  
-Que signifie l'erreur de compilation ? Pourquoi ne l'avez vous pas rencontrer dans le fichier `1-structs.cpp` ?
+Que signifie l'erreur de compilation ? Pourquoi ne l'avez vous pas rencontrée dans le fichier `1-structs.cpp` ?
 
 {{% hidden-solution %}}
 L'erreur signifie qu'on essaye d'accéder à un champ privé d'une classe depuis l'extérieur.  
@@ -313,7 +313,7 @@ Lorsqu'il analyse les instructions qui les utilisent, il ne les trouve donc pas 
 
 On a également l'erreur `'name' was not declared in this scope`.
 Celle-ci est plus étonnante, puisque `name` est bien définie une ligne plus haut.  
-Cependant, comme l'instruction définissant la variable `name` n'a pas compilée, elle n'a pas pu être ajoutée à la table des symboles.
+Cependant, comme l'instruction définissant la variable `name` n'a pas compilé, elle n'a pas pu être ajoutée à la table des symboles.
 Le compilateur ne la trouve donc pas au moment où il analyse l'instruction `std::cin >> name;`, ce qui explique cette erreur.
 {{% /hidden-solution %}}
 
@@ -574,7 +574,7 @@ struct Tac
 {{% /hidden-solution %}}
 
 {{% notice info %}}
-Certaines directives d'inclusions peuvent être remplacées par des forward-declarations, mais pas toutes !  
+Certaines directives d'inclusion peuvent être remplacées par des forward-declarations, mais pas toutes !  
 En effet, ici, cela fonctionne parce que dans le fichier `5-tac.hpp`, on ne fait que déclarer une référence de type `Tic`.  
 Si on avait voulu accéder à l'un des champs de la classe, ou bien à sa taille pour réserver de l'espace mémoire, la définition complète de `Tic`, et donc l'inclusion du header, aurait été nécessaire.  
 {{% /notice %}}
@@ -771,7 +771,7 @@ La fonction `invert(Fraction)` présente dans `math.o` et qui n'est jamais appel
 
 ### Encore plus d'erreurs ! 😭
 
-De la même façon que nous l'avons fait avec les erreurs de compilation, nous allons vous présenter quelques situations d'erreurs émises au cours l'édition des liens.
+De la même façon que nous l'avons fait avec les erreurs de compilation, nous allons vous présenter quelques situations d'erreurs émises au cours de l'édition des liens.
 
 Commencez par vous placer dans le répertoire `chap-01/4-link-errors`.
 
@@ -781,11 +781,13 @@ Commencez par vous placer dans le répertoire `chap-01/4-link-errors`.
 Quel est le message d'erreur ? Pouvez-vous identifier dans la sortie complète le nom du programme effectuant l'édition des liens ? 
 
 {{% hidden-solution %}}
+Pour récupérer une erreur humainement lisible, il faut faire un peu de ménage dans la sortie.
+
 ```b
 g++ -std=c++17 -c 1-hello_wordl.cpp
 # => Ok
 g++ -o program 1-hello_wordl.o
-# => undefined reference to `main'
+# => [plein de trucs horribles à lire] undefined reference to `main' (ou WinMain sous Windows)
 ```
 
 On note également le message `ld returned 1 exit status` à la toute fin.  
@@ -849,7 +851,7 @@ int main()
 
 A la suite de la compilation de ce fichier, `2-main.o` contient uniquement les instructions de la fonction `main`.  
 En effet, la ligne 3 est une déclaration de fonction.
-Le compilateur ne connaissant pas la définition de `add(int, int)`, il ne peut pas générer les instructions binaires qui lui serait associées.
+Le compilateur ne connaissant pas la définition de `add(int, int)`, il ne peut pas générer les instructions binaires qui lui seraient associées.
 {{% /hidden-solution %}}
 
 4. Que manque-t-il dans la ligne de commande pour que le programme compile ?
@@ -938,7 +940,7 @@ L'essentiel, c'est de faire en sorte que les déclarations présentes dans le he
 {{% /hidden-solution %}}
 
 {{% notice tip %}}
-Si vous rencontrez une erreur de type `undefined reference to ...`, commencez par vérifier que vous n'avez pas oublier de compiler un fichier-source.  
+Si vous rencontrez une erreur de type `undefined reference to ...`, commencez par vérifier que vous n'avez pas oublié de compiler un fichier-source.  
 Si le problème ne vient pas de là, assurez-vous que la **signature** de votre fonction (nom + type des paramètres) est bien strictement la même dans sa définition et dans ses déclarations. 
 {{% /notice %}}
 
@@ -1029,7 +1031,7 @@ Dans le fichier `4-debug.hpp`, on aurait uniquement la déclaration de la foncti
 Ainsi le symbole ne serait plus présent dans `4-add.o` ni `4-sub.o`, seulement dans `4-debug.o`.
 {{% /hidden-solution %}}
 
-Pour contraindre le linker a accepté qu'un symbole soit présent dans plusieurs fichiers-objet, vous pouvez placer le mot-clef `inline` devant sa définition dans le code-source.  
+Pour contraindre le linker à accepter qu'un symbole soit présent dans plusieurs fichiers-objet, vous pouvez placer le mot-clef `inline` devant sa définition dans le code-source.  
 Dans ce cas, au moment d'écrire le symbole dans l'exécutable final, le linker utilisera la version trouvée dans n'importe lequel des fichiers-objet.
 
 Cela vous permet donc de définir vos fonctions directement dans les headers.
@@ -1050,6 +1052,11 @@ inline void debug(const char* fcn, int p1, int p2)
 }
 ```
 {{% /hidden-solution %}}
+
+{{% notice note %}}
+Dans le cadre de petits programmes, il n'y a aucune contre-indication à utiliser `inline` pour coder un maximum de choses dans les headers.  
+En revanche, pour de plus gros programmes, sachez que plus vous mettrez de choses dans les headers, plus la compilation prendra du temps.
+{{% /notice %}}
 
 ---
 

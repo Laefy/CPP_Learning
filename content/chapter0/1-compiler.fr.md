@@ -12,9 +12,10 @@ Pour le compilateur, vous devrez utiliser g++ (version >= 9) si vous êtes sous 
 1. Ouvrez un terminal et exécutez `g++ -v`.
 Si la commande réussit, assurez-vous que la dernière ligne indique bien une version de gcc >= 9.
 2. Si ce n'est pas le cas, installez le gestionnaire de paquet MSYS2 en suivant les instructions sur {{< open_in_new_tab "https://www.msys2.org" "cette page" />}}.\
-MSYS2 contient en particulier MinGW, qui est l'équivalent du compilateur gcc/g++ pour Windows.
-3. Réouvrez un terminal MSYS2 UCRT64 si vous l'avez fermé, et installez le paquet `gdb` avec l'instruction :
+MSYS2 contient en particulier MinGW, qui est l'équivalent du compilateur gcc/g++ pour Windows.  
+3. A la fin de l'installation, réouvrez le terminal MSYS2 UCRT64 si vous l'avez fermé, et installez les paquets `gcc` et `gdb` avec les instructions :
    ```sh
+   pacman -S mingw-w64-ucrt-x86_64-gcc
    pacman -S mingw-w64-ucrt-x86_64-gdb
    ```
 4. Ouvrez l'éditeur de variables d'environnement Windows.

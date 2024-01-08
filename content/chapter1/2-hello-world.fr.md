@@ -9,7 +9,7 @@ Nous allons maintenant enfin pouvoir coder ! Dans la suite de ce chapitre, vous 
 - écrire sur la sortie standard,
 - lire sur l'entrée standard,
 - définir des fonctions,
-- utilisez les structures de contrôle (conditions, boucles, switch, etc.),
+- utiliser les structures de contrôle (conditions, boucles, switch, etc.),
 - créer des tableaux et des chaînes de caractères,
 - utiliser des références.
 
@@ -23,8 +23,8 @@ En réalité, comme vous avez déjà fait du C et du Java, il y a pas mal de cho
 
 Le code initial de tous les exercices proposés dans ce cours en ligne sont présents sur ce dépôt git : https://github.com/Laefy/CPP_Learning_Code.
 
-Clonez-le sur votre machine et ouvrez le répertoire "chap-01" dans VSCode.  
-Ouvrez ensuite le fichier "1-hello_world.cpp".
+Clonez-le sur votre machine et ouvrez le répertoire `"chap-01"` dans VSCode.  
+Ouvrez ensuite le fichier `"1-hello_world.cpp"`.
 
 Pour votre premier programme, on ne va pas trop faire dans l'originalité, il s'agira d'un Hello World.
 Vous l'avez d'ailleurs déjà probablement vu dans le chapitre précédent, pour tester vos outils.
@@ -47,10 +47,10 @@ La valeur de retour du `main` indique si le programme s'est terminé sans erreur
 {{% /notice %}}
 
 Pour compiler votre programme, commencez par ouvrir un terminal (vous pouvez le faire directement dans l'interface de VSCode).  
-Placez-vous dans le répertoire "chap-01" avec `cd`, puis tapper la commande: `g++ -std=c++17 -o hello-world 1-hello_world.cpp`.
+Placez-vous dans le répertoire `"chap-01"` avec `cd`, puis taper la commande: `g++ -std=c++17 -o hello-world 1-hello_world.cpp`.
 
 L'option `-std` sert à spécifier la version du langage qu'on veut utiliser.  
-L'option `-o` permet de spécifier le chemin (location + nom) du programme que l'on souhaite générer.  
+L'option `-o` permet de spécifier le chemin (dossier + nom) du programme que l'on souhaite générer.  
 Tous les autres arguments correspondent aux chemins des fichiers `.cpp` que l'on veut compiler.
 Pour le moment, il n'y en a qu'un seul, le fichier `1-hello_world.cpp`.
 

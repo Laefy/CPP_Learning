@@ -9,7 +9,7 @@ Cette page vous présentera quelques caractéristiques du C++, les différences 
 
 ### Quelques caractéristiques
 
-C++ est un langage de programmation informatique inventé dans les années 1980 par un informaticien nommé Bjarne Stroupstrup. Il s'agit d'un langage...
+C++ est un langage de programmation informatique inventé dans les années 1980 par un informaticien nommé Bjarne Stroustrup. Il s'agit d'un langage...
 
 ##### ... Compilé
 
@@ -29,8 +29,8 @@ Cependant, le C++ n'est pas un langage purement orienté-objet. On peut définir
 
 Un langage est dit générique s'il permet d'appliquer un même algorithme sur différents types de données. Dans le cas du C++, la généricité s'exprime via les mécanismes suivants : \
 \- le polymorphisme : on peut passer un objet de type Chien à une fonction recevant un objet de type Animal, \
-\- la surcharge : on peut définir différentes fonctions avec le même nom, dès lors qu'elles acceptent un nombre différent de paramètres, ou que ces paramètres ne sont pas de même types, \
-\- les templates (ou "patrons" en français, mais nous utiliserons toujours le terme anglais dans ce cours) : il est possible de définir des types et fonctions permettant de travailler avec des paramètres dont le type n'est pas clairement spécifié.
+\- la surcharge : on peut définir différentes fonctions avec le même nom, dès lors qu'elles acceptent un nombre différent de paramètres, ou que ces paramètres ne sont pas de même type, \
+\- les templates (ou "patrons" en français, mais nous utiliserons toujours le terme anglais dans ce cours) : il est possible de définir des types et fonctions permettant de travailler avec des paramètres génériques.
 
 ---
 
@@ -62,12 +62,12 @@ Mais en réalité, une fois la syntaxe démystifiée et le concept de durée de 
 
 ### Un langage populaire
 
-C++ est l'un des rares langages orienté-objet permettant une gestion extrèmement fine de la mémoire et des composants matériel de la machine.
+C++ est l'un des rares langages orientés-objet permettant une gestion extrèmement fine de la mémoire et des composants matériel de la machine.
 Il est également très performant, ce qui fait de lui le langage de prédilection dans des domaines pour lesquels la performance est critique : systèmes d'exploitation, systèmes embarqués, pilotes, moteurs de recherche, jeux vidéos, moteurs de rendu 3D, etc.
 
 Mais C++ ne se limite pas qu'à ces domaines. Il est un des langages de programmation les plus utilisés à travers le monde pour le développement d'applications ou d'API.
 Cette popularité peut s'expliquer par le fait qu'il est extrêmement bien documenté et qu'il dispose d'une large communauté à laquelle s'adresser en cas de difficulté.
-On peut aussi supposer que les nombreuses évolutions qu'il a connu depuis une dizaine d'années, autant pour apporter de nouvelles fonctionnalités que pour le rendre plus intuitif à utiliser, ont participé à son succès.
+On peut aussi supposer que les nombreuses évolutions qu'il a connues depuis une dizaine d'années, autant pour apporter de nouvelles fonctionnalités que pour le rendre plus intuitif à utiliser, ont participé à son succès.
 
 Un autre aspect important et apprécié du C++ est qu'il s'agit d'un langage sans surprise. Le standard spécifie tout ce qui est supporté, et surtout, tout ce qui ne l'est pas (undefined behavior). Si quelque chose est supporté, alors le standard définit un comportement que les compilateurs devront garantir quelque soit la machine sur laquelle le programme sera exécuté. Cela permet aux programmeurs d'être assurés que ce qui doit fonctionner fonctionnera effectivement, et de ne pas s'étonner si ce qui est spécifié comme undefined behavior ne fonctionne pas comme ils l'espéraient.
 

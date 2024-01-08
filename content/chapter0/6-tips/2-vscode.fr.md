@@ -9,8 +9,8 @@ Lorsque vous avez un projet un peu plus conséquent, il est plus pratique de pas
 
 ### Configuration avec CMake
 
-Vous aurez besoin d'un fichier CMakeLists.txt à la racine de votre répertoire pour configurer le projet.
-Si celui-ci ne contient qu'un seul programme, vous pouvez copier et adapter dans votre CMakeLists.txt les instructions suivantes.
+Vous aurez besoin d'un fichier `CMakeLists.txt` à la racine de votre répertoire pour configurer le projet.
+Si celui-ci ne contient qu'un seul programme, vous pouvez copier et adapter dans votre `CMakeLists.txt` les instructions suivantes.
 ```
 cmake_minimum_required(VERSION 3.1)
 project(my_project)

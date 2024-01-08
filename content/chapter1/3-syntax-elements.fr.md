@@ -4,15 +4,15 @@ weight: 3
 ---
 
 Nous allons vous présenter les éléments de syntaxe de base du langage.  
-Comme vous pourrez le constater, mise à part quelques subtilités, la plupart de ce que vous allez voir ici ne devrait pas vous dépayser de ce que vous avez déjà vu en C ou Java.
+Comme vous pourrez le constater, mis à part quelques subtilités, la plupart des informations que vous allez lire ici devrait être similaire à ce que vous avez déjà appris en C ou en Java.
 
 ---
 
 ### Variables et types fondamentaux
 
 Comme dans tous les langages ou presque, on retrouve :
-- les types entier (signés ou non-signés) : `int`, `short`, `unsigned int`, ...
-- les types flottant : `float`, `double`
+- les entiers (signés ou non-signés) : `int`, `short`, `unsigned int`, ...
+- les flottants : `float`, `double`
 - les types caractère : `char`, `unsigned char`
 - le type booléen : `bool` (et non pas `boolean` comme en Java ⚠️)
 
@@ -26,7 +26,7 @@ En effet, ces variables ne sont pas toujours mises à 0 par défaut, comme en t�
 En ce qui concerne les spécificités du C++ maintenant...    
 Contrairement au C, les pointeurs null ne sont plus représentés par la constante `NULL` (c'est-à-dire à 0, donc de type entier) mais par le mot-clef `nullptr` (en minuscule) de type `nullptr_t`.
 
-Autre particularité, vous n'êtes pas obligé de respécifier le type de la variable que vous déclarez si vous l'initialiser en même temps : si vous définissez votre variable avec le mot-clef `auto` (équivalent à `var` en Java), le compilateur utilise le type de la valeur utilisée pour l'initialisation.
+Autre particularité, vous n'êtes pas obligé de respécifier le type de la variable que vous déclarez si vous l'initialisez en même temps : si vous définissez votre variable avec le mot-clef `auto` (équivalent à `var` en Java), le compilateur utilise le type de la valeur utilisée pour l'initialisation.
 
 Voici quelques exemples de définition de variables :
 ```cpp
@@ -173,8 +173,8 @@ int main()
 
 ### Références
 
-Les références sont des alias sur des zones de la mémoire.
-Elles se définissent un peu comme des variables, mais on rajoute le symbole `&` après le type.
+Les références sont des alias sur des zones de la mémoire (c'est un peu comme un surnom).  
+Elles se définissent presque comme des variables, mais on rajoute le symbole `&` après le type.
 
 ```cpp
 int  value = 3;
@@ -340,6 +340,35 @@ int main()
     // => v n'est pas accessible dans C car privé
 }
 ```
+
+---
+
+### Initialisation
+
+Sachez que pour initialiser une variable à une valeur donnée, il existe souvent une multitude de syntaxes possibles.
+
+Par exemple, toutes les instructions ci-dessous permettent d'initialiser un `int` à `0` :
+
+```cpp
+// la version classique
+int i1 = 0;
+// la version auto
+auto i2 = 0;
+// la version avec des parenthèses
+int i3(0);
+// les versions avec des accolades
+int i4 {}; 
+int i5 = {};
+int i6 = { 0 };
+// les versions avec des accolades et auto
+auto i7 = int {};
+auto i8 = int { 0 };
+```
+
+Attention, on ne vous demande pas de retenir toutes ces syntaxes, simplement d'être capable de reconnaître une instruction d'initialisation si vous en voyez une.
+
+Sachez aussi que dans ce cours, nous utiliserons essentiellement `= <value>` pour l'initialisation des types fondamentaux et `= <type> { <arg1>, ... }` pour celle des types structurés.  
+Néanmoins, ce n'est pas une prérogative et vous êtes libre d'utiliser le style de votre choix pour écrire votre code.
 
 ---
 
