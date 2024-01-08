@@ -68,7 +68,7 @@
       <link>https://laefy.github.io/CPP_Learning/chapter1/1-language/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://laefy.github.io/CPP_Learning/chapter1/1-language/</guid>
-      <description>Cette page vous présentera quelques caractéristiques du C++, les différences avec d&amp;rsquo;autres langages que vous avez étudiés jusque là, pourquoi est-ce que certains disent que C++ est compliqué, alors que pas forcément, et ce qui fait que le langage est aussi utilisé aujourd&amp;rsquo;hui. Promis, c&amp;rsquo;est la seule page du cours où vous trouverez autant de pavés 🙂&#xA;Quelques caractéristiques C++ est un langage de programmation informatique inventé dans les années 1980 par un informaticien nommé Bjarne Stroupstrup.</description>
+      <description>Cette page vous présentera quelques caractéristiques du C++, les différences avec d&amp;rsquo;autres langages que vous avez étudiés jusque là, pourquoi est-ce que certains disent que C++ est compliqué, alors que pas forcément, et ce qui fait que le langage est aussi utilisé aujourd&amp;rsquo;hui. Promis, c&amp;rsquo;est la seule page du cours où vous trouverez autant de pavés 🙂&#xA;Quelques caractéristiques C++ est un langage de programmation informatique inventé dans les années 1980 par un informaticien nommé Bjarne Stroustrup.</description>
     </item>
     <item>
       <title>Projets VSCode</title>
@@ -131,7 +131,7 @@
       <link>https://laefy.github.io/CPP_Learning/chapter1/2-hello-world/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://laefy.github.io/CPP_Learning/chapter1/2-hello-world/</guid>
-      <description>Nous allons maintenant enfin pouvoir coder ! Dans la suite de ce chapitre, vous verrez comment :&#xA;écrire un programme, déclarer des variables, écrire sur la sortie standard, lire sur l&amp;rsquo;entrée standard, définir des fonctions, utilisez les structures de contrôle (conditions, boucles, switch, etc.), créer des tableaux et des chaînes de caractères, utiliser des références. Ça fait beaucoup hein ? 😈&#xA;En réalité, comme vous avez déjà fait du C et du Java, il y a pas mal de choses que vous connaissez déjà.</description>
+      <description>Nous allons maintenant enfin pouvoir coder ! Dans la suite de ce chapitre, vous verrez comment :&#xA;écrire un programme, déclarer des variables, écrire sur la sortie standard, lire sur l&amp;rsquo;entrée standard, définir des fonctions, utiliser les structures de contrôle (conditions, boucles, switch, etc.), créer des tableaux et des chaînes de caractères, utiliser des références. Ça fait beaucoup hein ? 😈&#xA;En réalité, comme vous avez déjà fait du C et du Java, il y a pas mal de choses que vous connaissez déjà.</description>
     </item>
     <item>
       <title>Ownership</title>
@@ -208,7 +208,7 @@
       <link>https://laefy.github.io/CPP_Learning/chapter1/3-syntax-elements/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://laefy.github.io/CPP_Learning/chapter1/3-syntax-elements/</guid>
-      <description>Nous allons vous présenter les éléments de syntaxe de base du langage.&#xA;Comme vous pourrez le constater, mise à part quelques subtilités, la plupart de ce que vous allez voir ici ne devrait pas vous dépayser de ce que vous avez déjà vu en C ou Java.&#xA;Variables et types fondamentaux Comme dans tous les langages ou presque, on retrouve :&#xA;les types entier (signés ou non-signés) : int, short, unsigned int, &amp;hellip; les types flottant : float, double les types caractère : char, unsigned char le type booléen : bool (et non pas boolean comme en Java ⚠️) Pour définir des variables, c&amp;rsquo;est comme d&amp;rsquo;habitude : &amp;lt;type&amp;gt; &amp;lt;nom&amp;gt; = &amp;lt;valeur&amp;gt;;</description>
+      <description>Nous allons vous présenter les éléments de syntaxe de base du langage.&#xA;Comme vous pourrez le constater, mis à part quelques subtilités, la plupart des informations que vous allez lire ici devrait être similaire à ce que vous avez déjà appris en C ou en Java.&#xA;Variables et types fondamentaux Comme dans tous les langages ou presque, on retrouve :&#xA;les entiers (signés ou non-signés) : int, short, unsigned int, &amp;hellip; les flottants : float, double les types caractère : char, unsigned char le type booléen : bool (et non pas boolean comme en Java ⚠️) Pour définir des variables, c&amp;rsquo;est comme d&amp;rsquo;habitude : &amp;lt;type&amp;gt; &amp;lt;nom&amp;gt; = &amp;lt;valeur&amp;gt;;</description>
     </item>
     <item>
       <title>Itérateurs</title>
@@ -404,7 +404,7 @@
       <link>https://laefy.github.io/CPP_Learning/chapter1/test/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://laefy.github.io/CPP_Learning/chapter1/test/</guid>
-      <description>Félicitations !! Vous avez enfin terminé le Chapitre 1 ! 🥳🎉&#xA;Le questionnaire ci-dessous vous aidera à savoir si vous avez bien compris le cours ou non.&#xA;Il n&amp;rsquo;a donc pas vocation à vous évaluer, mais à vous donnez une idée de ce que vous auriez lu trop vite ou n&amp;rsquo;auriez pas assez pratiqué.&#xA;Dans tous les cas, si vous répondez à ce questionnaire et cliquez sur le bouton Valider, vos réponses nous seront envoyées par mail et nous vous ferons un petit retour sur ce que vous avez réussi ou non 😉</description>
+      <description>Félicitations !! Vous avez enfin terminé le Chapitre 1 ! 🥳🎉&#xA;Le questionnaire ci-dessous vous aidera à savoir si vous avez bien compris le cours ou non.&#xA;Il n&amp;rsquo;a donc pas vocation à vous évaluer, mais à vous donner une idée de ce que vous auriez lu trop vite ou n&amp;rsquo;auriez pas assez pratiqué.&#xA;Dans tous les cas, si vous répondez à ce questionnaire et cliquez sur le bouton Valider, vos réponses nous seront envoyées par mail et nous vous ferons un petit retour sur ce que vous avez réussi ou non 😉</description>
     </item>
     <item>
       <title>Retours ?</title>

@@ -12,22 +12,22 @@
     <title>Compilateur :: Cours de C&#43;&#43; - Niveau Master</title>
 
     
-    <link href="/CPP_Learning/css/nucleus.css?1704718612" rel="stylesheet">
-    <link href="/CPP_Learning/css/fontawesome-all.min.css?1704718612" rel="stylesheet">
-    <link href="/CPP_Learning/css/hybrid.css?1704718612" rel="stylesheet">
-    <link href="/CPP_Learning/css/featherlight.min.css?1704718612" rel="stylesheet">
-    <link href="/CPP_Learning/css/perfect-scrollbar.min.css?1704718612" rel="stylesheet">
-    <link href="/CPP_Learning/css/auto-complete.css?1704718612" rel="stylesheet">
-    <link href="/CPP_Learning/css/atom-one-dark-reasonable.css?1704718612" rel="stylesheet">
-    <link href="/CPP_Learning/css/theme.css?1704718612" rel="stylesheet">
-    <link href="/CPP_Learning/css/tabs.css?1704718612" rel="stylesheet">
-    <link href="/CPP_Learning/css/hugo-theme.css?1704718612" rel="stylesheet">
+    <link href="/CPP_Learning/css/nucleus.css?1704755107" rel="stylesheet">
+    <link href="/CPP_Learning/css/fontawesome-all.min.css?1704755107" rel="stylesheet">
+    <link href="/CPP_Learning/css/hybrid.css?1704755107" rel="stylesheet">
+    <link href="/CPP_Learning/css/featherlight.min.css?1704755107" rel="stylesheet">
+    <link href="/CPP_Learning/css/perfect-scrollbar.min.css?1704755107" rel="stylesheet">
+    <link href="/CPP_Learning/css/auto-complete.css?1704755107" rel="stylesheet">
+    <link href="/CPP_Learning/css/atom-one-dark-reasonable.css?1704755107" rel="stylesheet">
+    <link href="/CPP_Learning/css/theme.css?1704755107" rel="stylesheet">
+    <link href="/CPP_Learning/css/tabs.css?1704755107" rel="stylesheet">
+    <link href="/CPP_Learning/css/hugo-theme.css?1704755107" rel="stylesheet">
     
-    <link href="/CPP_Learning/css/theme-mine.css?1704718612" rel="stylesheet">
+    <link href="/CPP_Learning/css/theme-mine.css?1704755107" rel="stylesheet">
     
-    <link href="/CPP_Learning/css/syntax.css?1704718612" rel="stylesheet">
+    <link href="/CPP_Learning/css/syntax.css?1704755107" rel="stylesheet">
 
-    <script src="/CPP_Learning/js/jquery-3.3.1.min.js?1704718612"></script>
+    <script src="/CPP_Learning/js/jquery-3.3.1.min.js?1704755107"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -1958,8 +1958,9 @@ Si la commande réussit, assurez-vous que la dernière ligne indique bien une ve
 <li>Si ce n&rsquo;est pas le cas, installez le gestionnaire de paquet MSYS2 en suivant les instructions sur 
 <a href="https://www.msys2.org" target="_blank" rel="noopener noreferrer">cette page</a>.<br>
 MSYS2 contient en particulier MinGW, qui est l&rsquo;équivalent du compilateur gcc/g++ pour Windows.</li>
-<li>Réouvrez un terminal MSYS2 UCRT64 si vous l&rsquo;avez fermé, et installez le paquet <code>gdb</code> avec l&rsquo;instruction :
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">pacman -S mingw-w64-ucrt-x86_64-gdb
+<li>A la fin de l&rsquo;installation, réouvrez le terminal MSYS2 UCRT64 si vous l&rsquo;avez fermé, et installez les paquets <code>gcc</code> et <code>gdb</code> avec les instructions :
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">pacman -S mingw-w64-ucrt-x86_64-gcc
+</span></span><span class="line"><span class="cl">pacman -S mingw-w64-ucrt-x86_64-gdb
 </span></span></code></pre></div></li>
 <li>Ouvrez l&rsquo;éditeur de variables d&rsquo;environnement Windows.
 <img src="/CPP_Learning/images/chapter0/env-var.png" alt=""></li>
@@ -3311,19 +3312,19 @@ Le programme devrait vous répondre &ldquo;Hello!&rdquo;.</li>
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/CPP_Learning/js/clipboard.min.js?1704718612"></script>
-    <script src="/CPP_Learning/js/perfect-scrollbar.min.js?1704718612"></script>
-    <script src="/CPP_Learning/js/perfect-scrollbar.jquery.min.js?1704718612"></script>
-    <script src="/CPP_Learning/js/jquery.sticky.js?1704718612"></script>
-    <script src="/CPP_Learning/js/featherlight.min.js?1704718612"></script>
-    <script src="/CPP_Learning/js/highlight.pack.js?1704718612"></script>
+    <script src="/CPP_Learning/js/clipboard.min.js?1704755107"></script>
+    <script src="/CPP_Learning/js/perfect-scrollbar.min.js?1704755107"></script>
+    <script src="/CPP_Learning/js/perfect-scrollbar.jquery.min.js?1704755107"></script>
+    <script src="/CPP_Learning/js/jquery.sticky.js?1704755107"></script>
+    <script src="/CPP_Learning/js/featherlight.min.js?1704755107"></script>
+    <script src="/CPP_Learning/js/highlight.pack.js?1704755107"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/CPP_Learning/js/modernizr.custom-3.6.0.js?1704718612"></script>
-    <script src="/CPP_Learning/js/learn.js?1704718612"></script>
-    <script src="/CPP_Learning/js/hugo-learn.js?1704718612"></script>
+    <script src="/CPP_Learning/js/modernizr.custom-3.6.0.js?1704755107"></script>
+    <script src="/CPP_Learning/js/learn.js?1704755107"></script>
+    <script src="/CPP_Learning/js/hugo-learn.js?1704755107"></script>
     
         
-            <script src="/CPP_Learning/mermaid/mermaid.js?1704718612"></script>
+            <script src="/CPP_Learning/mermaid/mermaid.js?1704755107"></script>
         
         <script>
             mermaid.initialize({ startOnLoad: true });
@@ -3334,13 +3335,15 @@ Le programme devrait vous répondre &ldquo;Hello!&rdquo;.</li>
 <button id="footer-question-btn" onclick="openQuestionForm()" disabled><i class="fas fa-question-circle"></i></button>
 
 <div id="footer-question-window" disabled>
-    <form id="question" method=POST action="https://formsubmit.co/3aa0f379a1aed9c454634cc2da153a7b" target="question-submitted">
+    <form id="question" method=POST action="https://formsubmit.co/3aa0f379a1aed9c454634cc2da153a7b"
+        target="question-submitted" onsubmit="cleanQuestionFormContent()">
+
         <input type="email" name="email" placeholder="mon_email@smthg.com" required />
-        <textarea name="question" rows="7" cols="30" placeholder="ma question..."></textarea>
+        <textarea id="question-content" name="question" rows="7" cols="30" placeholder="ma question..."></textarea>
         <input id="question-topic" type="hidden" name="selection" />
 
         <input type="hidden" name="_replyto" />
-        <input type="hidden" name="_subject" value="[C++][Chapitre ] Question sur le cours" />
+        <input type="hidden" name="_subject" value="[C++][Chapitre 0] Question sur le cours" />
         <input type="hidden" name="_template" value="box" />
         <input type="hidden" name="_captcha" value="false" />
         <input type="hidden" name="_next" value="https://laefy.github.io/CPP_Learning//question-submitted/" />
@@ -3353,6 +3356,17 @@ Le programme devrait vous répondre &ldquo;Hello!&rdquo;.</li>
 </div>
 
 <script>
+
+    function cleanQuestionFormContent() {
+
+        function clean(element) {
+            
+            element.value = element.value.replace(/\[\.\./g, "[ ..");
+        }
+
+        clean(document.getElementById("question-content"))
+        clean(document.getElementById("question-topic"))
+    }
 
     function openQuestionForm() {
         document.getElementById("footer-question-window").removeAttribute("disabled");

@@ -12,22 +12,22 @@
     <title>Eléments de syntaxe ✍ :: Cours de C&#43;&#43; - Niveau Master</title>
 
     
-    <link href="/CPP_Learning/css/nucleus.css?1704718612" rel="stylesheet">
-    <link href="/CPP_Learning/css/fontawesome-all.min.css?1704718612" rel="stylesheet">
-    <link href="/CPP_Learning/css/hybrid.css?1704718612" rel="stylesheet">
-    <link href="/CPP_Learning/css/featherlight.min.css?1704718612" rel="stylesheet">
-    <link href="/CPP_Learning/css/perfect-scrollbar.min.css?1704718612" rel="stylesheet">
-    <link href="/CPP_Learning/css/auto-complete.css?1704718612" rel="stylesheet">
-    <link href="/CPP_Learning/css/atom-one-dark-reasonable.css?1704718612" rel="stylesheet">
-    <link href="/CPP_Learning/css/theme.css?1704718612" rel="stylesheet">
-    <link href="/CPP_Learning/css/tabs.css?1704718612" rel="stylesheet">
-    <link href="/CPP_Learning/css/hugo-theme.css?1704718612" rel="stylesheet">
+    <link href="/CPP_Learning/css/nucleus.css?1704755107" rel="stylesheet">
+    <link href="/CPP_Learning/css/fontawesome-all.min.css?1704755107" rel="stylesheet">
+    <link href="/CPP_Learning/css/hybrid.css?1704755107" rel="stylesheet">
+    <link href="/CPP_Learning/css/featherlight.min.css?1704755107" rel="stylesheet">
+    <link href="/CPP_Learning/css/perfect-scrollbar.min.css?1704755107" rel="stylesheet">
+    <link href="/CPP_Learning/css/auto-complete.css?1704755107" rel="stylesheet">
+    <link href="/CPP_Learning/css/atom-one-dark-reasonable.css?1704755107" rel="stylesheet">
+    <link href="/CPP_Learning/css/theme.css?1704755107" rel="stylesheet">
+    <link href="/CPP_Learning/css/tabs.css?1704755107" rel="stylesheet">
+    <link href="/CPP_Learning/css/hugo-theme.css?1704755107" rel="stylesheet">
     
-    <link href="/CPP_Learning/css/theme-mine.css?1704718612" rel="stylesheet">
+    <link href="/CPP_Learning/css/theme-mine.css?1704755107" rel="stylesheet">
     
-    <link href="/CPP_Learning/css/syntax.css?1704718612" rel="stylesheet">
+    <link href="/CPP_Learning/css/syntax.css?1704755107" rel="stylesheet">
 
-    <script src="/CPP_Learning/js/jquery-3.3.1.min.js?1704718612"></script>
+    <script src="/CPP_Learning/js/jquery-3.3.1.min.js?1704755107"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -1925,6 +1925,7 @@
         <li><a href="#fonctions-libres">Fonctions libres</a></li>
         <li><a href="#références">Références</a></li>
         <li><a href="#types-structurés">Types structurés</a></li>
+        <li><a href="#initialisation">Initialisation</a></li>
         <li><a href="#synthèse">Synthèse</a></li>
       </ul>
     </li>
@@ -1953,13 +1954,13 @@
 
 
 <p>Nous allons vous présenter les éléments de syntaxe de base du langage.<br>
-Comme vous pourrez le constater, mise à part quelques subtilités, la plupart de ce que vous allez voir ici ne devrait pas vous dépayser de ce que vous avez déjà vu en C ou Java.</p>
+Comme vous pourrez le constater, mis à part quelques subtilités, la plupart des informations que vous allez lire ici devrait être similaire à ce que vous avez déjà appris en C ou en Java.</p>
 <hr>
 <h3 id="variables-et-types-fondamentaux">Variables et types fondamentaux</h3>
 <p>Comme dans tous les langages ou presque, on retrouve :</p>
 <ul>
-<li>les types entier (signés ou non-signés) : <code>int</code>, <code>short</code>, <code>unsigned int</code>, &hellip;</li>
-<li>les types flottant : <code>float</code>, <code>double</code></li>
+<li>les entiers (signés ou non-signés) : <code>int</code>, <code>short</code>, <code>unsigned int</code>, &hellip;</li>
+<li>les flottants : <code>float</code>, <code>double</code></li>
 <li>les types caractère : <code>char</code>, <code>unsigned char</code></li>
 <li>le type booléen : <code>bool</code> (et non pas <code>boolean</code> comme en Java ⚠️)</li>
 </ul>
@@ -1971,7 +1972,7 @@ En effet, ces variables ne sont pas toujours mises à 0 par défaut, comme en t�
 
 <p>En ce qui concerne les spécificités du C++ maintenant&hellip; <br>
 Contrairement au C, les pointeurs null ne sont plus représentés par la constante <code>NULL</code> (c&rsquo;est-à-dire à 0, donc de type entier) mais par le mot-clef <code>nullptr</code> (en minuscule) de type <code>nullptr_t</code>.</p>
-<p>Autre particularité, vous n&rsquo;êtes pas obligé de respécifier le type de la variable que vous déclarez si vous l&rsquo;initialiser en même temps : si vous définissez votre variable avec le mot-clef <code>auto</code> (équivalent à <code>var</code> en Java), le compilateur utilise le type de la valeur utilisée pour l&rsquo;initialisation.</p>
+<p>Autre particularité, vous n&rsquo;êtes pas obligé de respécifier le type de la variable que vous déclarez si vous l&rsquo;initialisez en même temps : si vous définissez votre variable avec le mot-clef <code>auto</code> (équivalent à <code>var</code> en Java), le compilateur utilise le type de la valeur utilisée pour l&rsquo;initialisation.</p>
 <p>Voici quelques exemples de définition de variables :</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="kt">int</span>          <span class="n">i1</span> <span class="o">=</span> <span class="mi">3</span><span class="p">;</span>        <span class="c1">// type i1 = int
 </span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kt">unsigned</span> <span class="kt">int</span> <span class="n">u2</span> <span class="o">=</span> <span class="mi">4</span><span class="p">;</span>        <span class="c1">// type u2 = int
@@ -2091,8 +2092,8 @@ Cela signifie que la fonction utilisée doit être déclarée avant la ligne où
 </span></span><span class="line"><span class="cl"><span class="p">}</span>
 </span></span></code></pre></div><hr>
 <h3 id="références">Références</h3>
-<p>Les références sont des alias sur des zones de la mémoire.
-Elles se définissent un peu comme des variables, mais on rajoute le symbole <code>&amp;</code> après le type.</p>
+<p>Les références sont des alias sur des zones de la mémoire (c&rsquo;est un peu comme un surnom).<br>
+Elles se définissent presque comme des variables, mais on rajoute le symbole <code>&amp;</code> après le type.</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="kt">int</span>  <span class="n">value</span> <span class="o">=</span> <span class="mi">3</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl"><span class="kt">int</span><span class="o">&amp;</span> <span class="n">ref</span>   <span class="o">=</span> <span class="n">value</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl">
@@ -2240,6 +2241,26 @@ Si vous ne précisez ni <code>public</code>, ni <code>private</code>, alors les 
 </span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="c1">// =&gt; v n&#39;est pas accessible dans C car privé
 </span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="p">}</span>
 </span></span></code></pre></div><hr>
+<h3 id="initialisation">Initialisation</h3>
+<p>Sachez que pour initialiser une variable à une valeur donnée, il existe souvent une multitude de syntaxes possibles.</p>
+<p>Par exemple, toutes les instructions ci-dessous permettent d&rsquo;initialiser un <code>int</code> à <code>0</code> :</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="c1">// la version classique
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kt">int</span> <span class="n">i1</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="c1">// la version auto
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">auto</span> <span class="n">i2</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="c1">// la version avec des parenthèses
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kt">int</span> <span class="nf">i3</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="c1">// les versions avec des accolades
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kt">int</span> <span class="n">i4</span> <span class="p">{};</span> 
+</span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="n">i5</span> <span class="o">=</span> <span class="p">{};</span>
+</span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="n">i6</span> <span class="o">=</span> <span class="p">{</span> <span class="mi">0</span> <span class="p">};</span>
+</span></span><span class="line"><span class="cl"><span class="c1">// les versions avec des accolades et auto
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">auto</span> <span class="n">i7</span> <span class="o">=</span> <span class="kt">int</span> <span class="p">{};</span>
+</span></span><span class="line"><span class="cl"><span class="k">auto</span> <span class="n">i8</span> <span class="o">=</span> <span class="kt">int</span> <span class="p">{</span> <span class="mi">0</span> <span class="p">};</span>
+</span></span></code></pre></div><p>Attention, on ne vous demande pas de retenir toutes ces syntaxes, simplement d&rsquo;être capable de reconnaître une instruction d&rsquo;initialisation si vous en voyez une.</p>
+<p>Sachez aussi que dans ce cours, nous utiliserons essentiellement <code>= &lt;value&gt;</code> pour l&rsquo;initialisation des types fondamentaux et <code>= &lt;type&gt; { &lt;arg1&gt;, ... }</code> pour celle des types structurés.<br>
+Néanmoins, ce n&rsquo;est pas une prérogative et vous êtes libre d&rsquo;utiliser le style de votre choix pour écrire votre code.</p>
+<hr>
 <h3 id="synthèse">Synthèse</h3>
 <p>Nous venons de vous présenter les bases de la syntaxe du C++.</p>
 <p>Voici un petit rappel des choses à retenir :</p>
@@ -3555,19 +3576,19 @@ Si vous ne précisez ni <code>public</code>, ni <code>private</code>, alors les 
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/CPP_Learning/js/clipboard.min.js?1704718612"></script>
-    <script src="/CPP_Learning/js/perfect-scrollbar.min.js?1704718612"></script>
-    <script src="/CPP_Learning/js/perfect-scrollbar.jquery.min.js?1704718612"></script>
-    <script src="/CPP_Learning/js/jquery.sticky.js?1704718612"></script>
-    <script src="/CPP_Learning/js/featherlight.min.js?1704718612"></script>
-    <script src="/CPP_Learning/js/highlight.pack.js?1704718612"></script>
+    <script src="/CPP_Learning/js/clipboard.min.js?1704755107"></script>
+    <script src="/CPP_Learning/js/perfect-scrollbar.min.js?1704755107"></script>
+    <script src="/CPP_Learning/js/perfect-scrollbar.jquery.min.js?1704755107"></script>
+    <script src="/CPP_Learning/js/jquery.sticky.js?1704755107"></script>
+    <script src="/CPP_Learning/js/featherlight.min.js?1704755107"></script>
+    <script src="/CPP_Learning/js/highlight.pack.js?1704755107"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/CPP_Learning/js/modernizr.custom-3.6.0.js?1704718612"></script>
-    <script src="/CPP_Learning/js/learn.js?1704718612"></script>
-    <script src="/CPP_Learning/js/hugo-learn.js?1704718612"></script>
+    <script src="/CPP_Learning/js/modernizr.custom-3.6.0.js?1704755107"></script>
+    <script src="/CPP_Learning/js/learn.js?1704755107"></script>
+    <script src="/CPP_Learning/js/hugo-learn.js?1704755107"></script>
     
         
-            <script src="/CPP_Learning/mermaid/mermaid.js?1704718612"></script>
+            <script src="/CPP_Learning/mermaid/mermaid.js?1704755107"></script>
         
         <script>
             mermaid.initialize({ startOnLoad: true });
@@ -3578,13 +3599,15 @@ Si vous ne précisez ni <code>public</code>, ni <code>private</code>, alors les 
 <button id="footer-question-btn" onclick="openQuestionForm()" disabled><i class="fas fa-question-circle"></i></button>
 
 <div id="footer-question-window" disabled>
-    <form id="question" method=POST action="https://formsubmit.co/3aa0f379a1aed9c454634cc2da153a7b" target="question-submitted">
+    <form id="question" method=POST action="https://formsubmit.co/3aa0f379a1aed9c454634cc2da153a7b"
+        target="question-submitted" onsubmit="cleanQuestionFormContent()">
+
         <input type="email" name="email" placeholder="mon_email@smthg.com" required />
-        <textarea name="question" rows="7" cols="30" placeholder="ma question..."></textarea>
+        <textarea id="question-content" name="question" rows="7" cols="30" placeholder="ma question..."></textarea>
         <input id="question-topic" type="hidden" name="selection" />
 
         <input type="hidden" name="_replyto" />
-        <input type="hidden" name="_subject" value="[C++][Chapitre ] Question sur le cours" />
+        <input type="hidden" name="_subject" value="[C++][Chapitre 2] Question sur le cours" />
         <input type="hidden" name="_template" value="box" />
         <input type="hidden" name="_captcha" value="false" />
         <input type="hidden" name="_next" value="https://laefy.github.io/CPP_Learning//question-submitted/" />
@@ -3597,6 +3620,17 @@ Si vous ne précisez ni <code>public</code>, ni <code>private</code>, alors les 
 </div>
 
 <script>
+
+    function cleanQuestionFormContent() {
+
+        function clean(element) {
+            
+            element.value = element.value.replace(/\[\.\./g, "[ ..");
+        }
+
+        clean(document.getElementById("question-content"))
+        clean(document.getElementById("question-topic"))
+    }
 
     function openQuestionForm() {
         document.getElementById("footer-question-window").removeAttribute("disabled");

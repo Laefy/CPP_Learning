@@ -12,22 +12,22 @@
     <title>Compilation ⚙️ :: Cours de C&#43;&#43; - Niveau Master</title>
 
     
-    <link href="/CPP_Learning/css/nucleus.css?1704718612" rel="stylesheet">
-    <link href="/CPP_Learning/css/fontawesome-all.min.css?1704718612" rel="stylesheet">
-    <link href="/CPP_Learning/css/hybrid.css?1704718612" rel="stylesheet">
-    <link href="/CPP_Learning/css/featherlight.min.css?1704718612" rel="stylesheet">
-    <link href="/CPP_Learning/css/perfect-scrollbar.min.css?1704718612" rel="stylesheet">
-    <link href="/CPP_Learning/css/auto-complete.css?1704718612" rel="stylesheet">
-    <link href="/CPP_Learning/css/atom-one-dark-reasonable.css?1704718612" rel="stylesheet">
-    <link href="/CPP_Learning/css/theme.css?1704718612" rel="stylesheet">
-    <link href="/CPP_Learning/css/tabs.css?1704718612" rel="stylesheet">
-    <link href="/CPP_Learning/css/hugo-theme.css?1704718612" rel="stylesheet">
+    <link href="/CPP_Learning/css/nucleus.css?1704755107" rel="stylesheet">
+    <link href="/CPP_Learning/css/fontawesome-all.min.css?1704755107" rel="stylesheet">
+    <link href="/CPP_Learning/css/hybrid.css?1704755107" rel="stylesheet">
+    <link href="/CPP_Learning/css/featherlight.min.css?1704755107" rel="stylesheet">
+    <link href="/CPP_Learning/css/perfect-scrollbar.min.css?1704755107" rel="stylesheet">
+    <link href="/CPP_Learning/css/auto-complete.css?1704755107" rel="stylesheet">
+    <link href="/CPP_Learning/css/atom-one-dark-reasonable.css?1704755107" rel="stylesheet">
+    <link href="/CPP_Learning/css/theme.css?1704755107" rel="stylesheet">
+    <link href="/CPP_Learning/css/tabs.css?1704755107" rel="stylesheet">
+    <link href="/CPP_Learning/css/hugo-theme.css?1704755107" rel="stylesheet">
     
-    <link href="/CPP_Learning/css/theme-mine.css?1704718612" rel="stylesheet">
+    <link href="/CPP_Learning/css/theme-mine.css?1704755107" rel="stylesheet">
     
-    <link href="/CPP_Learning/css/syntax.css?1704718612" rel="stylesheet">
+    <link href="/CPP_Learning/css/syntax.css?1704755107" rel="stylesheet">
 
-    <script src="/CPP_Learning/js/jquery-3.3.1.min.js?1704718612"></script>
+    <script src="/CPP_Learning/js/jquery-3.3.1.min.js?1704755107"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -2265,7 +2265,7 @@ Le fichier-objet en sortie contient :</p>
 </ul>
 <hr>
 <h3 id="mais-cest-quoi-cette-erreur--">Mais c&rsquo;est quoi cette erreur ?? 🤯</h3>
-<p>Il nous apparaît utile de faire un petit tour des situations d&rsquo;erreurs les plus courantes, afin que vous puissiez identifier les problèmes plus rapidement si vous les recontrez.</p>
+<p>Il nous apparaît utile de faire un petit tour des situations d&rsquo;erreurs les plus courantes, afin que vous puissiez identifier les problèmes plus rapidement si vous les rencontrez.</p>
 <p>Et vous les rencontrerez forcément, eheheh&hellip; 😈</p>
 <p>Commencez par vous placer dans le répertoire <code>chap-01/3-build-errors</code>, car c&rsquo;est là que vous devrez compiler les différents fichiers.</p>
 <h4 id="1-expected--after-class-definition">1. expected &lsquo;;&rsquo; after class definition</h4>
@@ -2334,7 +2334,7 @@ Effectuez ces modifications et vérifiez que le fichier compile désormais.</li>
 <h4 id="2-bla-is-private-within-this-context">2. &lsquo;bla&rsquo; is private within this context</h4>
 <ol>
 <li>Essayez maintenant de compiler le fichier <code>2-class.cpp</code>.<br>
-Que signifie l&rsquo;erreur de compilation ? Pourquoi ne l&rsquo;avez vous pas rencontrer dans le fichier <code>1-structs.cpp</code> ?</li>
+Que signifie l&rsquo;erreur de compilation ? Pourquoi ne l&rsquo;avez vous pas rencontrée dans le fichier <code>1-structs.cpp</code> ?</li>
 </ol>
 
 <div class="hidden-solution">
@@ -2410,7 +2410,7 @@ Quelles sont les différentes erreurs obtenues ? Expliquez la cause de chacune d
 Lorsqu&rsquo;il analyse les instructions qui les utilisent, il ne les trouve donc pas dans la table des symboles et émet donc des erreurs du style <code>'...' is not a member of 'std'</code>.</p>
 <p>On a également l&rsquo;erreur <code>'name' was not declared in this scope</code>.
 Celle-ci est plus étonnante, puisque <code>name</code> est bien définie une ligne plus haut.<br>
-Cependant, comme l&rsquo;instruction définissant la variable <code>name</code> n&rsquo;a pas compilée, elle n&rsquo;a pas pu être ajoutée à la table des symboles.
+Cependant, comme l&rsquo;instruction définissant la variable <code>name</code> n&rsquo;a pas compilé, elle n&rsquo;a pas pu être ajoutée à la table des symboles.
 Le compilateur ne la trouve donc pas au moment où il analyse l&rsquo;instruction <code>std::cin &gt;&gt; name;</code>, ce qui explique cette erreur.</p>
 
         </div>
@@ -2758,7 +2758,7 @@ On remplace donc le code de <code>5-tic.hpp</code> par :</p>
 
 </div>
 
-<div class="notices info" ><p>Certaines directives d&rsquo;inclusions peuvent être remplacées par des forward-declarations, mais pas toutes !<br>
+<div class="notices info" ><p>Certaines directives d&rsquo;inclusion peuvent être remplacées par des forward-declarations, mais pas toutes !<br>
 En effet, ici, cela fonctionne parce que dans le fichier <code>5-tac.hpp</code>, on ne fait que déclarer une référence de type <code>Tic</code>.<br>
 Si on avait voulu accéder à l&rsquo;un des champs de la classe, ou bien à sa taille pour réserver de l&rsquo;espace mémoire, la définition complète de <code>Tic</code>, et donc l&rsquo;inclusion du header, aurait été nécessaire.</p>
 </div>
@@ -2990,7 +2990,7 @@ class main,half,create_half,mult fat
 La fonction <code>invert(Fraction)</code> présente dans <code>math.o</code> et qui n&rsquo;est jamais appelée n&rsquo;en fait donc pas partie.</p>
 <hr>
 <h3 id="encore-plus-derreurs--">Encore plus d&rsquo;erreurs ! 😭</h3>
-<p>De la même façon que nous l&rsquo;avons fait avec les erreurs de compilation, nous allons vous présenter quelques situations d&rsquo;erreurs émises au cours l&rsquo;édition des liens.</p>
+<p>De la même façon que nous l&rsquo;avons fait avec les erreurs de compilation, nous allons vous présenter quelques situations d&rsquo;erreurs émises au cours de l&rsquo;édition des liens.</p>
 <p>Commencez par vous placer dans le répertoire <code>chap-01/4-link-errors</code>.</p>
 <h4 id="1-undefined-reference-to-main">1. undefined reference to `main&rsquo;</h4>
 <ol>
@@ -3010,10 +3010,11 @@ Quel est le message d&rsquo;erreur ? Pouvez-vous identifier dans la sortie compl
         </button>
 
         <div class="hidden-solution-content">
-            <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-b" data-lang="b"><span class="line"><span class="cl"><span class="c">g</span><span class="nb">++</span><span class="c"> </span><span class="nb">-</span><span class="c">std=c</span><span class="nb">++</span><span class="c">17 </span><span class="nb">-</span><span class="c">c 1</span><span class="nb">-</span><span class="c">hello_wordl</span><span class="nt">.</span><span class="c">cpp
+            <p>Pour récupérer une erreur humainement lisible, il faut faire un peu de ménage dans la sortie.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-b" data-lang="b"><span class="line"><span class="cl"><span class="c">g</span><span class="nb">++</span><span class="c"> </span><span class="nb">-</span><span class="c">std=c</span><span class="nb">++</span><span class="c">17 </span><span class="nb">-</span><span class="c">c 1</span><span class="nb">-</span><span class="c">hello_wordl</span><span class="nt">.</span><span class="c">cpp
 </span></span></span><span class="line"><span class="cl"><span class="c"># =</span><span class="nv">&gt;</span><span class="c"> Ok
 </span></span></span><span class="line"><span class="cl"><span class="c">g</span><span class="nb">++</span><span class="c"> </span><span class="nb">-</span><span class="c">o program 1</span><span class="nb">-</span><span class="c">hello_wordl</span><span class="nt">.</span><span class="c">o
-</span></span></span><span class="line"><span class="cl"><span class="c"># =</span><span class="nv">&gt;</span><span class="c"> undefined reference to `main&#39;
+</span></span></span><span class="line"><span class="cl"><span class="c"># =</span><span class="nv">&gt;</span><span class="c"> </span><span class="k">[</span><span class="c">plein de trucs horribles à lire</span><span class="k">]</span><span class="c"> undefined reference to `main&#39; (ou WinMain sous Windows)
 </span></span></span></code></pre></div><p>On note également le message <code>ld returned 1 exit status</code> à la toute fin.<br>
 Le programme chargé de l&rsquo;édition des liens est donc <code>ld</code>.</p>
 
@@ -3144,7 +3145,7 @@ Quelle est la sortie du programme ? La compilation du fichier <code>2-main.cpp</
 </div>
 </div><p>A la suite de la compilation de ce fichier, <code>2-main.o</code> contient uniquement les instructions de la fonction <code>main</code>.<br>
 En effet, la ligne 3 est une déclaration de fonction.
-Le compilateur ne connaissant pas la définition de <code>add(int, int)</code>, il ne peut pas générer les instructions binaires qui lui serait associées.</p>
+Le compilateur ne connaissant pas la définition de <code>add(int, int)</code>, il ne peut pas générer les instructions binaires qui lui seraient associées.</p>
 
         </div>
     </div>
@@ -3284,7 +3285,7 @@ De cette manière, à la compilation de <code>3-main.cpp</code>, le symbole asso
 
 </div>
 
-<div class="notices tip" ><p>Si vous rencontrez une erreur de type <code>undefined reference to ...</code>, commencez par vérifier que vous n&rsquo;avez pas oublier de compiler un fichier-source.<br>
+<div class="notices tip" ><p>Si vous rencontrez une erreur de type <code>undefined reference to ...</code>, commencez par vérifier que vous n&rsquo;avez pas oublié de compiler un fichier-source.<br>
 Si le problème ne vient pas de là, assurez-vous que la <strong>signature</strong> de votre fonction (nom + type des paramètres) est bien strictement la même dans sa définition et dans ses déclarations.</p>
 </div>
 
@@ -3416,7 +3417,7 @@ Ainsi le symbole ne serait plus présent dans <code>4-add.o</code> ni <code>4-su
     </div>
 
 </div>
-<p>Pour contraindre le linker a accepté qu&rsquo;un symbole soit présent dans plusieurs fichiers-objet, vous pouvez placer le mot-clef <code>inline</code> devant sa définition dans le code-source.<br>
+<p>Pour contraindre le linker à accepter qu&rsquo;un symbole soit présent dans plusieurs fichiers-objet, vous pouvez placer le mot-clef <code>inline</code> devant sa définition dans le code-source.<br>
 Dans ce cas, au moment d&rsquo;écrire le symbole dans l&rsquo;exécutable final, le linker utilisera la version trouvée dans n&rsquo;importe lequel des fichiers-objet.</p>
 <p>Cela vous permet donc de définir vos fonctions directement dans les headers.
 S&rsquo;ils sont inclus depuis plusieurs fichiers-source, le linker fera comme si les fonctions n&rsquo;étaient présentes que dans l&rsquo;un d&rsquo;entre eux et n&rsquo;émettera pas d&rsquo;erreurs.</p>
@@ -3450,6 +3451,11 @@ S&rsquo;ils sont inclus depuis plusieurs fichiers-source, le linker fera comme s
     </div>
 
 </div>
+
+<div class="notices note" ><p>Dans le cadre de petits programmes, il n&rsquo;y a aucune contre-indication à utiliser <code>inline</code> pour coder un maximum de choses dans les headers.<br>
+En revanche, pour de plus gros programmes, sachez que plus vous mettrez de choses dans les headers, plus la compilation prendra du temps.</p>
+</div>
+
 <hr>
 <h3 id="synthèse">Synthèse</h3>
 <p>Il faut retenir que la compilation d&rsquo;un programme se fait en deux étapes : la compilation des fichiers-source suivie de l&rsquo;édition des liens.</p>
@@ -4771,19 +4777,19 @@ S&rsquo;ils sont inclus depuis plusieurs fichiers-source, le linker fera comme s
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/CPP_Learning/js/clipboard.min.js?1704718612"></script>
-    <script src="/CPP_Learning/js/perfect-scrollbar.min.js?1704718612"></script>
-    <script src="/CPP_Learning/js/perfect-scrollbar.jquery.min.js?1704718612"></script>
-    <script src="/CPP_Learning/js/jquery.sticky.js?1704718612"></script>
-    <script src="/CPP_Learning/js/featherlight.min.js?1704718612"></script>
-    <script src="/CPP_Learning/js/highlight.pack.js?1704718612"></script>
+    <script src="/CPP_Learning/js/clipboard.min.js?1704755107"></script>
+    <script src="/CPP_Learning/js/perfect-scrollbar.min.js?1704755107"></script>
+    <script src="/CPP_Learning/js/perfect-scrollbar.jquery.min.js?1704755107"></script>
+    <script src="/CPP_Learning/js/jquery.sticky.js?1704755107"></script>
+    <script src="/CPP_Learning/js/featherlight.min.js?1704755107"></script>
+    <script src="/CPP_Learning/js/highlight.pack.js?1704755107"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/CPP_Learning/js/modernizr.custom-3.6.0.js?1704718612"></script>
-    <script src="/CPP_Learning/js/learn.js?1704718612"></script>
-    <script src="/CPP_Learning/js/hugo-learn.js?1704718612"></script>
+    <script src="/CPP_Learning/js/modernizr.custom-3.6.0.js?1704755107"></script>
+    <script src="/CPP_Learning/js/learn.js?1704755107"></script>
+    <script src="/CPP_Learning/js/hugo-learn.js?1704755107"></script>
     
         
-            <script src="/CPP_Learning/mermaid/mermaid.js?1704718612"></script>
+            <script src="/CPP_Learning/mermaid/mermaid.js?1704755107"></script>
         
         <script>
             mermaid.initialize({ startOnLoad: true });
@@ -4794,13 +4800,15 @@ S&rsquo;ils sont inclus depuis plusieurs fichiers-source, le linker fera comme s
 <button id="footer-question-btn" onclick="openQuestionForm()" disabled><i class="fas fa-question-circle"></i></button>
 
 <div id="footer-question-window" disabled>
-    <form id="question" method=POST action="https://formsubmit.co/3aa0f379a1aed9c454634cc2da153a7b" target="question-submitted">
+    <form id="question" method=POST action="https://formsubmit.co/3aa0f379a1aed9c454634cc2da153a7b"
+        target="question-submitted" onsubmit="cleanQuestionFormContent()">
+
         <input type="email" name="email" placeholder="mon_email@smthg.com" required />
-        <textarea name="question" rows="7" cols="30" placeholder="ma question..."></textarea>
+        <textarea id="question-content" name="question" rows="7" cols="30" placeholder="ma question..."></textarea>
         <input id="question-topic" type="hidden" name="selection" />
 
         <input type="hidden" name="_replyto" />
-        <input type="hidden" name="_subject" value="[C++][Chapitre ] Question sur le cours" />
+        <input type="hidden" name="_subject" value="[C++][Chapitre 4] Question sur le cours" />
         <input type="hidden" name="_template" value="box" />
         <input type="hidden" name="_captcha" value="false" />
         <input type="hidden" name="_next" value="https://laefy.github.io/CPP_Learning//question-submitted/" />
@@ -4813,6 +4821,17 @@ S&rsquo;ils sont inclus depuis plusieurs fichiers-source, le linker fera comme s
 </div>
 
 <script>
+
+    function cleanQuestionFormContent() {
+
+        function clean(element) {
+            
+            element.value = element.value.replace(/\[\.\./g, "[ ..");
+        }
+
+        clean(document.getElementById("question-content"))
+        clean(document.getElementById("question-topic"))
+    }
 
     function openQuestionForm() {
         document.getElementById("footer-question-window").removeAttribute("disabled");
