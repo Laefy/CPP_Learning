@@ -3,13 +3,15 @@
 <button id="footer-question-btn" onclick="openQuestionForm()" disabled><i class="fas fa-question-circle"></i></button>
 
 <div id="footer-question-window" disabled>
-    <form id="question" method=POST action="https://formsubmit.co/3aa0f379a1aed9c454634cc2da153a7b" target="question-submitted">
+    <form id="question" method=POST action="https://formsubmit.co/3aa0f379a1aed9c454634cc2da153a7b"
+        target="question-submitted" onsubmit="cleanQuestionFormContent()">
+
         <input type="email" name="email" placeholder="mon_email@smthg.com" required />
-        <textarea name="question" rows="7" cols="30" placeholder="ma question..."></textarea>
+        <textarea id="question-content" name="question" rows="7" cols="30" placeholder="ma question..."></textarea>
         <input id="question-topic" type="hidden" name="selection" />
 
         <input type="hidden" name="_replyto" />
-        <input type="hidden" name="_subject" value="[C++][Chapitre {{ .Page.Params.chapter }}] Question sur le cours" />
+        <input type="hidden" name="_subject" value="[C++][Chapitre {{ sub .Page.Weight 1 }}] Question sur le cours" />
         <input type="hidden" name="_template" value="box" />
         <input type="hidden" name="_captcha" value="false" />
         <input type="hidden" name="_next" value="{{ .Site.BaseURL }}/question-submitted/" />
@@ -22,6 +24,17 @@
 </div>
 
 <script>
+
+    function cleanQuestionFormContent() {
+
+        function clean(element) {
+            // The following sequences are not handled by FormSubmit.
+            element.value = element.value.replace(/\[\.\./g, "[ ..");
+        }
+
+        clean(document.getElementById("question-content"))
+        clean(document.getElementById("question-topic"))
+    }
 
     function openQuestionForm() {
         document.getElementById("footer-question-window").removeAttribute("disabled");
