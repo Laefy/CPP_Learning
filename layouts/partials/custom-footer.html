@@ -24,7 +24,7 @@
 <script>
 
     function openQuestionForm() {
-        var window = document.getElementById("footer-question-window").removeAttribute("disabled");
+        document.getElementById("footer-question-window").removeAttribute("disabled");
 
         var selection = window.getSelection().toString();
         document.getElementById("question-topic").value = selection
