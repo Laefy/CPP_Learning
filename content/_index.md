@@ -54,6 +54,11 @@ Une fois que vous avez quelque chose qui a l'air de fonctionner, regardez la sol
 Si votre code n'est pas identique, c'est probablement parce qu'il n'y a pas qu'une seule bonne réponse.
 Et si vous n'êtes vraiment pas sûr(e)s de votre solution, n'hésitez pas à m'envoyer ce que vous avez fait par mail ou Discord, ou à l'indiquer dans le formulaire de fin de chapitre afin que l'on vous donne un retour.
 
+{{% notice tip %}}
+Si vous avez une question ou une remarque (typo par exemple) sur un endroit très précis du cours, **vous pouvez sélectionner la zone concernée et cliquer sur le point d'interrogation** qui s'affiche en bas à droite de l'écran pour nous envoyer votre message.  
+On pourra ainsi vous répondre et éventuellement retravailler cette partie du site pour qu'elle soit plus claire pour tout le monde ! 😄
+{{% /notice %}}
+
 #### Questionnaires
 
 Le questionnaire de fin de chapitre sera composé comme suit :
@@ -63,8 +68,7 @@ Le questionnaire de fin de chapitre sera composé comme suit :
 - un champ pour entrer vos propres questions (nous enverrons les réponses au mail indiqué plus haut),
 - un champ pour laisser des commentaires sur le format du cours et me prévenir si j'ai écrit des bêtises
 
-N'hésitez vraiment surtout pas à poser vos questions dans le formulaire, mais aussi à me les envoyez directement par mail ou Discord, en particulier si cela vous bloque pour avancer.
-Si vous ne comprenez pas bien le cours, c'est que je peux l'améliorer pour le rendre plus compréhensible.
+N'hésitez vraiment surtout pas à poser vos questions dans le formulaire, mais aussi à nous les envoyer directement par mail ou Discord, en particulier si cela vous bloque pour avancer.
 
 ### Séances de TP
 
