@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="Hugo 0.121.0">
+    <meta name="generator" content="Hugo 0.76.5" />
     <meta name="description" content="">
 
 
@@ -12,22 +12,22 @@
     <title>Débrief :: Cours de C&#43;&#43; - Niveau Master</title>
 
     
-    <link href="/CPP_Learning/css/nucleus.css?1704755107" rel="stylesheet">
-    <link href="/CPP_Learning/css/fontawesome-all.min.css?1704755107" rel="stylesheet">
-    <link href="/CPP_Learning/css/hybrid.css?1704755107" rel="stylesheet">
-    <link href="/CPP_Learning/css/featherlight.min.css?1704755107" rel="stylesheet">
-    <link href="/CPP_Learning/css/perfect-scrollbar.min.css?1704755107" rel="stylesheet">
-    <link href="/CPP_Learning/css/auto-complete.css?1704755107" rel="stylesheet">
-    <link href="/CPP_Learning/css/atom-one-dark-reasonable.css?1704755107" rel="stylesheet">
-    <link href="/CPP_Learning/css/theme.css?1704755107" rel="stylesheet">
-    <link href="/CPP_Learning/css/tabs.css?1704755107" rel="stylesheet">
-    <link href="/CPP_Learning/css/hugo-theme.css?1704755107" rel="stylesheet">
+    <link href="/CPP_Learning/css/nucleus.css?1705257267" rel="stylesheet">
+    <link href="/CPP_Learning/css/fontawesome-all.min.css?1705257267" rel="stylesheet">
+    <link href="/CPP_Learning/css/hybrid.css?1705257267" rel="stylesheet">
+    <link href="/CPP_Learning/css/featherlight.min.css?1705257267" rel="stylesheet">
+    <link href="/CPP_Learning/css/perfect-scrollbar.min.css?1705257267" rel="stylesheet">
+    <link href="/CPP_Learning/css/auto-complete.css?1705257267" rel="stylesheet">
+    <link href="/CPP_Learning/css/atom-one-dark-reasonable.css?1705257267" rel="stylesheet">
+    <link href="/CPP_Learning/css/theme.css?1705257267" rel="stylesheet">
+    <link href="/CPP_Learning/css/tabs.css?1705257267" rel="stylesheet">
+    <link href="/CPP_Learning/css/hugo-theme.css?1705257267" rel="stylesheet">
     
-    <link href="/CPP_Learning/css/theme-mine.css?1704755107" rel="stylesheet">
+    <link href="/CPP_Learning/css/theme-mine.css?1705257267" rel="stylesheet">
     
-    <link href="/CPP_Learning/css/syntax.css?1704755107" rel="stylesheet">
+    <link href="/CPP_Learning/css/syntax.css?1705257267" rel="stylesheet">
 
-    <script src="/CPP_Learning/js/jquery-3.3.1.min.js?1704755107"></script>
+    <script src="/CPP_Learning/js/jquery-3.3.1.min.js?1705257267"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -1959,156 +1959,156 @@ Les chevrons contiennent la liste des paramètres du template. Chaque paramètre
 - un type intégral, comme <code>size_t</code>, <code>char</code>, <code>int</code>, &hellip; : il faut passer une expression du bon type <strong>évaluable à la compilation</strong>,<br>
 - une énumération : il faut passer une valeur de cette énumération <strong>évaluable à la compilation</strong>.</p>
 <p>Classe-template :</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span> <span class="n">Type</span><span class="p">,</span> <span class="kt">int</span> <span class="n">Size</span><span class="p">,</span> <span class="kt">char</span> <span class="n">Letter</span><span class="o">&gt;</span>
-</span></span><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">TemplateClass</span>
-</span></span><span class="line"><span class="cl"><span class="p">{</span> <span class="p">...</span> <span class="p">};</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
-</span></span><span class="line"><span class="cl"><span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="n">TemplateClass</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="sc">&#39;A&#39;</span><span class="o">&gt;</span> <span class="n">class_example</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">    <span class="p">...</span>
-</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span></code></pre></div><p>Fonction-template :</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="k">enum</span> <span class="k">class</span> <span class="nc">TheEnum</span> <span class="p">{</span> <span class="n">E1</span><span class="p">,</span> <span class="n">E2</span><span class="p">,</span> <span class="n">E3</span> <span class="p">};</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="k">template</span> <span class="o">&lt;</span><span class="n">TheEnum</span> <span class="n">Enum</span><span class="o">&gt;</span>
-</span></span><span class="line"><span class="cl"><span class="kt">void</span> <span class="n">template_fcn</span><span class="p">()</span>
-</span></span><span class="line"><span class="cl"><span class="p">{</span> <span class="p">...</span> <span class="p">}</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
-</span></span><span class="line"><span class="cl"><span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="n">template_fcn</span><span class="o">&lt;</span><span class="n">TheEnum</span><span class="o">::</span><span class="n">E2</span><span class="o">&gt;</span><span class="p">();</span>
-</span></span><span class="line"><span class="cl">    <span class="p">...</span>
-</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span></code></pre></div><hr>
+<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span> <span class="n">Type</span><span class="p">,</span> <span class="kt">int</span> <span class="n">Size</span><span class="p">,</span> <span class="kt">char</span> <span class="n">Letter</span><span class="o">&gt;</span>
+<span class="k">class</span> <span class="nc">TemplateClass</span>
+<span class="p">{</span> <span class="p">...</span> <span class="p">};</span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="n">TemplateClass</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="sc">&#39;A&#39;</span><span class="o">&gt;</span> <span class="n">class_example</span><span class="p">;</span>
+    <span class="p">...</span>
+    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div><p>Fonction-template :</p>
+<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="k">enum</span> <span class="k">class</span> <span class="nc">TheEnum</span> <span class="p">{</span> <span class="n">E1</span><span class="p">,</span> <span class="n">E2</span><span class="p">,</span> <span class="n">E3</span> <span class="p">};</span>
+
+<span class="k">template</span> <span class="o">&lt;</span><span class="n">TheEnum</span> <span class="n">Enum</span><span class="o">&gt;</span>
+<span class="kt">void</span> <span class="n">template_fcn</span><span class="p">()</span>
+<span class="p">{</span> <span class="p">...</span> <span class="p">}</span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="n">template_fcn</span><span class="o">&lt;</span><span class="n">TheEnum</span><span class="o">::</span><span class="n">E2</span><span class="o">&gt;</span><span class="p">();</span>
+    <span class="p">...</span>
+    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div><hr>
 <h3 id="valeur-par-défaut-de-paramètres-de-template">Valeur par défaut de paramètres de template</h3>
 <p>Il est possible de donner des valeurs par défaut aux paramètres de template :</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span> <span class="n">T1</span> <span class="o">=</span> <span class="kt">int</span><span class="p">,</span> <span class="k">typename</span> <span class="n">T2</span> <span class="o">=</span> <span class="n">T1</span><span class="p">,</span> <span class="k">typename</span> <span class="n">T3</span> <span class="o">=</span> <span class="n">T1</span><span class="o">&gt;</span>
-</span></span><span class="line"><span class="cl"><span class="k">struct</span> <span class="nc">Triple</span>
-</span></span><span class="line"><span class="cl"><span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="n">T1</span> <span class="n">_m1</span> <span class="p">{};</span>
-</span></span><span class="line"><span class="cl">    <span class="n">T2</span> <span class="n">_m2</span> <span class="p">{};</span>
-</span></span><span class="line"><span class="cl">    <span class="n">T3</span> <span class="n">_m3</span> <span class="p">{};</span>
-</span></span><span class="line"><span class="cl"><span class="p">};</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
-</span></span><span class="line"><span class="cl"><span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="n">Triple</span><span class="o">&lt;</span><span class="kt">float</span><span class="p">,</span> <span class="kt">double</span><span class="o">&gt;</span> <span class="n">t1</span><span class="p">;</span> <span class="c1">// =&gt; Triple&lt;float, double, float&gt;
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="n">Triple</span><span class="o">&lt;</span><span class="kt">float</span><span class="o">&gt;</span>         <span class="n">t2</span><span class="p">;</span> <span class="c1">// =&gt; Triple&lt;float, float, float&gt;
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="n">Triple</span><span class="o">&lt;&gt;</span>              <span class="n">t3</span><span class="p">;</span> <span class="c1">// =&gt; Triple&lt;int, int, int&gt;   
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="n">Triple</span>                <span class="n">t4</span><span class="p">;</span> <span class="c1">// =&gt; Triple&lt;int, int, int&gt; (pareil que la syntaxe précédente)  
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
-</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span></code></pre></div><hr>
+<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span> <span class="n">T1</span> <span class="o">=</span> <span class="kt">int</span><span class="p">,</span> <span class="k">typename</span> <span class="n">T2</span> <span class="o">=</span> <span class="n">T1</span><span class="p">,</span> <span class="k">typename</span> <span class="n">T3</span> <span class="o">=</span> <span class="n">T1</span><span class="o">&gt;</span>
+<span class="k">struct</span> <span class="nc">Triple</span>
+<span class="p">{</span>
+    <span class="n">T1</span> <span class="n">_m1</span> <span class="p">{};</span>
+    <span class="n">T2</span> <span class="n">_m2</span> <span class="p">{};</span>
+    <span class="n">T3</span> <span class="n">_m3</span> <span class="p">{};</span>
+<span class="p">};</span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="n">Triple</span><span class="o">&lt;</span><span class="kt">float</span><span class="p">,</span> <span class="kt">double</span><span class="o">&gt;</span> <span class="n">t1</span><span class="p">;</span> <span class="c1">// =&gt; Triple&lt;float, double, float&gt;
+</span><span class="c1"></span>    <span class="n">Triple</span><span class="o">&lt;</span><span class="kt">float</span><span class="o">&gt;</span>         <span class="n">t2</span><span class="p">;</span> <span class="c1">// =&gt; Triple&lt;float, float, float&gt;
+</span><span class="c1"></span>    <span class="n">Triple</span><span class="o">&lt;&gt;</span>              <span class="n">t3</span><span class="p">;</span> <span class="c1">// =&gt; Triple&lt;int, int, int&gt;   
+</span><span class="c1"></span>    <span class="n">Triple</span>                <span class="n">t4</span><span class="p">;</span> <span class="c1">// =&gt; Triple&lt;int, int, int&gt; (pareil que la syntaxe précédente)  
+</span><span class="c1"></span>
+    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div><hr>
 <h3 id="déduction-des-paramètres-de-template">Déduction des paramètres de template</h3>
 <p>Dans le cas d&rsquo;un appel de fonction-template, on peut omettre de spécifier les derniers paramètres de template si ceux-ci sont déductibles des arguments passés à la fonction :</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span> <span class="n">T1</span><span class="p">,</span> <span class="k">typename</span> <span class="n">T2</span><span class="p">,</span> <span class="k">typename</span> <span class="n">T3</span><span class="o">&gt;</span>
-</span></span><span class="line"><span class="cl"><span class="k">struct</span> <span class="nc">Triple</span>
-</span></span><span class="line"><span class="cl"><span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="n">T1</span> <span class="n">_m1</span> <span class="p">{};</span>
-</span></span><span class="line"><span class="cl">    <span class="n">T2</span> <span class="n">_m2</span> <span class="p">{};</span>
-</span></span><span class="line"><span class="cl">    <span class="n">T3</span> <span class="n">_m3</span> <span class="p">{};</span>
-</span></span><span class="line"><span class="cl"><span class="p">};</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span> <span class="n">T1</span><span class="p">,</span> <span class="k">typename</span> <span class="n">T2</span><span class="p">,</span> <span class="k">typename</span> <span class="n">T3</span><span class="o">&gt;</span>
-</span></span><span class="line"><span class="cl"><span class="n">Triple</span><span class="o">&lt;</span><span class="n">T1</span><span class="p">,</span> <span class="n">T2</span><span class="p">,</span> <span class="n">T3</span><span class="o">&gt;</span> <span class="n">make_triple</span><span class="p">(</span><span class="k">const</span> <span class="n">T1</span><span class="o">&amp;</span> <span class="n">p1</span><span class="p">,</span> <span class="k">const</span> <span class="n">T2</span><span class="o">&amp;</span> <span class="n">p2</span><span class="p">,</span> <span class="k">const</span> <span class="n">T3</span><span class="o">&amp;</span> <span class="n">p3</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl"><span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">Triple</span><span class="o">&lt;</span><span class="n">T1</span><span class="p">,</span> <span class="n">T2</span><span class="p">,</span> <span class="n">T3</span><span class="o">&gt;</span> <span class="p">{</span> <span class="n">p1</span><span class="p">,</span> <span class="n">p2</span><span class="p">,</span> <span class="n">p3</span> <span class="p">};</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
-</span></span><span class="line"><span class="cl"><span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="k">auto</span> <span class="n">triple</span> <span class="o">=</span> <span class="n">make_triple</span><span class="p">(</span><span class="mf">3.2f</span><span class="p">,</span> <span class="sc">&#39;A&#39;</span><span class="p">,</span> <span class="mi">6u</span><span class="p">);</span> <span class="c1">// =&gt; Triple&lt;float, char, unsigned int&gt;
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span></code></pre></div><hr>
+<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span> <span class="n">T1</span><span class="p">,</span> <span class="k">typename</span> <span class="n">T2</span><span class="p">,</span> <span class="k">typename</span> <span class="n">T3</span><span class="o">&gt;</span>
+<span class="k">struct</span> <span class="nc">Triple</span>
+<span class="p">{</span>
+    <span class="n">T1</span> <span class="n">_m1</span> <span class="p">{};</span>
+    <span class="n">T2</span> <span class="n">_m2</span> <span class="p">{};</span>
+    <span class="n">T3</span> <span class="n">_m3</span> <span class="p">{};</span>
+<span class="p">};</span>
+
+<span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span> <span class="n">T1</span><span class="p">,</span> <span class="k">typename</span> <span class="n">T2</span><span class="p">,</span> <span class="k">typename</span> <span class="n">T3</span><span class="o">&gt;</span>
+<span class="n">Triple</span><span class="o">&lt;</span><span class="n">T1</span><span class="p">,</span> <span class="n">T2</span><span class="p">,</span> <span class="n">T3</span><span class="o">&gt;</span> <span class="n">make_triple</span><span class="p">(</span><span class="k">const</span> <span class="n">T1</span><span class="o">&amp;</span> <span class="n">p1</span><span class="p">,</span> <span class="k">const</span> <span class="n">T2</span><span class="o">&amp;</span> <span class="n">p2</span><span class="p">,</span> <span class="k">const</span> <span class="n">T3</span><span class="o">&amp;</span> <span class="n">p3</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="k">return</span> <span class="n">Triple</span><span class="o">&lt;</span><span class="n">T1</span><span class="p">,</span> <span class="n">T2</span><span class="p">,</span> <span class="n">T3</span><span class="o">&gt;</span> <span class="p">{</span> <span class="n">p1</span><span class="p">,</span> <span class="n">p2</span><span class="p">,</span> <span class="n">p3</span> <span class="p">};</span>
+<span class="p">}</span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="k">auto</span> <span class="n">triple</span> <span class="o">=</span> <span class="n">make_triple</span><span class="p">(</span><span class="mf">3.2f</span><span class="p">,</span> <span class="sc">&#39;A&#39;</span><span class="p">,</span> <span class="mi">6u</span><span class="p">);</span> <span class="c1">// =&gt; Triple&lt;float, char, unsigned int&gt;
+</span><span class="c1"></span>    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div><hr>
 <h3 id="constexpr">Constexpr</h3>
 <p>Le mot-clef <code>constexpr</code> sert à indiquer au compilateur qu&rsquo;il est censé pouvoir évaluer le contenu d&rsquo;une expression à la compilation.
 Seules des expressions évaluables à la compilation peuvent être passées en tant que paramètres de template.</p>
 <p>On peut l&rsquo;indiquer sur des variables :</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="k">constexpr</span> <span class="n">size_t</span> <span class="n">size</span> <span class="o">=</span> <span class="mi">3</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl"><span class="n">std</span><span class="o">::</span><span class="n">array</span><span class="o">&lt;</span><span class="kt">int</span><span class="p">,</span> <span class="n">size</span><span class="o">&gt;</span> <span class="n">array</span><span class="p">;</span>
-</span></span></code></pre></div><p>On peut aussi l&rsquo;indiquer sur des fonctions :</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="k">constexpr</span> <span class="n">size_t</span> <span class="nf">factorial</span><span class="p">(</span><span class="n">size_t</span> <span class="n">n</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl"><span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">n</span> <span class="o">&lt;</span> <span class="mi">2</span> <span class="o">?</span> <span class="mi">1</span> <span class="o">:</span> <span class="p">(</span><span class="n">n</span> <span class="o">*</span> <span class="n">factorial</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">));</span> 
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="n">std</span><span class="o">::</span><span class="n">array</span><span class="o">&lt;</span><span class="kt">int</span><span class="p">,</span> <span class="n">factorial</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span><span class="o">&gt;</span> <span class="n">array</span><span class="p">;</span>
-</span></span></code></pre></div><p>Enfin, lorsqu&rsquo;on peut évaluer une condition à la compilation, on peut utiliser un <code>if constexpr</code> plutôt qu&rsquo;un <code>if</code> pour que le code correspondant à la branche qui ne sera jamais exécutée ne soit pas généré du tout.</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span> <span class="n">T</span><span class="p">,</span> <span class="n">size_t</span> <span class="n">Size</span><span class="o">&gt;</span>
-</span></span><span class="line"><span class="cl"><span class="kt">void</span> <span class="n">woah</span><span class="p">(</span><span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">array</span><span class="o">&lt;</span><span class="n">T</span><span class="p">,</span> <span class="n">Size</span><span class="o">&gt;&amp;</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl"><span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="nf">constexpr</span> <span class="p">(</span><span class="n">Size</span> <span class="o">&gt;</span> <span class="mi">16</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">    <span class="p">{</span>
-</span></span><span class="line"><span class="cl">        <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;Woaaaah, this is a BIG array!&#34;</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">    <span class="p">}</span>
-</span></span><span class="line"><span class="cl">    <span class="k">else</span>
-</span></span><span class="line"><span class="cl">    <span class="p">{</span>
-</span></span><span class="line"><span class="cl">        <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;This is a little array.&#34;</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">    <span class="p">}</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span></code></pre></div><hr>
+<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="k">constexpr</span> <span class="n">size_t</span> <span class="n">size</span> <span class="o">=</span> <span class="mi">3</span><span class="p">;</span>
+<span class="n">std</span><span class="o">::</span><span class="n">array</span><span class="o">&lt;</span><span class="kt">int</span><span class="p">,</span> <span class="n">size</span><span class="o">&gt;</span> <span class="n">array</span><span class="p">;</span>
+</code></pre></div><p>On peut aussi l&rsquo;indiquer sur des fonctions :</p>
+<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="k">constexpr</span> <span class="n">size_t</span> <span class="nf">factorial</span><span class="p">(</span><span class="n">size_t</span> <span class="n">n</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="k">return</span> <span class="n">n</span> <span class="o">&lt;</span> <span class="mi">2</span> <span class="o">?</span> <span class="mi">1</span> <span class="o">:</span> <span class="p">(</span><span class="n">n</span> <span class="o">*</span> <span class="n">factorial</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">));</span> 
+<span class="p">}</span>
+
+<span class="n">std</span><span class="o">::</span><span class="n">array</span><span class="o">&lt;</span><span class="kt">int</span><span class="p">,</span> <span class="n">factorial</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span><span class="o">&gt;</span> <span class="n">array</span><span class="p">;</span>
+</code></pre></div><p>Enfin, lorsqu&rsquo;on peut évaluer une condition à la compilation, on peut utiliser un <code>if constexpr</code> plutôt qu&rsquo;un <code>if</code> pour que le code correspondant à la branche qui ne sera jamais exécutée ne soit pas généré du tout.</p>
+<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span> <span class="n">T</span><span class="p">,</span> <span class="n">size_t</span> <span class="n">Size</span><span class="o">&gt;</span>
+<span class="kt">void</span> <span class="n">woah</span><span class="p">(</span><span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">array</span><span class="o">&lt;</span><span class="n">T</span><span class="p">,</span> <span class="n">Size</span><span class="o">&gt;&amp;</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="k">if</span> <span class="nf">constexpr</span> <span class="p">(</span><span class="n">Size</span> <span class="o">&gt;</span> <span class="mi">16</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;Woaaaah, this is a BIG array!&#34;</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="k">else</span>
+    <span class="p">{</span>
+        <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;This is a little array.&#34;</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div><hr>
 <h3 id="contraintes-des-paramètres-de-template">Contraintes des paramètres de template</h3>
 <p>Les paramètres de templates peuvent être utilisés à n&rsquo;importe quel endroit de la classe-template ou de la fonction-template.<br>
 Il faut juste vérifier les deux conditions suivantes pour que le programme compile :<br>
 1- le code de la classe ou de la fonction peut être généré à partir du template et des arguments de template fournis,<br>
 2- ce code généré compile.</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span> <span class="n">Animal</span><span class="o">&gt;</span>
-</span></span><span class="line"><span class="cl"><span class="kt">void</span> <span class="n">go_somewhere</span><span class="p">(</span><span class="n">Animal</span><span class="o">&amp;</span> <span class="n">animal</span><span class="p">,</span> <span class="k">const</span> <span class="n">Point</span><span class="o">&amp;</span> <span class="n">destination</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl"><span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="nf">constexpr</span> <span class="p">(</span><span class="n">Animal</span><span class="o">::</span><span class="n">category</span> <span class="o">==</span> <span class="n">Category</span><span class="o">::</span><span class="n">Bird</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">    <span class="p">{</span>
-</span></span><span class="line"><span class="cl">        <span class="n">animal</span><span class="p">.</span><span class="n">fly_to</span><span class="p">(</span><span class="n">destination</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl">    <span class="p">}</span>
-</span></span><span class="line"><span class="cl">    <span class="k">else</span> <span class="k">if</span> <span class="nf">constexpr</span> <span class="p">(</span><span class="n">Animal</span><span class="o">::</span><span class="n">category</span> <span class="o">==</span> <span class="n">Category</span><span class="o">::</span><span class="n">Fish</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">    <span class="p">{</span>
-</span></span><span class="line"><span class="cl">        <span class="n">animal</span><span class="p">.</span><span class="n">swim_to</span><span class="p">(</span><span class="n">destination</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl">    <span class="p">}</span>
-</span></span><span class="line"><span class="cl">    <span class="k">else</span> <span class="k">if</span> <span class="nf">constexpr</span> <span class="p">(</span><span class="n">Animal</span><span class="o">::</span><span class="n">category</span> <span class="o">==</span> <span class="n">Category</span><span class="o">::</span><span class="n">Mammal</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">    <span class="p">{</span>
-</span></span><span class="line"><span class="cl">        <span class="n">animal</span><span class="p">.</span><span class="n">run_to</span><span class="p">(</span><span class="n">destination</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl">    <span class="p">}</span>
-</span></span><span class="line"><span class="cl">    <span class="k">else</span>
-</span></span><span class="line"><span class="cl">    <span class="p">{</span>
-</span></span><span class="line"><span class="cl">        <span class="n">animal</span><span class="p">.</span><span class="n">go_to</span><span class="p">(</span><span class="n">destination</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl">    <span class="p">}</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="k">struct</span> <span class="nc">Monkey</span>
-</span></span><span class="line"><span class="cl"><span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="k">static</span> <span class="k">constexpr</span> <span class="n">Category</span> <span class="n">category</span> <span class="o">=</span> <span class="n">Category</span><span class="o">::</span><span class="n">Mammal</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">    
-</span></span><span class="line"><span class="cl">    <span class="kt">void</span> <span class="nf">run_to</span><span class="p">(</span><span class="k">const</span> <span class="n">Point</span><span class="o">&amp;</span> <span class="n">destination</span><span class="p">)</span> <span class="p">{</span> <span class="p">...</span> <span class="p">};</span>
-</span></span><span class="line"><span class="cl"><span class="p">};</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="k">struct</span> <span class="nc">Snake</span>
-</span></span><span class="line"><span class="cl"><span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="k">static</span> <span class="k">constexpr</span> <span class="n">Category</span> <span class="n">category</span> <span class="o">=</span> <span class="n">Category</span><span class="o">::</span><span class="n">Reptile</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">    
-</span></span><span class="line"><span class="cl">    <span class="kt">void</span> <span class="nf">crawl_to</span><span class="p">(</span><span class="k">const</span> <span class="n">Point</span><span class="o">&amp;</span> <span class="n">destination</span><span class="p">)</span> <span class="p">{</span> <span class="p">...</span> <span class="p">};</span>
-</span></span><span class="line"><span class="cl"><span class="p">};</span>
-</span></span></code></pre></div><p>Le code de <code>go_somewhere&lt;Monkey&gt;</code> peut être généré et compile :</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="kt">void</span> <span class="nf">go_somewhere</span><span class="p">(</span><span class="n">Monkey</span><span class="o">&amp;</span> <span class="n">animal</span><span class="p">,</span> <span class="k">const</span> <span class="n">Point</span><span class="o">&amp;</span> <span class="n">destination</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl"><span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="n">animal</span><span class="p">.</span><span class="n">run_to</span><span class="p">(</span><span class="n">destination</span><span class="p">);</span> <span class="c1">// Monkey a bien une fonction run_to(const Point&amp;).
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="p">}</span>
-</span></span></code></pre></div><p>Le code de <code>go_somewhere&lt;int&gt;</code> ne pourra pas être généré :</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="c1">// ... génération de go_somewhere&lt;int&gt;
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kt">void</span> <span class="nf">go_somewhere</span><span class="p">(</span><span class="kt">int</span><span class="o">&amp;</span> <span class="n">animal</span><span class="p">,</span> <span class="k">const</span> <span class="n">Point</span><span class="o">&amp;</span> <span class="n">destination</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl"><span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="k">constexpr</span> <span class="p">(</span><span class="kt">int</span><span class="o">::</span><span class="n">category</span> <span class="o">==</span> <span class="n">Category</span><span class="o">::</span><span class="n">Bird</span><span class="p">)</span> <span class="c1">// Erreur !
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="c1">// int est un type primitif, on ne peut donc pas écrire int::category, et encore moins évaluer la condition du if constexpr.
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="p">}</span>
-</span></span></code></pre></div><p>Le code de <code>go_somewhere&lt;Snake&gt;</code> pourra être généré, mais ne compilera pas :</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="kt">void</span> <span class="nf">go_somewhere</span><span class="p">(</span><span class="n">Snake</span><span class="o">&amp;</span> <span class="n">animal</span><span class="p">,</span> <span class="k">const</span> <span class="n">Point</span><span class="o">&amp;</span> <span class="n">destination</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl"><span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="n">animal</span><span class="p">.</span><span class="n">go_to</span><span class="p">(</span><span class="n">destination</span><span class="p">);</span> <span class="c1">// Snake n&#39;a pas de fonction go_to(const Point&amp;).
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="p">}</span>
-</span></span></code></pre></div>
+<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span> <span class="n">Animal</span><span class="o">&gt;</span>
+<span class="kt">void</span> <span class="n">go_somewhere</span><span class="p">(</span><span class="n">Animal</span><span class="o">&amp;</span> <span class="n">animal</span><span class="p">,</span> <span class="k">const</span> <span class="n">Point</span><span class="o">&amp;</span> <span class="n">destination</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="k">if</span> <span class="nf">constexpr</span> <span class="p">(</span><span class="n">Animal</span><span class="o">::</span><span class="n">category</span> <span class="o">==</span> <span class="n">Category</span><span class="o">::</span><span class="n">Bird</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">animal</span><span class="p">.</span><span class="n">fly_to</span><span class="p">(</span><span class="n">destination</span><span class="p">);</span>
+    <span class="p">}</span>
+    <span class="k">else</span> <span class="k">if</span> <span class="nf">constexpr</span> <span class="p">(</span><span class="n">Animal</span><span class="o">::</span><span class="n">category</span> <span class="o">==</span> <span class="n">Category</span><span class="o">::</span><span class="n">Fish</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">animal</span><span class="p">.</span><span class="n">swim_to</span><span class="p">(</span><span class="n">destination</span><span class="p">);</span>
+    <span class="p">}</span>
+    <span class="k">else</span> <span class="k">if</span> <span class="nf">constexpr</span> <span class="p">(</span><span class="n">Animal</span><span class="o">::</span><span class="n">category</span> <span class="o">==</span> <span class="n">Category</span><span class="o">::</span><span class="n">Mammal</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">animal</span><span class="p">.</span><span class="n">run_to</span><span class="p">(</span><span class="n">destination</span><span class="p">);</span>
+    <span class="p">}</span>
+    <span class="k">else</span>
+    <span class="p">{</span>
+        <span class="n">animal</span><span class="p">.</span><span class="n">go_to</span><span class="p">(</span><span class="n">destination</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="k">struct</span> <span class="nc">Monkey</span>
+<span class="p">{</span>
+    <span class="k">static</span> <span class="k">constexpr</span> <span class="n">Category</span> <span class="n">category</span> <span class="o">=</span> <span class="n">Category</span><span class="o">::</span><span class="n">Mammal</span><span class="p">;</span>
+    
+    <span class="kt">void</span> <span class="nf">run_to</span><span class="p">(</span><span class="k">const</span> <span class="n">Point</span><span class="o">&amp;</span> <span class="n">destination</span><span class="p">)</span> <span class="p">{</span> <span class="p">...</span> <span class="p">};</span>
+<span class="p">};</span>
+
+<span class="k">struct</span> <span class="nc">Snake</span>
+<span class="p">{</span>
+    <span class="k">static</span> <span class="k">constexpr</span> <span class="n">Category</span> <span class="n">category</span> <span class="o">=</span> <span class="n">Category</span><span class="o">::</span><span class="n">Reptile</span><span class="p">;</span>
+    
+    <span class="kt">void</span> <span class="nf">crawl_to</span><span class="p">(</span><span class="k">const</span> <span class="n">Point</span><span class="o">&amp;</span> <span class="n">destination</span><span class="p">)</span> <span class="p">{</span> <span class="p">...</span> <span class="p">};</span>
+<span class="p">};</span>
+</code></pre></div><p>Le code de <code>go_somewhere&lt;Monkey&gt;</code> peut être généré et compile :</p>
+<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="kt">void</span> <span class="nf">go_somewhere</span><span class="p">(</span><span class="n">Monkey</span><span class="o">&amp;</span> <span class="n">animal</span><span class="p">,</span> <span class="k">const</span> <span class="n">Point</span><span class="o">&amp;</span> <span class="n">destination</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">animal</span><span class="p">.</span><span class="n">run_to</span><span class="p">(</span><span class="n">destination</span><span class="p">);</span> <span class="c1">// Monkey a bien une fonction run_to(const Point&amp;).
+</span><span class="c1"></span><span class="p">}</span>
+</code></pre></div><p>Le code de <code>go_somewhere&lt;int&gt;</code> ne pourra pas être généré :</p>
+<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="c1">// ... génération de go_somewhere&lt;int&gt;
+</span><span class="c1"></span><span class="kt">void</span> <span class="nf">go_somewhere</span><span class="p">(</span><span class="kt">int</span><span class="o">&amp;</span> <span class="n">animal</span><span class="p">,</span> <span class="k">const</span> <span class="n">Point</span><span class="o">&amp;</span> <span class="n">destination</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="k">if</span> <span class="k">constexpr</span> <span class="p">(</span><span class="kt">int</span><span class="o">::</span><span class="n">category</span> <span class="o">==</span> <span class="n">Category</span><span class="o">::</span><span class="n">Bird</span><span class="p">)</span> <span class="c1">// Erreur !
+</span><span class="c1"></span>    <span class="c1">// int est un type primitif, on ne peut donc pas écrire int::category, et encore moins évaluer la condition du if constexpr.
+</span><span class="c1"></span><span class="p">}</span>
+</code></pre></div><p>Le code de <code>go_somewhere&lt;Snake&gt;</code> pourra être généré, mais ne compilera pas :</p>
+<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="kt">void</span> <span class="nf">go_somewhere</span><span class="p">(</span><span class="n">Snake</span><span class="o">&amp;</span> <span class="n">animal</span><span class="p">,</span> <span class="k">const</span> <span class="n">Point</span><span class="o">&amp;</span> <span class="n">destination</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">animal</span><span class="p">.</span><span class="n">go_to</span><span class="p">(</span><span class="n">destination</span><span class="p">);</span> <span class="c1">// Snake n&#39;a pas de fonction go_to(const Point&amp;).
+</span><span class="c1"></span><span class="p">}</span>
+</code></pre></div>
 
 <footer class="footline">
 	
@@ -3409,19 +3409,19 @@ Il faut juste vérifier les deux conditions suivantes pour que le programme comp
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/CPP_Learning/js/clipboard.min.js?1704755107"></script>
-    <script src="/CPP_Learning/js/perfect-scrollbar.min.js?1704755107"></script>
-    <script src="/CPP_Learning/js/perfect-scrollbar.jquery.min.js?1704755107"></script>
-    <script src="/CPP_Learning/js/jquery.sticky.js?1704755107"></script>
-    <script src="/CPP_Learning/js/featherlight.min.js?1704755107"></script>
-    <script src="/CPP_Learning/js/highlight.pack.js?1704755107"></script>
+    <script src="/CPP_Learning/js/clipboard.min.js?1705257267"></script>
+    <script src="/CPP_Learning/js/perfect-scrollbar.min.js?1705257267"></script>
+    <script src="/CPP_Learning/js/perfect-scrollbar.jquery.min.js?1705257267"></script>
+    <script src="/CPP_Learning/js/jquery.sticky.js?1705257267"></script>
+    <script src="/CPP_Learning/js/featherlight.min.js?1705257267"></script>
+    <script src="/CPP_Learning/js/highlight.pack.js?1705257267"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/CPP_Learning/js/modernizr.custom-3.6.0.js?1704755107"></script>
-    <script src="/CPP_Learning/js/learn.js?1704755107"></script>
-    <script src="/CPP_Learning/js/hugo-learn.js?1704755107"></script>
+    <script src="/CPP_Learning/js/modernizr.custom-3.6.0.js?1705257267"></script>
+    <script src="/CPP_Learning/js/learn.js?1705257267"></script>
+    <script src="/CPP_Learning/js/hugo-learn.js?1705257267"></script>
     
         
-            <script src="/CPP_Learning/mermaid/mermaid.js?1704755107"></script>
+            <script src="/CPP_Learning/mermaid/mermaid.js?1705257267"></script>
         
         <script>
             mermaid.initialize({ startOnLoad: true });
@@ -3435,12 +3435,12 @@ Il faut juste vérifier les deux conditions suivantes pour que le programme comp
     <form id="question" method=POST action="https://formsubmit.co/3aa0f379a1aed9c454634cc2da153a7b"
         target="question-submitted" onsubmit="cleanQuestionFormContent()">
 
-        <input type="email" name="email" placeholder="mon_email@smthg.com" required />
-        <textarea id="question-content" name="question" rows="7" cols="30" placeholder="ma question..."></textarea>
-        <input id="question-topic" type="hidden" name="selection" />
+        <input type="email" name="email" placeholder="mon_email@smthg.com" required onchange="updateQuestionFormSubject()" />
+        <textarea name="question" rows="7" cols="30" placeholder="ma question..."></textarea>
+        <input type="hidden" name="selection" />
 
         <input type="hidden" name="_replyto" />
-        <input type="hidden" name="_subject" value="[C++][Chapitre 2] Question sur le cours" />
+        <input type="hidden" name="_subject" />
         <input type="hidden" name="_template" value="box" />
         <input type="hidden" name="_captcha" value="false" />
         <input type="hidden" name="_next" value="https://laefy.github.io/CPP_Learning//question-submitted/" />
@@ -3449,10 +3449,15 @@ Il faut juste vérifier les deux conditions suivantes pour que le programme comp
         <input type="submit" value="Envoyer" />
     </form>
 
-    <iframe id="question-submitted" class="hidden" name="question-submitted" src=""></iframe>
+    <iframe class="hidden" name="question-submitted" src=""></iframe>
 </div>
 
 <script>
+
+    function updateQuestionFormSubject() {
+        let email = document.querySelector('#question>input[name="email"]').value;
+        document.querySelector('#question>input[name="_subject"]').value = "[C++][Chapitre 2] " + email + ", retour sur ta question";
+    }
 
     function cleanQuestionFormContent() {
 
@@ -3461,15 +3466,15 @@ Il faut juste vérifier les deux conditions suivantes pour que le programme comp
             element.value = element.value.replace(/\[\.\./g, "[ ..");
         }
 
-        clean(document.getElementById("question-content"))
-        clean(document.getElementById("question-topic"))
+        clean(document.querySelector('#question>textarea[name="question"]'))
+        clean(document.querySelector('#question>input[name="selection"]'))
     }
 
     function openQuestionForm() {
         document.getElementById("footer-question-window").removeAttribute("disabled");
 
         var selection = window.getSelection().toString();
-        document.getElementById("question-topic").value = selection
+        document.querySelector('#question>input[name="selection"]').value = selection
     }
 
     function updateQuestionWidgetState(event) {
@@ -3490,6 +3495,8 @@ Il faut juste vérifier les deux conditions suivantes pour que le programme comp
             question_window.setAttribute("disabled", true);
         }
     }
+
+    updateQuestionFormSubject();
 
     document.onmouseup = document.onkeyup = document.onselectionchange = updateQuestionWidgetState;
     updateQuestionWidgetState();

@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="Hugo 0.121.0">
+    <meta name="generator" content="Hugo 0.76.5" />
     <meta name="description" content="">
 
 
@@ -12,22 +12,22 @@
     <title>SFINAE :: Cours de C&#43;&#43; - Niveau Master</title>
 
     
-    <link href="/CPP_Learning/css/nucleus.css?1704755107" rel="stylesheet">
-    <link href="/CPP_Learning/css/fontawesome-all.min.css?1704755107" rel="stylesheet">
-    <link href="/CPP_Learning/css/hybrid.css?1704755107" rel="stylesheet">
-    <link href="/CPP_Learning/css/featherlight.min.css?1704755107" rel="stylesheet">
-    <link href="/CPP_Learning/css/perfect-scrollbar.min.css?1704755107" rel="stylesheet">
-    <link href="/CPP_Learning/css/auto-complete.css?1704755107" rel="stylesheet">
-    <link href="/CPP_Learning/css/atom-one-dark-reasonable.css?1704755107" rel="stylesheet">
-    <link href="/CPP_Learning/css/theme.css?1704755107" rel="stylesheet">
-    <link href="/CPP_Learning/css/tabs.css?1704755107" rel="stylesheet">
-    <link href="/CPP_Learning/css/hugo-theme.css?1704755107" rel="stylesheet">
+    <link href="/CPP_Learning/css/nucleus.css?1705257267" rel="stylesheet">
+    <link href="/CPP_Learning/css/fontawesome-all.min.css?1705257267" rel="stylesheet">
+    <link href="/CPP_Learning/css/hybrid.css?1705257267" rel="stylesheet">
+    <link href="/CPP_Learning/css/featherlight.min.css?1705257267" rel="stylesheet">
+    <link href="/CPP_Learning/css/perfect-scrollbar.min.css?1705257267" rel="stylesheet">
+    <link href="/CPP_Learning/css/auto-complete.css?1705257267" rel="stylesheet">
+    <link href="/CPP_Learning/css/atom-one-dark-reasonable.css?1705257267" rel="stylesheet">
+    <link href="/CPP_Learning/css/theme.css?1705257267" rel="stylesheet">
+    <link href="/CPP_Learning/css/tabs.css?1705257267" rel="stylesheet">
+    <link href="/CPP_Learning/css/hugo-theme.css?1705257267" rel="stylesheet">
     
-    <link href="/CPP_Learning/css/theme-mine.css?1704755107" rel="stylesheet">
+    <link href="/CPP_Learning/css/theme-mine.css?1705257267" rel="stylesheet">
     
-    <link href="/CPP_Learning/css/syntax.css?1704755107" rel="stylesheet">
+    <link href="/CPP_Learning/css/syntax.css?1705257267" rel="stylesheet">
 
-    <script src="/CPP_Learning/js/jquery-3.3.1.min.js?1704755107"></script>
+    <script src="/CPP_Learning/js/jquery-3.3.1.min.js?1705257267"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -1953,225 +1953,225 @@
 <hr>
 <h3 id="le-besoin">Le besoin</h3>
 <p>Supposons que nous souhaitions pouvoir récupérer une clef pour différents type à l&rsquo;aide d&rsquo;une fonction <code>get_key(const Type&amp;)</code>, en utilisant des overloads.</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">Person</span>
-</span></span><span class="line"><span class="cl"><span class="p">{</span>
-</span></span><span class="line"><span class="cl"><span class="k">public</span><span class="o">:</span>
-</span></span><span class="line"><span class="cl">    <span class="n">Person</span><span class="p">(</span><span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&amp;</span> <span class="n">name</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">    <span class="o">:</span> <span class="n">_name</span> <span class="p">{</span> <span class="n">name</span> <span class="p">}</span>
-</span></span><span class="line"><span class="cl">    <span class="p">{}</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">    <span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&amp;</span> <span class="n">get_name</span><span class="p">()</span> <span class="k">const</span>
-</span></span><span class="line"><span class="cl">    <span class="p">{</span>
-</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="n">_name</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">    <span class="p">}</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="k">private</span><span class="o">:</span>
-</span></span><span class="line"><span class="cl">    <span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">_name</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl"><span class="p">};</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c1">// Overload pour notre classe Person.
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&amp;</span> <span class="n">get_key</span><span class="p">(</span><span class="k">const</span> <span class="n">Person</span><span class="o">&amp;</span> <span class="n">person</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl"><span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">person</span><span class="p">.</span><span class="n">get_name</span><span class="p">();</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c1">// Overload pour un type générique de la librairie standard.
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span> <span class="n">First</span><span class="p">,</span> <span class="k">typename</span> <span class="n">Second</span><span class="o">&gt;</span>
-</span></span><span class="line"><span class="cl"><span class="k">const</span> <span class="n">First</span><span class="o">&amp;</span> <span class="n">get_key</span><span class="p">(</span><span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">pair</span><span class="o">&lt;</span><span class="n">First</span><span class="p">,</span> <span class="n">Second</span><span class="o">&gt;&amp;</span> <span class="n">pair</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl"><span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">pair</span><span class="p">.</span><span class="n">first</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
-</span></span><span class="line"><span class="cl"><span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="n">Person</span> <span class="n">charles</span> <span class="p">{</span> <span class="s">&#34;Charles&#34;</span> <span class="p">};</span>
-</span></span><span class="line"><span class="cl">    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">get_key</span><span class="p">(</span><span class="n">charles</span><span class="p">)</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span> <span class="c1">// --&gt; Charles 
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
-</span></span><span class="line"><span class="cl">    <span class="n">std</span><span class="o">::</span><span class="n">pair</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="p">,</span> <span class="kt">int</span><span class="o">&gt;</span> <span class="n">pair</span> <span class="p">{</span> <span class="s">&#34;eight&#34;</span><span class="p">,</span> <span class="mi">8</span> <span class="p">};</span>
-</span></span><span class="line"><span class="cl">    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">get_key</span><span class="p">(</span><span class="n">pair</span><span class="p">)</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span> <span class="c1">// --&gt; eight 
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
-</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span></code></pre></div><p>Supposons maintenant que l&rsquo;on se trouve dans un projet dans lequel de nombreuses classes définissent déjà un getter constant <code>get_key()</code> permettant de renvoyer la clef correspondant à cet objet :</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span> <span class="n">Key</span><span class="p">,</span> <span class="k">typename</span> <span class="n">Value</span><span class="o">&gt;</span>
-</span></span><span class="line"><span class="cl"><span class="k">struct</span> <span class="nc">KeyValue</span>
-</span></span><span class="line"><span class="cl"><span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="n">Key</span> <span class="n">key</span> <span class="o">=</span> <span class="p">{};</span>
-</span></span><span class="line"><span class="cl">    <span class="n">Value</span> <span class="n">value</span> <span class="o">=</span> <span class="p">{};</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">    <span class="k">const</span> <span class="n">Key</span><span class="o">&amp;</span> <span class="n">get_key</span><span class="p">()</span> <span class="k">const</span> <span class="p">{</span> <span class="k">return</span> <span class="n">key</span><span class="p">;</span> <span class="p">}</span>
-</span></span><span class="line"><span class="cl"><span class="p">};</span>
-</span></span></code></pre></div><p>Plutôt que de devoir définir manuellement l&rsquo;overload pour chacuns de ces types, nous souhaiterions que la fonction <code>get_key(const T&amp; obj)</code> puisse être automatiquement générée et appelle <code>obj.get_key()</code>.
+<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="k">class</span> <span class="nc">Person</span>
+<span class="p">{</span>
+<span class="k">public</span><span class="o">:</span>
+    <span class="n">Person</span><span class="p">(</span><span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&amp;</span> <span class="n">name</span><span class="p">)</span>
+    <span class="o">:</span> <span class="n">_name</span> <span class="p">{</span> <span class="n">name</span> <span class="p">}</span>
+    <span class="p">{}</span>
+
+    <span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&amp;</span> <span class="n">get_name</span><span class="p">()</span> <span class="k">const</span>
+    <span class="p">{</span>
+        <span class="k">return</span> <span class="n">_name</span><span class="p">;</span>
+    <span class="p">}</span>
+
+<span class="k">private</span><span class="o">:</span>
+    <span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">_name</span><span class="p">;</span>
+<span class="p">};</span>
+
+<span class="c1">// Overload pour notre classe Person.
+</span><span class="c1"></span><span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&amp;</span> <span class="n">get_key</span><span class="p">(</span><span class="k">const</span> <span class="n">Person</span><span class="o">&amp;</span> <span class="n">person</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="k">return</span> <span class="n">person</span><span class="p">.</span><span class="n">get_name</span><span class="p">();</span>
+<span class="p">}</span>
+
+<span class="c1">// Overload pour un type générique de la librairie standard.
+</span><span class="c1"></span><span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span> <span class="n">First</span><span class="p">,</span> <span class="k">typename</span> <span class="n">Second</span><span class="o">&gt;</span>
+<span class="k">const</span> <span class="n">First</span><span class="o">&amp;</span> <span class="n">get_key</span><span class="p">(</span><span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">pair</span><span class="o">&lt;</span><span class="n">First</span><span class="p">,</span> <span class="n">Second</span><span class="o">&gt;&amp;</span> <span class="n">pair</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="k">return</span> <span class="n">pair</span><span class="p">.</span><span class="n">first</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="n">Person</span> <span class="n">charles</span> <span class="p">{</span> <span class="s">&#34;Charles&#34;</span> <span class="p">};</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">get_key</span><span class="p">(</span><span class="n">charles</span><span class="p">)</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span> <span class="c1">// --&gt; Charles 
+</span><span class="c1"></span>
+    <span class="n">std</span><span class="o">::</span><span class="n">pair</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="p">,</span> <span class="kt">int</span><span class="o">&gt;</span> <span class="n">pair</span> <span class="p">{</span> <span class="s">&#34;eight&#34;</span><span class="p">,</span> <span class="mi">8</span> <span class="p">};</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">get_key</span><span class="p">(</span><span class="n">pair</span><span class="p">)</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span> <span class="c1">// --&gt; eight 
+</span><span class="c1"></span>
+    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div><p>Supposons maintenant que l&rsquo;on se trouve dans un projet dans lequel de nombreuses classes définissent déjà un getter constant <code>get_key()</code> permettant de renvoyer la clef correspondant à cet objet :</p>
+<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span> <span class="n">Key</span><span class="p">,</span> <span class="k">typename</span> <span class="n">Value</span><span class="o">&gt;</span>
+<span class="k">struct</span> <span class="nc">KeyValue</span>
+<span class="p">{</span>
+    <span class="n">Key</span> <span class="n">key</span> <span class="o">=</span> <span class="p">{};</span>
+    <span class="n">Value</span> <span class="n">value</span> <span class="o">=</span> <span class="p">{};</span>
+
+    <span class="k">const</span> <span class="n">Key</span><span class="o">&amp;</span> <span class="n">get_key</span><span class="p">()</span> <span class="k">const</span> <span class="p">{</span> <span class="k">return</span> <span class="n">key</span><span class="p">;</span> <span class="p">}</span>
+<span class="p">};</span>
+</code></pre></div><p>Plutôt que de devoir définir manuellement l&rsquo;overload pour chacuns de ces types, nous souhaiterions que la fonction <code>get_key(const T&amp; obj)</code> puisse être automatiquement générée et appelle <code>obj.get_key()</code>.
 On pourrait donc avoir quelque chose comme ça :</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp">
-</span></span></span><span class="line"><span class="cl"><span class="cp"></span>
-</span></span><span class="line"><span class="cl"><span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span> <span class="n">T</span><span class="o">&gt;</span>
-</span></span><span class="line"><span class="cl"><span class="k">const</span> <span class="k">auto</span><span class="o">&amp;</span> <span class="n">get_key</span><span class="p">(</span><span class="k">const</span> <span class="n">T</span><span class="o">&amp;</span> <span class="n">obj</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl"><span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">obj</span><span class="p">.</span><span class="n">get_key</span><span class="p">();</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span> 
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span> <span class="n">Key</span><span class="p">,</span> <span class="k">typename</span> <span class="n">Value</span><span class="o">&gt;</span>
-</span></span><span class="line"><span class="cl"><span class="k">struct</span> <span class="nc">KeyValue</span>
-</span></span><span class="line"><span class="cl"><span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="n">Key</span> <span class="n">key</span> <span class="o">=</span> <span class="p">{};</span>
-</span></span><span class="line"><span class="cl">    <span class="n">Value</span> <span class="n">value</span> <span class="o">=</span> <span class="p">{};</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">    <span class="k">const</span> <span class="n">Key</span><span class="o">&amp;</span> <span class="n">get_key</span><span class="p">()</span> <span class="k">const</span> <span class="p">{</span> <span class="k">return</span> <span class="n">key</span><span class="p">;</span> <span class="p">}</span>
-</span></span><span class="line"><span class="cl"><span class="p">};</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
-</span></span><span class="line"><span class="cl"><span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="n">KeyValue</span><span class="o">&lt;</span><span class="kt">int</span><span class="p">,</span> <span class="kt">int</span><span class="o">&gt;</span> <span class="n">kv</span> <span class="p">{</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span> <span class="p">};</span>
-</span></span><span class="line"><span class="cl">    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">get_key</span><span class="p">(</span><span class="n">kv</span><span class="p">)</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span> <span class="c1">// --&gt; 1 
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
-</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span></code></pre></div><p>Incroyable ! Ca fonctionne.</p>
+<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp">
+</span><span class="cp"></span>
+<span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span> <span class="n">T</span><span class="o">&gt;</span>
+<span class="k">const</span> <span class="k">auto</span><span class="o">&amp;</span> <span class="n">get_key</span><span class="p">(</span><span class="k">const</span> <span class="n">T</span><span class="o">&amp;</span> <span class="n">obj</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="k">return</span> <span class="n">obj</span><span class="p">.</span><span class="n">get_key</span><span class="p">();</span>
+<span class="p">}</span> 
+
+<span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span> <span class="n">Key</span><span class="p">,</span> <span class="k">typename</span> <span class="n">Value</span><span class="o">&gt;</span>
+<span class="k">struct</span> <span class="nc">KeyValue</span>
+<span class="p">{</span>
+    <span class="n">Key</span> <span class="n">key</span> <span class="o">=</span> <span class="p">{};</span>
+    <span class="n">Value</span> <span class="n">value</span> <span class="o">=</span> <span class="p">{};</span>
+
+    <span class="k">const</span> <span class="n">Key</span><span class="o">&amp;</span> <span class="n">get_key</span><span class="p">()</span> <span class="k">const</span> <span class="p">{</span> <span class="k">return</span> <span class="n">key</span><span class="p">;</span> <span class="p">}</span>
+<span class="p">};</span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="n">KeyValue</span><span class="o">&lt;</span><span class="kt">int</span><span class="p">,</span> <span class="kt">int</span><span class="o">&gt;</span> <span class="n">kv</span> <span class="p">{</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span> <span class="p">};</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">get_key</span><span class="p">(</span><span class="n">kv</span><span class="p">)</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span> <span class="c1">// --&gt; 1 
+</span><span class="c1"></span>
+    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div><p>Incroyable ! Ca fonctionne.</p>
 <p>Essayons maintenant de rajouter l&rsquo;overload pour les <code>std::pair</code>, ainsi que l&rsquo;appel à la fonction <code>get_key()</code> sur une instance de <code>pair&lt;std::string, int&gt;</code>.</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp">
-</span></span></span><span class="line"><span class="cl"><span class="cp">#include</span> <span class="cpf">&lt;utility&gt;</span><span class="cp">
-</span></span></span><span class="line"><span class="cl"><span class="cp"></span>
-</span></span><span class="line"><span class="cl"><span class="c1">// Overload générique pour tous les types qui contiennent un getter get_key().
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span> <span class="n">T</span><span class="o">&gt;</span>
-</span></span><span class="line"><span class="cl"><span class="k">const</span> <span class="k">auto</span><span class="o">&amp;</span> <span class="n">get_key</span><span class="p">(</span><span class="k">const</span> <span class="n">T</span><span class="o">&amp;</span> <span class="n">obj</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl"><span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">obj</span><span class="p">.</span><span class="n">get_key</span><span class="p">();</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c1">// Overload pour un type générique de la librairie standard.
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span> <span class="n">First</span><span class="p">,</span> <span class="k">typename</span> <span class="n">Second</span><span class="o">&gt;</span>
-</span></span><span class="line"><span class="cl"><span class="k">const</span> <span class="n">First</span><span class="o">&amp;</span> <span class="n">get_key</span><span class="p">(</span><span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">pair</span><span class="o">&lt;</span><span class="n">First</span><span class="p">,</span> <span class="n">Second</span><span class="o">&gt;&amp;</span> <span class="n">pair</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl"><span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">pair</span><span class="p">.</span><span class="n">first</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span> <span class="n">Key</span><span class="p">,</span> <span class="k">typename</span> <span class="n">Value</span><span class="o">&gt;</span>
-</span></span><span class="line"><span class="cl"><span class="k">struct</span> <span class="nc">KeyValue</span>
-</span></span><span class="line"><span class="cl"><span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="n">Key</span> <span class="n">key</span> <span class="o">=</span> <span class="p">{};</span>
-</span></span><span class="line"><span class="cl">    <span class="n">Value</span> <span class="n">value</span> <span class="o">=</span> <span class="p">{};</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">    <span class="k">const</span> <span class="n">Key</span><span class="o">&amp;</span> <span class="n">get_key</span><span class="p">()</span> <span class="k">const</span> <span class="p">{</span> <span class="k">return</span> <span class="n">key</span><span class="p">;</span> <span class="p">}</span>
-</span></span><span class="line"><span class="cl"><span class="p">};</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
-</span></span><span class="line"><span class="cl"><span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="n">KeyValue</span><span class="o">&lt;</span><span class="kt">int</span><span class="p">,</span> <span class="kt">int</span><span class="o">&gt;</span> <span class="n">kv</span> <span class="p">{</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span> <span class="p">};</span>
-</span></span><span class="line"><span class="cl">    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">get_key</span><span class="p">(</span><span class="n">kv</span><span class="p">)</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span> <span class="c1">// --&gt; 1
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
-</span></span><span class="line"><span class="cl">    <span class="n">std</span><span class="o">::</span><span class="n">pair</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="p">,</span> <span class="kt">int</span><span class="o">&gt;</span> <span class="n">pair</span> <span class="p">{</span> <span class="s">&#34;eight&#34;</span><span class="p">,</span> <span class="mi">8</span> <span class="p">};</span>
-</span></span><span class="line"><span class="cl">    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">get_key</span><span class="p">(</span><span class="n">pair</span><span class="p">)</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span> <span class="c1">// --&gt; eight
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
-</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span></code></pre></div><p>Extra-ordinaire ! Ca fonctionne toujours !</p>
+<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp">
+</span><span class="cp">#include</span> <span class="cpf">&lt;utility&gt;</span><span class="cp">
+</span><span class="cp"></span>
+<span class="c1">// Overload générique pour tous les types qui contiennent un getter get_key().
+</span><span class="c1"></span><span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span> <span class="n">T</span><span class="o">&gt;</span>
+<span class="k">const</span> <span class="k">auto</span><span class="o">&amp;</span> <span class="n">get_key</span><span class="p">(</span><span class="k">const</span> <span class="n">T</span><span class="o">&amp;</span> <span class="n">obj</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="k">return</span> <span class="n">obj</span><span class="p">.</span><span class="n">get_key</span><span class="p">();</span>
+<span class="p">}</span>
+
+<span class="c1">// Overload pour un type générique de la librairie standard.
+</span><span class="c1"></span><span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span> <span class="n">First</span><span class="p">,</span> <span class="k">typename</span> <span class="n">Second</span><span class="o">&gt;</span>
+<span class="k">const</span> <span class="n">First</span><span class="o">&amp;</span> <span class="n">get_key</span><span class="p">(</span><span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">pair</span><span class="o">&lt;</span><span class="n">First</span><span class="p">,</span> <span class="n">Second</span><span class="o">&gt;&amp;</span> <span class="n">pair</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="k">return</span> <span class="n">pair</span><span class="p">.</span><span class="n">first</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span> <span class="n">Key</span><span class="p">,</span> <span class="k">typename</span> <span class="n">Value</span><span class="o">&gt;</span>
+<span class="k">struct</span> <span class="nc">KeyValue</span>
+<span class="p">{</span>
+    <span class="n">Key</span> <span class="n">key</span> <span class="o">=</span> <span class="p">{};</span>
+    <span class="n">Value</span> <span class="n">value</span> <span class="o">=</span> <span class="p">{};</span>
+
+    <span class="k">const</span> <span class="n">Key</span><span class="o">&amp;</span> <span class="n">get_key</span><span class="p">()</span> <span class="k">const</span> <span class="p">{</span> <span class="k">return</span> <span class="n">key</span><span class="p">;</span> <span class="p">}</span>
+<span class="p">};</span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="n">KeyValue</span><span class="o">&lt;</span><span class="kt">int</span><span class="p">,</span> <span class="kt">int</span><span class="o">&gt;</span> <span class="n">kv</span> <span class="p">{</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span> <span class="p">};</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">get_key</span><span class="p">(</span><span class="n">kv</span><span class="p">)</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span> <span class="c1">// --&gt; 1
+</span><span class="c1"></span>
+    <span class="n">std</span><span class="o">::</span><span class="n">pair</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="p">,</span> <span class="kt">int</span><span class="o">&gt;</span> <span class="n">pair</span> <span class="p">{</span> <span class="s">&#34;eight&#34;</span><span class="p">,</span> <span class="mi">8</span> <span class="p">};</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">get_key</span><span class="p">(</span><span class="n">pair</span><span class="p">)</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span> <span class="c1">// --&gt; eight
+</span><span class="c1"></span>
+    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div><p>Extra-ordinaire ! Ca fonctionne toujours !</p>
 <p>Vous vous apercevez maintenant que dans l&rsquo;une des dépendences externes de votre projet, vous disposez d&rsquo;une classe polymorphe <code>Procedure</code> contenant une fonction <code>get_id()</code>.<br>
 Comme vous êtes malin, vous vous dites que vous allez créer un overload pour <code>const Procedure&amp;</code>, afin que l&rsquo;on puisse passer n&rsquo;importe quelle sous-classe à la fonction, et que celle-ci appelle <code>get_id()</code> pour déterminer la clef de l&rsquo;objet.</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp">
-</span></span></span><span class="line"><span class="cl"><span class="cp"></span>
-</span></span><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">Procedure</span> <span class="c1">// supposée hors du projet
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="p">{</span>
-</span></span><span class="line"><span class="cl"><span class="k">public</span><span class="o">:</span>
-</span></span><span class="line"><span class="cl">    <span class="k">virtual</span> <span class="o">~</span><span class="n">Procedure</span><span class="p">()</span> <span class="o">=</span> <span class="k">default</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">    <span class="k">virtual</span> <span class="kt">int</span> <span class="nf">get_id</span><span class="p">()</span> <span class="k">const</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl"><span class="p">};</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">ZeroProcedure</span><span class="o">:</span> <span class="k">public</span> <span class="n">Procedure</span>
-</span></span><span class="line"><span class="cl"><span class="p">{</span>
-</span></span><span class="line"><span class="cl"><span class="k">public</span><span class="o">:</span>
-</span></span><span class="line"><span class="cl">    <span class="kt">int</span> <span class="n">get_id</span><span class="p">()</span> <span class="k">const</span> <span class="k">override</span> <span class="p">{</span> <span class="k">return</span> <span class="mi">0</span><span class="p">;</span> <span class="p">}</span>
-</span></span><span class="line"><span class="cl"><span class="p">};</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c1">// Overload spécifique à Procedure et ses sous-classes.
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kt">int</span> <span class="nf">get_key</span><span class="p">(</span><span class="k">const</span> <span class="n">Procedure</span><span class="o">&amp;</span> <span class="n">procedure</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl"><span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">procedure</span><span class="p">.</span><span class="n">get_id</span><span class="p">();</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c1">// Overload générique pour tous les types qui contiennent un getter get_key().
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span> <span class="n">T</span><span class="o">&gt;</span>
-</span></span><span class="line"><span class="cl"><span class="k">const</span> <span class="k">auto</span><span class="o">&amp;</span> <span class="n">get_key</span><span class="p">(</span><span class="k">const</span> <span class="n">T</span><span class="o">&amp;</span> <span class="n">obj</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl"><span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">obj</span><span class="p">.</span><span class="n">get_key</span><span class="p">();</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span> <span class="n">Key</span><span class="p">,</span> <span class="k">typename</span> <span class="n">Value</span><span class="o">&gt;</span>
-</span></span><span class="line"><span class="cl"><span class="k">struct</span> <span class="nc">KeyValue</span>
-</span></span><span class="line"><span class="cl"><span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="n">Key</span> <span class="n">key</span> <span class="o">=</span> <span class="p">{};</span>
-</span></span><span class="line"><span class="cl">    <span class="n">Value</span> <span class="n">value</span> <span class="o">=</span> <span class="p">{};</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">    <span class="k">const</span> <span class="n">Key</span><span class="o">&amp;</span> <span class="n">get_key</span><span class="p">()</span> <span class="k">const</span> <span class="p">{</span> <span class="k">return</span> <span class="n">key</span><span class="p">;</span> <span class="p">}</span>
-</span></span><span class="line"><span class="cl"><span class="p">};</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
-</span></span><span class="line"><span class="cl"><span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="n">KeyValue</span><span class="o">&lt;</span><span class="kt">int</span><span class="p">,</span> <span class="kt">int</span><span class="o">&gt;</span> <span class="n">kv</span> <span class="p">{</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span> <span class="p">};</span>
-</span></span><span class="line"><span class="cl">    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">get_key</span><span class="p">(</span><span class="n">kv</span><span class="p">)</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">    
-</span></span><span class="line"><span class="cl">    <span class="n">ZeroProcedure</span> <span class="n">p</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">get_key</span><span class="p">(</span><span class="n">p</span><span class="p">)</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span></code></pre></div><p>Et là, vous vous retrouvez avec cette erreur :</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-b" data-lang="b"><span class="line"><span class="cl"><span class="c">error: &#39;const class ZeroProcedure&#39; has no member named &#39;get_key&#39;
-</span></span></span></code></pre></div><p>Comment ça <code>ZeroProcedure</code> n&rsquo;a pas de fonction <code>get_key</code> ??<br>
+<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp">
+</span><span class="cp"></span>
+<span class="k">class</span> <span class="nc">Procedure</span> <span class="c1">// supposée hors du projet
+</span><span class="c1"></span><span class="p">{</span>
+<span class="k">public</span><span class="o">:</span>
+    <span class="k">virtual</span> <span class="o">~</span><span class="n">Procedure</span><span class="p">()</span> <span class="o">=</span> <span class="k">default</span><span class="p">;</span>
+
+    <span class="k">virtual</span> <span class="kt">int</span> <span class="nf">get_id</span><span class="p">()</span> <span class="k">const</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">};</span>
+
+<span class="k">class</span> <span class="nc">ZeroProcedure</span><span class="o">:</span> <span class="k">public</span> <span class="n">Procedure</span>
+<span class="p">{</span>
+<span class="k">public</span><span class="o">:</span>
+    <span class="kt">int</span> <span class="n">get_id</span><span class="p">()</span> <span class="k">const</span> <span class="k">override</span> <span class="p">{</span> <span class="k">return</span> <span class="mi">0</span><span class="p">;</span> <span class="p">}</span>
+<span class="p">};</span>
+
+<span class="c1">// Overload spécifique à Procedure et ses sous-classes.
+</span><span class="c1"></span><span class="kt">int</span> <span class="nf">get_key</span><span class="p">(</span><span class="k">const</span> <span class="n">Procedure</span><span class="o">&amp;</span> <span class="n">procedure</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="k">return</span> <span class="n">procedure</span><span class="p">.</span><span class="n">get_id</span><span class="p">();</span>
+<span class="p">}</span>
+
+<span class="c1">// Overload générique pour tous les types qui contiennent un getter get_key().
+</span><span class="c1"></span><span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span> <span class="n">T</span><span class="o">&gt;</span>
+<span class="k">const</span> <span class="k">auto</span><span class="o">&amp;</span> <span class="n">get_key</span><span class="p">(</span><span class="k">const</span> <span class="n">T</span><span class="o">&amp;</span> <span class="n">obj</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="k">return</span> <span class="n">obj</span><span class="p">.</span><span class="n">get_key</span><span class="p">();</span>
+<span class="p">}</span>
+
+<span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span> <span class="n">Key</span><span class="p">,</span> <span class="k">typename</span> <span class="n">Value</span><span class="o">&gt;</span>
+<span class="k">struct</span> <span class="nc">KeyValue</span>
+<span class="p">{</span>
+    <span class="n">Key</span> <span class="n">key</span> <span class="o">=</span> <span class="p">{};</span>
+    <span class="n">Value</span> <span class="n">value</span> <span class="o">=</span> <span class="p">{};</span>
+
+    <span class="k">const</span> <span class="n">Key</span><span class="o">&amp;</span> <span class="n">get_key</span><span class="p">()</span> <span class="k">const</span> <span class="p">{</span> <span class="k">return</span> <span class="n">key</span><span class="p">;</span> <span class="p">}</span>
+<span class="p">};</span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="n">KeyValue</span><span class="o">&lt;</span><span class="kt">int</span><span class="p">,</span> <span class="kt">int</span><span class="o">&gt;</span> <span class="n">kv</span> <span class="p">{</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span> <span class="p">};</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">get_key</span><span class="p">(</span><span class="n">kv</span><span class="p">)</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+    
+    <span class="n">ZeroProcedure</span> <span class="n">p</span><span class="p">;</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">get_key</span><span class="p">(</span><span class="n">p</span><span class="p">)</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+
+    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div><p>Et là, vous vous retrouvez avec cette erreur :</p>
+<div class="highlight"><pre class="chroma"><code class="language-b" data-lang="b"><span class="c">error: &#39;const class ZeroProcedure&#39; has no member named &#39;get_key&#39;
+</span></code></pre></div><p>Comment ça <code>ZeroProcedure</code> n&rsquo;a pas de fonction <code>get_key</code> ??<br>
 Elle n&rsquo;a pas besoin d&rsquo;une fonction <code>get_key</code>, puisse qu&rsquo;on lui a créé un super overload qui utilise <code>Procedure::get_id()</code>&hellip;</p>
 <hr>
 <h3 id="best-viable-function">Best viable function</h3>
 <p>Pour vous convaincre que vous n&rsquo;avez pas écrit n&rsquo;importe quoi précédement, vous allez commenter la version générique de <code>get_key()</code>:</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp">
-</span></span></span><span class="line"><span class="cl"><span class="cp"></span>
-</span></span><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">Procedure</span> <span class="c1">// supposée hors du projet
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="p">{</span>
-</span></span><span class="line"><span class="cl"><span class="k">public</span><span class="o">:</span>
-</span></span><span class="line"><span class="cl">    <span class="k">virtual</span> <span class="o">~</span><span class="n">Procedure</span><span class="p">()</span> <span class="o">=</span> <span class="k">default</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">    <span class="k">virtual</span> <span class="kt">int</span> <span class="nf">get_id</span><span class="p">()</span> <span class="k">const</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl"><span class="p">};</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">ZeroProcedure</span><span class="o">:</span> <span class="k">public</span> <span class="n">Procedure</span>
-</span></span><span class="line"><span class="cl"><span class="p">{</span>
-</span></span><span class="line"><span class="cl"><span class="k">public</span><span class="o">:</span>
-</span></span><span class="line"><span class="cl">    <span class="kt">int</span> <span class="n">get_id</span><span class="p">()</span> <span class="k">const</span> <span class="k">override</span> <span class="p">{</span> <span class="k">return</span> <span class="mi">0</span><span class="p">;</span> <span class="p">}</span>
-</span></span><span class="line"><span class="cl"><span class="p">};</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c1">// Overload spécifique à Procedure et ses sous-classes.
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kt">int</span> <span class="nf">get_key</span><span class="p">(</span><span class="k">const</span> <span class="n">Procedure</span><span class="o">&amp;</span> <span class="n">procedure</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl"><span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">procedure</span><span class="p">.</span><span class="n">get_id</span><span class="p">();</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c1">// // Overload générique pour tous les types qui contiennent un getter get_key().
-</span></span></span><span class="line"><span class="cl"><span class="c1">// template &lt;typename T&gt;
-</span></span></span><span class="line"><span class="cl"><span class="c1">// const auto&amp; get_key(const T&amp; obj)
-</span></span></span><span class="line"><span class="cl"><span class="c1">// {
-</span></span></span><span class="line"><span class="cl"><span class="c1">//     return obj.get_key();
-</span></span></span><span class="line"><span class="cl"><span class="c1">// }
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
-</span></span><span class="line"><span class="cl"><span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span> <span class="n">Key</span><span class="p">,</span> <span class="k">typename</span> <span class="n">Value</span><span class="o">&gt;</span>
-</span></span><span class="line"><span class="cl"><span class="k">struct</span> <span class="nc">KeyValue</span>
-</span></span><span class="line"><span class="cl"><span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="n">Key</span> <span class="n">key</span> <span class="o">=</span> <span class="p">{};</span>
-</span></span><span class="line"><span class="cl">    <span class="n">Value</span> <span class="n">value</span> <span class="o">=</span> <span class="p">{};</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">    <span class="k">const</span> <span class="n">Key</span><span class="o">&amp;</span> <span class="n">get_key</span><span class="p">()</span> <span class="k">const</span> <span class="p">{</span> <span class="k">return</span> <span class="n">key</span><span class="p">;</span> <span class="p">}</span>
-</span></span><span class="line"><span class="cl"><span class="p">};</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
-</span></span><span class="line"><span class="cl"><span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="c1">// KeyValue&lt;int, int&gt; kv { 1, 2 };
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="c1">// std::cout &lt;&lt; get_key(kv) &lt;&lt; std::endl;
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    
-</span></span><span class="line"><span class="cl">    <span class="n">ZeroProcedure</span> <span class="n">p</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">get_key</span><span class="p">(</span><span class="n">p</span><span class="p">)</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span></code></pre></div><p>Le code compile à nouveau.</p>
+<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp">
+</span><span class="cp"></span>
+<span class="k">class</span> <span class="nc">Procedure</span> <span class="c1">// supposée hors du projet
+</span><span class="c1"></span><span class="p">{</span>
+<span class="k">public</span><span class="o">:</span>
+    <span class="k">virtual</span> <span class="o">~</span><span class="n">Procedure</span><span class="p">()</span> <span class="o">=</span> <span class="k">default</span><span class="p">;</span>
+
+    <span class="k">virtual</span> <span class="kt">int</span> <span class="nf">get_id</span><span class="p">()</span> <span class="k">const</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">};</span>
+
+<span class="k">class</span> <span class="nc">ZeroProcedure</span><span class="o">:</span> <span class="k">public</span> <span class="n">Procedure</span>
+<span class="p">{</span>
+<span class="k">public</span><span class="o">:</span>
+    <span class="kt">int</span> <span class="n">get_id</span><span class="p">()</span> <span class="k">const</span> <span class="k">override</span> <span class="p">{</span> <span class="k">return</span> <span class="mi">0</span><span class="p">;</span> <span class="p">}</span>
+<span class="p">};</span>
+
+<span class="c1">// Overload spécifique à Procedure et ses sous-classes.
+</span><span class="c1"></span><span class="kt">int</span> <span class="nf">get_key</span><span class="p">(</span><span class="k">const</span> <span class="n">Procedure</span><span class="o">&amp;</span> <span class="n">procedure</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="k">return</span> <span class="n">procedure</span><span class="p">.</span><span class="n">get_id</span><span class="p">();</span>
+<span class="p">}</span>
+
+<span class="c1">// // Overload générique pour tous les types qui contiennent un getter get_key().
+</span><span class="c1">// template &lt;typename T&gt;
+</span><span class="c1">// const auto&amp; get_key(const T&amp; obj)
+</span><span class="c1">// {
+</span><span class="c1">//     return obj.get_key();
+</span><span class="c1">// }
+</span><span class="c1"></span>
+<span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span> <span class="n">Key</span><span class="p">,</span> <span class="k">typename</span> <span class="n">Value</span><span class="o">&gt;</span>
+<span class="k">struct</span> <span class="nc">KeyValue</span>
+<span class="p">{</span>
+    <span class="n">Key</span> <span class="n">key</span> <span class="o">=</span> <span class="p">{};</span>
+    <span class="n">Value</span> <span class="n">value</span> <span class="o">=</span> <span class="p">{};</span>
+
+    <span class="k">const</span> <span class="n">Key</span><span class="o">&amp;</span> <span class="n">get_key</span><span class="p">()</span> <span class="k">const</span> <span class="p">{</span> <span class="k">return</span> <span class="n">key</span><span class="p">;</span> <span class="p">}</span>
+<span class="p">};</span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="c1">// KeyValue&lt;int, int&gt; kv { 1, 2 };
+</span><span class="c1"></span>    <span class="c1">// std::cout &lt;&lt; get_key(kv) &lt;&lt; std::endl;
+</span><span class="c1"></span>    
+    <span class="n">ZeroProcedure</span> <span class="n">p</span><span class="p">;</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">get_key</span><span class="p">(</span><span class="n">p</span><span class="p">)</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+
+    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div><p>Le code compile à nouveau.</p>
 <p>Il semblerait donc que lors de l&rsquo;étape de résolution des appels, si on passe un type <code>Child</code> a une fonction disposant :</p>
 <ul>
 <li>d&rsquo;un overload entièrement générique : <code>template &lt;Type&gt; .. fcn(const Type&amp;)</code>,</li>
@@ -2190,14 +2190,14 @@ Cette astuce existe et porte un nom : <strong>SFINAE</strong>.</p>
 Il va simplement ignorer cette définition et tenter de trouver un autre overload à appeler.</p>
 <p>Dans notre exemple, la fonction générique ne peut fonctionner que si l&rsquo;objet passé en paramètre dispose d&rsquo;un getter <code>get_key</code> n&rsquo;acceptant pas de paramètre.
 Nous allons donc utiliser SFINAE pour empêcher le compilateur de considérer <code>get_key(const Type&amp;)</code> si <code>Type</code> ne définit pas ce getter.</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="cp">#include</span> <span class="cpf">&lt;type_traits&gt;</span><span class="cp">
-</span></span></span><span class="line"><span class="cl"><span class="cp"></span>
-</span></span><span class="line"><span class="cl"><span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span> <span class="n">T</span><span class="p">,</span> <span class="k">typename</span> <span class="n">Ret</span> <span class="o">=</span> <span class="k">decltype</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">declval</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span><span class="p">().</span><span class="n">get_key</span><span class="p">())</span><span class="o">&gt;</span>
-</span></span><span class="line"><span class="cl"><span class="n">Ret</span> <span class="n">get_key</span><span class="p">(</span><span class="k">const</span> <span class="n">T</span><span class="o">&amp;</span> <span class="n">obj</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl"><span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">obj</span><span class="p">.</span><span class="n">get_key</span><span class="p">();</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span></code></pre></div><p>Commençons tout d&rsquo;abord par décortiquer : <code>typename Ret = decltype(std::declval&lt;T&gt;().get_key())</code>:</p>
+<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="cp">#include</span> <span class="cpf">&lt;type_traits&gt;</span><span class="cp">
+</span><span class="cp"></span>
+<span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span> <span class="n">T</span><span class="p">,</span> <span class="k">typename</span> <span class="n">Ret</span> <span class="o">=</span> <span class="k">decltype</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">declval</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span><span class="p">().</span><span class="n">get_key</span><span class="p">())</span><span class="o">&gt;</span>
+<span class="n">Ret</span> <span class="n">get_key</span><span class="p">(</span><span class="k">const</span> <span class="n">T</span><span class="o">&amp;</span> <span class="n">obj</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="k">return</span> <span class="n">obj</span><span class="p">.</span><span class="n">get_key</span><span class="p">();</span>
+<span class="p">}</span>
+</code></pre></div><p>Commençons tout d&rsquo;abord par décortiquer : <code>typename Ret = decltype(std::declval&lt;T&gt;().get_key())</code>:</p>
 <ol>
 <li>On définit un nouveau paramètre de template nommé <code>Ret</code>.</li>
 <li>On lui assigne une valeur par défaut.</li>
@@ -2207,82 +2207,82 @@ Nous allons donc utiliser SFINAE pour empêcher le compilateur de considérer <c
 <li>La valeur par défaut de <code>Ret</code> correspond donc au type de retour de la fonction <code>T::get_key()</code>.</li>
 </ol>
 <p>Essayez de compiler le code suivant, vous devriez constater qu&rsquo;il n&rsquo;y a plus d&rsquo;erreur de compilation et que tout se passe comme attendu :</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp">
-</span></span></span><span class="line"><span class="cl"><span class="cp">#include</span> <span class="cpf">&lt;type_traits&gt;</span><span class="cp">
-</span></span></span><span class="line"><span class="cl"><span class="cp"></span>
-</span></span><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">Procedure</span> <span class="c1">// supposée hors du projet
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="p">{</span>
-</span></span><span class="line"><span class="cl"><span class="k">public</span><span class="o">:</span>
-</span></span><span class="line"><span class="cl">    <span class="k">virtual</span> <span class="o">~</span><span class="n">Procedure</span><span class="p">()</span> <span class="o">=</span> <span class="k">default</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">    <span class="k">virtual</span> <span class="kt">int</span> <span class="nf">get_id</span><span class="p">()</span> <span class="k">const</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl"><span class="p">};</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">ZeroProcedure</span><span class="o">:</span> <span class="k">public</span> <span class="n">Procedure</span>
-</span></span><span class="line"><span class="cl"><span class="p">{</span>
-</span></span><span class="line"><span class="cl"><span class="k">public</span><span class="o">:</span>
-</span></span><span class="line"><span class="cl">    <span class="kt">int</span> <span class="n">get_id</span><span class="p">()</span> <span class="k">const</span> <span class="k">override</span> <span class="p">{</span> <span class="k">return</span> <span class="mi">0</span><span class="p">;</span> <span class="p">}</span>
-</span></span><span class="line"><span class="cl"><span class="p">};</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c1">// Overload spécifique à Procedure et ses sous-classes.
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kt">int</span> <span class="nf">get_key</span><span class="p">(</span><span class="k">const</span> <span class="n">Procedure</span><span class="o">&amp;</span> <span class="n">procedure</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl"><span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">procedure</span><span class="p">.</span><span class="n">get_id</span><span class="p">();</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c1">// Overload générique pour tous les types qui contiennent un getter get_key().
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span> <span class="n">T</span><span class="p">,</span> <span class="k">typename</span> <span class="n">Ret</span> <span class="o">=</span> <span class="k">decltype</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">declval</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span><span class="p">().</span><span class="n">get_key</span><span class="p">())</span><span class="o">&gt;</span>
-</span></span><span class="line"><span class="cl"><span class="n">Ret</span> <span class="n">get_key</span><span class="p">(</span><span class="k">const</span> <span class="n">T</span><span class="o">&amp;</span> <span class="n">obj</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl"><span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">obj</span><span class="p">.</span><span class="n">get_key</span><span class="p">();</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span> <span class="n">Key</span><span class="p">,</span> <span class="k">typename</span> <span class="n">Value</span><span class="o">&gt;</span>
-</span></span><span class="line"><span class="cl"><span class="k">struct</span> <span class="nc">KeyValue</span>
-</span></span><span class="line"><span class="cl"><span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="n">Key</span> <span class="n">key</span> <span class="o">=</span> <span class="p">{};</span>
-</span></span><span class="line"><span class="cl">    <span class="n">Value</span> <span class="n">value</span> <span class="o">=</span> <span class="p">{};</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">    <span class="k">const</span> <span class="n">Key</span><span class="o">&amp;</span> <span class="n">get_key</span><span class="p">()</span> <span class="k">const</span> <span class="p">{</span> <span class="k">return</span> <span class="n">key</span><span class="p">;</span> <span class="p">}</span>
-</span></span><span class="line"><span class="cl"><span class="p">};</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
-</span></span><span class="line"><span class="cl"><span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="n">KeyValue</span><span class="o">&lt;</span><span class="kt">int</span><span class="p">,</span> <span class="kt">int</span><span class="o">&gt;</span> <span class="n">kv</span> <span class="p">{</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span> <span class="p">};</span>
-</span></span><span class="line"><span class="cl">    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">get_key</span><span class="p">(</span><span class="n">kv</span><span class="p">)</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">    
-</span></span><span class="line"><span class="cl">    <span class="n">ZeroProcedure</span> <span class="n">p</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">get_key</span><span class="p">(</span><span class="n">p</span><span class="p">)</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span></code></pre></div><p>Ce qu&rsquo;il s&rsquo;est produit ici, c&rsquo;est que lorsque le compilateur a regardé si l&rsquo;overload générique de <code>get_key()</code> pouvait être utilisé avec <code>ZeroProcedure</code>, il n&rsquo;a pas réussi à générer la signature de la fonction à partir des types fournis.<br>
+<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp">
+</span><span class="cp">#include</span> <span class="cpf">&lt;type_traits&gt;</span><span class="cp">
+</span><span class="cp"></span>
+<span class="k">class</span> <span class="nc">Procedure</span> <span class="c1">// supposée hors du projet
+</span><span class="c1"></span><span class="p">{</span>
+<span class="k">public</span><span class="o">:</span>
+    <span class="k">virtual</span> <span class="o">~</span><span class="n">Procedure</span><span class="p">()</span> <span class="o">=</span> <span class="k">default</span><span class="p">;</span>
+
+    <span class="k">virtual</span> <span class="kt">int</span> <span class="nf">get_id</span><span class="p">()</span> <span class="k">const</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">};</span>
+
+<span class="k">class</span> <span class="nc">ZeroProcedure</span><span class="o">:</span> <span class="k">public</span> <span class="n">Procedure</span>
+<span class="p">{</span>
+<span class="k">public</span><span class="o">:</span>
+    <span class="kt">int</span> <span class="n">get_id</span><span class="p">()</span> <span class="k">const</span> <span class="k">override</span> <span class="p">{</span> <span class="k">return</span> <span class="mi">0</span><span class="p">;</span> <span class="p">}</span>
+<span class="p">};</span>
+
+<span class="c1">// Overload spécifique à Procedure et ses sous-classes.
+</span><span class="c1"></span><span class="kt">int</span> <span class="nf">get_key</span><span class="p">(</span><span class="k">const</span> <span class="n">Procedure</span><span class="o">&amp;</span> <span class="n">procedure</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="k">return</span> <span class="n">procedure</span><span class="p">.</span><span class="n">get_id</span><span class="p">();</span>
+<span class="p">}</span>
+
+<span class="c1">// Overload générique pour tous les types qui contiennent un getter get_key().
+</span><span class="c1"></span><span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span> <span class="n">T</span><span class="p">,</span> <span class="k">typename</span> <span class="n">Ret</span> <span class="o">=</span> <span class="k">decltype</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">declval</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span><span class="p">().</span><span class="n">get_key</span><span class="p">())</span><span class="o">&gt;</span>
+<span class="n">Ret</span> <span class="n">get_key</span><span class="p">(</span><span class="k">const</span> <span class="n">T</span><span class="o">&amp;</span> <span class="n">obj</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="k">return</span> <span class="n">obj</span><span class="p">.</span><span class="n">get_key</span><span class="p">();</span>
+<span class="p">}</span>
+
+<span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span> <span class="n">Key</span><span class="p">,</span> <span class="k">typename</span> <span class="n">Value</span><span class="o">&gt;</span>
+<span class="k">struct</span> <span class="nc">KeyValue</span>
+<span class="p">{</span>
+    <span class="n">Key</span> <span class="n">key</span> <span class="o">=</span> <span class="p">{};</span>
+    <span class="n">Value</span> <span class="n">value</span> <span class="o">=</span> <span class="p">{};</span>
+
+    <span class="k">const</span> <span class="n">Key</span><span class="o">&amp;</span> <span class="n">get_key</span><span class="p">()</span> <span class="k">const</span> <span class="p">{</span> <span class="k">return</span> <span class="n">key</span><span class="p">;</span> <span class="p">}</span>
+<span class="p">};</span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="n">KeyValue</span><span class="o">&lt;</span><span class="kt">int</span><span class="p">,</span> <span class="kt">int</span><span class="o">&gt;</span> <span class="n">kv</span> <span class="p">{</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span> <span class="p">};</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">get_key</span><span class="p">(</span><span class="n">kv</span><span class="p">)</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+    
+    <span class="n">ZeroProcedure</span> <span class="n">p</span><span class="p">;</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">get_key</span><span class="p">(</span><span class="n">p</span><span class="p">)</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+
+    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div><p>Ce qu&rsquo;il s&rsquo;est produit ici, c&rsquo;est que lorsque le compilateur a regardé si l&rsquo;overload générique de <code>get_key()</code> pouvait être utilisé avec <code>ZeroProcedure</code>, il n&rsquo;a pas réussi à générer la signature de la fonction à partir des types fournis.<br>
 En effet, il a pu remplacer <code>T</code> par <code>ZeroProcedure</code>.
 Cependant, pour déterminer <code>Ret</code>, il a été obligé d&rsquo;évaluer sa valeur par défaut, à savoir le type de retour de <code>ZeroProcedure::get_key()</code>.<br>
 Comme cette fonction n&rsquo;existe pas, la substitution a échouée, et le compilateur a donc sélectionné la fonction candidate suivante, à savoir <code>get_key(const Procedure&amp;)</code>.</p>
 <p>Pour déclencher des échecs de substitution, vous pouvez vous placer soit au niveau des paramètres de template (type ou valeur par défaut), soit au niveau de la signature de la fonction (type des paramètres ou leurs valeurs par défaut), soit au niveau du type de retour de la fonction.</p>
 <p>Choisir ce dernier permet généralement d&rsquo;utiliser <code>std::enable_if_t&lt;condition, type&gt;</code>, ainsi que de nombreux autres utilitaires définis dans <code>&lt;type_traits&gt;</code>.<br>
 Voici par exemple une façon de définir une fonction qui n&rsquo;existe que pour les types entiers :</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="cp">#include</span> <span class="cpf">&lt;type_traits&gt;</span><span class="cp">
-</span></span></span><span class="line"><span class="cl"><span class="cp"></span>
-</span></span><span class="line"><span class="cl"><span class="c1">// La substitution fonctionne seulement si T est entier.
-</span></span></span><span class="line"><span class="cl"><span class="c1">// La fonction renvoie alors un T.
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span> <span class="n">T</span><span class="o">&gt;</span>
-</span></span><span class="line"><span class="cl"><span class="n">std</span><span class="o">::</span><span class="n">enable_if_t</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">is_integer_v</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span><span class="p">,</span> <span class="n">T</span><span class="o">&gt;</span>
-</span></span><span class="line"><span class="cl"><span class="n">add_two</span><span class="p">(</span><span class="k">const</span> <span class="n">T</span> <span class="n">value</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl"><span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">value</span> <span class="o">+</span> <span class="mi">2</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c1">// La substitution fonctionne seulement si v1 et v2 sont de mêmes types.
-</span></span></span><span class="line"><span class="cl"><span class="c1">// La fonction renvoie alors un booléen.
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span> <span class="n">T1</span><span class="p">,</span> <span class="k">typename</span> <span class="n">T2</span><span class="o">&gt;</span>
-</span></span><span class="line"><span class="cl"><span class="n">std</span><span class="o">::</span><span class="n">enable_if_t</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">is_same_v</span><span class="o">&lt;</span><span class="n">T1</span><span class="p">,</span> <span class="n">T2</span><span class="o">&gt;&gt;</span><span class="p">,</span> <span class="kt">bool</span><span class="o">&gt;</span>
-</span></span><span class="line"><span class="cl"><span class="n">are_equal</span><span class="p">(</span><span class="k">const</span> <span class="n">T1</span><span class="o">&amp;</span> <span class="n">v1</span><span class="p">,</span> <span class="k">const</span> <span class="n">T2</span><span class="o">&amp;</span> <span class="n">v2</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl"><span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">v1</span> <span class="o">==</span> <span class="n">v2</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span></code></pre></div>
+<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="cp">#include</span> <span class="cpf">&lt;type_traits&gt;</span><span class="cp">
+</span><span class="cp"></span>
+<span class="c1">// La substitution fonctionne seulement si T est entier.
+</span><span class="c1">// La fonction renvoie alors un T.
+</span><span class="c1"></span><span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span> <span class="n">T</span><span class="o">&gt;</span>
+<span class="n">std</span><span class="o">::</span><span class="n">enable_if_t</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">is_integer_v</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span><span class="p">,</span> <span class="n">T</span><span class="o">&gt;</span>
+<span class="n">add_two</span><span class="p">(</span><span class="k">const</span> <span class="n">T</span> <span class="n">value</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="k">return</span> <span class="n">value</span> <span class="o">+</span> <span class="mi">2</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="c1">// La substitution fonctionne seulement si v1 et v2 sont de mêmes types.
+</span><span class="c1">// La fonction renvoie alors un booléen.
+</span><span class="c1"></span><span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span> <span class="n">T1</span><span class="p">,</span> <span class="k">typename</span> <span class="n">T2</span><span class="o">&gt;</span>
+<span class="n">std</span><span class="o">::</span><span class="n">enable_if_t</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">is_same_v</span><span class="o">&lt;</span><span class="n">T1</span><span class="p">,</span> <span class="n">T2</span><span class="o">&gt;&gt;</span><span class="p">,</span> <span class="kt">bool</span><span class="o">&gt;</span>
+<span class="n">are_equal</span><span class="p">(</span><span class="k">const</span> <span class="n">T1</span><span class="o">&amp;</span> <span class="n">v1</span><span class="p">,</span> <span class="k">const</span> <span class="n">T2</span><span class="o">&amp;</span> <span class="n">v2</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="k">return</span> <span class="n">v1</span> <span class="o">==</span> <span class="n">v2</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
 
 <footer class="footline">
 	
@@ -3583,19 +3583,19 @@ Voici par exemple une façon de définir une fonction qui n&rsquo;existe que pou
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/CPP_Learning/js/clipboard.min.js?1704755107"></script>
-    <script src="/CPP_Learning/js/perfect-scrollbar.min.js?1704755107"></script>
-    <script src="/CPP_Learning/js/perfect-scrollbar.jquery.min.js?1704755107"></script>
-    <script src="/CPP_Learning/js/jquery.sticky.js?1704755107"></script>
-    <script src="/CPP_Learning/js/featherlight.min.js?1704755107"></script>
-    <script src="/CPP_Learning/js/highlight.pack.js?1704755107"></script>
+    <script src="/CPP_Learning/js/clipboard.min.js?1705257267"></script>
+    <script src="/CPP_Learning/js/perfect-scrollbar.min.js?1705257267"></script>
+    <script src="/CPP_Learning/js/perfect-scrollbar.jquery.min.js?1705257267"></script>
+    <script src="/CPP_Learning/js/jquery.sticky.js?1705257267"></script>
+    <script src="/CPP_Learning/js/featherlight.min.js?1705257267"></script>
+    <script src="/CPP_Learning/js/highlight.pack.js?1705257267"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/CPP_Learning/js/modernizr.custom-3.6.0.js?1704755107"></script>
-    <script src="/CPP_Learning/js/learn.js?1704755107"></script>
-    <script src="/CPP_Learning/js/hugo-learn.js?1704755107"></script>
+    <script src="/CPP_Learning/js/modernizr.custom-3.6.0.js?1705257267"></script>
+    <script src="/CPP_Learning/js/learn.js?1705257267"></script>
+    <script src="/CPP_Learning/js/hugo-learn.js?1705257267"></script>
     
         
-            <script src="/CPP_Learning/mermaid/mermaid.js?1704755107"></script>
+            <script src="/CPP_Learning/mermaid/mermaid.js?1705257267"></script>
         
         <script>
             mermaid.initialize({ startOnLoad: true });
@@ -3609,12 +3609,12 @@ Voici par exemple une façon de définir une fonction qui n&rsquo;existe que pou
     <form id="question" method=POST action="https://formsubmit.co/3aa0f379a1aed9c454634cc2da153a7b"
         target="question-submitted" onsubmit="cleanQuestionFormContent()">
 
-        <input type="email" name="email" placeholder="mon_email@smthg.com" required />
-        <textarea id="question-content" name="question" rows="7" cols="30" placeholder="ma question..."></textarea>
-        <input id="question-topic" type="hidden" name="selection" />
+        <input type="email" name="email" placeholder="mon_email@smthg.com" required onchange="updateQuestionFormSubject()" />
+        <textarea name="question" rows="7" cols="30" placeholder="ma question..."></textarea>
+        <input type="hidden" name="selection" />
 
         <input type="hidden" name="_replyto" />
-        <input type="hidden" name="_subject" value="[C++][Chapitre 3] Question sur le cours" />
+        <input type="hidden" name="_subject" />
         <input type="hidden" name="_template" value="box" />
         <input type="hidden" name="_captcha" value="false" />
         <input type="hidden" name="_next" value="https://laefy.github.io/CPP_Learning//question-submitted/" />
@@ -3623,10 +3623,15 @@ Voici par exemple une façon de définir une fonction qui n&rsquo;existe que pou
         <input type="submit" value="Envoyer" />
     </form>
 
-    <iframe id="question-submitted" class="hidden" name="question-submitted" src=""></iframe>
+    <iframe class="hidden" name="question-submitted" src=""></iframe>
 </div>
 
 <script>
+
+    function updateQuestionFormSubject() {
+        let email = document.querySelector('#question>input[name="email"]').value;
+        document.querySelector('#question>input[name="_subject"]').value = "[C++][Chapitre 3] " + email + ", retour sur ta question";
+    }
 
     function cleanQuestionFormContent() {
 
@@ -3635,15 +3640,15 @@ Voici par exemple une façon de définir une fonction qui n&rsquo;existe que pou
             element.value = element.value.replace(/\[\.\./g, "[ ..");
         }
 
-        clean(document.getElementById("question-content"))
-        clean(document.getElementById("question-topic"))
+        clean(document.querySelector('#question>textarea[name="question"]'))
+        clean(document.querySelector('#question>input[name="selection"]'))
     }
 
     function openQuestionForm() {
         document.getElementById("footer-question-window").removeAttribute("disabled");
 
         var selection = window.getSelection().toString();
-        document.getElementById("question-topic").value = selection
+        document.querySelector('#question>input[name="selection"]').value = selection
     }
 
     function updateQuestionWidgetState(event) {
@@ -3664,6 +3669,8 @@ Voici par exemple une façon de définir une fonction qui n&rsquo;existe que pou
             question_window.setAttribute("disabled", true);
         }
     }
+
+    updateQuestionFormSubject();
 
     document.onmouseup = document.onkeyup = document.onselectionchange = updateQuestionWidgetState;
     updateQuestionWidgetState();

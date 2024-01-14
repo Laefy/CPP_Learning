@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="Hugo 0.121.0">
+    <meta name="generator" content="Hugo 0.76.5" />
     <meta name="description" content="">
 
 
@@ -12,22 +12,22 @@
     <title>Questionnaire ! :: Cours de C&#43;&#43; - Niveau Master</title>
 
     
-    <link href="/CPP_Learning/css/nucleus.css?1704755107" rel="stylesheet">
-    <link href="/CPP_Learning/css/fontawesome-all.min.css?1704755107" rel="stylesheet">
-    <link href="/CPP_Learning/css/hybrid.css?1704755107" rel="stylesheet">
-    <link href="/CPP_Learning/css/featherlight.min.css?1704755107" rel="stylesheet">
-    <link href="/CPP_Learning/css/perfect-scrollbar.min.css?1704755107" rel="stylesheet">
-    <link href="/CPP_Learning/css/auto-complete.css?1704755107" rel="stylesheet">
-    <link href="/CPP_Learning/css/atom-one-dark-reasonable.css?1704755107" rel="stylesheet">
-    <link href="/CPP_Learning/css/theme.css?1704755107" rel="stylesheet">
-    <link href="/CPP_Learning/css/tabs.css?1704755107" rel="stylesheet">
-    <link href="/CPP_Learning/css/hugo-theme.css?1704755107" rel="stylesheet">
+    <link href="/CPP_Learning/css/nucleus.css?1705257267" rel="stylesheet">
+    <link href="/CPP_Learning/css/fontawesome-all.min.css?1705257267" rel="stylesheet">
+    <link href="/CPP_Learning/css/hybrid.css?1705257267" rel="stylesheet">
+    <link href="/CPP_Learning/css/featherlight.min.css?1705257267" rel="stylesheet">
+    <link href="/CPP_Learning/css/perfect-scrollbar.min.css?1705257267" rel="stylesheet">
+    <link href="/CPP_Learning/css/auto-complete.css?1705257267" rel="stylesheet">
+    <link href="/CPP_Learning/css/atom-one-dark-reasonable.css?1705257267" rel="stylesheet">
+    <link href="/CPP_Learning/css/theme.css?1705257267" rel="stylesheet">
+    <link href="/CPP_Learning/css/tabs.css?1705257267" rel="stylesheet">
+    <link href="/CPP_Learning/css/hugo-theme.css?1705257267" rel="stylesheet">
     
-    <link href="/CPP_Learning/css/theme-mine.css?1704755107" rel="stylesheet">
+    <link href="/CPP_Learning/css/theme-mine.css?1705257267" rel="stylesheet">
     
-    <link href="/CPP_Learning/css/syntax.css?1704755107" rel="stylesheet">
+    <link href="/CPP_Learning/css/syntax.css?1705257267" rel="stylesheet">
 
-    <script src="/CPP_Learning/js/jquery-3.3.1.min.js?1704755107"></script>
+    <script src="/CPP_Learning/js/jquery-3.3.1.min.js?1705257267"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -1944,73 +1944,85 @@ Bon courage à vous 🙂</p>
 <hr>
 
 
-<form id="test" data-chapter="6" data-year="2024" method=POST action="https://formsubmit.co/3aa0f379a1aed9c454634cc2da153a7b">
-  <label for="name">Vous êtes : </label>
-  <input type="text" id="name" name="name" placeholder="Prénom Nom" required />
+<script>
 
-  <label for="email">Votre adresse mail : </label>
+  function updateTestSubject() {
+    let name = document.querySelector('#test>input[name="name"]').value;
+    document.querySelector('#test>input[name="_subject"]').value = "[C++][Chapitre 6] " + name + ", retour sur ton questionnaire";
+  }
+
+  updateQuestionFormSubject();
+
+</script>
+
+<form id="test" data-chapter="6" data-year="2024" method=POST action="https://formsubmit.co/3aa0f379a1aed9c454634cc2da153a7b">
+  <label>Vous êtes :</label>
+  <input type="text" name="name" placeholder="Prénom Nom" required onchange="updateTestSubject()" />
+
+  <label>Votre adresse mail :</label>
   <input type="email" name="email" placeholder="mail@smthg.com" required />
 
-  <label for="group">Votre groupe : </label>
+  <label>Votre groupe :</label>
   <select name="group">
+  
     <option value="group-I1">Initiaux 1</option>
     <option value="group-I2">Initiaux 2</option>
     <option value="group-Alt">Alternants</option>
   </select>
 
+  <input type="hidden" name="_subject" />
   <input type="hidden" name="_replyto" />
-  <input type="hidden" name="_subject" value="[C++][Chapitre 6] Retour sur ton questionnaire" />
 
   <hr/>
 
-  <p><label for="q1">1- Quel type de boucle faut-il utiliser pour modifier la structure d’un conteneur lors d’un parcours ?</label></p>
-<textarea id="q1" name="Quel type de boucle faut-il utiliser pour modifier la structure d&rsquo;un conteneur lors d&rsquo;un parcours ?" rows="1" cols="50"></textarea>
-<p><label for="q2">2- Dans quel cas peut-il être intéressant d’utiliser la fonction <code>std::for_each</code> ?</label></p>
-<textarea id="q2" name="Dans quel cas peut-il être intéressant d&rsquo;utiliser la fonction std::for_each ?" rows="1" cols="50"></textarea>
+  <p><label for="q1">1- Quel type de boucle faut-il utiliser pour modifier la structure d’un conteneur lors d’un parcours ?</label>
+<textarea id="q1" name="Quel type de boucle faut-il utiliser pour modifier la structure d&rsquo;un conteneur lors d&rsquo;un parcours ?" rows="1" cols="50"></textarea></p>
+<p><label for="q2">2- Dans quel cas peut-il être intéressant d’utiliser la fonction <code>std::for_each</code> ?</label>
+<textarea id="q2" name="Dans quel cas peut-il être intéressant d&rsquo;utiliser la fonction std::for_each ?" rows="1" cols="50"></textarea></p>
 <hr>
-<p><label for="q3">3- Quels headers contiennent les algorithmes de la STL ?</label></p>
-<textarea id="q3" name="Quels headers contiennent les algorithmes de la STL ?" rows="1" cols="50"></textarea>
-<p><label for="q4">4- Donnez un exemple d’utilisation de <code>std::find_if</code>. Vous pouvez considérer que les variables dont vous auriez besoin ont déjà été définies plus haut (ça s’applique aux prochaines questions aussi).</label></p>
-<textarea id="q4" name="Donnez un exemple d&rsquo;utilisation de std::find_if. Vous pouvez considérer que les variables dont vous auriez besoin ont déjà été définies plus haut (ça s&rsquo;applique aux prochaines questions aussi)." rows="2" cols="50"></textarea>
-<p><label for="q5">5- Qu’est-ce qu’un prédicat ?</label></p>
-<textarea id="q5" name="Qu&rsquo;est-ce qu&rsquo;un prédicat ?" rows="1" cols="50"></textarea>
-<p><label for="q6">6- Quelle fonction permet de savoir si l’ensemble des éléments d’un conteneur vérifie un prédicat ?</label></p>
-<textarea id="q6" name="Quelle fonction permet de savoir si l&rsquo;ensemble des éléments d&rsquo;un conteneur vérifie un prédicat ?" rows="1" cols="50"></textarea>
-<p><label for="q7">7- Donnez un exemple d’utilisation de cette fonction sur un <code>std::vector</code>.</label></p>
-<textarea id="q7" name="Donnez un exemple d&rsquo;utilisation de cette fonction sur un std::vector." rows="2" cols="50"></textarea>
-<p><label for="q8">8- Quelle fonction permet de récupérer le minimum et le maximum d’une plage d’éléments en une seule passe ?</label></p>
-<textarea id="q8" name="Quelle fonction permet de récupérer le minimum et le maximum d&rsquo;une plage d&rsquo;éléments en une seule passe ?" rows="1" cols="50"></textarea>
+<p><label for="q3">3- Quels headers contiennent les algorithmes de la STL ?</label>
+<textarea id="q3" name="Quels headers contiennent les algorithmes de la STL ?" rows="1" cols="50"></textarea></p>
+<p><label for="q4">4- Donnez un exemple d’utilisation de <code>std::find_if</code>. Vous pouvez considérer que les variables dont vous auriez besoin ont déjà été définies plus haut (ça s’applique aux prochaines questions aussi).</label>
+<textarea id="q4" name="Donnez un exemple d&rsquo;utilisation de std::find_if. Vous pouvez considérer que les variables dont vous auriez besoin ont déjà été définies plus haut (ça s&rsquo;applique aux prochaines questions aussi)." rows="2" cols="50"></textarea></p>
+<p><label for="q5">5- Qu’est-ce qu’un prédicat ?</label>
+<textarea id="q5" name="Qu&rsquo;est-ce qu&rsquo;un prédicat ?" rows="1" cols="50"></textarea></p>
+<p><label for="q6">6- Quelle fonction permet de savoir si l’ensemble des éléments d’un conteneur vérifie un prédicat ?</label>
+<textarea id="q6" name="Quelle fonction permet de savoir si l&rsquo;ensemble des éléments d&rsquo;un conteneur vérifie un prédicat ?" rows="1" cols="50"></textarea></p>
+<p><label for="q7">7- Donnez un exemple d’utilisation de cette fonction sur un <code>std::vector</code>.</label>
+<textarea id="q7" name="Donnez un exemple d&rsquo;utilisation de cette fonction sur un std::vector." rows="2" cols="50"></textarea></p>
+<p><label for="q8">8- Quelle fonction permet de récupérer le minimum et le maximum d’une plage d’éléments en une seule passe ?</label>
+<textarea id="q8" name="Quelle fonction permet de récupérer le minimum et le maximum d&rsquo;une plage d&rsquo;éléments en une seule passe ?" rows="1" cols="50"></textarea></p>
 <hr>
-<p><label for="q9">9- Ecrivez les instructions permettant de retirer tous les noms commençant par un ‘A’ d’un <code>vector&lt;string&gt;</code>.</label></p>
-<textarea id="q9" name="Ecrivez les instructions permettant de retirer tous les noms commençant par un &lsquo;A&rsquo; d&rsquo;un vector&lt;string&gt;." rows="3" cols="50"></textarea>
-<p><label for="q10">10- A quoi sert <code>std::back_inserter</code> ?</label></p>
-<textarea id="q10" name="A quoi sert std::back_inserter ?" rows="1" cols="50"></textarea>
-<p><label for="q11">11- Soit une <code>list&lt;string&gt;</code>. Ecrivez les instructions permettant de créer un tableau contenant le nombre de caractères de chaque élément de cette liste.</label></p>
-<textarea id="q11" name="Soit une list&lt;string&gt;. Ecrivez les instructions permettant de créer un tableau contenant le nombre de caractères de chaque élément de cette liste." rows="2" cols="50"></textarea>
-<p><label for="q12">12- Qu’est-ce qu’une réduction ? Quelles fonctions permettent d’effectuer ce genre d’opération ?</label></p>
-<textarea id="q12" name="Qu&rsquo;est-ce qu&rsquo;une réduction ? Quelles fonctions permettent d&rsquo;effectuer ce genre d&rsquo;opération ?" rows="2" cols="50"></textarea>
+<p><label for="q9">9- Ecrivez les instructions permettant de retirer tous les noms commençant par un ‘A’ d’un <code>vector&lt;string&gt;</code>.</label>
+<textarea id="q9" name="Ecrivez les instructions permettant de retirer tous les noms commençant par un &lsquo;A&rsquo; d&rsquo;un vector&lt;string&gt;." rows="3" cols="50"></textarea></p>
+<p><label for="q10">10- A quoi sert <code>std::back_inserter</code> ?</label>
+<textarea id="q10" name="A quoi sert std::back_inserter ?" rows="1" cols="50"></textarea></p>
+<p><label for="q11">11- Soit une <code>list&lt;string&gt;</code>. Ecrivez les instructions permettant de créer un tableau contenant le nombre de caractères de chaque élément de cette liste.</label>
+<textarea id="q11" name="Soit une list&lt;string&gt;. Ecrivez les instructions permettant de créer un tableau contenant le nombre de caractères de chaque élément de cette liste." rows="2" cols="50"></textarea></p>
+<p><label for="q12">12- Qu’est-ce qu’une réduction ? Quelles fonctions permettent d’effectuer ce genre d’opération ?</label>
+<textarea id="q12" name="Qu&rsquo;est-ce qu&rsquo;une réduction ? Quelles fonctions permettent d&rsquo;effectuer ce genre d&rsquo;opération ?" rows="2" cols="50"></textarea></p>
 <hr>
-<p><label for="q13">13- Quelle catégorie d’itérateur permet d’accéder à n’importe quel élément d’une plage en temps constant ?</label></p>
-<textarea id="q13" name="Quelle catégorie d&rsquo;itérateur permet d&rsquo;accéder à n&rsquo;importe quel élément d&rsquo;une plage en temps constant ?" rows="1" cols="50"></textarea>
-<p><label for="q14">14- En supposant que vous avez un itérateur permettant d’itérer sur une plage de <code>Donkey</code>, quelles peuvent-être les signatures de ses opérateurs de déréférencement ?</label></p>
-<textarea id="q14" name="En supposant que vous avez un itérateur permettant d&rsquo;itérer sur une plage de Donkey, quelles peuvent-être les signatures de ses opérateurs de déréférencement ?" rows="2" cols="50"></textarea>
-<p><label for="q15">15- Comment appelle-t-on l’opérateur ayant la signature suivante : <code>It operator++(int)</code> ?</label></p>
-<textarea id="q15" name="Comment appelle-t-on l&rsquo;opérateur ayant la signature suivante : It operator&#43;&#43;(int) ?" rows="1" cols="50"></textarea>
+<p><label for="q13">13- Quelle catégorie d’itérateur permet d’accéder à n’importe quel élément d’une plage en temps constant ?</label>
+<textarea id="q13" name="Quelle catégorie d&rsquo;itérateur permet d&rsquo;accéder à n&rsquo;importe quel élément d&rsquo;une plage en temps constant ?" rows="1" cols="50"></textarea></p>
+<p><label for="q14">14- En supposant que vous avez un itérateur permettant d’itérer sur une plage de <code>Donkey</code>, quelles peuvent-être les signatures de ses opérateurs de déréférencement ?</label>
+<textarea id="q14" name="En supposant que vous avez un itérateur permettant d&rsquo;itérer sur une plage de Donkey, quelles peuvent-être les signatures de ses opérateurs de déréférencement ?" rows="2" cols="50"></textarea></p>
+<p><label for="q15">15- Comment appelle-t-on l’opérateur ayant la signature suivante : <code>It operator++(int)</code> ?</label>
+<textarea id="q15" name="Comment appelle-t-on l&rsquo;opérateur ayant la signature suivante : It operator&#43;&#43;(int) ?" rows="1" cols="50"></textarea></p>
 <hr>
-<p><label for="q16">16- A quoi sert la capture dans une lambda ?</label></p>
-<textarea id="q16" name="A quoi sert la capture dans une lambda ?" rows="1" cols="50"></textarea>
-<p><label for="q17">17- Quelle classe de la librairie standard permet de stocker des lambdas ?</label></p>
-<textarea id="q17" name="Quelle classe de la librairie standard permet de stocker des lambdas ?" rows="1" cols="50"></textarea>
-<p><label for="q18">18- Comment savoir si une variable est capturée par référence ou par valeur ?</label></p>
-<textarea id="q18" name="Comment savoir si une variable est capturée par référence ou par valeur ?" rows="1" cols="50"></textarea>
-<p><label for="q19">19- Comment faut-il faire pour capturer les attributs d’une classe ?</label></p>
-<textarea id="q19" name="Comment faut-il faire pour capturer les attributs d&rsquo;une classe ?" rows="1" cols="50"></textarea>
-<p><label for="q20">20- Que faut-il faire pour pouvoir modifier un objet capturé par valeur ?</label></p>
-<textarea id="q20" name="Que faut-il faire pour pouvoir modifier un objet capturé par valeur ?" rows="1" cols="50"></textarea>
-<p><label for="q21">21- Pourquoi doit-on souvent utiliser <code>auto</code> pour définir des variables contenant des lambdas ?</label></p>
-<textarea id="q21" name="Pourquoi doit-on souvent utiliser auto pour définir des variables contenant des lambdas ?" rows="1" cols="50"></textarea>
-<p><label for="q22">22- Soit une lambda nommée <code>is_finished</code>, capturant un entier par référence, prenant en paramètre une <code>string_view</code> et un <code>float</code>, et retournant un <code>bool</code>. Donnez une instruction permettant d’exécuter cette lambda.</label></p>
-<textarea id="q22" name="Soit une lambda nommée is_finished, capturant un entier par référence, prenant en paramètre une string_view et un float, et retournant un bool. Donnez une instruction permettant d&rsquo;exécuter cette lambda." rows="1" cols="50"></textarea>
+<p><label for="q16">16- A quoi sert la capture dans une lambda ?</label>
+<textarea id="q16" name="A quoi sert la capture dans une lambda ?" rows="1" cols="50"></textarea></p>
+<p><label for="q17">17- Quelle classe de la librairie standard permet de stocker des lambdas ?</label>
+<textarea id="q17" name="Quelle classe de la librairie standard permet de stocker des lambdas ?" rows="1" cols="50"></textarea></p>
+<p><label for="q18">18- Comment savoir si une variable est capturée par référence ou par valeur ?</label>
+<textarea id="q18" name="Comment savoir si une variable est capturée par référence ou par valeur ?" rows="1" cols="50"></textarea></p>
+<p><label for="q19">19- Comment faut-il faire pour capturer les attributs d’une classe ?</label>
+<textarea id="q19" name="Comment faut-il faire pour capturer les attributs d&rsquo;une classe ?" rows="1" cols="50"></textarea></p>
+<p><label for="q20">20- Que faut-il faire pour pouvoir modifier un objet capturé par valeur ?</label>
+<textarea id="q20" name="Que faut-il faire pour pouvoir modifier un objet capturé par valeur ?" rows="1" cols="50"></textarea></p>
+<p><label for="q21">21- Pourquoi doit-on souvent utiliser <code>auto</code> pour définir des variables contenant des lambdas ?</label>
+<textarea id="q21" name="Pourquoi doit-on souvent utiliser auto pour définir des variables contenant des lambdas ?" rows="1" cols="50"></textarea></p>
+<p><label for="q22">22- Soit une lambda nommée <code>is_finished</code>, capturant un entier par référence, prenant en paramètre une <code>string_view</code> et un <code>float</code>, et retournant un <code>bool</code>. Donnez une instruction permettant d’exécuter cette lambda.</label>
+<textarea id="q22" name="Soit une lambda nommée is_finished, capturant un entier par référence, prenant en paramètre une string_view et un float, et retournant un bool. Donnez une instruction permettant d&rsquo;exécuter cette lambda." rows="1" cols="50"></textarea></p>
 <hr>
 
 
@@ -2020,10 +2032,10 @@ Bon courage à vous 🙂</p>
   <input type="text" name="time" placeholder="environ 4h30" />
 
   <label for="questions">Avez-vous des questions suite à sa lecture ?</label>
-  <textarea id="questions" name="questions" rows="5" cols="50"></textarea>
+  <textarea name="questions" rows="5" cols="50"></textarea>
 
   <label for="comments">Avez-vous des commentaires concernant le chapitre et/ou le site ?</label>
-  <textarea id="comments" name="comments" rows="5" cols="50"></textarea>
+  <textarea name="comments" rows="5" cols="50"></textarea>
 
   <input type="hidden" name="_template" value="box" />
   <input type="hidden" name="_captcha" value="false" />
@@ -3336,19 +3348,19 @@ Bon courage à vous 🙂</p>
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/CPP_Learning/js/clipboard.min.js?1704755107"></script>
-    <script src="/CPP_Learning/js/perfect-scrollbar.min.js?1704755107"></script>
-    <script src="/CPP_Learning/js/perfect-scrollbar.jquery.min.js?1704755107"></script>
-    <script src="/CPP_Learning/js/jquery.sticky.js?1704755107"></script>
-    <script src="/CPP_Learning/js/featherlight.min.js?1704755107"></script>
-    <script src="/CPP_Learning/js/highlight.pack.js?1704755107"></script>
+    <script src="/CPP_Learning/js/clipboard.min.js?1705257267"></script>
+    <script src="/CPP_Learning/js/perfect-scrollbar.min.js?1705257267"></script>
+    <script src="/CPP_Learning/js/perfect-scrollbar.jquery.min.js?1705257267"></script>
+    <script src="/CPP_Learning/js/jquery.sticky.js?1705257267"></script>
+    <script src="/CPP_Learning/js/featherlight.min.js?1705257267"></script>
+    <script src="/CPP_Learning/js/highlight.pack.js?1705257267"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/CPP_Learning/js/modernizr.custom-3.6.0.js?1704755107"></script>
-    <script src="/CPP_Learning/js/learn.js?1704755107"></script>
-    <script src="/CPP_Learning/js/hugo-learn.js?1704755107"></script>
+    <script src="/CPP_Learning/js/modernizr.custom-3.6.0.js?1705257267"></script>
+    <script src="/CPP_Learning/js/learn.js?1705257267"></script>
+    <script src="/CPP_Learning/js/hugo-learn.js?1705257267"></script>
     
         
-            <script src="/CPP_Learning/mermaid/mermaid.js?1704755107"></script>
+            <script src="/CPP_Learning/mermaid/mermaid.js?1705257267"></script>
         
         <script>
             mermaid.initialize({ startOnLoad: true });
@@ -3362,12 +3374,12 @@ Bon courage à vous 🙂</p>
     <form id="question" method=POST action="https://formsubmit.co/3aa0f379a1aed9c454634cc2da153a7b"
         target="question-submitted" onsubmit="cleanQuestionFormContent()">
 
-        <input type="email" name="email" placeholder="mon_email@smthg.com" required />
-        <textarea id="question-content" name="question" rows="7" cols="30" placeholder="ma question..."></textarea>
-        <input id="question-topic" type="hidden" name="selection" />
+        <input type="email" name="email" placeholder="mon_email@smthg.com" required onchange="updateQuestionFormSubject()" />
+        <textarea name="question" rows="7" cols="30" placeholder="ma question..."></textarea>
+        <input type="hidden" name="selection" />
 
         <input type="hidden" name="_replyto" />
-        <input type="hidden" name="_subject" value="[C++][Chapitre 99] Question sur le cours" />
+        <input type="hidden" name="_subject" />
         <input type="hidden" name="_template" value="box" />
         <input type="hidden" name="_captcha" value="false" />
         <input type="hidden" name="_next" value="https://laefy.github.io/CPP_Learning//question-submitted/" />
@@ -3376,10 +3388,15 @@ Bon courage à vous 🙂</p>
         <input type="submit" value="Envoyer" />
     </form>
 
-    <iframe id="question-submitted" class="hidden" name="question-submitted" src=""></iframe>
+    <iframe class="hidden" name="question-submitted" src=""></iframe>
 </div>
 
 <script>
+
+    function updateQuestionFormSubject() {
+        let email = document.querySelector('#question>input[name="email"]').value;
+        document.querySelector('#question>input[name="_subject"]').value = "[C++][Chapitre 99] " + email + ", retour sur ta question";
+    }
 
     function cleanQuestionFormContent() {
 
@@ -3388,15 +3405,15 @@ Bon courage à vous 🙂</p>
             element.value = element.value.replace(/\[\.\./g, "[ ..");
         }
 
-        clean(document.getElementById("question-content"))
-        clean(document.getElementById("question-topic"))
+        clean(document.querySelector('#question>textarea[name="question"]'))
+        clean(document.querySelector('#question>input[name="selection"]'))
     }
 
     function openQuestionForm() {
         document.getElementById("footer-question-window").removeAttribute("disabled");
 
         var selection = window.getSelection().toString();
-        document.getElementById("question-topic").value = selection
+        document.querySelector('#question>input[name="selection"]').value = selection
     }
 
     function updateQuestionWidgetState(event) {
@@ -3417,6 +3434,8 @@ Bon courage à vous 🙂</p>
             question_window.setAttribute("disabled", true);
         }
     }
+
+    updateQuestionFormSubject();
 
     document.onmouseup = document.onkeyup = document.onselectionchange = updateQuestionWidgetState;
     updateQuestionWidgetState();

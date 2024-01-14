@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="Hugo 0.121.0">
+    <meta name="generator" content="Hugo 0.76.5" />
     <meta name="description" content="">
 
 
@@ -12,22 +12,22 @@
     <title>Questionnaire ! :: Cours de C&#43;&#43; - Niveau Master</title>
 
     
-    <link href="/CPP_Learning/css/nucleus.css?1704755107" rel="stylesheet">
-    <link href="/CPP_Learning/css/fontawesome-all.min.css?1704755107" rel="stylesheet">
-    <link href="/CPP_Learning/css/hybrid.css?1704755107" rel="stylesheet">
-    <link href="/CPP_Learning/css/featherlight.min.css?1704755107" rel="stylesheet">
-    <link href="/CPP_Learning/css/perfect-scrollbar.min.css?1704755107" rel="stylesheet">
-    <link href="/CPP_Learning/css/auto-complete.css?1704755107" rel="stylesheet">
-    <link href="/CPP_Learning/css/atom-one-dark-reasonable.css?1704755107" rel="stylesheet">
-    <link href="/CPP_Learning/css/theme.css?1704755107" rel="stylesheet">
-    <link href="/CPP_Learning/css/tabs.css?1704755107" rel="stylesheet">
-    <link href="/CPP_Learning/css/hugo-theme.css?1704755107" rel="stylesheet">
+    <link href="/CPP_Learning/css/nucleus.css?1705257267" rel="stylesheet">
+    <link href="/CPP_Learning/css/fontawesome-all.min.css?1705257267" rel="stylesheet">
+    <link href="/CPP_Learning/css/hybrid.css?1705257267" rel="stylesheet">
+    <link href="/CPP_Learning/css/featherlight.min.css?1705257267" rel="stylesheet">
+    <link href="/CPP_Learning/css/perfect-scrollbar.min.css?1705257267" rel="stylesheet">
+    <link href="/CPP_Learning/css/auto-complete.css?1705257267" rel="stylesheet">
+    <link href="/CPP_Learning/css/atom-one-dark-reasonable.css?1705257267" rel="stylesheet">
+    <link href="/CPP_Learning/css/theme.css?1705257267" rel="stylesheet">
+    <link href="/CPP_Learning/css/tabs.css?1705257267" rel="stylesheet">
+    <link href="/CPP_Learning/css/hugo-theme.css?1705257267" rel="stylesheet">
     
-    <link href="/CPP_Learning/css/theme-mine.css?1704755107" rel="stylesheet">
+    <link href="/CPP_Learning/css/theme-mine.css?1705257267" rel="stylesheet">
     
-    <link href="/CPP_Learning/css/syntax.css?1704755107" rel="stylesheet">
+    <link href="/CPP_Learning/css/syntax.css?1705257267" rel="stylesheet">
 
-    <script src="/CPP_Learning/js/jquery-3.3.1.min.js?1704755107"></script>
+    <script src="/CPP_Learning/js/jquery-3.3.1.min.js?1705257267"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -1955,131 +1955,143 @@ Mais bon, vous l&rsquo;avez enfin terminé, donc vous pouvez être fiers de vous
 <hr>
 
 
-<form id="test" data-chapter="2" data-year="2024" method=POST action="https://formsubmit.co/3aa0f379a1aed9c454634cc2da153a7b">
-  <label for="name">Vous êtes : </label>
-  <input type="text" id="name" name="name" placeholder="Prénom Nom" required />
+<script>
 
-  <label for="email">Votre adresse mail : </label>
+  function updateTestSubject() {
+    let name = document.querySelector('#test>input[name="name"]').value;
+    document.querySelector('#test>input[name="_subject"]').value = "[C++][Chapitre 2] " + name + ", retour sur ton questionnaire";
+  }
+
+  updateQuestionFormSubject();
+
+</script>
+
+<form id="test" data-chapter="2" data-year="2024" method=POST action="https://formsubmit.co/3aa0f379a1aed9c454634cc2da153a7b">
+  <label>Vous êtes :</label>
+  <input type="text" name="name" placeholder="Prénom Nom" required onchange="updateTestSubject()" />
+
+  <label>Votre adresse mail :</label>
   <input type="email" name="email" placeholder="mail@smthg.com" required />
 
-  <label for="group">Votre groupe : </label>
+  <label>Votre groupe :</label>
   <select name="group">
+  
     <option value="group-I1">Initiaux 1</option>
     <option value="group-I2">Initiaux 2</option>
     <option value="group-Alt">Alternants</option>
   </select>
 
+  <input type="hidden" name="_subject" />
   <input type="hidden" name="_replyto" />
-  <input type="hidden" name="_subject" value="[C++][Chapitre 2] Retour sur ton questionnaire" />
 
   <hr/>
 
-  <p><label for="q1">1- Quel est le terme C++ permettant de désigner les “méthodes” d’une classe ?</label></p>
-<textarea id="q1" name="Quel est le terme C&#43;&#43; permettant de désigner les &ldquo;méthodes&rdquo; d&rsquo;une classe ?" rows="1" cols="50"></textarea>
-<p><label for="q2">2- Supposons une classe <code>Cercle</code> disposant d’un attribut <code>_points</code> de type <code>std::vector&lt;point&gt;</code>. Quel invariant cette classe pourrait-elle décider d’enforcer ?</label></p>
-<textarea id="q2" name="Supposons une classe Cercle disposant d&rsquo;un attribut _points de type std::vector&lt;point&gt;. Quel invariant cette classe pourrait-elle décider d&rsquo;enforcer ?" rows="1" cols="50"></textarea>
-<p><label for="q3">3- Citez une règle permettant de respecter le principe d’encapsulation en C++.</label></p>
-<textarea id="q3" name="Citez une règle permettant de respecter le principe d&rsquo;encapsulation en C&#43;&#43;." rows="1" cols="50"></textarea>
+  <p><label for="q1">1- Quel est le terme C++ permettant de désigner les “méthodes” d’une classe ?</label>
+<textarea id="q1" name="Quel est le terme C&#43;&#43; permettant de désigner les &ldquo;méthodes&rdquo; d&rsquo;une classe ?" rows="1" cols="50"></textarea></p>
+<p><label for="q2">2- Supposons une classe <code>Cercle</code> disposant d’un attribut <code>_points</code> de type <code>std::vector&lt;point&gt;</code>. Quel invariant cette classe pourrait-elle décider d’enforcer ?</label>
+<textarea id="q2" name="Supposons une classe Cercle disposant d&rsquo;un attribut _points de type std::vector&lt;point&gt;. Quel invariant cette classe pourrait-elle décider d&rsquo;enforcer ?" rows="1" cols="50"></textarea></p>
+<p><label for="q3">3- Citez une règle permettant de respecter le principe d’encapsulation en C++.</label>
+<textarea id="q3" name="Citez une règle permettant de respecter le principe d&rsquo;encapsulation en C&#43;&#43;." rows="1" cols="50"></textarea></p>
 <hr>
-<p><label for="q4">4- En quoi consiste la méthodologie TDD ?</label></p>
-<textarea id="q4" name="En quoi consiste la méthodologie TDD ?" rows="1" cols="50"></textarea>
-<p><label for="q5">5- Donnez un avantage de cette pratique.</label></p>
-<textarea id="q5" name="Donnez un avantage de cette pratique." rows="1" cols="50"></textarea>
+<p><label for="q4">4- En quoi consiste la méthodologie TDD ?</label>
+<textarea id="q4" name="En quoi consiste la méthodologie TDD ?" rows="1" cols="50"></textarea></p>
+<p><label for="q5">5- Donnez un avantage de cette pratique.</label>
+<textarea id="q5" name="Donnez un avantage de cette pratique." rows="1" cols="50"></textarea></p>
 <hr>
-<p><label for="q6">6- Quel est le nom de la fonctionnalité permettant d’initialiser un attribut sur la même ligne que sa définition ?</label></p>
-<textarea id="q6" name="Quel est le nom de la fonctionnalité permettant d&rsquo;initialiser un attribut sur la même ligne que sa définition ?" rows="1" cols="50"></textarea>
-<p><label for="q7">7- Dans un constructeur, comment s’appelle la zone dans laquelle on initialise les attributs de la classe ?</label></p>
-<textarea id="q7" name="Dans un constructeur, comment s&rsquo;appelle la zone dans laquelle on initialise les attributs de la classe ?" rows="1" cols="50"></textarea>
-<p><label for="q8">8- A quoi fait-on généralement référence lorsque l’on parle d’implémentation par défaut ?</label></p>
-<textarea id="q8" name="A quoi fait-on généralement référence lorsque l&rsquo;on parle d&rsquo;implémentation par défaut ?" rows="1" cols="50"></textarea>
-<p><label for="q9">9- Quand est-ce qu’une référence devient une dangling reference ?</label></p>
-<textarea id="q9" name="Quand est-ce qu&rsquo;une référence devient une dangling reference ?" rows="1" cols="50"></textarea>
-<p><label for="q10">10- Dans l’implémentation d’une fonction-membre, quel mot-clef permet de faire référence à l’instance courante ?</label></p>
-<textarea id="q10" name="Dans l&rsquo;implémentation d&rsquo;une fonction-membre, quel mot-clef permet de faire référence à l&rsquo;instance courante ?" rows="1" cols="50"></textarea>
-<p><label for="q11">11- Quelles sont les 3 fonctions vues dans ce chapitre que le compilateur peut générer automatiquement ?</label></p>
-<textarea id="q11" name="Quelles sont les 3 fonctions vues dans ce chapitre que le compilateur peut générer automatiquement ?" rows="1" cols="50"></textarea>
+<p><label for="q6">6- Quel est le nom de la fonctionnalité permettant d’initialiser un attribut sur la même ligne que sa définition ?</label>
+<textarea id="q6" name="Quel est le nom de la fonctionnalité permettant d&rsquo;initialiser un attribut sur la même ligne que sa définition ?" rows="1" cols="50"></textarea></p>
+<p><label for="q7">7- Dans un constructeur, comment s’appelle la zone dans laquelle on initialise les attributs de la classe ?</label>
+<textarea id="q7" name="Dans un constructeur, comment s&rsquo;appelle la zone dans laquelle on initialise les attributs de la classe ?" rows="1" cols="50"></textarea></p>
+<p><label for="q8">8- A quoi fait-on généralement référence lorsque l’on parle d’implémentation par défaut ?</label>
+<textarea id="q8" name="A quoi fait-on généralement référence lorsque l&rsquo;on parle d&rsquo;implémentation par défaut ?" rows="1" cols="50"></textarea></p>
+<p><label for="q9">9- Quand est-ce qu’une référence devient une dangling reference ?</label>
+<textarea id="q9" name="Quand est-ce qu&rsquo;une référence devient une dangling reference ?" rows="1" cols="50"></textarea></p>
+<p><label for="q10">10- Dans l’implémentation d’une fonction-membre, quel mot-clef permet de faire référence à l’instance courante ?</label>
+<textarea id="q10" name="Dans l&rsquo;implémentation d&rsquo;une fonction-membre, quel mot-clef permet de faire référence à l&rsquo;instance courante ?" rows="1" cols="50"></textarea></p>
+<p><label for="q11">11- Quelles sont les 3 fonctions vues dans ce chapitre que le compilateur peut générer automatiquement ?</label>
+<textarea id="q11" name="Quelles sont les 3 fonctions vues dans ce chapitre que le compilateur peut générer automatiquement ?" rows="1" cols="50"></textarea></p>
 <hr>
-<p><label for="q12">12- A quoi sert <code>#pragma once</code> ?</label></p>
-<textarea id="q12" name="A quoi sert #pragma once ?" rows="1" cols="50"></textarea>
-<p><label for="q13">13- Supposons une fonction-membre <code>bool hello() const</code> définie dans une classe <code>Greetings</code>. Que faut-il faire pour l’implémenter dans un .cpp séparé ?</label></p>
-<textarea id="q13" name="Supposons une fonction-membre bool hello() const définie dans une classe Greetings. Que faut-il faire pour l&rsquo;implémenter dans un .cpp séparé ?" rows="1" cols="50"></textarea>
-<p><label for="q14">14- Soit un attribut statique déclaré par <code>static float _attr</code> dans une classe <code>UneClasse</code>. Comment faut-il faire pour le définir ?</label></p>
-<textarea id="q14" name="Soit un attribut statique déclaré par static float _attr dans une classe UneClasse. Comment faut-il faire pour le définir ?" rows="1" cols="50"></textarea>
-<p><label for="q15">15- La ligne <code>static int Toto::fcn_static() { return 1; }</code> placée dans un fichier <code>Toto.cpp</code> ne compile pas. Pourtant, <code>fcn_static</code> a été déclarée comme il faut dans la classe <code>Toto</code> et l’include a été fait. Quel est le problème ?</label></p>
-<textarea id="q15" name="La ligne static int Toto::fcn_static() { return 1; } placée dans un fichier Toto.cpp ne compile pas. Pourtant, fcn_static a été déclarée comme il faut dans la classe Toto et l&rsquo;include a été fait. Quel est le problème ?" rows="1" cols="50"></textarea>
+<p><label for="q12">12- A quoi sert <code>#pragma once</code> ?</label>
+<textarea id="q12" name="A quoi sert #pragma once ?" rows="1" cols="50"></textarea></p>
+<p><label for="q13">13- Supposons une fonction-membre <code>bool hello() const</code> définie dans une classe <code>Greetings</code>. Que faut-il faire pour l’implémenter dans un .cpp séparé ?</label>
+<textarea id="q13" name="Supposons une fonction-membre bool hello() const définie dans une classe Greetings. Que faut-il faire pour l&rsquo;implémenter dans un .cpp séparé ?" rows="1" cols="50"></textarea></p>
+<p><label for="q14">14- Soit un attribut statique déclaré par <code>static float _attr</code> dans une classe <code>UneClasse</code>. Comment faut-il faire pour le définir ?</label>
+<textarea id="q14" name="Soit un attribut statique déclaré par static float _attr dans une classe UneClasse. Comment faut-il faire pour le définir ?" rows="1" cols="50"></textarea></p>
+<p><label for="q15">15- La ligne <code>static int Toto::fcn_static() { return 1; }</code> placée dans un fichier <code>Toto.cpp</code> ne compile pas. Pourtant, <code>fcn_static</code> a été déclarée comme il faut dans la classe <code>Toto</code> et l’include a été fait. Quel est le problème ?</label>
+<textarea id="q15" name="La ligne static int Toto::fcn_static() { return 1; } placée dans un fichier Toto.cpp ne compile pas. Pourtant, fcn_static a été déclarée comme il faut dans la classe Toto et l&rsquo;include a été fait. Quel est le problème ?" rows="1" cols="50"></textarea></p>
 <hr>
-<p><label for="q16">16- Donnez la signature de l’opérateur <code>&lt;&lt;</code> permettant d’afficher le contenu une variable de type <code>Cat</code> dans un flux de sortie.</label></p>
-<textarea id="q16" name="Donnez la signature de l&rsquo;opérateur &lt;&lt; permettant d&rsquo;afficher le contenu une variable de type Cat dans un flux de sortie." rows="1" cols="50"></textarea>
-<p><label for="q17">17- Quelle instruction permet de définir un alias <code>SmallerName</code> sur le type suivant : <code>std::unique_ptr&lt;std::array&lt;std::string, 3&gt;&gt;</code> ?</label></p>
-<textarea id="q17" name="Quelle instruction permet de définir un alias SmallerName sur le type suivant : std::unique_ptr&lt;std::array&lt;std::string, 3&gt;&gt; ?" rows="1" cols="50"></textarea>
+<p><label for="q16">16- Donnez la signature de l’opérateur <code>&lt;&lt;</code> permettant d’afficher le contenu une variable de type <code>Cat</code> dans un flux de sortie.</label>
+<textarea id="q16" name="Donnez la signature de l&rsquo;opérateur &lt;&lt; permettant d&rsquo;afficher le contenu une variable de type Cat dans un flux de sortie." rows="1" cols="50"></textarea></p>
+<p><label for="q17">17- Quelle instruction permet de définir un alias <code>SmallerName</code> sur le type suivant : <code>std::unique_ptr&lt;std::array&lt;std::string, 3&gt;&gt;</code> ?</label>
+<textarea id="q17" name="Quelle instruction permet de définir un alias SmallerName sur le type suivant : std::unique_ptr&lt;std::array&lt;std::string, 3&gt;&gt; ?" rows="1" cols="50"></textarea></p>
 <hr>
-<p><label for="q18">18- Quel nom donne-t-on au constructeur d’une classe acceptant 0 paramètre ?</label></p>
-<textarea id="q18" name="Quel nom donne-t-on au constructeur d&rsquo;une classe acceptant 0 paramètre ?" rows="1" cols="50"></textarea>
-<p><label for="q19">19- Afin de construire un objet à partir d’un autre de même type, quel est le nom du constructeur à appeler ?</label></p>
-<textarea id="q19" name="Afin de construire un objet à partir d&rsquo;un autre de même type, quel est le nom du constructeur à appeler ?" rows="1" cols="50"></textarea>
-<p><label for="q20">20- Donnez la signature de l’opérateur d’assignation d’une class <code>Mouse</code>.</label></p>
-<textarea id="q20" name="Donnez la signature de l&rsquo;opérateur d&rsquo;assignation d&rsquo;une class Mouse." rows="1" cols="50"></textarea>
+<p><label for="q18">18- Quel nom donne-t-on au constructeur d’une classe acceptant 0 paramètre ?</label>
+<textarea id="q18" name="Quel nom donne-t-on au constructeur d&rsquo;une classe acceptant 0 paramètre ?" rows="1" cols="50"></textarea></p>
+<p><label for="q19">19- Afin de construire un objet à partir d’un autre de même type, quel est le nom du constructeur à appeler ?</label>
+<textarea id="q19" name="Afin de construire un objet à partir d&rsquo;un autre de même type, quel est le nom du constructeur à appeler ?" rows="1" cols="50"></textarea></p>
+<p><label for="q20">20- Donnez la signature de l’opérateur d’assignation d’une class <code>Mouse</code>.</label>
+<textarea id="q20" name="Donnez la signature de l&rsquo;opérateur d&rsquo;assignation d&rsquo;une class Mouse." rows="1" cols="50"></textarea></p>
 <hr>
 <p>A partir du code ci-dessous, indiquez si les instructions (que l&rsquo;on suppose en dehors de la classe) compilent ou non. Si ce n&rsquo;est pas le cas, précisez la raison.</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">Dog</span>
-</span></span><span class="line"><span class="cl"><span class="p">{</span>
-</span></span><span class="line"><span class="cl"><span class="k">public</span><span class="o">:</span>
-</span></span><span class="line"><span class="cl">    <span class="n">Dog</span><span class="p">();</span>
-</span></span><span class="line"><span class="cl">    <span class="n">Dog</span><span class="p">(</span><span class="kt">int</span> <span class="n">v1</span><span class="p">,</span> <span class="kt">int</span> <span class="n">v2</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">    <span class="kt">void</span> <span class="nf">set</span><span class="p">(</span><span class="kt">int</span> <span class="n">v</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl">    <span class="kt">int</span> <span class="nf">get</span><span class="p">()</span> <span class="k">const</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">    <span class="k">static</span> <span class="kt">int</span> <span class="n">_nb</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">    <span class="k">static</span> <span class="kt">void</span> <span class="nf">call</span><span class="p">(</span><span class="k">const</span> <span class="n">Dog</span><span class="o">&amp;</span> <span class="n">d</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="k">private</span><span class="o">:</span>
-</span></span><span class="line"><span class="cl">    <span class="kt">void</span> <span class="n">move</span><span class="p">();</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">    <span class="k">static</span> <span class="kt">void</span> <span class="nf">speak</span><span class="p">();</span>
-</span></span><span class="line"><span class="cl">    <span class="k">friend</span> <span class="kt">void</span> <span class="nf">print</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">ostream</span><span class="o">&amp;</span> <span class="n">stream</span><span class="p">,</span> <span class="k">const</span> <span class="n">Dog</span><span class="o">&amp;</span> <span class="n">dog</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl"><span class="p">};</span>
-</span></span></code></pre></div><p><label for="q21">21- <code>Dog d; auto v = d.get();</code></label></p>
-<textarea id="q21" name="Dog d; auto v = d.get();" rows="1" cols="50"></textarea>
-<p><label for="q22">22- <code>Dog d; print(std::cout, d);</code></label></p>
-<textarea id="q22" name="Dog d; print(std::cout, d);" rows="1" cols="50"></textarea>
-<p><label for="q23">23- <code>Dog::speak();</code></label></p>
-<textarea id="q23" name="Dog::speak();" rows="1" cols="50"></textarea>
-<p><label for="q24">24- <code>auto a = Dog::get();</code></label></p>
-<textarea id="q24" name="auto a = Dog::get();" rows="1" cols="50"></textarea>
-<p><label for="q25">25- <code>Dog d1; Dog d2 = d1;</code></label></p>
-<textarea id="q25" name="Dog d1; Dog d2 = d1;" rows="1" cols="50"></textarea>
-<p><label for="q26">26- <code>const Dog d; d.set(8);</code></label></p>
-<textarea id="q26" name="const Dog d; d.set(8);" rows="1" cols="50"></textarea>
-<p><label for="q27">27- <code>Dog d; d.move();</code></label></p>
-<textarea id="q27" name="Dog d; d.move();" rows="1" cols="50"></textarea>
-<p><label for="q28">28- <code>std::cout &lt;&lt; Dog::_nb &lt;&lt; std::endl;</code></label></p>
-<textarea id="q28" name="std::cout &lt;&lt; Dog::_nb &lt;&lt; std::endl;" rows="1" cols="50"></textarea>
-<p><label for="q29">29- <code>Dog d();</code></label></p>
-<textarea id="q29" name="Dog d();" rows="1" cols="50"></textarea>
-<p><label for="q30">30- <code>Dog d; Dog::call(d);</code></label></p>
-<textarea id="q30" name="Dog d; Dog::call(d);" rows="1" cols="50"></textarea>
-<p><label for="q31">31- <code>Dog d { -1, 3 };</code></label></p>
-<textarea id="q31" name="Dog d { -1, 3 };" rows="1" cols="50"></textarea>
+<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="k">class</span> <span class="nc">Dog</span>
+<span class="p">{</span>
+<span class="k">public</span><span class="o">:</span>
+    <span class="n">Dog</span><span class="p">();</span>
+    <span class="n">Dog</span><span class="p">(</span><span class="kt">int</span> <span class="n">v1</span><span class="p">,</span> <span class="kt">int</span> <span class="n">v2</span><span class="p">);</span>
+
+    <span class="kt">void</span> <span class="nf">set</span><span class="p">(</span><span class="kt">int</span> <span class="n">v</span><span class="p">);</span>
+    <span class="kt">int</span> <span class="nf">get</span><span class="p">()</span> <span class="k">const</span><span class="p">;</span>
+
+    <span class="k">static</span> <span class="kt">int</span> <span class="n">_nb</span><span class="p">;</span>
+    <span class="k">static</span> <span class="kt">void</span> <span class="nf">call</span><span class="p">(</span><span class="k">const</span> <span class="n">Dog</span><span class="o">&amp;</span> <span class="n">d</span><span class="p">);</span>
+
+<span class="k">private</span><span class="o">:</span>
+    <span class="kt">void</span> <span class="n">move</span><span class="p">();</span>
+
+    <span class="k">static</span> <span class="kt">void</span> <span class="nf">speak</span><span class="p">();</span>
+    <span class="k">friend</span> <span class="kt">void</span> <span class="nf">print</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">ostream</span><span class="o">&amp;</span> <span class="n">stream</span><span class="p">,</span> <span class="k">const</span> <span class="n">Dog</span><span class="o">&amp;</span> <span class="n">dog</span><span class="p">);</span>
+<span class="p">};</span>
+</code></pre></div><p><label for="q21">21- <code>Dog d; auto v = d.get();</code></label>
+<textarea id="q21" name="Dog d; auto v = d.get();" rows="1" cols="50"></textarea></p>
+<p><label for="q22">22- <code>Dog d; print(std::cout, d);</code></label>
+<textarea id="q22" name="Dog d; print(std::cout, d);" rows="1" cols="50"></textarea></p>
+<p><label for="q23">23- <code>Dog::speak();</code></label>
+<textarea id="q23" name="Dog::speak();" rows="1" cols="50"></textarea></p>
+<p><label for="q24">24- <code>auto a = Dog::get();</code></label>
+<textarea id="q24" name="auto a = Dog::get();" rows="1" cols="50"></textarea></p>
+<p><label for="q25">25- <code>Dog d1; Dog d2 = d1;</code></label>
+<textarea id="q25" name="Dog d1; Dog d2 = d1;" rows="1" cols="50"></textarea></p>
+<p><label for="q26">26- <code>const Dog d; d.set(8);</code></label>
+<textarea id="q26" name="const Dog d; d.set(8);" rows="1" cols="50"></textarea></p>
+<p><label for="q27">27- <code>Dog d; d.move();</code></label>
+<textarea id="q27" name="Dog d; d.move();" rows="1" cols="50"></textarea></p>
+<p><label for="q28">28- <code>std::cout &lt;&lt; Dog::_nb &lt;&lt; std::endl;</code></label>
+<textarea id="q28" name="std::cout &lt;&lt; Dog::_nb &lt;&lt; std::endl;" rows="1" cols="50"></textarea></p>
+<p><label for="q29">29- <code>Dog d();</code></label>
+<textarea id="q29" name="Dog d();" rows="1" cols="50"></textarea></p>
+<p><label for="q30">30- <code>Dog d; Dog::call(d);</code></label>
+<textarea id="q30" name="Dog d; Dog::call(d);" rows="1" cols="50"></textarea></p>
+<p><label for="q31">31- <code>Dog d { -1, 3 };</code></label>
+<textarea id="q31" name="Dog d { -1, 3 };" rows="1" cols="50"></textarea></p>
 <hr>
 <p>Les deux prochaines questions font référence à cette classe :</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">Toto</span>
-</span></span><span class="line"><span class="cl"><span class="p">{</span>
-</span></span><span class="line"><span class="cl"><span class="k">public</span><span class="o">:</span>
-</span></span><span class="line"><span class="cl">    <span class="n">Toto</span><span class="p">()</span> <span class="o">:</span> <span class="n">Toto</span><span class="p">(</span><span class="mi">3</span><span class="p">),</span> <span class="n">_value2</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">    <span class="p">{}</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">    <span class="n">Toto</span><span class="p">(</span><span class="kt">int</span> <span class="n">v1</span><span class="p">)</span> <span class="o">:</span> <span class="n">_value1</span><span class="p">(</span><span class="n">v1</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">    <span class="p">{}</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="k">private</span><span class="o">:</span>
-</span></span><span class="line"><span class="cl">    <span class="kt">int</span> <span class="n">_value1</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">    <span class="kt">int</span> <span class="n">_value2</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span></code></pre></div><p><label for="q32">32- Ce code ne compile pas pour deux raisons. Quelles sont-elles ?</label></p>
-<textarea id="q32" name="Ce code ne compile pas pour deux raisons. Quelles sont-elles ?" rows="1" cols="50"></textarea>
-<p><label for="q33">33- Essayez d’identifier un autre problème lié au constructeur à 1 paramètre. Il ne s’agit pas d’un problème de compilation.</label></p>
-<textarea id="q33" name="Essayez d&rsquo;identifier un autre problème lié au constructeur à 1 paramètre. Il ne s&rsquo;agit pas d&rsquo;un problème de compilation." rows="1" cols="50"></textarea>
+<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="k">class</span> <span class="nc">Toto</span>
+<span class="p">{</span>
+<span class="k">public</span><span class="o">:</span>
+    <span class="n">Toto</span><span class="p">()</span> <span class="o">:</span> <span class="n">Toto</span><span class="p">(</span><span class="mi">3</span><span class="p">),</span> <span class="n">_value2</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+    <span class="p">{}</span>
+
+    <span class="n">Toto</span><span class="p">(</span><span class="kt">int</span> <span class="n">v1</span><span class="p">)</span> <span class="o">:</span> <span class="n">_value1</span><span class="p">(</span><span class="n">v1</span><span class="p">)</span>
+    <span class="p">{}</span>
+
+<span class="k">private</span><span class="o">:</span>
+    <span class="kt">int</span> <span class="n">_value1</span><span class="p">;</span>
+    <span class="kt">int</span> <span class="n">_value2</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div><p><label for="q32">32- Ce code ne compile pas pour deux raisons. Quelles sont-elles ?</label>
+<textarea id="q32" name="Ce code ne compile pas pour deux raisons. Quelles sont-elles ?" rows="1" cols="50"></textarea></p>
+<p><label for="q33">33- Essayez d’identifier un autre problème lié au constructeur à 1 paramètre. Il ne s’agit pas d’un problème de compilation.</label>
+<textarea id="q33" name="Essayez d&rsquo;identifier un autre problème lié au constructeur à 1 paramètre. Il ne s&rsquo;agit pas d&rsquo;un problème de compilation." rows="1" cols="50"></textarea></p>
 
 
   <hr/>
@@ -2088,10 +2100,10 @@ Mais bon, vous l&rsquo;avez enfin terminé, donc vous pouvez être fiers de vous
   <input type="text" name="time" placeholder="environ 4h30" />
 
   <label for="questions">Avez-vous des questions suite à sa lecture ?</label>
-  <textarea id="questions" name="questions" rows="5" cols="50"></textarea>
+  <textarea name="questions" rows="5" cols="50"></textarea>
 
   <label for="comments">Avez-vous des commentaires concernant le chapitre et/ou le site ?</label>
-  <textarea id="comments" name="comments" rows="5" cols="50"></textarea>
+  <textarea name="comments" rows="5" cols="50"></textarea>
 
   <input type="hidden" name="_template" value="box" />
   <input type="hidden" name="_captcha" value="false" />
@@ -3404,19 +3416,19 @@ Mais bon, vous l&rsquo;avez enfin terminé, donc vous pouvez être fiers de vous
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/CPP_Learning/js/clipboard.min.js?1704755107"></script>
-    <script src="/CPP_Learning/js/perfect-scrollbar.min.js?1704755107"></script>
-    <script src="/CPP_Learning/js/perfect-scrollbar.jquery.min.js?1704755107"></script>
-    <script src="/CPP_Learning/js/jquery.sticky.js?1704755107"></script>
-    <script src="/CPP_Learning/js/featherlight.min.js?1704755107"></script>
-    <script src="/CPP_Learning/js/highlight.pack.js?1704755107"></script>
+    <script src="/CPP_Learning/js/clipboard.min.js?1705257267"></script>
+    <script src="/CPP_Learning/js/perfect-scrollbar.min.js?1705257267"></script>
+    <script src="/CPP_Learning/js/perfect-scrollbar.jquery.min.js?1705257267"></script>
+    <script src="/CPP_Learning/js/jquery.sticky.js?1705257267"></script>
+    <script src="/CPP_Learning/js/featherlight.min.js?1705257267"></script>
+    <script src="/CPP_Learning/js/highlight.pack.js?1705257267"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/CPP_Learning/js/modernizr.custom-3.6.0.js?1704755107"></script>
-    <script src="/CPP_Learning/js/learn.js?1704755107"></script>
-    <script src="/CPP_Learning/js/hugo-learn.js?1704755107"></script>
+    <script src="/CPP_Learning/js/modernizr.custom-3.6.0.js?1705257267"></script>
+    <script src="/CPP_Learning/js/learn.js?1705257267"></script>
+    <script src="/CPP_Learning/js/hugo-learn.js?1705257267"></script>
     
         
-            <script src="/CPP_Learning/mermaid/mermaid.js?1704755107"></script>
+            <script src="/CPP_Learning/mermaid/mermaid.js?1705257267"></script>
         
         <script>
             mermaid.initialize({ startOnLoad: true });
@@ -3430,12 +3442,12 @@ Mais bon, vous l&rsquo;avez enfin terminé, donc vous pouvez être fiers de vous
     <form id="question" method=POST action="https://formsubmit.co/3aa0f379a1aed9c454634cc2da153a7b"
         target="question-submitted" onsubmit="cleanQuestionFormContent()">
 
-        <input type="email" name="email" placeholder="mon_email@smthg.com" required />
-        <textarea id="question-content" name="question" rows="7" cols="30" placeholder="ma question..."></textarea>
-        <input id="question-topic" type="hidden" name="selection" />
+        <input type="email" name="email" placeholder="mon_email@smthg.com" required onchange="updateQuestionFormSubject()" />
+        <textarea name="question" rows="7" cols="30" placeholder="ma question..."></textarea>
+        <input type="hidden" name="selection" />
 
         <input type="hidden" name="_replyto" />
-        <input type="hidden" name="_subject" value="[C++][Chapitre 99] Question sur le cours" />
+        <input type="hidden" name="_subject" />
         <input type="hidden" name="_template" value="box" />
         <input type="hidden" name="_captcha" value="false" />
         <input type="hidden" name="_next" value="https://laefy.github.io/CPP_Learning//question-submitted/" />
@@ -3444,10 +3456,15 @@ Mais bon, vous l&rsquo;avez enfin terminé, donc vous pouvez être fiers de vous
         <input type="submit" value="Envoyer" />
     </form>
 
-    <iframe id="question-submitted" class="hidden" name="question-submitted" src=""></iframe>
+    <iframe class="hidden" name="question-submitted" src=""></iframe>
 </div>
 
 <script>
+
+    function updateQuestionFormSubject() {
+        let email = document.querySelector('#question>input[name="email"]').value;
+        document.querySelector('#question>input[name="_subject"]').value = "[C++][Chapitre 99] " + email + ", retour sur ta question";
+    }
 
     function cleanQuestionFormContent() {
 
@@ -3456,15 +3473,15 @@ Mais bon, vous l&rsquo;avez enfin terminé, donc vous pouvez être fiers de vous
             element.value = element.value.replace(/\[\.\./g, "[ ..");
         }
 
-        clean(document.getElementById("question-content"))
-        clean(document.getElementById("question-topic"))
+        clean(document.querySelector('#question>textarea[name="question"]'))
+        clean(document.querySelector('#question>input[name="selection"]'))
     }
 
     function openQuestionForm() {
         document.getElementById("footer-question-window").removeAttribute("disabled");
 
         var selection = window.getSelection().toString();
-        document.getElementById("question-topic").value = selection
+        document.querySelector('#question>input[name="selection"]').value = selection
     }
 
     function updateQuestionWidgetState(event) {
@@ -3485,6 +3502,8 @@ Mais bon, vous l&rsquo;avez enfin terminé, donc vous pouvez être fiers de vous
             question_window.setAttribute("disabled", true);
         }
     }
+
+    updateQuestionFormSubject();
 
     document.onmouseup = document.onkeyup = document.onselectionchange = updateQuestionWidgetState;
     updateQuestionWidgetState();

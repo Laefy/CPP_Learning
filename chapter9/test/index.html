@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="Hugo 0.121.0">
+    <meta name="generator" content="Hugo 0.76.5" />
     <meta name="description" content="">
 
 
@@ -12,22 +12,22 @@
     <title>Questionnaire ! :: Cours de C&#43;&#43; - Niveau Master</title>
 
     
-    <link href="/CPP_Learning/css/nucleus.css?1704755107" rel="stylesheet">
-    <link href="/CPP_Learning/css/fontawesome-all.min.css?1704755107" rel="stylesheet">
-    <link href="/CPP_Learning/css/hybrid.css?1704755107" rel="stylesheet">
-    <link href="/CPP_Learning/css/featherlight.min.css?1704755107" rel="stylesheet">
-    <link href="/CPP_Learning/css/perfect-scrollbar.min.css?1704755107" rel="stylesheet">
-    <link href="/CPP_Learning/css/auto-complete.css?1704755107" rel="stylesheet">
-    <link href="/CPP_Learning/css/atom-one-dark-reasonable.css?1704755107" rel="stylesheet">
-    <link href="/CPP_Learning/css/theme.css?1704755107" rel="stylesheet">
-    <link href="/CPP_Learning/css/tabs.css?1704755107" rel="stylesheet">
-    <link href="/CPP_Learning/css/hugo-theme.css?1704755107" rel="stylesheet">
+    <link href="/CPP_Learning/css/nucleus.css?1705257267" rel="stylesheet">
+    <link href="/CPP_Learning/css/fontawesome-all.min.css?1705257267" rel="stylesheet">
+    <link href="/CPP_Learning/css/hybrid.css?1705257267" rel="stylesheet">
+    <link href="/CPP_Learning/css/featherlight.min.css?1705257267" rel="stylesheet">
+    <link href="/CPP_Learning/css/perfect-scrollbar.min.css?1705257267" rel="stylesheet">
+    <link href="/CPP_Learning/css/auto-complete.css?1705257267" rel="stylesheet">
+    <link href="/CPP_Learning/css/atom-one-dark-reasonable.css?1705257267" rel="stylesheet">
+    <link href="/CPP_Learning/css/theme.css?1705257267" rel="stylesheet">
+    <link href="/CPP_Learning/css/tabs.css?1705257267" rel="stylesheet">
+    <link href="/CPP_Learning/css/hugo-theme.css?1705257267" rel="stylesheet">
     
-    <link href="/CPP_Learning/css/theme-mine.css?1704755107" rel="stylesheet">
+    <link href="/CPP_Learning/css/theme-mine.css?1705257267" rel="stylesheet">
     
-    <link href="/CPP_Learning/css/syntax.css?1704755107" rel="stylesheet">
+    <link href="/CPP_Learning/css/syntax.css?1705257267" rel="stylesheet">
 
-    <script src="/CPP_Learning/js/jquery-3.3.1.min.js?1704755107"></script>
+    <script src="/CPP_Learning/js/jquery-3.3.1.min.js?1705257267"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -1944,43 +1944,55 @@ Bon courage à vous 🙂</p>
 <hr>
 
 
-<form id="test" data-chapter="9" data-year="2024" method=POST action="https://formsubmit.co/3aa0f379a1aed9c454634cc2da153a7b">
-  <label for="name">Vous êtes : </label>
-  <input type="text" id="name" name="name" placeholder="Prénom Nom" required />
+<script>
 
-  <label for="email">Votre adresse mail : </label>
+  function updateTestSubject() {
+    let name = document.querySelector('#test>input[name="name"]').value;
+    document.querySelector('#test>input[name="_subject"]').value = "[C++][Chapitre 9] " + name + ", retour sur ton questionnaire";
+  }
+
+  updateQuestionFormSubject();
+
+</script>
+
+<form id="test" data-chapter="9" data-year="2024" method=POST action="https://formsubmit.co/3aa0f379a1aed9c454634cc2da153a7b">
+  <label>Vous êtes :</label>
+  <input type="text" name="name" placeholder="Prénom Nom" required onchange="updateTestSubject()" />
+
+  <label>Votre adresse mail :</label>
   <input type="email" name="email" placeholder="mail@smthg.com" required />
 
-  <label for="group">Votre groupe : </label>
+  <label>Votre groupe :</label>
   <select name="group">
+  
     <option value="group-I1">Initiaux 1</option>
     <option value="group-I2">Initiaux 2</option>
     <option value="group-Alt">Alternants</option>
   </select>
 
+  <input type="hidden" name="_subject" />
   <input type="hidden" name="_replyto" />
-  <input type="hidden" name="_subject" value="[C++][Chapitre 9] Retour sur ton questionnaire" />
 
   <hr/>
 
-  <p><label for="q1">1- Que faut-il écrire juste avant la définition d’une classe (ou fonction) pour en faire une classe (ou fonction) templatée ?</label></p>
-<textarea id="q1" name="Que faut-il écrire juste avant la définition d&rsquo;une classe (ou fonction) pour en faire une classe (ou fonction) templatée ?" rows="1" cols="50"></textarea>
-<p><label for="q2">2- Pourquoi n’est-il pas toujours possible de placer l’implémentation des fonctions-membres d’une classe-template dans un .cpp distinct ?</label></p>
-<textarea id="q2" name="Pourquoi n&rsquo;est-il pas toujours possible de placer l&rsquo;implémentation des fonctions-membres d&rsquo;une classe-template dans un .cpp distinct ?" rows="1" cols="50"></textarea>
-<p><label for="q3">3- Que signifie le mot-clef <code>constexpr</code> ? A quoi sert-il ?</label></p>
-<textarea id="q3" name="Que signifie le mot-clef constexpr ? A quoi sert-il ?" rows="2" cols="50"></textarea>
+  <p><label for="q1">1- Que faut-il écrire juste avant la définition d’une classe (ou fonction) pour en faire une classe (ou fonction) templatée ?</label>
+<textarea id="q1" name="Que faut-il écrire juste avant la définition d&rsquo;une classe (ou fonction) pour en faire une classe (ou fonction) templatée ?" rows="1" cols="50"></textarea></p>
+<p><label for="q2">2- Pourquoi n’est-il pas toujours possible de placer l’implémentation des fonctions-membres d’une classe-template dans un .cpp distinct ?</label>
+<textarea id="q2" name="Pourquoi n&rsquo;est-il pas toujours possible de placer l&rsquo;implémentation des fonctions-membres d&rsquo;une classe-template dans un .cpp distinct ?" rows="1" cols="50"></textarea></p>
+<p><label for="q3">3- Que signifie le mot-clef <code>constexpr</code> ? A quoi sert-il ?</label>
+<textarea id="q3" name="Que signifie le mot-clef constexpr ? A quoi sert-il ?" rows="2" cols="50"></textarea></p>
 <hr>
-<p><label for="q4">4- En sachant que l’on peut instancier <code>AlphaRange</code> avec <code>AlphaRange&lt;char, ‘A’, ‘C’&gt;</code>, quels peuvent-être les types de chacun des paramètres de template de <code>AlphaRange</code> ?</label></p>
-<textarea id="q4" name="En sachant que l&rsquo;on peut instancier AlphaRange avec AlphaRange&lt;char, &#39;A&#39;, &#39;C&#39;&gt;, quels peuvent-être les types de chacun des paramètres de template de AlphaRange ?" rows="1" cols="50"></textarea>
-<p><label for="q5">5- <code>std::min</code> est une fonction-template. Quelle est la signature de la fonction générée lors de l’appel à <code>std::min(4u, 9u)</code> ?</label></p>
-<textarea id="q5" name="std::min est une fonction-template. Quelle est la signature de la fonction générée lors de l&rsquo;appel à std::min(4u, 9u) ?" rows="1" cols="50"></textarea>
-<p><label for="q6">6- Expliquez pourquoi l’instruction <code>std::max(3, 4.3f)</code> ne compile pas, en précisant le nom de la phase de compilation qui pose problème. Que pouvez-vous modifier dans cet appel pour régler le problème ?</label></p>
-<textarea id="q6" name="Expliquez pourquoi l&rsquo;instruction std::max(3, 4.3f) ne compile pas, en précisant le nom de la phase de compilation qui pose problème. Que pouvez-vous modifier dans cet appel pour régler le problème ?" rows="1" cols="50"></textarea>
+<p><label for="q4">4- En sachant que l’on peut instancier <code>AlphaRange</code> avec <code>AlphaRange&lt;char, ‘A’, ‘C’&gt;</code>, quels peuvent-être les types de chacun des paramètres de template de <code>AlphaRange</code> ?</label>
+<textarea id="q4" name="En sachant que l&rsquo;on peut instancier AlphaRange avec AlphaRange&lt;char, &#39;A&#39;, &#39;C&#39;&gt;, quels peuvent-être les types de chacun des paramètres de template de AlphaRange ?" rows="1" cols="50"></textarea></p>
+<p><label for="q5">5- <code>std::min</code> est une fonction-template. Quelle est la signature de la fonction générée lors de l’appel à <code>std::min(4u, 9u)</code> ?</label>
+<textarea id="q5" name="std::min est une fonction-template. Quelle est la signature de la fonction générée lors de l&rsquo;appel à std::min(4u, 9u) ?" rows="1" cols="50"></textarea></p>
+<p><label for="q6">6- Expliquez pourquoi l’instruction <code>std::max(3, 4.3f)</code> ne compile pas, en précisant le nom de la phase de compilation qui pose problème. Que pouvez-vous modifier dans cet appel pour régler le problème ?</label>
+<textarea id="q6" name="Expliquez pourquoi l&rsquo;instruction std::max(3, 4.3f) ne compile pas, en précisant le nom de la phase de compilation qui pose problème. Que pouvez-vous modifier dans cet appel pour régler le problème ?" rows="1" cols="50"></textarea></p>
 <hr>
-<p><label for="q7">7- Ecrivez une fonction-template qui retourne le carré d’une valeur, peu importe son type.</label></p>
-<textarea id="q7" name="Ecrivez une fonction-template qui retourne le carré d&rsquo;une valeur, peu importe son type." rows="4" cols="50"></textarea>
-<p><label for="q8">8- Définissez une structure-template <code>Point</code>, contenant deux attributs <code>x</code> et <code>y</code> de même type. Vous ajouterez deux fonctions permettant de réaliser des additions et des soustractions de <code>Point</code> avec <code>+</code> et <code>-</code>.</label></p>
-<textarea id="q8" name="Définissez une structure-template Point, contenant deux attributs x et y de même type. Vous ajouterez deux fonctions permettant de réaliser des additions et des soustractions de Point avec &#43; et -." rows="10" cols="50"></textarea>
+<p><label for="q7">7- Ecrivez une fonction-template qui retourne le carré d’une valeur, peu importe son type.</label>
+<textarea id="q7" name="Ecrivez une fonction-template qui retourne le carré d&rsquo;une valeur, peu importe son type." rows="4" cols="50"></textarea></p>
+<p><label for="q8">8- Définissez une structure-template <code>Point</code>, contenant deux attributs <code>x</code> et <code>y</code> de même type. Vous ajouterez deux fonctions permettant de réaliser des additions et des soustractions de <code>Point</code> avec <code>+</code> et <code>-</code>.</label>
+<textarea id="q8" name="Définissez une structure-template Point, contenant deux attributs x et y de même type. Vous ajouterez deux fonctions permettant de réaliser des additions et des soustractions de Point avec &#43; et -." rows="10" cols="50"></textarea></p>
 
 
   <hr/>
@@ -1989,10 +2001,10 @@ Bon courage à vous 🙂</p>
   <input type="text" name="time" placeholder="environ 4h30" />
 
   <label for="questions">Avez-vous des questions suite à sa lecture ?</label>
-  <textarea id="questions" name="questions" rows="5" cols="50"></textarea>
+  <textarea name="questions" rows="5" cols="50"></textarea>
 
   <label for="comments">Avez-vous des commentaires concernant le chapitre et/ou le site ?</label>
-  <textarea id="comments" name="comments" rows="5" cols="50"></textarea>
+  <textarea name="comments" rows="5" cols="50"></textarea>
 
   <input type="hidden" name="_template" value="box" />
   <input type="hidden" name="_captcha" value="false" />
@@ -3305,19 +3317,19 @@ Bon courage à vous 🙂</p>
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/CPP_Learning/js/clipboard.min.js?1704755107"></script>
-    <script src="/CPP_Learning/js/perfect-scrollbar.min.js?1704755107"></script>
-    <script src="/CPP_Learning/js/perfect-scrollbar.jquery.min.js?1704755107"></script>
-    <script src="/CPP_Learning/js/jquery.sticky.js?1704755107"></script>
-    <script src="/CPP_Learning/js/featherlight.min.js?1704755107"></script>
-    <script src="/CPP_Learning/js/highlight.pack.js?1704755107"></script>
+    <script src="/CPP_Learning/js/clipboard.min.js?1705257267"></script>
+    <script src="/CPP_Learning/js/perfect-scrollbar.min.js?1705257267"></script>
+    <script src="/CPP_Learning/js/perfect-scrollbar.jquery.min.js?1705257267"></script>
+    <script src="/CPP_Learning/js/jquery.sticky.js?1705257267"></script>
+    <script src="/CPP_Learning/js/featherlight.min.js?1705257267"></script>
+    <script src="/CPP_Learning/js/highlight.pack.js?1705257267"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/CPP_Learning/js/modernizr.custom-3.6.0.js?1704755107"></script>
-    <script src="/CPP_Learning/js/learn.js?1704755107"></script>
-    <script src="/CPP_Learning/js/hugo-learn.js?1704755107"></script>
+    <script src="/CPP_Learning/js/modernizr.custom-3.6.0.js?1705257267"></script>
+    <script src="/CPP_Learning/js/learn.js?1705257267"></script>
+    <script src="/CPP_Learning/js/hugo-learn.js?1705257267"></script>
     
         
-            <script src="/CPP_Learning/mermaid/mermaid.js?1704755107"></script>
+            <script src="/CPP_Learning/mermaid/mermaid.js?1705257267"></script>
         
         <script>
             mermaid.initialize({ startOnLoad: true });
@@ -3331,12 +3343,12 @@ Bon courage à vous 🙂</p>
     <form id="question" method=POST action="https://formsubmit.co/3aa0f379a1aed9c454634cc2da153a7b"
         target="question-submitted" onsubmit="cleanQuestionFormContent()">
 
-        <input type="email" name="email" placeholder="mon_email@smthg.com" required />
-        <textarea id="question-content" name="question" rows="7" cols="30" placeholder="ma question..."></textarea>
-        <input id="question-topic" type="hidden" name="selection" />
+        <input type="email" name="email" placeholder="mon_email@smthg.com" required onchange="updateQuestionFormSubject()" />
+        <textarea name="question" rows="7" cols="30" placeholder="ma question..."></textarea>
+        <input type="hidden" name="selection" />
 
         <input type="hidden" name="_replyto" />
-        <input type="hidden" name="_subject" value="[C++][Chapitre 99] Question sur le cours" />
+        <input type="hidden" name="_subject" />
         <input type="hidden" name="_template" value="box" />
         <input type="hidden" name="_captcha" value="false" />
         <input type="hidden" name="_next" value="https://laefy.github.io/CPP_Learning//question-submitted/" />
@@ -3345,10 +3357,15 @@ Bon courage à vous 🙂</p>
         <input type="submit" value="Envoyer" />
     </form>
 
-    <iframe id="question-submitted" class="hidden" name="question-submitted" src=""></iframe>
+    <iframe class="hidden" name="question-submitted" src=""></iframe>
 </div>
 
 <script>
+
+    function updateQuestionFormSubject() {
+        let email = document.querySelector('#question>input[name="email"]').value;
+        document.querySelector('#question>input[name="_subject"]').value = "[C++][Chapitre 99] " + email + ", retour sur ta question";
+    }
 
     function cleanQuestionFormContent() {
 
@@ -3357,15 +3374,15 @@ Bon courage à vous 🙂</p>
             element.value = element.value.replace(/\[\.\./g, "[ ..");
         }
 
-        clean(document.getElementById("question-content"))
-        clean(document.getElementById("question-topic"))
+        clean(document.querySelector('#question>textarea[name="question"]'))
+        clean(document.querySelector('#question>input[name="selection"]'))
     }
 
     function openQuestionForm() {
         document.getElementById("footer-question-window").removeAttribute("disabled");
 
         var selection = window.getSelection().toString();
-        document.getElementById("question-topic").value = selection
+        document.querySelector('#question>input[name="selection"]').value = selection
     }
 
     function updateQuestionWidgetState(event) {
@@ -3386,6 +3403,8 @@ Bon courage à vous 🙂</p>
             question_window.setAttribute("disabled", true);
         }
     }
+
+    updateQuestionFormSubject();
 
     document.onmouseup = document.onkeyup = document.onselectionchange = updateQuestionWidgetState;
     updateQuestionWidgetState();

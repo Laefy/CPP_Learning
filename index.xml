@@ -5,539 +5,882 @@
     <link>https://laefy.github.io/CPP_Learning/</link>
     <description>Recent content in Accueil on Cours de C&#43;&#43; - Niveau Master</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>fr</language>
-    <atom:link href="https://laefy.github.io/CPP_Learning/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>💼 Hiérarchie professionnelle</title>
-      <link>https://laefy.github.io/CPP_Learning/chapter4/1-hierarchy/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://laefy.github.io/CPP_Learning/chapter4/1-hierarchy/</guid>
-      <description>Dans cette première partie, vous apprendrez comment définir des relations de parenté entre vos classes.&#xA;Nous ne parlerons sur cette page que d&amp;rsquo;héritage dit &amp;ldquo;statique&amp;rdquo;, c&amp;rsquo;est-à-dire que nous ne chercherons pas à modifier dans les classes-fille le comportement hérité de la classe-mère.&#xA;Pour cet exercice, vous modifierez les fichiers :&#xA;- chap-04/1-hierarchy/Boss.cpp&#xA;- chap-04/1-hierarchy/Boss.h&#xA;- chap-04/1-hierarchy/Staff.cpp&#xA;- chap-04/1-hierarchy/Staff.h&#xA;- chap-04/1-hierarchy/Intern.cpp&#xA;- chap-04/1-hierarchy/Intern.h&#xA;La cible à compiler est c4-1-hierarchy.&#xA;Définir une classe-mère Commencez par jeter un coup d&amp;rsquo;oeil à chacun des fichiers fournis.</description>
-    </item>
+    <language>en-us</language><atom:link href="https://laefy.github.io/CPP_Learning/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Assertions</title>
       <link>https://laefy.github.io/CPP_Learning/chapter8/1-assertions/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
       <guid>https://laefy.github.io/CPP_Learning/chapter8/1-assertions/</guid>
-      <description>Types d&amp;rsquo;erreurs Lorsqu&amp;rsquo;une erreur se produit dans un logiciel, il s&amp;rsquo;agit soit d&amp;rsquo;une erreur de programmation, soit d&amp;rsquo;une erreur d&amp;rsquo;utilisation du logiciel.&#xA;Voici quelques exemples :&#xA;Un pointeur null a été déréférencé : erreur de programmation. Le programme a demandé à l&amp;rsquo;utilisateur de rentrer une image, mais celui-ci a fournit un fichier texte : erreur d&amp;rsquo;utilisation. On a écrit dans la case array.size() de array : erreur de programmation. L&amp;rsquo;utilisateur a entraîné &amp;ldquo;-34&amp;rdquo; alors que le programme attendait un entier positif : erreur d&amp;rsquo;utilisation.</description>
+      <description>Types d&amp;rsquo;erreurs Lorsqu&amp;rsquo;une erreur se produit dans un logiciel, il s&amp;rsquo;agit soit d&amp;rsquo;une erreur de programmation, soit d&amp;rsquo;une erreur d&amp;rsquo;utilisation du logiciel.
+Voici quelques exemples :
+ Un pointeur null a été déréférencé : erreur de programmation. Le programme a demandé à l&amp;rsquo;utilisateur de rentrer une image, mais celui-ci a fournit un fichier texte : erreur d&amp;rsquo;utilisation. On a écrit dans la case array.size() de array : erreur de programmation.</description>
     </item>
+    
     <item>
       <title>C&#39;est quoi un objet déjà ?</title>
       <link>https://laefy.github.io/CPP_Learning/chapter2/1-poo/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
       <guid>https://laefy.github.io/CPP_Learning/chapter2/1-poo/</guid>
-      <description>Commençons par donner quelques rappels des notions de POO que vous avez pu voir l&amp;rsquo;an dernier.&#xA;Objet Dans un programme, un objet est un élément constitué d&amp;rsquo;un état, et disposant d&amp;rsquo;une interface permettant d&amp;rsquo;intéragir avec cet état.&#xA;Classe Un objet est généralement créé à partir d&amp;rsquo;un modèle, que l&amp;rsquo;on appelle classe. Un objet créé à partir d&amp;rsquo;une classe constitue une instance de cette classe.&#xA;Etat L&amp;rsquo;état d&amp;rsquo;un objet est composé de valeurs, pouvant ou non varier au cours de l&amp;rsquo;exécution du programme.</description>
+      <description>Commençons par donner quelques rappels des notions de POO que vous avez pu voir l&amp;rsquo;an dernier.
+ Objet Dans un programme, un objet est un élément constitué d&amp;rsquo;un état, et disposant d&amp;rsquo;une interface permettant d&amp;rsquo;intéragir avec cet état.
+Classe Un objet est généralement créé à partir d&amp;rsquo;un modèle, que l&amp;rsquo;on appelle classe. Un objet créé à partir d&amp;rsquo;une classe constitue une instance de cette classe.
+Etat L&amp;rsquo;état d&amp;rsquo;un objet est composé de valeurs, pouvant ou non varier au cours de l&amp;rsquo;exécution du programme.</description>
     </item>
+    
     <item>
       <title>Compilateur</title>
       <link>https://laefy.github.io/CPP_Learning/chapter0/1-compiler/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
       <guid>https://laefy.github.io/CPP_Learning/chapter0/1-compiler/</guid>
-      <description>Pour le compilateur, vous devrez utiliser g++ (version &amp;gt;= 9) si vous êtes sous Windows ou Linux, et clang si vous êtes sous MacOS.&#xA;Windows Ouvrez un terminal et exécutez g++ -v. Si la commande réussit, assurez-vous que la dernière ligne indique bien une version de gcc &amp;gt;= 9. Si ce n&amp;rsquo;est pas le cas, installez le gestionnaire de paquet MSYS2 en suivant les instructions sur cette page.&#xA;MSYS2 contient en particulier MinGW, qui est l&amp;rsquo;équivalent du compilateur gcc/g++ pour Windows.</description>
+      <description>Pour le compilateur, vous devrez utiliser g++ (version &amp;gt;= 9) si vous êtes sous Windows ou Linux, et clang si vous êtes sous MacOS.
+ Windows  Ouvrez un terminal et exécutez g++ -v. Si la commande réussit, assurez-vous que la dernière ligne indique bien une version de gcc &amp;gt;= 9. Si ce n&amp;rsquo;est pas le cas, installez le gestionnaire de paquet MSYS2 en suivant les instructions sur cette page.</description>
     </item>
+    
     <item>
       <title>Durée de vie</title>
       <link>https://laefy.github.io/CPP_Learning/chapter3/1-lifespan/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
       <guid>https://laefy.github.io/CPP_Learning/chapter3/1-lifespan/</guid>
-      <description>Portée d&amp;rsquo;une variable locale Afin de parler de durée de vie, nous allons commencer par parler de la portée de nos variables. Comme vous le savez peut-être, la portée d&amp;rsquo;une variable définit la portion de code dans laquelle le compilateur nous permet de l&amp;rsquo;utiliser.&#xA;Si on définit une variable dans une fonction, la portée de celle-ci démarre à sa définition et se termine à la fin du bloc dans lequel celle-ci a été définie.</description>
+      <description>Portée d&amp;rsquo;une variable locale Afin de parler de durée de vie, nous allons commencer par parler de la portée de nos variables. Comme vous le savez peut-être, la portée d&amp;rsquo;une variable définit la portion de code dans laquelle le compilateur nous permet de l&amp;rsquo;utiliser.
+Si on définit une variable dans une fonction, la portée de celle-ci démarre à sa définition et se termine à la fin du bloc dans lequel celle-ci a été définie.</description>
     </item>
+    
     <item>
       <title>Introduction</title>
       <link>https://laefy.github.io/CPP_Learning/chapter9/1-introduction/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
       <guid>https://laefy.github.io/CPP_Learning/chapter9/1-introduction/</guid>
-      <description>Qu&amp;rsquo;est-ce qu&amp;rsquo;un template ? Les templates sont un mécanisme du C++ permettant de faire de la programmation générique.&#xA;Le terme &amp;ldquo;template&amp;rdquo; se traduit littéralement par &amp;ldquo;patron&amp;rdquo; en français (au sens patron de vêtement, pas patron d&amp;rsquo;entreprise). Les templates vont donc permettre de construire un modèle de classe (ou de fonction) à partir duquel le compilateur pourra de générer de véritables classes (ou fonctions).&#xA;Notez donc bien que malgré le terme, une classe-template n&amp;rsquo;est pas une classe.</description>
+      <description>Qu&amp;rsquo;est-ce qu&amp;rsquo;un template ? Les templates sont un mécanisme du C++ permettant de faire de la programmation générique.
+Le terme &amp;ldquo;template&amp;rdquo; se traduit littéralement par &amp;ldquo;patron&amp;rdquo; en français (au sens patron de vêtement, pas patron d&amp;rsquo;entreprise). Les templates vont donc permettre de construire un modèle de classe (ou de fonction) à partir duquel le compilateur pourra de générer de véritables classes (ou fonctions).
+Notez donc bien que malgré le terme, une classe-template n&amp;rsquo;est pas une classe.</description>
     </item>
+    
     <item>
       <title>Parcours et recherches</title>
       <link>https://laefy.github.io/CPP_Learning/chapter6/1-searches/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
       <guid>https://laefy.github.io/CPP_Learning/chapter6/1-searches/</guid>
-      <description>Parcours de plages Pour parcourir une plage d&amp;rsquo;éléments, vous devriez normalement déjà savoir qu&amp;rsquo;il faut utiliser une boucle for ou foreach. Les boucles while et do-while ne sont en effet pas vraiment adaptées à ce type d&amp;rsquo;usage.&#xA;Vous trouverez quelques conseils dans cette partie pour rendre votre code plus lisible, concis et fiable.&#xA;Boucle foreach Lorsqu&amp;rsquo;on itère sur un conteneur avec une boucle foreach, il faut faire attention à si l&amp;rsquo;on souhaite récupérer une copie de l&amp;rsquo;élément ou une référence.</description>
+      <description>Parcours de plages Pour parcourir une plage d&amp;rsquo;éléments, vous devriez normalement déjà savoir qu&amp;rsquo;il faut utiliser une boucle for ou foreach. Les boucles while et do-while ne sont en effet pas vraiment adaptées à ce type d&amp;rsquo;usage.
+Vous trouverez quelques conseils dans cette partie pour rendre votre code plus lisible, concis et fiable.
+ Boucle foreach Lorsqu&amp;rsquo;on itère sur un conteneur avec une boucle foreach, il faut faire attention à si l&amp;rsquo;on souhaite récupérer une copie de l&amp;rsquo;élément ou une référence.</description>
     </item>
+    
     <item>
       <title>Petits programmes</title>
       <link>https://laefy.github.io/CPP_Learning/chapter0/6-tips/1-snippets/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
       <guid>https://laefy.github.io/CPP_Learning/chapter0/6-tips/1-snippets/</guid>
-      <description>Voici 2 solutions permettant de compiler et de tester rapidement des petits programme.&#xA;Compiler Explorer Vous pouvez utiliser Compiler Explorer pour compiler du code avec à peu près tous les compilateurs de la Terre.&#xA;Cet utilitaire vous permet également d&amp;rsquo;exécuter directement votre programme.&#xA;Depuis un terminal Pour compiler Avec g++ :&#xA;g++ f1.cpp f2.cpp f3.cpp -o program Avec clang :&#xA;clang++ f1.cpp f2.cpp f3.cpp -o program Vous pouvez ajouter des options de compilation à la fin de la ligne de commande.</description>
+      <description>Voici 2 solutions permettant de compiler et de tester rapidement des petits programme.
+ Compiler Explorer Vous pouvez utiliser Compiler Explorer pour compiler du code avec à peu près tous les compilateurs de la Terre.
+Cet utilitaire vous permet également d&amp;rsquo;exécuter directement votre programme.
+ Depuis un terminal Pour compiler Avec g++ :
+g++f1.cpp f2.cpp f3.cpp -o program Avec clang :
+clang++f1.cpp f2.cpp f3.cpp -o program Vous pouvez ajouter des options de compilation à la fin de la ligne de commande.</description>
     </item>
-    <item>
-      <title>Présentation du langage</title>
-      <link>https://laefy.github.io/CPP_Learning/chapter1/1-language/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://laefy.github.io/CPP_Learning/chapter1/1-language/</guid>
-      <description>Cette page vous présentera quelques caractéristiques du C++, les différences avec d&amp;rsquo;autres langages que vous avez étudiés jusque là, pourquoi est-ce que certains disent que C++ est compliqué, alors que pas forcément, et ce qui fait que le langage est aussi utilisé aujourd&amp;rsquo;hui. Promis, c&amp;rsquo;est la seule page du cours où vous trouverez autant de pavés 🙂&#xA;Quelques caractéristiques C++ est un langage de programmation informatique inventé dans les années 1980 par un informaticien nommé Bjarne Stroustrup.</description>
-    </item>
+    
     <item>
       <title>Projets VSCode</title>
       <link>https://laefy.github.io/CPP_Learning/chapter0/6-tips/2-vscode/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
       <guid>https://laefy.github.io/CPP_Learning/chapter0/6-tips/2-vscode/</guid>
-      <description>Lorsque vous avez un projet un peu plus conséquent, il est plus pratique de passer par VSCode pour configurer, compiler et tester vos programmes.&#xA;Configuration avec CMake Vous aurez besoin d&amp;rsquo;un fichier CMakeLists.txt à la racine de votre répertoire pour configurer le projet. Si celui-ci ne contient qu&amp;rsquo;un seul programme, vous pouvez copier et adapter dans votre CMakeLists.txt les instructions suivantes.&#xA;cmake_minimum_required(VERSION 3.1)&#xD;project(my_project)&#xD;add_executable(my_executable&#xD;my_file1.cpp&#xD;my_file2.cpp&#xD;my_file3.h&#xD;)&#xD;target_compile_features(my_executable PUBLIC cxx_std_17) Pour configurer le projet, utilisez la commande CMake: Configure.</description>
+      <description>Lorsque vous avez un projet un peu plus conséquent, il est plus pratique de passer par VSCode pour configurer, compiler et tester vos programmes.
+ Configuration avec CMake Vous aurez besoin d&amp;rsquo;un fichier CMakeLists.txt à la racine de votre répertoire pour configurer le projet. Si celui-ci ne contient qu&amp;rsquo;un seul programme, vous pouvez copier et adapter dans votre CMakeLists.txt les instructions suivantes.
+cmake_minimum_required(VERSION 3.1)project(my_project)add_executable(my_executablemy_file1.cppmy_file2.cppmy_file3.h)target_compile_features(my_executable PUBLIC cxx_std_17)Pour configurer le projet, utilisez la commande CMake: Configure.</description>
     </item>
+    
+    <item>
+      <title>Présentation du langage</title>
+      <link>https://laefy.github.io/CPP_Learning/chapter1/1-language/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://laefy.github.io/CPP_Learning/chapter1/1-language/</guid>
+      <description>Cette page vous présentera quelques caractéristiques du C++, les différences avec d&amp;rsquo;autres langages que vous avez étudiés jusque là, pourquoi est-ce que certains disent que C++ est compliqué, alors que pas forcément, et ce qui fait que le langage est aussi utilisé aujourd&amp;rsquo;hui. Promis, c&amp;rsquo;est la seule page du cours où vous trouverez autant de pavés 🙂
+ Quelques caractéristiques C++ est un langage de programmation informatique inventé dans les années 1980 par un informaticien nommé Bjarne Stroustrup.</description>
+    </item>
+    
     <item>
       <title>Raccourcis VSCode</title>
       <link>https://laefy.github.io/CPP_Learning/chapter0/6-tips/3-keybinds-commands/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
       <guid>https://laefy.github.io/CPP_Learning/chapter0/6-tips/3-keybinds-commands/</guid>
-      <description>Général Ouvrir le panneau de commandes VSCode :&#xA;Ctrl+Shift+P&#xA;Configuration, Compilation, Exécution Configurer le projet :&#xA;CMake: Configure&#xA;Compiler un programme :&#xA;Shift+F7 ou CMake: Build Target&#xA;Changer le programme à exécuter :&#xA;CMake: Set Debug Target&#xA;Lancer le programme :&#xA;F5 ou Debug: Start Debugging&#xA;Debugging Placer un breakpoint à la ligne du curseur :&#xA;F9&#xA;Reprendre l&amp;rsquo;exécution :&#xA;F5&#xA;Exécuter l&amp;rsquo;instruction suivante :&#xA;F10&#xA;Entrer dans la fonction :</description>
+      <description>Général Ouvrir le panneau de commandes VSCode :
+Ctrl+Shift+P
+ Configuration, Compilation, Exécution Configurer le projet :
+CMake: Configure
+Compiler un programme :
+Shift+F7 ou CMake: Build Target
+Changer le programme à exécuter :
+CMake: Set Debug Target
+Lancer le programme :
+F5 ou Debug: Start Debugging
+ Debugging Placer un breakpoint à la ligne du curseur :
+F9
+Reprendre l&amp;rsquo;exécution :
+F5
+Exécuter l&amp;rsquo;instruction suivante :
+F10
+Entrer dans la fonction :</description>
     </item>
+    
     <item>
       <title>Référence universelle</title>
       <link>https://laefy.github.io/CPP_Learning/chapter10/1-universal-ref/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
       <guid>https://laefy.github.io/CPP_Learning/chapter10/1-universal-ref/</guid>
-      <description>Dans cette première section, nous commencerons par introduire les concepts de l-value et r-value.&#xA;Cela nous conduira à vous présenter la notion de référence universelle. Nous vous expliquerons ensuite quand et comment vous en servir dans votre code.&#xA;l-value / r-value Avant de parler concrètement des références universelles, il faut aborder un point essentiel à leur compréhension.&#xA;En C++, une expression est une suite d&amp;rsquo;opérateurs et d&amp;rsquo;opérandes pouvant être évaluée. L&amp;rsquo;évaluation d&amp;rsquo;une expression peut parfois produire une valeur.</description>
+      <description>Dans cette première section, nous commencerons par introduire les concepts de l-value et r-value.
+Cela nous conduira à vous présenter la notion de référence universelle. Nous vous expliquerons ensuite quand et comment vous en servir dans votre code.
+ l-value / r-value Avant de parler concrètement des références universelles, il faut aborder un point essentiel à leur compréhension.
+En C++, une expression est une suite d&amp;rsquo;opérateurs et d&amp;rsquo;opérandes pouvant être évaluée.</description>
     </item>
+    
     <item>
       <title>Un peu de doc...</title>
       <link>https://laefy.github.io/CPP_Learning/chapter5/1-doc/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
       <guid>https://laefy.github.io/CPP_Learning/chapter5/1-doc/</guid>
-      <description>Pour démarrez ce chapitre, nous allons vous expliquer comment parcourir la documentation que vous trouverez sur le site cppreference.&#xA;Commencez par ouvrir cette page. Vous y trouverez la documentation de la classe vector.&#xA;A première vue, son contenu peut paraître indigeste. Nous allons donc vous expliquer comment il est structuré afin que vous puissiez vous y repérer plus facilement.&#xA;Documentation d&amp;rsquo;une classe 1. En-tête Dans l&amp;rsquo;en-tête de la documentation, vous trouverez le nom de la classe, suivi du header à inclure afin de pouvoir l&amp;rsquo;utiliser.</description>
+      <description>Pour démarrez ce chapitre, nous allons vous expliquer comment parcourir la documentation que vous trouverez sur le site cppreference.
+Commencez par ouvrir cette page. Vous y trouverez la documentation de la classe vector.
+A première vue, son contenu peut paraître indigeste. Nous allons donc vous expliquer comment il est structuré afin que vous puissiez vous y repérer plus facilement.
+ Documentation d&amp;rsquo;une classe 1. En-tête Dans l&amp;rsquo;en-tête de la documentation, vous trouverez le nom de la classe, suivi du header à inclure afin de pouvoir l&amp;rsquo;utiliser.</description>
     </item>
+    
     <item>
-      <title>✨ Première classe</title>
-      <link>https://laefy.github.io/CPP_Learning/chapter2/2-first-class/</link>
+      <title>💼 Hiérarchie professionnelle</title>
+      <link>https://laefy.github.io/CPP_Learning/chapter4/1-hierarchy/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://laefy.github.io/CPP_Learning/chapter2/2-first-class/</guid>
-      <description>C&amp;rsquo;est parti pour la pratique ! Vous allez ici apprendre à définir une classe en C++ et à l&amp;rsquo;instancier.&#xA;Pour cet exercice, vous modifierez le fichier :&#xA;- chap-02/1-first_class.cpp&#xA;La cible à compiler est c2-1-first_class.&#xA;Méthodologie Pour cet exercice, on vous fournit le code de la fonction main.&#xA;int main() { // Person p; // p.set_name(&amp;#34;Batman&amp;#34;); // p.set_age(23); // std::cout &amp;lt;&amp;lt; &amp;#34;Person named &amp;#39;&amp;#34; &amp;lt;&amp;lt; p.get_name() &amp;lt;&amp;lt; &amp;#34;&amp;#39; is &amp;#34; &amp;lt;&amp;lt; p.</description>
+      
+      <guid>https://laefy.github.io/CPP_Learning/chapter4/1-hierarchy/</guid>
+      <description>Dans cette première partie, vous apprendrez comment définir des relations de parenté entre vos classes.
+Nous ne parlerons sur cette page que d&amp;rsquo;héritage dit &amp;ldquo;statique&amp;rdquo;, c&amp;rsquo;est-à-dire que nous ne chercherons pas à modifier dans les classes-fille le comportement hérité de la classe-mère.
+ Pour cet exercice, vous modifierez les fichiers :
+- chap-04/1-hierarchy/Boss.cpp
+- chap-04/1-hierarchy/Boss.h
+- chap-04/1-hierarchy/Staff.cpp
+- chap-04/1-hierarchy/Staff.h
+- chap-04/1-hierarchy/Intern.cpp
+- chap-04/1-hierarchy/Intern.h
+La cible à compiler est c4-1-hierarchy.
+ Définir une classe-mère Commencez par jeter un coup d&amp;rsquo;oeil à chacun des fichiers fournis.</description>
     </item>
-    <item>
-      <title>🐮 Concerto animalier</title>
-      <link>https://laefy.github.io/CPP_Learning/chapter4/2-farm/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://laefy.github.io/CPP_Learning/chapter4/2-farm/</guid>
-      <description>Vous allez maintenant apprendre à définir des classes permettant à leurs enfants de spécialiser leur comportement. On parle alors de classe polymorphe.&#xA;Nous ferons un petit récapitulatif en fin de page, pour rappelez les points essentiels auxquels il faut faire attention lorsque vous définissez des classes polymorphes pour éviter les bugs.&#xA;Pour cet exercice, vous modifierez les fichiers :&#xA;- chap-04/2-farm/FarmHouse.cpp&#xA;- chap-04/2-farm/Animal.h&#xA;- chap-04/2-farm/Dog.h&#xA;- chap-04/2-farm/Cat.h&#xA;- chap-04/2-farm/Chicken.h&#xA;- chap-04/2-farm/Cow.</description>
-    </item>
+    
     <item>
       <title>Exceptions</title>
       <link>https://laefy.github.io/CPP_Learning/chapter8/2-exceptions/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
       <guid>https://laefy.github.io/CPP_Learning/chapter8/2-exceptions/</guid>
-      <description>Qu&amp;rsquo;est-ce qu&amp;rsquo;une exception ? En C++, une exception sert à interrompre le flot classique d&amp;rsquo;exécution du programme lorsqu&amp;rsquo;un événement particulier se produit. Lorsqu&amp;rsquo;une exception est lancée, on sort du bloc courant, et on remonte la callstack autant que nécessaire, jusqu&amp;rsquo;à atteindre un bloc capable de traiter l&amp;rsquo;exception.&#xA;C&amp;rsquo;est donc un mécanisme extrêmement utilisé pour le traitement des erreurs (autant de programmation que d&amp;rsquo;utilisation), puisque l&amp;rsquo;erreur est remontée automatiquement jusqu&amp;rsquo;à l&amp;rsquo;endroit qui peut la traiter, sans avoir besoin de toucher au code des fonctions intermédiaires.</description>
+      <description>Qu&amp;rsquo;est-ce qu&amp;rsquo;une exception ? En C++, une exception sert à interrompre le flot classique d&amp;rsquo;exécution du programme lorsqu&amp;rsquo;un événement particulier se produit. Lorsqu&amp;rsquo;une exception est lancée, on sort du bloc courant, et on remonte la callstack autant que nécessaire, jusqu&amp;rsquo;à atteindre un bloc capable de traiter l&amp;rsquo;exception.
+C&amp;rsquo;est donc un mécanisme extrêmement utilisé pour le traitement des erreurs (autant de programmation que d&amp;rsquo;utilisation), puisque l&amp;rsquo;erreur est remontée automatiquement jusqu&amp;rsquo;à l&amp;rsquo;endroit qui peut la traiter, sans avoir besoin de toucher au code des fonctions intermédiaires.</description>
     </item>
+    
     <item>
       <title>Exemples</title>
       <link>https://laefy.github.io/CPP_Learning/chapter9/2-examples/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
       <guid>https://laefy.github.io/CPP_Learning/chapter9/2-examples/</guid>
-      <description>Nous allons maintenant rentrer dans le vif du sujet en vous présentant le code de différents templates.&#xA;Nous détaillerons ensuite chacun des éléments de la syntaxe, afin que vous puissiez les comprendre pour les réutiliser dans votre propre code.&#xA;Premier exemple de classe-template Cet exemple consiste en l&amp;rsquo;implémentation d&amp;rsquo;un tableau de taille statique (un peu comme la classe std::array).&#xA;#include &amp;lt;algorithm&amp;gt; #include &amp;lt;cassert&amp;gt; #include &amp;lt;iostream&amp;gt; template &amp;lt;typename ElementType, size_t Size&amp;gt; class StaticArray { public: // Rappel: l&amp;#39;implémentation par défaut du constructeur par défaut disparaît lorsqu&amp;#39;on // définit explicitement un autre constructeur (ce qui est le cas ici).</description>
+      <description>Nous allons maintenant rentrer dans le vif du sujet en vous présentant le code de différents templates.
+Nous détaillerons ensuite chacun des éléments de la syntaxe, afin que vous puissiez les comprendre pour les réutiliser dans votre propre code.
+ Premier exemple de classe-template Cet exemple consiste en l&amp;rsquo;implémentation d&amp;rsquo;un tableau de taille statique (un peu comme la classe std::array).
+#include &amp;lt;algorithm&amp;gt;#include &amp;lt;cassert&amp;gt;#include &amp;lt;iostream&amp;gt; template &amp;lt;typename ElementType, size_t Size&amp;gt; class StaticArray { public: // Rappel: l&amp;#39;implémentation par défaut du constructeur par défaut disparaît lorsqu&amp;#39;on  // définit explicitement un autre constructeur (ce qui est le cas ici).</description>
     </item>
+    
     <item>
       <title>Hello World 👋</title>
       <link>https://laefy.github.io/CPP_Learning/chapter1/2-hello-world/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
       <guid>https://laefy.github.io/CPP_Learning/chapter1/2-hello-world/</guid>
-      <description>Nous allons maintenant enfin pouvoir coder ! Dans la suite de ce chapitre, vous verrez comment :&#xA;écrire un programme, déclarer des variables, écrire sur la sortie standard, lire sur l&amp;rsquo;entrée standard, définir des fonctions, utiliser les structures de contrôle (conditions, boucles, switch, etc.), créer des tableaux et des chaînes de caractères, utiliser des références. Ça fait beaucoup hein ? 😈&#xA;En réalité, comme vous avez déjà fait du C et du Java, il y a pas mal de choses que vous connaissez déjà.</description>
+      <description>Nous allons maintenant enfin pouvoir coder ! Dans la suite de ce chapitre, vous verrez comment :
+ écrire un programme, déclarer des variables, écrire sur la sortie standard, lire sur l&amp;rsquo;entrée standard, définir des fonctions, utiliser les structures de contrôle (conditions, boucles, switch, etc.), créer des tableaux et des chaînes de caractères, utiliser des références.  Ça fait beaucoup hein ? 😈
+En réalité, comme vous avez déjà fait du C et du Java, il y a pas mal de choses que vous connaissez déjà.</description>
     </item>
+    
     <item>
       <title>Ownership</title>
       <link>https://laefy.github.io/CPP_Learning/chapter3/2-ownership/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
       <guid>https://laefy.github.io/CPP_Learning/chapter3/2-ownership/</guid>
-      <description>Ownership On dit qu&amp;rsquo;un objet A est le propriétaire, ou le owner, d&amp;rsquo;un objet B lorsque la destruction de A entraîne la destruction de B.&#xA;Dans l&amp;rsquo;exercice précédent, on peut donc dire que box était propriétaire de box._content.&#xA;Considérons un autre exemple :&#xA;std::vector&amp;lt;Box&amp;gt; boxes; boxes.emplace_back(&amp;#34;gift1&amp;#34;); Box&amp;amp; gift2 = boxes.emplace_back(&amp;#34;gift2&amp;#34;); Box gift3 = boxes.emplace_back(&amp;#34;gift3&amp;#34;); Ici, le tableau boxes est le propriétaire des objets boxes[0], boxes[1] et boxes[2]. Il est également propriétaire de l&amp;rsquo;objet gift2, puisqu&amp;rsquo;il s&amp;rsquo;agit d&amp;rsquo;une référence sur boxes[1].</description>
+      <description>Ownership On dit qu&amp;rsquo;un objet A est le propriétaire, ou le owner, d&amp;rsquo;un objet B lorsque la destruction de A entraîne la destruction de B.
+Dans l&amp;rsquo;exercice précédent, on peut donc dire que box était propriétaire de box._content.
+Considérons un autre exemple :
+std::vector&amp;lt;Box&amp;gt; boxes; boxes.emplace_back(&amp;#34;gift1&amp;#34;); Box&amp;amp; gift2 = boxes.emplace_back(&amp;#34;gift2&amp;#34;); Box gift3 = boxes.emplace_back(&amp;#34;gift3&amp;#34;); Ici, le tableau boxes est le propriétaire des objets boxes[0], boxes[1] et boxes[2]. Il est également propriétaire de l&amp;rsquo;objet gift2, puisqu&amp;rsquo;il s&amp;rsquo;agit d&amp;rsquo;une référence sur boxes[1].</description>
     </item>
+    
     <item>
       <title>Tableaux dynamiques</title>
       <link>https://laefy.github.io/CPP_Learning/chapter5/2-vectors/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
       <guid>https://laefy.github.io/CPP_Learning/chapter5/2-vectors/</guid>
-      <description>Vous apprendrez ici à utiliser des vector de manière un peu plus avancée : construction, accès, insertions, suppressions et recherches n&amp;rsquo;auront plus de secrets pour vous !&#xA;Pour cet exercice, vous modifierez le fichier :&#xA;- chap-05/1-vectors.cpp&#xA;La cible à compiler est c5-1-vectors.&#xA;Construction Au chapitre précédent, nous vous avions présenté différentes syntaxes permettant d&amp;rsquo;instancier une classe. Nous vous avions en particulier indiquer qu&amp;rsquo;il était possible d&amp;rsquo;utiliser la syntaxe Class c { p1, p2 }; ou bien la syntaxe Class c(p1, p2);.</description>
+      <description>Vous apprendrez ici à utiliser des vector de manière un peu plus avancée : construction, accès, insertions, suppressions et recherches n&amp;rsquo;auront plus de secrets pour vous !
+ Pour cet exercice, vous modifierez le fichier :
+- chap-05/1-vectors.cpp
+La cible à compiler est c5-1-vectors.
+ Construction Au chapitre précédent, nous vous avions présenté différentes syntaxes permettant d&amp;rsquo;instancier une classe. Nous vous avions en particulier indiquer qu&amp;rsquo;il était possible d&amp;rsquo;utiliser la syntaxe Class c { p1, p2 }; ou bien la syntaxe Class c(p1, p2);.</description>
     </item>
+    
     <item>
       <title>Template variadique</title>
       <link>https://laefy.github.io/CPP_Learning/chapter10/2-variadiac/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
       <guid>https://laefy.github.io/CPP_Learning/chapter10/2-variadiac/</guid>
-      <description>Un template variadique, c&amp;rsquo;est un template qui attend un nombre variable de paramètres. Vous en avez déjà utilisé plusieurs, comme :&#xA;- la fonction-template emplace_back de std::vector, qui attend n&amp;rsquo;importe quels nombres et types d&amp;rsquo;arguments, et les utilisent pour construire le nouvel élément,&#xA;- la fonction-template std::make_unique, qui fonctionne sur le même principe,&#xA;- la classe-template std::tuple, qui permet de représenter un N-uplet contenant n&amp;rsquo;importe quels types.&#xA;L&amp;rsquo;objectif de cette section sera de vous apprendre à définir vos propres templates variadiques.</description>
+      <description>Un template variadique, c&amp;rsquo;est un template qui attend un nombre variable de paramètres. Vous en avez déjà utilisé plusieurs, comme :
+- la fonction-template emplace_back de std::vector, qui attend n&amp;rsquo;importe quels nombres et types d&amp;rsquo;arguments, et les utilisent pour construire le nouvel élément,
+- la fonction-template std::make_unique, qui fonctionne sur le même principe,
+- la classe-template std::tuple, qui permet de représenter un N-uplet contenant n&amp;rsquo;importe quels types.
+L&amp;rsquo;objectif de cette section sera de vous apprendre à définir vos propres templates variadiques.</description>
     </item>
+    
     <item>
       <title>Transformations</title>
       <link>https://laefy.github.io/CPP_Learning/chapter6/2-transformations/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
       <guid>https://laefy.github.io/CPP_Learning/chapter6/2-transformations/</guid>
-      <description>Maintenant que nous vous avons présenté les fonctions permettant de récupérer des informations à partir d&amp;rsquo;une plage d&amp;rsquo;éléments, nous allons vous présenter celles qui permettent de manipuler et de transformer ces plages.&#xA;Suppressions Afin de supprimer des éléments d&amp;rsquo;une plage, on utilise la fonction std::remove. Cette fonction a pour effet de déplacer les éléments à conserver au début de la plage, en préservant leur ordre. Elle renvoie un itérateur sur le nouvel itérateur de fin de plage.</description>
+      <description>Maintenant que nous vous avons présenté les fonctions permettant de récupérer des informations à partir d&amp;rsquo;une plage d&amp;rsquo;éléments, nous allons vous présenter celles qui permettent de manipuler et de transformer ces plages.
+ Suppressions Afin de supprimer des éléments d&amp;rsquo;une plage, on utilise la fonction std::remove. Cette fonction a pour effet de déplacer les éléments à conserver au début de la plage, en préservant leur ordre. Elle renvoie un itérateur sur le nouvel itérateur de fin de plage.</description>
     </item>
+    
     <item>
       <title>Visual Studio Code</title>
       <link>https://laefy.github.io/CPP_Learning/chapter0/2-vscode/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
       <guid>https://laefy.github.io/CPP_Learning/chapter0/2-vscode/</guid>
-      <description>Pour l&amp;rsquo;IDE, nous vous conseillons d&amp;rsquo;utiliser Visual Studio Code, car celui-ci est disponible sur toutes les plateformes (contrairement à Visual Studio tout court), qu&amp;rsquo;il est très bien documenté et que vous pourrez trouvez de nombreux tutoriels en ligne pour apprendre à l&amp;rsquo;utiliser.&#xA;Vous trouverez ci-dessous les instructions permettant d&amp;rsquo;installer VSCode.&#xA;Windows Installez VSCode en suivant les instructions du paragraphe Installation. Si l&amp;rsquo;installeur vous propose d&amp;rsquo;installer git, vous pouvez acceptez, cela vous fera gagner du temps pour la suite.</description>
+      <description>Pour l&amp;rsquo;IDE, nous vous conseillons d&amp;rsquo;utiliser Visual Studio Code, car celui-ci est disponible sur toutes les plateformes (contrairement à Visual Studio tout court), qu&amp;rsquo;il est très bien documenté et que vous pourrez trouvez de nombreux tutoriels en ligne pour apprendre à l&amp;rsquo;utiliser.
+Vous trouverez ci-dessous les instructions permettant d&amp;rsquo;installer VSCode.
+ Windows  Installez VSCode en suivant les instructions du paragraphe Installation.
+Si l&amp;rsquo;installeur vous propose d&amp;rsquo;installer git, vous pouvez acceptez, cela vous fera gagner du temps pour la suite.</description>
     </item>
+    
     <item>
-      <title>🔨 Constructeur</title>
-      <link>https://laefy.github.io/CPP_Learning/chapter2/3-constructor/</link>
+      <title>✨ Première classe</title>
+      <link>https://laefy.github.io/CPP_Learning/chapter2/2-first-class/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://laefy.github.io/CPP_Learning/chapter2/3-constructor/</guid>
-      <description>Dans cet exercice, vous apprendrez à paramétrer la construction de vos objets.&#xA;Pour cet exercice, vous modifierez le fichier :&#xA;- chap-02/2-constructor.cpp&#xA;La cible à compiler est c2-2-constructor.&#xA;Constructeur à paramètres Reprenez le code de l&amp;rsquo;exercice précédent.&#xA;Vous aviez implémenté une fonction-membre set_name dans la classe Person pour initialiser l&amp;rsquo;attribut _name. Or, ce serait bien d&amp;rsquo;une part de réellement pouvoir initialiser cet attribut plutôt que de le modifier après l&amp;rsquo;instanciation, et d&amp;rsquo;autre part, de supprimer ce setter, afin qu&amp;rsquo;une fois initialisé, il ne soit plus possible de modifier _name.</description>
+      
+      <guid>https://laefy.github.io/CPP_Learning/chapter2/2-first-class/</guid>
+      <description>C&amp;rsquo;est parti pour la pratique ! Vous allez ici apprendre à définir une classe en C++ et à l&amp;rsquo;instancier.
+ Pour cet exercice, vous modifierez le fichier :
+- chap-02/1-first_class.cpp
+La cible à compiler est c2-1-first_class.
+ Méthodologie Pour cet exercice, on vous fournit le code de la fonction main.
+int main() { // Person p;  // p.set_name(&amp;#34;Batman&amp;#34;);  // p.set_age(23);  // std::cout &amp;lt;&amp;lt; &amp;#34;Person named &amp;#39;&amp;#34; &amp;lt;&amp;lt; p.</description>
     </item>
+    
+    <item>
+      <title>🐮 Concerto animalier</title>
+      <link>https://laefy.github.io/CPP_Learning/chapter4/2-farm/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://laefy.github.io/CPP_Learning/chapter4/2-farm/</guid>
+      <description>Vous allez maintenant apprendre à définir des classes permettant à leurs enfants de spécialiser leur comportement. On parle alors de classe polymorphe.
+Nous ferons un petit récapitulatif en fin de page, pour rappelez les points essentiels auxquels il faut faire attention lorsque vous définissez des classes polymorphes pour éviter les bugs.
+ Pour cet exercice, vous modifierez les fichiers :
+- chap-04/2-farm/FarmHouse.cpp
+- chap-04/2-farm/Animal.h
+- chap-04/2-farm/Dog.h
+- chap-04/2-farm/Cat.h
+- chap-04/2-farm/Chicken.h</description>
+    </item>
+    
     <item>
       <title>Allocation dynamique</title>
       <link>https://laefy.github.io/CPP_Learning/chapter3/3-allocation/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
       <guid>https://laefy.github.io/CPP_Learning/chapter3/3-allocation/</guid>
-      <description>Nous allons maintenant voir comment il est possible d&amp;rsquo;allouer de la mémoire simplement, en particulier sans avoir à se soucier des fuites mémoire.&#xA;Allocation d&amp;rsquo;une primitive Pour créer un objet sur le tas, nous allons nous servir d&amp;rsquo;un petit utilitaire appelé std::unique_ptr et de la fonction std::make_unique. Ces deux symboles se trouvent dans le header &amp;lt;memory&amp;gt;.&#xA;Voici la syntaxe permettant d&amp;rsquo;allouer de la mémoire pour un entier :&#xA;#include &amp;lt;iostream&amp;gt; #include &amp;lt;memory&amp;gt; void fcn() { std::unique_ptr&amp;lt;int&amp;gt; int_on_heap = std::make_unique&amp;lt;int&amp;gt;(3); std::cout &amp;lt;&amp;lt; *int_on_heap &amp;lt;&amp;lt; std::endl; // affiche 3 *int_on_heap = 5; std::cout &amp;lt;&amp;lt; *int_on_heap &amp;lt;&amp;lt; std::endl; // affiche 5 } La classe unique_ptr est donc un symbole que l&amp;rsquo;on template par le type qu&amp;rsquo;il doit contenir.</description>
+      <description>Nous allons maintenant voir comment il est possible d&amp;rsquo;allouer de la mémoire simplement, en particulier sans avoir à se soucier des fuites mémoire.
+ Allocation d&amp;rsquo;une primitive Pour créer un objet sur le tas, nous allons nous servir d&amp;rsquo;un petit utilitaire appelé std::unique_ptr et de la fonction std::make_unique. Ces deux symboles se trouvent dans le header &amp;lt;memory&amp;gt;.
+Voici la syntaxe permettant d&amp;rsquo;allouer de la mémoire pour un entier :
+#include &amp;lt;iostream&amp;gt;#include &amp;lt;memory&amp;gt; void fcn() { std::unique_ptr&amp;lt;int&amp;gt; int_on_heap = std::make_unique&amp;lt;int&amp;gt;(3); std::cout &amp;lt;&amp;lt; *int_on_heap &amp;lt;&amp;lt; std::endl; // affiche 3  *int_on_heap = 5; std::cout &amp;lt;&amp;lt; *int_on_heap &amp;lt;&amp;lt; std::endl; // affiche 5 } La classe unique_ptr est donc un symbole que l&amp;rsquo;on template par le type qu&amp;rsquo;il doit contenir.</description>
     </item>
+    
     <item>
       <title>Autres conteneurs séquentiels</title>
       <link>https://laefy.github.io/CPP_Learning/chapter5/3-sequentials/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
       <guid>https://laefy.github.io/CPP_Learning/chapter5/3-sequentials/</guid>
-      <description>Vous allez maintenant manipuler les autres conteneurs séquentiels que la libraire propose.&#xA;Pour cet exercice, vous modifierez le fichier :&#xA;- chap-05/2-sequentials.cpp&#xA;La cible à compiler est c5-2-sequentials.&#xA;Tableaux de taille fixe Pour créer des tableaux de taille fixe, il est bien entendu possible d&amp;rsquo;utiliser les tableaux primitifs. L&amp;rsquo;inconvénient, c&amp;rsquo;est qu&amp;rsquo;il faut penser à les initialiser, ce que tout le monde ne pense pas toujours à faire&amp;hellip;.&#xA;Du coup, pour pallier à ce problème, il est possible d&amp;rsquo;utiliser la classe std::array.</description>
+      <description>Vous allez maintenant manipuler les autres conteneurs séquentiels que la libraire propose.
+ Pour cet exercice, vous modifierez le fichier :
+- chap-05/2-sequentials.cpp
+La cible à compiler est c5-2-sequentials.
+ Tableaux de taille fixe Pour créer des tableaux de taille fixe, il est bien entendu possible d&amp;rsquo;utiliser les tableaux primitifs. L&amp;rsquo;inconvénient, c&amp;rsquo;est qu&amp;rsquo;il faut penser à les initialiser, ce que tout le monde ne pense pas toujours à faire&amp;hellip;.
+Du coup, pour pallier à ce problème, il est possible d&amp;rsquo;utiliser la classe std::array.</description>
     </item>
+    
     <item>
       <title>CMake</title>
       <link>https://laefy.github.io/CPP_Learning/chapter0/3-cmake/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
       <guid>https://laefy.github.io/CPP_Learning/chapter0/3-cmake/</guid>
-      <description>Afin de générer les artéfacts pour la compilation, nous utiliserons CMake.&#xA;Installation Windows Ouvrez un terminal MSYS2 UCRT64. Installez les paquets cmake et make avec l&amp;rsquo;instruction suivante : pacman -S mingw-w64-ucrt-x86_64-cmake mingw-w64-ucrt-x86_64-make Linux / MacOS Ouvrez un terminal. Utilisez votre gestionnaire de package afin d&amp;rsquo;installer cmake. Intégration à VSCode Afin de pouvoir utiliser CMake facilement depuis VSCode, il faut installer les extensions CMake et CMakeTools.&#xA;Démarrez VSCode. Ouvrez le panneau des extensions et recherchez les extensions CMake et CMakeTools.</description>
+      <description>Afin de générer les artéfacts pour la compilation, nous utiliserons CMake.
+ Installation Windows  Ouvrez un terminal MSYS2 UCRT64. Installez les paquets cmake et make avec l&amp;rsquo;instruction suivante : pacman -S mingw-w64-ucrt-x86_64-cmake mingw-w64-ucrt-x86_64-make   Linux / MacOS  Ouvrez un terminal. Utilisez votre gestionnaire de package afin d&amp;rsquo;installer cmake.   Intégration à VSCode Afin de pouvoir utiliser CMake facilement depuis VSCode, il faut installer les extensions CMake et CMakeTools.</description>
     </item>
+    
     <item>
       <title>Débrief</title>
       <link>https://laefy.github.io/CPP_Learning/chapter9/3-syntaxe/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
       <guid>https://laefy.github.io/CPP_Learning/chapter9/3-syntaxe/</guid>
-      <description>Définition d&amp;rsquo;un template Pour définir un template, il faut écrire template &amp;lt;...&amp;gt; devant la définition de la classe ou fonction templatée.&#xA;Les chevrons contiennent la liste des paramètres du template. Chaque paramètre est typé par :&#xA;- typename : il faut donc passer un nom de type en paramètre,&#xA;- un type intégral, comme size_t, char, int, &amp;hellip; : il faut passer une expression du bon type évaluable à la compilation,</description>
+      <description>Définition d&amp;rsquo;un template Pour définir un template, il faut écrire template &amp;lt;...&amp;gt; devant la définition de la classe ou fonction templatée.
+Les chevrons contiennent la liste des paramètres du template. Chaque paramètre est typé par :
+- typename : il faut donc passer un nom de type en paramètre,
+- un type intégral, comme size_t, char, int, &amp;hellip; : il faut passer une expression du bon type évaluable à la compilation,</description>
     </item>
+    
     <item>
       <title>Eléments de syntaxe ✍</title>
       <link>https://laefy.github.io/CPP_Learning/chapter1/3-syntax-elements/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
       <guid>https://laefy.github.io/CPP_Learning/chapter1/3-syntax-elements/</guid>
-      <description>Nous allons vous présenter les éléments de syntaxe de base du langage.&#xA;Comme vous pourrez le constater, mis à part quelques subtilités, la plupart des informations que vous allez lire ici devrait être similaire à ce que vous avez déjà appris en C ou en Java.&#xA;Variables et types fondamentaux Comme dans tous les langages ou presque, on retrouve :&#xA;les entiers (signés ou non-signés) : int, short, unsigned int, &amp;hellip; les flottants : float, double les types caractère : char, unsigned char le type booléen : bool (et non pas boolean comme en Java ⚠️) Pour définir des variables, c&amp;rsquo;est comme d&amp;rsquo;habitude : &amp;lt;type&amp;gt; &amp;lt;nom&amp;gt; = &amp;lt;valeur&amp;gt;;</description>
+      <description>Nous allons vous présenter les éléments de syntaxe de base du langage.
+Comme vous pourrez le constater, mis à part quelques subtilités, la plupart des informations que vous allez lire ici devrait être similaire à ce que vous avez déjà appris en C ou en Java.
+ Variables et types fondamentaux Comme dans tous les langages ou presque, on retrouve :
+ les entiers (signés ou non-signés) : int, short, unsigned int, &amp;hellip; les flottants : float, double les types caractère : char, unsigned char le type booléen : bool (et non pas boolean comme en Java ⚠️)  Pour définir des variables, c&amp;rsquo;est comme d&amp;rsquo;habitude : &amp;lt;type&amp;gt; &amp;lt;nom&amp;gt; = &amp;lt;valeur&amp;gt;;</description>
     </item>
+    
     <item>
       <title>Itérateurs</title>
       <link>https://laefy.github.io/CPP_Learning/chapter6/3-iterators/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
       <guid>https://laefy.github.io/CPP_Learning/chapter6/3-iterators/</guid>
-      <description>Normalement, avec tout ce que vous avez vu jusqu&amp;rsquo;ici, vous devriez être capable d&amp;rsquo;utiliser correctement un itérateur :&#xA;déréférencement avec *it incrémentation avec ++it récupérer les itérateurs de début et de fin d&amp;rsquo;un conteneur avec ctn.begin() et ctn.end() insérer un élément dans un conteneur avec auto it_on_new = ctn.insert(it, new_value) supprimer un élément d&amp;rsquo;un conteneur avec auto it_on_next = ctn.erase(it) Vous allez maintenant voir ce qu&amp;rsquo;il faut faire pour implémenter vos propres itérateurs.</description>
+      <description>Normalement, avec tout ce que vous avez vu jusqu&amp;rsquo;ici, vous devriez être capable d&amp;rsquo;utiliser correctement un itérateur :
+ déréférencement avec *it incrémentation avec ++it récupérer les itérateurs de début et de fin d&amp;rsquo;un conteneur avec ctn.begin() et ctn.end() insérer un élément dans un conteneur avec auto it_on_new = ctn.insert(it, new_value) supprimer un élément d&amp;rsquo;un conteneur avec auto it_on_next = ctn.erase(it)  Vous allez maintenant voir ce qu&amp;rsquo;il faut faire pour implémenter vos propres itérateurs.</description>
     </item>
+    
     <item>
       <title>Résolution d&#39;appel virtuel</title>
       <link>https://laefy.github.io/CPP_Learning/chapter4/3-virtual/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
       <guid>https://laefy.github.io/CPP_Learning/chapter4/3-virtual/</guid>
-      <description>Nous allons maintenant rentrer dans les détails de ce qu&amp;rsquo;il se passe sous le manteau, lorsque le programme effectue un appel virtuel.&#xA;Virtual table Lorsqu&amp;rsquo;une classe Parent contenant des fonctions virtuelles est compilée, le compilateur va générer pour l&amp;rsquo;ensemble des classes qui en dérivent une virtual table. Il s&amp;rsquo;agit d&amp;rsquo;une tableau qui contient, pour chaque fonction virtuelle de la classe, un pointeur sur la fonction qui sera vraiment appelée.&#xA;Analysons la hiérarchie suivante :</description>
+      <description>Nous allons maintenant rentrer dans les détails de ce qu&amp;rsquo;il se passe sous le manteau, lorsque le programme effectue un appel virtuel.
+ Virtual table Lorsqu&amp;rsquo;une classe Parent contenant des fonctions virtuelles est compilée, le compilateur va générer pour l&amp;rsquo;ensemble des classes qui en dérivent une virtual table. Il s&amp;rsquo;agit d&amp;rsquo;une tableau qui contient, pour chaque fonction virtuelle de la classe, un pointeur sur la fonction qui sera vraiment appelée.</description>
     </item>
+    
     <item>
       <title>Spécialisations</title>
       <link>https://laefy.github.io/CPP_Learning/chapter10/3-specializations/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
       <guid>https://laefy.github.io/CPP_Learning/chapter10/3-specializations/</guid>
-      <description>Cette section sera consacrée à la spécialisation de templates de fonctions et de classes.&#xA;Une spécialisation est la redéfinition d&amp;rsquo;une entitée templatée, qui va s&amp;rsquo;appliquer pour des paramètres particuliers. Il y a de nombreux cas d&amp;rsquo;utilisation des spécialisation, l&amp;rsquo;un d&amp;rsquo;entre eux étant de définir de traiter des cas particuliers.&#xA;Spécialisation de fonctions Soit la fonction templatée suivante, permettant d&amp;rsquo;afficher des valeurs dans le terminal :&#xA;template &amp;lt;typename T&amp;gt; void print(const T&amp;amp; value) { std::cout &amp;lt;&amp;lt; value &amp;lt;&amp;lt; std::endl; } Si on lui passe des booléens, cette fonction affichera 0 ou 1.</description>
+      <description>Cette section sera consacrée à la spécialisation de templates de fonctions et de classes.
+Une spécialisation est la redéfinition d&amp;rsquo;une entitée templatée, qui va s&amp;rsquo;appliquer pour des paramètres particuliers. Il y a de nombreux cas d&amp;rsquo;utilisation des spécialisation, l&amp;rsquo;un d&amp;rsquo;entre eux étant de définir de traiter des cas particuliers.
+ Spécialisation de fonctions Soit la fonction templatée suivante, permettant d&amp;rsquo;afficher des valeurs dans le terminal :
+template &amp;lt;typename T&amp;gt; void print(const T&amp;amp; value) { std::cout &amp;lt;&amp;lt; value &amp;lt;&amp;lt; std::endl; } Si on lui passe des booléens, cette fonction affichera 0 ou 1.</description>
     </item>
+    
+    <item>
+      <title>🔨 Constructeur</title>
+      <link>https://laefy.github.io/CPP_Learning/chapter2/3-constructor/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://laefy.github.io/CPP_Learning/chapter2/3-constructor/</guid>
+      <description>Dans cet exercice, vous apprendrez à paramétrer la construction de vos objets.
+ Pour cet exercice, vous modifierez le fichier :
+- chap-02/2-constructor.cpp
+La cible à compiler est c2-2-constructor.
+ Constructeur à paramètres Reprenez le code de l&amp;rsquo;exercice précédent.
+Vous aviez implémenté une fonction-membre set_name dans la classe Person pour initialiser l&amp;rsquo;attribut _name. Or, ce serait bien d&amp;rsquo;une part de réellement pouvoir initialiser cet attribut plutôt que de le modifier après l&amp;rsquo;instanciation, et d&amp;rsquo;autre part, de supprimer ce setter, afin qu&amp;rsquo;une fois initialisé, il ne soit plus possible de modifier _name.</description>
+    </item>
+    
     <item>
       <title>Compilation en terminal</title>
       <link>https://laefy.github.io/CPP_Learning/chapter0/6-tips/4-terminal/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
       <guid>https://laefy.github.io/CPP_Learning/chapter0/6-tips/4-terminal/</guid>
-      <description>Options g++ et clang++ Si vous compilez via le terminal ou avec Compiler Explorer, nous vous conseillons d&amp;rsquo;utiliser les options ci-dessous, car nous les activerons pour vos rendus de projet :&#xA;-std=c++17 : spécifie que le projet sera compilé en C++17 (sans cette option, certains fichiers peuvent ne pas compiler) -Wall -W : permet d&amp;rsquo;activer un certain nombre de warnings -Werror : transforme les warnings en erreurs, donc tant qu&amp;rsquo;il y a des warnings, le programme ne compile pas Sachez par ailleurs que vous pouvez également utiliser :</description>
+      <description>Options g++ et clang++ Si vous compilez via le terminal ou avec Compiler Explorer, nous vous conseillons d&amp;rsquo;utiliser les options ci-dessous, car nous les activerons pour vos rendus de projet :
+ -std=c++17 : spécifie que le projet sera compilé en C++17 (sans cette option, certains fichiers peuvent ne pas compiler) -Wall -W : permet d&amp;rsquo;activer un certain nombre de warnings -Werror : transforme les warnings en erreurs, donc tant qu&amp;rsquo;il y a des warnings, le programme ne compile pas  Sachez par ailleurs que vous pouvez également utiliser :</description>
     </item>
+    
     <item>
       <title>Conteneurs associatifs</title>
       <link>https://laefy.github.io/CPP_Learning/chapter5/4-associatives/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
       <guid>https://laefy.github.io/CPP_Learning/chapter5/4-associatives/</guid>
-      <description>Un conteneur associatif est un conteneur dans lequel les éléments peuvent être indexés par des objets, et non plus seulement par des entiers.&#xA;Vous allez donc ici voir les différents types de conteneurs associatifs proposés par la STL.&#xA;Pour cet exercice, vous modifierez les fichiers :&#xA;- chap-05/3-associatives/main.cpp&#xA;- chap-05/3-associatives/keys.h&#xA;La cible à compiler est c5-3-associatives.&#xA;Les sets (ensembles) Un set est un conteneur dans lequel les éléments sont &amp;ldquo;indexés par eux-mêmes&amp;rdquo;.</description>
+      <description>Un conteneur associatif est un conteneur dans lequel les éléments peuvent être indexés par des objets, et non plus seulement par des entiers.
+Vous allez donc ici voir les différents types de conteneurs associatifs proposés par la STL.
+ Pour cet exercice, vous modifierez les fichiers :
+- chap-05/3-associatives/main.cpp
+- chap-05/3-associatives/keys.h
+La cible à compiler est c5-3-associatives.
+ Les sets (ensembles) Un set est un conteneur dans lequel les éléments sont &amp;ldquo;indexés par eux-mêmes&amp;rdquo;.</description>
     </item>
+    
     <item>
       <title>Déplacement</title>
       <link>https://laefy.github.io/CPP_Learning/chapter3/4-move-sem/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
       <guid>https://laefy.github.io/CPP_Learning/chapter3/4-move-sem/</guid>
-      <description>Nous avons vu précédement que les unique_ptr ne pouvaient pas être copiés. Cependant, le vector a réussi à provoquer leur &amp;ldquo;déplacement&amp;rdquo; en mémoire pour effectuer sa réallocation.&#xA;Nous allons voir comment faire de même afin de pouvoir manipuler les unique_ptr avec un peu plus de souplesse.&#xA;Construction sur place Lorsqu&amp;rsquo;une fonction retourne un objet et que celui-ci est utilisé pour initialiser une variable, aucune copie n&amp;rsquo;a lieu. L&amp;rsquo;objet est directement construit à l&amp;rsquo;adresse mémoire qui lui était réservée dans le code appelant.</description>
+      <description>Nous avons vu précédement que les unique_ptr ne pouvaient pas être copiés. Cependant, le vector a réussi à provoquer leur &amp;ldquo;déplacement&amp;rdquo; en mémoire pour effectuer sa réallocation.
+Nous allons voir comment faire de même afin de pouvoir manipuler les unique_ptr avec un peu plus de souplesse.
+ Construction sur place Lorsqu&amp;rsquo;une fonction retourne un objet et que celui-ci est utilisé pour initialiser une variable, aucune copie n&amp;rsquo;a lieu. L&amp;rsquo;objet est directement construit à l&amp;rsquo;adresse mémoire qui lui était réservée dans le code appelant.</description>
     </item>
+    
     <item>
       <title>Git</title>
       <link>https://laefy.github.io/CPP_Learning/chapter0/4-git/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
       <guid>https://laefy.github.io/CPP_Learning/chapter0/4-git/</guid>
-      <description>Pour le gestionnaire de version, nous utiliserons git et nous utiliserons GitHub pour l&amp;rsquo;hébergement des dépôts.&#xA;GitHub Création de compte Commencez par créer un compte si vous n&amp;rsquo;en avez pas déjà un.&#xA;Génération de clef SSHs Depuis quelques années, pour pouvoir push sur un dépôt, il est nécessaire de passer par la méthode SSH (HTML ne permet plus d&amp;rsquo;éditer, juste de consulter).&#xA;Pour associer une nouvelle clef SSH à votre machine, suivez les instructions du paragraphe &amp;ldquo;Generating a new SSH key&amp;rdquo; et enregistrez la clef à l&amp;rsquo;emplacement par défaut (c&amp;rsquo;est-à-dire sans spécifier de chemin de sauvegarde).</description>
+      <description>Pour le gestionnaire de version, nous utiliserons git et nous utiliserons GitHub pour l&amp;rsquo;hébergement des dépôts.
+ GitHub Création de compte Commencez par créer un compte si vous n&amp;rsquo;en avez pas déjà un.
+Génération de clef SSHs Depuis quelques années, pour pouvoir push sur un dépôt, il est nécessaire de passer par la méthode SSH (HTML ne permet plus d&amp;rsquo;éditer, juste de consulter).
+Pour associer une nouvelle clef SSH à votre machine, suivez les instructions du paragraphe &amp;ldquo;Generating a new SSH key&amp;rdquo; et enregistrez la clef à l&amp;rsquo;emplacement par défaut (c&amp;rsquo;est-à-dire sans spécifier de chemin de sauvegarde).</description>
     </item>
+    
     <item>
       <title>Lambdas</title>
       <link>https://laefy.github.io/CPP_Learning/chapter6/4-lambdas/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
       <guid>https://laefy.github.io/CPP_Learning/chapter6/4-lambdas/</guid>
-      <description>Les lambdas sont des objets-fonction un peu spéciaux, que l&amp;rsquo;on peut facilement définir depuis le corps d&amp;rsquo;une fonction. Vous avez déjà dû voir de nombreux exemples d&amp;rsquo;utilisation de lambda tout au long de ce cours. Nous allons maintenant revenir plus en détail sur leur fonctionnement et vous montrez tout ce qu&amp;rsquo;il est possible de faire avec.&#xA;Syntaxe La définition d&amp;rsquo;une lambda est composée en général de trois parties :&#xA;[c1, c2, c3](int p1, int p2, int p3) { return c1 * p1 + c2 * p2 + c3 * p3; } La partie entre crochet s&amp;rsquo;appelle la capture.</description>
+      <description>Les lambdas sont des objets-fonction un peu spéciaux, que l&amp;rsquo;on peut facilement définir depuis le corps d&amp;rsquo;une fonction. Vous avez déjà dû voir de nombreux exemples d&amp;rsquo;utilisation de lambda tout au long de ce cours. Nous allons maintenant revenir plus en détail sur leur fonctionnement et vous montrez tout ce qu&amp;rsquo;il est possible de faire avec.
+ Syntaxe La définition d&amp;rsquo;une lambda est composée en général de trois parties :</description>
     </item>
+    
     <item>
       <title>Librairie standard 📚</title>
       <link>https://laefy.github.io/CPP_Learning/chapter1/4-std-lib/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
       <guid>https://laefy.github.io/CPP_Learning/chapter1/4-std-lib/</guid>
-      <description>Sur cette page, vous allez apprendre à utiliser quelques classes fournies par la librarie standard pour manipuler chaînes de caractères et tableaux. Vous verrez également comment écrire ou lire dans des flux pour intéragir avec l&amp;rsquo;utilisateur.&#xA;Chaînes de caractères Comme en C, const char* est le type fondamental associé à une chaîne de caractère littérale (c&amp;rsquo;est-à-dire écrite en dur, avec les guillemets autour) :&#xA;auto str = &amp;#34;hello&amp;#34;; // -&amp;gt; str est de type const char* Cependant, ce n&amp;rsquo;est pas du tout pratique pour faire des opérations comme des concaténations, des recherches, ou même simplement récupérer la taille de la chaîne.</description>
+      <description>Sur cette page, vous allez apprendre à utiliser quelques classes fournies par la librarie standard pour manipuler chaînes de caractères et tableaux. Vous verrez également comment écrire ou lire dans des flux pour intéragir avec l&amp;rsquo;utilisateur.
+ Chaînes de caractères Comme en C, const char* est le type fondamental associé à une chaîne de caractère littérale (c&amp;rsquo;est-à-dire écrite en dur, avec les guillemets autour) :
+auto str = &amp;#34;hello&amp;#34;; // -&amp;gt; str est de type const char* Cependant, ce n&amp;rsquo;est pas du tout pratique pour faire des opérations comme des concaténations, des recherches, ou même simplement récupérer la taille de la chaîne.</description>
     </item>
+    
     <item>
       <title>Polymorphisme</title>
       <link>https://laefy.github.io/CPP_Learning/chapter4/4-polymorphism/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
       <guid>https://laefy.github.io/CPP_Learning/chapter4/4-polymorphism/</guid>
-      <description>Vous avez probablement déjà entendu le terme polymorphisme, vous l&amp;rsquo;avez peut-être même déjà utilisé, mais quand vous y réfléchissez, si on vous demandait de le définir clairement, vous ne sauriez pas forcément quoi répondre. Cette page sera donc l&amp;rsquo;occasion de revenir sur sa définition.&#xA;Dans ce chapitre, nous nous sommes intéressés à deux manières de mettre-en-ouvre le polymorphisme en C++ : l&amp;rsquo;héritage statique et l&amp;rsquo;héritage dynamique. Nous détaillerons les différences entre les deux et dans quels cas utiliser l&amp;rsquo;un ou l&amp;rsquo;autre.</description>
+      <description>Vous avez probablement déjà entendu le terme polymorphisme, vous l&amp;rsquo;avez peut-être même déjà utilisé, mais quand vous y réfléchissez, si on vous demandait de le définir clairement, vous ne sauriez pas forcément quoi répondre. Cette page sera donc l&amp;rsquo;occasion de revenir sur sa définition.
+Dans ce chapitre, nous nous sommes intéressés à deux manières de mettre-en-ouvre le polymorphisme en C++ : l&amp;rsquo;héritage statique et l&amp;rsquo;héritage dynamique. Nous détaillerons les différences entre les deux et dans quels cas utiliser l&amp;rsquo;un ou l&amp;rsquo;autre.</description>
     </item>
+    
     <item>
       <title>SFINAE</title>
       <link>https://laefy.github.io/CPP_Learning/chapter10/4-sfinae/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
       <guid>https://laefy.github.io/CPP_Learning/chapter10/4-sfinae/</guid>
-      <description>Nous allons maintenant vous expliquer ce que signifie SFINAE, le besoin auquel ce mécanisme répond et comment le mettre en oeuvre dans votre code.&#xA;Le besoin Supposons que nous souhaitions pouvoir récupérer une clef pour différents type à l&amp;rsquo;aide d&amp;rsquo;une fonction get_key(const Type&amp;amp;), en utilisant des overloads.&#xA;class Person { public: Person(const std::string&amp;amp; name) : _name { name } {} const std::string&amp;amp; get_name() const { return _name; } private: const std::string _name; }; // Overload pour notre classe Person.</description>
+      <description>Nous allons maintenant vous expliquer ce que signifie SFINAE, le besoin auquel ce mécanisme répond et comment le mettre en oeuvre dans votre code.
+ Le besoin Supposons que nous souhaitions pouvoir récupérer une clef pour différents type à l&amp;rsquo;aide d&amp;rsquo;une fonction get_key(const Type&amp;amp;), en utilisant des overloads.
+class Person { public: Person(const std::string&amp;amp; name) : _name { name } {} const std::string&amp;amp; get_name() const { return _name; } private: const std::string _name; }; // Overload pour notre classe Person.</description>
     </item>
+    
     <item>
       <title>🧬 Clône</title>
       <link>https://laefy.github.io/CPP_Learning/chapter2/4-clone/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
       <guid>https://laefy.github.io/CPP_Learning/chapter2/4-clone/</guid>
-      <description>Dans cet exercice, vous verrez comment implémenter un constructeur de copie et un opérateur d&amp;rsquo;assignation.&#xA;Nous en profiterons aussi pour vous montrer comment surcharger l&amp;rsquo;opérateur &amp;lt;&amp;lt;.&#xA;Pour cet exercice, vous modifierez le fichier :&#xA;- chap-02/3-clone.cpp&#xA;La cible à compiler est c2-3-clone.&#xA;Constructeur de copie Dans la fonction main, instanciez à la suite du code existant une nouvelle instance de Person et initialisée là à partir de la variable batman. Cela se fait exactement de la même manière que si vous souhaitiez créer une copie d&amp;rsquo;une variable de type int.</description>
+      <description>Dans cet exercice, vous verrez comment implémenter un constructeur de copie et un opérateur d&amp;rsquo;assignation.
+Nous en profiterons aussi pour vous montrer comment surcharger l&amp;rsquo;opérateur &amp;lt;&amp;lt;.
+ Pour cet exercice, vous modifierez le fichier :
+- chap-02/3-clone.cpp
+La cible à compiler est c2-3-clone.
+ Constructeur de copie Dans la fonction main, instanciez à la suite du code existant une nouvelle instance de Person et initialisée là à partir de la variable batman.</description>
     </item>
-    <item>
-      <title>🔳 Rectangle</title>
-      <link>https://laefy.github.io/CPP_Learning/chapter2/5-rectangle/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://laefy.github.io/CPP_Learning/chapter2/5-rectangle/</guid>
-      <description>Cet exercice vous permettra de découvrir :&#xA;comment écrire des headers en C++, comment extraire l&amp;rsquo;implémentation des fonctions d&amp;rsquo;une classe en dehors de cette classe, à quoi correspondent les membres statiques d&amp;rsquo;une classe et comment les définir, comment déléguer un appel à un autre constructeur. Pour cet exercice, vous modifierez les fichiers :&#xA;- chap-02/4-rectangle/main.cpp&#xA;- chap-02/4-rectangle/Rectangle.cpp&#xA;- chap-02/4-rectangle/Rectangle.h&#xA;La cible à compiler est c2-4-rectangle.&#xA;Header en C++ Vous commencez l&amp;rsquo;exercice avec une fonction main dans le fichier main.</description>
-    </item>
-    <item>
-      <title>🚗 Véhicule partagé</title>
-      <link>https://laefy.github.io/CPP_Learning/chapter4/5-vehicles/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://laefy.github.io/CPP_Learning/chapter4/5-vehicles/</guid>
-      <description>Pour terminer ce chapitre, nous allons voir comment faire pour accéder directement aux attributs de votre classe de base, comment appeler la fonction parent depuis la rédéfinition de cette fonction dans la classe-fille et enfin, comment modéliser des classes abstraites.&#xA;Pour cet exercice, vous modifierez les fichiers :&#xA;- chap-04/3-vehicles/Program.cpp&#xA;- chap-04/3-vehicles/Vehicle.h&#xA;- chap-04/3-vehicles/Car.h&#xA;- chap-04/3-vehicles/Scooter.h&#xA;La cible à compiler est c4-3-vehicles.&#xA;Introduction du permis Dans le programme que l&amp;rsquo;on vous fournit, n&amp;rsquo;importe qui peut conduire n&amp;rsquo;importe quoi.</description>
-    </item>
+    
     <item>
       <title>Clang-Format</title>
       <link>https://laefy.github.io/CPP_Learning/chapter0/5-clang-format/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
       <guid>https://laefy.github.io/CPP_Learning/chapter0/5-clang-format/</guid>
-      <description>Clang-Format est un outil permettant de formatter automatiquement vos fichiers (indentation, espaces, retours à la ligne, etc).&#xA;Comme le C++ est un langage avec une syntaxe un peu lourde, utiliser ce type d&amp;rsquo;outils permet de faciliter la lecture du code.&#xA;Configuration de VSCode Clang-Format est déjà disponible dans l&amp;rsquo;extension C/C++ installée précédemment. Pour qu&amp;rsquo;il se lance automatiquement lorsque vous sauvegardez vos fichiers, suivez les instructions ci-dessous.&#xA;Ouvrez le panneau de commandes VSCode (Ctrl+Shift+P).</description>
+      <description>Clang-Format est un outil permettant de formatter automatiquement vos fichiers (indentation, espaces, retours à la ligne, etc).
+Comme le C++ est un langage avec une syntaxe un peu lourde, utiliser ce type d&amp;rsquo;outils permet de faciliter la lecture du code.
+ Configuration de VSCode Clang-Format est déjà disponible dans l&amp;rsquo;extension C/C++ installée précédemment. Pour qu&amp;rsquo;il se lance automatiquement lorsque vous sauvegardez vos fichiers, suivez les instructions ci-dessous.
+ Ouvrez le panneau de commandes VSCode (Ctrl+Shift+P).</description>
     </item>
+    
     <item>
       <title>Compilation ⚙️</title>
       <link>https://laefy.github.io/CPP_Learning/chapter1/5-compilation/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
       <guid>https://laefy.github.io/CPP_Learning/chapter1/5-compilation/</guid>
-      <description>En théorie, le contenu de cette page ne devrait être qu&amp;rsquo;une redite de vos cours de C et de compilation de l&amp;rsquo;an dernier.&#xA;Cependant, je sais qu&amp;rsquo;à la réminiscence des moments passés à réviser ces matières, la plupart d&amp;rsquo;entre vous sentez la chaleur de vos larmes couler le long de vos joues.&#xA;Nous allons donc reprendre le sujet en douceur pour faire en sorte que vous compreniez un peu mieux ce qu&amp;rsquo;il se passe pendant la compilation et à quoi elle sert.</description>
+      <description>En théorie, le contenu de cette page ne devrait être qu&amp;rsquo;une redite de vos cours de C et de compilation de l&amp;rsquo;an dernier.
+Cependant, je sais qu&amp;rsquo;à la réminiscence des moments passés à réviser ces matières, la plupart d&amp;rsquo;entre vous sentez la chaleur de vos larmes couler le long de vos joues.
+Nous allons donc reprendre le sujet en douceur pour faire en sorte que vous compreniez un peu mieux ce qu&amp;rsquo;il se passe pendant la compilation et à quoi elle sert.</description>
     </item>
+    
     <item>
       <title>Manipulation de chaînes</title>
       <link>https://laefy.github.io/CPP_Learning/chapter5/5-strings/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
       <guid>https://laefy.github.io/CPP_Learning/chapter5/5-strings/</guid>
-      <description>Dans cette partie, nous reviendrons sur les fonctions fournies par la librairie permettant de manipuler des string. Vous apprendrez aussi ce que sont les string_view et à quoi elles servent.&#xA;Pour cet exercice, vous modifierez le fichier :&#xA;- chap-05/4-strings.cpp&#xA;La cible à compiler est c5-4-strings.&#xA;Opérations standards Parmis les opérations standards que l&amp;rsquo;on peut effectuer sur des chaînes de caractère, on retrouve :&#xA;la concaténation, l&amp;rsquo;extration de sous-chaîne, la recherche de caractère ou de sous-chaîne, la comparaison, le remplacement d&amp;rsquo;une partie de la chaîne.</description>
+      <description>Dans cette partie, nous reviendrons sur les fonctions fournies par la librairie permettant de manipuler des string. Vous apprendrez aussi ce que sont les string_view et à quoi elles servent.
+ Pour cet exercice, vous modifierez le fichier :
+- chap-05/4-strings.cpp
+La cible à compiler est c5-4-strings.
+ Opérations standards Parmis les opérations standards que l&amp;rsquo;on peut effectuer sur des chaînes de caractère, on retrouve :
+ la concaténation, l&amp;rsquo;extration de sous-chaîne, la recherche de caractère ou de sous-chaîne, la comparaison, le remplacement d&amp;rsquo;une partie de la chaîne.</description>
     </item>
+    
     <item>
-      <title>💠 Polygône</title>
-      <link>https://laefy.github.io/CPP_Learning/chapter2/6-polygon/</link>
+      <title>🔳 Rectangle</title>
+      <link>https://laefy.github.io/CPP_Learning/chapter2/5-rectangle/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://laefy.github.io/CPP_Learning/chapter2/6-polygon/</guid>
-      <description>Dans cet exercice, vous découvrirez la notion d&amp;rsquo;alias et le mécanisme d&amp;rsquo;amitié.&#xA;Pour terminer, vous serez confronté à votre première &amp;ldquo;dangling reference&amp;rdquo;.&#xA;Pour cet exercice, vous modifierez les fichiers :&#xA;- chap-02/5-polygon/main.cpp&#xA;- chap-02/CMakeLists.txt&#xA;Et vous ajouterez les fichiers :&#xA;- chap-02/5-polygon/Polygon.h&#xA;- chap-02/5-polygon/Polygon.cpp&#xA;La cible à compiler est c2-5-polygon.&#xA;Présentation de l&amp;rsquo;exercice Pour cet exercice, vous utiliserez la même méthodologie que pour l&amp;rsquo;exercice first-class :&#xA;Décommenter la prochaine ligne du main.</description>
+      
+      <guid>https://laefy.github.io/CPP_Learning/chapter2/5-rectangle/</guid>
+      <description>Cet exercice vous permettra de découvrir :
+ comment écrire des headers en C++, comment extraire l&amp;rsquo;implémentation des fonctions d&amp;rsquo;une classe en dehors de cette classe, à quoi correspondent les membres statiques d&amp;rsquo;une classe et comment les définir, comment déléguer un appel à un autre constructeur.   Pour cet exercice, vous modifierez les fichiers :
+- chap-02/4-rectangle/main.cpp
+- chap-02/4-rectangle/Rectangle.cpp
+- chap-02/4-rectangle/Rectangle.h
+La cible à compiler est c2-4-rectangle.
+ Header en C++ Vous commencez l&amp;rsquo;exercice avec une fonction main dans le fichier main.</description>
     </item>
+    
+    <item>
+      <title>🚗 Véhicule partagé</title>
+      <link>https://laefy.github.io/CPP_Learning/chapter4/5-vehicles/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://laefy.github.io/CPP_Learning/chapter4/5-vehicles/</guid>
+      <description>Pour terminer ce chapitre, nous allons voir comment faire pour accéder directement aux attributs de votre classe de base, comment appeler la fonction parent depuis la rédéfinition de cette fonction dans la classe-fille et enfin, comment modéliser des classes abstraites.
+ Pour cet exercice, vous modifierez les fichiers :
+- chap-04/3-vehicles/Program.cpp
+- chap-04/3-vehicles/Vehicle.h
+- chap-04/3-vehicles/Car.h
+- chap-04/3-vehicles/Scooter.h
+La cible à compiler est c4-3-vehicles.
+ Introduction du permis Dans le programme que l&amp;rsquo;on vous fournit, n&amp;rsquo;importe qui peut conduire n&amp;rsquo;importe quoi.</description>
+    </item>
+    
     <item>
       <title>Paires et tuples</title>
       <link>https://laefy.github.io/CPP_Learning/chapter5/6-tuples/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
       <guid>https://laefy.github.io/CPP_Learning/chapter5/6-tuples/</guid>
-      <description>Vous avez déjà utilisé le type pair au cours d&amp;rsquo;exercices précédents. Nous allons maintenant vous présenter son cousin, la classe tuple.&#xA;Pour cet exercice, vous modifierez le fichier :&#xA;- chap-05/5-tuples.cpp&#xA;La cible à compiler est c5-5-tuples.&#xA;Micro rappel sur les pair La classe pair est un type templaté avec deux paramètres :&#xA;std::pair&amp;lt;int, float&amp;gt; such_a_nice_pair { 1, 3.f }; On accède aux éléments de la pair directement via ses attributs first et second (pas de getters) :</description>
+      <description>Vous avez déjà utilisé le type pair au cours d&amp;rsquo;exercices précédents. Nous allons maintenant vous présenter son cousin, la classe tuple.
+ Pour cet exercice, vous modifierez le fichier :
+- chap-05/5-tuples.cpp
+La cible à compiler est c5-5-tuples.
+ Micro rappel sur les pair La classe pair est un type templaté avec deux paramètres :
+std::pair&amp;lt;int, float&amp;gt; such_a_nice_pair { 1, 3.f }; On accède aux éléments de la pair directement via ses attributs first et second (pas de getters) :</description>
     </item>
+    
+    <item>
+      <title>💠 Polygône</title>
+      <link>https://laefy.github.io/CPP_Learning/chapter2/6-polygon/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://laefy.github.io/CPP_Learning/chapter2/6-polygon/</guid>
+      <description>Dans cet exercice, vous découvrirez la notion d&amp;rsquo;alias et le mécanisme d&amp;rsquo;amitié.
+Pour terminer, vous serez confronté à votre première &amp;ldquo;dangling reference&amp;rdquo;.
+ Pour cet exercice, vous modifierez les fichiers :
+- chap-02/5-polygon/main.cpp
+- chap-02/CMakeLists.txt
+Et vous ajouterez les fichiers :
+- chap-02/5-polygon/Polygon.h
+- chap-02/5-polygon/Polygon.cpp
+La cible à compiler est c2-5-polygon.
+ Présentation de l&amp;rsquo;exercice Pour cet exercice, vous utiliserez la même méthodologie que pour l&amp;rsquo;exercice first-class :
+ Décommenter la prochaine ligne du main.</description>
+    </item>
+    
     <item>
       <title>Questionnaire !</title>
       <link>https://laefy.github.io/CPP_Learning/chapter10/test/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
       <guid>https://laefy.github.io/CPP_Learning/chapter10/test/</guid>
-      <description>Pas de questionnaire cette semaine, parce que mis en ligne trop tard.&#xA;N&amp;rsquo;hésitez néanmoins pas à utiliser le formulaire pour envoyer vos questions.&#xA;Vous êtes : Votre adresse mail : Votre groupe : Initiaux 1&#xD;Initiaux 2&#xD;Alternants&#xD;Combien de temps avez-vous mis à compléter ce chapitre ?&#xD;Avez-vous des questions suite à sa lecture ?&#xD;Avez-vous des commentaires concernant le chapitre et/ou le site ?&#xD;</description>
+      <description>Pas de questionnaire cette semaine, parce que mis en ligne trop tard.
+N&amp;rsquo;hésitez néanmoins pas à utiliser le formulaire pour envoyer vos questions.
+ function updateTestSubject() {let name = document.querySelector(&#39;#testinput[name=&#34;name&#34;]&#39;).value;document.querySelector(&#39;#testinput[name=&#34;_subject&#34;]&#39;).value = &#34;[C++][Chapitre 10] &#34; + name + &#34;, retour sur ton questionnaire&#34;;}updateQuestionFormSubject();Vous êtes :Votre adresse mail :Votre groupe :Initiaux 1Initiaux 2AlternantsCombien de temps avez-vous mis à compléter ce chapitre ?</description>
     </item>
+    
     <item>
       <title>Questionnaire !</title>
       <link>https://laefy.github.io/CPP_Learning/chapter2/test/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
       <guid>https://laefy.github.io/CPP_Learning/chapter2/test/</guid>
-      <description>Vous pensiez que le Chapitre 2 serait plus léger que le Chapitre 1 ? Désolée de vous avoir déçus 😅&#xA;Mais bon, vous l&amp;rsquo;avez enfin terminé, donc vous pouvez être fiers de vous ! 😀&#xA;Avant de nous quitter pour aller savourer ce moment, vous devriez profiter que le chapitre soit bien frais dans votre tête pour répondre au questionnaire ci-dessous. Nous vous rappelons que si vous êtes en M1 à l&amp;rsquo;UGE, il participera à votre notation.</description>
+      <description>Vous pensiez que le Chapitre 2 serait plus léger que le Chapitre 1 ? Désolée de vous avoir déçus 😅
+Mais bon, vous l&amp;rsquo;avez enfin terminé, donc vous pouvez être fiers de vous ! 😀
+ Avant de nous quitter pour aller savourer ce moment, vous devriez profiter que le chapitre soit bien frais dans votre tête pour répondre au questionnaire ci-dessous. Nous vous rappelons que si vous êtes en M1 à l&amp;rsquo;UGE, il participera à votre notation.</description>
     </item>
+    
     <item>
       <title>Questionnaire !</title>
       <link>https://laefy.github.io/CPP_Learning/chapter3/test/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
       <guid>https://laefy.github.io/CPP_Learning/chapter3/test/</guid>
-      <description>C&amp;rsquo;est l&amp;rsquo;heure du test ! Bon courage 🙂&#xA;Vous êtes : Votre adresse mail : Votre groupe : Initiaux 1&#xD;Initiaux 2&#xD;Alternants&#xD;1- Comment définir la période de validité d’un objet ?&#xA;2- Citez une bonne raison d’allouer de la mémoire via un unique_ptr plutôt que via un pointeur simple (avec new).&#xA;3- Quelle fonction de la librarie standard permet de transférer le contenu d’un objet dans un autre ?</description>
+      <description>C&amp;rsquo;est l&amp;rsquo;heure du test ! Bon courage 🙂
+ function updateTestSubject() {let name = document.querySelector(&#39;#testinput[name=&#34;name&#34;]&#39;).value;document.querySelector(&#39;#testinput[name=&#34;_subject&#34;]&#39;).value = &#34;[C++][Chapitre 3] &#34; + name + &#34;, retour sur ton questionnaire&#34;;}updateQuestionFormSubject();Vous êtes :Votre adresse mail :Votre groupe :Initiaux 1Initiaux 2Alternants1- Comment définir la période de validité d’un objet ? 
+2- Citez une bonne raison d’allouer de la mémoire via un unique_ptr plutôt que via un pointeur simple (avec new).</description>
     </item>
+    
     <item>
       <title>Questionnaire !</title>
       <link>https://laefy.github.io/CPP_Learning/chapter4/test/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
       <guid>https://laefy.github.io/CPP_Learning/chapter4/test/</guid>
-      <description>Vous avez terminé le Chapitre 4 ! C&amp;rsquo;est donc maintenant le moment de connecter vos neurones pour répondre aux questions suivantes.&#xA;Bon courage à vous 🙂&#xA;Vous êtes : Votre adresse mail : Votre groupe : Initiaux 1&#xD;Initiaux 2&#xD;Alternants&#xD;1- Qu’est-ce qu’une classe polymorphe ?&#xA;2- Définissez une classe polymorphe Nothing qui ne fait rien.&#xA;3- Comment représenter une classe abstraite en C++ ?&#xA;Les questions 4 à 6 font référence au code suivant :</description>
+      <description>Vous avez terminé le Chapitre 4 ! C&amp;rsquo;est donc maintenant le moment de connecter vos neurones pour répondre aux questions suivantes.
+Bon courage à vous 🙂
+ function updateTestSubject() {let name = document.querySelector(&#39;#testinput[name=&#34;name&#34;]&#39;).value;document.querySelector(&#39;#testinput[name=&#34;_subject&#34;]&#39;).value = &#34;[C++][Chapitre 4] &#34; + name + &#34;, retour sur ton questionnaire&#34;;}updateQuestionFormSubject();Vous êtes :Votre adresse mail :Votre groupe :Initiaux 1Initiaux 2Alternants1- Qu’est-ce qu’une classe polymorphe ?</description>
     </item>
+    
     <item>
       <title>Questionnaire !</title>
       <link>https://laefy.github.io/CPP_Learning/chapter5/test/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
       <guid>https://laefy.github.io/CPP_Learning/chapter5/test/</guid>
-      <description>Le premier objectif de ce chapitre était de vous présenter quelques classes de la STL, leurs rôles, leurs différences, dans quelles situations les utiliser et comment.&#xA;Il avait également un deuxième objectif, qui était en quelque sorte de vous apprendre à vous débrouiller tout seul : vous devriez désormais être capable de rechercher par vous-même des informations dans la documentation, et vous devriez aussi appréhender un peu mieux qu&amp;rsquo;avant les messages du compilateur.</description>
+      <description>Le premier objectif de ce chapitre était de vous présenter quelques classes de la STL, leurs rôles, leurs différences, dans quelles situations les utiliser et comment.
+Il avait également un deuxième objectif, qui était en quelque sorte de vous apprendre à vous débrouiller tout seul : vous devriez désormais être capable de rechercher par vous-même des informations dans la documentation, et vous devriez aussi appréhender un peu mieux qu&amp;rsquo;avant les messages du compilateur.</description>
     </item>
+    
     <item>
       <title>Questionnaire !</title>
       <link>https://laefy.github.io/CPP_Learning/chapter6/test/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
       <guid>https://laefy.github.io/CPP_Learning/chapter6/test/</guid>
-      <description>C&amp;rsquo;est l&amp;rsquo;heure du test ! N&amp;rsquo;oubliez pas que vous pouvez utiliser Godbolt pour compiler et tester des petits bouts de code.&#xA;Bon courage à vous 🙂&#xA;Vous êtes : Votre adresse mail : Votre groupe : Initiaux 1&#xD;Initiaux 2&#xD;Alternants&#xD;1- Quel type de boucle faut-il utiliser pour modifier la structure d’un conteneur lors d’un parcours ?&#xA;2- Dans quel cas peut-il être intéressant d’utiliser la fonction std::for_each ?</description>
+      <description>C&amp;rsquo;est l&amp;rsquo;heure du test ! N&amp;rsquo;oubliez pas que vous pouvez utiliser Godbolt pour compiler et tester des petits bouts de code.
+Bon courage à vous 🙂
+ function updateTestSubject() {let name = document.querySelector(&#39;#testinput[name=&#34;name&#34;]&#39;).value;document.querySelector(&#39;#testinput[name=&#34;_subject&#34;]&#39;).value = &#34;[C++][Chapitre 6] &#34; + name + &#34;, retour sur ton questionnaire&#34;;}updateQuestionFormSubject();Vous êtes :Votre adresse mail :Votre groupe :Initiaux 1Initiaux 2Alternants1- Quel type de boucle faut-il utiliser pour modifier la structure d’un conteneur lors d’un parcours ?</description>
     </item>
+    
     <item>
       <title>Questionnaire !</title>
       <link>https://laefy.github.io/CPP_Learning/chapter8/test/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
       <guid>https://laefy.github.io/CPP_Learning/chapter8/test/</guid>
-      <description>C&amp;rsquo;est l&amp;rsquo;heure du test ! N&amp;rsquo;oubliez pas que vous pouvez utiliser Godbolt pour compiler et tester des petits bouts de code.&#xA;Bon courage à vous 🙂&#xA;Vous êtes : Votre adresse mail : Votre groupe : Initiaux 1&#xD;Initiaux 2&#xD;Alternants&#xD;1- A quoi sert une assertion ?&#xA;2- Pourquoi ne faut-il pas utiliser d’assertions pour traiter une erreur d’utilisation d’un logiciel ?&#xA;3- Ecrivez une assertion permettant de s’assurer qu’une variable name de type std::string n’est pas vide.</description>
+      <description>C&amp;rsquo;est l&amp;rsquo;heure du test ! N&amp;rsquo;oubliez pas que vous pouvez utiliser Godbolt pour compiler et tester des petits bouts de code.
+Bon courage à vous 🙂
+ function updateTestSubject() {let name = document.querySelector(&#39;#testinput[name=&#34;name&#34;]&#39;).value;document.querySelector(&#39;#testinput[name=&#34;_subject&#34;]&#39;).value = &#34;[C++][Chapitre 8] &#34; + name + &#34;, retour sur ton questionnaire&#34;;}updateQuestionFormSubject();Vous êtes :Votre adresse mail :Votre groupe :Initiaux 1Initiaux 2Alternants1- A quoi sert une assertion ?</description>
     </item>
+    
     <item>
       <title>Questionnaire !</title>
       <link>https://laefy.github.io/CPP_Learning/chapter9/test/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
       <guid>https://laefy.github.io/CPP_Learning/chapter9/test/</guid>
-      <description>C&amp;rsquo;est l&amp;rsquo;heure du test ! N&amp;rsquo;oubliez pas que vous pouvez utiliser Godbolt pour compiler et tester des petits bouts de code.&#xA;Bon courage à vous 🙂&#xA;Vous êtes : Votre adresse mail : Votre groupe : Initiaux 1&#xD;Initiaux 2&#xD;Alternants&#xD;1- Que faut-il écrire juste avant la définition d’une classe (ou fonction) pour en faire une classe (ou fonction) templatée ?&#xA;2- Pourquoi n’est-il pas toujours possible de placer l’implémentation des fonctions-membres d’une classe-template dans un .</description>
+      <description>C&amp;rsquo;est l&amp;rsquo;heure du test ! N&amp;rsquo;oubliez pas que vous pouvez utiliser Godbolt pour compiler et tester des petits bouts de code.
+Bon courage à vous 🙂
+ function updateTestSubject() {let name = document.querySelector(&#39;#testinput[name=&#34;name&#34;]&#39;).value;document.querySelector(&#39;#testinput[name=&#34;_subject&#34;]&#39;).value = &#34;[C++][Chapitre 9] &#34; + name + &#34;, retour sur ton questionnaire&#34;;}updateQuestionFormSubject();Vous êtes :Votre adresse mail :Votre groupe :Initiaux 1Initiaux 2Alternants1- Que faut-il écrire juste avant la définition d’une classe (ou fonction) pour en faire une classe (ou fonction) templatée ?</description>
     </item>
+    
     <item>
       <title>Questionnaire ☑</title>
       <link>https://laefy.github.io/CPP_Learning/chapter1/test/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
       <guid>https://laefy.github.io/CPP_Learning/chapter1/test/</guid>
-      <description>Félicitations !! Vous avez enfin terminé le Chapitre 1 ! 🥳🎉&#xA;Le questionnaire ci-dessous vous aidera à savoir si vous avez bien compris le cours ou non.&#xA;Il n&amp;rsquo;a donc pas vocation à vous évaluer, mais à vous donner une idée de ce que vous auriez lu trop vite ou n&amp;rsquo;auriez pas assez pratiqué.&#xA;Dans tous les cas, si vous répondez à ce questionnaire et cliquez sur le bouton Valider, vos réponses nous seront envoyées par mail et nous vous ferons un petit retour sur ce que vous avez réussi ou non 😉</description>
+      <description>Félicitations !! Vous avez enfin terminé le Chapitre 1 ! 🥳🎉
+Le questionnaire ci-dessous vous aidera à savoir si vous avez bien compris le cours ou non.
+Il n&amp;rsquo;a donc pas vocation à vous évaluer, mais à vous donner une idée de ce que vous auriez lu trop vite ou n&amp;rsquo;auriez pas assez pratiqué.
+Dans tous les cas, si vous répondez à ce questionnaire et cliquez sur le bouton Valider, vos réponses nous seront envoyées par mail et nous vous ferons un petit retour sur ce que vous avez réussi ou non 😉</description>
     </item>
+    
     <item>
       <title>Retours ?</title>
       <link>https://laefy.github.io/CPP_Learning/chapter0/test/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
       <guid>https://laefy.github.io/CPP_Learning/chapter0/test/</guid>
-      <description>Si vous avez rencontré des problèmes lors de l&amp;rsquo;installation d&amp;rsquo;un des logiciels, n&amp;rsquo;hésitez pas à nous l&amp;rsquo;indiquer, afin que nous puissions améliorer nos explications. Merci d&amp;rsquo;avance ! 🙂&#xA;Vous êtes : Votre adresse mail : Votre groupe : Initiaux 1&#xD;Initiaux 2&#xD;Alternants&#xD;1- Avez-vous rencontré des difficultés lors de l’installation d’un des composants ? Si oui, du ou desquels s’agit-il ?&#xA;2- Si une erreur est survenue à un moment, pouvez-vous la copier-coller ci-dessous et indiquer le contexte dans lequel celle-ci a eu lieu ?</description>
+      <description>Si vous avez rencontré des problèmes lors de l&amp;rsquo;installation d&amp;rsquo;un des logiciels, n&amp;rsquo;hésitez pas à nous l&amp;rsquo;indiquer, afin que nous puissions améliorer nos explications. Merci d&amp;rsquo;avance ! 🙂
+ function updateTestSubject() {let name = document.querySelector(&#39;#testinput[name=&#34;name&#34;]&#39;).value;document.querySelector(&#39;#testinput[name=&#34;_subject&#34;]&#39;).value = &#34;[C++][Chapitre 0] &#34; + name + &#34;, retour sur ton questionnaire&#34;;}updateQuestionFormSubject();Vous êtes :Votre adresse mail :Votre groupe :Initiaux 1Initiaux 2Alternants1- Avez-vous rencontré des difficultés lors de l’installation d’un des composants ?</description>
     </item>
+    
     <item>
       <title>Synthèse</title>
       <link>https://laefy.github.io/CPP_Learning/chapter10/summary/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
       <guid>https://laefy.github.io/CPP_Learning/chapter10/summary/</guid>
       <description>// 🚧🚥🔨 //</description>
     </item>
+    
     <item>
       <title>Synthèse</title>
       <link>https://laefy.github.io/CPP_Learning/chapter2/summary/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
       <guid>https://laefy.github.io/CPP_Learning/chapter2/summary/</guid>
-      <description>Ce qu&amp;rsquo;il faut retenir Théorie A quoi correspondent les termes attributs et fonction-membres constructeur = fonction appelée à l&amp;rsquo;instanciation d&amp;rsquo;une classe constructeur par défaut = constructeur à 0 paramètre implémentation par défaut = implémentation d&amp;rsquo;une fonction générée par le compilateur dans certaines conditions opérateur d&amp;rsquo;assignation = fonction appelée lorsque l&amp;rsquo;on écrit a = ...;, sachant que a a été instancié plus tôt surcharge = fonction de même nom, acceptant un nombre différent de paramètres et/ou des paramètres de types différents Lorsque la variable référencée par une référence est détruite, on a une dangling reference Pratique Utiliser this pour faire référence à l&amp;rsquo;instance courante Comparer this et &amp;amp;other au début de l&amp;rsquo;opérateur d&amp;rsquo;assignation Utiliser const aussi souvent que possible Ce qu&amp;rsquo;il faut savoir faire Langage Définir une classe : class A {}; (sans oublier le point-virgule) Définir des attributs et des fonctions-membres Indiquer la visibilité d&amp;rsquo;un ou plusieurs membres : public: - private: Définir un constructeur : ClassName(int p1, char p2) : _a1 { p1 }, _a2 { p2 } { } Déléguer la construction à un autre constructeur : ClassName(int p) : ClassName { p, p } {} Définir un constructeur de copie : ClassName(const ClassName&amp;amp; other) : _a1 { other.</description>
+      <description>Ce qu&amp;rsquo;il faut retenir Théorie  A quoi correspondent les termes attributs et fonction-membres constructeur = fonction appelée à l&amp;rsquo;instanciation d&amp;rsquo;une classe constructeur par défaut = constructeur à 0 paramètre implémentation par défaut = implémentation d&amp;rsquo;une fonction générée par le compilateur dans certaines conditions opérateur d&amp;rsquo;assignation = fonction appelée lorsque l&amp;rsquo;on écrit a = ...;, sachant que a a été instancié plus tôt surcharge = fonction de même nom, acceptant un nombre différent de paramètres et/ou des paramètres de types différents Lorsque la variable référencée par une référence est détruite, on a une dangling reference  Pratique  Utiliser this pour faire référence à l&amp;rsquo;instance courante Comparer this et &amp;amp;other au début de l&amp;rsquo;opérateur d&amp;rsquo;assignation Utiliser const aussi souvent que possible   Ce qu&amp;rsquo;il faut savoir faire Langage  Définir une classe : class A {}; (sans oublier le point-virgule) Définir des attributs et des fonctions-membres Indiquer la visibilité d&amp;rsquo;un ou plusieurs membres : public: - private: Définir un constructeur : ClassName(int p1, char p2) : _a1 { p1 }, _a2 { p2 } { } Déléguer la construction à un autre constructeur : ClassName(int p) : ClassName { p, p } {} Définir un constructeur de copie : ClassName(const ClassName&amp;amp; other) : _a1 { other.</description>
     </item>
+    
     <item>
       <title>Synthèse</title>
       <link>https://laefy.github.io/CPP_Learning/chapter3/summary/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
       <guid>https://laefy.github.io/CPP_Learning/chapter3/summary/</guid>
-      <description>Ce qu&amp;rsquo;il faut retenir Théorie La durée de vie d&amp;rsquo;un objet s&amp;rsquo;étend de sa construction à sa destruction. Lorsque la durée de vie d&amp;rsquo;un objet s&amp;rsquo;achève, il n&amp;rsquo;est plus valide de l&amp;rsquo;utiliser. La portée d&amp;rsquo;une référence peut excéder la durée de vie de l&amp;rsquo;objet référencé (=&amp;gt; dangling reference). Un objet A est propriétaire d&amp;rsquo;un objet B si la destruction de A entraîne celle de B. Aucune copie n&amp;rsquo;est faite lorsqu&amp;rsquo;on initialise une variable avec la valeur de retour d&amp;rsquo;une fonction (mandatory copy-elision) Pratique Un unique_ptr n&amp;rsquo;est pas copiable.</description>
+      <description>Ce qu&amp;rsquo;il faut retenir Théorie  La durée de vie d&amp;rsquo;un objet s&amp;rsquo;étend de sa construction à sa destruction. Lorsque la durée de vie d&amp;rsquo;un objet s&amp;rsquo;achève, il n&amp;rsquo;est plus valide de l&amp;rsquo;utiliser. La portée d&amp;rsquo;une référence peut excéder la durée de vie de l&amp;rsquo;objet référencé (=&amp;gt; dangling reference). Un objet A est propriétaire d&amp;rsquo;un objet B si la destruction de A entraîne celle de B. Aucune copie n&amp;rsquo;est faite lorsqu&amp;rsquo;on initialise une variable avec la valeur de retour d&amp;rsquo;une fonction (mandatory copy-elision)  Pratique  Un unique_ptr n&amp;rsquo;est pas copiable.</description>
     </item>
+    
     <item>
       <title>Synthèse</title>
       <link>https://laefy.github.io/CPP_Learning/chapter4/summary/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
       <guid>https://laefy.github.io/CPP_Learning/chapter4/summary/</guid>
-      <description>Ce qu&amp;rsquo;il faut savoir faire Langage Définir une relation de parenté publique entre deux classes : class Child : public Parent { ... }; Définir un membre (fonction ou attribut) accessible uniquement depuis la classe courante et ses enfants : protected : int _a1 = 0; char _a2 = &#39;a&#39;; Appeler le constructeur de la classe parent : Child(int p1, int p2) : Parent { p1 }, _p2 { p2 } { .</description>
+      <description>Ce qu&amp;rsquo;il faut savoir faire Langage  Définir une relation de parenté publique entre deux classes : class Child : public Parent { ... }; Définir un membre (fonction ou attribut) accessible uniquement depuis la classe courante et ses enfants : protected : int _a1 = 0; char _a2 = &#39;a&#39;; Appeler le constructeur de la classe parent : Child(int p1, int p2) : Parent { p1 }, _p2 { p2 } { .</description>
     </item>
+    
     <item>
       <title>Synthèse</title>
       <link>https://laefy.github.io/CPP_Learning/chapter5/summary/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
       <guid>https://laefy.github.io/CPP_Learning/chapter5/summary/</guid>
-      <description>Ce qu&amp;rsquo;il faut retenir Théorie Un conteneur séquentiel est un conteneur dans lequel les élements se suivent (tableaux, listes, &amp;hellip;). Un conteneur associatif est un conteneur dans lequel chaque élément est indexé par une clef (l&amp;rsquo;élément pouvant être la clef elle-même). Les types passés en paramètre de template doivent parfois respecter des contraintes pour compiler (ces contraintes sont spécifiées dans la documentation). Librairie standard Tableau de taille dynamique : vector Tableau de taille fixe : array Listes chaînées : list ou forward_list Ensembles : set ou unordered_set Dictionnaires : map ou unordered_map Pratique On peut passer les chaînes de caractères constantes par std::string_view plutôt que const std::string&amp;amp; ou const char*.</description>
+      <description>Ce qu&amp;rsquo;il faut retenir Théorie  Un conteneur séquentiel est un conteneur dans lequel les élements se suivent (tableaux, listes, &amp;hellip;). Un conteneur associatif est un conteneur dans lequel chaque élément est indexé par une clef (l&amp;rsquo;élément pouvant être la clef elle-même). Les types passés en paramètre de template doivent parfois respecter des contraintes pour compiler (ces contraintes sont spécifiées dans la documentation).  Librairie standard  Tableau de taille dynamique : vector Tableau de taille fixe : array Listes chaînées : list ou forward_list Ensembles : set ou unordered_set Dictionnaires : map ou unordered_map  Pratique  On peut passer les chaînes de caractères constantes par std::string_view plutôt que const std::string&amp;amp; ou const char*.</description>
     </item>
+    
     <item>
       <title>FAQ</title>
       <link>https://laefy.github.io/CPP_Learning/faq/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
       <guid>https://laefy.github.io/CPP_Learning/faq/</guid>
-      <description>Pourquoi je n&amp;rsquo;arrive pas à lancer mon projet avec CMake ? Cela peut-être dû à plusieurs raisons :&#xA;1. Vous n&amp;rsquo;avez pas ouvert le bon dossier dans VSCode. Il faut toujours ouvrir le dossier qui contient tous les chapitres et tous les TPs, pas le dossier d&amp;rsquo;un chapitre ou d&amp;rsquo;un TP en particulier.&#xA;2. Vous avez essayé de lancer le programme via le menu Run de VSCode. Si vous tentez de lancer un programme de cette manière, VSCode va générer un fichier launch.</description>
+      <description>Pourquoi je n&amp;rsquo;arrive pas à lancer mon projet avec CMake ? Cela peut-être dû à plusieurs raisons :
+1. Vous n&amp;rsquo;avez pas ouvert le bon dossier dans VSCode. Il faut toujours ouvrir le dossier qui contient tous les chapitres et tous les TPs, pas le dossier d&amp;rsquo;un chapitre ou d&amp;rsquo;un TP en particulier.
+2. Vous avez essayé de lancer le programme via le menu Run de VSCode. Si vous tentez de lancer un programme de cette manière, VSCode va générer un fichier launch.</description>
     </item>
+    
     <item>
       <title>Merci !</title>
       <link>https://laefy.github.io/CPP_Learning/chapter0/test_done/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
       <guid>https://laefy.github.io/CPP_Learning/chapter0/test_done/</guid>
-      <description>&#xD;Vos réponses nous ont bien été communiquées 😃&#xD;N&#39;hésitez pas à nous relancer si vous n&#39;avez pas eu de nouvelles après une semaine !&#xD;</description>
+      <description>Vos réponses nous ont bien été communiquées 😃N&#39;hésitez pas à nous relancer si vous n&#39;avez pas eu de nouvelles après une semaine !</description>
     </item>
+    
     <item>
       <title>Merci !</title>
       <link>https://laefy.github.io/CPP_Learning/chapter10/test_done/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
       <guid>https://laefy.github.io/CPP_Learning/chapter10/test_done/</guid>
-      <description>&#xD;Vos réponses nous ont bien été communiquées 😃&#xD;N&#39;hésitez pas à nous relancer si vous n&#39;avez pas eu de nouvelles après une semaine !&#xD;</description>
+      <description>Vos réponses nous ont bien été communiquées 😃N&#39;hésitez pas à nous relancer si vous n&#39;avez pas eu de nouvelles après une semaine !</description>
     </item>
+    
     <item>
       <title>Merci !</title>
       <link>https://laefy.github.io/CPP_Learning/chapter1/test_done/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
       <guid>https://laefy.github.io/CPP_Learning/chapter1/test_done/</guid>
-      <description>&#xD;Vos réponses nous ont bien été communiquées 😃&#xD;N&#39;hésitez pas à nous relancer si vous n&#39;avez pas eu de nouvelles après une semaine !&#xD;</description>
+      <description>Vos réponses nous ont bien été communiquées 😃N&#39;hésitez pas à nous relancer si vous n&#39;avez pas eu de nouvelles après une semaine !</description>
     </item>
+    
     <item>
       <title>Merci !</title>
       <link>https://laefy.github.io/CPP_Learning/chapter2/test_done/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
       <guid>https://laefy.github.io/CPP_Learning/chapter2/test_done/</guid>
-      <description>&#xD;Vos réponses nous ont bien été communiquées 😃&#xD;N&#39;hésitez pas à nous relancer si vous n&#39;avez pas eu de nouvelles après une semaine !&#xD;</description>
+      <description>Vos réponses nous ont bien été communiquées 😃N&#39;hésitez pas à nous relancer si vous n&#39;avez pas eu de nouvelles après une semaine !</description>
     </item>
+    
     <item>
       <title>Merci !</title>
       <link>https://laefy.github.io/CPP_Learning/chapter3/test_done/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
       <guid>https://laefy.github.io/CPP_Learning/chapter3/test_done/</guid>
-      <description>&#xD;Vos réponses nous ont bien été communiquées 😃&#xD;N&#39;hésitez pas à nous relancer si vous n&#39;avez pas eu de nouvelles après une semaine !&#xD;</description>
+      <description>Vos réponses nous ont bien été communiquées 😃N&#39;hésitez pas à nous relancer si vous n&#39;avez pas eu de nouvelles après une semaine !</description>
     </item>
+    
     <item>
       <title>Merci !</title>
       <link>https://laefy.github.io/CPP_Learning/chapter4/test_done/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
       <guid>https://laefy.github.io/CPP_Learning/chapter4/test_done/</guid>
-      <description>&#xD;Vos réponses nous ont bien été communiquées 😃&#xD;N&#39;hésitez pas à nous relancer si vous n&#39;avez pas eu de nouvelles après une semaine !&#xD;</description>
+      <description>Vos réponses nous ont bien été communiquées 😃N&#39;hésitez pas à nous relancer si vous n&#39;avez pas eu de nouvelles après une semaine !</description>
     </item>
+    
     <item>
       <title>Merci !</title>
       <link>https://laefy.github.io/CPP_Learning/chapter5/test_done/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
       <guid>https://laefy.github.io/CPP_Learning/chapter5/test_done/</guid>
-      <description>&#xD;Vos réponses nous ont bien été communiquées 😃&#xD;N&#39;hésitez pas à nous relancer si vous n&#39;avez pas eu de nouvelles après une semaine !&#xD;</description>
+      <description>Vos réponses nous ont bien été communiquées 😃N&#39;hésitez pas à nous relancer si vous n&#39;avez pas eu de nouvelles après une semaine !</description>
     </item>
+    
     <item>
       <title>Merci !</title>
       <link>https://laefy.github.io/CPP_Learning/chapter6/test_done/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
       <guid>https://laefy.github.io/CPP_Learning/chapter6/test_done/</guid>
-      <description>&#xD;Vos réponses nous ont bien été communiquées 😃&#xD;N&#39;hésitez pas à nous relancer si vous n&#39;avez pas eu de nouvelles après une semaine !&#xD;</description>
+      <description>Vos réponses nous ont bien été communiquées 😃N&#39;hésitez pas à nous relancer si vous n&#39;avez pas eu de nouvelles après une semaine !</description>
     </item>
+    
     <item>
       <title>Merci !</title>
       <link>https://laefy.github.io/CPP_Learning/chapter8/test_done/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
       <guid>https://laefy.github.io/CPP_Learning/chapter8/test_done/</guid>
-      <description>&#xD;Vos réponses nous ont bien été communiquées 😃&#xD;N&#39;hésitez pas à nous relancer si vous n&#39;avez pas eu de nouvelles après une semaine !&#xD;</description>
+      <description>Vos réponses nous ont bien été communiquées 😃N&#39;hésitez pas à nous relancer si vous n&#39;avez pas eu de nouvelles après une semaine !</description>
     </item>
+    
     <item>
       <title>Merci !</title>
       <link>https://laefy.github.io/CPP_Learning/chapter9/test_done/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
       <guid>https://laefy.github.io/CPP_Learning/chapter9/test_done/</guid>
-      <description>&#xD;Vos réponses nous ont bien été communiquées 😃&#xD;N&#39;hésitez pas à nous relancer si vous n&#39;avez pas eu de nouvelles après une semaine !&#xD;</description>
+      <description>Vos réponses nous ont bien été communiquées 😃N&#39;hésitez pas à nous relancer si vous n&#39;avez pas eu de nouvelles après une semaine !</description>
     </item>
+    
     <item>
       <title>Question Submitted</title>
       <link>https://laefy.github.io/CPP_Learning/question-submitted/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
       <guid>https://laefy.github.io/CPP_Learning/question-submitted/</guid>
-      <description>&#xD;</description>
+      <description>alert(&#34;Your question has been sent correctly.&#34;);parent.parent.document.getElementById(&#34;footer-question-window&#34;).setAttribute(&#34;disabled&#34;, true)</description>
     </item>
+    
     <item>
       <title>Workflow</title>
       <link>https://laefy.github.io/CPP_Learning/workflow/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
       <guid>https://laefy.github.io/CPP_Learning/workflow/</guid>
-      <description>Afin de pouvoir mettre en place votre environnement de travail rapidement, vous pouvez suivre les étapes ci-dessous.&#xA;Récupérer le dépôt Git du cours et des TPs Forkez le dépôt https://github.com/Laefy/CPP_Learning_Code/. Ouvrez une nouvelle fenêtre dans VSCode et cliquez sur &amp;ldquo;clone repository&amp;hellip;&amp;rdquo; Copiez le lien de votre dépôt créé par le fork. Collez ce lien dans la fenêtre de VSCode et sélectionnez &amp;ldquo;Clone from URL&amp;rdquo;. Choisissez le répertoire dans lequel le dépôt sera cloné.</description>
+      <description>Afin de pouvoir mettre en place votre environnement de travail rapidement, vous pouvez suivre les étapes ci-dessous.
+ Récupérer le dépôt Git du cours et des TPs   Forkez le dépôt https://github.com/Laefy/CPP_Learning_Code/.   Ouvrez une nouvelle fenêtre dans VSCode et cliquez sur &amp;ldquo;clone repository&amp;hellip;&amp;rdquo;   Copiez le lien de votre dépôt créé par le fork.   Collez ce lien dans la fenêtre de VSCode et sélectionnez &amp;ldquo;Clone from URL&amp;rdquo;.</description>
     </item>
+    
   </channel>
 </rss>

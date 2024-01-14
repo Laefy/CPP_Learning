@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="Hugo 0.121.0">
+    <meta name="generator" content="Hugo 0.76.5" />
     <meta name="description" content="">
 
 
@@ -12,22 +12,22 @@
     <title>Référence universelle :: Cours de C&#43;&#43; - Niveau Master</title>
 
     
-    <link href="/CPP_Learning/css/nucleus.css?1704755107" rel="stylesheet">
-    <link href="/CPP_Learning/css/fontawesome-all.min.css?1704755107" rel="stylesheet">
-    <link href="/CPP_Learning/css/hybrid.css?1704755107" rel="stylesheet">
-    <link href="/CPP_Learning/css/featherlight.min.css?1704755107" rel="stylesheet">
-    <link href="/CPP_Learning/css/perfect-scrollbar.min.css?1704755107" rel="stylesheet">
-    <link href="/CPP_Learning/css/auto-complete.css?1704755107" rel="stylesheet">
-    <link href="/CPP_Learning/css/atom-one-dark-reasonable.css?1704755107" rel="stylesheet">
-    <link href="/CPP_Learning/css/theme.css?1704755107" rel="stylesheet">
-    <link href="/CPP_Learning/css/tabs.css?1704755107" rel="stylesheet">
-    <link href="/CPP_Learning/css/hugo-theme.css?1704755107" rel="stylesheet">
+    <link href="/CPP_Learning/css/nucleus.css?1705257267" rel="stylesheet">
+    <link href="/CPP_Learning/css/fontawesome-all.min.css?1705257267" rel="stylesheet">
+    <link href="/CPP_Learning/css/hybrid.css?1705257267" rel="stylesheet">
+    <link href="/CPP_Learning/css/featherlight.min.css?1705257267" rel="stylesheet">
+    <link href="/CPP_Learning/css/perfect-scrollbar.min.css?1705257267" rel="stylesheet">
+    <link href="/CPP_Learning/css/auto-complete.css?1705257267" rel="stylesheet">
+    <link href="/CPP_Learning/css/atom-one-dark-reasonable.css?1705257267" rel="stylesheet">
+    <link href="/CPP_Learning/css/theme.css?1705257267" rel="stylesheet">
+    <link href="/CPP_Learning/css/tabs.css?1705257267" rel="stylesheet">
+    <link href="/CPP_Learning/css/hugo-theme.css?1705257267" rel="stylesheet">
     
-    <link href="/CPP_Learning/css/theme-mine.css?1704755107" rel="stylesheet">
+    <link href="/CPP_Learning/css/theme-mine.css?1705257267" rel="stylesheet">
     
-    <link href="/CPP_Learning/css/syntax.css?1704755107" rel="stylesheet">
+    <link href="/CPP_Learning/css/syntax.css?1705257267" rel="stylesheet">
 
-    <script src="/CPP_Learning/js/jquery-3.3.1.min.js?1704755107"></script>
+    <script src="/CPP_Learning/js/jquery-3.3.1.min.js?1705257267"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -1959,14 +1959,14 @@ Nous vous expliquerons ensuite quand et comment vous en servir dans votre code.<
 <p>En C++, une expression est une suite d&rsquo;opérateurs et d&rsquo;opérandes pouvant être évaluée.
 L&rsquo;évaluation d&rsquo;une expression peut parfois produire une valeur.<br>
 Voici quelques exemples d&rsquo;expressions :</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="p">(</span><span class="n">a</span> <span class="o">+</span> <span class="n">b</span><span class="p">)</span> <span class="o">/</span> <span class="mi">3</span>
-</span></span><span class="line"><span class="cl"><span class="mi">15</span>
-</span></span><span class="line"><span class="cl"><span class="o">&amp;</span><span class="n">r</span>
-</span></span><span class="line"><span class="cl"><span class="n">fcn</span><span class="p">(</span><span class="n">r</span><span class="p">,</span> <span class="n">c</span> <span class="o">+</span> <span class="mi">3</span><span class="p">,</span> <span class="n">t</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl"><span class="n">a</span> <span class="o">=</span> <span class="n">b</span> <span class="o">=</span> <span class="n">c</span>
-</span></span><span class="line"><span class="cl"><span class="n">r</span> <span class="o">==</span> <span class="mi">8</span> <span class="o">||</span> <span class="n">call</span><span class="p">(</span><span class="n">g</span><span class="p">)</span> <span class="o">==</span> <span class="sc">&#39;c&#39;</span>
-</span></span><span class="line"><span class="cl"><span class="o">++</span><span class="n">it</span>
-</span></span></code></pre></div><p>Notez bien qu&rsquo;une expression peut bien composée de plusieurs sous-expressions.
+<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="p">(</span><span class="n">a</span> <span class="o">+</span> <span class="n">b</span><span class="p">)</span> <span class="o">/</span> <span class="mi">3</span>
+<span class="mi">15</span>
+<span class="o">&amp;</span><span class="n">r</span>
+<span class="n">fcn</span><span class="p">(</span><span class="n">r</span><span class="p">,</span> <span class="n">c</span> <span class="o">+</span> <span class="mi">3</span><span class="p">,</span> <span class="n">t</span><span class="p">)</span>
+<span class="n">a</span> <span class="o">=</span> <span class="n">b</span> <span class="o">=</span> <span class="n">c</span>
+<span class="n">r</span> <span class="o">==</span> <span class="mi">8</span> <span class="o">||</span> <span class="n">call</span><span class="p">(</span><span class="n">g</span><span class="p">)</span> <span class="o">==</span> <span class="sc">&#39;c&#39;</span>
+<span class="o">++</span><span class="n">it</span>
+</code></pre></div><p>Notez bien qu&rsquo;une expression peut bien composée de plusieurs sous-expressions.
 Par exemple, dans la première ligne, <code>(a + b) / 3</code> est une expression composée des sous-expressions <code>(a + b)</code> et <code>3</code>, et <code>(a + b)</code> est elle-même composée des sous-expressions <code>a</code> et <code>b</code>.</p>
 <p>La plupart des expressions peuvent être catégorisées en tant que l-value ou r-value.
 Pour faire la différence entre une l-value et une r-value, il suffit de se poser deux questions.</p>
@@ -1977,48 +1977,48 @@ Si oui, on passe à la question 2, si non, c&rsquo;est une r-value.</li>
 Si oui, c&rsquo;est une r-value, si non, c&rsquo;est une l-value.</li>
 </ol>
 <p>Par exemple :</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="k">auto</span> <span class="n">v1</span> <span class="o">=</span> <span class="mi">5</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl"><span class="c1">// `5` est une r-value.
-</span></span></span><span class="line"><span class="cl"><span class="c1">// C&#39;est un litéral entier, et il n&#39;a donc pas d&#39;adresse en mémoire.
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
-</span></span><span class="line"><span class="cl"><span class="k">auto</span> <span class="n">v2</span> <span class="o">=</span> <span class="n">v1</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl"><span class="c1">// `v1` est une l-value.
-</span></span></span><span class="line"><span class="cl"><span class="c1">// L&#39;expression fait référence à la variable v1, qui a bien une adresse en mémoire.
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
-</span></span><span class="line"><span class="cl"><span class="k">auto</span> <span class="n">v3</span> <span class="o">=</span> <span class="n">v2</span> <span class="o">+</span> <span class="mi">5</span> <span class="o">-</span> <span class="n">v1</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl"><span class="c1">// `v2 + 5 - v1` est une r-value.
-</span></span></span><span class="line"><span class="cl"><span class="c1">// C&#39;est une suite d&#39;opérations qui ne fait pas référence à un objet en particulier.
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
-</span></span><span class="line"><span class="cl"><span class="k">auto</span> <span class="n">v4</span> <span class="o">=</span> <span class="n">std</span><span class="o">::</span><span class="n">vector</span> <span class="p">{</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span> <span class="p">};</span>
-</span></span><span class="line"><span class="cl"><span class="c1">// `std::vector { 1, 2, 3 }` est une r-value.
-</span></span></span><span class="line"><span class="cl"><span class="c1">// Bien qu&#39;il s&#39;agisse d&#39;un objet, si on ne l&#39;avait pas mis dans une variable, celui-ci aurait été détruit à la fin de l&#39;instruction.
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
-</span></span><span class="line"><span class="cl"><span class="k">auto</span> <span class="n">v5</span> <span class="o">=</span> <span class="n">v4</span><span class="p">.</span><span class="n">emplace_back</span><span class="p">(</span><span class="mi">4</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl"><span class="c1">// `v4.emplace_back(4)` est une l-value.
-</span></span></span><span class="line"><span class="cl"><span class="c1">// emplace_back retourne une référence sur l&#39;élément ajouté dans le tableau.
-</span></span></span><span class="line"><span class="cl"><span class="c1">// Si on n&#39;avait pas stocké le résultat, cet élément n&#39;aurait pas pour autant été détruit.
-</span></span></span></code></pre></div><p><strong>Petit exercice</strong><br>
+<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="k">auto</span> <span class="n">v1</span> <span class="o">=</span> <span class="mi">5</span><span class="p">;</span>
+<span class="c1">// `5` est une r-value.
+</span><span class="c1">// C&#39;est un litéral entier, et il n&#39;a donc pas d&#39;adresse en mémoire.
+</span><span class="c1"></span>
+<span class="k">auto</span> <span class="n">v2</span> <span class="o">=</span> <span class="n">v1</span><span class="p">;</span>
+<span class="c1">// `v1` est une l-value.
+</span><span class="c1">// L&#39;expression fait référence à la variable v1, qui a bien une adresse en mémoire.
+</span><span class="c1"></span>
+<span class="k">auto</span> <span class="n">v3</span> <span class="o">=</span> <span class="n">v2</span> <span class="o">+</span> <span class="mi">5</span> <span class="o">-</span> <span class="n">v1</span><span class="p">;</span>
+<span class="c1">// `v2 + 5 - v1` est une r-value.
+</span><span class="c1">// C&#39;est une suite d&#39;opérations qui ne fait pas référence à un objet en particulier.
+</span><span class="c1"></span>
+<span class="k">auto</span> <span class="n">v4</span> <span class="o">=</span> <span class="n">std</span><span class="o">::</span><span class="n">vector</span> <span class="p">{</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span> <span class="p">};</span>
+<span class="c1">// `std::vector { 1, 2, 3 }` est une r-value.
+</span><span class="c1">// Bien qu&#39;il s&#39;agisse d&#39;un objet, si on ne l&#39;avait pas mis dans une variable, celui-ci aurait été détruit à la fin de l&#39;instruction.
+</span><span class="c1"></span>
+<span class="k">auto</span> <span class="n">v5</span> <span class="o">=</span> <span class="n">v4</span><span class="p">.</span><span class="n">emplace_back</span><span class="p">(</span><span class="mi">4</span><span class="p">);</span>
+<span class="c1">// `v4.emplace_back(4)` est une l-value.
+</span><span class="c1">// emplace_back retourne une référence sur l&#39;élément ajouté dans le tableau.
+</span><span class="c1">// Si on n&#39;avait pas stocké le résultat, cet élément n&#39;aurait pas pour autant été détruit.
+</span></code></pre></div><p><strong>Petit exercice</strong><br>
 Essayez de déterminer la catégorie des expressions indiquées dans chacun des commentaires.
 Vous pouvez utiliser 
 <a href="https://www.godbolt.org/z/YT9Ef889f" target="_blank" rel="noopener noreferrer">ce petit programme</a> pour obtenir les solutions et testez d&rsquo;autres expressions.</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="kt">int</span> <span class="nf">return_3</span><span class="p">()</span> <span class="p">{</span> <span class="k">return</span> <span class="mi">3</span><span class="p">;</span> <span class="p">}</span>
-</span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="nf">return_copy</span><span class="p">(</span><span class="kt">int</span><span class="o">&amp;</span> <span class="n">ref</span><span class="p">)</span> <span class="p">{</span> <span class="k">return</span> <span class="n">ref</span><span class="p">;</span> <span class="p">}</span>
-</span></span><span class="line"><span class="cl"><span class="kt">int</span><span class="o">&amp;</span> <span class="n">return_ref</span><span class="p">(</span><span class="kt">int</span><span class="o">&amp;</span> <span class="n">ref</span><span class="p">)</span> <span class="p">{</span> <span class="k">return</span> <span class="n">ref</span><span class="p">;</span> <span class="p">}</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
-</span></span><span class="line"><span class="cl"><span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="kt">int</span> <span class="n">value</span> <span class="o">=</span> <span class="mi">3</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">    <span class="c1">// `value`
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="c1">// `3+4`
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="c1">// `&#34;tata&#34;`
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="c1">// `std::string { &#34;toto&#34; }`
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="c1">// `std::move(value)`
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="c1">// `&amp;value`
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="c1">// `return_3()`
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="c1">// `return_ref(value)`
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="c1">// `return_copy(value)`
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="p">}</span>
-</span></span></code></pre></div>
+<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="kt">int</span> <span class="nf">return_3</span><span class="p">()</span> <span class="p">{</span> <span class="k">return</span> <span class="mi">3</span><span class="p">;</span> <span class="p">}</span>
+<span class="kt">int</span> <span class="nf">return_copy</span><span class="p">(</span><span class="kt">int</span><span class="o">&amp;</span> <span class="n">ref</span><span class="p">)</span> <span class="p">{</span> <span class="k">return</span> <span class="n">ref</span><span class="p">;</span> <span class="p">}</span>
+<span class="kt">int</span><span class="o">&amp;</span> <span class="n">return_ref</span><span class="p">(</span><span class="kt">int</span><span class="o">&amp;</span> <span class="n">ref</span><span class="p">)</span> <span class="p">{</span> <span class="k">return</span> <span class="n">ref</span><span class="p">;</span> <span class="p">}</span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="kt">int</span> <span class="n">value</span> <span class="o">=</span> <span class="mi">3</span><span class="p">;</span>
+    <span class="c1">// `value`
+</span><span class="c1"></span>    <span class="c1">// `3+4`
+</span><span class="c1"></span>    <span class="c1">// `&#34;tata&#34;`
+</span><span class="c1"></span>    <span class="c1">// `std::string { &#34;toto&#34; }`
+</span><span class="c1"></span>    <span class="c1">// `std::move(value)`
+</span><span class="c1"></span>    <span class="c1">// `&amp;value`
+</span><span class="c1"></span>    <span class="c1">// `return_3()`
+</span><span class="c1"></span>    <span class="c1">// `return_ref(value)`
+</span><span class="c1"></span>    <span class="c1">// `return_copy(value)`
+</span><span class="c1"></span><span class="p">}</span>
+</code></pre></div>
 <div class="expand">
     <div class="expand-label" style="cursor: pointer;" onclick="$h = $(this);$h.next('div').slideToggle(100,function () {$h.children('i').attr('class',function () {return $h.next('div').is(':visible') ? 'fas fa-chevron-down' : 'fas fa-chevron-right';});});">
         <i style="font-size:x-small;" class="fas fa-chevron-right"></i>
@@ -2094,24 +2094,24 @@ Retenez donc qu&rsquo;étymologiquement, les noms signifient &ldquo;left-value&r
 <p>Comme vous le savez, il est possible de surcharger des fonctions.</p>
 <p>Mais ce que vous ne saviez probablement pas, c&rsquo;est qu&rsquo;il est possible de définir une surcharge qui sera utilisée uniquement si on lui passe une expression r-value.<br>
 Voici la syntaxe :</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="kt">void</span> <span class="nf">fcn</span><span class="p">(</span><span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&amp;</span> <span class="n">str</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl"><span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;l-value contains &#34;</span> <span class="o">&lt;&lt;</span> <span class="n">str</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="kt">void</span> <span class="nf">fcn</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&amp;&amp;</span> <span class="n">str</span><span class="p">)</span> <span class="c1">// &lt;- on utilise &#39;&amp;&amp;&#39; derrière le type pour définir une r-value reference
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;r-value contains &#34;</span> <span class="o">&lt;&lt;</span> <span class="n">str</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
-</span></span><span class="line"><span class="cl"><span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">str</span> <span class="o">=</span> <span class="s">&#34;toto&#34;</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">    <span class="n">fcn</span><span class="p">(</span><span class="n">str</span><span class="p">);</span>                       <span class="c1">// =&gt; fcn(const std::string&amp;)
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="n">fcn</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="p">{</span> <span class="s">&#34;tata&#34;</span> <span class="p">});</span>    <span class="c1">// =&gt; fcn(std::string&amp;&amp;)
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span></code></pre></div><p>Bien sûr, si vous retirez la surcharge <code>fcn(std::string&amp;&amp;)</code>, le programme continuera de compiler puisque jusqu&rsquo;ici, vos programmes ont compilés (enfin j&rsquo;espère) sans que vous ayiez eu besoin d&rsquo;écrire <code>&amp;&amp;</code>.
+<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="kt">void</span> <span class="nf">fcn</span><span class="p">(</span><span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&amp;</span> <span class="n">str</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;l-value contains &#34;</span> <span class="o">&lt;&lt;</span> <span class="n">str</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kt">void</span> <span class="nf">fcn</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&amp;&amp;</span> <span class="n">str</span><span class="p">)</span> <span class="c1">// &lt;- on utilise &#39;&amp;&amp;&#39; derrière le type pour définir une r-value reference
+</span><span class="c1"></span><span class="p">{</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;r-value contains &#34;</span> <span class="o">&lt;&lt;</span> <span class="n">str</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">str</span> <span class="o">=</span> <span class="s">&#34;toto&#34;</span><span class="p">;</span>
+    <span class="n">fcn</span><span class="p">(</span><span class="n">str</span><span class="p">);</span>                       <span class="c1">// =&gt; fcn(const std::string&amp;)
+</span><span class="c1"></span>    <span class="n">fcn</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="p">{</span> <span class="s">&#34;tata&#34;</span> <span class="p">});</span>    <span class="c1">// =&gt; fcn(std::string&amp;&amp;)
+</span><span class="c1"></span>    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div><p>Bien sûr, si vous retirez la surcharge <code>fcn(std::string&amp;&amp;)</code>, le programme continuera de compiler puisque jusqu&rsquo;ici, vos programmes ont compilés (enfin j&rsquo;espère) sans que vous ayiez eu besoin d&rsquo;écrire <code>&amp;&amp;</code>.
 En effet, si le compilateur ne trouve pas de surcharge acceptant une <code>T&amp;&amp;</code>, alors il se rabattera sur une surcharge acceptant un <code>T</code> ou un <code>const T&amp;</code>.</p>
 <p>Bien qu&rsquo;une r-value puisse être convertie en const l-value, sachez que l&rsquo;inverse n&rsquo;est pas possible.
 Si le seul overload de votre fonction attend une r-value, vous ne pourrez pas compiler un appel fournissant une l-value.
@@ -2123,26 +2123,26 @@ L&rsquo;instruction <code>fcn(str)</code> ne devrait plus compiler, alors que <c
 L&rsquo;intérêt est d&rsquo;éviter des copies coûteuse, puisque quand on vole / déplace quelque chose, on ne le copie pas.</p>
 <p>Dans le cas où l&rsquo;appelant vous envoie une r-value directement, cela n&rsquo;a pas d&rsquo;importance, parce qu&rsquo;il n&rsquo;avait pas encore stocké cet objet de son côté.
 En revanche, s&rsquo;il cherchait à passer une l-value, il serait obligé d&rsquo;utiliser <code>std::move</code> pour indiquer qu&rsquo;il est prêt à céder cet objet à la fonction appelante et à ne plus le réutiliser ensuite.</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="kt">void</span> <span class="nf">steal_and_assign_name</span><span class="p">(</span><span class="n">Person</span><span class="o">&amp;</span> <span class="n">person</span><span class="p">,</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&amp;&amp;</span> <span class="n">name</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl"><span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="n">person</span><span class="p">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">std</span><span class="o">::</span><span class="n">move</span><span class="p">(</span><span class="n">name</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl">    <span class="c1">// Le buffer alloué pour `name` a été déplacé dans `person.name`.
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="c1">// A partir de maintenant, l&#39;utilisation de `name` n&#39;est plus valide.
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="p">}</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
-</span></span><span class="line"><span class="cl"><span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="n">Person</span> <span class="n">p</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">    <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">name</span> <span class="o">=</span> <span class="s">&#34;Toto&#34;</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">    <span class="n">steal_and_assign_name</span><span class="p">(</span><span class="n">p</span><span class="p">,</span> <span class="n">std</span><span class="o">::</span><span class="n">move</span><span class="p">(</span><span class="n">name</span><span class="p">));</span>
-</span></span><span class="line"><span class="cl">    <span class="c1">// On est obligé d&#39;utiliser `std::move`, car `steal_and_assign_name` attend une r-value.
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="c1">// Si le compilateur ne nous avait pas obligé à le faire, il aurait fallu regarder l&#39;implémentation
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="c1">// de `steal_and_assign_name` pour comprendre que `name` a été invalidé.
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
-</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span></code></pre></div>
+<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="kt">void</span> <span class="nf">steal_and_assign_name</span><span class="p">(</span><span class="n">Person</span><span class="o">&amp;</span> <span class="n">person</span><span class="p">,</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&amp;&amp;</span> <span class="n">name</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">person</span><span class="p">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">std</span><span class="o">::</span><span class="n">move</span><span class="p">(</span><span class="n">name</span><span class="p">);</span>
+    <span class="c1">// Le buffer alloué pour `name` a été déplacé dans `person.name`.
+</span><span class="c1"></span>    <span class="c1">// A partir de maintenant, l&#39;utilisation de `name` n&#39;est plus valide.
+</span><span class="c1"></span><span class="p">}</span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="n">Person</span> <span class="n">p</span><span class="p">;</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">name</span> <span class="o">=</span> <span class="s">&#34;Toto&#34;</span><span class="p">;</span>
+
+    <span class="n">steal_and_assign_name</span><span class="p">(</span><span class="n">p</span><span class="p">,</span> <span class="n">std</span><span class="o">::</span><span class="n">move</span><span class="p">(</span><span class="n">name</span><span class="p">));</span>
+    <span class="c1">// On est obligé d&#39;utiliser `std::move`, car `steal_and_assign_name` attend une r-value.
+</span><span class="c1"></span>    <span class="c1">// Si le compilateur ne nous avait pas obligé à le faire, il aurait fallu regarder l&#39;implémentation
+</span><span class="c1"></span>    <span class="c1">// de `steal_and_assign_name` pour comprendre que `name` a été invalidé.
+</span><span class="c1"></span>
+    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
 <div class="notices tip" ><p>Après avoir <code>std::move</code> un objet, il faut être prudent, car son contenu a probablement été extrait par la fonction à laquelle il a été passé.</p>
 </div>
 
@@ -2151,78 +2151,78 @@ Si vous consultez la documentation de <code>std::unique_ptr</code> par exemple, 
 En revanche, il est tout de même possible de construire un <code>unique_ptr</code> à partir d&rsquo;un autre <code>unique_ptr</code>, du moment que l&rsquo;on déplace ce dernier.</p>
 <p>Cela est possible parce que <code>unique_ptr</code> définit un move-constructor et un opérateur d&rsquo;assignation par déplacement.
 Il s&rsquo;agit de surcharges acceptant des r-value references de <code>unique_ptr</code> au lieu de const-ref.</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="n">unique_ptr</span><span class="p">(</span><span class="n">unique_ptr</span><span class="o">&amp;&amp;</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl"><span class="n">unique_ptr</span><span class="o">&amp;</span> <span class="k">operator</span><span class="o">=</span><span class="p">(</span><span class="n">unique_ptr</span><span class="o">&amp;&amp;</span><span class="p">);</span>
-</span></span></code></pre></div><p>Le code suivant est donc tout à fait valide, puisque le compilateur réussira bien à trouver les fonctions permettant de compiler ses instructions :</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="n">std</span><span class="o">::</span><span class="n">unique_ptr</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">p1</span> <span class="o">=</span> <span class="n">std</span><span class="o">::</span><span class="n">make_unique</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="p">(</span><span class="mi">3</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl"><span class="n">std</span><span class="o">::</span><span class="n">unique_ptr</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">p2</span> <span class="p">{</span> <span class="n">std</span><span class="o">::</span><span class="n">move</span><span class="p">(</span><span class="n">p1</span><span class="p">)</span> <span class="p">};</span> <span class="c1">// =&gt; appel à unique_ptr(unique_ptr&amp;&amp;)
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">std</span><span class="o">::</span><span class="n">unique_ptr</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">p3</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl"><span class="n">p3</span> <span class="o">=</span> <span class="n">std</span><span class="o">::</span><span class="n">move</span><span class="p">(</span><span class="n">p2</span><span class="p">);</span>                        <span class="c1">// =&gt; appel à operator=(unique_ptr&amp;&amp;)
-</span></span></span></code></pre></div><hr>
+<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="n">unique_ptr</span><span class="p">(</span><span class="n">unique_ptr</span><span class="o">&amp;&amp;</span><span class="p">);</span>
+<span class="n">unique_ptr</span><span class="o">&amp;</span> <span class="k">operator</span><span class="o">=</span><span class="p">(</span><span class="n">unique_ptr</span><span class="o">&amp;&amp;</span><span class="p">);</span>
+</code></pre></div><p>Le code suivant est donc tout à fait valide, puisque le compilateur réussira bien à trouver les fonctions permettant de compiler ses instructions :</p>
+<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="n">std</span><span class="o">::</span><span class="n">unique_ptr</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">p1</span> <span class="o">=</span> <span class="n">std</span><span class="o">::</span><span class="n">make_unique</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="p">(</span><span class="mi">3</span><span class="p">);</span>
+<span class="n">std</span><span class="o">::</span><span class="n">unique_ptr</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">p2</span> <span class="p">{</span> <span class="n">std</span><span class="o">::</span><span class="n">move</span><span class="p">(</span><span class="n">p1</span><span class="p">)</span> <span class="p">};</span> <span class="c1">// =&gt; appel à unique_ptr(unique_ptr&amp;&amp;)
+</span><span class="c1"></span><span class="n">std</span><span class="o">::</span><span class="n">unique_ptr</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">p3</span><span class="p">;</span>
+<span class="n">p3</span> <span class="o">=</span> <span class="n">std</span><span class="o">::</span><span class="n">move</span><span class="p">(</span><span class="n">p2</span><span class="p">);</span>                        <span class="c1">// =&gt; appel à operator=(unique_ptr&amp;&amp;)
+</span></code></pre></div><hr>
 <h3 id="référence-universelle-et-perfect-forwarding">Référence universelle et perfect-forwarding</h3>
 <p>Revenons maintenant à nos moutons et parlons template !</p>
 <p>Supposons que vous avez cette superbe fonction, permettant d&rsquo;insérer une valeur dans un conteneur disposant d&rsquo;une fonction <code>emplace_back</code> :</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span> <span class="n">Ctn</span><span class="p">,</span> <span class="k">typename</span> <span class="n">T</span><span class="o">&gt;</span>
-</span></span><span class="line"><span class="cl"><span class="kt">void</span> <span class="n">generic_emplace</span><span class="p">(</span><span class="n">Ctn</span><span class="o">&amp;</span> <span class="n">ctn</span><span class="p">,</span> <span class="n">T</span> <span class="n">value</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl"><span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="n">ctn</span><span class="p">.</span><span class="n">emplace_back</span><span class="p">(</span><span class="n">value</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span></code></pre></div><p>Voici différents appels à cette fonction, ainsi que le code généré par le compilateur pour chacun d&rsquo;entre eux :</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="n">std</span><span class="o">::</span><span class="n">list</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">values</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl"><span class="n">generic_emplace</span><span class="p">(</span><span class="n">values</span><span class="p">,</span> <span class="mi">3</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl"><span class="c1">// void generic_emplace(std::list&lt;int&gt;&amp; ctn, int value)
-</span></span></span><span class="line"><span class="cl"><span class="c1">// {
-</span></span></span><span class="line"><span class="cl"><span class="c1">//     ctn.emplace_back(value);
-</span></span></span><span class="line"><span class="cl"><span class="c1">// }
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
-</span></span><span class="line"><span class="cl"><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&gt;</span> <span class="n">names</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl"><span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">str</span> <span class="o">=</span> <span class="s">&#34;toto&#34;</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl"><span class="n">generic_emplace</span><span class="p">(</span><span class="n">names</span><span class="p">,</span> <span class="n">str</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl"><span class="c1">// void generic_emplace(std::vector&lt;std::string&gt;&amp; ctn, std::string value)
-</span></span></span><span class="line"><span class="cl"><span class="c1">// {
-</span></span></span><span class="line"><span class="cl"><span class="c1">//     ctn.emplace_back(value);
-</span></span></span><span class="line"><span class="cl"><span class="c1">// }
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
-</span></span><span class="line"><span class="cl"><span class="n">std</span><span class="o">::</span><span class="n">deque</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">unique_ptr</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;&gt;</span> <span class="n">ptrs</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl"><span class="n">generic_emplace</span><span class="p">(</span><span class="n">ptrs</span><span class="p">,</span> <span class="n">std</span><span class="o">::</span><span class="n">make_unique</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="p">(</span><span class="mi">3</span><span class="p">));</span>
-</span></span><span class="line"><span class="cl"><span class="c1">// void generic_emplace(std::deque&lt;std::unique_ptr&lt;int&gt;&gt;&amp; ctn, std::unique_ptr&lt;int&gt; value)
-</span></span></span><span class="line"><span class="cl"><span class="c1">// {
-</span></span></span><span class="line"><span class="cl"><span class="c1">//     ctn.emplace_back(value);
-</span></span></span><span class="line"><span class="cl"><span class="c1">// }
-</span></span></span></code></pre></div><p>Le premier appel va compiler sans aucun problème.<br>
+<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span> <span class="n">Ctn</span><span class="p">,</span> <span class="k">typename</span> <span class="n">T</span><span class="o">&gt;</span>
+<span class="kt">void</span> <span class="n">generic_emplace</span><span class="p">(</span><span class="n">Ctn</span><span class="o">&amp;</span> <span class="n">ctn</span><span class="p">,</span> <span class="n">T</span> <span class="n">value</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">ctn</span><span class="p">.</span><span class="n">emplace_back</span><span class="p">(</span><span class="n">value</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div><p>Voici différents appels à cette fonction, ainsi que le code généré par le compilateur pour chacun d&rsquo;entre eux :</p>
+<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="n">std</span><span class="o">::</span><span class="n">list</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">values</span><span class="p">;</span>
+<span class="n">generic_emplace</span><span class="p">(</span><span class="n">values</span><span class="p">,</span> <span class="mi">3</span><span class="p">);</span>
+<span class="c1">// void generic_emplace(std::list&lt;int&gt;&amp; ctn, int value)
+</span><span class="c1">// {
+</span><span class="c1">//     ctn.emplace_back(value);
+</span><span class="c1">// }
+</span><span class="c1"></span>
+<span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&gt;</span> <span class="n">names</span><span class="p">;</span>
+<span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">str</span> <span class="o">=</span> <span class="s">&#34;toto&#34;</span><span class="p">;</span>
+<span class="n">generic_emplace</span><span class="p">(</span><span class="n">names</span><span class="p">,</span> <span class="n">str</span><span class="p">);</span>
+<span class="c1">// void generic_emplace(std::vector&lt;std::string&gt;&amp; ctn, std::string value)
+</span><span class="c1">// {
+</span><span class="c1">//     ctn.emplace_back(value);
+</span><span class="c1">// }
+</span><span class="c1"></span>
+<span class="n">std</span><span class="o">::</span><span class="n">deque</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">unique_ptr</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;&gt;</span> <span class="n">ptrs</span><span class="p">;</span>
+<span class="n">generic_emplace</span><span class="p">(</span><span class="n">ptrs</span><span class="p">,</span> <span class="n">std</span><span class="o">::</span><span class="n">make_unique</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="p">(</span><span class="mi">3</span><span class="p">));</span>
+<span class="c1">// void generic_emplace(std::deque&lt;std::unique_ptr&lt;int&gt;&gt;&amp; ctn, std::unique_ptr&lt;int&gt; value)
+</span><span class="c1">// {
+</span><span class="c1">//     ctn.emplace_back(value);
+</span><span class="c1">// }
+</span></code></pre></div><p>Le premier appel va compiler sans aucun problème.<br>
 Le second appel va également compiler, mais on note qu&rsquo;on réalise une copie inutile.<br>
 Par contre, le troisième appel ne va pas compiler du tout, car <code>ctn.emplace_back(value)</code> va tenter d&rsquo;appeler le constructeur de copie de <code>unique_ptr</code>, qui n&rsquo;existe pas.</p>
 <p>Ce qu&rsquo;on aimerait idéalement avoir au moment de la génération, c&rsquo;est donc plutôt cela :</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="n">std</span><span class="o">::</span><span class="n">list</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">values</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl"><span class="n">generic_emplace</span><span class="p">(</span><span class="n">values</span><span class="p">,</span> <span class="mi">3</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl"><span class="c1">// void generic_emplace(std::list&lt;int&gt;&amp; ctn, int value)
-</span></span></span><span class="line"><span class="cl"><span class="c1">// {
-</span></span></span><span class="line"><span class="cl"><span class="c1">//     ctn.emplace_back(value);
-</span></span></span><span class="line"><span class="cl"><span class="c1">// }
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
-</span></span><span class="line"><span class="cl"><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&gt;</span> <span class="n">names</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl"><span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">str</span> <span class="o">=</span> <span class="s">&#34;toto&#34;</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl"><span class="n">generic_emplace</span><span class="p">(</span><span class="n">names</span><span class="p">,</span> <span class="n">str</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl"><span class="c1">// void generic_emplace(std::vector&lt;std::string&gt;&amp; ctn, const std::string&amp; value) -&gt; const-ref pour économiser une copie
-</span></span></span><span class="line"><span class="cl"><span class="c1">// {
-</span></span></span><span class="line"><span class="cl"><span class="c1">//     ctn.emplace_back(value);
-</span></span></span><span class="line"><span class="cl"><span class="c1">// }
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
-</span></span><span class="line"><span class="cl"><span class="n">std</span><span class="o">::</span><span class="n">deque</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">unique_ptr</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;&gt;</span> <span class="n">ptrs</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl"><span class="n">generic_emplace</span><span class="p">(</span><span class="n">ptrs</span><span class="p">,</span> <span class="n">std</span><span class="o">::</span><span class="n">make_unique</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="p">(</span><span class="mi">3</span><span class="p">));</span>
-</span></span><span class="line"><span class="cl"><span class="c1">// void generic_emplace(std::deque&lt;std::unique_ptr&lt;int&gt;&gt;&amp; ctn, std::unique_ptr&lt;int&gt;&amp;&amp; value) -&gt; r-value car on vole le ptr
-</span></span></span><span class="line"><span class="cl"><span class="c1">// {
-</span></span></span><span class="line"><span class="cl"><span class="c1">//     ctn.emplace_back(std::move(value)); -&gt; pour le placer dans ctn avec un move
-</span></span></span><span class="line"><span class="cl"><span class="c1">// }
-</span></span></span></code></pre></div><p>Afin de pouvoir arriver à un comportement approximativement similaire, il faut utiliser des références universelles d&rsquo;une part, et du perfect-forwarding de l&rsquo;autre.</p>
+<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="n">std</span><span class="o">::</span><span class="n">list</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">values</span><span class="p">;</span>
+<span class="n">generic_emplace</span><span class="p">(</span><span class="n">values</span><span class="p">,</span> <span class="mi">3</span><span class="p">);</span>
+<span class="c1">// void generic_emplace(std::list&lt;int&gt;&amp; ctn, int value)
+</span><span class="c1">// {
+</span><span class="c1">//     ctn.emplace_back(value);
+</span><span class="c1">// }
+</span><span class="c1"></span>
+<span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&gt;</span> <span class="n">names</span><span class="p">;</span>
+<span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">str</span> <span class="o">=</span> <span class="s">&#34;toto&#34;</span><span class="p">;</span>
+<span class="n">generic_emplace</span><span class="p">(</span><span class="n">names</span><span class="p">,</span> <span class="n">str</span><span class="p">);</span>
+<span class="c1">// void generic_emplace(std::vector&lt;std::string&gt;&amp; ctn, const std::string&amp; value) -&gt; const-ref pour économiser une copie
+</span><span class="c1">// {
+</span><span class="c1">//     ctn.emplace_back(value);
+</span><span class="c1">// }
+</span><span class="c1"></span>
+<span class="n">std</span><span class="o">::</span><span class="n">deque</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">unique_ptr</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;&gt;</span> <span class="n">ptrs</span><span class="p">;</span>
+<span class="n">generic_emplace</span><span class="p">(</span><span class="n">ptrs</span><span class="p">,</span> <span class="n">std</span><span class="o">::</span><span class="n">make_unique</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="p">(</span><span class="mi">3</span><span class="p">));</span>
+<span class="c1">// void generic_emplace(std::deque&lt;std::unique_ptr&lt;int&gt;&gt;&amp; ctn, std::unique_ptr&lt;int&gt;&amp;&amp; value) -&gt; r-value car on vole le ptr
+</span><span class="c1">// {
+</span><span class="c1">//     ctn.emplace_back(std::move(value)); -&gt; pour le placer dans ctn avec un move
+</span><span class="c1">// }
+</span></code></pre></div><p>Afin de pouvoir arriver à un comportement approximativement similaire, il faut utiliser des références universelles d&rsquo;une part, et du perfect-forwarding de l&rsquo;autre.</p>
 <p>Commençons par les références universelles.
 Voici la syntaxe :</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span> <span class="n">Ctn</span><span class="p">,</span> <span class="k">typename</span> <span class="n">T</span><span class="o">&gt;</span>
-</span></span><span class="line"><span class="cl"><span class="kt">void</span> <span class="n">generic_emplace</span><span class="p">(</span><span class="n">Ctn</span><span class="o">&amp;</span> <span class="n">ctn</span><span class="p">,</span> <span class="n">T</span><span class="o">&amp;&amp;</span> <span class="n">value</span><span class="p">)</span> <span class="c1">// &lt;- on ajoute &amp;&amp; sur T
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="n">ctn</span><span class="p">.</span><span class="n">emplace_back</span><span class="p">(</span><span class="n">value</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span></code></pre></div><p><strong>Heeeeeein ? Mais on vient de voir que <code>&amp;&amp;</code>, ça sert à faire des r-value references !</strong></p>
+<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span> <span class="n">Ctn</span><span class="p">,</span> <span class="k">typename</span> <span class="n">T</span><span class="o">&gt;</span>
+<span class="kt">void</span> <span class="n">generic_emplace</span><span class="p">(</span><span class="n">Ctn</span><span class="o">&amp;</span> <span class="n">ctn</span><span class="p">,</span> <span class="n">T</span><span class="o">&amp;&amp;</span> <span class="n">value</span><span class="p">)</span> <span class="c1">// &lt;- on ajoute &amp;&amp; sur T
+</span><span class="c1"></span><span class="p">{</span>
+    <span class="n">ctn</span><span class="p">.</span><span class="n">emplace_back</span><span class="p">(</span><span class="n">value</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div><p><strong>Heeeeeein ? Mais on vient de voir que <code>&amp;&amp;</code>, ça sert à faire des r-value references !</strong></p>
 <p>Et bah pas dans ce cas&hellip;<br>
 Si vous mettez <code>&amp;&amp;</code> sur un type précis, comme <code>int&amp;&amp;</code> ou <code>std::string&amp;&amp;</code>, vous êtes effectivement en train d&rsquo;attendre qu&rsquo;on vous passe une r-value de ce type.<br>
 En revanche, si vous mettez <code>&amp;&amp;</code> sur un type générique défini comme argument de template de la fonction, vous êtes en train de définir une référence universelle.<br>
@@ -2235,96 +2235,96 @@ Déjà que c&rsquo;est pas simple de comprendre la différence entre l-value et 
 Vous pouvez aussi lire 
 <a href="https://isocpp.org/blog/2012/11/universal-references-in-c11-scott-meyers" target="_blank" rel="noopener noreferrer">cet article</a> si vous souhaitez apprendre à distinguer une r-value reference d&rsquo;une référence universelle à tous les coups !</p>
 <p>Revenons au code précédent.</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span> <span class="n">Ctn</span><span class="p">,</span> <span class="k">typename</span> <span class="n">T</span><span class="o">&gt;</span>
-</span></span><span class="line"><span class="cl"><span class="kt">void</span> <span class="n">generic_emplace</span><span class="p">(</span><span class="n">Ctn</span><span class="o">&amp;</span> <span class="n">ctn</span><span class="p">,</span> <span class="n">T</span><span class="o">&amp;&amp;</span> <span class="n">value</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl"><span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="n">ctn</span><span class="p">.</span><span class="n">emplace_back</span><span class="p">(</span><span class="n">value</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span></code></pre></div><p>Voici les fonctions qui seront maintenant générées par chacun des appels :</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="n">std</span><span class="o">::</span><span class="n">list</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">values</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl"><span class="n">generic_emplace</span><span class="p">(</span><span class="n">values</span><span class="p">,</span> <span class="mi">3</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl"><span class="c1">// Comme on passe `3` qui est une r-value, la référence universelle est transformée en r-value reference
-</span></span></span><span class="line"><span class="cl"><span class="c1">// void generic_emplace(std::list&lt;int&gt;&amp; ctn, int&amp;&amp; value)
-</span></span></span><span class="line"><span class="cl"><span class="c1">// {
-</span></span></span><span class="line"><span class="cl"><span class="c1">//     ctn.emplace_back(value);
-</span></span></span><span class="line"><span class="cl"><span class="c1">// }
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
-</span></span><span class="line"><span class="cl"><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&gt;</span> <span class="n">names</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl"><span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">str</span> <span class="o">=</span> <span class="s">&#34;toto&#34;</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl"><span class="n">generic_emplace</span><span class="p">(</span><span class="n">names</span><span class="p">,</span> <span class="n">str</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl"><span class="c1">// Comme on passe `str` qui est une l-value constante, la référence universelle est transformée en const-ref
-</span></span></span><span class="line"><span class="cl"><span class="c1">// void generic_emplace(std::vector&lt;std::string&gt;&amp; ctn, const std::string&amp; value)
-</span></span></span><span class="line"><span class="cl"><span class="c1">// {
-</span></span></span><span class="line"><span class="cl"><span class="c1">//     ctn.emplace_back(value);
-</span></span></span><span class="line"><span class="cl"><span class="c1">// }
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
-</span></span><span class="line"><span class="cl"><span class="n">std</span><span class="o">::</span><span class="n">deque</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">unique_ptr</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;&gt;</span> <span class="n">ptrs</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl"><span class="n">generic_emplace</span><span class="p">(</span><span class="n">ptrs</span><span class="p">,</span> <span class="n">std</span><span class="o">::</span><span class="n">make_unique</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="p">(</span><span class="mi">3</span><span class="p">));</span>
-</span></span><span class="line"><span class="cl"><span class="c1">// Comme on passe `std::make_unique&lt;int&gt;(3)` qui est une r-value, la référence universelle est transformée en r-value reference
-</span></span></span><span class="line"><span class="cl"><span class="c1">// void generic_emplace(std::deque&lt;std::unique_ptr&lt;int&gt;&gt;&amp; ctn, std::unique_ptr&lt;int&gt;&amp;&amp; value)
-</span></span></span><span class="line"><span class="cl"><span class="c1">// {
-</span></span></span><span class="line"><span class="cl"><span class="c1">//     ctn.emplace_back(value);
-</span></span></span><span class="line"><span class="cl"><span class="c1">// }
-</span></span></span></code></pre></div><p>Le premier appel compile toujours.
+<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span> <span class="n">Ctn</span><span class="p">,</span> <span class="k">typename</span> <span class="n">T</span><span class="o">&gt;</span>
+<span class="kt">void</span> <span class="n">generic_emplace</span><span class="p">(</span><span class="n">Ctn</span><span class="o">&amp;</span> <span class="n">ctn</span><span class="p">,</span> <span class="n">T</span><span class="o">&amp;&amp;</span> <span class="n">value</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">ctn</span><span class="p">.</span><span class="n">emplace_back</span><span class="p">(</span><span class="n">value</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div><p>Voici les fonctions qui seront maintenant générées par chacun des appels :</p>
+<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="n">std</span><span class="o">::</span><span class="n">list</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">values</span><span class="p">;</span>
+<span class="n">generic_emplace</span><span class="p">(</span><span class="n">values</span><span class="p">,</span> <span class="mi">3</span><span class="p">);</span>
+<span class="c1">// Comme on passe `3` qui est une r-value, la référence universelle est transformée en r-value reference
+</span><span class="c1">// void generic_emplace(std::list&lt;int&gt;&amp; ctn, int&amp;&amp; value)
+</span><span class="c1">// {
+</span><span class="c1">//     ctn.emplace_back(value);
+</span><span class="c1">// }
+</span><span class="c1"></span>
+<span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&gt;</span> <span class="n">names</span><span class="p">;</span>
+<span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">str</span> <span class="o">=</span> <span class="s">&#34;toto&#34;</span><span class="p">;</span>
+<span class="n">generic_emplace</span><span class="p">(</span><span class="n">names</span><span class="p">,</span> <span class="n">str</span><span class="p">);</span>
+<span class="c1">// Comme on passe `str` qui est une l-value constante, la référence universelle est transformée en const-ref
+</span><span class="c1">// void generic_emplace(std::vector&lt;std::string&gt;&amp; ctn, const std::string&amp; value)
+</span><span class="c1">// {
+</span><span class="c1">//     ctn.emplace_back(value);
+</span><span class="c1">// }
+</span><span class="c1"></span>
+<span class="n">std</span><span class="o">::</span><span class="n">deque</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">unique_ptr</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;&gt;</span> <span class="n">ptrs</span><span class="p">;</span>
+<span class="n">generic_emplace</span><span class="p">(</span><span class="n">ptrs</span><span class="p">,</span> <span class="n">std</span><span class="o">::</span><span class="n">make_unique</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="p">(</span><span class="mi">3</span><span class="p">));</span>
+<span class="c1">// Comme on passe `std::make_unique&lt;int&gt;(3)` qui est une r-value, la référence universelle est transformée en r-value reference
+</span><span class="c1">// void generic_emplace(std::deque&lt;std::unique_ptr&lt;int&gt;&gt;&amp; ctn, std::unique_ptr&lt;int&gt;&amp;&amp; value)
+</span><span class="c1">// {
+</span><span class="c1">//     ctn.emplace_back(value);
+</span><span class="c1">// }
+</span></code></pre></div><p>Le premier appel compile toujours.
 Le second appel compile lui aussi, et on a réussi à économiser la copie inutile que l&rsquo;on faisait avant.<br>
 En revanche, le troisième appel ne toujours compile pas, car bien que la signature de <code>generic_emplace</code> ait changée, une fois à l&rsquo;intérieur de la fonction, c&rsquo;est toujours le constructeur de copie de <code>unique_ptr</code> que le compilateur tente d&rsquo;utiliser.</p>
 <p>Eh oui, même si <code>value</code> est de type <code>std::unique_ptr&lt;int&gt;&amp;&amp;</code>, l&rsquo;expression <code>value</code> est une l-value (contre-intuitif n&rsquo;est-ce pas ? 🤪).
 Rappelez-vous, si une expression fait référence à un objet particulier, et que cet objet n&rsquo;est pas détruit une fois l&rsquo;instruction exécutée, c&rsquo;est qu&rsquo;il s&rsquo;agit d&rsquo;une l-value.</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="kt">void</span> <span class="nf">fcn</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&amp;&amp;</span> <span class="n">str</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl"><span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">str</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">    <span class="c1">// str n&#39;a pas été détruite à la fin de l&#39;instruction précédente =&gt; l-value
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
-</span></span><span class="line"><span class="cl">    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="p">{</span> <span class="s">&#34;toto&#34;</span> <span class="p">}</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">    <span class="c1">// la std::string construite a été détruite à la fin de l&#39;instruction =&gt; r-value
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="p">}</span>
-</span></span></code></pre></div><p>Du coup, pour en revenir à <code>generic_emplace</code>, lorsqu&rsquo;on écrit <code>ctn.emplace_back(value)</code>, on appelle le copy-constructor de <code>unique_ptr</code> au lieu du move-constructor, car l&rsquo;expression <code>value</code> est une l-value et non pas une r-value.</p>
+<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="kt">void</span> <span class="nf">fcn</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&amp;&amp;</span> <span class="n">str</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">str</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+    <span class="c1">// str n&#39;a pas été détruite à la fin de l&#39;instruction précédente =&gt; l-value
+</span><span class="c1"></span>
+    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="p">{</span> <span class="s">&#34;toto&#34;</span> <span class="p">}</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+    <span class="c1">// la std::string construite a été détruite à la fin de l&#39;instruction =&gt; r-value
+</span><span class="c1"></span><span class="p">}</span>
+</code></pre></div><p>Du coup, pour en revenir à <code>generic_emplace</code>, lorsqu&rsquo;on écrit <code>ctn.emplace_back(value)</code>, on appelle le copy-constructor de <code>unique_ptr</code> au lieu du move-constructor, car l&rsquo;expression <code>value</code> est une l-value et non pas une r-value.</p>
 <p>Afin de transformer cette l-value en r-value, on utilise une technique nommée <strong>perfect-forwarding</strong>, reposant sur l&rsquo;utilisation de la fonction <code>std::forward</code> définie dans <code>&lt;utility&gt;</code>.</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span> <span class="n">T</span><span class="o">&gt;</span>
-</span></span><span class="line"><span class="cl"><span class="kt">void</span> <span class="n">perfect_forwarder</span><span class="p">(</span><span class="n">T</span><span class="o">&amp;&amp;</span> <span class="n">universal_ref</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl"><span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="c1">// std::forward, c&#39;est un peu comme std::move, si ce n&#39;est qu&#39;il faut rajouter &lt;T&gt; (sans les &amp;&amp;) à l&#39;appel.
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="n">do_something</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">forward</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span><span class="p">(</span><span class="n">universal_ref</span><span class="p">));</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span></code></pre></div><p>Le comportement de <code>std::forward</code> est le suivant :<br>
+<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span> <span class="n">T</span><span class="o">&gt;</span>
+<span class="kt">void</span> <span class="n">perfect_forwarder</span><span class="p">(</span><span class="n">T</span><span class="o">&amp;&amp;</span> <span class="n">universal_ref</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="c1">// std::forward, c&#39;est un peu comme std::move, si ce n&#39;est qu&#39;il faut rajouter &lt;T&gt; (sans les &amp;&amp;) à l&#39;appel.
+</span><span class="c1"></span>    <span class="n">do_something</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">forward</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span><span class="p">(</span><span class="n">universal_ref</span><span class="p">));</span>
+<span class="p">}</span>
+</code></pre></div><p>Le comportement de <code>std::forward</code> est le suivant :<br>
 - si <code>universal_ref</code> est de type <code>const T&amp;</code>, alors l&rsquo;expression <code>std::forward&lt;T&gt;(universal_ref)</code> est une l-value de type <code>const T&amp;</code>,<br>
 - si <code>universal_ref</code> est de type <code>T&amp;</code>, alors l&rsquo;expression <code>std::forward&lt;T&gt;(universal_ref)</code> est une l-value de type <code>T&amp;</code>,<br>
 - si <code>universal_ref</code> est de type <code>T&amp;&amp;</code> (au sens r-value reference et pas référence universelle), alors l&rsquo;expression <code>std::forward&lt;T&gt;(universal_ref)</code> est une r-value de type <code>T&amp;&amp;</code>.</p>
 <p>Du coup, on peut réécrire <code>generic_emplace</code> de cette manière :</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span> <span class="n">Ctn</span><span class="p">,</span> <span class="k">typename</span> <span class="n">T</span><span class="o">&gt;</span>
-</span></span><span class="line"><span class="cl"><span class="kt">void</span> <span class="n">generic_emplace</span><span class="p">(</span><span class="n">Ctn</span><span class="o">&amp;</span> <span class="n">ctn</span><span class="p">,</span> <span class="n">T</span><span class="o">&amp;&amp;</span> <span class="n">value</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl"><span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="n">ctn</span><span class="p">.</span><span class="n">emplace_back</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">forward</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span><span class="p">(</span><span class="n">value</span><span class="p">));</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span></code></pre></div><p>Ainsi, le code généré sera le suivant, et il n&rsquo;y aura plus d&rsquo;erreur de compilation :</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="n">std</span><span class="o">::</span><span class="n">list</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">values</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl"><span class="n">generic_emplace</span><span class="p">(</span><span class="n">values</span><span class="p">,</span> <span class="mi">3</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl"><span class="c1">// void generic_emplace(std::list&lt;int&gt;&amp; ctn, int&amp;&amp; value)
-</span></span></span><span class="line"><span class="cl"><span class="c1">// {
-</span></span></span><span class="line"><span class="cl"><span class="c1">//     ctn.emplace_back(static_cast&lt;int&amp;&amp;&gt;(value));
-</span></span></span><span class="line"><span class="cl"><span class="c1">//     -&gt; Le static_cast ne change rien ici, vu que int est un type primitif
-</span></span></span><span class="line"><span class="cl"><span class="c1">//        Il n&#39;y a effectivement pas de move-constructor ni de copy-constructor, juste le processeur qui change la valeur des octets en mémoire
-</span></span></span><span class="line"><span class="cl"><span class="c1">// }
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
-</span></span><span class="line"><span class="cl"><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&gt;</span> <span class="n">names</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl"><span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">str</span> <span class="o">=</span> <span class="s">&#34;toto&#34;</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl"><span class="n">generic_emplace</span><span class="p">(</span><span class="n">names</span><span class="p">,</span> <span class="n">str</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl"><span class="c1">// void generic_emplace(std::vector&lt;std::string&gt;&amp; ctn, const std::string&amp; value)
-</span></span></span><span class="line"><span class="cl"><span class="c1">// {
-</span></span></span><span class="line"><span class="cl"><span class="c1">//     ctn.emplace_back(static_cast&lt;const std::string&amp;&gt;(value));
-</span></span></span><span class="line"><span class="cl"><span class="c1">//     -&gt; Le static_cast ne change rien ici non plus, mais pour une autre raison.
-</span></span></span><span class="line"><span class="cl"><span class="c1">//        `value` est déjà une l-value de type `const std::string&amp;`, ce qui est aussi le cas de `static_cast&lt;const std::string&amp;&gt;(value)`.
-</span></span></span><span class="line"><span class="cl"><span class="c1">// }
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
-</span></span><span class="line"><span class="cl"><span class="n">std</span><span class="o">::</span><span class="n">deque</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">unique_ptr</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;&gt;</span> <span class="n">ptrs</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl"><span class="n">generic_emplace</span><span class="p">(</span><span class="n">ptrs</span><span class="p">,</span> <span class="n">std</span><span class="o">::</span><span class="n">make_unique</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="p">(</span><span class="mi">3</span><span class="p">));</span>
-</span></span><span class="line"><span class="cl"><span class="c1">// void generic_emplace(std::deque&lt;std::unique_ptr&lt;int&gt;&gt;&amp; ctn, std::unique_ptr&lt;int&gt;&amp;&amp; value)
-</span></span></span><span class="line"><span class="cl"><span class="c1">// {
-</span></span></span><span class="line"><span class="cl"><span class="c1">//     ctn.emplace_back(static_cast&lt;std::unique_ptr&lt;int&gt;&amp;&amp;&gt;(value));
-</span></span></span><span class="line"><span class="cl"><span class="c1">//     -&gt; Le static_cast permet ici d&#39;appeler `unique_ptr(unique_ptr&amp;&amp;)` plutôt que `unique_ptr(const unique_ptr&amp;)`.
-</span></span></span><span class="line"><span class="cl"><span class="c1">//        `value` est une l-value de type `std::unique_ptr&lt;int&gt;&amp;&amp;`, alors que `static_cast&lt;std::unique_ptr&lt;int&gt;&amp;&amp;&gt;` est une r-value de type `std::unique_ptr&lt;int&gt;&amp;&amp;`.
-</span></span></span><span class="line"><span class="cl"><span class="c1">// }
-</span></span></span></code></pre></div><hr>
+<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span> <span class="n">Ctn</span><span class="p">,</span> <span class="k">typename</span> <span class="n">T</span><span class="o">&gt;</span>
+<span class="kt">void</span> <span class="n">generic_emplace</span><span class="p">(</span><span class="n">Ctn</span><span class="o">&amp;</span> <span class="n">ctn</span><span class="p">,</span> <span class="n">T</span><span class="o">&amp;&amp;</span> <span class="n">value</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">ctn</span><span class="p">.</span><span class="n">emplace_back</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">forward</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span><span class="p">(</span><span class="n">value</span><span class="p">));</span>
+<span class="p">}</span>
+</code></pre></div><p>Ainsi, le code généré sera le suivant, et il n&rsquo;y aura plus d&rsquo;erreur de compilation :</p>
+<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="n">std</span><span class="o">::</span><span class="n">list</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">values</span><span class="p">;</span>
+<span class="n">generic_emplace</span><span class="p">(</span><span class="n">values</span><span class="p">,</span> <span class="mi">3</span><span class="p">);</span>
+<span class="c1">// void generic_emplace(std::list&lt;int&gt;&amp; ctn, int&amp;&amp; value)
+</span><span class="c1">// {
+</span><span class="c1">//     ctn.emplace_back(static_cast&lt;int&amp;&amp;&gt;(value));
+</span><span class="c1">//     -&gt; Le static_cast ne change rien ici, vu que int est un type primitif
+</span><span class="c1">//        Il n&#39;y a effectivement pas de move-constructor ni de copy-constructor, juste le processeur qui change la valeur des octets en mémoire
+</span><span class="c1">// }
+</span><span class="c1"></span>
+<span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&gt;</span> <span class="n">names</span><span class="p">;</span>
+<span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">str</span> <span class="o">=</span> <span class="s">&#34;toto&#34;</span><span class="p">;</span>
+<span class="n">generic_emplace</span><span class="p">(</span><span class="n">names</span><span class="p">,</span> <span class="n">str</span><span class="p">);</span>
+<span class="c1">// void generic_emplace(std::vector&lt;std::string&gt;&amp; ctn, const std::string&amp; value)
+</span><span class="c1">// {
+</span><span class="c1">//     ctn.emplace_back(static_cast&lt;const std::string&amp;&gt;(value));
+</span><span class="c1">//     -&gt; Le static_cast ne change rien ici non plus, mais pour une autre raison.
+</span><span class="c1">//        `value` est déjà une l-value de type `const std::string&amp;`, ce qui est aussi le cas de `static_cast&lt;const std::string&amp;&gt;(value)`.
+</span><span class="c1">// }
+</span><span class="c1"></span>
+<span class="n">std</span><span class="o">::</span><span class="n">deque</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">unique_ptr</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;&gt;</span> <span class="n">ptrs</span><span class="p">;</span>
+<span class="n">generic_emplace</span><span class="p">(</span><span class="n">ptrs</span><span class="p">,</span> <span class="n">std</span><span class="o">::</span><span class="n">make_unique</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="p">(</span><span class="mi">3</span><span class="p">));</span>
+<span class="c1">// void generic_emplace(std::deque&lt;std::unique_ptr&lt;int&gt;&gt;&amp; ctn, std::unique_ptr&lt;int&gt;&amp;&amp; value)
+</span><span class="c1">// {
+</span><span class="c1">//     ctn.emplace_back(static_cast&lt;std::unique_ptr&lt;int&gt;&amp;&amp;&gt;(value));
+</span><span class="c1">//     -&gt; Le static_cast permet ici d&#39;appeler `unique_ptr(unique_ptr&amp;&amp;)` plutôt que `unique_ptr(const unique_ptr&amp;)`.
+</span><span class="c1">//        `value` est une l-value de type `std::unique_ptr&lt;int&gt;&amp;&amp;`, alors que `static_cast&lt;std::unique_ptr&lt;int&gt;&amp;&amp;&gt;` est une r-value de type `std::unique_ptr&lt;int&gt;&amp;&amp;`.
+</span><span class="c1">// }
+</span></code></pre></div><hr>
 <h3 id="conclusion">Conclusion</h3>
 <p>En C++, la plupart des expressions sont classées en deux grandes catégories : les l-values et les r-values.<br>
 Les expressions l-values sont généralement des noms de variables, comme <code>value</code>, ou bien des appels de fonctions qui renvoient des l-value references, comme <code>vec.emplace_back(3)</code>.<br>
@@ -2334,14 +2334,14 @@ Les expressions r-values englobent à peu près tout le reste, à savoir les cal
 <li>utiliser une référence universelle pour définir ce paramètre,</li>
 <li>passer ce paramètre à l&rsquo;autre fonction en utilisant <code>std::forward</code>.</li>
 </ol>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="cp">#include</span> <span class="cpf">&lt;utility&gt;</span><span class="cp">
-</span></span></span><span class="line"><span class="cl"><span class="cp"></span>
-</span></span><span class="line"><span class="cl"><span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span> <span class="n">Plat</span><span class="o">&gt;</span>
-</span></span><span class="line"><span class="cl"><span class="kt">void</span> <span class="n">passe_plat</span><span class="p">(</span><span class="n">Serveur</span><span class="o">&amp;</span> <span class="n">serveur</span><span class="p">,</span> <span class="n">Plat</span><span class="o">&amp;&amp;</span> <span class="n">plat</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl"><span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="n">serveur</span><span class="p">.</span><span class="n">recoit</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">forward</span><span class="o">&lt;</span><span class="n">Plat</span><span class="o">&gt;</span><span class="p">(</span><span class="n">plat</span><span class="p">));</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span></code></pre></div>
+<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="cp">#include</span> <span class="cpf">&lt;utility&gt;</span><span class="cp">
+</span><span class="cp"></span>
+<span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span> <span class="n">Plat</span><span class="o">&gt;</span>
+<span class="kt">void</span> <span class="n">passe_plat</span><span class="p">(</span><span class="n">Serveur</span><span class="o">&amp;</span> <span class="n">serveur</span><span class="p">,</span> <span class="n">Plat</span><span class="o">&amp;&amp;</span> <span class="n">plat</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">serveur</span><span class="p">.</span><span class="n">recoit</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">forward</span><span class="o">&lt;</span><span class="n">Plat</span><span class="o">&gt;</span><span class="p">(</span><span class="n">plat</span><span class="p">));</span>
+<span class="p">}</span>
+</code></pre></div>
 
 <footer class="footline">
 	
@@ -3639,19 +3639,19 @@ Les expressions r-values englobent à peu près tout le reste, à savoir les cal
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/CPP_Learning/js/clipboard.min.js?1704755107"></script>
-    <script src="/CPP_Learning/js/perfect-scrollbar.min.js?1704755107"></script>
-    <script src="/CPP_Learning/js/perfect-scrollbar.jquery.min.js?1704755107"></script>
-    <script src="/CPP_Learning/js/jquery.sticky.js?1704755107"></script>
-    <script src="/CPP_Learning/js/featherlight.min.js?1704755107"></script>
-    <script src="/CPP_Learning/js/highlight.pack.js?1704755107"></script>
+    <script src="/CPP_Learning/js/clipboard.min.js?1705257267"></script>
+    <script src="/CPP_Learning/js/perfect-scrollbar.min.js?1705257267"></script>
+    <script src="/CPP_Learning/js/perfect-scrollbar.jquery.min.js?1705257267"></script>
+    <script src="/CPP_Learning/js/jquery.sticky.js?1705257267"></script>
+    <script src="/CPP_Learning/js/featherlight.min.js?1705257267"></script>
+    <script src="/CPP_Learning/js/highlight.pack.js?1705257267"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/CPP_Learning/js/modernizr.custom-3.6.0.js?1704755107"></script>
-    <script src="/CPP_Learning/js/learn.js?1704755107"></script>
-    <script src="/CPP_Learning/js/hugo-learn.js?1704755107"></script>
+    <script src="/CPP_Learning/js/modernizr.custom-3.6.0.js?1705257267"></script>
+    <script src="/CPP_Learning/js/learn.js?1705257267"></script>
+    <script src="/CPP_Learning/js/hugo-learn.js?1705257267"></script>
     
         
-            <script src="/CPP_Learning/mermaid/mermaid.js?1704755107"></script>
+            <script src="/CPP_Learning/mermaid/mermaid.js?1705257267"></script>
         
         <script>
             mermaid.initialize({ startOnLoad: true });
@@ -3665,12 +3665,12 @@ Les expressions r-values englobent à peu près tout le reste, à savoir les cal
     <form id="question" method=POST action="https://formsubmit.co/3aa0f379a1aed9c454634cc2da153a7b"
         target="question-submitted" onsubmit="cleanQuestionFormContent()">
 
-        <input type="email" name="email" placeholder="mon_email@smthg.com" required />
-        <textarea id="question-content" name="question" rows="7" cols="30" placeholder="ma question..."></textarea>
-        <input id="question-topic" type="hidden" name="selection" />
+        <input type="email" name="email" placeholder="mon_email@smthg.com" required onchange="updateQuestionFormSubject()" />
+        <textarea name="question" rows="7" cols="30" placeholder="ma question..."></textarea>
+        <input type="hidden" name="selection" />
 
         <input type="hidden" name="_replyto" />
-        <input type="hidden" name="_subject" value="[C++][Chapitre 0] Question sur le cours" />
+        <input type="hidden" name="_subject" />
         <input type="hidden" name="_template" value="box" />
         <input type="hidden" name="_captcha" value="false" />
         <input type="hidden" name="_next" value="https://laefy.github.io/CPP_Learning//question-submitted/" />
@@ -3679,10 +3679,15 @@ Les expressions r-values englobent à peu près tout le reste, à savoir les cal
         <input type="submit" value="Envoyer" />
     </form>
 
-    <iframe id="question-submitted" class="hidden" name="question-submitted" src=""></iframe>
+    <iframe class="hidden" name="question-submitted" src=""></iframe>
 </div>
 
 <script>
+
+    function updateQuestionFormSubject() {
+        let email = document.querySelector('#question>input[name="email"]').value;
+        document.querySelector('#question>input[name="_subject"]').value = "[C++][Chapitre 0] " + email + ", retour sur ta question";
+    }
 
     function cleanQuestionFormContent() {
 
@@ -3691,15 +3696,15 @@ Les expressions r-values englobent à peu près tout le reste, à savoir les cal
             element.value = element.value.replace(/\[\.\./g, "[ ..");
         }
 
-        clean(document.getElementById("question-content"))
-        clean(document.getElementById("question-topic"))
+        clean(document.querySelector('#question>textarea[name="question"]'))
+        clean(document.querySelector('#question>input[name="selection"]'))
     }
 
     function openQuestionForm() {
         document.getElementById("footer-question-window").removeAttribute("disabled");
 
         var selection = window.getSelection().toString();
-        document.getElementById("question-topic").value = selection
+        document.querySelector('#question>input[name="selection"]').value = selection
     }
 
     function updateQuestionWidgetState(event) {
@@ -3720,6 +3725,8 @@ Les expressions r-values englobent à peu près tout le reste, à savoir les cal
             question_window.setAttribute("disabled", true);
         }
     }
+
+    updateQuestionFormSubject();
 
     document.onmouseup = document.onkeyup = document.onselectionchange = updateQuestionWidgetState;
     updateQuestionWidgetState();

@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="Hugo 0.121.0">
+    <meta name="generator" content="Hugo 0.76.5" />
     <meta name="description" content="">
 
 
@@ -12,22 +12,22 @@
     <title>Template variadique :: Cours de C&#43;&#43; - Niveau Master</title>
 
     
-    <link href="/CPP_Learning/css/nucleus.css?1704755107" rel="stylesheet">
-    <link href="/CPP_Learning/css/fontawesome-all.min.css?1704755107" rel="stylesheet">
-    <link href="/CPP_Learning/css/hybrid.css?1704755107" rel="stylesheet">
-    <link href="/CPP_Learning/css/featherlight.min.css?1704755107" rel="stylesheet">
-    <link href="/CPP_Learning/css/perfect-scrollbar.min.css?1704755107" rel="stylesheet">
-    <link href="/CPP_Learning/css/auto-complete.css?1704755107" rel="stylesheet">
-    <link href="/CPP_Learning/css/atom-one-dark-reasonable.css?1704755107" rel="stylesheet">
-    <link href="/CPP_Learning/css/theme.css?1704755107" rel="stylesheet">
-    <link href="/CPP_Learning/css/tabs.css?1704755107" rel="stylesheet">
-    <link href="/CPP_Learning/css/hugo-theme.css?1704755107" rel="stylesheet">
+    <link href="/CPP_Learning/css/nucleus.css?1705257267" rel="stylesheet">
+    <link href="/CPP_Learning/css/fontawesome-all.min.css?1705257267" rel="stylesheet">
+    <link href="/CPP_Learning/css/hybrid.css?1705257267" rel="stylesheet">
+    <link href="/CPP_Learning/css/featherlight.min.css?1705257267" rel="stylesheet">
+    <link href="/CPP_Learning/css/perfect-scrollbar.min.css?1705257267" rel="stylesheet">
+    <link href="/CPP_Learning/css/auto-complete.css?1705257267" rel="stylesheet">
+    <link href="/CPP_Learning/css/atom-one-dark-reasonable.css?1705257267" rel="stylesheet">
+    <link href="/CPP_Learning/css/theme.css?1705257267" rel="stylesheet">
+    <link href="/CPP_Learning/css/tabs.css?1705257267" rel="stylesheet">
+    <link href="/CPP_Learning/css/hugo-theme.css?1705257267" rel="stylesheet">
     
-    <link href="/CPP_Learning/css/theme-mine.css?1704755107" rel="stylesheet">
+    <link href="/CPP_Learning/css/theme-mine.css?1705257267" rel="stylesheet">
     
-    <link href="/CPP_Learning/css/syntax.css?1704755107" rel="stylesheet">
+    <link href="/CPP_Learning/css/syntax.css?1705257267" rel="stylesheet">
 
-    <script src="/CPP_Learning/js/jquery-3.3.1.min.js?1704755107"></script>
+    <script src="/CPP_Learning/js/jquery-3.3.1.min.js?1705257267"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -1951,7 +1951,7 @@
         
 
 
-<p>Un template variadique, c&rsquo;est un template qui attend un nombre variable de paramètres.
+<p>Un template variadique, c&rsquo;est un template qui attend un nombre variable de paramètres. 
 Vous en avez déjà utilisé plusieurs, comme :<br>
 - la fonction-template <code>emplace_back</code> de <code>std::vector</code>, qui attend n&rsquo;importe quels nombres et types d&rsquo;arguments, et les utilisent pour construire le nouvel élément,<br>
 - la fonction-template <code>std::make_unique</code>, qui fonctionne sur le même principe,<br>
@@ -1960,47 +1960,47 @@ Vous en avez déjà utilisé plusieurs, comme :<br>
 <hr>
 <h3 id="parameter-packs-et-substitutions">Parameter packs et substitutions</h3>
 <p>Commençons par la syntaxe permettant d&rsquo;indiquer qu&rsquo;un template peut recevoir un nombre variable de paramètres.</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span><span class="p">...</span> <span class="n">Ts</span><span class="o">&gt;</span>   <span class="c1">// -&gt; on écrit `...` entre le type (ici typename) et le nom du paramètre (ici T)
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kt">void</span> <span class="n">fcn</span><span class="p">(</span><span class="n">Ts</span><span class="p">...</span> <span class="n">params</span><span class="p">)</span>      <span class="c1">// -&gt; on écrit encore `...` entre le type (ici Ts) et le nom du paramètre (ici params) 
-</span></span></span></code></pre></div><p>On parlera de <strong>parameter pack de template</strong> pour désigner <code>Ts</code> et de <strong>parameter pack de fonction</strong> pour désigner <code>params</code>.</p>
+<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span><span class="p">...</span> <span class="n">Ts</span><span class="o">&gt;</span>   <span class="c1">// -&gt; on écrit `...` entre le type (ici typename) et le nom du paramètre (ici T)
+</span><span class="c1"></span><span class="kt">void</span> <span class="n">fcn</span><span class="p">(</span><span class="n">Ts</span><span class="p">...</span> <span class="n">params</span><span class="p">)</span>      <span class="c1">// -&gt; on écrit encore `...` entre le type (ici Ts) et le nom du paramètre (ici params) 
+</span></code></pre></div><p>On parlera de <strong>parameter pack de template</strong> pour désigner <code>Ts</code> et de <strong>parameter pack de fonction</strong> pour désigner <code>params</code>.</p>
 <p>Comme n&rsquo;importe quel paramètre de fonction-template, il est possible de qualifier <code>Ts</code> avec <code>&amp;</code> (l-value non-constante), <code>const &amp;</code> (l-value constante) ou <code>&amp;&amp;</code> (référence universelle) :</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span><span class="p">...</span> <span class="n">Ts</span><span class="o">&gt;</span>
-</span></span><span class="line"><span class="cl"><span class="kt">void</span> <span class="n">fcn_ref</span><span class="p">(</span><span class="n">Ts</span><span class="o">&amp;</span><span class="p">...</span> <span class="n">params</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span><span class="p">...</span> <span class="n">Ts</span><span class="o">&gt;</span>
-</span></span><span class="line"><span class="cl"><span class="kt">void</span> <span class="n">fcn_const_ref</span><span class="p">(</span><span class="k">const</span> <span class="n">Ts</span><span class="o">&amp;</span><span class="p">...</span> <span class="n">params</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span><span class="p">...</span> <span class="n">Ts</span><span class="o">&gt;</span>
-</span></span><span class="line"><span class="cl"><span class="kt">void</span> <span class="n">fcn_universal_ref</span><span class="p">(</span><span class="n">Ts</span><span class="o">&amp;&amp;</span><span class="p">...</span> <span class="n">params</span><span class="p">)</span>
-</span></span></code></pre></div><p>Cela impactera bien sûr la possibilité pour le compilateur de générer une fonction à partir d&rsquo;un appel donné, ainsi que la signature de l&rsquo;éventuelle fonction générée :</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="kt">int</span> <span class="n">v1</span> <span class="o">=</span> <span class="mi">3</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl"><span class="kt">char</span> <span class="n">v2</span> <span class="o">=</span> <span class="sc">&#39;A&#39;</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl"><span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">v3</span> <span class="o">=</span> <span class="s">&#34;toto&#34;</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c1">// Il est toujours possible de substituer Ts&amp;... / const Ts&amp;... / Ts&amp;&amp;... avec &#34;rien&#34;. 
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">fcn_ref</span><span class="p">();</span>
-</span></span><span class="line"><span class="cl"><span class="n">fcn_const_ref</span><span class="p">();</span>
-</span></span><span class="line"><span class="cl"><span class="n">fcn_universal_ref</span><span class="p">();</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c1">// Ts&amp;... ne peut être substitué que par des l-values (constantes ou pas)
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">fcn_ref</span><span class="p">(</span><span class="n">v1</span><span class="p">,</span> <span class="n">v2</span><span class="p">);</span> <span class="c1">// ok : Ts&amp;... -&gt; int&amp;, char&amp;
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">fcn_ref</span><span class="p">(</span><span class="n">v1</span><span class="p">,</span> <span class="mi">3</span><span class="p">);</span>  <span class="c1">// pas ok, car 3 est une r-value
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">fcn_ref</span><span class="p">(</span><span class="n">v3</span><span class="p">);</span>     <span class="c1">// ok : Ts&amp;... -&gt; const std::string&amp;
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
-</span></span><span class="line"><span class="cl"><span class="c1">// const Ts&amp;... peut être substitué par n&#39;importe quoi (les r-value et l-value non-const seront converties en l-value const si nécessaires)
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">fcn_const_ref</span><span class="p">(</span><span class="n">v1</span><span class="p">,</span> <span class="n">v2</span><span class="p">);</span> <span class="c1">// ok : Ts&amp;... -&gt; const int&amp;, const char&amp;
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">fcn_const_ref</span><span class="p">(</span><span class="n">v1</span><span class="p">,</span> <span class="mi">3</span><span class="p">);</span>  <span class="c1">// ok : Ts&amp;... -&gt; const int&amp;, const int&amp;
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">fcn_const_ref</span><span class="p">(</span><span class="n">v3</span><span class="p">);</span>     <span class="c1">// ok : Ts&amp;... -&gt; const std::string&amp;
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
-</span></span><span class="line"><span class="cl"><span class="c1">// Ts&amp;&amp;... peut évident être subtitué par n&#39;importe quoi (c&#39;est le principe de la référence universelle)
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">fcn_universal_ref</span><span class="p">(</span><span class="n">v1</span><span class="p">,</span> <span class="n">v2</span><span class="p">);</span> <span class="c1">// ok : Ts&amp;... -&gt; int&amp;, char&amp;
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">fcn_universal_ref</span><span class="p">(</span><span class="n">v1</span><span class="p">,</span> <span class="mi">3</span><span class="p">);</span>  <span class="c1">// ok : Ts&amp;... -&gt; int&amp;, int&amp;&amp;
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">fcn_universal_ref</span><span class="p">(</span><span class="n">v3</span><span class="p">);</span>     <span class="c1">// ok : Ts&amp;... -&gt; const std::string&amp;
-</span></span></span></code></pre></div><p>Un petit point à noter : il n&rsquo;est pas possible de restreindre les paramètres d&rsquo;un pack à un type donné.<br>
+<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span><span class="p">...</span> <span class="n">Ts</span><span class="o">&gt;</span>
+<span class="kt">void</span> <span class="n">fcn_ref</span><span class="p">(</span><span class="n">Ts</span><span class="o">&amp;</span><span class="p">...</span> <span class="n">params</span><span class="p">)</span>
+
+<span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span><span class="p">...</span> <span class="n">Ts</span><span class="o">&gt;</span>
+<span class="kt">void</span> <span class="n">fcn_const_ref</span><span class="p">(</span><span class="k">const</span> <span class="n">Ts</span><span class="o">&amp;</span><span class="p">...</span> <span class="n">params</span><span class="p">)</span>
+
+<span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span><span class="p">...</span> <span class="n">Ts</span><span class="o">&gt;</span>
+<span class="kt">void</span> <span class="n">fcn_universal_ref</span><span class="p">(</span><span class="n">Ts</span><span class="o">&amp;&amp;</span><span class="p">...</span> <span class="n">params</span><span class="p">)</span>
+</code></pre></div><p>Cela impactera bien sûr la possibilité pour le compilateur de générer une fonction à partir d&rsquo;un appel donné, ainsi que la signature de l&rsquo;éventuelle fonction générée :</p>
+<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="kt">int</span> <span class="n">v1</span> <span class="o">=</span> <span class="mi">3</span><span class="p">;</span>
+<span class="kt">char</span> <span class="n">v2</span> <span class="o">=</span> <span class="sc">&#39;A&#39;</span><span class="p">;</span>
+<span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">v3</span> <span class="o">=</span> <span class="s">&#34;toto&#34;</span><span class="p">;</span>
+
+<span class="c1">// Il est toujours possible de substituer Ts&amp;... / const Ts&amp;... / Ts&amp;&amp;... avec &#34;rien&#34;. 
+</span><span class="c1"></span><span class="n">fcn_ref</span><span class="p">();</span>
+<span class="n">fcn_const_ref</span><span class="p">();</span>
+<span class="n">fcn_universal_ref</span><span class="p">();</span>
+
+<span class="c1">// Ts&amp;... ne peut être substitué que par des l-values (constantes ou pas)
+</span><span class="c1"></span><span class="n">fcn_ref</span><span class="p">(</span><span class="n">v1</span><span class="p">,</span> <span class="n">v2</span><span class="p">);</span> <span class="c1">// ok : Ts&amp;... -&gt; int&amp;, char&amp;
+</span><span class="c1"></span><span class="n">fcn_ref</span><span class="p">(</span><span class="n">v1</span><span class="p">,</span> <span class="mi">3</span><span class="p">);</span>  <span class="c1">// pas ok, car 3 est une r-value
+</span><span class="c1"></span><span class="n">fcn_ref</span><span class="p">(</span><span class="n">v3</span><span class="p">);</span>     <span class="c1">// ok : Ts&amp;... -&gt; const std::string&amp;
+</span><span class="c1"></span>
+<span class="c1">// const Ts&amp;... peut être substitué par n&#39;importe quoi (les r-value et l-value non-const seront converties en l-value const si nécessaires)
+</span><span class="c1"></span><span class="n">fcn_const_ref</span><span class="p">(</span><span class="n">v1</span><span class="p">,</span> <span class="n">v2</span><span class="p">);</span> <span class="c1">// ok : Ts&amp;... -&gt; const int&amp;, const char&amp;
+</span><span class="c1"></span><span class="n">fcn_const_ref</span><span class="p">(</span><span class="n">v1</span><span class="p">,</span> <span class="mi">3</span><span class="p">);</span>  <span class="c1">// ok : Ts&amp;... -&gt; const int&amp;, const int&amp;
+</span><span class="c1"></span><span class="n">fcn_const_ref</span><span class="p">(</span><span class="n">v3</span><span class="p">);</span>     <span class="c1">// ok : Ts&amp;... -&gt; const std::string&amp;
+</span><span class="c1"></span>
+<span class="c1">// Ts&amp;&amp;... peut évident être subtitué par n&#39;importe quoi (c&#39;est le principe de la référence universelle)
+</span><span class="c1"></span><span class="n">fcn_universal_ref</span><span class="p">(</span><span class="n">v1</span><span class="p">,</span> <span class="n">v2</span><span class="p">);</span> <span class="c1">// ok : Ts&amp;... -&gt; int&amp;, char&amp;
+</span><span class="c1"></span><span class="n">fcn_universal_ref</span><span class="p">(</span><span class="n">v1</span><span class="p">,</span> <span class="mi">3</span><span class="p">);</span>  <span class="c1">// ok : Ts&amp;... -&gt; int&amp;, int&amp;&amp;
+</span><span class="c1"></span><span class="n">fcn_universal_ref</span><span class="p">(</span><span class="n">v3</span><span class="p">);</span>     <span class="c1">// ok : Ts&amp;... -&gt; const std::string&amp;
+</span></code></pre></div><p>Un petit point à noter : il n&rsquo;est pas possible de restreindre les paramètres d&rsquo;un pack à un type donné.<br>
 Le code suivant n&rsquo;est du coup pas valide :</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="kt">void</span> <span class="nf">give_me_some_ints</span><span class="p">(</span><span class="kt">int</span><span class="p">...</span> <span class="n">params</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl"><span class="p">{</span> <span class="cm">/* ... */</span> <span class="p">}</span>
-</span></span></code></pre></div><p>Il existe différentes méthodes permettant d&rsquo;obtenir ce genre de comportement.
+<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="kt">void</span> <span class="nf">give_me_some_ints</span><span class="p">(</span><span class="kt">int</span><span class="p">...</span> <span class="n">params</span><span class="p">)</span>
+<span class="p">{</span> <span class="cm">/* ... */</span> <span class="p">}</span>
+</code></pre></div><p>Il existe différentes méthodes permettant d&rsquo;obtenir ce genre de comportement.
 Nous détaillerons l&rsquo;une d&rsquo;entre elles dans la dernière partie de ce chapitre.</p>
 <hr>
 <h3 id="pack-expansion">Pack expansion</h3>
@@ -2008,95 +2008,95 @@ Nous détaillerons l&rsquo;une d&rsquo;entre elles dans la dernière partie de c
 <p>La première façon d&rsquo;utiliser un parameter pack, c&rsquo;est de le passer à un autre template ou fonction.
 On parlera dans ce cas de <strong>pack expansion</strong>.</p>
 <p>Voici un exemple dans lequel on passe notre parameter pack de template à une autre classe-template :</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span><span class="p">...</span> <span class="n">Ts</span><span class="o">&gt;</span>
-</span></span><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">SomeStuff</span>
-</span></span><span class="line"><span class="cl"><span class="p">{</span>
-</span></span><span class="line"><span class="cl"><span class="k">public</span><span class="o">:</span>
-</span></span><span class="line"><span class="cl">    <span class="cm">/* ... */</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="k">private</span><span class="o">:</span>
-</span></span><span class="line"><span class="cl">    <span class="n">std</span><span class="o">::</span><span class="n">tuple</span><span class="o">&lt;</span><span class="n">Ts</span><span class="p">...</span><span class="o">&gt;</span> <span class="n">_tuple</span><span class="p">;</span> <span class="c1">// -&gt; pack expansion : `Ts...`
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="p">};</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c1">// En utilisant SomeStuff&lt;int, char, double&gt;, la génération du pack expansion donne :
-</span></span></span><span class="line"><span class="cl"><span class="c1">// std::tuple&lt;int, char, double&gt; _tuple;
-</span></span></span></code></pre></div><p>Et voici un exemple dans lequel on transfère notre parameter pack de fonction dans un autre appel de fonction :</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span> <span class="n">Ctn</span><span class="p">,</span> <span class="k">typename</span><span class="p">...</span> <span class="n">Args</span><span class="o">&gt;</span>
-</span></span><span class="line"><span class="cl"><span class="kt">void</span> <span class="n">copy_to</span><span class="p">(</span><span class="n">Ctn</span><span class="o">&amp;</span> <span class="n">ctn</span><span class="p">,</span> <span class="k">const</span> <span class="n">Args</span><span class="o">&amp;</span><span class="p">...</span> <span class="n">args</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl"><span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="n">ctn</span><span class="p">.</span><span class="n">emplace_back</span><span class="p">(</span><span class="n">args</span><span class="p">...);</span> <span class="c1">// -&gt; pack expansion : `args...` 
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="p">}</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c1">// En appelant copy_to(persons, 3, name), le compilateur pourrait générer quelque chose comme :
-</span></span></span><span class="line"><span class="cl"><span class="c1">// void copy_to(std::vector&lt;Person&gt;&amp; ctn, const int&amp; p1, const std::string&amp; p2)
-</span></span></span><span class="line"><span class="cl"><span class="c1">// {
-</span></span></span><span class="line"><span class="cl"><span class="c1">//     ctn.emplace_back(p1, p2); 
-</span></span></span><span class="line"><span class="cl"><span class="c1">// }
-</span></span></span></code></pre></div><p>Dans les 2 exemples ci-dessus, le motif répété par le pack expansion correspondait uniquement aux paramètres du pack.
+<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span><span class="p">...</span> <span class="n">Ts</span><span class="o">&gt;</span>
+<span class="k">class</span> <span class="nc">SomeStuff</span>
+<span class="p">{</span>
+<span class="k">public</span><span class="o">:</span>
+    <span class="cm">/* ... */</span>
+
+<span class="k">private</span><span class="o">:</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">tuple</span><span class="o">&lt;</span><span class="n">Ts</span><span class="p">...</span><span class="o">&gt;</span> <span class="n">_tuple</span><span class="p">;</span> <span class="c1">// -&gt; pack expansion : `Ts...`
+</span><span class="c1"></span><span class="p">};</span>
+
+<span class="c1">// En utilisant SomeStuff&lt;int, char, double&gt;, la génération du pack expansion donne :
+</span><span class="c1">// std::tuple&lt;int, char, double&gt; _tuple;
+</span></code></pre></div><p>Et voici un exemple dans lequel on transfère notre parameter pack de fonction dans un autre appel de fonction :</p>
+<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span> <span class="n">Ctn</span><span class="p">,</span> <span class="k">typename</span><span class="p">...</span> <span class="n">Args</span><span class="o">&gt;</span>
+<span class="kt">void</span> <span class="n">copy_to</span><span class="p">(</span><span class="n">Ctn</span><span class="o">&amp;</span> <span class="n">ctn</span><span class="p">,</span> <span class="k">const</span> <span class="n">Args</span><span class="o">&amp;</span><span class="p">...</span> <span class="n">args</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">ctn</span><span class="p">.</span><span class="n">emplace_back</span><span class="p">(</span><span class="n">args</span><span class="p">...);</span> <span class="c1">// -&gt; pack expansion : `args...` 
+</span><span class="c1"></span><span class="p">}</span>
+
+<span class="c1">// En appelant copy_to(persons, 3, name), le compilateur pourrait générer quelque chose comme :
+</span><span class="c1">// void copy_to(std::vector&lt;Person&gt;&amp; ctn, const int&amp; p1, const std::string&amp; p2)
+</span><span class="c1">// {
+</span><span class="c1">//     ctn.emplace_back(p1, p2); 
+</span><span class="c1">// }
+</span></code></pre></div><p>Dans les 2 exemples ci-dessus, le motif répété par le pack expansion correspondait uniquement aux paramètres du pack.
 Mais il est possible d&rsquo;élargir le motif à répéter, en plaçant les <code>...</code> ailleurs que juste après le nom du pack.</p>
 <p>Reprenons <code>generic_emplace</code> pour voir ce que cela donne avec le perfect forwarding :</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span> <span class="n">Ctn</span><span class="p">,</span> <span class="k">typename</span><span class="p">...</span> <span class="n">Args</span><span class="o">&gt;</span>
-</span></span><span class="line"><span class="cl"><span class="kt">void</span> <span class="n">generic_emplace</span><span class="p">(</span><span class="n">Ctn</span><span class="o">&amp;</span> <span class="n">ctn</span><span class="p">,</span> <span class="n">Args</span><span class="o">&amp;&amp;</span><span class="p">...</span> <span class="n">args</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl"><span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="n">ctn</span><span class="p">.</span><span class="n">emplace_back</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">forward</span><span class="o">&lt;</span><span class="n">Args</span><span class="o">&gt;</span><span class="p">(</span><span class="n">args</span><span class="p">)...);</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c1">// En plaçant les ... derrière l&#39;appel à `forward` plutôt que derrière `args`, la génération du parameter pack donnerait :
-</span></span></span><span class="line"><span class="cl"><span class="c1">// `std::forward&lt;A1&gt;(a1), std::forward&lt;A2&gt;(a2), ...` dans l&#39;appel à `emplace_back`
-</span></span></span><span class="line"><span class="cl"><span class="c1">// plutôt que :
-</span></span></span><span class="line"><span class="cl"><span class="c1">// `a1, a2, ...` dans l&#39;appel à `forward`.
-</span></span></span></code></pre></div><p>Voici un autre exemple, qui ajoute 3 à chacun des paramètres, les sérialisent et les regroupent dans un <code>vector</code> :</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span><span class="p">...</span> <span class="n">Values</span><span class="o">&gt;</span>
-</span></span><span class="line"><span class="cl"><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&gt;</span> <span class="n">add_3_and_stringify</span><span class="p">(</span><span class="k">const</span> <span class="n">Values</span><span class="o">&amp;</span><span class="p">...</span> <span class="n">values</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl"><span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&gt;</span> <span class="p">{</span> <span class="n">std</span><span class="o">::</span><span class="n">to_string</span><span class="p">(</span><span class="n">values</span> <span class="o">+</span> <span class="mi">3</span><span class="p">)...</span> <span class="p">};</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c1">// Ici, le parameter pack expansion donnera quelque chose comme :
-</span></span></span><span class="line"><span class="cl"><span class="c1">// return std::vector&lt;std::string&gt; { std::to_string(v1 + 3), std::to_string(v2 + 3), ... };
-</span></span></span></code></pre></div><hr>
+<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span> <span class="n">Ctn</span><span class="p">,</span> <span class="k">typename</span><span class="p">...</span> <span class="n">Args</span><span class="o">&gt;</span>
+<span class="kt">void</span> <span class="n">generic_emplace</span><span class="p">(</span><span class="n">Ctn</span><span class="o">&amp;</span> <span class="n">ctn</span><span class="p">,</span> <span class="n">Args</span><span class="o">&amp;&amp;</span><span class="p">...</span> <span class="n">args</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">ctn</span><span class="p">.</span><span class="n">emplace_back</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">forward</span><span class="o">&lt;</span><span class="n">Args</span><span class="o">&gt;</span><span class="p">(</span><span class="n">args</span><span class="p">)...);</span>
+<span class="p">}</span>
+
+<span class="c1">// En plaçant les ... derrière l&#39;appel à `forward` plutôt que derrière `args`, la génération du parameter pack donnerait :
+</span><span class="c1">// `std::forward&lt;A1&gt;(a1), std::forward&lt;A2&gt;(a2), ...` dans l&#39;appel à `emplace_back`
+</span><span class="c1">// plutôt que :
+</span><span class="c1">// `a1, a2, ...` dans l&#39;appel à `forward`.
+</span></code></pre></div><p>Voici un autre exemple, qui ajoute 3 à chacun des paramètres, les sérialisent et les regroupent dans un <code>vector</code> :</p>
+<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span><span class="p">...</span> <span class="n">Values</span><span class="o">&gt;</span>
+<span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&gt;</span> <span class="n">add_3_and_stringify</span><span class="p">(</span><span class="k">const</span> <span class="n">Values</span><span class="o">&amp;</span><span class="p">...</span> <span class="n">values</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="k">return</span> <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&gt;</span> <span class="p">{</span> <span class="n">std</span><span class="o">::</span><span class="n">to_string</span><span class="p">(</span><span class="n">values</span> <span class="o">+</span> <span class="mi">3</span><span class="p">)...</span> <span class="p">};</span>
+<span class="p">}</span>
+
+<span class="c1">// Ici, le parameter pack expansion donnera quelque chose comme :
+</span><span class="c1">// return std::vector&lt;std::string&gt; { std::to_string(v1 + 3), std::to_string(v2 + 3), ... };
+</span></code></pre></div><hr>
 <h3 id="fold-expressions">Fold expressions</h3>
 <p>Les fold expressions constituent la deuxième manière d&rsquo;utiliser les parameter packs.</p>
 <p>Avec les pack expansions, on peut générer un motif <code>arg1, arg2, ..., argN</code> à passer en paramètre de template ou de fonctions.<br>
 Avec les fold expressions, on va pouvoir générer ce même type de motifs, mais en utilisant des opérateurs binaire (<code>+</code>, <code>-</code>, <code>&amp;&amp;</code>, &hellip;) au lieu de la virgule de séparations d&rsquo;arguments.
 Les fold expressions permettent donc de réaliser des réductions sur des parameter packs.</p>
 <p>En supposant que <code>op</code> est un opérateur binaire quelconque, voici la syntaxe d&rsquo;une fold expression :</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="p">(</span><span class="n">args</span> <span class="n">op</span> <span class="p">...)</span> <span class="c1">// -&gt; associativité droite -&gt; gauche : a1 op (a2 op (... op (aN-1 op aN)))
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="p">(...</span> <span class="n">op</span> <span class="n">args</span><span class="p">)</span> <span class="c1">// -&gt; associativité gauche -&gt; droite : (((a1 op a2) op ...) op aN-1) op aN
-</span></span></span></code></pre></div>
+<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="p">(</span><span class="n">args</span> <span class="n">op</span> <span class="p">...)</span> <span class="c1">// -&gt; associativité droite -&gt; gauche : a1 op (a2 op (... op (aN-1 op aN)))
+</span><span class="c1"></span><span class="p">(...</span> <span class="n">op</span> <span class="n">args</span><span class="p">)</span> <span class="c1">// -&gt; associativité gauche -&gt; droite : (((a1 op a2) op ...) op aN-1) op aN
+</span></code></pre></div>
 <div class="notices info" ><p>Notez bien que les parenthèses englobant la fold expression sont nécessaires.
 Sans elles, le programme ne compilera pas.</p>
 </div>
 
 <p>On peut donc réaliser une somme simplement en écrivant :</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span><span class="p">...</span> <span class="n">Values</span><span class="o">&gt;</span>
-</span></span><span class="line"><span class="cl"><span class="k">auto</span> <span class="n">sum</span><span class="p">(</span><span class="k">const</span> <span class="n">Values</span><span class="o">&amp;</span><span class="p">...</span> <span class="n">values</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl"><span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="p">(</span><span class="n">values</span> <span class="o">+</span> <span class="p">...);</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span></code></pre></div><p>Il est également possible de spécifier l&rsquo;élément neutre de la réduction en l&rsquo;ajoutant de l&rsquo;autre côté des <code>...</code> :</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span><span class="p">...</span> <span class="n">Values</span><span class="o">&gt;</span>
-</span></span><span class="line"><span class="cl"><span class="k">auto</span> <span class="n">sum_starting_at_10</span><span class="p">(</span><span class="k">const</span> <span class="n">Values</span><span class="o">&amp;</span><span class="p">...</span> <span class="n">values</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl"><span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="p">(</span><span class="n">values</span> <span class="o">+</span> <span class="p">...</span> <span class="o">+</span> <span class="mi">10</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span></code></pre></div><p>Lorsqu&rsquo;on commence à utiliser les fold expressions, il devient très intéressant d&rsquo;introduire l&rsquo;opérateur binaire <code>,</code> (aussi appelé opérateur <strong>comma</strong>).<br>
+<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span><span class="p">...</span> <span class="n">Values</span><span class="o">&gt;</span>
+<span class="k">auto</span> <span class="n">sum</span><span class="p">(</span><span class="k">const</span> <span class="n">Values</span><span class="o">&amp;</span><span class="p">...</span> <span class="n">values</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="k">return</span> <span class="p">(</span><span class="n">values</span> <span class="o">+</span> <span class="p">...);</span>
+<span class="p">}</span>
+</code></pre></div><p>Il est également possible de spécifier l&rsquo;élément neutre de la réduction en l&rsquo;ajoutant de l&rsquo;autre côté des <code>...</code> :</p>
+<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span><span class="p">...</span> <span class="n">Values</span><span class="o">&gt;</span>
+<span class="k">auto</span> <span class="n">sum_starting_at_10</span><span class="p">(</span><span class="k">const</span> <span class="n">Values</span><span class="o">&amp;</span><span class="p">...</span> <span class="n">values</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="k">return</span> <span class="p">(</span><span class="n">values</span> <span class="o">+</span> <span class="p">...</span> <span class="o">+</span> <span class="mi">10</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div><p>Lorsqu&rsquo;on commence à utiliser les fold expressions, il devient très intéressant d&rsquo;introduire l&rsquo;opérateur binaire <code>,</code> (aussi appelé opérateur <strong>comma</strong>).<br>
 Celui-ci permet d&rsquo;évaluer des expressions de gauche à droite et de récupérer la valeur de la dernière expression.</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="kt">int</span> <span class="nf">print_and_return</span><span class="p">(</span><span class="kt">int</span> <span class="n">value</span><span class="p">)</span> <span class="p">{</span> <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">value</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span> <span class="p">}</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
-</span></span><span class="line"><span class="cl"><span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="kt">int</span> <span class="n">last</span> <span class="o">=</span> <span class="p">(</span><span class="n">print_and_return</span><span class="p">(</span><span class="mi">1</span><span class="p">),</span> <span class="n">print_and_return</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">),</span> <span class="n">print_and_return</span><span class="p">(</span><span class="mi">3</span><span class="p">));</span>
-</span></span><span class="line"><span class="cl">    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;Last is &#34;</span> <span class="o">&lt;&lt;</span> <span class="n">last</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c1">// Ce programme affiche :
-</span></span></span><span class="line"><span class="cl"><span class="c1">// 1
-</span></span></span><span class="line"><span class="cl"><span class="c1">// -1
-</span></span></span><span class="line"><span class="cl"><span class="c1">// 3
-</span></span></span><span class="line"><span class="cl"><span class="c1">// Last is 3
-</span></span></span></code></pre></div>
+<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="kt">int</span> <span class="nf">print_and_return</span><span class="p">(</span><span class="kt">int</span> <span class="n">value</span><span class="p">)</span> <span class="p">{</span> <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">value</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span> <span class="p">}</span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="kt">int</span> <span class="n">last</span> <span class="o">=</span> <span class="p">(</span><span class="n">print_and_return</span><span class="p">(</span><span class="mi">1</span><span class="p">),</span> <span class="n">print_and_return</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">),</span> <span class="n">print_and_return</span><span class="p">(</span><span class="mi">3</span><span class="p">));</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;Last is &#34;</span> <span class="o">&lt;&lt;</span> <span class="n">last</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="c1">// Ce programme affiche :
+</span><span class="c1">// 1
+</span><span class="c1">// -1
+</span><span class="c1">// 3
+</span><span class="c1">// Last is 3
+</span></code></pre></div>
 <div class="notices info" ><p>Encore une fois, on a affaire à un affreux cas de recyclage de syntaxe.<br>
 Notez bien que le compilateur interprétera le symbole <code>,</code> à l&rsquo;intérieur de <code>fcn(p1, p2, ...)</code> comme le séparateur d&rsquo;arguments dans l&rsquo;appel à une fonction <code>fcn</code>.<br>
 Par contre, dans l&rsquo;expression <code>(p1, p2, ...)</code> (avec &ldquo;rien&rdquo; devant la parenthèse) ou l&rsquo;instruction <code>p1, p2, ...;</code>, il l&rsquo;interprétera comme l&rsquo;opérateur comma.</p>
@@ -2106,26 +2106,26 @@ Par contre, dans l&rsquo;expression <code>(p1, p2, ...)</code> (avec &ldquo;rien
 Or, comme l&rsquo;opérateur comma permet de réécrire plusieurs instructions sous la forme d&rsquo;une seule, cela va permettre d&rsquo;écrire le code des templates variadiques beaucoup plus facilement.</p>
 <p>Supposons que l&rsquo;on veuille écrire une fonction qui affiche tous les paramètres de notre fonction dans la console.
 Si on travaillait avec une fonction normale à N paramètres, on pourrait avoir quelque chose comme :</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="kt">void</span> <span class="nf">print</span><span class="p">(</span><span class="kt">int</span> <span class="n">p1</span><span class="p">,</span> <span class="kt">char</span> <span class="n">p2</span><span class="p">,</span> <span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&amp;</span> <span class="n">p3</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl"><span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">p1</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">p2</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">p3</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span></code></pre></div><p>On pourrait ensuite réécrire cette fonction avec l&rsquo;opérateur comma, pour n&rsquo;avoir qu&rsquo;une seule instruction,</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="kt">void</span> <span class="nf">print</span><span class="p">(</span><span class="kt">int</span> <span class="n">p1</span><span class="p">,</span> <span class="kt">char</span> <span class="n">p2</span><span class="p">,</span> <span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&amp;</span> <span class="n">p3</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl"><span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">p1</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">),</span> <span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">p2</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">),</span> <span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">p3</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span></code></pre></div><p>Enfin, pour généraliser cette fonction à n&rsquo;importe quel nombre de paramètres, on remplacerait par :</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span><span class="p">...</span> <span class="n">Ts</span><span class="o">&gt;</span>
-</span></span><span class="line"><span class="cl"><span class="kt">void</span> <span class="n">print</span><span class="p">(</span><span class="k">const</span> <span class="n">Ts</span><span class="o">&amp;</span><span class="p">...</span> <span class="n">params</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl"><span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="p">((</span><span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">params</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">),</span> <span class="p">...);</span>
-</span></span><span class="line"><span class="cl">    <span class="c1">// Encore une fois, il ne faut pas oublier les parenthèses autour de la fold expression, ainsi
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="c1">// qu&#39;autour du motif à répéter (car il n&#39;y a pas qu&#39;un seul symbole dans cette expression).
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="p">}</span>
-</span></span></code></pre></div>
+<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="kt">void</span> <span class="nf">print</span><span class="p">(</span><span class="kt">int</span> <span class="n">p1</span><span class="p">,</span> <span class="kt">char</span> <span class="n">p2</span><span class="p">,</span> <span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&amp;</span> <span class="n">p3</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">p1</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">p2</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">p3</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div><p>On pourrait ensuite réécrire cette fonction avec l&rsquo;opérateur comma, pour n&rsquo;avoir qu&rsquo;une seule instruction,</p>
+<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="kt">void</span> <span class="nf">print</span><span class="p">(</span><span class="kt">int</span> <span class="n">p1</span><span class="p">,</span> <span class="kt">char</span> <span class="n">p2</span><span class="p">,</span> <span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&amp;</span> <span class="n">p3</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">p1</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">),</span> <span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">p2</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">),</span> <span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">p3</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div><p>Enfin, pour généraliser cette fonction à n&rsquo;importe quel nombre de paramètres, on remplacerait par :</p>
+<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span><span class="p">...</span> <span class="n">Ts</span><span class="o">&gt;</span>
+<span class="kt">void</span> <span class="n">print</span><span class="p">(</span><span class="k">const</span> <span class="n">Ts</span><span class="o">&amp;</span><span class="p">...</span> <span class="n">params</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="p">((</span><span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">params</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">),</span> <span class="p">...);</span>
+    <span class="c1">// Encore une fois, il ne faut pas oublier les parenthèses autour de la fold expression, ainsi
+</span><span class="c1"></span>    <span class="c1">// qu&#39;autour du motif à répéter (car il n&#39;y a pas qu&#39;un seul symbole dans cette expression).
+</span><span class="c1"></span><span class="p">}</span>
+</code></pre></div>
 <div class="notices tip" ><p>L&rsquo;avant-dernier snippet n&rsquo;est pas un exemple de bonne pratique, au contraire.
 Le but est juste de vous montrez les étapes pour passer de N instructions à 1 instruction, afin d&rsquo;arriver au code du template variadique.<br>
 Retenez qu&rsquo;en général l&rsquo;opérateur comma est utilisé pour implémenter du code de template variadique, ou éventuellement pour offusquer du code (il y a notamment des concours, dont le but est d&rsquo;écrire le code le plus illisible possible).</p>
@@ -2134,44 +2134,44 @@ Retenez qu&rsquo;en général l&rsquo;opérateur comma est utilisé pour implém
 <hr>
 <h3 id="position-du-pack">Position du pack</h3>
 <p>Dans un template variadique de classe, le paramètre pack doit nécessairement se trouver en dernière position :</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span> <span class="n">T1</span><span class="p">,</span> <span class="k">typename</span> <span class="n">T2</span><span class="p">,</span> <span class="k">typename</span><span class="p">...</span> <span class="n">Others</span><span class="o">&gt;</span> <span class="c1">// OK
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">class</span> <span class="nc">C</span>
-</span></span><span class="line"><span class="cl"><span class="p">{</span> <span class="cm">/* ... */</span> <span class="p">};</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span> <span class="n">T1</span><span class="p">,</span> <span class="k">typename</span><span class="p">...</span> <span class="n">Others</span><span class="p">,</span> <span class="k">typename</span> <span class="n">T2</span><span class="o">&gt;</span> <span class="c1">// Pas OK
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">class</span> <span class="nc">C</span>
-</span></span><span class="line"><span class="cl"><span class="p">{</span> <span class="cm">/* ... */</span> <span class="p">};</span>
-</span></span></code></pre></div><p>Dans le cas d&rsquo;un template de fonction, il peut se trouver ailleurs qu&rsquo;à la dernière position uniquement si les paramètres spécifiés derrière le pack &hellip;<br>
+<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span> <span class="n">T1</span><span class="p">,</span> <span class="k">typename</span> <span class="n">T2</span><span class="p">,</span> <span class="k">typename</span><span class="p">...</span> <span class="n">Others</span><span class="o">&gt;</span> <span class="c1">// OK
+</span><span class="c1"></span><span class="k">class</span> <span class="nc">C</span>
+<span class="p">{</span> <span class="cm">/* ... */</span> <span class="p">};</span>
+
+<span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span> <span class="n">T1</span><span class="p">,</span> <span class="k">typename</span><span class="p">...</span> <span class="n">Others</span><span class="p">,</span> <span class="k">typename</span> <span class="n">T2</span><span class="o">&gt;</span> <span class="c1">// Pas OK
+</span><span class="c1"></span><span class="k">class</span> <span class="nc">C</span>
+<span class="p">{</span> <span class="cm">/* ... */</span> <span class="p">};</span>
+</code></pre></div><p>Dans le cas d&rsquo;un template de fonction, il peut se trouver ailleurs qu&rsquo;à la dernière position uniquement si les paramètres spécifiés derrière le pack &hellip;<br>
 - &hellip; peuvent être déduits à partir des paramètres passés à la fonction,<br>
 - &hellip; ou possèdent une valeur par défaut.</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span> <span class="n">Res</span><span class="p">,</span> <span class="k">typename</span><span class="p">...</span> <span class="n">Args</span><span class="o">&gt;</span> <span class="c1">// OK
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">Res</span> <span class="n">fcn</span><span class="p">(</span><span class="n">Args</span><span class="o">&amp;&amp;</span><span class="p">...</span> <span class="n">args</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl"><span class="p">{</span> <span class="cm">/* ... */</span> <span class="p">}</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span> <span class="n">Res</span><span class="p">,</span> <span class="k">typename</span><span class="p">...</span> <span class="n">Args</span><span class="p">,</span> <span class="k">typename</span> <span class="n">Ctn</span> <span class="o">=</span> <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">Res</span><span class="o">&gt;&gt;</span> <span class="c1">// OK car Ctn a une valeur par défaut
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">Res</span> <span class="n">fcn</span><span class="p">(</span><span class="n">Args</span><span class="o">&amp;&amp;</span><span class="p">...</span> <span class="n">args</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl"><span class="p">{</span> <span class="cm">/* ... */</span> <span class="p">}</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span> <span class="n">Res</span><span class="p">,</span> <span class="k">typename</span><span class="p">...</span> <span class="n">Args</span><span class="p">,</span> <span class="k">typename</span> <span class="n">Arg1</span><span class="o">&gt;</span> <span class="c1">// OK car Arg1 peut être déduit du type du paramètre `arg1`
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">Res</span> <span class="n">fcn</span><span class="p">(</span><span class="n">Arg1</span> <span class="n">arg1</span><span class="p">,</span> <span class="n">Args</span><span class="o">&amp;&amp;</span><span class="p">...</span> <span class="n">other_args</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl"><span class="p">{</span> <span class="cm">/* ... */</span> <span class="p">}</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span><span class="p">...</span> <span class="n">Args</span><span class="p">,</span> <span class="k">typename</span> <span class="n">Res</span><span class="o">&gt;</span> <span class="c1">// Pas OK car Res n&#39;a pas de valeur par défaut et ne peut pas non plus être déduit des paramètres de la fonction
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">Res</span> <span class="n">fcn</span><span class="p">(</span><span class="n">Args</span><span class="o">&amp;&amp;</span><span class="p">...</span> <span class="n">args</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl"><span class="p">{</span> <span class="cm">/* ... */</span> <span class="p">}</span>
-</span></span></code></pre></div><p>Enfin, pour les parameter packs de fonction, ceux-ci doivent toujours se trouver en dernière position, même si les paramètres suivants ont des valeurs par défaut.</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span><span class="p">...</span> <span class="n">Args</span><span class="o">&gt;</span>
-</span></span><span class="line"><span class="cl"><span class="kt">void</span> <span class="n">fcn</span><span class="p">(</span><span class="kt">int</span> <span class="n">p1</span><span class="p">,</span> <span class="n">Args</span><span class="o">&amp;&amp;</span><span class="p">...</span> <span class="n">args</span><span class="p">)</span> <span class="c1">// OK
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="p">{</span> <span class="cm">/* ... */</span> <span class="p">}</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span><span class="p">...</span> <span class="n">Args</span><span class="o">&gt;</span>
-</span></span><span class="line"><span class="cl"><span class="kt">void</span> <span class="n">fcn</span><span class="p">(</span><span class="kt">int</span> <span class="n">p1</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">Args</span><span class="o">&amp;&amp;</span><span class="p">...</span> <span class="n">args</span><span class="p">)</span> <span class="c1">// OK aussi
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="p">{</span> <span class="cm">/* ... */</span> <span class="p">}</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span><span class="p">...</span> <span class="n">Args</span><span class="o">&gt;</span>
-</span></span><span class="line"><span class="cl"><span class="kt">void</span> <span class="n">fcn</span><span class="p">(</span><span class="n">Args</span><span class="o">&amp;&amp;</span><span class="p">...</span> <span class="n">args</span><span class="p">,</span> <span class="kt">int</span> <span class="n">pn</span> <span class="o">=</span> <span class="mi">0</span><span class="p">)</span> <span class="c1">// Pas OK car le parameter pack doit être en dernière position
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="p">{</span> <span class="cm">/* ... */</span> <span class="p">}</span>
-</span></span></code></pre></div><hr>
+<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span> <span class="n">Res</span><span class="p">,</span> <span class="k">typename</span><span class="p">...</span> <span class="n">Args</span><span class="o">&gt;</span> <span class="c1">// OK
+</span><span class="c1"></span><span class="n">Res</span> <span class="n">fcn</span><span class="p">(</span><span class="n">Args</span><span class="o">&amp;&amp;</span><span class="p">...</span> <span class="n">args</span><span class="p">)</span>
+<span class="p">{</span> <span class="cm">/* ... */</span> <span class="p">}</span>
+
+<span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span> <span class="n">Res</span><span class="p">,</span> <span class="k">typename</span><span class="p">...</span> <span class="n">Args</span><span class="p">,</span> <span class="k">typename</span> <span class="n">Ctn</span> <span class="o">=</span> <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">Res</span><span class="o">&gt;&gt;</span> <span class="c1">// OK car Ctn a une valeur par défaut
+</span><span class="c1"></span><span class="n">Res</span> <span class="n">fcn</span><span class="p">(</span><span class="n">Args</span><span class="o">&amp;&amp;</span><span class="p">...</span> <span class="n">args</span><span class="p">)</span>
+<span class="p">{</span> <span class="cm">/* ... */</span> <span class="p">}</span>
+
+<span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span> <span class="n">Res</span><span class="p">,</span> <span class="k">typename</span><span class="p">...</span> <span class="n">Args</span><span class="p">,</span> <span class="k">typename</span> <span class="n">Arg1</span><span class="o">&gt;</span> <span class="c1">// OK car Arg1 peut être déduit du type du paramètre `arg1`
+</span><span class="c1"></span><span class="n">Res</span> <span class="n">fcn</span><span class="p">(</span><span class="n">Arg1</span> <span class="n">arg1</span><span class="p">,</span> <span class="n">Args</span><span class="o">&amp;&amp;</span><span class="p">...</span> <span class="n">other_args</span><span class="p">)</span>
+<span class="p">{</span> <span class="cm">/* ... */</span> <span class="p">}</span>
+
+<span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span><span class="p">...</span> <span class="n">Args</span><span class="p">,</span> <span class="k">typename</span> <span class="n">Res</span><span class="o">&gt;</span> <span class="c1">// Pas OK car Res n&#39;a pas de valeur par défaut et ne peut pas non plus être déduit des paramètres de la fonction
+</span><span class="c1"></span><span class="n">Res</span> <span class="n">fcn</span><span class="p">(</span><span class="n">Args</span><span class="o">&amp;&amp;</span><span class="p">...</span> <span class="n">args</span><span class="p">)</span>
+<span class="p">{</span> <span class="cm">/* ... */</span> <span class="p">}</span>
+</code></pre></div><p>Enfin, pour les parameter packs de fonction, ceux-ci doivent toujours se trouver en dernière position, même si les paramètres suivants ont des valeurs par défaut.</p>
+<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span><span class="p">...</span> <span class="n">Args</span><span class="o">&gt;</span>
+<span class="kt">void</span> <span class="n">fcn</span><span class="p">(</span><span class="kt">int</span> <span class="n">p1</span><span class="p">,</span> <span class="n">Args</span><span class="o">&amp;&amp;</span><span class="p">...</span> <span class="n">args</span><span class="p">)</span> <span class="c1">// OK
+</span><span class="c1"></span><span class="p">{</span> <span class="cm">/* ... */</span> <span class="p">}</span>
+
+<span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span><span class="p">...</span> <span class="n">Args</span><span class="o">&gt;</span>
+<span class="kt">void</span> <span class="n">fcn</span><span class="p">(</span><span class="kt">int</span> <span class="n">p1</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">Args</span><span class="o">&amp;&amp;</span><span class="p">...</span> <span class="n">args</span><span class="p">)</span> <span class="c1">// OK aussi
+</span><span class="c1"></span><span class="p">{</span> <span class="cm">/* ... */</span> <span class="p">}</span>
+
+<span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span><span class="p">...</span> <span class="n">Args</span><span class="o">&gt;</span>
+<span class="kt">void</span> <span class="n">fcn</span><span class="p">(</span><span class="n">Args</span><span class="o">&amp;&amp;</span><span class="p">...</span> <span class="n">args</span><span class="p">,</span> <span class="kt">int</span> <span class="n">pn</span> <span class="o">=</span> <span class="mi">0</span><span class="p">)</span> <span class="c1">// Pas OK car le parameter pack doit être en dernière position
+</span><span class="c1"></span><span class="p">{</span> <span class="cm">/* ... */</span> <span class="p">}</span>
+</code></pre></div><hr>
 <h3 id="exercices">Exercices</h3>
 <p>Entraînez-vous en implémentant les fonctions suivantes :</p>
 <ul>
@@ -3480,19 +3480,19 @@ Retenez qu&rsquo;en général l&rsquo;opérateur comma est utilisé pour implém
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/CPP_Learning/js/clipboard.min.js?1704755107"></script>
-    <script src="/CPP_Learning/js/perfect-scrollbar.min.js?1704755107"></script>
-    <script src="/CPP_Learning/js/perfect-scrollbar.jquery.min.js?1704755107"></script>
-    <script src="/CPP_Learning/js/jquery.sticky.js?1704755107"></script>
-    <script src="/CPP_Learning/js/featherlight.min.js?1704755107"></script>
-    <script src="/CPP_Learning/js/highlight.pack.js?1704755107"></script>
+    <script src="/CPP_Learning/js/clipboard.min.js?1705257267"></script>
+    <script src="/CPP_Learning/js/perfect-scrollbar.min.js?1705257267"></script>
+    <script src="/CPP_Learning/js/perfect-scrollbar.jquery.min.js?1705257267"></script>
+    <script src="/CPP_Learning/js/jquery.sticky.js?1705257267"></script>
+    <script src="/CPP_Learning/js/featherlight.min.js?1705257267"></script>
+    <script src="/CPP_Learning/js/highlight.pack.js?1705257267"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/CPP_Learning/js/modernizr.custom-3.6.0.js?1704755107"></script>
-    <script src="/CPP_Learning/js/learn.js?1704755107"></script>
-    <script src="/CPP_Learning/js/hugo-learn.js?1704755107"></script>
+    <script src="/CPP_Learning/js/modernizr.custom-3.6.0.js?1705257267"></script>
+    <script src="/CPP_Learning/js/learn.js?1705257267"></script>
+    <script src="/CPP_Learning/js/hugo-learn.js?1705257267"></script>
     
         
-            <script src="/CPP_Learning/mermaid/mermaid.js?1704755107"></script>
+            <script src="/CPP_Learning/mermaid/mermaid.js?1705257267"></script>
         
         <script>
             mermaid.initialize({ startOnLoad: true });
@@ -3506,12 +3506,12 @@ Retenez qu&rsquo;en général l&rsquo;opérateur comma est utilisé pour implém
     <form id="question" method=POST action="https://formsubmit.co/3aa0f379a1aed9c454634cc2da153a7b"
         target="question-submitted" onsubmit="cleanQuestionFormContent()">
 
-        <input type="email" name="email" placeholder="mon_email@smthg.com" required />
-        <textarea id="question-content" name="question" rows="7" cols="30" placeholder="ma question..."></textarea>
-        <input id="question-topic" type="hidden" name="selection" />
+        <input type="email" name="email" placeholder="mon_email@smthg.com" required onchange="updateQuestionFormSubject()" />
+        <textarea name="question" rows="7" cols="30" placeholder="ma question..."></textarea>
+        <input type="hidden" name="selection" />
 
         <input type="hidden" name="_replyto" />
-        <input type="hidden" name="_subject" value="[C++][Chapitre 1] Question sur le cours" />
+        <input type="hidden" name="_subject" />
         <input type="hidden" name="_template" value="box" />
         <input type="hidden" name="_captcha" value="false" />
         <input type="hidden" name="_next" value="https://laefy.github.io/CPP_Learning//question-submitted/" />
@@ -3520,10 +3520,15 @@ Retenez qu&rsquo;en général l&rsquo;opérateur comma est utilisé pour implém
         <input type="submit" value="Envoyer" />
     </form>
 
-    <iframe id="question-submitted" class="hidden" name="question-submitted" src=""></iframe>
+    <iframe class="hidden" name="question-submitted" src=""></iframe>
 </div>
 
 <script>
+
+    function updateQuestionFormSubject() {
+        let email = document.querySelector('#question>input[name="email"]').value;
+        document.querySelector('#question>input[name="_subject"]').value = "[C++][Chapitre 1] " + email + ", retour sur ta question";
+    }
 
     function cleanQuestionFormContent() {
 
@@ -3532,15 +3537,15 @@ Retenez qu&rsquo;en général l&rsquo;opérateur comma est utilisé pour implém
             element.value = element.value.replace(/\[\.\./g, "[ ..");
         }
 
-        clean(document.getElementById("question-content"))
-        clean(document.getElementById("question-topic"))
+        clean(document.querySelector('#question>textarea[name="question"]'))
+        clean(document.querySelector('#question>input[name="selection"]'))
     }
 
     function openQuestionForm() {
         document.getElementById("footer-question-window").removeAttribute("disabled");
 
         var selection = window.getSelection().toString();
-        document.getElementById("question-topic").value = selection
+        document.querySelector('#question>input[name="selection"]').value = selection
     }
 
     function updateQuestionWidgetState(event) {
@@ -3561,6 +3566,8 @@ Retenez qu&rsquo;en général l&rsquo;opérateur comma est utilisé pour implém
             question_window.setAttribute("disabled", true);
         }
     }
+
+    updateQuestionFormSubject();
 
     document.onmouseup = document.onkeyup = document.onselectionchange = updateQuestionWidgetState;
     updateQuestionWidgetState();

@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="Hugo 0.121.0">
+    <meta name="generator" content="Hugo 0.76.5" />
     <meta name="description" content="">
 
 
@@ -12,22 +12,22 @@
     <title>Parcours et recherches :: Cours de C&#43;&#43; - Niveau Master</title>
 
     
-    <link href="/CPP_Learning/css/nucleus.css?1704755107" rel="stylesheet">
-    <link href="/CPP_Learning/css/fontawesome-all.min.css?1704755107" rel="stylesheet">
-    <link href="/CPP_Learning/css/hybrid.css?1704755107" rel="stylesheet">
-    <link href="/CPP_Learning/css/featherlight.min.css?1704755107" rel="stylesheet">
-    <link href="/CPP_Learning/css/perfect-scrollbar.min.css?1704755107" rel="stylesheet">
-    <link href="/CPP_Learning/css/auto-complete.css?1704755107" rel="stylesheet">
-    <link href="/CPP_Learning/css/atom-one-dark-reasonable.css?1704755107" rel="stylesheet">
-    <link href="/CPP_Learning/css/theme.css?1704755107" rel="stylesheet">
-    <link href="/CPP_Learning/css/tabs.css?1704755107" rel="stylesheet">
-    <link href="/CPP_Learning/css/hugo-theme.css?1704755107" rel="stylesheet">
+    <link href="/CPP_Learning/css/nucleus.css?1705257267" rel="stylesheet">
+    <link href="/CPP_Learning/css/fontawesome-all.min.css?1705257267" rel="stylesheet">
+    <link href="/CPP_Learning/css/hybrid.css?1705257267" rel="stylesheet">
+    <link href="/CPP_Learning/css/featherlight.min.css?1705257267" rel="stylesheet">
+    <link href="/CPP_Learning/css/perfect-scrollbar.min.css?1705257267" rel="stylesheet">
+    <link href="/CPP_Learning/css/auto-complete.css?1705257267" rel="stylesheet">
+    <link href="/CPP_Learning/css/atom-one-dark-reasonable.css?1705257267" rel="stylesheet">
+    <link href="/CPP_Learning/css/theme.css?1705257267" rel="stylesheet">
+    <link href="/CPP_Learning/css/tabs.css?1705257267" rel="stylesheet">
+    <link href="/CPP_Learning/css/hugo-theme.css?1705257267" rel="stylesheet">
     
-    <link href="/CPP_Learning/css/theme-mine.css?1704755107" rel="stylesheet">
+    <link href="/CPP_Learning/css/theme-mine.css?1705257267" rel="stylesheet">
     
-    <link href="/CPP_Learning/css/syntax.css?1704755107" rel="stylesheet">
+    <link href="/CPP_Learning/css/syntax.css?1705257267" rel="stylesheet">
 
-    <script src="/CPP_Learning/js/jquery-3.3.1.min.js?1704755107"></script>
+    <script src="/CPP_Learning/js/jquery-3.3.1.min.js?1705257267"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -1960,46 +1960,46 @@ Les boucles <code>while</code> et <code>do-while</code> ne sont en effet pas vra
 <h5 id="boucle-foreach">Boucle foreach</h5>
 <p>Lorsqu&rsquo;on itère sur un conteneur avec une boucle foreach, il faut faire attention à si l&rsquo;on souhaite récupérer une copie de l&rsquo;élément ou une référence.</p>
 <p>Lorsque l&rsquo;on ne souhaite pas modifier le contenu du conteneur et que les éléments sont légers à copier (primitives par exemple) :</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="k">for</span> <span class="p">(</span><span class="k">auto</span> <span class="nl">e</span> <span class="p">:</span> <span class="n">ctn</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl"><span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">e</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span></code></pre></div><p>Lorsque l&rsquo;on ne souhaite pas modifier le contenu du conteneur et que la copie des éléments peut être coûteuse :</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="k">for</span> <span class="p">(</span><span class="k">const</span> <span class="k">auto</span><span class="o">&amp;</span> <span class="nl">e</span> <span class="p">:</span> <span class="n">ctn</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl"><span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">e</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span></code></pre></div><p>Lorsque l&rsquo;on souhaite modifier le contenu du conteneur :</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="k">for</span> <span class="p">(</span><span class="k">auto</span><span class="o">&amp;</span> <span class="nl">e</span> <span class="p">:</span> <span class="n">ctn</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl"><span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="n">e</span> <span class="o">=</span> <span class="n">compute_next</span><span class="p">();</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span></code></pre></div><p>Certains conteneurs stockent leurs éléments sous forme de tuples.
+<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="k">for</span> <span class="p">(</span><span class="k">auto</span> <span class="nl">e</span> <span class="p">:</span> <span class="n">ctn</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">e</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div><p>Lorsque l&rsquo;on ne souhaite pas modifier le contenu du conteneur et que la copie des éléments peut être coûteuse :</p>
+<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="k">for</span> <span class="p">(</span><span class="k">const</span> <span class="k">auto</span><span class="o">&amp;</span> <span class="nl">e</span> <span class="p">:</span> <span class="n">ctn</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">e</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div><p>Lorsque l&rsquo;on souhaite modifier le contenu du conteneur :</p>
+<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="k">for</span> <span class="p">(</span><span class="k">auto</span><span class="o">&amp;</span> <span class="nl">e</span> <span class="p">:</span> <span class="n">ctn</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">e</span> <span class="o">=</span> <span class="n">compute_next</span><span class="p">();</span>
+<span class="p">}</span>
+</code></pre></div><p>Certains conteneurs stockent leurs éléments sous forme de tuples.
 Par exemple, les <code>std::map</code> et les <code>std::unordered_map</code> contiennent des <code>std::pair&lt;key, value&gt;</code>.<br>
 Lorsque c&rsquo;est le cas, il est aussi possible d&rsquo;utiliser un <strong>structured binding</strong> pour rendre le contenu de la boucle plus lisible.</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="c1">// Sans structured binding
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">for</span> <span class="p">(</span><span class="k">const</span> <span class="k">auto</span><span class="o">&amp;</span> <span class="nl">kv</span> <span class="p">:</span> <span class="n">map</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl"><span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;Key: &#34;</span> <span class="o">&lt;&lt;</span> <span class="n">kv</span><span class="p">.</span><span class="n">first</span> <span class="o">&lt;&lt;</span> <span class="s">&#34; Value: &#34;</span> <span class="o">&lt;&lt;</span> <span class="n">kv</span><span class="p">.</span><span class="n">second</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c1">// Avec structured binding
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">for</span> <span class="p">(</span><span class="k">const</span> <span class="k">auto</span><span class="o">&amp;</span> <span class="p">[</span><span class="n">key</span><span class="p">,</span> <span class="n">value</span><span class="p">]</span> <span class="o">:</span> <span class="n">map</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl"><span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;Key: &#34;</span> <span class="o">&lt;&lt;</span> <span class="n">key</span> <span class="o">&lt;&lt;</span> <span class="s">&#34; Value: &#34;</span> <span class="o">&lt;&lt;</span> <span class="n">value</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span></code></pre></div><hr>
+<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="c1">// Sans structured binding
+</span><span class="c1"></span><span class="k">for</span> <span class="p">(</span><span class="k">const</span> <span class="k">auto</span><span class="o">&amp;</span> <span class="nl">kv</span> <span class="p">:</span> <span class="n">map</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;Key: &#34;</span> <span class="o">&lt;&lt;</span> <span class="n">kv</span><span class="p">.</span><span class="n">first</span> <span class="o">&lt;&lt;</span> <span class="s">&#34; Value: &#34;</span> <span class="o">&lt;&lt;</span> <span class="n">kv</span><span class="p">.</span><span class="n">second</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="c1">// Avec structured binding
+</span><span class="c1"></span><span class="k">for</span> <span class="p">(</span><span class="k">const</span> <span class="k">auto</span><span class="o">&amp;</span> <span class="p">[</span><span class="n">key</span><span class="p">,</span> <span class="n">value</span><span class="p">]</span> <span class="o">:</span> <span class="n">map</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;Key: &#34;</span> <span class="o">&lt;&lt;</span> <span class="n">key</span> <span class="o">&lt;&lt;</span> <span class="s">&#34; Value: &#34;</span> <span class="o">&lt;&lt;</span> <span class="n">value</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div><hr>
 <h5 id="boucle-for-avec-indice">Boucle for avec indice</h5>
 <p>Il est possible d&rsquo;utiliser une boucle <code>for</code> pour itérer sur un conteneur disposant d&rsquo;un <code>operator[]</code> attendant un entier (<code>int</code>, <code>unsigned int</code>, <code>size_t</code>).</p>
 
 <div class="notices tip" ><p>Il est préférable de ne les utiliser que lorsque l&rsquo;on ne cherche pas à ajouter ou supprimer des éléments du conteneur (<code>for</code> avec itérateur est plus adapté dans ce cas), et que l&rsquo;indice est utilisé pour autre chose que l&rsquo;accès à l&rsquo;élément (foreach suffit alors).</p>
 </div>
 
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="k">for</span> <span class="p">(</span><span class="n">size_t</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">end</span> <span class="o">=</span> <span class="n">ctn</span><span class="p">.</span><span class="n">size</span><span class="p">();</span> <span class="n">i</span> <span class="o">!=</span> <span class="n">end</span><span class="p">;</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl"><span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">ctn</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">&lt;&lt;</span> <span class="s">&#34; is at index &#34;</span> <span class="o">&lt;&lt;</span> <span class="n">i</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span></code></pre></div>
+<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="k">for</span> <span class="p">(</span><span class="n">size_t</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">end</span> <span class="o">=</span> <span class="n">ctn</span><span class="p">.</span><span class="n">size</span><span class="p">();</span> <span class="n">i</span> <span class="o">!=</span> <span class="n">end</span><span class="p">;</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">ctn</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">&lt;&lt;</span> <span class="s">&#34; is at index &#34;</span> <span class="o">&lt;&lt;</span> <span class="n">i</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
 <div class="notices tip" ><p>Lorsque le processeur essaye de mettre une valeur dans un registre dans lequel elle ne peut pas tenir (valeur trop grande ou trop petite), on parle d&rsquo;overflow.
 Pour éviter ce type de problème, il faut prendre comme type d&rsquo;indice celui renvoyé par <code>ctn.size()</code>.
 C&rsquo;est aussi une des bonnes raisons de préférer les boucles foreach ou <code>for</code> avec itérateurs aux boucles <code>for</code> avec indice.</p>
@@ -2014,49 +2014,49 @@ Si vous ne pouvez pas le faire car celui-ci n&rsquo;est pas constant (car vous a
 <h5 id="boucle-for-avec-itérateurs">Boucle for avec itérateurs</h5>
 <p>La boucle <code>for</code> avec itérateurs est la boucle la plus adaptée pour ajouter ou supprimer les éléments d&rsquo;un conteneur pendant qu&rsquo;on le parcourt.<br>
 En effet, les autres types de parcours permettent rarement de traiter correctement l&rsquo;invalidation des itérateurs.</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="c1">// Retire les éléments pairs.
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">for</span> <span class="p">(</span><span class="k">auto</span> <span class="n">it</span> <span class="o">=</span> <span class="n">ctn</span><span class="p">.</span><span class="n">begin</span><span class="p">();</span> <span class="n">it</span> <span class="o">!=</span> <span class="n">ctn</span><span class="p">.</span><span class="n">end</span><span class="p">();</span> <span class="p">)</span>
-</span></span><span class="line"><span class="cl"><span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="p">(</span><span class="o">*</span><span class="n">it</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">    <span class="p">{</span>
-</span></span><span class="line"><span class="cl">        <span class="c1">// ctn.erase(it) invalide it.
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="c1">// On ne peut donc pas utiliser it après cet appel : on ne pourrait ni écrire *it, ni ++it.
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="c1">// C&#39;est pour cela que la fonction erase renvoie un nouvel itérateur, valide, sur l&#39;élément suivant celui qui a été retiré.
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="c1">// En écrivant it = ctn.erase(it), on peut donc à nouveau utiliser la variable it.
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="n">it</span> <span class="o">=</span> <span class="n">ctn</span><span class="p">.</span><span class="n">erase</span><span class="p">(</span><span class="n">it</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl">    <span class="p">}</span>
-</span></span><span class="line"><span class="cl">    <span class="k">else</span>
-</span></span><span class="line"><span class="cl">    <span class="p">{</span>
-</span></span><span class="line"><span class="cl">        <span class="o">++</span><span class="n">it</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">    <span class="p">}</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="c1">// Ajoute une copie de chaque élément au tableau.
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">for</span> <span class="p">(</span><span class="k">auto</span> <span class="n">it</span> <span class="o">=</span> <span class="n">ctn</span><span class="p">.</span><span class="n">begin</span><span class="p">();</span> <span class="n">it</span> <span class="o">!=</span> <span class="n">ctn</span><span class="p">.</span><span class="n">end</span><span class="p">();</span> <span class="n">it</span> <span class="o">+=</span> <span class="mi">2</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl"><span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="c1">// ctn.insert(it, ...) invalide
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="n">it</span> <span class="o">=</span> <span class="n">ctn</span><span class="p">.</span><span class="n">insert</span><span class="p">(</span><span class="n">it</span><span class="p">,</span> <span class="o">*</span><span class="n">it</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span></code></pre></div><hr>
+<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="c1">// Retire les éléments pairs.
+</span><span class="c1"></span><span class="k">for</span> <span class="p">(</span><span class="k">auto</span> <span class="n">it</span> <span class="o">=</span> <span class="n">ctn</span><span class="p">.</span><span class="n">begin</span><span class="p">();</span> <span class="n">it</span> <span class="o">!=</span> <span class="n">ctn</span><span class="p">.</span><span class="n">end</span><span class="p">();</span> <span class="p">)</span>
+<span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="o">*</span><span class="n">it</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="c1">// ctn.erase(it) invalide it.
+</span><span class="c1"></span>        <span class="c1">// On ne peut donc pas utiliser it après cet appel : on ne pourrait ni écrire *it, ni ++it.
+</span><span class="c1"></span>        <span class="c1">// C&#39;est pour cela que la fonction erase renvoie un nouvel itérateur, valide, sur l&#39;élément suivant celui qui a été retiré.
+</span><span class="c1"></span>        <span class="c1">// En écrivant it = ctn.erase(it), on peut donc à nouveau utiliser la variable it.
+</span><span class="c1"></span>        <span class="n">it</span> <span class="o">=</span> <span class="n">ctn</span><span class="p">.</span><span class="n">erase</span><span class="p">(</span><span class="n">it</span><span class="p">);</span>
+    <span class="p">}</span>
+    <span class="k">else</span>
+    <span class="p">{</span>
+        <span class="o">++</span><span class="n">it</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div><div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="c1">// Ajoute une copie de chaque élément au tableau.
+</span><span class="c1"></span><span class="k">for</span> <span class="p">(</span><span class="k">auto</span> <span class="n">it</span> <span class="o">=</span> <span class="n">ctn</span><span class="p">.</span><span class="n">begin</span><span class="p">();</span> <span class="n">it</span> <span class="o">!=</span> <span class="n">ctn</span><span class="p">.</span><span class="n">end</span><span class="p">();</span> <span class="n">it</span> <span class="o">+=</span> <span class="mi">2</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="c1">// ctn.insert(it, ...) invalide
+</span><span class="c1"></span>    <span class="n">it</span> <span class="o">=</span> <span class="n">ctn</span><span class="p">.</span><span class="n">insert</span><span class="p">(</span><span class="n">it</span><span class="p">,</span> <span class="o">*</span><span class="n">it</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div><hr>
 <h5 id="boucle-stdfor_each">Boucle std::for_each</h5>
 <p>Il est également possible d&rsquo;utiliser la fonction <code>std::for_each</code> de <code>&lt;algorithm&gt;</code> pour itérer sur une plage de valeurs.<br>
 L&rsquo;intérêt de cette fonction, par rapport au foreach classique, c&rsquo;est que l&rsquo;on peut passer les itérateurs de début et de fin de notre choix.</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="cp">#include</span> <span class="cpf">&lt;algorithm&gt;</span><span class="cp">
-</span></span></span><span class="line"><span class="cl"><span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp">
-</span></span></span><span class="line"><span class="cl"><span class="cp"></span>
-</span></span><span class="line"><span class="cl"><span class="kt">void</span> <span class="nf">display_single</span><span class="p">(</span><span class="kt">int</span> <span class="n">v</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl"><span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">v</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="kt">void</span> <span class="nf">display_many</span><span class="p">(</span><span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;&amp;</span> <span class="n">values</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl"><span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="c1">// On peut passer une fonction libre avec le bon prototype.
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="n">std</span><span class="o">::</span><span class="n">for_each</span><span class="p">(</span><span class="n">values</span><span class="p">.</span><span class="n">begin</span><span class="p">()</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">values</span><span class="p">.</span><span class="n">end</span><span class="p">()</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span> <span class="n">display_single</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">    <span class="c1">// On peut aussi passer une lambda.
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="n">std</span><span class="o">::</span><span class="n">for_each</span><span class="p">(</span><span class="n">values</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span> <span class="n">values</span><span class="p">.</span><span class="n">end</span><span class="p">(),</span> <span class="p">[](</span><span class="kt">int</span> <span class="n">v</span><span class="p">)</span> <span class="p">{</span> <span class="n">display_single</span><span class="p">(</span><span class="n">v</span><span class="p">);</span> <span class="p">});</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span></code></pre></div><hr>
+<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="cp">#include</span> <span class="cpf">&lt;algorithm&gt;</span><span class="cp">
+</span><span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp">
+</span><span class="cp"></span>
+<span class="kt">void</span> <span class="nf">display_single</span><span class="p">(</span><span class="kt">int</span> <span class="n">v</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">v</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kt">void</span> <span class="nf">display_many</span><span class="p">(</span><span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;&amp;</span> <span class="n">values</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="c1">// On peut passer une fonction libre avec le bon prototype.
+</span><span class="c1"></span>    <span class="n">std</span><span class="o">::</span><span class="n">for_each</span><span class="p">(</span><span class="n">values</span><span class="p">.</span><span class="n">begin</span><span class="p">()</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">values</span><span class="p">.</span><span class="n">end</span><span class="p">()</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span> <span class="n">display_single</span><span class="p">);</span>
+
+    <span class="c1">// On peut aussi passer une lambda.
+</span><span class="c1"></span>    <span class="n">std</span><span class="o">::</span><span class="n">for_each</span><span class="p">(</span><span class="n">values</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span> <span class="n">values</span><span class="p">.</span><span class="n">end</span><span class="p">(),</span> <span class="p">[](</span><span class="kt">int</span> <span class="n">v</span><span class="p">)</span> <span class="p">{</span> <span class="n">display_single</span><span class="p">(</span><span class="n">v</span><span class="p">);</span> <span class="p">});</span>
+<span class="p">}</span>
+</code></pre></div><hr>
 <h3 id="recherche-déléments">Recherche d&rsquo;éléments</h3>
 <p>Parlons maintenant de comment retrouver un ou des éléments à l&rsquo;intérieur d&rsquo;une plage.
 Vous pourriez bien sûr faire une boucle et recherchez ce dont vous avez besoin manuellement.<br>
@@ -2064,24 +2064,24 @@ Mais pourquoi s&rsquo;embêter à écrire des boucles, lorsque tout un tas de fo
 <hr>
 <h5 id="recherche-de-la-première-occurrence-dun-élément">Recherche de la première occurrence d&rsquo;un élément</h5>
 <p>Pour rechercher un élément bien précis dans une plage quelconque, vous pouvez utiliser <code>std::find</code> de <code>&lt;algorithm&gt;</code>.</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="k">const</span> <span class="k">auto</span> <span class="n">searched</span> <span class="o">=</span> <span class="mi">8</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl"><span class="k">const</span> <span class="k">auto</span> <span class="n">it</span> <span class="o">=</span> <span class="n">std</span><span class="o">::</span><span class="n">find</span><span class="p">(</span><span class="n">ctn</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span> <span class="n">ctn</span><span class="p">.</span><span class="n">end</span><span class="p">(),</span> <span class="n">searched</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c1">// Si la valeur n&#39;est pas trouvée, `it` prend la même valeur que le 2e argument passé à std::find.
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">const</span> <span class="k">auto</span> <span class="n">found</span> <span class="o">=</span> <span class="p">(</span><span class="n">it</span> <span class="o">!=</span> <span class="n">ctn</span><span class="p">.</span><span class="n">end</span><span class="p">());</span>
-</span></span><span class="line"><span class="cl"><span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">searched</span> <span class="o">&lt;&lt;</span> <span class="p">(</span><span class="n">found</span> <span class="o">?</span> <span class="s">&#34;found&#34;</span> <span class="o">:</span> <span class="s">&#34;not found&#34;</span><span class="p">)</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;in ctn.&#34;</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="k">if</span> <span class="p">(</span><span class="n">found</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl"><span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="k">const</span> <span class="k">auto</span> <span class="n">half_begin</span> <span class="o">=</span> <span class="n">ctn</span><span class="p">.</span><span class="n">begin</span><span class="p">();</span>
-</span></span><span class="line"><span class="cl">    <span class="k">const</span> <span class="k">auto</span> <span class="n">half_end</span> <span class="o">=</span> <span class="n">std</span><span class="o">::</span><span class="n">next</span><span class="p">(</span><span class="n">half_begin</span><span class="p">,</span> <span class="n">ctn</span><span class="p">.</span><span class="n">size</span><span class="p">()</span> <span class="o">/</span> <span class="mi">2</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl">    <span class="k">const</span> <span class="k">auto</span> <span class="n">half_it</span> <span class="o">=</span> <span class="n">std</span><span class="o">::</span><span class="n">find</span><span class="p">(</span><span class="n">half_begin</span><span class="p">,</span> <span class="n">half_end</span><span class="p">,</span> <span class="n">searched</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="p">(</span><span class="n">half_it</span> <span class="o">!=</span> <span class="n">half_end</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">    <span class="p">{</span>
-</span></span><span class="line"><span class="cl">        <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">searched</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;found in first half of ctn.&#34;</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">    <span class="p">}</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span></code></pre></div>
+<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="k">const</span> <span class="k">auto</span> <span class="n">searched</span> <span class="o">=</span> <span class="mi">8</span><span class="p">;</span>
+<span class="k">const</span> <span class="k">auto</span> <span class="n">it</span> <span class="o">=</span> <span class="n">std</span><span class="o">::</span><span class="n">find</span><span class="p">(</span><span class="n">ctn</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span> <span class="n">ctn</span><span class="p">.</span><span class="n">end</span><span class="p">(),</span> <span class="n">searched</span><span class="p">);</span>
+
+<span class="c1">// Si la valeur n&#39;est pas trouvée, `it` prend la même valeur que le 2e argument passé à std::find.
+</span><span class="c1"></span><span class="k">const</span> <span class="k">auto</span> <span class="n">found</span> <span class="o">=</span> <span class="p">(</span><span class="n">it</span> <span class="o">!=</span> <span class="n">ctn</span><span class="p">.</span><span class="n">end</span><span class="p">());</span>
+<span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">searched</span> <span class="o">&lt;&lt;</span> <span class="p">(</span><span class="n">found</span> <span class="o">?</span> <span class="s">&#34;found&#34;</span> <span class="o">:</span> <span class="s">&#34;not found&#34;</span><span class="p">)</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;in ctn.&#34;</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+
+<span class="k">if</span> <span class="p">(</span><span class="n">found</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="k">const</span> <span class="k">auto</span> <span class="n">half_begin</span> <span class="o">=</span> <span class="n">ctn</span><span class="p">.</span><span class="n">begin</span><span class="p">();</span>
+    <span class="k">const</span> <span class="k">auto</span> <span class="n">half_end</span> <span class="o">=</span> <span class="n">std</span><span class="o">::</span><span class="n">next</span><span class="p">(</span><span class="n">half_begin</span><span class="p">,</span> <span class="n">ctn</span><span class="p">.</span><span class="n">size</span><span class="p">()</span> <span class="o">/</span> <span class="mi">2</span><span class="p">);</span>
+    <span class="k">const</span> <span class="k">auto</span> <span class="n">half_it</span> <span class="o">=</span> <span class="n">std</span><span class="o">::</span><span class="n">find</span><span class="p">(</span><span class="n">half_begin</span><span class="p">,</span> <span class="n">half_end</span><span class="p">,</span> <span class="n">searched</span><span class="p">);</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">half_it</span> <span class="o">!=</span> <span class="n">half_end</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">searched</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;found in first half of ctn.&#34;</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
 <div class="notices tip" ><p>Certains conteneurs, comme <code>set</code>, <code>unordered_set</code>, <code>map</code> ou <code>unordered_map</code>, proposent une fonction de recherche ayant une meilleure complexité que <code>std::find</code> (qui est en O(n)).
 Afin d&rsquo;implémenter des programmes efficaces, regardez donc toujours si vos conteneurs ne disposent pas de fonctions-membre permettant d&rsquo;effectuer des opérations plus efficacement que les fonctions de <code>&lt;algorithm&gt;</code>.</p>
 </div>
@@ -2095,19 +2095,19 @@ Si vous souhaitez rechercher la dernière occurrence, il est donc nécessaire de
 <li>transformer les itérateurs permettant d&rsquo;avancer en itérateurs permettant de reculer : <code>std::make_reverse_iterator(it)</code> dans <code>&lt;iterator&gt;</code></li>
 <li>les inverser dans l&rsquo;appel à <code>std::find</code>.</li>
 </ul>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="k">const</span> <span class="k">auto</span> <span class="n">searched</span> <span class="o">=</span> <span class="mi">8</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl"><span class="k">const</span> <span class="k">auto</span> <span class="n">reversed_begin</span> <span class="o">=</span> <span class="n">std</span><span class="o">::</span><span class="n">make_reverse_iterator</span><span class="p">(</span><span class="n">ctn</span><span class="p">.</span><span class="n">end</span><span class="p">());</span>
-</span></span><span class="line"><span class="cl"><span class="k">const</span> <span class="k">auto</span> <span class="n">reversed_end</span> <span class="o">=</span> <span class="n">std</span><span class="o">::</span><span class="n">make_reverse_iterator</span><span class="p">(</span><span class="n">ctn</span><span class="p">.</span><span class="n">begin</span><span class="p">());</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="k">const</span> <span class="k">auto</span> <span class="n">it</span> <span class="o">=</span> <span class="n">std</span><span class="o">::</span><span class="n">find</span><span class="p">(</span><span class="n">reversed_begin</span><span class="p">,</span> <span class="n">reversed_end</span><span class="p">,</span> <span class="n">searched</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c1">// Il faut toujours comparer au 2e argument de find, c&#39;est-à-dire reversed_end et non pas ctn.end().
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">if</span> <span class="p">(</span><span class="n">it</span> <span class="o">!=</span> <span class="n">reversed_end</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl"><span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="k">const</span> <span class="k">auto</span> <span class="n">pos</span> <span class="o">=</span> <span class="n">std</span><span class="o">::</span><span class="n">distance</span><span class="p">(</span><span class="n">reversed_begin</span><span class="p">,</span> <span class="n">it</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl">    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">pos</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;-th element from the end of ctn is a &#34;</span> <span class="o">&lt;&lt;</span> <span class="n">searched</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;.&#34;</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span></code></pre></div>
+<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="k">const</span> <span class="k">auto</span> <span class="n">searched</span> <span class="o">=</span> <span class="mi">8</span><span class="p">;</span>
+<span class="k">const</span> <span class="k">auto</span> <span class="n">reversed_begin</span> <span class="o">=</span> <span class="n">std</span><span class="o">::</span><span class="n">make_reverse_iterator</span><span class="p">(</span><span class="n">ctn</span><span class="p">.</span><span class="n">end</span><span class="p">());</span>
+<span class="k">const</span> <span class="k">auto</span> <span class="n">reversed_end</span> <span class="o">=</span> <span class="n">std</span><span class="o">::</span><span class="n">make_reverse_iterator</span><span class="p">(</span><span class="n">ctn</span><span class="p">.</span><span class="n">begin</span><span class="p">());</span>
+
+<span class="k">const</span> <span class="k">auto</span> <span class="n">it</span> <span class="o">=</span> <span class="n">std</span><span class="o">::</span><span class="n">find</span><span class="p">(</span><span class="n">reversed_begin</span><span class="p">,</span> <span class="n">reversed_end</span><span class="p">,</span> <span class="n">searched</span><span class="p">);</span>
+
+<span class="c1">// Il faut toujours comparer au 2e argument de find, c&#39;est-à-dire reversed_end et non pas ctn.end().
+</span><span class="c1"></span><span class="k">if</span> <span class="p">(</span><span class="n">it</span> <span class="o">!=</span> <span class="n">reversed_end</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="k">const</span> <span class="k">auto</span> <span class="n">pos</span> <span class="o">=</span> <span class="n">std</span><span class="o">::</span><span class="n">distance</span><span class="p">(</span><span class="n">reversed_begin</span><span class="p">,</span> <span class="n">it</span><span class="p">);</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">pos</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;-th element from the end of ctn is a &#34;</span> <span class="o">&lt;&lt;</span> <span class="n">searched</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;.&#34;</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
 <div class="notices note" ><p>Il n&rsquo;est pas toujours possible de parcourir une plage à l&rsquo;envers.
 Seuls les itérateurs bidirectionnels peuvent être passés à la fonction <code>std::make_reverse_iterator</code>.</p>
 </div>
@@ -2117,57 +2117,57 @@ Seuls les itérateurs bidirectionnels peuvent être passés à la fonction <code
 <p>Dans certains cas, on recherche la première occurrence parmi un ensemble.<br>
 Par exemple, pour retrouver dans un texte le premier mot parmis <code>cheval</code>, <code>dodo</code>, <code>chien</code> et <code>bernard-l'ermite</code>, il faudrait faire 4 recherches si l&rsquo;on utilisait <code>std::find</code>.</p>
 <p>Afin d&rsquo;effectuer cette recherche en une seule passe, il est possible d&rsquo;utiliser <code>std::find_first_of</code>.</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&gt;</span> <span class="n">text</span> <span class="o">=</span> <span class="n">get_text</span><span class="p">();</span>
-</span></span><span class="line"><span class="cl"><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&gt;</span> <span class="n">keywords</span> <span class="p">{</span> <span class="s">&#34;horse&#34;</span><span class="p">,</span> <span class="s">&#34;dodo&#34;</span><span class="p">,</span> <span class="s">&#34;dog&#34;</span><span class="p">,</span> <span class="s">&#34;hermit crabs&#34;</span> <span class="p">};</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="k">const</span> <span class="k">auto</span> <span class="n">it</span> <span class="o">=</span> <span class="n">std</span><span class="o">::</span><span class="n">find_first_of</span><span class="p">(</span><span class="n">text</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span> <span class="n">text</span><span class="p">.</span><span class="n">end</span><span class="p">(),</span> <span class="n">keywords</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span> <span class="n">keywords</span><span class="p">.</span><span class="n">end</span><span class="p">());</span>
-</span></span><span class="line"><span class="cl"><span class="k">if</span> <span class="p">(</span><span class="n">it</span> <span class="o">!=</span> <span class="n">text</span><span class="p">.</span><span class="n">end</span><span class="p">())</span>
-</span></span><span class="line"><span class="cl"><span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;The first interesting animal we&#39;re talking about in this text is &#34;</span> <span class="o">&lt;&lt;</span> <span class="o">*</span><span class="n">it</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;.&#34;</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span><span class="line"><span class="cl"><span class="k">else</span>
-</span></span><span class="line"><span class="cl"><span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;The author didn&#39;t seem to like animals.&#34;</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span></code></pre></div><hr>
+<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&gt;</span> <span class="n">text</span> <span class="o">=</span> <span class="n">get_text</span><span class="p">();</span>
+<span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&gt;</span> <span class="n">keywords</span> <span class="p">{</span> <span class="s">&#34;horse&#34;</span><span class="p">,</span> <span class="s">&#34;dodo&#34;</span><span class="p">,</span> <span class="s">&#34;dog&#34;</span><span class="p">,</span> <span class="s">&#34;hermit crabs&#34;</span> <span class="p">};</span>
+
+<span class="k">const</span> <span class="k">auto</span> <span class="n">it</span> <span class="o">=</span> <span class="n">std</span><span class="o">::</span><span class="n">find_first_of</span><span class="p">(</span><span class="n">text</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span> <span class="n">text</span><span class="p">.</span><span class="n">end</span><span class="p">(),</span> <span class="n">keywords</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span> <span class="n">keywords</span><span class="p">.</span><span class="n">end</span><span class="p">());</span>
+<span class="k">if</span> <span class="p">(</span><span class="n">it</span> <span class="o">!=</span> <span class="n">text</span><span class="p">.</span><span class="n">end</span><span class="p">())</span>
+<span class="p">{</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;The first interesting animal we&#39;re talking about in this text is &#34;</span> <span class="o">&lt;&lt;</span> <span class="o">*</span><span class="n">it</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;.&#34;</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="k">else</span>
+<span class="p">{</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;The author didn&#39;t seem to like animals.&#34;</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div><hr>
 <h5 id="recherche-du-premier-élément-vérifiant-un-prédicat">Recherche du premier élément vérifiant un prédicat</h5>
 <p>C&rsquo;est bien beau tout ça, mais comment faire pour récupérer le premier élément pair dans un tableau ?
 Vous n&rsquo;allez pas pouvoir utiliser <code>find_first_of</code>, puisqu&rsquo;il faudrait que la deuxième plage contienne une infinité d&rsquo;éléments.</p>
 <p>Heureusement, il y a <code>find_if</code>. Comme toutes les fonctions de <code>&lt;algorithm&gt;</code> (ou presque), <code>find_if</code> attend déjà les deux itérateurs bornant la plage d&rsquo;éléments.<br>
 Ensuite, vous devez lui fournir un <strong>foncteur</strong> acceptant un unique paramètre du type des éléments de la plage (par valeur ou const-ref), et renvoyant un booléen.</p>
 <p>Un foncteur, c&rsquo;est soit une fonction libre, soit une instance de classe avec un <code>operator()</code>, soit une lambda.</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="c1">// Fonction libre
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kt">bool</span> <span class="nf">is_even</span><span class="p">(</span><span class="kt">int</span> <span class="n">value</span><span class="p">)</span> <span class="p">{</span> <span class="k">return</span> <span class="n">value</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span><span class="p">;</span> <span class="p">}</span>
-</span></span><span class="line"><span class="cl"><span class="p">...</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="k">const</span> <span class="k">auto</span> <span class="n">it</span> <span class="o">=</span> <span class="n">std</span><span class="o">::</span><span class="n">find_if</span><span class="p">(</span><span class="n">values</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span> <span class="n">values</span><span class="p">.</span><span class="n">end</span><span class="p">(),</span> <span class="n">is_even</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c1">// Objet-fonction
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">struct</span> <span class="nc">IsEven</span>
-</span></span><span class="line"><span class="cl"><span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="kt">bool</span> <span class="nf">operator</span><span class="p">()(</span><span class="kt">int</span> <span class="n">value</span><span class="p">)</span> <span class="k">const</span> <span class="p">{</span> <span class="k">return</span> <span class="n">value</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span><span class="p">;</span> <span class="p">}</span>
-</span></span><span class="line"><span class="cl"><span class="p">};</span>
-</span></span><span class="line"><span class="cl"><span class="p">...</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="k">const</span> <span class="n">IsEven</span> <span class="n">is_even_obj</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl"><span class="k">const</span> <span class="k">auto</span> <span class="n">it</span> <span class="o">=</span> <span class="n">std</span><span class="o">::</span><span class="n">find_if</span><span class="p">(</span><span class="n">values</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span> <span class="n">values</span><span class="p">.</span><span class="n">end</span><span class="p">(),</span> <span class="n">is_even_obj</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c1">// Lambda
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">const</span> <span class="k">auto</span> <span class="n">it</span> <span class="o">=</span> <span class="n">std</span><span class="o">::</span><span class="n">find_if</span><span class="p">(</span><span class="n">values</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span> <span class="n">values</span><span class="p">.</span><span class="n">end</span><span class="p">(),</span> <span class="p">[](</span><span class="kt">int</span> <span class="n">value</span><span class="p">)</span> <span class="p">{</span> <span class="k">return</span> <span class="n">value</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span><span class="p">;</span> <span class="p">});</span>
-</span></span></code></pre></div>
+<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="c1">// Fonction libre
+</span><span class="c1"></span><span class="kt">bool</span> <span class="nf">is_even</span><span class="p">(</span><span class="kt">int</span> <span class="n">value</span><span class="p">)</span> <span class="p">{</span> <span class="k">return</span> <span class="n">value</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span><span class="p">;</span> <span class="p">}</span>
+<span class="p">...</span>
+
+<span class="k">const</span> <span class="k">auto</span> <span class="n">it</span> <span class="o">=</span> <span class="n">std</span><span class="o">::</span><span class="n">find_if</span><span class="p">(</span><span class="n">values</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span> <span class="n">values</span><span class="p">.</span><span class="n">end</span><span class="p">(),</span> <span class="n">is_even</span><span class="p">);</span>
+
+
+<span class="c1">// Objet-fonction
+</span><span class="c1"></span><span class="k">struct</span> <span class="nc">IsEven</span>
+<span class="p">{</span>
+    <span class="kt">bool</span> <span class="nf">operator</span><span class="p">()(</span><span class="kt">int</span> <span class="n">value</span><span class="p">)</span> <span class="k">const</span> <span class="p">{</span> <span class="k">return</span> <span class="n">value</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span><span class="p">;</span> <span class="p">}</span>
+<span class="p">};</span>
+<span class="p">...</span>
+
+<span class="k">const</span> <span class="n">IsEven</span> <span class="n">is_even_obj</span><span class="p">;</span>
+<span class="k">const</span> <span class="k">auto</span> <span class="n">it</span> <span class="o">=</span> <span class="n">std</span><span class="o">::</span><span class="n">find_if</span><span class="p">(</span><span class="n">values</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span> <span class="n">values</span><span class="p">.</span><span class="n">end</span><span class="p">(),</span> <span class="n">is_even_obj</span><span class="p">);</span>
+
+
+<span class="c1">// Lambda
+</span><span class="c1"></span><span class="k">const</span> <span class="k">auto</span> <span class="n">it</span> <span class="o">=</span> <span class="n">std</span><span class="o">::</span><span class="n">find_if</span><span class="p">(</span><span class="n">values</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span> <span class="n">values</span><span class="p">.</span><span class="n">end</span><span class="p">(),</span> <span class="p">[](</span><span class="kt">int</span> <span class="n">value</span><span class="p">)</span> <span class="p">{</span> <span class="k">return</span> <span class="n">value</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span><span class="p">;</span> <span class="p">});</span>
+</code></pre></div>
 <div class="notices tip" ><p>On désigne par <strong>prédicats</strong> les foncteurs retournant un booléen. En fonction du nombre de paramètres acceptés, on parlera de prédicat unaire, binaire, ternaire, etc.</p>
 </div>
 
 <p>Sachez qu&rsquo;il existe aussi <code>find_if_not</code> pour récupérer le premier élément qui ne ne vérifie pas un prédicat.<br>
 Il est intéressant de s&rsquo;en servir lorsque vous avez déjà une fonction libre ou un objet-fonction vérifiant l&rsquo;inverse de ce que vous recherchez.<br>
 Utiliser <code>find_if_not</code> évite alors d&rsquo;écrire une nouvelle fonction ou une nouvelle classe.</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="kt">bool</span> <span class="nf">is_even</span><span class="p">(</span><span class="kt">int</span> <span class="n">value</span><span class="p">)</span> <span class="p">{</span> <span class="k">return</span> <span class="n">value</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span><span class="p">;</span> <span class="p">}</span>
-</span></span><span class="line"><span class="cl"><span class="p">...</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="k">const</span> <span class="k">auto</span> <span class="n">first_odd_it</span> <span class="o">=</span> <span class="n">std</span><span class="o">::</span><span class="n">find_if_not</span><span class="p">(</span><span class="n">values</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span> <span class="n">values</span><span class="p">.</span><span class="n">end</span><span class="p">(),</span> <span class="n">is_even</span><span class="p">);</span>
-</span></span></code></pre></div><hr>
+<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="kt">bool</span> <span class="nf">is_even</span><span class="p">(</span><span class="kt">int</span> <span class="n">value</span><span class="p">)</span> <span class="p">{</span> <span class="k">return</span> <span class="n">value</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span><span class="p">;</span> <span class="p">}</span>
+<span class="p">...</span>
+
+<span class="k">const</span> <span class="k">auto</span> <span class="n">first_odd_it</span> <span class="o">=</span> <span class="n">std</span><span class="o">::</span><span class="n">find_if_not</span><span class="p">(</span><span class="n">values</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span> <span class="n">values</span><span class="p">.</span><span class="n">end</span><span class="p">(),</span> <span class="n">is_even</span><span class="p">);</span>
+</code></pre></div><hr>
 <h3 id="vérification-globale-de-prédicats">Vérification globale de prédicats</h3>
 <p>Lorsque l&rsquo;on veut savoir si un prédicat est vérifié par l&rsquo;ensemble des éléments d&rsquo;une plage, on peut utiliser <code>std::all_of</code>, dans <code>&lt;algorithm&gt;</code>.
 On a également <code>std::any_of</code> et <code>std::none_of</code>, permettant respectivement de savoir si au moins un élément vérifie le prédicat, ou si aucun élément ne vérifie le prédicat.</p>
@@ -2176,69 +2176,69 @@ On a également <code>std::any_of</code> et <code>std::none_of</code>, permettan
 </div>
 
 <p>Comme <code>find_if</code>, ces trois fonctions attendent deux itérateurs et un prédicat. Elles retournent par contre un booléen.</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="kt">bool</span> <span class="nf">is_even</span><span class="p">(</span><span class="kt">int</span> <span class="n">value</span><span class="p">)</span> <span class="p">{</span> <span class="k">return</span> <span class="n">value</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span><span class="p">;</span> <span class="p">}</span>
-</span></span><span class="line"><span class="cl"><span class="p">...</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="k">const</span> <span class="k">auto</span> <span class="n">it_begin</span> <span class="o">=</span> <span class="n">values</span><span class="p">.</span><span class="n">begin</span><span class="p">();</span>
-</span></span><span class="line"><span class="cl"><span class="k">const</span> <span class="k">auto</span> <span class="n">it_end</span> <span class="o">=</span> <span class="n">values</span><span class="p">.</span><span class="n">end</span><span class="p">();</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="k">if</span> <span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">all_of</span><span class="p">(</span><span class="n">it_begin</span><span class="p">,</span> <span class="n">it_end</span><span class="p">,</span> <span class="n">is_even</span><span class="p">))</span>
-</span></span><span class="line"><span class="cl"><span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;All values are even!&#34;</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span><span class="line"><span class="cl"><span class="k">else</span> <span class="nf">if</span> <span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">none_of</span><span class="p">(</span><span class="n">it_begin</span><span class="p">,</span> <span class="n">it_end</span><span class="p">,</span> <span class="n">is_even</span><span class="p">))</span>
-</span></span><span class="line"><span class="cl"><span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="c1">// Pour avoir l&#39;inverse d&#39;un prédicat, on peut utiliser not_fn de &lt;functional&gt;. 
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="n">assert</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">all_of</span><span class="p">(</span><span class="n">it_begin</span><span class="p">,</span> <span class="n">it_end</span><span class="p">,</span> <span class="n">std</span><span class="o">::</span><span class="n">not_fn</span><span class="p">(</span><span class="n">is_even</span><span class="p">)));</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;All values are odd!&#34;</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span><span class="line"><span class="cl"><span class="k">else</span>
-</span></span><span class="line"><span class="cl"><span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="n">assert</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">any_of</span><span class="p">(</span><span class="n">it_begin</span><span class="p">,</span> <span class="n">it_end</span><span class="p">,</span> <span class="n">is_even</span><span class="p">));</span>
-</span></span><span class="line"><span class="cl">    <span class="n">assert</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">any_of</span><span class="p">(</span><span class="n">it_begin</span><span class="p">,</span> <span class="n">it_end</span><span class="p">,</span> <span class="n">std</span><span class="o">::</span><span class="n">not_fn</span><span class="p">(</span><span class="n">is_even</span><span class="p">)));</span>
-</span></span><span class="line"><span class="cl">    
-</span></span><span class="line"><span class="cl">    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;Some values are even, and some are odd!&#34;</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span></code></pre></div><hr>
+<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="kt">bool</span> <span class="nf">is_even</span><span class="p">(</span><span class="kt">int</span> <span class="n">value</span><span class="p">)</span> <span class="p">{</span> <span class="k">return</span> <span class="n">value</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span><span class="p">;</span> <span class="p">}</span>
+<span class="p">...</span>
+
+<span class="k">const</span> <span class="k">auto</span> <span class="n">it_begin</span> <span class="o">=</span> <span class="n">values</span><span class="p">.</span><span class="n">begin</span><span class="p">();</span>
+<span class="k">const</span> <span class="k">auto</span> <span class="n">it_end</span> <span class="o">=</span> <span class="n">values</span><span class="p">.</span><span class="n">end</span><span class="p">();</span>
+
+<span class="k">if</span> <span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">all_of</span><span class="p">(</span><span class="n">it_begin</span><span class="p">,</span> <span class="n">it_end</span><span class="p">,</span> <span class="n">is_even</span><span class="p">))</span>
+<span class="p">{</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;All values are even!&#34;</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="k">else</span> <span class="nf">if</span> <span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">none_of</span><span class="p">(</span><span class="n">it_begin</span><span class="p">,</span> <span class="n">it_end</span><span class="p">,</span> <span class="n">is_even</span><span class="p">))</span>
+<span class="p">{</span>
+    <span class="c1">// Pour avoir l&#39;inverse d&#39;un prédicat, on peut utiliser not_fn de &lt;functional&gt;. 
+</span><span class="c1"></span>    <span class="n">assert</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">all_of</span><span class="p">(</span><span class="n">it_begin</span><span class="p">,</span> <span class="n">it_end</span><span class="p">,</span> <span class="n">std</span><span class="o">::</span><span class="n">not_fn</span><span class="p">(</span><span class="n">is_even</span><span class="p">)));</span>
+
+    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;All values are odd!&#34;</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="k">else</span>
+<span class="p">{</span>
+    <span class="n">assert</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">any_of</span><span class="p">(</span><span class="n">it_begin</span><span class="p">,</span> <span class="n">it_end</span><span class="p">,</span> <span class="n">is_even</span><span class="p">));</span>
+    <span class="n">assert</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">any_of</span><span class="p">(</span><span class="n">it_begin</span><span class="p">,</span> <span class="n">it_end</span><span class="p">,</span> <span class="n">std</span><span class="o">::</span><span class="n">not_fn</span><span class="p">(</span><span class="n">is_even</span><span class="p">)));</span>
+    
+    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;Some values are even, and some are odd!&#34;</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div><hr>
 <h3 id="compter-des-éléments">Compter des éléments</h3>
 <p>Une des opérations courantes à réaliser sur une plage de valeurs, c&rsquo;est de compter le nombre d&rsquo;occurrence d&rsquo;un élément.
 Pour cela, il y a la fonction <code>std::count</code>, encore une fois dans <code>&lt;algorithm&gt;</code>.
 Il y a également <code>std::count_if</code>, si vous souhaitez compter le nombre d&rsquo;éléments vérifiant un prédicat, plutôt que le nombre d&rsquo;occurrences d&rsquo;un élément précis.</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="k">const</span> <span class="k">auto</span> <span class="n">nb_1</span>    <span class="o">=</span> <span class="n">std</span><span class="o">::</span><span class="n">count</span><span class="p">(</span><span class="n">values</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span> <span class="n">values</span><span class="p">.</span><span class="n">end</span><span class="p">(),</span> <span class="mi">1</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl"><span class="k">const</span> <span class="k">auto</span> <span class="n">nb_even</span> <span class="o">=</span> <span class="n">std</span><span class="o">::</span><span class="n">count_if</span><span class="p">(</span><span class="n">values</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span> <span class="n">values</span><span class="p">.</span><span class="n">end</span><span class="p">(),</span> <span class="n">is_even</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl"><span class="k">const</span> <span class="k">auto</span> <span class="n">nb_odd</span>  <span class="o">=</span> <span class="n">std</span><span class="o">::</span><span class="n">count_if</span><span class="p">(</span><span class="n">values</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span> <span class="n">values</span><span class="p">.</span><span class="n">end</span><span class="p">(),</span> <span class="n">std</span><span class="o">::</span><span class="n">not_fn</span><span class="p">(</span><span class="n">is_even</span><span class="p">));</span>
-</span></span></code></pre></div><hr>
+<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="k">const</span> <span class="k">auto</span> <span class="n">nb_1</span>    <span class="o">=</span> <span class="n">std</span><span class="o">::</span><span class="n">count</span><span class="p">(</span><span class="n">values</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span> <span class="n">values</span><span class="p">.</span><span class="n">end</span><span class="p">(),</span> <span class="mi">1</span><span class="p">);</span>
+<span class="k">const</span> <span class="k">auto</span> <span class="n">nb_even</span> <span class="o">=</span> <span class="n">std</span><span class="o">::</span><span class="n">count_if</span><span class="p">(</span><span class="n">values</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span> <span class="n">values</span><span class="p">.</span><span class="n">end</span><span class="p">(),</span> <span class="n">is_even</span><span class="p">);</span>
+<span class="k">const</span> <span class="k">auto</span> <span class="n">nb_odd</span>  <span class="o">=</span> <span class="n">std</span><span class="o">::</span><span class="n">count_if</span><span class="p">(</span><span class="n">values</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span> <span class="n">values</span><span class="p">.</span><span class="n">end</span><span class="p">(),</span> <span class="n">std</span><span class="o">::</span><span class="n">not_fn</span><span class="p">(</span><span class="n">is_even</span><span class="p">));</span>
+</code></pre></div><hr>
 <h3 id="min-et-max">Min et max</h3>
 <h5 id="comparer-deux-éléments">Comparer deux éléments</h5>
 <p>Vous le savez peut-être déjà, mais plutôt qu&rsquo;écrire une ternaire pour déterminer le minimum ou le maximum de deux valeurs, vous pouvez utiliser les fonctions <code>std::min</code> et <code>std::max</code> (oui, toujours dans <code>&lt;algorithm&gt;</code>).
 Ce que vous ne savez peut-être pas, c&rsquo;est qu&rsquo;il est possible de passer un <strong>comparateur</strong> à cette fonction.</p>
 <p>Un comparateur, c&rsquo;est un foncteur qui accepte deux paramètres de même type, et qui renvoie un booléen.</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="c1">// Si on ne passe pas de comparateur, le compilateur essaye d&#39;utiliser operator&lt; entre value1 et value2.
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">const</span> <span class="k">auto</span> <span class="n">max_value</span> <span class="o">=</span> <span class="n">std</span><span class="o">::</span><span class="n">max</span><span class="p">(</span><span class="n">value1</span><span class="p">,</span> <span class="n">value2</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c1">// Comme on n&#39;a pas forcément envie que Person::operator&lt; se base sur la taille, on peut passer un autre comparateur à std::min.
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">const</span> <span class="k">auto</span> <span class="n">compare_by_height</span> <span class="o">=</span> <span class="p">[](</span><span class="k">const</span> <span class="n">Person</span><span class="o">&amp;</span> <span class="n">p1</span><span class="p">,</span> <span class="k">const</span> <span class="n">Person</span><span class="o">&amp;</span> <span class="n">p2</span><span class="p">)</span> <span class="p">{</span> <span class="k">return</span> <span class="n">p1</span><span class="p">.</span><span class="n">height</span> <span class="o">&lt;</span> <span class="n">p2</span><span class="p">.</span><span class="n">height</span><span class="p">;</span> <span class="p">};</span>
-</span></span><span class="line"><span class="cl"><span class="k">const</span> <span class="k">auto</span> <span class="n">shortest_person</span> <span class="o">=</span> <span class="n">std</span><span class="o">::</span><span class="n">min</span><span class="p">(</span><span class="n">person1</span><span class="p">,</span> <span class="n">person2</span><span class="p">,</span> <span class="n">compare_by_height</span><span class="p">);</span>
-</span></span></code></pre></div><p>Si vous n&rsquo;utilisez pas tout à fait les mêmes types, par exemple, en mélangeant des <code>size_t</code> et des <code>unsigned int</code>, les appels à <code>std::min</code> et <code>std::max</code> ne pourront pas compiler.
+<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="c1">// Si on ne passe pas de comparateur, le compilateur essaye d&#39;utiliser operator&lt; entre value1 et value2.
+</span><span class="c1"></span><span class="k">const</span> <span class="k">auto</span> <span class="n">max_value</span> <span class="o">=</span> <span class="n">std</span><span class="o">::</span><span class="n">max</span><span class="p">(</span><span class="n">value1</span><span class="p">,</span> <span class="n">value2</span><span class="p">);</span>
+
+<span class="c1">// Comme on n&#39;a pas forcément envie que Person::operator&lt; se base sur la taille, on peut passer un autre comparateur à std::min.
+</span><span class="c1"></span><span class="k">const</span> <span class="k">auto</span> <span class="n">compare_by_height</span> <span class="o">=</span> <span class="p">[](</span><span class="k">const</span> <span class="n">Person</span><span class="o">&amp;</span> <span class="n">p1</span><span class="p">,</span> <span class="k">const</span> <span class="n">Person</span><span class="o">&amp;</span> <span class="n">p2</span><span class="p">)</span> <span class="p">{</span> <span class="k">return</span> <span class="n">p1</span><span class="p">.</span><span class="n">height</span> <span class="o">&lt;</span> <span class="n">p2</span><span class="p">.</span><span class="n">height</span><span class="p">;</span> <span class="p">};</span>
+<span class="k">const</span> <span class="k">auto</span> <span class="n">shortest_person</span> <span class="o">=</span> <span class="n">std</span><span class="o">::</span><span class="n">min</span><span class="p">(</span><span class="n">person1</span><span class="p">,</span> <span class="n">person2</span><span class="p">,</span> <span class="n">compare_by_height</span><span class="p">);</span>
+</code></pre></div><p>Si vous n&rsquo;utilisez pas tout à fait les mêmes types, par exemple, en mélangeant des <code>size_t</code> et des <code>unsigned int</code>, les appels à <code>std::min</code> et <code>std::max</code> ne pourront pas compiler.
 En effet, la fonction ne saura pas quel type utilisé pour le résultat.
 Pour désambiguifier la situation, il faudra donc indiquer clairement le type utilisé avec <code>std::min&lt;T&gt;(...)</code> ou <code>std::max&lt;T&gt;(...)</code>.</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="c1">// Par défaut, écrire &#34;0&#34; créé un élément de type int, alors que values.size() et expected_size sont de type size_t.
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">const</span> <span class="k">auto</span> <span class="n">new_size</span> <span class="o">=</span> <span class="n">std</span><span class="o">::</span><span class="n">max</span><span class="o">&lt;</span><span class="n">size_t</span><span class="o">&gt;</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">values</span><span class="p">.</span><span class="n">size</span><span class="p">(),</span> <span class="n">expected_size</span><span class="p">);</span>
-</span></span></code></pre></div><p>Parfois, on veut récupérer à la fois le minimum et le maximum. Dans ce cas là, plutôt que d&rsquo;avoir un appel à <code>min</code> et un appel à <code>max</code>, c&rsquo;est-à-dire deux comparaisons, on peut utiliser la fonction <code>std::minmax</code>.
+<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="c1">// Par défaut, écrire &#34;0&#34; créé un élément de type int, alors que values.size() et expected_size sont de type size_t.
+</span><span class="c1"></span><span class="k">const</span> <span class="k">auto</span> <span class="n">new_size</span> <span class="o">=</span> <span class="n">std</span><span class="o">::</span><span class="n">max</span><span class="o">&lt;</span><span class="n">size_t</span><span class="o">&gt;</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">values</span><span class="p">.</span><span class="n">size</span><span class="p">(),</span> <span class="n">expected_size</span><span class="p">);</span>
+</code></pre></div><p>Parfois, on veut récupérer à la fois le minimum et le maximum. Dans ce cas là, plutôt que d&rsquo;avoir un appel à <code>min</code> et un appel à <code>max</code>, c&rsquo;est-à-dire deux comparaisons, on peut utiliser la fonction <code>std::minmax</code>.
 Celle-ci retourne un objet de type <code>std::pair&lt;T, T&gt;</code>, contenant le minimum pour premier élément et le maximum pour second élément.
 Et ici aussi, plutôt que de faire <code>result.first</code> et <code>result.second</code> pour accéder au contenu de la paire, on peut utiliser un structured binding pour récupérer le résultat.</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="k">const</span> <span class="k">auto</span> <span class="n">compare_by_height</span> <span class="o">=</span> <span class="p">[](</span><span class="k">const</span> <span class="n">Person</span><span class="o">&amp;</span> <span class="n">p1</span><span class="p">,</span> <span class="k">const</span> <span class="n">Person</span><span class="o">&amp;</span> <span class="n">p2</span><span class="p">)</span> <span class="p">{</span> <span class="k">return</span> <span class="n">p1</span><span class="p">.</span><span class="n">height</span> <span class="o">&lt;</span> <span class="n">p2</span><span class="p">.</span><span class="n">height</span><span class="p">;</span> <span class="p">};</span>
-</span></span><span class="line"><span class="cl"><span class="k">const</span> <span class="k">auto</span> <span class="p">[</span><span class="n">shortest</span><span class="p">,</span> <span class="n">tallest</span><span class="p">]</span> <span class="o">=</span> <span class="n">std</span><span class="o">::</span><span class="n">minmax</span><span class="p">(</span><span class="n">person1</span><span class="p">,</span> <span class="n">person2</span><span class="p">,</span> <span class="n">compare_by_height</span><span class="p">);</span>
-</span></span></code></pre></div><hr>
+<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="k">const</span> <span class="k">auto</span> <span class="n">compare_by_height</span> <span class="o">=</span> <span class="p">[](</span><span class="k">const</span> <span class="n">Person</span><span class="o">&amp;</span> <span class="n">p1</span><span class="p">,</span> <span class="k">const</span> <span class="n">Person</span><span class="o">&amp;</span> <span class="n">p2</span><span class="p">)</span> <span class="p">{</span> <span class="k">return</span> <span class="n">p1</span><span class="p">.</span><span class="n">height</span> <span class="o">&lt;</span> <span class="n">p2</span><span class="p">.</span><span class="n">height</span><span class="p">;</span> <span class="p">};</span>
+<span class="k">const</span> <span class="k">auto</span> <span class="p">[</span><span class="n">shortest</span><span class="p">,</span> <span class="n">tallest</span><span class="p">]</span> <span class="o">=</span> <span class="n">std</span><span class="o">::</span><span class="n">minmax</span><span class="p">(</span><span class="n">person1</span><span class="p">,</span> <span class="n">person2</span><span class="p">,</span> <span class="n">compare_by_height</span><span class="p">);</span>
+</code></pre></div><hr>
 <h5 id="comparer-n-éléments">Comparer N éléments</h5>
 <p>Les trois fonctions <code>std::min</code>, <code>std::max</code> et <code>std::minmax</code> disposent de surcharges acceptant une <code>initializer_list</code>.
 On peut ainsi récupérer le minimum et le maximum d&rsquo;un ensemble de valeurs.</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="k">const</span> <span class="k">auto</span> <span class="n">min_value</span> <span class="o">=</span> <span class="n">std</span><span class="o">::</span><span class="n">min</span><span class="p">({</span> <span class="mi">0</span><span class="p">,</span> <span class="n">value1</span><span class="p">,</span> <span class="n">value2</span><span class="p">,</span> <span class="n">value3</span> <span class="p">});</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="k">const</span> <span class="k">auto</span> <span class="n">compare_by_height</span> <span class="o">=</span> <span class="p">[](</span><span class="k">const</span> <span class="n">Person</span><span class="o">&amp;</span> <span class="n">p1</span><span class="p">,</span> <span class="k">const</span> <span class="n">Person</span><span class="o">&amp;</span> <span class="n">p2</span><span class="p">)</span> <span class="p">{</span> <span class="k">return</span> <span class="n">p1</span><span class="p">.</span><span class="n">height</span> <span class="o">&lt;</span> <span class="n">p2</span><span class="p">.</span><span class="n">height</span><span class="p">;</span> <span class="p">};</span>
-</span></span><span class="line"><span class="cl"><span class="k">const</span> <span class="k">auto</span> <span class="p">[</span><span class="n">shortest</span><span class="p">,</span> <span class="n">tallest</span><span class="p">]</span> <span class="o">=</span> <span class="n">std</span><span class="o">::</span><span class="n">minmax</span><span class="p">({</span> <span class="n">person1</span><span class="p">,</span> <span class="n">person2</span><span class="p">,</span> <span class="n">person3</span> <span class="p">},</span> <span class="n">compare_by_height</span><span class="p">);</span>
-</span></span></code></pre></div>
+<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="k">const</span> <span class="k">auto</span> <span class="n">min_value</span> <span class="o">=</span> <span class="n">std</span><span class="o">::</span><span class="n">min</span><span class="p">({</span> <span class="mi">0</span><span class="p">,</span> <span class="n">value1</span><span class="p">,</span> <span class="n">value2</span><span class="p">,</span> <span class="n">value3</span> <span class="p">});</span>
+
+<span class="k">const</span> <span class="k">auto</span> <span class="n">compare_by_height</span> <span class="o">=</span> <span class="p">[](</span><span class="k">const</span> <span class="n">Person</span><span class="o">&amp;</span> <span class="n">p1</span><span class="p">,</span> <span class="k">const</span> <span class="n">Person</span><span class="o">&amp;</span> <span class="n">p2</span><span class="p">)</span> <span class="p">{</span> <span class="k">return</span> <span class="n">p1</span><span class="p">.</span><span class="n">height</span> <span class="o">&lt;</span> <span class="n">p2</span><span class="p">.</span><span class="n">height</span><span class="p">;</span> <span class="p">};</span>
+<span class="k">const</span> <span class="k">auto</span> <span class="p">[</span><span class="n">shortest</span><span class="p">,</span> <span class="n">tallest</span><span class="p">]</span> <span class="o">=</span> <span class="n">std</span><span class="o">::</span><span class="n">minmax</span><span class="p">({</span> <span class="n">person1</span><span class="p">,</span> <span class="n">person2</span><span class="p">,</span> <span class="n">person3</span> <span class="p">},</span> <span class="n">compare_by_height</span><span class="p">);</span>
+</code></pre></div>
 <div class="notices info" ><p>Attention cependant, en passant des éléments par <code>initializer_list</code>, ces éléments sont forcément copiés.
 Dans le code plus haut, cela signifie que <code>shortest</code> est un nouvel objet, et non pas une référence sur l&rsquo;un des objets <code>person#</code>.
 Si vous voulez vraiment récupérer des références, vous pouvez créer des références wrappers à la volée, avec l&rsquo;appel suivant :<br>
@@ -2250,28 +2250,28 @@ Si vous voulez vraiment récupérer des références, vous pouvez créer des ré
 <p>Il n&rsquo;est pas possible de créer des <code>initializer_list</code> à partir d&rsquo;un autre conteneur.</p>
 <p>Du coup, si l&rsquo;on veut récupérer l&rsquo;élément minimum dans un <code>vector</code>, <code>&lt;algorithm&gt;</code> fournit la fonction <code>std::min_element</code>.
 On retrouve bien sûr aussi <code>std::max_element</code> et <code>std::minmax_element</code>.</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="k">const</span> <span class="k">auto</span> <span class="n">min_value</span> <span class="o">=</span> <span class="n">std</span><span class="o">::</span><span class="n">min_element</span><span class="p">(</span><span class="n">values</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span> <span class="n">values</span><span class="p">.</span><span class="n">end</span><span class="p">());</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="k">const</span> <span class="k">auto</span> <span class="n">compare_by_height</span> <span class="o">=</span> <span class="p">[](</span><span class="k">const</span> <span class="n">Person</span><span class="o">&amp;</span> <span class="n">p1</span><span class="p">,</span> <span class="k">const</span> <span class="n">Person</span><span class="o">&amp;</span> <span class="n">p2</span><span class="p">)</span> <span class="p">{</span> <span class="k">return</span> <span class="n">p1</span><span class="p">.</span><span class="n">height</span> <span class="o">&lt;</span> <span class="n">p2</span><span class="p">.</span><span class="n">height</span><span class="p">;</span> <span class="p">};</span>
-</span></span><span class="line"><span class="cl"><span class="k">const</span> <span class="k">auto</span> <span class="p">[</span><span class="n">shortest</span><span class="p">,</span> <span class="n">tallest</span><span class="p">]</span> <span class="o">=</span> <span class="n">std</span><span class="o">::</span><span class="n">minmax_element</span><span class="p">(</span><span class="n">persons</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span> <span class="n">persons</span><span class="p">.</span><span class="n">end</span><span class="p">(),</span> <span class="n">compare_by_height</span><span class="p">);</span>
-</span></span></code></pre></div><hr>
+<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="k">const</span> <span class="k">auto</span> <span class="n">min_value</span> <span class="o">=</span> <span class="n">std</span><span class="o">::</span><span class="n">min_element</span><span class="p">(</span><span class="n">values</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span> <span class="n">values</span><span class="p">.</span><span class="n">end</span><span class="p">());</span>
+
+<span class="k">const</span> <span class="k">auto</span> <span class="n">compare_by_height</span> <span class="o">=</span> <span class="p">[](</span><span class="k">const</span> <span class="n">Person</span><span class="o">&amp;</span> <span class="n">p1</span><span class="p">,</span> <span class="k">const</span> <span class="n">Person</span><span class="o">&amp;</span> <span class="n">p2</span><span class="p">)</span> <span class="p">{</span> <span class="k">return</span> <span class="n">p1</span><span class="p">.</span><span class="n">height</span> <span class="o">&lt;</span> <span class="n">p2</span><span class="p">.</span><span class="n">height</span><span class="p">;</span> <span class="p">};</span>
+<span class="k">const</span> <span class="k">auto</span> <span class="p">[</span><span class="n">shortest</span><span class="p">,</span> <span class="n">tallest</span><span class="p">]</span> <span class="o">=</span> <span class="n">std</span><span class="o">::</span><span class="n">minmax_element</span><span class="p">(</span><span class="n">persons</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span> <span class="n">persons</span><span class="p">.</span><span class="n">end</span><span class="p">(),</span> <span class="n">compare_by_height</span><span class="p">);</span>
+</code></pre></div><hr>
 <h5 id="bornes-inférieure-et-supérieure">Bornes inférieure et supérieure</h5>
 <p>Dans une plage d&rsquo;éléments triée en selon un ordre donné, il est possible d&rsquo;extraire le premier élément à être supérieur ou égal (par rapport à l&rsquo;ordre choisi pour le conteneur) à une valeur donnée.
 Par exemple, si on a [0, 3, 5, 6, 8, 10], alors le premier élément supérieur ou égal à 5 est 5, et le premier élément supérieur ou égal à 2 est 3.</p>
 <p>La fonction <code>std::lower_bound</code> permet de récupérer cet élément :</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">values</span> <span class="p">{</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">10</span> <span class="p">};</span>
-</span></span><span class="line"><span class="cl"><span class="k">const</span> <span class="k">auto</span> <span class="n">it</span> <span class="o">=</span> <span class="n">std</span><span class="o">::</span><span class="n">lower_bound</span><span class="p">(</span><span class="n">values</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span> <span class="n">values</span><span class="p">.</span><span class="n">end</span><span class="p">(),</span> <span class="mi">2</span><span class="p">);</span> <span class="c1">// *it should be 3.
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
-</span></span><span class="line"><span class="cl"><span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&gt;</span> <span class="n">names</span> <span class="p">{</span> <span class="s">&#34;Johnny halliday&#34;</span><span class="p">,</span> <span class="s">&#34;Jack L&#39;Eventreur&#34;</span><span class="p">,</span> <span class="s">&#34;Denver Le Dernier Dinosaure&#34;</span><span class="p">,</span> <span class="s">&#34;Anne hidalgo&#34;</span> <span class="p">};</span>
-</span></span><span class="line"><span class="cl"><span class="c1">// Si la plage n&#39;est pas ordonnée selon operator&lt;, on doit passer à lower_bound un comparateur respectant l&#39;ordre de la plage.
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">const</span> <span class="k">auto</span> <span class="n">it</span> <span class="o">=</span> <span class="n">std</span><span class="o">::</span><span class="n">lower_bound</span><span class="p">(</span><span class="n">names</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span> <span class="n">names</span><span class="p">.</span><span class="n">end</span><span class="p">(),</span> <span class="s">&#34;Ji&#34;</span><span class="p">,</span> <span class="n">std</span><span class="o">::</span><span class="n">greater</span> <span class="p">{});</span> <span class="c1">// *it should be &#34;Jack L&#39;Eventreur&#34;
-</span></span></span></code></pre></div><p>Si on veut maintenant récupérer le dernier élément inférieur ou égal à une valeur, on peut utiliser <code>upper_bound</code> :</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">values</span> <span class="p">{</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">10</span> <span class="p">};</span>
-</span></span><span class="line"><span class="cl"><span class="k">const</span> <span class="k">auto</span> <span class="n">it</span> <span class="o">=</span> <span class="n">std</span><span class="o">::</span><span class="n">upper_bound</span><span class="p">(</span><span class="n">values</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span> <span class="n">values</span><span class="p">.</span><span class="n">end</span><span class="p">(),</span> <span class="mi">2</span><span class="p">);</span> <span class="c1">// *it should be 0.
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
-</span></span><span class="line"><span class="cl"><span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&gt;</span> <span class="n">names</span> <span class="p">{</span> <span class="s">&#34;Johnny Halliday&#34;</span><span class="p">,</span> <span class="s">&#34;Jack L&#39;Eventreur&#34;</span><span class="p">,</span> <span class="s">&#34;Denver Le Dernier Dinosaure&#34;</span><span class="p">,</span> <span class="s">&#34;Anne hidalgo&#34;</span> <span class="p">};</span>
-</span></span><span class="line"><span class="cl"><span class="k">const</span> <span class="k">auto</span> <span class="n">it</span> <span class="o">=</span> <span class="n">std</span><span class="o">::</span><span class="n">upper_bound</span><span class="p">(</span><span class="n">names</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span> <span class="n">names</span><span class="p">.</span><span class="n">end</span><span class="p">(),</span> <span class="s">&#34;Ji&#34;</span><span class="p">,</span> <span class="n">std</span><span class="o">::</span><span class="n">greater</span> <span class="p">{});</span> <span class="c1">// *it should be &#34;Johnny Halliday&#34;
-</span></span></span></code></pre></div>
+<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">values</span> <span class="p">{</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">10</span> <span class="p">};</span>
+<span class="k">const</span> <span class="k">auto</span> <span class="n">it</span> <span class="o">=</span> <span class="n">std</span><span class="o">::</span><span class="n">lower_bound</span><span class="p">(</span><span class="n">values</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span> <span class="n">values</span><span class="p">.</span><span class="n">end</span><span class="p">(),</span> <span class="mi">2</span><span class="p">);</span> <span class="c1">// *it should be 3.
+</span><span class="c1"></span>
+<span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&gt;</span> <span class="n">names</span> <span class="p">{</span> <span class="s">&#34;Johnny halliday&#34;</span><span class="p">,</span> <span class="s">&#34;Jack L&#39;Eventreur&#34;</span><span class="p">,</span> <span class="s">&#34;Denver Le Dernier Dinosaure&#34;</span><span class="p">,</span> <span class="s">&#34;Anne hidalgo&#34;</span> <span class="p">};</span>
+<span class="c1">// Si la plage n&#39;est pas ordonnée selon operator&lt;, on doit passer à lower_bound un comparateur respectant l&#39;ordre de la plage.
+</span><span class="c1"></span><span class="k">const</span> <span class="k">auto</span> <span class="n">it</span> <span class="o">=</span> <span class="n">std</span><span class="o">::</span><span class="n">lower_bound</span><span class="p">(</span><span class="n">names</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span> <span class="n">names</span><span class="p">.</span><span class="n">end</span><span class="p">(),</span> <span class="s">&#34;Ji&#34;</span><span class="p">,</span> <span class="n">std</span><span class="o">::</span><span class="n">greater</span> <span class="p">{});</span> <span class="c1">// *it should be &#34;Jack L&#39;Eventreur&#34;
+</span></code></pre></div><p>Si on veut maintenant récupérer le dernier élément inférieur ou égal à une valeur, on peut utiliser <code>upper_bound</code> :</p>
+<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">values</span> <span class="p">{</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">10</span> <span class="p">};</span>
+<span class="k">const</span> <span class="k">auto</span> <span class="n">it</span> <span class="o">=</span> <span class="n">std</span><span class="o">::</span><span class="n">upper_bound</span><span class="p">(</span><span class="n">values</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span> <span class="n">values</span><span class="p">.</span><span class="n">end</span><span class="p">(),</span> <span class="mi">2</span><span class="p">);</span> <span class="c1">// *it should be 0.
+</span><span class="c1"></span>
+<span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&gt;</span> <span class="n">names</span> <span class="p">{</span> <span class="s">&#34;Johnny Halliday&#34;</span><span class="p">,</span> <span class="s">&#34;Jack L&#39;Eventreur&#34;</span><span class="p">,</span> <span class="s">&#34;Denver Le Dernier Dinosaure&#34;</span><span class="p">,</span> <span class="s">&#34;Anne hidalgo&#34;</span> <span class="p">};</span>
+<span class="k">const</span> <span class="k">auto</span> <span class="n">it</span> <span class="o">=</span> <span class="n">std</span><span class="o">::</span><span class="n">upper_bound</span><span class="p">(</span><span class="n">names</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span> <span class="n">names</span><span class="p">.</span><span class="n">end</span><span class="p">(),</span> <span class="s">&#34;Ji&#34;</span><span class="p">,</span> <span class="n">std</span><span class="o">::</span><span class="n">greater</span> <span class="p">{});</span> <span class="c1">// *it should be &#34;Johnny Halliday&#34;
+</span></code></pre></div>
 <div class="notices info" ><p>Assurez-vous bien que votre plage d&rsquo;éléments soit triée lorsque vous utilisez <code>std::lower_bound</code> ou <code>std::upper_bound</code>.</p>
 </div>
 
@@ -2281,36 +2281,36 @@ Par exemple, si on a [0, 3, 5, 6, 8, 10], alors le premier élément supérieur 
 <hr>
 <h5 id="egalité-ou-équivalence">Egalité ou équivalence</h5>
 <p>Pour commencer, pour savoir si deux plages d&rsquo;éléments sont égales, vous pouvez utiliser <code>std::equal</code>.</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="k">const</span> <span class="k">auto</span> <span class="n">begin</span> <span class="o">=</span> <span class="n">values</span><span class="p">.</span><span class="n">begin</span><span class="p">();</span>
-</span></span><span class="line"><span class="cl"><span class="k">const</span> <span class="k">auto</span> <span class="n">end</span> <span class="o">=</span> <span class="n">values</span><span class="p">.</span><span class="n">end</span><span class="p">();</span>
-</span></span><span class="line"><span class="cl"><span class="k">const</span> <span class="k">auto</span> <span class="n">half</span> <span class="o">=</span> <span class="n">std</span><span class="o">::</span><span class="n">next</span><span class="p">(</span><span class="n">begin</span><span class="p">,</span> <span class="n">std</span><span class="o">::</span><span class="n">distance</span><span class="p">(</span><span class="n">begin</span><span class="p">,</span> <span class="n">end</span><span class="p">)</span> <span class="o">/</span> <span class="mi">2</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl"><span class="k">if</span> <span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">equals</span><span class="p">(</span><span class="n">begin</span><span class="p">,</span> <span class="n">half</span><span class="p">,</span> <span class="n">half</span><span class="p">,</span> <span class="n">end</span><span class="p">))</span>
-</span></span><span class="line"><span class="cl"><span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;The first half of values contains the same elements as its second half.&#34;</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="k">if</span> <span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">equals</span><span class="p">(</span><span class="n">my_dogs_names</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span> <span class="n">my_dogs_names</span><span class="p">.</span><span class="n">end</span><span class="p">(),</span> <span class="n">your_dogs_names</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span> <span class="n">your_dogs_names</span><span class="p">.</span><span class="n">end</span><span class="p">()))</span>
-</span></span><span class="line"><span class="cl"><span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;Stop calling your dogs the same way I do!&#34;</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span></code></pre></div><p>Vous pouvez passer un comparateur à la fonction, en particulier si vous ne traitez pas des plages du même type.</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">Dog</span><span class="o">&gt;</span> <span class="n">dogs</span> <span class="p">{</span> <span class="n">Dog</span> <span class="p">{</span> <span class="s">&#34;medor&#34;</span> <span class="p">},</span> <span class="n">Dog</span> <span class="p">{</span> <span class="s">&#34;dagobert&#34;</span> <span class="p">},</span> <span class="n">Dog</span> <span class="p">{</span> <span class="s">&#34;nonoss&#34;</span> <span class="p">}</span> <span class="p">};</span>
-</span></span><span class="line"><span class="cl"><span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">Cat</span><span class="o">&gt;</span> <span class="n">cats</span> <span class="p">{</span> <span class="n">Cat</span> <span class="p">{</span> <span class="s">&#34;medor&#34;</span> <span class="p">},</span> <span class="n">Cat</span> <span class="p">{</span> <span class="s">&#34;dagobert&#34;</span> <span class="p">},</span> <span class="n">Cat</span> <span class="p">{</span> <span class="s">&#34;nonoss&#34;</span> <span class="p">}</span> <span class="p">};</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="k">const</span> <span class="k">auto</span> <span class="n">compare_names</span> <span class="o">=</span> <span class="p">[](</span><span class="k">const</span> <span class="n">Dog</span><span class="o">&amp;</span> <span class="n">dog</span><span class="p">,</span> <span class="k">const</span> <span class="n">Cat</span><span class="o">&amp;</span> <span class="n">cat</span><span class="p">)</span> <span class="p">{</span> <span class="k">return</span> <span class="n">dog</span><span class="p">.</span><span class="n">name</span><span class="p">()</span> <span class="o">==</span> <span class="n">cat</span><span class="p">.</span><span class="n">name</span><span class="p">();</span> <span class="p">}</span>
-</span></span><span class="line"><span class="cl"><span class="k">if</span> <span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">equals</span><span class="p">(</span><span class="n">dogs</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span> <span class="n">dogs</span><span class="p">.</span><span class="n">end</span><span class="p">(),</span> <span class="n">cats</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span> <span class="n">cats</span><span class="p">.</span><span class="n">end</span><span class="p">(),</span> <span class="n">compare_names</span><span class="p">))</span>
-</span></span><span class="line"><span class="cl"><span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;Why would you ever name your cats this way?&#34;</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span></code></pre></div><p>Enfin, il est possible de vérifier si deux plages contiennent les mêmes éléments, mais pas forcément dans le même ordre, en utilisant <code>std::is_permutation</code>.</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">unsigned</span> <span class="kt">int</span><span class="o">&gt;</span> <span class="n">my_numbers</span> <span class="p">{</span> <span class="mi">16</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">32</span><span class="p">,</span> <span class="mi">33</span><span class="p">,</span> <span class="mi">21</span> <span class="p">};</span>
-</span></span><span class="line"><span class="cl"><span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">unsigned</span> <span class="kt">int</span><span class="o">&gt;</span> <span class="n">winning_numbers</span> <span class="p">{</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">16</span><span class="p">,</span> <span class="mi">21</span><span class="p">,</span> <span class="mi">32</span><span class="p">,</span> <span class="mi">33</span> <span class="p">};</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="k">if</span> <span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">is_permutation</span><span class="p">(</span><span class="n">my_numbers</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span> <span class="n">my_numbers</span><span class="p">.</span><span class="n">end</span><span class="p">(),</span> <span class="n">winning_numbers</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span> <span class="n">winning_numbers</span><span class="p">.</span><span class="n">end</span><span class="p">()))</span>
-</span></span><span class="line"><span class="cl"><span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;WOUHHHHHH OOOOOOOOOOOOOOUUUUUUUUHHHHHHHHHH!!!!!!!!!!!&#34;</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span></code></pre></div>
+<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="k">const</span> <span class="k">auto</span> <span class="n">begin</span> <span class="o">=</span> <span class="n">values</span><span class="p">.</span><span class="n">begin</span><span class="p">();</span>
+<span class="k">const</span> <span class="k">auto</span> <span class="n">end</span> <span class="o">=</span> <span class="n">values</span><span class="p">.</span><span class="n">end</span><span class="p">();</span>
+<span class="k">const</span> <span class="k">auto</span> <span class="n">half</span> <span class="o">=</span> <span class="n">std</span><span class="o">::</span><span class="n">next</span><span class="p">(</span><span class="n">begin</span><span class="p">,</span> <span class="n">std</span><span class="o">::</span><span class="n">distance</span><span class="p">(</span><span class="n">begin</span><span class="p">,</span> <span class="n">end</span><span class="p">)</span> <span class="o">/</span> <span class="mi">2</span><span class="p">);</span>
+<span class="k">if</span> <span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">equals</span><span class="p">(</span><span class="n">begin</span><span class="p">,</span> <span class="n">half</span><span class="p">,</span> <span class="n">half</span><span class="p">,</span> <span class="n">end</span><span class="p">))</span>
+<span class="p">{</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;The first half of values contains the same elements as its second half.&#34;</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="k">if</span> <span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">equals</span><span class="p">(</span><span class="n">my_dogs_names</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span> <span class="n">my_dogs_names</span><span class="p">.</span><span class="n">end</span><span class="p">(),</span> <span class="n">your_dogs_names</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span> <span class="n">your_dogs_names</span><span class="p">.</span><span class="n">end</span><span class="p">()))</span>
+<span class="p">{</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;Stop calling your dogs the same way I do!&#34;</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div><p>Vous pouvez passer un comparateur à la fonction, en particulier si vous ne traitez pas des plages du même type.</p>
+<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">Dog</span><span class="o">&gt;</span> <span class="n">dogs</span> <span class="p">{</span> <span class="n">Dog</span> <span class="p">{</span> <span class="s">&#34;medor&#34;</span> <span class="p">},</span> <span class="n">Dog</span> <span class="p">{</span> <span class="s">&#34;dagobert&#34;</span> <span class="p">},</span> <span class="n">Dog</span> <span class="p">{</span> <span class="s">&#34;nonoss&#34;</span> <span class="p">}</span> <span class="p">};</span>
+<span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">Cat</span><span class="o">&gt;</span> <span class="n">cats</span> <span class="p">{</span> <span class="n">Cat</span> <span class="p">{</span> <span class="s">&#34;medor&#34;</span> <span class="p">},</span> <span class="n">Cat</span> <span class="p">{</span> <span class="s">&#34;dagobert&#34;</span> <span class="p">},</span> <span class="n">Cat</span> <span class="p">{</span> <span class="s">&#34;nonoss&#34;</span> <span class="p">}</span> <span class="p">};</span>
+
+<span class="k">const</span> <span class="k">auto</span> <span class="n">compare_names</span> <span class="o">=</span> <span class="p">[](</span><span class="k">const</span> <span class="n">Dog</span><span class="o">&amp;</span> <span class="n">dog</span><span class="p">,</span> <span class="k">const</span> <span class="n">Cat</span><span class="o">&amp;</span> <span class="n">cat</span><span class="p">)</span> <span class="p">{</span> <span class="k">return</span> <span class="n">dog</span><span class="p">.</span><span class="n">name</span><span class="p">()</span> <span class="o">==</span> <span class="n">cat</span><span class="p">.</span><span class="n">name</span><span class="p">();</span> <span class="p">}</span>
+<span class="k">if</span> <span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">equals</span><span class="p">(</span><span class="n">dogs</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span> <span class="n">dogs</span><span class="p">.</span><span class="n">end</span><span class="p">(),</span> <span class="n">cats</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span> <span class="n">cats</span><span class="p">.</span><span class="n">end</span><span class="p">(),</span> <span class="n">compare_names</span><span class="p">))</span>
+<span class="p">{</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;Why would you ever name your cats this way?&#34;</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div><p>Enfin, il est possible de vérifier si deux plages contiennent les mêmes éléments, mais pas forcément dans le même ordre, en utilisant <code>std::is_permutation</code>.</p>
+<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">unsigned</span> <span class="kt">int</span><span class="o">&gt;</span> <span class="n">my_numbers</span> <span class="p">{</span> <span class="mi">16</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">32</span><span class="p">,</span> <span class="mi">33</span><span class="p">,</span> <span class="mi">21</span> <span class="p">};</span>
+<span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">unsigned</span> <span class="kt">int</span><span class="o">&gt;</span> <span class="n">winning_numbers</span> <span class="p">{</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">16</span><span class="p">,</span> <span class="mi">21</span><span class="p">,</span> <span class="mi">32</span><span class="p">,</span> <span class="mi">33</span> <span class="p">};</span>
+
+<span class="k">if</span> <span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">is_permutation</span><span class="p">(</span><span class="n">my_numbers</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span> <span class="n">my_numbers</span><span class="p">.</span><span class="n">end</span><span class="p">(),</span> <span class="n">winning_numbers</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span> <span class="n">winning_numbers</span><span class="p">.</span><span class="n">end</span><span class="p">()))</span>
+<span class="p">{</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;WOUHHHHHH OOOOOOOOOOOOOOUUUUUUUUHHHHHHHHHH!!!!!!!!!!!&#34;</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
 <div class="notices note" ><p>Il est possible de passer un comparateur à <code>equals</code>, et c&rsquo;est également possible de le faire avec <code>is_permutation</code>, ainsi qu&rsquo;avec toutes les autres fonctions présentées dans cette section.</p>
 </div>
 
@@ -2318,18 +2318,18 @@ Par exemple, si on a [0, 3, 5, 6, 8, 10], alors le premier élément supérieur 
 <h5 id="comparaison-lexicographique">Comparaison lexicographique</h5>
 <p>Comparer lexicographiquement deux chaînes de caractères revient à d&rsquo;abord comparer les premières lettres, puis si elles sont égales, les deuxièmes, puis si elles sont égales aussi, les troisièmes, et ainsi de suite jusqu&rsquo;à trouver deux lettres qui ne sont pas identique.</p>
 <p>Ce procédé peut se généraliser à n&rsquo;importe quels types de plages d&rsquo;éléments en utilisant la fonction <code>std::lexicographical_compare</code>.</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="n">std</span><span class="o">::</span><span class="n">array</span><span class="o">&lt;</span><span class="n">Pokemon</span><span class="p">,</span> <span class="mi">6</span><span class="o">&gt;</span> <span class="n">my_pokemons</span> <span class="p">{</span> <span class="p">...</span> <span class="p">};</span>
-</span></span><span class="line"><span class="cl"><span class="n">std</span><span class="o">::</span><span class="n">array</span><span class="o">&lt;</span><span class="n">Pokemon</span><span class="p">,</span> <span class="mi">6</span><span class="o">&gt;</span> <span class="n">your_pokemons</span> <span class="p">{</span> <span class="p">...</span> <span class="p">};</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="k">if</span> <span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">lexicographical_compare</span><span class="p">(</span><span class="n">my_pokemons</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span> <span class="n">my_pokemons</span><span class="p">.</span><span class="n">end</span><span class="p">(),</span> <span class="n">your_pokemons</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span> <span class="n">your_pokemons</span><span class="p">.</span><span class="n">end</span><span class="p">()))</span>
-</span></span><span class="line"><span class="cl"><span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;You win the duel.&#34;</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">end</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span><span class="line"><span class="cl"><span class="k">else</span>
-</span></span><span class="line"><span class="cl"><span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;I win the duel.&#34;</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span></code></pre></div>
+<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="n">std</span><span class="o">::</span><span class="n">array</span><span class="o">&lt;</span><span class="n">Pokemon</span><span class="p">,</span> <span class="mi">6</span><span class="o">&gt;</span> <span class="n">my_pokemons</span> <span class="p">{</span> <span class="p">...</span> <span class="p">};</span>
+<span class="n">std</span><span class="o">::</span><span class="n">array</span><span class="o">&lt;</span><span class="n">Pokemon</span><span class="p">,</span> <span class="mi">6</span><span class="o">&gt;</span> <span class="n">your_pokemons</span> <span class="p">{</span> <span class="p">...</span> <span class="p">};</span>
+
+<span class="k">if</span> <span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">lexicographical_compare</span><span class="p">(</span><span class="n">my_pokemons</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span> <span class="n">my_pokemons</span><span class="p">.</span><span class="n">end</span><span class="p">(),</span> <span class="n">your_pokemons</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span> <span class="n">your_pokemons</span><span class="p">.</span><span class="n">end</span><span class="p">()))</span>
+<span class="p">{</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;You win the duel.&#34;</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">end</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="k">else</span>
+<span class="p">{</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;I win the duel.&#34;</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
 
 <footer class="footline">
 	
@@ -3627,19 +3627,19 @@ Par exemple, si on a [0, 3, 5, 6, 8, 10], alors le premier élément supérieur 
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/CPP_Learning/js/clipboard.min.js?1704755107"></script>
-    <script src="/CPP_Learning/js/perfect-scrollbar.min.js?1704755107"></script>
-    <script src="/CPP_Learning/js/perfect-scrollbar.jquery.min.js?1704755107"></script>
-    <script src="/CPP_Learning/js/jquery.sticky.js?1704755107"></script>
-    <script src="/CPP_Learning/js/featherlight.min.js?1704755107"></script>
-    <script src="/CPP_Learning/js/highlight.pack.js?1704755107"></script>
+    <script src="/CPP_Learning/js/clipboard.min.js?1705257267"></script>
+    <script src="/CPP_Learning/js/perfect-scrollbar.min.js?1705257267"></script>
+    <script src="/CPP_Learning/js/perfect-scrollbar.jquery.min.js?1705257267"></script>
+    <script src="/CPP_Learning/js/jquery.sticky.js?1705257267"></script>
+    <script src="/CPP_Learning/js/featherlight.min.js?1705257267"></script>
+    <script src="/CPP_Learning/js/highlight.pack.js?1705257267"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/CPP_Learning/js/modernizr.custom-3.6.0.js?1704755107"></script>
-    <script src="/CPP_Learning/js/learn.js?1704755107"></script>
-    <script src="/CPP_Learning/js/hugo-learn.js?1704755107"></script>
+    <script src="/CPP_Learning/js/modernizr.custom-3.6.0.js?1705257267"></script>
+    <script src="/CPP_Learning/js/learn.js?1705257267"></script>
+    <script src="/CPP_Learning/js/hugo-learn.js?1705257267"></script>
     
         
-            <script src="/CPP_Learning/mermaid/mermaid.js?1704755107"></script>
+            <script src="/CPP_Learning/mermaid/mermaid.js?1705257267"></script>
         
         <script>
             mermaid.initialize({ startOnLoad: true });
@@ -3653,12 +3653,12 @@ Par exemple, si on a [0, 3, 5, 6, 8, 10], alors le premier élément supérieur 
     <form id="question" method=POST action="https://formsubmit.co/3aa0f379a1aed9c454634cc2da153a7b"
         target="question-submitted" onsubmit="cleanQuestionFormContent()">
 
-        <input type="email" name="email" placeholder="mon_email@smthg.com" required />
-        <textarea id="question-content" name="question" rows="7" cols="30" placeholder="ma question..."></textarea>
-        <input id="question-topic" type="hidden" name="selection" />
+        <input type="email" name="email" placeholder="mon_email@smthg.com" required onchange="updateQuestionFormSubject()" />
+        <textarea name="question" rows="7" cols="30" placeholder="ma question..."></textarea>
+        <input type="hidden" name="selection" />
 
         <input type="hidden" name="_replyto" />
-        <input type="hidden" name="_subject" value="[C++][Chapitre 0] Question sur le cours" />
+        <input type="hidden" name="_subject" />
         <input type="hidden" name="_template" value="box" />
         <input type="hidden" name="_captcha" value="false" />
         <input type="hidden" name="_next" value="https://laefy.github.io/CPP_Learning//question-submitted/" />
@@ -3667,10 +3667,15 @@ Par exemple, si on a [0, 3, 5, 6, 8, 10], alors le premier élément supérieur 
         <input type="submit" value="Envoyer" />
     </form>
 
-    <iframe id="question-submitted" class="hidden" name="question-submitted" src=""></iframe>
+    <iframe class="hidden" name="question-submitted" src=""></iframe>
 </div>
 
 <script>
+
+    function updateQuestionFormSubject() {
+        let email = document.querySelector('#question>input[name="email"]').value;
+        document.querySelector('#question>input[name="_subject"]').value = "[C++][Chapitre 0] " + email + ", retour sur ta question";
+    }
 
     function cleanQuestionFormContent() {
 
@@ -3679,15 +3684,15 @@ Par exemple, si on a [0, 3, 5, 6, 8, 10], alors le premier élément supérieur 
             element.value = element.value.replace(/\[\.\./g, "[ ..");
         }
 
-        clean(document.getElementById("question-content"))
-        clean(document.getElementById("question-topic"))
+        clean(document.querySelector('#question>textarea[name="question"]'))
+        clean(document.querySelector('#question>input[name="selection"]'))
     }
 
     function openQuestionForm() {
         document.getElementById("footer-question-window").removeAttribute("disabled");
 
         var selection = window.getSelection().toString();
-        document.getElementById("question-topic").value = selection
+        document.querySelector('#question>input[name="selection"]').value = selection
     }
 
     function updateQuestionWidgetState(event) {
@@ -3708,6 +3713,8 @@ Par exemple, si on a [0, 3, 5, 6, 8, 10], alors le premier élément supérieur 
             question_window.setAttribute("disabled", true);
         }
     }
+
+    updateQuestionFormSubject();
 
     document.onmouseup = document.onkeyup = document.onselectionchange = updateQuestionWidgetState;
     updateQuestionWidgetState();

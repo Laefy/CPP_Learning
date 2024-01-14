@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  
   <url>
     <loc>https://laefy.github.io/CPP_Learning/en/</loc>
     <xhtml:link
@@ -13,7 +14,9 @@
                 hreflang="en"
                 href="https://laefy.github.io/CPP_Learning/en/"
                 />
-  </url><url>
+  </url>
+  
+  <url>
     <loc>https://laefy.github.io/CPP_Learning/en/categories/</loc>
     <xhtml:link
                 rel="alternate"
@@ -25,7 +28,9 @@
                 hreflang="en"
                 href="https://laefy.github.io/CPP_Learning/en/categories/"
                 />
-  </url><url>
+  </url>
+  
+  <url>
     <loc>https://laefy.github.io/CPP_Learning/en/tags/</loc>
     <xhtml:link
                 rel="alternate"
@@ -38,4 +43,5 @@
                 href="https://laefy.github.io/CPP_Learning/en/tags/"
                 />
   </url>
+  
 </urlset>

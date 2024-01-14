@@ -5,35 +5,66 @@
     <link>https://laefy.github.io/CPP_Learning/chapter0/6-tips/</link>
     <description>Recent content in Astuces on Cours de C&#43;&#43; - Niveau Master</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>fr</language>
-    <atom:link href="https://laefy.github.io/CPP_Learning/chapter0/6-tips/index.xml" rel="self" type="application/rss+xml" />
+    <language>en-us</language><atom:link href="https://laefy.github.io/CPP_Learning/chapter0/6-tips/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Petits programmes</title>
       <link>https://laefy.github.io/CPP_Learning/chapter0/6-tips/1-snippets/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
       <guid>https://laefy.github.io/CPP_Learning/chapter0/6-tips/1-snippets/</guid>
-      <description>Voici 2 solutions permettant de compiler et de tester rapidement des petits programme.&#xA;Compiler Explorer Vous pouvez utiliser Compiler Explorer pour compiler du code avec à peu près tous les compilateurs de la Terre.&#xA;Cet utilitaire vous permet également d&amp;rsquo;exécuter directement votre programme.&#xA;Depuis un terminal Pour compiler Avec g++ :&#xA;g++ f1.cpp f2.cpp f3.cpp -o program Avec clang :&#xA;clang++ f1.cpp f2.cpp f3.cpp -o program Vous pouvez ajouter des options de compilation à la fin de la ligne de commande.</description>
+      <description>Voici 2 solutions permettant de compiler et de tester rapidement des petits programme.
+ Compiler Explorer Vous pouvez utiliser Compiler Explorer pour compiler du code avec à peu près tous les compilateurs de la Terre.
+Cet utilitaire vous permet également d&amp;rsquo;exécuter directement votre programme.
+ Depuis un terminal Pour compiler Avec g++ :
+g++f1.cpp f2.cpp f3.cpp -o program Avec clang :
+clang++f1.cpp f2.cpp f3.cpp -o program Vous pouvez ajouter des options de compilation à la fin de la ligne de commande.</description>
     </item>
+    
     <item>
       <title>Projets VSCode</title>
       <link>https://laefy.github.io/CPP_Learning/chapter0/6-tips/2-vscode/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
       <guid>https://laefy.github.io/CPP_Learning/chapter0/6-tips/2-vscode/</guid>
-      <description>Lorsque vous avez un projet un peu plus conséquent, il est plus pratique de passer par VSCode pour configurer, compiler et tester vos programmes.&#xA;Configuration avec CMake Vous aurez besoin d&amp;rsquo;un fichier CMakeLists.txt à la racine de votre répertoire pour configurer le projet. Si celui-ci ne contient qu&amp;rsquo;un seul programme, vous pouvez copier et adapter dans votre CMakeLists.txt les instructions suivantes.&#xA;cmake_minimum_required(VERSION 3.1)&#xD;project(my_project)&#xD;add_executable(my_executable&#xD;my_file1.cpp&#xD;my_file2.cpp&#xD;my_file3.h&#xD;)&#xD;target_compile_features(my_executable PUBLIC cxx_std_17) Pour configurer le projet, utilisez la commande CMake: Configure.</description>
+      <description>Lorsque vous avez un projet un peu plus conséquent, il est plus pratique de passer par VSCode pour configurer, compiler et tester vos programmes.
+ Configuration avec CMake Vous aurez besoin d&amp;rsquo;un fichier CMakeLists.txt à la racine de votre répertoire pour configurer le projet. Si celui-ci ne contient qu&amp;rsquo;un seul programme, vous pouvez copier et adapter dans votre CMakeLists.txt les instructions suivantes.
+cmake_minimum_required(VERSION 3.1)project(my_project)add_executable(my_executablemy_file1.cppmy_file2.cppmy_file3.h)target_compile_features(my_executable PUBLIC cxx_std_17)Pour configurer le projet, utilisez la commande CMake: Configure.</description>
     </item>
+    
     <item>
       <title>Raccourcis VSCode</title>
       <link>https://laefy.github.io/CPP_Learning/chapter0/6-tips/3-keybinds-commands/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
       <guid>https://laefy.github.io/CPP_Learning/chapter0/6-tips/3-keybinds-commands/</guid>
-      <description>Général Ouvrir le panneau de commandes VSCode :&#xA;Ctrl+Shift+P&#xA;Configuration, Compilation, Exécution Configurer le projet :&#xA;CMake: Configure&#xA;Compiler un programme :&#xA;Shift+F7 ou CMake: Build Target&#xA;Changer le programme à exécuter :&#xA;CMake: Set Debug Target&#xA;Lancer le programme :&#xA;F5 ou Debug: Start Debugging&#xA;Debugging Placer un breakpoint à la ligne du curseur :&#xA;F9&#xA;Reprendre l&amp;rsquo;exécution :&#xA;F5&#xA;Exécuter l&amp;rsquo;instruction suivante :&#xA;F10&#xA;Entrer dans la fonction :</description>
+      <description>Général Ouvrir le panneau de commandes VSCode :
+Ctrl+Shift+P
+ Configuration, Compilation, Exécution Configurer le projet :
+CMake: Configure
+Compiler un programme :
+Shift+F7 ou CMake: Build Target
+Changer le programme à exécuter :
+CMake: Set Debug Target
+Lancer le programme :
+F5 ou Debug: Start Debugging
+ Debugging Placer un breakpoint à la ligne du curseur :
+F9
+Reprendre l&amp;rsquo;exécution :
+F5
+Exécuter l&amp;rsquo;instruction suivante :
+F10
+Entrer dans la fonction :</description>
     </item>
+    
     <item>
       <title>Compilation en terminal</title>
       <link>https://laefy.github.io/CPP_Learning/chapter0/6-tips/4-terminal/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
       <guid>https://laefy.github.io/CPP_Learning/chapter0/6-tips/4-terminal/</guid>
-      <description>Options g++ et clang++ Si vous compilez via le terminal ou avec Compiler Explorer, nous vous conseillons d&amp;rsquo;utiliser les options ci-dessous, car nous les activerons pour vos rendus de projet :&#xA;-std=c++17 : spécifie que le projet sera compilé en C++17 (sans cette option, certains fichiers peuvent ne pas compiler) -Wall -W : permet d&amp;rsquo;activer un certain nombre de warnings -Werror : transforme les warnings en erreurs, donc tant qu&amp;rsquo;il y a des warnings, le programme ne compile pas Sachez par ailleurs que vous pouvez également utiliser :</description>
+      <description>Options g++ et clang++ Si vous compilez via le terminal ou avec Compiler Explorer, nous vous conseillons d&amp;rsquo;utiliser les options ci-dessous, car nous les activerons pour vos rendus de projet :
+ -std=c++17 : spécifie que le projet sera compilé en C++17 (sans cette option, certains fichiers peuvent ne pas compiler) -Wall -W : permet d&amp;rsquo;activer un certain nombre de warnings -Werror : transforme les warnings en erreurs, donc tant qu&amp;rsquo;il y a des warnings, le programme ne compile pas  Sachez par ailleurs que vous pouvez également utiliser :</description>
     </item>
+    
   </channel>
 </rss>

@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="Hugo 0.121.0">
+    <meta name="generator" content="Hugo 0.76.5" />
     <meta name="description" content="">
 
 
@@ -12,22 +12,22 @@
     <title>Exceptions :: Cours de C&#43;&#43; - Niveau Master</title>
 
     
-    <link href="/CPP_Learning/css/nucleus.css?1704755107" rel="stylesheet">
-    <link href="/CPP_Learning/css/fontawesome-all.min.css?1704755107" rel="stylesheet">
-    <link href="/CPP_Learning/css/hybrid.css?1704755107" rel="stylesheet">
-    <link href="/CPP_Learning/css/featherlight.min.css?1704755107" rel="stylesheet">
-    <link href="/CPP_Learning/css/perfect-scrollbar.min.css?1704755107" rel="stylesheet">
-    <link href="/CPP_Learning/css/auto-complete.css?1704755107" rel="stylesheet">
-    <link href="/CPP_Learning/css/atom-one-dark-reasonable.css?1704755107" rel="stylesheet">
-    <link href="/CPP_Learning/css/theme.css?1704755107" rel="stylesheet">
-    <link href="/CPP_Learning/css/tabs.css?1704755107" rel="stylesheet">
-    <link href="/CPP_Learning/css/hugo-theme.css?1704755107" rel="stylesheet">
+    <link href="/CPP_Learning/css/nucleus.css?1705257267" rel="stylesheet">
+    <link href="/CPP_Learning/css/fontawesome-all.min.css?1705257267" rel="stylesheet">
+    <link href="/CPP_Learning/css/hybrid.css?1705257267" rel="stylesheet">
+    <link href="/CPP_Learning/css/featherlight.min.css?1705257267" rel="stylesheet">
+    <link href="/CPP_Learning/css/perfect-scrollbar.min.css?1705257267" rel="stylesheet">
+    <link href="/CPP_Learning/css/auto-complete.css?1705257267" rel="stylesheet">
+    <link href="/CPP_Learning/css/atom-one-dark-reasonable.css?1705257267" rel="stylesheet">
+    <link href="/CPP_Learning/css/theme.css?1705257267" rel="stylesheet">
+    <link href="/CPP_Learning/css/tabs.css?1705257267" rel="stylesheet">
+    <link href="/CPP_Learning/css/hugo-theme.css?1705257267" rel="stylesheet">
     
-    <link href="/CPP_Learning/css/theme-mine.css?1704755107" rel="stylesheet">
+    <link href="/CPP_Learning/css/theme-mine.css?1705257267" rel="stylesheet">
     
-    <link href="/CPP_Learning/css/syntax.css?1704755107" rel="stylesheet">
+    <link href="/CPP_Learning/css/syntax.css?1705257267" rel="stylesheet">
 
-    <script src="/CPP_Learning/js/jquery-3.3.1.min.js?1704755107"></script>
+    <script src="/CPP_Learning/js/jquery-3.3.1.min.js?1705257267"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -1955,36 +1955,36 @@
 <p>En C++, une exception sert à interrompre le flot classique d&rsquo;exécution du programme lorsqu&rsquo;un événement particulier se produit.
 Lorsqu&rsquo;une exception est lancée, on sort du bloc courant, et on remonte la callstack autant que nécessaire, jusqu&rsquo;à atteindre un bloc capable de traiter l&rsquo;exception.</p>
 <p>C&rsquo;est donc un mécanisme extrêmement utilisé pour le traitement des erreurs (autant de programmation que d&rsquo;utilisation), puisque l&rsquo;erreur est remontée automatiquement jusqu&rsquo;à l&rsquo;endroit qui peut la traiter, sans avoir besoin de toucher au code des fonctions intermédiaires.</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="cp">#include</span> <span class="cpf">&lt;stdexcept&gt;</span><span class="cp">
-</span></span></span><span class="line"><span class="cl"><span class="cp"></span>
-</span></span><span class="line"><span class="cl"><span class="kt">void</span> <span class="n">AnimalCenter</span><span class="o">::</span><span class="n">adopt_dog</span><span class="p">(</span><span class="n">Someone</span><span class="o">&amp;</span> <span class="n">someone</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl"><span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">someone</span><span class="p">.</span><span class="n">like_dogs</span><span class="p">())</span>
-</span></span><span class="line"><span class="cl">    <span class="p">{</span>
-</span></span><span class="line"><span class="cl">        <span class="k">throw</span> <span class="n">std</span><span class="o">::</span><span class="n">invalid_argument</span> <span class="p">{</span> <span class="s">&#34;Les gens qui n&#39;aiment pas les chiens n&#39;ont rien à faire ici !&#34;</span> <span class="p">};</span>
-</span></span><span class="line"><span class="cl">    <span class="p">}</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">    <span class="n">someone</span><span class="p">.</span><span class="n">receive</span><span class="p">(</span><span class="n">_dogs</span><span class="p">.</span><span class="n">front</span><span class="p">());</span>
-</span></span><span class="line"><span class="cl">    <span class="n">_dogs</span><span class="p">.</span><span class="n">pop_front</span><span class="p">();</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="p">...</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="kt">void</span> <span class="n">AnimalCenter</span><span class="o">::</span><span class="n">update</span><span class="p">()</span>
-</span></span><span class="line"><span class="cl"><span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="k">while</span> <span class="p">(</span><span class="k">auto</span><span class="o">*</span> <span class="n">client</span> <span class="o">=</span> <span class="n">get_new_client</span><span class="p">())</span>
-</span></span><span class="line"><span class="cl">    <span class="p">{</span>
-</span></span><span class="line"><span class="cl">        <span class="k">try</span>
-</span></span><span class="line"><span class="cl">        <span class="p">{</span>
-</span></span><span class="line"><span class="cl">            <span class="n">_seller</span><span class="p">.</span><span class="n">process</span><span class="p">(</span><span class="o">*</span><span class="n">client</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl">        <span class="p">}</span>
-</span></span><span class="line"><span class="cl">        <span class="k">catch</span> <span class="p">(</span><span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">invalid_argument</span><span class="o">&amp;</span> <span class="n">arg_error</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">        <span class="p">{</span>
-</span></span><span class="line"><span class="cl">            <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;Seller: </span><span class="se">\&#34;</span><span class="s">&#34;</span> <span class="o">&lt;&lt;</span> <span class="n">arg_error</span><span class="p">.</span><span class="n">what</span><span class="p">()</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;</span><span class="se">\&#34;</span><span class="s">&#34;</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span> <span class="c1">// =&gt; Seller: &#34;Les gens qui n&#39;aiment pas les chiens n&#39;ont rien à faire ici !&#34;
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="p">}</span>
-</span></span><span class="line"><span class="cl">    <span class="p">}</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span></code></pre></div><p><strong>Puisqu&rsquo;il est possible de traiter des erreurs de programmation avec les exceptions, pourquoi utiliser des assertions ?</strong></p>
+<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="cp">#include</span> <span class="cpf">&lt;stdexcept&gt;</span><span class="cp">
+</span><span class="cp"></span>
+<span class="kt">void</span> <span class="n">AnimalCenter</span><span class="o">::</span><span class="n">adopt_dog</span><span class="p">(</span><span class="n">Someone</span><span class="o">&amp;</span> <span class="n">someone</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">someone</span><span class="p">.</span><span class="n">like_dogs</span><span class="p">())</span>
+    <span class="p">{</span>
+        <span class="k">throw</span> <span class="n">std</span><span class="o">::</span><span class="n">invalid_argument</span> <span class="p">{</span> <span class="s">&#34;Les gens qui n&#39;aiment pas les chiens n&#39;ont rien à faire ici !&#34;</span> <span class="p">};</span>
+    <span class="p">}</span>
+
+    <span class="n">someone</span><span class="p">.</span><span class="n">receive</span><span class="p">(</span><span class="n">_dogs</span><span class="p">.</span><span class="n">front</span><span class="p">());</span>
+    <span class="n">_dogs</span><span class="p">.</span><span class="n">pop_front</span><span class="p">();</span>
+<span class="p">}</span>
+
+<span class="p">...</span>
+
+<span class="kt">void</span> <span class="n">AnimalCenter</span><span class="o">::</span><span class="n">update</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="k">while</span> <span class="p">(</span><span class="k">auto</span><span class="o">*</span> <span class="n">client</span> <span class="o">=</span> <span class="n">get_new_client</span><span class="p">())</span>
+    <span class="p">{</span>
+        <span class="k">try</span>
+        <span class="p">{</span>
+            <span class="n">_seller</span><span class="p">.</span><span class="n">process</span><span class="p">(</span><span class="o">*</span><span class="n">client</span><span class="p">);</span>
+        <span class="p">}</span>
+        <span class="k">catch</span> <span class="p">(</span><span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">invalid_argument</span><span class="o">&amp;</span> <span class="n">arg_error</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;Seller: </span><span class="se">\&#34;</span><span class="s">&#34;</span> <span class="o">&lt;&lt;</span> <span class="n">arg_error</span><span class="p">.</span><span class="n">what</span><span class="p">()</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;</span><span class="se">\&#34;</span><span class="s">&#34;</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span> <span class="c1">// =&gt; Seller: &#34;Les gens qui n&#39;aiment pas les chiens n&#39;ont rien à faire ici !&#34;
+</span><span class="c1"></span>        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div><p><strong>Puisqu&rsquo;il est possible de traiter des erreurs de programmation avec les exceptions, pourquoi utiliser des assertions ?</strong></p>
 <ol>
 <li>Car jeter et attraper une exception, c&rsquo;est relativement coûteux à faire, en comparaison de simplement vérifier une condition.</li>
 <li>Les assertions peuvent être complètement désactivées en définissant la constante <code>NDEBUG</code>, et ce n&rsquo;est pas le cas des exceptions.</li>
@@ -1995,16 +1995,16 @@ Lorsqu&rsquo;une exception est lancée, on sort du bloc courant, et on remonte l
 <h5 id="stdexception">std::exception</h5>
 <p>La classe <code>std::exception</code> (dans <code>&lt;exception&gt;</code>) est l&rsquo;interface de base dont dérivent toutes les exceptions de la STL.
 Elle comporte une fonction virtuelle <code>what()</code>, qui permet d&rsquo;accéder au message d&rsquo;erreur associé à l&rsquo;exception.</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="c1">// Si `err` est une std::exception, on peut appeler `what()` pour récupérer le message d&#39;erreur. 
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">std</span><span class="o">::</span><span class="n">cerr</span> <span class="o">&lt;&lt;</span> <span class="n">err</span><span class="p">.</span><span class="n">what</span><span class="p">()</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
-</span></span></code></pre></div><hr>
+<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="c1">// Si `err` est une std::exception, on peut appeler `what()` pour récupérer le message d&#39;erreur. 
+</span><span class="c1"></span><span class="n">std</span><span class="o">::</span><span class="n">cerr</span> <span class="o">&lt;&lt;</span> <span class="n">err</span><span class="p">.</span><span class="n">what</span><span class="p">()</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+</code></pre></div><hr>
 <h5 id="throw">Throw</h5>
 <p>Pour lancer une exception, il suffit d&rsquo;utiliser l&rsquo;instruction <code>throw</code> :</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="k">throw</span> <span class="n">std</span><span class="o">::</span><span class="n">runtime_error</span> <span class="p">{</span> <span class="s">&#34;Something wrong happened!&#34;</span> <span class="p">};</span>
-</span></span></code></pre></div><p>Notez qu&rsquo;il n&rsquo;est pas obligatoire de construire l&rsquo;exception sur la ligne où elle est lancée :</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="n">std</span><span class="o">::</span><span class="n">runtime_error</span> <span class="n">err</span> <span class="p">{</span> <span class="s">&#34;Something wrong happened!&#34;</span> <span class="p">}</span><span class="o">:</span>
-</span></span><span class="line"><span class="cl"><span class="k">throw</span> <span class="n">err</span><span class="p">;</span>
-</span></span></code></pre></div><p>La STL propose quelques classes d&rsquo;exceptions génériques, qui font partie de <code>&lt;stdexcept&gt;</code> (et non pas <code>&lt;exception&gt;</code>) :</p>
+<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="k">throw</span> <span class="n">std</span><span class="o">::</span><span class="n">runtime_error</span> <span class="p">{</span> <span class="s">&#34;Something wrong happened!&#34;</span> <span class="p">};</span>
+</code></pre></div><p>Notez qu&rsquo;il n&rsquo;est pas obligatoire de construire l&rsquo;exception sur la ligne où elle est lancée :</p>
+<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="n">std</span><span class="o">::</span><span class="n">runtime_error</span> <span class="n">err</span> <span class="p">{</span> <span class="s">&#34;Something wrong happened!&#34;</span> <span class="p">}</span><span class="o">:</span>
+<span class="k">throw</span> <span class="n">err</span><span class="p">;</span>
+</code></pre></div><p>La STL propose quelques classes d&rsquo;exceptions génériques, qui font partie de <code>&lt;stdexcept&gt;</code> (et non pas <code>&lt;exception&gt;</code>) :</p>
 <ul>
 <li><code>std::logic_error</code> : violation d&rsquo;invariant ou de précondition (=&gt; erreur de programmation)</li>
 <li><code>std::invalid_argument</code> : l&rsquo;un des arguments de la fonction n&rsquo;est pas valide</li>
@@ -2012,70 +2012,70 @@ Elle comporte une fonction virtuelle <code>what()</code>, qui permet d&rsquo;acc
 <li>&hellip;</li>
 </ul>
 <p>A la construction, chacune d&rsquo;entre elle attend le message d&rsquo;erreur qui sera retourné par l&rsquo;appel à <code>what()</code>.</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="c1">// std::invalid_argument
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">std</span><span class="o">::</span><span class="n">pair</span><span class="o">&lt;</span><span class="kt">int</span><span class="p">,</span> <span class="kt">int</span><span class="o">&gt;</span> <span class="n">euclidian_division</span><span class="p">(</span><span class="kt">int</span> <span class="n">num</span><span class="p">,</span> <span class="kt">int</span> <span class="n">den</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl"><span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="p">(</span><span class="n">den</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">    <span class="p">{</span>
-</span></span><span class="line"><span class="cl">        <span class="k">throw</span> <span class="n">std</span><span class="o">::</span><span class="n">invalid_argument</span> <span class="p">{</span> <span class="s">&#34;The denominator is null.&#34;</span> <span class="p">};</span>
-</span></span><span class="line"><span class="cl">    <span class="p">}</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">std</span><span class="o">::</span><span class="n">pair</span> <span class="p">{</span> <span class="n">num</span> <span class="o">/</span> <span class="n">den</span><span class="p">,</span> <span class="n">num</span> <span class="o">%</span> <span class="n">den</span> <span class="p">};</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c1">// std::logic_error
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">class</span> <span class="nc">Square</span>
-</span></span><span class="line"><span class="cl"><span class="p">{</span>
-</span></span><span class="line"><span class="cl"><span class="k">public</span><span class="o">:</span>
-</span></span><span class="line"><span class="cl">    <span class="kt">void</span> <span class="n">fcn1</span><span class="p">(...)</span>
-</span></span><span class="line"><span class="cl">    <span class="p">{</span>
-</span></span><span class="line"><span class="cl">        <span class="n">check_square</span><span class="p">();</span>
-</span></span><span class="line"><span class="cl">        <span class="p">...</span>
-</span></span><span class="line"><span class="cl">    <span class="p">}</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">    <span class="kt">void</span> <span class="nf">fcn2</span><span class="p">(...)</span>
-</span></span><span class="line"><span class="cl">    <span class="p">{</span>
-</span></span><span class="line"><span class="cl">        <span class="n">check_square</span><span class="p">();</span>
-</span></span><span class="line"><span class="cl">        <span class="p">...</span>
-</span></span><span class="line"><span class="cl">    <span class="p">}</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">    <span class="p">...</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="k">private</span><span class="o">:</span>
-</span></span><span class="line"><span class="cl">    <span class="kt">void</span> <span class="n">check_square</span><span class="p">()</span>
-</span></span><span class="line"><span class="cl">    <span class="p">{</span>
-</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="p">(</span><span class="cm">/* check if the segments length are not equal */</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">        <span class="p">{</span>
-</span></span><span class="line"><span class="cl">            <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">msg</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">            <span class="n">msg</span> <span class="o">+=</span> <span class="s">&#34;This square is not a square anymore: &#34;</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">            <span class="n">msg</span> <span class="o">+=</span> <span class="n">segments_to_string</span><span class="p">();</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">            <span class="k">throw</span> <span class="n">std</span><span class="o">::</span><span class="n">logic_error</span> <span class="p">{</span> <span class="n">msg</span> <span class="p">};</span>
-</span></span><span class="line"><span class="cl">        <span class="p">}</span>
-</span></span><span class="line"><span class="cl">    <span class="p">}</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">    <span class="p">...</span>
-</span></span><span class="line"><span class="cl"><span class="p">};</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c1">// std::runtime_error
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">query_mail</span><span class="p">()</span>
-</span></span><span class="line"><span class="cl"><span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">mail</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">    <span class="n">std</span><span class="o">::</span><span class="n">getline</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">cin</span><span class="p">,</span> <span class="n">mail</span><span class="p">);</span> 
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="p">(</span><span class="n">mail</span><span class="p">.</span><span class="n">find</span><span class="p">(</span><span class="sc">&#39;@&#39;</span><span class="p">)</span> <span class="o">==</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">::</span><span class="n">npos</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">    <span class="p">{</span>
-</span></span><span class="line"><span class="cl">        <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">err</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">        <span class="n">err</span> <span class="o">+=</span> <span class="s">&#34;</span><span class="se">\&#39;</span><span class="s">&#34;</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">        <span class="n">err</span> <span class="o">+=</span> <span class="n">mail</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">        <span class="n">err</span> <span class="o">+=</span> <span class="s">&#34;</span><span class="se">\&#39;</span><span class="s"> is not a valid email address.&#34;</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">        <span class="k">throw</span> <span class="n">std</span><span class="o">::</span><span class="n">runtime_error</span> <span class="p">{</span>  <span class="n">err</span> <span class="p">};</span>
-</span></span><span class="line"><span class="cl">    <span class="p">}</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">mail</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span></code></pre></div>
+<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="c1">// std::invalid_argument
+</span><span class="c1"></span><span class="n">std</span><span class="o">::</span><span class="n">pair</span><span class="o">&lt;</span><span class="kt">int</span><span class="p">,</span> <span class="kt">int</span><span class="o">&gt;</span> <span class="n">euclidian_division</span><span class="p">(</span><span class="kt">int</span> <span class="n">num</span><span class="p">,</span> <span class="kt">int</span> <span class="n">den</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">den</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="k">throw</span> <span class="n">std</span><span class="o">::</span><span class="n">invalid_argument</span> <span class="p">{</span> <span class="s">&#34;The denominator is null.&#34;</span> <span class="p">};</span>
+    <span class="p">}</span>
+
+    <span class="k">return</span> <span class="n">std</span><span class="o">::</span><span class="n">pair</span> <span class="p">{</span> <span class="n">num</span> <span class="o">/</span> <span class="n">den</span><span class="p">,</span> <span class="n">num</span> <span class="o">%</span> <span class="n">den</span> <span class="p">};</span>
+<span class="p">}</span>
+
+<span class="c1">// std::logic_error
+</span><span class="c1"></span><span class="k">class</span> <span class="nc">Square</span>
+<span class="p">{</span>
+<span class="k">public</span><span class="o">:</span>
+    <span class="kt">void</span> <span class="n">fcn1</span><span class="p">(...)</span>
+    <span class="p">{</span>
+        <span class="n">check_square</span><span class="p">();</span>
+        <span class="p">...</span>
+    <span class="p">}</span>
+
+    <span class="kt">void</span> <span class="nf">fcn2</span><span class="p">(...)</span>
+    <span class="p">{</span>
+        <span class="n">check_square</span><span class="p">();</span>
+        <span class="p">...</span>
+    <span class="p">}</span>
+
+    <span class="p">...</span>
+
+<span class="k">private</span><span class="o">:</span>
+    <span class="kt">void</span> <span class="n">check_square</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="cm">/* check if the segments length are not equal */</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">msg</span><span class="p">;</span>
+            <span class="n">msg</span> <span class="o">+=</span> <span class="s">&#34;This square is not a square anymore: &#34;</span><span class="p">;</span>
+            <span class="n">msg</span> <span class="o">+=</span> <span class="n">segments_to_string</span><span class="p">();</span>
+
+            <span class="k">throw</span> <span class="n">std</span><span class="o">::</span><span class="n">logic_error</span> <span class="p">{</span> <span class="n">msg</span> <span class="p">};</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+
+    <span class="p">...</span>
+<span class="p">};</span>
+
+<span class="c1">// std::runtime_error
+</span><span class="c1"></span><span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">query_mail</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">mail</span><span class="p">;</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">getline</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">cin</span><span class="p">,</span> <span class="n">mail</span><span class="p">);</span> 
+
+    <span class="k">if</span> <span class="p">(</span><span class="n">mail</span><span class="p">.</span><span class="n">find</span><span class="p">(</span><span class="sc">&#39;@&#39;</span><span class="p">)</span> <span class="o">==</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">::</span><span class="n">npos</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">err</span><span class="p">;</span>
+        <span class="n">err</span> <span class="o">+=</span> <span class="s">&#34;</span><span class="se">\&#39;</span><span class="s">&#34;</span><span class="p">;</span>
+        <span class="n">err</span> <span class="o">+=</span> <span class="n">mail</span><span class="p">;</span>
+        <span class="n">err</span> <span class="o">+=</span> <span class="s">&#34;</span><span class="se">\&#39;</span><span class="s"> is not a valid email address.&#34;</span><span class="p">;</span>
+
+        <span class="k">throw</span> <span class="n">std</span><span class="o">::</span><span class="n">runtime_error</span> <span class="p">{</span>  <span class="n">err</span> <span class="p">};</span>
+    <span class="p">}</span>
+
+    <span class="k">return</span> <span class="n">mail</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
 <div class="notices warning" ><p>Attention, il ne faut pas appeler du code susceptible de lancer une exception (instruction throw / fonction qui throw) depuis le destructeur d&rsquo;une classe.
 Cela peut générer des undefined behaviors.</p>
 </div>
@@ -2083,161 +2083,161 @@ Cela peut générer des undefined behaviors.</p>
 <hr>
 <h5 id="try-catch">Try-Catch</h5>
 <p>Pour attraper une erreur, il suffit de placer le code pouvant lancer une exception dans un bloc <code>try-catch</code>.</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="k">try</span>
-</span></span><span class="line"><span class="cl"><span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="cm">/* du code qui peut throw */</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span><span class="line"><span class="cl"><span class="k">catch</span> <span class="p">(</span><span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">exception</span><span class="o">&amp;</span> <span class="n">err</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl"><span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="cm">/* traitement de l&#39;exception */</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span></code></pre></div>
+<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="k">try</span>
+<span class="p">{</span>
+    <span class="cm">/* du code qui peut throw */</span>
+<span class="p">}</span>
+<span class="k">catch</span> <span class="p">(</span><span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">exception</span><span class="o">&amp;</span> <span class="n">err</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="cm">/* traitement de l&#39;exception */</span>
+<span class="p">}</span>
+</code></pre></div>
 <div class="notices info" ><p>Si vous lancez une exception polymorphe (c&rsquo;est le cas de <code>std::exception</code> et des ses dérivés), il faut bien penser à l&rsquo;attraper dans le <code>catch</code> par référence et non pas par copie.</p>
 </div>
 
 <p>Il est possible de placer plusieurs <code>catch</code> à la suite, pour traiter différemments des exceptions en fonction de leur type :</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="k">try</span>
-</span></span><span class="line"><span class="cl"><span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="cm">/* du code qui peut throw */</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span><span class="line"><span class="cl"><span class="k">catch</span> <span class="p">(</span><span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">invalid_argument</span><span class="o">&amp;</span> <span class="n">err</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl"><span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="n">std</span><span class="o">::</span><span class="n">cerr</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;My bad: &#34;</span> <span class="o">&lt;&lt;</span> <span class="n">err</span><span class="p">.</span><span class="n">what</span><span class="p">()</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span><span class="line"><span class="cl"><span class="k">catch</span> <span class="p">(</span><span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">logic_error</span><span class="o">&amp;</span> <span class="n">err</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl"><span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="n">std</span><span class="o">::</span><span class="n">cerr</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;Also my bad: &#34;</span> <span class="o">&lt;&lt;</span> <span class="n">err</span><span class="p">.</span><span class="n">what</span><span class="p">()</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span><span class="line"><span class="cl"><span class="k">catch</span> <span class="p">(</span><span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">runtime_error</span><span class="o">&amp;</span> <span class="n">err</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl"><span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="n">std</span><span class="o">::</span><span class="n">cerr</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;This one is not my fault: &#34;</span> <span class="o">&lt;&lt;</span> <span class="n">err</span><span class="p">.</span><span class="n">what</span><span class="p">()</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span><span class="line"><span class="cl"><span class="cm">/* si c&#39;est un autre type, alors l&#39;exception continue de remonter la callstack */</span>
-</span></span></code></pre></div><p>Attention par contre à l&rsquo;ordre dans lequel vous définissez les blocs <code>catch</code>.
+<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="k">try</span>
+<span class="p">{</span>
+    <span class="cm">/* du code qui peut throw */</span>
+<span class="p">}</span>
+<span class="k">catch</span> <span class="p">(</span><span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">invalid_argument</span><span class="o">&amp;</span> <span class="n">err</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">cerr</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;My bad: &#34;</span> <span class="o">&lt;&lt;</span> <span class="n">err</span><span class="p">.</span><span class="n">what</span><span class="p">()</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="k">catch</span> <span class="p">(</span><span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">logic_error</span><span class="o">&amp;</span> <span class="n">err</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">cerr</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;Also my bad: &#34;</span> <span class="o">&lt;&lt;</span> <span class="n">err</span><span class="p">.</span><span class="n">what</span><span class="p">()</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="k">catch</span> <span class="p">(</span><span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">runtime_error</span><span class="o">&amp;</span> <span class="n">err</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">cerr</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;This one is not my fault: &#34;</span> <span class="o">&lt;&lt;</span> <span class="n">err</span><span class="p">.</span><span class="n">what</span><span class="p">()</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="cm">/* si c&#39;est un autre type, alors l&#39;exception continue de remonter la callstack */</span>
+</code></pre></div><p>Attention par contre à l&rsquo;ordre dans lequel vous définissez les blocs <code>catch</code>.
 En effet, le compilateur ne va pas aller chercher le bloc &ldquo;le plus spécialisé&rdquo; pour traiter une exception.
 Il utilisera le premier qu&rsquo;il trouve permettant de traiter l&rsquo;exception donnée.
 Si une relation d&rsquo;héritage existe entre les types que vous souhaitez attrapés, il faut donc écrire les <code>catch</code> du type le plus dérivé au type le plus générique.</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="k">try</span>
-</span></span><span class="line"><span class="cl"><span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="c1">// Comme std::invalid_argument est une sous-classe de std::logic_error
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="c1">// on va entrer dans le premier catch au lieu du deuxième.
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
-</span></span><span class="line"><span class="cl">    <span class="k">throw</span> <span class="n">std</span><span class="o">::</span><span class="n">invalid_argument</span> <span class="p">{</span> <span class="s">&#34;err&#34;</span> <span class="p">};</span>
-</span></span><span class="line"><span class="cl">    <span class="c1">// =&gt; &#34;logic_error&#34;
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="p">}</span>
-</span></span><span class="line"><span class="cl"><span class="k">catch</span> <span class="p">(</span><span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">logic_error</span><span class="o">&amp;</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl"><span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="n">std</span><span class="o">::</span><span class="n">cerr</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;logic_error&#34;</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span><span class="line"><span class="cl"><span class="k">catch</span> <span class="p">(</span><span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">invalid_argument</span><span class="o">&amp;</span> <span class="n">err</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl"><span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="n">std</span><span class="o">::</span><span class="n">cerr</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;invalid_argument&#34;</span> <span class="o">&lt;&lt;</span> <span class="n">err</span><span class="p">.</span><span class="n">what</span><span class="p">()</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span></code></pre></div><hr>
+<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="k">try</span>
+<span class="p">{</span>
+    <span class="c1">// Comme std::invalid_argument est une sous-classe de std::logic_error
+</span><span class="c1"></span>    <span class="c1">// on va entrer dans le premier catch au lieu du deuxième.
+</span><span class="c1"></span>
+    <span class="k">throw</span> <span class="n">std</span><span class="o">::</span><span class="n">invalid_argument</span> <span class="p">{</span> <span class="s">&#34;err&#34;</span> <span class="p">};</span>
+    <span class="c1">// =&gt; &#34;logic_error&#34;
+</span><span class="c1"></span><span class="p">}</span>
+<span class="k">catch</span> <span class="p">(</span><span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">logic_error</span><span class="o">&amp;</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">cerr</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;logic_error&#34;</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="k">catch</span> <span class="p">(</span><span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">invalid_argument</span><span class="o">&amp;</span> <span class="n">err</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">cerr</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;invalid_argument&#34;</span> <span class="o">&lt;&lt;</span> <span class="n">err</span><span class="p">.</span><span class="n">what</span><span class="p">()</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div><hr>
 <h3 id="stack-unwinding">Stack unwinding</h3>
 <p>Lorsque vous sortez d&rsquo;un bloc (<code>if</code>, <code>else</code>, <code>for</code>, fonctions, etc.) dans lequel vous avez défini des variables, celles-ci sont automatiquement détruites (le destructeur est appelé, et la variable est retirée de la pile).
 Dans le cas des exceptions, ce mécanisme s&rsquo;applique également, et on parle de <strong>stack unwinding</strong>.</p>
 <p>Lorsque vous allouez des ressources dans une fonction qui <code>throw</code>, il faut faire attention aux fuites de mémoire :</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="kt">void</span> <span class="nf">fcn</span><span class="p">(</span><span class="n">size_t</span> <span class="n">count</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl"><span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="k">auto</span><span class="o">*</span> <span class="n">bad_c_array</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">int</span><span class="p">[</span><span class="n">count</span><span class="p">]</span> <span class="p">{};</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">    <span class="p">...</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="p">(</span><span class="cm">/* something bad */</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">    <span class="p">{</span>
-</span></span><span class="line"><span class="cl">        <span class="c1">// Il faut penser à écrire `delete[] bad_c_array` ici,
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="c1">// sinon, on a une fuite de mémoire...
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="k">delete</span><span class="p">[]</span> <span class="n">bad_c_array</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">        <span class="k">throw</span> <span class="n">std</span><span class="o">::</span><span class="n">runtime_error</span> <span class="p">{</span> <span class="s">&#34;Something went wrong!&#34;</span> <span class="p">};</span>
-</span></span><span class="line"><span class="cl">    <span class="p">}</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">    <span class="p">...</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">    <span class="k">delete</span><span class="p">[]</span> <span class="n">bad_c_array</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span></code></pre></div><p>Pensez donc bien à utiliser des classes RAII (conteneurs standards, smart pointers, etc), pour profiter du stack unwinding et ne pas avoir à vous soucier de libérer les ressources.</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="kt">void</span> <span class="nf">fcn</span><span class="p">(</span><span class="n">size_t</span> <span class="n">count</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl"><span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">good_cpp_array</span><span class="p">(</span><span class="n">count</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">    <span class="p">...</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="p">(</span><span class="cm">/* something bad */</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">    <span class="p">{</span>
-</span></span><span class="line"><span class="cl">        <span class="c1">// std::vector::~vector sera automatiquement appelé grâce au stack unwinding, ce qui entraînera la
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="c1">// libération de son buffer alloué en interne.
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="k">throw</span> <span class="n">std</span><span class="o">::</span><span class="n">runtime_error</span> <span class="p">{</span> <span class="s">&#34;Something went wrong!&#34;</span> <span class="p">};</span>
-</span></span><span class="line"><span class="cl">    <span class="p">}</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">    <span class="p">...</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span></code></pre></div><hr>
+<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="kt">void</span> <span class="nf">fcn</span><span class="p">(</span><span class="n">size_t</span> <span class="n">count</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="k">auto</span><span class="o">*</span> <span class="n">bad_c_array</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">int</span><span class="p">[</span><span class="n">count</span><span class="p">]</span> <span class="p">{};</span>
+
+    <span class="p">...</span>
+
+    <span class="k">if</span> <span class="p">(</span><span class="cm">/* something bad */</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="c1">// Il faut penser à écrire `delete[] bad_c_array` ici,
+</span><span class="c1"></span>        <span class="c1">// sinon, on a une fuite de mémoire...
+</span><span class="c1"></span>        <span class="k">delete</span><span class="p">[]</span> <span class="n">bad_c_array</span><span class="p">;</span>
+        <span class="k">throw</span> <span class="n">std</span><span class="o">::</span><span class="n">runtime_error</span> <span class="p">{</span> <span class="s">&#34;Something went wrong!&#34;</span> <span class="p">};</span>
+    <span class="p">}</span>
+
+    <span class="p">...</span>
+
+    <span class="k">delete</span><span class="p">[]</span> <span class="n">bad_c_array</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div><p>Pensez donc bien à utiliser des classes RAII (conteneurs standards, smart pointers, etc), pour profiter du stack unwinding et ne pas avoir à vous soucier de libérer les ressources.</p>
+<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="kt">void</span> <span class="nf">fcn</span><span class="p">(</span><span class="n">size_t</span> <span class="n">count</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">good_cpp_array</span><span class="p">(</span><span class="n">count</span><span class="p">);</span>
+
+    <span class="p">...</span>
+
+    <span class="k">if</span> <span class="p">(</span><span class="cm">/* something bad */</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="c1">// std::vector::~vector sera automatiquement appelé grâce au stack unwinding, ce qui entraînera la
+</span><span class="c1"></span>        <span class="c1">// libération de son buffer alloué en interne.
+</span><span class="c1"></span>        <span class="k">throw</span> <span class="n">std</span><span class="o">::</span><span class="n">runtime_error</span> <span class="p">{</span> <span class="s">&#34;Something went wrong!&#34;</span> <span class="p">};</span>
+    <span class="p">}</span>
+
+    <span class="p">...</span>
+<span class="p">}</span>
+</code></pre></div><hr>
 <h3 id="définir-ses-propres-types-dexceptions">Définir ses propres types d&rsquo;exceptions</h3>
 <p>Si vous souhaitez définir un type particulier d&rsquo;exception, vous pouvez hériter d&rsquo;une des classes présentées sur <a href="https://en.cppreference.com/w/cpp/header/stdexcept">cette page</a>.
 Chacune d&rsquo;entre elle attend un message à sa construction, qui sera retourné en cas d&rsquo;appel à <code>what()</code>.</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="cp">#include</span> <span class="cpf">&lt;stdexcept&gt;</span><span class="cp">
-</span></span></span><span class="line"><span class="cl"><span class="cp"></span>
-</span></span><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">DogLegsError</span> <span class="o">:</span> <span class="k">public</span> <span class="n">std</span><span class="o">::</span><span class="n">out_of_range</span>
-</span></span><span class="line"><span class="cl"><span class="p">{</span>
-</span></span><span class="line"><span class="cl"><span class="k">public</span><span class="o">:</span>
-</span></span><span class="line"><span class="cl">    <span class="n">DogLegsError</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">string_view</span> <span class="n">name</span><span class="p">,</span> <span class="n">size_t</span> <span class="n">legs_count</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">        <span class="o">:</span> <span class="n">std</span><span class="o">::</span><span class="n">out_of_range</span> <span class="p">{</span> <span class="n">build_error_msg</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">legs_count</span><span class="p">)</span> <span class="p">}</span>
-</span></span><span class="line"><span class="cl">        <span class="p">,</span> <span class="n">_name</span> <span class="p">{</span> <span class="n">name</span> <span class="p">}</span>
-</span></span><span class="line"><span class="cl">    <span class="p">{}</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="k">private</span><span class="o">:</span>
-</span></span><span class="line"><span class="cl">    <span class="k">static</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">build_error_msg</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">string_view</span> <span class="n">name</span><span class="p">,</span> <span class="n">size_t</span> <span class="n">legs_count</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">    <span class="p">{</span>
-</span></span><span class="line"><span class="cl">        <span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="o">::</span><span class="n">string_literals</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">        <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">msg</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">        <span class="n">msg</span> <span class="o">+=</span> <span class="s">&#34;A dog has 4 legs at most. Ok, maybe 5 in some rare cases. &#34;</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">        <span class="n">msg</span> <span class="o">+=</span> <span class="s">&#34;But clearly, if you saw &#34;</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">        <span class="n">msg</span> <span class="o">+=</span> <span class="n">name</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">        <span class="n">msg</span> <span class="o">+=</span> <span class="s">&#34; with &#34;</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">        <span class="n">msg</span> <span class="o">+=</span> <span class="n">std</span><span class="o">::</span><span class="n">to_string</span><span class="p">(</span><span class="n">legs_count</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl">        <span class="n">msg</span> <span class="o">+=</span> <span class="s">&#34; legs, then you either need glasses, or we must run away from the evil spider-dog...&#34;</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="n">msg</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">    <span class="p">}</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">    <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">_name</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl"><span class="p">};</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">Dog</span>
-</span></span><span class="line"><span class="cl"><span class="p">{</span>
-</span></span><span class="line"><span class="cl"><span class="k">public</span><span class="o">:</span>
-</span></span><span class="line"><span class="cl">    <span class="n">Dog</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">string_view</span> <span class="n">name</span><span class="p">,</span> <span class="n">size_t</span> <span class="n">legs_count</span><span class="p">)</span> <span class="o">:</span> <span class="n">_name</span> <span class="p">{</span> <span class="n">name</span> <span class="p">},</span> <span class="n">_legs_count</span> <span class="p">{</span> <span class="n">legs_count</span> <span class="p">}</span>
-</span></span><span class="line"><span class="cl">    <span class="p">{</span>
-</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="p">(</span><span class="n">_legs_count</span> <span class="o">&gt;</span> <span class="mi">5</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">        <span class="p">{</span>
-</span></span><span class="line"><span class="cl">            <span class="k">throw</span> <span class="n">DogLegsError</span> <span class="p">{</span> <span class="n">name</span><span class="p">,</span> <span class="n">legs_count</span> <span class="p">};</span>
-</span></span><span class="line"><span class="cl">        <span class="p">}</span>
-</span></span><span class="line"><span class="cl">    <span class="p">}</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="k">private</span><span class="o">:</span>
-</span></span><span class="line"><span class="cl">    <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">_name</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">    <span class="n">size_t</span>      <span class="n">_legs_count</span> <span class="o">=</span> <span class="mi">0u</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl"><span class="p">};</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
-</span></span><span class="line"><span class="cl"><span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="k">try</span>
-</span></span><span class="line"><span class="cl">    <span class="p">{</span>
-</span></span><span class="line"><span class="cl">        <span class="n">Dog</span> <span class="n">medor</span> <span class="p">{</span> <span class="s">&#34;Medor&#34;</span><span class="p">,</span> <span class="mi">4</span> <span class="p">};</span>
-</span></span><span class="line"><span class="cl">        <span class="n">Dog</span> <span class="n">turlutu</span> <span class="p">{</span> <span class="s">&#34;Turlutu&#34;</span><span class="p">,</span> <span class="mi">3</span> <span class="p">};</span>
-</span></span><span class="line"><span class="cl">        <span class="n">Dog</span> <span class="n">brutus</span> <span class="p">{</span> <span class="s">&#34;Brutus&#34;</span><span class="p">,</span> <span class="mi">5</span> <span class="p">};</span>
-</span></span><span class="line"><span class="cl">        <span class="n">Dog</span> <span class="n">evil_beast</span> <span class="p">{</span> <span class="s">&#34;EvilBeast&#34;</span><span class="p">,</span> <span class="mi">12</span> <span class="p">};</span>
-</span></span><span class="line"><span class="cl">    <span class="p">}</span>
-</span></span><span class="line"><span class="cl">    <span class="k">catch</span> <span class="p">(</span><span class="k">const</span> <span class="n">DogLegsError</span><span class="o">&amp;</span> <span class="n">err</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">    <span class="p">{</span>
-</span></span><span class="line"><span class="cl">        <span class="n">std</span><span class="o">::</span><span class="n">cerr</span> <span class="o">&lt;&lt;</span> <span class="n">err</span><span class="p">.</span><span class="n">what</span><span class="p">()</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">    <span class="p">}</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span></code></pre></div>
+<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="cp">#include</span> <span class="cpf">&lt;stdexcept&gt;</span><span class="cp">
+</span><span class="cp"></span>
+<span class="k">class</span> <span class="nc">DogLegsError</span> <span class="o">:</span> <span class="k">public</span> <span class="n">std</span><span class="o">::</span><span class="n">out_of_range</span>
+<span class="p">{</span>
+<span class="k">public</span><span class="o">:</span>
+    <span class="n">DogLegsError</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">string_view</span> <span class="n">name</span><span class="p">,</span> <span class="n">size_t</span> <span class="n">legs_count</span><span class="p">)</span>
+        <span class="o">:</span> <span class="n">std</span><span class="o">::</span><span class="n">out_of_range</span> <span class="p">{</span> <span class="n">build_error_msg</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">legs_count</span><span class="p">)</span> <span class="p">}</span>
+        <span class="p">,</span> <span class="n">_name</span> <span class="p">{</span> <span class="n">name</span> <span class="p">}</span>
+    <span class="p">{}</span>
+
+<span class="k">private</span><span class="o">:</span>
+    <span class="k">static</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">build_error_msg</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">string_view</span> <span class="n">name</span><span class="p">,</span> <span class="n">size_t</span> <span class="n">legs_count</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="o">::</span><span class="n">string_literals</span><span class="p">;</span>
+
+        <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">msg</span><span class="p">;</span>
+        <span class="n">msg</span> <span class="o">+=</span> <span class="s">&#34;A dog has 4 legs at most. Ok, maybe 5 in some rare cases. &#34;</span><span class="p">;</span>
+        <span class="n">msg</span> <span class="o">+=</span> <span class="s">&#34;But clearly, if you saw &#34;</span><span class="p">;</span>
+        <span class="n">msg</span> <span class="o">+=</span> <span class="n">name</span><span class="p">;</span>
+        <span class="n">msg</span> <span class="o">+=</span> <span class="s">&#34; with &#34;</span><span class="p">;</span>
+        <span class="n">msg</span> <span class="o">+=</span> <span class="n">std</span><span class="o">::</span><span class="n">to_string</span><span class="p">(</span><span class="n">legs_count</span><span class="p">);</span>
+        <span class="n">msg</span> <span class="o">+=</span> <span class="s">&#34; legs, then you either need glasses, or we must run away from the evil spider-dog...&#34;</span><span class="p">;</span>
+
+        <span class="k">return</span> <span class="n">msg</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">_name</span><span class="p">;</span>
+<span class="p">};</span>
+
+<span class="k">class</span> <span class="nc">Dog</span>
+<span class="p">{</span>
+<span class="k">public</span><span class="o">:</span>
+    <span class="n">Dog</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">string_view</span> <span class="n">name</span><span class="p">,</span> <span class="n">size_t</span> <span class="n">legs_count</span><span class="p">)</span> <span class="o">:</span> <span class="n">_name</span> <span class="p">{</span> <span class="n">name</span> <span class="p">},</span> <span class="n">_legs_count</span> <span class="p">{</span> <span class="n">legs_count</span> <span class="p">}</span>
+    <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">_legs_count</span> <span class="o">&gt;</span> <span class="mi">5</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="k">throw</span> <span class="n">DogLegsError</span> <span class="p">{</span> <span class="n">name</span><span class="p">,</span> <span class="n">legs_count</span> <span class="p">};</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+
+<span class="k">private</span><span class="o">:</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">_name</span><span class="p">;</span>
+    <span class="n">size_t</span>      <span class="n">_legs_count</span> <span class="o">=</span> <span class="mi">0u</span><span class="p">;</span>
+<span class="p">};</span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="k">try</span>
+    <span class="p">{</span>
+        <span class="n">Dog</span> <span class="n">medor</span> <span class="p">{</span> <span class="s">&#34;Medor&#34;</span><span class="p">,</span> <span class="mi">4</span> <span class="p">};</span>
+        <span class="n">Dog</span> <span class="n">turlutu</span> <span class="p">{</span> <span class="s">&#34;Turlutu&#34;</span><span class="p">,</span> <span class="mi">3</span> <span class="p">};</span>
+        <span class="n">Dog</span> <span class="n">brutus</span> <span class="p">{</span> <span class="s">&#34;Brutus&#34;</span><span class="p">,</span> <span class="mi">5</span> <span class="p">};</span>
+        <span class="n">Dog</span> <span class="n">evil_beast</span> <span class="p">{</span> <span class="s">&#34;EvilBeast&#34;</span><span class="p">,</span> <span class="mi">12</span> <span class="p">};</span>
+    <span class="p">}</span>
+    <span class="k">catch</span> <span class="p">(</span><span class="k">const</span> <span class="n">DogLegsError</span><span class="o">&amp;</span> <span class="n">err</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">std</span><span class="o">::</span><span class="n">cerr</span> <span class="o">&lt;&lt;</span> <span class="n">err</span><span class="p">.</span><span class="n">what</span><span class="p">()</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
 
 <footer class="footline">
 	
@@ -3538,19 +3538,19 @@ Chacune d&rsquo;entre elle attend un message à sa construction, qui sera retour
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/CPP_Learning/js/clipboard.min.js?1704755107"></script>
-    <script src="/CPP_Learning/js/perfect-scrollbar.min.js?1704755107"></script>
-    <script src="/CPP_Learning/js/perfect-scrollbar.jquery.min.js?1704755107"></script>
-    <script src="/CPP_Learning/js/jquery.sticky.js?1704755107"></script>
-    <script src="/CPP_Learning/js/featherlight.min.js?1704755107"></script>
-    <script src="/CPP_Learning/js/highlight.pack.js?1704755107"></script>
+    <script src="/CPP_Learning/js/clipboard.min.js?1705257267"></script>
+    <script src="/CPP_Learning/js/perfect-scrollbar.min.js?1705257267"></script>
+    <script src="/CPP_Learning/js/perfect-scrollbar.jquery.min.js?1705257267"></script>
+    <script src="/CPP_Learning/js/jquery.sticky.js?1705257267"></script>
+    <script src="/CPP_Learning/js/featherlight.min.js?1705257267"></script>
+    <script src="/CPP_Learning/js/highlight.pack.js?1705257267"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/CPP_Learning/js/modernizr.custom-3.6.0.js?1704755107"></script>
-    <script src="/CPP_Learning/js/learn.js?1704755107"></script>
-    <script src="/CPP_Learning/js/hugo-learn.js?1704755107"></script>
+    <script src="/CPP_Learning/js/modernizr.custom-3.6.0.js?1705257267"></script>
+    <script src="/CPP_Learning/js/learn.js?1705257267"></script>
+    <script src="/CPP_Learning/js/hugo-learn.js?1705257267"></script>
     
         
-            <script src="/CPP_Learning/mermaid/mermaid.js?1704755107"></script>
+            <script src="/CPP_Learning/mermaid/mermaid.js?1705257267"></script>
         
         <script>
             mermaid.initialize({ startOnLoad: true });
@@ -3564,12 +3564,12 @@ Chacune d&rsquo;entre elle attend un message à sa construction, qui sera retour
     <form id="question" method=POST action="https://formsubmit.co/3aa0f379a1aed9c454634cc2da153a7b"
         target="question-submitted" onsubmit="cleanQuestionFormContent()">
 
-        <input type="email" name="email" placeholder="mon_email@smthg.com" required />
-        <textarea id="question-content" name="question" rows="7" cols="30" placeholder="ma question..."></textarea>
-        <input id="question-topic" type="hidden" name="selection" />
+        <input type="email" name="email" placeholder="mon_email@smthg.com" required onchange="updateQuestionFormSubject()" />
+        <textarea name="question" rows="7" cols="30" placeholder="ma question..."></textarea>
+        <input type="hidden" name="selection" />
 
         <input type="hidden" name="_replyto" />
-        <input type="hidden" name="_subject" value="[C++][Chapitre 1] Question sur le cours" />
+        <input type="hidden" name="_subject" />
         <input type="hidden" name="_template" value="box" />
         <input type="hidden" name="_captcha" value="false" />
         <input type="hidden" name="_next" value="https://laefy.github.io/CPP_Learning//question-submitted/" />
@@ -3578,10 +3578,15 @@ Chacune d&rsquo;entre elle attend un message à sa construction, qui sera retour
         <input type="submit" value="Envoyer" />
     </form>
 
-    <iframe id="question-submitted" class="hidden" name="question-submitted" src=""></iframe>
+    <iframe class="hidden" name="question-submitted" src=""></iframe>
 </div>
 
 <script>
+
+    function updateQuestionFormSubject() {
+        let email = document.querySelector('#question>input[name="email"]').value;
+        document.querySelector('#question>input[name="_subject"]').value = "[C++][Chapitre 1] " + email + ", retour sur ta question";
+    }
 
     function cleanQuestionFormContent() {
 
@@ -3590,15 +3595,15 @@ Chacune d&rsquo;entre elle attend un message à sa construction, qui sera retour
             element.value = element.value.replace(/\[\.\./g, "[ ..");
         }
 
-        clean(document.getElementById("question-content"))
-        clean(document.getElementById("question-topic"))
+        clean(document.querySelector('#question>textarea[name="question"]'))
+        clean(document.querySelector('#question>input[name="selection"]'))
     }
 
     function openQuestionForm() {
         document.getElementById("footer-question-window").removeAttribute("disabled");
 
         var selection = window.getSelection().toString();
-        document.getElementById("question-topic").value = selection
+        document.querySelector('#question>input[name="selection"]').value = selection
     }
 
     function updateQuestionWidgetState(event) {
@@ -3619,6 +3624,8 @@ Chacune d&rsquo;entre elle attend un message à sa construction, qui sera retour
             question_window.setAttribute("disabled", true);
         }
     }
+
+    updateQuestionFormSubject();
 
     document.onmouseup = document.onkeyup = document.onselectionchange = updateQuestionWidgetState;
     updateQuestionWidgetState();

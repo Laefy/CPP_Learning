@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="Hugo 0.121.0">
+    <meta name="generator" content="Hugo 0.76.5" />
     <meta name="description" content="">
 
 
@@ -12,22 +12,22 @@
     <title>🔳 Rectangle :: Cours de C&#43;&#43; - Niveau Master</title>
 
     
-    <link href="/CPP_Learning/css/nucleus.css?1704755107" rel="stylesheet">
-    <link href="/CPP_Learning/css/fontawesome-all.min.css?1704755107" rel="stylesheet">
-    <link href="/CPP_Learning/css/hybrid.css?1704755107" rel="stylesheet">
-    <link href="/CPP_Learning/css/featherlight.min.css?1704755107" rel="stylesheet">
-    <link href="/CPP_Learning/css/perfect-scrollbar.min.css?1704755107" rel="stylesheet">
-    <link href="/CPP_Learning/css/auto-complete.css?1704755107" rel="stylesheet">
-    <link href="/CPP_Learning/css/atom-one-dark-reasonable.css?1704755107" rel="stylesheet">
-    <link href="/CPP_Learning/css/theme.css?1704755107" rel="stylesheet">
-    <link href="/CPP_Learning/css/tabs.css?1704755107" rel="stylesheet">
-    <link href="/CPP_Learning/css/hugo-theme.css?1704755107" rel="stylesheet">
+    <link href="/CPP_Learning/css/nucleus.css?1705257267" rel="stylesheet">
+    <link href="/CPP_Learning/css/fontawesome-all.min.css?1705257267" rel="stylesheet">
+    <link href="/CPP_Learning/css/hybrid.css?1705257267" rel="stylesheet">
+    <link href="/CPP_Learning/css/featherlight.min.css?1705257267" rel="stylesheet">
+    <link href="/CPP_Learning/css/perfect-scrollbar.min.css?1705257267" rel="stylesheet">
+    <link href="/CPP_Learning/css/auto-complete.css?1705257267" rel="stylesheet">
+    <link href="/CPP_Learning/css/atom-one-dark-reasonable.css?1705257267" rel="stylesheet">
+    <link href="/CPP_Learning/css/theme.css?1705257267" rel="stylesheet">
+    <link href="/CPP_Learning/css/tabs.css?1705257267" rel="stylesheet">
+    <link href="/CPP_Learning/css/hugo-theme.css?1705257267" rel="stylesheet">
     
-    <link href="/CPP_Learning/css/theme-mine.css?1704755107" rel="stylesheet">
+    <link href="/CPP_Learning/css/theme-mine.css?1705257267" rel="stylesheet">
     
-    <link href="/CPP_Learning/css/syntax.css?1704755107" rel="stylesheet">
+    <link href="/CPP_Learning/css/syntax.css?1705257267" rel="stylesheet">
 
-    <script src="/CPP_Learning/js/jquery-3.3.1.min.js?1704755107"></script>
+    <script src="/CPP_Learning/js/jquery-3.3.1.min.js?1705257267"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -1973,7 +1973,7 @@ Cela demande au compilateur de ne pas recopier une nouvelle fois le header dans 
 <p>Enfin, si vous regardez le fichier <code>main.cpp</code>, vous pouvez constater que l&rsquo;on inclut le fichier <code>Rectangle.h</code> en utilisant des <code>&quot;&quot;</code>. Ici, c&rsquo;est pareil qu&rsquo;en C, si le fichier est dans le même projet, on aura tendance à utiliser <code>#include &quot;header.h&quot;</code>, et s&rsquo;il s&rsquo;agit d&rsquo;une librairie externe, plutôt <code>#include &lt;header.h&gt;</code>.</p>
 <hr>
 <h3 id="implémentation--cpp">Implémentation =&gt; .cpp</h3>
-<p>Il est très courant de placer chaque définition de classe dans un header différent et d&rsquo;extraire l&rsquo;implémentation des ses fonctions-membres dans l&rsquo;<strong>unité de compilation</strong> (.cpp) associé.
+<p>Il est très courant de placer chaque définition de classe dans un header différent et d&rsquo;extraire l&rsquo;implémentation des ses fonctions-membres dans l'<strong>unité de compilation</strong> (.cpp) associé.
 Cela permet de limiter le nombre d&rsquo;inclusions à faire dans les headers et par conséquent de réduire les temps de compilation (surtout sur les gros projets).</p>
 <p>Dans cet exercice, vous allez voir comment extraire le constructeur de la classe <code>Rectangle</code> et sa fonction <code>scale</code> dans le fichier <code>Rectangle.cpp</code>.
 Vous pouvez laisser dans le header les petits getters.</p>
@@ -1993,26 +1993,26 @@ Si vous essayez de compiler le code, votre <code>main</code> devrait compiler sa
     	</span>
     </div>
     <div class="expand-content" style="display: none;">
-        <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">Rectangle</span>
-</span></span><span class="line"><span class="cl"><span class="p">{</span>
-</span></span><span class="line"><span class="cl"><span class="k">public</span><span class="o">:</span>
-</span></span><span class="line"><span class="cl">    <span class="n">Rectangle</span><span class="p">(</span><span class="kt">float</span> <span class="n">length</span><span class="p">,</span> <span class="kt">float</span> <span class="n">width</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl"><span class="c1">//    Rectangle(float length, float width)
-</span></span></span><span class="line"><span class="cl"><span class="c1">//        : _length { length }, _width { width }
-</span></span></span><span class="line"><span class="cl"><span class="c1">//    {}
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
-</span></span><span class="line"><span class="cl">    <span class="p">...</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">    <span class="kt">void</span> <span class="n">scale</span><span class="p">(</span><span class="kt">float</span> <span class="n">ratio</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl"><span class="c1">//    void scale(float ratio)
-</span></span></span><span class="line"><span class="cl"><span class="c1">//    {
-</span></span></span><span class="line"><span class="cl"><span class="c1">//        _length *= ratio;
-</span></span></span><span class="line"><span class="cl"><span class="c1">//        _width *= ratio;
-</span></span></span><span class="line"><span class="cl"><span class="c1">//    }
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
-</span></span><span class="line"><span class="cl">    <span class="p">...</span>
-</span></span><span class="line"><span class="cl"><span class="p">};</span>
-</span></span></code></pre></div>
+        <div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="k">class</span> <span class="nc">Rectangle</span>
+<span class="p">{</span>
+<span class="k">public</span><span class="o">:</span>
+    <span class="n">Rectangle</span><span class="p">(</span><span class="kt">float</span> <span class="n">length</span><span class="p">,</span> <span class="kt">float</span> <span class="n">width</span><span class="p">);</span>
+<span class="c1">//    Rectangle(float length, float width)
+</span><span class="c1">//        : _length { length }, _width { width }
+</span><span class="c1">//    {}
+</span><span class="c1"></span>
+    <span class="p">...</span>
+
+    <span class="kt">void</span> <span class="n">scale</span><span class="p">(</span><span class="kt">float</span> <span class="n">ratio</span><span class="p">);</span>
+<span class="c1">//    void scale(float ratio)
+</span><span class="c1">//    {
+</span><span class="c1">//        _length *= ratio;
+</span><span class="c1">//        _width *= ratio;
+</span><span class="c1">//    }
+</span><span class="c1"></span>
+    <span class="p">...</span>
+<span class="p">};</span>
+</code></pre></div>
     </div>
 </div>
 <p><code>Rectangle.cpp</code> :<br>
@@ -2033,26 +2033,26 @@ C&rsquo;est la même syntaxe que celle utilisée pour indiquer qu&rsquo;un symbo
     	</span>
     </div>
     <div class="expand-content" style="display: none;">
-        <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="cp">#include</span> <span class="cpf">&#34;Rectangle.h&#34;</span><span class="cp">
-</span></span></span><span class="line"><span class="cl"><span class="cp"></span>
-</span></span><span class="line"><span class="cl"><span class="n">Rectangle</span><span class="o">::</span><span class="n">Rectangle</span><span class="p">(</span><span class="kt">float</span> <span class="n">length</span><span class="p">,</span> <span class="kt">float</span> <span class="n">width</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">    <span class="o">:</span> <span class="n">_length</span> <span class="p">{</span> <span class="n">length</span> <span class="p">},</span> <span class="n">_width</span> <span class="p">{</span> <span class="n">width</span> <span class="p">}</span>
-</span></span><span class="line"><span class="cl"><span class="p">{}</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="kt">void</span> <span class="n">Rectangle</span><span class="o">::</span><span class="n">scale</span><span class="p">(</span><span class="kt">float</span> <span class="n">ratio</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl"><span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="n">_length</span> <span class="o">*=</span> <span class="n">ratio</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">    <span class="n">_width</span> <span class="o">*=</span> <span class="n">ratio</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span></code></pre></div>
+        <div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="cp">#include</span> <span class="cpf">&#34;Rectangle.h&#34;</span><span class="cp">
+</span><span class="cp"></span>
+<span class="n">Rectangle</span><span class="o">::</span><span class="n">Rectangle</span><span class="p">(</span><span class="kt">float</span> <span class="n">length</span><span class="p">,</span> <span class="kt">float</span> <span class="n">width</span><span class="p">)</span>
+    <span class="o">:</span> <span class="n">_length</span> <span class="p">{</span> <span class="n">length</span> <span class="p">},</span> <span class="n">_width</span> <span class="p">{</span> <span class="n">width</span> <span class="p">}</span>
+<span class="p">{}</span>
+
+<span class="kt">void</span> <span class="n">Rectangle</span><span class="o">::</span><span class="n">scale</span><span class="p">(</span><span class="kt">float</span> <span class="n">ratio</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">_length</span> <span class="o">*=</span> <span class="n">ratio</span><span class="p">;</span>
+    <span class="n">_width</span> <span class="o">*=</span> <span class="n">ratio</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
     </div>
 </div>
 <hr>
 <h3 id="constructeur-délégué">Constructeur délégué</h3>
 <p>Vous pouvez instancier des rectangles, mais vous aimeriez bien aussi pouvoir instancier des carrés.
 Pour cela, vous pouvez tout à faire écrire :</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="n">Rectangle</span> <span class="nf">square</span><span class="p">(</span><span class="mf">2.5f</span><span class="p">,</span> <span class="mf">2.5f</span><span class="p">);</span>
-</span></span></code></pre></div><p>Sauf que ça vous paraît un peu bête de devoir réécrire deux fois la même valeur dans l&rsquo;appel au constructeur.</p>
+<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="n">Rectangle</span> <span class="nf">square</span><span class="p">(</span><span class="mf">2.5f</span><span class="p">,</span> <span class="mf">2.5f</span><span class="p">);</span>
+</code></pre></div><p>Sauf que ça vous paraît un peu bête de devoir réécrire deux fois la même valeur dans l&rsquo;appel au constructeur.</p>
 <p>Modifiez le <code>main</code> afin de créer cette instance de <code>square</code>, mais en n&rsquo;y passant qu&rsquo;une seule fois <code>2.5f</code>.<br>
 Définissez ensuite le constructeur à 1 paramètre correspondant qui initialise les deux attributs <code>_length</code> et <code>_width</code> avec cette valeur.<br>
 Vous placerez l&rsquo;implémentation de ce constructeur dans <code>Rectangle.cpp</code>.</p>
@@ -2068,46 +2068,47 @@ Vous placerez l&rsquo;implémentation de ce constructeur dans <code>Rectangle.cp
     	</span>
     </div>
     <div class="expand-content" style="display: none;">
-        <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="c1">// Rectangle.cpp
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
-</span></span><span class="line"><span class="cl"><span class="n">Rectangle</span><span class="o">::</span><span class="n">Rectangle</span><span class="p">(</span><span class="kt">float</span> <span class="n">size</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">    <span class="o">:</span> <span class="n">_length</span> <span class="p">{</span> <span class="n">size</span> <span class="p">},</span> <span class="n">_width</span> <span class="p">{</span> <span class="n">size</span> <span class="p">}</span>
-</span></span><span class="line"><span class="cl"><span class="p">{}</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="n">Rectangle</span><span class="o">::</span><span class="n">Rectangle</span><span class="p">(</span><span class="kt">float</span> <span class="n">length</span><span class="p">,</span> <span class="kt">float</span> <span class="n">width</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">    <span class="o">:</span> <span class="n">_length</span> <span class="p">{</span> <span class="n">length</span> <span class="p">},</span> <span class="n">_width</span> <span class="p">{</span> <span class="n">width</span> <span class="p">}</span>
-</span></span><span class="line"><span class="cl"><span class="p">{}</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="p">...</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c1">// Rectangle.h
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
-</span></span><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">Rectangle</span>
-</span></span><span class="line"><span class="cl"><span class="p">{</span>
-</span></span><span class="line"><span class="cl"><span class="k">public</span><span class="o">:</span>
-</span></span><span class="line"><span class="cl">    <span class="n">Rectangle</span><span class="p">(</span><span class="kt">float</span> <span class="n">size</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl">    <span class="n">Rectangle</span><span class="p">(</span><span class="kt">float</span> <span class="n">length</span><span class="p">,</span> <span class="kt">float</span> <span class="n">width</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">    <span class="p">...</span>
-</span></span><span class="line"><span class="cl"><span class="p">};</span>
-</span></span></code></pre></div>
+        <div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="c1">// Rectangle.cpp
+</span><span class="c1"></span>
+<span class="n">Rectangle</span><span class="o">::</span><span class="n">Rectangle</span><span class="p">(</span><span class="kt">float</span> <span class="n">size</span><span class="p">)</span>
+    <span class="o">:</span> <span class="n">_length</span> <span class="p">{</span> <span class="n">size</span> <span class="p">},</span> <span class="n">_width</span> <span class="p">{</span> <span class="n">size</span> <span class="p">}</span>
+<span class="p">{}</span>
+
+<span class="n">Rectangle</span><span class="o">::</span><span class="n">Rectangle</span><span class="p">(</span><span class="kt">float</span> <span class="n">length</span><span class="p">,</span> <span class="kt">float</span> <span class="n">width</span><span class="p">)</span>
+    <span class="o">:</span> <span class="n">_length</span> <span class="p">{</span> <span class="n">length</span> <span class="p">},</span> <span class="n">_width</span> <span class="p">{</span> <span class="n">width</span> <span class="p">}</span>
+<span class="p">{}</span>
+
+<span class="p">...</span>
+
+<span class="c1">// Rectangle.h
+</span><span class="c1"></span>
+<span class="k">class</span> <span class="nc">Rectangle</span>
+<span class="p">{</span>
+<span class="k">public</span><span class="o">:</span>
+    <span class="n">Rectangle</span><span class="p">(</span><span class="kt">float</span> <span class="n">size</span><span class="p">);</span>
+    <span class="n">Rectangle</span><span class="p">(</span><span class="kt">float</span> <span class="n">length</span><span class="p">,</span> <span class="kt">float</span> <span class="n">width</span><span class="p">);</span>
+
+    <span class="p">...</span>
+<span class="p">};</span>
+</code></pre></div>
     </div>
 </div>
 <p>Le constructeur que vous venez de créer pourrait en fait appeler le second constructeur, en lui passant <code>size</code> deux fois.</p>
 <p>Pour appeler un constructeur depuis un autre constructeur, il faut appeler le premier constructeur depuis la liste d&rsquo;initialisation du second. Cela donne donc quelque chose comme ça :
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">SomeClass</span>
-</span></span><span class="line"><span class="cl"><span class="p">{</span>
-</span></span><span class="line"><span class="cl"><span class="k">public</span><span class="o">:</span>
-</span></span><span class="line"><span class="cl">    <span class="n">SomeClass</span><span class="p">(</span><span class="kt">int</span> <span class="n">p1</span><span class="p">,</span> <span class="kt">int</span> <span class="n">p2</span><span class="p">,</span> <span class="kt">int</span> <span class="n">p3</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">        <span class="o">:</span> <span class="n">_a1</span> <span class="p">{</span> <span class="n">p1</span> <span class="p">},</span> <span class="n">_a2</span> <span class="p">{</span> <span class="n">p2</span> <span class="p">},</span> <span class="n">_a3</span> <span class="p">{</span> <span class="n">p3</span> <span class="p">}</span>
-</span></span><span class="line"><span class="cl">    <span class="p">{}</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">    <span class="n">SomeClass</span><span class="p">(</span><span class="kt">int</span> <span class="n">p1</span><span class="p">)</span>
-</span></span><span class="line hl"><span class="cl">        <span class="o">:</span> <span class="n">SomeClass</span> <span class="p">{</span> <span class="n">p1</span><span class="p">,</span> <span class="n">p2</span><span class="p">,</span> <span class="n">p3</span> <span class="p">}</span>
-</span></span><span class="line"><span class="cl">    <span class="p">{}</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">    <span class="p">...</span>
-</span></span><span class="line"><span class="cl"><span class="p">};</span></span></span></code></pre></div></p>
+<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="k">class</span> <span class="nc">SomeClass</span>
+<span class="p">{</span>
+<span class="k">public</span><span class="o">:</span>
+    <span class="n">SomeClass</span><span class="p">(</span><span class="kt">int</span> <span class="n">p1</span><span class="p">,</span> <span class="kt">int</span> <span class="n">p2</span><span class="p">,</span> <span class="kt">int</span> <span class="n">p3</span><span class="p">)</span>
+        <span class="o">:</span> <span class="n">_a1</span> <span class="p">{</span> <span class="n">p1</span> <span class="p">},</span> <span class="n">_a2</span> <span class="p">{</span> <span class="n">p2</span> <span class="p">},</span> <span class="n">_a3</span> <span class="p">{</span> <span class="n">p3</span> <span class="p">}</span>
+    <span class="p">{}</span>
+
+    <span class="n">SomeClass</span><span class="p">(</span><span class="kt">int</span> <span class="n">p1</span><span class="p">)</span>
+<span class="hl">        <span class="o">:</span> <span class="n">SomeClass</span> <span class="p">{</span> <span class="n">p1</span><span class="p">,</span> <span class="n">p2</span><span class="p">,</span> <span class="n">p3</span> <span class="p">}</span>
+</span>    <span class="p">{}</span>
+
+    <span class="p">...</span>
+<span class="p">};</span>
+</code></pre></div></p>
 <p>Modifiez l&rsquo;implémentation du constructeur à 1 paramètre, de manière à déléguer la construction au constructeur à 2 paramètres.</p>
 
 <div class="expand">
@@ -2121,10 +2122,10 @@ Vous placerez l&rsquo;implémentation de ce constructeur dans <code>Rectangle.cp
     	</span>
     </div>
     <div class="expand-content" style="display: none;">
-        <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="n">Rectangle</span><span class="o">::</span><span class="n">Rectangle</span><span class="p">(</span><span class="kt">float</span> <span class="n">size</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">    <span class="o">:</span> <span class="n">Rectangle</span> <span class="p">{</span> <span class="n">size</span><span class="p">,</span> <span class="n">size</span> <span class="p">}</span>
-</span></span><span class="line"><span class="cl"><span class="p">{}</span>
-</span></span></code></pre></div>
+        <div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="n">Rectangle</span><span class="o">::</span><span class="n">Rectangle</span><span class="p">(</span><span class="kt">float</span> <span class="n">size</span><span class="p">)</span>
+    <span class="o">:</span> <span class="n">Rectangle</span> <span class="p">{</span> <span class="n">size</span><span class="p">,</span> <span class="n">size</span> <span class="p">}</span>
+<span class="p">{}</span>
+</code></pre></div>
     </div>
 </div>
 
@@ -2135,19 +2136,19 @@ Vous placerez l&rsquo;implémentation de ce constructeur dans <code>Rectangle.cp
 <h3 id="membres-statiques">Membres statiques</h3>
 <p>Nous souhaiterions maintenant pouvoir créer une série de carrés de même taille, sans avoir à spécifier le moindre paramètre à leur construction.
 Voici à quoi le code devrait pour ressembler :</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="cm">/* some instruction saying that next squares&#39;s size will be 3.f */</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="n">Rectangle</span> <span class="n">s1</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl"><span class="n">Rectangle</span> <span class="n">s2</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="cm">/* some instruction saying that next squares&#39;s size will now be 5.f */</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="n">Rectangle</span> <span class="n">s3</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl"><span class="n">Rectangle</span> <span class="n">s4</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl"><span class="n">Rectangle</span> <span class="n">s5</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c1">// At this point, size of s1 and s2 should be 3.f, and size of s3, s4 and s5 should be 5.f. 
-</span></span></span></code></pre></div><p>Pour cela, nous allons définir des <strong>membres statiques</strong> à la classe Rectangle.</p>
+<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="cm">/* some instruction saying that next squares&#39;s size will be 3.f */</span>
+
+<span class="n">Rectangle</span> <span class="n">s1</span><span class="p">;</span>
+<span class="n">Rectangle</span> <span class="n">s2</span><span class="p">;</span>
+
+<span class="cm">/* some instruction saying that next squares&#39;s size will now be 5.f */</span>
+
+<span class="n">Rectangle</span> <span class="n">s3</span><span class="p">;</span>
+<span class="n">Rectangle</span> <span class="n">s4</span><span class="p">;</span>
+<span class="n">Rectangle</span> <span class="n">s5</span><span class="p">;</span>
+
+<span class="c1">// At this point, size of s1 and s2 should be 3.f, and size of s3, s4 and s5 should be 5.f. 
+</span></code></pre></div><p>Pour cela, nous allons définir des <strong>membres statiques</strong> à la classe Rectangle.</p>
 <h4 id="attribut-statique">Attribut statique</h4>
 <p>Un attribut est dit statique si sa valeur est portée par la classe et non par une instance. Cela permet d&rsquo;avoir une variable qui est partagée par l&rsquo;ensemble des instances d&rsquo;une classe.</p>
 <p>Pour mettre cela en pratique, vous allez définir un nouvel attribut statique <code>_default_size</code> dans la partie publique de la classe <code>Rectangle</code>.
@@ -2165,14 +2166,14 @@ Vous pouvez utiliser la syntaxe suivante pour déclarer un attribut statique : <
     	</span>
     </div>
     <div class="expand-content" style="display: none;">
-        <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">Rectangle</span>
-</span></span><span class="line"><span class="cl"><span class="p">{</span>
-</span></span><span class="line"><span class="cl"><span class="k">public</span><span class="o">:</span>
-</span></span><span class="line"><span class="cl">    <span class="k">static</span> <span class="kt">float</span> <span class="n">_default_size</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">    <span class="p">...</span>
-</span></span><span class="line"><span class="cl"><span class="p">};</span>
-</span></span></code></pre></div>
+        <div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="k">class</span> <span class="nc">Rectangle</span>
+<span class="p">{</span>
+<span class="k">public</span><span class="o">:</span>
+    <span class="k">static</span> <span class="kt">float</span> <span class="n">_default_size</span><span class="p">;</span>
+
+    <span class="p">...</span>
+<span class="p">};</span>
+</code></pre></div>
     </div>
 </div>
 <p>A ce stade, vous ne devriez plus pouvoir compiler, car le linker n&rsquo;arrive pas à trouver de référence pour <code>_default_size</code>.</p>
@@ -2193,8 +2194,8 @@ Compilez et testez votre programme avec un débuggeur de manière à vous assure
     </div>
     <div class="expand-content" style="display: none;">
         <p>Comme la variable est statique, le compilateur l&rsquo;initialisera à 0 de lui-même (contrairement aux primitives locales), mais c&rsquo;est quand même plus clair de toujours spécifier une valeur d&rsquo;initialisation à ses primitives.</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="kt">float</span> <span class="n">Rectangle</span><span class="o">::</span><span class="n">_default_size</span> <span class="o">=</span> <span class="mf">0.f</span><span class="p">;</span>
-</span></span></code></pre></div>
+<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="kt">float</span> <span class="n">Rectangle</span><span class="o">::</span><span class="n">_default_size</span> <span class="o">=</span> <span class="mf">0.f</span><span class="p">;</span>
+</code></pre></div>
     </div>
 </div>
 <p>Ajoutez ensuite un constructeur par défaut à votre classe, qui déléguera la construction au constructeur à 1 paramètre en lui passant <code>_default_size</code>.</p>
@@ -2211,23 +2212,23 @@ Compilez et testez votre programme avec un débuggeur de manière à vous assure
     	</span>
     </div>
     <div class="expand-content" style="display: none;">
-        <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="c1">// Rectangle.h :
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
-</span></span><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">Rectangle</span>
-</span></span><span class="line"><span class="cl"><span class="p">{</span>
-</span></span><span class="line"><span class="cl"><span class="k">public</span><span class="o">:</span>
-</span></span><span class="line"><span class="cl">    <span class="k">static</span> <span class="kt">float</span> <span class="n">_default_size</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">    <span class="n">Rectangle</span><span class="p">();</span>
-</span></span><span class="line"><span class="cl">    <span class="p">...</span>
-</span></span><span class="line"><span class="cl"><span class="p">};</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c1">// Rectangle.cpp :
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
-</span></span><span class="line"><span class="cl"><span class="n">Rectangle</span><span class="o">::</span><span class="n">Rectangle</span><span class="p">()</span>
-</span></span><span class="line"><span class="cl">    <span class="o">:</span> <span class="n">Rectangle</span> <span class="p">{</span> <span class="n">_default_size</span> <span class="p">}</span>
-</span></span><span class="line"><span class="cl"><span class="p">{}</span>
-</span></span></code></pre></div>
+        <div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="c1">// Rectangle.h :
+</span><span class="c1"></span>
+<span class="k">class</span> <span class="nc">Rectangle</span>
+<span class="p">{</span>
+<span class="k">public</span><span class="o">:</span>
+    <span class="k">static</span> <span class="kt">float</span> <span class="n">_default_size</span><span class="p">;</span>
+
+    <span class="n">Rectangle</span><span class="p">();</span>
+    <span class="p">...</span>
+<span class="p">};</span>
+
+<span class="c1">// Rectangle.cpp :
+</span><span class="c1"></span>
+<span class="n">Rectangle</span><span class="o">::</span><span class="n">Rectangle</span><span class="p">()</span>
+    <span class="o">:</span> <span class="n">Rectangle</span> <span class="p">{</span> <span class="n">_default_size</span> <span class="p">}</span>
+<span class="p">{}</span>
+</code></pre></div>
     </div>
 </div>
 <p>Vous allez maintenant modifier la valeur de <code>_default_size</code> entre les différentes instanciations de vos rectangles. Pour accéder ou modifier à la valeur de <code>_default_size</code> en dehors de la classe <code>Rectangle</code>, il faut préfixer par <code>Rectangle::</code>.<br>
@@ -2244,15 +2245,15 @@ Testez que les tailles de vos rectangles sont bien initialisées avec la derniè
     	</span>
     </div>
     <div class="expand-content" style="display: none;">
-        <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="n">Rectangle</span><span class="o">::</span><span class="n">_default_size</span> <span class="o">=</span> <span class="mf">2.f</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl"><span class="n">Rectangle</span> <span class="n">s1</span><span class="p">;</span> <span class="c1">// -&gt; size is 2.f
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">Rectangle</span> <span class="n">s2</span><span class="p">;</span> <span class="c1">// -&gt; size is 2.f
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
-</span></span><span class="line"><span class="cl"><span class="n">Rectangle</span><span class="o">::</span><span class="n">_default_size</span> <span class="o">=</span> <span class="mf">7.f</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl"><span class="n">Rectangle</span> <span class="n">s3</span><span class="p">;</span> <span class="c1">// -&gt; size is 7.f
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">Rectangle</span> <span class="n">s4</span><span class="p">;</span> <span class="c1">// -&gt; size is 7.f
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">Rectangle</span> <span class="n">s5</span><span class="p">;</span> <span class="c1">// -&gt; size is 7.f
-</span></span></span></code></pre></div>
+        <div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="n">Rectangle</span><span class="o">::</span><span class="n">_default_size</span> <span class="o">=</span> <span class="mf">2.f</span><span class="p">;</span>
+<span class="n">Rectangle</span> <span class="n">s1</span><span class="p">;</span> <span class="c1">// -&gt; size is 2.f
+</span><span class="c1"></span><span class="n">Rectangle</span> <span class="n">s2</span><span class="p">;</span> <span class="c1">// -&gt; size is 2.f
+</span><span class="c1"></span>
+<span class="n">Rectangle</span><span class="o">::</span><span class="n">_default_size</span> <span class="o">=</span> <span class="mf">7.f</span><span class="p">;</span>
+<span class="n">Rectangle</span> <span class="n">s3</span><span class="p">;</span> <span class="c1">// -&gt; size is 7.f
+</span><span class="c1"></span><span class="n">Rectangle</span> <span class="n">s4</span><span class="p">;</span> <span class="c1">// -&gt; size is 7.f
+</span><span class="c1"></span><span class="n">Rectangle</span> <span class="n">s5</span><span class="p">;</span> <span class="c1">// -&gt; size is 7.f
+</span></code></pre></div>
     </div>
 </div>
 <h4 id="fonction-membre-statique">Fonction-membre statique</h4>
@@ -2272,27 +2273,27 @@ Pour indiquer qu&rsquo;une fonction-membre est statique, il faut placer le mot-c
     	</span>
     </div>
     <div class="expand-content" style="display: none;">
-        <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="c1">// Rectangle.h :
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
-</span></span><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">Rectangle</span>
-</span></span><span class="line"><span class="cl"><span class="p">{</span>
-</span></span><span class="line"><span class="cl"><span class="k">public</span><span class="o">:</span>
-</span></span><span class="line"><span class="cl">    <span class="k">static</span> <span class="kt">void</span> <span class="n">set_default_size</span><span class="p">();</span>
-</span></span><span class="line"><span class="cl">    <span class="p">...</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="k">private</span><span class="o">:</span>
-</span></span><span class="line"><span class="cl">    <span class="k">static</span> <span class="kt">float</span> <span class="n">_default_size</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">    <span class="p">...</span>
-</span></span><span class="line"><span class="cl"><span class="p">};</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c1">// Rectangle.cpp :
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="p">...</span>
-</span></span><span class="line"><span class="cl"><span class="kt">void</span> <span class="n">Rectangle</span><span class="o">::</span><span class="n">set_default_size</span><span class="p">(</span><span class="kt">float</span> <span class="n">size</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl"><span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="n">_default_size</span> <span class="o">=</span> <span class="n">size</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span><span class="line"><span class="cl"><span class="p">...</span>
-</span></span></code></pre></div>
+        <div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="c1">// Rectangle.h :
+</span><span class="c1"></span>
+<span class="k">class</span> <span class="nc">Rectangle</span>
+<span class="p">{</span>
+<span class="k">public</span><span class="o">:</span>
+    <span class="k">static</span> <span class="kt">void</span> <span class="n">set_default_size</span><span class="p">();</span>
+    <span class="p">...</span>
+
+<span class="k">private</span><span class="o">:</span>
+    <span class="k">static</span> <span class="kt">float</span> <span class="n">_default_size</span><span class="p">;</span>
+    <span class="p">...</span>
+<span class="p">};</span>
+
+<span class="c1">// Rectangle.cpp :
+</span><span class="c1"></span><span class="p">...</span>
+<span class="kt">void</span> <span class="n">Rectangle</span><span class="o">::</span><span class="n">set_default_size</span><span class="p">(</span><span class="kt">float</span> <span class="n">size</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">_default_size</span> <span class="o">=</span> <span class="n">size</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="p">...</span>
+</code></pre></div>
     </div>
 </div>
 <p>Pour appeler cette fonction depuis l&rsquo;extérieur de la classe, il faut préfixer son nom par <code>Rectangle::</code>.<br>
@@ -2309,24 +2310,24 @@ Dans le <code>main</code>, remplacez les assignations de <code>_default_size</co
     	</span>
     </div>
     <div class="expand-content" style="display: none;">
-        <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="n">Rectangle</span><span class="o">::</span><span class="n">set_default_size</span><span class="p">(</span><span class="mf">2.f</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl"><span class="n">Rectangle</span> <span class="n">s1</span><span class="p">;</span> <span class="c1">// -&gt; size is 2.f
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">Rectangle</span> <span class="n">s2</span><span class="p">;</span> <span class="c1">// -&gt; size is 2.f
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
-</span></span><span class="line"><span class="cl"><span class="n">Rectangle</span><span class="o">::</span><span class="n">set_default_size</span><span class="p">(</span><span class="mf">7.f</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl"><span class="n">Rectangle</span> <span class="n">s3</span><span class="p">;</span> <span class="c1">// -&gt; size is 7.f
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">Rectangle</span> <span class="n">s4</span><span class="p">;</span> <span class="c1">// -&gt; size is 7.f
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">Rectangle</span> <span class="n">s5</span><span class="p">;</span> <span class="c1">// -&gt; size is 7.f
-</span></span></span></code></pre></div>
+        <div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="n">Rectangle</span><span class="o">::</span><span class="n">set_default_size</span><span class="p">(</span><span class="mf">2.f</span><span class="p">);</span>
+<span class="n">Rectangle</span> <span class="n">s1</span><span class="p">;</span> <span class="c1">// -&gt; size is 2.f
+</span><span class="c1"></span><span class="n">Rectangle</span> <span class="n">s2</span><span class="p">;</span> <span class="c1">// -&gt; size is 2.f
+</span><span class="c1"></span>
+<span class="n">Rectangle</span><span class="o">::</span><span class="n">set_default_size</span><span class="p">(</span><span class="mf">7.f</span><span class="p">);</span>
+<span class="n">Rectangle</span> <span class="n">s3</span><span class="p">;</span> <span class="c1">// -&gt; size is 7.f
+</span><span class="c1"></span><span class="n">Rectangle</span> <span class="n">s4</span><span class="p">;</span> <span class="c1">// -&gt; size is 7.f
+</span><span class="c1"></span><span class="n">Rectangle</span> <span class="n">s5</span><span class="p">;</span> <span class="c1">// -&gt; size is 7.f
+</span></code></pre></div>
     </div>
 </div>
 <hr>
 <h3 id="opérateur--le-retour">Opérateur <code>&lt;&lt;</code> (le retour)</h3>
 <p>Implémentez une surcharge de l&rsquo;opérateur <code>&lt;&lt;</code> dans <code>Rectangle.cpp</code>, de manière à pouvoir remplacer les :</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;{ L: &#34;</span> <span class="o">&lt;&lt;</span> <span class="n">rect</span><span class="p">.</span><span class="n">get_length</span><span class="p">()</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;, W: &#34;</span> <span class="o">&lt;&lt;</span> <span class="n">rect</span><span class="p">.</span><span class="n">get_width</span><span class="p">()</span> <span class="o">&lt;&lt;</span> <span class="s">&#34; }&#34;</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
-</span></span></code></pre></div><p>par des :</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">rect</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
-</span></span></code></pre></div><p>N&rsquo;oubliez pas d&rsquo;ajouter la déclaration de la fonction ainsi que l&rsquo;include de <code>&lt;ostream&gt;</code> dans le header <code>Rectangle.h</code>, afin que vous puissiez vous en servir dans <code>main</code>.</p>
+<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;{ L: &#34;</span> <span class="o">&lt;&lt;</span> <span class="n">rect</span><span class="p">.</span><span class="n">get_length</span><span class="p">()</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;, W: &#34;</span> <span class="o">&lt;&lt;</span> <span class="n">rect</span><span class="p">.</span><span class="n">get_width</span><span class="p">()</span> <span class="o">&lt;&lt;</span> <span class="s">&#34; }&#34;</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+</code></pre></div><p>par des :</p>
+<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">rect</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+</code></pre></div><p>N&rsquo;oubliez pas d&rsquo;ajouter la déclaration de la fonction ainsi que l&rsquo;include de <code>&lt;ostream&gt;</code> dans le header <code>Rectangle.h</code>, afin que vous puissiez vous en servir dans <code>main</code>.</p>
 
 <div class="expand">
     <div class="expand-label" style="cursor: pointer;" onclick="$h = $(this);$h.next('div').slideToggle(100,function () {$h.children('i').attr('class',function () {return $h.next('div').is(':visible') ? 'fas fa-chevron-down' : 'fas fa-chevron-right';});});">
@@ -2339,24 +2340,24 @@ Dans le <code>main</code>, remplacez les assignations de <code>_default_size</co
     	</span>
     </div>
     <div class="expand-content" style="display: none;">
-        <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="c1">// Rectangle.h :
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
-</span></span><span class="line"><span class="cl"><span class="cp">#include</span> <span class="cpf">&lt;ostream&gt;</span><span class="cp">
-</span></span></span><span class="line"><span class="cl"><span class="cp"></span>
-</span></span><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">Rectangle</span>
-</span></span><span class="line"><span class="cl"><span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="p">...</span>
-</span></span><span class="line"><span class="cl"><span class="p">};</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="n">std</span><span class="o">::</span><span class="n">ostream</span><span class="o">&amp;</span> <span class="k">operator</span><span class="o">&lt;&lt;</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">ostream</span><span class="o">&amp;</span> <span class="n">stream</span><span class="p">,</span> <span class="k">const</span> <span class="n">Rectangle</span><span class="o">&amp;</span> <span class="n">rect</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c1">// Rectangle.cpp :
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
-</span></span><span class="line"><span class="cl"><span class="n">std</span><span class="o">::</span><span class="n">ostream</span><span class="o">&amp;</span> <span class="k">operator</span><span class="o">&lt;&lt;</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">ostream</span><span class="o">&amp;</span> <span class="n">stream</span><span class="p">,</span> <span class="k">const</span> <span class="n">Rectangle</span><span class="o">&amp;</span> <span class="n">rect</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl"><span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">stream</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;{ L: &#34;</span> <span class="o">&lt;&lt;</span> <span class="n">rect</span><span class="p">.</span><span class="n">get_length</span><span class="p">()</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;, W: &#34;</span> <span class="o">&lt;&lt;</span> <span class="n">rect</span><span class="p">.</span><span class="n">get_width</span><span class="p">()</span> <span class="o">&lt;&lt;</span> <span class="s">&#34; }&#34;</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span></code></pre></div>
+        <div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="c1">// Rectangle.h :
+</span><span class="c1"></span>
+<span class="cp">#include</span> <span class="cpf">&lt;ostream&gt;</span><span class="cp">
+</span><span class="cp"></span>
+<span class="k">class</span> <span class="nc">Rectangle</span>
+<span class="p">{</span>
+    <span class="p">...</span>
+<span class="p">};</span>
+
+<span class="n">std</span><span class="o">::</span><span class="n">ostream</span><span class="o">&amp;</span> <span class="k">operator</span><span class="o">&lt;&lt;</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">ostream</span><span class="o">&amp;</span> <span class="n">stream</span><span class="p">,</span> <span class="k">const</span> <span class="n">Rectangle</span><span class="o">&amp;</span> <span class="n">rect</span><span class="p">);</span>
+
+<span class="c1">// Rectangle.cpp :
+</span><span class="c1"></span>
+<span class="n">std</span><span class="o">::</span><span class="n">ostream</span><span class="o">&amp;</span> <span class="k">operator</span><span class="o">&lt;&lt;</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">ostream</span><span class="o">&amp;</span> <span class="n">stream</span><span class="p">,</span> <span class="k">const</span> <span class="n">Rectangle</span><span class="o">&amp;</span> <span class="n">rect</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="k">return</span> <span class="n">stream</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;{ L: &#34;</span> <span class="o">&lt;&lt;</span> <span class="n">rect</span><span class="p">.</span><span class="n">get_length</span><span class="p">()</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;, W: &#34;</span> <span class="o">&lt;&lt;</span> <span class="n">rect</span><span class="p">.</span><span class="n">get_width</span><span class="p">()</span> <span class="o">&lt;&lt;</span> <span class="s">&#34; }&#34;</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
     </div>
 </div>
 
@@ -3660,19 +3661,19 @@ Dans le <code>main</code>, remplacez les assignations de <code>_default_size</co
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/CPP_Learning/js/clipboard.min.js?1704755107"></script>
-    <script src="/CPP_Learning/js/perfect-scrollbar.min.js?1704755107"></script>
-    <script src="/CPP_Learning/js/perfect-scrollbar.jquery.min.js?1704755107"></script>
-    <script src="/CPP_Learning/js/jquery.sticky.js?1704755107"></script>
-    <script src="/CPP_Learning/js/featherlight.min.js?1704755107"></script>
-    <script src="/CPP_Learning/js/highlight.pack.js?1704755107"></script>
+    <script src="/CPP_Learning/js/clipboard.min.js?1705257267"></script>
+    <script src="/CPP_Learning/js/perfect-scrollbar.min.js?1705257267"></script>
+    <script src="/CPP_Learning/js/perfect-scrollbar.jquery.min.js?1705257267"></script>
+    <script src="/CPP_Learning/js/jquery.sticky.js?1705257267"></script>
+    <script src="/CPP_Learning/js/featherlight.min.js?1705257267"></script>
+    <script src="/CPP_Learning/js/highlight.pack.js?1705257267"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/CPP_Learning/js/modernizr.custom-3.6.0.js?1704755107"></script>
-    <script src="/CPP_Learning/js/learn.js?1704755107"></script>
-    <script src="/CPP_Learning/js/hugo-learn.js?1704755107"></script>
+    <script src="/CPP_Learning/js/modernizr.custom-3.6.0.js?1705257267"></script>
+    <script src="/CPP_Learning/js/learn.js?1705257267"></script>
+    <script src="/CPP_Learning/js/hugo-learn.js?1705257267"></script>
     
         
-            <script src="/CPP_Learning/mermaid/mermaid.js?1704755107"></script>
+            <script src="/CPP_Learning/mermaid/mermaid.js?1705257267"></script>
         
         <script>
             mermaid.initialize({ startOnLoad: true });
@@ -3686,12 +3687,12 @@ Dans le <code>main</code>, remplacez les assignations de <code>_default_size</co
     <form id="question" method=POST action="https://formsubmit.co/3aa0f379a1aed9c454634cc2da153a7b"
         target="question-submitted" onsubmit="cleanQuestionFormContent()">
 
-        <input type="email" name="email" placeholder="mon_email@smthg.com" required />
-        <textarea id="question-content" name="question" rows="7" cols="30" placeholder="ma question..."></textarea>
-        <input id="question-topic" type="hidden" name="selection" />
+        <input type="email" name="email" placeholder="mon_email@smthg.com" required onchange="updateQuestionFormSubject()" />
+        <textarea name="question" rows="7" cols="30" placeholder="ma question..."></textarea>
+        <input type="hidden" name="selection" />
 
         <input type="hidden" name="_replyto" />
-        <input type="hidden" name="_subject" value="[C++][Chapitre 4] Question sur le cours" />
+        <input type="hidden" name="_subject" />
         <input type="hidden" name="_template" value="box" />
         <input type="hidden" name="_captcha" value="false" />
         <input type="hidden" name="_next" value="https://laefy.github.io/CPP_Learning//question-submitted/" />
@@ -3700,10 +3701,15 @@ Dans le <code>main</code>, remplacez les assignations de <code>_default_size</co
         <input type="submit" value="Envoyer" />
     </form>
 
-    <iframe id="question-submitted" class="hidden" name="question-submitted" src=""></iframe>
+    <iframe class="hidden" name="question-submitted" src=""></iframe>
 </div>
 
 <script>
+
+    function updateQuestionFormSubject() {
+        let email = document.querySelector('#question>input[name="email"]').value;
+        document.querySelector('#question>input[name="_subject"]').value = "[C++][Chapitre 4] " + email + ", retour sur ta question";
+    }
 
     function cleanQuestionFormContent() {
 
@@ -3712,15 +3718,15 @@ Dans le <code>main</code>, remplacez les assignations de <code>_default_size</co
             element.value = element.value.replace(/\[\.\./g, "[ ..");
         }
 
-        clean(document.getElementById("question-content"))
-        clean(document.getElementById("question-topic"))
+        clean(document.querySelector('#question>textarea[name="question"]'))
+        clean(document.querySelector('#question>input[name="selection"]'))
     }
 
     function openQuestionForm() {
         document.getElementById("footer-question-window").removeAttribute("disabled");
 
         var selection = window.getSelection().toString();
-        document.getElementById("question-topic").value = selection
+        document.querySelector('#question>input[name="selection"]').value = selection
     }
 
     function updateQuestionWidgetState(event) {
@@ -3741,6 +3747,8 @@ Dans le <code>main</code>, remplacez les assignations de <code>_default_size</co
             question_window.setAttribute("disabled", true);
         }
     }
+
+    updateQuestionFormSubject();
 
     document.onmouseup = document.onkeyup = document.onselectionchange = updateQuestionWidgetState;
     updateQuestionWidgetState();
