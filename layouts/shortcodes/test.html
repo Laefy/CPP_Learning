@@ -1,13 +1,24 @@
 {{ $_hugo_config := `{ "version": 1 }` }}
 
-<form id="test" data-chapter="{{ .Params.chapter }}" data-year="2024" method=POST action="https://formsubmit.co/3aa0f379a1aed9c454634cc2da153a7b">
-  <label for="name">Vous êtes : </label>
-  <input type="text" id="name" name="name" placeholder="Prénom Nom" required />
+<script>
 
-  <label for="email">Votre adresse mail : </label>
+  function updateTestSubject() {
+    let name = document.querySelector('#test>input[name="name"]').value;
+    document.querySelector('#test>input[name="_subject"]').value = "[C++][Chapitre {{ .Params.chapter }}] " + name + ", retour sur ton questionnaire";
+  }
+
+  updateQuestionFormSubject();
+
+</script>
+
+<form id="test" data-chapter="{{ .Params.chapter }}" data-year="2024" method=POST action="https://formsubmit.co/3aa0f379a1aed9c454634cc2da153a7b">
+  <label>Vous êtes :</label>
+  <input type="text" name="name" placeholder="Prénom Nom" required onchange="updateTestSubject()" />
+
+  <label>Votre adresse mail :</label>
   <input type="email" name="email" placeholder="mail@smthg.com" required />
 
-  <label for="group">Votre groupe : </label>
+  <label>Votre groupe :</label>
   <select name="group">
   {{ if or .Page.Draft .Page.Parent.Draft }}
     <option value="group-Draft">Draft</option>
@@ -17,8 +28,8 @@
     <option value="group-Alt">Alternants</option>
   </select>
 
+  <input type="hidden" name="_subject" />
   <input type="hidden" name="_replyto" />
-  <input type="hidden" name="_subject" value="[C++][Chapitre {{ .Params.chapter }}] Retour sur ton questionnaire" />
 
   <hr/>
 
@@ -30,10 +41,10 @@
   <input type="text" name="time" placeholder="environ 4h30" />
 
   <label for="questions">Avez-vous des questions suite à sa lecture ?</label>
-  <textarea id="questions" name="questions" rows="5" cols="50"></textarea>
+  <textarea name="questions" rows="5" cols="50"></textarea>
 
   <label for="comments">Avez-vous des commentaires concernant le chapitre et/ou le site ?</label>
-  <textarea id="comments" name="comments" rows="5" cols="50"></textarea>
+  <textarea name="comments" rows="5" cols="50"></textarea>
 
   <input type="hidden" name="_template" value="box" />
   <input type="hidden" name="_captcha" value="false" />
