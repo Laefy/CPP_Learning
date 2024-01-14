@@ -72,7 +72,7 @@ N'hésitez vraiment surtout pas à poser vos questions dans le formulaire, mais 
 
 ### Séances de TP
 
-L'énoncé pour chaque séance de TP sera disponible au format PDF sur {{% open_in_new_tab "https://github.com/Laefy/CPP_Exercises" "ce dépôt" /%}}.
+L'énoncé pour chaque séance de TP sera disponible au format Markdown sur {{% open_in_new_tab "https://github.com/Laefy/CPP_Exercises" "ce dépôt" /%}}.
 
 Certaines parties de la séance seront à réaliser en autonomie, tandis que d'autres parties devront se faire avec l'ensemble du groupe, de manière à ce que la correction puisse être comprise par tous. 
 
