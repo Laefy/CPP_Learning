@@ -9,6 +9,9 @@
 
   <label for="group">Votre groupe : </label>
   <select name="group">
+  {{ if or .Page.Draft .Page.Parent.Draft }}
+    <option value="group-Draft">Draft</option>
+  {{ end }}
     <option value="group-I1">Initiaux 1</option>
     <option value="group-I2">Initiaux 2</option>
     <option value="group-Alt">Alternants</option>
