@@ -39,12 +39,17 @@ Afin de pouvoir exécuter votre ou vos programme rapidemment, il vous faudra cr�
 3. Sélectionnez ensuite la configuration `C/C++: (XXX) Launch` adéquate.\
 Windows et Linux devraient vous proposez GDB et MacOS devrait vous fournir LLVM.
 ![](/CPP_Learning/images/chapter0/launch-conf.png)
-4. Remplacez les variables `program` et `cwd` par les valeurs ci-dessous :
+4. Remplacez la variable `cwd` par la valeur ci-dessous :
 ```json
-"program": "${command:cmake.launchTargetPath}",
 "cwd": "${workspaceFolder}",
 ```
-5. Si vous êtes sous Windows, supprimez la ligne contenant `"miDebuggerPath"`.
+5. Si vous avez compilé votre programme "à la main", remplacez `program` par le chemin de votre exécutable.  
+Si vous avez utilisé CMake, vous pouvez indiquer `${command:cmake.launchTargetPath}`.
+```json
+"program": "${workspaceFolder}/chap-02/1-first_class",
+"program": "${command:cmake.launchTargetPath}",
+```
+6. Si vous êtes sous Windows, supprimez la ligne contenant `"miDebuggerPath"`.
 
 ---
 

@@ -1,6 +1,6 @@
 ---
 title: "🧬 Clône"
-weight: 4
+draft: true
 ---
 
 Dans cet exercice, vous verrez comment implémenter un constructeur de copie et un opérateur d'assignation.\

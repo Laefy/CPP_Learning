@@ -31,15 +31,15 @@ Selon les langages, elle ne se présente pas de la même manière. En C++, elle 
 
 #### Invariant de classe
 
-Un **invariant de classe** est une condition que toutes les instances de cette classe doivent vérifier.\
-Un des invariants de la classe Carré est qu'il faut qu'à tout moment, les 4 côtés d'une instance soient de même longueur.\
-Un des invariants de la classe Fraction est que le dénominateur de chacune de ses instances ne peut pas être nul.\
+Un **invariant de classe** est une condition que toutes les instances de cette classe doivent vérifier.  
+Un des invariants de la classe Carré est qu'il faut qu'à tout moment, les 4 côtés d'une instance soient de même longueur.  
+Un des invariants de la classe Fraction est que le dénominateur de chacune de ses instances ne peut pas être nul.  
 Un des invariants de la classe ListeCroissante est que les éléments sont toujours par ordre croissant.
 
 Lorsqu'une fonction-membre publique est appelée, on peut toujours supposer qu'à son entrée, les invariants sont assurés.
-En contre-partie, il faut que l'implémentation de la fonction garantissent que les invariants sont toujours vrais en sortie.\
+En contre-partie, il faut que l'implémentation de la fonction garantisse qu'à la sortie, les invariants sont toujours vrais.  
 Par exemple, la fonction `SortedList::insert()` n'a pas besoin de vérifier que la liste est triée au début, car on part du principe que l'invariant est forcément vrai.
-On peut donc utiliser la recherche dichotomique pour trouver où doit être inséré le nouvel élément, ce qui est moins coûteux que si on avait à faire une recherche linéaire.\
+On peut donc utiliser la recherche dichotomique pour trouver où doit être inséré le nouvel élément, ce qui est moins coûteux que si on avait à faire une recherche linéaire.  
 L'invariant permet donc ici de gagner en temps de calcul.
 
 #### Encapsulation
