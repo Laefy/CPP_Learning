@@ -5,81 +5,56 @@
     <link>https://laefy.github.io/CPP_Learning/chapter0/</link>
     <description>Recent content in Mise en place on Cours de C&#43;&#43; - Niveau Master</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language><atom:link href="https://laefy.github.io/CPP_Learning/chapter0/index.xml" rel="self" type="application/rss+xml" />
+    <language>fr</language>
+    <atom:link href="https://laefy.github.io/CPP_Learning/chapter0/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Compilateur</title>
       <link>https://laefy.github.io/CPP_Learning/chapter0/1-compiler/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
       <guid>https://laefy.github.io/CPP_Learning/chapter0/1-compiler/</guid>
-      <description>Pour le compilateur, vous devrez utiliser g++ (version &amp;gt;= 9) si vous êtes sous Windows ou Linux, et clang si vous êtes sous MacOS.
- Windows  Ouvrez un terminal et exécutez g++ -v. Si la commande réussit, assurez-vous que la dernière ligne indique bien une version de gcc &amp;gt;= 9. Si ce n&amp;rsquo;est pas le cas, installez le gestionnaire de paquet MSYS2 en suivant les instructions sur cette page.</description>
+      <description>Pour le compilateur, vous devrez utiliser g++ (version &amp;gt;= 9) si vous êtes sous Windows ou Linux, et clang si vous êtes sous MacOS.&#xA;Windows Ouvrez un terminal et exécutez g++ -v. Si la commande réussit, assurez-vous que la dernière ligne indique bien une version de gcc &amp;gt;= 9. Si ce n&amp;rsquo;est pas le cas, installez le gestionnaire de paquet MSYS2 en suivant les instructions sur cette page.&#xA;MSYS2 contient en particulier MinGW, qui est l&amp;rsquo;équivalent du compilateur gcc/g++ pour Windows.</description>
     </item>
-    
     <item>
       <title>Visual Studio Code</title>
       <link>https://laefy.github.io/CPP_Learning/chapter0/2-vscode/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
       <guid>https://laefy.github.io/CPP_Learning/chapter0/2-vscode/</guid>
-      <description>Pour l&amp;rsquo;IDE, nous vous conseillons d&amp;rsquo;utiliser Visual Studio Code, car celui-ci est disponible sur toutes les plateformes (contrairement à Visual Studio tout court), qu&amp;rsquo;il est très bien documenté et que vous pourrez trouvez de nombreux tutoriels en ligne pour apprendre à l&amp;rsquo;utiliser.
-Vous trouverez ci-dessous les instructions permettant d&amp;rsquo;installer VSCode.
- Windows  Installez VSCode en suivant les instructions du paragraphe Installation.
-Si l&amp;rsquo;installeur vous propose d&amp;rsquo;installer git, vous pouvez acceptez, cela vous fera gagner du temps pour la suite.</description>
+      <description>Pour l&amp;rsquo;IDE, nous vous conseillons d&amp;rsquo;utiliser Visual Studio Code, car celui-ci est disponible sur toutes les plateformes (contrairement à Visual Studio tout court), qu&amp;rsquo;il est très bien documenté et que vous pourrez trouvez de nombreux tutoriels en ligne pour apprendre à l&amp;rsquo;utiliser.&#xA;Vous trouverez ci-dessous les instructions permettant d&amp;rsquo;installer VSCode.&#xA;Windows Installez VSCode en suivant les instructions du paragraphe Installation. Si l&amp;rsquo;installeur vous propose d&amp;rsquo;installer git, vous pouvez acceptez, cela vous fera gagner du temps pour la suite.</description>
     </item>
-    
     <item>
       <title>CMake</title>
       <link>https://laefy.github.io/CPP_Learning/chapter0/3-cmake/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
       <guid>https://laefy.github.io/CPP_Learning/chapter0/3-cmake/</guid>
-      <description>Afin de générer les artéfacts pour la compilation, nous utiliserons CMake.
- Installation Windows  Ouvrez un terminal MSYS2 UCRT64. Installez les paquets cmake et make avec l&amp;rsquo;instruction suivante : pacman -S mingw-w64-ucrt-x86_64-cmake mingw-w64-ucrt-x86_64-make   Linux / MacOS  Ouvrez un terminal. Utilisez votre gestionnaire de package afin d&amp;rsquo;installer cmake.   Intégration à VSCode Afin de pouvoir utiliser CMake facilement depuis VSCode, il faut installer les extensions CMake et CMakeTools.</description>
+      <description>Afin de générer les artéfacts pour la compilation, nous utiliserons CMake.&#xA;Installation Windows Ouvrez un terminal MSYS2 UCRT64. Installez les paquets cmake et make avec l&amp;rsquo;instruction suivante : pacman -S mingw-w64-ucrt-x86_64-cmake mingw-w64-ucrt-x86_64-make Linux / MacOS Ouvrez un terminal. Utilisez votre gestionnaire de package afin d&amp;rsquo;installer cmake. Intégration à VSCode Afin de pouvoir utiliser CMake facilement depuis VSCode, il faut installer les extensions CMake et CMakeTools.&#xA;Démarrez VSCode. Ouvrez le panneau des extensions et recherchez les extensions CMake et CMakeTools.</description>
     </item>
-    
     <item>
       <title>Git</title>
       <link>https://laefy.github.io/CPP_Learning/chapter0/4-git/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
       <guid>https://laefy.github.io/CPP_Learning/chapter0/4-git/</guid>
-      <description>Pour le gestionnaire de version, nous utiliserons git et nous utiliserons GitHub pour l&amp;rsquo;hébergement des dépôts.
- GitHub Création de compte Commencez par créer un compte si vous n&amp;rsquo;en avez pas déjà un.
-Génération de clef SSHs Depuis quelques années, pour pouvoir push sur un dépôt, il est nécessaire de passer par la méthode SSH (HTML ne permet plus d&amp;rsquo;éditer, juste de consulter).
-Pour associer une nouvelle clef SSH à votre machine, suivez les instructions du paragraphe &amp;ldquo;Generating a new SSH key&amp;rdquo; et enregistrez la clef à l&amp;rsquo;emplacement par défaut (c&amp;rsquo;est-à-dire sans spécifier de chemin de sauvegarde).</description>
+      <description>Pour le gestionnaire de version, nous utiliserons git et nous utiliserons GitHub pour l&amp;rsquo;hébergement des dépôts.&#xA;GitHub Création de compte Commencez par créer un compte si vous n&amp;rsquo;en avez pas déjà un.&#xA;Génération de clef SSHs Depuis quelques années, pour pouvoir push sur un dépôt, il est nécessaire de passer par la méthode SSH (HTML ne permet plus d&amp;rsquo;éditer, juste de consulter).&#xA;Pour associer une nouvelle clef SSH à votre machine, suivez les instructions du paragraphe &amp;ldquo;Generating a new SSH key&amp;rdquo; et enregistrez la clef à l&amp;rsquo;emplacement par défaut (c&amp;rsquo;est-à-dire sans spécifier de chemin de sauvegarde).</description>
     </item>
-    
     <item>
       <title>Clang-Format</title>
       <link>https://laefy.github.io/CPP_Learning/chapter0/5-clang-format/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
       <guid>https://laefy.github.io/CPP_Learning/chapter0/5-clang-format/</guid>
-      <description>Clang-Format est un outil permettant de formatter automatiquement vos fichiers (indentation, espaces, retours à la ligne, etc).
-Comme le C++ est un langage avec une syntaxe un peu lourde, utiliser ce type d&amp;rsquo;outils permet de faciliter la lecture du code.
- Configuration de VSCode Clang-Format est déjà disponible dans l&amp;rsquo;extension C/C++ installée précédemment. Pour qu&amp;rsquo;il se lance automatiquement lorsque vous sauvegardez vos fichiers, suivez les instructions ci-dessous.
- Ouvrez le panneau de commandes VSCode (Ctrl+Shift+P).</description>
+      <description>Clang-Format est un outil permettant de formatter automatiquement vos fichiers (indentation, espaces, retours à la ligne, etc).&#xA;Comme le C++ est un langage avec une syntaxe un peu lourde, utiliser ce type d&amp;rsquo;outils permet de faciliter la lecture du code.&#xA;Configuration de VSCode Clang-Format est déjà disponible dans l&amp;rsquo;extension C/C++ installée précédemment. Pour qu&amp;rsquo;il se lance automatiquement lorsque vous sauvegardez vos fichiers, suivez les instructions ci-dessous.&#xA;Ouvrez le panneau de commandes VSCode (Ctrl+Shift+P).</description>
     </item>
-    
     <item>
       <title>Retours ?</title>
       <link>https://laefy.github.io/CPP_Learning/chapter0/test/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
       <guid>https://laefy.github.io/CPP_Learning/chapter0/test/</guid>
-      <description>Si vous avez rencontré des problèmes lors de l&amp;rsquo;installation d&amp;rsquo;un des logiciels, n&amp;rsquo;hésitez pas à nous l&amp;rsquo;indiquer, afin que nous puissions améliorer nos explications. Merci d&amp;rsquo;avance ! 🙂
- function updateTestSubject() {let name = document.querySelector(&#39;#testinput[name=&#34;name&#34;]&#39;).value;document.querySelector(&#39;#testinput[name=&#34;_subject&#34;]&#39;).value = &#34;[C++][Chapitre 0] &#34; + name + &#34;, retour sur ton questionnaire&#34;;}updateQuestionFormSubject();Vous êtes :Votre adresse mail :Votre groupe :Initiaux 1Initiaux 2Alternants1- Avez-vous rencontré des difficultés lors de l’installation d’un des composants ?</description>
+      <description>Si vous avez rencontré des problèmes lors de l&amp;rsquo;installation d&amp;rsquo;un des logiciels, n&amp;rsquo;hésitez pas à nous l&amp;rsquo;indiquer, afin que nous puissions améliorer nos explications. Merci d&amp;rsquo;avance ! 🙂&#xA;Vous êtes :&#xD;Votre adresse mail :&#xD;Votre groupe :&#xD;Initiaux 1&#xD;Initiaux 2&#xD;Alternants&#xD;1- Avez-vous rencontré des difficultés lors de l’installation d’un des composants ? Si oui, du ou desquels s’agit-il ?&#xA;2- Si une erreur est survenue à un moment, pouvez-vous la copier-coller ci-dessous et indiquer le contexte dans lequel celle-ci a eu lieu ?</description>
     </item>
-    
     <item>
       <title>Merci !</title>
       <link>https://laefy.github.io/CPP_Learning/chapter0/test_done/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
       <guid>https://laefy.github.io/CPP_Learning/chapter0/test_done/</guid>
-      <description>Vos réponses nous ont bien été communiquées 😃N&#39;hésitez pas à nous relancer si vous n&#39;avez pas eu de nouvelles après une semaine !</description>
+      <description>&#xD;Vos réponses nous ont bien été communiquées 😃&#xD;N&#39;hésitez pas à nous relancer si vous n&#39;avez pas eu de nouvelles après une semaine !&#xD;</description>
     </item>
-    
   </channel>
 </rss>

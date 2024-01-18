@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="Hugo 0.76.5" />
+    <meta name="generator" content="Hugo 0.121.0">
     <meta name="description" content="">
 
 
@@ -12,22 +12,22 @@
     <title>🔨 Constructeur :: Cours de C&#43;&#43; - Niveau Master</title>
 
     
-    <link href="/CPP_Learning/css/nucleus.css?1705262579" rel="stylesheet">
-    <link href="/CPP_Learning/css/fontawesome-all.min.css?1705262579" rel="stylesheet">
-    <link href="/CPP_Learning/css/hybrid.css?1705262579" rel="stylesheet">
-    <link href="/CPP_Learning/css/featherlight.min.css?1705262579" rel="stylesheet">
-    <link href="/CPP_Learning/css/perfect-scrollbar.min.css?1705262579" rel="stylesheet">
-    <link href="/CPP_Learning/css/auto-complete.css?1705262579" rel="stylesheet">
-    <link href="/CPP_Learning/css/atom-one-dark-reasonable.css?1705262579" rel="stylesheet">
-    <link href="/CPP_Learning/css/theme.css?1705262579" rel="stylesheet">
-    <link href="/CPP_Learning/css/tabs.css?1705262579" rel="stylesheet">
-    <link href="/CPP_Learning/css/hugo-theme.css?1705262579" rel="stylesheet">
+    <link href="/CPP_Learning/css/nucleus.css?1705567863" rel="stylesheet">
+    <link href="/CPP_Learning/css/fontawesome-all.min.css?1705567863" rel="stylesheet">
+    <link href="/CPP_Learning/css/hybrid.css?1705567863" rel="stylesheet">
+    <link href="/CPP_Learning/css/featherlight.min.css?1705567863" rel="stylesheet">
+    <link href="/CPP_Learning/css/perfect-scrollbar.min.css?1705567863" rel="stylesheet">
+    <link href="/CPP_Learning/css/auto-complete.css?1705567863" rel="stylesheet">
+    <link href="/CPP_Learning/css/atom-one-dark-reasonable.css?1705567863" rel="stylesheet">
+    <link href="/CPP_Learning/css/theme.css?1705567863" rel="stylesheet">
+    <link href="/CPP_Learning/css/tabs.css?1705567863" rel="stylesheet">
+    <link href="/CPP_Learning/css/hugo-theme.css?1705567863" rel="stylesheet">
     
-    <link href="/CPP_Learning/css/theme-mine.css?1705262579" rel="stylesheet">
+    <link href="/CPP_Learning/css/theme-mine.css?1705567863" rel="stylesheet">
     
-    <link href="/CPP_Learning/css/syntax.css?1705262579" rel="stylesheet">
+    <link href="/CPP_Learning/css/syntax.css?1705567863" rel="stylesheet">
 
-    <script src="/CPP_Learning/js/jquery-3.3.1.min.js?1705262579"></script>
+    <script src="/CPP_Learning/js/jquery-3.3.1.min.js?1705567863"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -1961,41 +1961,41 @@
 <p>Vous aviez implémenté une fonction-membre <code>set_name</code> dans la classe <code>Person</code> pour initialiser l&rsquo;attribut <code>_name</code>. Or, ce serait bien d&rsquo;une part de réellement pouvoir initialiser cet attribut plutôt que de le modifier après l&rsquo;instanciation, et d&rsquo;autre part, de supprimer ce <strong>setter</strong>, afin qu&rsquo;une fois initialisé, il ne soit plus possible de modifier <code>_name</code>.</p>
 <p>Pour faire cela, il va falloir que vous définissiez une fonction spéciale appelée <strong>constructeur</strong>.
 Voici la syntaxe générique d&rsquo;un constructeur :</p>
-<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="k">class</span> <span class="nc">ClassName</span>
-<span class="p">{</span>
-<span class="k">public</span><span class="o">:</span>
-    <span class="n">ClassName</span><span class="p">(</span><span class="n">type</span> <span class="n">p1</span><span class="p">,</span> <span class="n">type</span> <span class="n">p2</span><span class="p">,</span> <span class="p">...)</span>
-        <span class="o">:</span> <span class="n">_attribute_1</span> <span class="p">{</span> <span class="cm">/* value for _a1 */</span> <span class="p">}</span>
-        <span class="p">,</span> <span class="n">_attribute_2</span> <span class="p">{</span> <span class="cm">/* value for _a2 */</span> <span class="p">}</span>
-        <span class="p">,</span> <span class="p">...</span>
-    <span class="p">{</span>
-        <span class="c1">// some optional code
-</span><span class="c1"></span>    <span class="p">}</span>
-
-<span class="k">private</span><span class="o">:</span>
-    <span class="n">type</span> <span class="n">_attribute_1</span><span class="p">;</span>
-    <span class="n">type</span> <span class="n">_attribute_2</span><span class="p">;</span>
-    <span class="p">...</span>
-<span class="p">};</span>
-</code></pre></div><p>Il s&rsquo;agit donc d&rsquo;une fonction sans type de retour, de même nom que la classe. Les membres sont initialisés entre le prototype et le corps de la fonction, dans ce qui s&rsquo;appelle la <strong>liste d&rsquo;initialisation</strong>.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">ClassName</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl"><span class="k">public</span><span class="o">:</span>
+</span></span><span class="line"><span class="cl">    <span class="n">ClassName</span><span class="p">(</span><span class="n">type</span> <span class="n">p1</span><span class="p">,</span> <span class="n">type</span> <span class="n">p2</span><span class="p">,</span> <span class="p">...)</span>
+</span></span><span class="line"><span class="cl">        <span class="o">:</span> <span class="n">_attribute_1</span> <span class="p">{</span> <span class="cm">/* value for _a1 */</span> <span class="p">}</span>
+</span></span><span class="line"><span class="cl">        <span class="p">,</span> <span class="n">_attribute_2</span> <span class="p">{</span> <span class="cm">/* value for _a2 */</span> <span class="p">}</span>
+</span></span><span class="line"><span class="cl">        <span class="p">,</span> <span class="p">...</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="c1">// some optional code
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">private</span><span class="o">:</span>
+</span></span><span class="line"><span class="cl">    <span class="n">type</span> <span class="n">_attribute_1</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">type</span> <span class="n">_attribute_2</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">...</span>
+</span></span><span class="line"><span class="cl"><span class="p">};</span>
+</span></span></code></pre></div><p>Il s&rsquo;agit donc d&rsquo;une fonction sans type de retour, de même nom que la classe. Les membres sont initialisés entre le prototype et le corps de la fonction, dans ce qui s&rsquo;appelle la <strong>liste d&rsquo;initialisation</strong>.</p>
 <p>Voici un exemple de ce que cela peut donner sur une petite classe :</p>
-<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="k">class</span> <span class="nc">Dog</span>
-<span class="p">{</span>
-<span class="k">public</span><span class="o">:</span>
-    <span class="n">Dog</span><span class="p">(</span><span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&amp;</span> <span class="n">breed</span><span class="p">,</span> <span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&amp;</span> <span class="n">name</span><span class="p">)</span>
-        <span class="o">:</span> <span class="n">_breed</span> <span class="p">{</span> <span class="n">breed</span> <span class="p">}</span>
-        <span class="p">,</span> <span class="n">_name</span> <span class="p">{</span> <span class="n">name</span> <span class="p">}</span>
-    <span class="p">{</span>
-        <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;Dog named &#34;</span> <span class="o">&lt;&lt;</span> <span class="n">name</span> <span class="o">&lt;&lt;</span> <span class="s">&#34; has just been born!&#34;</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
-    <span class="p">}</span>
-
-<span class="k">private</span><span class="o">:</span>
-    <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">_breed</span><span class="p">;</span>
-    <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">_name</span><span class="p">;</span>
-<span class="p">};</span>
-</code></pre></div><p>Et pour instancier la classe <code>Dog</code> avec le constructeur ci-dessus, on peut écrire :</p>
-<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="n">Dog</span> <span class="n">dog</span> <span class="p">{</span> <span class="s">&#34;Colley&#34;</span><span class="p">,</span> <span class="s">&#34;Lassie&#34;</span> <span class="p">};</span> 
-</code></pre></div><p>Commencez par modifier votre fonction <code>main</code>, de manière à passer le nom <code>&quot;Batman&quot;</code> à la construction de la variable <code>p</code>, puis supprimez l&rsquo;appel à <code>set_name</code>.
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">Dog</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl"><span class="k">public</span><span class="o">:</span>
+</span></span><span class="line"><span class="cl">    <span class="n">Dog</span><span class="p">(</span><span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&amp;</span> <span class="n">breed</span><span class="p">,</span> <span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&amp;</span> <span class="n">name</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="o">:</span> <span class="n">_breed</span> <span class="p">{</span> <span class="n">breed</span> <span class="p">}</span>
+</span></span><span class="line"><span class="cl">        <span class="p">,</span> <span class="n">_name</span> <span class="p">{</span> <span class="n">name</span> <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;Dog named &#34;</span> <span class="o">&lt;&lt;</span> <span class="n">name</span> <span class="o">&lt;&lt;</span> <span class="s">&#34; has just been born!&#34;</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">private</span><span class="o">:</span>
+</span></span><span class="line"><span class="cl">    <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">_breed</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">_name</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">};</span>
+</span></span></code></pre></div><p>Et pour instancier la classe <code>Dog</code> avec le constructeur ci-dessus, on peut écrire :</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="n">Dog</span> <span class="n">dog</span> <span class="p">{</span> <span class="s">&#34;Colley&#34;</span><span class="p">,</span> <span class="s">&#34;Lassie&#34;</span> <span class="p">};</span> 
+</span></span></code></pre></div><p>Commencez par modifier votre fonction <code>main</code>, de manière à passer le nom <code>&quot;Batman&quot;</code> à la construction de la variable <code>p</code>, puis supprimez l&rsquo;appel à <code>set_name</code>.
 Modifiez ensuite la classe <code>Person</code> pour lui ajouter un constructeur à un paramètre, dans lequel vous initialiser l&rsquo;attribut <code>_name</code>. Vous n&rsquo;êtes pas obligé d&rsquo;initialiser <code>_age</code> dans la liste d&rsquo;initialisation du constructeur, car cet attribut est déjà initialisé au niveau de sa définition (= <strong>class initializer</strong>).</p>
 <p>Comme d&rsquo;habitude, compilez et testez ensuite votre programme.</p>
 
@@ -2011,18 +2011,18 @@ Modifiez ensuite la classe <code>Person</code> pour lui ajouter un constructeur 
     </div>
     <div class="expand-content" style="display: none;">
         <p>Instanciation :</p>
-<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="n">Person</span> <span class="n">p</span> <span class="p">{</span> <span class="s">&#34;Batman&#34;</span> <span class="p">};</span>
-</code></pre></div><p>Définition du constructeur :</p>
-<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="k">class</span> <span class="nc">Person</span>
-<span class="p">{</span>
-<span class="k">public</span><span class="o">:</span>
-    <span class="n">Person</span><span class="p">(</span><span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&amp;</span> <span class="n">name</span><span class="p">)</span>
-        <span class="o">:</span> <span class="n">_name</span> <span class="p">{</span> <span class="n">name</span> <span class="p">}</span>
-    <span class="p">{}</span>
-
-    <span class="p">...</span>
-<span class="p">};</span>
-</code></pre></div>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="n">Person</span> <span class="n">p</span> <span class="p">{</span> <span class="s">&#34;Batman&#34;</span> <span class="p">};</span>
+</span></span></code></pre></div><p>Définition du constructeur :</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">Person</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl"><span class="k">public</span><span class="o">:</span>
+</span></span><span class="line"><span class="cl">    <span class="n">Person</span><span class="p">(</span><span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&amp;</span> <span class="n">name</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="o">:</span> <span class="n">_name</span> <span class="p">{</span> <span class="n">name</span> <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="p">...</span>
+</span></span><span class="line"><span class="cl"><span class="p">};</span>
+</span></span></code></pre></div>
     </div>
 </div>
 <p>Batman n&rsquo;est pas né Batman. Batman est né Bruce Wayne.<br>
@@ -2042,24 +2042,24 @@ Attention, il y a un piège avec le type de retour.</p>
     </div>
     <div class="expand-content" style="display: none;">
         <p>Instanciation :</p>
-<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="n">Person</span> <span class="n">p</span> <span class="p">{</span> <span class="s">&#34;Bruce&#34;</span><span class="p">,</span> <span class="s">&#34;Wayne&#34;</span> <span class="p">};</span>
-</code></pre></div><p>Définition du constructeur :</p>
-<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="k">class</span> <span class="nc">Person</span>
-<span class="p">{</span>
-<span class="k">public</span><span class="o">:</span>
-    <span class="n">Person</span><span class="p">(</span><span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&amp;</span> <span class="n">name</span><span class="p">,</span> <span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&amp;</span> <span class="n">surname</span><span class="p">)</span>
-        <span class="o">:</span> <span class="n">_name</span> <span class="p">{</span> <span class="n">name</span> <span class="p">}</span>
-        <span class="p">,</span> <span class="n">_surname</span> <span class="p">{</span> <span class="n">surname</span> <span class="p">}</span>
-    <span class="p">{}</span>
-
-    <span class="p">...</span>
-
-<span class="k">private</span><span class="o">:</span>
-    <span class="n">std</span><span class="o">::</span><span class="n">string</span>  <span class="n">_name</span><span class="p">;</span>
-    <span class="n">std</span><span class="o">::</span><span class="n">string</span>  <span class="n">_surname</span><span class="p">;</span>
-    <span class="kt">unsigned</span> <span class="kt">int</span> <span class="n">_age</span> <span class="o">=</span> <span class="mi">0u</span><span class="p">;</span>
-<span class="p">};</span>
-</code></pre></div>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="n">Person</span> <span class="n">p</span> <span class="p">{</span> <span class="s">&#34;Bruce&#34;</span><span class="p">,</span> <span class="s">&#34;Wayne&#34;</span> <span class="p">};</span>
+</span></span></code></pre></div><p>Définition du constructeur :</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">Person</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl"><span class="k">public</span><span class="o">:</span>
+</span></span><span class="line"><span class="cl">    <span class="n">Person</span><span class="p">(</span><span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&amp;</span> <span class="n">name</span><span class="p">,</span> <span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&amp;</span> <span class="n">surname</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="o">:</span> <span class="n">_name</span> <span class="p">{</span> <span class="n">name</span> <span class="p">}</span>
+</span></span><span class="line"><span class="cl">        <span class="p">,</span> <span class="n">_surname</span> <span class="p">{</span> <span class="n">surname</span> <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="p">...</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">private</span><span class="o">:</span>
+</span></span><span class="line"><span class="cl">    <span class="n">std</span><span class="o">::</span><span class="n">string</span>  <span class="n">_name</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">std</span><span class="o">::</span><span class="n">string</span>  <span class="n">_surname</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">unsigned</span> <span class="kt">int</span> <span class="n">_age</span> <span class="o">=</span> <span class="mi">0u</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">};</span>
+</span></span></code></pre></div>
     </div>
 </div>
 <p>Renommez votre fonction <code>get_name</code> en <code>get_full_name</code> et réalisez les modifications nécessaires afin que celle-ci renvoie <code>&quot;Bruce Wayne&quot;</code> plutôt que <code>&quot;Bruce&quot;</code>.
@@ -2077,8 +2077,8 @@ Attention, il y a un piège avec le type de retour.</p>
     <div class="expand-content" style="display: none;">
         <p>La fonction <code>get_name</code> pouvait renvoyer une const-ref, car le résultat pointait sur l&rsquo;espace mémoire de l&rsquo;attribut <code>_name</code>.
 Comme le résultat ne fait plus référence à un attribut de la classe, il est nécessaire de le renvoyer par valeur.</p>
-<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">get_full_name</span><span class="p">()</span> <span class="k">const</span> <span class="p">{</span> <span class="k">return</span> <span class="n">_name</span> <span class="o">+</span> <span class="s">&#34; &#34;</span> <span class="o">+</span> <span class="n">_surname</span><span class="p">;</span> <span class="p">}</span>
-</code></pre></div>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">get_full_name</span><span class="p">()</span> <span class="k">const</span> <span class="p">{</span> <span class="k">return</span> <span class="n">_name</span> <span class="o">+</span> <span class="s">&#34; &#34;</span> <span class="o">+</span> <span class="n">_surname</span><span class="p">;</span> <span class="p">}</span>
+</span></span></code></pre></div>
     </div>
 </div></p>
 <p>Pour terminer, supprimez le setter pour _name, puisque celui-ci n&rsquo;est plus utilisé.<br>
@@ -2095,20 +2095,20 @@ Profitez-en également pour rajouter les <code>const</code> sur les membres qui 
     	</span>
     </div>
     <div class="expand-content" style="display: none;">
-        <div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">_name</span><span class="p">;</span>
-<span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">_surname</span><span class="p">;</span>
-</code></pre></div>
+        <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">_name</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">_surname</span><span class="p">;</span>
+</span></span></code></pre></div>
     </div>
 </div></p>
 <hr>
 <h3 id="le-constructeur-par-défaut">Le constructeur par défaut</h3>
 <p>Modifiez l&rsquo;instanciation de <code>p</code> dans la fonction <code>main</code> de manière à ne plus lui passer d&rsquo;arguments (comme c&rsquo;était le cas avant de commencer l&rsquo;exercice) :</p>
-<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="n">Person</span> <span class="n">p</span><span class="p">;</span>
-</code></pre></div><p>Le programme ne compile plus alors qu&rsquo;il compilait tout à l&rsquo;heure.<br>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="n">Person</span> <span class="n">p</span><span class="p">;</span>
+</span></span></code></pre></div><p>Le programme ne compile plus alors qu&rsquo;il compilait tout à l&rsquo;heure.<br>
 Commentez la définition de votre constructeur, et essayez de compiler à nouveau. Ca recompile&hellip;</p>
 <p><strong>Pourquoi le programme compile quand on retire un constructeur ?</strong></p>
 <p>Lorsque l&rsquo;utilisateur ne définit aucun constructeur, le compilateur définit (s&rsquo;il le peut) un constructeur qui n&rsquo;attend aucun argument.</p>
-<p>On appelle <strong>constructeur par défaut</strong> tout constructeur qui n&rsquo;attend aucun paramètre. L&rsquo;utilisateur et le compilateur peuvent donc tout deux définir un constructeur par défaut. Dans le cas du compilateur, on parlera d'<strong>implémentation par défaut du constructeur par défaut</strong>.</p>
+<p>On appelle <strong>constructeur par défaut</strong> tout constructeur qui n&rsquo;attend aucun paramètre. L&rsquo;utilisateur et le compilateur peuvent donc tout deux définir un constructeur par défaut. Dans le cas du compilateur, on parlera d&rsquo;<strong>implémentation par défaut du constructeur par défaut</strong>.</p>
 <p>L&rsquo;implémentation par défaut du constructeur par défaut (trop de &ldquo;defaut&rdquo;, je sais) initialise les attributs de la classe selon les règles suivantes :</p>
 <ol>
 <li>en utilisant le class-initializer s&rsquo;il est fourni (comme pour <code>_age</code>),</li>
@@ -2117,19 +2117,19 @@ Commentez la définition de votre constructeur, et essayez de compiler à nouvea
 </ol>
 <p>Du coup pour répondre à la question, le code originel compilait car le compilateur définissait un constructeur par défaut à la classe <code>Person</code>. Dès lors que vous avez ajouté votre propre constructeur, le compilateur a supposé que vous ne vouliez probablement plus de l&rsquo;implémentation qu&rsquo;il vous fournissait. Il ne vous était donc plus possible d&rsquo;instancier la classe <code>Person</code> sans paramètres.</p>
 <p>Si vous vouliez pouvoir le faire à nouveau, tout en gardant votre constructeur à 2 paramètres, vous devriez donc définir un nouveau constructeur par défaut.</p>
-<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="k">class</span> <span class="nc">Person</span>
-<span class="p">{</span>
-<span class="k">public</span><span class="o">:</span>
-    <span class="n">Person</span><span class="p">()</span>
-    <span class="p">{}</span>
-
-    <span class="n">Person</span><span class="p">(</span><span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&amp;</span> <span class="n">name</span><span class="p">,</span> <span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&amp;</span> <span class="n">surname</span><span class="p">)</span>
-        <span class="o">:</span> <span class="n">_name</span> <span class="p">{</span> <span class="n">name</span> <span class="p">},</span> <span class="n">_surname</span> <span class="p">{</span> <span class="n">surname</span> <span class="p">}</span>
-    <span class="p">{}</span>
-
-    <span class="p">...</span>
-<span class="p">};</span>
-</code></pre></div>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">Person</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl"><span class="k">public</span><span class="o">:</span>
+</span></span><span class="line"><span class="cl">    <span class="n">Person</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="n">Person</span><span class="p">(</span><span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&amp;</span> <span class="n">name</span><span class="p">,</span> <span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&amp;</span> <span class="n">surname</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="o">:</span> <span class="n">_name</span> <span class="p">{</span> <span class="n">name</span> <span class="p">},</span> <span class="n">_surname</span> <span class="p">{</span> <span class="n">surname</span> <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="p">...</span>
+</span></span><span class="line"><span class="cl"><span class="p">};</span>
+</span></span></code></pre></div>
 <div class="notices note" ><p>1- Si on n&rsquo;initialise aucun attribut dans la liste d&rsquo;initialisation d&rsquo;un constructeur, alors il faut omettre complètement cette liste (écrire <code>Person() {}</code> plutôt que <code>Person() : {}</code>).<br>
 2- Si un attribut n&rsquo;est pas initialisé via la liste d&rsquo;initialisation, alors il est initialisé selon les mêmes règles que celles exposées pour l&rsquo;implémentation par défaut du constructeur par défaut. C&rsquo;est pour cela que l&rsquo;on n&rsquo;a pas besoin de respécifier <code>_age</code> dans la liste d&rsquo;initialisation du constructeur à 2 paramètres.</p>
 </div>
@@ -2177,10 +2177,10 @@ Testez que votre programme fonctionne correctement.</p>
     </div>
     <div class="expand-content" style="display: none;">
         <p>Appel :</p>
-<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="n">p</span><span class="p">.</span><span class="n">wait</span><span class="p">(</span><span class="mi">23</span><span class="p">);</span>
-</code></pre></div><p>Définition :</p>
-<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="kt">void</span> <span class="nf">wait</span><span class="p">(</span><span class="kt">unsigned</span> <span class="kt">int</span> <span class="n">years</span><span class="p">)</span> <span class="p">{</span> <span class="n">_age</span> <span class="o">+=</span> <span class="n">years</span><span class="p">;</span> <span class="p">}</span>
-</code></pre></div>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="n">p</span><span class="p">.</span><span class="n">wait</span><span class="p">(</span><span class="mi">23</span><span class="p">);</span>
+</span></span></code></pre></div><p>Définition :</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="kt">void</span> <span class="nf">wait</span><span class="p">(</span><span class="kt">unsigned</span> <span class="kt">int</span> <span class="n">years</span><span class="p">)</span> <span class="p">{</span> <span class="n">_age</span> <span class="o">+=</span> <span class="n">years</span><span class="p">;</span> <span class="p">}</span>
+</span></span></code></pre></div>
     </div>
 </div>
 
@@ -3488,19 +3488,19 @@ Testez que votre programme fonctionne correctement.</p>
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/CPP_Learning/js/clipboard.min.js?1705262579"></script>
-    <script src="/CPP_Learning/js/perfect-scrollbar.min.js?1705262579"></script>
-    <script src="/CPP_Learning/js/perfect-scrollbar.jquery.min.js?1705262579"></script>
-    <script src="/CPP_Learning/js/jquery.sticky.js?1705262579"></script>
-    <script src="/CPP_Learning/js/featherlight.min.js?1705262579"></script>
-    <script src="/CPP_Learning/js/highlight.pack.js?1705262579"></script>
+    <script src="/CPP_Learning/js/clipboard.min.js?1705567864"></script>
+    <script src="/CPP_Learning/js/perfect-scrollbar.min.js?1705567864"></script>
+    <script src="/CPP_Learning/js/perfect-scrollbar.jquery.min.js?1705567864"></script>
+    <script src="/CPP_Learning/js/jquery.sticky.js?1705567864"></script>
+    <script src="/CPP_Learning/js/featherlight.min.js?1705567864"></script>
+    <script src="/CPP_Learning/js/highlight.pack.js?1705567864"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/CPP_Learning/js/modernizr.custom-3.6.0.js?1705262579"></script>
-    <script src="/CPP_Learning/js/learn.js?1705262579"></script>
-    <script src="/CPP_Learning/js/hugo-learn.js?1705262579"></script>
+    <script src="/CPP_Learning/js/modernizr.custom-3.6.0.js?1705567864"></script>
+    <script src="/CPP_Learning/js/learn.js?1705567864"></script>
+    <script src="/CPP_Learning/js/hugo-learn.js?1705567864"></script>
     
         
-            <script src="/CPP_Learning/mermaid/mermaid.js?1705262579"></script>
+            <script src="/CPP_Learning/mermaid/mermaid.js?1705567864"></script>
         
         <script>
             mermaid.initialize({ startOnLoad: true });

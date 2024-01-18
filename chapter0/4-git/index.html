@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="Hugo 0.76.5" />
+    <meta name="generator" content="Hugo 0.121.0">
     <meta name="description" content="">
 
 
@@ -12,22 +12,22 @@
     <title>Git :: Cours de C&#43;&#43; - Niveau Master</title>
 
     
-    <link href="/CPP_Learning/css/nucleus.css?1705262579" rel="stylesheet">
-    <link href="/CPP_Learning/css/fontawesome-all.min.css?1705262579" rel="stylesheet">
-    <link href="/CPP_Learning/css/hybrid.css?1705262579" rel="stylesheet">
-    <link href="/CPP_Learning/css/featherlight.min.css?1705262579" rel="stylesheet">
-    <link href="/CPP_Learning/css/perfect-scrollbar.min.css?1705262579" rel="stylesheet">
-    <link href="/CPP_Learning/css/auto-complete.css?1705262579" rel="stylesheet">
-    <link href="/CPP_Learning/css/atom-one-dark-reasonable.css?1705262579" rel="stylesheet">
-    <link href="/CPP_Learning/css/theme.css?1705262579" rel="stylesheet">
-    <link href="/CPP_Learning/css/tabs.css?1705262579" rel="stylesheet">
-    <link href="/CPP_Learning/css/hugo-theme.css?1705262579" rel="stylesheet">
+    <link href="/CPP_Learning/css/nucleus.css?1705567863" rel="stylesheet">
+    <link href="/CPP_Learning/css/fontawesome-all.min.css?1705567863" rel="stylesheet">
+    <link href="/CPP_Learning/css/hybrid.css?1705567863" rel="stylesheet">
+    <link href="/CPP_Learning/css/featherlight.min.css?1705567863" rel="stylesheet">
+    <link href="/CPP_Learning/css/perfect-scrollbar.min.css?1705567863" rel="stylesheet">
+    <link href="/CPP_Learning/css/auto-complete.css?1705567863" rel="stylesheet">
+    <link href="/CPP_Learning/css/atom-one-dark-reasonable.css?1705567863" rel="stylesheet">
+    <link href="/CPP_Learning/css/theme.css?1705567863" rel="stylesheet">
+    <link href="/CPP_Learning/css/tabs.css?1705567863" rel="stylesheet">
+    <link href="/CPP_Learning/css/hugo-theme.css?1705567863" rel="stylesheet">
     
-    <link href="/CPP_Learning/css/theme-mine.css?1705262579" rel="stylesheet">
+    <link href="/CPP_Learning/css/theme-mine.css?1705567863" rel="stylesheet">
     
-    <link href="/CPP_Learning/css/syntax.css?1705262579" rel="stylesheet">
+    <link href="/CPP_Learning/css/syntax.css?1705567863" rel="stylesheet">
 
-    <script src="/CPP_Learning/js/jquery-3.3.1.min.js?1705262579"></script>
+    <script src="/CPP_Learning/js/jquery-3.3.1.min.js?1705567863"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -1979,15 +1979,15 @@ Mais si vous êtes intéressés quand même, les sections ci-dessous détaillent
 Comme nous ne souhaitons pas sauvegarder les fichiers temporaires, nous allons les ignorer en ajoutant un nouveau fichier <code>.gitignore</code>.<br>
 Créez ce fichier à la racine de votre dossier et copiez-collez dedans les lignes ci-dessous :</li>
 </ol>
-<div class="highlight"><pre class="chroma"><code class="language-b" data-lang="b"><span class="c">build/
-</span><span class="c"></span><span class="nt">.</span><span class="c">vscode/
-</span><span class="c">
-</span><span class="c">*</span><span class="nt">.</span><span class="c">exe
-</span><span class="c">*</span><span class="nt">.</span><span class="c">obj
-</span><span class="c">*</span><span class="nt">.</span><span class="c">pdb
-</span><span class="c">*</span><span class="nt">.</span><span class="c">ilk
-</span><span class="c">*</span><span class="nt">.</span><span class="c">o
-</span></code></pre></div><ol start="7">
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-b" data-lang="b"><span class="line"><span class="cl"><span class="c">build/
+</span></span></span><span class="line"><span class="cl"><span class="c"></span><span class="nt">.</span><span class="c">vscode/
+</span></span></span><span class="line"><span class="cl"><span class="c">
+</span></span></span><span class="line"><span class="cl"><span class="c">*</span><span class="nt">.</span><span class="c">exe
+</span></span></span><span class="line"><span class="cl"><span class="c">*</span><span class="nt">.</span><span class="c">obj
+</span></span></span><span class="line"><span class="cl"><span class="c">*</span><span class="nt">.</span><span class="c">pdb
+</span></span></span><span class="line"><span class="cl"><span class="c">*</span><span class="nt">.</span><span class="c">ilk
+</span></span></span><span class="line"><span class="cl"><span class="c">*</span><span class="nt">.</span><span class="c">o
+</span></span></span></code></pre></div><ol start="7">
 <li>Vérifiez que seuls les fichiers helloworld.cpp, CMakeLists.txt, .clang-format et .gitignore apparaissent désormais dans la liste des changements.</li>
 <li>Retournez dans l&rsquo;onglet Source Control, et appuyez sur le bouton <code>+</code> pour stager vos modifications.
 <img src="/CPP_Learning/images/chapter0/git-add.png" alt=""></li>
@@ -2006,12 +2006,12 @@ Créez ce fichier à la racine de votre dossier et copiez-collez dedans les lign
 <li>Sélectionnez le dossier où vous ranger habituellement vos projets de code, pour que git y copie le dépôt distant.</li>
 <li>Dans le fichier <code>main.cpp</code>, remplacez le contenu de la fonction <code>main</code> par les instructions ci-dessous :</li>
 </ol>
-<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
-<span class="p">{</span>
-    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;ByeBye now&#34;</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
-    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
-<span class="p">}</span> 
-</code></pre></div><ol start="7">
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;ByeBye now&#34;</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span> 
+</span></span></code></pre></div><ol start="7">
 <li>Allez dans l&rsquo;onglet Source Control de VSCode (Ctrl+Shift+G ou <code>View &gt; SCM</code>) et appuyez sur le bouton <code>+</code> pour stager vos changements.
 <img src="/CPP_Learning/images/vscode-git-clone-stage.png" alt=""></li>
 <li>Entrez un message et cliquez sur la coche pour committer vos changements.
@@ -3319,19 +3319,19 @@ Une popup vous demandera de vous connecter à votre compte GitHub si vous ne l&r
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/CPP_Learning/js/clipboard.min.js?1705262579"></script>
-    <script src="/CPP_Learning/js/perfect-scrollbar.min.js?1705262579"></script>
-    <script src="/CPP_Learning/js/perfect-scrollbar.jquery.min.js?1705262579"></script>
-    <script src="/CPP_Learning/js/jquery.sticky.js?1705262579"></script>
-    <script src="/CPP_Learning/js/featherlight.min.js?1705262579"></script>
-    <script src="/CPP_Learning/js/highlight.pack.js?1705262579"></script>
+    <script src="/CPP_Learning/js/clipboard.min.js?1705567863"></script>
+    <script src="/CPP_Learning/js/perfect-scrollbar.min.js?1705567863"></script>
+    <script src="/CPP_Learning/js/perfect-scrollbar.jquery.min.js?1705567863"></script>
+    <script src="/CPP_Learning/js/jquery.sticky.js?1705567863"></script>
+    <script src="/CPP_Learning/js/featherlight.min.js?1705567863"></script>
+    <script src="/CPP_Learning/js/highlight.pack.js?1705567863"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/CPP_Learning/js/modernizr.custom-3.6.0.js?1705262579"></script>
-    <script src="/CPP_Learning/js/learn.js?1705262579"></script>
-    <script src="/CPP_Learning/js/hugo-learn.js?1705262579"></script>
+    <script src="/CPP_Learning/js/modernizr.custom-3.6.0.js?1705567863"></script>
+    <script src="/CPP_Learning/js/learn.js?1705567863"></script>
+    <script src="/CPP_Learning/js/hugo-learn.js?1705567863"></script>
     
         
-            <script src="/CPP_Learning/mermaid/mermaid.js?1705262579"></script>
+            <script src="/CPP_Learning/mermaid/mermaid.js?1705567863"></script>
         
         <script>
             mermaid.initialize({ startOnLoad: true });

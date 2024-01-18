@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="Hugo 0.76.5" />
+    <meta name="generator" content="Hugo 0.121.0">
     <meta name="description" content="">
 
 
@@ -12,22 +12,22 @@
     <title>💠 Polygône :: Cours de C&#43;&#43; - Niveau Master</title>
 
     
-    <link href="/CPP_Learning/css/nucleus.css?1705262579" rel="stylesheet">
-    <link href="/CPP_Learning/css/fontawesome-all.min.css?1705262579" rel="stylesheet">
-    <link href="/CPP_Learning/css/hybrid.css?1705262579" rel="stylesheet">
-    <link href="/CPP_Learning/css/featherlight.min.css?1705262579" rel="stylesheet">
-    <link href="/CPP_Learning/css/perfect-scrollbar.min.css?1705262579" rel="stylesheet">
-    <link href="/CPP_Learning/css/auto-complete.css?1705262579" rel="stylesheet">
-    <link href="/CPP_Learning/css/atom-one-dark-reasonable.css?1705262579" rel="stylesheet">
-    <link href="/CPP_Learning/css/theme.css?1705262579" rel="stylesheet">
-    <link href="/CPP_Learning/css/tabs.css?1705262579" rel="stylesheet">
-    <link href="/CPP_Learning/css/hugo-theme.css?1705262579" rel="stylesheet">
+    <link href="/CPP_Learning/css/nucleus.css?1705567864" rel="stylesheet">
+    <link href="/CPP_Learning/css/fontawesome-all.min.css?1705567864" rel="stylesheet">
+    <link href="/CPP_Learning/css/hybrid.css?1705567864" rel="stylesheet">
+    <link href="/CPP_Learning/css/featherlight.min.css?1705567864" rel="stylesheet">
+    <link href="/CPP_Learning/css/perfect-scrollbar.min.css?1705567864" rel="stylesheet">
+    <link href="/CPP_Learning/css/auto-complete.css?1705567864" rel="stylesheet">
+    <link href="/CPP_Learning/css/atom-one-dark-reasonable.css?1705567864" rel="stylesheet">
+    <link href="/CPP_Learning/css/theme.css?1705567864" rel="stylesheet">
+    <link href="/CPP_Learning/css/tabs.css?1705567864" rel="stylesheet">
+    <link href="/CPP_Learning/css/hugo-theme.css?1705567864" rel="stylesheet">
     
-    <link href="/CPP_Learning/css/theme-mine.css?1705262579" rel="stylesheet">
+    <link href="/CPP_Learning/css/theme-mine.css?1705567864" rel="stylesheet">
     
-    <link href="/CPP_Learning/css/syntax.css?1705262579" rel="stylesheet">
+    <link href="/CPP_Learning/css/syntax.css?1705567864" rel="stylesheet">
 
-    <script src="/CPP_Learning/js/jquery-3.3.1.min.js?1705262579"></script>
+    <script src="/CPP_Learning/js/jquery-3.3.1.min.js?1705567864"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -1978,8 +1978,8 @@ Pour terminer, vous serez confronté à votre première &ldquo;dangling referenc
 <hr>
 <h3 id="définition-de-la-classe">Définition de la classe</h3>
 <p>Décommentez la première instruction du <code>main</code> :</p>
-<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="n">Polygon</span> <span class="n">polygon</span><span class="p">;</span>
-</code></pre></div><p>Créez un nouveau fichier <code>Polygon.h</code> et ajoutez-y la définition d&rsquo;une classe <code>Polygon</code>, pour le moment vide.<br>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="n">Polygon</span> <span class="n">polygon</span><span class="p">;</span>
+</span></span></code></pre></div><p>Créez un nouveau fichier <code>Polygon.h</code> et ajoutez-y la définition d&rsquo;une classe <code>Polygon</code>, pour le moment vide.<br>
 Que faut-il mettre au début du header ? Que devez-vous penser à faire dans <code>main.cpp</code> ?</p>
 <p>Décommentez la ligne associée à ce fichier dans le <code>CMakeLists.txt</code> (celui contenu dans <code>chap-02/5-polygon/</code>) afin que la compilation ajoute le fichier au programme.
 Relancez la configuration du projet (dans VSCode, <code>CMake: Configure</code>), compilez et testez qu&rsquo;il se lance.</p>
@@ -1997,19 +1997,19 @@ Relancez la configuration du projet (dans VSCode, <code>CMake: Configure</code>)
     <div class="expand-content" style="display: none;">
         <p>Au début des headers, il faut écrire <code>#pragma once</code>.<br>
 Dans le fichier <code>main.cpp</code>, on pense à inclure le nouveau fichier <code>Polygon.h</code>.</p>
-<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="cp">#pragma once
-</span><span class="cp"></span>
-<span class="k">class</span> <span class="nc">Polygon</span>
-<span class="p">{</span>
-<span class="p">};</span>
-</code></pre></div>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="cp">#pragma once
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span>
+</span></span><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">Polygon</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl"><span class="p">};</span>
+</span></span></code></pre></div>
     </div>
 </div>
 <hr>
 <h3 id="ajout-dun-sommet">Ajout d&rsquo;un sommet</h3>
 <p>Décommentez l&rsquo;instruction suivante :</p>
-<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="n">polygon</span><span class="p">.</span><span class="n">add_vertex</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">);</span>
-</code></pre></div><p>Pour ajouter un sommet au polygône, il va déjà falloir faire en sorte que le polygône puisse en contenir.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="n">polygon</span><span class="p">.</span><span class="n">add_vertex</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">);</span>
+</span></span></code></pre></div><p>Pour ajouter un sommet au polygône, il va déjà falloir faire en sorte que le polygône puisse en contenir.</p>
 <p>Afin de représenter les sommets, vous allez utiliser la structure <code>std::pair&lt;int, int&gt;</code>.
 Ajoutez un attribut <code>_vertices</code> qui puisse contenir un tableau dynamique de sommets.<br>
 Quel doit-être le type de <code>_vertices</code> ? Dans quel header est défini <code>std::pair</code> ?</p>
@@ -2026,23 +2026,23 @@ Quel doit-être le type de <code>_vertices</code> ? Dans quel header est défini
     </div>
     <div class="expand-content" style="display: none;">
         <p>Les attributs doivent être placés autant que possible dans la partie privée.</p>
-<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="cp">#pragma once
-</span><span class="cp"></span>
-<span class="cp">#include</span> <span class="cpf">&lt;utility&gt;</span><span class="cp">
-</span><span class="cp">#include</span> <span class="cpf">&lt;vector&gt;</span><span class="cp">
-</span><span class="cp"></span>
-<span class="k">class</span> <span class="nc">Polygon</span>
-<span class="p">{</span>
-<span class="k">private</span><span class="o">:</span>
-    <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">pair</span><span class="o">&lt;</span><span class="kt">int</span><span class="p">,</span> <span class="kt">int</span><span class="o">&gt;&gt;</span> <span class="n">_vertices</span><span class="p">;</span>
-<span class="p">};</span>
-</code></pre></div>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="cp">#pragma once
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span>
+</span></span><span class="line"><span class="cl"><span class="cp">#include</span> <span class="cpf">&lt;utility&gt;</span><span class="cp">
+</span></span></span><span class="line"><span class="cl"><span class="cp">#include</span> <span class="cpf">&lt;vector&gt;</span><span class="cp">
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span>
+</span></span><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">Polygon</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl"><span class="k">private</span><span class="o">:</span>
+</span></span><span class="line"><span class="cl">    <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">pair</span><span class="o">&lt;</span><span class="kt">int</span><span class="p">,</span> <span class="kt">int</span><span class="o">&gt;&gt;</span> <span class="n">_vertices</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">};</span>
+</span></span></code></pre></div>
     </div>
 </div>
 <p>Comme <code>std::pair&lt;int, int&gt;</code> n&rsquo;est ni très lisible, ni très représentatif de ce qui va être contenu dedans, vous allez créer un <strong>alias</strong> <code>Vertex</code> dessus.<br>
 Pour définir un alias (équivalent au <code>typedef</code> en C), on utilise le mot-clef <code>using</code> :</p>
-<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="k">using</span> <span class="n">AliasName</span> <span class="o">=</span> <span class="n">OriginalType</span><span class="p">;</span>
-</code></pre></div><p>Adaptez cette instruction et placez là dans <code>Polygon.h</code>, juste avant la définition de votre classe. Modifiez la définition de <code>_vertices</code> afin d&rsquo;utiliser cet alias.
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="k">using</span> <span class="n">AliasName</span> <span class="o">=</span> <span class="n">OriginalType</span><span class="p">;</span>
+</span></span></code></pre></div><p>Adaptez cette instruction et placez là dans <code>Polygon.h</code>, juste avant la définition de votre classe. Modifiez la définition de <code>_vertices</code> afin d&rsquo;utiliser cet alias.
 
 <div class="expand">
     <div class="expand-label" style="cursor: pointer;" onclick="$h = $(this);$h.next('div').slideToggle(100,function () {$h.children('i').attr('class',function () {return $h.next('div').is(':visible') ? 'fas fa-chevron-down' : 'fas fa-chevron-right';});});">
@@ -2055,18 +2055,18 @@ Pour définir un alias (équivalent au <code>typedef</code> en C), on utilise le
     	</span>
     </div>
     <div class="expand-content" style="display: none;">
-        <div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="cp">#pragma once
-</span><span class="cp"></span>
-<span class="cp">#include</span> <span class="cpf">&lt;utility&gt;</span><span class="cp">
-</span><span class="cp">#include</span> <span class="cpf">&lt;vector&gt;</span><span class="cp">
-</span><span class="hl"><span class="cp"></span>
-</span><span class="k">using</span> <span class="n">Vertex</span> <span class="o">=</span> <span class="n">std</span><span class="o">::</span><span class="n">pair</span><span class="o">&lt;</span><span class="kt">int</span><span class="p">,</span> <span class="kt">int</span><span class="o">&gt;</span><span class="p">;</span>
-<p><span class="k">class</span> <span class="nc">Polygon</span>
-<span class="p">{</span>
-<span class="hl"><span class="k">private</span><span class="o">:</span>
-</span>    <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">Vertex</span><span class="o">&gt;</span> <span class="n">_vertices</span><span class="p">;</span>
-<span class="p">};</span>
-</code></pre></div></p>
+        <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="cp">#pragma once
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span>
+</span></span><span class="line"><span class="cl"><span class="cp">#include</span> <span class="cpf">&lt;utility&gt;</span><span class="cp">
+</span></span></span><span class="line"><span class="cl"><span class="cp">#include</span> <span class="cpf">&lt;vector&gt;</span><span class="cp">
+</span></span></span><span class="line hl"><span class="cl"><span class="cp"></span>
+</span></span><span class="line"><span class="cl"><span class="k">using</span> <span class="n">Vertex</span> <span class="o">=</span> <span class="n">std</span><span class="o">::</span><span class="n">pair</span><span class="o">&lt;</span><span class="kt">int</span><span class="p">,</span> <span class="kt">int</span><span class="o">&gt;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">Polygon</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line hl"><span class="cl"><span class="k">private</span><span class="o">:</span>
+</span></span><span class="line"><span class="cl">    <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">Vertex</span><span class="o">&gt;</span> <span class="n">_vertices</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">};</span></span></span></code></pre></div>
 <div class="notices note" ><p>Il est aussi possible de placer l&rsquo;instruction pour définir un alias à l&rsquo;intérieur d&rsquo;une classe (partie privée ou publique, en fonction de si on veut pouvoir y accéder de l&rsquo;extérieur ou pas), ainsi que dans le corps d&rsquo;une fonction (accessible alors uniquement depuis cette fonction).</p>
 </div>
 
@@ -2088,11 +2088,11 @@ Pour construire un <code>Vertex</code> (aka <code>std::pair&lt;int, int&gt;</cod
     </div>
     <div class="expand-content" style="display: none;">
         <p>Voici une implémentation possible pour <code>add_vertex</code> :</p>
-<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="kt">void</span> <span class="n">Polygon</span><span class="o">::</span><span class="n">add_vertex</span><span class="p">(</span><span class="kt">int</span> <span class="n">x</span><span class="p">,</span> <span class="kt">int</span> <span class="n">y</span><span class="p">)</span>
-<span class="p">{</span>
-    <span class="n">_vertices</span><span class="p">.</span><span class="n">emplace_back</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">);</span>
-<span class="p">}</span>
-</code></pre></div><div class="notices tip" ><p>La fonction <code>emplace_back</code> de <code>vector</code> est un peu spéciale.
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="kt">void</span> <span class="n">Polygon</span><span class="o">::</span><span class="n">add_vertex</span><span class="p">(</span><span class="kt">int</span> <span class="n">x</span><span class="p">,</span> <span class="kt">int</span> <span class="n">y</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="n">_vertices</span><span class="p">.</span><span class="n">emplace_back</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><div class="notices tip" ><p>La fonction <code>emplace_back</code> de <code>vector</code> est un peu spéciale.
 On peut lui passer directement les arguments que l&rsquo;on passerait au constructeur de l&rsquo;objet qu&rsquo;on souhaite ajouter au tableau.<br>
 Du coup, plutôt qu&rsquo;écrire <code>_vertices.emplace_back(Vertex { x, y })</code>, on peut directement écrire <code>_vertices.emplace_back(x, y)</code>.<br>
 Plutôt pratique, non ?</p>
@@ -2112,19 +2112,19 @@ Votre vue devrait désormais ressembler à celle-ci si vous vous placez dans l&r
 <p>Dans la fenêtre des variables, en haut à gauche, cliquez sur la variable <code>polygon</code>, puis sur son membre <code>_vertices</code>.<br>
 Celui-ci ne devrait rien contenir.</p>
 <p>Appuyez ensuite sur F10 afin d&rsquo;exécuter l&rsquo;instruction sur la ligne sur laquelle nous sommes arrêtés.<br>
-Vous devriez pouvoir constater que <code>_vertices</code> contient désormais le sommet (2, 3). 
+Vous devriez pouvoir constater que <code>_vertices</code> contient désormais le sommet (2, 3).
 <img src="/CPP_Learning/images/chapter2/6-vertices-2-3.png" alt=""></p>
 <hr>
 <h3 id="un-ami-imprimeur">Un ami imprimeur</h3>
 <p>Décommentez les instructions :</p>
-<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="n">polygon</span><span class="p">.</span><span class="n">add_vertex</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">);</span>
-<span class="n">polygon</span><span class="p">.</span><span class="n">add_vertex</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">);</span>
-
-<span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">polygon</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
-</code></pre></div><p>Vous allez une fois de plus implémenter un opérateur <code>&lt;&lt;</code> afin d&rsquo;afficher le contenu de votre objet.<br>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="n">polygon</span><span class="p">.</span><span class="n">add_vertex</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="n">polygon</span><span class="p">.</span><span class="n">add_vertex</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">polygon</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+</span></span></code></pre></div><p>Vous allez une fois de plus implémenter un opérateur <code>&lt;&lt;</code> afin d&rsquo;afficher le contenu de votre objet.<br>
 Nous attendrons dans la console le résultat suivant :</p>
-<div class="highlight"><pre class="chroma"><code class="language-b" data-lang="b"><span class="c">(2</span><span class="nt">,</span><span class="c">3) (4</span><span class="nt">,</span><span class="c">5) (6</span><span class="nt">,</span><span class="c">7) 
-</span></code></pre></div><p>Déclarez l&rsquo;opérateur <code>&lt;&lt;</code> dans <code>Polygon.h</code>, et implémentez-le dans <code>Polygon.cpp</code>.
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-b" data-lang="b"><span class="line"><span class="cl"><span class="c">(2</span><span class="nt">,</span><span class="c">3) (4</span><span class="nt">,</span><span class="c">5) (6</span><span class="nt">,</span><span class="c">7) 
+</span></span></span></code></pre></div><p>Déclarez l&rsquo;opérateur <code>&lt;&lt;</code> dans <code>Polygon.h</code>, et implémentez-le dans <code>Polygon.cpp</code>.
 Afin de pouvoir accéder aux attributs de la classe, vous changerez dans un premier temps leur visibilité à <code>public</code>.</p>
 
 <div class="expand">
@@ -2140,37 +2140,35 @@ Afin de pouvoir accéder aux attributs de la classe, vous changerez dans un prem
     <div class="expand-content" style="display: none;">
         
 <p><code>Polygon.h</code>:
-<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="cp">#pragma once
-</span><span class="cp"></span>
-<span class="hl"><span class="cp">#include</span> <span class="cpf">&lt;ostream&gt;</span><span class="cp">
-</span></span><span class="cp">#include</span> <span class="cpf">&lt;utility&gt;</span><span class="cp">
-</span><span class="cp">#include</span> <span class="cpf">&lt;vector&gt;</span><span class="cp">
-</span><span class="cp"></span>
-<span class="k">using</span> <span class="n">Vertex</span> <span class="o">=</span> <span class="n">std</span><span class="o">::</span><span class="n">pair</span><span class="o">&lt;</span><span class="kt">int</span><span class="p">,</span> <span class="kt">int</span><span class="o">&gt;</span><span class="p">;</span>
-
-<span class="k">class</span> <span class="nc">Polygon</span>
-<span class="p">{</span>
-<span class="k">public</span><span class="o">:</span>
-    <span class="kt">void</span> <span class="n">add_vertex</span><span class="p">(</span><span class="kt">int</span> <span class="n">x</span><span class="p">,</span> <span class="kt">int</span> <span class="n">y</span><span class="p">);</span>
-
-<span class="hl"><span class="k">public</span><span class="o">:</span>
-</span>    <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">Vertex</span><span class="o">&gt;</span> <span class="n">_vertices</span><span class="p">;</span>
-<span class="p">};</span>
-
-<span class="hl"><span class="n">std</span><span class="o">::</span><span class="n">ostream</span><span class="o">&amp;</span> <span class="k">operator</span><span class="o">&lt;&lt;</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">ostream</span><span class="o">&amp;</span> <span class="n">stream</span><span class="p">,</span> <span class="k">const</span> <span class="n">Polygon</span><span class="o">&amp;</span> <span class="n">polygon</span><span class="p">);</span>
-</span></code></pre></div>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="cp">#pragma once
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span>
+</span></span><span class="line hl"><span class="cl"><span class="cp">#include</span> <span class="cpf">&lt;ostream&gt;</span><span class="cp">
+</span></span></span><span class="line"><span class="cl"><span class="cp">#include</span> <span class="cpf">&lt;utility&gt;</span><span class="cp">
+</span></span></span><span class="line"><span class="cl"><span class="cp">#include</span> <span class="cpf">&lt;vector&gt;</span><span class="cp">
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span>
+</span></span><span class="line"><span class="cl"><span class="k">using</span> <span class="n">Vertex</span> <span class="o">=</span> <span class="n">std</span><span class="o">::</span><span class="n">pair</span><span class="o">&lt;</span><span class="kt">int</span><span class="p">,</span> <span class="kt">int</span><span class="o">&gt;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">Polygon</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl"><span class="k">public</span><span class="o">:</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">void</span> <span class="n">add_vertex</span><span class="p">(</span><span class="kt">int</span> <span class="n">x</span><span class="p">,</span> <span class="kt">int</span> <span class="n">y</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line hl"><span class="cl"><span class="k">public</span><span class="o">:</span>
+</span></span><span class="line"><span class="cl">    <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">Vertex</span><span class="o">&gt;</span> <span class="n">_vertices</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">};</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line hl"><span class="cl"><span class="n">std</span><span class="o">::</span><span class="n">ostream</span><span class="o">&amp;</span> <span class="k">operator</span><span class="o">&lt;&lt;</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">ostream</span><span class="o">&amp;</span> <span class="n">stream</span><span class="p">,</span> <span class="k">const</span> <span class="n">Polygon</span><span class="o">&amp;</span> <span class="n">polygon</span><span class="p">);</span></span></span></code></pre></div>
 </p>
 <p><code>Polygon.cpp</code>:
-<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="n">std</span><span class="o">::</span><span class="n">ostream</span><span class="o">&amp;</span> <span class="k">operator</span><span class="o">&lt;&lt;</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">ostream</span><span class="o">&amp;</span> <span class="n">stream</span><span class="p">,</span> <span class="k">const</span> <span class="n">Polygon</span><span class="o">&amp;</span> <span class="n">polygon</span><span class="p">)</span>
-<span class="p">{</span>
-    <span class="k">for</span> <span class="p">(</span><span class="k">const</span> <span class="k">auto</span><span class="o">&amp;</span> <span class="nl">v</span><span class="p">:</span> <span class="n">polygon</span><span class="p">.</span><span class="n">_vertices</span><span class="p">)</span>
-    <span class="p">{</span>
-        <span class="n">stream</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;(&#34;</span> <span class="o">&lt;&lt;</span> <span class="n">v</span><span class="p">.</span><span class="n">first</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;,&#34;</span> <span class="o">&lt;&lt;</span> <span class="n">v</span><span class="p">.</span><span class="n">second</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;) &#34;</span><span class="p">;</span>
-    <span class="p">}</span>
-
-    <span class="k">return</span> <span class="n">stream</span><span class="p">;</span>
-<span class="p">}</span>
-</code></pre></div>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="n">std</span><span class="o">::</span><span class="n">ostream</span><span class="o">&amp;</span> <span class="k">operator</span><span class="o">&lt;&lt;</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">ostream</span><span class="o">&amp;</span> <span class="n">stream</span><span class="p">,</span> <span class="k">const</span> <span class="n">Polygon</span><span class="o">&amp;</span> <span class="n">polygon</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">for</span> <span class="p">(</span><span class="k">const</span> <span class="k">auto</span><span class="o">&amp;</span> <span class="nl">v</span><span class="p">:</span> <span class="n">polygon</span><span class="p">.</span><span class="n">_vertices</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="n">stream</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;(&#34;</span> <span class="o">&lt;&lt;</span> <span class="n">v</span><span class="p">.</span><span class="n">first</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;,&#34;</span> <span class="o">&lt;&lt;</span> <span class="n">v</span><span class="p">.</span><span class="n">second</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;) &#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">stream</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span></span></span></code></pre></div>
 </p>
 
     </div>
@@ -2192,17 +2190,17 @@ Toutes les fonctions déclarées avec le mot-clef <code>friend</code> sont forc�
     </div>
     <div class="expand-content" style="display: none;">
         <p>L&rsquo;endroit où vous placez la déclaration dans la classe n&rsquo;a pas d&rsquo;importance. Les modificateurs de visibilité n&rsquo;ont pas d&rsquo;effet sur une déclaration d&rsquo;amitié.</p>
-<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="k">class</span> <span class="nc">Polygon</span>
-<span class="p">{</span>
-    <span class="k">friend</span> <span class="n">std</span><span class="o">::</span><span class="n">ostream</span><span class="o">&amp;</span> <span class="k">operator</span><span class="o">&lt;&lt;</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">ostream</span><span class="o">&amp;</span> <span class="n">stream</span><span class="p">,</span> <span class="k">const</span> <span class="n">Polygon</span><span class="o">&amp;</span> <span class="n">polygon</span><span class="p">);</span>
-
-<span class="k">public</span><span class="o">:</span>
-    <span class="kt">void</span> <span class="n">add_vertex</span><span class="p">(</span><span class="kt">int</span> <span class="n">x</span><span class="p">,</span> <span class="kt">int</span> <span class="n">y</span><span class="p">);</span>
-
-<span class="k">private</span><span class="o">:</span>
-    <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">Vertex</span><span class="o">&gt;</span> <span class="n">_vertices</span><span class="p">;</span>
-<span class="p">};</span>
-</code></pre></div><div class="notices tip" ><p>Une déclaration de fonction amie reste une déclaration de fonction. Il est donc tout à fait possible (mais pas nécessaire) de retirer la déclaration de l&rsquo;opérateur à la fin du header.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">Polygon</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">friend</span> <span class="n">std</span><span class="o">::</span><span class="n">ostream</span><span class="o">&amp;</span> <span class="k">operator</span><span class="o">&lt;&lt;</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">ostream</span><span class="o">&amp;</span> <span class="n">stream</span><span class="p">,</span> <span class="k">const</span> <span class="n">Polygon</span><span class="o">&amp;</span> <span class="n">polygon</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">public</span><span class="o">:</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">void</span> <span class="n">add_vertex</span><span class="p">(</span><span class="kt">int</span> <span class="n">x</span><span class="p">,</span> <span class="kt">int</span> <span class="n">y</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">private</span><span class="o">:</span>
+</span></span><span class="line"><span class="cl">    <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">Vertex</span><span class="o">&gt;</span> <span class="n">_vertices</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">};</span>
+</span></span></code></pre></div><div class="notices tip" ><p>Une déclaration de fonction amie reste une déclaration de fonction. Il est donc tout à fait possible (mais pas nécessaire) de retirer la déclaration de l&rsquo;opérateur à la fin du header.</p>
 </div>
 
     </div>
@@ -2210,9 +2208,9 @@ Toutes les fonctions déclarées avec le mot-clef <code>friend</code> sont forc�
 <hr>
 <h3 id="retour-de-référence">Retour de référence</h3>
 <p>Décommentez les deux prochaines instructions du <code>main</code> :</p>
-<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="k">const</span> <span class="k">auto</span><span class="o">&amp;</span> <span class="n">vertex</span> <span class="o">=</span> <span class="n">polygon</span><span class="p">.</span><span class="n">get_vertex</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
-<span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;(&#34;</span> <span class="o">&lt;&lt;</span> <span class="n">vertex</span><span class="p">.</span><span class="n">first</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;,&#34;</span> <span class="o">&lt;&lt;</span> <span class="n">vertex</span><span class="p">.</span><span class="n">second</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;)&#34;</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span> <span class="c1">// -&gt; (4,5)
-</span></code></pre></div><p>Implémentez la fonction <code>get_vertex</code> directement dans la définition de la classe.<br>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="k">const</span> <span class="k">auto</span><span class="o">&amp;</span> <span class="n">vertex</span> <span class="o">=</span> <span class="n">polygon</span><span class="p">.</span><span class="n">get_vertex</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;(&#34;</span> <span class="o">&lt;&lt;</span> <span class="n">vertex</span><span class="p">.</span><span class="n">first</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;,&#34;</span> <span class="o">&lt;&lt;</span> <span class="n">vertex</span><span class="p">.</span><span class="n">second</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;)&#34;</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span> <span class="c1">// -&gt; (4,5)
+</span></span></span></code></pre></div><p>Implémentez la fonction <code>get_vertex</code> directement dans la définition de la classe.<br>
 Puisqu&rsquo;il s&rsquo;agit d&rsquo;un getter, et qu&rsquo;un getter n&rsquo;est pas censé modifier l&rsquo;instance sur laquelle il est appelé, que faut-il ajouter à la signature de <code>get_vertex</code> ?<br>
 Dans le <code>main</code>, la variable <code>vertex</code> est déclarée avec <code>const auto&amp;</code>. Quel devrait être son type ? Déduisez-en le type de retour attendu pour la fonction.</p>
 
@@ -2229,18 +2227,18 @@ Dans le <code>main</code>, la variable <code>vertex</code> est déclarée avec <
     <div class="expand-content" style="display: none;">
         <p>Les fonction-membres qui ne modifient pas l&rsquo;état de l&rsquo;objet doivent ajouter <code>const</code> à la fin de leur signature, derrière la liste de leurs paramètres.<br>
 La variable étant nommée <code>vertex</code>, elle devrait logiquement contenir un <code>Vertex</code>. Comme elle est déclarée avec <code>const auto&amp;</code>, on en déduit qu&rsquo;elle sera de type <code>const Vertex&amp;</code>.</p>
-<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="k">class</span> <span class="nc">Polygon</span>
-<span class="p">{</span>
-    <span class="p">...</span>
-    
-    <span class="k">const</span> <span class="n">Vertex</span><span class="o">&amp;</span> <span class="n">get_vertex</span><span class="p">(</span><span class="n">size_t</span> <span class="n">idx</span><span class="p">)</span> <span class="k">const</span>
-    <span class="p">{</span>
-        <span class="k">return</span> <span class="n">_vertices</span><span class="p">[</span><span class="n">idx</span><span class="p">];</span>
-    <span class="p">}</span>
-    
-    <span class="p">...</span>
-<span class="p">};</span>
-</code></pre></div>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">Polygon</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="p">...</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">    <span class="k">const</span> <span class="n">Vertex</span><span class="o">&amp;</span> <span class="n">get_vertex</span><span class="p">(</span><span class="n">size_t</span> <span class="n">idx</span><span class="p">)</span> <span class="k">const</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="n">_vertices</span><span class="p">[</span><span class="n">idx</span><span class="p">];</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">    <span class="p">...</span>
+</span></span><span class="line"><span class="cl"><span class="p">};</span>
+</span></span></code></pre></div>
     </div>
 </div>
 <p>Vous allez maintenant déplacer l&rsquo;implémentation de la fonction dans le fichier <code>Polygon.cpp</code>. Notez bien que le mot-clef <code>const</code> fait partie de la signature de la fonction (contrairement à <code>static</code> ou <code>friend</code>).</p>
@@ -2258,30 +2256,30 @@ La variable étant nommée <code>vertex</code>, elle devrait logiquement conteni
     <div class="expand-content" style="display: none;">
         <p>Comme <code>const</code> fait partie de la signature de la fonction, il doit apparaître non seulement dans sa déclaration, mais aussi dans sa définition.</p>
 <p><code>Polygon.h</code> :</p>
-<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="k">class</span> <span class="nc">Polygon</span>
-<span class="p">{</span>
-    <span class="p">...</span>
-    <span class="k">const</span> <span class="n">Vertex</span><span class="o">&amp;</span> <span class="n">get_vertex</span><span class="p">(</span><span class="n">size_t</span> <span class="n">idx</span><span class="p">)</span> <span class="k">const</span><span class="p">;</span>
-    <span class="p">...</span>
-<span class="p">};</span>
-</code></pre></div><p><code>Polygon.cpp</code> :</p>
-<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="k">const</span> <span class="n">Vertex</span><span class="o">&amp;</span> <span class="n">Polygon</span><span class="o">::</span><span class="n">get_vertex</span><span class="p">(</span><span class="n">size_t</span> <span class="n">idx</span><span class="p">)</span> <span class="k">const</span>
-<span class="p">{</span>
-    <span class="k">return</span> <span class="n">_vertices</span><span class="p">[</span><span class="n">idx</span><span class="p">];</span>
-<span class="p">}</span>
-</code></pre></div>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">Polygon</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="p">...</span>
+</span></span><span class="line"><span class="cl">    <span class="k">const</span> <span class="n">Vertex</span><span class="o">&amp;</span> <span class="n">get_vertex</span><span class="p">(</span><span class="n">size_t</span> <span class="n">idx</span><span class="p">)</span> <span class="k">const</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">...</span>
+</span></span><span class="line"><span class="cl"><span class="p">};</span>
+</span></span></code></pre></div><p><code>Polygon.cpp</code> :</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="k">const</span> <span class="n">Vertex</span><span class="o">&amp;</span> <span class="n">Polygon</span><span class="o">::</span><span class="n">get_vertex</span><span class="p">(</span><span class="n">size_t</span> <span class="n">idx</span><span class="p">)</span> <span class="k">const</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">_vertices</span><span class="p">[</span><span class="n">idx</span><span class="p">];</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div>
     </div>
 </div>
 <hr>
 <h3 id="une-référence-pendouillante-">Une référence pendouillante 😱</h3>
 <p>Décommentez le restant du <code>main</code> :</p>
-<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="k">for</span> <span class="p">(</span><span class="k">auto</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">200</span><span class="p">;</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span>
-<span class="p">{</span>
-    <span class="n">polygon</span><span class="p">.</span><span class="n">add_vertex</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">i</span> <span class="o">*</span> <span class="mi">2</span><span class="p">);</span>
-<span class="p">}</span>
-
-<span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;(&#34;</span> <span class="o">&lt;&lt;</span> <span class="n">vertex</span><span class="p">.</span><span class="n">first</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;,&#34;</span> <span class="o">&lt;&lt;</span> <span class="n">vertex</span><span class="p">.</span><span class="n">second</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;)&#34;</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span> <span class="c1">//-&gt; ???
-</span></code></pre></div><p>Dans ces instructions, on commence par ajouter de nombreux sommets au polygône, puis on essaye d&rsquo;afficher une nouvelle fois la variable <code>vertex</code>, qui est censée contenir le deuxième sommet du polygône.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="k">for</span> <span class="p">(</span><span class="k">auto</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">200</span><span class="p">;</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="n">polygon</span><span class="p">.</span><span class="n">add_vertex</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">i</span> <span class="o">*</span> <span class="mi">2</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;(&#34;</span> <span class="o">&lt;&lt;</span> <span class="n">vertex</span><span class="p">.</span><span class="n">first</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;,&#34;</span> <span class="o">&lt;&lt;</span> <span class="n">vertex</span><span class="p">.</span><span class="n">second</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;)&#34;</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span> <span class="c1">//-&gt; ???
+</span></span></span></code></pre></div><p>Dans ces instructions, on commence par ajouter de nombreux sommets au polygône, puis on essaye d&rsquo;afficher une nouvelle fois la variable <code>vertex</code>, qui est censée contenir le deuxième sommet du polygône.</p>
 <p>Testez le programme et constatez le problème.</p>
 <p><strong>Pourquoi la dernière instruction n&rsquo;affiche pas <code>(4,5)</code>, comme c&rsquo;était le cas sur la ligne d&rsquo;au-dessus ?</strong></p>
 <p>Afin de répondre à cette question, vous allez une nouvelle fois utiliser le débuggeur.</p>
@@ -3620,19 +3618,19 @@ L&rsquo;inconvénient, c&rsquo;est que si les valeurs du sommet sont modifiées 
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/CPP_Learning/js/clipboard.min.js?1705262579"></script>
-    <script src="/CPP_Learning/js/perfect-scrollbar.min.js?1705262579"></script>
-    <script src="/CPP_Learning/js/perfect-scrollbar.jquery.min.js?1705262579"></script>
-    <script src="/CPP_Learning/js/jquery.sticky.js?1705262579"></script>
-    <script src="/CPP_Learning/js/featherlight.min.js?1705262579"></script>
-    <script src="/CPP_Learning/js/highlight.pack.js?1705262579"></script>
+    <script src="/CPP_Learning/js/clipboard.min.js?1705567864"></script>
+    <script src="/CPP_Learning/js/perfect-scrollbar.min.js?1705567864"></script>
+    <script src="/CPP_Learning/js/perfect-scrollbar.jquery.min.js?1705567864"></script>
+    <script src="/CPP_Learning/js/jquery.sticky.js?1705567864"></script>
+    <script src="/CPP_Learning/js/featherlight.min.js?1705567864"></script>
+    <script src="/CPP_Learning/js/highlight.pack.js?1705567864"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/CPP_Learning/js/modernizr.custom-3.6.0.js?1705262579"></script>
-    <script src="/CPP_Learning/js/learn.js?1705262579"></script>
-    <script src="/CPP_Learning/js/hugo-learn.js?1705262579"></script>
+    <script src="/CPP_Learning/js/modernizr.custom-3.6.0.js?1705567864"></script>
+    <script src="/CPP_Learning/js/learn.js?1705567864"></script>
+    <script src="/CPP_Learning/js/hugo-learn.js?1705567864"></script>
     
         
-            <script src="/CPP_Learning/mermaid/mermaid.js?1705262579"></script>
+            <script src="/CPP_Learning/mermaid/mermaid.js?1705567864"></script>
         
         <script>
             mermaid.initialize({ startOnLoad: true });

@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="Hugo 0.76.5" />
+    <meta name="generator" content="Hugo 0.121.0">
     <meta name="description" content="">
 
 
@@ -12,22 +12,22 @@
     <title>Questionnaire ! :: Cours de C&#43;&#43; - Niveau Master</title>
 
     
-    <link href="/CPP_Learning/css/nucleus.css?1705262579" rel="stylesheet">
-    <link href="/CPP_Learning/css/fontawesome-all.min.css?1705262579" rel="stylesheet">
-    <link href="/CPP_Learning/css/hybrid.css?1705262579" rel="stylesheet">
-    <link href="/CPP_Learning/css/featherlight.min.css?1705262579" rel="stylesheet">
-    <link href="/CPP_Learning/css/perfect-scrollbar.min.css?1705262579" rel="stylesheet">
-    <link href="/CPP_Learning/css/auto-complete.css?1705262579" rel="stylesheet">
-    <link href="/CPP_Learning/css/atom-one-dark-reasonable.css?1705262579" rel="stylesheet">
-    <link href="/CPP_Learning/css/theme.css?1705262579" rel="stylesheet">
-    <link href="/CPP_Learning/css/tabs.css?1705262579" rel="stylesheet">
-    <link href="/CPP_Learning/css/hugo-theme.css?1705262579" rel="stylesheet">
+    <link href="/CPP_Learning/css/nucleus.css?1705567864" rel="stylesheet">
+    <link href="/CPP_Learning/css/fontawesome-all.min.css?1705567864" rel="stylesheet">
+    <link href="/CPP_Learning/css/hybrid.css?1705567864" rel="stylesheet">
+    <link href="/CPP_Learning/css/featherlight.min.css?1705567864" rel="stylesheet">
+    <link href="/CPP_Learning/css/perfect-scrollbar.min.css?1705567864" rel="stylesheet">
+    <link href="/CPP_Learning/css/auto-complete.css?1705567864" rel="stylesheet">
+    <link href="/CPP_Learning/css/atom-one-dark-reasonable.css?1705567864" rel="stylesheet">
+    <link href="/CPP_Learning/css/theme.css?1705567864" rel="stylesheet">
+    <link href="/CPP_Learning/css/tabs.css?1705567864" rel="stylesheet">
+    <link href="/CPP_Learning/css/hugo-theme.css?1705567864" rel="stylesheet">
     
-    <link href="/CPP_Learning/css/theme-mine.css?1705262579" rel="stylesheet">
+    <link href="/CPP_Learning/css/theme-mine.css?1705567864" rel="stylesheet">
     
-    <link href="/CPP_Learning/css/syntax.css?1705262579" rel="stylesheet">
+    <link href="/CPP_Learning/css/syntax.css?1705567864" rel="stylesheet">
 
-    <script src="/CPP_Learning/js/jquery-3.3.1.min.js?1705262579"></script>
+    <script src="/CPP_Learning/js/jquery-3.3.1.min.js?1705567864"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -1974,85 +1974,85 @@
 
   <hr/>
 
-  <p><label for="q1">1- Comment définir la période de validité d’un objet ?</label>
-<textarea id="q1" name="Comment définir la période de validité d&rsquo;un objet ?" rows="1" cols="50"></textarea></p>
-<p><label for="q2">2- Citez une bonne raison d’allouer de la mémoire via un <code>unique_ptr</code> plutôt que via un pointeur simple (avec <code>new</code>).</label>
-<textarea id="q2" name="Citez une bonne raison d&rsquo;allouer de la mémoire via un unique_ptr plutôt que via un pointeur simple (avec new)." rows="2" cols="50"></textarea></p>
-<p><label for="q3">3- Quelle fonction de la librarie standard permet de transférer le contenu d’un objet dans un autre ?</label>
-<textarea id="q3" name="Quelle fonction de la librarie standard permet de transférer le contenu d&rsquo;un objet dans un autre ?" rows="1" cols="50"></textarea></p>
+  <p><label for="q1">1- Comment définir la période de validité d’un objet ?</label></p>
+<textarea id="q1" name="Comment définir la période de validité d&rsquo;un objet ?" rows="1" cols="50"></textarea>
+<p><label for="q2">2- Citez une bonne raison d’allouer de la mémoire via un <code>unique_ptr</code> plutôt que via un pointeur simple (avec <code>new</code>).</label></p>
+<textarea id="q2" name="Citez une bonne raison d&rsquo;allouer de la mémoire via un unique_ptr plutôt que via un pointeur simple (avec new)." rows="2" cols="50"></textarea>
+<p><label for="q3">3- Quelle fonction de la librarie standard permet de transférer le contenu d’un objet dans un autre ?</label></p>
+<textarea id="q3" name="Quelle fonction de la librarie standard permet de transférer le contenu d&rsquo;un objet dans un autre ?" rows="1" cols="50"></textarea>
 <hr>
-<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="k">class</span> <span class="nc">A</span>
-<span class="p">{</span>
-<span class="k">public</span><span class="o">:</span>
-    <span class="p">...</span>
-
-<span class="k">private</span><span class="o">:</span>
-    <span class="n">B</span><span class="o">&amp;</span>                 <span class="n">_b</span><span class="p">;</span>
-    <span class="k">const</span> <span class="n">C</span><span class="o">&amp;</span>           <span class="n">_c</span><span class="p">;</span>
-    <span class="n">D</span>                  <span class="n">_d</span><span class="p">;</span>
-    <span class="n">std</span><span class="o">::</span><span class="n">unique_ptr</span><span class="o">&lt;</span><span class="n">E</span><span class="o">&gt;</span> <span class="n">_e</span><span class="p">;</span>
-<span class="p">};</span>
-
-<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
-<span class="p">{</span>
-    <span class="n">A</span> <span class="n">a</span><span class="p">;</span>
-    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
-<span class="p">}</span>
-</code></pre></div><p><label for="q4">4- De quel(s) objet(s) <code>a</code> est-il propriétaire parmis <code>a._b</code>, <code>a._c</code>, <code>a._d</code> et <code>a._e</code> ?</label>
-<textarea id="q4" name="De quel(s) objet(s) a est-il propriétaire parmis a._b, a._c, a._d et a._e ?" rows="1" cols="50"></textarea></p>
-<p><label for="q5">5- <code>a</code> est-il propriétaire de <code>*a._e</code> ? Justifiez.</label>
-<textarea id="q5" name="a est-il propriétaire de *a._e ? Justifiez." rows="2" cols="50"></textarea></p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">A</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl"><span class="k">public</span><span class="o">:</span>
+</span></span><span class="line"><span class="cl">    <span class="p">...</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">private</span><span class="o">:</span>
+</span></span><span class="line"><span class="cl">    <span class="n">B</span><span class="o">&amp;</span>                 <span class="n">_b</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">const</span> <span class="n">C</span><span class="o">&amp;</span>           <span class="n">_c</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">D</span>                  <span class="n">_d</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">std</span><span class="o">::</span><span class="n">unique_ptr</span><span class="o">&lt;</span><span class="n">E</span><span class="o">&gt;</span> <span class="n">_e</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">};</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="n">A</span> <span class="n">a</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><p><label for="q4">4- De quel(s) objet(s) <code>a</code> est-il propriétaire parmis <code>a._b</code>, <code>a._c</code>, <code>a._d</code> et <code>a._e</code> ?</label></p>
+<textarea id="q4" name="De quel(s) objet(s) a est-il propriétaire parmis a._b, a._c, a._d et a._e ?" rows="1" cols="50"></textarea>
+<p><label for="q5">5- <code>a</code> est-il propriétaire de <code>*a._e</code> ? Justifiez.</label></p>
+<textarea id="q5" name="a est-il propriétaire de *a._e ? Justifiez." rows="2" cols="50"></textarea>
 <hr>
 <p>Les questions 6 à 10 font référence au code ci-dessous :</p>
-<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="cp">#include</span> <span class="cpf">&lt;memory&gt;</span><span class="cp">
-</span><span class="cp">#include</span> <span class="cpf">&lt;string&gt;</span><span class="cp">
-</span><span class="cp">#include</span> <span class="cpf">&lt;vector&gt;</span><span class="cp">
-</span><span class="cp"></span>
-<span class="k">struct</span> <span class="nc">Resource</span>
-<span class="p">{</span>
-    <span class="n">Resource</span><span class="p">(</span><span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&amp;</span> <span class="n">content</span><span class="p">)</span>
-        <span class="o">:</span> <span class="n">_content</span> <span class="p">{</span> <span class="n">content</span> <span class="p">}</span>
-    <span class="p">{}</span>
-
-    <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">_content</span><span class="p">;</span>
-<span class="p">};</span>
-
-<span class="c1">// Index objects of type Resource and handle their lifespans.
-</span><span class="c1"></span><span class="k">class</span> <span class="nc">ResourceManager</span>
-<span class="p">{</span>
-<span class="k">public</span><span class="o">:</span>
-    <span class="c1">// Create a new resource.
-</span><span class="c1"></span>    <span class="c1">// Return the index where the resource was created.
-</span><span class="c1"></span>    <span class="n">size_t</span> <span class="n">create</span><span class="p">(</span><span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&amp;</span> <span class="n">content</span><span class="p">);</span>
-
-    <span class="c1">// Destroy the resource at the given index.
-</span><span class="c1"></span>    <span class="c1">// The other elements keep the same index, we do not reorganize the array.
-</span><span class="c1"></span>    <span class="kt">void</span> <span class="nf">destroy</span><span class="p">(</span><span class="n">size_t</span> <span class="n">index</span><span class="p">);</span>
-
-    <span class="c1">// Take the ownership of an existing resource.
-</span><span class="c1"></span>    <span class="c1">// Return the index where the resource was placed.
-</span><span class="c1"></span>    <span class="n">size_t</span> <span class="nf">acquire</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">unique_ptr</span><span class="o">&lt;</span><span class="n">Resource</span><span class="o">&gt;</span> <span class="n">resource</span><span class="p">);</span>
-
-    <span class="c1">// Transfer the resource at the given index to the caller.
-</span><span class="c1"></span>    <span class="n">std</span><span class="o">::</span><span class="n">unique_ptr</span><span class="o">&lt;</span><span class="n">Resource</span><span class="o">&gt;</span> <span class="n">yield</span><span class="p">(</span><span class="n">size_t</span> <span class="n">index</span><span class="p">);</span>
-
-    <span class="c1">// Provide access to the resource at the given index.
-</span><span class="c1"></span>    <span class="n">Resource</span><span class="o">&amp;</span> <span class="n">get</span><span class="p">(</span><span class="n">size_t</span> <span class="n">index</span><span class="p">)</span> <span class="k">const</span><span class="p">;</span>
-
-<span class="k">private</span><span class="o">:</span>
-    <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">unique_ptr</span><span class="o">&lt;</span><span class="n">Resource</span><span class="o">&gt;&gt;</span> <span class="n">_resources</span><span class="p">;</span>
-<span class="p">};</span>
-</code></pre></div><p>Pensez à implémenter vos fonctions dans GodBolt pour vous assurez qu&rsquo;elles compilent avant de soumettre le questionnaire.</p>
-<p><label for="q6">6- Implémentez le contenu de <code>create</code>.</label>
-<textarea id="q6" name="Implémentez le contenu de create." rows="3" cols="50"></textarea></p>
-<p><label for="q7">7- Implémentez le contenu de <code>destroy</code>.</label>
-<textarea id="q7" name="Implémentez le contenu de destroy." rows="3" cols="50"></textarea></p>
-<p><label for="q8">8- Implémentez le contenu de <code>acquire_resource</code>.</label>
-<textarea id="q8" name="Implémentez le contenu de acquire_resource." rows="3" cols="50"></textarea></p>
-<p><label for="q9">9- Implémentez le contenu de <code>yield</code>.</label>
-<textarea id="q9" name="Implémentez le contenu de yield." rows="3" cols="50"></textarea></p>
-<p><label for="q10">10- Implémentez le contenu de <code>get</code>.</label>
-<textarea id="q10" name="Implémentez le contenu de get." rows="3" cols="50"></textarea></p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="cp">#include</span> <span class="cpf">&lt;memory&gt;</span><span class="cp">
+</span></span></span><span class="line"><span class="cl"><span class="cp">#include</span> <span class="cpf">&lt;string&gt;</span><span class="cp">
+</span></span></span><span class="line"><span class="cl"><span class="cp">#include</span> <span class="cpf">&lt;vector&gt;</span><span class="cp">
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span>
+</span></span><span class="line"><span class="cl"><span class="k">struct</span> <span class="nc">Resource</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="n">Resource</span><span class="p">(</span><span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&amp;</span> <span class="n">content</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="o">:</span> <span class="n">_content</span> <span class="p">{</span> <span class="n">content</span> <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">_content</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">};</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">// Index objects of type Resource and handle their lifespans.
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">class</span> <span class="nc">ResourceManager</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl"><span class="k">public</span><span class="o">:</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">// Create a new resource.
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="c1">// Return the index where the resource was created.
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="n">size_t</span> <span class="n">create</span><span class="p">(</span><span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&amp;</span> <span class="n">content</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c1">// Destroy the resource at the given index.
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="c1">// The other elements keep the same index, we do not reorganize the array.
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="kt">void</span> <span class="nf">destroy</span><span class="p">(</span><span class="n">size_t</span> <span class="n">index</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c1">// Take the ownership of an existing resource.
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="c1">// Return the index where the resource was placed.
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="n">size_t</span> <span class="nf">acquire</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">unique_ptr</span><span class="o">&lt;</span><span class="n">Resource</span><span class="o">&gt;</span> <span class="n">resource</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c1">// Transfer the resource at the given index to the caller.
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="n">std</span><span class="o">::</span><span class="n">unique_ptr</span><span class="o">&lt;</span><span class="n">Resource</span><span class="o">&gt;</span> <span class="n">yield</span><span class="p">(</span><span class="n">size_t</span> <span class="n">index</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c1">// Provide access to the resource at the given index.
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="n">Resource</span><span class="o">&amp;</span> <span class="n">get</span><span class="p">(</span><span class="n">size_t</span> <span class="n">index</span><span class="p">)</span> <span class="k">const</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">private</span><span class="o">:</span>
+</span></span><span class="line"><span class="cl">    <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">unique_ptr</span><span class="o">&lt;</span><span class="n">Resource</span><span class="o">&gt;&gt;</span> <span class="n">_resources</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">};</span>
+</span></span></code></pre></div><p>Pensez à implémenter vos fonctions dans GodBolt pour vous assurez qu&rsquo;elles compilent avant de soumettre le questionnaire.</p>
+<p><label for="q6">6- Implémentez le contenu de <code>create</code>.</label></p>
+<textarea id="q6" name="Implémentez le contenu de create." rows="3" cols="50"></textarea>
+<p><label for="q7">7- Implémentez le contenu de <code>destroy</code>.</label></p>
+<textarea id="q7" name="Implémentez le contenu de destroy." rows="3" cols="50"></textarea>
+<p><label for="q8">8- Implémentez le contenu de <code>acquire_resource</code>.</label></p>
+<textarea id="q8" name="Implémentez le contenu de acquire_resource." rows="3" cols="50"></textarea>
+<p><label for="q9">9- Implémentez le contenu de <code>yield</code>.</label></p>
+<textarea id="q9" name="Implémentez le contenu de yield." rows="3" cols="50"></textarea>
+<p><label for="q10">10- Implémentez le contenu de <code>get</code>.</label></p>
+<textarea id="q10" name="Implémentez le contenu de get." rows="3" cols="50"></textarea>
 
 
   <hr/>
@@ -3377,19 +3377,19 @@
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/CPP_Learning/js/clipboard.min.js?1705262579"></script>
-    <script src="/CPP_Learning/js/perfect-scrollbar.min.js?1705262579"></script>
-    <script src="/CPP_Learning/js/perfect-scrollbar.jquery.min.js?1705262579"></script>
-    <script src="/CPP_Learning/js/jquery.sticky.js?1705262579"></script>
-    <script src="/CPP_Learning/js/featherlight.min.js?1705262579"></script>
-    <script src="/CPP_Learning/js/highlight.pack.js?1705262579"></script>
+    <script src="/CPP_Learning/js/clipboard.min.js?1705567864"></script>
+    <script src="/CPP_Learning/js/perfect-scrollbar.min.js?1705567864"></script>
+    <script src="/CPP_Learning/js/perfect-scrollbar.jquery.min.js?1705567864"></script>
+    <script src="/CPP_Learning/js/jquery.sticky.js?1705567864"></script>
+    <script src="/CPP_Learning/js/featherlight.min.js?1705567864"></script>
+    <script src="/CPP_Learning/js/highlight.pack.js?1705567864"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/CPP_Learning/js/modernizr.custom-3.6.0.js?1705262579"></script>
-    <script src="/CPP_Learning/js/learn.js?1705262579"></script>
-    <script src="/CPP_Learning/js/hugo-learn.js?1705262579"></script>
+    <script src="/CPP_Learning/js/modernizr.custom-3.6.0.js?1705567864"></script>
+    <script src="/CPP_Learning/js/learn.js?1705567864"></script>
+    <script src="/CPP_Learning/js/hugo-learn.js?1705567864"></script>
     
         
-            <script src="/CPP_Learning/mermaid/mermaid.js?1705262579"></script>
+            <script src="/CPP_Learning/mermaid/mermaid.js?1705567864"></script>
         
         <script>
             mermaid.initialize({ startOnLoad: true });

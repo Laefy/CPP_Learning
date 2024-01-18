@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="Hugo 0.76.5" />
+    <meta name="generator" content="Hugo 0.121.0">
     <meta name="description" content="">
 
 
@@ -12,22 +12,22 @@
     <title>Lambdas :: Cours de C&#43;&#43; - Niveau Master</title>
 
     
-    <link href="/CPP_Learning/css/nucleus.css?1705262579" rel="stylesheet">
-    <link href="/CPP_Learning/css/fontawesome-all.min.css?1705262579" rel="stylesheet">
-    <link href="/CPP_Learning/css/hybrid.css?1705262579" rel="stylesheet">
-    <link href="/CPP_Learning/css/featherlight.min.css?1705262579" rel="stylesheet">
-    <link href="/CPP_Learning/css/perfect-scrollbar.min.css?1705262579" rel="stylesheet">
-    <link href="/CPP_Learning/css/auto-complete.css?1705262579" rel="stylesheet">
-    <link href="/CPP_Learning/css/atom-one-dark-reasonable.css?1705262579" rel="stylesheet">
-    <link href="/CPP_Learning/css/theme.css?1705262579" rel="stylesheet">
-    <link href="/CPP_Learning/css/tabs.css?1705262579" rel="stylesheet">
-    <link href="/CPP_Learning/css/hugo-theme.css?1705262579" rel="stylesheet">
+    <link href="/CPP_Learning/css/nucleus.css?1705567864" rel="stylesheet">
+    <link href="/CPP_Learning/css/fontawesome-all.min.css?1705567864" rel="stylesheet">
+    <link href="/CPP_Learning/css/hybrid.css?1705567864" rel="stylesheet">
+    <link href="/CPP_Learning/css/featherlight.min.css?1705567864" rel="stylesheet">
+    <link href="/CPP_Learning/css/perfect-scrollbar.min.css?1705567864" rel="stylesheet">
+    <link href="/CPP_Learning/css/auto-complete.css?1705567864" rel="stylesheet">
+    <link href="/CPP_Learning/css/atom-one-dark-reasonable.css?1705567864" rel="stylesheet">
+    <link href="/CPP_Learning/css/theme.css?1705567864" rel="stylesheet">
+    <link href="/CPP_Learning/css/tabs.css?1705567864" rel="stylesheet">
+    <link href="/CPP_Learning/css/hugo-theme.css?1705567864" rel="stylesheet">
     
-    <link href="/CPP_Learning/css/theme-mine.css?1705262579" rel="stylesheet">
+    <link href="/CPP_Learning/css/theme-mine.css?1705567864" rel="stylesheet">
     
-    <link href="/CPP_Learning/css/syntax.css?1705262579" rel="stylesheet">
+    <link href="/CPP_Learning/css/syntax.css?1705567864" rel="stylesheet">
 
-    <script src="/CPP_Learning/js/jquery-3.3.1.min.js?1705262579"></script>
+    <script src="/CPP_Learning/js/jquery-3.3.1.min.js?1705567864"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -1956,8 +1956,8 @@ Nous allons maintenant revenir plus en détail sur leur fonctionnement et vous m
 <hr>
 <h3 id="syntaxe">Syntaxe</h3>
 <p>La définition d&rsquo;une lambda est composée en général de trois parties :</p>
-<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="p">[</span><span class="n">c1</span><span class="p">,</span> <span class="n">c2</span><span class="p">,</span> <span class="n">c3</span><span class="p">](</span><span class="kt">int</span> <span class="n">p1</span><span class="p">,</span> <span class="kt">int</span> <span class="n">p2</span><span class="p">,</span> <span class="kt">int</span> <span class="n">p3</span><span class="p">)</span> <span class="p">{</span> <span class="k">return</span> <span class="n">c1</span> <span class="o">*</span> <span class="n">p1</span> <span class="o">+</span> <span class="n">c2</span> <span class="o">*</span> <span class="n">p2</span> <span class="o">+</span> <span class="n">c3</span> <span class="o">*</span> <span class="n">p3</span><span class="p">;</span> <span class="p">}</span>
-</code></pre></div><p>La partie entre crochet s&rsquo;appelle la <strong>capture</strong>.
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="p">[</span><span class="n">c1</span><span class="p">,</span> <span class="n">c2</span><span class="p">,</span> <span class="n">c3</span><span class="p">](</span><span class="kt">int</span> <span class="n">p1</span><span class="p">,</span> <span class="kt">int</span> <span class="n">p2</span><span class="p">,</span> <span class="kt">int</span> <span class="n">p3</span><span class="p">)</span> <span class="p">{</span> <span class="k">return</span> <span class="n">c1</span> <span class="o">*</span> <span class="n">p1</span> <span class="o">+</span> <span class="n">c2</span> <span class="o">*</span> <span class="n">p2</span> <span class="o">+</span> <span class="n">c3</span> <span class="o">*</span> <span class="n">p3</span><span class="p">;</span> <span class="p">}</span>
+</span></span></code></pre></div><p>La partie entre crochet s&rsquo;appelle la <strong>capture</strong>.
 Par défaut, la lambda n&rsquo;a pas accès aux variables définies dans la fonction parent.
 La capture permet donc de spécifier les variables locales du parent que l&rsquo;on veut pouvoir utiliser dans la lambda.</p>
 <p>La deuxième partie est composée des paramètres de la lambda.
@@ -1970,57 +1970,57 @@ Cela permet de garder du code lisible.</p>
 <hr>
 <h3 id="stockage-et-appel">Stockage et appel</h3>
 <p>Les lambdas peuvent être placées dans des variables locales ayant pour type <code>auto</code> :</p>
-<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="k">const</span> <span class="k">auto</span> <span class="n">compare_stuff</span> <span class="o">=</span> <span class="p">[](</span><span class="k">const</span> <span class="n">Stuff</span><span class="o">&amp;</span> <span class="n">stuff1</span><span class="p">,</span> <span class="k">const</span> <span class="n">Stuff</span><span class="o">&amp;</span> <span class="n">stuff2</span><span class="p">)</span> <span class="p">{</span> <span class="k">return</span> <span class="n">stuff1</span><span class="p">.</span><span class="n">content</span> <span class="o">==</span> <span class="n">stuff2</span><span class="p">.</span><span class="n">content</span><span class="p">;</span> <span class="p">};</span>
-
-<span class="n">Stuff</span> <span class="n">stuff1</span> <span class="p">{</span> <span class="mi">1</span> <span class="p">},</span> <span class="n">stuff2</span> <span class="p">{</span> <span class="mi">2</span> <span class="p">},</span> <span class="n">stuff3</span> <span class="p">{</span> <span class="mi">2</span> <span class="p">},</span> <span class="n">stuff4</span> <span class="p">{</span> <span class="mi">1</span> <span class="p">};</span>
-<span class="k">if</span> <span class="p">(</span><span class="n">compare_stuff</span><span class="p">(</span><span class="n">stuff1</span><span class="p">,</span> <span class="n">stuff2</span><span class="p">)</span> <span class="o">&amp;&amp;</span> <span class="n">compare_stuff</span><span class="p">(</span><span class="n">stuff2</span><span class="p">,</span> <span class="n">stuff3</span><span class="p">))</span>
-<span class="p">{</span>
-    <span class="n">assert</span><span class="p">(</span><span class="n">compare_stuff</span><span class="p">(</span><span class="n">stuff1</span><span class="p">,</span> <span class="n">stuff3</span><span class="p">));</span>
-<span class="p">}</span>
-</code></pre></div><p>On peut également les assigner à des objets de type <code>std::function&lt;Ret(Params...)&gt;</code> si la signature de la lambda correspond bien au paramètre de template de la <code>std::function</code> :</p>
-<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="k">const</span> <span class="n">Dog</span> <span class="n">my_first_dog</span><span class="p">;</span>
-
-<span class="n">std</span><span class="o">::</span><span class="n">function</span><span class="o">&lt;</span><span class="kt">bool</span><span class="p">(</span><span class="k">const</span> <span class="n">Dog</span><span class="o">&amp;</span><span class="p">)</span><span class="o">&gt;</span> <span class="n">is_my_dog</span> <span class="o">=</span> <span class="p">[</span><span class="o">&amp;</span><span class="n">my_first_dog</span><span class="p">](</span><span class="k">const</span> <span class="n">Dog</span><span class="o">&amp;</span> <span class="n">dog</span><span class="p">)</span> <span class="p">{</span> <span class="k">return</span> <span class="o">&amp;</span><span class="n">dog</span> <span class="o">==</span> <span class="o">&amp;</span><span class="n">my_first_dog</span><span class="p">;</span> <span class="p">};</span>
-
-<span class="k">if</span> <span class="p">(</span><span class="n">Dog</span><span class="o">*</span> <span class="n">my_new_dog</span> <span class="o">=</span> <span class="n">get_new_dog</span><span class="p">())</span>
-<span class="p">{</span>
-    <span class="n">is_my_dog</span> <span class="o">=</span> <span class="p">[</span><span class="n">my_new_dog</span><span class="p">](</span><span class="k">const</span> <span class="n">Dog</span><span class="o">&amp;</span> <span class="n">dog</span><span class="p">)</span> <span class="p">{</span> <span class="k">return</span> <span class="o">&amp;</span><span class="n">dog</span> <span class="o">==</span> <span class="n">my_new_dog</span><span class="p">;</span> <span class="p">};</span>
-<span class="p">}</span>
-
-<span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">is_my_dog</span><span class="p">(</span><span class="n">my_first_dog</span><span class="p">))</span>
-<span class="p">{</span>
-    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;Seems like I got a new dog.&#34;</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
-<span class="p">}</span>
-</code></pre></div>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="k">const</span> <span class="k">auto</span> <span class="n">compare_stuff</span> <span class="o">=</span> <span class="p">[](</span><span class="k">const</span> <span class="n">Stuff</span><span class="o">&amp;</span> <span class="n">stuff1</span><span class="p">,</span> <span class="k">const</span> <span class="n">Stuff</span><span class="o">&amp;</span> <span class="n">stuff2</span><span class="p">)</span> <span class="p">{</span> <span class="k">return</span> <span class="n">stuff1</span><span class="p">.</span><span class="n">content</span> <span class="o">==</span> <span class="n">stuff2</span><span class="p">.</span><span class="n">content</span><span class="p">;</span> <span class="p">};</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">Stuff</span> <span class="n">stuff1</span> <span class="p">{</span> <span class="mi">1</span> <span class="p">},</span> <span class="n">stuff2</span> <span class="p">{</span> <span class="mi">2</span> <span class="p">},</span> <span class="n">stuff3</span> <span class="p">{</span> <span class="mi">2</span> <span class="p">},</span> <span class="n">stuff4</span> <span class="p">{</span> <span class="mi">1</span> <span class="p">};</span>
+</span></span><span class="line"><span class="cl"><span class="k">if</span> <span class="p">(</span><span class="n">compare_stuff</span><span class="p">(</span><span class="n">stuff1</span><span class="p">,</span> <span class="n">stuff2</span><span class="p">)</span> <span class="o">&amp;&amp;</span> <span class="n">compare_stuff</span><span class="p">(</span><span class="n">stuff2</span><span class="p">,</span> <span class="n">stuff3</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="n">assert</span><span class="p">(</span><span class="n">compare_stuff</span><span class="p">(</span><span class="n">stuff1</span><span class="p">,</span> <span class="n">stuff3</span><span class="p">));</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><p>On peut également les assigner à des objets de type <code>std::function&lt;Ret(Params...)&gt;</code> si la signature de la lambda correspond bien au paramètre de template de la <code>std::function</code> :</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="k">const</span> <span class="n">Dog</span> <span class="n">my_first_dog</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">std</span><span class="o">::</span><span class="n">function</span><span class="o">&lt;</span><span class="kt">bool</span><span class="p">(</span><span class="k">const</span> <span class="n">Dog</span><span class="o">&amp;</span><span class="p">)</span><span class="o">&gt;</span> <span class="n">is_my_dog</span> <span class="o">=</span> <span class="p">[</span><span class="o">&amp;</span><span class="n">my_first_dog</span><span class="p">](</span><span class="k">const</span> <span class="n">Dog</span><span class="o">&amp;</span> <span class="n">dog</span><span class="p">)</span> <span class="p">{</span> <span class="k">return</span> <span class="o">&amp;</span><span class="n">dog</span> <span class="o">==</span> <span class="o">&amp;</span><span class="n">my_first_dog</span><span class="p">;</span> <span class="p">};</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">if</span> <span class="p">(</span><span class="n">Dog</span><span class="o">*</span> <span class="n">my_new_dog</span> <span class="o">=</span> <span class="n">get_new_dog</span><span class="p">())</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="n">is_my_dog</span> <span class="o">=</span> <span class="p">[</span><span class="n">my_new_dog</span><span class="p">](</span><span class="k">const</span> <span class="n">Dog</span><span class="o">&amp;</span> <span class="n">dog</span><span class="p">)</span> <span class="p">{</span> <span class="k">return</span> <span class="o">&amp;</span><span class="n">dog</span> <span class="o">==</span> <span class="n">my_new_dog</span><span class="p">;</span> <span class="p">};</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">is_my_dog</span><span class="p">(</span><span class="n">my_first_dog</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;Seems like I got a new dog.&#34;</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div>
 <div class="notices note" ><p><code>std::function&lt;Ret(Params...)&gt;</code> est une classe définie dans <code>&lt;functional&gt;</code> qui permet de wrapper n&rsquo;importe quel genre de foncteur : fonctions libres, lambdas, objets avec <code>operator()</code>, appel à une fonction-membre, etc.<br>
 C&rsquo;est très pratique pour mettre en place un système de <strong>callbacks</strong>, c&rsquo;est-à-dire pour stocker des fonctions destinées à être appelées plus tard dans le programme.</p>
 </div>
 
 <p>Enfin, on peut les passer directement à des fonctions qui attendent des <code>std::function&lt;...&gt;</code> ou des &ldquo;<em>Callables</em>&rdquo; (comme les fonctions de <code>&lt;algorithm&gt;</code>) :</p>
-<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="k">for</span> <span class="p">(</span><span class="kt">unsigned</span> <span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">20u</span><span class="p">;</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span>
-<span class="p">{</span>
-    <span class="n">mutiples_nb</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">std</span><span class="o">::</span><span class="n">count_if</span><span class="p">(</span><span class="n">values</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span> <span class="n">values</span><span class="p">.</span><span class="n">end</span><span class="p">(),</span> <span class="p">[</span><span class="n">i</span><span class="p">](</span><span class="kt">unsigned</span> <span class="kt">int</span> <span class="n">v</span><span class="p">)</span> <span class="p">{</span> <span class="k">return</span> <span class="n">v</span> <span class="o">%</span> <span class="n">i</span> <span class="o">==</span> <span class="mi">0u</span><span class="p">;</span> <span class="p">});</span>
-<span class="p">}</span>
-</code></pre></div><hr>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="k">for</span> <span class="p">(</span><span class="kt">unsigned</span> <span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">20u</span><span class="p">;</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="n">mutiples_nb</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">std</span><span class="o">::</span><span class="n">count_if</span><span class="p">(</span><span class="n">values</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span> <span class="n">values</span><span class="p">.</span><span class="n">end</span><span class="p">(),</span> <span class="p">[</span><span class="n">i</span><span class="p">](</span><span class="kt">unsigned</span> <span class="kt">int</span> <span class="n">v</span><span class="p">)</span> <span class="p">{</span> <span class="k">return</span> <span class="n">v</span> <span class="o">%</span> <span class="n">i</span> <span class="o">==</span> <span class="mi">0u</span><span class="p">;</span> <span class="p">});</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><hr>
 <h3 id="captures">Captures</h3>
 <h5 id="valeur-ou-référence">Valeur ou référence</h5>
 <p>Pour commencer, on peut choisir de capturer une variable par valeur ou par référence.</p>
-<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="kt">int</span> <span class="n">value</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
-
-<span class="c1">// Capture par valeur.
-</span><span class="c1"></span><span class="k">const</span> <span class="k">auto</span> <span class="n">display_copy</span> <span class="o">=</span> <span class="p">[</span><span class="n">value</span><span class="p">]()</span> <span class="p">{</span> <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">value</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span> <span class="p">};</span>
-
-<span class="c1">// Capture par référence.
-</span><span class="c1"></span><span class="k">const</span> <span class="k">auto</span> <span class="n">display_ref</span> <span class="o">=</span> <span class="p">[</span><span class="o">&amp;</span><span class="n">value</span><span class="p">]()</span> <span class="p">{</span> <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">value</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span> <span class="p">};</span>
-
-<span class="n">display_copy</span><span class="p">();</span> <span class="c1">// =&gt; 0
-</span><span class="c1"></span><span class="n">display_ref</span><span class="p">();</span>  <span class="c1">// =&gt; 0
-</span><span class="c1"></span>
-<span class="n">value</span> <span class="o">=</span> <span class="mi">5</span><span class="p">;</span>
-
-<span class="n">display_copy</span><span class="p">();</span> <span class="c1">// =&gt; 0
-</span><span class="c1"></span><span class="n">display_ref</span><span class="p">();</span>  <span class="c1">// =&gt; 5
-</span></code></pre></div>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="kt">int</span> <span class="n">value</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">// Capture par valeur.
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">const</span> <span class="k">auto</span> <span class="n">display_copy</span> <span class="o">=</span> <span class="p">[</span><span class="n">value</span><span class="p">]()</span> <span class="p">{</span> <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">value</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span> <span class="p">};</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">// Capture par référence.
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">const</span> <span class="k">auto</span> <span class="n">display_ref</span> <span class="o">=</span> <span class="p">[</span><span class="o">&amp;</span><span class="n">value</span><span class="p">]()</span> <span class="p">{</span> <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">value</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span> <span class="p">};</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">display_copy</span><span class="p">();</span> <span class="c1">// =&gt; 0
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">display_ref</span><span class="p">();</span>  <span class="c1">// =&gt; 0
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl"><span class="n">value</span> <span class="o">=</span> <span class="mi">5</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">display_copy</span><span class="p">();</span> <span class="c1">// =&gt; 0
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">display_ref</span><span class="p">();</span>  <span class="c1">// =&gt; 5
+</span></span></span></code></pre></div>
 <div class="notices info" ><p>Lorsque l&rsquo;on capture par référence, il faut s&rsquo;assurer que la durée de vie de la lambda ne dépassera pas celle de la variable référencée.
 Si cette dernière est détruite et que l&rsquo;on appelle la lambda après, on se retrouve avec une dangling-ref.</p>
 </div>
@@ -2028,202 +2028,202 @@ Si cette dernière est détruite et que l&rsquo;on appelle la lambda après, on 
 <hr>
 <h5 id="capture-des-attributs-dun-objet">Capture des attributs d&rsquo;un objet</h5>
 <p>Si vous écrivez une lambda à l&rsquo;intérieur d&rsquo;une fonction-membre, vous devriez vous apercevoir qu&rsquo;il n&rsquo;est pas possible de capturer les attributs de l&rsquo;objet :</p>
-<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="k">struct</span> <span class="nc">CaptureTest</span>
-<span class="p">{</span>
-    <span class="n">std</span><span class="o">::</span><span class="n">function</span><span class="o">&lt;</span><span class="kt">void</span><span class="p">(</span><span class="kt">int</span><span class="p">)</span><span class="o">&gt;</span> <span class="n">create_add_callback</span><span class="p">()</span> <span class="k">const</span>
-    <span class="p">{</span>
-        <span class="k">return</span> <span class="p">[</span><span class="o">&amp;</span><span class="n">_value</span><span class="p">](</span><span class="kt">int</span> <span class="n">other</span><span class="p">)</span> <span class="p">{</span> <span class="k">return</span> <span class="n">_value</span> <span class="o">+</span> <span class="n">other</span><span class="p">;</span> <span class="p">};</span> <span class="c1">// =&gt; la capture ne compile pas...
-</span><span class="c1"></span>    <span class="p">}</span>
-
-    <span class="kt">int</span> <span class="n">_value</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
-<span class="p">};</span>
-</code></pre></div><p>En fait, pour capturer les attributs de l&rsquo;objet, il faut capturer l&rsquo;objet en lui-même.
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="k">struct</span> <span class="nc">CaptureTest</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="n">std</span><span class="o">::</span><span class="n">function</span><span class="o">&lt;</span><span class="kt">void</span><span class="p">(</span><span class="kt">int</span><span class="p">)</span><span class="o">&gt;</span> <span class="n">create_add_callback</span><span class="p">()</span> <span class="k">const</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="p">[</span><span class="o">&amp;</span><span class="n">_value</span><span class="p">](</span><span class="kt">int</span> <span class="n">other</span><span class="p">)</span> <span class="p">{</span> <span class="k">return</span> <span class="n">_value</span> <span class="o">+</span> <span class="n">other</span><span class="p">;</span> <span class="p">};</span> <span class="c1">// =&gt; la capture ne compile pas...
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="kt">int</span> <span class="n">_value</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">};</span>
+</span></span></code></pre></div><p>En fait, pour capturer les attributs de l&rsquo;objet, il faut capturer l&rsquo;objet en lui-même.
 Pour faire cela, on écrit <code>this</code> dans la capture.</p>
-<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="k">struct</span> <span class="nc">CaptureTest</span>
-<span class="p">{</span>
-    <span class="n">std</span><span class="o">::</span><span class="n">function</span><span class="o">&lt;</span><span class="kt">void</span><span class="p">(</span><span class="kt">int</span><span class="p">)</span><span class="o">&gt;</span> <span class="n">create_add_callback</span><span class="p">()</span> <span class="k">const</span>
-    <span class="p">{</span>
-        <span class="k">return</span> <span class="p">[</span><span class="k">this</span><span class="p">](</span><span class="kt">int</span> <span class="n">other</span><span class="p">)</span> <span class="p">{</span> <span class="k">return</span> <span class="n">_value</span> <span class="o">+</span> <span class="n">other</span><span class="p">;</span> <span class="p">};</span> <span class="c1">// =&gt; _value est maintenant accessible !
-</span><span class="c1"></span>    <span class="p">}</span>
-
-    <span class="kt">int</span> <span class="n">_value</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
-<span class="p">};</span>
-</code></pre></div><p>Attention encore une fois aux durées de vie.
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="k">struct</span> <span class="nc">CaptureTest</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="n">std</span><span class="o">::</span><span class="n">function</span><span class="o">&lt;</span><span class="kt">void</span><span class="p">(</span><span class="kt">int</span><span class="p">)</span><span class="o">&gt;</span> <span class="n">create_add_callback</span><span class="p">()</span> <span class="k">const</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="p">[</span><span class="k">this</span><span class="p">](</span><span class="kt">int</span> <span class="n">other</span><span class="p">)</span> <span class="p">{</span> <span class="k">return</span> <span class="n">_value</span> <span class="o">+</span> <span class="n">other</span><span class="p">;</span> <span class="p">};</span> <span class="c1">// =&gt; _value est maintenant accessible !
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="kt">int</span> <span class="n">_value</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">};</span>
+</span></span></code></pre></div><p>Attention encore une fois aux durées de vie.
 Si vous capturez <code>this</code>, cela revient à capturer par référence tous les attributs et fonction-membres de l&rsquo;objet.
 Vous devez donc vous assurer que l&rsquo;instance capturée vivra au moins aussi longtemps que la lambda.</p>
-<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="k">auto</span> <span class="n">capture_test</span> <span class="o">=</span> <span class="n">std</span><span class="o">::</span><span class="n">make_unique</span><span class="o">&lt;</span><span class="n">CaptureTest</span><span class="o">&gt;</span><span class="p">();</span>
-<span class="n">capture_test</span><span class="o">-&gt;</span><span class="n">_value</span> <span class="o">=</span> <span class="mi">3</span><span class="p">;</span>
-
-<span class="k">const</span> <span class="k">auto</span> <span class="n">add_cb</span> <span class="o">=</span> <span class="n">capture_test</span><span class="o">-&gt;</span><span class="n">create_add_callback</span><span class="p">();</span>
-
-<span class="c1">// L&#39;instruction suivante affiche 6.
-</span><span class="c1"></span><span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">add_cb</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
-
-<span class="c1">// L&#39;objet capture_test est détruit.
-</span><span class="c1"></span><span class="n">capture_test</span><span class="p">.</span><span class="n">reset</span><span class="p">();</span>
-
-<span class="c1">// L&#39;instruction suivante a un comportement indéfini (usage d&#39;une dangling-ref).
-</span><span class="c1"></span><span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">add_cb</span><span class="p">(</span><span class="mi">9</span><span class="p">)</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
-</code></pre></div><hr>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="k">auto</span> <span class="n">capture_test</span> <span class="o">=</span> <span class="n">std</span><span class="o">::</span><span class="n">make_unique</span><span class="o">&lt;</span><span class="n">CaptureTest</span><span class="o">&gt;</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl"><span class="n">capture_test</span><span class="o">-&gt;</span><span class="n">_value</span> <span class="o">=</span> <span class="mi">3</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">const</span> <span class="k">auto</span> <span class="n">add_cb</span> <span class="o">=</span> <span class="n">capture_test</span><span class="o">-&gt;</span><span class="n">create_add_callback</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">// L&#39;instruction suivante affiche 6.
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">add_cb</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">// L&#39;objet capture_test est détruit.
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">capture_test</span><span class="p">.</span><span class="n">reset</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">// L&#39;instruction suivante a un comportement indéfini (usage d&#39;une dangling-ref).
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">add_cb</span><span class="p">(</span><span class="mi">9</span><span class="p">)</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+</span></span></code></pre></div><hr>
 <h5 id="capture-des-variables-globales">Capture des variables globales</h5>
 <p>Les variables globales ne peuvent pas être capturées.
 En effet, celles-ci sont déjà accessibles de base dans le corps de la lambda.</p>
-<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="kt">int</span> <span class="n">global_value</span> <span class="o">=</span> <span class="mi">5</span><span class="p">;</span>
-
-<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
-<span class="p">{</span>
-    <span class="c1">// La ligne suivante déclenche un warning.
-</span><span class="c1"></span>    <span class="c1">// const auto increment_global = [&amp;global_value]() { ++global_value; };
-</span><span class="c1"></span>
-    <span class="c1">// Alors que celle-ci compile parfaitement.
-</span><span class="c1"></span>    <span class="k">const</span> <span class="k">auto</span> <span class="n">increment_global</span> <span class="o">=</span> <span class="p">[]()</span> <span class="p">{</span> <span class="o">++</span><span class="n">global_value</span><span class="p">;</span> <span class="p">};</span>
-    <span class="n">increment_global</span><span class="p">();</span>
-    <span class="n">increment_global</span><span class="p">();</span>
-
-    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">global_value</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span> <span class="c1">// =&gt; 7
-</span><span class="c1"></span>
-    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
-<span class="p">}</span>
-</code></pre></div><hr>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="kt">int</span> <span class="n">global_value</span> <span class="o">=</span> <span class="mi">5</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">// La ligne suivante déclenche un warning.
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="c1">// const auto increment_global = [&amp;global_value]() { ++global_value; };
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl">    <span class="c1">// Alors que celle-ci compile parfaitement.
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="k">const</span> <span class="k">auto</span> <span class="n">increment_global</span> <span class="o">=</span> <span class="p">[]()</span> <span class="p">{</span> <span class="o">++</span><span class="n">global_value</span><span class="p">;</span> <span class="p">};</span>
+</span></span><span class="line"><span class="cl">    <span class="n">increment_global</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">    <span class="n">increment_global</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">global_value</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span> <span class="c1">// =&gt; 7
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><hr>
 <h5 id="alias">Alias</h5>
 <p>Il est possible de définir un alias pour capturer un élément.
 Vous pouvez ainsi utiliser des noms plus courts dans la lambda, ou encore capturer le résultat d&rsquo;une expression.</p>
-<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="kt">int</span> <span class="n">variable</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
-<span class="k">const</span> <span class="k">auto</span> <span class="n">lambda</span> <span class="o">=</span> <span class="p">[</span><span class="n">v</span> <span class="o">=</span> <span class="n">variable</span><span class="p">,</span> <span class="n">square</span> <span class="o">=</span> <span class="p">(</span><span class="n">variable</span> <span class="o">*</span> <span class="n">variable</span><span class="p">)]()</span> <span class="p">{</span> <span class="k">return</span> <span class="n">v</span> <span class="o">+</span> <span class="n">square</span><span class="p">;</span> <span class="p">};</span>
-</code></pre></div><p>C&rsquo;est aussi pratique lorsque l&rsquo;on est dans une fonction-membre, et que l&rsquo;on souhaite capturer l&rsquo;instance courante par valeur (= copie) plutôt que par référence.</p>
-<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="k">struct</span> <span class="nc">CaptureTest</span>
-<span class="p">{</span>
-    <span class="n">std</span><span class="o">::</span><span class="n">function</span><span class="o">&lt;</span><span class="kt">void</span><span class="p">(</span><span class="kt">int</span><span class="p">)</span><span class="o">&gt;</span> <span class="n">create_add_callback</span><span class="p">()</span> <span class="k">const</span>
-    <span class="p">{</span>
-        <span class="k">return</span> <span class="p">[</span><span class="n">self_copy</span> <span class="o">=</span> <span class="o">*</span><span class="k">this</span><span class="p">](</span><span class="kt">int</span> <span class="n">other</span><span class="p">)</span> <span class="p">{</span> <span class="k">return</span> <span class="n">other</span> <span class="o">+</span> <span class="n">self_copy</span><span class="p">.</span><span class="n">_value</span><span class="p">;</span> <span class="p">};</span>
-    <span class="p">}</span>
-
-    <span class="kt">int</span> <span class="n">_value</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
-<span class="p">};</span>
-
-<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
-<span class="p">{</span>
-    <span class="k">auto</span> <span class="n">capture_test</span> <span class="o">=</span> <span class="n">std</span><span class="o">::</span><span class="n">make_unique</span><span class="o">&lt;</span><span class="n">CaptureTest</span><span class="o">&gt;</span><span class="p">();</span>
-    <span class="n">capture_test</span><span class="o">-&gt;</span><span class="n">_value</span> <span class="o">=</span> <span class="mi">3</span><span class="p">;</span>
-
-    <span class="k">const</span> <span class="k">auto</span> <span class="n">add_cb</span> <span class="o">=</span> <span class="n">capture_test</span><span class="o">-&gt;</span><span class="n">create_add_callback</span><span class="p">();</span>
-    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">add_cb</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span> <span class="c1">// =&gt; 6
-</span><span class="c1"></span>
-    <span class="n">capture</span><span class="o">-&gt;</span><span class="n">_value</span> <span class="o">=</span> <span class="mi">7</span><span class="p">;</span>
-    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">add_cb</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span> <span class="c1">// =&gt; toujours 6, puisqu&#39;on a pas capturé par référence
-</span><span class="c1"></span>
-    <span class="n">capture_test</span><span class="p">.</span><span class="n">reset</span><span class="p">();</span>
-    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">add_cb</span><span class="p">(</span><span class="mi">9</span><span class="p">)</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span> <span class="c1">// =&gt; 12, donc plus de problème de dangling-ref !
-</span><span class="c1"></span>
-    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
-<span class="p">}</span>
-</code></pre></div><p>On peut aussi décider de restreindre la capture à un seul attribut, plutôt que de capturer l&rsquo;intégralité de l&rsquo;objet.</p>
-<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="k">struct</span> <span class="nc">BunchOfStuff</span>
-<span class="p">{</span>
-    <span class="n">std</span><span class="o">::</span><span class="n">function</span><span class="o">&lt;</span><span class="kt">void</span><span class="p">()</span><span class="o">&gt;</span> <span class="n">update_first_stuff_cb</span><span class="p">()</span>
-    <span class="p">{</span>
-        <span class="c1">// Notez qu&#39;utiliser un alias n&#39;empêche pas de capturer par référence.
-</span><span class="c1"></span>        <span class="k">return</span> <span class="p">[</span><span class="o">&amp;</span><span class="n">stuff</span> <span class="o">=</span> <span class="n">_stuff1</span><span class="p">]()</span> <span class="p">{</span> <span class="n">stuff</span><span class="p">.</span><span class="n">update</span><span class="p">();</span> <span class="p">};</span>
-    <span class="p">}</span>
-
-    <span class="n">Stuff</span> <span class="n">_stuff1</span><span class="p">;</span>
-    <span class="n">Stuff</span> <span class="n">_stuff2</span><span class="p">;</span>
-    <span class="n">Stuff</span> <span class="n">_stuff3</span><span class="p">;</span>
-<span class="p">};</span>
-</code></pre></div><p>Enfin, en utilisant des alias, il est possible de déplacer un objet à l&rsquo;intérieur d&rsquo;une lambda :</p>
-<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="n">std</span><span class="o">::</span><span class="n">function</span><span class="o">&lt;</span><span class="kt">void</span><span class="p">()</span><span class="o">&gt;</span> <span class="n">create_display_range_cb</span><span class="p">(</span><span class="kt">int</span> <span class="n">a</span><span class="p">,</span> <span class="kt">int</span> <span class="n">b</span><span class="p">)</span>
-<span class="p">{</span>
-    <span class="k">const</span> <span class="k">auto</span> <span class="p">[</span><span class="n">min</span><span class="p">,</span> <span class="n">max</span><span class="p">]</span> <span class="o">=</span> <span class="n">std</span><span class="o">::</span><span class="n">minmax</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">);</span>
-    
-    <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">values</span><span class="p">;</span>
-    <span class="n">std</span><span class="o">::</span><span class="n">generate</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">back_inserter</span><span class="p">(</span><span class="n">values</span><span class="p">),</span> <span class="n">max</span> <span class="o">-</span> <span class="n">min</span><span class="p">,</span> <span class="p">[</span><span class="n">v</span> <span class="o">=</span> <span class="n">min</span><span class="p">]()</span> <span class="k">mutable</span> <span class="p">{</span> <span class="k">return</span> <span class="n">v</span><span class="o">++</span><span class="p">;</span> <span class="p">});</span>
-    
-    <span class="c1">// On ne va plus utiliser &#34;values&#34; après, donc on peut déplacer le tableau dans la lambda, afin d&#39;économiser une copie.
-</span><span class="c1"></span>    <span class="k">return</span> <span class="p">[</span><span class="n">values</span> <span class="o">=</span> <span class="n">std</span><span class="o">::</span><span class="n">move</span><span class="p">(</span><span class="n">values</span><span class="p">)]()</span>
-    <span class="p">{</span> 
-        <span class="n">std</span><span class="o">::</span><span class="n">for_each</span><span class="p">(</span><span class="n">values</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span> <span class="n">values</span><span class="p">.</span><span class="n">end</span><span class="p">(),</span> <span class="p">[](</span><span class="kt">int</span> <span class="n">v</span><span class="p">)</span> <span class="p">{</span> <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">v</span> <span class="o">&lt;&lt;</span> <span class="s">&#34; &#34;</span><span class="p">;</span> <span class="p">});</span>
-    <span class="p">};</span>
-<span class="p">}</span>
-</code></pre></div><hr>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="kt">int</span> <span class="n">variable</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="k">const</span> <span class="k">auto</span> <span class="n">lambda</span> <span class="o">=</span> <span class="p">[</span><span class="n">v</span> <span class="o">=</span> <span class="n">variable</span><span class="p">,</span> <span class="n">square</span> <span class="o">=</span> <span class="p">(</span><span class="n">variable</span> <span class="o">*</span> <span class="n">variable</span><span class="p">)]()</span> <span class="p">{</span> <span class="k">return</span> <span class="n">v</span> <span class="o">+</span> <span class="n">square</span><span class="p">;</span> <span class="p">};</span>
+</span></span></code></pre></div><p>C&rsquo;est aussi pratique lorsque l&rsquo;on est dans une fonction-membre, et que l&rsquo;on souhaite capturer l&rsquo;instance courante par valeur (= copie) plutôt que par référence.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="k">struct</span> <span class="nc">CaptureTest</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="n">std</span><span class="o">::</span><span class="n">function</span><span class="o">&lt;</span><span class="kt">void</span><span class="p">(</span><span class="kt">int</span><span class="p">)</span><span class="o">&gt;</span> <span class="n">create_add_callback</span><span class="p">()</span> <span class="k">const</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="p">[</span><span class="n">self_copy</span> <span class="o">=</span> <span class="o">*</span><span class="k">this</span><span class="p">](</span><span class="kt">int</span> <span class="n">other</span><span class="p">)</span> <span class="p">{</span> <span class="k">return</span> <span class="n">other</span> <span class="o">+</span> <span class="n">self_copy</span><span class="p">.</span><span class="n">_value</span><span class="p">;</span> <span class="p">};</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="kt">int</span> <span class="n">_value</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">};</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">auto</span> <span class="n">capture_test</span> <span class="o">=</span> <span class="n">std</span><span class="o">::</span><span class="n">make_unique</span><span class="o">&lt;</span><span class="n">CaptureTest</span><span class="o">&gt;</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">    <span class="n">capture_test</span><span class="o">-&gt;</span><span class="n">_value</span> <span class="o">=</span> <span class="mi">3</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">const</span> <span class="k">auto</span> <span class="n">add_cb</span> <span class="o">=</span> <span class="n">capture_test</span><span class="o">-&gt;</span><span class="n">create_add_callback</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">add_cb</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span> <span class="c1">// =&gt; 6
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl">    <span class="n">capture</span><span class="o">-&gt;</span><span class="n">_value</span> <span class="o">=</span> <span class="mi">7</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">add_cb</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span> <span class="c1">// =&gt; toujours 6, puisqu&#39;on a pas capturé par référence
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl">    <span class="n">capture_test</span><span class="p">.</span><span class="n">reset</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">add_cb</span><span class="p">(</span><span class="mi">9</span><span class="p">)</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span> <span class="c1">// =&gt; 12, donc plus de problème de dangling-ref !
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><p>On peut aussi décider de restreindre la capture à un seul attribut, plutôt que de capturer l&rsquo;intégralité de l&rsquo;objet.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="k">struct</span> <span class="nc">BunchOfStuff</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="n">std</span><span class="o">::</span><span class="n">function</span><span class="o">&lt;</span><span class="kt">void</span><span class="p">()</span><span class="o">&gt;</span> <span class="n">update_first_stuff_cb</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="c1">// Notez qu&#39;utiliser un alias n&#39;empêche pas de capturer par référence.
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="k">return</span> <span class="p">[</span><span class="o">&amp;</span><span class="n">stuff</span> <span class="o">=</span> <span class="n">_stuff1</span><span class="p">]()</span> <span class="p">{</span> <span class="n">stuff</span><span class="p">.</span><span class="n">update</span><span class="p">();</span> <span class="p">};</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="n">Stuff</span> <span class="n">_stuff1</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">Stuff</span> <span class="n">_stuff2</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">Stuff</span> <span class="n">_stuff3</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">};</span>
+</span></span></code></pre></div><p>Enfin, en utilisant des alias, il est possible de déplacer un objet à l&rsquo;intérieur d&rsquo;une lambda :</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="n">std</span><span class="o">::</span><span class="n">function</span><span class="o">&lt;</span><span class="kt">void</span><span class="p">()</span><span class="o">&gt;</span> <span class="n">create_display_range_cb</span><span class="p">(</span><span class="kt">int</span> <span class="n">a</span><span class="p">,</span> <span class="kt">int</span> <span class="n">b</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">const</span> <span class="k">auto</span> <span class="p">[</span><span class="n">min</span><span class="p">,</span> <span class="n">max</span><span class="p">]</span> <span class="o">=</span> <span class="n">std</span><span class="o">::</span><span class="n">minmax</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">    <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">values</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">std</span><span class="o">::</span><span class="n">generate</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">back_inserter</span><span class="p">(</span><span class="n">values</span><span class="p">),</span> <span class="n">max</span> <span class="o">-</span> <span class="n">min</span><span class="p">,</span> <span class="p">[</span><span class="n">v</span> <span class="o">=</span> <span class="n">min</span><span class="p">]()</span> <span class="k">mutable</span> <span class="p">{</span> <span class="k">return</span> <span class="n">v</span><span class="o">++</span><span class="p">;</span> <span class="p">});</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">    <span class="c1">// On ne va plus utiliser &#34;values&#34; après, donc on peut déplacer le tableau dans la lambda, afin d&#39;économiser une copie.
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="k">return</span> <span class="p">[</span><span class="n">values</span> <span class="o">=</span> <span class="n">std</span><span class="o">::</span><span class="n">move</span><span class="p">(</span><span class="n">values</span><span class="p">)]()</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span> 
+</span></span><span class="line"><span class="cl">        <span class="n">std</span><span class="o">::</span><span class="n">for_each</span><span class="p">(</span><span class="n">values</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span> <span class="n">values</span><span class="p">.</span><span class="n">end</span><span class="p">(),</span> <span class="p">[](</span><span class="kt">int</span> <span class="n">v</span><span class="p">)</span> <span class="p">{</span> <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">v</span> <span class="o">&lt;&lt;</span> <span class="s">&#34; &#34;</span><span class="p">;</span> <span class="p">});</span>
+</span></span><span class="line"><span class="cl">    <span class="p">};</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><hr>
 <h3 id="compilation">Compilation</h3>
 <p>Au moment où vous écrivez une lambda, il faut savoir que celle-ci n&rsquo;a pas encore de type.
 C&rsquo;est pour cela que lorsque vous voulez créer une variable à partir d&rsquo;une lambda, vous êtes obligé d&rsquo;utiliser <code>auto</code>, ou bien de la wrapper à l&rsquo;intérieur d&rsquo;un objet de type <code>std::function</code>.</p>
 <p>Le type de la lambda va être réellement généré au cours de la compilation.</p>
 <p>Si la lambda ne capture rien, alors le compilateur va créer une fonction libre à partir du code de la lambda.
 Le type de cette lambda sera donc un pointeur de fonction avec la même signature.</p>
-<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
-<span class="p">{</span>
-    <span class="k">auto</span> <span class="n">lambda</span> <span class="o">=</span> <span class="p">[](</span><span class="kt">int</span> <span class="n">v</span><span class="p">){</span> <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">v</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span> <span class="p">};</span>
-    <span class="n">lambda</span><span class="p">(</span><span class="mi">3</span><span class="p">);</span>
-    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
-<span class="p">}</span>
-
-<span class="c1">// pourrait être traduit par le compilateur avec :
-</span><span class="c1"></span>
-<span class="kt">void</span> <span class="nf">nom_autogenere_incomprehensible</span><span class="p">(</span><span class="kt">int</span> <span class="n">v</span><span class="p">)</span>
-<span class="p">{</span>
-    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">v</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
-<span class="p">}</span>
-
-<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
-<span class="p">{</span>
-    <span class="kt">void</span> <span class="p">(</span><span class="o">*</span><span class="n">lambda</span><span class="p">)(</span><span class="kt">int</span><span class="p">)</span> <span class="o">=</span> <span class="o">&amp;</span><span class="n">nom_autogenere_incomprehensible</span><span class="p">;</span>
-    <span class="n">lambda</span><span class="p">(</span><span class="mi">3</span><span class="p">);</span>
-    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
-<span class="p">}</span>
-</code></pre></div><p>En revanche, si la lambda capture quelque chose, alors le compilateur va générer une classe ayant pour attributs les différents éléments capturés.
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">auto</span> <span class="n">lambda</span> <span class="o">=</span> <span class="p">[](</span><span class="kt">int</span> <span class="n">v</span><span class="p">){</span> <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">v</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span> <span class="p">};</span>
+</span></span><span class="line"><span class="cl">    <span class="n">lambda</span><span class="p">(</span><span class="mi">3</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">// pourrait être traduit par le compilateur avec :
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl"><span class="kt">void</span> <span class="nf">nom_autogenere_incomprehensible</span><span class="p">(</span><span class="kt">int</span> <span class="n">v</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">v</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">void</span> <span class="p">(</span><span class="o">*</span><span class="n">lambda</span><span class="p">)(</span><span class="kt">int</span><span class="p">)</span> <span class="o">=</span> <span class="o">&amp;</span><span class="n">nom_autogenere_incomprehensible</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">lambda</span><span class="p">(</span><span class="mi">3</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><p>En revanche, si la lambda capture quelque chose, alors le compilateur va générer une classe ayant pour attributs les différents éléments capturés.
 La lambda aura dans ce cas pour type cette classe auto-générée.</p>
-<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
-<span class="p">{</span>
-    <span class="kt">int</span> <span class="n">coeff</span> <span class="o">=</span> <span class="mi">3</span><span class="p">;</span>
-    <span class="k">auto</span> <span class="n">lambda</span> <span class="o">=</span> <span class="p">[</span><span class="n">coeff</span><span class="p">](</span><span class="kt">int</span> <span class="n">v</span><span class="p">){</span> <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="p">(</span><span class="n">coeff</span> <span class="o">*</span> <span class="n">v</span><span class="p">)</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span> <span class="p">};</span>
-    <span class="n">lambda</span><span class="p">(</span><span class="mi">3</span><span class="p">);</span>
-    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
-<span class="p">}</span>
-
-<span class="c1">// pourrait être traduit par le compilateur avec :
-</span><span class="c1"></span>
-<span class="k">struct</span> <span class="nc">nom_autogenere_incomprehensible</span>
-<span class="p">{</span>
-    <span class="n">nom_autogenere_incomprehensible</span><span class="p">(</span><span class="kt">int</span> <span class="n">coeff</span><span class="p">)</span>
-        <span class="o">:</span> <span class="n">_coeff</span> <span class="p">{</span> <span class="n">coeff</span> <span class="p">}</span>
-    <span class="p">{}</span>
-
-    <span class="kt">void</span> <span class="nf">operator</span><span class="p">()(</span><span class="kt">int</span> <span class="n">v</span><span class="p">)</span> <span class="k">const</span>
-    <span class="p">{</span>
-        <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="p">(</span><span class="n">_coeff</span> <span class="o">*</span> <span class="n">v</span><span class="p">)</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
-    <span class="p">}</span>
-
-    <span class="kt">int</span> <span class="n">_coeff</span><span class="p">;</span>
-<span class="p">};</span>
-
-<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
-<span class="p">{</span> 
-    <span class="kt">int</span> <span class="n">coeff</span> <span class="o">=</span> <span class="mi">3</span><span class="p">;</span>
-    <span class="n">nom_autogenere_incomprehensible</span> <span class="n">lambda</span> <span class="p">{</span> <span class="n">coeff</span> <span class="p">};</span>
-    <span class="n">lambda</span><span class="p">(</span><span class="mi">3</span><span class="p">);</span>
-    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
-<span class="p">}</span>
-</code></pre></div><p>Comme vous pouvez le constater, dans le code ci-dessus, nous avons marqué l'<code>operator()</code> comme étant <code>const</code>.<br>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">int</span> <span class="n">coeff</span> <span class="o">=</span> <span class="mi">3</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">auto</span> <span class="n">lambda</span> <span class="o">=</span> <span class="p">[</span><span class="n">coeff</span><span class="p">](</span><span class="kt">int</span> <span class="n">v</span><span class="p">){</span> <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="p">(</span><span class="n">coeff</span> <span class="o">*</span> <span class="n">v</span><span class="p">)</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span> <span class="p">};</span>
+</span></span><span class="line"><span class="cl">    <span class="n">lambda</span><span class="p">(</span><span class="mi">3</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">// pourrait être traduit par le compilateur avec :
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl"><span class="k">struct</span> <span class="nc">nom_autogenere_incomprehensible</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="n">nom_autogenere_incomprehensible</span><span class="p">(</span><span class="kt">int</span> <span class="n">coeff</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="o">:</span> <span class="n">_coeff</span> <span class="p">{</span> <span class="n">coeff</span> <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="kt">void</span> <span class="nf">operator</span><span class="p">()(</span><span class="kt">int</span> <span class="n">v</span><span class="p">)</span> <span class="k">const</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="p">(</span><span class="n">_coeff</span> <span class="o">*</span> <span class="n">v</span><span class="p">)</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="kt">int</span> <span class="n">_coeff</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">};</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span> 
+</span></span><span class="line"><span class="cl">    <span class="kt">int</span> <span class="n">coeff</span> <span class="o">=</span> <span class="mi">3</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">nom_autogenere_incomprehensible</span> <span class="n">lambda</span> <span class="p">{</span> <span class="n">coeff</span> <span class="p">};</span>
+</span></span><span class="line"><span class="cl">    <span class="n">lambda</span><span class="p">(</span><span class="mi">3</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><p>Comme vous pouvez le constater, dans le code ci-dessus, nous avons marqué l&rsquo;<code>operator()</code> comme étant <code>const</code>.<br>
 En effet, vous devriez avoir une erreur si vous essayez de compiler le code suivant :</p>
-<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
-<span class="p">{</span>
-    <span class="kt">int</span> <span class="n">coeff</span> <span class="o">=</span> <span class="mi">3</span><span class="p">;</span>
-    <span class="k">auto</span> <span class="n">lambda</span> <span class="o">=</span> <span class="p">[</span><span class="n">coeff</span><span class="p">](</span><span class="kt">int</span> <span class="n">v</span><span class="p">)</span> <span class="p">{</span> <span class="n">coeff</span> <span class="o">+=</span> <span class="n">v</span><span class="p">;</span> <span class="p">};</span> <span class="c1">// =&gt; assignment of read-only variable &#39;coeff&#39;
-</span><span class="c1"></span>    <span class="n">lambda</span><span class="p">(</span><span class="mi">3</span><span class="p">);</span>
-    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
-<span class="p">}</span>
-</code></pre></div><p>Par défaut, il n&rsquo;est pas possible de modifier les objets capturés par valeur dans une lambda.
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">int</span> <span class="n">coeff</span> <span class="o">=</span> <span class="mi">3</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">auto</span> <span class="n">lambda</span> <span class="o">=</span> <span class="p">[</span><span class="n">coeff</span><span class="p">](</span><span class="kt">int</span> <span class="n">v</span><span class="p">)</span> <span class="p">{</span> <span class="n">coeff</span> <span class="o">+=</span> <span class="n">v</span><span class="p">;</span> <span class="p">};</span> <span class="c1">// =&gt; assignment of read-only variable &#39;coeff&#39;
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="n">lambda</span><span class="p">(</span><span class="mi">3</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><p>Par défaut, il n&rsquo;est pas possible de modifier les objets capturés par valeur dans une lambda.
 Si vous souhaitez pouvoir le faire, il faut utiliser le mot-clef <code>mutable</code>.
-Ainsi, au moment de générer le type de la lambda, le compilateur ne placera pas <code>const</code> sur l'<code>operator()</code>.</p>
-<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
-<span class="p">{</span>
-    <span class="kt">int</span> <span class="n">coeff</span> <span class="o">=</span> <span class="mi">3</span><span class="p">;</span>
-    <span class="k">auto</span> <span class="n">lambda</span> <span class="o">=</span> <span class="p">[</span><span class="n">coeff</span><span class="p">](</span><span class="kt">int</span> <span class="n">v</span><span class="p">)</span> <span class="k">mutable</span> <span class="p">{</span> <span class="n">coeff</span> <span class="o">+=</span> <span class="n">v</span><span class="p">;</span> <span class="p">};</span> <span class="c1">// =&gt; plus d&#39;erreur
-</span><span class="c1"></span>    <span class="n">lambda</span><span class="p">(</span><span class="mi">3</span><span class="p">);</span>
-    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
-<span class="p">}</span>
-</code></pre></div>
+Ainsi, au moment de générer le type de la lambda, le compilateur ne placera pas <code>const</code> sur l&rsquo;<code>operator()</code>.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">int</span> <span class="n">coeff</span> <span class="o">=</span> <span class="mi">3</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">auto</span> <span class="n">lambda</span> <span class="o">=</span> <span class="p">[</span><span class="n">coeff</span><span class="p">](</span><span class="kt">int</span> <span class="n">v</span><span class="p">)</span> <span class="k">mutable</span> <span class="p">{</span> <span class="n">coeff</span> <span class="o">+=</span> <span class="n">v</span><span class="p">;</span> <span class="p">};</span> <span class="c1">// =&gt; plus d&#39;erreur
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="n">lambda</span><span class="p">(</span><span class="mi">3</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div>
 <div class="notices tip" ><p>Notez bien que cela ne concerne que les captures <strong>par valeur</strong>.
 En effet, lorsqu&rsquo;on capture par référence, la lambda ne own pas l&rsquo;objet référencé.
 Si on modifie le contenu de la référence, on ne modifie donc pas vraiment la lambda, puisque ce qui est modifié vit en dehors de la lambda.
@@ -3531,19 +3531,19 @@ Il est donc recommandé de ne mettre <code>mutable</code> que si vous modifiez d
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/CPP_Learning/js/clipboard.min.js?1705262579"></script>
-    <script src="/CPP_Learning/js/perfect-scrollbar.min.js?1705262579"></script>
-    <script src="/CPP_Learning/js/perfect-scrollbar.jquery.min.js?1705262579"></script>
-    <script src="/CPP_Learning/js/jquery.sticky.js?1705262579"></script>
-    <script src="/CPP_Learning/js/featherlight.min.js?1705262579"></script>
-    <script src="/CPP_Learning/js/highlight.pack.js?1705262579"></script>
+    <script src="/CPP_Learning/js/clipboard.min.js?1705567864"></script>
+    <script src="/CPP_Learning/js/perfect-scrollbar.min.js?1705567864"></script>
+    <script src="/CPP_Learning/js/perfect-scrollbar.jquery.min.js?1705567864"></script>
+    <script src="/CPP_Learning/js/jquery.sticky.js?1705567864"></script>
+    <script src="/CPP_Learning/js/featherlight.min.js?1705567864"></script>
+    <script src="/CPP_Learning/js/highlight.pack.js?1705567864"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/CPP_Learning/js/modernizr.custom-3.6.0.js?1705262579"></script>
-    <script src="/CPP_Learning/js/learn.js?1705262579"></script>
-    <script src="/CPP_Learning/js/hugo-learn.js?1705262579"></script>
+    <script src="/CPP_Learning/js/modernizr.custom-3.6.0.js?1705567864"></script>
+    <script src="/CPP_Learning/js/learn.js?1705567864"></script>
+    <script src="/CPP_Learning/js/hugo-learn.js?1705567864"></script>
     
         
-            <script src="/CPP_Learning/mermaid/mermaid.js?1705262579"></script>
+            <script src="/CPP_Learning/mermaid/mermaid.js?1705567864"></script>
         
         <script>
             mermaid.initialize({ startOnLoad: true });

@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="Hugo 0.76.5" />
+    <meta name="generator" content="Hugo 0.121.0">
     <meta name="description" content="">
 
 
@@ -12,22 +12,22 @@
     <title>Questionnaire ! :: Cours de C&#43;&#43; - Niveau Master</title>
 
     
-    <link href="/CPP_Learning/css/nucleus.css?1705262579" rel="stylesheet">
-    <link href="/CPP_Learning/css/fontawesome-all.min.css?1705262579" rel="stylesheet">
-    <link href="/CPP_Learning/css/hybrid.css?1705262579" rel="stylesheet">
-    <link href="/CPP_Learning/css/featherlight.min.css?1705262579" rel="stylesheet">
-    <link href="/CPP_Learning/css/perfect-scrollbar.min.css?1705262579" rel="stylesheet">
-    <link href="/CPP_Learning/css/auto-complete.css?1705262579" rel="stylesheet">
-    <link href="/CPP_Learning/css/atom-one-dark-reasonable.css?1705262579" rel="stylesheet">
-    <link href="/CPP_Learning/css/theme.css?1705262579" rel="stylesheet">
-    <link href="/CPP_Learning/css/tabs.css?1705262579" rel="stylesheet">
-    <link href="/CPP_Learning/css/hugo-theme.css?1705262579" rel="stylesheet">
+    <link href="/CPP_Learning/css/nucleus.css?1705567864" rel="stylesheet">
+    <link href="/CPP_Learning/css/fontawesome-all.min.css?1705567864" rel="stylesheet">
+    <link href="/CPP_Learning/css/hybrid.css?1705567864" rel="stylesheet">
+    <link href="/CPP_Learning/css/featherlight.min.css?1705567864" rel="stylesheet">
+    <link href="/CPP_Learning/css/perfect-scrollbar.min.css?1705567864" rel="stylesheet">
+    <link href="/CPP_Learning/css/auto-complete.css?1705567864" rel="stylesheet">
+    <link href="/CPP_Learning/css/atom-one-dark-reasonable.css?1705567864" rel="stylesheet">
+    <link href="/CPP_Learning/css/theme.css?1705567864" rel="stylesheet">
+    <link href="/CPP_Learning/css/tabs.css?1705567864" rel="stylesheet">
+    <link href="/CPP_Learning/css/hugo-theme.css?1705567864" rel="stylesheet">
     
-    <link href="/CPP_Learning/css/theme-mine.css?1705262579" rel="stylesheet">
+    <link href="/CPP_Learning/css/theme-mine.css?1705567864" rel="stylesheet">
     
-    <link href="/CPP_Learning/css/syntax.css?1705262579" rel="stylesheet">
+    <link href="/CPP_Learning/css/syntax.css?1705567864" rel="stylesheet">
 
-    <script src="/CPP_Learning/js/jquery-3.3.1.min.js?1705262579"></script>
+    <script src="/CPP_Learning/js/jquery-3.3.1.min.js?1705567864"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -1975,70 +1975,70 @@ Bon courage à vous 🙂</p>
 
   <hr/>
 
-  <p><label for="q1">1- Qu’est-ce qu’une classe polymorphe ?</label>
-<textarea id="q1" name="Qu&rsquo;est-ce qu&rsquo;une classe polymorphe ?" rows="1" cols="50"></textarea></p>
-<p><label for="q2">2- Définissez une classe polymorphe <code>Nothing</code> qui ne fait rien.</label>
-<textarea id="q2" name="Définissez une classe polymorphe Nothing qui ne fait rien." rows="5" cols="50"></textarea></p>
-<p><label for="q3">3- Comment représenter une classe abstraite en C++ ?</label>
-<textarea id="q3" name="Comment représenter une classe abstraite en C&#43;&#43; ?" rows="2" cols="50"></textarea></p>
+  <p><label for="q1">1- Qu’est-ce qu’une classe polymorphe ?</label></p>
+<textarea id="q1" name="Qu&rsquo;est-ce qu&rsquo;une classe polymorphe ?" rows="1" cols="50"></textarea>
+<p><label for="q2">2- Définissez une classe polymorphe <code>Nothing</code> qui ne fait rien.</label></p>
+<textarea id="q2" name="Définissez une classe polymorphe Nothing qui ne fait rien." rows="5" cols="50"></textarea>
+<p><label for="q3">3- Comment représenter une classe abstraite en C++ ?</label></p>
+<textarea id="q3" name="Comment représenter une classe abstraite en C&#43;&#43; ?" rows="2" cols="50"></textarea>
 <hr>
 <p>Les questions 4 à 6 font référence au code suivant :</p>
-<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="k">class</span> <span class="nc">A</span>
-<span class="p">{</span>
-<span class="k">public</span><span class="o">:</span>
-    <span class="k">virtual</span> <span class="kt">int</span>  <span class="n">fcn1</span><span class="p">(</span><span class="kt">int</span> <span class="n">p1</span><span class="p">,</span> <span class="kt">int</span> <span class="n">p2</span><span class="p">)</span> <span class="k">const</span> <span class="p">{</span> <span class="k">return</span> <span class="n">p1</span> <span class="o">*</span> <span class="n">p2</span><span class="p">;</span> <span class="p">}</span>
-    <span class="k">virtual</span> <span class="kt">void</span> <span class="nf">fcn2</span><span class="p">(</span><span class="k">const</span> <span class="kt">char</span><span class="o">*</span> <span class="n">str</span><span class="p">)</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
-    <span class="k">virtual</span> <span class="kt">void</span> <span class="nf">fcn3</span><span class="p">(</span><span class="kt">bool</span><span class="p">)</span> <span class="p">{}</span>
-    <span class="k">const</span> <span class="kt">char</span><span class="o">*</span>  <span class="nf">fcn4</span><span class="p">()</span> <span class="p">{</span> <span class="k">return</span> <span class="s">&#34;artichaut&#34;</span><span class="p">;</span> <span class="p">}</span>
-<span class="p">};</span>
-
-<span class="k">class</span> <span class="nc">B</span> <span class="o">:</span> <span class="n">A</span>
-<span class="p">{</span>
-<span class="k">public</span><span class="o">:</span>
-    <span class="kt">int</span> <span class="n">fcn1</span><span class="p">(</span><span class="kt">int</span> <span class="n">p1</span><span class="p">,</span> <span class="kt">int</span> <span class="n">p2</span><span class="p">)</span> <span class="p">{</span> <span class="k">return</span> <span class="n">p1</span> <span class="o">+</span> <span class="n">p2</span><span class="p">;</span> <span class="p">}</span>
-
-    <span class="kt">void</span> <span class="nf">fcn2</span><span class="p">(</span><span class="k">const</span> <span class="kt">char</span><span class="o">*</span><span class="p">)</span> <span class="k">override</span> <span class="p">{}</span>
-
-    <span class="kt">void</span> <span class="nf">fcn3</span><span class="p">(</span><span class="kt">bool</span> <span class="n">b</span><span class="p">)</span>
-    <span class="p">{</span>
-        <span class="k">if</span> <span class="p">(</span><span class="n">b</span><span class="p">)</span>
-        <span class="p">{</span>
-            <span class="n">A</span><span class="o">::</span><span class="n">fcn3</span><span class="p">(</span><span class="n">b</span><span class="p">);</span>
-        <span class="p">}</span>
-    <span class="p">}</span>
-    
-    <span class="k">const</span> <span class="kt">char</span><span class="o">*</span> <span class="nf">fcn4</span><span class="p">()</span> <span class="p">{</span> <span class="k">return</span> <span class="s">&#34;sopalin&#34;</span><span class="p">;</span> <span class="p">}</span>
-<span class="p">};</span>
-
-<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
-<span class="p">{</span>
-    <span class="n">A</span><span class="o">*</span> <span class="n">a</span> <span class="o">=</span> <span class="k">new</span> <span class="n">B</span><span class="p">();</span>
-
-    <span class="n">a</span><span class="o">-&gt;</span><span class="n">fcn1</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">);</span>
-    <span class="n">a</span><span class="o">-&gt;</span><span class="n">fcn2</span><span class="p">(</span><span class="s">&#34;la la la&#34;</span><span class="p">);</span>
-    <span class="n">a</span><span class="o">-&gt;</span><span class="n">fcn3</span><span class="p">(</span><span class="nb">false</span><span class="p">);</span>
-    <span class="n">a</span><span class="o">-&gt;</span><span class="n">fcn4</span><span class="p">();</span>
-
-    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
-<span class="p">}</span>
-</code></pre></div><p><label for="q4">4- Le programme ci-dessus ne compile pas. Pourquoi et que faut-il faire pour le corriger ?</label>
-<textarea id="q4" name="Le programme ci-dessus ne compile pas. Pourquoi et que faut-il faire pour le corriger ?" rows="3" cols="50"></textarea></p>
-<p><label for="q5">5- En plus du problème de compilation, on peut relever trois erreurs de programmation qui pourraient générer des problèmes à l’exécution. Quelles sont-elles et que faut-il faire pour les corriger ?</label>
-<textarea id="q5" name="En plus du problème de compilation, on peut relever trois erreurs de programmation qui pourraient générer des problèmes à l&rsquo;exécution. Quelles sont-elles et que faut-il faire pour les corriger ?" rows="3" cols="50"></textarea></p>
-<p><label for="q6">6- Pour chacun des appels sur <code>a</code>, indiquez quelle fonction sera appelée (<code>A::fcnX</code> ou <code>B::fcnX</code>) et justifiez. Vous considérerez que vous n’avez pas effectué les corrections de la question précédente.</label>
-<textarea id="q6" name="Pour chacun des appels sur a, indiquez quelle fonction sera appelée (A::fcnX ou B::fcnX) et justifiez. Vous considérerez que vous n&rsquo;avez pas effectué les corrections de la question précédente." rows="4" cols="50"></textarea></p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">A</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl"><span class="k">public</span><span class="o">:</span>
+</span></span><span class="line"><span class="cl">    <span class="k">virtual</span> <span class="kt">int</span>  <span class="n">fcn1</span><span class="p">(</span><span class="kt">int</span> <span class="n">p1</span><span class="p">,</span> <span class="kt">int</span> <span class="n">p2</span><span class="p">)</span> <span class="k">const</span> <span class="p">{</span> <span class="k">return</span> <span class="n">p1</span> <span class="o">*</span> <span class="n">p2</span><span class="p">;</span> <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="k">virtual</span> <span class="kt">void</span> <span class="nf">fcn2</span><span class="p">(</span><span class="k">const</span> <span class="kt">char</span><span class="o">*</span> <span class="n">str</span><span class="p">)</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">virtual</span> <span class="kt">void</span> <span class="nf">fcn3</span><span class="p">(</span><span class="kt">bool</span><span class="p">)</span> <span class="p">{}</span>
+</span></span><span class="line"><span class="cl">    <span class="k">const</span> <span class="kt">char</span><span class="o">*</span>  <span class="nf">fcn4</span><span class="p">()</span> <span class="p">{</span> <span class="k">return</span> <span class="s">&#34;artichaut&#34;</span><span class="p">;</span> <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">};</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">B</span> <span class="o">:</span> <span class="n">A</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl"><span class="k">public</span><span class="o">:</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">int</span> <span class="n">fcn1</span><span class="p">(</span><span class="kt">int</span> <span class="n">p1</span><span class="p">,</span> <span class="kt">int</span> <span class="n">p2</span><span class="p">)</span> <span class="p">{</span> <span class="k">return</span> <span class="n">p1</span> <span class="o">+</span> <span class="n">p2</span><span class="p">;</span> <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="kt">void</span> <span class="nf">fcn2</span><span class="p">(</span><span class="k">const</span> <span class="kt">char</span><span class="o">*</span><span class="p">)</span> <span class="k">override</span> <span class="p">{}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="kt">void</span> <span class="nf">fcn3</span><span class="p">(</span><span class="kt">bool</span> <span class="n">b</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="p">(</span><span class="n">b</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="n">A</span><span class="o">::</span><span class="n">fcn3</span><span class="p">(</span><span class="n">b</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">    <span class="k">const</span> <span class="kt">char</span><span class="o">*</span> <span class="nf">fcn4</span><span class="p">()</span> <span class="p">{</span> <span class="k">return</span> <span class="s">&#34;sopalin&#34;</span><span class="p">;</span> <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">};</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="n">A</span><span class="o">*</span> <span class="n">a</span> <span class="o">=</span> <span class="k">new</span> <span class="n">B</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="n">a</span><span class="o">-&gt;</span><span class="n">fcn1</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="n">a</span><span class="o">-&gt;</span><span class="n">fcn2</span><span class="p">(</span><span class="s">&#34;la la la&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="n">a</span><span class="o">-&gt;</span><span class="n">fcn3</span><span class="p">(</span><span class="nb">false</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="n">a</span><span class="o">-&gt;</span><span class="n">fcn4</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><p><label for="q4">4- Le programme ci-dessus ne compile pas. Pourquoi et que faut-il faire pour le corriger ?</label></p>
+<textarea id="q4" name="Le programme ci-dessus ne compile pas. Pourquoi et que faut-il faire pour le corriger ?" rows="3" cols="50"></textarea>
+<p><label for="q5">5- En plus du problème de compilation, on peut relever trois erreurs de programmation qui pourraient générer des problèmes à l’exécution. Quelles sont-elles et que faut-il faire pour les corriger ?</label></p>
+<textarea id="q5" name="En plus du problème de compilation, on peut relever trois erreurs de programmation qui pourraient générer des problèmes à l&rsquo;exécution. Quelles sont-elles et que faut-il faire pour les corriger ?" rows="3" cols="50"></textarea>
+<p><label for="q6">6- Pour chacun des appels sur <code>a</code>, indiquez quelle fonction sera appelée (<code>A::fcnX</code> ou <code>B::fcnX</code>) et justifiez. Vous considérerez que vous n’avez pas effectué les corrections de la question précédente.</label></p>
+<textarea id="q6" name="Pour chacun des appels sur a, indiquez quelle fonction sera appelée (A::fcnX ou B::fcnX) et justifiez. Vous considérerez que vous n&rsquo;avez pas effectué les corrections de la question précédente." rows="4" cols="50"></textarea>
 <hr>
 <p>Pour les questions 7 et 8, vous pouvez partir de <a href="https://godbolt.org/z/nzsWWszvP">là</a> pour tester votre code.</p>
-<p><label for="q7">7- Définissez une classe <code>SharedStuff</code> contenant un attribut <code>_value</code> accessible uniquement depuis ses classes dérivées. Ajoutez un constructeur à 1 paramètre pour initialiser ce membre.</label>
-<textarea id="q7" name="Définissez une classe SharedStuff contenant un attribut _value accessible uniquement depuis ses classes dérivées. Ajoutez un constructeur à 1 paramètre pour initialiser ce membre." rows="10" cols="50"></textarea></p>
-<p><label for="q8">8- Définissez une classe <code>MoreStuff</code> héritant de <code>SharedStuff</code> et contenant un attribut <code>_value2</code>. Définissez les fonctions nécessaires permettant d’instancier un objet de ce type, et d’afficher les valeurs de ses deux membres dans la console.</label>
-<textarea id="q8" name="Définissez une classe MoreStuff héritant de SharedStuff et contenant un attribut _value2. Définissez les fonctions nécessaires permettant d&rsquo;instancier un objet de ce type, et d&rsquo;afficher les valeurs de ses deux membres dans la console." rows="10" cols="50"></textarea></p>
+<p><label for="q7">7- Définissez une classe <code>SharedStuff</code> contenant un attribut <code>_value</code> accessible uniquement depuis ses classes dérivées. Ajoutez un constructeur à 1 paramètre pour initialiser ce membre.</label></p>
+<textarea id="q7" name="Définissez une classe SharedStuff contenant un attribut _value accessible uniquement depuis ses classes dérivées. Ajoutez un constructeur à 1 paramètre pour initialiser ce membre." rows="10" cols="50"></textarea>
+<p><label for="q8">8- Définissez une classe <code>MoreStuff</code> héritant de <code>SharedStuff</code> et contenant un attribut <code>_value2</code>. Définissez les fonctions nécessaires permettant d’instancier un objet de ce type, et d’afficher les valeurs de ses deux membres dans la console.</label></p>
+<textarea id="q8" name="Définissez une classe MoreStuff héritant de SharedStuff et contenant un attribut _value2. Définissez les fonctions nécessaires permettant d&rsquo;instancier un objet de ce type, et d&rsquo;afficher les valeurs de ses deux membres dans la console." rows="10" cols="50"></textarea>
 <hr>
 <p>Pour les questions 9 et 10, vous pouvez partir de <a href="https://godbolt.org/z/vfzzGTsTT">là</a> pour tester votre code.</p>
-<p><label for="q9">9- Définissez une classe <code>Food</code> contenant une fonction virtuelle pure <code>miam_miam</code>. Cette fonction doit servir à afficher le nom de l’aliment dans la console.</label>
-<textarea id="q9" name="Définissez une classe Food contenant une fonction virtuelle pure miam_miam. Cette fonction doit servir à afficher le nom de l&rsquo;aliment dans la console." rows="10" cols="50"></textarea></p>
-<p><label for="q10">10- Définissez une classe <code>Nutella</code> héritant de <code>Food</code>. Ajoutez ce qu’il faut pour rendre cette classe instanciable.</label>
-<textarea id="q10" name="Définissez une classe Nutella héritant de Food. Ajoutez ce qu&rsquo;il faut pour rendre cette classe instanciable." rows="10" cols="50"></textarea></p>
+<p><label for="q9">9- Définissez une classe <code>Food</code> contenant une fonction virtuelle pure <code>miam_miam</code>. Cette fonction doit servir à afficher le nom de l’aliment dans la console.</label></p>
+<textarea id="q9" name="Définissez une classe Food contenant une fonction virtuelle pure miam_miam. Cette fonction doit servir à afficher le nom de l&rsquo;aliment dans la console." rows="10" cols="50"></textarea>
+<p><label for="q10">10- Définissez une classe <code>Nutella</code> héritant de <code>Food</code>. Ajoutez ce qu’il faut pour rendre cette classe instanciable.</label></p>
+<textarea id="q10" name="Définissez une classe Nutella héritant de Food. Ajoutez ce qu&rsquo;il faut pour rendre cette classe instanciable." rows="10" cols="50"></textarea>
 
 
   <hr/>
@@ -3363,19 +3363,19 @@ Bon courage à vous 🙂</p>
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/CPP_Learning/js/clipboard.min.js?1705262579"></script>
-    <script src="/CPP_Learning/js/perfect-scrollbar.min.js?1705262579"></script>
-    <script src="/CPP_Learning/js/perfect-scrollbar.jquery.min.js?1705262579"></script>
-    <script src="/CPP_Learning/js/jquery.sticky.js?1705262579"></script>
-    <script src="/CPP_Learning/js/featherlight.min.js?1705262579"></script>
-    <script src="/CPP_Learning/js/highlight.pack.js?1705262579"></script>
+    <script src="/CPP_Learning/js/clipboard.min.js?1705567864"></script>
+    <script src="/CPP_Learning/js/perfect-scrollbar.min.js?1705567864"></script>
+    <script src="/CPP_Learning/js/perfect-scrollbar.jquery.min.js?1705567864"></script>
+    <script src="/CPP_Learning/js/jquery.sticky.js?1705567864"></script>
+    <script src="/CPP_Learning/js/featherlight.min.js?1705567864"></script>
+    <script src="/CPP_Learning/js/highlight.pack.js?1705567864"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/CPP_Learning/js/modernizr.custom-3.6.0.js?1705262579"></script>
-    <script src="/CPP_Learning/js/learn.js?1705262579"></script>
-    <script src="/CPP_Learning/js/hugo-learn.js?1705262579"></script>
+    <script src="/CPP_Learning/js/modernizr.custom-3.6.0.js?1705567864"></script>
+    <script src="/CPP_Learning/js/learn.js?1705567864"></script>
+    <script src="/CPP_Learning/js/hugo-learn.js?1705567864"></script>
     
         
-            <script src="/CPP_Learning/mermaid/mermaid.js?1705262579"></script>
+            <script src="/CPP_Learning/mermaid/mermaid.js?1705567864"></script>
         
         <script>
             mermaid.initialize({ startOnLoad: true });

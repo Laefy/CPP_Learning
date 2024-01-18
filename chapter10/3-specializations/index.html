@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="Hugo 0.76.5" />
+    <meta name="generator" content="Hugo 0.121.0">
     <meta name="description" content="">
 
 
@@ -12,22 +12,22 @@
     <title>Spécialisations :: Cours de C&#43;&#43; - Niveau Master</title>
 
     
-    <link href="/CPP_Learning/css/nucleus.css?1705262579" rel="stylesheet">
-    <link href="/CPP_Learning/css/fontawesome-all.min.css?1705262579" rel="stylesheet">
-    <link href="/CPP_Learning/css/hybrid.css?1705262579" rel="stylesheet">
-    <link href="/CPP_Learning/css/featherlight.min.css?1705262579" rel="stylesheet">
-    <link href="/CPP_Learning/css/perfect-scrollbar.min.css?1705262579" rel="stylesheet">
-    <link href="/CPP_Learning/css/auto-complete.css?1705262579" rel="stylesheet">
-    <link href="/CPP_Learning/css/atom-one-dark-reasonable.css?1705262579" rel="stylesheet">
-    <link href="/CPP_Learning/css/theme.css?1705262579" rel="stylesheet">
-    <link href="/CPP_Learning/css/tabs.css?1705262579" rel="stylesheet">
-    <link href="/CPP_Learning/css/hugo-theme.css?1705262579" rel="stylesheet">
+    <link href="/CPP_Learning/css/nucleus.css?1705567863" rel="stylesheet">
+    <link href="/CPP_Learning/css/fontawesome-all.min.css?1705567863" rel="stylesheet">
+    <link href="/CPP_Learning/css/hybrid.css?1705567863" rel="stylesheet">
+    <link href="/CPP_Learning/css/featherlight.min.css?1705567863" rel="stylesheet">
+    <link href="/CPP_Learning/css/perfect-scrollbar.min.css?1705567863" rel="stylesheet">
+    <link href="/CPP_Learning/css/auto-complete.css?1705567863" rel="stylesheet">
+    <link href="/CPP_Learning/css/atom-one-dark-reasonable.css?1705567863" rel="stylesheet">
+    <link href="/CPP_Learning/css/theme.css?1705567863" rel="stylesheet">
+    <link href="/CPP_Learning/css/tabs.css?1705567863" rel="stylesheet">
+    <link href="/CPP_Learning/css/hugo-theme.css?1705567863" rel="stylesheet">
     
-    <link href="/CPP_Learning/css/theme-mine.css?1705262579" rel="stylesheet">
+    <link href="/CPP_Learning/css/theme-mine.css?1705567863" rel="stylesheet">
     
-    <link href="/CPP_Learning/css/syntax.css?1705262579" rel="stylesheet">
+    <link href="/CPP_Learning/css/syntax.css?1705567863" rel="stylesheet">
 
-    <script src="/CPP_Learning/js/jquery-3.3.1.min.js?1705262579"></script>
+    <script src="/CPP_Learning/js/jquery-3.3.1.min.js?1705567863"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -1954,45 +1954,45 @@ Il y a de nombreux cas d&rsquo;utilisation des spécialisation, l&rsquo;un d&rsq
 <hr>
 <h3 id="spécialisation-de-fonctions">Spécialisation de fonctions</h3>
 <p>Soit la fonction templatée suivante, permettant d&rsquo;afficher des valeurs dans le terminal :</p>
-<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span> <span class="n">T</span><span class="o">&gt;</span> 
-<span class="kt">void</span> <span class="n">print</span><span class="p">(</span><span class="k">const</span> <span class="n">T</span><span class="o">&amp;</span> <span class="n">value</span><span class="p">)</span>
-<span class="p">{</span>
-    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">value</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
-<span class="p">}</span>
-</code></pre></div><p>Si on lui passe des booléens, cette fonction affichera 0 ou 1.<br>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span> <span class="n">T</span><span class="o">&gt;</span> 
+</span></span><span class="line"><span class="cl"><span class="kt">void</span> <span class="n">print</span><span class="p">(</span><span class="k">const</span> <span class="n">T</span><span class="o">&amp;</span> <span class="n">value</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">value</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><p>Si on lui passe des booléens, cette fonction affichera 0 ou 1.<br>
 On peut donc décider de spécialiser la fonction afin qu&rsquo;elle écrive plutôt &ldquo;false&rdquo; ou &ldquo;true&rdquo;.</p>
 <p>Voici la syntaxe pour spécialiser la fonction <code>print</code> dans ce cas :</p>
-<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="k">template</span> <span class="o">&lt;&gt;</span>                     <span class="c1">// on écrit des chevrons vides
-</span><span class="c1"></span><span class="kt">void</span> <span class="n">print</span><span class="p">(</span><span class="k">const</span> <span class="kt">bool</span><span class="o">&amp;</span> <span class="n">value</span><span class="p">)</span>   <span class="c1">// on écrit le type attendu (ici bool) à la place du T de la signature précédente
-</span><span class="c1"></span><span class="p">{</span>
-    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="p">(</span><span class="n">value</span> <span class="o">?</span> <span class="s">&#34;true&#34;</span> <span class="o">:</span> <span class="s">&#34;false&#34;</span><span class="p">)</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
-<span class="p">}</span>
-</code></pre></div>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="k">template</span> <span class="o">&lt;&gt;</span>                     <span class="c1">// on écrit des chevrons vides
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kt">void</span> <span class="n">print</span><span class="p">(</span><span class="k">const</span> <span class="kt">bool</span><span class="o">&amp;</span> <span class="n">value</span><span class="p">)</span>   <span class="c1">// on écrit le type attendu (ici bool) à la place du T de la signature précédente
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="p">(</span><span class="n">value</span> <span class="o">?</span> <span class="s">&#34;true&#34;</span> <span class="o">:</span> <span class="s">&#34;false&#34;</span><span class="p">)</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div>
 <div class="notices note" ><p>Notez que pour qu&rsquo;une spécialisation puisse être utilisée, il faut que le compilateur trouve sa déclaration avant son usage.
 S&rsquo;il ne la trouve pas, alors il utilisera le template de base pour générer le code de la fonction, et vous pourrez vous retrouver au mieux avec des erreurs de compilation ou de link qui vous avertit du problème, au pire avec des bugs au runtime que vous aurez du mal à identifier.\</p>
 </div>
 
 <p>Supposons maintenant que notre template a plusieurs paramètres.\</p>
-<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span> <span class="n">Animal</span><span class="p">,</span> <span class="k">typename</span> <span class="n">Food</span><span class="o">&gt;</span> 
-<span class="kt">void</span> <span class="n">eat</span><span class="p">(</span><span class="k">const</span> <span class="n">Animal</span><span class="o">&amp;</span> <span class="n">animal</span><span class="p">,</span> <span class="k">const</span> <span class="n">Food</span><span class="o">&amp;</span> <span class="n">food</span><span class="p">)</span>
-<span class="p">{</span>
-    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">animal</span><span class="p">.</span><span class="n">name</span><span class="p">()</span> <span class="o">&lt;&lt;</span> <span class="s">&#34; eats &#34;</span> <span class="o">&lt;&lt;</span> <span class="n">food</span><span class="p">.</span><span class="n">name</span><span class="p">()</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
-<span class="p">}</span>
-</code></pre></div><p>Pour spécialiser la fonction, on peut écrire quelque chose comme :</p>
-<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="k">template</span> <span class="o">&lt;&gt;</span> 
-<span class="kt">void</span> <span class="n">eat</span><span class="p">(</span><span class="k">const</span> <span class="n">Mosquito</span><span class="o">&amp;</span> <span class="n">mosquito</span><span class="p">,</span> <span class="k">const</span> <span class="n">CarnivorousPlant</span><span class="o">&amp;</span> <span class="n">plant</span><span class="p">)</span>
-<span class="p">{</span>
-    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">plant</span><span class="p">.</span><span class="n">name</span><span class="p">()</span> <span class="o">&lt;&lt;</span> <span class="s">&#34; eats &#34;</span> <span class="o">&lt;&lt;</span> <span class="n">mosquito</span><span class="p">.</span><span class="n">name</span><span class="p">()</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
-<span class="p">}</span>
-</code></pre></div><p>Sachez enfin que lorsqu&rsquo;on spécialise une fonction, on doit forcément spécialiser l&rsquo;entièreté des paramètres de template.
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span> <span class="n">Animal</span><span class="p">,</span> <span class="k">typename</span> <span class="n">Food</span><span class="o">&gt;</span> 
+</span></span><span class="line"><span class="cl"><span class="kt">void</span> <span class="n">eat</span><span class="p">(</span><span class="k">const</span> <span class="n">Animal</span><span class="o">&amp;</span> <span class="n">animal</span><span class="p">,</span> <span class="k">const</span> <span class="n">Food</span><span class="o">&amp;</span> <span class="n">food</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">animal</span><span class="p">.</span><span class="n">name</span><span class="p">()</span> <span class="o">&lt;&lt;</span> <span class="s">&#34; eats &#34;</span> <span class="o">&lt;&lt;</span> <span class="n">food</span><span class="p">.</span><span class="n">name</span><span class="p">()</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><p>Pour spécialiser la fonction, on peut écrire quelque chose comme :</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="k">template</span> <span class="o">&lt;&gt;</span> 
+</span></span><span class="line"><span class="cl"><span class="kt">void</span> <span class="n">eat</span><span class="p">(</span><span class="k">const</span> <span class="n">Mosquito</span><span class="o">&amp;</span> <span class="n">mosquito</span><span class="p">,</span> <span class="k">const</span> <span class="n">CarnivorousPlant</span><span class="o">&amp;</span> <span class="n">plant</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">plant</span><span class="p">.</span><span class="n">name</span><span class="p">()</span> <span class="o">&lt;&lt;</span> <span class="s">&#34; eats &#34;</span> <span class="o">&lt;&lt;</span> <span class="n">mosquito</span><span class="p">.</span><span class="n">name</span><span class="p">()</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><p>Sachez enfin que lorsqu&rsquo;on spécialise une fonction, on doit forcément spécialiser l&rsquo;entièreté des paramètres de template.
 On parle de <strong>spécialisation totale</strong>.</p>
 <p>On ne peut donc <strong>pas</strong> écrire :</p>
-<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span> <span class="n">Food</span><span class="o">&gt;</span> 
-<span class="kt">void</span> <span class="n">eat</span><span class="p">(</span><span class="k">const</span> <span class="n">Mosquito</span><span class="o">&amp;</span> <span class="n">mosquito</span><span class="p">,</span> <span class="k">const</span> <span class="n">Food</span><span class="o">&amp;</span> <span class="n">food</span><span class="p">)</span>
-<span class="p">{</span>
-    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">mosquito</span><span class="p">.</span><span class="n">name</span><span class="p">()</span> <span class="o">&lt;&lt;</span> <span class="s">&#34; maybe gets eatten by &#34;</span> <span class="o">&lt;&lt;</span> <span class="n">food</span><span class="p">.</span><span class="n">name</span><span class="p">()</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
-<span class="p">}</span>
-</code></pre></div><hr>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span> <span class="n">Food</span><span class="o">&gt;</span> 
+</span></span><span class="line"><span class="cl"><span class="kt">void</span> <span class="n">eat</span><span class="p">(</span><span class="k">const</span> <span class="n">Mosquito</span><span class="o">&amp;</span> <span class="n">mosquito</span><span class="p">,</span> <span class="k">const</span> <span class="n">Food</span><span class="o">&amp;</span> <span class="n">food</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">mosquito</span><span class="p">.</span><span class="n">name</span><span class="p">()</span> <span class="o">&lt;&lt;</span> <span class="s">&#34; maybe gets eatten by &#34;</span> <span class="o">&lt;&lt;</span> <span class="n">food</span><span class="p">.</span><span class="n">name</span><span class="p">()</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><hr>
 <h3 id="spécialisation-de-classes">Spécialisation de classes</h3>
 <p>Contrairement aux fonctions, il est possible de spécialiser des classes aussi bien totalement que partiellement.<br>
 Il est également possible de spécialiser seulement certaines fonctions à l&rsquo;intérieur d&rsquo;une classe template.</p>
@@ -2000,143 +2000,143 @@ Il est également possible de spécialiser seulement certaines fonctions à l&rs
 <p>Commençons par la spécialisation totale.
 Celle-ci permet de redéfinir en intégralité la façon dont la classe est implémentée.
 Cela signifie qu&rsquo;il faut réécrire tous les champs et fonctions du template initial si vous souhaitez pouvoir vous en servir.</p>
-<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span> <span class="n">T</span><span class="o">&gt;</span>
-<span class="k">class</span> <span class="nc">Container</span>
-<span class="p">{</span>
-<span class="k">public</span><span class="o">:</span>
-    <span class="kt">void</span> <span class="n">add</span><span class="p">(</span><span class="k">const</span> <span class="n">T</span><span class="o">&amp;</span> <span class="n">value</span><span class="p">)</span>
-    <span class="p">{</span>
-        <span class="n">_values</span><span class="p">.</span><span class="n">emplace_back</span><span class="p">(</span><span class="n">value</span><span class="p">);</span>
-    <span class="p">}</span>
-
-    <span class="kt">void</span> <span class="nf">print_all</span><span class="p">()</span> <span class="k">const</span>
-    <span class="p">{</span>
-        <span class="k">for</span> <span class="p">(</span><span class="k">const</span> <span class="k">auto</span><span class="o">&amp;</span> <span class="nl">v</span><span class="p">:</span> <span class="n">_values</span><span class="p">)</span>
-        <span class="p">{</span>
-            <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">v</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
-        <span class="p">}</span>
-    <span class="p">}</span>
-
-<span class="k">private</span><span class="o">:</span>
-    <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="n">_values</span><span class="p">;</span>
-<span class="p">};</span>
-
-<span class="k">template</span> <span class="o">&lt;&gt;</span>             <span class="c1">// on écrit des chevrons vides ici
-</span><span class="c1"></span><span class="k">class</span> <span class="nc">Container</span><span class="o">&lt;</span><span class="kt">char</span><span class="o">&gt;</span>   <span class="c1">// on écrit à nouveau des chevrons, contenant les valeurs des paramètres spécialisés
-</span><span class="c1"></span><span class="p">{</span>
-<span class="k">public</span><span class="o">:</span>
-    <span class="kt">void</span> <span class="n">add</span><span class="p">(</span><span class="kt">char</span> <span class="n">c</span><span class="p">)</span>
-    <span class="p">{</span>
-        <span class="n">_string</span> <span class="o">+=</span> <span class="n">c</span><span class="p">;</span>
-    <span class="p">}</span>
-
-    <span class="kt">void</span> <span class="nf">print</span><span class="p">()</span> <span class="k">const</span>
-    <span class="p">{</span>
-        <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">_string</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
-    <span class="p">}</span>
-
-<span class="k">private</span><span class="o">:</span>
-    <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">_string</span><span class="p">;</span>
-<span class="p">}</span>
-
-<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
-<span class="p">{</span>
-    <span class="n">Container</span><span class="o">&lt;</span><span class="kt">char</span><span class="o">&gt;</span> <span class="n">ctn</span><span class="p">;</span>
-    <span class="n">ctn</span><span class="p">.</span><span class="n">add</span><span class="p">(</span><span class="sc">&#39;h&#39;</span><span class="p">);</span>
-    <span class="n">ctn</span><span class="p">.</span><span class="n">add</span><span class="p">(</span><span class="sc">&#39;e&#39;</span><span class="p">);</span>
-    <span class="n">ctn</span><span class="p">.</span><span class="n">add</span><span class="p">(</span><span class="sc">&#39;y&#39;</span><span class="p">);</span>
-    <span class="n">ctn</span><span class="p">.</span><span class="n">print</span><span class="p">();</span>     <span class="c1">// --&gt; &#34;hey&#34;
-</span><span class="c1"></span>    <span class="n">ctn</span><span class="p">.</span><span class="n">print_all</span><span class="p">();</span> <span class="c1">// --&gt; Ne compile pas, print_all n&#39;est pas définie dans Container&lt;char&gt;...
-</span><span class="c1"></span>
-    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
-<span class="p">}</span>
-</code></pre></div><h4 id="spécialisation-partielle">Spécialisation partielle</h4>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span> <span class="n">T</span><span class="o">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">Container</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl"><span class="k">public</span><span class="o">:</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">void</span> <span class="n">add</span><span class="p">(</span><span class="k">const</span> <span class="n">T</span><span class="o">&amp;</span> <span class="n">value</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="n">_values</span><span class="p">.</span><span class="n">emplace_back</span><span class="p">(</span><span class="n">value</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="kt">void</span> <span class="nf">print_all</span><span class="p">()</span> <span class="k">const</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="k">for</span> <span class="p">(</span><span class="k">const</span> <span class="k">auto</span><span class="o">&amp;</span> <span class="nl">v</span><span class="p">:</span> <span class="n">_values</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">v</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">private</span><span class="o">:</span>
+</span></span><span class="line"><span class="cl">    <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="n">_values</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">};</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">template</span> <span class="o">&lt;&gt;</span>             <span class="c1">// on écrit des chevrons vides ici
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">class</span> <span class="nc">Container</span><span class="o">&lt;</span><span class="kt">char</span><span class="o">&gt;</span>   <span class="c1">// on écrit à nouveau des chevrons, contenant les valeurs des paramètres spécialisés
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="p">{</span>
+</span></span><span class="line"><span class="cl"><span class="k">public</span><span class="o">:</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">void</span> <span class="n">add</span><span class="p">(</span><span class="kt">char</span> <span class="n">c</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="n">_string</span> <span class="o">+=</span> <span class="n">c</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="kt">void</span> <span class="nf">print</span><span class="p">()</span> <span class="k">const</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">_string</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">private</span><span class="o">:</span>
+</span></span><span class="line"><span class="cl">    <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">_string</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="n">Container</span><span class="o">&lt;</span><span class="kt">char</span><span class="o">&gt;</span> <span class="n">ctn</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">ctn</span><span class="p">.</span><span class="n">add</span><span class="p">(</span><span class="sc">&#39;h&#39;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="n">ctn</span><span class="p">.</span><span class="n">add</span><span class="p">(</span><span class="sc">&#39;e&#39;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="n">ctn</span><span class="p">.</span><span class="n">add</span><span class="p">(</span><span class="sc">&#39;y&#39;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="n">ctn</span><span class="p">.</span><span class="n">print</span><span class="p">();</span>     <span class="c1">// --&gt; &#34;hey&#34;
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="n">ctn</span><span class="p">.</span><span class="n">print_all</span><span class="p">();</span> <span class="c1">// --&gt; Ne compile pas, print_all n&#39;est pas définie dans Container&lt;char&gt;...
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><h4 id="spécialisation-partielle">Spécialisation partielle</h4>
 <p>Supposons que vous ayiez N paramètres de template, mais que vous ne souhaitiez en spécialiser qu&rsquo;un certain nombre.<br>
 Voici la syntaxe à utiliser :</p>
-<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span> <span class="n">T1</span><span class="p">,</span> <span class="k">typename</span> <span class="n">T2</span><span class="p">,</span> <span class="k">typename</span> <span class="n">T3</span><span class="p">,</span> <span class="k">typename</span> <span class="n">T4</span><span class="o">&gt;</span>
-<span class="k">struct</span> <span class="nc">SomeTemplate</span>
-<span class="p">{</span>
-    <span class="p">...</span>
-<span class="p">};</span>
-
-<span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span> <span class="n">T2</span><span class="p">,</span> <span class="k">typename</span> <span class="n">T4</span><span class="o">&gt;</span>             <span class="c1">// on réécrit uniquement les paramètres que l&#39;on ne souhaite pas spécialiser 
-</span><span class="c1"></span><span class="k">struct</span> <span class="nc">SomeTemplate</span><span class="o">&lt;</span><span class="kt">bool</span><span class="p">,</span> <span class="n">T2</span><span class="p">,</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="p">,</span> <span class="n">T4</span><span class="o">&gt;</span>  <span class="c1">// on écrit tous les paramètres entre chevrons, en remplaçant ceux que l&#39;on a spécialisé 
-</span><span class="c1"></span><span class="p">{</span>
-    <span class="p">...</span>
-<span class="p">};</span>
-</code></pre></div><p>En plus de pouvoir spécialiser seulement une partie des paramètres, la spécialisation partielle permet également de spécialiser une classe à partir d&rsquo;autres classes template.
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span> <span class="n">T1</span><span class="p">,</span> <span class="k">typename</span> <span class="n">T2</span><span class="p">,</span> <span class="k">typename</span> <span class="n">T3</span><span class="p">,</span> <span class="k">typename</span> <span class="n">T4</span><span class="o">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="k">struct</span> <span class="nc">SomeTemplate</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="p">...</span>
+</span></span><span class="line"><span class="cl"><span class="p">};</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span> <span class="n">T2</span><span class="p">,</span> <span class="k">typename</span> <span class="n">T4</span><span class="o">&gt;</span>             <span class="c1">// on réécrit uniquement les paramètres que l&#39;on ne souhaite pas spécialiser 
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">struct</span> <span class="nc">SomeTemplate</span><span class="o">&lt;</span><span class="kt">bool</span><span class="p">,</span> <span class="n">T2</span><span class="p">,</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="p">,</span> <span class="n">T4</span><span class="o">&gt;</span>  <span class="c1">// on écrit tous les paramètres entre chevrons, en remplaçant ceux que l&#39;on a spécialisé 
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="p">...</span>
+</span></span><span class="line"><span class="cl"><span class="p">};</span>
+</span></span></code></pre></div><p>En plus de pouvoir spécialiser seulement une partie des paramètres, la spécialisation partielle permet également de spécialiser une classe à partir d&rsquo;autres classes template.
 Par exemple, il est possible de spécialiser une classe-template pour un conteneur particulier, sans forcément spécifier le contenu du conteneur :</p>
-<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span> <span class="n">Ctn</span><span class="o">&gt;</span>
-<span class="k">class</span> <span class="nc">ManyContainers</span>
-<span class="p">{</span>
-<span class="k">public</span><span class="o">:</span>
-    <span class="kt">void</span> <span class="n">add</span><span class="p">(</span><span class="n">Ctn</span><span class="o">&amp;&amp;</span> <span class="n">ctn</span><span class="p">)</span>
-    <span class="p">{</span>
-        <span class="n">_containers</span><span class="p">.</span><span class="n">emplace_back</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">move</span><span class="p">(</span><span class="n">ctn</span><span class="p">));</span>
-    <span class="p">}</span>
-
-    <span class="k">auto</span> <span class="nf">get</span><span class="p">(</span><span class="n">size_t</span> <span class="n">ctn_idx</span><span class="p">,</span> <span class="n">size_t</span> <span class="n">inner_idx</span><span class="p">)</span> <span class="k">const</span>
-    <span class="p">{</span>
-        <span class="k">return</span> <span class="o">*</span><span class="n">std</span><span class="o">::</span><span class="n">next</span><span class="p">(</span><span class="n">_containers</span><span class="p">[</span><span class="n">ctn_idx</span><span class="p">].</span><span class="n">begin</span><span class="p">(),</span> <span class="n">inner_idx</span><span class="p">);</span>
-    <span class="p">}</span>
-
-<span class="k">private</span><span class="o">:</span>
-    <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">Ctn</span><span class="o">&gt;</span> <span class="n">_containers</span><span class="p">;</span>
-<span class="p">};</span>
-
-<span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span> <span class="n">Value</span><span class="o">&gt;</span>                   <span class="c1">// le type contenu dans le vector reste générique
-</span><span class="c1"></span><span class="k">class</span> <span class="nc">ManyContainers</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">Value</span><span class="o">&gt;&gt;</span>    <span class="c1">// et on utilise ce type pour écrire la spécialisation
-</span><span class="c1"></span><span class="p">{</span>
-<span class="k">public</span><span class="o">:</span>
-    <span class="kt">void</span> <span class="n">add</span><span class="p">(</span><span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">Value</span><span class="o">&gt;&amp;</span> <span class="n">ctn</span><span class="p">)</span>
-    <span class="p">{</span>
-        <span class="n">_begins</span><span class="p">.</span><span class="n">emplace_back</span><span class="p">(</span><span class="n">_values</span><span class="p">.</span><span class="n">size</span><span class="p">());</span>
-        <span class="n">_values</span><span class="p">.</span><span class="n">insert</span><span class="p">(</span><span class="n">ctn</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span> <span class="n">ctn</span><span class="p">.</span><span class="n">end</span><span class="p">());</span>
-    <span class="p">}</span>
-
-    <span class="k">auto</span> <span class="nf">get</span><span class="p">(</span><span class="n">size_t</span> <span class="n">ctn_idx</span><span class="p">,</span> <span class="n">size_t</span> <span class="n">inner_idx</span><span class="p">)</span> <span class="k">const</span>
-    <span class="p">{</span>
-        <span class="k">return</span> <span class="n">_values</span><span class="p">[</span><span class="n">_begins</span><span class="p">[</span><span class="n">ctn_idx</span><span class="p">]</span> <span class="o">+</span> <span class="n">innner_idx</span><span class="p">];</span>
-    <span class="p">}</span>
-
-<span class="k">private</span><span class="o">:</span>
-    <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">Value</span><span class="o">&gt;</span>  <span class="n">_values</span><span class="p">;</span>
-    <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">size_t</span><span class="o">&gt;</span> <span class="n">_begins</span><span class="p">;</span>
-<span class="p">};</span>
-</code></pre></div><h4 id="spécialisation-de-fonction-membres">Spécialisation de fonction-membres</h4>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span> <span class="n">Ctn</span><span class="o">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">ManyContainers</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl"><span class="k">public</span><span class="o">:</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">void</span> <span class="n">add</span><span class="p">(</span><span class="n">Ctn</span><span class="o">&amp;&amp;</span> <span class="n">ctn</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="n">_containers</span><span class="p">.</span><span class="n">emplace_back</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">move</span><span class="p">(</span><span class="n">ctn</span><span class="p">));</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">auto</span> <span class="nf">get</span><span class="p">(</span><span class="n">size_t</span> <span class="n">ctn_idx</span><span class="p">,</span> <span class="n">size_t</span> <span class="n">inner_idx</span><span class="p">)</span> <span class="k">const</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="o">*</span><span class="n">std</span><span class="o">::</span><span class="n">next</span><span class="p">(</span><span class="n">_containers</span><span class="p">[</span><span class="n">ctn_idx</span><span class="p">].</span><span class="n">begin</span><span class="p">(),</span> <span class="n">inner_idx</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">private</span><span class="o">:</span>
+</span></span><span class="line"><span class="cl">    <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">Ctn</span><span class="o">&gt;</span> <span class="n">_containers</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">};</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span> <span class="n">Value</span><span class="o">&gt;</span>                   <span class="c1">// le type contenu dans le vector reste générique
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">class</span> <span class="nc">ManyContainers</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">Value</span><span class="o">&gt;&gt;</span>    <span class="c1">// et on utilise ce type pour écrire la spécialisation
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="p">{</span>
+</span></span><span class="line"><span class="cl"><span class="k">public</span><span class="o">:</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">void</span> <span class="n">add</span><span class="p">(</span><span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">Value</span><span class="o">&gt;&amp;</span> <span class="n">ctn</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="n">_begins</span><span class="p">.</span><span class="n">emplace_back</span><span class="p">(</span><span class="n">_values</span><span class="p">.</span><span class="n">size</span><span class="p">());</span>
+</span></span><span class="line"><span class="cl">        <span class="n">_values</span><span class="p">.</span><span class="n">insert</span><span class="p">(</span><span class="n">ctn</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span> <span class="n">ctn</span><span class="p">.</span><span class="n">end</span><span class="p">());</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">auto</span> <span class="nf">get</span><span class="p">(</span><span class="n">size_t</span> <span class="n">ctn_idx</span><span class="p">,</span> <span class="n">size_t</span> <span class="n">inner_idx</span><span class="p">)</span> <span class="k">const</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="n">_values</span><span class="p">[</span><span class="n">_begins</span><span class="p">[</span><span class="n">ctn_idx</span><span class="p">]</span> <span class="o">+</span> <span class="n">innner_idx</span><span class="p">];</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">private</span><span class="o">:</span>
+</span></span><span class="line"><span class="cl">    <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">Value</span><span class="o">&gt;</span>  <span class="n">_values</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">size_t</span><span class="o">&gt;</span> <span class="n">_begins</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">};</span>
+</span></span></code></pre></div><h4 id="spécialisation-de-fonction-membres">Spécialisation de fonction-membres</h4>
 <p>Supposons que vous ayiez une classe-template dont vous aimeriez redéfinir seulement certaines fonctions membres.</p>
-<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span> <span class="n">T</span><span class="o">&gt;</span>
-<span class="k">struct</span> <span class="nc">Printer</span>
-<span class="p">{</span>
-    <span class="kt">void</span> <span class="nf">print</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">ostream</span><span class="o">&amp;</span> <span class="n">stream</span><span class="p">,</span> <span class="k">const</span> <span class="n">T</span><span class="o">&amp;</span> <span class="n">value</span><span class="p">)</span> <span class="k">const</span>
-    <span class="p">{</span>
-        <span class="n">stream</span> <span class="o">&lt;&lt;</span> <span class="n">value</span><span class="p">;</span>
-    <span class="p">}</span>
-
-    <span class="kt">void</span> <span class="nf">print_line</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">ostream</span><span class="o">&amp;</span> <span class="n">stream</span><span class="p">,</span> <span class="k">const</span> <span class="n">T</span><span class="o">&amp;</span> <span class="n">value</span><span class="p">)</span> <span class="k">const</span>
-    <span class="p">{</span>
-        <span class="n">print</span><span class="p">(</span><span class="n">stream</span><span class="p">,</span> <span class="n">value</span><span class="p">);</span>
-        <span class="n">stream</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
-    <span class="p">}</span>
-
-    <span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span> <span class="n">BeginIt</span><span class="p">,</span> <span class="k">typename</span> <span class="n">EndIt</span><span class="o">&gt;</span>
-    <span class="kt">void</span> <span class="n">print_many</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">ostream</span><span class="o">&amp;</span> <span class="n">stream</span><span class="p">,</span> <span class="n">BeginIt</span> <span class="n">it</span><span class="p">,</span> <span class="k">const</span> <span class="n">EndIt</span><span class="o">&amp;</span> <span class="n">end</span><span class="p">)</span> <span class="k">const</span>
-    <span class="p">{</span>
-        <span class="k">while</span> <span class="p">(</span><span class="n">it</span> <span class="o">!=</span> <span class="n">end</span><span class="p">)</span>
-        <span class="p">{</span>
-            <span class="n">print</span><span class="p">(</span><span class="n">stream</span><span class="p">,</span> <span class="o">*</span><span class="n">it</span><span class="p">);</span>
-            <span class="n">stream</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;,&#34;</span><span class="p">;</span>
-            <span class="o">++</span><span class="n">it</span><span class="p">;</span>
-        <span class="p">}</span>
-    <span class="p">}</span>
-<span class="p">};</span>
-</code></pre></div><p>Voici la syntaxe associée :</p>
-<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="k">template</span> <span class="o">&lt;&gt;</span>
-<span class="kt">void</span> <span class="n">Printer</span><span class="o">&lt;</span><span class="kt">bool</span><span class="o">&gt;::</span><span class="n">print</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">ostream</span><span class="o">&amp;</span> <span class="n">stream</span><span class="p">,</span> <span class="k">const</span> <span class="kt">bool</span><span class="o">&amp;</span> <span class="n">value</span><span class="p">)</span> <span class="k">const</span>
-<span class="p">{</span>
-    <span class="n">stream</span> <span class="o">&lt;&lt;</span> <span class="p">(</span><span class="n">value</span> <span class="o">?</span> <span class="s">&#34;true&#34;</span> <span class="o">:</span> <span class="s">&#34;false&#34;</span><span class="p">);</span>
-<span class="p">}</span>
-</code></pre></div>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span> <span class="n">T</span><span class="o">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="k">struct</span> <span class="nc">Printer</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">void</span> <span class="nf">print</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">ostream</span><span class="o">&amp;</span> <span class="n">stream</span><span class="p">,</span> <span class="k">const</span> <span class="n">T</span><span class="o">&amp;</span> <span class="n">value</span><span class="p">)</span> <span class="k">const</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="n">stream</span> <span class="o">&lt;&lt;</span> <span class="n">value</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="kt">void</span> <span class="nf">print_line</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">ostream</span><span class="o">&amp;</span> <span class="n">stream</span><span class="p">,</span> <span class="k">const</span> <span class="n">T</span><span class="o">&amp;</span> <span class="n">value</span><span class="p">)</span> <span class="k">const</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="n">print</span><span class="p">(</span><span class="n">stream</span><span class="p">,</span> <span class="n">value</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">        <span class="n">stream</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span> <span class="n">BeginIt</span><span class="p">,</span> <span class="k">typename</span> <span class="n">EndIt</span><span class="o">&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">void</span> <span class="n">print_many</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">ostream</span><span class="o">&amp;</span> <span class="n">stream</span><span class="p">,</span> <span class="n">BeginIt</span> <span class="n">it</span><span class="p">,</span> <span class="k">const</span> <span class="n">EndIt</span><span class="o">&amp;</span> <span class="n">end</span><span class="p">)</span> <span class="k">const</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="k">while</span> <span class="p">(</span><span class="n">it</span> <span class="o">!=</span> <span class="n">end</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="n">print</span><span class="p">(</span><span class="n">stream</span><span class="p">,</span> <span class="o">*</span><span class="n">it</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">            <span class="n">stream</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;,&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">            <span class="o">++</span><span class="n">it</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">};</span>
+</span></span></code></pre></div><p>Voici la syntaxe associée :</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="k">template</span> <span class="o">&lt;&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="kt">void</span> <span class="n">Printer</span><span class="o">&lt;</span><span class="kt">bool</span><span class="o">&gt;::</span><span class="n">print</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">ostream</span><span class="o">&amp;</span> <span class="n">stream</span><span class="p">,</span> <span class="k">const</span> <span class="kt">bool</span><span class="o">&amp;</span> <span class="n">value</span><span class="p">)</span> <span class="k">const</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="n">stream</span> <span class="o">&lt;&lt;</span> <span class="p">(</span><span class="n">value</span> <span class="o">?</span> <span class="s">&#34;true&#34;</span> <span class="o">:</span> <span class="s">&#34;false&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div>
 <div class="notices warning" ><p>Comme pour la spécialisation de fonctions libres, il n&rsquo;est pas possible de spécialiser partiellement des fonctions-membre.</p>
 </div>
 
@@ -3441,19 +3441,19 @@ Par exemple, il est possible de spécialiser une classe-template pour un contene
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/CPP_Learning/js/clipboard.min.js?1705262579"></script>
-    <script src="/CPP_Learning/js/perfect-scrollbar.min.js?1705262579"></script>
-    <script src="/CPP_Learning/js/perfect-scrollbar.jquery.min.js?1705262579"></script>
-    <script src="/CPP_Learning/js/jquery.sticky.js?1705262579"></script>
-    <script src="/CPP_Learning/js/featherlight.min.js?1705262579"></script>
-    <script src="/CPP_Learning/js/highlight.pack.js?1705262579"></script>
+    <script src="/CPP_Learning/js/clipboard.min.js?1705567864"></script>
+    <script src="/CPP_Learning/js/perfect-scrollbar.min.js?1705567864"></script>
+    <script src="/CPP_Learning/js/perfect-scrollbar.jquery.min.js?1705567864"></script>
+    <script src="/CPP_Learning/js/jquery.sticky.js?1705567864"></script>
+    <script src="/CPP_Learning/js/featherlight.min.js?1705567864"></script>
+    <script src="/CPP_Learning/js/highlight.pack.js?1705567864"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/CPP_Learning/js/modernizr.custom-3.6.0.js?1705262579"></script>
-    <script src="/CPP_Learning/js/learn.js?1705262579"></script>
-    <script src="/CPP_Learning/js/hugo-learn.js?1705262579"></script>
+    <script src="/CPP_Learning/js/modernizr.custom-3.6.0.js?1705567864"></script>
+    <script src="/CPP_Learning/js/learn.js?1705567864"></script>
+    <script src="/CPP_Learning/js/hugo-learn.js?1705567864"></script>
     
         
-            <script src="/CPP_Learning/mermaid/mermaid.js?1705262579"></script>
+            <script src="/CPP_Learning/mermaid/mermaid.js?1705567864"></script>
         
         <script>
             mermaid.initialize({ startOnLoad: true });

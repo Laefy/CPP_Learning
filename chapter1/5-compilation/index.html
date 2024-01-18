@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="Hugo 0.76.5" />
+    <meta name="generator" content="Hugo 0.121.0">
     <meta name="description" content="">
 
 
@@ -12,22 +12,22 @@
     <title>Compilation ⚙️ :: Cours de C&#43;&#43; - Niveau Master</title>
 
     
-    <link href="/CPP_Learning/css/nucleus.css?1705262579" rel="stylesheet">
-    <link href="/CPP_Learning/css/fontawesome-all.min.css?1705262579" rel="stylesheet">
-    <link href="/CPP_Learning/css/hybrid.css?1705262579" rel="stylesheet">
-    <link href="/CPP_Learning/css/featherlight.min.css?1705262579" rel="stylesheet">
-    <link href="/CPP_Learning/css/perfect-scrollbar.min.css?1705262579" rel="stylesheet">
-    <link href="/CPP_Learning/css/auto-complete.css?1705262579" rel="stylesheet">
-    <link href="/CPP_Learning/css/atom-one-dark-reasonable.css?1705262579" rel="stylesheet">
-    <link href="/CPP_Learning/css/theme.css?1705262579" rel="stylesheet">
-    <link href="/CPP_Learning/css/tabs.css?1705262579" rel="stylesheet">
-    <link href="/CPP_Learning/css/hugo-theme.css?1705262579" rel="stylesheet">
+    <link href="/CPP_Learning/css/nucleus.css?1705567863" rel="stylesheet">
+    <link href="/CPP_Learning/css/fontawesome-all.min.css?1705567863" rel="stylesheet">
+    <link href="/CPP_Learning/css/hybrid.css?1705567863" rel="stylesheet">
+    <link href="/CPP_Learning/css/featherlight.min.css?1705567863" rel="stylesheet">
+    <link href="/CPP_Learning/css/perfect-scrollbar.min.css?1705567863" rel="stylesheet">
+    <link href="/CPP_Learning/css/auto-complete.css?1705567863" rel="stylesheet">
+    <link href="/CPP_Learning/css/atom-one-dark-reasonable.css?1705567863" rel="stylesheet">
+    <link href="/CPP_Learning/css/theme.css?1705567863" rel="stylesheet">
+    <link href="/CPP_Learning/css/tabs.css?1705567863" rel="stylesheet">
+    <link href="/CPP_Learning/css/hugo-theme.css?1705567863" rel="stylesheet">
     
-    <link href="/CPP_Learning/css/theme-mine.css?1705262579" rel="stylesheet">
+    <link href="/CPP_Learning/css/theme-mine.css?1705567863" rel="stylesheet">
     
-    <link href="/CPP_Learning/css/syntax.css?1705262579" rel="stylesheet">
+    <link href="/CPP_Learning/css/syntax.css?1705567863" rel="stylesheet">
 
-    <script src="/CPP_Learning/js/jquery-3.3.1.min.js?1705262579"></script>
+    <script src="/CPP_Learning/js/jquery-3.3.1.min.js?1705567863"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -1963,7 +1963,7 @@ Dans ce cours, on utilisera le terme de &ldquo;compilation&rdquo; pour faire ré
 <p>La <strong>compilation d&rsquo;un programme</strong> est constituée de deux phases bien distinctes :</p>
 <ol>
 <li>la <strong>compilation de chacun de vos .cpp</strong> en fichier-objet, réalisée par le compilateur,</li>
-<li>l'<strong>édition des liens</strong>, qui permet de créer un exécutable à partir de tous vos fichiers-objet, réalisée par le linker.</li>
+<li>l&rsquo;<strong>édition des liens</strong>, qui permet de créer un exécutable à partir de tous vos fichiers-objet, réalisée par le linker.</li>
 </ol>
 <p><code>g++</code> est à la fois un compilateur et un linker.<br>
 Lorsque vous exécutez <code>g++ -o program.exe a.cpp b.cpp c.cpp</code>, l&rsquo;outil réalise donc 4 opérations :</p>
@@ -1973,19 +1973,20 @@ Lorsque vous exécutez <code>g++ -o program.exe a.cpp b.cpp c.cpp</code>, l&rsqu
 <li>la compilation de c.cpp =&gt; <code>g++ -c c.cpp</code></li>
 <li>l&rsquo;édition des liens pour générer program.exe =&gt; <code>g++ -o program.exe a.o b.o c.o</code></li>
 </ol>
-<pre><code class="language-mermaid" data-lang="mermaid">flowchart TD;
+<pre class="mermaid">flowchart TD;
     L(Edition des liens)
     C1(Compilation)
     C2(Compilation)
     C3(Compilation)
-    Acpp[a.cpp] --- C1 --&gt; Ao[a.o]
-    Bcpp[b.cpp] --- C2 --&gt; Bo[b.o]
-    Ccpp[c.cpp] --- C3 --&gt; Co[c.o]
+    Acpp[a.cpp] --- C1 --> Ao[a.o]
+    Bcpp[b.cpp] --- C2 --> Bo[b.o]
+    Ccpp[c.cpp] --- C3 --> Co[c.o]
     Ao --- L
     Bo --- L
     Co --- L
-    L --&gt; E[program.exe]
-</code></pre><hr>
+    L --> E[program.exe]
+</pre>
+<hr>
 <h3 id="compilation">Compilation</h3>
 <p>Concentrons nous d&rsquo;abord sur la phase de compilation.</p>
 <p>Le compilateur attend en entrée un fichier .cpp et écrit le fichier-objet correspondant.
@@ -2008,7 +2009,7 @@ Si l&rsquo;instruction contient :</p>
 <p>Supposons que l&rsquo;on a le code suivant dans <code>math.hpp</code> :</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
@@ -2017,19 +2018,19 @@ Si l&rsquo;instruction contient :</p>
 </span><span class="lnt">7
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="k">struct</span> <span class="nc">Fraction</span>
-<span class="p">{</span>
-    <span class="kt">int</span> <span class="n">num</span><span class="p">;</span>
-    <span class="kt">int</span> <span class="n">den</span><span class="p">;</span>
-<span class="p">};</span>
-
-<span class="n">Fraction</span> <span class="nf">add</span><span class="p">(</span><span class="n">Fraction</span> <span class="n">f1</span><span class="p">,</span> <span class="n">Fraction</span> <span class="n">f2</span><span class="p">);</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="k">struct</span> <span class="nc">Fraction</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">int</span> <span class="n">num</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">int</span> <span class="n">den</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">};</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">Fraction</span> <span class="nf">add</span><span class="p">(</span><span class="n">Fraction</span> <span class="n">f1</span><span class="p">,</span> <span class="n">Fraction</span> <span class="n">f2</span><span class="p">);</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>Et ce code dans <code>main.cpp</code> :</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -2042,24 +2043,24 @@ Si l&rsquo;instruction contient :</p>
 </span><span class="lnt">11
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="cp">#include</span> <span class="cpf">&#34;math.hpp&#34;</span><span class="cp">
-</span><span class="cp"></span>
-<span class="n">Fraction</span> <span class="n">half</span> <span class="p">{</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span> <span class="p">};</span>
-
-<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
-<span class="p">{</span>
-    <span class="n">Fraction</span> <span class="n">third</span> <span class="p">{</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">3</span> <span class="p">};</span>
-
-    <span class="n">Fraction</span> <span class="n">res</span> <span class="o">=</span> <span class="n">add</span><span class="p">(</span><span class="n">half</span><span class="p">,</span> <span class="n">third</span><span class="p">);</span>
-    <span class="k">return</span> <span class="n">res</span><span class="p">.</span><span class="n">num</span><span class="p">;</span>
-<span class="p">}</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="cp">#include</span> <span class="cpf">&#34;math.hpp&#34;</span><span class="cp">
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span>
+</span></span><span class="line"><span class="cl"><span class="n">Fraction</span> <span class="n">half</span> <span class="p">{</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span> <span class="p">};</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="n">Fraction</span> <span class="n">third</span> <span class="p">{</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">3</span> <span class="p">};</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="n">Fraction</span> <span class="n">res</span> <span class="o">=</span> <span class="n">add</span><span class="p">(</span><span class="n">half</span><span class="p">,</span> <span class="n">third</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">res</span><span class="p">.</span><span class="n">num</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>Tout d&rsquo;abord, le préprocesseur copie-colle le contenu de <code>math.hpp</code> à la place de la directive d&rsquo;inclusion.
 On obtient donc :</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -2078,24 +2079,24 @@ On obtient donc :</p>
 </span><span class="lnt">17
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="k">struct</span> <span class="nc">Fraction</span>
-<span class="p">{</span>
-    <span class="kt">int</span> <span class="n">num</span><span class="p">;</span>
-    <span class="kt">int</span> <span class="n">den</span><span class="p">;</span>
-<span class="p">};</span>
-
-<span class="n">Fraction</span> <span class="nf">add</span><span class="p">(</span><span class="n">Fraction</span> <span class="n">f1</span><span class="p">,</span> <span class="n">Fraction</span> <span class="n">f2</span><span class="p">);</span>
-
-<span class="n">Fraction</span> <span class="n">half</span> <span class="p">{</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span> <span class="p">};</span>
-
-<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
-<span class="p">{</span>
-    <span class="n">Fraction</span> <span class="n">third</span> <span class="p">{</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">3</span> <span class="p">};</span>
-
-    <span class="n">Fraction</span> <span class="n">res</span> <span class="o">=</span> <span class="n">add</span><span class="p">(</span><span class="n">half</span><span class="p">,</span> <span class="n">third</span><span class="p">);</span>
-    <span class="k">return</span> <span class="n">res</span><span class="p">.</span><span class="n">num</span><span class="p">;</span>
-<span class="p">}</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="k">struct</span> <span class="nc">Fraction</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">int</span> <span class="n">num</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">int</span> <span class="n">den</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">};</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">Fraction</span> <span class="nf">add</span><span class="p">(</span><span class="n">Fraction</span> <span class="n">f1</span><span class="p">,</span> <span class="n">Fraction</span> <span class="n">f2</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">Fraction</span> <span class="n">half</span> <span class="p">{</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span> <span class="p">};</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="n">Fraction</span> <span class="n">third</span> <span class="p">{</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">3</span> <span class="p">};</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="n">Fraction</span> <span class="n">res</span> <span class="o">=</span> <span class="n">add</span><span class="p">(</span><span class="n">half</span><span class="p">,</span> <span class="n">third</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">res</span><span class="p">.</span><span class="n">num</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>Puis le compilateur lit les instructions au fur-et-à-mesure :</p>
 <ul>
@@ -2286,8 +2287,8 @@ Celui-ci ne devrait pas compiler.</li>
 
         <div class="hidden-solution-content">
             <p>On doit ajouter l&rsquo;option <code>-c</code> pour s&rsquo;arrêter après la phase de compilation.</p>
-<div class="highlight"><pre class="chroma"><code class="language-b" data-lang="b"><span class="c">g</span><span class="nb">++</span><span class="c"> </span><span class="nb">-</span><span class="c">std=c</span><span class="nb">++</span><span class="c">17 </span><span class="nb">-</span><span class="c">c 1</span><span class="nb">-</span><span class="c">structs</span><span class="nt">.</span><span class="c">cpp
-</span></code></pre></div>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-b" data-lang="b"><span class="line"><span class="cl"><span class="c">g</span><span class="nb">++</span><span class="c"> </span><span class="nb">-</span><span class="c">std=c</span><span class="nb">++</span><span class="c">17 </span><span class="nb">-</span><span class="c">c 1</span><span class="nb">-</span><span class="c">structs</span><span class="nt">.</span><span class="c">cpp
+</span></span></span></code></pre></div>
         </div>
     </div>
 
@@ -2311,21 +2312,21 @@ Effectuez ces modifications et vérifiez que le fichier compile désormais.</li>
 
         <div class="hidden-solution-content">
             <p>Contrairement au Java, il faut penser à écrire <code>;</code> après la définition de tout type (<code>class</code>, <code>struct</code>, <code>enum</code>, etc).</p>
-<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="k">struct</span> <span class="nc">A</span>
-<span class="p">{</span>
-    <span class="kt">int</span> <span class="n">a</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
-<span class="hl"><span class="p">};</span>
-</span>
-<span class="k">struct</span> <span class="nc">B</span>
-<span class="p">{</span>
-    <span class="kt">int</span> <span class="n">b</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
-<span class="hl"><span class="p">};</span>
-</span>
-<span class="kt">int</span> <span class="nf">add</span><span class="p">(</span><span class="n">A</span> <span class="n">a</span><span class="p">,</span> <span class="n">B</span> <span class="n">b</span><span class="p">)</span>
-<span class="p">{</span>
-    <span class="k">return</span> <span class="n">a</span><span class="p">.</span><span class="n">a</span> <span class="o">+</span> <span class="n">b</span><span class="p">.</span><span class="n">b</span><span class="p">;</span>
-<span class="p">}</span>
-</code></pre></div>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="k">struct</span> <span class="nc">A</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">int</span> <span class="n">a</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line hl"><span class="cl"><span class="p">};</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">struct</span> <span class="nc">B</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">int</span> <span class="n">b</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line hl"><span class="cl"><span class="p">};</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="nf">add</span><span class="p">(</span><span class="n">A</span> <span class="n">a</span><span class="p">,</span> <span class="n">B</span> <span class="n">b</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">a</span><span class="p">.</span><span class="n">a</span> <span class="o">+</span> <span class="n">b</span><span class="p">.</span><span class="n">b</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div>
         </div>
     </div>
 
@@ -2372,17 +2373,17 @@ C&rsquo;est pour ça que nous n&rsquo;avons pas eu l&rsquo;erreur dans le fichie
         </button>
 
         <div class="hidden-solution-content">
-            <div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="k">class</span> <span class="nc">A</span>
-<span class="p">{</span>
-<span class="k">public</span><span class="o">:</span>
-    <span class="kt">int</span> <span class="n">a</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
-<span class="p">};</span>
-
-<span class="kt">int</span> <span class="nf">get_a</span><span class="p">(</span><span class="n">A</span> <span class="n">a</span><span class="p">)</span>
-<span class="p">{</span>
-    <span class="k">return</span> <span class="n">a</span><span class="p">.</span><span class="n">a</span><span class="p">;</span>
-<span class="p">}</span>
-</code></pre></div>
+            <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">A</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line hl"><span class="cl"><span class="k">public</span><span class="o">:</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">int</span> <span class="n">a</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">};</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="nf">get_a</span><span class="p">(</span><span class="n">A</span> <span class="n">a</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">a</span><span class="p">.</span><span class="n">a</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div>
         </div>
     </div>
 
@@ -2432,19 +2433,19 @@ Le compilateur ne la trouve donc pas au moment où il analyse l&rsquo;instructio
         </button>
 
         <div class="hidden-solution-content">
-            <div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="hl"><span class="cp">#include</span> <span class="cpf">&lt;iostream&gt; // pour std::cin, std::cout et std::endl</span><span class="cp">
-</span></span><span class="hl"><span class="cp">#include</span> <span class="cpf">&lt;string&gt;   // pour std::string</span><span class="cp">
-</span></span><span class="cp"></span>
-<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
-<span class="p">{</span>
-    <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">name</span><span class="p">;</span>
-    <span class="n">std</span><span class="o">::</span><span class="n">cin</span> <span class="o">&gt;&gt;</span> <span class="n">name</span><span class="p">;</span>
-
-    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;Hello &#34;</span> <span class="o">&lt;&lt;</span> <span class="n">name</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
-
-    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
-<span class="p">}</span>
-</code></pre></div>
+            <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line hl"><span class="cl"><span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp"> </span><span class="c1">// pour std::cin, std::cout et std::endl
+</span></span></span><span class="line hl"><span class="cl"><span class="c1"></span><span class="cp">#include</span> <span class="cpf">&lt;string&gt;</span><span class="cp">   </span><span class="c1">// pour std::string
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">name</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">std</span><span class="o">::</span><span class="n">cin</span> <span class="o">&gt;&gt;</span> <span class="n">name</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;Hello &#34;</span> <span class="o">&lt;&lt;</span> <span class="n">name</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div>
         </div>
     </div>
 
@@ -2473,60 +2474,60 @@ Quelle est l&rsquo;erreur ? Essayez de l&rsquo;expliquer en imaginant le contenu
 
         <div class="hidden-solution-content">
             <p>Après le passage du préprocesseur, le fichier devrait ressembler à :</p>
-<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="c1">// =========================================//
-</span><span class="c1">// Inclusion de 4-car.hpp depuis 4-main.cpp //
-</span><span class="c1">// =========================================//
-</span><span class="c1"></span>                                            <span class="c1">//
-</span><span class="c1"></span>    <span class="cm">/** le contenu de &lt;string&gt; **/</span>          <span class="c1">//
-</span><span class="c1"></span>                                            <span class="c1">//
-</span><span class="c1"></span>    <span class="k">struct</span> <span class="nc">Car</span>                              <span class="c1">//
-</span><span class="c1"></span>    <span class="p">{</span>                                       <span class="c1">//
-</span><span class="c1"></span>        <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">brand</span><span class="p">;</span>                  <span class="c1">//
-</span><span class="c1"></span>    <span class="p">};</span>                                      <span class="c1">//
-</span><span class="c1"></span>                                            <span class="c1">//
-</span><span class="c1">// =========================================//
-</span><span class="c1"></span>
-<span class="c1">// ================================================//
-</span><span class="c1">// Inclusion de 4-driver.hpp depuis 4-main.cpp     //
-</span><span class="c1">// ================================================//
-</span><span class="c1"></span>                                                   <span class="c1">//
-</span><span class="c1"></span>    <span class="c1">// =========================================// //
-</span><span class="c1"></span>    <span class="c1">// Inclusion de 4-car.hpp depuis 4-main.cpp // //
-</span><span class="c1"></span>    <span class="c1">// =========================================// //
-</span><span class="c1"></span>                                                <span class="c1">// //
-</span><span class="c1"></span>        <span class="cm">/** le contenu de &lt;string&gt; **/</span>          <span class="c1">// //
-</span><span class="c1"></span>                                                <span class="c1">// //
-</span><span class="c1"></span>        <span class="k">struct</span> <span class="nc">Car</span>                              <span class="c1">// //
-</span><span class="c1"></span>        <span class="p">{</span>                                       <span class="c1">// //
-</span><span class="c1"></span>            <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">brand</span><span class="p">;</span>                  <span class="c1">// //
-</span><span class="c1"></span>        <span class="p">};</span>                                      <span class="c1">// //
-</span><span class="c1"></span>                                                <span class="c1">// //
-</span><span class="c1"></span>    <span class="c1">// =========================================// //
-</span><span class="c1"></span>                                                   <span class="c1">//
-</span><span class="c1"></span>    <span class="cm">/** le contenu de &lt;iostream&gt; **/</span>               <span class="c1">//
-</span><span class="c1"></span>                                                   <span class="c1">//
-</span><span class="c1"></span>    <span class="k">struct</span> <span class="nc">Driver</span>                                  <span class="c1">//
-</span><span class="c1"></span>    <span class="p">{</span>                                              <span class="c1">//
-</span><span class="c1"></span>        <span class="kt">void</span> <span class="nf">drive</span><span class="p">(</span><span class="n">Car</span> <span class="n">car</span><span class="p">)</span>                        <span class="c1">//
-</span><span class="c1"></span>        <span class="p">{</span>                                          <span class="c1">//
-</span><span class="c1"></span>            <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;I&#39;m driving a &#34;</span>          <span class="c1">//
-</span><span class="c1"></span>                      <span class="o">&lt;&lt;</span> <span class="n">car</span><span class="p">.</span><span class="n">brand</span>                 <span class="c1">//
-</span><span class="c1"></span>                      <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>                <span class="c1">//
-</span><span class="c1"></span>        <span class="p">}</span>                                          <span class="c1">//
-</span><span class="c1"></span>    <span class="p">};</span>                                             <span class="c1">//
-</span><span class="c1"></span>                                                   <span class="c1">//
-</span><span class="c1">// ================================================//
-</span><span class="c1"></span>
-<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
-<span class="p">{</span>
-    <span class="n">Car</span> <span class="n">car</span> <span class="p">{</span> <span class="s">&#34;golf&#34;</span> <span class="p">};</span>
-
-    <span class="n">Driver</span> <span class="n">driver</span><span class="p">;</span>
-    <span class="n">driver</span><span class="p">.</span><span class="n">drive</span><span class="p">(</span><span class="n">car</span><span class="p">);</span>
-
-    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
-<span class="p">}</span>
-</code></pre></div><p>Lorsque le compilateur parcourt le fichier, il rencontre deux fois la définition du type <code>Car</code>.<br>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="c1">// =========================================//
+</span></span></span><span class="line"><span class="cl"><span class="c1">// Inclusion de 4-car.hpp depuis 4-main.cpp //
+</span></span></span><span class="line"><span class="cl"><span class="c1">// =========================================//
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>                                            <span class="c1">//
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="cm">/** le contenu de &lt;string&gt; **/</span>          <span class="c1">//
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>                                            <span class="c1">//
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="k">struct</span> <span class="nc">Car</span>                              <span class="c1">//
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="p">{</span>                                       <span class="c1">//
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">brand</span><span class="p">;</span>                  <span class="c1">//
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="p">};</span>                                      <span class="c1">//
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>                                            <span class="c1">//
+</span></span></span><span class="line"><span class="cl"><span class="c1">// =========================================//
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl"><span class="c1">// ================================================//
+</span></span></span><span class="line"><span class="cl"><span class="c1">// Inclusion de 4-driver.hpp depuis 4-main.cpp     //
+</span></span></span><span class="line"><span class="cl"><span class="c1">// ================================================//
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>                                                   <span class="c1">//
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="c1">// =========================================// //
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="c1">// Inclusion de 4-car.hpp depuis 4-main.cpp // //
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="c1">// =========================================// //
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>                                                <span class="c1">// //
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="cm">/** le contenu de &lt;string&gt; **/</span>          <span class="c1">// //
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>                                                <span class="c1">// //
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="k">struct</span> <span class="nc">Car</span>                              <span class="c1">// //
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="p">{</span>                                       <span class="c1">// //
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>            <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">brand</span><span class="p">;</span>                  <span class="c1">// //
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="p">};</span>                                      <span class="c1">// //
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>                                                <span class="c1">// //
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="c1">// =========================================// //
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>                                                   <span class="c1">//
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="cm">/** le contenu de &lt;iostream&gt; **/</span>               <span class="c1">//
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>                                                   <span class="c1">//
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="k">struct</span> <span class="nc">Driver</span>                                  <span class="c1">//
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="p">{</span>                                              <span class="c1">//
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="kt">void</span> <span class="nf">drive</span><span class="p">(</span><span class="n">Car</span> <span class="n">car</span><span class="p">)</span>                        <span class="c1">//
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="p">{</span>                                          <span class="c1">//
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>            <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;I&#39;m driving a &#34;</span>          <span class="c1">//
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>                      <span class="o">&lt;&lt;</span> <span class="n">car</span><span class="p">.</span><span class="n">brand</span>                 <span class="c1">//
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>                      <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>                <span class="c1">//
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="p">}</span>                                          <span class="c1">//
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="p">};</span>                                             <span class="c1">//
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>                                                   <span class="c1">//
+</span></span></span><span class="line"><span class="cl"><span class="c1">// ================================================//
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="n">Car</span> <span class="n">car</span> <span class="p">{</span> <span class="s">&#34;golf&#34;</span> <span class="p">};</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="n">Driver</span> <span class="n">driver</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">driver</span><span class="p">.</span><span class="n">drive</span><span class="p">(</span><span class="n">car</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><p>Lorsque le compilateur parcourt le fichier, il rencontre deux fois la définition du type <code>Car</code>.<br>
 Il est donc logique qu&rsquo;il émette l&rsquo;erreur <code>redefinition of 'Car'</code>.</p>
 
         </div>
@@ -2551,30 +2552,30 @@ Corrigez le code et assurez-vous que le fichier <code>4-main.cpp</code> compile 
 
         <div class="hidden-solution-content">
             <p>On modifie d&rsquo;abord <code>4-car.hpp</code>, puisque c&rsquo;est ce fichier qui est inclus en double.</p>
-<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="cp">#pragma once
-</span><span class="cp"></span>
-<span class="cp">#include</span> <span class="cpf">&lt;string&gt;</span><span class="cp">
-</span><span class="cp"></span>
-<span class="k">struct</span> <span class="nc">Car</span>
-<span class="p">{</span>
-    <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">brand</span><span class="p">;</span>
-<span class="p">};</span>
-</code></pre></div><p>Une fois ce changement fait, on constate que le code compile.<br>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line hl"><span class="cl"><span class="cp">#pragma once
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span>
+</span></span><span class="line"><span class="cl"><span class="cp">#include</span> <span class="cpf">&lt;string&gt;</span><span class="cp">
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span>
+</span></span><span class="line"><span class="cl"><span class="k">struct</span> <span class="nc">Car</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">brand</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">};</span>
+</span></span></code></pre></div><p>Une fois ce changement fait, on constate que le code compile.<br>
 Pour éviter que le problème ne se reproduise si on décidait d&rsquo;inclure <code>4-driver.hpp</code> dans un autre header, on modifie également ce dernier.</p>
-<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="cp">#pragma once
-</span><span class="cp"></span>
-<span class="cp">#include</span> <span class="cpf">&#34;4-car.hpp&#34;</span><span class="cp">
-</span><span class="cp"></span>
-<span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp">
-</span><span class="cp"></span>
-<span class="k">struct</span> <span class="nc">Driver</span>
-<span class="p">{</span>
-    <span class="kt">void</span> <span class="nf">drive</span><span class="p">(</span><span class="n">Car</span> <span class="n">car</span><span class="p">)</span>
-    <span class="p">{</span>
-        <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;I&#39;m driving a &#34;</span> <span class="o">&lt;&lt;</span> <span class="n">car</span><span class="p">.</span><span class="n">brand</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span> 
-    <span class="p">}</span>
-<span class="p">};</span>
-</code></pre></div>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line hl"><span class="cl"><span class="cp">#pragma once
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span>
+</span></span><span class="line"><span class="cl"><span class="cp">#include</span> <span class="cpf">&#34;4-car.hpp&#34;</span><span class="cp">
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span>
+</span></span><span class="line"><span class="cl"><span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp">
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span>
+</span></span><span class="line"><span class="cl"><span class="k">struct</span> <span class="nc">Driver</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">void</span> <span class="nf">drive</span><span class="p">(</span><span class="n">Car</span> <span class="n">car</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;I&#39;m driving a &#34;</span> <span class="o">&lt;&lt;</span> <span class="n">car</span><span class="p">.</span><span class="n">brand</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span> 
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">};</span>
+</span></span></code></pre></div>
         </div>
     </div>
 
@@ -2603,8 +2604,8 @@ Cependant, elle peut également se produire dans la situation présentée ci-des
         </button>
 
         <div class="hidden-solution-content">
-            <div class="highlight"><pre class="chroma"><code class="language-b" data-lang="b"><span class="c">g</span><span class="nb">++</span><span class="c"> </span><span class="nb">-</span><span class="c">std=c</span><span class="nb">++</span><span class="c">17 </span><span class="nb">-</span><span class="c">Wfatal</span><span class="nb">-</span><span class="c">errors </span><span class="nb">-</span><span class="c">c 5</span><span class="nb">-</span><span class="c">main</span><span class="nt">.</span><span class="c">cpp 
-</span></code></pre></div>
+            <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-b" data-lang="b"><span class="line"><span class="cl"><span class="c">g</span><span class="nb">++</span><span class="c"> </span><span class="nb">-</span><span class="c">std=c</span><span class="nb">++</span><span class="c">17 </span><span class="nb">-</span><span class="c">Wfatal</span><span class="nb">-</span><span class="c">errors </span><span class="nb">-</span><span class="c">c 5</span><span class="nb">-</span><span class="c">main</span><span class="nt">.</span><span class="c">cpp 
+</span></span></span></code></pre></div>
         </div>
     </div>
 
@@ -2628,53 +2629,53 @@ Pourquoi le compilateur n&rsquo;arrive pas à reconnaître le symbole <code>Tic<
 
         <div class="hidden-solution-content">
             <p>Dans un premier temps, il faut savoir ce que le compilateur analyse une fois la précompilation terminée :</p>
-<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="c1">// =====================================================//
-</span><span class="c1">// Inclusion de 5-tic.hpp depuis 4-main.cpp             //
-</span><span class="c1">// =====================================================//
-</span><span class="c1"></span>                                                        <span class="c1">//
-</span><span class="c1"></span>    <span class="cp">#pragma once </span><span class="c1">// -&gt; 1e inclusion de 5-tic.hpp        //
-</span><span class="c1"></span>                                                        <span class="c1">//
-</span><span class="c1"></span>    <span class="c1">// ==============================================// //
-</span><span class="c1"></span>    <span class="c1">// Inclusion de 5-tac.hpp depuis 5-tic.cpp ======// //
-</span><span class="c1"></span>    <span class="c1">// ==============================================// //
-</span><span class="c1"></span>                                                     <span class="c1">// //
-</span><span class="c1"></span>        <span class="cp">#pragma once </span><span class="c1">// -&gt; 1e inclusion de 5-tac.hpp // //
-</span><span class="c1"></span>                                                     <span class="c1">// //
-</span><span class="c1"></span>        <span class="c1">// =====================//                   // //
-</span><span class="c1"></span>        <span class="c1">// #include &#34;5-tic.hpp&#34; // -&gt; déjà inclus !  // //
-</span><span class="c1"></span>        <span class="c1">// ---------------------//                   // //
-</span><span class="c1"></span>                                                     <span class="c1">// //
-</span><span class="c1"></span>        <span class="k">struct</span> <span class="nc">Tac</span>                                   <span class="c1">// //
-</span><span class="c1"></span>        <span class="p">{</span>                                            <span class="c1">// //
-</span><span class="c1"></span>            <span class="c1">// Invert value with tic.                // //
-</span><span class="c1"></span>            <span class="kt">void</span> <span class="nf">swap</span><span class="p">(</span><span class="n">Tic</span><span class="o">&amp;</span> <span class="n">tic</span><span class="p">);</span>                     <span class="c1">// //
-</span><span class="c1"></span>                                                     <span class="c1">// //
-</span><span class="c1"></span>            <span class="kt">int</span> <span class="n">value</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>                           <span class="c1">// //
-</span><span class="c1"></span>        <span class="p">};</span>                                           <span class="c1">// //
-</span><span class="c1"></span>                                                     <span class="c1">// //
-</span><span class="c1"></span>    <span class="c1">// ==============================================// //
-</span><span class="c1"></span>                                                        <span class="c1">//
-</span><span class="c1"></span>    <span class="k">struct</span> <span class="nc">Tic</span>                                          <span class="c1">//
-</span><span class="c1"></span>    <span class="p">{</span>                                                   <span class="c1">//
-</span><span class="c1"></span>        <span class="c1">// Invert value with tac.                       //
-</span><span class="c1"></span>        <span class="kt">void</span> <span class="nf">swap</span><span class="p">(</span><span class="n">Tac</span><span class="o">&amp;</span> <span class="n">tac</span><span class="p">);</span>                            <span class="c1">//
-</span><span class="c1"></span>                                                        <span class="c1">//
-</span><span class="c1"></span>        <span class="kt">int</span> <span class="n">value</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>                                  <span class="c1">//
-</span><span class="c1"></span>    <span class="p">};</span>                                                  <span class="c1">//
-</span><span class="c1"></span>                                                        <span class="c1">//
-</span><span class="c1">// =====================================================//
-</span><span class="c1"></span>
-<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
-<span class="p">{</span>
-    <span class="n">Tic</span> <span class="n">tic</span> <span class="p">{</span> <span class="mi">1</span> <span class="p">};</span>
-    <span class="n">Tac</span> <span class="n">tac</span> <span class="p">{</span> <span class="mi">5</span> <span class="p">};</span>
-
-    <span class="n">tic</span><span class="p">.</span><span class="n">swap</span><span class="p">(</span><span class="n">tac</span><span class="p">);</span>
-    <span class="n">tac</span><span class="p">.</span><span class="n">swap</span><span class="p">(</span><span class="n">tic</span><span class="p">);</span>
-
-    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
-<span class="p">}</span>
-</code></pre></div><p>Effectivement, lorsque le compilateur arrive à l&rsquo;instruction <code>void swap(Tic&amp; tic);</code>, la définition de <code>Tic</code> n&rsquo;a encore jamais été rencontrée.<br>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="c1">// =====================================================//
+</span></span></span><span class="line"><span class="cl"><span class="c1">// Inclusion de 5-tic.hpp depuis 4-main.cpp             //
+</span></span></span><span class="line"><span class="cl"><span class="c1">// =====================================================//
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>                                                        <span class="c1">//
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="cp">#pragma once </span><span class="c1">// -&gt; 1e inclusion de 5-tic.hpp        //
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>                                                        <span class="c1">//
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="c1">// ==============================================// //
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="c1">// Inclusion de 5-tac.hpp depuis 5-tic.cpp ======// //
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="c1">// ==============================================// //
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>                                                     <span class="c1">// //
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="cp">#pragma once </span><span class="c1">// -&gt; 1e inclusion de 5-tac.hpp // //
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>                                                     <span class="c1">// //
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="c1">// =====================//                   // //
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="c1">// #include &#34;5-tic.hpp&#34; // -&gt; déjà inclus !  // //
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="c1">// ---------------------//                   // //
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>                                                     <span class="c1">// //
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="k">struct</span> <span class="nc">Tac</span>                                   <span class="c1">// //
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="p">{</span>                                            <span class="c1">// //
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>            <span class="c1">// Invert value with tic.                // //
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>            <span class="kt">void</span> <span class="nf">swap</span><span class="p">(</span><span class="n">Tic</span><span class="o">&amp;</span> <span class="n">tic</span><span class="p">);</span>                     <span class="c1">// //
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>                                                     <span class="c1">// //
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>            <span class="kt">int</span> <span class="n">value</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>                           <span class="c1">// //
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="p">};</span>                                           <span class="c1">// //
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>                                                     <span class="c1">// //
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="c1">// ==============================================// //
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>                                                        <span class="c1">//
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="k">struct</span> <span class="nc">Tic</span>                                          <span class="c1">//
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="p">{</span>                                                   <span class="c1">//
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="c1">// Invert value with tac.                       //
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="kt">void</span> <span class="nf">swap</span><span class="p">(</span><span class="n">Tac</span><span class="o">&amp;</span> <span class="n">tac</span><span class="p">);</span>                            <span class="c1">//
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>                                                        <span class="c1">//
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="kt">int</span> <span class="n">value</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>                                  <span class="c1">//
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="p">};</span>                                                  <span class="c1">//
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>                                                        <span class="c1">//
+</span></span></span><span class="line"><span class="cl"><span class="c1">// =====================================================//
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="n">Tic</span> <span class="n">tic</span> <span class="p">{</span> <span class="mi">1</span> <span class="p">};</span>
+</span></span><span class="line"><span class="cl">    <span class="n">Tac</span> <span class="n">tac</span> <span class="p">{</span> <span class="mi">5</span> <span class="p">};</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="n">tic</span><span class="p">.</span><span class="n">swap</span><span class="p">(</span><span class="n">tac</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="n">tac</span><span class="p">.</span><span class="n">swap</span><span class="p">(</span><span class="n">tic</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><p>Effectivement, lorsque le compilateur arrive à l&rsquo;instruction <code>void swap(Tic&amp; tic);</code>, la définition de <code>Tic</code> n&rsquo;a encore jamais été rencontrée.<br>
 Le symbole n&rsquo;existant pas encore dans la table des symboles, on obtient l&rsquo;erreur <code>'Tic' has not been declared</code>.</p>
 
         </div>
@@ -2706,10 +2707,10 @@ Effectivement <code>5-tic.hpp</code> inclut <code>5-tac.hpp</code> qui inclut à
 </div>
 <p>Pour indiquer au compilateur qu&rsquo;un type existe, on a deux possibilités : le définir ou le <strong>pré-déclarer</strong> (on employera plus communément le terme anglais <strong>forward-declare</strong>).<br>
 Il suffit pour cela d&rsquo;écrire :</p>
-<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="k">class</span> <span class="nc">A</span><span class="p">;</span>    <span class="c1">// forward-declare d&#39;une class A
-</span><span class="c1"></span><span class="k">struct</span> <span class="nc">B</span><span class="p">;</span>   <span class="c1">// forward-declare d&#39;une struct B
-</span><span class="c1"></span><span class="k">enum</span> <span class="nc">C</span><span class="p">;</span>     <span class="c1">// forward-declare d&#39;un enum C
-</span></code></pre></div><ol start="3">
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">A</span><span class="p">;</span>    <span class="c1">// forward-declare d&#39;une class A
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">struct</span> <span class="nc">B</span><span class="p">;</span>   <span class="c1">// forward-declare d&#39;une struct B
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">enum</span> <span class="nc">C</span><span class="p">;</span>     <span class="c1">// forward-declare d&#39;un enum C
+</span></span></span></code></pre></div><ol start="3">
 <li>Supprimez les directives d&rsquo;inclusions problématiques, et ajoutez des forward-declarations à la place.<br>
 Vérifiez que cela fixe bien le problème.</li>
 </ol>
@@ -2728,30 +2729,30 @@ Vérifiez que cela fixe bien le problème.</li>
         <div class="hidden-solution-content">
             <p>Les directives d&rsquo;inclusions problématiques sont celles situées dans les fichiers <code>5-tic.hpp</code> et <code>5-tac.hpp</code>.<br>
 On remplace donc le code de <code>5-tic.hpp</code> par :</p>
-<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="cp">#pragma once
-</span><span class="cp"></span>
-<span class="k">struct</span> <span class="nc">Tac</span><span class="p">;</span>
-
-<span class="k">struct</span> <span class="nc">Tic</span>
-<span class="p">{</span>
-    <span class="c1">// Invert value with tac.
-</span><span class="c1"></span>    <span class="kt">void</span> <span class="nf">swap</span><span class="p">(</span><span class="n">Tac</span><span class="o">&amp;</span> <span class="n">tac</span><span class="p">);</span>
-
-    <span class="kt">int</span> <span class="n">value</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
-<span class="p">};</span>
-</code></pre></div><p>Et celui de <code>5-tac.hpp</code> par :</p>
-<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="cp">#pragma once
-</span><span class="cp"></span>
-<span class="k">struct</span> <span class="nc">Tic</span><span class="p">;</span>
-
-<span class="k">struct</span> <span class="nc">Tac</span>
-<span class="p">{</span>
-    <span class="c1">// Invert value with tic.
-</span><span class="c1"></span>    <span class="kt">void</span> <span class="nf">swap</span><span class="p">(</span><span class="n">Tic</span><span class="o">&amp;</span> <span class="n">tic</span><span class="p">);</span>
-
-    <span class="kt">int</span> <span class="n">value</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
-<span class="p">};</span>
-</code></pre></div>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="cp">#pragma once
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span>
+</span></span><span class="line hl"><span class="cl"><span class="k">struct</span> <span class="nc">Tac</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">struct</span> <span class="nc">Tic</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">// Invert value with tac.
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="kt">void</span> <span class="nf">swap</span><span class="p">(</span><span class="n">Tac</span><span class="o">&amp;</span> <span class="n">tac</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="kt">int</span> <span class="n">value</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">};</span>
+</span></span></code></pre></div><p>Et celui de <code>5-tac.hpp</code> par :</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="cp">#pragma once
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span>
+</span></span><span class="line hl"><span class="cl"><span class="k">struct</span> <span class="nc">Tic</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">struct</span> <span class="nc">Tac</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">// Invert value with tic.
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="kt">void</span> <span class="nf">swap</span><span class="p">(</span><span class="n">Tic</span><span class="o">&amp;</span> <span class="n">tic</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="kt">int</span> <span class="n">value</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">};</span>
+</span></span></code></pre></div>
         </div>
     </div>
 
@@ -2772,7 +2773,7 @@ Dans le cadre de la génération d&rsquo;un programme, l&rsquo;objectif du linke
 On suppose que <code>main.o</code> est le résultat de la compilation de :</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -2785,23 +2786,23 @@ On suppose que <code>main.o</code> est le résultat de la compilation de :</p>
 </span><span class="lnt">11
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="cp">#include</span> <span class="cpf">&#34;math.hpp&#34;</span><span class="cp">
-</span><span class="cp"></span>
-<span class="n">Fraction</span> <span class="n">half</span> <span class="o">=</span> <span class="n">create_half</span><span class="p">();</span>
-
-<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
-<span class="p">{</span>
-    <span class="n">Fraction</span> <span class="n">third</span> <span class="p">{</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">3</span> <span class="p">};</span>
-
-    <span class="n">Fraction</span> <span class="n">res</span> <span class="o">=</span> <span class="n">mult</span><span class="p">(</span><span class="n">half</span><span class="p">,</span> <span class="n">third</span><span class="p">);</span>
-    <span class="k">return</span> <span class="n">res</span><span class="p">.</span><span class="n">num</span><span class="p">;</span>
-<span class="p">}</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="cp">#include</span> <span class="cpf">&#34;math.hpp&#34;</span><span class="cp">
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span>
+</span></span><span class="line"><span class="cl"><span class="n">Fraction</span> <span class="n">half</span> <span class="o">=</span> <span class="n">create_half</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="n">Fraction</span> <span class="n">third</span> <span class="p">{</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">3</span> <span class="p">};</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="n">Fraction</span> <span class="n">res</span> <span class="o">=</span> <span class="n">mult</span><span class="p">(</span><span class="n">half</span><span class="p">,</span> <span class="n">third</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">res</span><span class="p">.</span><span class="n">num</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>que <code>math.o</code> est le résultat de :</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -2828,37 +2829,37 @@ On suppose que <code>main.o</code> est le résultat de la compilation de :</p>
 </span><span class="lnt">25
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="cp">#include</span> <span class="cpf">&#34;math.hpp&#34;</span><span class="cp">
-</span><span class="cp"></span>
-<span class="n">Fraction</span> <span class="nf">create_half</span><span class="p">()</span>
-<span class="p">{</span>
-    <span class="n">Fraction</span> <span class="n">f</span><span class="p">;</span>
-    <span class="n">f</span><span class="p">.</span><span class="n">num</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
-    <span class="n">f</span><span class="p">.</span><span class="n">den</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span>
-    <span class="k">return</span> <span class="n">f</span><span class="p">;</span>
-<span class="p">}</span>
-
-<span class="n">Fraction</span> <span class="nf">mult</span><span class="p">(</span><span class="n">Fraction</span> <span class="n">f1</span><span class="p">,</span> <span class="n">Fraction</span> <span class="n">f2</span><span class="p">)</span>
-<span class="p">{</span>
-    <span class="n">Fraction</span> <span class="n">res</span><span class="p">;</span>
-    <span class="n">res</span><span class="p">.</span><span class="n">num</span> <span class="o">=</span> <span class="n">f1</span><span class="p">.</span><span class="n">num</span> <span class="o">*</span> <span class="n">f2</span><span class="p">.</span><span class="n">num</span><span class="p">;</span>
-    <span class="n">res</span><span class="p">.</span><span class="n">den</span> <span class="o">=</span> <span class="n">f1</span><span class="p">.</span><span class="n">den</span> <span class="o">*</span> <span class="n">f2</span><span class="p">.</span><span class="n">den</span><span class="p">;</span>
-    <span class="k">return</span> <span class="n">res</span><span class="p">;</span>
-<span class="p">}</span>
-
-<span class="n">Fraction</span> <span class="nf">invert</span><span class="p">(</span><span class="n">Fraction</span> <span class="n">f</span><span class="p">)</span>
-<span class="p">{</span>
-    <span class="n">Fraction</span> <span class="n">res</span><span class="p">;</span>
-    <span class="n">res</span><span class="p">.</span><span class="n">num</span> <span class="o">=</span> <span class="n">f</span><span class="p">.</span><span class="n">den</span><span class="p">;</span>
-    <span class="n">res</span><span class="p">.</span><span class="n">den</span> <span class="o">=</span> <span class="n">f</span><span class="p">.</span><span class="n">num</span><span class="p">;</span>
-    <span class="k">return</span> <span class="n">res</span><span class="p">;</span>
-<span class="p">}</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="cp">#include</span> <span class="cpf">&#34;math.hpp&#34;</span><span class="cp">
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span>
+</span></span><span class="line"><span class="cl"><span class="n">Fraction</span> <span class="nf">create_half</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="n">Fraction</span> <span class="n">f</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">f</span><span class="p">.</span><span class="n">num</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">f</span><span class="p">.</span><span class="n">den</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">f</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">Fraction</span> <span class="nf">mult</span><span class="p">(</span><span class="n">Fraction</span> <span class="n">f1</span><span class="p">,</span> <span class="n">Fraction</span> <span class="n">f2</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="n">Fraction</span> <span class="n">res</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">res</span><span class="p">.</span><span class="n">num</span> <span class="o">=</span> <span class="n">f1</span><span class="p">.</span><span class="n">num</span> <span class="o">*</span> <span class="n">f2</span><span class="p">.</span><span class="n">num</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">res</span><span class="p">.</span><span class="n">den</span> <span class="o">=</span> <span class="n">f1</span><span class="p">.</span><span class="n">den</span> <span class="o">*</span> <span class="n">f2</span><span class="p">.</span><span class="n">den</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">res</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">Fraction</span> <span class="nf">invert</span><span class="p">(</span><span class="n">Fraction</span> <span class="n">f</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="n">Fraction</span> <span class="n">res</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">res</span><span class="p">.</span><span class="n">num</span> <span class="o">=</span> <span class="n">f</span><span class="p">.</span><span class="n">den</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">res</span><span class="p">.</span><span class="n">den</span> <span class="o">=</span> <span class="n">f</span><span class="p">.</span><span class="n">num</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">res</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>et que <code>math.hpp</code> contient le code suivant :</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -2871,18 +2872,18 @@ On suppose que <code>main.o</code> est le résultat de la compilation de :</p>
 </span><span class="lnt">11
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="cp">#pragma once
-</span><span class="cp"></span>
-<span class="k">struct</span> <span class="nc">Fraction</span>
-<span class="p">{</span>
-    <span class="kt">int</span> <span class="n">num</span><span class="p">;</span>
-    <span class="kt">int</span> <span class="n">den</span><span class="p">;</span>
-<span class="p">};</span>
-
-<span class="n">Fraction</span> <span class="nf">create_half</span><span class="p">();</span>
-<span class="n">Fraction</span> <span class="nf">mult</span><span class="p">(</span><span class="n">Fraction</span> <span class="n">f1</span><span class="p">,</span> <span class="n">Fraction</span> <span class="n">f2</span><span class="p">);</span>
-<span class="n">Fraction</span> <span class="nf">invert</span><span class="p">(</span><span class="n">Fraction</span> <span class="n">f</span><span class="p">);</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="cp">#pragma once
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span>
+</span></span><span class="line"><span class="cl"><span class="k">struct</span> <span class="nc">Fraction</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">int</span> <span class="n">num</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">int</span> <span class="n">den</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">};</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">Fraction</span> <span class="nf">create_half</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl"><span class="n">Fraction</span> <span class="nf">mult</span><span class="p">(</span><span class="n">Fraction</span> <span class="n">f1</span><span class="p">,</span> <span class="n">Fraction</span> <span class="n">f2</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="n">Fraction</span> <span class="nf">invert</span><span class="p">(</span><span class="n">Fraction</span> <span class="n">f</span><span class="p">);</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>Dans ce cas, <code>main.o</code> contient les instructions de la fonction <code>main()</code> et les instructions d&rsquo;initialisation de la variable globale <code>half</code>, tandis que <code>math.o</code> contient les instructions des fonctions <code>create_half()</code>, <code>mult(Fraction, Fraction)</code> et <code>invert(Fraction)</code>.</p>
 <style>
@@ -2892,100 +2893,106 @@ On suppose que <code>main.o</code> est le résultat de la compilation de :</p>
         margin-bottom: 0;
     }
 </style>
-<pre><code class="language-mermaid" data-lang="mermaid">graph LR
+<pre class="mermaid">graph LR
 
 subgraph A[main.o]
-    main([&quot;main()&quot;])
-    half([&quot;half: Fraction&quot;])
+    main(["main()"])
+    half(["half: Fraction"])
 end
-</code></pre><pre><code class="language-mermaid" data-lang="mermaid">graph LR
+</pre>
+<pre class="mermaid">graph LR
 
 subgraph B[math.o]
-    create_half([&quot;create_half()&quot;])
-    mult([&quot;mult(Fraction, Fraction)&quot;])
-    invert([&quot;invert(Fraction)&quot;])
+    create_half(["create_half()"])
+    mult(["mult(Fraction, Fraction)"])
+    invert(["invert(Fraction)"])
 end
-</code></pre><p>Le linker identifie les éléments dont les instructions seront exécutées quoi qu&rsquo;il arrive :</p>
+</pre>
+<p>Le linker identifie les éléments dont les instructions seront exécutées quoi qu&rsquo;il arrive :</p>
 <ul>
 <li>le point d&rsquo;entrée du programme, c&rsquo;est-à-dire la fonction <code>main</code>,</li>
 <li>les instructions nécessaires à l&rsquo;initialisation des variables globales.</li>
 </ul>
-<pre><code class="language-mermaid" data-lang="mermaid">graph LR
+<pre class="mermaid">graph LR
 
 subgraph A[main.o]
-    main([&quot;main()&quot;])
-    half([&quot;half: Fraction&quot;])
+    main(["main()"])
+    half(["half: Fraction"])
 end
 
 classDef fat stroke-width:3px
 class main,half fat
-</code></pre><pre><code class="language-mermaid" data-lang="mermaid">graph LR
+</pre>
+<pre class="mermaid">graph LR
 
 subgraph B[math.o]
-    create_half([&quot;create_half()&quot;])
-    mult([&quot;mult(Fraction, Fraction)&quot;])
-    invert([&quot;invert(Fraction)&quot;])
+    create_half(["create_half()"])
+    mult(["mult(Fraction, Fraction)"])
+    invert(["invert(Fraction)"])
 end
-</code></pre><p>Il analyse ensuite les instructions associées à chaque élément de manière à créer les liens vers les bonnes fonctions.</p>
-<pre><code class="language-mermaid" data-lang="mermaid">graph LR
+</pre>
+<p>Il analyse ensuite les instructions associées à chaque élément de manière à créer les liens vers les bonnes fonctions.</p>
+<pre class="mermaid">graph LR
 
 subgraph A[main.o]
-    main([&quot;main()&quot;])
-    half([&quot;half: Fraction&quot;])
+    main(["main()"])
+    half(["half: Fraction"])
 
-    main -.-&gt;|l.9| half
+    main -.->|l.9| half
 end
 
 subgraph B[math.o]
-    create_half([&quot;create_half()&quot;])
-    mult([&quot;mult(Fraction, Fraction)&quot;])
-    invert([&quot;invert(Fraction)&quot;])
+    create_half(["create_half()"])
+    mult(["mult(Fraction, Fraction)"])
+    invert(["invert(Fraction)"])
 end
 
-half -.-&gt;|l.3| create_half
-main -.-&gt;|l.9| mult
+half -.->|l.3| create_half
+main -.->|l.9| mult
 
 classDef fat stroke-width:3px
 class main,half fat
-</code></pre><p>Cela lui permet d&rsquo;identifier l&rsquo;ensemble des éléments à placer dans l&rsquo;exécutable final.</p>
-<pre><code class="language-mermaid" data-lang="mermaid">graph LR
+</pre>
+<p>Cela lui permet d&rsquo;identifier l&rsquo;ensemble des éléments à placer dans l&rsquo;exécutable final.</p>
+<pre class="mermaid">graph LR
 
 subgraph D[program.exe]
-    f_main([&quot;main()&quot;])
-    f_half([&quot;half: Fraction&quot;])
-    f_create_half([&quot;create_half()&quot;])
-    f_mult([&quot;mult(Fraction, Fraction)&quot;])
+    f_main(["main()"])
+    f_half(["half: Fraction"])
+    f_create_half(["create_half()"])
+    f_mult(["mult(Fraction, Fraction)"])
 end
 
     subgraph A[main.o]
-        main([&quot;main()&quot;])
-        half([&quot;half: Fraction&quot;])
+        main(["main()"])
+        half(["half: Fraction"])
     end
 
     subgraph B[math.o]
-        create_half([&quot;create_half()&quot;])
-        mult([&quot;mult(Fraction, Fraction)&quot;])
-        invert([&quot;invert(Fraction)&quot;])
+        create_half(["create_half()"])
+        mult(["mult(Fraction, Fraction)"])
+        invert(["invert(Fraction)"])
     end
 
-main -.-&gt;|l.9| half
-half -.-&gt;|l.3| create_half
-main -.-&gt;|l.9| mult
+main -.->|l.9| half
+half -.->|l.3| create_half
+main -.->|l.9| mult
 
-main ==&gt; f_main
-half ==&gt; f_half
-create_half ==&gt; f_create_half
-mult ==&gt; f_mult
+main ==> f_main
+half ==> f_half
+create_half ==> f_create_half
+mult ==> f_mult
 
 classDef fat stroke-width:3px
 class main,half,create_half,mult fat
-</code></pre><p>L&rsquo;exécutable final ne contient donc que les symboles effectivement utilisés par le programme.<br>
+</pre>
+<p>L&rsquo;exécutable final ne contient donc que les symboles effectivement utilisés par le programme.<br>
 La fonction <code>invert(Fraction)</code> présente dans <code>math.o</code> et qui n&rsquo;est jamais appelée n&rsquo;en fait donc pas partie.</p>
 <hr>
 <h3 id="encore-plus-derreurs--">Encore plus d&rsquo;erreurs ! 😭</h3>
 <p>De la même façon que nous l&rsquo;avons fait avec les erreurs de compilation, nous allons vous présenter quelques situations d&rsquo;erreurs émises au cours de l&rsquo;édition des liens.</p>
 <p>Commencez par vous placer dans le répertoire <code>chap-01/4-link-errors</code>.</p>
-<h4 id="1-undefined-reference-to-main">1. undefined reference to `main'</h4>
+<h4 id="1-undefined-reference-to-main">1. undefined reference to `main&rsquo;</h4>
 <ol>
 <li>Compilez le fichier <code>1-hello_wordl.cpp</code> pour en faire un fichier-objet, puis essayez de créer un programme à partir de ce fichier-objet.<br>
 Quel est le message d&rsquo;erreur ? Pouvez-vous identifier dans la sortie complète le nom du programme effectuant l&rsquo;édition des liens ?</li>
@@ -3004,11 +3011,11 @@ Quel est le message d&rsquo;erreur ? Pouvez-vous identifier dans la sortie compl
 
         <div class="hidden-solution-content">
             <p>Pour récupérer une erreur humainement lisible, il faut faire un peu de ménage dans la sortie.</p>
-<div class="highlight"><pre class="chroma"><code class="language-b" data-lang="b"><span class="c">g</span><span class="nb">++</span><span class="c"> </span><span class="nb">-</span><span class="c">std=c</span><span class="nb">++</span><span class="c">17 </span><span class="nb">-</span><span class="c">c 1</span><span class="nb">-</span><span class="c">hello_wordl</span><span class="nt">.</span><span class="c">cpp
-</span><span class="c"># =</span><span class="nv">&gt;</span><span class="c"> Ok
-</span><span class="c">g</span><span class="nb">++</span><span class="c"> </span><span class="nb">-</span><span class="c">o program 1</span><span class="nb">-</span><span class="c">hello_wordl</span><span class="nt">.</span><span class="c">o
-</span><span class="c"># =</span><span class="nv">&gt;</span><span class="c"> </span><span class="k">[</span><span class="c">plein de trucs horribles à lire</span><span class="k">]</span><span class="c"> undefined reference to `main&#39; (ou WinMain sous Windows)
-</span></code></pre></div><p>On note également le message <code>ld returned 1 exit status</code> à la toute fin.<br>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-b" data-lang="b"><span class="line"><span class="cl"><span class="c">g</span><span class="nb">++</span><span class="c"> </span><span class="nb">-</span><span class="c">std=c</span><span class="nb">++</span><span class="c">17 </span><span class="nb">-</span><span class="c">c 1</span><span class="nb">-</span><span class="c">hello_wordl</span><span class="nt">.</span><span class="c">cpp
+</span></span></span><span class="line"><span class="cl"><span class="c"># =</span><span class="nv">&gt;</span><span class="c"> Ok
+</span></span></span><span class="line"><span class="cl"><span class="c">g</span><span class="nb">++</span><span class="c"> </span><span class="nb">-</span><span class="c">o program 1</span><span class="nb">-</span><span class="c">hello_wordl</span><span class="nt">.</span><span class="c">o
+</span></span></span><span class="line"><span class="cl"><span class="c"># =</span><span class="nv">&gt;</span><span class="c"> </span><span class="k">[</span><span class="c">plein de trucs horribles à lire</span><span class="k">]</span><span class="c"> undefined reference to `main&#39; (ou WinMain sous Windows)
+</span></span></span></code></pre></div><p>On note également le message <code>ld returned 1 exit status</code> à la toute fin.<br>
 Le programme chargé de l&rsquo;édition des liens est donc <code>ld</code>.</p>
 
         </div>
@@ -3032,14 +3039,14 @@ Le programme chargé de l&rsquo;édition des liens est donc <code>ld</code>.</p>
 
         <div class="hidden-solution-content">
             <p>Il y a une typo dans le nom de la fonction <code>main</code>, ce qui empêche le linker de la trouver.</p>
-<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp">
-</span><span class="cp"></span>
-<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
-<span class="p">{</span>
-    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;Hello world!&#34;</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
-    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
-<span class="p">}</span>
-</code></pre></div>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp">
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span>
+</span></span><span class="line hl"><span class="cl"><span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;Hello world!&#34;</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div>
         </div>
     </div>
 
@@ -3048,7 +3055,7 @@ Le programme chargé de l&rsquo;édition des liens est donc <code>ld</code>.</p>
 <div class="notices tip" ><p>Lorsque la sortie d&rsquo;erreurs se termine par quelque chose comme <code>ld returned 1 exit status</code>, cela indique que l&rsquo;erreur se produit durant l&rsquo;édition des liens.</p>
 </div>
 
-<h4 id="2-undefined-reference-to-bla-1">2. undefined reference to `bla(&hellip;)' #1</h4>
+<h4 id="2-undefined-reference-to-bla-1">2. undefined reference to `bla(&hellip;)&rsquo; #1</h4>
 <ol>
 <li>Que fait la commande <code>g++ -std=c++17 -o program 2-main.cpp</code> ?</li>
 </ol>
@@ -3089,9 +3096,9 @@ Quelle est la sortie du programme ? La compilation du fichier <code>2-main.cpp</
 
         <div class="hidden-solution-content">
             <p>On obtient quelque chose comme :</p>
-<div class="highlight"><pre class="chroma"><code class="language-b" data-lang="b"><span class="c">2</span><span class="nb">-</span><span class="c">main</span><span class="nt">.</span><span class="c">cpp: undefined reference to `add(int</span><span class="nt">,</span><span class="c"> int)&#39;
-</span><span class="c">error: ld returned 1 exit status
-</span></code></pre></div><p>La compilation du fichier <code>2-main.cpp</code> s&rsquo;est donc bien passée, puisque c&rsquo;est la phase d&rsquo;édition des liens (<code>ld</code>) qui échoue.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-b" data-lang="b"><span class="line"><span class="cl"><span class="c">2</span><span class="nb">-</span><span class="c">main</span><span class="nt">.</span><span class="c">cpp: undefined reference to `add(int</span><span class="nt">,</span><span class="c"> int)&#39;
+</span></span></span><span class="line"><span class="cl"><span class="c">error: ld returned 1 exit status
+</span></span></span></code></pre></div><p>La compilation du fichier <code>2-main.cpp</code> s&rsquo;est donc bien passée, puisque c&rsquo;est la phase d&rsquo;édition des liens (<code>ld</code>) qui échoue.</p>
 
         </div>
     </div>
@@ -3116,7 +3123,7 @@ Quelle est la sortie du programme ? La compilation du fichier <code>2-main.cpp</
             <p>Après la précompilation, le fichier <code>2-main.cpp</code> est transformé en :</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
@@ -3126,15 +3133,15 @@ Quelle est la sortie du programme ? La compilation du fichier <code>2-main.cpp</
 </span><span class="lnt">8
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="cp">#pragma once
-</span><span class="cp"></span>
-<span class="kt">int</span> <span class="nf">add</span><span class="p">(</span><span class="kt">int</span> <span class="n">a</span><span class="p">,</span> <span class="kt">int</span> <span class="n">b</span><span class="p">);</span>
-
-<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
-<span class="p">{</span>
-    <span class="k">return</span> <span class="n">add</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">);</span>
-<span class="p">}</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="cp">#pragma once
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span>
+</span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="nf">add</span><span class="p">(</span><span class="kt">int</span> <span class="n">a</span><span class="p">,</span> <span class="kt">int</span> <span class="n">b</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">add</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>A la suite de la compilation de ce fichier, <code>2-main.o</code> contient uniquement les instructions de la fonction <code>main</code>.<br>
 En effet, la ligne 3 est une déclaration de fonction.
@@ -3162,13 +3169,13 @@ Le compilateur ne connaissant pas la définition de <code>add(int, int)</code>, 
         <div class="hidden-solution-content">
             <p>La définition de la fonction <code>add(int, int)</code> est présente dans le fichier <code>2-add.cpp</code>.<br>
 Il suffit donc d&rsquo;ajouter ce fichier à la ligne de commande :</p>
-<div class="highlight"><pre class="chroma"><code class="language-b" data-lang="b"><span class="c">g</span><span class="nb">++</span><span class="c"> </span><span class="nb">-</span><span class="c">std=c</span><span class="nb">++</span><span class="c">17 </span><span class="nb">-</span><span class="c">o program 2</span><span class="nb">-</span><span class="c">main</span><span class="nt">.</span><span class="c">cpp 2</span><span class="nb">-</span><span class="c">add</span><span class="nt">.</span><span class="c">cpp
-</span></code></pre></div>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-b" data-lang="b"><span class="line"><span class="cl"><span class="c">g</span><span class="nb">++</span><span class="c"> </span><span class="nb">-</span><span class="c">std=c</span><span class="nb">++</span><span class="c">17 </span><span class="nb">-</span><span class="c">o program 2</span><span class="nb">-</span><span class="c">main</span><span class="nt">.</span><span class="c">cpp 2</span><span class="nb">-</span><span class="c">add</span><span class="nt">.</span><span class="c">cpp
+</span></span></span></code></pre></div>
         </div>
     </div>
 
 </div>
-<h4 id="3-undefined-reference-to-bla-2">3. undefined reference to `bla(&hellip;)' #2</h4>
+<h4 id="3-undefined-reference-to-bla-2">3. undefined reference to `bla(&hellip;)&rsquo; #2</h4>
 <ol>
 <li>Exécutez maintenant <code>g++ -std=c++17 -o program 3-main.cpp 3-sub.cpp</code>.<br>
 Quelle est l&rsquo;erreur ? Que contient le fichier-objet <code>3-sub.o</code> ?</li>
@@ -3187,17 +3194,17 @@ Quelle est l&rsquo;erreur ? Que contient le fichier-objet <code>3-sub.o</code> ?
 
         <div class="hidden-solution-content">
             <p>L&rsquo;erreur est la suivante, et il s&rsquo;agit à nouveau d&rsquo;une erreur de link.</p>
-<div class="highlight"><pre class="chroma"><code class="language-b" data-lang="b"><span class="c">3</span><span class="nb">-</span><span class="c">main</span><span class="nt">.</span><span class="c">cpp: undefined reference to `sub(int</span><span class="nt">,</span><span class="c"> int)&#39;
-</span></code></pre></div><p>Après précompilation, le fichier <code>3-sub.cpp</code> contient :</p>
-<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="cp">#pragma once
-</span><span class="cp"></span>
-<span class="kt">int</span> <span class="nf">sub</span><span class="p">(</span><span class="kt">int</span> <span class="n">a</span><span class="p">,</span> <span class="kt">int</span> <span class="n">b</span><span class="p">);</span>
-
-<span class="kt">float</span> <span class="nf">sub</span><span class="p">(</span><span class="kt">float</span> <span class="n">a</span><span class="p">,</span> <span class="kt">float</span> <span class="n">b</span><span class="p">)</span>
-<span class="p">{</span>
-    <span class="k">return</span> <span class="n">a</span> <span class="o">-</span> <span class="n">b</span><span class="p">;</span>
-<span class="p">}</span>
-</code></pre></div><p>Le fichier <code>3-sub.o</code> contient donc les instructions binaires de la fonction <code>sub(float, float)</code>, et non pas celles de <code>sub(int, int)</code>.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-b" data-lang="b"><span class="line"><span class="cl"><span class="c">3</span><span class="nb">-</span><span class="c">main</span><span class="nt">.</span><span class="c">cpp: undefined reference to `sub(int</span><span class="nt">,</span><span class="c"> int)&#39;
+</span></span></span></code></pre></div><p>Après précompilation, le fichier <code>3-sub.cpp</code> contient :</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="cp">#pragma once
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span>
+</span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="nf">sub</span><span class="p">(</span><span class="kt">int</span> <span class="n">a</span><span class="p">,</span> <span class="kt">int</span> <span class="n">b</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kt">float</span> <span class="nf">sub</span><span class="p">(</span><span class="kt">float</span> <span class="n">a</span><span class="p">,</span> <span class="kt">float</span> <span class="n">b</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">a</span> <span class="o">-</span> <span class="n">b</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><p>Le fichier <code>3-sub.o</code> contient donc les instructions binaires de la fonction <code>sub(float, float)</code>, et non pas celles de <code>sub(int, int)</code>.</p>
 
         </div>
     </div>
@@ -3220,25 +3227,25 @@ Quelle est l&rsquo;erreur ? Que contient le fichier-objet <code>3-sub.o</code> ?
 
         <div class="hidden-solution-content">
             <p>Le fichier <code>3-main.o</code> précompilé devrait avoir ce contenu :</p>
-<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="cp">#pragma once
-</span><span class="cp"></span>
-<span class="kt">int</span> <span class="nf">sub</span><span class="p">(</span><span class="kt">int</span> <span class="n">a</span><span class="p">,</span> <span class="kt">int</span> <span class="n">b</span><span class="p">);</span>
-
-<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
-<span class="p">{</span>
-    <span class="k">return</span> <span class="n">sub</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">);</span>
-<span class="p">}</span>
-</code></pre></div><p>Il n&rsquo;y a donc aucune raison qu&rsquo;il ne compile pas, puisque la fonction <code>sub(int, int)</code> est correctement déclarée avant son appel, et que les arguments fournis ont un type compatible avec la signature de la fonction.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="cp">#pragma once
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span>
+</span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="nf">sub</span><span class="p">(</span><span class="kt">int</span> <span class="n">a</span><span class="p">,</span> <span class="kt">int</span> <span class="n">b</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">sub</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><p>Il n&rsquo;y a donc aucune raison qu&rsquo;il ne compile pas, puisque la fonction <code>sub(int, int)</code> est correctement déclarée avant son appel, et que les arguments fournis ont un type compatible avec la signature de la fonction.</p>
 <p>En ce qui concerne le fichier <code>3-sub.cpp</code>, nous avons :</p>
-<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="cp">#pragma once
-</span><span class="cp"></span>
-<span class="kt">int</span> <span class="nf">sub</span><span class="p">(</span><span class="kt">int</span> <span class="n">a</span><span class="p">,</span> <span class="kt">int</span> <span class="n">b</span><span class="p">);</span>
-
-<span class="kt">float</span> <span class="nf">sub</span><span class="p">(</span><span class="kt">float</span> <span class="n">a</span><span class="p">,</span> <span class="kt">float</span> <span class="n">b</span><span class="p">)</span>
-<span class="p">{</span>
-    <span class="k">return</span> <span class="n">a</span> <span class="o">-</span> <span class="n">b</span><span class="p">;</span>
-<span class="p">}</span>
-</code></pre></div><p>Ici, on pourrait se demander pourquoi le compilateur accepte d&rsquo;avoir une déclaration de <code>sub</code> qui attend des <code>int</code>, et une définition de <code>sub</code> qui attend des <code>float</code>.<br>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="cp">#pragma once
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span>
+</span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="nf">sub</span><span class="p">(</span><span class="kt">int</span> <span class="n">a</span><span class="p">,</span> <span class="kt">int</span> <span class="n">b</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kt">float</span> <span class="nf">sub</span><span class="p">(</span><span class="kt">float</span> <span class="n">a</span><span class="p">,</span> <span class="kt">float</span> <span class="n">b</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">a</span> <span class="o">-</span> <span class="n">b</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><p>Ici, on pourrait se demander pourquoi le compilateur accepte d&rsquo;avoir une déclaration de <code>sub</code> qui attend des <code>int</code>, et une définition de <code>sub</code> qui attend des <code>float</code>.<br>
 C&rsquo;est tout simplement parce qu&rsquo;en C++, la <strong>surcharge</strong> de fonctions est autorisée (comme en Java).</p>
 <p>On pourrait par exemple avoir dans un autre fichier-source, ou bien dans le même que celui-ci, une définition valide de <code>sub(int, int)</code>, en plus de la définition déjà existante de <code>sub(float, float)</code>.<br>
 En fonction du type des arguments passés à l&rsquo;appel, le compilateur choisirait la fonction avec la signature la plus proche.</p>
@@ -3282,7 +3289,7 @@ De cette manière, à la compilation de <code>3-main.cpp</code>, le symbole asso
 Si le problème ne vient pas de là, assurez-vous que la <strong>signature</strong> de votre fonction (nom + type des paramètres) est bien strictement la même dans sa définition et dans ses déclarations.</p>
 </div>
 
-<h4 id="4-multiple-definition-of-bla">4. multiple definition of `bla'</h4>
+<h4 id="4-multiple-definition-of-bla">4. multiple definition of `bla&rsquo;</h4>
 <ol>
 <li>Exécutez la commande <code>g++ -std=c++17 -o prog 4-main.cpp 4-sub.cpp 4-add.cpp</code>.<br>
 Quelle est l&rsquo;erreur ?</li>
@@ -3301,9 +3308,9 @@ Quelle est l&rsquo;erreur ?</li>
 
         <div class="hidden-solution-content">
             <p>En supprimant tous les caractères bizarres de la sortie, on obtient ces erreurs :</p>
-<div class="highlight"><pre class="chroma"><code class="language-b" data-lang="b"><span class="c">4</span><span class="nb">-</span><span class="c">add</span><span class="nt">.</span><span class="c">cpp: multiple definition of `debug(char const*</span><span class="nt">,</span><span class="c"> int</span><span class="nt">,</span><span class="c"> int)&#39;
-</span><span class="c">4</span><span class="nb">-</span><span class="c">sub</span><span class="nt">.</span><span class="c">cpp: first defined here
-</span></code></pre></div>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-b" data-lang="b"><span class="line"><span class="cl"><span class="c">4</span><span class="nb">-</span><span class="c">add</span><span class="nt">.</span><span class="c">cpp: multiple definition of `debug(char const*</span><span class="nt">,</span><span class="c"> int</span><span class="nt">,</span><span class="c"> int)&#39;
+</span></span></span><span class="line"><span class="cl"><span class="c">4</span><span class="nb">-</span><span class="c">sub</span><span class="nt">.</span><span class="c">cpp: first defined here
+</span></span></span></code></pre></div>
         </div>
     </div>
 
@@ -3325,57 +3332,57 @@ Quelle est l&rsquo;erreur ?</li>
 
         <div class="hidden-solution-content">
             <p>Après la précompilation de <code>4-add.cpp</code>, on a :</p>
-<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="cp">#pragma once
-</span><span class="cp"></span>
-<span class="kt">int</span> <span class="nf">add</span><span class="p">(</span><span class="kt">int</span> <span class="n">a</span><span class="p">,</span> <span class="kt">int</span> <span class="n">b</span><span class="p">);</span>
-
-<span class="c1">//-----------------------------
-</span><span class="c1"></span>
-<span class="cp">#pragma once
-</span><span class="cp"></span>
-<span class="c1">// le contenu de &lt;iostream&gt;
-</span><span class="c1"></span>
-<span class="kt">void</span> <span class="nf">debug</span><span class="p">(</span><span class="k">const</span> <span class="kt">char</span><span class="o">*</span> <span class="n">fcn</span><span class="p">,</span> <span class="kt">int</span> <span class="n">p1</span><span class="p">,</span> <span class="kt">int</span> <span class="n">p2</span><span class="p">)</span>
-<span class="p">{</span>
-    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">fcn</span> <span class="o">&lt;&lt;</span> <span class="s">&#34; called with &#34;</span> <span class="o">&lt;&lt;</span> <span class="n">p1</span> <span class="o">&lt;&lt;</span> <span class="s">&#34; and &#34;</span> <span class="o">&lt;&lt;</span> <span class="n">p2</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
-<span class="p">}</span>
-
-<span class="c1">//-----------------------------
-</span><span class="c1"></span>
-<span class="kt">int</span> <span class="nf">add</span><span class="p">(</span><span class="kt">int</span> <span class="n">a</span><span class="p">,</span> <span class="kt">int</span> <span class="n">b</span><span class="p">)</span>
-<span class="p">{</span>
-    <span class="n">debug</span><span class="p">(</span><span class="s">&#34;add&#34;</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">);</span>
-    <span class="k">return</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span><span class="p">;</span>
-<span class="p">}</span>
-</code></pre></div><p>Les symboles présents dans <code>4-add.o</code> sont donc :</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="cp">#pragma once
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span>
+</span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="nf">add</span><span class="p">(</span><span class="kt">int</span> <span class="n">a</span><span class="p">,</span> <span class="kt">int</span> <span class="n">b</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">//-----------------------------
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl"><span class="cp">#pragma once
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span>
+</span></span><span class="line"><span class="cl"><span class="c1">// le contenu de &lt;iostream&gt;
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl"><span class="kt">void</span> <span class="nf">debug</span><span class="p">(</span><span class="k">const</span> <span class="kt">char</span><span class="o">*</span> <span class="n">fcn</span><span class="p">,</span> <span class="kt">int</span> <span class="n">p1</span><span class="p">,</span> <span class="kt">int</span> <span class="n">p2</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">fcn</span> <span class="o">&lt;&lt;</span> <span class="s">&#34; called with &#34;</span> <span class="o">&lt;&lt;</span> <span class="n">p1</span> <span class="o">&lt;&lt;</span> <span class="s">&#34; and &#34;</span> <span class="o">&lt;&lt;</span> <span class="n">p2</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">//-----------------------------
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="nf">add</span><span class="p">(</span><span class="kt">int</span> <span class="n">a</span><span class="p">,</span> <span class="kt">int</span> <span class="n">b</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="n">debug</span><span class="p">(</span><span class="s">&#34;add&#34;</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><p>Les symboles présents dans <code>4-add.o</code> sont donc :</p>
 <ul>
 <li><code>debug(const char*, int, int)</code></li>
 <li><code>add(int, int)</code></li>
 </ul>
 <p>Similairement, après la précompilation de <code>4-sub.cpp</code>, on a :</p>
-<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="cp">#pragma once
-</span><span class="cp"></span>
-<span class="kt">int</span> <span class="nf">sub</span><span class="p">(</span><span class="kt">int</span> <span class="n">a</span><span class="p">,</span> <span class="kt">int</span> <span class="n">b</span><span class="p">);</span>
-
-<span class="c1">//-----------------------------
-</span><span class="c1"></span>
-<span class="cp">#pragma once
-</span><span class="cp"></span>
-<span class="c1">// le contenu de &lt;iostream&gt;
-</span><span class="c1"></span>
-<span class="kt">void</span> <span class="nf">debug</span><span class="p">(</span><span class="k">const</span> <span class="kt">char</span><span class="o">*</span> <span class="n">fcn</span><span class="p">,</span> <span class="kt">int</span> <span class="n">p1</span><span class="p">,</span> <span class="kt">int</span> <span class="n">p2</span><span class="p">)</span>
-<span class="p">{</span>
-    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">fcn</span> <span class="o">&lt;&lt;</span> <span class="s">&#34; called with &#34;</span> <span class="o">&lt;&lt;</span> <span class="n">p1</span> <span class="o">&lt;&lt;</span> <span class="s">&#34; and &#34;</span> <span class="o">&lt;&lt;</span> <span class="n">p2</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
-<span class="p">}</span>
-
-<span class="c1">//-----------------------------
-</span><span class="c1"></span>
-<span class="kt">int</span> <span class="nf">sub</span><span class="p">(</span><span class="kt">int</span> <span class="n">a</span><span class="p">,</span> <span class="kt">int</span> <span class="n">b</span><span class="p">)</span>
-<span class="p">{</span>
-    <span class="n">debug</span><span class="p">(</span><span class="s">&#34;sub&#34;</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">);</span>
-    <span class="k">return</span> <span class="n">a</span> <span class="o">-</span> <span class="n">b</span><span class="p">;</span>
-<span class="p">}</span>
-</code></pre></div><p>Les symboles présents dans <code>4-sub.o</code> sont donc :</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="cp">#pragma once
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span>
+</span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="nf">sub</span><span class="p">(</span><span class="kt">int</span> <span class="n">a</span><span class="p">,</span> <span class="kt">int</span> <span class="n">b</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">//-----------------------------
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl"><span class="cp">#pragma once
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span>
+</span></span><span class="line"><span class="cl"><span class="c1">// le contenu de &lt;iostream&gt;
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl"><span class="kt">void</span> <span class="nf">debug</span><span class="p">(</span><span class="k">const</span> <span class="kt">char</span><span class="o">*</span> <span class="n">fcn</span><span class="p">,</span> <span class="kt">int</span> <span class="n">p1</span><span class="p">,</span> <span class="kt">int</span> <span class="n">p2</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">fcn</span> <span class="o">&lt;&lt;</span> <span class="s">&#34; called with &#34;</span> <span class="o">&lt;&lt;</span> <span class="n">p1</span> <span class="o">&lt;&lt;</span> <span class="s">&#34; and &#34;</span> <span class="o">&lt;&lt;</span> <span class="n">p2</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">//-----------------------------
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="nf">sub</span><span class="p">(</span><span class="kt">int</span> <span class="n">a</span><span class="p">,</span> <span class="kt">int</span> <span class="n">b</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="n">debug</span><span class="p">(</span><span class="s">&#34;sub&#34;</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">a</span> <span class="o">-</span> <span class="n">b</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><p>Les symboles présents dans <code>4-sub.o</code> sont donc :</p>
 <ul>
 <li><code>debug(const char*, int, int)</code></li>
 <li><code>sub(int, int)</code></li>
@@ -3431,15 +3438,15 @@ S&rsquo;ils sont inclus depuis plusieurs fichiers-source, le linker fera comme s
 
         <div class="hidden-solution-content">
             <p>On remplace le contenu de <code>4-debug.hpp</code> par :</p>
-<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="cp">#pragma once
-</span><span class="cp"></span>
-<span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp">
-</span><span class="cp"></span>
-<span class="kr">inline</span> <span class="kt">void</span> <span class="nf">debug</span><span class="p">(</span><span class="k">const</span> <span class="kt">char</span><span class="o">*</span> <span class="n">fcn</span><span class="p">,</span> <span class="kt">int</span> <span class="n">p1</span><span class="p">,</span> <span class="kt">int</span> <span class="n">p2</span><span class="p">)</span>
-<span class="p">{</span>
-    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">fcn</span> <span class="o">&lt;&lt;</span> <span class="s">&#34; called with &#34;</span> <span class="o">&lt;&lt;</span> <span class="n">p1</span> <span class="o">&lt;&lt;</span> <span class="s">&#34; and &#34;</span> <span class="o">&lt;&lt;</span> <span class="n">p2</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
-<span class="p">}</span>
-</code></pre></div>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="cp">#pragma once
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span>
+</span></span><span class="line"><span class="cl"><span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp">
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span>
+</span></span><span class="line hl"><span class="cl"><span class="kr">inline</span> <span class="kt">void</span> <span class="nf">debug</span><span class="p">(</span><span class="k">const</span> <span class="kt">char</span><span class="o">*</span> <span class="n">fcn</span><span class="p">,</span> <span class="kt">int</span> <span class="n">p1</span><span class="p">,</span> <span class="kt">int</span> <span class="n">p2</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">fcn</span> <span class="o">&lt;&lt;</span> <span class="s">&#34; called with &#34;</span> <span class="o">&lt;&lt;</span> <span class="n">p1</span> <span class="o">&lt;&lt;</span> <span class="s">&#34; and &#34;</span> <span class="o">&lt;&lt;</span> <span class="n">p2</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div>
         </div>
     </div>
 
@@ -4770,19 +4777,19 @@ En revanche, pour de plus gros programmes, sachez que plus vous mettrez de chose
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/CPP_Learning/js/clipboard.min.js?1705262579"></script>
-    <script src="/CPP_Learning/js/perfect-scrollbar.min.js?1705262579"></script>
-    <script src="/CPP_Learning/js/perfect-scrollbar.jquery.min.js?1705262579"></script>
-    <script src="/CPP_Learning/js/jquery.sticky.js?1705262579"></script>
-    <script src="/CPP_Learning/js/featherlight.min.js?1705262579"></script>
-    <script src="/CPP_Learning/js/highlight.pack.js?1705262579"></script>
+    <script src="/CPP_Learning/js/clipboard.min.js?1705567864"></script>
+    <script src="/CPP_Learning/js/perfect-scrollbar.min.js?1705567864"></script>
+    <script src="/CPP_Learning/js/perfect-scrollbar.jquery.min.js?1705567864"></script>
+    <script src="/CPP_Learning/js/jquery.sticky.js?1705567864"></script>
+    <script src="/CPP_Learning/js/featherlight.min.js?1705567864"></script>
+    <script src="/CPP_Learning/js/highlight.pack.js?1705567864"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/CPP_Learning/js/modernizr.custom-3.6.0.js?1705262579"></script>
-    <script src="/CPP_Learning/js/learn.js?1705262579"></script>
-    <script src="/CPP_Learning/js/hugo-learn.js?1705262579"></script>
+    <script src="/CPP_Learning/js/modernizr.custom-3.6.0.js?1705567864"></script>
+    <script src="/CPP_Learning/js/learn.js?1705567864"></script>
+    <script src="/CPP_Learning/js/hugo-learn.js?1705567864"></script>
     
         
-            <script src="/CPP_Learning/mermaid/mermaid.js?1705262579"></script>
+            <script src="/CPP_Learning/mermaid/mermaid.js?1705567864"></script>
         
         <script>
             mermaid.initialize({ startOnLoad: true });

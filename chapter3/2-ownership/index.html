@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="Hugo 0.76.5" />
+    <meta name="generator" content="Hugo 0.121.0">
     <meta name="description" content="">
 
 
@@ -12,22 +12,22 @@
     <title>Ownership :: Cours de C&#43;&#43; - Niveau Master</title>
 
     
-    <link href="/CPP_Learning/css/nucleus.css?1705262579" rel="stylesheet">
-    <link href="/CPP_Learning/css/fontawesome-all.min.css?1705262579" rel="stylesheet">
-    <link href="/CPP_Learning/css/hybrid.css?1705262579" rel="stylesheet">
-    <link href="/CPP_Learning/css/featherlight.min.css?1705262579" rel="stylesheet">
-    <link href="/CPP_Learning/css/perfect-scrollbar.min.css?1705262579" rel="stylesheet">
-    <link href="/CPP_Learning/css/auto-complete.css?1705262579" rel="stylesheet">
-    <link href="/CPP_Learning/css/atom-one-dark-reasonable.css?1705262579" rel="stylesheet">
-    <link href="/CPP_Learning/css/theme.css?1705262579" rel="stylesheet">
-    <link href="/CPP_Learning/css/tabs.css?1705262579" rel="stylesheet">
-    <link href="/CPP_Learning/css/hugo-theme.css?1705262579" rel="stylesheet">
+    <link href="/CPP_Learning/css/nucleus.css?1705567863" rel="stylesheet">
+    <link href="/CPP_Learning/css/fontawesome-all.min.css?1705567863" rel="stylesheet">
+    <link href="/CPP_Learning/css/hybrid.css?1705567863" rel="stylesheet">
+    <link href="/CPP_Learning/css/featherlight.min.css?1705567863" rel="stylesheet">
+    <link href="/CPP_Learning/css/perfect-scrollbar.min.css?1705567863" rel="stylesheet">
+    <link href="/CPP_Learning/css/auto-complete.css?1705567863" rel="stylesheet">
+    <link href="/CPP_Learning/css/atom-one-dark-reasonable.css?1705567863" rel="stylesheet">
+    <link href="/CPP_Learning/css/theme.css?1705567863" rel="stylesheet">
+    <link href="/CPP_Learning/css/tabs.css?1705567863" rel="stylesheet">
+    <link href="/CPP_Learning/css/hugo-theme.css?1705567863" rel="stylesheet">
     
-    <link href="/CPP_Learning/css/theme-mine.css?1705262579" rel="stylesheet">
+    <link href="/CPP_Learning/css/theme-mine.css?1705567863" rel="stylesheet">
     
-    <link href="/CPP_Learning/css/syntax.css?1705262579" rel="stylesheet">
+    <link href="/CPP_Learning/css/syntax.css?1705567863" rel="stylesheet">
 
-    <script src="/CPP_Learning/js/jquery-3.3.1.min.js?1705262579"></script>
+    <script src="/CPP_Learning/js/jquery-3.3.1.min.js?1705567863"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -1953,42 +1953,42 @@
 <p>On dit qu&rsquo;un objet A est le <strong>propriétaire</strong>, ou le <strong>owner</strong>, d&rsquo;un objet B lorsque la destruction de A entraîne la destruction de B.<br>
 Dans l&rsquo;exercice précédent, on peut donc dire que <code>box</code> était propriétaire de <code>box._content</code>.</p>
 <p>Considérons un autre exemple :</p>
-<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">Box</span><span class="o">&gt;</span> <span class="n">boxes</span><span class="p">;</span>
-
-             <span class="n">boxes</span><span class="p">.</span><span class="n">emplace_back</span><span class="p">(</span><span class="s">&#34;gift1&#34;</span><span class="p">);</span>
-<span class="n">Box</span><span class="o">&amp;</span> <span class="n">gift2</span> <span class="o">=</span> <span class="n">boxes</span><span class="p">.</span><span class="n">emplace_back</span><span class="p">(</span><span class="s">&#34;gift2&#34;</span><span class="p">);</span>
-<span class="n">Box</span>  <span class="n">gift3</span> <span class="o">=</span> <span class="n">boxes</span><span class="p">.</span><span class="n">emplace_back</span><span class="p">(</span><span class="s">&#34;gift3&#34;</span><span class="p">);</span>
-</code></pre></div><p>Ici, le tableau <code>boxes</code> est le propriétaire des objets <code>boxes[0]</code>, <code>boxes[1]</code> et <code>boxes[2]</code>.
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">Box</span><span class="o">&gt;</span> <span class="n">boxes</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">             <span class="n">boxes</span><span class="p">.</span><span class="n">emplace_back</span><span class="p">(</span><span class="s">&#34;gift1&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="n">Box</span><span class="o">&amp;</span> <span class="n">gift2</span> <span class="o">=</span> <span class="n">boxes</span><span class="p">.</span><span class="n">emplace_back</span><span class="p">(</span><span class="s">&#34;gift2&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="n">Box</span>  <span class="n">gift3</span> <span class="o">=</span> <span class="n">boxes</span><span class="p">.</span><span class="n">emplace_back</span><span class="p">(</span><span class="s">&#34;gift3&#34;</span><span class="p">);</span>
+</span></span></code></pre></div><p>Ici, le tableau <code>boxes</code> est le propriétaire des objets <code>boxes[0]</code>, <code>boxes[1]</code> et <code>boxes[2]</code>.
 Il est également propriétaire de l&rsquo;objet <code>gift2</code>, puisqu&rsquo;il s&rsquo;agit d&rsquo;une référence sur <code>boxes[1]</code>.<br>
 En revanche, il n&rsquo;est pas propriétaire de <code>gift3</code>, car <code>gift3</code> est une copie de <code>boxes[2]</code>, et que la destruction de <code>boxes</code> n&rsquo;entrainera donc pas la destruction de <code>gift3</code>.</p>
 <p>Considérons un exemple supplémentaire :</p>
-<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="k">struct</span> <span class="nc">Content</span>
-<span class="p">{</span>
-    <span class="n">Content</span><span class="p">(</span><span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&amp;</span> <span class="n">name</span><span class="p">)</span>
-        <span class="o">:</span> <span class="n">name</span> <span class="p">{</span> <span class="n">name</span> <span class="p">}</span>
-    <span class="p">{}</span>
-
-    <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">name</span><span class="p">;</span>
-<span class="p">};</span>
-
-<span class="k">class</span> <span class="nc">Bag</span>
-<span class="p">{</span>
-<span class="k">public</span><span class="o">:</span>
-    <span class="n">Content</span><span class="o">&amp;</span> <span class="n">add</span><span class="p">(</span><span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&amp;</span> <span class="n">name</span><span class="p">)</span> <span class="p">{</span> <span class="k">return</span> <span class="n">_contents</span><span class="p">.</span><span class="n">emplace_back</span><span class="p">(</span><span class="n">name</span><span class="p">);</span> <span class="p">}</span>
-
-<span class="k">private</span><span class="o">:</span>
-    <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">Content</span><span class="o">&gt;</span> <span class="n">_contents</span><span class="p">;</span>
-<span class="p">};</span>
-
-<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
-<span class="p">{</span>
-    <span class="n">Bag</span> <span class="n">bag</span><span class="p">;</span>
-    <span class="n">bag</span><span class="p">.</span><span class="n">add</span><span class="p">(</span><span class="s">&#34;thing1&#34;</span><span class="p">);</span>
-    <span class="n">bag</span><span class="p">.</span><span class="n">add</span><span class="p">(</span><span class="s">&#34;thing2&#34;</span><span class="p">);</span>
-
-    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
-<span class="p">}</span>
-</code></pre></div><p>Dans le code ci-dessus, <code>bag._contents</code> est le propriétaire de <code>bag._contents[0]</code> et <code>bag._contents[1]</code>.
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="k">struct</span> <span class="nc">Content</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="n">Content</span><span class="p">(</span><span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&amp;</span> <span class="n">name</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="o">:</span> <span class="n">name</span> <span class="p">{</span> <span class="n">name</span> <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">name</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">};</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">Bag</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl"><span class="k">public</span><span class="o">:</span>
+</span></span><span class="line"><span class="cl">    <span class="n">Content</span><span class="o">&amp;</span> <span class="n">add</span><span class="p">(</span><span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&amp;</span> <span class="n">name</span><span class="p">)</span> <span class="p">{</span> <span class="k">return</span> <span class="n">_contents</span><span class="p">.</span><span class="n">emplace_back</span><span class="p">(</span><span class="n">name</span><span class="p">);</span> <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">private</span><span class="o">:</span>
+</span></span><span class="line"><span class="cl">    <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">Content</span><span class="o">&gt;</span> <span class="n">_contents</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">};</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="n">Bag</span> <span class="n">bag</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">bag</span><span class="p">.</span><span class="n">add</span><span class="p">(</span><span class="s">&#34;thing1&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="n">bag</span><span class="p">.</span><span class="n">add</span><span class="p">(</span><span class="s">&#34;thing2&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><p>Dans le code ci-dessus, <code>bag._contents</code> est le propriétaire de <code>bag._contents[0]</code> et <code>bag._contents[1]</code>.
 Aussi, <code>bag</code> est le propriétaire de <code>bag._contents</code>.</p>
 <p>La destruction de <code>bag</code> entraînera donc la destruction de <code>bag._contents</code>, qui elle-même entraînera la destruction de <code>bag._contents[0]</code> et <code>bag._contents[1]</code>.<br>
 La relation d&rsquo;ownership est donc une relation transitive.
@@ -3355,19 +3355,19 @@ En effet, les objets référencés pourraient être détruits à tout moment, et
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/CPP_Learning/js/clipboard.min.js?1705262579"></script>
-    <script src="/CPP_Learning/js/perfect-scrollbar.min.js?1705262579"></script>
-    <script src="/CPP_Learning/js/perfect-scrollbar.jquery.min.js?1705262579"></script>
-    <script src="/CPP_Learning/js/jquery.sticky.js?1705262579"></script>
-    <script src="/CPP_Learning/js/featherlight.min.js?1705262579"></script>
-    <script src="/CPP_Learning/js/highlight.pack.js?1705262579"></script>
+    <script src="/CPP_Learning/js/clipboard.min.js?1705567864"></script>
+    <script src="/CPP_Learning/js/perfect-scrollbar.min.js?1705567864"></script>
+    <script src="/CPP_Learning/js/perfect-scrollbar.jquery.min.js?1705567864"></script>
+    <script src="/CPP_Learning/js/jquery.sticky.js?1705567864"></script>
+    <script src="/CPP_Learning/js/featherlight.min.js?1705567864"></script>
+    <script src="/CPP_Learning/js/highlight.pack.js?1705567864"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/CPP_Learning/js/modernizr.custom-3.6.0.js?1705262579"></script>
-    <script src="/CPP_Learning/js/learn.js?1705262579"></script>
-    <script src="/CPP_Learning/js/hugo-learn.js?1705262579"></script>
+    <script src="/CPP_Learning/js/modernizr.custom-3.6.0.js?1705567864"></script>
+    <script src="/CPP_Learning/js/learn.js?1705567864"></script>
+    <script src="/CPP_Learning/js/hugo-learn.js?1705567864"></script>
     
         
-            <script src="/CPP_Learning/mermaid/mermaid.js?1705262579"></script>
+            <script src="/CPP_Learning/mermaid/mermaid.js?1705567864"></script>
         
         <script>
             mermaid.initialize({ startOnLoad: true });

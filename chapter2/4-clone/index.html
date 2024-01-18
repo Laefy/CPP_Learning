@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="Hugo 0.76.5" />
+    <meta name="generator" content="Hugo 0.121.0">
     <meta name="description" content="">
 
 
@@ -12,22 +12,22 @@
     <title>🧬 Clône :: Cours de C&#43;&#43; - Niveau Master</title>
 
     
-    <link href="/CPP_Learning/css/nucleus.css?1705262579" rel="stylesheet">
-    <link href="/CPP_Learning/css/fontawesome-all.min.css?1705262579" rel="stylesheet">
-    <link href="/CPP_Learning/css/hybrid.css?1705262579" rel="stylesheet">
-    <link href="/CPP_Learning/css/featherlight.min.css?1705262579" rel="stylesheet">
-    <link href="/CPP_Learning/css/perfect-scrollbar.min.css?1705262579" rel="stylesheet">
-    <link href="/CPP_Learning/css/auto-complete.css?1705262579" rel="stylesheet">
-    <link href="/CPP_Learning/css/atom-one-dark-reasonable.css?1705262579" rel="stylesheet">
-    <link href="/CPP_Learning/css/theme.css?1705262579" rel="stylesheet">
-    <link href="/CPP_Learning/css/tabs.css?1705262579" rel="stylesheet">
-    <link href="/CPP_Learning/css/hugo-theme.css?1705262579" rel="stylesheet">
+    <link href="/CPP_Learning/css/nucleus.css?1705567863" rel="stylesheet">
+    <link href="/CPP_Learning/css/fontawesome-all.min.css?1705567863" rel="stylesheet">
+    <link href="/CPP_Learning/css/hybrid.css?1705567863" rel="stylesheet">
+    <link href="/CPP_Learning/css/featherlight.min.css?1705567863" rel="stylesheet">
+    <link href="/CPP_Learning/css/perfect-scrollbar.min.css?1705567863" rel="stylesheet">
+    <link href="/CPP_Learning/css/auto-complete.css?1705567863" rel="stylesheet">
+    <link href="/CPP_Learning/css/atom-one-dark-reasonable.css?1705567863" rel="stylesheet">
+    <link href="/CPP_Learning/css/theme.css?1705567863" rel="stylesheet">
+    <link href="/CPP_Learning/css/tabs.css?1705567863" rel="stylesheet">
+    <link href="/CPP_Learning/css/hugo-theme.css?1705567863" rel="stylesheet">
     
-    <link href="/CPP_Learning/css/theme-mine.css?1705262579" rel="stylesheet">
+    <link href="/CPP_Learning/css/theme-mine.css?1705567863" rel="stylesheet">
     
-    <link href="/CPP_Learning/css/syntax.css?1705262579" rel="stylesheet">
+    <link href="/CPP_Learning/css/syntax.css?1705567863" rel="stylesheet">
 
-    <script src="/CPP_Learning/js/jquery-3.3.1.min.js?1705262579"></script>
+    <script src="/CPP_Learning/js/jquery-3.3.1.min.js?1705567863"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -1971,9 +1971,9 @@ Affichez ensuite le contenu de cet objet, en copiant-collant l&rsquo;instruction
     	</span>
     </div>
     <div class="expand-content" style="display: none;">
-        <div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="n">Person</span> <span class="n">copy</span> <span class="o">=</span> <span class="n">batman</span><span class="p">;</span>
-<span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;Person named &#39;&#34;</span> <span class="o">&lt;&lt;</span> <span class="n">copy</span><span class="p">.</span><span class="n">get_full_name</span><span class="p">()</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;&#39; is &#34;</span> <span class="o">&lt;&lt;</span> <span class="n">copy</span><span class="p">.</span><span class="n">get_age</span><span class="p">()</span> <span class="o">&lt;&lt;</span> <span class="s">&#34; years old.&#34;</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
-</code></pre></div>
+        <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="n">Person</span> <span class="n">copy</span> <span class="o">=</span> <span class="n">batman</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;Person named &#39;&#34;</span> <span class="o">&lt;&lt;</span> <span class="n">copy</span><span class="p">.</span><span class="n">get_full_name</span><span class="p">()</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;&#39; is &#34;</span> <span class="o">&lt;&lt;</span> <span class="n">copy</span><span class="p">.</span><span class="n">get_age</span><span class="p">()</span> <span class="o">&lt;&lt;</span> <span class="s">&#34; years old.&#34;</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+</span></span></code></pre></div>
     </div>
 </div>
 <p>Vous devriez obtenir le même résultat en sortie pour Batman et sa copie.</p>
@@ -1981,27 +1981,27 @@ Affichez ensuite le contenu de cet objet, en copiant-collant l&rsquo;instruction
 <p>Pour ce faire, vous allez devoir redéfinir votre propre constructeur de copie. Je dis &ldquo;redéfinir&rdquo;, car le compilateur (qui est gentil des fois) en a déjà défini un pour vous. Sans ça, l&rsquo;instruction <code>Person clone = batman;</code> n&rsquo;aurait pas pu compiler.</p>
 
 <div class="notices note" ><p>Le compilateur défini un constructeur de copie uniquement si vous n&rsquo;en définissez pas un vous-même, et que chacun des attributs de votre classe est <strong>copiable</strong> (= disposant d&rsquo;un constructeur de copie).<br>
-Dans ce cas, l'<strong>implémentation par défaut du constructeur de copie</strong> appelera pour chacun des attributs de la classe son propre constructeur de copie.</p>
+Dans ce cas, l&rsquo;<strong>implémentation par défaut du constructeur de copie</strong> appelera pour chacun des attributs de la classe son propre constructeur de copie.</p>
 </div>
 
 <p>Voici la syntaxe permettant de définir un constructeur de copie :</p>
-<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="k">class</span> <span class="nc">ClassName</span>
-<span class="p">{</span>
-<span class="k">public</span><span class="o">:</span>
-    <span class="n">ClassName</span><span class="p">(</span><span class="k">const</span> <span class="n">ClassName</span><span class="o">&amp;</span> <span class="n">other</span><span class="p">)</span>
-        <span class="o">:</span> <span class="n">_attribute_1</span> <span class="p">{</span> <span class="cm">/* probably other._attribute_1 */</span> <span class="p">}</span>
-        <span class="p">,</span> <span class="n">_attribute_2</span> <span class="p">{</span> <span class="cm">/* probably other._attribute_2 */</span> <span class="p">}</span>
-        <span class="p">,</span> <span class="p">...</span>
-    <span class="p">{</span>
-        <span class="c1">// some optional code
-</span><span class="c1"></span>    <span class="p">}</span>
-
-<span class="k">private</span><span class="o">:</span>
-    <span class="n">type</span> <span class="n">_attribute_1</span><span class="p">;</span>
-    <span class="n">type</span> <span class="n">_attribute_2</span><span class="p">;</span>
-    <span class="p">...</span>
-<span class="p">};</span>
-</code></pre></div><p>Au final, il s&rsquo;agit simplement d&rsquo;un constructeur à 1 paramètre, ce paramètre étant une const-ref sur la classe courante.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">ClassName</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl"><span class="k">public</span><span class="o">:</span>
+</span></span><span class="line"><span class="cl">    <span class="n">ClassName</span><span class="p">(</span><span class="k">const</span> <span class="n">ClassName</span><span class="o">&amp;</span> <span class="n">other</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="o">:</span> <span class="n">_attribute_1</span> <span class="p">{</span> <span class="cm">/* probably other._attribute_1 */</span> <span class="p">}</span>
+</span></span><span class="line"><span class="cl">        <span class="p">,</span> <span class="n">_attribute_2</span> <span class="p">{</span> <span class="cm">/* probably other._attribute_2 */</span> <span class="p">}</span>
+</span></span><span class="line"><span class="cl">        <span class="p">,</span> <span class="p">...</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="c1">// some optional code
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">private</span><span class="o">:</span>
+</span></span><span class="line"><span class="cl">    <span class="n">type</span> <span class="n">_attribute_1</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">type</span> <span class="n">_attribute_2</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">...</span>
+</span></span><span class="line"><span class="cl"><span class="p">};</span>
+</span></span></code></pre></div><p>Au final, il s&rsquo;agit simplement d&rsquo;un constructeur à 1 paramètre, ce paramètre étant une const-ref sur la classe courante.</p>
 <p>Essayez de définir un constructeur de copie pour la classe <code>Person</code>, qui effectue la copie de l&rsquo;ensemble des attributs de la classe.<br>
 Vérifiez que vous obtenez le même résultat que précédemment.</p>
 
@@ -2016,12 +2016,12 @@ Vérifiez que vous obtenez le même résultat que précédemment.</p>
     	</span>
     </div>
     <div class="expand-content" style="display: none;">
-        <div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="n">Person</span><span class="p">(</span><span class="k">const</span> <span class="n">Person</span><span class="o">&amp;</span> <span class="n">other</span><span class="p">)</span>
-    <span class="o">:</span> <span class="n">_name</span> <span class="p">{</span> <span class="n">other</span><span class="p">.</span><span class="n">_name</span> <span class="p">}</span>
-    <span class="p">,</span> <span class="n">_surname</span> <span class="p">{</span> <span class="n">other</span><span class="p">.</span><span class="n">_surname</span> <span class="p">}</span>
-    <span class="p">,</span> <span class="n">_age</span> <span class="p">{</span> <span class="n">other</span><span class="p">.</span><span class="n">_age</span> <span class="p">}</span>
-<span class="p">{}</span>
-</code></pre></div>
+        <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="n">Person</span><span class="p">(</span><span class="k">const</span> <span class="n">Person</span><span class="o">&amp;</span> <span class="n">other</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="o">:</span> <span class="n">_name</span> <span class="p">{</span> <span class="n">other</span><span class="p">.</span><span class="n">_name</span> <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="p">,</span> <span class="n">_surname</span> <span class="p">{</span> <span class="n">other</span><span class="p">.</span><span class="n">_surname</span> <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="p">,</span> <span class="n">_age</span> <span class="p">{</span> <span class="n">other</span><span class="p">.</span><span class="n">_age</span> <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">{}</span>
+</span></span></code></pre></div>
     </div>
 </div>
 <p>Supprimez l&rsquo;initialisation de l&rsquo;attribut <code>_age</code> de la liste d&rsquo;initialisation. De cette manière, le compilateur réalisera l&rsquo;initialisation de <code>_age</code> à partir de son class-initializer (c&rsquo;est-à-dire le <code>= 0u</code>).<br>
@@ -2038,23 +2038,23 @@ Testez le programme pour vous assurer que le clône a bien 0 an après son insta
     	</span>
     </div>
     <div class="expand-content" style="display: none;">
-        <div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="k">class</span> <span class="nc">Person</span>
-<span class="p">{</span>
-<span class="k">public</span><span class="o">:</span>
-    <span class="p">...</span>
-
-    <span class="n">Person</span><span class="p">(</span><span class="k">const</span> <span class="n">Person</span><span class="o">&amp;</span> <span class="n">other</span><span class="p">)</span>
-        <span class="o">:</span> <span class="n">_name</span> <span class="p">{</span> <span class="n">other</span><span class="p">.</span><span class="n">_name</span> <span class="p">}</span>
-        <span class="p">,</span> <span class="n">_surname</span> <span class="p">{</span> <span class="n">other</span><span class="p">.</span><span class="n">_surname</span> <span class="p">}</span>
-    <span class="p">{}</span>
-
-    <span class="p">...</span>
-
-<span class="k">private</span><span class="o">:</span>
-    <span class="p">...</span>
-    <span class="kt">unsigned</span> <span class="kt">int</span> <span class="n">_age</span> <span class="o">=</span> <span class="mi">0u</span><span class="p">;</span>
-<span class="p">}</span>
-</code></pre></div>
+        <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">Person</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl"><span class="k">public</span><span class="o">:</span>
+</span></span><span class="line"><span class="cl">    <span class="p">...</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="n">Person</span><span class="p">(</span><span class="k">const</span> <span class="n">Person</span><span class="o">&amp;</span> <span class="n">other</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="o">:</span> <span class="n">_name</span> <span class="p">{</span> <span class="n">other</span><span class="p">.</span><span class="n">_name</span> <span class="p">}</span>
+</span></span><span class="line"><span class="cl">        <span class="p">,</span> <span class="n">_surname</span> <span class="p">{</span> <span class="n">other</span><span class="p">.</span><span class="n">_surname</span> <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="p">...</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">private</span><span class="o">:</span>
+</span></span><span class="line"><span class="cl">    <span class="p">...</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">unsigned</span> <span class="kt">int</span> <span class="n">_age</span> <span class="o">=</span> <span class="mi">0u</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div>
     </div>
 </div>
 <hr>
@@ -2064,22 +2064,22 @@ Testez le programme pour vous assurer que le clône a bien 0 an après son insta
 <p><strong>Qu&rsquo;est-ce qu&rsquo;un opérateur ?</strong><br>
 C&rsquo;est simplement une fonction avec un nom bizarre : <code>operator¤</code>, et pouvant être appelée en utilisant <code>¤</code> au lieu des parenthèses <code>()</code>.<br>
 Supposons une classe <code>SomeClass</code>, avec un seul attribut <code>value</code> de type <code>int</code>. On peut alors définir un opérateur binaire <code>+</code> et l&rsquo;utiliser de la manière suivante :</p>
-<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="c1">// Definition
-</span><span class="c1"></span><span class="kt">int</span> <span class="k">operator</span><span class="o">+</span><span class="p">(</span><span class="k">const</span> <span class="n">SomeClass</span><span class="o">&amp;</span> <span class="n">p1</span><span class="p">,</span> <span class="k">const</span> <span class="n">SomeClass</span><span class="o">&amp;</span> <span class="n">p2</span><span class="p">)</span>
-<span class="p">{</span>
-    <span class="k">return</span> <span class="n">p1</span><span class="p">.</span><span class="n">value</span> <span class="o">+</span> <span class="n">p2</span><span class="p">.</span><span class="n">value</span><span class="p">;</span>
-<span class="p">}</span>
-
-<span class="c1">// Call
-</span><span class="c1"></span><span class="n">SomeClass</span> <span class="n">c1</span> <span class="p">{</span> <span class="mi">3</span> <span class="p">};</span>
-<span class="n">SomeClass</span> <span class="n">c2</span> <span class="p">{</span> <span class="mi">6</span> <span class="p">};</span>
-<span class="kt">int</span> <span class="n">res</span> <span class="o">=</span> <span class="n">c1</span> <span class="o">+</span> <span class="n">c2</span><span class="p">;</span> <span class="c1">// -&gt; 9
-</span></code></pre></div><p><strong>C&rsquo;est quoi une surcharge ?</strong><br>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="c1">// Definition
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kt">int</span> <span class="k">operator</span><span class="o">+</span><span class="p">(</span><span class="k">const</span> <span class="n">SomeClass</span><span class="o">&amp;</span> <span class="n">p1</span><span class="p">,</span> <span class="k">const</span> <span class="n">SomeClass</span><span class="o">&amp;</span> <span class="n">p2</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">p1</span><span class="p">.</span><span class="n">value</span> <span class="o">+</span> <span class="n">p2</span><span class="p">.</span><span class="n">value</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">// Call
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">SomeClass</span> <span class="n">c1</span> <span class="p">{</span> <span class="mi">3</span> <span class="p">};</span>
+</span></span><span class="line"><span class="cl"><span class="n">SomeClass</span> <span class="n">c2</span> <span class="p">{</span> <span class="mi">6</span> <span class="p">};</span>
+</span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="n">res</span> <span class="o">=</span> <span class="n">c1</span> <span class="o">+</span> <span class="n">c2</span><span class="p">;</span> <span class="c1">// -&gt; 9
+</span></span></span></code></pre></div><p><strong>C&rsquo;est quoi une surcharge ?</strong><br>
 En C++, on peut définir des fonctions qui ont le même nom, du moment qu&rsquo;elles ne prennent pas le même nombre de paramètres, ou bien que ces paramètres sont de types différents. Il s&rsquo;agit du mécanisme de <strong>surcharge</strong> de fonctions.</p>
 <p>L&rsquo;opérateur <code>&lt;&lt;</code> a déjà été défini, puisque vous l&rsquo;avez utilisé afin d&rsquo;afficher des <code>string</code> et des <code>int</code> dans le flux <code>cout</code>.<br>
 Votre objectif est de surcharger cet opérateur, de manière à pouvoir écrire :</p>
-<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">batman</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
-</code></pre></div><p>Votre surcharge acceptera deux paramètres, car <code>&lt;&lt;</code> est un opérateur binaire :<br>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">batman</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+</span></span></code></pre></div><p>Votre surcharge acceptera deux paramètres, car <code>&lt;&lt;</code> est un opérateur binaire :<br>
 - le premier doit être du même type que <code>std::cout</code>. Recherchez dans la documentation de la librairie standard le type de cette variable.<br>
 - le second doit être du même type que <code>batman</code>, c&rsquo;est-à-dire de type <code>Person</code>.<br>
 Pour le type de retour, vous devez utiliser <code>std::ostream&amp;</code>, car c&rsquo;est ce qui vous permet de concaténer plusieurs <code>&lt;&lt;</code> dans la même instruction.</p>
@@ -2096,8 +2096,8 @@ Pour le type de retour, vous devez utiliser <code>std::ostream&amp;</code>, car 
     	</span>
     </div>
     <div class="expand-content" style="display: none;">
-        <div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="n">std</span><span class="o">::</span><span class="n">ostream</span><span class="o">&amp;</span> <span class="k">operator</span><span class="o">&lt;&lt;</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">ostream</span><span class="o">&amp;</span> <span class="n">stream</span><span class="p">,</span> <span class="k">const</span> <span class="n">Person</span><span class="o">&amp;</span> <span class="n">person</span><span class="p">)</span>
-</code></pre></div>
+        <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="n">std</span><span class="o">::</span><span class="n">ostream</span><span class="o">&amp;</span> <span class="k">operator</span><span class="o">&lt;&lt;</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">ostream</span><span class="o">&amp;</span> <span class="n">stream</span><span class="p">,</span> <span class="k">const</span> <span class="n">Person</span><span class="o">&amp;</span> <span class="n">person</span><span class="p">)</span>
+</span></span></code></pre></div>
     </div>
 </div></p>
 <p>Définissez le code de cette fonction entre la classe <code>Person</code> et la fonction <code>main</code>. Vous pouvez utiliser le premier argument comme valeur de retour.</p>
@@ -2113,11 +2113,11 @@ Pour le type de retour, vous devez utiliser <code>std::ostream&amp;</code>, car 
     	</span>
     </div>
     <div class="expand-content" style="display: none;">
-        <div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="n">std</span><span class="o">::</span><span class="n">ostream</span><span class="o">&amp;</span> <span class="k">operator</span><span class="o">&lt;&lt;</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">ostream</span><span class="o">&amp;</span> <span class="n">stream</span><span class="p">,</span> <span class="k">const</span> <span class="n">Person</span><span class="o">&amp;</span> <span class="n">person</span><span class="p">)</span>
-<span class="p">{</span>
-    <span class="k">return</span> <span class="n">stream</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;Person named &#39;&#34;</span> <span class="o">&lt;&lt;</span> <span class="n">person</span><span class="p">.</span><span class="n">get_full_name</span><span class="p">()</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;&#39; is &#34;</span> <span class="o">&lt;&lt;</span> <span class="n">person</span><span class="p">.</span><span class="n">get_age</span><span class="p">()</span> <span class="o">&lt;&lt;</span> <span class="s">&#34; years old.&#34;</span><span class="p">;</span>
-<span class="p">}</span>
-</code></pre></div><div class="notices note" ><p>Afin de pouvoir être utilisé en série, l&rsquo;opérateur <code>&lt;&lt;</code> est toujours supposé retourner son premier paramètre. Le résultat de <code>(stream &lt;&lt; ... &lt;&lt; ... )</code> devrait donc être <code>stream</code>. Il est donc possible (mais pas nécessaire) d&rsquo;écrire <code>return stream &lt;&lt; ... &lt;&lt; ...;</code> directement, au lieu de faire le <code>return stream;</code> sur une ligne séparée.</p>
+        <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="n">std</span><span class="o">::</span><span class="n">ostream</span><span class="o">&amp;</span> <span class="k">operator</span><span class="o">&lt;&lt;</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">ostream</span><span class="o">&amp;</span> <span class="n">stream</span><span class="p">,</span> <span class="k">const</span> <span class="n">Person</span><span class="o">&amp;</span> <span class="n">person</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">stream</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;Person named &#39;&#34;</span> <span class="o">&lt;&lt;</span> <span class="n">person</span><span class="p">.</span><span class="n">get_full_name</span><span class="p">()</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;&#39; is &#34;</span> <span class="o">&lt;&lt;</span> <span class="n">person</span><span class="p">.</span><span class="n">get_age</span><span class="p">()</span> <span class="o">&lt;&lt;</span> <span class="s">&#34; years old.&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><div class="notices note" ><p>Afin de pouvoir être utilisé en série, l&rsquo;opérateur <code>&lt;&lt;</code> est toujours supposé retourner son premier paramètre. Le résultat de <code>(stream &lt;&lt; ... &lt;&lt; ... )</code> devrait donc être <code>stream</code>. Il est donc possible (mais pas nécessaire) d&rsquo;écrire <code>return stream &lt;&lt; ... &lt;&lt; ...;</code> directement, au lieu de faire le <code>return stream;</code> sur une ligne séparée.</p>
 </div>
 
     </div>
@@ -2135,13 +2135,13 @@ Pour le type de retour, vous devez utiliser <code>std::ostream&amp;</code>, car 
     	</span>
     </div>
     <div class="expand-content" style="display: none;">
-        <div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="n">Person</span> <span class="n">batman</span> <span class="p">{</span> <span class="s">&#34;Bruce&#34;</span><span class="p">,</span> <span class="s">&#34;Wayne&#34;</span> <span class="p">};</span>
-<span class="n">batman</span><span class="p">.</span><span class="n">wait</span><span class="p">(</span><span class="mi">23</span><span class="p">);</span>
-<span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">batman</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
-
-<span class="n">Person</span> <span class="n">clone</span> <span class="o">=</span> <span class="n">batman</span><span class="p">;</span>
-<span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">clone</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
-</code></pre></div>
+        <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="n">Person</span> <span class="n">batman</span> <span class="p">{</span> <span class="s">&#34;Bruce&#34;</span><span class="p">,</span> <span class="s">&#34;Wayne&#34;</span> <span class="p">};</span>
+</span></span><span class="line"><span class="cl"><span class="n">batman</span><span class="p">.</span><span class="n">wait</span><span class="p">(</span><span class="mi">23</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">batman</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">Person</span> <span class="n">clone</span> <span class="o">=</span> <span class="n">batman</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">clone</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+</span></span></code></pre></div>
     </div>
 </div>
 <hr>
@@ -2149,12 +2149,12 @@ Pour le type de retour, vous devez utiliser <code>std::ostream&amp;</code>, car 
 <p>Lorsqu&rsquo;on rédéfinit le constructeur de copie, il est souvent nécessaire de redéfinir également l&rsquo;opérateur d&rsquo;assignation.<br>
 &ldquo;Redéfinir&rdquo;, car ici encore, le compilateur fournit une implémentation par défaut de cette fonction.</p>
 <p>Ajoutez le code suivant à votre <code>main</code>:</p>
-<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="n">Person</span> <span class="n">assigned_clone</span> <span class="p">{</span> <span class="s">&#34;Batman&#34;</span><span class="p">,</span> <span class="s">&#34;2&#34;</span> <span class="p">};</span>
-<span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">assigned_clone</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
-
-<span class="n">assigned_clone</span> <span class="o">=</span> <span class="n">batman</span><span class="p">;</span>
-<span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">assigned_clone</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
-</code></pre></div><p>Si vous essayez de compiler, vous devriez constater que ça ne fonctionne pas&hellip;<br>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="n">Person</span> <span class="n">assigned_clone</span> <span class="p">{</span> <span class="s">&#34;Batman&#34;</span><span class="p">,</span> <span class="s">&#34;2&#34;</span> <span class="p">};</span>
+</span></span><span class="line"><span class="cl"><span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">assigned_clone</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">assigned_clone</span> <span class="o">=</span> <span class="n">batman</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">assigned_clone</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+</span></span></code></pre></div><p>Si vous essayez de compiler, vous devriez constater que ça ne fonctionne pas&hellip;<br>
 Rappelez-vous, nous avions modifié les variables membres <code>_name</code> et <code>_surname</code> afin d&rsquo;indiquer qu&rsquo;elles étaient constantes.<br>
 Puisque l&rsquo;on veut maintenant avoir la possibilité de réassigner le contenu d&rsquo;une personne, il faut commencer par retirer les const sur ses variables membre.</p>
 
@@ -2165,21 +2165,21 @@ C&rsquo;est seulement au moment où le besoin évolue (ici, on décide que l&rsq
 
 <p>Recompilez et lancez le programme. Vous devriez constater que l&rsquo;âge de <code>assigned_clone</code> est de 23 ans.</p>
 <p>Pour être cohérent avec ce que nous avons fait précédemment, nous allons dire que l&rsquo;âge d&rsquo;une instance de <code>Person</code> n&rsquo;est pas modifiée au moment de sa réassignation.<br>
-Seul son nom change. 
-Puisque l'<strong>implémentation par défaut de l&rsquo;opérateur d&rsquo;assignation</strong> modifie l&rsquo;âge de notre instance, nous allons le redéfinir.</p>
+Seul son nom change.
+Puisque l&rsquo;<strong>implémentation par défaut de l&rsquo;opérateur d&rsquo;assignation</strong> modifie l&rsquo;âge de notre instance, nous allons le redéfinir.</p>
 <p>Voici le code permettant de redéfinir l&rsquo;opérateur d&rsquo;assignation d&rsquo;une classe :</p>
-<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="n">ClassName</span><span class="o">&amp;</span> <span class="k">operator</span><span class="o">=</span><span class="p">(</span><span class="k">const</span> <span class="n">ClassName</span><span class="o">&amp;</span> <span class="n">other</span><span class="p">)</span>
-<span class="p">{</span>
-    <span class="k">if</span> <span class="p">(</span><span class="k">this</span> <span class="o">!=</span> <span class="o">&amp;</span><span class="n">other</span><span class="p">)</span>
-    <span class="p">{</span>
-        <span class="n">_attribute_1</span> <span class="o">=</span> <span class="cm">/* probably other._attribute_1; */</span>
-        <span class="n">_attribute_2</span> <span class="o">=</span> <span class="cm">/* probably other._attribute_2; */</span>
-        <span class="p">...</span>
-    <span class="p">}</span>
-
-    <span class="k">return</span> <span class="o">*</span><span class="k">this</span><span class="p">;</span>
-<span class="p">}</span>
-</code></pre></div><p><strong>Qui est <code>this</code> ?</strong><br>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="n">ClassName</span><span class="o">&amp;</span> <span class="k">operator</span><span class="o">=</span><span class="p">(</span><span class="k">const</span> <span class="n">ClassName</span><span class="o">&amp;</span> <span class="n">other</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="p">(</span><span class="k">this</span> <span class="o">!=</span> <span class="o">&amp;</span><span class="n">other</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="n">_attribute_1</span> <span class="o">=</span> <span class="cm">/* probably other._attribute_1; */</span>
+</span></span><span class="line"><span class="cl">        <span class="n">_attribute_2</span> <span class="o">=</span> <span class="cm">/* probably other._attribute_2; */</span>
+</span></span><span class="line"><span class="cl">        <span class="p">...</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="o">*</span><span class="k">this</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><p><strong>Qui est <code>this</code> ?</strong><br>
 Comme en Java, <code>this</code> fait référence à l&rsquo;instance courante de la classe. Attention cependant, en C++, <code>this</code> est un pointeur. C&rsquo;est d&rsquo;ailleurs pour cela qu&rsquo;on renvoie <code>*this</code> et non <code>this</code>.</p>
 <p><strong>Pourquoi la comparaison entre <code>this</code> et <code>&amp;other</code> ?</strong><br>
 Il est très important de réaliser cette comparaison, en particulier dans le cas ou l&rsquo;un des attributs de la classe est un objet alloué dynamiquement.<br>
@@ -2198,17 +2198,17 @@ C&rsquo;est comme ça qu&rsquo;on se retrouve avec des fuites de mémoire et un 
     	</span>
     </div>
     <div class="expand-content" style="display: none;">
-        <div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="n">Person</span><span class="o">&amp;</span> <span class="k">operator</span><span class="o">=</span><span class="p">(</span><span class="k">const</span> <span class="n">Person</span><span class="o">&amp;</span> <span class="n">other</span><span class="p">)</span>
-<span class="p">{</span>
-    <span class="k">if</span> <span class="p">(</span><span class="k">this</span> <span class="o">!=</span> <span class="o">&amp;</span><span class="n">other</span><span class="p">)</span>
-    <span class="p">{</span>
-        <span class="n">_name</span> <span class="o">=</span> <span class="n">other</span><span class="p">.</span><span class="n">_name</span><span class="p">;</span>
-        <span class="n">_surname</span> <span class="o">=</span> <span class="n">other</span><span class="p">.</span><span class="n">_surname</span><span class="p">;</span>
-    <span class="p">}</span>
-
-    <span class="k">return</span> <span class="o">*</span><span class="k">this</span><span class="p">;</span>
-<span class="p">}</span>
-</code></pre></div>
+        <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="n">Person</span><span class="o">&amp;</span> <span class="k">operator</span><span class="o">=</span><span class="p">(</span><span class="k">const</span> <span class="n">Person</span><span class="o">&amp;</span> <span class="n">other</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="p">(</span><span class="k">this</span> <span class="o">!=</span> <span class="o">&amp;</span><span class="n">other</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="n">_name</span> <span class="o">=</span> <span class="n">other</span><span class="p">.</span><span class="n">_name</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="n">_surname</span> <span class="o">=</span> <span class="n">other</span><span class="p">.</span><span class="n">_surname</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="o">*</span><span class="k">this</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div>
     </div>
 </div>
 
@@ -3512,19 +3512,19 @@ C&rsquo;est comme ça qu&rsquo;on se retrouve avec des fuites de mémoire et un 
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/CPP_Learning/js/clipboard.min.js?1705262579"></script>
-    <script src="/CPP_Learning/js/perfect-scrollbar.min.js?1705262579"></script>
-    <script src="/CPP_Learning/js/perfect-scrollbar.jquery.min.js?1705262579"></script>
-    <script src="/CPP_Learning/js/jquery.sticky.js?1705262579"></script>
-    <script src="/CPP_Learning/js/featherlight.min.js?1705262579"></script>
-    <script src="/CPP_Learning/js/highlight.pack.js?1705262579"></script>
+    <script src="/CPP_Learning/js/clipboard.min.js?1705567864"></script>
+    <script src="/CPP_Learning/js/perfect-scrollbar.min.js?1705567864"></script>
+    <script src="/CPP_Learning/js/perfect-scrollbar.jquery.min.js?1705567864"></script>
+    <script src="/CPP_Learning/js/jquery.sticky.js?1705567864"></script>
+    <script src="/CPP_Learning/js/featherlight.min.js?1705567864"></script>
+    <script src="/CPP_Learning/js/highlight.pack.js?1705567864"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/CPP_Learning/js/modernizr.custom-3.6.0.js?1705262579"></script>
-    <script src="/CPP_Learning/js/learn.js?1705262579"></script>
-    <script src="/CPP_Learning/js/hugo-learn.js?1705262579"></script>
+    <script src="/CPP_Learning/js/modernizr.custom-3.6.0.js?1705567864"></script>
+    <script src="/CPP_Learning/js/learn.js?1705567864"></script>
+    <script src="/CPP_Learning/js/hugo-learn.js?1705567864"></script>
     
         
-            <script src="/CPP_Learning/mermaid/mermaid.js?1705262579"></script>
+            <script src="/CPP_Learning/mermaid/mermaid.js?1705567864"></script>
         
         <script>
             mermaid.initialize({ startOnLoad: true });

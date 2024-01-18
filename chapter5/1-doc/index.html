@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="Hugo 0.76.5" />
+    <meta name="generator" content="Hugo 0.121.0">
     <meta name="description" content="">
 
 
@@ -12,22 +12,22 @@
     <title>Un peu de doc... :: Cours de C&#43;&#43; - Niveau Master</title>
 
     
-    <link href="/CPP_Learning/css/nucleus.css?1705262579" rel="stylesheet">
-    <link href="/CPP_Learning/css/fontawesome-all.min.css?1705262579" rel="stylesheet">
-    <link href="/CPP_Learning/css/hybrid.css?1705262579" rel="stylesheet">
-    <link href="/CPP_Learning/css/featherlight.min.css?1705262579" rel="stylesheet">
-    <link href="/CPP_Learning/css/perfect-scrollbar.min.css?1705262579" rel="stylesheet">
-    <link href="/CPP_Learning/css/auto-complete.css?1705262579" rel="stylesheet">
-    <link href="/CPP_Learning/css/atom-one-dark-reasonable.css?1705262579" rel="stylesheet">
-    <link href="/CPP_Learning/css/theme.css?1705262579" rel="stylesheet">
-    <link href="/CPP_Learning/css/tabs.css?1705262579" rel="stylesheet">
-    <link href="/CPP_Learning/css/hugo-theme.css?1705262579" rel="stylesheet">
+    <link href="/CPP_Learning/css/nucleus.css?1705567864" rel="stylesheet">
+    <link href="/CPP_Learning/css/fontawesome-all.min.css?1705567864" rel="stylesheet">
+    <link href="/CPP_Learning/css/hybrid.css?1705567864" rel="stylesheet">
+    <link href="/CPP_Learning/css/featherlight.min.css?1705567864" rel="stylesheet">
+    <link href="/CPP_Learning/css/perfect-scrollbar.min.css?1705567864" rel="stylesheet">
+    <link href="/CPP_Learning/css/auto-complete.css?1705567864" rel="stylesheet">
+    <link href="/CPP_Learning/css/atom-one-dark-reasonable.css?1705567864" rel="stylesheet">
+    <link href="/CPP_Learning/css/theme.css?1705567864" rel="stylesheet">
+    <link href="/CPP_Learning/css/tabs.css?1705567864" rel="stylesheet">
+    <link href="/CPP_Learning/css/hugo-theme.css?1705567864" rel="stylesheet">
     
-    <link href="/CPP_Learning/css/theme-mine.css?1705262579" rel="stylesheet">
+    <link href="/CPP_Learning/css/theme-mine.css?1705567864" rel="stylesheet">
     
-    <link href="/CPP_Learning/css/syntax.css?1705262579" rel="stylesheet">
+    <link href="/CPP_Learning/css/syntax.css?1705567864" rel="stylesheet">
 
-    <script src="/CPP_Learning/js/jquery-3.3.1.min.js?1705262579"></script>
+    <script src="/CPP_Learning/js/jquery-3.3.1.min.js?1705567864"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -1975,7 +1975,7 @@ Une phrase décrit ensuite brièvement le rôle de la classe : on nous dit par e
 <p><img src="/CPP_Learning/images/chapter5/doc-vector-params.png" alt=""></p>
 <p>Les paramètres de templates correspondent aux éléments que vous devez indiquer dans les <code>&lt;...&gt;</code> de <code>vector</code>. Ces éléments doivent parfois respecter des contraintes, et cette section de la documentation permet d&rsquo;en prendre connaissance.</p>
 <p>On peut ici voir que pour utiliser un <code>vector&lt;T&gt;</code> avec une version inférieure à C++11, il faut que <code>T</code> soit constructible par copie (= contructeur de copie disponible) et assignable par copie (= opérateur d&rsquo;assignation par copie disponible).</p>
-<p><strong>Qu&rsquo;en est-il d'<code>Allocator</code> ? Pourquoi n&rsquo;avons nous pas eu à fournir de valeur pour ce paramètre à <code>vector</code> ?</strong><br>
+<p><strong>Qu&rsquo;en est-il d&rsquo;<code>Allocator</code> ? Pourquoi n&rsquo;avons nous pas eu à fournir de valeur pour ce paramètre à <code>vector</code> ?</strong><br>
 Nous n&rsquo;étudierons pas dans ce cours le rôle du paramètre <code>Allocator</code>. Cependant, sachez que si vous avez pu écrire <code>vector&lt;int&gt;</code> plutôt que <code>vector&lt;int, allocator&gt;</code> jusqu&rsquo;ici, c&rsquo;est parce que ce paramètre a une valeur par défaut. Pour connaître la valeur par défaut éventuelle d&rsquo;un paramètre de template, vous pouvez retourner voir <a href="./#1-en-t%C3%AAte">l&rsquo;en-tête</a> de la page.</p>
 <p>Juste après les paramètres, vous trouvez des informations sur les éventuelles spécialisations de la classe.<br>
 Une spécialisation est une version un peu modifiée de la classe, qui sera utilisée à la place de la version de base si on lui donne  des paramètres de template particuliers.<br>
@@ -1984,31 +1984,31 @@ Sur cette page, on vous dit que si vous utilisez des <code>vector&lt;bool&gt;</c
 <p>On trouve ensuite la liste des fonctions qui, lorsqu&rsquo;elles sont appelées, invalident les itérateurs.
 <img src="/CPP_Learning/images/chapter5/doc-vector-it.png" alt=""></p>
 <p>Prenons l&rsquo;exemple suivant :</p>
-<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">values</span> <span class="p">{</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span> <span class="p">};</span>
-
-<span class="k">auto</span> <span class="n">begin_it</span> <span class="o">=</span> <span class="n">values</span><span class="p">.</span><span class="n">begin</span><span class="p">();</span>         <span class="c1">// &lt;- begin retourne un itérateur pointeur sur le premier élément du tableau.
-</span><span class="c1"></span><span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="o">*</span><span class="n">begin_it</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>    <span class="c1">// &lt;- *begin_it permet d&#39;accéder à l&#39;élément pointé par begin_it, donc affiche 0.
-</span><span class="c1"></span>
-<span class="n">values</span><span class="p">.</span><span class="n">emplace_back</span><span class="p">(</span><span class="mi">3</span><span class="p">);</span>                 <span class="c1">// &lt;- d&#39;après la documentation, emplace_back invalide tous les itérateurs.
-</span><span class="c1"></span><span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="o">*</span><span class="n">begin_it</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>    <span class="c1">// &lt;- il est donc invalide d&#39;utiliser begin_it dans cette instruction.
-</span></code></pre></div><p>En effet, comme <code>emplace_back()</code> peut provoquer des réallocations mémoires, le bloc mémoire sur lequel l&rsquo;itérateur pointait peut avoir été libéré.
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">values</span> <span class="p">{</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span> <span class="p">};</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">auto</span> <span class="n">begin_it</span> <span class="o">=</span> <span class="n">values</span><span class="p">.</span><span class="n">begin</span><span class="p">();</span>         <span class="c1">// &lt;- begin retourne un itérateur pointeur sur le premier élément du tableau.
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="o">*</span><span class="n">begin_it</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>    <span class="c1">// &lt;- *begin_it permet d&#39;accéder à l&#39;élément pointé par begin_it, donc affiche 0.
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl"><span class="n">values</span><span class="p">.</span><span class="n">emplace_back</span><span class="p">(</span><span class="mi">3</span><span class="p">);</span>                 <span class="c1">// &lt;- d&#39;après la documentation, emplace_back invalide tous les itérateurs.
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="o">*</span><span class="n">begin_it</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>    <span class="c1">// &lt;- il est donc invalide d&#39;utiliser begin_it dans cette instruction.
+</span></span></span></code></pre></div><p>En effet, comme <code>emplace_back()</code> peut provoquer des réallocations mémoires, le bloc mémoire sur lequel l&rsquo;itérateur pointait peut avoir été libéré.
 Il n&rsquo;est donc plus valide d&rsquo;utiliser l&rsquo;itérateur, et c&rsquo;est ce que la documentation nous indique ici.</p>
 <p>Plus généralement, lorsqu&rsquo;un itérateur est invalidé, ce n&rsquo;est pas seulement l&rsquo;accès au contenu de l&rsquo;itérateur qui doit être évité, mais toutes les opérations qui peuvent être exécutée dessus.
 Seule la réassignation de l&rsquo;itérateur est possible.</p>
-<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">values</span> <span class="p">{</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span> <span class="p">};</span>
-
-<span class="k">auto</span> <span class="n">it0</span> <span class="o">=</span> <span class="n">values</span><span class="p">.</span><span class="n">begin</span><span class="p">();</span>   <span class="c1">// 0
-</span><span class="c1"></span><span class="k">auto</span> <span class="n">it1</span> <span class="o">=</span> <span class="n">it0</span> <span class="o">+</span> <span class="mi">1</span><span class="p">;</span>          <span class="c1">// 1
-</span><span class="c1"></span><span class="k">auto</span> <span class="n">it2</span> <span class="o">=</span> <span class="n">it1</span> <span class="o">+</span> <span class="mi">1</span><span class="p">;</span>          <span class="c1">// 2
-</span><span class="c1"></span>
-<span class="n">values</span><span class="p">.</span><span class="n">erase</span><span class="p">(</span><span class="n">it1</span><span class="p">);</span>           <span class="c1">// &lt;- invalide it_1 et it_2 mais pas it_0
-</span><span class="c1"></span><span class="k">auto</span> <span class="n">v1</span>  <span class="o">=</span> <span class="o">*</span><span class="n">it1</span><span class="p">;</span>             <span class="c1">// INVALIDE car on utilise it1
-</span><span class="c1"></span><span class="k">auto</span> <span class="n">it3</span> <span class="o">=</span> <span class="n">it2</span> <span class="o">+</span> <span class="mi">1</span><span class="p">;</span>          <span class="c1">// INVALIDE car on utilise it2
-</span><span class="c1"></span><span class="o">++</span><span class="n">it2</span><span class="p">;</span>                       <span class="c1">// INVALIDE car on utilise it2
-</span><span class="c1"></span>
-<span class="n">it2</span> <span class="o">=</span> <span class="n">it0</span> <span class="o">+</span> <span class="mi">2</span><span class="p">;</span>               <span class="c1">// OK car it0 est toujours valide et on réassigne it2 (qui est maintenant valide également)
-</span><span class="c1"></span><span class="k">auto</span> <span class="n">v2</span> <span class="o">=</span> <span class="o">*</span><span class="n">it2</span><span class="p">;</span>              <span class="c1">// OK car it2 est valide depuis l&#39;instruction précédente.
-</span></code></pre></div>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">values</span> <span class="p">{</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span> <span class="p">};</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">auto</span> <span class="n">it0</span> <span class="o">=</span> <span class="n">values</span><span class="p">.</span><span class="n">begin</span><span class="p">();</span>   <span class="c1">// 0
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">auto</span> <span class="n">it1</span> <span class="o">=</span> <span class="n">it0</span> <span class="o">+</span> <span class="mi">1</span><span class="p">;</span>          <span class="c1">// 1
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">auto</span> <span class="n">it2</span> <span class="o">=</span> <span class="n">it1</span> <span class="o">+</span> <span class="mi">1</span><span class="p">;</span>          <span class="c1">// 2
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl"><span class="n">values</span><span class="p">.</span><span class="n">erase</span><span class="p">(</span><span class="n">it1</span><span class="p">);</span>           <span class="c1">// &lt;- invalide it_1 et it_2 mais pas it_0
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">auto</span> <span class="n">v1</span>  <span class="o">=</span> <span class="o">*</span><span class="n">it1</span><span class="p">;</span>             <span class="c1">// INVALIDE car on utilise it1
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">auto</span> <span class="n">it3</span> <span class="o">=</span> <span class="n">it2</span> <span class="o">+</span> <span class="mi">1</span><span class="p">;</span>          <span class="c1">// INVALIDE car on utilise it2
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="o">++</span><span class="n">it2</span><span class="p">;</span>                       <span class="c1">// INVALIDE car on utilise it2
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl"><span class="n">it2</span> <span class="o">=</span> <span class="n">it0</span> <span class="o">+</span> <span class="mi">2</span><span class="p">;</span>               <span class="c1">// OK car it0 est toujours valide et on réassigne it2 (qui est maintenant valide également)
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">auto</span> <span class="n">v2</span> <span class="o">=</span> <span class="o">*</span><span class="n">it2</span><span class="p">;</span>              <span class="c1">// OK car it2 est valide depuis l&#39;instruction précédente.
+</span></span></span></code></pre></div>
 <div class="notices warning" ><p>Sachez que si vous êtes en train de parcourir un conteneur au moyen d&rsquo;une boucle <strong>foreach</strong>, vous ne devez utiliser aucune fonction pouvant invalider l&rsquo;itérateur <code>end()</code>.<br>
 Dans le cas du <code>vector</code>, si vous regardez le tableau, cela élimine donc toutes les fonctions qui ne sont pas des opérations de lecture seule.</p>
 </div>
@@ -2036,10 +2036,10 @@ Vous pouvez par exemple voir qu&rsquo;initialement, <code>emplace_back</code> ne
 <p><img src="/CPP_Learning/images/chapter5/doc-fcn-params.png" alt=""></p>
 <p>Vous trouvez ici pour chaque paramètre attendu par la fonction, ce que celle-ci compte en faire. Notez par exemple que dans le cas de <code>emplace_back</code>, les arguments sont directement transmis au constructeur de l&rsquo;élément à insérer.<br>
 Si vous avez une classe <code>Person</code> dont le constructeur attend un prénom et un nom, vous pouvez donc écrire le code suivant :</p>
-<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">Person</span><span class="o">&gt;</span> <span class="n">persons</span><span class="p">;</span>
-<span class="n">persons</span><span class="p">.</span><span class="n">emplace_back</span><span class="p">(</span><span class="s">&#34;Bruce&#34;</span><span class="p">,</span> <span class="s">&#34;Wayne&#34;</span><span class="p">);</span>
-<span class="n">persons</span><span class="p">.</span><span class="n">emplace_back</span><span class="p">(</span><span class="s">&#34;Clark&#34;</span><span class="p">,</span> <span class="s">&#34;Kent&#34;</span><span class="p">);</span>
-</code></pre></div><p>En dessous des paramètres de la fonction, on vous indique les éventuelles contraintes sur les paramètres de template. Si on souhaite appeler <code>emplace_back</code> sur un <code>std::vector&lt;Person&gt;</code>, il faut que <code>Person</code> soit <code>MoveInsertable</code> et <code>EmplaceConstructible</code>. Vous pouvez cliquer sur chacune de ces contraintes si vous désirez savoir ce qu&rsquo;elles impliquent.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">Person</span><span class="o">&gt;</span> <span class="n">persons</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="n">persons</span><span class="p">.</span><span class="n">emplace_back</span><span class="p">(</span><span class="s">&#34;Bruce&#34;</span><span class="p">,</span> <span class="s">&#34;Wayne&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="n">persons</span><span class="p">.</span><span class="n">emplace_back</span><span class="p">(</span><span class="s">&#34;Clark&#34;</span><span class="p">,</span> <span class="s">&#34;Kent&#34;</span><span class="p">);</span>
+</span></span></code></pre></div><p>En dessous des paramètres de la fonction, on vous indique les éventuelles contraintes sur les paramètres de template. Si on souhaite appeler <code>emplace_back</code> sur un <code>std::vector&lt;Person&gt;</code>, il faut que <code>Person</code> soit <code>MoveInsertable</code> et <code>EmplaceConstructible</code>. Vous pouvez cliquer sur chacune de ces contraintes si vous désirez savoir ce qu&rsquo;elles impliquent.</p>
 <h4 id="3-valeur-de-retour">3. Valeur de retour</h4>
 <p><img src="/CPP_Learning/images/chapter5/doc-fcn-return.png" alt=""></p>
 <p>On vous indique simplement ce que la fonction vous renvoie.</p>
@@ -3384,19 +3384,19 @@ Pour <code>emplace_back</code>, on voit que si une exception est lancée par le 
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/CPP_Learning/js/clipboard.min.js?1705262579"></script>
-    <script src="/CPP_Learning/js/perfect-scrollbar.min.js?1705262579"></script>
-    <script src="/CPP_Learning/js/perfect-scrollbar.jquery.min.js?1705262579"></script>
-    <script src="/CPP_Learning/js/jquery.sticky.js?1705262579"></script>
-    <script src="/CPP_Learning/js/featherlight.min.js?1705262579"></script>
-    <script src="/CPP_Learning/js/highlight.pack.js?1705262579"></script>
+    <script src="/CPP_Learning/js/clipboard.min.js?1705567864"></script>
+    <script src="/CPP_Learning/js/perfect-scrollbar.min.js?1705567864"></script>
+    <script src="/CPP_Learning/js/perfect-scrollbar.jquery.min.js?1705567864"></script>
+    <script src="/CPP_Learning/js/jquery.sticky.js?1705567864"></script>
+    <script src="/CPP_Learning/js/featherlight.min.js?1705567864"></script>
+    <script src="/CPP_Learning/js/highlight.pack.js?1705567864"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/CPP_Learning/js/modernizr.custom-3.6.0.js?1705262579"></script>
-    <script src="/CPP_Learning/js/learn.js?1705262579"></script>
-    <script src="/CPP_Learning/js/hugo-learn.js?1705262579"></script>
+    <script src="/CPP_Learning/js/modernizr.custom-3.6.0.js?1705567864"></script>
+    <script src="/CPP_Learning/js/learn.js?1705567864"></script>
+    <script src="/CPP_Learning/js/hugo-learn.js?1705567864"></script>
     
         
-            <script src="/CPP_Learning/mermaid/mermaid.js?1705262579"></script>
+            <script src="/CPP_Learning/mermaid/mermaid.js?1705567864"></script>
         
         <script>
             mermaid.initialize({ startOnLoad: true });

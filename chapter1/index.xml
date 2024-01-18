@@ -5,82 +5,56 @@
     <link>https://laefy.github.io/CPP_Learning/chapter1/</link>
     <description>Recent content in Introduction au C&#43;&#43; on Cours de C&#43;&#43; - Niveau Master</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language><atom:link href="https://laefy.github.io/CPP_Learning/chapter1/index.xml" rel="self" type="application/rss+xml" />
+    <language>fr</language>
+    <atom:link href="https://laefy.github.io/CPP_Learning/chapter1/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Présentation du langage</title>
       <link>https://laefy.github.io/CPP_Learning/chapter1/1-language/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
       <guid>https://laefy.github.io/CPP_Learning/chapter1/1-language/</guid>
-      <description>Cette page vous présentera quelques caractéristiques du C++, les différences avec d&amp;rsquo;autres langages que vous avez étudiés jusque là, pourquoi est-ce que certains disent que C++ est compliqué, alors que pas forcément, et ce qui fait que le langage est aussi utilisé aujourd&amp;rsquo;hui. Promis, c&amp;rsquo;est la seule page du cours où vous trouverez autant de pavés 🙂
- Quelques caractéristiques C++ est un langage de programmation informatique inventé dans les années 1980 par un informaticien nommé Bjarne Stroustrup.</description>
+      <description>Cette page vous présentera quelques caractéristiques du C++, les différences avec d&amp;rsquo;autres langages que vous avez étudiés jusque là, pourquoi est-ce que certains disent que C++ est compliqué, alors que pas forcément, et ce qui fait que le langage est aussi utilisé aujourd&amp;rsquo;hui. Promis, c&amp;rsquo;est la seule page du cours où vous trouverez autant de pavés 🙂&#xA;Quelques caractéristiques C++ est un langage de programmation informatique inventé dans les années 1980 par un informaticien nommé Bjarne Stroustrup.</description>
     </item>
-    
     <item>
       <title>Hello World 👋</title>
       <link>https://laefy.github.io/CPP_Learning/chapter1/2-hello-world/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
       <guid>https://laefy.github.io/CPP_Learning/chapter1/2-hello-world/</guid>
-      <description>Nous allons maintenant enfin pouvoir coder ! Dans la suite de ce chapitre, vous verrez comment :
- écrire un programme, déclarer des variables, écrire sur la sortie standard, lire sur l&amp;rsquo;entrée standard, définir des fonctions, utiliser les structures de contrôle (conditions, boucles, switch, etc.), créer des tableaux et des chaînes de caractères, utiliser des références.  Ça fait beaucoup hein ? 😈
-En réalité, comme vous avez déjà fait du C et du Java, il y a pas mal de choses que vous connaissez déjà.</description>
+      <description>Nous allons maintenant enfin pouvoir coder ! Dans la suite de ce chapitre, vous verrez comment :&#xA;écrire un programme, déclarer des variables, écrire sur la sortie standard, lire sur l&amp;rsquo;entrée standard, définir des fonctions, utiliser les structures de contrôle (conditions, boucles, switch, etc.), créer des tableaux et des chaînes de caractères, utiliser des références. Ça fait beaucoup hein ? 😈&#xA;En réalité, comme vous avez déjà fait du C et du Java, il y a pas mal de choses que vous connaissez déjà.</description>
     </item>
-    
     <item>
       <title>Eléments de syntaxe ✍</title>
       <link>https://laefy.github.io/CPP_Learning/chapter1/3-syntax-elements/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
       <guid>https://laefy.github.io/CPP_Learning/chapter1/3-syntax-elements/</guid>
-      <description>Nous allons vous présenter les éléments de syntaxe de base du langage.
-Comme vous pourrez le constater, mis à part quelques subtilités, la plupart des informations que vous allez lire ici devrait être similaire à ce que vous avez déjà appris en C ou en Java.
- Variables et types fondamentaux Comme dans tous les langages ou presque, on retrouve :
- les entiers (signés ou non-signés) : int, short, unsigned int, &amp;hellip; les flottants : float, double les types caractère : char, unsigned char le type booléen : bool (et non pas boolean comme en Java ⚠️)  Pour définir des variables, c&amp;rsquo;est comme d&amp;rsquo;habitude : &amp;lt;type&amp;gt; &amp;lt;nom&amp;gt; = &amp;lt;valeur&amp;gt;;</description>
+      <description>Nous allons vous présenter les éléments de syntaxe de base du langage.&#xA;Comme vous pourrez le constater, mis à part quelques subtilités, la plupart des informations que vous allez lire ici devrait être similaire à ce que vous avez déjà appris en C ou en Java.&#xA;Variables et types fondamentaux Comme dans tous les langages ou presque, on retrouve :&#xA;les entiers (signés ou non-signés) : int, short, unsigned int, &amp;hellip; les flottants : float, double les types caractère : char, unsigned char le type booléen : bool (et non pas boolean comme en Java ⚠️) Pour définir des variables, c&amp;rsquo;est comme d&amp;rsquo;habitude : &amp;lt;type&amp;gt; &amp;lt;nom&amp;gt; = &amp;lt;valeur&amp;gt;;</description>
     </item>
-    
     <item>
       <title>Librairie standard 📚</title>
       <link>https://laefy.github.io/CPP_Learning/chapter1/4-std-lib/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
       <guid>https://laefy.github.io/CPP_Learning/chapter1/4-std-lib/</guid>
-      <description>Sur cette page, vous allez apprendre à utiliser quelques classes fournies par la librarie standard pour manipuler chaînes de caractères et tableaux. Vous verrez également comment écrire ou lire dans des flux pour intéragir avec l&amp;rsquo;utilisateur.
- Chaînes de caractères Comme en C, const char* est le type fondamental associé à une chaîne de caractère littérale (c&amp;rsquo;est-à-dire écrite en dur, avec les guillemets autour) :
-auto str = &amp;#34;hello&amp;#34;; // -&amp;gt; str est de type const char* Cependant, ce n&amp;rsquo;est pas du tout pratique pour faire des opérations comme des concaténations, des recherches, ou même simplement récupérer la taille de la chaîne.</description>
+      <description>Sur cette page, vous allez apprendre à utiliser quelques classes fournies par la librarie standard pour manipuler chaînes de caractères et tableaux. Vous verrez également comment écrire ou lire dans des flux pour intéragir avec l&amp;rsquo;utilisateur.&#xA;Chaînes de caractères Comme en C, const char* est le type fondamental associé à une chaîne de caractère littérale (c&amp;rsquo;est-à-dire écrite en dur, avec les guillemets autour) :&#xA;auto str = &amp;#34;hello&amp;#34;; // -&amp;gt; str est de type const char* Cependant, ce n&amp;rsquo;est pas du tout pratique pour faire des opérations comme des concaténations, des recherches, ou même simplement récupérer la taille de la chaîne.</description>
     </item>
-    
     <item>
       <title>Compilation ⚙️</title>
       <link>https://laefy.github.io/CPP_Learning/chapter1/5-compilation/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
       <guid>https://laefy.github.io/CPP_Learning/chapter1/5-compilation/</guid>
-      <description>En théorie, le contenu de cette page ne devrait être qu&amp;rsquo;une redite de vos cours de C et de compilation de l&amp;rsquo;an dernier.
-Cependant, je sais qu&amp;rsquo;à la réminiscence des moments passés à réviser ces matières, la plupart d&amp;rsquo;entre vous sentez la chaleur de vos larmes couler le long de vos joues.
-Nous allons donc reprendre le sujet en douceur pour faire en sorte que vous compreniez un peu mieux ce qu&amp;rsquo;il se passe pendant la compilation et à quoi elle sert.</description>
+      <description>En théorie, le contenu de cette page ne devrait être qu&amp;rsquo;une redite de vos cours de C et de compilation de l&amp;rsquo;an dernier.&#xA;Cependant, je sais qu&amp;rsquo;à la réminiscence des moments passés à réviser ces matières, la plupart d&amp;rsquo;entre vous sentez la chaleur de vos larmes couler le long de vos joues.&#xA;Nous allons donc reprendre le sujet en douceur pour faire en sorte que vous compreniez un peu mieux ce qu&amp;rsquo;il se passe pendant la compilation et à quoi elle sert.</description>
     </item>
-    
     <item>
       <title>Questionnaire ☑</title>
       <link>https://laefy.github.io/CPP_Learning/chapter1/test/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
       <guid>https://laefy.github.io/CPP_Learning/chapter1/test/</guid>
-      <description>Félicitations !! Vous avez enfin terminé le Chapitre 1 ! 🥳🎉
-Le questionnaire ci-dessous vous aidera à savoir si vous avez bien compris le cours ou non.
-Il n&amp;rsquo;a donc pas vocation à vous évaluer, mais à vous donner une idée de ce que vous auriez lu trop vite ou n&amp;rsquo;auriez pas assez pratiqué.
-Dans tous les cas, si vous répondez à ce questionnaire et cliquez sur le bouton Valider, vos réponses nous seront envoyées par mail et nous vous ferons un petit retour sur ce que vous avez réussi ou non 😉</description>
+      <description>Félicitations !! Vous avez enfin terminé le Chapitre 1 ! 🥳🎉&#xA;Le questionnaire ci-dessous vous aidera à savoir si vous avez bien compris le cours ou non.&#xA;Il n&amp;rsquo;a donc pas vocation à vous évaluer, mais à vous donner une idée de ce que vous auriez lu trop vite ou n&amp;rsquo;auriez pas assez pratiqué.&#xA;Dans tous les cas, si vous répondez à ce questionnaire et cliquez sur le bouton Valider, vos réponses nous seront envoyées par mail et nous vous ferons un petit retour sur ce que vous avez réussi ou non 😉</description>
     </item>
-    
     <item>
       <title>Merci !</title>
       <link>https://laefy.github.io/CPP_Learning/chapter1/test_done/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
       <guid>https://laefy.github.io/CPP_Learning/chapter1/test_done/</guid>
-      <description>Vos réponses nous ont bien été communiquées 😃N&#39;hésitez pas à nous relancer si vous n&#39;avez pas eu de nouvelles après une semaine !</description>
+      <description>&#xD;Vos réponses nous ont bien été communiquées 😃&#xD;N&#39;hésitez pas à nous relancer si vous n&#39;avez pas eu de nouvelles après une semaine !&#xD;</description>
     </item>
-    
   </channel>
 </rss>

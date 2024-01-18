@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="Hugo 0.76.5" />
+    <meta name="generator" content="Hugo 0.121.0">
     <meta name="description" content="">
 
 
@@ -12,22 +12,22 @@
     <title>Hello World 👋 :: Cours de C&#43;&#43; - Niveau Master</title>
 
     
-    <link href="/CPP_Learning/css/nucleus.css?1705262579" rel="stylesheet">
-    <link href="/CPP_Learning/css/fontawesome-all.min.css?1705262579" rel="stylesheet">
-    <link href="/CPP_Learning/css/hybrid.css?1705262579" rel="stylesheet">
-    <link href="/CPP_Learning/css/featherlight.min.css?1705262579" rel="stylesheet">
-    <link href="/CPP_Learning/css/perfect-scrollbar.min.css?1705262579" rel="stylesheet">
-    <link href="/CPP_Learning/css/auto-complete.css?1705262579" rel="stylesheet">
-    <link href="/CPP_Learning/css/atom-one-dark-reasonable.css?1705262579" rel="stylesheet">
-    <link href="/CPP_Learning/css/theme.css?1705262579" rel="stylesheet">
-    <link href="/CPP_Learning/css/tabs.css?1705262579" rel="stylesheet">
-    <link href="/CPP_Learning/css/hugo-theme.css?1705262579" rel="stylesheet">
+    <link href="/CPP_Learning/css/nucleus.css?1705567863" rel="stylesheet">
+    <link href="/CPP_Learning/css/fontawesome-all.min.css?1705567863" rel="stylesheet">
+    <link href="/CPP_Learning/css/hybrid.css?1705567863" rel="stylesheet">
+    <link href="/CPP_Learning/css/featherlight.min.css?1705567863" rel="stylesheet">
+    <link href="/CPP_Learning/css/perfect-scrollbar.min.css?1705567863" rel="stylesheet">
+    <link href="/CPP_Learning/css/auto-complete.css?1705567863" rel="stylesheet">
+    <link href="/CPP_Learning/css/atom-one-dark-reasonable.css?1705567863" rel="stylesheet">
+    <link href="/CPP_Learning/css/theme.css?1705567863" rel="stylesheet">
+    <link href="/CPP_Learning/css/tabs.css?1705567863" rel="stylesheet">
+    <link href="/CPP_Learning/css/hugo-theme.css?1705567863" rel="stylesheet">
     
-    <link href="/CPP_Learning/css/theme-mine.css?1705262579" rel="stylesheet">
+    <link href="/CPP_Learning/css/theme-mine.css?1705567863" rel="stylesheet">
     
-    <link href="/CPP_Learning/css/syntax.css?1705262579" rel="stylesheet">
+    <link href="/CPP_Learning/css/syntax.css?1705567863" rel="stylesheet">
 
-    <script src="/CPP_Learning/js/jquery-3.3.1.min.js?1705262579"></script>
+    <script src="/CPP_Learning/js/jquery-3.3.1.min.js?1705567863"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -1972,11 +1972,11 @@ Vous l&rsquo;avez d&rsquo;ailleurs déjà probablement vu dans le chapitre préc
 <hr>
 <h3 id="la-fonction-main">La fonction main</h3>
 <p>Tout d&rsquo;abord, commençons par écrire la fonction qui est appelée lorsqu&rsquo;on lance le programme. On parle de <strong>point d&rsquo;entrée</strong>. Comme en C, cette fonction doit s&rsquo;appeler <code>main</code> et renvoyer une valeur de type <code>int</code>. Pour ce premier exercice, nous n&rsquo;aurons pas besoin de lui fournir d&rsquo;arguments.</p>
-<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
-<span class="p">{</span>
-    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
-<span class="p">}</span>
-</code></pre></div>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div>
 <div class="notices note" ><p>La valeur de retour du <code>main</code> indique si le programme s&rsquo;est terminé sans erreur. Si tout se passe bien, il faut retourner 0. N&rsquo;importe quelle autre valeur indique une erreur.</p>
 </div>
 
@@ -1990,17 +1990,17 @@ Pour le moment, il n&rsquo;y en a qu&rsquo;un seul, le fichier <code>1-hello_wor
 <hr>
 <h3 id="ecrire-sur-la-sortie-standard">Ecrire sur la sortie standard</h3>
 <p>L&rsquo;instruction ci-dessous permet d&rsquo;afficher la chaîne de caractère &ldquo;Hello World!&rdquo; sur la sortie standard du programme.</p>
-<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;Hello World!&#34;</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
-</code></pre></div><p>Décortiquons la ensemble&hellip;</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;Hello World!&#34;</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+</span></span></code></pre></div><p>Décortiquons la ensemble&hellip;</p>
 <p><code>std::</code><br>
 En C++, il est possible de définir des <strong>espaces de noms</strong>, ou <strong>namespaces</strong>.<br>
 <code>std</code> fait référence au namespace utilisé pour la librairie standard.
 Si on écrit <code>std::cout</code>, c&rsquo;est donc pour référencer un symbole nommé <code>cout</code> défini par la librairie standard.</p>
 
-<div class="notices note" ><p>Les librairies développées en C++ définissent généralement des namespaces pour contenir leurs symboles. Cela permet d&rsquo;éviter des conflits de noms dans les programmes qui les utilisent. Par exemple, 
-<a href="https://ogrecave.github.io/ogre/api/latest/" target="_blank" rel="noopener noreferrer">Ogre</a> définit ses symboles dans <code>Ogre</code>, la 
+<div class="notices note" ><p>Les librairies développées en C++ définissent généralement des namespaces pour contenir leurs symboles. Cela permet d&rsquo;éviter des conflits de noms dans les programmes qui les utilisent. Par exemple,
+<a href="https://ogrecave.github.io/ogre/api/latest/" target="_blank" rel="noopener noreferrer">Ogre</a> définit ses symboles dans <code>Ogre</code>, la
 <a href="https://www.sfml-dev.org/documentation/" target="_blank" rel="noopener noreferrer">SFML</a> dans <code>sf</code>, etc.<br>
-Ce problème existe aussi en C bien sûr, et pour y pallier, certaines APIs préfixent tous leurs symboles (la 
+Ce problème existe aussi en C bien sûr, et pour y pallier, certaines APIs préfixent tous leurs symboles (la
 <a href="https://wiki.libsdl.org/CategoryAPI" target="_blank" rel="noopener noreferrer">SDL</a> par exemple)&hellip; Ce n&rsquo;est pas très pratique, d&rsquo;où la bonne idée d&rsquo;avoir introduit les namespaces en C++.</p>
 </div>
 
@@ -2011,7 +2011,7 @@ Il s&rsquo;agit d&rsquo;un opérateur, un peu comme <code>+</code> ou <code>%</c
 <p><code>&quot;Hello World!&quot;</code><br>
 Une chaîne de caractère, comme en C.</p>
 <p><code>endl</code><br>
-Cette variable permet d&rsquo;écrire le caractère de fin de ligne <code>\n</code> (&lsquo;endl&rsquo; pour &lsquo;end of line&rsquo;) dans le flux. Il permet également de forcer son flush.</p>
+Cette variable permet d&rsquo;écrire le caractère de fin de ligne <code>\n</code> (&rsquo;endl&rsquo; pour &rsquo;end of line&rsquo;) dans le flux. Il permet également de forcer son flush.</p>
 
 <div class="notices tip" ><p>En C, on a dû vous dire expliquer qu&rsquo;il fallait toujours mettre des <code>\n</code> à la fin de vos écritures avec <code>printf</code>, car cela permet d&rsquo;être sûr que tout est bien écrit dans la console. En effet, les programmes n&rsquo;écrivent pas directement dans la console. Ils écrivent d&rsquo;abord chaque caractère dans un espace-mémoire (généralement aussi appelé espace tampon), puis au moment opportun comme lors d&rsquo;un saut de ligne, le programme transfère tout le bloc de texte en une seule fois dans la console (on parle de flush).<br>
 En C++, <code>\n</code> ne suffit pas à faire le flush. C&rsquo;est en plaçant la valeur <code>endl</code> dans le flux que l&rsquo;on indique qu&rsquo;on veut à la fois un saut de ligne et l&rsquo;opération de flush.</p>
@@ -2019,13 +2019,13 @@ En C++, <code>\n</code> ne suffit pas à faire le flush. C&rsquo;est en plaçant
 
 <p>Ajoutez l&rsquo;instruction précédente dans votre fonction <code>main</code> et essayez de recompiler votre programme.<br>
 Vous devriez obtenir des erreurs de ce style :</p>
-<div class="highlight"><pre class="chroma"><code class="language-b" data-lang="b"><span class="c">blabla error ##: &#39;cout&#39;: is not a member of &#39;std&#39; blabla
-</span><span class="c">blabla message : see declaration of &#39;std&#39; blabla
-</span><span class="c">blabla error ##: &#39;cout&#39;: undeclared identifier blabla
-</span><span class="c">blabla error ##: &#39;endl&#39;: is not a member of &#39;std&#39; blabla
-</span><span class="c">blabla message : see declaration of &#39;std&#39; blabla
-</span><span class="c">blabla error ##: &#39;endl&#39;: undeclared identifier blabla
-</span></code></pre></div><p>Le premier message indique que le compilateur ne trouve aucun symbole nommé <code>cout</code> dans le namespace <code>std</code>. Eh bien oui, le C++, c&rsquo;est comme le C. Le compilateur est un peu bêbête, et il faut tout lui indiquer, même où trouver les symboles de la librairie standard.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-b" data-lang="b"><span class="line"><span class="cl"><span class="c">blabla error ##: &#39;cout&#39;: is not a member of &#39;std&#39; blabla
+</span></span></span><span class="line"><span class="cl"><span class="c">blabla message : see declaration of &#39;std&#39; blabla
+</span></span></span><span class="line"><span class="cl"><span class="c">blabla error ##: &#39;cout&#39;: undeclared identifier blabla
+</span></span></span><span class="line"><span class="cl"><span class="c">blabla error ##: &#39;endl&#39;: is not a member of &#39;std&#39; blabla
+</span></span></span><span class="line"><span class="cl"><span class="c">blabla message : see declaration of &#39;std&#39; blabla
+</span></span></span><span class="line"><span class="cl"><span class="c">blabla error ##: &#39;endl&#39;: undeclared identifier blabla
+</span></span></span></code></pre></div><p>Le premier message indique que le compilateur ne trouve aucun symbole nommé <code>cout</code> dans le namespace <code>std</code>. Eh bien oui, le C++, c&rsquo;est comme le C. Le compilateur est un peu bêbête, et il faut tout lui indiquer, même où trouver les symboles de la librairie standard.</p>
 <p>Allez sur 
 <a href="https://en.cppreference.com/w/" target="_blank" rel="noopener noreferrer">ce site</a> et recherchez <code>cout</code>. Cela devrait vous permettre de déterminer dans quel header la fonction est déclarée, afin d&rsquo;ajouter la directive d&rsquo;inclusion correspondante au fichier.</p>
 
@@ -2041,29 +2041,29 @@ Vous devriez obtenir des erreurs de ce style :</p>
         </button>
 
         <div class="hidden-solution-content">
-            <p>Vous devriez arriver sur 
+            <p>Vous devriez arriver sur
 <a href="https://en.cppreference.com/w/cpp/io/cout" target="_blank" rel="noopener noreferrer">cette page</a>, vous indiquant que le header à référencer est <code>&lt;iostream&gt;</code> :
 <img src="/CPP_Learning/images/doc-cout.png" alt=""></p>
 <p>Placez le code suivant dans votre fichier :</p>
-<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp">
-</span><span class="cp"></span>
-<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
-<span class="p">{</span>
-    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;Hello World!&#34;</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
-    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
-<span class="p">}</span>
-</code></pre></div>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp">
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span>
+</span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;Hello World!&#34;</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div>
         </div>
     </div>
 
 </div>
 <p>Vous devriez maintenant pouvoir compiler le programme sans souci. Exécutez-le et vérifiez que vous obtenez bien un résultat similaire à celui-ci :</p>
-<div class="highlight"><pre class="chroma"><code class="language-b" data-lang="b"><span class="c">Hello World!
-</span><span class="c">The program &#39;</span><span class="k">[</span><span class="c">2288</span><span class="k">]</span><span class="c"> c1</span><span class="nb">-</span><span class="c">1</span><span class="nb">-</span><span class="c">hello_world</span><span class="nt">.</span><span class="c">exe&#39; has exited with code 0 (0x0)</span><span class="nt">.</span><span class="c">
-</span></code></pre></div><p>Par ailleurs, sachez qu&rsquo;il est possible de chaîner l&rsquo;opérateur <code>&lt;&lt;</code> et de lui fournir d&rsquo;autres éléments que des chaînes de caractères.<br>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-b" data-lang="b"><span class="line"><span class="cl"><span class="c">Hello World!
+</span></span></span><span class="line"><span class="cl"><span class="c">The program &#39;</span><span class="k">[</span><span class="c">2288</span><span class="k">]</span><span class="c"> c1</span><span class="nb">-</span><span class="c">1</span><span class="nb">-</span><span class="c">hello_world</span><span class="nt">.</span><span class="c">exe&#39; has exited with code 0 (0x0)</span><span class="nt">.</span><span class="c">
+</span></span></span></code></pre></div><p>Par ailleurs, sachez qu&rsquo;il est possible de chaîner l&rsquo;opérateur <code>&lt;&lt;</code> et de lui fournir d&rsquo;autres éléments que des chaînes de caractères. <br>
 Vous pouvez donc écrire des choses comme :</p>
-<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;I have &#34;</span> <span class="o">&lt;&lt;</span> <span class="mi">7</span> <span class="o">&lt;&lt;</span> <span class="s">&#34; dogs.&#34;</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
-</code></pre></div>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;I have &#34;</span> <span class="o">&lt;&lt;</span> <span class="mi">7</span> <span class="o">&lt;&lt;</span> <span class="s">&#34; dogs.&#34;</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+</span></span></code></pre></div>
 
 <footer class="footline">
 	
@@ -3364,19 +3364,19 @@ Vous pouvez donc écrire des choses comme :</p>
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/CPP_Learning/js/clipboard.min.js?1705262579"></script>
-    <script src="/CPP_Learning/js/perfect-scrollbar.min.js?1705262579"></script>
-    <script src="/CPP_Learning/js/perfect-scrollbar.jquery.min.js?1705262579"></script>
-    <script src="/CPP_Learning/js/jquery.sticky.js?1705262579"></script>
-    <script src="/CPP_Learning/js/featherlight.min.js?1705262579"></script>
-    <script src="/CPP_Learning/js/highlight.pack.js?1705262579"></script>
+    <script src="/CPP_Learning/js/clipboard.min.js?1705567863"></script>
+    <script src="/CPP_Learning/js/perfect-scrollbar.min.js?1705567863"></script>
+    <script src="/CPP_Learning/js/perfect-scrollbar.jquery.min.js?1705567863"></script>
+    <script src="/CPP_Learning/js/jquery.sticky.js?1705567863"></script>
+    <script src="/CPP_Learning/js/featherlight.min.js?1705567863"></script>
+    <script src="/CPP_Learning/js/highlight.pack.js?1705567863"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/CPP_Learning/js/modernizr.custom-3.6.0.js?1705262579"></script>
-    <script src="/CPP_Learning/js/learn.js?1705262579"></script>
-    <script src="/CPP_Learning/js/hugo-learn.js?1705262579"></script>
+    <script src="/CPP_Learning/js/modernizr.custom-3.6.0.js?1705567863"></script>
+    <script src="/CPP_Learning/js/learn.js?1705567863"></script>
+    <script src="/CPP_Learning/js/hugo-learn.js?1705567863"></script>
     
         
-            <script src="/CPP_Learning/mermaid/mermaid.js?1705262579"></script>
+            <script src="/CPP_Learning/mermaid/mermaid.js?1705567863"></script>
         
         <script>
             mermaid.initialize({ startOnLoad: true });

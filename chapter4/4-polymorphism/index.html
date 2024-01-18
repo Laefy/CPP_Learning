@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="Hugo 0.76.5" />
+    <meta name="generator" content="Hugo 0.121.0">
     <meta name="description" content="">
 
 
@@ -12,22 +12,22 @@
     <title>Polymorphisme :: Cours de C&#43;&#43; - Niveau Master</title>
 
     
-    <link href="/CPP_Learning/css/nucleus.css?1705262579" rel="stylesheet">
-    <link href="/CPP_Learning/css/fontawesome-all.min.css?1705262579" rel="stylesheet">
-    <link href="/CPP_Learning/css/hybrid.css?1705262579" rel="stylesheet">
-    <link href="/CPP_Learning/css/featherlight.min.css?1705262579" rel="stylesheet">
-    <link href="/CPP_Learning/css/perfect-scrollbar.min.css?1705262579" rel="stylesheet">
-    <link href="/CPP_Learning/css/auto-complete.css?1705262579" rel="stylesheet">
-    <link href="/CPP_Learning/css/atom-one-dark-reasonable.css?1705262579" rel="stylesheet">
-    <link href="/CPP_Learning/css/theme.css?1705262579" rel="stylesheet">
-    <link href="/CPP_Learning/css/tabs.css?1705262579" rel="stylesheet">
-    <link href="/CPP_Learning/css/hugo-theme.css?1705262579" rel="stylesheet">
+    <link href="/CPP_Learning/css/nucleus.css?1705567864" rel="stylesheet">
+    <link href="/CPP_Learning/css/fontawesome-all.min.css?1705567864" rel="stylesheet">
+    <link href="/CPP_Learning/css/hybrid.css?1705567864" rel="stylesheet">
+    <link href="/CPP_Learning/css/featherlight.min.css?1705567864" rel="stylesheet">
+    <link href="/CPP_Learning/css/perfect-scrollbar.min.css?1705567864" rel="stylesheet">
+    <link href="/CPP_Learning/css/auto-complete.css?1705567864" rel="stylesheet">
+    <link href="/CPP_Learning/css/atom-one-dark-reasonable.css?1705567864" rel="stylesheet">
+    <link href="/CPP_Learning/css/theme.css?1705567864" rel="stylesheet">
+    <link href="/CPP_Learning/css/tabs.css?1705567864" rel="stylesheet">
+    <link href="/CPP_Learning/css/hugo-theme.css?1705567864" rel="stylesheet">
     
-    <link href="/CPP_Learning/css/theme-mine.css?1705262579" rel="stylesheet">
+    <link href="/CPP_Learning/css/theme-mine.css?1705567864" rel="stylesheet">
     
-    <link href="/CPP_Learning/css/syntax.css?1705262579" rel="stylesheet">
+    <link href="/CPP_Learning/css/syntax.css?1705567864" rel="stylesheet">
 
-    <script src="/CPP_Learning/js/jquery-3.3.1.min.js?1705262579"></script>
+    <script src="/CPP_Learning/js/jquery-3.3.1.min.js?1705567864"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -1976,68 +1976,68 @@ En effet, il suffit de définir les fonctions-membres que l&rsquo;on souhaite ex
 Vous devriez donc préférer la composition à un héritage statique, dès lors que vous ne souhaitez pas exposer l&rsquo;intégralité de l&rsquo;interface du type à réutiliser
 (meilleure encapsulation, et donc plus simple d&rsquo;enforcer les invariants de classe).</p>
 <p>Voici un exemple permettant d&rsquo;illustrer un cas d&rsquo;utilisation pour un héritage statique, et un cas d&rsquo;utilisation pour une composition :</p>
-<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="c1">// Shared class
-</span><span class="c1"></span><span class="k">class</span> <span class="nc">SharedStuff</span>
-<span class="p">{</span>
-<span class="k">public</span><span class="o">:</span>
-    <span class="kt">void</span> <span class="n">set_stuff1</span><span class="p">(</span><span class="kt">int</span> <span class="n">stuff1</span><span class="p">)</span>   <span class="p">{</span> <span class="n">_stuff1</span> <span class="o">=</span> <span class="n">stuff1</span><span class="p">;</span> <span class="p">}</span>
-    <span class="kt">void</span> <span class="nf">set_stuff2</span><span class="p">(</span><span class="kt">float</span> <span class="n">stuff2</span><span class="p">)</span> <span class="p">{</span> <span class="n">_stuff2</span> <span class="o">=</span> <span class="n">stuff2</span><span class="p">;</span> <span class="p">}</span>
-
-<span class="k">private</span><span class="o">:</span>
-    <span class="kt">int</span>   <span class="n">_stuff1</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
-    <span class="kt">float</span> <span class="n">_stuff2</span> <span class="o">=</span> <span class="mf">0.f</span><span class="p">;</span>
-<span class="p">};</span>
-
-<span class="c1">// Static inheritance
-</span><span class="c1"></span><span class="k">class</span> <span class="nc">OMGYouReallyGotALotOfStuff</span> <span class="o">:</span> <span class="k">public</span> <span class="n">SharedStuff</span>
-<span class="p">{</span>
-<span class="k">public</span><span class="o">:</span>
-    <span class="kt">void</span> <span class="n">set_stuff3</span><span class="p">(</span><span class="kt">char</span> <span class="n">stuff3</span><span class="p">)</span> <span class="p">{</span> <span class="n">_stuff3</span> <span class="o">=</span> <span class="n">stuff3</span><span class="p">;</span> <span class="p">}</span>
-
-<span class="k">private</span><span class="o">:</span>
-    <span class="kt">char</span> <span class="n">_stuff3</span> <span class="o">=</span> <span class="sc">&#39;\0&#39;</span><span class="p">;</span>
-<span class="p">};</span>
-
-<span class="c1">// Composition
-</span><span class="c1"></span><span class="k">class</span> <span class="nc">DontBuyMoreStuffIfYouCantKeepItNeat</span>
-<span class="p">{</span>
-<span class="k">public</span><span class="o">:</span>
-    <span class="kt">void</span> <span class="n">set_stuff1</span><span class="p">(</span><span class="kt">int</span> <span class="n">stuff1</span><span class="p">)</span>
-    <span class="p">{</span>
-        <span class="k">if</span> <span class="p">(</span><span class="n">check_room_tidy</span><span class="p">())</span>
-        <span class="p">{</span>
-            <span class="n">_the_stuff</span><span class="p">.</span><span class="n">set_stuff1</span><span class="p">(</span><span class="n">stuff1</span><span class="p">);</span>
-            <span class="n">_is_tidy</span> <span class="o">=</span> <span class="nb">false</span><span class="p">;</span>
-        <span class="p">}</span>
-    <span class="p">}</span>
-
-    <span class="kt">void</span> <span class="nf">set_stuff2</span><span class="p">(</span><span class="kt">float</span> <span class="n">stuff2</span><span class="p">)</span>
-    <span class="p">{</span>
-        <span class="k">if</span> <span class="p">(</span><span class="n">check_room_tidy</span><span class="p">())</span>
-        <span class="p">{</span>
-            <span class="n">_the_stuff</span><span class="p">.</span><span class="n">set_stuff2</span><span class="p">(</span><span class="n">stuff2</span><span class="p">);</span>
-            <span class="n">_is_tidy</span> <span class="o">=</span> <span class="nb">false</span><span class="p">;</span>
-        <span class="p">}</span>
-    <span class="p">}</span>
-
-    <span class="kt">void</span> <span class="nf">tidy_the_room</span><span class="p">()</span> <span class="p">{</span> <span class="n">_is_tidy</span> <span class="o">=</span> <span class="nb">true</span><span class="p">;</span> <span class="p">}</span>
-
-<span class="k">private</span><span class="o">:</span>
-    <span class="kt">bool</span> <span class="n">check_room_tidy</span><span class="p">()</span> <span class="k">const</span>
-    <span class="p">{</span>
-        <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">_is_tidy</span><span class="p">)</span>
-        <span class="p">{</span>
-            <span class="n">std</span><span class="o">::</span><span class="n">cerr</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;Clean your room before starting to put new stuff in it!&#34;</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
-            <span class="k">return</span> <span class="nb">false</span><span class="p">;</span>
-        <span class="p">}</span>
-
-        <span class="k">return</span> <span class="nb">true</span><span class="p">;</span>
-    <span class="p">}</span>
-
-    <span class="n">SharedStuff</span> <span class="n">_the_stuff</span><span class="p">;</span>
-    <span class="kt">bool</span>        <span class="n">_is_tidy</span> <span class="o">=</span> <span class="nb">false</span><span class="p">;</span>
-<span class="p">};</span>
-</code></pre></div><hr>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="c1">// Shared class
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">class</span> <span class="nc">SharedStuff</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl"><span class="k">public</span><span class="o">:</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">void</span> <span class="n">set_stuff1</span><span class="p">(</span><span class="kt">int</span> <span class="n">stuff1</span><span class="p">)</span>   <span class="p">{</span> <span class="n">_stuff1</span> <span class="o">=</span> <span class="n">stuff1</span><span class="p">;</span> <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">void</span> <span class="nf">set_stuff2</span><span class="p">(</span><span class="kt">float</span> <span class="n">stuff2</span><span class="p">)</span> <span class="p">{</span> <span class="n">_stuff2</span> <span class="o">=</span> <span class="n">stuff2</span><span class="p">;</span> <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">private</span><span class="o">:</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">int</span>   <span class="n">_stuff1</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">float</span> <span class="n">_stuff2</span> <span class="o">=</span> <span class="mf">0.f</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">};</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">// Static inheritance
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">class</span> <span class="nc">OMGYouReallyGotALotOfStuff</span> <span class="o">:</span> <span class="k">public</span> <span class="n">SharedStuff</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl"><span class="k">public</span><span class="o">:</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">void</span> <span class="n">set_stuff3</span><span class="p">(</span><span class="kt">char</span> <span class="n">stuff3</span><span class="p">)</span> <span class="p">{</span> <span class="n">_stuff3</span> <span class="o">=</span> <span class="n">stuff3</span><span class="p">;</span> <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">private</span><span class="o">:</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">char</span> <span class="n">_stuff3</span> <span class="o">=</span> <span class="sc">&#39;\0&#39;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">};</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">// Composition
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">class</span> <span class="nc">DontBuyMoreStuffIfYouCantKeepItNeat</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl"><span class="k">public</span><span class="o">:</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">void</span> <span class="n">set_stuff1</span><span class="p">(</span><span class="kt">int</span> <span class="n">stuff1</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="p">(</span><span class="n">check_room_tidy</span><span class="p">())</span>
+</span></span><span class="line"><span class="cl">        <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="n">_the_stuff</span><span class="p">.</span><span class="n">set_stuff1</span><span class="p">(</span><span class="n">stuff1</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">            <span class="n">_is_tidy</span> <span class="o">=</span> <span class="nb">false</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="kt">void</span> <span class="nf">set_stuff2</span><span class="p">(</span><span class="kt">float</span> <span class="n">stuff2</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="p">(</span><span class="n">check_room_tidy</span><span class="p">())</span>
+</span></span><span class="line"><span class="cl">        <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="n">_the_stuff</span><span class="p">.</span><span class="n">set_stuff2</span><span class="p">(</span><span class="n">stuff2</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">            <span class="n">_is_tidy</span> <span class="o">=</span> <span class="nb">false</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="kt">void</span> <span class="nf">tidy_the_room</span><span class="p">()</span> <span class="p">{</span> <span class="n">_is_tidy</span> <span class="o">=</span> <span class="nb">true</span><span class="p">;</span> <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">private</span><span class="o">:</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">bool</span> <span class="n">check_room_tidy</span><span class="p">()</span> <span class="k">const</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">_is_tidy</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="n">std</span><span class="o">::</span><span class="n">cerr</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;Clean your room before starting to put new stuff in it!&#34;</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">            <span class="k">return</span> <span class="nb">false</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="nb">true</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="n">SharedStuff</span> <span class="n">_the_stuff</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">bool</span>        <span class="n">_is_tidy</span> <span class="o">=</span> <span class="nb">false</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">};</span>
+</span></span></code></pre></div><hr>
 <h3 id="héritage-dynamique-et-classes-polymorphes">Héritage dynamique et classes polymorphes</h3>
 <p>L&rsquo;intérêt de l&rsquo;héritage dynamique, c&rsquo;est de pouvoir définir des interfaces génériques (= polymorphisme), dans lesquelles une ou plusieurs parties de l&rsquo;algorithme vont être spécialisées en fonction du type réel de l&rsquo;objet passé en paramètre.
 Sans ce mécanisme, le C++ ne serait plus vraiment un langage orienté-objet. Il s&rsquo;agit donc de quelque chose de très important, mais qu&rsquo;il faut apprendre à manipuler avec soin :</p>
@@ -3355,19 +3355,19 @@ Du coup, n&rsquo;hésitez pas à utiliser des fonctions virtuelles, mais évitez
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/CPP_Learning/js/clipboard.min.js?1705262579"></script>
-    <script src="/CPP_Learning/js/perfect-scrollbar.min.js?1705262579"></script>
-    <script src="/CPP_Learning/js/perfect-scrollbar.jquery.min.js?1705262579"></script>
-    <script src="/CPP_Learning/js/jquery.sticky.js?1705262579"></script>
-    <script src="/CPP_Learning/js/featherlight.min.js?1705262579"></script>
-    <script src="/CPP_Learning/js/highlight.pack.js?1705262579"></script>
+    <script src="/CPP_Learning/js/clipboard.min.js?1705567864"></script>
+    <script src="/CPP_Learning/js/perfect-scrollbar.min.js?1705567864"></script>
+    <script src="/CPP_Learning/js/perfect-scrollbar.jquery.min.js?1705567864"></script>
+    <script src="/CPP_Learning/js/jquery.sticky.js?1705567864"></script>
+    <script src="/CPP_Learning/js/featherlight.min.js?1705567864"></script>
+    <script src="/CPP_Learning/js/highlight.pack.js?1705567864"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/CPP_Learning/js/modernizr.custom-3.6.0.js?1705262579"></script>
-    <script src="/CPP_Learning/js/learn.js?1705262579"></script>
-    <script src="/CPP_Learning/js/hugo-learn.js?1705262579"></script>
+    <script src="/CPP_Learning/js/modernizr.custom-3.6.0.js?1705567864"></script>
+    <script src="/CPP_Learning/js/learn.js?1705567864"></script>
+    <script src="/CPP_Learning/js/hugo-learn.js?1705567864"></script>
     
         
-            <script src="/CPP_Learning/mermaid/mermaid.js?1705262579"></script>
+            <script src="/CPP_Learning/mermaid/mermaid.js?1705567864"></script>
         
         <script>
             mermaid.initialize({ startOnLoad: true });

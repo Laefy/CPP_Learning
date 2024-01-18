@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="Hugo 0.76.5" />
+    <meta name="generator" content="Hugo 0.121.0">
     <meta name="description" content="">
 
 
@@ -12,22 +12,22 @@
     <title>Assertions :: Cours de C&#43;&#43; - Niveau Master</title>
 
     
-    <link href="/CPP_Learning/css/nucleus.css?1705262579" rel="stylesheet">
-    <link href="/CPP_Learning/css/fontawesome-all.min.css?1705262579" rel="stylesheet">
-    <link href="/CPP_Learning/css/hybrid.css?1705262579" rel="stylesheet">
-    <link href="/CPP_Learning/css/featherlight.min.css?1705262579" rel="stylesheet">
-    <link href="/CPP_Learning/css/perfect-scrollbar.min.css?1705262579" rel="stylesheet">
-    <link href="/CPP_Learning/css/auto-complete.css?1705262579" rel="stylesheet">
-    <link href="/CPP_Learning/css/atom-one-dark-reasonable.css?1705262579" rel="stylesheet">
-    <link href="/CPP_Learning/css/theme.css?1705262579" rel="stylesheet">
-    <link href="/CPP_Learning/css/tabs.css?1705262579" rel="stylesheet">
-    <link href="/CPP_Learning/css/hugo-theme.css?1705262579" rel="stylesheet">
+    <link href="/CPP_Learning/css/nucleus.css?1705567864" rel="stylesheet">
+    <link href="/CPP_Learning/css/fontawesome-all.min.css?1705567864" rel="stylesheet">
+    <link href="/CPP_Learning/css/hybrid.css?1705567864" rel="stylesheet">
+    <link href="/CPP_Learning/css/featherlight.min.css?1705567864" rel="stylesheet">
+    <link href="/CPP_Learning/css/perfect-scrollbar.min.css?1705567864" rel="stylesheet">
+    <link href="/CPP_Learning/css/auto-complete.css?1705567864" rel="stylesheet">
+    <link href="/CPP_Learning/css/atom-one-dark-reasonable.css?1705567864" rel="stylesheet">
+    <link href="/CPP_Learning/css/theme.css?1705567864" rel="stylesheet">
+    <link href="/CPP_Learning/css/tabs.css?1705567864" rel="stylesheet">
+    <link href="/CPP_Learning/css/hugo-theme.css?1705567864" rel="stylesheet">
     
-    <link href="/CPP_Learning/css/theme-mine.css?1705262579" rel="stylesheet">
+    <link href="/CPP_Learning/css/theme-mine.css?1705567864" rel="stylesheet">
     
-    <link href="/CPP_Learning/css/syntax.css?1705262579" rel="stylesheet">
+    <link href="/CPP_Learning/css/syntax.css?1705567864" rel="stylesheet">
 
-    <script src="/CPP_Learning/js/jquery-3.3.1.min.js?1705262579"></script>
+    <script src="/CPP_Learning/js/jquery-3.3.1.min.js?1705567864"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -1972,15 +1972,15 @@ On essayera aussi de faire en sorte que le programme puisse continuer son exécu
 <h3 id="quest-ce-quune-assertion-">Qu&rsquo;est-ce qu&rsquo;une assertion ?</h3>
 <p>Une assertion est une expression qui doit toujours être évaluée à vraie.</p>
 <p>En C++, le but des assertions, c&rsquo;est de faire crasher brutalement le programme si une condition n&rsquo;est pas respectée, afin d&rsquo;éviter que des problèmes plus difficiles à identifier ne se manifestent par la suite.</p>
-<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="kt">void</span> <span class="n">AnimalCenter</span><span class="o">::</span><span class="n">adopt_dog</span><span class="p">(</span><span class="n">Someone</span><span class="o">&amp;</span> <span class="n">someone</span><span class="p">)</span>
-<span class="p">{</span>
-    <span class="c1">// If you don&#39;t like dogs, then you shouldn&#39;t end up here!
-</span><span class="c1"></span>    <span class="n">assert</span><span class="p">(</span><span class="n">someone</span><span class="p">.</span><span class="n">like_dog</span><span class="p">());</span>
-
-    <span class="n">someone</span><span class="p">.</span><span class="n">receive</span><span class="p">(</span><span class="n">_dogs</span><span class="p">.</span><span class="n">front</span><span class="p">());</span>
-    <span class="n">_dogs</span><span class="p">.</span><span class="n">pop_front</span><span class="p">();</span>
-<span class="p">}</span>
-</code></pre></div><p>Comme on l&rsquo;a dit plus haut, seules les erreurs de programmation sont censées entraîner la fin du programme.
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="kt">void</span> <span class="n">AnimalCenter</span><span class="o">::</span><span class="n">adopt_dog</span><span class="p">(</span><span class="n">Someone</span><span class="o">&amp;</span> <span class="n">someone</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">// If you don&#39;t like dogs, then you shouldn&#39;t end up here!
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="n">assert</span><span class="p">(</span><span class="n">someone</span><span class="p">.</span><span class="n">like_dog</span><span class="p">());</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="n">someone</span><span class="p">.</span><span class="n">receive</span><span class="p">(</span><span class="n">_dogs</span><span class="p">.</span><span class="n">front</span><span class="p">());</span>
+</span></span><span class="line"><span class="cl">    <span class="n">_dogs</span><span class="p">.</span><span class="n">pop_front</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><p>Comme on l&rsquo;a dit plus haut, seules les erreurs de programmation sont censées entraîner la fin du programme.
 Les assertions vont donc servir à identifier ce type d&rsquo;erreurs, pour aider les programmeurs à corriger les failles de leur programme.</p>
 <p>Normalement, une fois la phase de production et de debug d&rsquo;un logiciel terminée, plus aucune assertion n&rsquo;est censée échouée.
 Puisqu&rsquo;il n&rsquo;est pas nécessaire d&rsquo;évaluer des conditions supposées être toujours vraies, les assertions sont du coup généralement désactivées avant de déployer le programme chez le client.
@@ -2000,90 +2000,90 @@ En plus, comme les assertions sont désactivées une fois le logiciel déployé,
 Si elle est évaluée à vraie, alors le programme continue.
 Autrement, le programme est interrompu et un message d&rsquo;erreur est affiché.
 Ce dernier présente le contenu de l&rsquo;assertion, le chemin du fichier et le numéro de la ligne où elle est écrite.</p>
-<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="k">class</span> <span class="nc">Class</span>
-<span class="p">{</span>
-<span class="k">public</span><span class="o">:</span>
-    <span class="kt">void</span> <span class="n">initialize</span><span class="p">(</span><span class="kt">unsigned</span> <span class="kt">int</span> <span class="n">p1</span><span class="p">,</span> <span class="kt">unsigned</span> <span class="kt">int</span> <span class="n">p2</span><span class="p">)</span>
-    <span class="p">{</span>
-        <span class="c1">// On peut vérifier la validité des paramètres qu&#39;on nous donne (IllegalArgumentException en Java).
-</span><span class="c1"></span>        <span class="n">assert</span><span class="p">(</span><span class="n">p1</span> <span class="o">&lt;</span> <span class="n">p2</span> <span class="o">&amp;&amp;</span> <span class="n">p2</span> <span class="o">&lt;</span> <span class="mi">100</span><span class="p">);</span>
-
-        <span class="c1">// On peut aussi vérifier les pré-conditions de la fonction courante (IllegalStateException en Java).
-</span><span class="c1"></span>        <span class="n">assert</span><span class="p">(</span><span class="o">!</span><span class="n">_attr</span><span class="p">.</span><span class="n">is_valid</span><span class="p">());</span> <span class="c1">// on n&#39;est pas censé appeler Class::initialize() si _attr est déjà valide. 
-</span><span class="c1"></span>
-        <span class="c1">// On peut également vérifier les post-conditions d&#39;une fonction que l&#39;on appelle.
-</span><span class="c1"></span>        <span class="n">_attr</span><span class="p">.</span><span class="n">set_params</span><span class="p">(</span><span class="n">p1</span><span class="p">,</span> <span class="n">p2</span><span class="p">);</span>
-        <span class="n">assert</span><span class="p">(</span><span class="n">_attr</span><span class="p">.</span><span class="n">is_valid</span><span class="p">());</span> <span class="c1">// _attr.set_params() est censé rendre _attr valid. 
-</span><span class="c1"></span>    <span class="p">}</span>
-
-    <span class="kt">void</span> <span class="nf">process</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">unique_ptr</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">value</span><span class="p">)</span>
-    <span class="p">{</span>
-        <span class="c1">// Paramètre
-</span><span class="c1"></span>        <span class="n">assert</span><span class="p">(</span><span class="n">value</span> <span class="o">!=</span> <span class="k">nullptr</span><span class="p">);</span> <span class="c1">// On attend un pointeur non-null.
-</span><span class="c1"></span>
-        <span class="c1">// Pré-condition de Class::process
-</span><span class="c1"></span>        <span class="n">assert</span><span class="p">(</span><span class="n">_attr</span><span class="p">.</span><span class="n">is_valid</span><span class="p">());</span> <span class="c1">// Class::process() ne doit pas être appelée si _attr n&#39;est pas valide. 
-</span><span class="c1"></span>
-        <span class="c1">// Post-condition de _attr::process
-</span><span class="c1"></span>        <span class="n">_attr</span><span class="p">.</span><span class="n">process</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">move</span><span class="p">(</span><span class="n">value</span><span class="p">));</span>
-        <span class="n">assert</span><span class="p">(</span><span class="n">_attr</span><span class="p">.</span><span class="n">is_valid</span><span class="p">());</span> <span class="c1">// _attr.process() n&#39;est pas censé modifier la validité de _attr.
-</span><span class="c1"></span>    <span class="p">}</span>
-
-<span class="k">private</span><span class="o">:</span>
-    <span class="n">Attr</span> <span class="n">_attr</span><span class="p">;</span>
-<span class="p">};</span>
-
-<span class="k">class</span> <span class="nc">Square</span>
-<span class="p">{</span>
-<span class="k">public</span><span class="o">:</span>
-    <span class="kt">void</span> <span class="n">do_stuff</span><span class="p">(...)</span>
-    <span class="p">{</span>
-        <span class="c1">// On peut également vérifier les invariants d&#39;une classe.
-</span><span class="c1"></span>        <span class="n">assert</span><span class="p">(</span><span class="n">all_segments_have_same_length</span><span class="p">());</span>
-        <span class="n">do_some_stuff</span><span class="p">();</span>
-        <span class="n">assert</span><span class="p">(</span><span class="n">all_segments_have_same_length</span><span class="p">());</span>
-        <span class="n">do_some_other_stuff</span><span class="p">();</span>
-        <span class="n">assert</span><span class="p">(</span><span class="n">all_segments_have_same_length</span><span class="p">());</span>
-    <span class="p">}</span>
-
-<span class="k">private</span><span class="o">:</span>
-    <span class="kt">bool</span> <span class="n">all_segments_have_same_length</span><span class="p">()</span> <span class="k">const</span> <span class="p">{</span> <span class="k">return</span> <span class="p">...;</span> <span class="p">}</span>
-
-    <span class="n">std</span><span class="o">::</span><span class="n">array</span><span class="o">&lt;</span><span class="n">Point</span><span class="p">,</span> <span class="mi">4</span><span class="o">&gt;</span> <span class="n">_points</span><span class="p">;</span>  
-<span class="p">};</span>
-</code></pre></div>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">Class</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl"><span class="k">public</span><span class="o">:</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">void</span> <span class="n">initialize</span><span class="p">(</span><span class="kt">unsigned</span> <span class="kt">int</span> <span class="n">p1</span><span class="p">,</span> <span class="kt">unsigned</span> <span class="kt">int</span> <span class="n">p2</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="c1">// On peut vérifier la validité des paramètres qu&#39;on nous donne (IllegalArgumentException en Java).
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="n">assert</span><span class="p">(</span><span class="n">p1</span> <span class="o">&lt;</span> <span class="n">p2</span> <span class="o">&amp;&amp;</span> <span class="n">p2</span> <span class="o">&lt;</span> <span class="mi">100</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="c1">// On peut aussi vérifier les pré-conditions de la fonction courante (IllegalStateException en Java).
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="n">assert</span><span class="p">(</span><span class="o">!</span><span class="n">_attr</span><span class="p">.</span><span class="n">is_valid</span><span class="p">());</span> <span class="c1">// on n&#39;est pas censé appeler Class::initialize() si _attr est déjà valide. 
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl">        <span class="c1">// On peut également vérifier les post-conditions d&#39;une fonction que l&#39;on appelle.
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="n">_attr</span><span class="p">.</span><span class="n">set_params</span><span class="p">(</span><span class="n">p1</span><span class="p">,</span> <span class="n">p2</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">        <span class="n">assert</span><span class="p">(</span><span class="n">_attr</span><span class="p">.</span><span class="n">is_valid</span><span class="p">());</span> <span class="c1">// _attr.set_params() est censé rendre _attr valid. 
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="kt">void</span> <span class="nf">process</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">unique_ptr</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">value</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="c1">// Paramètre
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="n">assert</span><span class="p">(</span><span class="n">value</span> <span class="o">!=</span> <span class="k">nullptr</span><span class="p">);</span> <span class="c1">// On attend un pointeur non-null.
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl">        <span class="c1">// Pré-condition de Class::process
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="n">assert</span><span class="p">(</span><span class="n">_attr</span><span class="p">.</span><span class="n">is_valid</span><span class="p">());</span> <span class="c1">// Class::process() ne doit pas être appelée si _attr n&#39;est pas valide. 
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl">        <span class="c1">// Post-condition de _attr::process
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="n">_attr</span><span class="p">.</span><span class="n">process</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">move</span><span class="p">(</span><span class="n">value</span><span class="p">));</span>
+</span></span><span class="line"><span class="cl">        <span class="n">assert</span><span class="p">(</span><span class="n">_attr</span><span class="p">.</span><span class="n">is_valid</span><span class="p">());</span> <span class="c1">// _attr.process() n&#39;est pas censé modifier la validité de _attr.
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">private</span><span class="o">:</span>
+</span></span><span class="line"><span class="cl">    <span class="n">Attr</span> <span class="n">_attr</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">};</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">Square</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl"><span class="k">public</span><span class="o">:</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">void</span> <span class="n">do_stuff</span><span class="p">(...)</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="c1">// On peut également vérifier les invariants d&#39;une classe.
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="n">assert</span><span class="p">(</span><span class="n">all_segments_have_same_length</span><span class="p">());</span>
+</span></span><span class="line"><span class="cl">        <span class="n">do_some_stuff</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">        <span class="n">assert</span><span class="p">(</span><span class="n">all_segments_have_same_length</span><span class="p">());</span>
+</span></span><span class="line"><span class="cl">        <span class="n">do_some_other_stuff</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">        <span class="n">assert</span><span class="p">(</span><span class="n">all_segments_have_same_length</span><span class="p">());</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">private</span><span class="o">:</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">bool</span> <span class="n">all_segments_have_same_length</span><span class="p">()</span> <span class="k">const</span> <span class="p">{</span> <span class="k">return</span> <span class="p">...;</span> <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="n">std</span><span class="o">::</span><span class="n">array</span><span class="o">&lt;</span><span class="n">Point</span><span class="p">,</span> <span class="mi">4</span><span class="o">&gt;</span> <span class="n">_points</span><span class="p">;</span>  
+</span></span><span class="line"><span class="cl"><span class="p">};</span>
+</span></span></code></pre></div>
 <div class="notices note" ><p>La <a href="https://fr.wikipedia.org/wiki/Programmation_par_contrat">programmation par contrat</a> est un paradigme qui consiste à vérifier tout un tas d&rsquo;assertions au cours de l&rsquo;exécution d&rsquo;un programme pour s&rsquo;assurer qu&rsquo;il est bien dans l&rsquo;état attendu.
 Un mécanisme de programmation par contrat aurait dû être introduit nativement dans le langage en C++20, mais cela n&rsquo;a finalement pas eu lieu.
 Pour l&rsquo;instant, les macros de type <code>assert</code> restent donc l&rsquo;outil standard pour essayer de programmer par contrat en C++.</p>
 </div>
 
 <p>Comme <code>assert</code> n&rsquo;est pas très verbeux, il est possible d&rsquo;ajouter <code>&amp;&amp; &quot;un message&quot;</code> au contenu de l&rsquo;assertion.
-Si la condition est vérifiée, alors <code>&amp;&amp; &quot;un message&quot;</code> ne changera rien, car une chaîne de caractères convertie en <code>bool</code> vaut forcément <code>true</code>. 
+Si la condition est vérifiée, alors <code>&amp;&amp; &quot;un message&quot;</code> ne changera rien, car une chaîne de caractères convertie en <code>bool</code> vaut forcément <code>true</code>.
 Et si l&rsquo;assertion échoue, la condition complète sera affichée dans le message d&rsquo;erreur.</p>
-<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="c1">// Si l&#39;assertion échoue, on aura comme message :
-</span><span class="c1">// Assertion failed: _attr_.is_valid() &amp;&amp; &#34;you probably need to call Initialize() function&#34;, file ###.cpp, line ### 
-</span><span class="c1"></span><span class="n">assert</span><span class="p">(</span><span class="n">_attr_</span><span class="p">.</span><span class="n">is_valid</span><span class="p">()</span> <span class="o">&amp;&amp;</span> <span class="s">&#34;you probably need to call initialize() function&#34;</span><span class="p">);</span>
-</code></pre></div><hr>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="c1">// Si l&#39;assertion échoue, on aura comme message :
+</span></span></span><span class="line"><span class="cl"><span class="c1">// Assertion failed: _attr_.is_valid() &amp;&amp; &#34;you probably need to call Initialize() function&#34;, file ###.cpp, line ### 
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">assert</span><span class="p">(</span><span class="n">_attr_</span><span class="p">.</span><span class="n">is_valid</span><span class="p">()</span> <span class="o">&amp;&amp;</span> <span class="s">&#34;you probably need to call initialize() function&#34;</span><span class="p">);</span>
+</span></span></code></pre></div><hr>
 <h5 id="désactivation-en-release">Désactivation en Release</h5>
 <p>Il faut savoir que lorsque la constante <code>NDEBUG</code> est définie, la macro <code>assert</code> ne fait plus rien.
 En particulier, son contenu n&rsquo;est plus évalué.
 Ce système permet donc de désactiver les assertions en release.</p>
-<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="cp">#define NDEBUG
-</span><span class="cp"></span>
-<span class="cp">#include</span> <span class="cpf">&lt;cassert&gt;</span><span class="cp">
-</span><span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp">
-</span><span class="cp"></span>
-<span class="kt">void</span> <span class="nf">this_will_never_be_called</span><span class="p">()</span>
-<span class="p">{</span>
-    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;You can&#39;t see me... I&#39;m a shadow...&#34;</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
-<span class="p">}</span>
-
-<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
-<span class="p">{</span>
-    <span class="n">assert</span><span class="p">(</span><span class="n">this_will_never_be_called</span><span class="p">());</span>
-    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
-<span class="p">}</span>
-</code></pre></div>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="cp">#define NDEBUG
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span>
+</span></span><span class="line"><span class="cl"><span class="cp">#include</span> <span class="cpf">&lt;cassert&gt;</span><span class="cp">
+</span></span></span><span class="line"><span class="cl"><span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp">
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span>
+</span></span><span class="line"><span class="cl"><span class="kt">void</span> <span class="nf">this_will_never_be_called</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;You can&#39;t see me... I&#39;m a shadow...&#34;</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="n">assert</span><span class="p">(</span><span class="n">this_will_never_be_called</span><span class="p">());</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div>
 <div class="notices warning" ><p>Attention à ne pas appeler n&rsquo;importe quelle fonction à l&rsquo;intérieur d&rsquo;un <code>assert</code>.
 Par exemple, si vous écrivez quelque chose comme <code>assert(my_set.insert(value))</code>, soyez bien conscient que l&rsquo;insertion n&rsquo;aura lieu que si vous êtes en mode debug.</p>
 </div>
@@ -2098,28 +2098,28 @@ D&rsquo;ailleurs, par défaut, CMake ajoute tout seul <code>-DNDEBUG</code> à l
 <h5 id="redéfinir-son-propre-assert">Redéfinir son propre assert</h5>
 <p>Si vous trouvez que <code>assert</code> ne vous donne pas suffisamment d&rsquo;informations, vous pouvez tout à fait définir votre propre macro d&rsquo;assertion.
 Par exemple, celle-ci vous permettra d&rsquo;afficher le contenu d&rsquo;une variable :</p>
-<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="cp">#ifndef NDEBUG
-</span><span class="cp"></span>
-<span class="cp">#define super_assert(cdn, msg)                                                  \
-</span><span class="cp">    if (!cdn)                                                                   \
-</span><span class="cp">    {                                                                           \
-</span><span class="cp">        std::cerr &lt;&lt; &#34;Assertion failed: &#34; &lt;&lt; #cdn                               \
-</span><span class="cp">                  &lt;&lt; &#34;\nLocation: &#34; &lt;&lt; __FILE__ &lt;&lt; &#34; (ln.&#34; &lt;&lt; __LINE__ &lt;&lt; &#34;)&#34;   \
-</span><span class="cp">                  &lt;&lt; &#34;\nReason: &#34; &lt;&lt; msg                                        \
-</span><span class="cp">                  &lt;&lt; std::endl;                                                 \
-</span><span class="cp">        std::terminate();                                                       \
-</span><span class="cp">    }
-</span><span class="cp"></span>
-<span class="cp">#else
-</span><span class="cp">#define super_assert(cdn, msg) ;
-</span><span class="cp">#endif
-</span><span class="cp"></span>
-<span class="kt">void</span> <span class="nf">fcn</span><span class="p">(</span><span class="kt">int</span> <span class="n">value</span><span class="p">)</span>
-<span class="p">{</span>
-    <span class="n">super_assert</span><span class="p">(</span><span class="n">value</span> <span class="o">&gt;</span> <span class="o">-</span><span class="mi">100</span> <span class="o">&amp;&amp;</span> <span class="n">value</span> <span class="o">&lt;</span> <span class="mi">100</span><span class="p">,</span> <span class="n">value</span><span class="p">);</span>
-    <span class="p">...</span>
-<span class="p">};</span>
-</code></pre></div>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="cp">#ifndef NDEBUG
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span>
+</span></span><span class="line"><span class="cl"><span class="cp">#define super_assert(cdn, msg)                                                  \
+</span></span></span><span class="line"><span class="cl"><span class="cp">    if (!cdn)                                                                   \
+</span></span></span><span class="line"><span class="cl"><span class="cp">    {                                                                           \
+</span></span></span><span class="line"><span class="cl"><span class="cp">        std::cerr &lt;&lt; &#34;Assertion failed: &#34; &lt;&lt; #cdn                               \
+</span></span></span><span class="line"><span class="cl"><span class="cp">                  &lt;&lt; &#34;\nLocation: &#34; &lt;&lt; __FILE__ &lt;&lt; &#34; (ln.&#34; &lt;&lt; __LINE__ &lt;&lt; &#34;)&#34;   \
+</span></span></span><span class="line"><span class="cl"><span class="cp">                  &lt;&lt; &#34;\nReason: &#34; &lt;&lt; msg                                        \
+</span></span></span><span class="line"><span class="cl"><span class="cp">                  &lt;&lt; std::endl;                                                 \
+</span></span></span><span class="line"><span class="cl"><span class="cp">        std::terminate();                                                       \
+</span></span></span><span class="line"><span class="cl"><span class="cp">    }
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span>
+</span></span><span class="line"><span class="cl"><span class="cp">#else
+</span></span></span><span class="line"><span class="cl"><span class="cp">#define super_assert(cdn, msg) ;
+</span></span></span><span class="line"><span class="cl"><span class="cp">#endif
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span>
+</span></span><span class="line"><span class="cl"><span class="kt">void</span> <span class="nf">fcn</span><span class="p">(</span><span class="kt">int</span> <span class="n">value</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="n">super_assert</span><span class="p">(</span><span class="n">value</span> <span class="o">&gt;</span> <span class="o">-</span><span class="mi">100</span> <span class="o">&amp;&amp;</span> <span class="n">value</span> <span class="o">&lt;</span> <span class="mi">100</span><span class="p">,</span> <span class="n">value</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="p">...</span>
+</span></span><span class="line"><span class="cl"><span class="p">};</span>
+</span></span></code></pre></div>
 
 <footer class="footline">
 	
@@ -3417,19 +3417,19 @@ Par exemple, celle-ci vous permettra d&rsquo;afficher le contenu d&rsquo;une var
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/CPP_Learning/js/clipboard.min.js?1705262579"></script>
-    <script src="/CPP_Learning/js/perfect-scrollbar.min.js?1705262579"></script>
-    <script src="/CPP_Learning/js/perfect-scrollbar.jquery.min.js?1705262579"></script>
-    <script src="/CPP_Learning/js/jquery.sticky.js?1705262579"></script>
-    <script src="/CPP_Learning/js/featherlight.min.js?1705262579"></script>
-    <script src="/CPP_Learning/js/highlight.pack.js?1705262579"></script>
+    <script src="/CPP_Learning/js/clipboard.min.js?1705567864"></script>
+    <script src="/CPP_Learning/js/perfect-scrollbar.min.js?1705567864"></script>
+    <script src="/CPP_Learning/js/perfect-scrollbar.jquery.min.js?1705567864"></script>
+    <script src="/CPP_Learning/js/jquery.sticky.js?1705567864"></script>
+    <script src="/CPP_Learning/js/featherlight.min.js?1705567864"></script>
+    <script src="/CPP_Learning/js/highlight.pack.js?1705567864"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/CPP_Learning/js/modernizr.custom-3.6.0.js?1705262579"></script>
-    <script src="/CPP_Learning/js/learn.js?1705262579"></script>
-    <script src="/CPP_Learning/js/hugo-learn.js?1705262579"></script>
+    <script src="/CPP_Learning/js/modernizr.custom-3.6.0.js?1705567864"></script>
+    <script src="/CPP_Learning/js/learn.js?1705567864"></script>
+    <script src="/CPP_Learning/js/hugo-learn.js?1705567864"></script>
     
         
-            <script src="/CPP_Learning/mermaid/mermaid.js?1705262579"></script>
+            <script src="/CPP_Learning/mermaid/mermaid.js?1705567864"></script>
         
         <script>
             mermaid.initialize({ startOnLoad: true });

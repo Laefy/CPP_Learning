@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="Hugo 0.76.5" />
+    <meta name="generator" content="Hugo 0.121.0">
     <meta name="description" content="">
 
 
@@ -12,22 +12,22 @@
     <title>Résolution d&#39;appel virtuel :: Cours de C&#43;&#43; - Niveau Master</title>
 
     
-    <link href="/CPP_Learning/css/nucleus.css?1705262579" rel="stylesheet">
-    <link href="/CPP_Learning/css/fontawesome-all.min.css?1705262579" rel="stylesheet">
-    <link href="/CPP_Learning/css/hybrid.css?1705262579" rel="stylesheet">
-    <link href="/CPP_Learning/css/featherlight.min.css?1705262579" rel="stylesheet">
-    <link href="/CPP_Learning/css/perfect-scrollbar.min.css?1705262579" rel="stylesheet">
-    <link href="/CPP_Learning/css/auto-complete.css?1705262579" rel="stylesheet">
-    <link href="/CPP_Learning/css/atom-one-dark-reasonable.css?1705262579" rel="stylesheet">
-    <link href="/CPP_Learning/css/theme.css?1705262579" rel="stylesheet">
-    <link href="/CPP_Learning/css/tabs.css?1705262579" rel="stylesheet">
-    <link href="/CPP_Learning/css/hugo-theme.css?1705262579" rel="stylesheet">
+    <link href="/CPP_Learning/css/nucleus.css?1705567864" rel="stylesheet">
+    <link href="/CPP_Learning/css/fontawesome-all.min.css?1705567864" rel="stylesheet">
+    <link href="/CPP_Learning/css/hybrid.css?1705567864" rel="stylesheet">
+    <link href="/CPP_Learning/css/featherlight.min.css?1705567864" rel="stylesheet">
+    <link href="/CPP_Learning/css/perfect-scrollbar.min.css?1705567864" rel="stylesheet">
+    <link href="/CPP_Learning/css/auto-complete.css?1705567864" rel="stylesheet">
+    <link href="/CPP_Learning/css/atom-one-dark-reasonable.css?1705567864" rel="stylesheet">
+    <link href="/CPP_Learning/css/theme.css?1705567864" rel="stylesheet">
+    <link href="/CPP_Learning/css/tabs.css?1705567864" rel="stylesheet">
+    <link href="/CPP_Learning/css/hugo-theme.css?1705567864" rel="stylesheet">
     
-    <link href="/CPP_Learning/css/theme-mine.css?1705262579" rel="stylesheet">
+    <link href="/CPP_Learning/css/theme-mine.css?1705567864" rel="stylesheet">
     
-    <link href="/CPP_Learning/css/syntax.css?1705262579" rel="stylesheet">
+    <link href="/CPP_Learning/css/syntax.css?1705567864" rel="stylesheet">
 
-    <script src="/CPP_Learning/js/jquery-3.3.1.min.js?1705262579"></script>
+    <script src="/CPP_Learning/js/jquery-3.3.1.min.js?1705567864"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -1955,35 +1955,35 @@
 <p>Lorsqu&rsquo;une classe <code>Parent</code> contenant des fonctions virtuelles est compilée, le compilateur va générer pour l&rsquo;ensemble des classes qui en dérivent une <strong>virtual table</strong>.
 Il s&rsquo;agit d&rsquo;une tableau qui contient, pour chaque fonction virtuelle de la classe, un pointeur sur la fonction qui sera vraiment appelée.</p>
 <p>Analysons la hiérarchie suivante :</p>
-<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="k">struct</span> <span class="nc">GrandFather</span>
-<span class="p">{</span>
-    <span class="k">virtual</span> <span class="o">~</span><span class="n">GrandFather</span><span class="p">()</span> <span class="p">{}</span>
-
-    <span class="k">virtual</span> <span class="kt">void</span> <span class="nf">fcn_a</span><span class="p">(</span><span class="kt">bool</span><span class="p">);</span>
-            <span class="kt">void</span> <span class="nf">fcn_b</span><span class="p">();</span>
-    <span class="k">virtual</span> <span class="kt">void</span> <span class="nf">fcn_c</span><span class="p">()</span> <span class="k">const</span><span class="p">;</span>
-<span class="p">};</span>
-
-<span class="k">struct</span> <span class="nc">Father</span> <span class="o">:</span> <span class="n">GrandFather</span>
-<span class="p">{</span>
-    <span class="kt">void</span> <span class="nf">fcn_a</span><span class="p">(</span><span class="kt">bool</span><span class="p">);</span>
-    <span class="kt">void</span> <span class="nf">fcn_b</span><span class="p">();</span>
-    <span class="k">virtual</span> <span class="kt">void</span> <span class="nf">fcn_d</span><span class="p">();</span>
-<span class="p">};</span>
-
-<span class="k">struct</span> <span class="nc">Son</span> <span class="o">:</span> <span class="n">Father</span>
-<span class="p">{</span>
-    <span class="kt">void</span> <span class="nf">fcn_a</span><span class="p">(</span><span class="kt">bool</span><span class="p">);</span>
-    <span class="kt">void</span> <span class="nf">fcn_c</span><span class="p">();</span>
-<span class="p">};</span>
-
-<span class="k">struct</span> <span class="nc">GrandSon</span> <span class="o">:</span> <span class="n">Son</span>
-<span class="p">{</span>
-    <span class="kt">void</span> <span class="nf">fcn_a</span><span class="p">(</span><span class="kt">char</span><span class="p">,</span> <span class="kt">int</span><span class="p">);</span>
-    <span class="kt">void</span> <span class="nf">fcn_c</span><span class="p">()</span> <span class="k">const</span><span class="p">;</span>
-    <span class="kt">void</span> <span class="nf">fcn_d</span><span class="p">();</span>
-<span class="p">};</span>
-</code></pre></div>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="k">struct</span> <span class="nc">GrandFather</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">virtual</span> <span class="o">~</span><span class="n">GrandFather</span><span class="p">()</span> <span class="p">{}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">virtual</span> <span class="kt">void</span> <span class="nf">fcn_a</span><span class="p">(</span><span class="kt">bool</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">            <span class="kt">void</span> <span class="nf">fcn_b</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">    <span class="k">virtual</span> <span class="kt">void</span> <span class="nf">fcn_c</span><span class="p">()</span> <span class="k">const</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">};</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">struct</span> <span class="nc">Father</span> <span class="o">:</span> <span class="n">GrandFather</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">void</span> <span class="nf">fcn_a</span><span class="p">(</span><span class="kt">bool</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">void</span> <span class="nf">fcn_b</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">    <span class="k">virtual</span> <span class="kt">void</span> <span class="nf">fcn_d</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl"><span class="p">};</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">struct</span> <span class="nc">Son</span> <span class="o">:</span> <span class="n">Father</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">void</span> <span class="nf">fcn_a</span><span class="p">(</span><span class="kt">bool</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">void</span> <span class="nf">fcn_c</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl"><span class="p">};</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">struct</span> <span class="nc">GrandSon</span> <span class="o">:</span> <span class="n">Son</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">void</span> <span class="nf">fcn_a</span><span class="p">(</span><span class="kt">char</span><span class="p">,</span> <span class="kt">int</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">void</span> <span class="nf">fcn_c</span><span class="p">()</span> <span class="k">const</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">void</span> <span class="nf">fcn_d</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl"><span class="p">};</span>
+</span></span></code></pre></div>
 <div class="notices info" ><p>Nous avons volontairement omis les <code>override</code>, car le but est d&rsquo;analyser le comportement du programme pendant un appel de fonction.
 Bien entendu, dans un vrai programme, vous devez toujours placer <code>override</code> sur une fonction redéfinie.</p>
 </div>
@@ -2020,16 +2020,16 @@ La virtual table de <code>Father</code> sera donc la suivante :<br>
 <hr>
 <h3 id="résolution-dappel">Résolution d&rsquo;appel</h3>
 <p>Maintenant que l&rsquo;on connaît les virtual table, nous allons pouvoir déterminer la fonction appelée sur un objet en fonction de son <strong>type statique</strong> (= type de la variable ou de l&rsquo;expression) et de son <strong>type dynamique</strong> (= type avec lequel l&rsquo;objet est construit).</p>
-<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="n">Son</span>          <span class="n">real_son</span><span class="p">;</span>
-<span class="n">GrandSon</span>     <span class="n">real_grand_son</span><span class="p">;</span>
-<span class="n">Father</span>       <span class="n">real_father</span><span class="p">;</span>
-<span class="n">GrandFather</span>  <span class="n">real_grand_father</span><span class="p">;</span>
-
-<span class="n">Father</span><span class="o">&amp;</span>      <span class="n">son_as_father</span>          <span class="o">=</span> <span class="n">real_son</span><span class="p">;</span>
-<span class="n">Father</span><span class="o">&amp;</span>      <span class="n">grand_son_as_father</span>    <span class="o">=</span> <span class="n">real_grand_son</span><span class="p">;</span>
-<span class="n">GrandFather</span><span class="o">&amp;</span> <span class="n">son_as_grand_father</span>    <span class="o">=</span> <span class="n">real_son</span><span class="p">;</span>
-<span class="n">GrandFather</span><span class="o">&amp;</span> <span class="n">father_as_grand_father</span> <span class="o">=</span> <span class="n">real_father</span><span class="p">;</span>
-</code></pre></div><p>Considérons l&rsquo;objet <code>real_father</code>.<br>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="n">Son</span>          <span class="n">real_son</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="n">GrandSon</span>     <span class="n">real_grand_son</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="n">Father</span>       <span class="n">real_father</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="n">GrandFather</span>  <span class="n">real_grand_father</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">Father</span><span class="o">&amp;</span>      <span class="n">son_as_father</span>          <span class="o">=</span> <span class="n">real_son</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="n">Father</span><span class="o">&amp;</span>      <span class="n">grand_son_as_father</span>    <span class="o">=</span> <span class="n">real_grand_son</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="n">GrandFather</span><span class="o">&amp;</span> <span class="n">son_as_grand_father</span>    <span class="o">=</span> <span class="n">real_son</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="n">GrandFather</span><span class="o">&amp;</span> <span class="n">father_as_grand_father</span> <span class="o">=</span> <span class="n">real_father</span><span class="p">;</span>
+</span></span></code></pre></div><p>Considérons l&rsquo;objet <code>real_father</code>.<br>
 Le type statique est <code>Father</code>, puisque la variable est de type <code>Father</code>.<br>
 Le type dynamique est <code>Father</code>, puisqu&rsquo;il a été construit en tant que <code>Father</code>.</p>
 <p>Considérons maintenant <code>son_as_father</code>.<br>
@@ -2044,35 +2044,35 @@ Si non, alors la résolution de l&rsquo;appel s&rsquo;achève pendant la compila
 </ol>
 <p>Essayons de prédire ce qu&rsquo;il va se produire à l&rsquo;exécution sur quelques exemples.</p>
 <hr>
-<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="n">son_as_grand_father</span><span class="p">.</span><span class="n">fcn_b</span><span class="p">();</span>
-</code></pre></div><ol>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="n">son_as_grand_father</span><span class="p">.</span><span class="n">fcn_b</span><span class="p">();</span>
+</span></span></code></pre></div><ol>
 <li>Le type statique de <code>son_as_grand_father</code> est <code>GrandFather</code>. Dans la classe <code>GrandFather</code>, on trouve la fonction <code>fcn_b()</code>.</li>
 <li>Celle-ci n&rsquo;est pas virtuelle.</li>
 <li>Le compilateur décide que l&rsquo;instruction appelera <code>GrandFather::fcn_b()</code>.</li>
 </ol>
 <hr>
-<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="n">son_as_father</span><span class="p">.</span><span class="n">fcn_b</span><span class="p">();</span>
-</code></pre></div><ol>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="n">son_as_father</span><span class="p">.</span><span class="n">fcn_b</span><span class="p">();</span>
+</span></span></code></pre></div><ol>
 <li>Le type statique de <code>son_as_grand_father</code> est <code>Father</code>. Dans la classe <code>Father</code>, on trouve la fonction <code>fcn_b()</code>.</li>
 <li>Celle-ci n&rsquo;est pas virtuelle, puisqu&rsquo;elle n&rsquo;est pas référencée dans la virtual table de <code>Father</code>.</li>
 <li>Le compilateur décide que l&rsquo;instruction appelera <code>Father::fcn_b()</code>.</li>
 </ol>
 <hr>
-<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="n">son_as_grand_father</span><span class="p">.</span><span class="n">fcn_d</span><span class="p">();</span>
-</code></pre></div><ol>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="n">son_as_grand_father</span><span class="p">.</span><span class="n">fcn_d</span><span class="p">();</span>
+</span></span></code></pre></div><ol>
 <li>Le type statique de <code>son_as_grand_father</code> est <code>GrandFather</code>. Dans la classe <code>GrandFather</code>, on ne trouve pas de fonction fonction <code>fcn_d()</code>.<br>
 =&gt; L&rsquo;instruction ne compile pas.</li>
 </ol>
 <hr>
-<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="n">son_as_father</span><span class="p">.</span><span class="n">fcn_d</span><span class="p">();</span>
-</code></pre></div><ol>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="n">son_as_father</span><span class="p">.</span><span class="n">fcn_d</span><span class="p">();</span>
+</span></span></code></pre></div><ol>
 <li>Le type statique de <code>son_as_father</code> est <code>Father</code>. Dans la classe <code>Father</code>, on trouve la fonction <code>fcn_d()</code>.</li>
 <li>Celle-ci est virtuelle.</li>
 <li>Au moment de l&rsquo;exécution, le type dynamique de <code>son_as_father</code> est <code>Son</code>. Dans sa virtual table, <code>fcn_d()</code> pointe sur <code>Father::fcn_d()</code>, c&rsquo;est donc cette fonction là qui sera appelée.</li>
 </ol>
 <hr>
-<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="n">grand_son_as_father</span><span class="p">.</span><span class="n">fcn_d</span><span class="p">();</span>
-</code></pre></div><ol>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="n">grand_son_as_father</span><span class="p">.</span><span class="n">fcn_d</span><span class="p">();</span>
+</span></span></code></pre></div><ol>
 <li>Le type statique de <code>grand_son_as_father</code> est <code>Father</code>. Dans la classe <code>Father</code>, on trouve la fonction <code>fcn_d()</code>.</li>
 <li>Celle-ci est virtuelle.</li>
 <li>Au moment de l&rsquo;exécution, le type dynamique de <code>grand_son_as_father</code> est <code>GrandSon</code>. Dans sa virtual table, <code>fcn_d()</code> pointe sur <code>GrandSon::fcn_d()</code>, c&rsquo;est donc cette fonction là qui sera appelée.</li>
@@ -2080,24 +2080,24 @@ Si non, alors la résolution de l&rsquo;appel s&rsquo;achève pendant la compila
 <hr>
 <h3 id="a-vous-de-jouer">A vous de jouer</h3>
 <p>Essayez maintenant de déterminer par vous-mêmes les fonctions qui seront appelées par les instructions ci-dessous.</p>
-<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="n">Father</span><span class="o">&amp;</span> <span class="n">grand_son_as_father</span> <span class="o">=</span> <span class="n">grand_son</span><span class="p">;</span>
-<span class="n">grand_son_as_father</span><span class="p">.</span><span class="n">fcn_a</span><span class="p">(</span><span class="sc">&#39;a&#39;</span><span class="p">,</span> <span class="mi">8</span><span class="p">)</span>   <span class="c1">// (1)
-</span><span class="c1"></span>
-<span class="n">GrandSon</span> <span class="n">grand_son</span><span class="p">;</span>
-<span class="n">grand_son</span><span class="p">.</span><span class="n">fcn_a</span><span class="p">(</span><span class="nb">false</span><span class="p">);</span>             <span class="c1">// (2)
-</span><span class="c1"></span>
-<span class="n">grand_son_as_father</span><span class="p">.</span><span class="n">fcn_c</span><span class="p">();</span>        <span class="c1">// (3)
-</span><span class="c1"></span>
-<span class="n">Son</span>        <span class="n">son</span><span class="p">;</span>
-<span class="k">const</span> <span class="n">Son</span><span class="o">&amp;</span> <span class="n">son_cref</span> <span class="o">=</span> <span class="n">son</span><span class="p">;</span>
-<span class="n">son_cref</span><span class="p">.</span><span class="n">fcn_c</span><span class="p">();</span>                   <span class="c1">// (4)
-</span><span class="c1"></span>
-<span class="n">GrandFather</span><span class="o">&amp;</span> <span class="n">son_as_grand_father</span> <span class="o">=</span> <span class="n">son</span><span class="p">;</span>
-<span class="n">son_as_grand_father</span><span class="p">.</span><span class="n">fcn_c</span><span class="p">();</span>        <span class="c1">// (5)
-</span><span class="c1"></span>
-<span class="n">Father</span> <span class="n">grand_son_copy_as_father</span> <span class="o">=</span> <span class="n">grand_son</span><span class="p">;</span>
-<span class="n">grand_son_copy_as_father</span><span class="p">.</span><span class="n">fcn_d</span><span class="p">();</span>   <span class="c1">// (6)
-</span></code></pre></div><p>Attention, il y a des vilains pièges, donc vérifiez bien la solution à la fin !</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="n">Father</span><span class="o">&amp;</span> <span class="n">grand_son_as_father</span> <span class="o">=</span> <span class="n">grand_son</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="n">grand_son_as_father</span><span class="p">.</span><span class="n">fcn_a</span><span class="p">(</span><span class="sc">&#39;a&#39;</span><span class="p">,</span> <span class="mi">8</span><span class="p">)</span>   <span class="c1">// (1)
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl"><span class="n">GrandSon</span> <span class="n">grand_son</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="n">grand_son</span><span class="p">.</span><span class="n">fcn_a</span><span class="p">(</span><span class="nb">false</span><span class="p">);</span>             <span class="c1">// (2)
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl"><span class="n">grand_son_as_father</span><span class="p">.</span><span class="n">fcn_c</span><span class="p">();</span>        <span class="c1">// (3)
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl"><span class="n">Son</span>        <span class="n">son</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="k">const</span> <span class="n">Son</span><span class="o">&amp;</span> <span class="n">son_cref</span> <span class="o">=</span> <span class="n">son</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="n">son_cref</span><span class="p">.</span><span class="n">fcn_c</span><span class="p">();</span>                   <span class="c1">// (4)
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl"><span class="n">GrandFather</span><span class="o">&amp;</span> <span class="n">son_as_grand_father</span> <span class="o">=</span> <span class="n">son</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="n">son_as_grand_father</span><span class="p">.</span><span class="n">fcn_c</span><span class="p">();</span>        <span class="c1">// (5)
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl"><span class="n">Father</span> <span class="n">grand_son_copy_as_father</span> <span class="o">=</span> <span class="n">grand_son</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="n">grand_son_copy_as_father</span><span class="p">.</span><span class="n">fcn_d</span><span class="p">();</span>   <span class="c1">// (6)
+</span></span></span></code></pre></div><p>Attention, il y a des vilains pièges, donc vérifiez bien la solution à la fin !</p>
 
 <div class="expand">
     <div class="expand-label" style="cursor: pointer;" onclick="$h = $(this);$h.next('div').slideToggle(100,function () {$h.children('i').attr('class',function () {return $h.next('div').is(':visible') ? 'fas fa-chevron-down' : 'fas fa-chevron-right';});});">
@@ -3427,19 +3427,19 @@ Comme <code>grand_son_copy_as_father</code> n&rsquo;est pas une référence, il 
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/CPP_Learning/js/clipboard.min.js?1705262579"></script>
-    <script src="/CPP_Learning/js/perfect-scrollbar.min.js?1705262579"></script>
-    <script src="/CPP_Learning/js/perfect-scrollbar.jquery.min.js?1705262579"></script>
-    <script src="/CPP_Learning/js/jquery.sticky.js?1705262579"></script>
-    <script src="/CPP_Learning/js/featherlight.min.js?1705262579"></script>
-    <script src="/CPP_Learning/js/highlight.pack.js?1705262579"></script>
+    <script src="/CPP_Learning/js/clipboard.min.js?1705567864"></script>
+    <script src="/CPP_Learning/js/perfect-scrollbar.min.js?1705567864"></script>
+    <script src="/CPP_Learning/js/perfect-scrollbar.jquery.min.js?1705567864"></script>
+    <script src="/CPP_Learning/js/jquery.sticky.js?1705567864"></script>
+    <script src="/CPP_Learning/js/featherlight.min.js?1705567864"></script>
+    <script src="/CPP_Learning/js/highlight.pack.js?1705567864"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/CPP_Learning/js/modernizr.custom-3.6.0.js?1705262579"></script>
-    <script src="/CPP_Learning/js/learn.js?1705262579"></script>
-    <script src="/CPP_Learning/js/hugo-learn.js?1705262579"></script>
+    <script src="/CPP_Learning/js/modernizr.custom-3.6.0.js?1705567864"></script>
+    <script src="/CPP_Learning/js/learn.js?1705567864"></script>
+    <script src="/CPP_Learning/js/hugo-learn.js?1705567864"></script>
     
         
-            <script src="/CPP_Learning/mermaid/mermaid.js?1705262579"></script>
+            <script src="/CPP_Learning/mermaid/mermaid.js?1705567864"></script>
         
         <script>
             mermaid.initialize({ startOnLoad: true });

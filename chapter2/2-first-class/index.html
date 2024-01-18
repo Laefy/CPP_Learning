@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="Hugo 0.76.5" />
+    <meta name="generator" content="Hugo 0.121.0">
     <meta name="description" content="">
 
 
@@ -12,22 +12,22 @@
     <title>✨ Première classe :: Cours de C&#43;&#43; - Niveau Master</title>
 
     
-    <link href="/CPP_Learning/css/nucleus.css?1705262579" rel="stylesheet">
-    <link href="/CPP_Learning/css/fontawesome-all.min.css?1705262579" rel="stylesheet">
-    <link href="/CPP_Learning/css/hybrid.css?1705262579" rel="stylesheet">
-    <link href="/CPP_Learning/css/featherlight.min.css?1705262579" rel="stylesheet">
-    <link href="/CPP_Learning/css/perfect-scrollbar.min.css?1705262579" rel="stylesheet">
-    <link href="/CPP_Learning/css/auto-complete.css?1705262579" rel="stylesheet">
-    <link href="/CPP_Learning/css/atom-one-dark-reasonable.css?1705262579" rel="stylesheet">
-    <link href="/CPP_Learning/css/theme.css?1705262579" rel="stylesheet">
-    <link href="/CPP_Learning/css/tabs.css?1705262579" rel="stylesheet">
-    <link href="/CPP_Learning/css/hugo-theme.css?1705262579" rel="stylesheet">
+    <link href="/CPP_Learning/css/nucleus.css?1705567863" rel="stylesheet">
+    <link href="/CPP_Learning/css/fontawesome-all.min.css?1705567863" rel="stylesheet">
+    <link href="/CPP_Learning/css/hybrid.css?1705567863" rel="stylesheet">
+    <link href="/CPP_Learning/css/featherlight.min.css?1705567863" rel="stylesheet">
+    <link href="/CPP_Learning/css/perfect-scrollbar.min.css?1705567863" rel="stylesheet">
+    <link href="/CPP_Learning/css/auto-complete.css?1705567863" rel="stylesheet">
+    <link href="/CPP_Learning/css/atom-one-dark-reasonable.css?1705567863" rel="stylesheet">
+    <link href="/CPP_Learning/css/theme.css?1705567863" rel="stylesheet">
+    <link href="/CPP_Learning/css/tabs.css?1705567863" rel="stylesheet">
+    <link href="/CPP_Learning/css/hugo-theme.css?1705567863" rel="stylesheet">
     
-    <link href="/CPP_Learning/css/theme-mine.css?1705262579" rel="stylesheet">
+    <link href="/CPP_Learning/css/theme-mine.css?1705567863" rel="stylesheet">
     
-    <link href="/CPP_Learning/css/syntax.css?1705262579" rel="stylesheet">
+    <link href="/CPP_Learning/css/syntax.css?1705567863" rel="stylesheet">
 
-    <script src="/CPP_Learning/js/jquery-3.3.1.min.js?1705262579"></script>
+    <script src="/CPP_Learning/js/jquery-3.3.1.min.js?1705567863"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -1959,18 +1959,18 @@
 <hr>
 <h3 id="méthodologie">Méthodologie</h3>
 <p>Pour cet exercice, on vous fournit le code de la fonction <code>main</code>.</p>
-<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
-<span class="p">{</span>
-    <span class="c1">// Person p;
-</span><span class="c1"></span>
-    <span class="c1">// p.set_name(&#34;Batman&#34;);
-</span><span class="c1"></span>    <span class="c1">// p.set_age(23);
-</span><span class="c1"></span>
-    <span class="c1">// std::cout &lt;&lt; &#34;Person named &#39;&#34; &lt;&lt; p.get_name() &lt;&lt; &#34;&#39; is &#34; &lt;&lt; p.get_age() &lt;&lt; &#34; years old.&#34; &lt;&lt; std::endl;
-</span><span class="c1"></span>
-    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
-<span class="p">}</span>
-</code></pre></div><p>Vous allez procéder ici en suivant plus ou moins la méthodologie <strong>Test Driven Development</strong> (ou TDD),
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">// Person p;
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl">    <span class="c1">// p.set_name(&#34;Batman&#34;);
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="c1">// p.set_age(23);
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl">    <span class="c1">// std::cout &lt;&lt; &#34;Person named &#39;&#34; &lt;&lt; p.get_name() &lt;&lt; &#34;&#39; is &#34; &lt;&lt; p.get_age() &lt;&lt; &#34; years old.&#34; &lt;&lt; std::endl;
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><p>Vous allez procéder ici en suivant plus ou moins la méthodologie <strong>Test Driven Development</strong> (ou TDD),
 qui consiste à écrire le code des tests avant d&rsquo;écrire le code appelé. Dans votre cas, il ne s&rsquo;agira pas réellement de TDD (si vous voulez vraiment voir en quoi cela consiste, vous pouvez trouver plein d&rsquo;exemples sur Internet), mais vous suivrez les étapes ci-dessous afin de vous habituer à écrire le code appelé uniquement à partir de ce que le code appelant requiert :</p>
 <ol>
 <li>Décommenter la prochaine ligne du <code>main</code>.</li>
@@ -1989,10 +1989,10 @@ qui consiste à écrire le code des tests avant d&rsquo;écrire le code appelé.
 <hr>
 <h3 id="définition-dune-classe">Définition d&rsquo;une classe</h3>
 <p>Voici la syntaxe permettant de définir une classe <code>A</code> :</p>
-<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="k">class</span> <span class="nc">A</span>
-<span class="p">{</span>
-<span class="p">};</span>
-</code></pre></div><p>Attention à ne pas oublier le point virgule <code>;</code> après l&rsquo;accolade fermante. Il s&rsquo;agit d&rsquo;une erreur classique.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">A</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl"><span class="p">};</span>
+</span></span></code></pre></div><p>Attention à ne pas oublier le point virgule <code>;</code> après l&rsquo;accolade fermante. Il s&rsquo;agit d&rsquo;une erreur classique.</p>
 <p>Décommentez la première instruction du <code>main</code>, permettant d&rsquo;instancier une variable <code>p</code> de type <code>Person</code>, et définissez la classe correspondante juste au-dessus du <code>main</code>.<br>
 Compilez et testez que le programme se lance correctement.</p>
 
@@ -2007,42 +2007,42 @@ Compilez et testez que le programme se lance correctement.</p>
     	</span>
     </div>
     <div class="expand-content" style="display: none;">
-        <div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="cp">#include</span> <span class="cpf">...</span><span class="cp">
-</span><span class="cp"></span>
-<span class="k">class</span> <span class="nc">Person</span>
-<span class="p">{</span>
-<span class="p">};</span>
-
-<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
-<span class="p">{</span>
-    <span class="n">Person</span> <span class="n">p</span><span class="p">;</span>
-    <span class="p">...</span>
-<span class="p">}</span>
-</code></pre></div>
+        <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="cp">#include ...
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span>
+</span></span><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">Person</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl"><span class="p">};</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="n">Person</span> <span class="n">p</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">...</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div>
     </div>
 </div>
 <hr>
 <h3 id="définition-des-membres-attributs-et-fonctions-membres">Définition des membres (attributs et fonctions-membres)</h3>
 <p>Pour définir des membres dans une classe, il faut dans un premier temps choisir leur visibilité. En C++, cela se fait à l&rsquo;aide des mots-clefs <code>public</code>, <code>private</code> et <code>protected</code>. Dans ce chapitre, nous n&rsquo;utiliserons que les deux premiers.</p>
 <p>Voici un exemple de classe définissant des fonctions-membres publiques et des attributs privés :</p>
-<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="k">class</span> <span class="nc">SomeClass</span>
-<span class="p">{</span>
-<span class="k">public</span><span class="o">:</span>
-    <span class="kt">void</span> <span class="n">fcn1</span><span class="p">(</span><span class="kt">int</span> <span class="n">p1</span><span class="p">,</span> <span class="kt">int</span> <span class="n">p2</span><span class="p">)</span>
-    <span class="p">{</span>
-        <span class="c1">// code
-</span><span class="c1"></span>    <span class="p">}</span>
-
-    <span class="kt">int</span> <span class="nf">fcn2</span><span class="p">(</span><span class="kt">bool</span> <span class="n">p1</span><span class="p">)</span>
-    <span class="p">{</span>
-        <span class="c1">// code
-</span><span class="c1"></span>    <span class="p">}</span>
-
-<span class="k">private</span><span class="o">:</span>
-    <span class="kt">int</span>         <span class="n">_member1</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
-    <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">_member2</span><span class="p">;</span>
-<span class="p">};</span>
-</code></pre></div>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">SomeClass</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl"><span class="k">public</span><span class="o">:</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">void</span> <span class="n">fcn1</span><span class="p">(</span><span class="kt">int</span> <span class="n">p1</span><span class="p">,</span> <span class="kt">int</span> <span class="n">p2</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="c1">// code
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="kt">int</span> <span class="nf">fcn2</span><span class="p">(</span><span class="kt">bool</span> <span class="n">p1</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="c1">// code
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">private</span><span class="o">:</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">int</span>         <span class="n">_member1</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">_member2</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">};</span>
+</span></span></code></pre></div>
 <div class="notices note" ><p>- Nous avons mis la partie publique avant la partie privée, mais on peut très bien faire l&rsquo;inverse. Il est même possible d&rsquo;écrire un nouveau bloc public derrière le bloc privé.<br>
 - Ici, toutes les fonctions sont publiques, et tous les attributs sont privés, mais on peut très bien mettre la définition d&rsquo;une fonction dans le bloc privé ou la définition d&rsquo;un attribut dans le bloc public.<br>
 - Nous avons préfixé les attributs avec <code>_</code>. Ce n&rsquo;est ni obligatoire de préfixer, ni d&rsquo;utiliser <code>_</code> comme préfixe (certains utilisent <code>m_</code> ou <code>my</code>), mais c&rsquo;est toujours pratique de le faire pour distinguer les attributs des paramètres de même nom.</p>
@@ -2068,21 +2068,21 @@ Autant utiliser une classe qui s&rsquo;en charge déjà pour nous 🙂</p>
 <p>La signature la plus appropriée pour <code>set_name</code> avec ce que l&rsquo;on a vu jusqu&rsquo;ici est : <code>void set_name(const std::string&amp; name)</code>. Les copies de <code>std::string</code> étant coûteuses (allocation mémoire), on passera par référence constante plutôt que par copie.</p>
 <p>Enfin, pour les visibilités, <code>_name</code> doit être privé, car on y accède uniquement depuis une fonction-membre. En revanche, <code>set_name</code> doit être publique, car on l&rsquo;utilise depuis le <code>main</code>, donc en dehors de la définition de la classe.</p>
 <p>Voici le nouveau code de la classe <code>Person</code> :</p>
-<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="k">class</span> <span class="nc">Person</span>
-<span class="p">{</span>
-<span class="k">public</span><span class="o">:</span>
-    <span class="kt">void</span> <span class="n">set_name</span><span class="p">(</span><span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&amp;</span> <span class="n">name</span><span class="p">)</span> <span class="p">{</span> <span class="n">_name</span> <span class="o">=</span> <span class="n">name</span><span class="p">;</span> <span class="p">}</span>
-
-<span class="k">private</span><span class="o">:</span>
-    <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">_name</span><span class="p">;</span>
-<span class="p">};</span>
-</code></pre></div>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">Person</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl"><span class="k">public</span><span class="o">:</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">void</span> <span class="n">set_name</span><span class="p">(</span><span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&amp;</span> <span class="n">name</span><span class="p">)</span> <span class="p">{</span> <span class="n">_name</span> <span class="o">=</span> <span class="n">name</span><span class="p">;</span> <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">private</span><span class="o">:</span>
+</span></span><span class="line"><span class="cl">    <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">_name</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">};</span>
+</span></span></code></pre></div>
     </div>
 </div>
 <hr>
 <p><strong>Comment s&rsquo;assurer que le code est juste, sachant que la ligne qui affiche le résultat est toujours commentée ?</strong></p>
 <p>C&rsquo;est la raison pour laquelle je vous ai demandé d&rsquo;installer un vrai IDE. Nous allons voir comment inspecter les valeurs du programme au cours de l&rsquo;exécution à l&rsquo;aide du débuggeur.</p>
-<p>Déjà, il faut placer un <strong>breakpoint</strong>. Cela permet au programme de se mettre en pause, juste avant l&rsquo;exécution d&rsquo;une instruction particulière. Nous allons placer le breakpoint sur l&rsquo;instruction <code>return 0;</code> du <code>main</code>. 
+<p>Déjà, il faut placer un <strong>breakpoint</strong>. Cela permet au programme de se mettre en pause, juste avant l&rsquo;exécution d&rsquo;une instruction particulière. Nous allons placer le breakpoint sur l&rsquo;instruction <code>return 0;</code> du <code>main</code>.
 Pour faire cela dans VSCode, placez votre curseur sur la ligne en question et appuyer sur F9. Vous pouvez aussi cliquer directement dans l&rsquo;espace juste avant le numéro de ligne.
 <img src="/CPP_Learning/images/vscode-breakpoint.png" alt=""></p>
 <p>Afin de pouvoir lancer le programme, il faudra préalablement avoir configuré votre fichier <code>launch.json</code>.<br>
@@ -2122,17 +2122,17 @@ Evidemment, ce genre de bonne pratique ne peut s&rsquo;appliquer que dans le cas
 </div>
 <p>Pour <code>set_age</code>, il est préférable de passer la paramètre par valeur (ou copie). En effet, pour des types primitifs ou des petits objets qui n&rsquo;allouent rien à leur construction, passer par valeur plutôt que par const-ref permet au compilateur d&rsquo;optimiser le code comme il le souhaite.</p>
 <p>Voici le nouveau code :</p>
-<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="k">class</span> <span class="nc">Person</span>
-<span class="p">{</span>
-<span class="k">public</span><span class="o">:</span>
-    <span class="kt">void</span> <span class="n">set_name</span><span class="p">(</span><span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&amp;</span> <span class="n">name</span><span class="p">)</span> <span class="p">{</span> <span class="n">_name</span> <span class="o">=</span> <span class="n">name</span><span class="p">;</span> <span class="p">}</span>
-    <span class="kt">void</span> <span class="nf">set_age</span><span class="p">(</span><span class="kt">unsigned</span> <span class="kt">int</span> <span class="n">age</span><span class="p">)</span> <span class="p">{</span> <span class="n">_age</span> <span class="o">=</span> <span class="n">age</span><span class="p">;</span> <span class="p">}</span>
-
-<span class="k">private</span><span class="o">:</span>
-    <span class="n">std</span><span class="o">::</span><span class="n">string</span>  <span class="n">_name</span><span class="p">;</span>
-    <span class="kt">unsigned</span> <span class="kt">int</span> <span class="n">_age</span><span class="p">;</span>
-<span class="p">};</span>
-</code></pre></div>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">Person</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl"><span class="k">public</span><span class="o">:</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">void</span> <span class="n">set_name</span><span class="p">(</span><span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&amp;</span> <span class="n">name</span><span class="p">)</span> <span class="p">{</span> <span class="n">_name</span> <span class="o">=</span> <span class="n">name</span><span class="p">;</span> <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">void</span> <span class="nf">set_age</span><span class="p">(</span><span class="kt">unsigned</span> <span class="kt">int</span> <span class="n">age</span><span class="p">)</span> <span class="p">{</span> <span class="n">_age</span> <span class="o">=</span> <span class="n">age</span><span class="p">;</span> <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">private</span><span class="o">:</span>
+</span></span><span class="line"><span class="cl">    <span class="n">std</span><span class="o">::</span><span class="n">string</span>  <span class="n">_name</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">unsigned</span> <span class="kt">int</span> <span class="n">_age</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">};</span>
+</span></span></code></pre></div>
     </div>
 </div>
 <p>Testez à nouveau votre code avec le débuggeur. En plus du breakpoint final, ajoutez un breakpoint suppplémentaire de manière à vous arrêter juste après l&rsquo;exécution du <code>set_name</code> et juste avant l&rsquo;exécution du <code>set_age</code>.</p>
@@ -2166,10 +2166,10 @@ Evidemment, ce genre de bonne pratique ne peut s&rsquo;appliquer que dans le cas
     	</span>
     </div>
     <div class="expand-content" style="display: none;">
-        <div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="k">private</span><span class="o">:</span>
-    <span class="n">std</span><span class="o">::</span><span class="n">string</span>  <span class="n">_name</span><span class="p">;</span>
-    <span class="kt">unsigned</span> <span class="kt">int</span> <span class="n">_age</span> <span class="o">=</span> <span class="mi">0u</span><span class="p">;</span>
-</code></pre></div><div class="notices info" ><p><code>0u</code> permet de faire référence au <code>0</code> entier non-signé. Cela n&rsquo;a pas beaucoup d&rsquo;importance d&rsquo;ici, puisque <code>_age</code> est explicitement typé, mais si on écrivait dans une fonction <code>auto v = 0u;</code> alors <code>v</code> serait de type <code>unsigned int</code> plutôt que de type <code>int</code>.</p>
+        <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="k">private</span><span class="o">:</span>
+</span></span><span class="line"><span class="cl">    <span class="n">std</span><span class="o">::</span><span class="n">string</span>  <span class="n">_name</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">unsigned</span> <span class="kt">int</span> <span class="n">_age</span> <span class="o">=</span> <span class="mi">0u</span><span class="p">;</span>
+</span></span></code></pre></div><div class="notices info" ><p><code>0u</code> permet de faire référence au <code>0</code> entier non-signé. Cela n&rsquo;a pas beaucoup d&rsquo;importance d&rsquo;ici, puisque <code>_age</code> est explicitement typé, mais si on écrivait dans une fonction <code>auto v = 0u;</code> alors <code>v</code> serait de type <code>unsigned int</code> plutôt que de type <code>int</code>.</p>
 </div>
 
     </div>
@@ -2178,31 +2178,30 @@ Evidemment, ce genre de bonne pratique ne peut s&rsquo;appliquer que dans le cas
 <h3 id="fonction-membre-constante">Fonction-membre constante</h3>
 <p>Il ne reste plus qu&rsquo;une seule ligne à décommenter. Vous devrez ici implémenter deux <strong>accesseurs</strong> (ou <strong>getters</strong>), un pour le nom et un pour l&rsquo;âge.</p>
 <p>Les accesseurs sont des fonctions qui ne sont pas censées modifier l&rsquo;état de l&rsquo;objet lorsqu&rsquo;elles sont appelées. En C++, on spécifie cette garantie en plaçant le mot-clef <code>const</code> à la fin de la signature de la fonction.</p>
-<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="k">public</span><span class="o">:</span>
-    <span class="kt">int</span> <span class="n">get_value</span><span class="p">()</span> <span class="k">const</span> <span class="p">{</span> <span class="k">return</span> <span class="n">_value</span><span class="p">;</span> <span class="p">}</span>
-</code></pre></div><p>Dès lors qu&rsquo;une fonction-membre est marquée <code>const</code>, le compilateur va vérifier qu&rsquo;aucune modification n&rsquo;est effectué sur les attributs de l&rsquo;objet. Le code suivant ne compilera donc pas :<br>
-<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="k">class</span> <span class="nc">SomeClass</span>
-<span class="p">{</span>
-<span class="k">public</span><span class="o">:</span>
-    <span class="kt">int</span> <span class="n">set_and_get</span><span class="p">(</span><span class="kt">int</span> <span class="n">value</span><span class="p">)</span> <span class="k">const</span>
-    <span class="p">{</span>
-<span class="hl">        <span class="n">_value</span> <span class="o">=</span> <span class="n">value</span><span class="p">;</span>
-</span>        <span class="k">return</span> <span class="n">_value</span><span class="p">;</span>
-    <span class="p">}</span>
-
-<span class="k">private</span><span class="o">:</span>
-    <span class="kt">int</span> <span class="n">_value</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
-<span class="p">};</span>
-</code></pre></div></p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="k">public</span><span class="o">:</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">int</span> <span class="n">get_value</span><span class="p">()</span> <span class="k">const</span> <span class="p">{</span> <span class="k">return</span> <span class="n">_value</span><span class="p">;</span> <span class="p">}</span>
+</span></span></code></pre></div><p>Dès lors qu&rsquo;une fonction-membre est marquée <code>const</code>, le compilateur va vérifier qu&rsquo;aucune modification n&rsquo;est effectué sur les attributs de l&rsquo;objet. Le code suivant ne compilera donc pas :<br>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">SomeClass</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl"><span class="k">public</span><span class="o">:</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">int</span> <span class="n">set_and_get</span><span class="p">(</span><span class="kt">int</span> <span class="n">value</span><span class="p">)</span> <span class="k">const</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line hl"><span class="cl">        <span class="n">_value</span> <span class="o">=</span> <span class="n">value</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="n">_value</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">private</span><span class="o">:</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">int</span> <span class="n">_value</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">};</span></span></span></code></pre></div></p>
 <p>Aussi, seules les fonctions-membres constantes peuvent être appelées sur des objets constants ou des références constantes. Le code suivant ne compilera que si la fonction <code>Obj::get</code> a bien été marquée <code>const</code>.</p>
-<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="kt">void</span> <span class="nf">fcn</span><span class="p">(</span><span class="k">const</span> <span class="n">Obj</span><span class="o">&amp;</span> <span class="n">param</span><span class="p">)</span>
-<span class="p">{</span>
-    <span class="n">param</span><span class="p">.</span><span class="n">get</span><span class="p">();</span>
-
-    <span class="k">const</span> <span class="n">Obj</span> <span class="n">var</span><span class="p">;</span>
-    <span class="n">var</span><span class="p">.</span><span class="n">get</span><span class="p">();</span>
-<span class="p">};</span>
-</code></pre></div>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="kt">void</span> <span class="nf">fcn</span><span class="p">(</span><span class="k">const</span> <span class="n">Obj</span><span class="o">&amp;</span> <span class="n">param</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="n">param</span><span class="p">.</span><span class="n">get</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">const</span> <span class="n">Obj</span> <span class="n">var</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">var</span><span class="p">.</span><span class="n">get</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl"><span class="p">};</span>
+</span></span></code></pre></div>
 <div class="notices warning" ><p>Il est extrêmement important de s&rsquo;assurer de la <strong>const-correctness</strong> de votre code. Le mot-clef <code>const</code> doit être placé sur les variables, références et attributs qui ne vont pas être modifiés, ainsi que sur les fonctions-membres qui ne vont pas modifier l&rsquo;état de l&rsquo;objet.<br>
 Une bonne partie des <code>const</code> n&rsquo;est pas nécessaire pour faire compiler et fonctionner le programme, et c&rsquo;est donc difficile, surtout au début, de prendre l&rsquo;habitude de les mettre partout où ils devraient être. Cependant, même si le compilateur peut parfois s&rsquo;en passer, il s&rsquo;agit d&rsquo;une information très utile pour le programmeur qui va lire votre code, car cela permet d&rsquo;identifier très vite ce qui peut bouger et ce qui ne bougera jamais au cours de l&rsquo;exécution.<br>
 Donc demandez-vous autant que possible si vous avez bien placé les <code>const</code> partout où vous pouvez, et faites-le si ce n&rsquo;est le cas 💪</p>
@@ -2222,12 +2221,12 @@ Donc demandez-vous autant que possible si vous avez bien placé les <code>const<
     </div>
     <div class="expand-content" style="display: none;">
         <p>Pour les types de retour, c&rsquo;est pareil que pour les paramètres en entrée, on peut renvoyer des const-ref pour éviter les copies coûteuses de <code>string</code>.</p>
-<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="k">public</span><span class="o">:</span>
-    <span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&amp;</span> <span class="n">get_name</span><span class="p">()</span> <span class="k">const</span> <span class="p">{</span> <span class="k">return</span> <span class="n">_name</span><span class="p">;</span> <span class="p">}</span>
-    <span class="kt">unsigned</span> <span class="kt">int</span>       <span class="nf">get_age</span><span class="p">()</span> <span class="k">const</span>  <span class="p">{</span> <span class="k">return</span> <span class="n">_age</span><span class="p">;</span> <span class="p">}</span>
-
-    <span class="p">...</span>
-</code></pre></div>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="k">public</span><span class="o">:</span>
+</span></span><span class="line"><span class="cl">    <span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&amp;</span> <span class="n">get_name</span><span class="p">()</span> <span class="k">const</span> <span class="p">{</span> <span class="k">return</span> <span class="n">_name</span><span class="p">;</span> <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">unsigned</span> <span class="kt">int</span>       <span class="nf">get_age</span><span class="p">()</span> <span class="k">const</span>  <span class="p">{</span> <span class="k">return</span> <span class="n">_age</span><span class="p">;</span> <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="p">...</span>
+</span></span></code></pre></div>
     </div>
 </div>
 
@@ -3531,19 +3530,19 @@ Donc demandez-vous autant que possible si vous avez bien placé les <code>const<
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/CPP_Learning/js/clipboard.min.js?1705262579"></script>
-    <script src="/CPP_Learning/js/perfect-scrollbar.min.js?1705262579"></script>
-    <script src="/CPP_Learning/js/perfect-scrollbar.jquery.min.js?1705262579"></script>
-    <script src="/CPP_Learning/js/jquery.sticky.js?1705262579"></script>
-    <script src="/CPP_Learning/js/featherlight.min.js?1705262579"></script>
-    <script src="/CPP_Learning/js/highlight.pack.js?1705262579"></script>
+    <script src="/CPP_Learning/js/clipboard.min.js?1705567864"></script>
+    <script src="/CPP_Learning/js/perfect-scrollbar.min.js?1705567864"></script>
+    <script src="/CPP_Learning/js/perfect-scrollbar.jquery.min.js?1705567864"></script>
+    <script src="/CPP_Learning/js/jquery.sticky.js?1705567864"></script>
+    <script src="/CPP_Learning/js/featherlight.min.js?1705567864"></script>
+    <script src="/CPP_Learning/js/highlight.pack.js?1705567864"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/CPP_Learning/js/modernizr.custom-3.6.0.js?1705262579"></script>
-    <script src="/CPP_Learning/js/learn.js?1705262579"></script>
-    <script src="/CPP_Learning/js/hugo-learn.js?1705262579"></script>
+    <script src="/CPP_Learning/js/modernizr.custom-3.6.0.js?1705567864"></script>
+    <script src="/CPP_Learning/js/learn.js?1705567864"></script>
+    <script src="/CPP_Learning/js/hugo-learn.js?1705567864"></script>
     
         
-            <script src="/CPP_Learning/mermaid/mermaid.js?1705262579"></script>
+            <script src="/CPP_Learning/mermaid/mermaid.js?1705567864"></script>
         
         <script>
             mermaid.initialize({ startOnLoad: true });

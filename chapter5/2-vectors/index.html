@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="Hugo 0.76.5" />
+    <meta name="generator" content="Hugo 0.121.0">
     <meta name="description" content="">
 
 
@@ -12,22 +12,22 @@
     <title>Tableaux dynamiques :: Cours de C&#43;&#43; - Niveau Master</title>
 
     
-    <link href="/CPP_Learning/css/nucleus.css?1705262579" rel="stylesheet">
-    <link href="/CPP_Learning/css/fontawesome-all.min.css?1705262579" rel="stylesheet">
-    <link href="/CPP_Learning/css/hybrid.css?1705262579" rel="stylesheet">
-    <link href="/CPP_Learning/css/featherlight.min.css?1705262579" rel="stylesheet">
-    <link href="/CPP_Learning/css/perfect-scrollbar.min.css?1705262579" rel="stylesheet">
-    <link href="/CPP_Learning/css/auto-complete.css?1705262579" rel="stylesheet">
-    <link href="/CPP_Learning/css/atom-one-dark-reasonable.css?1705262579" rel="stylesheet">
-    <link href="/CPP_Learning/css/theme.css?1705262579" rel="stylesheet">
-    <link href="/CPP_Learning/css/tabs.css?1705262579" rel="stylesheet">
-    <link href="/CPP_Learning/css/hugo-theme.css?1705262579" rel="stylesheet">
+    <link href="/CPP_Learning/css/nucleus.css?1705567864" rel="stylesheet">
+    <link href="/CPP_Learning/css/fontawesome-all.min.css?1705567864" rel="stylesheet">
+    <link href="/CPP_Learning/css/hybrid.css?1705567864" rel="stylesheet">
+    <link href="/CPP_Learning/css/featherlight.min.css?1705567864" rel="stylesheet">
+    <link href="/CPP_Learning/css/perfect-scrollbar.min.css?1705567864" rel="stylesheet">
+    <link href="/CPP_Learning/css/auto-complete.css?1705567864" rel="stylesheet">
+    <link href="/CPP_Learning/css/atom-one-dark-reasonable.css?1705567864" rel="stylesheet">
+    <link href="/CPP_Learning/css/theme.css?1705567864" rel="stylesheet">
+    <link href="/CPP_Learning/css/tabs.css?1705567864" rel="stylesheet">
+    <link href="/CPP_Learning/css/hugo-theme.css?1705567864" rel="stylesheet">
     
-    <link href="/CPP_Learning/css/theme-mine.css?1705262579" rel="stylesheet">
+    <link href="/CPP_Learning/css/theme-mine.css?1705567864" rel="stylesheet">
     
-    <link href="/CPP_Learning/css/syntax.css?1705262579" rel="stylesheet">
+    <link href="/CPP_Learning/css/syntax.css?1705567864" rel="stylesheet">
 
-    <script src="/CPP_Learning/js/jquery-3.3.1.min.js?1705262579"></script>
+    <script src="/CPP_Learning/js/jquery-3.3.1.min.js?1705567864"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -1974,14 +1974,14 @@ Remplacez ensuite les <code>{}</code> dans l&rsquo;instanciation par <code>()</c
     	</span>
     </div>
     <div class="expand-content" style="display: none;">
-        <div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="c1">//std::vector&lt;int&gt; values { 4, 0 };
-</span><span class="c1"></span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">values</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
-
-<span class="k">for</span> <span class="p">(</span><span class="k">const</span> <span class="k">auto</span> <span class="nl">v</span><span class="p">:</span> <span class="n">values</span><span class="p">)</span>
-<span class="p">{</span>
-    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">v</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
-<span class="p">}</span>
-</code></pre></div><p>Avec <code>{ 4, 0 }</code>, on obtient le tableau <code>{ 4, 0 }</code>. Avec <code>(4, 0)</code>, on obtient le tableau <code>{ 0, 0, 0, 0 }</code>.<br>
+        <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="c1">//std::vector&lt;int&gt; values { 4, 0 };
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">values</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">for</span> <span class="p">(</span><span class="k">const</span> <span class="k">auto</span> <span class="nl">v</span><span class="p">:</span> <span class="n">values</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">v</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><p>Avec <code>{ 4, 0 }</code>, on obtient le tableau <code>{ 4, 0 }</code>. Avec <code>(4, 0)</code>, on obtient le tableau <code>{ 0, 0, 0, 0 }</code>.<br>
 La syntaxe <code>{}</code> permet donc d&rsquo;initialiser le contenu du conteneur directement, alors que la syntaxe <code>()</code> permet d&rsquo;initialiser le tableau avec 4 éléments valant 0.</p>
 
     </div>
@@ -2012,9 +2012,9 @@ Et si la classe ne contient pas ce genre de constructeur, le compilateur utilise
 Il s&rsquo;agit de la surcharge n° 5 : le constructeur attend deux paramètres <code>first</code> et <code>last</code>, qui correspondent aux itérateurs de début et fin d&rsquo;un autre conteneur.</p>
 <p>Commencez par instancier un tableau primitif avec les valeurs <code>{ 0, 1, 2, 3, 4, 5 }</code>.<br>
 Les itérateurs d&rsquo;un tableau primitif sont en fait les pointeurs sur chacune de ses cases :</p>
-<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="kt">int</span>  <span class="n">array</span><span class="p">[]</span> <span class="o">=</span> <span class="p">{</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">3</span> <span class="p">};</span>
-<span class="kt">int</span><span class="o">*</span> <span class="n">iterator_on_2nd_element</span> <span class="o">=</span> <span class="o">&amp;</span><span class="n">array</span><span class="p">[</span><span class="mi">1</span><span class="p">];</span>
-</code></pre></div><p>Construisez maintenant un <code>vector</code> en lui fournissant des itérateurs de votre tableau primitif.<br>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="kt">int</span>  <span class="n">array</span><span class="p">[]</span> <span class="o">=</span> <span class="p">{</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">3</span> <span class="p">};</span>
+</span></span><span class="line"><span class="cl"><span class="kt">int</span><span class="o">*</span> <span class="n">iterator_on_2nd_element</span> <span class="o">=</span> <span class="o">&amp;</span><span class="n">array</span><span class="p">[</span><span class="mi">1</span><span class="p">];</span>
+</span></span></code></pre></div><p>Construisez maintenant un <code>vector</code> en lui fournissant des itérateurs de votre tableau primitif.<br>
 Essayez dans un premier temps d&rsquo;avoir dans votre <code>vector</code> les valeurs <code>{ 2, 3, 4 }</code>, puis essayez ensuite d&rsquo;obtenir le tableau complet.</p>
 
 <div class="expand">
@@ -2030,20 +2030,20 @@ Essayez dans un premier temps d&rsquo;avoir dans votre <code>vector</code> les v
     <div class="expand-content" style="display: none;">
         <p>Déja, vu que <code>vector</code> a un constructeur par <code>initializer_list</code>, on est obligé d&rsquo;utiliser la syntaxe <code>()</code> pour utiliser le constructeur qui nous intéresse.<br>
 Ensuite, pour aller jusqu&rsquo;à 4, on se rend compte qu&rsquo;il faut en fait donner l&rsquo;itérateur sur la case suivant la dernière que l&rsquo;on veut inclure.</p>
-<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="kt">int</span> <span class="n">array</span><span class="p">[]</span> <span class="o">=</span> <span class="p">{</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span> <span class="p">};</span>
-
-<span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">part</span><span class="p">(</span><span class="o">&amp;</span><span class="n">array</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="o">&amp;</span><span class="n">array</span><span class="p">[</span><span class="mi">5</span><span class="p">]);</span>
-<span class="k">for</span> <span class="p">(</span><span class="k">const</span> <span class="k">auto</span> <span class="nl">v</span><span class="p">:</span> <span class="n">part</span><span class="p">)</span>
-<span class="p">{</span>
-    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">v</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
-<span class="p">}</span>
-
-<span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">full</span><span class="p">(</span><span class="n">array</span><span class="p">,</span> <span class="n">array</span> <span class="o">+</span> <span class="mi">6</span><span class="p">);</span>
-<span class="k">for</span> <span class="p">(</span><span class="k">const</span> <span class="k">auto</span> <span class="nl">v</span><span class="p">:</span> <span class="n">part</span><span class="p">)</span>
-<span class="p">{</span>
-    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">v</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
-<span class="p">}</span>
-</code></pre></div><div class="notices tip" ><p>Pour <code>full</code>, on aurait pu écrire <code>(&amp;array[0], &amp;array[6])</code>, mais c&rsquo;est plus élégant d&rsquo;écrire <code>(array, array + 6)</code> car cela évite de penser qu&rsquo;on essaye d&rsquo;accéder au 6e élément de <code>array</code>, alors que celui-ci n&rsquo;existe pas.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="kt">int</span> <span class="n">array</span><span class="p">[]</span> <span class="o">=</span> <span class="p">{</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span> <span class="p">};</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">part</span><span class="p">(</span><span class="o">&amp;</span><span class="n">array</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="o">&amp;</span><span class="n">array</span><span class="p">[</span><span class="mi">5</span><span class="p">]);</span>
+</span></span><span class="line"><span class="cl"><span class="k">for</span> <span class="p">(</span><span class="k">const</span> <span class="k">auto</span> <span class="nl">v</span><span class="p">:</span> <span class="n">part</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">v</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">full</span><span class="p">(</span><span class="n">array</span><span class="p">,</span> <span class="n">array</span> <span class="o">+</span> <span class="mi">6</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="k">for</span> <span class="p">(</span><span class="k">const</span> <span class="k">auto</span> <span class="nl">v</span><span class="p">:</span> <span class="n">part</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">v</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><div class="notices tip" ><p>Pour <code>full</code>, on aurait pu écrire <code>(&amp;array[0], &amp;array[6])</code>, mais c&rsquo;est plus élégant d&rsquo;écrire <code>(array, array + 6)</code> car cela évite de penser qu&rsquo;on essaye d&rsquo;accéder au 6e élément de <code>array</code>, alors que celui-ci n&rsquo;existe pas.</p>
 </div>
 
     </div>
@@ -2051,12 +2051,12 @@ Ensuite, pour aller jusqu&rsquo;à 4, on se rend compte qu&rsquo;il faut en fait
 <hr>
 <h3 id="accès-aux-éléments">Accès aux éléments</h3>
 <p>Pour accéder à un élément précis d&rsquo;un tableau, on peut utiliser <code>array[idx]</code>, comme sur un tableau primitif :</p>
-<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">values</span> <span class="p">{</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span> <span class="p">};</span>
-<span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;2nd element is &#34;</span> <span class="o">&lt;&lt;</span> <span class="n">v</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
-
-<span class="n">v</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="mi">8</span><span class="p">;</span>
-<span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;Last element has changed to &#34;</span> <span class="o">&lt;&lt;</span> <span class="n">v</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
-</code></pre></div><p>Utilisez une boucle <code>for</code> (et pas foreach) de manière à inverser l&rsquo;ordre des éléments du tableau de la question précédente.<br>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">values</span> <span class="p">{</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span> <span class="p">};</span>
+</span></span><span class="line"><span class="cl"><span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;2nd element is &#34;</span> <span class="o">&lt;&lt;</span> <span class="n">v</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">v</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="mi">8</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;Last element has changed to &#34;</span> <span class="o">&lt;&lt;</span> <span class="n">v</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+</span></span></code></pre></div><p>Utilisez une boucle <code>for</code> (et pas foreach) de manière à inverser l&rsquo;ordre des éléments du tableau de la question précédente.<br>
 Afin d&rsquo;itérer sur le <code>vector</code>, vous devrez récupérer sa taille. Quelle fonction faut-il utiliser pour ça ?<br>
 Sachez également que vous aurez probablement besoin d&rsquo;utiliser la fonction <code>std::swap</code>.</p>
 
@@ -2073,12 +2073,12 @@ Sachez également que vous aurez probablement besoin d&rsquo;utiliser la fonctio
     <div class="expand-content" style="display: none;">
         <p>Dans l&rsquo;exercice de la page précédente, vous avez appris que <code>size()</code> permet d&rsquo;obtenir le nombre de d&rsquo;éléments dans un <code>vector</code>.<br>
 Et pour utiliser <code>swap</code>, on n&rsquo;oublie pas d&rsquo;inclure le header <code>&lt;utility&gt;</code>.</p>
-<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">full</span><span class="p">(</span><span class="n">array</span><span class="p">,</span> <span class="n">array</span> <span class="o">+</span> <span class="mi">6</span><span class="p">);</span>
-<span class="k">for</span> <span class="p">(</span><span class="n">size_t</span> <span class="n">left</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">right</span> <span class="o">=</span> <span class="n">full</span><span class="p">.</span><span class="n">size</span><span class="p">()</span> <span class="o">-</span> <span class="mi">1</span><span class="p">;</span> <span class="n">left</span> <span class="o">&lt;</span> <span class="n">right</span><span class="p">;</span> <span class="o">++</span><span class="n">left</span><span class="p">,</span> <span class="o">--</span><span class="n">right</span><span class="p">)</span>
-<span class="p">{</span>
-    <span class="n">std</span><span class="o">::</span><span class="n">swap</span><span class="p">(</span><span class="n">full</span><span class="p">[</span><span class="n">left</span><span class="p">],</span> <span class="n">full</span><span class="p">[</span><span class="n">right</span><span class="p">]);</span>
-<span class="p">}</span>
-</code></pre></div><div class="notices tip" ><p>Il est possible de définir plusieurs itérateurs dans la zone d&rsquo;intialisation du <code>for</code>, du moment qu&rsquo;ils sont de même type.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">full</span><span class="p">(</span><span class="n">array</span><span class="p">,</span> <span class="n">array</span> <span class="o">+</span> <span class="mi">6</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="k">for</span> <span class="p">(</span><span class="n">size_t</span> <span class="n">left</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">right</span> <span class="o">=</span> <span class="n">full</span><span class="p">.</span><span class="n">size</span><span class="p">()</span> <span class="o">-</span> <span class="mi">1</span><span class="p">;</span> <span class="n">left</span> <span class="o">&lt;</span> <span class="n">right</span><span class="p">;</span> <span class="o">++</span><span class="n">left</span><span class="p">,</span> <span class="o">--</span><span class="n">right</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="n">std</span><span class="o">::</span><span class="n">swap</span><span class="p">(</span><span class="n">full</span><span class="p">[</span><span class="n">left</span><span class="p">],</span> <span class="n">full</span><span class="p">[</span><span class="n">right</span><span class="p">]);</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><div class="notices tip" ><p>Il est possible de définir plusieurs itérateurs dans la zone d&rsquo;intialisation du <code>for</code>, du moment qu&rsquo;ils sont de même type.</p>
 </div>
 
     </div>
@@ -2112,12 +2112,12 @@ Essayez de trouver dans la documentation les deux fonctions permettant d&rsquo;a
 </div>
 <p>Vous ne l&rsquo;avez peut-être pas remarqué, mais ces fonctions attendent un itérateur, et non un indice, pour indiquer où insérer le nouvel élément.<br>
 Pour obtenir un itérateur sur le début d&rsquo;un <code>vector</code>, il faut utiliser la fonction <code>begin()</code>, pour obtenir l&rsquo;itérateur de fin, il faut utiliser <code>end()</code>, et pour incrémenter l&rsquo;itérateur, vous pouvez utiliser <code>++it</code> ou <code>it += step</code>. Enfin, si vous voulez récupérer l&rsquo;élément pointé, vous pouvez écrire <code>*it</code> :</p>
-<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="c1">// Display the content of values.
-</span><span class="c1"></span><span class="k">for</span> <span class="p">(</span><span class="k">auto</span> <span class="n">it</span> <span class="o">=</span> <span class="n">values</span><span class="p">.</span><span class="n">begin</span><span class="p">();</span> <span class="n">it</span> <span class="o">!=</span> <span class="n">values</span><span class="p">.</span><span class="n">end</span><span class="p">();</span> <span class="o">++</span><span class="n">it</span><span class="p">)</span>
-<span class="p">{</span>
-    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="o">*</span><span class="n">it</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
-<span class="p">}</span>
-</code></pre></div>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="c1">// Display the content of values.
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">for</span> <span class="p">(</span><span class="k">auto</span> <span class="n">it</span> <span class="o">=</span> <span class="n">values</span><span class="p">.</span><span class="n">begin</span><span class="p">();</span> <span class="n">it</span> <span class="o">!=</span> <span class="n">values</span><span class="p">.</span><span class="n">end</span><span class="p">();</span> <span class="o">++</span><span class="n">it</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="o">*</span><span class="n">it</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div>
 <div class="notices tip" ><p>Les itérateurs ont souvent des types compliqués à écrire et à lire, c&rsquo;est donc un bon prétexte pour utiliser <code>auto</code>.</p>
 </div>
 
@@ -2135,11 +2135,11 @@ Pour obtenir un itérateur sur le début d&rsquo;un <code>vector</code>, il faut
     	</span>
     </div>
     <div class="expand-content" style="display: none;">
-        <div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="k">for</span> <span class="p">(</span><span class="k">auto</span> <span class="n">it</span> <span class="o">=</span> <span class="n">full</span><span class="p">.</span><span class="n">begin</span><span class="p">();</span> <span class="n">it</span> <span class="o">!=</span> <span class="n">full</span><span class="p">.</span><span class="n">end</span><span class="p">();</span> <span class="n">it</span> <span class="o">+=</span> <span class="mi">2</span><span class="p">)</span>
-<span class="p">{</span>
-    <span class="n">it</span> <span class="o">=</span> <span class="n">full</span><span class="p">.</span><span class="n">insert</span><span class="p">(</span><span class="n">it</span><span class="p">,</span> <span class="o">*</span><span class="n">it</span><span class="p">);</span>
-<span class="p">}</span>
-</code></pre></div><div class="notices warning" ><p>En cas de réallocations du tableau pendant l&rsquo;insertion (parce que la capacité n&rsquo;est plus suffisante), tous les itérateurs de notre tableau sont invalidés.<br>
+        <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="k">for</span> <span class="p">(</span><span class="k">auto</span> <span class="n">it</span> <span class="o">=</span> <span class="n">full</span><span class="p">.</span><span class="n">begin</span><span class="p">();</span> <span class="n">it</span> <span class="o">!=</span> <span class="n">full</span><span class="p">.</span><span class="n">end</span><span class="p">();</span> <span class="n">it</span> <span class="o">+=</span> <span class="mi">2</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="n">it</span> <span class="o">=</span> <span class="n">full</span><span class="p">.</span><span class="n">insert</span><span class="p">(</span><span class="n">it</span><span class="p">,</span> <span class="o">*</span><span class="n">it</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><div class="notices warning" ><p>En cas de réallocations du tableau pendant l&rsquo;insertion (parce que la capacité n&rsquo;est plus suffisante), tous les itérateurs de notre tableau sont invalidés.<br>
 C&rsquo;est pour cela que l&rsquo;on doit assigner le résultat de <code>insert</code> à <code>it</code> à chaque tour de boucle.</p>
 </div>
 
@@ -2163,11 +2163,11 @@ Quelle fonction allez-vous utiliser dans la condition du <code>while</code> pour
     	</span>
     </div>
     <div class="expand-content" style="display: none;">
-        <div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="k">while</span> <span class="p">(</span><span class="o">!</span><span class="n">full</span><span class="p">.</span><span class="n">empty</span><span class="p">())</span>
-<span class="p">{</span>
-    <span class="n">full</span><span class="p">.</span><span class="n">pop_back</span><span class="p">();</span>
-<span class="p">}</span>
-</code></pre></div>
+        <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="k">while</span> <span class="p">(</span><span class="o">!</span><span class="n">full</span><span class="p">.</span><span class="n">empty</span><span class="p">())</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="n">full</span><span class="p">.</span><span class="n">pop_back</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div>
     </div>
 </div>
 <p>Ca, c&rsquo;était la partie façile. Pour supprimer des éléments à une position bien particulière, c&rsquo;est un tout petit peu plus compliqué.<br>
@@ -2188,8 +2188,8 @@ Consultez la documentation pour comprendre ce qui ne va pas et trouvez-y ce qu&r
         <p>La fonction <code>erase</code> fonctionne avec des itérateurs et non des indices, comme pour <code>insert</code> ou <code>emplace</code>.<br>
 En regardant l&rsquo;exemple, on voit qu&rsquo;il est possible de récupérer un itérateur sur la n-ieme case d&rsquo;un tableau en écrivant <code>v.begin() + n</code>.
 Pour supprimer le 3e élément du tableau, on peut donc écrire :</p>
-<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="n">v</span><span class="p">.</span><span class="n">erase</span><span class="p">(</span><span class="n">v</span><span class="p">.</span><span class="n">begin</span><span class="p">()</span> <span class="o">+</span> <span class="mi">3</span><span class="p">);</span>
-</code></pre></div>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="n">v</span><span class="p">.</span><span class="n">erase</span><span class="p">(</span><span class="n">v</span><span class="p">.</span><span class="n">begin</span><span class="p">()</span> <span class="o">+</span> <span class="mi">3</span><span class="p">);</span>
+</span></span></code></pre></div>
     </div>
 </div>
 <p>Utilisez maintenant <code>erase</code> pour supprimer les éléments allant de l&rsquo;indice 2 à l&rsquo;indice 6 inclus d&rsquo;un tableau contenant initialement <code>{ 0, 1, ..., 10 }</code>.<br>
@@ -2208,27 +2208,27 @@ Faites le nécessaire pour que <code>erase</code> ne soit appelé qu&rsquo;une s
     <div class="expand-content" style="display: none;">
         <p><code>erase</code> dispose d&rsquo;une surcharge acceptant deux itérateurs, qui permet de supprimer tous les éléments présents entre ces deux itérateurs.<br>
 Comme d&rsquo;habitude, l&rsquo;élément pointé par l&rsquo;itérateur de fin est exclu. On doit donc écrire :</p>
-<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="n">v</span><span class="p">.</span><span class="n">erase</span><span class="p">(</span><span class="n">v</span><span class="p">.</span><span class="n">begin</span><span class="p">()</span> <span class="o">+</span> <span class="mi">2</span><span class="p">,</span> <span class="n">v</span><span class="p">.</span><span class="n">begin</span><span class="p">()</span> <span class="o">+</span> <span class="mi">7</span><span class="p">);</span>
-</code></pre></div>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="n">v</span><span class="p">.</span><span class="n">erase</span><span class="p">(</span><span class="n">v</span><span class="p">.</span><span class="n">begin</span><span class="p">()</span> <span class="o">+</span> <span class="mi">2</span><span class="p">,</span> <span class="n">v</span><span class="p">.</span><span class="n">begin</span><span class="p">()</span> <span class="o">+</span> <span class="mi">7</span><span class="p">);</span>
+</span></span></code></pre></div>
     </div>
 </div>
 <p>Supposons maintenant que vous souhaitez retirer un élément du tableau en fonction de sa valeur, et non plus de sa position.<br>
 Voici du code permettant de retirer le premier 9 rencontré dans un tableau <code>v</code> :</p>
-<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="k">auto</span> <span class="n">it</span> <span class="o">=</span> <span class="n">v</span><span class="p">.</span><span class="n">begin</span><span class="p">();</span>
-
-<span class="k">for</span> <span class="p">(;</span> <span class="n">it</span> <span class="o">!=</span> <span class="n">v</span><span class="p">.</span><span class="n">end</span><span class="p">();</span> <span class="o">++</span><span class="n">it</span><span class="p">)</span>
-<span class="p">{</span>
-    <span class="k">if</span> <span class="p">(</span><span class="o">*</span><span class="n">it</span> <span class="o">==</span> <span class="mi">9</span><span class="p">)</span>
-    <span class="p">{</span>
-        <span class="k">break</span><span class="p">;</span>
-    <span class="p">}</span>
-<span class="p">}</span>
-
-<span class="k">if</span> <span class="p">(</span><span class="n">it</span> <span class="o">!=</span> <span class="n">v</span><span class="p">.</span><span class="n">end</span><span class="p">())</span>
-<span class="p">{</span>
-    <span class="n">v</span><span class="p">.</span><span class="n">erase</span><span class="p">(</span><span class="n">it</span><span class="p">);</span>
-<span class="p">}</span>
-</code></pre></div><p>Ca fonctionne, mais bon, ce n&rsquo;est pas très concis&hellip;<br>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="k">auto</span> <span class="n">it</span> <span class="o">=</span> <span class="n">v</span><span class="p">.</span><span class="n">begin</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">for</span> <span class="p">(;</span> <span class="n">it</span> <span class="o">!=</span> <span class="n">v</span><span class="p">.</span><span class="n">end</span><span class="p">();</span> <span class="o">++</span><span class="n">it</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="p">(</span><span class="o">*</span><span class="n">it</span> <span class="o">==</span> <span class="mi">9</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="k">break</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">if</span> <span class="p">(</span><span class="n">it</span> <span class="o">!=</span> <span class="n">v</span><span class="p">.</span><span class="n">end</span><span class="p">())</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="n">v</span><span class="p">.</span><span class="n">erase</span><span class="p">(</span><span class="n">it</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><p>Ca fonctionne, mais bon, ce n&rsquo;est pas très concis&hellip;<br>
 Afin de pouvoir supprimer la boucle qui se charge de la recherche, il est possible d&rsquo;utiliser la fonction <code>std::find</code>. Attention, il s&rsquo;agit d&rsquo;une fonction libre, et non pas d&rsquo;une fonction-membre de <code>vector</code>.<br>
 Modifiez le code ci-dessus afin d&rsquo;utiliser <code>std::find</code>.</p>
 
@@ -2244,12 +2244,12 @@ Modifiez le code ci-dessus afin d&rsquo;utiliser <code>std::find</code>.</p>
     </div>
     <div class="expand-content" style="display: none;">
         <p>Déjà, il faut penser à inclure <code>&lt;algorithm&gt;</code>.</p>
-<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="k">const</span> <span class="k">auto</span> <span class="n">it</span> <span class="o">=</span> <span class="n">std</span><span class="o">::</span><span class="n">find</span><span class="p">(</span><span class="n">v</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span> <span class="n">v</span><span class="p">.</span><span class="n">end</span><span class="p">(),</span> <span class="mi">5</span><span class="p">);</span>
-<span class="k">if</span> <span class="p">(</span><span class="n">it</span> <span class="o">!=</span> <span class="n">v</span><span class="p">.</span><span class="n">end</span><span class="p">())</span>
-<span class="p">{</span>
-    <span class="n">v</span><span class="p">.</span><span class="n">erase</span><span class="p">(</span><span class="n">it</span><span class="p">);</span>
-<span class="p">}</span>
-</code></pre></div><div class="notices info" ><p>Attention à bien vérifier <code>it != v.end()</code> avant d&rsquo;appeler <code>erase</code>. En effet, <code>find(it1, it2, val)</code> renvoie <code>it2</code> si la valeur n&rsquo;est pas trouvée, et il est clairement indiqué dans la documentation de <code>erase</code> qu&rsquo;il ne faut pas passer <code>v.end()</code> à son paramètre <code>pos</code>.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="k">const</span> <span class="k">auto</span> <span class="n">it</span> <span class="o">=</span> <span class="n">std</span><span class="o">::</span><span class="n">find</span><span class="p">(</span><span class="n">v</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span> <span class="n">v</span><span class="p">.</span><span class="n">end</span><span class="p">(),</span> <span class="mi">5</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="k">if</span> <span class="p">(</span><span class="n">it</span> <span class="o">!=</span> <span class="n">v</span><span class="p">.</span><span class="n">end</span><span class="p">())</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="n">v</span><span class="p">.</span><span class="n">erase</span><span class="p">(</span><span class="n">it</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><div class="notices info" ><p>Attention à bien vérifier <code>it != v.end()</code> avant d&rsquo;appeler <code>erase</code>. En effet, <code>find(it1, it2, val)</code> renvoie <code>it2</code> si la valeur n&rsquo;est pas trouvée, et il est clairement indiqué dans la documentation de <code>erase</code> qu&rsquo;il ne faut pas passer <code>v.end()</code> à son paramètre <code>pos</code>.</p>
 </div>
 
     </div>
@@ -2259,7 +2259,7 @@ Modifiez le code ci-dessus afin d&rsquo;utiliser <code>std::find</code>.</p>
 <p>Pour terminer, nous allons voir comment réinitialiser complètement un <code>vector</code>.</p>
 <p>Si vous souhaitez simplement vider le <code>vector</code>, vous pouvez utiliser la fonction <code>clear</code>.<br>
 Et si vous voulez réinitialiser son contenu pour qu&rsquo;il contienne de nouvelles valeurs, vous pouvez utiliser <code>assign</code>, qui dispose des mêmes surcharges que celles proposées par le constructeur de <code>vector</code>.</p>
-<p>Essayez de remplacer le contenu d&rsquo;un <code>vector</code> existant par un tableau contenant 5 fois la valeur 2, sans utiliser l&rsquo;opérateur d&rsquo;assignation (= pas le droit d&rsquo;utiliser <code>v = ...</code>).<br>
+<p>Essayez de remplacer le contenu d&rsquo;un <code>vector</code> existant par un tableau contenant 5 fois la valeur 2, sans utiliser l&rsquo;opérateur d&rsquo;assignation (= pas le droit d&rsquo;utiliser <code>v = ...</code>). <br>
 Faites de même, mais en lui attribuant cette fois-ci les valeurs <code>{ 0, 2, 32, -4, 3 }</code>.<br>
 Enfin, arrangez-vous pour supprimer tout le contenu du tableau.</p>
 
@@ -2274,12 +2274,12 @@ Enfin, arrangez-vous pour supprimer tout le contenu du tableau.</p>
     	</span>
     </div>
     <div class="expand-content" style="display: none;">
-        <p>En regardant les exemples d&rsquo;utilisation d'<code>assign</code>, on voit que pour appeler la surcharge prenant un <code>initializer_list</code>, il faut écrire <code>v.assign({ ... })</code>.</p>
-<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">v</span><span class="p">;</span>
-<span class="n">v</span><span class="p">.</span><span class="n">assign</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">2</span><span class="p">);</span>
-<span class="n">v</span><span class="p">.</span><span class="n">assign</span><span class="p">({</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">32</span><span class="p">,</span> <span class="o">-</span><span class="mi">4</span><span class="p">,</span> <span class="mi">3</span> <span class="p">});</span>
-<span class="n">v</span><span class="p">.</span><span class="n">clear</span><span class="p">();</span>
-</code></pre></div>
+        <p>En regardant les exemples d&rsquo;utilisation d&rsquo;<code>assign</code>, on voit que pour appeler la surcharge prenant un <code>initializer_list</code>, il faut écrire <code>v.assign({ ... })</code>.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">v</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="n">v</span><span class="p">.</span><span class="n">assign</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">2</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="n">v</span><span class="p">.</span><span class="n">assign</span><span class="p">({</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">32</span><span class="p">,</span> <span class="o">-</span><span class="mi">4</span><span class="p">,</span> <span class="mi">3</span> <span class="p">});</span>
+</span></span><span class="line"><span class="cl"><span class="n">v</span><span class="p">.</span><span class="n">clear</span><span class="p">();</span>
+</span></span></code></pre></div>
     </div>
 </div>
 
@@ -3583,19 +3583,19 @@ Enfin, arrangez-vous pour supprimer tout le contenu du tableau.</p>
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/CPP_Learning/js/clipboard.min.js?1705262579"></script>
-    <script src="/CPP_Learning/js/perfect-scrollbar.min.js?1705262579"></script>
-    <script src="/CPP_Learning/js/perfect-scrollbar.jquery.min.js?1705262579"></script>
-    <script src="/CPP_Learning/js/jquery.sticky.js?1705262579"></script>
-    <script src="/CPP_Learning/js/featherlight.min.js?1705262579"></script>
-    <script src="/CPP_Learning/js/highlight.pack.js?1705262579"></script>
+    <script src="/CPP_Learning/js/clipboard.min.js?1705567864"></script>
+    <script src="/CPP_Learning/js/perfect-scrollbar.min.js?1705567864"></script>
+    <script src="/CPP_Learning/js/perfect-scrollbar.jquery.min.js?1705567864"></script>
+    <script src="/CPP_Learning/js/jquery.sticky.js?1705567864"></script>
+    <script src="/CPP_Learning/js/featherlight.min.js?1705567864"></script>
+    <script src="/CPP_Learning/js/highlight.pack.js?1705567864"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/CPP_Learning/js/modernizr.custom-3.6.0.js?1705262579"></script>
-    <script src="/CPP_Learning/js/learn.js?1705262579"></script>
-    <script src="/CPP_Learning/js/hugo-learn.js?1705262579"></script>
+    <script src="/CPP_Learning/js/modernizr.custom-3.6.0.js?1705567864"></script>
+    <script src="/CPP_Learning/js/learn.js?1705567864"></script>
+    <script src="/CPP_Learning/js/hugo-learn.js?1705567864"></script>
     
         
-            <script src="/CPP_Learning/mermaid/mermaid.js?1705262579"></script>
+            <script src="/CPP_Learning/mermaid/mermaid.js?1705567864"></script>
         
         <script>
             mermaid.initialize({ startOnLoad: true });
