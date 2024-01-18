@@ -1,5 +1,12 @@
 {{ if le .Page.Weight 100 }}
 
+{{ $chapter := 0 }}
+{{ if eq .Page.BundleType "branch" }}
+    {{ $chapter = sub .Page.Weight 1 }}
+{{ else }}
+    {{ $chapter = sub .Page.Parent.Weight 1 }}
+{{ end }}
+
 <button id="footer-question-btn" title="Envoyer un message à propos du texte sélectionné" onclick="openQuestionForm()" disabled><i class="fas fa-question-circle"></i></button>
 
 <div id="footer-question-window" disabled>
@@ -27,7 +34,7 @@
 
     function updateQuestionFormSubject() {
         let email = document.querySelector('#question>input[name="email"]').value;
-        document.querySelector('#question>input[name="_subject"]').value = "[C++][Chapitre {{ sub .Page.Weight 1 }}] " + email + ", retour sur ta question";
+        document.querySelector('#question>input[name="_subject"]').value = "[C++][Chapitre {{ $chapter }}] " + email + ", retour sur ta question";
     }
 
     function cleanQuestionFormContent() {
