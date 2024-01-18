@@ -408,7 +408,7 @@ Lorsque le compilateur parcourt le fichier, il rencontre deux fois la définitio
 Il est donc logique qu'il émette l'erreur `redefinition of 'Car'`.
 {{% /hidden-solution %}}
 
-2. En C++, pour empêcher les inclusions multiples d'un même header, il suffit d'écrire `#pragma once` en faut du fichier.  
+2. En C++, pour empêcher les inclusions multiples d'un même header, il suffit d'écrire `#pragma once` en haut du fichier.  
 Corrigez le code et assurez-vous que le fichier `4-main.cpp` compile désormais. 
 
 {{% hidden-solution %}}
