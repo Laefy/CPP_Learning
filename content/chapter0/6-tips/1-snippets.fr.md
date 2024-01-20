@@ -20,15 +20,15 @@ Cet utilitaire vous permet également d'exécuter directement votre programme.
 
 Avec g++ :
 ```b
-g++ f1.cpp f2.cpp f3.cpp -o program
+g++ f1.cpp f2.cpp f3.cpp -o program -std=c++17
 ```
 
 Avec clang :
 ```b
-clang++ f1.cpp f2.cpp f3.cpp -o program
+clang++ f1.cpp f2.cpp f3.cpp -o program -std=c++17
 ```
 
-Vous pouvez ajouter des [options de compilation](4-options) à la fin de la ligne de commande.
+Vous pouvez ajouter des [options de compilation](../4-terminal) à la fin de la ligne de commande.
 
 ##### Pour exécuter
 
