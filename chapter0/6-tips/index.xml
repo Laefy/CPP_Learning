@@ -12,7 +12,7 @@
       <link>https://laefy.github.io/CPP_Learning/chapter0/6-tips/1-snippets/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://laefy.github.io/CPP_Learning/chapter0/6-tips/1-snippets/</guid>
-      <description>Voici 2 solutions permettant de compiler et de tester rapidement des petits programme.&#xA;Compiler Explorer Vous pouvez utiliser Compiler Explorer pour compiler du code avec à peu près tous les compilateurs de la Terre.&#xA;Cet utilitaire vous permet également d&amp;rsquo;exécuter directement votre programme.&#xA;Depuis un terminal Pour compiler Avec g++ :&#xA;g++ f1.cpp f2.cpp f3.cpp -o program Avec clang :&#xA;clang++ f1.cpp f2.cpp f3.cpp -o program Vous pouvez ajouter des options de compilation à la fin de la ligne de commande.</description>
+      <description>Voici 2 solutions permettant de compiler et de tester rapidement des petits programme.&#xA;Compiler Explorer Vous pouvez utiliser Compiler Explorer pour compiler du code avec à peu près tous les compilateurs de la Terre.&#xA;Cet utilitaire vous permet également d&amp;rsquo;exécuter directement votre programme.&#xA;Depuis un terminal Pour compiler Avec g++ :&#xA;g++ f1.cpp f2.cpp f3.cpp -o program -std=c++17 Avec clang :&#xA;clang++ f1.cpp f2.cpp f3.cpp -o program -std=c++17 Vous pouvez ajouter des options de compilation à la fin de la ligne de commande.</description>
     </item>
     <item>
       <title>Projets VSCode</title>

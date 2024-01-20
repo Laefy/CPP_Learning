@@ -9,7 +9,7 @@
 
     <link rel="icon" href="/CPP_Learning/images/favicon.png" type="image/png">
 
-    <title>Eléments de syntaxe ✍ :: Cours de C&#43;&#43; - Niveau Master</title>
+    <title>Slides :: Cours de C&#43;&#43; - Niveau Master</title>
 
     
     <link href="/CPP_Learning/css/nucleus.css?1705748871" rel="stylesheet">
@@ -41,7 +41,7 @@
     </style>
     
   </head>
-  <body class="" data-url="/CPP_Learning/chapter1/3-syntax-elements/">
+  <body class="" data-url="/CPP_Learning/slides/">
     <nav id="sidebar" class="showVisitedLinks">
 
 
@@ -358,7 +358,7 @@
   
     
     <li data-nav-id="/CPP_Learning/chapter1/" title="Introduction au C&#43;&#43;" class="dd-item
-        parent
+        
         
         
         ">
@@ -428,7 +428,7 @@
  
   
     
-      <li data-nav-id="/CPP_Learning/chapter1/3-syntax-elements/" title="Eléments de syntaxe ✍" class="dd-item active">
+      <li data-nav-id="/CPP_Learning/chapter1/3-syntax-elements/" title="Eléments de syntaxe ✍" class="dd-item ">
         <a href="/CPP_Learning/chapter1/3-syntax-elements/">
         Eléments de syntaxe ✍
         <i class="fas fa-check read-icon"></i>
@@ -1882,13 +1882,7 @@
             
           
           
-            
-            
-          
-          
-            <a href='/CPP_Learning/'>Accueil</a> > <a href='/CPP_Learning/chapter1/'>Introduction au C++</a> > Eléments de syntaxe ✍
-          
-        
+            <a href='/CPP_Learning/'>Accueil</a> > Slides
           
         
           
@@ -1899,21 +1893,7 @@
                 
                     <div class="progress">
     <div class="wrapper">
-<nav id="TableOfContents">
-  <ul>
-    <li>
-      <ul>
-        <li><a href="#variables-et-types-fondamentaux">Variables et types fondamentaux</a></li>
-        <li><a href="#structures-de-contrôle">Structures de contrôle</a></li>
-        <li><a href="#fonctions-libres">Fonctions libres</a></li>
-        <li><a href="#références">Références</a></li>
-        <li><a href="#types-structurés">Types structurés</a></li>
-        <li><a href="#initialisation">Initialisation</a></li>
-        <li><a href="#synthèse">Synthèse</a></li>
-      </ul>
-    </li>
-  </ul>
-</nav>
+<nav id="TableOfContents"></nav>
     </div>
 </div>
 
@@ -1929,334 +1909,17 @@
           
             <h1>
               
-              Eléments de syntaxe ✍
+              Slides
             </h1>
           
 
         
 
 
-<p>Nous allons vous présenter les éléments de syntaxe de base du langage.<br>
-Comme vous pourrez le constater, mis à part quelques subtilités, la plupart des informations que vous allez lire ici devrait être similaire à ce que vous avez déjà appris en C ou en Java.</p>
+<p>Ci-dessous, vous trouverez le lien pour télécharger les slides de chaque séance de cours magistraux.</p>
 <hr>
-<h3 id="variables-et-types-fondamentaux">Variables et types fondamentaux</h3>
-<p>Comme dans tous les langages ou presque, on retrouve :</p>
 <ul>
-<li>les entiers (signés ou non-signés) : <code>int</code>, <code>short</code>, <code>unsigned int</code>, &hellip;</li>
-<li>les flottants : <code>float</code>, <code>double</code></li>
-<li>les types caractère : <code>char</code>, <code>unsigned char</code></li>
-<li>le type booléen : <code>bool</code> (et non pas <code>boolean</code> comme en Java ⚠️)</li>
-</ul>
-<p>Pour définir des variables, c&rsquo;est comme d&rsquo;habitude : <code>&lt;type&gt; &lt;nom&gt; = &lt;valeur&gt;;</code></p>
-
-<div class="notices tip" ><p>Faites bien attention à initialiser vos variables si elles ont un type fondamental pour éviter de vous retrouver avec des valeurs &ldquo;aléatoires&rdquo;.<br>
-En effet, ces variables ne sont pas toujours mises à 0 par défaut, comme en témoigne <a href="https://godbolt.org/z/P4Kr44q5s">ce programme</a>.</p>
-</div>
-
-<p>En ce qui concerne les spécificités du C++ maintenant&hellip; <br>
-Contrairement au C, les pointeurs null ne sont plus représentés par la constante <code>NULL</code> (c&rsquo;est-à-dire à 0, donc de type entier) mais par le mot-clef <code>nullptr</code> (en minuscule) de type <code>nullptr_t</code>.</p>
-<p>Autre particularité, vous n&rsquo;êtes pas obligé de respécifier le type de la variable que vous déclarez si vous l&rsquo;initialisez en même temps : si vous définissez votre variable avec le mot-clef <code>auto</code> (équivalent à <code>var</code> en Java), le compilateur utilise le type de la valeur utilisée pour l&rsquo;initialisation.</p>
-<p>Voici quelques exemples de définition de variables :</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="kt">int</span>          <span class="n">i1</span> <span class="o">=</span> <span class="mi">3</span><span class="p">;</span>        <span class="c1">// type i1 = int
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kt">unsigned</span> <span class="kt">int</span> <span class="n">u2</span> <span class="o">=</span> <span class="mi">4</span><span class="p">;</span>        <span class="c1">// type u2 = int
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kt">float</span>        <span class="n">f3</span> <span class="o">=</span> <span class="mf">4.5f</span><span class="p">;</span>     <span class="c1">// type f3 = float
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">auto</span>         <span class="n">d4</span> <span class="o">=</span> <span class="mf">5.0</span><span class="p">;</span>      <span class="c1">// type d4 = double
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">auto</span>         <span class="n">u5</span> <span class="o">=</span> <span class="mi">9u</span><span class="p">;</span>       <span class="c1">// type u5 = unsigned int
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">auto</span>         <span class="n">s6</span> <span class="o">=</span> <span class="s">&#34;blabla&#34;</span><span class="p">;</span> <span class="c1">// type s6 = const char*
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kt">float</span>        <span class="n">f7</span> <span class="o">=</span> <span class="mi">3</span><span class="p">;</span>        <span class="c1">// type f7 = float
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">auto</span>         <span class="n">b8</span> <span class="o">=</span> <span class="nb">true</span><span class="p">;</span>     <span class="c1">// type b8 = bool
-</span></span></span></code></pre></div><p>La liste complète des types fondamentaux est accessible <a href="https://en.cppreference.com/w/cpp/language/types">ici</a>.</p>
-<hr>
-<h3 id="structures-de-contrôle">Structures de contrôle</h3>
-<p>En ce qui concerne les structures de contrôle qui sont similaires à celles que vous avez déjà rencontrées, on retrouve le <code>if</code> / <code>else if</code> / <code>else</code> et le <code>switch</code> pour les conditions, et le <code>while</code>, le <code>do-while</code> et le <code>for</code> pour les boucles.</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="c1">// Ex1: affiche si les éléments d&#39;un tableau sont pairs ou impairs
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">it</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">it</span> <span class="o">&lt;</span> <span class="n">n</span><span class="p">;</span> <span class="o">++</span><span class="n">it</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl"><span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="p">(</span><span class="n">tab</span><span class="p">[</span><span class="n">it</span><span class="p">]</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">    <span class="p">{</span>
-</span></span><span class="line"><span class="cl">        <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;Number #&#34;</span> <span class="o">&lt;&lt;</span> <span class="n">it</span> <span class="o">&lt;&lt;</span> <span class="s">&#34; is even&#34;</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">    <span class="p">}</span>
-</span></span><span class="line"><span class="cl">    <span class="k">else</span>
-</span></span><span class="line"><span class="cl">    <span class="p">{</span>
-</span></span><span class="line"><span class="cl">        <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;Number #&#34;</span> <span class="o">&lt;&lt;</span> <span class="n">it</span> <span class="o">&lt;&lt;</span> <span class="s">&#34; is odd&#34;</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">    <span class="p">}</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c1">// Ex2: récupère les caractères de la sortie standard pour effectuer des commandes
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">auto</span> <span class="n">exit</span> <span class="o">=</span> <span class="nb">false</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl"><span class="k">while</span> <span class="p">(</span><span class="o">!</span><span class="n">exit</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl"><span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="k">auto</span> <span class="n">c</span> <span class="o">=</span> <span class="n">std</span><span class="o">::</span><span class="n">cin</span><span class="p">.</span><span class="n">get</span><span class="p">();</span>
-</span></span><span class="line"><span class="cl">    <span class="k">switch</span> <span class="p">(</span><span class="n">c</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">    <span class="p">{</span>
-</span></span><span class="line"><span class="cl">        <span class="k">case</span> <span class="sc">&#39;p&#39;</span><span class="o">:</span>
-</span></span><span class="line"><span class="cl">            <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;Print&#34;</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">            <span class="k">break</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">        <span class="k">case</span> <span class="sc">&#39;c&#39;</span><span class="o">:</span>
-</span></span><span class="line"><span class="cl">            <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;Compute&#34;</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">            <span class="k">break</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">        <span class="k">case</span> <span class="sc">&#39;b&#39;</span><span class="o">:</span>
-</span></span><span class="line"><span class="cl">            <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;Bye-Bye&#34;</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">            <span class="n">exit</span> <span class="o">=</span> <span class="nb">true</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">            <span class="k">break</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">        <span class="k">default</span><span class="o">:</span>
-</span></span><span class="line"><span class="cl">            <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;Unknown command &#34;</span> <span class="o">&lt;&lt;</span> <span class="n">c</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">            <span class="n">exit</span> <span class="o">=</span> <span class="nb">true</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">            <span class="k">break</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">    <span class="p">}</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span></code></pre></div>
-<div class="notices tip" ><p>En C++, il est tout à fait valide et même conseillé de définir son indice d&rsquo;itérations directement dans l&rsquo;instruction <code>for</code>.
-Cela permet de limiter le <strong>scope</strong> (ou portée) de la variable à la boucle dans laquelle elle est définie.<br>
-On écrira donc <code>for (int i = 0; i &lt; 10; ++ i) { ... }</code> plutôt que <code>int i; for (i = 0; i &lt; 10; ++i) { ... }</code>.</p>
-</div>
-
-<p>En plus du <code>for</code> classique, le C++ introduit une structure <code>for</code>-each. Celle-ci permet d&rsquo;itérer sur des plages de données.<br>
-Voici la syntaxe, mais nous vous détaillerons un peu mieux son fonctionnement une fois que lorsqu&rsquo;on vous aura présenté quelques conteneurs de la librairie standard :</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="k">for</span> <span class="p">(</span><span class="o">&lt;</span><span class="n">type</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="n">variable</span><span class="o">&gt;</span> <span class="o">:</span> <span class="o">&lt;</span><span class="n">conteneur</span><span class="o">&gt;</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl"><span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="p">...</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c1">// Ex: affiche chaque valeur du tableau ci-dessous sur une nouvelle ligne
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kt">int</span> <span class="n">array</span><span class="p">[]</span> <span class="o">=</span> <span class="p">{</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span> <span class="p">};</span>
-</span></span><span class="line"><span class="cl"><span class="k">for</span> <span class="p">(</span><span class="k">auto</span> <span class="nl">v</span> <span class="p">:</span> <span class="n">array</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl"><span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">v</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span></code></pre></div><hr>
-<h3 id="fonctions-libres">Fonctions libres</h3>
-<p>De la même manière qu&rsquo;en C, vous pouvez définir des <strong>fonctions libres</strong> en C++, c&rsquo;est-à-dire des fonctions qui ne sont pas rattachées à une classe.</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="c1">// Ex1: fonction qui retourne la somme de deux entiers
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kt">int</span> <span class="nf">sum</span><span class="p">(</span><span class="kt">int</span> <span class="n">a</span><span class="p">,</span> <span class="kt">int</span> <span class="n">b</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl"><span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c1">// Ex2: fonction qui retourne si la somme des trois entiers entrés est pair
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kt">bool</span> <span class="nf">is_full_sum_even</span><span class="p">()</span>
-</span></span><span class="line"><span class="cl"><span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="kt">int</span> <span class="n">s</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">3</span><span class="p">;</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">    <span class="p">{</span>
-</span></span><span class="line"><span class="cl">        <span class="kt">int</span> <span class="n">n</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">        <span class="n">std</span><span class="o">::</span><span class="n">cin</span> <span class="o">&gt;&gt;</span> <span class="n">n</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">        <span class="n">s</span> <span class="o">=</span> <span class="n">sum</span><span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="n">n</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl">    <span class="p">}</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">s</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span></code></pre></div><p>Notez que pour pouvoir utiliser une fonction, il faut que le compilateur ait connaissance de son existence.<br>
-Cela signifie que la fonction utilisée doit être déclarée avant la ligne où vous essayez de l&rsquo;appeler.</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="c1">// Ex1: on définit la fonction avant son appel (car une
-</span></span></span><span class="line"><span class="cl"><span class="c1">// définition de fonction fait office de déclaration)
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kt">int</span> <span class="nf">sum</span><span class="p">(</span><span class="kt">int</span> <span class="n">a</span><span class="p">,</span> <span class="kt">int</span> <span class="n">b</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl"><span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="kt">void</span> <span class="nf">print_sum</span><span class="p">(</span><span class="kt">int</span> <span class="n">a</span><span class="p">,</span> <span class="kt">int</span> <span class="n">b</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl"><span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">sum</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c1">// Ex2: on déclare la fonction avant son appel (sa définition
-</span></span></span><span class="line"><span class="cl"><span class="c1">// peut exister n&#39;importe où ailleurs dans le programme,
-</span></span></span><span class="line"><span class="cl"><span class="c1">// plus loin dans le même fichier, ou bien dans un autre fichier)
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kt">int</span> <span class="nf">complicated_stuff</span><span class="p">();</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
-</span></span><span class="line"><span class="cl"><span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">complicated_stuff</span><span class="p">()</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span></code></pre></div><hr>
-<h3 id="références">Références</h3>
-<p>Les références sont des alias sur des zones de la mémoire (c&rsquo;est un peu comme un surnom).<br>
-Elles se définissent presque comme des variables, mais on rajoute le symbole <code>&amp;</code> après le type.</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="kt">int</span>  <span class="n">value</span> <span class="o">=</span> <span class="mi">3</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl"><span class="kt">int</span><span class="o">&amp;</span> <span class="n">ref</span>   <span class="o">=</span> <span class="n">value</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c1">// Les symboles ref et value sont maintenant équivalents...
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
-</span></span><span class="line"><span class="cl"><span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">value</span> <span class="o">&lt;&lt;</span> <span class="s">&#34; - &#34;</span> <span class="o">&lt;&lt;</span> <span class="n">ref</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span> <span class="c1">// -&gt; 3 - 3
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
-</span></span><span class="line"><span class="cl"><span class="c1">// ... et modifier l&#39;un revient à modifier l&#39;autre
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
-</span></span><span class="line"><span class="cl"><span class="n">value</span> <span class="o">=</span> <span class="mi">4</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl"><span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">value</span> <span class="o">&lt;&lt;</span> <span class="s">&#34; - &#34;</span> <span class="o">&lt;&lt;</span> <span class="n">ref</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span> <span class="c1">// -&gt; 4 - 4
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
-</span></span><span class="line"><span class="cl"><span class="n">ref</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl"><span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">value</span> <span class="o">&lt;&lt;</span> <span class="s">&#34; - &#34;</span> <span class="o">&lt;&lt;</span> <span class="n">ref</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span> <span class="c1">// -&gt; 2 - 2
-</span></span></span></code></pre></div>
-<div class="notices warning" ><p>Attention à ne pas confondre la syntaxe des références avec celle de l&rsquo;adresse mémoire d&rsquo;une variable.<br>
-Si le symbole <code>&amp;</code> est placé derrière un type, c&rsquo;est forcément la définition d&rsquo;une référence : <code>auto&amp; ref = var;</code><br>
-S&rsquo;il n&rsquo;y a pas de type juste devant, c&rsquo;est qu&rsquo;on essaye d&rsquo;accéder à l&rsquo;adresse mémoire de quelque chose : <code>auto addr = &amp;var;</code></p>
-</div>
-
-<p>Grâce aux références, vous pouvez facilement modifier une variable depuis l&rsquo;intérieur d&rsquo;une fonction.<br>
-En effet, par défaut, le passage de paramètres en C++ s&rsquo;effectue par copie (comme en C).
-Mais si vous définissez votre paramètre comme étant une référence, alors le passage est fait par référence.</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="kt">void</span> <span class="nf">set_variables_to_3</span><span class="p">(</span><span class="kt">int</span> <span class="n">p1</span><span class="p">,</span> <span class="kt">int</span><span class="o">&amp;</span> <span class="n">p2</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl"><span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="c1">// p1 est une copie de v1
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="c1">// p2 est un alias de v2
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
-</span></span><span class="line"><span class="cl">    <span class="n">p1</span> <span class="o">=</span> <span class="mi">3</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">    <span class="c1">// on a modifié la copie de v1
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="c1">// =&gt; pas d&#39;effet de bord, v1 reste inchangé
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
-</span></span><span class="line"><span class="cl">    <span class="n">p2</span> <span class="o">=</span> <span class="mi">3</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">    <span class="c1">// on a modifié un alias de v2
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="c1">// =&gt; il y a bien un effet de bord sur v2, sa valeur change
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="p">}</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
-</span></span><span class="line"><span class="cl"><span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="kt">int</span> <span class="n">v1</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">    <span class="kt">int</span> <span class="n">v2</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">    <span class="n">set_variables_to_3</span><span class="p">(</span><span class="n">v1</span><span class="p">,</span> <span class="n">v2</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">v1</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span> <span class="c1">// -&gt; 1
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">v2</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span> <span class="c1">// -&gt; 3
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="p">}</span>
-</span></span></code></pre></div><hr>
-<h3 id="types-structurés">Types structurés</h3>
-<p>Un type structuré est un type décomposé en sous-attributs.
-On utilisera souvent le terme <strong>classe</strong> pour parler des types structurés.</p>
-<p>Pour définir des types structurés, vous pouvez utiliser les mots-clef <code>struct</code> ou <code>class</code>.<br>
-On peut ensuite définir des <strong>attributs</strong> et des <strong>fonctions-membre</strong> dans le type.<br>
-Pour spécifier la visibilité des champs, on écrit <code>public:</code> ou <code>private:</code> devant un ensemble de champs.</p>
-<p>Voici un exemple de définition et d&rsquo;utilisation d&rsquo;un type structuré :</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="k">struct</span> <span class="nc">Fraction</span>
-</span></span><span class="line"><span class="cl"><span class="p">{</span>
-</span></span><span class="line"><span class="cl"><span class="k">public</span><span class="o">:</span>
-</span></span><span class="line"><span class="cl">    <span class="kt">void</span> <span class="n">set_num</span><span class="p">(</span><span class="kt">int</span> <span class="n">num</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">    <span class="p">{</span>
-</span></span><span class="line"><span class="cl">        <span class="n">_num</span> <span class="o">=</span> <span class="n">num</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">    <span class="p">}</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">    <span class="kt">void</span> <span class="nf">set_den</span><span class="p">(</span><span class="kt">int</span> <span class="n">den</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">    <span class="p">{</span>
-</span></span><span class="line"><span class="cl">        <span class="n">_den</span> <span class="o">=</span> <span class="n">den</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">    <span class="p">}</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">    <span class="kt">void</span> <span class="nf">add</span><span class="p">(</span><span class="n">Fraction</span> <span class="n">other</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">    <span class="p">{</span>
-</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="p">(</span><span class="n">_den</span> <span class="o">==</span> <span class="n">other</span><span class="p">.</span><span class="n">_den</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">        <span class="p">{</span>
-</span></span><span class="line"><span class="cl">            <span class="n">_num</span> <span class="o">+=</span> <span class="n">other</span><span class="p">.</span><span class="n">_num</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">        <span class="p">}</span>
-</span></span><span class="line"><span class="cl">        <span class="k">else</span>
-</span></span><span class="line"><span class="cl">        <span class="p">{</span>
-</span></span><span class="line"><span class="cl">            <span class="n">_den</span> <span class="o">*=</span> <span class="n">other</span><span class="p">.</span><span class="n">_den</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">            <span class="n">_num</span> <span class="o">=</span> <span class="n">_num</span> <span class="o">*</span> <span class="n">other</span><span class="p">.</span><span class="n">_den</span> <span class="o">+</span> <span class="n">other</span><span class="p">.</span><span class="n">_num</span> <span class="o">*</span> <span class="n">_den</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">        <span class="p">}</span>
-</span></span><span class="line"><span class="cl">    <span class="p">}</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">    <span class="kt">void</span> <span class="nf">print</span><span class="p">()</span>
-</span></span><span class="line"><span class="cl">    <span class="p">{</span>
-</span></span><span class="line"><span class="cl">        <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">_num</span> <span class="o">&lt;&lt;</span> <span class="sc">&#39;/&#39;</span> <span class="o">&lt;&lt;</span> <span class="n">_den</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">    <span class="p">}</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="k">private</span><span class="o">:</span>
-</span></span><span class="line"><span class="cl">    <span class="kt">int</span> <span class="n">_num</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">    <span class="kt">int</span> <span class="n">_den</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl"><span class="p">};</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
-</span></span><span class="line"><span class="cl"><span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="n">Fraction</span> <span class="n">f1</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">    <span class="n">f1</span><span class="p">.</span><span class="n">set_num</span><span class="p">(</span><span class="mi">3</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl">    <span class="n">f1</span><span class="p">.</span><span class="n">set_den</span><span class="p">(</span><span class="mi">6</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl">    <span class="n">f1</span><span class="p">.</span><span class="n">print</span><span class="p">();</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">    <span class="n">Fraction</span> <span class="n">f2</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">    <span class="n">f2</span><span class="p">.</span><span class="n">set_num</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl">    <span class="n">f2</span><span class="p">.</span><span class="n">set_den</span><span class="p">(</span><span class="mi">6</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl">    <span class="n">f2</span><span class="p">.</span><span class="n">print</span><span class="p">();</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">    <span class="n">f1</span><span class="p">.</span><span class="n">add</span><span class="p">(</span><span class="n">f2</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl">    <span class="n">f1</span><span class="p">.</span><span class="n">print</span><span class="p">();</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">    <span class="n">Fraction</span> <span class="n">f3</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">    <span class="n">f3</span><span class="p">.</span><span class="n">set_num</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl">    <span class="n">f3</span><span class="p">.</span><span class="n">print</span><span class="p">();</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">    <span class="n">f1</span><span class="p">.</span><span class="n">add</span><span class="p">(</span><span class="n">f3</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl">    <span class="n">f1</span><span class="p">.</span><span class="n">print</span><span class="p">();</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl"><span class="p">};</span>
-</span></span></code></pre></div>
-<div class="notices warning" ><p>Attention, contrairement au Java, <strong>il faut mettre un <code>;</code> à la fin de la définition des types</strong> !<br>
-Sinon, le compilateur n&rsquo;arrivera pas à comprendre ce que vous essayez de faire.</p>
-</div>
-
-<p>Comme vous pouvez le constater, nous avons défini des fonctions-membre dans une <code>struct</code>.<br>
-On aurait d&rsquo;ailleurs tout à fait pû remplacer le mot-clef <code>struct</code> par <code>class</code>.
-Cela n&rsquo;aurait absolument rien changé dans ce cas.</p>
-<p>Vous vous demandez donc probablement quelle est la différence entre une <code>struct</code> et une <code>class</code>, puisqu&rsquo;on peut faire la même chose avec les deux.<br>
-Eh bien la seule différence réside dans la visibilité par défaut des champs.
-Si vous ne précisez ni <code>public</code>, ni <code>private</code>, alors les champs seront publics pour une <code>struct</code> et privés pour une <code>class</code>.</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="k">struct</span> <span class="nc">S</span>
-</span></span><span class="line"><span class="cl"><span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="kt">int</span> <span class="n">v</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl"><span class="p">};</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">C</span>
-</span></span><span class="line"><span class="cl"><span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="kt">int</span> <span class="n">v</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl"><span class="p">};</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
-</span></span><span class="line"><span class="cl"><span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="n">S</span> <span class="n">s</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">s</span><span class="p">.</span><span class="n">v</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">    <span class="c1">// =&gt; ok, v est public dans S
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
-</span></span><span class="line"><span class="cl">    <span class="n">C</span> <span class="n">c</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">c</span><span class="p">.</span><span class="n">v</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">    <span class="c1">// =&gt; erreur de compilation !
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="c1">// =&gt; v n&#39;est pas accessible dans C car privé
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="p">}</span>
-</span></span></code></pre></div><hr>
-<h3 id="initialisation">Initialisation</h3>
-<p>Sachez que pour initialiser une variable à une valeur donnée, il existe souvent une multitude de syntaxes possibles.</p>
-<p>Par exemple, toutes les instructions ci-dessous permettent d&rsquo;initialiser un <code>int</code> à <code>0</code> :</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="c1">// la version classique
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kt">int</span> <span class="n">i1</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl"><span class="c1">// la version auto
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">auto</span> <span class="n">i2</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl"><span class="c1">// la version avec des parenthèses
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kt">int</span> <span class="nf">i3</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl"><span class="c1">// les versions avec des accolades
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kt">int</span> <span class="n">i4</span> <span class="p">{};</span> 
-</span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="n">i5</span> <span class="o">=</span> <span class="p">{};</span>
-</span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="n">i6</span> <span class="o">=</span> <span class="p">{</span> <span class="mi">0</span> <span class="p">};</span>
-</span></span><span class="line"><span class="cl"><span class="c1">// les versions avec des accolades et auto
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">auto</span> <span class="n">i7</span> <span class="o">=</span> <span class="kt">int</span> <span class="p">{};</span>
-</span></span><span class="line"><span class="cl"><span class="k">auto</span> <span class="n">i8</span> <span class="o">=</span> <span class="kt">int</span> <span class="p">{</span> <span class="mi">0</span> <span class="p">};</span>
-</span></span></code></pre></div><p>Attention, on ne vous demande pas de retenir toutes ces syntaxes, simplement d&rsquo;être capable de reconnaître une instruction d&rsquo;initialisation si vous en voyez une.</p>
-<p>Sachez aussi que dans ce cours, nous utiliserons essentiellement <code>= &lt;value&gt;</code> pour l&rsquo;initialisation des types fondamentaux et <code>= &lt;type&gt; { &lt;arg1&gt;, ... }</code> pour celle des types structurés.<br>
-Néanmoins, ce n&rsquo;est pas une prérogative et vous êtes libre d&rsquo;utiliser le style de votre choix pour écrire votre code.</p>
-<hr>
-<h3 id="synthèse">Synthèse</h3>
-<p>Nous venons de vous présenter les bases de la syntaxe du C++.</p>
-<p>Voici un petit rappel des choses à retenir :</p>
-<ul>
-<li>un bonne partie est similaire à ce que vous avez déjà vu en C ou en Java</li>
-<li><code>bool</code> pour les booléens, et pas <code>boolean</code></li>
-<li><code>auto</code> pour la déduction de type</li>
-<li><code>nullptr</code> au lieu de <code>NULL</code></li>
-<li>l&rsquo;itérateur peut se définir directement dans l&rsquo;instruction &ldquo;for&rdquo; : <code>for (auto it = ...; &lt;condition&gt;; &lt;iteration&gt;)</code></li>
-<li>la boucle &ldquo;foreach&rdquo; qui s&rsquo;écrit <code>for (&lt;type&gt; &lt;var&gt; : &lt;plage de données&gt;)</code></li>
-<li>le passage par référence en ajoutant <code>&amp;</code> derrière le type d&rsquo;un paramètre : <code>void fcn(int&amp; ref)</code></li>
-<li>le <code>;</code> derrière la définition des types structurés</li>
-<li>la visibilité dans une classe est définie en plaçant <code>public:</code> ou <code>private:</code> devant un groupe de champs</li>
+<li><a href="/CPP_Learning/files/cm1.pptx">Cours 1</a></li>
 </ul>
 
 
@@ -2497,7 +2160,6 @@ Néanmoins, ce n&rsquo;est pas une prérogative et vous êtes libre d&rsquo;util
             
                 
                     
-                    
                 
                 
 
@@ -2511,8 +2173,21 @@ Néanmoins, ce n&rsquo;est pas une prérogative et vous êtes libre d&rsquo;util
             
                 
                     
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
                         
-                        
+            
+            
+                
                     
                 
                 
@@ -2545,26 +2220,6 @@ Néanmoins, ce n&rsquo;est pas une prérogative et vous êtes libre d&rsquo;util
             
             
                 
-                    
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                        
-                        
                     
                 
                 
@@ -3530,10 +3185,8 @@ Néanmoins, ce n&rsquo;est pas une prérogative et vous êtes libre d&rsquo;util
 	 
 	 
 		
-			<a class="nav nav-prev" href="/CPP_Learning/chapter1/2-hello-world/" title="Hello World 👋"> <i class="fa fa-chevron-left"></i></a>
 		
-		
-			<a class="nav nav-next" href="/CPP_Learning/chapter1/4-std-lib/" title="Librairie standard 📚" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+			<a class="nav nav-next" href="/CPP_Learning/chapter0/" title="Mise en place" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
 		
 	
     </div>
@@ -3595,7 +3248,7 @@ Néanmoins, ce n&rsquo;est pas une prérogative et vous êtes libre d&rsquo;util
 
     function updateQuestionFormSubject() {
         let email = document.querySelector('#question>input[name="email"]').value;
-        document.querySelector('#question>input[name="_subject"]').value = "[C++][Chapitre 1] " + email + ", retour sur ta question";
+        document.querySelector('#question>input[name="_subject"]').value = "[C++][Chapitre -1] " + email + ", retour sur ta question";
     }
 
     function cleanQuestionFormContent() {
