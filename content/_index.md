@@ -19,9 +19,9 @@ Le planning est le suivant :
 | Séance | Date | Description |
 | - | - | - | - |
 | Cours 1 | 17/01 | |
-| TP 1 | Groupe I1 - 19/01<br/>Groupe I2 - 22/01<br/>Groupe Alt - 19/01 | * Compilation<br/>* Entrée / sortie<br/>* std::string et std::vector<br/>* Classes<br/>* Références |
-| TP 2 | Groupe I1 - 26/01<br/>Groupe I2 - 29/01<br/>Groupe Alt - 26/01 | TBD |
-| TP 3 | Groupe I1 - 02/02<br/>Groupe I2 - 05/02<br/>Groupe Alt - 02/02 | TBD |
+| TP 1 | Groupe I1 - 19/01<br/>Groupe I2 - 22/01<br/>Groupe Alt - 19/01 | * Compilation<br/>* Entrée / sortie<br/>* std::string et std::vector<br/>* Classes |
+| TP 2 | Groupe I1 - 26/01<br/>Groupe I2 - 29/01<br/>Groupe Alt - 26/01 | * Classes<br/>* Constructeurs<br/>* Membres statiques<br/>* Opérateurs |
+| TP 3 | Groupe I1 - 02/02<br/>Groupe I2 - 05/02<br/>Groupe Alt - 02/02 | * Références<br/>* Ownership |
 | TP 4 | Groupe I1 - 09/02<br/>Groupe I2 - 12/02<br/>Groupe Alt - 09/02 | TBD |
 | TP noté 1 | 21/02 | TBD |
 | Cours 2 | 21/02 | |
