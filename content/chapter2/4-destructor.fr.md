@@ -105,7 +105,7 @@ Vous pourrez constater que je ne vous ai pas raconté de salades concernant le m
 
 1. Définissez maintenant une classe `Batmobile`, qui aura un attribut `_batman` de type `Person`.  
 Vous initialiserez ce champs au moyen d'un class-initializer avec les arguments `"Bruce"` et `"Wayne"`.  
-Petite question au passage, pourquoi ne pouvez-vous pas définir la classe `Batmobile` avant la classe `Person`.?
+Petite question au passage, pourquoi ne pouvez-vous pas définir la classe `Batmobile` avant la classe `Person` ?
 
 {{% hidden-solution %}}
 Il faut forcément définir la classe `Batmobile` après la classe `Person`, car le compilateur a besoin de connaître la classe `Person` pour compiler la définition de l'attribut `_batman`.
@@ -217,7 +217,7 @@ Que va-t-il se passer à l'exécution ?
 {{% hidden-solution %}}
 Le programme affiche maintenant :
 ```b
-"Bruce Wayne died at 23 years old"
+"Bruce Wayne died at 0 years old"
 ```
 
 Le destructeur de `Person` est donc appelé, même si il n'y a plus le code du destructeur de `Batmobile`.

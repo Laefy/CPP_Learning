@@ -78,7 +78,7 @@ Ce problème existe aussi en C bien sûr, et pour y pallier, certaines APIs pré
 {{% /notice %}}
 
 `cout`\
-Il s'agit de la variable globale contenant le flux pour écrire sur la sortie standard du programme. Je ne sais pas pourquoi 'c', mais le 'out' indique 'sortie'. Par symétrie, on fera référence au flux pour l'entrée standard avec `cin`.
+Il s'agit de la variable globale contenant le flux pour écrire sur la sortie standard du programme. Le 'c' indique 'console' et le 'out' indique 'sortie'. Par symétrie, on fera référence au flux pour l'entrée standard avec `cin`.
 
 `<<`\
 Il s'agit d'un opérateur, un peu comme `+` ou `%`. Si on utilise `<<` entre une variable de flux et une chaîne de caractère, cette chaîne de caractère sera écrite dans le flux.

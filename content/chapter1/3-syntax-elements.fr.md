@@ -377,7 +377,7 @@ Néanmoins, ce n'est pas une prérogative et vous êtes libre d'utiliser le styl
 Nous venons de vous présenter les bases de la syntaxe du C++.
 
 Voici un petit rappel des choses à retenir :
-- un bonne partie est similaire à ce que vous avez déjà vu en C ou en Java
+- une bonne partie est similaire à ce que vous avez déjà vu en C ou en Java
 - `bool` pour les booléens, et pas `boolean`
 - `auto` pour la déduction de type
 - `nullptr` au lieu de `NULL`
