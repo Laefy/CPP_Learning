@@ -58,6 +58,11 @@ url = "/chapter0/6-tips/"
 weight = 6
 
 [[menu.shortcuts]]
+name = "<i class='fas fa-cog'></i> Compiler Explorer"
+url = "https://godbolt.org/"
+weight = 7
+
+[[menu.shortcuts]]
 name = "<i class='fas fa-passport'></i> CPP-Ref"
 url = "https://en.cppreference.com/w/"
-weight = 7
+weight = 8
