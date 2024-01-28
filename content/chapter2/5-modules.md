@@ -82,7 +82,7 @@ void ClassName::fcn(int p)
 ```
 
 2. Modifiez le fichier `Rectangle.cpp` de manière à y définir les fonctions-membres `Rectangle::Rectangle` (le constructeur de `Rectangle`) et `Rectangle::scale`.  
-Pensez également à y inclure le fichier `"Rectangle.h"`, sinon, le compilateur ne comprendra pas que `Rectangle` est une classe.  
+Pensez également à y inclure le fichier `Rectangle.h`, sinon, le compilateur ne comprendra pas que `Rectangle` est une classe.  
 Compilez et testez le programme.
 
 {{% hidden-solution %}}

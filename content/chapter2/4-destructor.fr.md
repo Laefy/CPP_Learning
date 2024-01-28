@@ -74,7 +74,7 @@ Comme le destructeur ne prend aucun paramètre, il n'a qu'une seule signature po
 {{% /notice %}}
 
 1. Ouvrez le fichier `chap-02/3-destructor.cpp` et ajoutez un destructeur à la classe `Person`.  
-À l'intérieur, ajoutez une instruction qui affichera, dans le cas de Batman, `"Bruce Wayne died at 23 years old"`.
+À l'intérieur, ajoutez une instruction qui affichera, dans le cas de Batman, `Bruce Wayne died at 23 years old`.
 
 {{% hidden-solution %}}
 Dans le destructeur, on peut parfaitement faire appel aux autres fonctions-membres de la classe.  
@@ -119,7 +119,7 @@ private:
 ```
 {{% /hidden-solution %}}
 
-1. Ajoutez un destructeur à `Batmobile` qui affiche la phrase suivante : `"The Batmobile has been destroyed!"`.  
+1. Ajoutez un destructeur à `Batmobile` qui affiche la phrase suivante : `The Batmobile has been destroyed!`.  
 Remplacez ensuite le contenu du `main` par :
 ```cpp
 int main()

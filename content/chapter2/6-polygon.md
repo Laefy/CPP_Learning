@@ -82,14 +82,14 @@ L'opérateur `+` étant un **opérateur binaire** (c'est-à-dire qu'il attend 2 
 ### Méthodologie de l'exercice
 
 Pour assimiler un peu ces notions, nous vous proposons un petit exercice.  
-Commencer par ouvrir le fichier `chap-02/5-operators/main.cpp`.
+Commencez par ouvrir le fichier `chap-02/5-operators/main.cpp`.
 
 Vous utiliserez la même méthodologie que pour `1-first_class.cpp` : 
-1. Décommenter la prochaine ligne du `main`.
-2. Ecrire le code permettant de la faire compiler.
-3. Compiler et tester.
-4. Si ça ne fonctionne pas, modifier le code, et recommencer à partir de l'étape 3.
-5. Si ça fonctionne, recommencer à partir de l'étape 1, jusqu'à ce que tout le code du `main` soit décommenté.
+1. Décommentez la prochaine ligne du `main`.
+2. Ecrivez le code permettant de la faire compiler.
+3. Compilez et testez.
+4. Si ça ne fonctionne pas, modifiez le code, et recommencez à partir de l'étape 3.
+5. Si ça fonctionne, recommencez à partir de l'étape 1, jusqu'à ce que tout le code du `main` soit décommenté.
 
 Vous aurez à implémenter une classe `Polygon` contenant un tableau dynamique de `Vertex`.
 
@@ -152,7 +152,7 @@ private:
 ```
 {{% /hidden-solution %}}
 
-Comme `std::pair<int, int>` n'est ni très lisible, ni très représentatif de ce qui va être contenu dedans, vous allez créer un **alias** `Vertex` dessus.  
+Comme `std::pair<int, int>` n'est ni très lisible, ni très représentatif de ce qui va être contenu dedans, vous allez lui créer un **alias** : `Vertex`.  
 Pour définir un alias (équivalent au `typedef` en C), on utilise le mot-clef `using` :
 ```cpp
 using AliasName = OriginalType;
@@ -198,7 +198,7 @@ void Polygon::add_vertex(int x, int y)
 {{% notice tip %}}
 La fonction `emplace_back` de `vector` est un peu spéciale.
 On peut lui passer directement les arguments que l'on passerait au constructeur de l'objet qu'on souhaite ajouter au tableau.  
-Du coup, plutôt qu'écrire `_vertices.emplace_back(Vertex { x, y })`, on peut directement écrire `_vertices.emplace_back(x, y)`.  
+Du coup, plutôt que d'écrire `_vertices.emplace_back(Vertex { x, y })`, on peut directement écrire `_vertices.emplace_back(x, y)`.  
 Plutôt pratique, non ?
 {{% /notice %}}
 
@@ -208,14 +208,14 @@ Plutôt pratique, non ?
 
 ### Inspection des variables
 
-Pour vérifier que le programme fonctionne correctement, vous allez utiliser le debugger.  
+Pour vérifier que le programme fonctionne correctement, vous allez utiliser le debuggeur.  
 Pensez bien à compiler votre programme avec `-g` et à modifier la valeur de `program` dans le fichier `.vscode/launch.json`.
 
 Placez ensuite un breakpoint sur la ligne `polygon.add_vertex(2, 3);` du `main`.  
 ![](/CPP_Learning/images/chapter2/6-breakpoint-v2.png)
 
 Lancez ensuite le programme avec F5.  
-Votre vue devrait désormais ressembler à celle-ci si vous vous placez dans l'onglet 'Exécution' à gauche :
+Votre vue devrait désormais ressembler à celle-ci si vous vous placez dans l'onglet `Exécution` à gauche :
 ![](/CPP_Learning/images/chapter2/6-execution-v2.png)
 
 Dans la fenêtre des variables, en haut à gauche, cliquez sur la variable `polygon`, puis sur son membre `_vertices`.  
@@ -276,7 +276,7 @@ std::cout << polygon << std::endl;
 
 Le but de cette dernière partie est d'implémenter l'opérateur de flux `<<` pour la classe `Polygon`.
 
-La première opérande de l'opérateur `<<` est le flux dans lequel on souhaite écrit.  
+La première opérande de l'opérateur `<<` est le flux dans lequel on souhaite écrire.  
 Le type associé est `std::ostream`, et on le passe par référence, car on ne veut pas créer de copie du flux à l'appel de la fonction.  
 Ce flux est ensuite renvoyé comme valeur de retour, afin de pouvoir chaîner l'appel :
 ```cpp
@@ -293,7 +293,7 @@ std::ostream& operator<<(std::ostream& stream, Polygon polygon);
 
 Essayez d'implémenter cette fonction.
 Vous placerez la déclaration dans `Polygon.h` et la définition dans `Polygon.cpp`.
-Pour son contenu, faites pour le moment en sorte qu'elle affiche `"This is a polygon"` dans le flux.
+Pour son contenu, faites pour le moment en sorte qu'elle affiche `This is a polygon` dans le flux.
 
 {{% hidden-solution %}}
 Dans `Polygon.h` :
