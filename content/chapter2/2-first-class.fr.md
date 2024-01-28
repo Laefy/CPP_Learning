@@ -26,7 +26,7 @@ int main()
 ```
 
 Vous allez procéder ici en suivant plus ou moins la méthodologie **Test Driven Development** (ou TDD),
-qui consiste à écrire le code des tests avant d'écrire le code appelé. Dans votre cas, il ne s'agira pas réellement de TDD (si vous voulez vraiment voir en quoi cela consiste, vous pouvez trouver plein d'exemples sur Internet), mais vous suivrez les étapes ci-dessous afin de vous habituer à écrire le code appelé uniquement à partir de ce que le code appelant requiert :
+qui consiste à écrire le code des tests avant d'écrire le code appelé. Dans votre cas, il ne s'agira pas réellement de TDD (si vous voulez vraiment voir en quoi cela consiste, vous pouvez trouver plein d'exemples sur Internet, comme [cette vidéo](https://www.youtube.com/watch?v=nbSaq_ykOl4) en français), mais vous suivrez les étapes ci-dessous afin de vous habituer à écrire le code appelé uniquement à partir de ce que le code appelant requiert :
 1. Décommenter la prochaine ligne du `main`.
 2. Ecrire le code permettant de la faire compiler.
 3. Compiler et tester.
@@ -35,9 +35,9 @@ qui consiste à écrire le code des tests avant d'écrire le code appelé. Dans 
 
 {{% notice note %}}
 Pourquoi vous faire faire l'exercice de cette manière ? Déjà, cela vous permet de découvrir un peu des méthodologies qui sont employées en entreprise. Ensuite, parce que le TDD a de gros avantages :\
-\- vous n'implémentez que du code utile : pas besoin de réfléchir à ce que vous devez fournir, puisque le code appelant vous dit quoi fournir, et vous perdez moins de temps à écrire du code qui au final ne sert à rien (= **code mort**),\
+\- vous n'implémentez que du code utile (principes [KISS](https://fr.wikipedia.org/wiki/Principe_KISS) et [YAGNI](https://fr.wikipedia.org/wiki/YAGNI)) : pas besoin de réfléchir à ce que vous devez fournir, puisque le code appelant vous dit quoi fournir, et vous perdez moins de temps à écrire du code qui au final ne sert à rien (= **code mort**),\
 \- vous ne déliverez que du code testé,\
-\- vous avez moins d'opportunités de **régression**, c'est-à-dire d'introduire des bugs dans du code qui fonctionnait à la base, lors d'un refacto par exemple.
+\- vous avez moins d'opportunités de **régression**, c'est-à-dire d'introduire des bugs dans du code qui fonctionnait à la base, lors d'un refactoring par exemple.
 {{% /notice %}}
 
 ---
@@ -104,7 +104,7 @@ private:
 ```
 
 {{% notice note %}}
-\- Nous avons mis la partie publique avant la partie privée, mais on peut très bien faire l'inverse. Il est même possible d'écrire un nouveau bloc public derrière le bloc privé.  
+\- Nous avons mis la partie publique avant la partie privée, mais on peut très bien faire l'inverse. Il est même possible d'écrire un nouveau bloc public derrière le bloc privé. Restez cependant cohérents, et lisibles.  
 \- Ici, toutes les fonctions sont publiques, et tous les attributs sont privés, mais on peut très bien mettre la définition d'une fonction dans le bloc privé ou la définition d'un attribut dans le bloc public.  
 \- Nous avons préfixé les attributs avec `_`. Ce n'est ni obligatoire de préfixer, ni d'utiliser `_` comme préfixe (certains utilisent `m_` ou `my`), mais c'est toujours pratique de le faire pour distinguer les attributs des paramètres de même nom.
 {{% /notice %}}
@@ -152,24 +152,31 @@ Par exemple, si vous avez suivi la correction, vous pouvez indiquer :
 "program": "${workspaceFolder}/chap-02/1-first_class",
 ```
 
-Une fois l'environnement correctement configuré, il faut ajouter un **breakpoint** : cela permet au programme de se mettre en pause, juste avant l'exécution d'une instruction particulière.  
+Une fois l'environnement correctement configuré, il faut ajouter un **breakpoint**, c'est-à-dire un point d'arrêt : cela permet au programme de se mettre en pause, juste avant l'exécution d'une instruction particulière.  
+
+Par défaut, VSCode propose des raccourcis clavier pour les différents fonctions du débuggeur. Voici les plus utiles pour le moment :
+- **F5** : Lancer ou reprendre l'exécution du programme (il se mettra en pause lorsqu'il atteindra un prochain point d'arrêt),
+- **F9** : Ajouter ou supprimer un point d'arrêt à la ligne actuelle,
+- **F10** : Passer à l'instruction suivante (étape par étape), sans descendre dans les fonctions,
+- **F11** : Passer à l'instruction suivante en descendant dans les fonctions si nécessaire.
+
 Ici, vous allez placer un breakpoint sur l'instruction `return 0;` du `main`. 
-Pour cela, placez votre curseur sur la ligne en question et appuyer sur F9. Vous pouvez aussi cliquer directement dans l'espace juste avant le numéro de ligne.
+Pour cela, placez votre curseur sur la ligne en question et appuyez sur F9. Vous pouvez aussi cliquer directement à gauche du numéro de ligne (un espace y est dédié à l'affichage des points d'arrêt).
 ![](/CPP_Learning/images/vscode-breakpoint.png)
 
 Utilisez ensuite F5 pour lancer le programme.
-L'éditeur devrait prendre cette apparence, indiquant que le programme est en pause à l'instruction surlignée :
+L'éditeur devrait prendre cette apparence, indiquant que le programme est en pause au niveau de l'instruction surlignée :
 ![](/CPP_Learning/images/vscode-breaking.png)
 
 Ouvrez maintenant le panneau d'exécution en allant dans `View > Run`.
 ![](/CPP_Learning/images/vscode-locals.png)
 
 Ce panneau contient 3 sections :
-- La section Variables, dans laquelle vous pouvez voir le contenu de chacune des variables locales à votre fonction.
-- La section Watch, qui vous permet d'entrer des expressions pour en récupérer le contenu. Vous pouvez par exemple entrer "8+3*5" pour obtenir le résultat du calcul, ou "p._name" pour obtenir la valeur de `p.name`, ou encore "&p" pour récupérer l'adresse de `p`.
-- La section Call Stack, qui vous permet de remonter les appels de fonction pour vous placer à un endroit particulier de la pile d'appel. Ici, vu qu'on a que le `main`, ce n'est pas très intéressant pour nous, mais nous y reviendrons.
+- La section **Variables**, dans laquelle vous pouvez voir le contenu de chacune des variables locales à votre fonction.
+- La section **Watch**, qui vous permet d'entrer des expressions pour en récupérer le contenu. Vous pouvez par exemple entrer `8 + 3 * 5` pour obtenir le résultat du calcul, ou `p._name` pour obtenir la valeur de l'attribut `_name` de `p`, ou encore `&p` pour récupérer l'adresse de `p`.
+- La section **Call Stack**, qui vous permet de suivre la trace des appels de fonctions, et de vous positionner à un point spécifique de la pile d'appels. Ici, vu qu'on n'a que le `main`, ce n'est pas très intéressant pour nous, mais nous y reviendrons.
 
-Dans la section des Variables, si vous pouvez constater comme sur le screenshot que `p._name` vaut bien `"Batman"`, alors c'est que votre code est correct.
+Dans la section des **Variables**, si vous pouvez constater comme sur le screenshot que `p._name` vaut bien `"Batman"`, alors c'est que votre code est correct.
 
 Appuyez ensuite sur F5 pour reprendre l'exécution du programme.
 
@@ -178,14 +185,14 @@ Appuyez ensuite sur F5 pour reprendre l'exécution du programme.
 ### Modification d'un attribut
 
 Décommentez l'instruction faisant l'appel à `set_age`, et définissez la fonction ainsi que l'attribut correspondants.\
-Quel type avez-vous utiliser pour l'âge de Batman ?
+Quel type avez-vous utilisé pour l'âge de Batman ?
 
 {{% hidden-solution %}}
-Pour `_age`, le mieux est d'utilisé un entier non-signé. En effet, ce n'est pas possible d'avoir un âge négatif, donc utiliser un `unsigned int` plutôt qu'un `int` permet de réduire la possibilité d'avoir un mauvais usage. Vous pouvez également décider d'utiliser un `unsigned short`, plutôt que `unsigned int`, puisque même Batman ne vivra pas si vieux.
+Pour `_age`, le mieux est d'utiliser un entier non-signé. En effet, ce n'est pas possible d'avoir un âge négatif, donc utiliser un `unsigned int` plutôt qu'un `int` permet de réduire la possibilité d'avoir un mauvais usage. Vous pouvez également décider d'utiliser un `unsigned short`, plutôt que `unsigned int`, puisque même Batman ne vivra pas si vieux.
 
 {{% notice tip %}}
 Je déconseille l'utilisation de `unsigned char` cependant, car `char` est associé à la notion de caractères. Donc bien que l'espace soit suffisant pour contenir un âge humain, il est plus clair d'utiliser un vrai type entier.  
-Evidemment, ce genre de bonne pratique ne peut s'appliquer que dans le cas où il n'y a pas de contrainte critique d'utilisation de la mémoire.
+Évidemment, ce genre de bonnes pratiques ne peut s'appliquer que dans le cas où il n'y a pas de contrainte critique d'utilisation de la mémoire.
 {{% /notice %}}
 
 Voici le nouveau code :
@@ -220,7 +227,7 @@ private:
 ```
 
 {{% notice info %}}
-`0u` permet de faire référence au `0` entier non-signé. Cela n'a pas beaucoup d'importance d'ici, puisque `_age` est explicitement typé, mais si on écrivait dans une fonction `auto v = 0u;` alors `v` serait de type `unsigned int` plutôt que de type `int`. 
+`0u` permet de faire référence au `0` entier non-signé. Cela n'a pas beaucoup d'importance ici, puisque `_age` est explicitement typé, mais si on écrivait dans une fonction `auto v = 0u;` alors `v` serait de type `unsigned int` plutôt que de type `int`. 
 {{% /notice %}}
 {{% /hidden-solution %}}
 
@@ -236,7 +243,7 @@ public:
     int get_value() const { return _value; }
 ```
 
-Dès lors qu'une fonction-membre est marquée `const`, le compilateur va vérifier qu'aucune modification n'est effectué sur les attributs de l'objet. Le code suivant ne compilera donc pas :  
+Dès lors qu'une fonction-membre est marquée `const`, le compilateur va vérifier qu'aucune modification n'est effectuée sur les attributs de l'objet. Le code suivant ne compilera donc pas :  
 ```cpp {hl_lines=[6]}
 class SomeClass
 {
@@ -253,10 +260,9 @@ private:
 ```
 
 {{% notice warning %}}
-Il est extrêmement facile d'oublier d'indiquer `const` sur les fonctions qui ne sont pas supposer modifier l'état de l'objet.  
-En effet, ils ne sont pas toujours nécessaire pour faire compiler et fonctionner le programme, et c'est donc difficile de prendre l'habitude de les ajouter.  
-Mais même si le compilateur peut s'en passer, il s'agit d'une information très utile pour le programmeur qui va lire votre code, car cela permet d'identifier très vite ce qui peut bouger et ce qui ne bougera jamais au cours de l'exécution.  
-Par conséquent, **relisez-vous toujours** après avoir ajouté une fonction-membre et demandez-vous si cette fonction est censée modifier la classe ? Si ce n'est pas le cas, ajoutez `const` 💪
+Il est extrêmement facile d'omettre d'ajouter `const` aux fonctions qui ne sont pas censées modifier l'état de l'objet. Parfois, ces indications ne sont pas strictement nécessaires pour compiler et exécuter le programme, et c'est donc difficile de prendre l'habitude de les ajouter.  
+Cependant, même si le compilateur peut s'en passer, inclure le mot-clé `const` est une information précieuse pour les programmeurs qui liront votre code. Cela permet d'identifier rapidement ce qui peut être modifié et ce qui restera constant pendant l'exécution.  
+Par conséquent, il est fortement recommandé de se **relire systématiquement** après l'ajout d'une fonction-membre et de se demander si cette fonction est censée modifier la classe. Si ce n'est pas le cas, n'oubliez pas d'ajouter `const` 💪
 {{% /notice %}}
 
 Revenons à notre exercice. Décommentez la dernière instruction du `main`, implémentez les deux accesseurs nécessaires (sans oublier leur `const` 🙃) et vérifiez que le programme fonctionne.
@@ -278,4 +284,4 @@ public:
 - Les classes peuvent contenir des **attributs** et des **fonctions-membre**
 - La définition d'une classe se termine toujours par un `;`
 - On utilise `public:` ou `private:` devant un groupe de champs pour indiquer s'ils sont publics ou privés
-- Si une fonction-membre n'a pas vocation a changé l'état de l'objet, il faut indiquer qu'elle est **const** (à placer derrière les parenthèses des paramètres)
+- Si une fonction-membre n'a pas vocation à changer l'état de l'objet, il faut indiquer qu'elle est **const** (à placer derrière les parenthèses des paramètres)
