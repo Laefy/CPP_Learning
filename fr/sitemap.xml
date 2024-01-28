@@ -4,13 +4,13 @@
   <url>
     <loc>https://laefy.github.io/CPP_Learning/chapter4/1-hierarchy/</loc>
   </url><url>
+    <loc>https://laefy.github.io/CPP_Learning/chapter3/1-allocation/</loc>
+  </url><url>
     <loc>https://laefy.github.io/CPP_Learning/chapter8/1-assertions/</loc>
   </url><url>
     <loc>https://laefy.github.io/CPP_Learning/chapter2/1-poo/</loc>
   </url><url>
     <loc>https://laefy.github.io/CPP_Learning/chapter0/1-compiler/</loc>
-  </url><url>
-    <loc>https://laefy.github.io/CPP_Learning/chapter3/1-lifespan/</loc>
   </url><url>
     <loc>https://laefy.github.io/CPP_Learning/chapter9/1-introduction/</loc>
   </url><url>
@@ -32,6 +32,8 @@
   </url><url>
     <loc>https://laefy.github.io/CPP_Learning/chapter4/2-farm/</loc>
   </url><url>
+    <loc>https://laefy.github.io/CPP_Learning/chapter3/2-lifespan/</loc>
+  </url><url>
     <loc>https://laefy.github.io/CPP_Learning/chapter8/2-exceptions/</loc>
   </url><url>
     <loc>https://laefy.github.io/CPP_Learning/chapter9/2-examples/</loc>
@@ -39,8 +41,6 @@
     <loc>https://laefy.github.io/CPP_Learning/chapter1/2-hello-world/</loc>
   </url><url>
     <loc>https://laefy.github.io/CPP_Learning/chapter1/</loc>
-  </url><url>
-    <loc>https://laefy.github.io/CPP_Learning/chapter3/2-ownership/</loc>
   </url><url>
     <loc>https://laefy.github.io/CPP_Learning/chapter2/2-first-class/</loc>
   </url><url>
@@ -51,8 +51,6 @@
     <loc>https://laefy.github.io/CPP_Learning/chapter6/2-transformations/</loc>
   </url><url>
     <loc>https://laefy.github.io/CPP_Learning/chapter0/2-vscode/</loc>
-  </url><url>
-    <loc>https://laefy.github.io/CPP_Learning/chapter3/3-allocation/</loc>
   </url><url>
     <loc>https://laefy.github.io/CPP_Learning/chapter5/3-sequentials/</loc>
   </url><url>
@@ -66,6 +64,8 @@
   </url><url>
     <loc>https://laefy.github.io/CPP_Learning/chapter1/3-syntax-elements/</loc>
   </url><url>
+    <loc>https://laefy.github.io/CPP_Learning/chapter3/3-storage/</loc>
+  </url><url>
     <loc>https://laefy.github.io/CPP_Learning/chapter6/3-iterators/</loc>
   </url><url>
     <loc>https://laefy.github.io/CPP_Learning/chapter4/3-virtual/</loc>
@@ -76,11 +76,9 @@
   </url><url>
     <loc>https://laefy.github.io/CPP_Learning/chapter5/4-associatives/</loc>
   </url><url>
-    <loc>https://laefy.github.io/CPP_Learning/chapter3/4-move-sem/</loc>
+    <loc>https://laefy.github.io/CPP_Learning/chapter3/</loc>
   </url><url>
     <loc>https://laefy.github.io/CPP_Learning/chapter2/4-destructor/</loc>
-  </url><url>
-    <loc>https://laefy.github.io/CPP_Learning/chapter3/</loc>
   </url><url>
     <loc>https://laefy.github.io/CPP_Learning/chapter0/4-git/</loc>
   </url><url>
@@ -91,6 +89,8 @@
     <loc>https://laefy.github.io/CPP_Learning/chapter4/4-polymorphism/</loc>
   </url><url>
     <loc>https://laefy.github.io/CPP_Learning/chapter10/4-sfinae/</loc>
+  </url><url>
+    <loc>https://laefy.github.io/CPP_Learning/chapter3/4-references/</loc>
   </url><url>
     <loc>https://laefy.github.io/CPP_Learning/chapter4/5-vehicles/</loc>
   </url><url>
@@ -103,6 +103,8 @@
     <loc>https://laefy.github.io/CPP_Learning/chapter5/5-strings/</loc>
   </url><url>
     <loc>https://laefy.github.io/CPP_Learning/chapter2/5-modules/</loc>
+  </url><url>
+    <loc>https://laefy.github.io/CPP_Learning/chapter3/5-ownership/</loc>
   </url><url>
     <loc>https://laefy.github.io/CPP_Learning/chapter0/6-tips/</loc>
   </url><url>
@@ -122,8 +124,6 @@
   </url><url>
     <loc>https://laefy.github.io/CPP_Learning/chapter10/test/</loc>
   </url><url>
-    <loc>https://laefy.github.io/CPP_Learning/chapter3/test/</loc>
-  </url><url>
     <loc>https://laefy.github.io/CPP_Learning/chapter4/test/</loc>
   </url><url>
     <loc>https://laefy.github.io/CPP_Learning/chapter5/test/</loc>
@@ -138,11 +138,11 @@
   </url><url>
     <loc>https://laefy.github.io/CPP_Learning/chapter2/test/</loc>
   </url><url>
+    <loc>https://laefy.github.io/CPP_Learning/chapter3/test/</loc>
+  </url><url>
     <loc>https://laefy.github.io/CPP_Learning/chapter0/test/</loc>
   </url><url>
     <loc>https://laefy.github.io/CPP_Learning/chapter10/summary/</loc>
-  </url><url>
-    <loc>https://laefy.github.io/CPP_Learning/chapter3/summary/</loc>
   </url><url>
     <loc>https://laefy.github.io/CPP_Learning/chapter4/summary/</loc>
   </url><url>

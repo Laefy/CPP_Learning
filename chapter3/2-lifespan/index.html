@@ -3,31 +3,31 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="Hugo 0.121.0">
+    <meta name="generator" content="Hugo 0.121.2">
     <meta name="description" content="">
 
 
     <link rel="icon" href="/CPP_Learning/images/favicon.png" type="image/png">
 
-    <title>Ownership :: Cours de C&#43;&#43; - Niveau Master</title>
+    <title>Durée de vie ⏳ :: Cours de C&#43;&#43; - Niveau Master</title>
 
     
-    <link href="/CPP_Learning/css/nucleus.css?1706024457" rel="stylesheet">
-    <link href="/CPP_Learning/css/fontawesome-all.min.css?1706024457" rel="stylesheet">
-    <link href="/CPP_Learning/css/hybrid.css?1706024457" rel="stylesheet">
-    <link href="/CPP_Learning/css/featherlight.min.css?1706024457" rel="stylesheet">
-    <link href="/CPP_Learning/css/perfect-scrollbar.min.css?1706024457" rel="stylesheet">
-    <link href="/CPP_Learning/css/auto-complete.css?1706024457" rel="stylesheet">
-    <link href="/CPP_Learning/css/atom-one-dark-reasonable.css?1706024457" rel="stylesheet">
-    <link href="/CPP_Learning/css/theme.css?1706024457" rel="stylesheet">
-    <link href="/CPP_Learning/css/tabs.css?1706024457" rel="stylesheet">
-    <link href="/CPP_Learning/css/hugo-theme.css?1706024457" rel="stylesheet">
+    <link href="/CPP_Learning/css/nucleus.css?1706446248" rel="stylesheet">
+    <link href="/CPP_Learning/css/fontawesome-all.min.css?1706446248" rel="stylesheet">
+    <link href="/CPP_Learning/css/hybrid.css?1706446248" rel="stylesheet">
+    <link href="/CPP_Learning/css/featherlight.min.css?1706446248" rel="stylesheet">
+    <link href="/CPP_Learning/css/perfect-scrollbar.min.css?1706446248" rel="stylesheet">
+    <link href="/CPP_Learning/css/auto-complete.css?1706446248" rel="stylesheet">
+    <link href="/CPP_Learning/css/atom-one-dark-reasonable.css?1706446248" rel="stylesheet">
+    <link href="/CPP_Learning/css/theme.css?1706446248" rel="stylesheet">
+    <link href="/CPP_Learning/css/tabs.css?1706446248" rel="stylesheet">
+    <link href="/CPP_Learning/css/hugo-theme.css?1706446248" rel="stylesheet">
     
-    <link href="/CPP_Learning/css/theme-mine.css?1706024457" rel="stylesheet">
+    <link href="/CPP_Learning/css/theme-mine.css?1706446248" rel="stylesheet">
     
-    <link href="/CPP_Learning/css/syntax.css?1706024457" rel="stylesheet">
+    <link href="/CPP_Learning/css/syntax.css?1706446248" rel="stylesheet">
 
-    <script src="/CPP_Learning/js/jquery-3.3.1.min.js?1706024457"></script>
+    <script src="/CPP_Learning/js/jquery-3.3.1.min.js?1706446248"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -41,7 +41,7 @@
     </style>
     
   </head>
-  <body class="" data-url="/CPP_Learning/chapter3/2-ownership/">
+  <body class="" data-url="/CPP_Learning/chapter3/2-lifespan/">
     <nav id="sidebar" class="showVisitedLinks">
 
 
@@ -708,13 +708,13 @@
  
   
     
-    <li data-nav-id="/CPP_Learning/chapter3/" title="Gestion mémoire" class="dd-item
+    <li data-nav-id="/CPP_Learning/chapter3/" title="Cycle de vie" class="dd-item
         parent
         
         
         ">
       <a href="/CPP_Learning/chapter3/">
-          <b>3- </b>Gestion mémoire
+          <b>3- </b>Cycle de vie
           
             <i class="fas fa-check read-icon"></i>
           
@@ -737,9 +737,9 @@
  
   
     
-      <li data-nav-id="/CPP_Learning/chapter3/1-lifespan/" title="Durée de vie" class="dd-item ">
-        <a href="/CPP_Learning/chapter3/1-lifespan/">
-        Durée de vie
+      <li data-nav-id="/CPP_Learning/chapter3/1-allocation/" title="Allocation dynamique 🎇" class="dd-item ">
+        <a href="/CPP_Learning/chapter3/1-allocation/">
+        Allocation dynamique 🎇
         <i class="fas fa-check read-icon"></i>
         </a>
     </li>
@@ -758,9 +758,9 @@
  
   
     
-      <li data-nav-id="/CPP_Learning/chapter3/2-ownership/" title="Ownership" class="dd-item active">
-        <a href="/CPP_Learning/chapter3/2-ownership/">
-        Ownership
+      <li data-nav-id="/CPP_Learning/chapter3/2-lifespan/" title="Durée de vie ⏳" class="dd-item active">
+        <a href="/CPP_Learning/chapter3/2-lifespan/">
+        Durée de vie ⏳
         <i class="fas fa-check read-icon"></i>
         </a>
     </li>
@@ -779,9 +779,9 @@
  
   
     
-      <li data-nav-id="/CPP_Learning/chapter3/3-allocation/" title="Allocation dynamique" class="dd-item ">
-        <a href="/CPP_Learning/chapter3/3-allocation/">
-        Allocation dynamique
+      <li data-nav-id="/CPP_Learning/chapter3/3-storage/" title="Espace de stockage 💾" class="dd-item ">
+        <a href="/CPP_Learning/chapter3/3-storage/">
+        Espace de stockage 💾
         <i class="fas fa-check read-icon"></i>
         </a>
     </li>
@@ -800,9 +800,9 @@
  
   
     
-      <li data-nav-id="/CPP_Learning/chapter3/4-move-sem/" title="Déplacement" class="dd-item ">
-        <a href="/CPP_Learning/chapter3/4-move-sem/">
-        Déplacement
+      <li data-nav-id="/CPP_Learning/chapter3/4-references/" title="Usage des références 🔀" class="dd-item ">
+        <a href="/CPP_Learning/chapter3/4-references/">
+        Usage des références 🔀
         <i class="fas fa-check read-icon"></i>
         </a>
     </li>
@@ -821,30 +821,30 @@
  
   
     
-      <li data-nav-id="/CPP_Learning/chapter3/test/" title="Questionnaire !" class="dd-item ">
+      <li data-nav-id="/CPP_Learning/chapter3/5-ownership/" title="Ownership 🏘️" class="dd-item ">
+        <a href="/CPP_Learning/chapter3/5-ownership/">
+        Ownership 🏘️
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/CPP_Learning/chapter3/test/" title="Questionnaire ☑" class="dd-item ">
         <a href="/CPP_Learning/chapter3/test/">
-        Questionnaire !
-        <i class="fas fa-check read-icon"></i>
-        </a>
-    </li>
-     
-  
- 
-
-            
-          
-            
-            
-
-
-
-
- 
-  
-    
-      <li data-nav-id="/CPP_Learning/chapter3/summary/" title="Synthèse" class="dd-item ">
-        <a href="/CPP_Learning/chapter3/summary/">
-        Synthèse
+        Questionnaire ☑
         <i class="fas fa-check read-icon"></i>
         </a>
     </li>
@@ -1826,6 +1826,10 @@
               </li>
           
               <li>
+                  <a class="padding" href="https://godbolt.org/"><i class='fas fa-cog'></i> Compiler Explorer</a>
+              </li>
+          
+              <li>
                   <a class="padding" href="https://en.cppreference.com/w/"><i class='fas fa-passport'></i> CPP-Ref</a>
               </li>
           
@@ -1886,7 +1890,7 @@
             
           
           
-            <a href='/CPP_Learning/'>Accueil</a> > <a href='/CPP_Learning/chapter3/'>Gestion mémoire</a> > Ownership
+            <a href='/CPP_Learning/'>Accueil</a> > <a href='/CPP_Learning/chapter3/'>Cycle de vie</a> > Durée de vie ⏳
           
         
           
@@ -1903,8 +1907,11 @@
   <ul>
     <li>
       <ul>
-        <li><a href="#ownership">Ownership</a></li>
-        <li><a href="#les-pièges-de-la-mémoire">Les pièges de la mémoire</a></li>
+        <li><a href="#donnée-de-type-fondamental">Donnée de type fondamental</a></li>
+        <li><a href="#donnée-de-type-structuré">Donnée de type-structuré</a></li>
+        <li><a href="#références">Références</a></li>
+        <li><a href="#validité-des-données">Validité des données</a></li>
+        <li><a href="#synthèse">Synthèse</a></li>
       </ul>
     </li>
   </ul>
@@ -1924,119 +1931,409 @@
           
             <h1>
               
-              Ownership
+              Durée de vie ⏳
             </h1>
           
 
         
 
 
+<p>Nous allons maintenant revenir sur l&rsquo;instanciation et la désinstanciation des données, car ce sont les deux événements qui délimitent leur période de validité.</p>
 <hr>
-<h3 id="ownership">Ownership</h3>
-<p>On dit qu&rsquo;un objet A est le <strong>propriétaire</strong>, ou le <strong>owner</strong>, d&rsquo;un objet B lorsque la destruction de A entraîne la destruction de B.<br>
-Dans l&rsquo;exercice précédent, on peut donc dire que <code>box</code> était propriétaire de <code>box._content</code>.</p>
-<p>Considérons un autre exemple :</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">Box</span><span class="o">&gt;</span> <span class="n">boxes</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">             <span class="n">boxes</span><span class="p">.</span><span class="n">emplace_back</span><span class="p">(</span><span class="s">&#34;gift1&#34;</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl"><span class="n">Box</span><span class="o">&amp;</span> <span class="n">gift2</span> <span class="o">=</span> <span class="n">boxes</span><span class="p">.</span><span class="n">emplace_back</span><span class="p">(</span><span class="s">&#34;gift2&#34;</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl"><span class="n">Box</span>  <span class="n">gift3</span> <span class="o">=</span> <span class="n">boxes</span><span class="p">.</span><span class="n">emplace_back</span><span class="p">(</span><span class="s">&#34;gift3&#34;</span><span class="p">);</span>
-</span></span></code></pre></div><p>Ici, le tableau <code>boxes</code> est le propriétaire des objets <code>boxes[0]</code>, <code>boxes[1]</code> et <code>boxes[2]</code>.
-Il est également propriétaire de l&rsquo;objet <code>gift2</code>, puisqu&rsquo;il s&rsquo;agit d&rsquo;une référence sur <code>boxes[1]</code>.<br>
-En revanche, il n&rsquo;est pas propriétaire de <code>gift3</code>, car <code>gift3</code> est une copie de <code>boxes[2]</code>, et que la destruction de <code>boxes</code> n&rsquo;entrainera donc pas la destruction de <code>gift3</code>.</p>
-<p>Considérons un exemple supplémentaire :</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="k">struct</span> <span class="nc">Content</span>
+<h3 id="donnée-de-type-fondamental">Donnée de type fondamental</h3>
+<p>L&rsquo;instanciation d&rsquo;une donnée de type fondamental est constitué de deux étapes :</p>
+<ol>
+<li>le programme alloue l&rsquo;espace nécessaire pour stocker la donnée,</li>
+<li><strong>si spécifié par le programmeur</strong>, le contenu de la donnée est initialisé.</li>
+</ol>
+<p>En ce qui concerne la désinstanciation, le programme désalloue l&rsquo;espace réservé pour la donnée.</p>
+<p>Dans le cas d&rsquo;une <strong>allocation automatique</strong>, l&rsquo;instanciation a lieu au moment de la définition de la variable et la désinstanciation lorsque l&rsquo;on sort du bloc dans lequel elle est définie.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="kt">int</span> <span class="nf">twice_sum</span><span class="p">()</span>
 </span></span><span class="line"><span class="cl"><span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="n">Content</span><span class="p">(</span><span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&amp;</span> <span class="n">name</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">        <span class="o">:</span> <span class="n">name</span> <span class="p">{</span> <span class="n">name</span> <span class="p">}</span>
-</span></span><span class="line"><span class="cl">    <span class="p">{}</span>
+</span></span><span class="line"><span class="cl">    <span class="k">auto</span> <span class="n">sum</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">    <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">name</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl"><span class="p">};</span>
+</span></span><span class="line"><span class="cl">    <span class="k">for</span> <span class="p">(</span><span class="k">auto</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">3</span><span class="p">;</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="k">auto</span> <span class="n">twice</span> <span class="o">=</span> <span class="n">i</span> <span class="o">*</span> <span class="mi">2</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="n">sum</span> <span class="o">+=</span> <span class="n">twice</span><span class="p">;</span> 
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">Bag</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">sum</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>Dans l&rsquo;exemple ci-dessus :</p>
+<ul>
+<li><code>sum</code> est instancié à la ligne 3 et désinstancié à la ligne 12</li>
+<li><code>i</code> est instancié à la ligne 5 et désinstancié à la ligne 9 (après la dernière itération de la boucle)</li>
+<li><code>twice</code> est instancié à la ligne 7 et désinstancié à la ligne 9 (à la fin de chaque itération)</li>
+</ul>
+<p>Dans le cas d&rsquo;une <strong>allocation dynamique</strong>, l&rsquo;instanciation a lieu à l&rsquo;appel à <code>new</code> (ou <code>new[]</code>) et la désinstanciation à l&rsquo;appel à <code>delete</code> (ou <code>delete[]</code>).</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="kt">int</span><span class="o">*</span> <span class="nf">make_int</span><span class="p">(</span><span class="kt">int</span> <span class="n">value</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">int</span><span class="o">*</span> <span class="n">ptr</span> <span class="o">=</span> <span class="k">nullptr</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">ptr</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">int</span> <span class="p">{</span> <span class="n">value</span> <span class="p">};</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">ptr</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">int</span><span class="o">*</span> <span class="n">five</span> <span class="o">=</span> <span class="n">make_int</span><span class="p">(</span><span class="mi">5</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="o">*</span><span class="n">five</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">delete</span> <span class="n">five</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>Dans ce nouvel exemple :</p>
+<ul>
+<li>la variable <code>value</code> est instanciée ligne 1 et désinstanciée ligne 6</li>
+<li>la variable <code>ptr</code> (le pointeur !) est instanciée ligne 3 et désinstanciée ligne 6</li>
+<li>l&rsquo;entier alloué dynamiquement (et référencé par <code>*ptr</code> puis <code>*five</code>) est instancié ligne 4 et désinstancié ligne 54</li>
+<li>la variable <code>five</code> (encore le pointeur) est instanciée à la ligne 10 et désinstanciée ligne 15</li>
+</ul>
+<hr>
+<h3 id="donnée-de-type-structuré">Donnée de type-structuré</h3>
+<p>Pour les types-structurés (c&rsquo;est-à-dire <code>class</code> et <code>struct</code>), le comportement à l&rsquo;instanciation et désinstanciation est un peu différent.</p>
+<p>A l&rsquo;instanciation :</p>
+<ol>
+<li>le programme alloue l&rsquo;espace nécessaire pour stocker la donnée,</li>
+<li>le constructeur de la donnée est appelé <strong>quoi qu&rsquo;il arrive</strong>.</li>
+</ol>
+<p>A la désinstanciation :</p>
+<ol>
+<li>le destructeur de la donnée est appelé,</li>
+<li>le programme désalloue l&rsquo;espace réservé pour la donnée.</li>
+</ol>
+<p>Prenons l&rsquo;exemple suivant :</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">Person</span>
 </span></span><span class="line"><span class="cl"><span class="p">{</span>
 </span></span><span class="line"><span class="cl"><span class="k">public</span><span class="o">:</span>
-</span></span><span class="line"><span class="cl">    <span class="n">Content</span><span class="o">&amp;</span> <span class="n">add</span><span class="p">(</span><span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&amp;</span> <span class="n">name</span><span class="p">)</span> <span class="p">{</span> <span class="k">return</span> <span class="n">_contents</span><span class="p">.</span><span class="n">emplace_back</span><span class="p">(</span><span class="n">name</span><span class="p">);</span> <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="n">Person</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">name</span><span class="p">,</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">surname</span><span class="p">)</span> <span class="o">:</span> <span class="n">_surname</span> <span class="p">{</span> <span class="n">surname</span> <span class="p">}</span>
+</span></span><span class="line"><span class="cl">                                                  <span class="p">,</span> <span class="n">_name</span> <span class="p">{</span> <span class="n">name</span> <span class="p">}</span>                                                    
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">name</span> <span class="o">&lt;&lt;</span> <span class="s">&#34; is born&#34;</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="o">~</span><span class="n">Person</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">name</span> <span class="o">&lt;&lt;</span> <span class="s">&#34; is dead&#34;</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="k">private</span><span class="o">:</span>
-</span></span><span class="line"><span class="cl">    <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">Content</span><span class="o">&gt;</span> <span class="n">_contents</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">_name</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">int</span>         <span class="n">_age</span> <span class="o">=</span> <span class="mi">3</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">_surname</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl"><span class="p">};</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
 </span></span><span class="line"><span class="cl"><span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="n">Bag</span> <span class="n">bag</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">    <span class="n">bag</span><span class="p">.</span><span class="n">add</span><span class="p">(</span><span class="s">&#34;thing1&#34;</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl">    <span class="n">bag</span><span class="p">.</span><span class="n">add</span><span class="p">(</span><span class="s">&#34;thing2&#34;</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="n">Person</span> <span class="n">p</span> <span class="p">{</span> <span class="s">&#34;Jean&#34;</span><span class="p">,</span> <span class="s">&#34;Paul&#34;</span> <span class="p">};</span>
 </span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span></code></pre></div><p>Dans le code ci-dessus, <code>bag._contents</code> est le propriétaire de <code>bag._contents[0]</code> et <code>bag._contents[1]</code>.
-Aussi, <code>bag</code> est le propriétaire de <code>bag._contents</code>.</p>
-<p>La destruction de <code>bag</code> entraînera donc la destruction de <code>bag._contents</code>, qui elle-même entraînera la destruction de <code>bag._contents[0]</code> et <code>bag._contents[1]</code>.<br>
-La relation d&rsquo;ownership est donc une relation transitive.
-Si un objet A est propriétaire d&rsquo;un objet B, qui lui-même est propriétaire d&rsquo;un objet C, alors A est également propriétaire de C.</p>
-<p>Analysez maintenant le code du programme <code>Reminders</code> du TP2 (vous pouvez trouver la correction <a href="https://github.com/Laefy/CPP_Learning_Code/tree/tp2_solution/tp-02">ici</a>) et essayez d&rsquo;identifier toutes les relations d&rsquo;ownership qu&rsquo;il contient.<br>
-Déduisez-en les durées de vie des différents objets du programme.</p>
-
-<div class="expand">
-    <div class="expand-label" style="cursor: pointer;" onclick="$h = $(this);$h.next('div').slideToggle(100,function () {$h.children('i').attr('class',function () {return $h.next('div').is(':visible') ? 'fas fa-chevron-down' : 'fas fa-chevron-right';});});">
-        <i style="font-size:x-small;" class="fas fa-chevron-right"></i>
-        <span>
-        
-    	
-    	Solution
-    	
-    	</span>
-    </div>
-    <div class="expand-content" style="display: none;">
-        <p><code>clock</code>:</p>
-<ul>
-<li>la durée de vie de <code>clock</code> va de la ligne 15 à la ligne 33 du <code>main</code></li>
-<li>propriétaire de <code>clock._min_hand</code>, <code>clock._sec_hand</code> et <code>clock._events</code></li>
-<li>mais pas de <code>events</code> (celui du <code>main</code>)</li>
-</ul>
-<p><code>clock._min_hand</code>:</p>
-<ul>
-<li>même durée de vie que <code>clock</code>, donc <code>main</code>: 15-33</li>
-<li>propriétaire de <code>clock._min_hand._minutes</code></li>
-</ul>
-<p><code>clock._min_hand._minutes</code>:</p>
-<ul>
-<li>même durée de vie que <code>clock._min_hand</code>, donc <code>main</code>: 15-33</li>
-</ul>
-<p><code>clock._sec_hand</code>:</p>
-<ul>
-<li>même durée de vie que <code>clock</code>, donc <code>main</code>: 15-33</li>
-<li>propriétaire de <code>clock._sec_hand._seconds</code></li>
-<li>mais pas de <code>clock._sec_hand._min_hand</code> (équivalent à <code>clock._min_hand</code>)</li>
-</ul>
-<p><code>clock._events</code>:</p>
-<ul>
-<li>même durée de vie que <code>clock</code>, donc <code>main</code>: 15-33</li>
-<li>propriétaire des éléments du tableau <code>clock._events</code></li>
-<li>mais pas des éléments du tableau <code>events</code> (celui du <code>main</code>), car les éléments ont été copiés</li>
-</ul>
-<p><code>events</code>:</p>
-<ul>
-<li>sa durée de vie s&rsquo;étend de <code>main</code> : 13-33</li>
-<li>propriétaire des éléments du tableau <code>events</code></li>
-<li>mais pas des éléments du tableau <code>clock._events</code></li>
-</ul>
-
-    </div>
+</span></span></code></pre></td></tr></table>
 </div>
+</div><p>Voici ce qu&rsquo;il se passe au moment de l&rsquo;instanciation de <code>p</code> (ligne 23) :</p>
+<ol>
+<li>le programme alloue l&rsquo;espace nécessaire pour stocker un objet de type <code>Person</code>,</li>
+<li>il appelle le constructeur de <code>Person</code> à deux paramètres qui :
+<ol>
+<li>instancie <code>_name</code> :
+<ol>
+<li>le programme lui alloue le bloc mémoire nécessaire (au sein de l&rsquo;espace déjà réservé pour <code>p</code>),</li>
+<li>il appelle le constructeur de <code>std::string</code> à un paramètre,</li>
+</ol>
+</li>
+<li>instancie <code>_age</code> :
+<ol>
+<li>le programme lui alloue le bloc mémoire nécessaire (au sein de l&rsquo;espace déjà réservé pour <code>p</code>),</li>
+<li>il lui assigne la valeur <code>3</code>,</li>
+</ol>
+</li>
+<li>instancie <code>_surname</code> :
+<ol>
+<li>le programme lui alloue le bloc mémoire nécessaire (au sein de l&rsquo;espace déjà réservé pour <code>p</code>),</li>
+<li>il appelle le constructeur de <code>std::string</code> à un paramètre,</li>
+</ol>
+</li>
+<li>exécute les instructions présentes dans le corps du constructeur (en l&rsquo;occurrence, cela affiche <code>&quot;Jean is born&quot;</code> dans la console).</li>
+</ol>
+</li>
+</ol>
+
+<div class="notices note" ><p>Notez bien ici que <code>_name</code> est instancié en premier, puis <code>_age</code>, puis <code>_surname</code>, malgré l&rsquo;ordre dans lequel les attributs apparaissent dans la liste d&rsquo;initialisation du constructeur.<br>
+En effet, c&rsquo;est l&rsquo;ordre de définition des attributs dans la classe qui fait foi et détermine qui est instancié avant qui.</p>
+</div>
+
+
+<div class="notices note" ><p>Si un attribut apparaît dans la liste d&rsquo;initialisation, alors il est initialisé à partir de ce qui est spécifié dans celle-ci.<br>
+Sinon, il est initialisé à partir du class-initializer.
+Dans le cas où celui-ci n&rsquo;est pas spécifié, alors le constructeur par défaut est appelé pour un type-structuré, et rien n&rsquo;est fait pour un type fondamental.</p>
+</div>
+
+<p>Voici maintenant ce qu&rsquo;il se passe au moment de sa désinstanciation (ligne 25) :</p>
+<ol>
+<li>le programme appelle le destructeur de <code>Person</code> qui :
+<ol>
+<li>exécute les instructions présentes dans le corps du destructeur (en l&rsquo;occurrence, cela affiche <code>&quot;Jean is dead&quot;</code> dans la console).</li>
+<li>désinstancie <code>_surname</code> :
+<ol>
+<li>le programme appelle le destructeur de <code>std::string</code>,</li>
+<li>il désalloue l&rsquo;espace réservé pour <code>_surname</code>,</li>
+</ol>
+</li>
+<li>désinstancie <code>_age</code>, c&rsquo;est-à-dire qu&rsquo;il désalloue l&rsquo;espace qui lui est réservé,</li>
+<li>désinstancie <code>_name</code> :
+<ol>
+<li>le programme appelle le destructeur de <code>std::string</code>,</li>
+<li>il désalloue l&rsquo;espace réservé pour <code>_name</code>,</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>le programme désalloue entièrement l&rsquo;espace réservé à <code>p</code>.</li>
+</ol>
+<p>Pour résumer, en plus de l&rsquo;allocation et la désallocation mémoire, l&rsquo;instanciation et la désinstanciation d&rsquo;un objet de type-structuré comprennent sa construction et sa destruction.<br>
+Ces deux étapes entraînent récursivement l&rsquo;instanciation et la désinstanciation de ses attributs.</p>
 <hr>
-<h3 id="les-pièges-de-la-mémoire">Les pièges de la mémoire</h3>
-<p>Etre attentifs aux relations d&rsquo;ownership permet généralement de déterminer les durées de vie des objets.
-Il existe cependent des cas où cela n&rsquo;est pas tout à fait vrai&hellip;</p>
-<p>Par exemple, prenons chacun des éléments du tableau <code>clock._events</code>.
-On pourrait supposer, en raison du fait que leur propriétaire est <code>clock._events</code> qu&rsquo;ils ont la même durée de vie que ce dernier, mais cela n&rsquo;est pas vrai.</p>
-<p>Puisqu&rsquo;un <code>std::vector</code> n&rsquo;est finalement qu&rsquo;un tableau dynamique, lorsque la capacité mémoire réservée pour ce dernier est atteinte, une nouvelle zone est réallouée, et les objets sont copiés dedans.<br>
-Cela signifie donc que chaque fois qu&rsquo;une réallocation mémoire a lieu, la durée de vie de chacun des <code>clock._events[i]</code> se termine, et de nouveaux objets sont créés ailleurs.</p>
-<p>Si l&rsquo;on voulait conserver des références sur les éléments de <code>clock._events</code>, il serait dans ce cas impossible de garantir la sécurité du programme.<br>
-En effet, les objets référencés pourraient être détruits à tout moment, et leurs références invalidées sans qu&rsquo;on ne le sache.</p>
-<p>La prochaine étape de ce chapitre sera donc de vous montrer comment contourner ce problème pour coder de manière sécurisée.</p>
+<h3 id="références">Références</h3>
+<p>Une référence est un alias sur une donnée, mais la définition d&rsquo;une référence ou la sortie du bloc dans lequel elle est définie n&rsquo;a absolument <strong>aucun impact</strong> sur l&rsquo;instanciation ou la désinstanciation de la donnée :</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="kt">void</span> <span class="nf">fcn</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">int</span> <span class="n">a</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="kt">int</span><span class="o">&amp;</span> <span class="n">b</span> <span class="o">=</span> <span class="n">a</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="n">b</span> <span class="o">=</span> <span class="mi">3</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="n">a</span> <span class="o">=</span> <span class="mi">5</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>La donnée representée par <code>a</code>, mais également par <code>b</code>, est instanciée ligne 3 et désinstanciée ligne 11.<br>
+La ligne 6 n&rsquo;a absolument aucun impact sur la mémoire : aucune nouvelle instanciation n&rsquo;est réalisée.<br>
+Idem pour la ligne 8, rien n&rsquo;est désinstancié, la donnée correspondant à <code>a</code> est toujours bien présente.</p>
+<p>En revanche, il faut faire attention au cas inverse : conserver une référence sur une donnée qui va être désinstanciée !<br>
+Voici un exemple :</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&amp;</span> <span class="n">person</span><span class="p">(</span><span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&amp;</span> <span class="n">name</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">default_name</span> <span class="o">=</span> <span class="s">&#34;stranger&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">name</span><span class="p">.</span><span class="n">empty</span><span class="p">()</span> <span class="o">?</span> <span class="nl">default_name</span> <span class="p">:</span> <span class="n">name</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">name</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">std</span><span class="o">::</span><span class="n">cin</span> <span class="o">&gt;&gt;</span> <span class="n">name</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;Hello &#34;</span> <span class="o">&lt;&lt;</span> <span class="n">person</span><span class="p">(</span><span class="n">name</span><span class="p">)</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>Ici, <code>default_name</code> est instancié ligne 3 et désinstancié ligne 5 (lorsqu&rsquo;on sort de la fonction <code>fcn</code>).<br>
+Dans le cas où <code>name</code> est vide, on renvoie une référence sur cette donnée, qui n&rsquo;a par conséquent plus d&rsquo;espace mémoire attribué une fois revenu dans la fonction <code>main</code>.<br>
+Ce qui est affiché dans la console à la ligne 11 est donc indéterminé (et encore, moyennant que le programme ne crash pas 😬).</p>
+<p>On utilise le terme <strong>dangling-reference</strong> pour parler de cette situation.
+C&rsquo;est un problème que l&rsquo;on rencontre souvent, surtout lorsqu&rsquo;on est débutant.</p>
+<hr>
+<h3 id="validité-des-données">Validité des données</h3>
+<p>L&rsquo;accès à une donnée (en écriture ou en lecture) est valide <strong>si et seulement si</strong> cet accès est effectué après son instanciation et avant sa désinstanciation.</p>
+<p>Pourquoi ? Eh bien, tout simplement parce que le support d&rsquo;existence d&rsquo;une donnée est le segment mémoire dans lequel elle est écrite et ce segment est réservé au cours de l&rsquo;instanciation et libéré à la désinstanciation.<br>
+C&rsquo;est d&rsquo;ailleurs la cause des dangling-references, que nous avons présentés dans le paragraphe précédent.</p>
+<p>La période entre ces deux événements est appelée <strong>durée de vie</strong> de la donnée, ou encore <strong>lifespan</strong> en anglais.</p>
+<p>Si l&rsquo;accès à la donnée est fait en dehors de sa durée de vie, le comportement du programme est indéterminé (= <strong>undefined behavior</strong>).<br>
+Dans le cas d&rsquo;un accès en lecture, si le programme ne génère pas immédiatement une segfault, vous pourrez vous retrouver avec une valeur complètement aléatoire (ce ne sera pas forcément la dernière valeur portée par la donnée).<br>
+Dans le cas d&rsquo;un accès en écriture, au mieux, on aura une segfault qui permettra de localiser rapidement à quel endroit du code l&rsquo;accès invalide est fait, au pire, on écrira dans une zone mémoire désormais allouée à une autre donnée, et c&rsquo;est alors extrêmement difficile de comprendre d&rsquo;où vient le problème&hellip;</p>
+<p>Petit exercice, dans le code ci-dessous, essayez d&rsquo;anticiper quelles seront les valeurs affichées dans la console :</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp">
+</span></span></span><span class="line"><span class="cl"><span class="cp">#include</span> <span class="cpf">&lt;vector&gt;</span><span class="cp">
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span>
+</span></span><span class="line"><span class="cl"><span class="kt">void</span> <span class="nf">fcn1</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">int</span><span class="o">*</span> <span class="n">ptr</span> <span class="o">=</span> <span class="k">nullptr</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="kt">int</span> <span class="n">a</span> <span class="o">=</span> <span class="mi">1200</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="n">ptr</span> <span class="o">=</span> <span class="o">&amp;</span><span class="n">a</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="o">*</span><span class="n">ptr</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span> <span class="c1">// =&gt; ?
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">struct</span> <span class="nc">Values</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">values</span> <span class="o">=</span> <span class="p">{</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span> <span class="p">};</span>
+</span></span><span class="line"><span class="cl"><span class="p">};</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kt">void</span> <span class="nf">fcn2</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="n">Values</span><span class="o">*</span> <span class="n">ptr</span> <span class="o">=</span> <span class="k">nullptr</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="n">Values</span> <span class="n">values</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="n">ptr</span> <span class="o">=</span> <span class="o">&amp;</span><span class="n">values</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">ptr</span><span class="o">-&gt;</span><span class="n">values</span><span class="p">.</span><span class="n">size</span><span class="p">()</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span> <span class="c1">// =&gt; ?
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">ptr</span><span class="o">-&gt;</span><span class="n">values</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span> <span class="c1">// =&gt; ?
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kt">void</span> <span class="nf">fcn3</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">int</span><span class="o">*</span> <span class="n">ptr</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">int</span><span class="p">(</span><span class="mi">1200</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="k">delete</span> <span class="n">ptr</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="o">*</span><span class="n">ptr</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span> <span class="c1">// =&gt; ?
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kt">int</span><span class="o">&amp;</span> <span class="n">fcn4</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">int</span> <span class="n">v</span> <span class="o">=</span> <span class="mi">4</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">v</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="n">fcn1</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">    <span class="n">fcn2</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">    <span class="n">fcn3</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">fcn4</span><span class="p">()</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span> <span class="c1">// =&gt; ?
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><p>Ouvrez maintenant le code dans <a href="https://godbolt.org/#z:OYLghAFBqd5QCxAYwPYBMCmBRdBLAF1QCcAaPECAMzwBtMA7AQwFtMQByARg9KtQYEAysib0QXACx8BBAKoBnTAAUAHpwAMvAFYTStJg1DIApACYAQuYukl9ZATwDKjdAGFUtAK4sGe1wAyeAyYAHI%2BAEaYxCBmGqQADqgKhE4MHt6%2BekkpjgJBIeEsUTFxtpj2eQxCBEzEBBk%2BflzllWk1dQQFYZHRsfEKtfWNWS2Dnd1FJf0AlLaoXsTI7BzmAMzByN5YANQma25Og8SYrPvYJhoAguub25h7BwBumA4k55c310%2BoeOg7VGQDC4EBmnxMAHYrNcdrCdsECAAqHYJAjER4AER2DC8tFoqOI%2B2hVzheyhn1JpIROyYmJ2XDiGiJFMpsIJdPMADYmMyYXDIRjwXzYYN0CAUAsCI83Ps3DtEezZbKdqLxa5aLySXCAPTanYAWn15xpyFMbjWJiuAA4FPCGE8xH9MKQdiwmHhbSciIsQjsInhGPTGeCIYLrp9jl4HDsAGpiLyYBQh4mk1UgF5vQkHBHGh3eRMcqH0l1mF1rMmCtbEgWaz4/P4AoFmUHJlmwuP5hTIxVrLE4vEEzWkyEp1mx%2BMFvMJpNVtuUntYrlTxND/mhoVakUEMUSrxSpUHFFoo1rbDLhQAOhSAC9MKDpcq0%2BrV7DdQaT9gTWaLdbbcE806Lpuh6OxegsxC%2Bv6gYWsKKrbuKaB7g%2Bh4Eh%2B54mAArBYXCYYuByPvBIDPrOsFvoaxpMKaJjmpaNp2gBWAumBPoPBhNJeDstABhxuxmI8ABi%2ByCWsgnhuu4bfL8/yAgwawtmJo6wgi3ZonSIQAO52gQEAMhoGhgiRm47Fg9AEA8g6GXOaaIfu%2BGHgqqkHnKT4MOgGqGaSZEfl%2B1E/nR/6OoxoGYN6EEPAwYAcHgLBJPUDwAI5eL8OxgGAIZhl8Vw5mYnKNgwkjyTc5KwdSTx0pIL7BQQPo7E8tbiZlnzUsBDCFSOc4ySCBmKXlzbdR1QJyf1ElGdZkrIXKMkFTME1wTuxE9V5FFUTRv70YFzquu6noheBkEBgwOwVSNpJejVTKWQ1HBzLQnAYbwfgcFopCoJwMqWNYKrgcsexmGsPCkAQmjXXMADWIAYfEt0cJID3Ay9nC8AoIDxEDT3XaQcCwEgmCqK8e4kOQlB1MACjKIYFRCAgqDqY9z1oDFdBMFU5MhLQVM03TvAMwkdB9FshjAFwEIaC0PN88QoSsCs3OoIz9DEAA8nuHO0/DuOvFcxCk4jpAa8gNT4I9vD8IIIhiOwUgyIIigqOo6OkLoLQGEYKDWNY%2Bh4BEyOQHMqComkyMcPqor7BipgfZYwu8KgLzEMQTo%2B6CpDEF4gjRZgAAqqCeEncwKN9lu2NuwSs5T1Nq9wvDqcQTAJJwPA3XdcMO69HDYHjyAE%2BiqhWpy%2BqcpIOwC0Y9IQheGgXlwOwQO9ViWC6uCECQv3/TMvBo1oMxzAgpxYDEyfg5D%2BicLDpBcwjHBIyjgPA9vJ8cGYLfPW3G933MccpM4khAA">Compiler Explorer</a> et regardez ce qu&rsquo;il se passe vraiment.<br>
+Changez ensuite de compilateur et sélectionnez <code>x86-64 gcc 13.2</code>.
+Que constatez-vous ?</p>
+
+<div class="notices tip" ><p>Le terme <strong>undefined behavior</strong> signifie littéralement &ldquo;comportement indéfini&rdquo;.
+En réalité, il s&rsquo;agit d&rsquo;un comportement indéfini <strong>par le standard</strong>.<br>
+Cela comporte donc les cas où le programme ne donne pas les mêmes résultats d&rsquo;une exécution à l&rsquo;autre (<code>fcn3</code>), mais également les cas où le comportement semble stable, jusqu&rsquo;à ce que l&rsquo;on change de compilateur ou de machine (<code>fcn2</code> et <code>fcn4</code>).<br>
+Et comme on ne peut pas tester son code sur tous les compilateurs et toutes les machines, même si certaines instructions ont l&rsquo;air de toujours se comporter comme on le voudrait (<code>fcn1</code>), il faudra éviter d&rsquo;écrire du code dont le comportement n&rsquo;est pas garanti par le standard.</p>
+</div>
+
+<hr>
+<h3 id="synthèse">Synthèse</h3>
+<ul>
+<li>L&rsquo;<strong>instanciation</strong> comporte :
+<ul>
+<li>l&rsquo;allocation de la mémoire pour la donnée</li>
+<li>son éventuelle initialisation : constructeur pour les types-structurés, initialisateur (seulement si spécifié) pour les types fondamentaux</li>
+</ul>
+</li>
+<li>La <strong>désinstanciation</strong> comporte :
+<ul>
+<li>la destruction de la donnée s&rsquo;il s&rsquo;agit d&rsquo;une instance de type-structuré</li>
+<li>la désallocation de la mémoire réservée</li>
+</ul>
+</li>
+<li>On parle d&rsquo;<strong>allocation automatique</strong> lorsque la donnée est instanciée via la définition d&rsquo;une variable locale.<br>
+La désinstanciation a lieu lorsque l&rsquo;on sort du bloc dans lequel elle est définie.</li>
+<li>On parle d&rsquo;<strong>allocation dynamique</strong> lorsque la donnée est instancié via l&rsquo;utilisation de <code>new</code> (ou <code>new[]</code>).<br>
+La désinstanciation se fait explicitement avec l&rsquo;appel <code>delete</code> (ou <code>delete[]</code>).</li>
+<li>Le constructeur d&rsquo;un objet déclenche l&rsquo;instanciation de chacun de ses attributs, dans l&rsquo;ordre dans lequel ils ont été définis.</li>
+<li>La <strong>durée de vie</strong> d&rsquo;une donnée est la période durant laquelle il est valide d&rsquo;y accéder : entre son instanciation et sa désinstanciation.</li>
+<li>Les références n&rsquo;ont pas d&rsquo;impact sur la durée de vie des données référencées.
+En revanche, il faut faire attention à ne pas conserver une référence sur une donnée déjà désinstanciée (= <strong>dangling-reference</strong>).</li>
+<li>Accéder à une donnée déjà désinstanciée constitue un <strong>undefined behavior</strong>.
+L&rsquo;utilisation d&rsquo;une dangling-reference est un bon exemple.</li>
+</ul>
 
 
 <footer class="footline">
@@ -3309,10 +3606,10 @@ En effet, les objets référencés pourraient être détruits à tout moment, et
 	 
 	 
 		
-			<a class="nav nav-prev" href="/CPP_Learning/chapter3/1-lifespan/" title="Durée de vie"> <i class="fa fa-chevron-left"></i></a>
+			<a class="nav nav-prev" href="/CPP_Learning/chapter3/1-allocation/" title="Allocation dynamique 🎇"> <i class="fa fa-chevron-left"></i></a>
 		
 		
-			<a class="nav nav-next" href="/CPP_Learning/chapter3/3-allocation/" title="Allocation dynamique" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+			<a class="nav nav-next" href="/CPP_Learning/chapter3/3-storage/" title="Espace de stockage 💾" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
 		
 	
     </div>
@@ -3322,19 +3619,19 @@ En effet, les objets référencés pourraient être détruits à tout moment, et
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/CPP_Learning/js/clipboard.min.js?1706024457"></script>
-    <script src="/CPP_Learning/js/perfect-scrollbar.min.js?1706024457"></script>
-    <script src="/CPP_Learning/js/perfect-scrollbar.jquery.min.js?1706024457"></script>
-    <script src="/CPP_Learning/js/jquery.sticky.js?1706024457"></script>
-    <script src="/CPP_Learning/js/featherlight.min.js?1706024457"></script>
-    <script src="/CPP_Learning/js/highlight.pack.js?1706024457"></script>
+    <script src="/CPP_Learning/js/clipboard.min.js?1706446248"></script>
+    <script src="/CPP_Learning/js/perfect-scrollbar.min.js?1706446248"></script>
+    <script src="/CPP_Learning/js/perfect-scrollbar.jquery.min.js?1706446248"></script>
+    <script src="/CPP_Learning/js/jquery.sticky.js?1706446248"></script>
+    <script src="/CPP_Learning/js/featherlight.min.js?1706446248"></script>
+    <script src="/CPP_Learning/js/highlight.pack.js?1706446248"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/CPP_Learning/js/modernizr.custom-3.6.0.js?1706024457"></script>
-    <script src="/CPP_Learning/js/learn.js?1706024457"></script>
-    <script src="/CPP_Learning/js/hugo-learn.js?1706024457"></script>
+    <script src="/CPP_Learning/js/modernizr.custom-3.6.0.js?1706446248"></script>
+    <script src="/CPP_Learning/js/learn.js?1706446248"></script>
+    <script src="/CPP_Learning/js/hugo-learn.js?1706446248"></script>
     
         
-            <script src="/CPP_Learning/mermaid/mermaid.js?1706024457"></script>
+            <script src="/CPP_Learning/mermaid/mermaid.js?1706446248"></script>
         
         <script>
             mermaid.initialize({ startOnLoad: true });

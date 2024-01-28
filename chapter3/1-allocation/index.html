@@ -3,31 +3,31 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="Hugo 0.121.0">
+    <meta name="generator" content="Hugo 0.121.2">
     <meta name="description" content="">
 
 
     <link rel="icon" href="/CPP_Learning/images/favicon.png" type="image/png">
 
-    <title>Déplacement :: Cours de C&#43;&#43; - Niveau Master</title>
+    <title>Allocation dynamique 🎇 :: Cours de C&#43;&#43; - Niveau Master</title>
 
     
-    <link href="/CPP_Learning/css/nucleus.css?1706024457" rel="stylesheet">
-    <link href="/CPP_Learning/css/fontawesome-all.min.css?1706024457" rel="stylesheet">
-    <link href="/CPP_Learning/css/hybrid.css?1706024457" rel="stylesheet">
-    <link href="/CPP_Learning/css/featherlight.min.css?1706024457" rel="stylesheet">
-    <link href="/CPP_Learning/css/perfect-scrollbar.min.css?1706024457" rel="stylesheet">
-    <link href="/CPP_Learning/css/auto-complete.css?1706024457" rel="stylesheet">
-    <link href="/CPP_Learning/css/atom-one-dark-reasonable.css?1706024457" rel="stylesheet">
-    <link href="/CPP_Learning/css/theme.css?1706024457" rel="stylesheet">
-    <link href="/CPP_Learning/css/tabs.css?1706024457" rel="stylesheet">
-    <link href="/CPP_Learning/css/hugo-theme.css?1706024457" rel="stylesheet">
+    <link href="/CPP_Learning/css/nucleus.css?1706446248" rel="stylesheet">
+    <link href="/CPP_Learning/css/fontawesome-all.min.css?1706446248" rel="stylesheet">
+    <link href="/CPP_Learning/css/hybrid.css?1706446248" rel="stylesheet">
+    <link href="/CPP_Learning/css/featherlight.min.css?1706446248" rel="stylesheet">
+    <link href="/CPP_Learning/css/perfect-scrollbar.min.css?1706446248" rel="stylesheet">
+    <link href="/CPP_Learning/css/auto-complete.css?1706446248" rel="stylesheet">
+    <link href="/CPP_Learning/css/atom-one-dark-reasonable.css?1706446248" rel="stylesheet">
+    <link href="/CPP_Learning/css/theme.css?1706446248" rel="stylesheet">
+    <link href="/CPP_Learning/css/tabs.css?1706446248" rel="stylesheet">
+    <link href="/CPP_Learning/css/hugo-theme.css?1706446248" rel="stylesheet">
     
-    <link href="/CPP_Learning/css/theme-mine.css?1706024457" rel="stylesheet">
+    <link href="/CPP_Learning/css/theme-mine.css?1706446248" rel="stylesheet">
     
-    <link href="/CPP_Learning/css/syntax.css?1706024457" rel="stylesheet">
+    <link href="/CPP_Learning/css/syntax.css?1706446248" rel="stylesheet">
 
-    <script src="/CPP_Learning/js/jquery-3.3.1.min.js?1706024457"></script>
+    <script src="/CPP_Learning/js/jquery-3.3.1.min.js?1706446248"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -41,7 +41,7 @@
     </style>
     
   </head>
-  <body class="" data-url="/CPP_Learning/chapter3/4-move-sem/">
+  <body class="" data-url="/CPP_Learning/chapter3/1-allocation/">
     <nav id="sidebar" class="showVisitedLinks">
 
 
@@ -708,13 +708,13 @@
  
   
     
-    <li data-nav-id="/CPP_Learning/chapter3/" title="Gestion mémoire" class="dd-item
+    <li data-nav-id="/CPP_Learning/chapter3/" title="Cycle de vie" class="dd-item
         parent
         
         
         ">
       <a href="/CPP_Learning/chapter3/">
-          <b>3- </b>Gestion mémoire
+          <b>3- </b>Cycle de vie
           
             <i class="fas fa-check read-icon"></i>
           
@@ -737,9 +737,9 @@
  
   
     
-      <li data-nav-id="/CPP_Learning/chapter3/1-lifespan/" title="Durée de vie" class="dd-item ">
-        <a href="/CPP_Learning/chapter3/1-lifespan/">
-        Durée de vie
+      <li data-nav-id="/CPP_Learning/chapter3/1-allocation/" title="Allocation dynamique 🎇" class="dd-item active">
+        <a href="/CPP_Learning/chapter3/1-allocation/">
+        Allocation dynamique 🎇
         <i class="fas fa-check read-icon"></i>
         </a>
     </li>
@@ -758,9 +758,9 @@
  
   
     
-      <li data-nav-id="/CPP_Learning/chapter3/2-ownership/" title="Ownership" class="dd-item ">
-        <a href="/CPP_Learning/chapter3/2-ownership/">
-        Ownership
+      <li data-nav-id="/CPP_Learning/chapter3/2-lifespan/" title="Durée de vie ⏳" class="dd-item ">
+        <a href="/CPP_Learning/chapter3/2-lifespan/">
+        Durée de vie ⏳
         <i class="fas fa-check read-icon"></i>
         </a>
     </li>
@@ -779,9 +779,9 @@
  
   
     
-      <li data-nav-id="/CPP_Learning/chapter3/3-allocation/" title="Allocation dynamique" class="dd-item ">
-        <a href="/CPP_Learning/chapter3/3-allocation/">
-        Allocation dynamique
+      <li data-nav-id="/CPP_Learning/chapter3/3-storage/" title="Espace de stockage 💾" class="dd-item ">
+        <a href="/CPP_Learning/chapter3/3-storage/">
+        Espace de stockage 💾
         <i class="fas fa-check read-icon"></i>
         </a>
     </li>
@@ -800,9 +800,9 @@
  
   
     
-      <li data-nav-id="/CPP_Learning/chapter3/4-move-sem/" title="Déplacement" class="dd-item active">
-        <a href="/CPP_Learning/chapter3/4-move-sem/">
-        Déplacement
+      <li data-nav-id="/CPP_Learning/chapter3/4-references/" title="Usage des références 🔀" class="dd-item ">
+        <a href="/CPP_Learning/chapter3/4-references/">
+        Usage des références 🔀
         <i class="fas fa-check read-icon"></i>
         </a>
     </li>
@@ -821,30 +821,30 @@
  
   
     
-      <li data-nav-id="/CPP_Learning/chapter3/test/" title="Questionnaire !" class="dd-item ">
+      <li data-nav-id="/CPP_Learning/chapter3/5-ownership/" title="Ownership 🏘️" class="dd-item ">
+        <a href="/CPP_Learning/chapter3/5-ownership/">
+        Ownership 🏘️
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/CPP_Learning/chapter3/test/" title="Questionnaire ☑" class="dd-item ">
         <a href="/CPP_Learning/chapter3/test/">
-        Questionnaire !
-        <i class="fas fa-check read-icon"></i>
-        </a>
-    </li>
-     
-  
- 
-
-            
-          
-            
-            
-
-
-
-
- 
-  
-    
-      <li data-nav-id="/CPP_Learning/chapter3/summary/" title="Synthèse" class="dd-item ">
-        <a href="/CPP_Learning/chapter3/summary/">
-        Synthèse
+        Questionnaire ☑
         <i class="fas fa-check read-icon"></i>
         </a>
     </li>
@@ -1826,6 +1826,10 @@
               </li>
           
               <li>
+                  <a class="padding" href="https://godbolt.org/"><i class='fas fa-cog'></i> Compiler Explorer</a>
+              </li>
+          
+              <li>
                   <a class="padding" href="https://en.cppreference.com/w/"><i class='fas fa-passport'></i> CPP-Ref</a>
               </li>
           
@@ -1886,7 +1890,7 @@
             
           
           
-            <a href='/CPP_Learning/'>Accueil</a> > <a href='/CPP_Learning/chapter3/'>Gestion mémoire</a> > Déplacement
+            <a href='/CPP_Learning/'>Accueil</a> > <a href='/CPP_Learning/chapter3/'>Cycle de vie</a> > Allocation dynamique 🎇
           
         
           
@@ -1903,9 +1907,9 @@
   <ul>
     <li>
       <ul>
-        <li><a href="#construction-sur-place">Construction sur place</a></li>
-        <li><a href="#déplacement">Déplacement</a></li>
-        <li><a href="#un-peu-de-pratique">Un peu de pratique</a></li>
+        <li><a href="#allouer-un-seul-élément">Allouer un seul élément</a></li>
+        <li><a href="#allouer-un-tableau-déléments">Allouer un tableau d&rsquo;éléments</a></li>
+        <li><a href="#pas-dexercice-">Pas d&rsquo;exercice ?</a></li>
       </ul>
     </li>
   </ul>
@@ -1925,309 +1929,42 @@
           
             <h1>
               
-              Déplacement
+              Allocation dynamique 🎇
             </h1>
           
 
         
 
 
-<p>Nous avons vu précédement que les <code>unique_ptr</code> ne pouvaient pas être copiés.
-Cependant, le <code>vector</code> a réussi à provoquer leur &ldquo;déplacement&rdquo; en mémoire pour effectuer sa réallocation.<br>
-Nous allons voir comment faire de même afin de pouvoir manipuler les <code>unique_ptr</code> avec un peu plus de souplesse.</p>
+<p>Cette première page sera assez courte, elle vous présentera simplement la syntaxe permettant d&rsquo;allouer dynamiquement de la mémoire et de libérer.</p>
 <hr>
-<h3 id="construction-sur-place">Construction sur place</h3>
-<p>Lorsqu&rsquo;une fonction retourne un objet et que celui-ci est utilisé pour initialiser une variable, aucune copie n&rsquo;a lieu.
-L&rsquo;objet est directement construit à l&rsquo;adresse mémoire qui lui était réservée dans le code appelant.</p>
-<p>Vous pouvez vérifier en exécutant le programme <code>c3-4-inplace</code> :</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp">
-</span></span></span><span class="line"><span class="cl"><span class="cp"></span>
-</span></span><span class="line"><span class="cl"><span class="k">struct</span> <span class="nc">Test</span>
-</span></span><span class="line"><span class="cl"><span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="n">Test</span><span class="p">(</span><span class="kt">int</span> <span class="n">v</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">        <span class="o">:</span> <span class="n">value</span> <span class="p">{</span> <span class="n">v</span> <span class="p">}</span>
-</span></span><span class="line"><span class="cl">    <span class="p">{</span>
-</span></span><span class="line"><span class="cl">        <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;Constructor was called with &#34;</span> <span class="o">&lt;&lt;</span> <span class="n">v</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;.&#34;</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">    <span class="p">}</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">    <span class="n">Test</span><span class="p">(</span><span class="k">const</span> <span class="n">Test</span><span class="o">&amp;</span> <span class="n">other</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">        <span class="o">:</span> <span class="n">value</span> <span class="p">{</span> <span class="n">other</span><span class="p">.</span><span class="n">value</span> <span class="p">}</span>
-</span></span><span class="line"><span class="cl">    <span class="p">{</span>
-</span></span><span class="line"><span class="cl">        <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;Copy constructor was called.&#34;</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">    <span class="p">}</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">    <span class="kt">int</span> <span class="n">value</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl"><span class="p">};</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="n">Test</span> <span class="nf">create_test</span><span class="p">(</span><span class="kt">int</span> <span class="n">value</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl"><span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="n">Test</span> <span class="n">result</span> <span class="p">{</span> <span class="n">value</span> <span class="p">};</span>
-</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">result</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
-</span></span><span class="line"><span class="cl"><span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="n">Test</span> <span class="n">test</span> <span class="o">=</span> <span class="n">create_test</span><span class="p">(</span><span class="mi">3</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl">    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">test</span><span class="p">.</span><span class="n">value</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span></code></pre></div><p>Comme vous pouvez le constater, seul le constructeur à 1 paramètre est appelé.
-La première ligne du <code>main</code> ne nécessite donc pas la présence du constructeur de copie.</p>
-
-<div class="notices note" ><p>Veuillez noter que ce n&rsquo;est qu&rsquo;à partir de C++17 que le standard garantit qu&rsquo;aucune construction supplémentaire n&rsquo;a lieu dans ce genre de cas.<br>
-Avant, il s&rsquo;agissait d&rsquo;une optimisation que certains compilateurs fournissait sous le nom de <strong>copy-elision</strong>.<br>
-Désormais, les compilateurs doivent l&rsquo;implémenter et on parle de <strong>mandatory copy-elision</strong>.</p>
-</div>
-
-<p>Vous pouvez également essayer d&rsquo;enchaîner les appels, il n&rsquo;y aura pas de copie :</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="n">Test</span> <span class="nf">create_test</span><span class="p">(</span><span class="kt">int</span> <span class="n">value</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl"><span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="n">Test</span> <span class="n">result</span> <span class="p">{</span> <span class="n">value</span> <span class="p">};</span>
-</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">result</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="n">Test</span> <span class="nf">create_test_double</span><span class="p">(</span><span class="kt">int</span> <span class="n">value</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl"><span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="n">Test</span> <span class="n">result</span> <span class="o">=</span> <span class="n">create_test</span><span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="n">value</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">result</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
-</span></span><span class="line"><span class="cl"><span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="n">Test</span> <span class="n">test</span> <span class="o">=</span> <span class="n">create_test_double</span><span class="p">(</span><span class="mi">3</span><span class="p">);</span>          <span class="c1">// -&gt; pas de copie non plus
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">test</span><span class="p">.</span><span class="n">value</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span></code></pre></div><p>Cela s&rsquo;applique également si vous essayez d&rsquo;imbriquer directement des appels au constructeur de copie :</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
-</span></span><span class="line"><span class="cl"><span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="n">Test</span> <span class="n">test</span> <span class="o">=</span> <span class="n">Test</span> <span class="p">{</span> <span class="n">Test</span> <span class="p">{</span> <span class="n">Test</span> <span class="p">{</span> <span class="mi">3</span> <span class="p">}</span> <span class="p">}</span> <span class="p">};</span>   <span class="c1">// -&gt; toujours aucune copie
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">test</span><span class="p">.</span><span class="n">value</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span></code></pre></div><p>En ce qui concerne l&rsquo;initialisation des <code>unique_ptr</code> avec <code>make_unique</code>, c&rsquo;est exactement le même principe.<br>
-Bien que le <code>unique_ptr</code> ne puisse pas être copié, il est valide d&rsquo;écrire le code ci-dessous, puisqu&rsquo;aucune copie n&rsquo;a lieu :</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="n">std</span><span class="o">::</span><span class="n">unique_ptr</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">ptr</span> <span class="o">=</span> <span class="n">std</span><span class="o">::</span><span class="n">make_unique</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="p">(</span><span class="mi">3</span><span class="p">);</span>
-</span></span></code></pre></div><p>Il est également valide de définir soi-même une fonction qui renvoie un <code>unique_ptr</code> et d&rsquo;assigner le résultat à une variable :</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="cp">#include</span> <span class="cpf">&lt;memory&gt;</span><span class="cp">
-</span></span></span><span class="line"><span class="cl"><span class="cp"></span>
-</span></span><span class="line"><span class="cl"><span class="n">std</span><span class="o">::</span><span class="n">unique_ptr</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">dynamic_add</span><span class="p">(</span><span class="kt">int</span> <span class="n">a</span><span class="p">,</span> <span class="kt">int</span> <span class="n">b</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl"><span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="n">std</span><span class="o">::</span><span class="n">unique_ptr</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">result</span> <span class="o">=</span> <span class="n">std</span><span class="o">::</span><span class="n">make_unique</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="p">(</span><span class="n">a</span> <span class="o">+</span> <span class="n">b</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">result</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
-</span></span><span class="line"><span class="cl"><span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="n">std</span><span class="o">::</span><span class="n">unique_ptr</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">sum</span> <span class="o">=</span> <span class="n">dynamic_add</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">12</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl">    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="o">*</span><span class="n">sum</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
+<h3 id="allouer-un-seul-élément">Allouer un seul élément</h3>
+<p>Pour allouer un bloc de mémoire, on utilise le mot-clef <code>new</code>, suivi du type de donnée que l&rsquo;on souhaite placer dedans, puis de la valeur avec laquelle on souhaite l&rsquo;initialiser.<br>
+Cette instruction retourne un pointeur.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="kt">int</span><span class="o">*</span> <span class="n">ptr_5</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">int</span> <span class="p">{</span> <span class="mi">5</span> <span class="p">};</span>
+</span></span><span class="line"><span class="cl"><span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="o">*</span><span class="n">ptr_5</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>   <span class="c1">// --&gt; 5
+</span></span></span></code></pre></div><p>Comme pour une variable classique, on peut utiliser des <code>{}</code> ou des <code>()</code> pour indiquer la valeur initiale.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="kt">int</span><span class="o">*</span> <span class="n">ptr_3</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">int</span><span class="p">(</span><span class="mi">3</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="o">*</span><span class="n">ptr_3</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>   <span class="c1">// --&gt; 3
+</span></span></span></code></pre></div><p>Une fois que de la mémoire a été allouée dynamiquement, il faut penser à la libérer.<br>
+Pour cela, on emploie <code>delete</code> :</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="k">delete</span> <span class="n">ptr_3</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="k">delete</span> <span class="n">ptr_5</span><span class="p">;</span>
 </span></span></code></pre></div><hr>
-<h3 id="déplacement">Déplacement</h3>
-<p>La copy-elision, c&rsquo;est bien, mais cela reste un peu limité pour manipuler aisément les <code>unique_ptr</code>&hellip;</p>
-<p>Par exemple, il n&rsquo;est toujours pas possible d&rsquo;écrire directement :</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">unique_ptr</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;&gt;</span> <span class="n">many_ints</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="n">std</span><span class="o">::</span><span class="n">unique_ptr</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">value</span> <span class="o">=</span> <span class="n">std</span><span class="o">::</span><span class="n">make_unique</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="p">(</span><span class="mi">3</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl"><span class="n">many_ints</span><span class="p">.</span><span class="n">emplace_back</span><span class="p">(</span><span class="n">value</span><span class="p">);</span> <span class="c1">// -&gt; tentative de copie
-</span></span></span></code></pre></div><p>On est obligé d&rsquo;imbriquer les appels, ce qui n&rsquo;est pas toujours très facile à lire :</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">unique_ptr</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;&gt;</span> <span class="n">many_ints</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl"><span class="n">many_ints</span><span class="p">.</span><span class="n">emplace_back</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">make_unique</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="p">(</span><span class="mi">3</span><span class="p">));</span> <span class="c1">// -&gt; ok, mais ça fait beaucoup de parenthèses à lire...
-</span></span></span></code></pre></div><p>Nous allons donc vous montrez comment déplacer un <code>unique_ptr</code>.<br>
-Cela se fait en utilisant la fonction <code>std::move</code>, contenu dans le header <code>&lt;utility&gt;</code> :</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">unique_ptr</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;&gt;</span> <span class="n">many_ints</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="n">std</span><span class="o">::</span><span class="n">unique_ptr</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">value</span> <span class="o">=</span> <span class="n">std</span><span class="o">::</span><span class="n">make_unique</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="p">(</span><span class="mi">3</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl"><span class="n">many_ints</span><span class="p">.</span><span class="n">emplace_back</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">move</span><span class="p">(</span><span class="n">value</span><span class="p">));</span> <span class="c1">// -&gt; ça fonctionne !
-</span></span></span></code></pre></div><p>Dans le code ci-dessus, le <code>unique_ptr</code> n&rsquo;a pas été copié.
-Il a été déplacé à l&rsquo;intérieur du tableau <code>many_ints</code>.
-Pour vous en convaincre, testez le code suivant :</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp">
-</span></span></span><span class="line"><span class="cl"><span class="cp">#include</span> <span class="cpf">&lt;memory&gt;</span><span class="cp">
-</span></span></span><span class="line"><span class="cl"><span class="cp">#include</span> <span class="cpf">&lt;utility&gt;</span><span class="cp">
-</span></span></span><span class="line"><span class="cl"><span class="cp">#include</span> <span class="cpf">&lt;vector&gt;</span><span class="cp">
-</span></span></span><span class="line"><span class="cl"><span class="cp"></span>
-</span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
-</span></span><span class="line"><span class="cl"><span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">unique_ptr</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;&gt;</span> <span class="n">many_ints</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">    <span class="k">auto</span> <span class="n">value</span> <span class="o">=</span> <span class="n">std</span><span class="o">::</span><span class="n">make_unique</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="p">(</span><span class="mi">3</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="p">(</span><span class="n">value</span> <span class="o">!=</span> <span class="k">nullptr</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">    <span class="p">{</span>
-</span></span><span class="line"><span class="cl">        <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;value is &#34;</span> <span class="o">&lt;&lt;</span> <span class="o">*</span><span class="n">value</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">    <span class="p">}</span>
-</span></span><span class="line"><span class="cl">    <span class="k">else</span>
-</span></span><span class="line"><span class="cl">    <span class="p">{</span>
-</span></span><span class="line"><span class="cl">        <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;value is empty&#34;</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">    <span class="p">}</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">    <span class="n">many_ints</span><span class="p">.</span><span class="n">emplace_back</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">move</span><span class="p">(</span><span class="n">value</span><span class="p">));</span>
-</span></span><span class="line"><span class="cl">    
-</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="p">(</span><span class="n">value</span> <span class="o">!=</span> <span class="k">nullptr</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">    <span class="p">{</span>
-</span></span><span class="line"><span class="cl">        <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;value is &#34;</span> <span class="o">&lt;&lt;</span> <span class="o">*</span><span class="n">value</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">    <span class="p">}</span>
-</span></span><span class="line"><span class="cl">    <span class="k">else</span>
-</span></span><span class="line"><span class="cl">    <span class="p">{</span>
-</span></span><span class="line"><span class="cl">        <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;value is empty&#34;</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">    <span class="p">}</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="p">(</span><span class="n">many_ints</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">!=</span> <span class="k">nullptr</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">    <span class="p">{</span>
-</span></span><span class="line"><span class="cl">        <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;many_ints[0] is &#34;</span> <span class="o">&lt;&lt;</span> <span class="o">*</span><span class="n">many_ints</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">    <span class="p">}</span>
-</span></span><span class="line"><span class="cl">    <span class="k">else</span>
-</span></span><span class="line"><span class="cl">    <span class="p">{</span>
-</span></span><span class="line"><span class="cl">        <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;many_ints[0] is empty&#34;</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">    <span class="p">}</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span></code></pre></div><p>Comme vous pouvez le voir, une fois le <code>emplace_back</code> exécuté, le contenu de <code>value</code> a été transféré dans <code>many_ints[0]</code>.<br>
-<code>value</code> est désormais vide, ce qui signifie bien qu&rsquo;il n&rsquo;y a pas eu de copie.</p>
-<p>Il est donc possible de transférer des données d&rsquo;une variable à une autre en utilisant <code>std::move</code>.<br>
-Remplacez les <code>unique_ptr&lt;int&gt;</code> par des <code>string</code> et adaptez le restant du programme pour vérifier que les <code>string</code> peuvent également être déplacées.</p>
-
-<div class="expand">
-    <div class="expand-label" style="cursor: pointer;" onclick="$h = $(this);$h.next('div').slideToggle(100,function () {$h.children('i').attr('class',function () {return $h.next('div').is(':visible') ? 'fas fa-chevron-down' : 'fas fa-chevron-right';});});">
-        <i style="font-size:x-small;" class="fas fa-chevron-right"></i>
-        <span>
-        
-    	
-    	Solution
-    	
-    	</span>
-    </div>
-    <div class="expand-content" style="display: none;">
-        <p>Attention à bien spécifier que l&rsquo;on construit une <code>std::string</code> et pas un <code>const char*</code> en remplaçant le <code>auto</code> ou bien en écrivant le type à droite du <code>=</code>.</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp">
-</span></span></span><span class="line"><span class="cl"><span class="cp">#include</span> <span class="cpf">&lt;string&gt;</span><span class="cp">
-</span></span></span><span class="line"><span class="cl"><span class="cp">#include</span> <span class="cpf">&lt;utility&gt;</span><span class="cp">
-</span></span></span><span class="line"><span class="cl"><span class="cp">#include</span> <span class="cpf">&lt;vector&gt;</span><span class="cp">
-</span></span></span><span class="line"><span class="cl"><span class="cp"></span>
-</span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
-</span></span><span class="line"><span class="cl"><span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&gt;</span> <span class="n">many_strings</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">    <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">value</span> <span class="o">=</span> <span class="s">&#34;will I move?&#34;</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">    <span class="c1">// auto value = std::string { &#34;will I move?&#34; };
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
-</span></span><span class="line"><span class="cl">    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;value is &#39;&#34;</span> <span class="o">&lt;&lt;</span> <span class="n">value</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;&#39;&#34;</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">    <span class="n">many_strings</span><span class="p">.</span><span class="n">emplace_back</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">move</span><span class="p">(</span><span class="n">value</span><span class="p">));</span>
-</span></span><span class="line"><span class="cl">    
-</span></span><span class="line"><span class="cl">    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;value is &#39;&#34;</span> <span class="o">&lt;&lt;</span> <span class="n">value</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;&#39;&#34;</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;many_strings[0] is &#39;&#34;</span> <span class="o">&lt;&lt;</span> <span class="n">many_strings</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;&#39;&#34;</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span></code></pre></div>
-    </div>
-</div>
-<hr>
-<h3 id="un-peu-de-pratique">Un peu de pratique</h3>
-<p>Entraînez-vous maintenant à déplacer des <code>unique_ptr</code> en écrivant un petit programme qui :</p>
-<ol>
-<li>initialise deux variables <code>i1</code> et <code>i2</code> de type <code>std::unique_ptr&lt;int&gt;</code> avec <code>make_unique</code>,</li>
-<li>transfère <code>i1</code> à une fonction <code>passthrough</code> qui attend un <code>std::unique_ptr&lt;int&gt;</code> (sans référence),</li>
-<li>le paramètre de <code>passthrough</code> est ensuite déplacé dans une variable locale,</li>
-<li>cette variable est renvoyée par la fonction,</li>
-<li>ce résultat est ensuite réassigné à <code>i2</code>.</li>
-</ol>
-<p>Pour vérifier ce qu&rsquo;il se passe au cours de l&rsquo;exécution du programme, vous implémenterez également une fonction qui affiche le nom d&rsquo;une variable et son contenu (si le pointeur n&rsquo;est pas vide).
-Voici sa signature :</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="kt">void</span> <span class="nf">display</span><span class="p">(</span><span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&amp;</span> <span class="n">variable_name</span><span class="p">,</span> <span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">unique_ptr</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;&amp;</span> <span class="n">variable</span><span class="p">);</span>
-</span></span></code></pre></div><p>Il faudra que vous puissiez l&rsquo;utiliser de cette manière :</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="n">display</span><span class="p">(</span><span class="s">&#34;i1&#34;</span><span class="p">,</span> <span class="n">i1</span><span class="p">);</span> <span class="c1">// -&gt; affiche &#34;i1 contains X&#34; ou &#34;i1 is empty&#34;
-</span></span></span></code></pre></div>
-<div class="expand">
-    <div class="expand-label" style="cursor: pointer;" onclick="$h = $(this);$h.next('div').slideToggle(100,function () {$h.children('i').attr('class',function () {return $h.next('div').is(':visible') ? 'fas fa-chevron-down' : 'fas fa-chevron-right';});});">
-        <i style="font-size:x-small;" class="fas fa-chevron-right"></i>
-        <span>
-        
-    	
-    	Solution
-    	
-    	</span>
-    </div>
-    <div class="expand-content" style="display: none;">
-        <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp">
-</span></span></span><span class="line"><span class="cl"><span class="cp">#include</span> <span class="cpf">&lt;memory&gt;</span><span class="cp">
-</span></span></span><span class="line"><span class="cl"><span class="cp">#include</span> <span class="cpf">&lt;utility&gt;</span><span class="cp">
-</span></span></span><span class="line"><span class="cl"><span class="cp"></span>
-</span></span><span class="line"><span class="cl"><span class="kt">void</span> <span class="nf">display</span><span class="p">(</span><span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&amp;</span> <span class="n">variable_name</span><span class="p">,</span> <span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">unique_ptr</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;&amp;</span> <span class="n">variable</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl"><span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="p">(</span><span class="n">variable</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">    <span class="p">{</span>
-</span></span><span class="line"><span class="cl">        <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">variable_name</span> <span class="o">&lt;&lt;</span> <span class="s">&#34; contains &#34;</span> <span class="o">&lt;&lt;</span> <span class="o">*</span><span class="n">variable</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">    <span class="p">}</span>
-</span></span><span class="line"><span class="cl">    <span class="k">else</span>
-</span></span><span class="line"><span class="cl">    <span class="p">{</span>
-</span></span><span class="line"><span class="cl">        <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">variable_name</span> <span class="o">&lt;&lt;</span> <span class="s">&#34; is empty&#34;</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">    <span class="p">}</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="n">std</span><span class="o">::</span><span class="n">unique_ptr</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">passthrough</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">unique_ptr</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">ptr</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl"><span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;Before move in passthrough&#34;</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">    <span class="n">display</span><span class="p">(</span><span class="s">&#34;ptr&#34;</span><span class="p">,</span> <span class="n">ptr</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl">    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;--------------------------&#34;</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">    <span class="k">auto</span> <span class="n">moved_ptr</span> <span class="o">=</span> <span class="n">std</span><span class="o">::</span><span class="n">move</span><span class="p">(</span><span class="n">ptr</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;After move in passthrough&#34;</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">    <span class="n">display</span><span class="p">(</span><span class="s">&#34;moved_ptr&#34;</span><span class="p">,</span> <span class="n">moved_ptr</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl">    <span class="n">display</span><span class="p">(</span><span class="s">&#34;ptr&#34;</span><span class="p">,</span> <span class="n">ptr</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl">    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;--------------------------&#34;</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">moved_ptr</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
-</span></span><span class="line"><span class="cl"><span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="k">auto</span> <span class="n">i1</span> <span class="o">=</span> <span class="n">std</span><span class="o">::</span><span class="n">make_unique</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="p">(</span><span class="mi">3</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl">    <span class="k">auto</span> <span class="n">i2</span> <span class="o">=</span> <span class="n">std</span><span class="o">::</span><span class="n">make_unique</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="p">(</span><span class="mi">8</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;Before passthrough call&#34;</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">    <span class="n">display</span><span class="p">(</span><span class="s">&#34;i1&#34;</span><span class="p">,</span> <span class="n">i1</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl">    <span class="n">display</span><span class="p">(</span><span class="s">&#34;i2&#34;</span><span class="p">,</span> <span class="n">i2</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl">    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;--------------------------&#34;</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">    <span class="n">i2</span> <span class="o">=</span> <span class="n">passthrough</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">move</span><span class="p">(</span><span class="n">i1</span><span class="p">));</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;After passthrough call&#34;</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">    <span class="n">display</span><span class="p">(</span><span class="s">&#34;i1&#34;</span><span class="p">,</span> <span class="n">i1</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl">    <span class="n">display</span><span class="p">(</span><span class="s">&#34;i2&#34;</span><span class="p">,</span> <span class="n">i2</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl">    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;--------------------------&#34;</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span></code></pre></div><p>La sortie du programme est la suivante :</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-b" data-lang="b"><span class="line"><span class="cl"><span class="nb">--------------------------</span><span class="c">
-</span></span></span><span class="line"><span class="cl"><span class="c">Before passthrough call
-</span></span></span><span class="line"><span class="cl"><span class="c">i1 contains 3
-</span></span></span><span class="line"><span class="cl"><span class="c">i2 contains 8
-</span></span></span><span class="line"><span class="cl"><span class="c"></span><span class="nb">--------------------------</span><span class="c">
-</span></span></span><span class="line"><span class="cl"><span class="c">Before move in passthrough
-</span></span></span><span class="line"><span class="cl"><span class="c">ptr contains 3
-</span></span></span><span class="line"><span class="cl"><span class="c"></span><span class="nb">--------------------------</span><span class="c">
-</span></span></span><span class="line"><span class="cl"><span class="c">After move in passthrough
-</span></span></span><span class="line"><span class="cl"><span class="c">moved_ptr contains 3
-</span></span></span><span class="line"><span class="cl"><span class="c">ptr is empty
-</span></span></span><span class="line"><span class="cl"><span class="c"></span><span class="nb">--------------------------</span><span class="c">
-</span></span></span><span class="line"><span class="cl"><span class="c">After passthrough call
-</span></span></span><span class="line"><span class="cl"><span class="c">i1 is empty
-</span></span></span><span class="line"><span class="cl"><span class="c">i2 contains 3
-</span></span></span><span class="line"><span class="cl"><span class="c"></span><span class="nb">--------------------------</span><span class="c">
-</span></span></span></code></pre></div>
-    </div>
-</div>
+<h3 id="allouer-un-tableau-déléments">Allouer un tableau d&rsquo;éléments</h3>
+<p>Pour allouer plusieurs éléments à la fois, c&rsquo;est quasiment pareil, si ce n&rsquo;est que juste derrière <code>new</code>, on indique entre <code>[]</code> le nombre d&rsquo;éléments souhaités.<br>
+L&rsquo;initialisation se fait forcément avec des <code>{}</code>.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="kt">char</span><span class="o">*</span> <span class="n">many_chars</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">char</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span> <span class="p">{</span> <span class="sc">&#39;a&#39;</span><span class="p">,</span> <span class="sc">&#39;b&#39;</span><span class="p">,</span> <span class="sc">&#39;c&#39;</span> <span class="p">};</span>
+</span></span><span class="line"><span class="cl"><span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">many_chars</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">&lt;&lt;</span> <span class="n">many_chars</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">&lt;&lt;</span> <span class="n">many_chars</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>   <span class="c1">// --&gt; abc
+</span></span></span></code></pre></div><p>Attention, pour la libération du bloc mémoire, il faut écrire <code>delete</code> suivi de <code>[]</code> vides !</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="k">delete</span><span class="p">[]</span> <span class="n">many_chars</span><span class="p">;</span>
+</span></span></code></pre></div><hr>
+<h3 id="pas-dexercice-">Pas d&rsquo;exercice ?</h3>
+<p>Eh bien non, pas sur cette partie.</p>
+<p>En effet, en C++, même si vous en faites votre métier, vous n&rsquo;aurez quasiment jamais besoin de vous servir de <code>new</code> et <code>delete</code>.<br>
+Ce sont des classes, telles que <code>std::vector</code> ou <code>std::string</code>, qui se chargeront de faire ce sale boulot pour vous !</p>
+<p>C&rsquo;est néanmoins utile pour la culture d&rsquo;avoir vu comment on écrivait des allocations à la mano.<br>
+Et surtout, cela vous permettra de comprendre ce que nous avons écrit dans la suite de ce chapitre.</p>
 
 
 <footer class="footline">
@@ -2731,6 +2468,23 @@ Voici sa signature :</p>
             
                 
                     
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
                         
                         
                     
@@ -2781,26 +2535,6 @@ Voici sa signature :</p>
             
             
                 
-                    
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                        
-                        
                     
                 
                 
@@ -3500,10 +3234,10 @@ Voici sa signature :</p>
 	 
 	 
 		
-			<a class="nav nav-prev" href="/CPP_Learning/chapter3/3-allocation/" title="Allocation dynamique"> <i class="fa fa-chevron-left"></i></a>
+			<a class="nav nav-prev" href="/CPP_Learning/chapter3/" title="Cycle de vie"> <i class="fa fa-chevron-left"></i></a>
 		
 		
-			<a class="nav nav-next" href="/CPP_Learning/chapter3/test/" title="Questionnaire !" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+			<a class="nav nav-next" href="/CPP_Learning/chapter3/2-lifespan/" title="Durée de vie ⏳" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
 		
 	
     </div>
@@ -3513,19 +3247,19 @@ Voici sa signature :</p>
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/CPP_Learning/js/clipboard.min.js?1706024457"></script>
-    <script src="/CPP_Learning/js/perfect-scrollbar.min.js?1706024457"></script>
-    <script src="/CPP_Learning/js/perfect-scrollbar.jquery.min.js?1706024457"></script>
-    <script src="/CPP_Learning/js/jquery.sticky.js?1706024457"></script>
-    <script src="/CPP_Learning/js/featherlight.min.js?1706024457"></script>
-    <script src="/CPP_Learning/js/highlight.pack.js?1706024457"></script>
+    <script src="/CPP_Learning/js/clipboard.min.js?1706446248"></script>
+    <script src="/CPP_Learning/js/perfect-scrollbar.min.js?1706446248"></script>
+    <script src="/CPP_Learning/js/perfect-scrollbar.jquery.min.js?1706446248"></script>
+    <script src="/CPP_Learning/js/jquery.sticky.js?1706446248"></script>
+    <script src="/CPP_Learning/js/featherlight.min.js?1706446248"></script>
+    <script src="/CPP_Learning/js/highlight.pack.js?1706446248"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/CPP_Learning/js/modernizr.custom-3.6.0.js?1706024457"></script>
-    <script src="/CPP_Learning/js/learn.js?1706024457"></script>
-    <script src="/CPP_Learning/js/hugo-learn.js?1706024457"></script>
+    <script src="/CPP_Learning/js/modernizr.custom-3.6.0.js?1706446248"></script>
+    <script src="/CPP_Learning/js/learn.js?1706446248"></script>
+    <script src="/CPP_Learning/js/hugo-learn.js?1706446248"></script>
     
         
-            <script src="/CPP_Learning/mermaid/mermaid.js?1706024457"></script>
+            <script src="/CPP_Learning/mermaid/mermaid.js?1706446248"></script>
         
         <script>
             mermaid.initialize({ startOnLoad: true });

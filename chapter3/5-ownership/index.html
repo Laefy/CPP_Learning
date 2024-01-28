@@ -3,31 +3,31 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="Hugo 0.121.0">
+    <meta name="generator" content="Hugo 0.121.2">
     <meta name="description" content="">
 
 
     <link rel="icon" href="/CPP_Learning/images/favicon.png" type="image/png">
 
-    <title>Durée de vie :: Cours de C&#43;&#43; - Niveau Master</title>
+    <title>Ownership 🏘️ :: Cours de C&#43;&#43; - Niveau Master</title>
 
     
-    <link href="/CPP_Learning/css/nucleus.css?1706024457" rel="stylesheet">
-    <link href="/CPP_Learning/css/fontawesome-all.min.css?1706024457" rel="stylesheet">
-    <link href="/CPP_Learning/css/hybrid.css?1706024457" rel="stylesheet">
-    <link href="/CPP_Learning/css/featherlight.min.css?1706024457" rel="stylesheet">
-    <link href="/CPP_Learning/css/perfect-scrollbar.min.css?1706024457" rel="stylesheet">
-    <link href="/CPP_Learning/css/auto-complete.css?1706024457" rel="stylesheet">
-    <link href="/CPP_Learning/css/atom-one-dark-reasonable.css?1706024457" rel="stylesheet">
-    <link href="/CPP_Learning/css/theme.css?1706024457" rel="stylesheet">
-    <link href="/CPP_Learning/css/tabs.css?1706024457" rel="stylesheet">
-    <link href="/CPP_Learning/css/hugo-theme.css?1706024457" rel="stylesheet">
+    <link href="/CPP_Learning/css/nucleus.css?1706446248" rel="stylesheet">
+    <link href="/CPP_Learning/css/fontawesome-all.min.css?1706446248" rel="stylesheet">
+    <link href="/CPP_Learning/css/hybrid.css?1706446248" rel="stylesheet">
+    <link href="/CPP_Learning/css/featherlight.min.css?1706446248" rel="stylesheet">
+    <link href="/CPP_Learning/css/perfect-scrollbar.min.css?1706446248" rel="stylesheet">
+    <link href="/CPP_Learning/css/auto-complete.css?1706446248" rel="stylesheet">
+    <link href="/CPP_Learning/css/atom-one-dark-reasonable.css?1706446248" rel="stylesheet">
+    <link href="/CPP_Learning/css/theme.css?1706446248" rel="stylesheet">
+    <link href="/CPP_Learning/css/tabs.css?1706446248" rel="stylesheet">
+    <link href="/CPP_Learning/css/hugo-theme.css?1706446248" rel="stylesheet">
     
-    <link href="/CPP_Learning/css/theme-mine.css?1706024457" rel="stylesheet">
+    <link href="/CPP_Learning/css/theme-mine.css?1706446248" rel="stylesheet">
     
-    <link href="/CPP_Learning/css/syntax.css?1706024457" rel="stylesheet">
+    <link href="/CPP_Learning/css/syntax.css?1706446248" rel="stylesheet">
 
-    <script src="/CPP_Learning/js/jquery-3.3.1.min.js?1706024457"></script>
+    <script src="/CPP_Learning/js/jquery-3.3.1.min.js?1706446248"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -41,7 +41,7 @@
     </style>
     
   </head>
-  <body class="" data-url="/CPP_Learning/chapter3/1-lifespan/">
+  <body class="" data-url="/CPP_Learning/chapter3/5-ownership/">
     <nav id="sidebar" class="showVisitedLinks">
 
 
@@ -708,13 +708,13 @@
  
   
     
-    <li data-nav-id="/CPP_Learning/chapter3/" title="Gestion mémoire" class="dd-item
+    <li data-nav-id="/CPP_Learning/chapter3/" title="Cycle de vie" class="dd-item
         parent
         
         
         ">
       <a href="/CPP_Learning/chapter3/">
-          <b>3- </b>Gestion mémoire
+          <b>3- </b>Cycle de vie
           
             <i class="fas fa-check read-icon"></i>
           
@@ -737,9 +737,9 @@
  
   
     
-      <li data-nav-id="/CPP_Learning/chapter3/1-lifespan/" title="Durée de vie" class="dd-item active">
-        <a href="/CPP_Learning/chapter3/1-lifespan/">
-        Durée de vie
+      <li data-nav-id="/CPP_Learning/chapter3/1-allocation/" title="Allocation dynamique 🎇" class="dd-item ">
+        <a href="/CPP_Learning/chapter3/1-allocation/">
+        Allocation dynamique 🎇
         <i class="fas fa-check read-icon"></i>
         </a>
     </li>
@@ -758,9 +758,9 @@
  
   
     
-      <li data-nav-id="/CPP_Learning/chapter3/2-ownership/" title="Ownership" class="dd-item ">
-        <a href="/CPP_Learning/chapter3/2-ownership/">
-        Ownership
+      <li data-nav-id="/CPP_Learning/chapter3/2-lifespan/" title="Durée de vie ⏳" class="dd-item ">
+        <a href="/CPP_Learning/chapter3/2-lifespan/">
+        Durée de vie ⏳
         <i class="fas fa-check read-icon"></i>
         </a>
     </li>
@@ -779,9 +779,9 @@
  
   
     
-      <li data-nav-id="/CPP_Learning/chapter3/3-allocation/" title="Allocation dynamique" class="dd-item ">
-        <a href="/CPP_Learning/chapter3/3-allocation/">
-        Allocation dynamique
+      <li data-nav-id="/CPP_Learning/chapter3/3-storage/" title="Espace de stockage 💾" class="dd-item ">
+        <a href="/CPP_Learning/chapter3/3-storage/">
+        Espace de stockage 💾
         <i class="fas fa-check read-icon"></i>
         </a>
     </li>
@@ -800,9 +800,9 @@
  
   
     
-      <li data-nav-id="/CPP_Learning/chapter3/4-move-sem/" title="Déplacement" class="dd-item ">
-        <a href="/CPP_Learning/chapter3/4-move-sem/">
-        Déplacement
+      <li data-nav-id="/CPP_Learning/chapter3/4-references/" title="Usage des références 🔀" class="dd-item ">
+        <a href="/CPP_Learning/chapter3/4-references/">
+        Usage des références 🔀
         <i class="fas fa-check read-icon"></i>
         </a>
     </li>
@@ -821,30 +821,30 @@
  
   
     
-      <li data-nav-id="/CPP_Learning/chapter3/test/" title="Questionnaire !" class="dd-item ">
+      <li data-nav-id="/CPP_Learning/chapter3/5-ownership/" title="Ownership 🏘️" class="dd-item active">
+        <a href="/CPP_Learning/chapter3/5-ownership/">
+        Ownership 🏘️
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/CPP_Learning/chapter3/test/" title="Questionnaire ☑" class="dd-item ">
         <a href="/CPP_Learning/chapter3/test/">
-        Questionnaire !
-        <i class="fas fa-check read-icon"></i>
-        </a>
-    </li>
-     
-  
- 
-
-            
-          
-            
-            
-
-
-
-
- 
-  
-    
-      <li data-nav-id="/CPP_Learning/chapter3/summary/" title="Synthèse" class="dd-item ">
-        <a href="/CPP_Learning/chapter3/summary/">
-        Synthèse
+        Questionnaire ☑
         <i class="fas fa-check read-icon"></i>
         </a>
     </li>
@@ -1826,6 +1826,10 @@
               </li>
           
               <li>
+                  <a class="padding" href="https://godbolt.org/"><i class='fas fa-cog'></i> Compiler Explorer</a>
+              </li>
+          
+              <li>
                   <a class="padding" href="https://en.cppreference.com/w/"><i class='fas fa-passport'></i> CPP-Ref</a>
               </li>
           
@@ -1886,7 +1890,7 @@
             
           
           
-            <a href='/CPP_Learning/'>Accueil</a> > <a href='/CPP_Learning/chapter3/'>Gestion mémoire</a> > Durée de vie
+            <a href='/CPP_Learning/'>Accueil</a> > <a href='/CPP_Learning/chapter3/'>Cycle de vie</a> > Ownership 🏘️
           
         
           
@@ -1899,19 +1903,7 @@
                 
                     <div class="progress">
     <div class="wrapper">
-<nav id="TableOfContents">
-  <ul>
-    <li>
-      <ul>
-        <li><a href="#portée-dune-variable-locale">Portée d&rsquo;une variable locale</a></li>
-        <li><a href="#destruction-dun-objet">Destruction d&rsquo;un objet</a></li>
-        <li><a href="#durée-de-vie-dun-objet">Durée de vie d&rsquo;un objet</a></li>
-        <li><a href="#validité-dun-objet">Validité d&rsquo;un objet</a></li>
-        <li><a href="#lien-avec-la-mémoire">Lien avec la mémoire</a></li>
-      </ul>
-    </li>
-  </ul>
-</nav>
+<nav id="TableOfContents"></nav>
     </div>
 </div>
 
@@ -1927,290 +1919,18 @@
           
             <h1>
               
-              Durée de vie
+              Ownership 🏘️
             </h1>
           
 
         
 
 
+<p>Jusqu&rsquo;ici, nous vous avons expliqué que contrairement au Java, les données que vous instanciez ne restent pas magiquement en vie tant que vous en avez besoin.<br>
+C&rsquo;est donc à vous de garantir que vos données ne seront pas désinstanciées avant d&rsquo;avoir fini de les utiliser.<br>
+Sur cette page, nous allons introduire le concept d&rsquo;<strong>ownership</strong>, qui vous aidera à mieux architecturer votre code pour éviter de vous retrouver avec des dangling-references.</p>
 <hr>
-<h3 id="portée-dune-variable-locale">Portée d&rsquo;une variable locale</h3>
-<p>Afin de parler de durée de vie, nous allons commencer par parler de la portée de nos variables.
-Comme vous le savez peut-être, la portée d&rsquo;une variable définit la portion de code dans laquelle le compilateur nous permet de l&rsquo;utiliser.</p>
-<p>Si on définit une variable dans une fonction, la portée de celle-ci démarre à sa définition et se termine à la fin du bloc dans lequel celle-ci a été définie.</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="ln"> 1</span><span class="cl"> <span class="kt">void</span> <span class="nf">fcn</span><span class="p">(</span><span class="kt">int</span> <span class="n">a</span><span class="p">)</span>
-</span></span><span class="line"><span class="ln"> 2</span><span class="cl"> <span class="p">{</span>
-</span></span><span class="line"><span class="ln"> 3</span><span class="cl">     <span class="k">if</span> <span class="p">(</span><span class="n">a</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span>
-</span></span><span class="line"><span class="ln"> 4</span><span class="cl">     <span class="p">{</span>
-</span></span><span class="line"><span class="ln"> 5</span><span class="cl">         <span class="kt">char</span> <span class="n">b</span> <span class="o">=</span> <span class="sc">&#39;0&#39;</span><span class="p">;</span>
-</span></span><span class="line"><span class="ln"> 6</span><span class="cl">         <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">b</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
-</span></span><span class="line"><span class="ln"> 7</span><span class="cl">     <span class="p">}</span>
-</span></span><span class="line"><span class="ln"> 8</span><span class="cl">     <span class="k">else</span>
-</span></span><span class="line"><span class="ln"> 9</span><span class="cl">     <span class="p">{</span>
-</span></span><span class="line"><span class="ln">10</span><span class="cl">         <span class="kt">char</span> <span class="n">c</span> <span class="o">=</span> <span class="sc">&#39;1&#39;</span><span class="p">;</span>
-</span></span><span class="line"><span class="ln">11</span><span class="cl">         <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">c</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
-</span></span><span class="line"><span class="ln">12</span><span class="cl">     <span class="p">}</span>
-</span></span><span class="line"><span class="ln">13</span><span class="cl"> <span class="p">}</span></span></span></code></pre></div>
-<p>Dans le code ci-dessus :</p>
-<ul>
-<li>la portée de <code>a</code> démarre à la ligne 1 et termine à la ligne 13,</li>
-<li>la portée de <code>b</code> démarre à la ligne 5 et termine à la ligne 7,</li>
-<li>la portée de <code>c</code> démarre à la ligne 10 et termine à la ligne 12.</li>
-</ul>
-<hr>
-<h3 id="destruction-dun-objet">Destruction d&rsquo;un objet</h3>
-<p>Supposons que nous ayions une classe <code>Class</code> et que l&rsquo;on déclare une variable de ce type.</p>
-<p>Lorsque cette variable sort du scope, une fonction spéciale de <code>Class</code> est appelée.<br>
-On appelle celle-ci le <strong>destructeur</strong> de l&rsquo;objet.<br>
-Le nom de cette fonction est le nom de la classe précédé d&rsquo;un tilde et acceptant 0 paramètre :</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="c1">// dans le header
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">class</span> <span class="nc">Class</span>
-</span></span><span class="line"><span class="cl"><span class="p">{</span>
-</span></span><span class="line"><span class="cl"><span class="k">public</span><span class="o">:</span>
-</span></span><span class="line"><span class="cl">    <span class="c1">// ...
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="o">~</span><span class="n">Class</span><span class="p">();</span>  <span class="c1">// destructeur de Class.
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
-</span></span><span class="line"><span class="cl">    <span class="c1">// ...
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="p">};</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c1">// dans le cpp
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">Class</span><span class="o">::~</span><span class="n">Class</span><span class="p">()</span>
-</span></span><span class="line"><span class="cl"><span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="c1">// implémentation du destructeur de Class.
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="p">}</span>
-</span></span></code></pre></div><p>Comme pour le constructeur par défaut, le constructeur de copie ou l&rsquo;opérateur d&rsquo;assignation, le compilateur définit une implémentation par défaut du destructeur de chaque classe.<br>
-Ainsi, même si nous n&rsquo;avons jusqu&rsquo;ici jamais eu à définir de destructeur pour nos classes, le destructeur existait bel et bien et était appelé à chaque fois qu&rsquo;il le devait.</p>
-<hr>
-<h3 id="durée-de-vie-dun-objet">Durée de vie d&rsquo;un objet</h3>
-<p>Revenons à la notion de durée de vie.
-La durée de vie d&rsquo;un objet démarre de l&rsquo;appel de son constructeur et termine à l&rsquo;appel de son destructeur.</p>
-<p>Lorsque l&rsquo;on définit une variable locale contenant une instance d&rsquo;objet, sa durée de vie correspond par conséquent à la portée de la variable dans laquelle celui-ci est placé.</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="ln"> 1</span><span class="cl"> <span class="kt">void</span> <span class="nf">fcn</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">param</span><span class="p">)</span>                <span class="c1">// construction de param
-</span></span></span><span class="line"><span class="ln"> 2</span><span class="cl"><span class="c1"></span> <span class="p">{</span>
-</span></span><span class="line"><span class="ln"> 3</span><span class="cl">     <span class="k">if</span> <span class="p">(</span><span class="n">s</span><span class="p">.</span><span class="n">empty</span><span class="p">())</span>
-</span></span><span class="line"><span class="ln"> 4</span><span class="cl">     <span class="p">{</span>
-</span></span><span class="line"><span class="ln"> 5</span><span class="cl">         <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">empty</span> <span class="o">=</span> <span class="s">&#34;empty&#34;</span><span class="p">;</span>       <span class="c1">// construction de empty
-</span></span></span><span class="line"><span class="ln"> 6</span><span class="cl"><span class="c1"></span>         <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">empty</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
-</span></span><span class="line"><span class="ln"> 7</span><span class="cl">     <span class="p">}</span>                                      <span class="c1">// destruction de empty
-</span></span></span><span class="line"><span class="ln"> 8</span><span class="cl"><span class="c1"></span>     <span class="k">else</span>
-</span></span><span class="line"><span class="ln"> 9</span><span class="cl">     <span class="p">{</span>
-</span></span><span class="line"><span class="ln">10</span><span class="cl">         <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">filled</span> <span class="o">=</span> <span class="s">&#34;filled&#34;</span><span class="p">;</span>     <span class="c1">// construction de filled
-</span></span></span><span class="line"><span class="ln">11</span><span class="cl"><span class="c1"></span>         <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">filled</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
-</span></span><span class="line"><span class="ln">12</span><span class="cl">     <span class="p">}</span>                                      <span class="c1">// destruction de filled
-</span></span></span><span class="line"><span class="ln">13</span><span class="cl"><span class="c1"></span> <span class="p">}</span>                                          <span class="c1">// destruction de param
-</span></span></span></code></pre></div>
-<p>Dans le code ci-dessus :</p>
-<ul>
-<li>la portée et la durée de vie de <code>param</code> démarre à la ligne 1 et termine à la ligne 13,</li>
-<li>la portée et la durée de vie de <code>empty</code> démarre à la ligne 5 et termine à la ligne 7,</li>
-<li>la portée et la durée de vie de <code>filled</code> démarre à la ligne 10 et termine à la ligne 12.</li>
-</ul>
-<p><strong>Qu&rsquo;en est-il de la durée de vie d&rsquo;un objet défini en tant qu&rsquo;attribut d&rsquo;une autre classe ?</strong></p>
-<p>Pour le déterminer, vous allez modifier le code du programme <code>c3-1-box</code>.</p>
-<p>Modifiez le constructeur de la classe <code>Box</code> et redéfinissez son destructeur afin qu&rsquo;ils affichent <code>Box created</code> et <code>Box destroyed</code>.<br>
-Faites de même pour <code>Content</code> et testez le programme.<br>
-Pouvez-vous en déduire à quel moment la durée de vie de <code>_content</code> démarre, et à quel moment celle-ci termine ?</p>
-
-<div class="expand">
-    <div class="expand-label" style="cursor: pointer;" onclick="$h = $(this);$h.next('div').slideToggle(100,function () {$h.children('i').attr('class',function () {return $h.next('div').is(':visible') ? 'fas fa-chevron-down' : 'fas fa-chevron-right';});});">
-        <i style="font-size:x-small;" class="fas fa-chevron-right"></i>
-        <span>
-        
-    	
-    	Solution
-    	
-    	</span>
-    </div>
-    <div class="expand-content" style="display: none;">
-        <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="k">struct</span> <span class="nc">Content</span>
-</span></span><span class="line"><span class="cl"><span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="n">Content</span><span class="p">(</span><span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&amp;</span> <span class="n">name</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">        <span class="o">:</span> <span class="n">name</span> <span class="p">{</span> <span class="n">name</span> <span class="p">}</span>
-</span></span><span class="line"><span class="cl">    <span class="p">{</span>
-</span></span><span class="line"><span class="cl">        <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;Content created&#34;</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">    <span class="p">}</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">    <span class="o">~</span><span class="n">Content</span><span class="p">()</span> <span class="p">{</span> <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;Content destroyed&#34;</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span> <span class="p">}</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">    <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">name</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl"><span class="p">};</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">Box</span>
-</span></span><span class="line"><span class="cl"><span class="p">{</span>
-</span></span><span class="line"><span class="cl"><span class="k">public</span><span class="o">:</span>
-</span></span><span class="line"><span class="cl">    <span class="n">Box</span><span class="p">(</span><span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&amp;</span> <span class="n">name</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">        <span class="o">:</span> <span class="n">_content</span> <span class="p">{</span> <span class="n">name</span> <span class="p">}</span>
-</span></span><span class="line"><span class="cl">    <span class="p">{</span>
-</span></span><span class="line"><span class="cl">        <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;Box created&#34;</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">    <span class="p">}</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">    <span class="o">~</span><span class="n">Box</span><span class="p">()</span> <span class="p">{</span> <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;Box destroyed&#34;</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span> <span class="p">}</span>
-</span></span><span class="line"><span class="cl">    
-</span></span><span class="line"><span class="cl">    <span class="n">Content</span><span class="o">&amp;</span> <span class="n">get_content</span><span class="p">()</span> <span class="p">{</span> <span class="k">return</span> <span class="n">_content</span><span class="p">;</span> <span class="p">}</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="k">private</span><span class="o">:</span>
-</span></span><span class="line"><span class="cl">    <span class="n">Content</span> <span class="n">_content</span> <span class="p">{</span> <span class="s">&#34;thing&#34;</span> <span class="p">};</span>
-</span></span><span class="line"><span class="cl"><span class="p">};</span>
-</span></span></code></pre></div><p>On obtient la sortie suivante :</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-b" data-lang="b"><span class="line"><span class="cl"><span class="c">box1 block begin
-</span></span></span><span class="line"><span class="cl"><span class="c">Content created
-</span></span></span><span class="line"><span class="cl"><span class="c">Box created
-</span></span></span><span class="line"><span class="cl"><span class="c">Box destroyed
-</span></span></span><span class="line"><span class="cl"><span class="c">Content destroyed
-</span></span></span><span class="line"><span class="cl"><span class="c"></span><span class="nb">----------------</span><span class="c">
-</span></span></span><span class="line"><span class="cl"><span class="c">box2 block begin
-</span></span></span><span class="line"><span class="cl"><span class="c">Content created
-</span></span></span><span class="line"><span class="cl"><span class="c">Box created
-</span></span></span><span class="line"><span class="cl"><span class="c">Box destroyed
-</span></span></span><span class="line"><span class="cl"><span class="c">Content destroyed
-</span></span></span><span class="line"><span class="cl"><span class="c">box2 block end
-</span></span></span></code></pre></div><p>On peut en déduire que <code>Box::_content</code> :<br>
-- est construit pendant l&rsquo;appel du constructeur de <code>Box</code>, juste avant de rentrer dans le corps de la fonction,<br>
-- est détruit pendant l&rsquo;appel du destructeur <code>Box</code>, juste après être sorti du corps de la fonction.</p>
-
-    </div>
-</div>
-<hr>
-<h3 id="validité-dun-objet">Validité d&rsquo;un objet</h3>
-<p>La durée de vie d&rsquo;un objet détermine la période durant laquelle il est valide d&rsquo;utiliser cet objet et son contenu.</p>
-<p>En C++, il est possible de créer des objets dynamiquement avec les mots-clefs <code>new</code> et <code>delete</code>.<br>
-Testez le code suivant et déterminez les durées de vie des objets <code>box</code> et <code>box-&gt;_content</code> à partir de l&rsquo;output du programme.
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="ln"> 1</span><span class="cl"> <span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
-</span></span><span class="line"><span class="ln"> 2</span><span class="cl"> <span class="p">{</span>
-</span></span><span class="line"><span class="ln"> 3</span><span class="cl">     <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;Main begin&#34;</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
-</span></span><span class="line"><span class="ln"> 4</span><span class="cl"> 
-</span></span><span class="line"><span class="ln"> 5</span><span class="cl">     <span class="n">Box</span><span class="o">*</span> <span class="n">box</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Box</span><span class="p">(</span><span class="s">&#34;gift&#34;</span><span class="p">);</span>
-</span></span><span class="line"><span class="ln"> 6</span><span class="cl">     <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">box</span><span class="o">-&gt;</span><span class="n">get_content</span><span class="p">().</span><span class="n">name</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
-</span></span><span class="line"><span class="ln"> 7</span><span class="cl">     <span class="k">delete</span> <span class="n">box</span><span class="p">;</span>
-</span></span><span class="line"><span class="ln"> 8</span><span class="cl"> 
-</span></span><span class="line"><span class="ln"> 9</span><span class="cl">     <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;Main end&#34;</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
-</span></span><span class="line"><span class="ln">10</span><span class="cl">     <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
-</span></span><span class="line"><span class="ln">11</span><span class="cl"> <span class="p">}</span></span></span></code></pre></div></p>
-
-<div class="expand">
-    <div class="expand-label" style="cursor: pointer;" onclick="$h = $(this);$h.next('div').slideToggle(100,function () {$h.children('i').attr('class',function () {return $h.next('div').is(':visible') ? 'fas fa-chevron-down' : 'fas fa-chevron-right';});});">
-        <i style="font-size:x-small;" class="fas fa-chevron-right"></i>
-        <span>
-        
-    	
-    	Solution
-    	
-    	</span>
-    </div>
-    <div class="expand-content" style="display: none;">
-        <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-b" data-lang="b"><span class="line"><span class="cl"><span class="c">Main begin
-</span></span></span><span class="line"><span class="cl"><span class="c">Content created
-</span></span></span><span class="line"><span class="cl"><span class="c">Box created
-</span></span></span><span class="line"><span class="cl"><span class="c">gift
-</span></span></span><span class="line"><span class="cl"><span class="c">Box destroyed
-</span></span></span><span class="line"><span class="cl"><span class="c">Content destroyed
-</span></span></span><span class="line"><span class="cl"><span class="c">Main end
-</span></span></span></code></pre></div><p>Les durées de vie des objets <code>box</code> et <code>box-&gt;_content</code> démarrent à la ligne 5 (<code>new</code>) et s&rsquo;achèvent à la ligne 7 (<code>delete</code>).</p>
-
-    </div>
-</div>
-<p>Analysez maintenant le code ci-dessous.<br>
-Quelle est selon vous la durée de vie de la variable <code>content</code> ?
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="ln"> 1</span><span class="cl"> <span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
-</span></span><span class="line"><span class="ln"> 2</span><span class="cl"> <span class="p">{</span>
-</span></span><span class="line"><span class="ln"> 3</span><span class="cl">     <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;Main start&#34;</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
-</span></span><span class="line"><span class="ln"> 4</span><span class="cl"> 
-</span></span><span class="line"><span class="ln"> 5</span><span class="cl">     <span class="n">Box</span><span class="o">*</span> <span class="n">box</span>        <span class="o">=</span> <span class="k">new</span> <span class="n">Box</span><span class="p">(</span><span class="s">&#34;gift&#34;</span><span class="p">);</span>
-</span></span><span class="line"><span class="ln"> 6</span><span class="cl">     <span class="n">Content</span> <span class="n">content</span> <span class="o">=</span> <span class="n">box</span><span class="o">-&gt;</span><span class="n">get_content</span><span class="p">();</span>
-</span></span><span class="line"><span class="ln"> 7</span><span class="cl"> 
-</span></span><span class="line"><span class="ln"> 8</span><span class="cl">     <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">content</span><span class="p">.</span><span class="n">name</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
-</span></span><span class="line"><span class="ln"> 9</span><span class="cl"> 
-</span></span><span class="line"><span class="ln">10</span><span class="cl">     <span class="k">delete</span> <span class="n">box</span><span class="p">;</span>
-</span></span><span class="line"><span class="ln">11</span><span class="cl"> 
-</span></span><span class="line"><span class="ln">12</span><span class="cl">     <span class="n">content</span><span class="p">.</span><span class="n">name</span> <span class="o">=</span> <span class="s">&#34;chocolate&#34;</span><span class="p">;</span>
-</span></span><span class="line"><span class="ln">13</span><span class="cl">     <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">content</span><span class="p">.</span><span class="n">name</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
-</span></span><span class="line"><span class="ln">14</span><span class="cl"> 
-</span></span><span class="line"><span class="ln">15</span><span class="cl">     <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;Main end&#34;</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
-</span></span><span class="line"><span class="ln">16</span><span class="cl">     <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
-</span></span><span class="line"><span class="ln">17</span><span class="cl"> <span class="p">}</span></span></span></code></pre></div></p>
-<p>Testez le code pour vérifier ce qu&rsquo;il se passe réellement.</p>
-<p>Pour mieux comprendre, vous allez redéfinir le constructeur de copie de <code>Content</code> afin qu&rsquo;il affiche <code>Content copied</code>.
-Combien d&rsquo;objets de type <code>Content</code> ont donc été créés par le programme précédent ? Quelles étaient leurs durées de vie respectives ?</p>
-
-<div class="expand">
-    <div class="expand-label" style="cursor: pointer;" onclick="$h = $(this);$h.next('div').slideToggle(100,function () {$h.children('i').attr('class',function () {return $h.next('div').is(':visible') ? 'fas fa-chevron-down' : 'fas fa-chevron-right';});});">
-        <i style="font-size:x-small;" class="fas fa-chevron-right"></i>
-        <span>
-        
-    	
-    	Solution
-    	
-    	</span>
-    </div>
-    <div class="expand-content" style="display: none;">
-        <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-b" data-lang="b"><span class="line"><span class="cl"><span class="c">Main start
-</span></span></span><span class="line"><span class="cl"><span class="c">Content created
-</span></span></span><span class="line"><span class="cl"><span class="c">Box created
-</span></span></span><span class="line"><span class="cl"><span class="c">Content copied
-</span></span></span><span class="line"><span class="cl"><span class="c">gift
-</span></span></span><span class="line"><span class="cl"><span class="c">Box destroyed
-</span></span></span><span class="line"><span class="cl"><span class="c">Content destroyed
-</span></span></span><span class="line"><span class="cl"><span class="c">chocolate
-</span></span></span><span class="line"><span class="cl"><span class="c">Main end
-</span></span></span><span class="line"><span class="cl"><span class="c">Content destroyed
-</span></span></span></code></pre></div><p>Deux objets de type <code>Content</code> ont été créés par le programme.<br>
-La durée de vie du premier, <code>box-&gt;_content</code>, démarre à la ligne 5 (construction de <code>*box</code>) et termine à la ligne 10 (destruction de <code>*box</code>).<br>
-La durée de vie du second, <code>content</code>, démarre à la ligne 6 (copie de <code>box-&gt;_content</code>) et termine à la ligne 17 (sortie du <code>main</code>).</p>
-
-    </div>
-</div>
-<p>Analysez enfin le code suivant.<br>
-Quelle est maintenant la durée de vie de <code>content_ref</code> ? A votre avis, que peut-il se passer lors de l&rsquo;exécution de la ligne 12 ?<br>
-Commentez ensuite la ligne 12 et retestez une dernière fois le programme.
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="ln"> 1</span><span class="cl"> <span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
-</span></span><span class="line"><span class="ln"> 2</span><span class="cl"> <span class="p">{</span>
-</span></span><span class="line"><span class="ln"> 3</span><span class="cl">     <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;Main start&#34;</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
-</span></span><span class="line"><span class="ln"> 4</span><span class="cl"> 
-</span></span><span class="line"><span class="ln"> 5</span><span class="cl">     <span class="n">Box</span><span class="o">*</span> <span class="n">box</span>             <span class="o">=</span> <span class="k">new</span> <span class="n">Box</span><span class="p">(</span><span class="s">&#34;gift&#34;</span><span class="p">);</span>
-</span></span><span class="line"><span class="ln"> 6</span><span class="cl">     <span class="n">Content</span><span class="o">&amp;</span> <span class="n">content_ref</span> <span class="o">=</span> <span class="n">box</span><span class="o">-&gt;</span><span class="n">get_content</span><span class="p">();</span>
-</span></span><span class="line"><span class="ln"> 7</span><span class="cl"> 
-</span></span><span class="line"><span class="ln"> 8</span><span class="cl">     <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">content_ref</span><span class="p">.</span><span class="n">name</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
-</span></span><span class="line"><span class="ln"> 9</span><span class="cl"> 
-</span></span><span class="line"><span class="ln">10</span><span class="cl">     <span class="k">delete</span> <span class="n">box</span><span class="p">;</span>
-</span></span><span class="line"><span class="ln">11</span><span class="cl"> 
-</span></span><span class="line"><span class="ln">12</span><span class="cl">     <span class="n">content_ref</span><span class="p">.</span><span class="n">name</span> <span class="o">=</span> <span class="s">&#34;chocolate&#34;</span><span class="p">;</span>
-</span></span><span class="line"><span class="ln">13</span><span class="cl">     <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">content_ref</span><span class="p">.</span><span class="n">name</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
-</span></span><span class="line"><span class="ln">14</span><span class="cl"> 
-</span></span><span class="line"><span class="ln">15</span><span class="cl">     <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;Main end&#34;</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
-</span></span><span class="line"><span class="ln">16</span><span class="cl">     <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
-</span></span><span class="line"><span class="ln">17</span><span class="cl"> <span class="p">}</span></span></span></code></pre></div></p>
-
-<div class="expand">
-    <div class="expand-label" style="cursor: pointer;" onclick="$h = $(this);$h.next('div').slideToggle(100,function () {$h.children('i').attr('class',function () {return $h.next('div').is(':visible') ? 'fas fa-chevron-down' : 'fas fa-chevron-right';});});">
-        <i style="font-size:x-small;" class="fas fa-chevron-right"></i>
-        <span>
-        
-    	
-    	Solution
-    	
-    	</span>
-    </div>
-    <div class="expand-content" style="display: none;">
-        <p>Comme <code>content_ref</code> est une référence, la variable correspond au même objet que <code>box-&gt;_content</code>.
-Sa durée de vie s&rsquo;étend donc de la ligne 5 à la ligne 10 du programme.</p>
-<p>De mon côté, le programme déclenche forcément une segfault.<br>
-Lorsque la ligne 12 est commentée, le programme crashe sur la ligne 13 (accès à <code>content_ref.name</code>) et lorsqu&rsquo;elle est décommenté, il crashe à la sortie du programme.</p>
-<p>En réalité, on est dans une situation qualifiée d&rsquo;<strong>undefined behavior</strong>.
-Le comportement exact du programme dépendra donc de votre compilateur et de la manière dont votre système d&rsquo;exploitation gère les accès mémoire.</p>
-
-    </div>
-</div>
-<p>Les différents tests effectués nous permettent de conclure les points suivants.<br>
-Tant qu&rsquo;on manipule des objets via des variables qui ne sont pas des références, ces objets existent forcément au moment de l&rsquo;utilisation et il n&rsquo;y a aucun risque d&rsquo;avoir un problème.<br>
-En revanche, dès lors que l&rsquo;on manipule des objets via des références, il est nécessaire d&rsquo;être prudent, car la portée de la variable ne correspondra pas nécessairement à la durée de vie de l&rsquo;objet référencé.</p>
-<hr>
-<h3 id="lien-avec-la-mémoire">Lien avec la mémoire</h3>
-<p>La durée de vie d&rsquo;un objet est étroitement liée à la mémoire du programme.</p>
-<p>Lorsqu&rsquo;on construit un objet dynamiquement, le programme demande au système d&rsquo;exploitation de réserver une zone dans la mémoire qui servira à contenir les données de l&rsquo;objet.
-Lorsque cet objet est détruit, le programme rend la mémoire au système, qui pourra la réattribuée à un autre processus.
-Pour éviter de corrompre les données des autres programmes, le système devrait empêcher votre programme d&rsquo;aller écrire dans de la mémoire libérée en déclenchant une segfault.</p>
-<p>C&rsquo;est donc pour cette raison que l&rsquo;on peut considérer que la durée de vie de l&rsquo;objet définit la région du code dans laquelle il est valide de l&rsquo;utiliser.</p>
+<p>Revenez d&rsquo;ici quelques heures s&rsquo;il vous plaît&hellip;. Je n&rsquo;ai pas encore fini&hellip;</p>
 
 
 <footer class="footline">
@@ -2714,23 +2434,6 @@ Pour éviter de corrompre les données des autres programmes, le système devrai
             
                 
                     
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
                         
                         
                     
@@ -2797,6 +2500,26 @@ Pour éviter de corrompre les données des autres programmes, le système devrai
             
             
                 
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
                     
                 
                 
@@ -3480,10 +3203,10 @@ Pour éviter de corrompre les données des autres programmes, le système devrai
 	 
 	 
 		
-			<a class="nav nav-prev" href="/CPP_Learning/chapter3/" title="Gestion mémoire"> <i class="fa fa-chevron-left"></i></a>
+			<a class="nav nav-prev" href="/CPP_Learning/chapter3/4-references/" title="Usage des références 🔀"> <i class="fa fa-chevron-left"></i></a>
 		
 		
-			<a class="nav nav-next" href="/CPP_Learning/chapter3/2-ownership/" title="Ownership" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+			<a class="nav nav-next" href="/CPP_Learning/chapter3/test/" title="Questionnaire ☑" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
 		
 	
     </div>
@@ -3493,19 +3216,19 @@ Pour éviter de corrompre les données des autres programmes, le système devrai
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/CPP_Learning/js/clipboard.min.js?1706024457"></script>
-    <script src="/CPP_Learning/js/perfect-scrollbar.min.js?1706024457"></script>
-    <script src="/CPP_Learning/js/perfect-scrollbar.jquery.min.js?1706024457"></script>
-    <script src="/CPP_Learning/js/jquery.sticky.js?1706024457"></script>
-    <script src="/CPP_Learning/js/featherlight.min.js?1706024457"></script>
-    <script src="/CPP_Learning/js/highlight.pack.js?1706024457"></script>
+    <script src="/CPP_Learning/js/clipboard.min.js?1706446248"></script>
+    <script src="/CPP_Learning/js/perfect-scrollbar.min.js?1706446248"></script>
+    <script src="/CPP_Learning/js/perfect-scrollbar.jquery.min.js?1706446248"></script>
+    <script src="/CPP_Learning/js/jquery.sticky.js?1706446248"></script>
+    <script src="/CPP_Learning/js/featherlight.min.js?1706446248"></script>
+    <script src="/CPP_Learning/js/highlight.pack.js?1706446248"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/CPP_Learning/js/modernizr.custom-3.6.0.js?1706024457"></script>
-    <script src="/CPP_Learning/js/learn.js?1706024457"></script>
-    <script src="/CPP_Learning/js/hugo-learn.js?1706024457"></script>
+    <script src="/CPP_Learning/js/modernizr.custom-3.6.0.js?1706446248"></script>
+    <script src="/CPP_Learning/js/learn.js?1706446248"></script>
+    <script src="/CPP_Learning/js/hugo-learn.js?1706446248"></script>
     
         
-            <script src="/CPP_Learning/mermaid/mermaid.js?1706024457"></script>
+            <script src="/CPP_Learning/mermaid/mermaid.js?1706446248"></script>
         
         <script>
             mermaid.initialize({ startOnLoad: true });

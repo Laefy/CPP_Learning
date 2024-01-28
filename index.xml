@@ -15,6 +15,13 @@
       <description>Dans cette première partie, vous apprendrez comment définir des relations de parenté entre vos classes.&#xA;Nous ne parlerons sur cette page que d&amp;rsquo;héritage dit &amp;ldquo;statique&amp;rdquo;, c&amp;rsquo;est-à-dire que nous ne chercherons pas à modifier dans les classes-fille le comportement hérité de la classe-mère.&#xA;Pour cet exercice, vous modifierez les fichiers :&#xA;- chap-04/1-hierarchy/Boss.cpp&#xA;- chap-04/1-hierarchy/Boss.h&#xA;- chap-04/1-hierarchy/Staff.cpp&#xA;- chap-04/1-hierarchy/Staff.h&#xA;- chap-04/1-hierarchy/Intern.cpp&#xA;- chap-04/1-hierarchy/Intern.h&#xA;La cible à compiler est c4-1-hierarchy.&#xA;Définir une classe-mère Commencez par jeter un coup d&amp;rsquo;oeil à chacun des fichiers fournis.</description>
     </item>
     <item>
+      <title>Allocation dynamique 🎇</title>
+      <link>https://laefy.github.io/CPP_Learning/chapter3/1-allocation/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://laefy.github.io/CPP_Learning/chapter3/1-allocation/</guid>
+      <description>Cette première page sera assez courte, elle vous présentera simplement la syntaxe permettant d&amp;rsquo;allouer dynamiquement de la mémoire et de libérer.&#xA;Allouer un seul élément Pour allouer un bloc de mémoire, on utilise le mot-clef new, suivi du type de donnée que l&amp;rsquo;on souhaite placer dedans, puis de la valeur avec laquelle on souhaite l&amp;rsquo;initialiser.&#xA;Cette instruction retourne un pointeur.&#xA;int* ptr_5 = new int { 5 }; std::cout &amp;lt;&amp;lt; *ptr_5 &amp;lt;&amp;lt; std::endl; // --&amp;gt; 5 Comme pour une variable classique, on peut utiliser des {} ou des () pour indiquer la valeur initiale.</description>
+    </item>
+    <item>
       <title>Assertions</title>
       <link>https://laefy.github.io/CPP_Learning/chapter8/1-assertions/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -34,13 +41,6 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://laefy.github.io/CPP_Learning/chapter0/1-compiler/</guid>
       <description>Pour le compilateur, vous devrez utiliser g++ (version &amp;gt;= 9) si vous êtes sous Windows ou Linux, et clang si vous êtes sous MacOS.&#xA;Windows Ouvrez un terminal et exécutez g++ -v. Si la commande réussit, assurez-vous que la dernière ligne indique bien une version de gcc &amp;gt;= 9. Si ce n&amp;rsquo;est pas le cas, installez le gestionnaire de paquet MSYS2 en suivant les instructions sur cette page.&#xA;MSYS2 contient en particulier MinGW, qui est l&amp;rsquo;équivalent du compilateur gcc/g++ pour Windows.</description>
-    </item>
-    <item>
-      <title>Durée de vie</title>
-      <link>https://laefy.github.io/CPP_Learning/chapter3/1-lifespan/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://laefy.github.io/CPP_Learning/chapter3/1-lifespan/</guid>
-      <description>Portée d&amp;rsquo;une variable locale Afin de parler de durée de vie, nous allons commencer par parler de la portée de nos variables. Comme vous le savez peut-être, la portée d&amp;rsquo;une variable définit la portion de code dans laquelle le compilateur nous permet de l&amp;rsquo;utiliser.&#xA;Si on définit une variable dans une fonction, la portée de celle-ci démarre à sa définition et se termine à la fin du bloc dans lequel celle-ci a été définie.</description>
     </item>
     <item>
       <title>Introduction</title>
@@ -106,6 +106,13 @@
       <description>Vous allez maintenant apprendre à définir des classes permettant à leurs enfants de spécialiser leur comportement. On parle alors de classe polymorphe.&#xA;Nous ferons un petit récapitulatif en fin de page, pour rappelez les points essentiels auxquels il faut faire attention lorsque vous définissez des classes polymorphes pour éviter les bugs.&#xA;Pour cet exercice, vous modifierez les fichiers :&#xA;- chap-04/2-farm/FarmHouse.cpp&#xA;- chap-04/2-farm/Animal.h&#xA;- chap-04/2-farm/Dog.h&#xA;- chap-04/2-farm/Cat.h&#xA;- chap-04/2-farm/Chicken.h&#xA;- chap-04/2-farm/Cow.</description>
     </item>
     <item>
+      <title>Durée de vie ⏳</title>
+      <link>https://laefy.github.io/CPP_Learning/chapter3/2-lifespan/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://laefy.github.io/CPP_Learning/chapter3/2-lifespan/</guid>
+      <description>Nous allons maintenant revenir sur l&amp;rsquo;instanciation et la désinstanciation des données, car ce sont les deux événements qui délimitent leur période de validité.&#xA;Donnée de type fondamental L&amp;rsquo;instanciation d&amp;rsquo;une donnée de type fondamental est constitué de deux étapes :&#xA;le programme alloue l&amp;rsquo;espace nécessaire pour stocker la donnée, si spécifié par le programmeur, le contenu de la donnée est initialisé. En ce qui concerne la désinstanciation, le programme désalloue l&amp;rsquo;espace réservé pour la donnée.</description>
+    </item>
+    <item>
       <title>Exceptions</title>
       <link>https://laefy.github.io/CPP_Learning/chapter8/2-exceptions/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -125,13 +132,6 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://laefy.github.io/CPP_Learning/chapter1/2-hello-world/</guid>
       <description>Nous allons maintenant enfin pouvoir coder ! Dans la suite de ce chapitre, vous verrez comment :&#xA;écrire un programme, déclarer des variables, écrire sur la sortie standard, lire sur l&amp;rsquo;entrée standard, définir des fonctions, utiliser les structures de contrôle (conditions, boucles, switch, etc.), créer des tableaux et des chaînes de caractères, utiliser des références. Ça fait beaucoup hein ? 😈&#xA;En réalité, comme vous avez déjà fait du C et du Java, il y a pas mal de choses que vous connaissez déjà.</description>
-    </item>
-    <item>
-      <title>Ownership</title>
-      <link>https://laefy.github.io/CPP_Learning/chapter3/2-ownership/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://laefy.github.io/CPP_Learning/chapter3/2-ownership/</guid>
-      <description>Ownership On dit qu&amp;rsquo;un objet A est le propriétaire, ou le owner, d&amp;rsquo;un objet B lorsque la destruction de A entraîne la destruction de B.&#xA;Dans l&amp;rsquo;exercice précédent, on peut donc dire que box était propriétaire de box._content.&#xA;Considérons un autre exemple :&#xA;std::vector&amp;lt;Box&amp;gt; boxes; boxes.emplace_back(&amp;#34;gift1&amp;#34;); Box&amp;amp; gift2 = boxes.emplace_back(&amp;#34;gift2&amp;#34;); Box gift3 = boxes.emplace_back(&amp;#34;gift3&amp;#34;); Ici, le tableau boxes est le propriétaire des objets boxes[0], boxes[1] et boxes[2]. Il est également propriétaire de l&amp;rsquo;objet gift2, puisqu&amp;rsquo;il s&amp;rsquo;agit d&amp;rsquo;une référence sur boxes[1].</description>
     </item>
     <item>
       <title>Première classe ✨</title>
@@ -169,13 +169,6 @@
       <description>Pour l&amp;rsquo;IDE, nous vous conseillons d&amp;rsquo;utiliser Visual Studio Code, car celui-ci est disponible sur toutes les plateformes (contrairement à Visual Studio tout court), qu&amp;rsquo;il est très bien documenté et que vous pourrez trouvez de nombreux tutoriels en ligne pour apprendre à l&amp;rsquo;utiliser.&#xA;Vous trouverez ci-dessous les instructions permettant d&amp;rsquo;installer VSCode.&#xA;Windows Installez VSCode en suivant les instructions du paragraphe Installation. Si l&amp;rsquo;installeur vous propose d&amp;rsquo;installer git, vous pouvez acceptez, cela vous fera gagner du temps pour la suite.</description>
     </item>
     <item>
-      <title>Allocation dynamique</title>
-      <link>https://laefy.github.io/CPP_Learning/chapter3/3-allocation/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://laefy.github.io/CPP_Learning/chapter3/3-allocation/</guid>
-      <description>Nous allons maintenant voir comment il est possible d&amp;rsquo;allouer de la mémoire simplement, en particulier sans avoir à se soucier des fuites mémoire.&#xA;Allocation d&amp;rsquo;une primitive Pour créer un objet sur le tas, nous allons nous servir d&amp;rsquo;un petit utilitaire appelé std::unique_ptr et de la fonction std::make_unique. Ces deux symboles se trouvent dans le header &amp;lt;memory&amp;gt;.&#xA;Voici la syntaxe permettant d&amp;rsquo;allouer de la mémoire pour un entier :&#xA;#include &amp;lt;iostream&amp;gt; #include &amp;lt;memory&amp;gt; void fcn() { std::unique_ptr&amp;lt;int&amp;gt; int_on_heap = std::make_unique&amp;lt;int&amp;gt;(3); std::cout &amp;lt;&amp;lt; *int_on_heap &amp;lt;&amp;lt; std::endl; // affiche 3 *int_on_heap = 5; std::cout &amp;lt;&amp;lt; *int_on_heap &amp;lt;&amp;lt; std::endl; // affiche 5 } La classe unique_ptr est donc un symbole que l&amp;rsquo;on template par le type qu&amp;rsquo;il doit contenir.</description>
-    </item>
-    <item>
       <title>Autres conteneurs séquentiels</title>
       <link>https://laefy.github.io/CPP_Learning/chapter5/3-sequentials/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -211,6 +204,13 @@
       <description>Nous allons vous présenter les éléments de syntaxe de base du langage.&#xA;Comme vous pourrez le constater, mis à part quelques subtilités, la plupart des informations que vous allez lire ici devrait être similaire à ce que vous avez déjà appris en C ou en Java.&#xA;Variables et types fondamentaux Comme dans tous les langages ou presque, on retrouve :&#xA;les entiers (signés ou non-signés) : int, short, unsigned int, &amp;hellip; les flottants : float, double les types caractère : char, unsigned char le type booléen : bool (et non pas boolean comme en Java ⚠️) Pour définir des variables, c&amp;rsquo;est comme d&amp;rsquo;habitude : &amp;lt;type&amp;gt; &amp;lt;nom&amp;gt; = &amp;lt;valeur&amp;gt;;</description>
     </item>
     <item>
+      <title>Espace de stockage 💾</title>
+      <link>https://laefy.github.io/CPP_Learning/chapter3/3-storage/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://laefy.github.io/CPP_Learning/chapter3/3-storage/</guid>
+      <description>Sur cette page, nous rappelerons ce que sont les variables et les pointeurs et comment ils peuvent être représentés en mémoire, puis nous ferons de même pour les références.&#xA;Nous présenterons ensuite les spécificités des trois zones dans lequel le programme alloue de la mémoire : la mémoire statique, la pile et le tas.&#xA;Cela vous aidera, j&amp;rsquo;espère, à visualiser mentalement quelles sont les données valides du programme.&#xA;Représentation Variables Une variable est un identifiant permettant d&amp;rsquo;accéder à une donnée de taille fixe en mémoire.</description>
+    </item>
+    <item>
       <title>Itérateurs</title>
       <link>https://laefy.github.io/CPP_Learning/chapter6/3-iterators/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -244,13 +244,6 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://laefy.github.io/CPP_Learning/chapter5/4-associatives/</guid>
       <description>Un conteneur associatif est un conteneur dans lequel les éléments peuvent être indexés par des objets, et non plus seulement par des entiers.&#xA;Vous allez donc ici voir les différents types de conteneurs associatifs proposés par la STL.&#xA;Pour cet exercice, vous modifierez les fichiers :&#xA;- chap-05/3-associatives/main.cpp&#xA;- chap-05/3-associatives/keys.h&#xA;La cible à compiler est c5-3-associatives.&#xA;Les sets (ensembles) Un set est un conteneur dans lequel les éléments sont &amp;ldquo;indexés par eux-mêmes&amp;rdquo;.</description>
-    </item>
-    <item>
-      <title>Déplacement</title>
-      <link>https://laefy.github.io/CPP_Learning/chapter3/4-move-sem/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://laefy.github.io/CPP_Learning/chapter3/4-move-sem/</guid>
-      <description>Nous avons vu précédement que les unique_ptr ne pouvaient pas être copiés. Cependant, le vector a réussi à provoquer leur &amp;ldquo;déplacement&amp;rdquo; en mémoire pour effectuer sa réallocation.&#xA;Nous allons voir comment faire de même afin de pouvoir manipuler les unique_ptr avec un peu plus de souplesse.&#xA;Construction sur place Lorsqu&amp;rsquo;une fonction retourne un objet et que celui-ci est utilisé pour initialiser une variable, aucune copie n&amp;rsquo;a lieu. L&amp;rsquo;objet est directement construit à l&amp;rsquo;adresse mémoire qui lui était réservée dans le code appelant.</description>
     </item>
     <item>
       <title>Destructeur 💣</title>
@@ -295,6 +288,13 @@
       <description>Nous allons maintenant vous expliquer ce que signifie SFINAE, le besoin auquel ce mécanisme répond et comment le mettre en oeuvre dans votre code.&#xA;Le besoin Supposons que nous souhaitions pouvoir récupérer une clef pour différents type à l&amp;rsquo;aide d&amp;rsquo;une fonction get_key(const Type&amp;amp;), en utilisant des overloads.&#xA;class Person { public: Person(const std::string&amp;amp; name) : _name { name } {} const std::string&amp;amp; get_name() const { return _name; } private: const std::string _name; }; // Overload pour notre classe Person.</description>
     </item>
     <item>
+      <title>Usage des références 🔀</title>
+      <link>https://laefy.github.io/CPP_Learning/chapter3/4-references/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://laefy.github.io/CPP_Learning/chapter3/4-references/</guid>
+      <description>Comme cela doit paraître encore un peu abstrait, nous allons vous présenter concrètement les principaux cas d&amp;rsquo;utilisation des références. Notez qu&amp;rsquo;il en existe un autre, mais vous le découvrirez dans le chapitre sur l&amp;rsquo;héritage !&#xA;Modifier un argument Le premier cas d&amp;rsquo;utilisation des références avait déjà été décrit dans le chapitre 1 : il s&amp;rsquo;agit de pouvoir modifier la valeur ou le contenu d&amp;rsquo;un argument passé à une fonction.&#xA;Pour rappel, lorsque vous passez un objet par valeur en paramètre à une fonction, l&amp;rsquo;intégralité de l&amp;rsquo;instance est copiée !</description>
+    </item>
+    <item>
       <title>🚗 Véhicule partagé</title>
       <link>https://laefy.github.io/CPP_Learning/chapter4/5-vehicles/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -330,6 +330,13 @@
       <description>Cet exercice vous permettra de découvrir :&#xA;comment écrire des headers en C++, comment extraire l&amp;rsquo;implémentation des fonctions d&amp;rsquo;une classe en dehors de cette classe, à quoi correspondent les membres statiques d&amp;rsquo;une classe et comment les définir, comment déléguer un appel à un autre constructeur. Séparer l&amp;rsquo;implémentation des fonctions-membre Ouvrez le dossier chap-02/4-modules. Celui-ci est composé de 3 fichiers :&#xA;main.cpp, qui contient une fonction main déjà écrite Rectangle.h, qui contient une classe Rectangle, Rectangle.</description>
     </item>
     <item>
+      <title>Ownership 🏘️</title>
+      <link>https://laefy.github.io/CPP_Learning/chapter3/5-ownership/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://laefy.github.io/CPP_Learning/chapter3/5-ownership/</guid>
+      <description>Jusqu&amp;rsquo;ici, nous vous avons expliqué que contrairement au Java, les données que vous instanciez ne restent pas magiquement en vie tant que vous en avez besoin.&#xA;C&amp;rsquo;est donc à vous de garantir que vos données ne seront pas désinstanciées avant d&amp;rsquo;avoir fini de les utiliser.&#xA;Sur cette page, nous allons introduire le concept d&amp;rsquo;ownership, qui vous aidera à mieux architecturer votre code pour éviter de vous retrouver avec des dangling-references.</description>
+    </item>
+    <item>
       <title>Opérateurs ➗</title>
       <link>https://laefy.github.io/CPP_Learning/chapter2/6-polygon/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -349,13 +356,6 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://laefy.github.io/CPP_Learning/chapter10/test/</guid>
       <description>Pas de questionnaire cette semaine, parce que mis en ligne trop tard.&#xA;N&amp;rsquo;hésitez néanmoins pas à utiliser le formulaire pour envoyer vos questions.&#xA;Vous êtes :&#xD;Votre adresse mail :&#xD;Votre groupe :&#xD;Initiaux 1&#xD;Initiaux 2&#xD;Alternants&#xD;Combien de temps avez-vous mis à compléter ce chapitre ?&#xD;Avez-vous des questions suite à sa lecture ?&#xD;Avez-vous des commentaires concernant le chapitre et/ou le site ?&#xD;</description>
-    </item>
-    <item>
-      <title>Questionnaire !</title>
-      <link>https://laefy.github.io/CPP_Learning/chapter3/test/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://laefy.github.io/CPP_Learning/chapter3/test/</guid>
-      <description>C&amp;rsquo;est l&amp;rsquo;heure du test ! Bon courage 🙂&#xA;Vous êtes :&#xD;Votre adresse mail :&#xD;Votre groupe :&#xD;Initiaux 1&#xD;Initiaux 2&#xD;Alternants&#xD;1- Comment définir la période de validité d’un objet ?&#xA;2- Citez une bonne raison d’allouer de la mémoire via un unique_ptr plutôt que via un pointeur simple (avec new).&#xA;3- Quelle fonction de la librarie standard permet de transférer le contenu d’un objet dans un autre ?</description>
     </item>
     <item>
       <title>Questionnaire !</title>
@@ -407,6 +407,13 @@
       <description>Vous êtes :&#xD;Votre adresse mail :&#xD;Votre groupe :&#xD;Initiaux 1&#xD;Initiaux 2&#xD;Alternants&#xD;1- Quel est le terme C++ permettant de désigner les “méthodes” d’une classe ?&#xA;2- Supposons une classe Cercle disposant d’un attribut _points de type std::vector&amp;lt;point&amp;gt;. Quel invariant cette classe pourrait-elle décider d’enforcer ?&#xA;3- Citez une règle permettant de respecter le principe d’encapsulation en C++.&#xA;4- En quoi consiste la méthodologie TDD ?</description>
     </item>
     <item>
+      <title>Questionnaire ☑</title>
+      <link>https://laefy.github.io/CPP_Learning/chapter3/test/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://laefy.github.io/CPP_Learning/chapter3/test/</guid>
+      <description>Vous êtes :&#xD;Votre adresse mail :&#xD;Votre groupe :&#xD;Initiaux 1&#xD;Initiaux 2&#xD;Alternants&#xD;1- Quels sont les avantages et les inconvénients de la pile par rapport du tas ?&#xA;2- A quoi sert le mot-clef delete[] ?&#xA;3- Quels sont les deux événements qui délimitent la durée de vie d’une donnée ?&#xA;4- Qu’est-ce qu’une dangling-reference ?&#xA;Donnez un exemple de situation dans lequel on peut en avoir une.</description>
+    </item>
+    <item>
       <title>Retours ?</title>
       <link>https://laefy.github.io/CPP_Learning/chapter0/test/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -419,13 +426,6 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://laefy.github.io/CPP_Learning/chapter10/summary/</guid>
       <description>// 🚧🚥🔨 //</description>
-    </item>
-    <item>
-      <title>Synthèse</title>
-      <link>https://laefy.github.io/CPP_Learning/chapter3/summary/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://laefy.github.io/CPP_Learning/chapter3/summary/</guid>
-      <description>Ce qu&amp;rsquo;il faut retenir Théorie La durée de vie d&amp;rsquo;un objet s&amp;rsquo;étend de sa construction à sa destruction. Lorsque la durée de vie d&amp;rsquo;un objet s&amp;rsquo;achève, il n&amp;rsquo;est plus valide de l&amp;rsquo;utiliser. La portée d&amp;rsquo;une référence peut excéder la durée de vie de l&amp;rsquo;objet référencé (=&amp;gt; dangling reference). Un objet A est propriétaire d&amp;rsquo;un objet B si la destruction de A entraîne celle de B. Aucune copie n&amp;rsquo;est faite lorsqu&amp;rsquo;on initialise une variable avec la valeur de retour d&amp;rsquo;une fonction (mandatory copy-elision) Pratique Un unique_ptr n&amp;rsquo;est pas copiable.</description>
     </item>
     <item>
       <title>Synthèse</title>
