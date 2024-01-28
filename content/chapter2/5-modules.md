@@ -11,7 +11,7 @@ Cet exercice vous permettra de découvrir :
 
 ---
 
-### Séparer l'implémentation des fonctions-membre
+### Séparer l'implémentation des fonctions-membres
 
 Ouvrez le dossier `chap-02/4-modules`.
 Celui-ci est composé de 3 fichiers :
@@ -19,16 +19,16 @@ Celui-ci est composé de 3 fichiers :
 - `Rectangle.h`, qui contient une classe `Rectangle`,
 - `Rectangle.cpp`, qui est lui tout vide.
 
-Il est très courant de placer la définition de chaque classe dans un header différent et d'extraire l'implémentation des ses fonctions-membres dans l'**unité de compilation** (.cpp) associée.  
+Il est très courant de placer la définition de chaque classe dans un header différent et d'extraire l'implémentation des ses fonctions-membres dans l'**unité de compilation** (`.cpp`) associée.  
 Cela permet de réduire drastiquement les temps de compilation dans les gros projets, car :
 1. le code est réparti dans plusieurs fichiers qui peuvent être compilés en parallèle,
-2. si on modifie un .cpp, seul ce dernier a besoin d'être recompilé,
-3. si on modifie un header, seuls les .cpp qui en dépendent ont besoin d'être recompilés.
+2. si on modifie un `.cpp`, seul ce dernier a besoin d'être recompilé,
+3. si on modifie un header, seuls les `.cpp` qui en dépendent ont besoin d'être recompilés.
 
 Dans cet exercice, vous allez voir comment extraire le constructeur de la classe `Rectangle` et sa fonction `scale` dans le fichier `Rectangle.cpp`.  
 Vous laisserez dans le header les petits getters.
 
-1. Commencez par vérifier que le programme constitué uniquement de `main.cpp` compile et exécutez-le.
+1. Commencez par vérifier que le programme constitué uniquement de `main.cpp` compile, et exécutez-le.
 
 2. Dans `Rectangle.h`, remplacez les définitions du constructeur de `scale` par des déclarations de fonction.
 Vous mettrez de côté les anciennes définitions en les commentant.  
@@ -66,7 +66,7 @@ main.o:main.cpp:(.text+0xc9): undefined reference to `Rectangle::scale(float)'
 ```
 {{% /hidden-solution %}}
 
-Pour définir une fonction-membre en dehors de sa classe, il suffit de préfixer l'identifiant de la fonction par le nom de la classe, suivie de `::`.  
+Pour définir une fonction-membre en dehors de sa classe, il suffit de préfixer l'identifiant de la fonction par le nom de la classe, suivi de `::`.  
 Par exemple :
 ```cpp
 struct ClassName
@@ -81,7 +81,7 @@ void ClassName::fcn(int p)
 }
 ```
 
-2. Modifiez le fichier `Rectangle.cpp` de manière à y définir les fonctions-membre `Rectangle::Rectangle` (le constructeur de `Rectangle`) et `Rectangle::scale`.  
+2. Modifiez le fichier `Rectangle.cpp` de manière à y définir les fonctions-membres `Rectangle::Rectangle` (le constructeur de `Rectangle`) et `Rectangle::scale`.  
 Pensez également à y inclure le fichier `"Rectangle.h"`, sinon, le compilateur ne comprendra pas que `Rectangle` est une classe.  
 Compilez et testez le programme.
 
@@ -100,7 +100,7 @@ void Rectangle::scale(float ratio)
 }
 ```
 
-On pense bien à indiquer les deux fichiers .cpp pour compiler le programme :
+On pense bien à indiquer les deux fichiers `.cpp` pour compiler le programme :
 ```b
 g++ -std=c++17 main.cpp Rectangle.cpp
 ```
@@ -118,10 +118,10 @@ Pourtant, si on s'intéresse aux fonctions dont les instructions attérissent da
 Les fonctions `Rectangle::get_length()` et `Rectangle::get_width()` apparaissent donc 2 fois.  
 En théorie, on devrait donc avoir des erreurs de type `"multiple definition of ..."` et le programme ne devrait donc pas compiler...
 
-Eh bien en réalité, toutes les fonctions qui sont définies à l'intérieur de la définition de la classe sont automatiquement taggées comme étant `inline`.
+Eh bien en réalité, toutes les fonctions qui sont définies à l'intérieur de la définition de la classe sont automatiquement marquées comme étant `inline`.
 Pour rappel, ce mot-clef permet d'indiquer au linker qu'il doit ignorer les éventuelles redéfinitions d'une fonction.
 
-Ainsi, votre programme compile sans que vous ayiez besoin de mettre des `inline` sur tous vos getters.
+Ainsi, votre programme compile, sans que vous ayiez besoin de mettre des `inline` sur tous vos getters.
 
 ---
 
@@ -136,7 +136,7 @@ Rectangle square(2.5f, 2.5f);
 Sauf que ça vous paraît un peu bête de devoir réécrire deux fois la même valeur dans l'appel au constructeur.
 
 1. Modifiez le `main` afin de créer cette instance de `square`, mais en n'y passant qu'une seule fois `2.5f`.\
-Définissez ensuite le constructeur à 1 paramètre correspondant qui initialise les deux attributs `_length` et `_width` avec cette valeur.\
+Définissez ensuite le constructeur à 1 paramètre correspondant, qui initialise les deux attributs `_length` et `_width` avec cette valeur.\
 Vous placerez l'implémentation de ce constructeur dans `Rectangle.cpp`.
 
 {{% hidden-solution %}}
@@ -197,7 +197,7 @@ Rectangle::Rectangle(float size)
 
 {{% notice info %}}
 Vous ne pouvez pas initialiser d'attributs dans la liste d'initialisation d'un constructeur qui a délégué la construction à un autre constructeur.  
-Le constructeur a qui vous délégué la construction doit donc vous permettre d'initialiser l'intégralité des attributs de la classe comme vous le souhaitez.
+Le constructeur aà qui vous déléguez la construction doit donc vous permettre d'initialiser l'intégralité des attributs de la classe comme vous le souhaitez.
 {{% /notice %}}
 
 ---
@@ -222,14 +222,14 @@ Rectangle s5;
 // At this point, size of s1 and s2 should be 3.f, and size of s3, s4 and s5 should be 5.f. 
 ```
 
-Pour cela, nous allons définir des **membres statiques** à la classe Rectangle.
+Pour cela, nous allons définir des **membres statiques** à la classe `Rectangle`.
 
 #### Attribut statique
 
 Un attribut est dit statique si sa valeur est portée par la classe et non par une instance. Cela permet d'avoir une variable qui est partagée par l'ensemble des instances d'une classe. 
 
 1. Pour mettre cela en pratique, vous allez définir un nouvel attribut statique `_default_size` dans la partie publique de la classe `Rectangle`.
-Il sera de type `float`, et vous n'essayerez pas de l'initialiser pour le moment.
+Il sera de type `float`, et vous n'essaierez pas de l'initialiser pour le moment.
 Vous pouvez utiliser la syntaxe suivante pour déclarer un attribut statique : `static type _attribute;`.
 
 {{% hidden-solution %}}
@@ -245,8 +245,8 @@ public:
 {{% /hidden-solution %}}
 
 2. Ajoutez maintenant un constructeur par défaut à votre classe, qui déléguera la construction au constructeur à 1 paramètre en lui passant `_default_size`.  
-A ce stade, votre programme ne devrait plus pouvoir compiler à cause d'une erreur de linker.  
-Vérifiez néanmoins que chacun de vos .cpp compilent correctement.
+À ce stade, votre programme ne devrait plus pouvoir compiler à cause d'une erreur de linker.  
+Vérifiez néanmoins que chacun de vos `.cpp` compilent correctement.
 
 {{% hidden-solution %}}
 ```cpp
@@ -273,13 +273,13 @@ L'erreur indique que la variable `Rectangle::_default_size` n'est pas définie.
 Et en effet, vous n'avez fait que la moitié du travail...  
 La ligne `static float _default_size;` dans `Rectangle` est une déclaration d'attribut statique, et non pas une définition.
 
-Pour définir une attribut statique, il y a deux méthodes.  
-La première consiste à écrire dans un .cpp, en dehors de toute fonction : `type ClassName::attribute;`  
+Pour définir un attribut statique, il y a deux méthodes.  
+La première consiste à écrire dans un `.cpp`, en dehors de toute fonction : `type ClassName::attribute;`  
 Notez bien qu'à cet endroit, on ne remet pas le mot-clef `static`, mais on préfixe par contre l'attribut avec `ClassName::`.
 
 3. Ajoutez la définition de l'attribut `_default_size` dans le fichier `Rectangle.cpp`.
 C'est au niveau de la définition d'un attribut que vous pouvez spécifier un initializer.  
-Compilez et testez votre programme avec un débuggeur de manière à vous assurez que la valeur de `_default_value` est correctement initialisée.
+Compilez et testez votre programme avec un débuggeur de manière à vous assurer que la valeur de `_default_value` est correctement initialisée.
 
 {{% hidden-solution %}}
 Comme la variable est statique, le compilateur l'initialisera à 0 de lui-même (contrairement aux variables locales de types fondamentaux).  
@@ -312,7 +312,7 @@ public:
 {{% /hidden-solution %}}
 
 6. Vous allez maintenant modifier la valeur de `_default_size` entre les différentes instanciations de vos rectangles.  
-Pour accéder ou modifier à la valeur de `_default_size` en dehors de la classe `Rectangle`, il faut préfixer par `Rectangle::`.  
+Pour accéder à la valeur de `_default_size` ou la modifier en dehors de la classe `Rectangle`, il faut préfixer par `Rectangle::`.  
 Testez que les tailles de vos rectangles sont bien initialisées avec la dernière valeur assignée à `_default_size` au moment de l'appel au constructeur.
 
 {{% hidden-solution %}}
@@ -335,7 +335,7 @@ Rectangle s5; // -> size is 7.f
 Une fonction-membre est dite statique si elle peut être appelée sur la classe plutôt que sur une instance. Ces fonctions peuvent donc accéder à l'ensemble des attributs statiques de la classe, mais elles ne peuvent pas accéder aux attributs d'instance, puisqu'on ne leur founit aucune instance au moment de l'appel.
 
 Vous allez déplacer `_default_size` dans la partie privée de la classe et définir un setter statique dans la partie publique.  
-Pour indiquer qu'une fonction-membre est statique, il faut placer le mot-clef `static` devant la déclaration de la fonction dans la définition de la classe. Attention, c'est uniquement à cet endroit là qu'il faut le faire. Si vous implémentez la fonction dans un .cpp séparé, vous ne devrez donc pas remettre `static` devant la définition.
+Pour indiquer qu'une fonction-membre est statique, il faut placer le mot-clef `static` devant la déclaration de la fonction dans la définition de la classe. Attention, c'est uniquement à cet endroit là qu'il faut le faire. Si vous implémentez la fonction dans un `.cpp` séparé, vous ne devrez donc pas remettre `static` devant la définition.
 
 1. Définissez la fonction-membre statique `set_default_size` prenant un `float` en paramètre et assignant sa valeur à `_default_size`. Vous placerez l'implémentation de la fonction dans `Rectangle.cpp`.
 
@@ -385,7 +385,7 @@ Rectangle s5; // -> size is 7.f
 ### Synthèse
 
 - Pour définir une fonction-membre en dehors de la classe, on préfixe l'identifiant de la fonction par `ClassName::`.
-- Si une fonction est définie à l'intérieur de la définition de la classe, elle est considérée `inline` par le linker (pas de risque de définitions multiples si le header est inclut depuis différents .cpp).
+- Si une fonction est définie à l'intérieur de la définition de la classe, elle est considérée `inline` par le linker (pas de risque de définitions multiples si le header est inclus depuis différents `.cpp`).
 - On peut déléguer la construction à un autre constructeur en l'appelant depuis la liste d'initialisation.
 - Les membres statiques ne sont pas associés à une instance de classe, on peut y accéder depuis la classe elle-même avec `ClassName::member`.
 - Pour déclarer une fonction-membre statique, on écrit `static` devant le prototype de la fonction : `static void fcn();`  

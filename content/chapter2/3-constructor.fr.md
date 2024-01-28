@@ -60,7 +60,7 @@ Dog dog { "Colley", "Lassie" };
 ```
 
 Commencez par modifier votre fonction `main`, de manière à passer le nom `"Batman"` à la construction de la variable `p`, puis supprimez l'appel à `set_name`.  
-Modifiez ensuite la classe `Person` pour lui ajouter un constructeur à un paramètre, dans lequel vous initialisez l'attribut `_name`. Vous n'êtes pas obligé d'initialiser `_age` dans la liste d'initialisation du constructeur, car cet attribut est déjà initialisé au niveau de sa définition (= **class initializer**).
+Modifiez ensuite la classe `Person` pour lui ajouter un constructeur à 1 paramètre, dans lequel vous initialisez l'attribut `_name`. Vous n'êtes pas obligé d'initialiser `_age` dans la liste d'initialisation du constructeur, car cet attribut est déjà initialisé au niveau de sa définition (= **class initializer**).
 
 Comme d'habitude, compilez et testez ensuite votre programme.
 
