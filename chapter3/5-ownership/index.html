@@ -12,22 +12,22 @@
     <title>Ownership 🏘️ :: Cours de C&#43;&#43; - Niveau Master</title>
 
     
-    <link href="/CPP_Learning/css/nucleus.css?1706446248" rel="stylesheet">
-    <link href="/CPP_Learning/css/fontawesome-all.min.css?1706446248" rel="stylesheet">
-    <link href="/CPP_Learning/css/hybrid.css?1706446248" rel="stylesheet">
-    <link href="/CPP_Learning/css/featherlight.min.css?1706446248" rel="stylesheet">
-    <link href="/CPP_Learning/css/perfect-scrollbar.min.css?1706446248" rel="stylesheet">
-    <link href="/CPP_Learning/css/auto-complete.css?1706446248" rel="stylesheet">
-    <link href="/CPP_Learning/css/atom-one-dark-reasonable.css?1706446248" rel="stylesheet">
-    <link href="/CPP_Learning/css/theme.css?1706446248" rel="stylesheet">
-    <link href="/CPP_Learning/css/tabs.css?1706446248" rel="stylesheet">
-    <link href="/CPP_Learning/css/hugo-theme.css?1706446248" rel="stylesheet">
+    <link href="/CPP_Learning/css/nucleus.css?1706486189" rel="stylesheet">
+    <link href="/CPP_Learning/css/fontawesome-all.min.css?1706486189" rel="stylesheet">
+    <link href="/CPP_Learning/css/hybrid.css?1706486189" rel="stylesheet">
+    <link href="/CPP_Learning/css/featherlight.min.css?1706486189" rel="stylesheet">
+    <link href="/CPP_Learning/css/perfect-scrollbar.min.css?1706486189" rel="stylesheet">
+    <link href="/CPP_Learning/css/auto-complete.css?1706486189" rel="stylesheet">
+    <link href="/CPP_Learning/css/atom-one-dark-reasonable.css?1706486189" rel="stylesheet">
+    <link href="/CPP_Learning/css/theme.css?1706486189" rel="stylesheet">
+    <link href="/CPP_Learning/css/tabs.css?1706486189" rel="stylesheet">
+    <link href="/CPP_Learning/css/hugo-theme.css?1706486189" rel="stylesheet">
     
-    <link href="/CPP_Learning/css/theme-mine.css?1706446248" rel="stylesheet">
+    <link href="/CPP_Learning/css/theme-mine.css?1706486189" rel="stylesheet">
     
-    <link href="/CPP_Learning/css/syntax.css?1706446248" rel="stylesheet">
+    <link href="/CPP_Learning/css/syntax.css?1706486189" rel="stylesheet">
 
-    <script src="/CPP_Learning/js/jquery-3.3.1.min.js?1706446248"></script>
+    <script src="/CPP_Learning/js/jquery-3.3.1.min.js?1706486189"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -1903,7 +1903,17 @@
                 
                     <div class="progress">
     <div class="wrapper">
-<nav id="TableOfContents"></nav>
+<nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#cest-quoi-lownership-">C&rsquo;est quoi l&rsquo;ownership ?</a></li>
+        <li><a href="#exercices-pratiques">Exercices pratiques</a></li>
+        <li><a href="#synthèse">Synthèse</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
     </div>
 </div>
 
@@ -1930,7 +1940,522 @@
 C&rsquo;est donc à vous de garantir que vos données ne seront pas désinstanciées avant d&rsquo;avoir fini de les utiliser.<br>
 Sur cette page, nous allons introduire le concept d&rsquo;<strong>ownership</strong>, qui vous aidera à mieux architecturer votre code pour éviter de vous retrouver avec des dangling-references.</p>
 <hr>
-<p>Revenez d&rsquo;ici quelques heures s&rsquo;il vous plaît&hellip;. Je n&rsquo;ai pas encore fini&hellip;</p>
+<h3 id="cest-quoi-lownership-">C&rsquo;est quoi l&rsquo;ownership ?</h3>
+<p>Littéralement, <strong>ownership</strong> signifie <strong>propriété</strong> (au sens de la possession de quelque chose).</p>
+<p>En pratique, dans le domaine de la programmation, le <strong>owner</strong> (ou le <strong>propriétaire</strong>) d&rsquo;une donnée est l&rsquo;élément qui a la responsabilité de la désinstancier une fois qu&rsquo;elle n&rsquo;est plus utile au programme.</p>
+<p>Nous allons vous montrer quelques exemples, afin que vous puissiez un peu mieux comprendre ce concept assez abstrait.<br>
+Au fur-et-à-mesure des exemples, nous établirons le <strong>graphe d&rsquo;ownership</strong> correspondant, c&rsquo;est-à-dire la représentation graphique illustrant les relations d&rsquo;ownership présentes au sein du programme.</p>
+<h4 id="variable-locale">Variable locale</h4>
+<p>Une variable locale est désinstanciée lorsqu&rsquo;on sort du bloc dans lequel elle est définie.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="kt">void</span> <span class="nf">fcn</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">int</span> <span class="n">a</span> <span class="o">=</span> <span class="mi">3</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><p>Dans l&rsquo;exemple ci-dessus, <code>a</code> est désinstanciée à la sortie de <code>fcn</code>.<br>
+On pourra donc dire que la donnée portée par <code>a</code> est ownée par la fonction <code>fcn</code>, ou encore que <code>fcn</code> own <code>a</code>.</p>
+<p><img src="/CPP_Learning/images/chapter3/ownership/01-local-var.svg" alt="Variable locale"></p>
+<h4 id="attribut-valeur">Attribut-valeur</h4>
+<p>La donnée portée par un attribut-valeur est désinstanciée lorsque l&rsquo;instance de la classe est détruite.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="k">struct</span> <span class="nc">MyStruct</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">int</span> <span class="n">value</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">};</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="n">MyStruct</span> <span class="n">s</span> <span class="p">{</span> <span class="mi">5</span> <span class="p">};</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><p>Ici, la donnée portée par l&rsquo;attribut <code>value</code> de l&rsquo;instance <code>s</code> est ownée par <code>s</code>.<br>
+On peut dire plus simplement que <code>s</code> own <code>s.value</code>.</p>
+<p><img src="/CPP_Learning/images/chapter3/ownership/02-value-attribute.svg" alt="Attribut-valeur"></p>
+<h4 id="attribut-référence">Attribut-référence</h4>
+<p>Ici, ça devient un peu plus compliqué !</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="k">struct</span> <span class="nc">Driver</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl"><span class="p">};</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">struct</span> <span class="nc">Car</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="n">Driver</span><span class="o">&amp;</span> <span class="n">driver</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">};</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="n">Driver</span> <span class="n">gontrand</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">Car</span> <span class="n">clio</span> <span class="p">{</span> <span class="n">gontrand</span> <span class="p">};</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><p>La donnée portée par <code>clio.driver</code> correspond à la variable <code>gontrand</code> définie dans le <code>main</code>.<br>
+Le owner de <code>clio.driver</code> n&rsquo;est donc pas <code>clio</code>, puisque la destruction de <code>clio</code> n&rsquo;entrainera pas la destruction de <code>gontrand</code>.<br>
+Dans ce cas précis, c&rsquo;est la fonction <code>main</code> qui own le contenu de <code>clio.driver</code>.</p>
+<p><img src="/CPP_Learning/images/chapter3/ownership/03-ref-attribute.svg" alt="Attribut-référence"></p>
+<h4 id="ressources-gérées-par-une-classe">Ressources gérées par une classe</h4>
+<p>Lorsque le cycle de vie d&rsquo;une ressource (mémoire, fichier, connexion réseau, etc) stockée à l&rsquo;intérieur d&rsquo;un objet est orchestré par les fonctions-membre de cet objet, alors ces ressources sont ownées par l&rsquo;objet.</p>
+<p>Prenons ici l&rsquo;exemple d&rsquo;un <code>std::vector</code>.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">Driver</span><span class="o">&gt;</span> <span class="n">drivers</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="n">drivers</span><span class="p">.</span><span class="n">emplace_back</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl"><span class="n">drivers</span><span class="p">.</span><span class="n">emplace_back</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl"><span class="n">drivers</span><span class="p">.</span><span class="n">emplace_back</span><span class="p">();</span>
+</span></span></code></pre></div><p>Chacun des <code>Driver</code> faisant partie du tableau est stocké sur un segment-mémoire alloué dynamiquement par l&rsquo;objet <code>drivers</code>.<br>
+Ce segment sera libéré à la destruction de <code>drivers</code> (ou plus tôt, en fonction des fonctions qu&rsquo;on appelera sur l&rsquo;objet), entraînant la désinstanciation des <code>Drivers</code>.<br>
+On peut donc dire que <code>drivers</code> owns chacun des éléments de type <code>Driver</code> ajouté via l&rsquo;appel à <code>emplace_back</code>.</p>
+<p><img src="/CPP_Learning/images/chapter3/ownership/04-vector.svg" alt="std::vector"></p>
+<h4 id="pointeur-ownant">Pointeur-ownant</h4>
+<p>Si on considère qu&rsquo;un pointeur est responsable du cyle de vie de la donnée pointée, on parlera de <strong>pointeurs-ownants</strong>.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="kt">int</span><span class="o">*</span> <span class="nf">create_int</span><span class="p">(</span><span class="kt">int</span> <span class="n">value</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">auto</span><span class="o">*</span> <span class="n">ptr</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">int</span> <span class="p">{</span> <span class="n">value</span> <span class="p">};</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">ptr</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">auto</span><span class="o">*</span> <span class="n">five</span> <span class="o">=</span> <span class="n">create_int</span><span class="p">(</span><span class="mi">5</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="o">*</span><span class="n">five</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span> 
+</span></span><span class="line"><span class="cl">    <span class="k">delete</span> <span class="n">five</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><p>Dans le code ci-dessus, à l&rsquo;intérieur de la fonction <code>create_int</code>, <code>ptr</code> est un pointeur-ownant.<br>
+En effet, on l&rsquo;a défini dans l&rsquo;objectif de stocker l&rsquo;adresse d&rsquo;un bloc mémoire fraîchement alloué pour stocker un entier.
+Il est par conséquent responsable du cycle de vie de cet entier.<br>
+Comme <code>ptr</code> est la valeur de retour de <code>create_int</code>, cette responsabilité est transmise à <code>five</code> au retour dans la fonction <code>main</code>, faisant de lui un pointeur-ownant.<br>
+La responsabilité de la désinstanciation de l&rsquo;entier étant attribué à <code>five</code>, on a pensé à exécuter <code>delete five</code> avant de sortir du <code>main</code>.</p>
+<p><img src="/CPP_Learning/images/chapter3/ownership/05-owning-ptr.svg" alt="Pointeur-ownant"></p>
+<h4 id="pointeur-observant">Pointeur-observant</h4>
+<p>Un <strong>pointeur-observant</strong> est un pointeur qui n&rsquo;est pas ownant. Ils servent simplement à référencer des données pré-existantes.</p>
+<p>Mais du coup, vous devez vous demander quel est leur intérêt, sachant qu&rsquo;on a déjà les références&hellip;<br>
+Eh bien les références ne permettent pas de faire autant de choses que les pointeurs.<br>
+Par exemple, vous ne pouvez pas créer de référence qui ne référence rien, alors qu&rsquo;un pointeur peut être vide :</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="kt">int</span><span class="o">&amp;</span> <span class="n">ref_on_nothing</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="c1">// =&gt; Aïe, ça compile pas
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl"><span class="kt">int</span><span class="o">*</span> <span class="n">ptr_on_nothing</span> <span class="o">=</span> <span class="k">nullptr</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="c1">// =&gt; Ok
+</span></span></span></code></pre></div><p>Une fois une référence définie, celle-ci référencera la même donnée pour toujours, tandis qu&rsquo;un pointeur est réassignable :</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="kt">int</span><span class="o">&amp;</span> <span class="n">ref</span> <span class="o">=</span> <span class="n">data_1</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="n">ref</span> <span class="o">=</span> <span class="n">data_2</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="c1">// =&gt; ref fait toujours référence à data_1, le contenu de data_2 a simplement été assigné à data_1 
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl"><span class="kt">int</span><span class="o">*</span> <span class="n">ptr</span> <span class="o">=</span> <span class="o">&amp;</span><span class="n">data_1</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="n">ptr</span> <span class="o">=</span> <span class="o">&amp;</span><span class="n">data_2</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="c1">// =&gt; data_1 n&#39;a pas changé et ptr pointe désormais sur data_2
+</span></span></span></code></pre></div><p>Sachant qu&rsquo;un pointeur-observant ne own pas son contenu, comment pourriez-vous dessiner le graphe d&rsquo;ownership du programme suivant, une fois arrivé à la ligne 8 :</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">auto</span> <span class="n">toto</span> <span class="o">=</span> <span class="n">Driver</span> <span class="p">{};</span>
+</span></span><span class="line"><span class="cl">    <span class="k">auto</span> <span class="n">jacquot</span> <span class="o">=</span> <span class="n">Driver</span> <span class="p">{};</span>
+</span></span><span class="line"><span class="cl">    <span class="k">auto</span> <span class="n">leon</span> <span class="o">=</span> <span class="n">Driver</span> <span class="p">{};</span>
+</span></span><span class="line"><span class="cl"> 
+</span></span><span class="line"><span class="cl">    <span class="k">auto</span> <span class="n">all_drivers</span> <span class="o">=</span> <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="k">const</span> <span class="n">Driver</span><span class="o">*&gt;</span> <span class="p">{</span> <span class="o">&amp;</span><span class="n">toto</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">jacquot</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">leon</span> <span class="p">};</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><br/>
+
+<div class="hidden-solution">
+
+    <button class="show-solution-btn" onclick="$(this).addClass('off'); $(this).next().removeClass('off');">
+        ⮟ Afficher la solution ⮟
+    </button>
+
+    <div class="off">
+        <button class="hide-solution-btn" onclick="$(this).parent().addClass('off'); $(this).parent().prev().removeClass('off');">
+            ⮝ Masquer la solution ⮝
+        </button>
+
+        <div class="hidden-solution-content">
+            <p>Les éléments de <code>all_drivers</code> étant des pointeurs, on utilise un contour plein pour les cases du tableau.<br>
+En revanche, comme ces pointeurs ne contrôlent pas le cycle de vie de chacun des <code>Drivers</code>, on les relie vers eux avec flèches pointillées.
+<img src="/CPP_Learning/images/chapter3/ownership/06-observing-ptr.svg" alt="Pointeur-observant"></p>
+
+        </div>
+    </div>
+
+</div>
+<hr>
+<h3 id="exercices-pratiques">Exercices pratiques</h3>
+<p>Nous allons maintenant vous présentez quelques petits bouts de code.<br>
+Vous devrez dessiner le graphe d&rsquo;ownership correspondant à l&rsquo;état du programme aux instructions indiquées, et en déduire les éventuels problèmes s&rsquo;il y en a.<br>
+Si vous souhaitez dessiner vos graphes sur ordinateur, vous pouvez utiliser <a href="https://app.diagrams.net/">draw.io</a>.</p>
+<p>Pour cela, vous pourrez vous appuyer sur les règles d&rsquo;architecture suivantes :</p>
+<ul>
+<li>chaque donnée a un seul et unique owner (=&gt; une unique flèche pleine arrive sur chaque case)</li>
+<li>toutes les références mènent à une donnée valide (=&gt; pas de flèche qui pointe sur une case rouge)</li>
+<li>si un pointeur est ownant, sa donnée sera correctement libérée <strong>ou bien</strong> il transfèrera l&rsquo;ownership à un autre pointeur (pas les deux)</li>
+</ul>
+<h4 id="cas-n1">Cas n°1</h4>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="kt">int</span><span class="o">&amp;</span> <span class="n">get_max</span><span class="p">(</span><span class="kt">int</span><span class="o">&amp;</span> <span class="n">a</span><span class="p">,</span> <span class="kt">int</span><span class="o">&amp;</span> <span class="n">b</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">a</span> <span class="o">&lt;</span> <span class="n">b</span> <span class="o">?</span> <span class="nl">a</span> <span class="p">:</span> <span class="n">b</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">int</span>  <span class="n">v1</span> <span class="o">=</span> <span class="mi">3</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">int</span>  <span class="n">v2</span> <span class="o">=</span> <span class="mi">6</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">int</span><span class="o">&amp;</span> <span class="n">max</span> <span class="o">=</span> <span class="n">get_max</span><span class="p">(</span><span class="n">v1</span><span class="p">,</span> <span class="n">v2</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">max</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><ol>
+<li>
+<p>Dessinez le graphe d&rsquo;ownership à la ligne 3, lorsque le <code>main</code> vient d&rsquo;appeler <code>get_max</code>.
+
+<div class="hidden-solution">
+
+    <button class="show-solution-btn" onclick="$(this).addClass('off'); $(this).next().removeClass('off');">
+        ⮟ Afficher la solution ⮟
+    </button>
+
+    <div class="off">
+        <button class="hide-solution-btn" onclick="$(this).parent().addClass('off'); $(this).parent().prev().removeClass('off');">
+            ⮝ Masquer la solution ⮝
+        </button>
+
+        <div class="hidden-solution-content">
+            <p><img src="/CPP_Learning/images/chapter3/ownership/07-case-1a.svg" alt=""></p>
+
+        </div>
+    </div>
+
+</div></p>
+</li>
+<li>
+<p>Dessinez maintenant le graphe d&rsquo;ownership associé au retour de la fonction <code>get_max</code> dans le <code>main</code>.<br>
+
+<div class="hidden-solution">
+
+    <button class="show-solution-btn" onclick="$(this).addClass('off'); $(this).next().removeClass('off');">
+        ⮟ Afficher la solution ⮟
+    </button>
+
+    <div class="off">
+        <button class="hide-solution-btn" onclick="$(this).parent().addClass('off'); $(this).parent().prev().removeClass('off');">
+            ⮝ Masquer la solution ⮝
+        </button>
+
+        <div class="hidden-solution-content">
+            <p>Il faut faire pointer la variable-référence <code>max</code> sur <code>v2</code>, et non sur <code>b</code>.<br>
+En effet, <code>b</code> n&rsquo;est pas une donnée, juste un alias, on ne peut donc pas faire pointer une référence dessus.
+<img src="/CPP_Learning/images/chapter3/ownership/07-case-1b.svg" alt=""></p>
+
+        </div>
+    </div>
+
+</div></p>
+</li>
+<li>
+<p>Redessinez le graphe correspondant au retour de la fonction <code>get_max</code>, mais en supposant que <code>get_max</code> attende ses paramètres par valeur.
+Le résultat est par contre toujours retourné par référence.
+
+<div class="hidden-solution">
+
+    <button class="show-solution-btn" onclick="$(this).addClass('off'); $(this).next().removeClass('off');">
+        ⮟ Afficher la solution ⮟
+    </button>
+
+    <div class="off">
+        <button class="hide-solution-btn" onclick="$(this).parent().addClass('off'); $(this).parent().prev().removeClass('off');">
+            ⮝ Masquer la solution ⮝
+        </button>
+
+        <div class="hidden-solution-content">
+            <p>Les paramètres <code>a</code> et <code>b</code> sont maintenant des données.<br>
+La variable-référence <code>max</code> pointera donc sur <code>b</code> et plus sur <code>v2</code>.
+<img src="/CPP_Learning/images/chapter3/ownership/07-case-1c.svg" alt=""></p>
+
+        </div>
+    </div>
+
+</div></p>
+</li>
+<li>
+<p>Quel problème est mis en avant par ce graphe ?
+
+<div class="hidden-solution">
+
+    <button class="show-solution-btn" onclick="$(this).addClass('off'); $(this).next().removeClass('off');">
+        ⮟ Afficher la solution ⮟
+    </button>
+
+    <div class="off">
+        <button class="hide-solution-btn" onclick="$(this).parent().addClass('off'); $(this).parent().prev().removeClass('off');">
+            ⮝ Masquer la solution ⮝
+        </button>
+
+        <div class="hidden-solution-content">
+            <p>On a une référence qui pointe sur une donnée qui été désinstanciée : il s&rsquo;agit d&rsquo;une dangling-reference.<br>
+Or cette référence est utilisée ligne 12, on a donc un undefined behavior&hellip;</p>
+
+        </div>
+    </div>
+
+</div></p>
+</li>
+</ol>
+<h4 id="cas-n2">Cas n°2</h4>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="k">struct</span> <span class="nc">Animal</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">name</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">};</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">struct</span> <span class="nc">ManyAnimals</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="o">~</span><span class="n">ManyAnimals</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="k">for</span> <span class="p">(</span><span class="k">auto</span><span class="o">*</span> <span class="nl">a</span><span class="p">:</span> <span class="n">animals</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="k">delete</span> <span class="n">a</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">Animals</span><span class="o">*&gt;</span> <span class="n">animals</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">};</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kt">void</span> <span class="nf">display_animals</span><span class="p">(</span><span class="n">ManyAnimals</span> <span class="n">many_animals</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">for</span> <span class="p">(</span><span class="k">auto</span><span class="o">*</span> <span class="nl">a</span><span class="p">:</span> <span class="n">many_animals</span><span class="p">.</span><span class="n">animals</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">a</span><span class="o">-&gt;</span><span class="n">name</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="n">ManyAnimals</span> <span class="n">many_animals</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">many_animals</span><span class="p">.</span><span class="n">emplace_back</span><span class="p">(</span><span class="k">new</span> <span class="n">Animal</span> <span class="p">{</span> <span class="s">&#34;dog&#34;</span> <span class="p">});</span>
+</span></span><span class="line"><span class="cl">    <span class="n">many_animals</span><span class="p">.</span><span class="n">emplace_back</span><span class="p">(</span><span class="k">new</span> <span class="n">Animal</span> <span class="p">{</span> <span class="s">&#34;cat&#34;</span> <span class="p">});</span>
+</span></span><span class="line"><span class="cl">    <span class="n">many_animals</span><span class="p">.</span><span class="n">emplace_back</span><span class="p">(</span><span class="k">new</span> <span class="n">Animal</span> <span class="p">{</span> <span class="s">&#34;mouse&#34;</span> <span class="p">});</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c1">// display_animals(many_animals);
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><ol>
+<li>
+<p>Etablissez le graphe d&rsquo;ownership du programme à la ligne 33.<br>
+Selon-vous, les pointeurs contenus dans <code>ManyAnimals::animals</code> sont-ils ownants ou observants ?
+
+<div class="hidden-solution">
+
+    <button class="show-solution-btn" onclick="$(this).addClass('off'); $(this).next().removeClass('off');">
+        ⮟ Afficher la solution ⮟
+    </button>
+
+    <div class="off">
+        <button class="hide-solution-btn" onclick="$(this).parent().addClass('off'); $(this).parent().prev().removeClass('off');">
+            ⮝ Masquer la solution ⮝
+        </button>
+
+        <div class="hidden-solution-content">
+            <p>Le destructeur de <code>ManyAnimals</code> se charge de libérer la mémoire associée à chacun des pointeurs contenus dans l&rsquo;attribut <code>animals</code>.<br>
+Ces pointeurs étant utilisés pour gérer le cycle de vie des données pointées, il s&rsquo;agit de pointeurs-ownants.<br>
+On représente donc les relations associées avec des flèches pleines.
+<img src="/CPP_Learning/images/chapter3/ownership/07-case-2a.svg" alt=""></p>
+
+        </div>
+    </div>
+
+</div></p>
+</li>
+<li>
+<p>Dessinez maintenant les modifications dans ce graphe une fois arrivé à la ligne 14 (c&rsquo;est-à-dire pendant la sortie du <code>main</code>, lorsque l&rsquo;instance de <code>many_animals</code> est en cours de destruction).
+
+<div class="hidden-solution">
+
+    <button class="show-solution-btn" onclick="$(this).addClass('off'); $(this).next().removeClass('off');">
+        ⮟ Afficher la solution ⮟
+    </button>
+
+    <div class="off">
+        <button class="hide-solution-btn" onclick="$(this).parent().addClass('off'); $(this).parent().prev().removeClass('off');">
+            ⮝ Masquer la solution ⮝
+        </button>
+
+        <div class="hidden-solution-content">
+            <p>A la ligne 14, les instances de <code>Animal</code> ont toutes été libérées.<br>
+<img src="/CPP_Learning/images/chapter3/ownership/07-case-2b.svg" alt=""></p>
+
+        </div>
+    </div>
+
+</div></p>
+</li>
+<li>
+<p>La ligne 34 est commentée, car si elle ne l&rsquo;est pas, le programme se termine avec une erreur.<br>
+Pour comprendre ce qu&rsquo;il se passe, reprenez le graphe de la question 1, et ajoutez les modifications décrivant l&rsquo;état du programme une fois arrivé dans la fonction <code>display_animals</code> (ligne 20).<br>
+Quel est le problème dans ce graphe ?
+
+<div class="hidden-solution">
+
+    <button class="show-solution-btn" onclick="$(this).addClass('off'); $(this).next().removeClass('off');">
+        ⮟ Afficher la solution ⮟
+    </button>
+
+    <div class="off">
+        <button class="hide-solution-btn" onclick="$(this).parent().addClass('off'); $(this).parent().prev().removeClass('off');">
+            ⮝ Masquer la solution ⮝
+        </button>
+
+        <div class="hidden-solution-content">
+            <p>L&rsquo;argument est passé par valeur, on a donc une copie de la variable <code>many_animals</code>.<br>
+En revanche, lorsqu&rsquo;un pointeur est copié, l&rsquo;élément pointé ne l&rsquo;est pas.
+<img src="/CPP_Learning/images/chapter3/ownership/07-case-2c.svg" alt="">
+Le problème ici, c&rsquo;est qu&rsquo;on a maintenant deux owners pour les données <code>dog</code>, <code>cat</code> et <code>mouse</code>.</p>
+
+        </div>
+    </div>
+
+</div></p>
+</li>
+<li>
+<p>Dessinez maintenant le graphe à la sortie de la fonction <code>display_animals</code>.<br>
+Expliquez ce qui pose problème et qui empêche le programme de se terminer correctement.
+
+<div class="hidden-solution">
+
+    <button class="show-solution-btn" onclick="$(this).addClass('off'); $(this).next().removeClass('off');">
+        ⮟ Afficher la solution ⮟
+    </button>
+
+    <div class="off">
+        <button class="hide-solution-btn" onclick="$(this).parent().addClass('off'); $(this).parent().prev().removeClass('off');">
+            ⮝ Masquer la solution ⮝
+        </button>
+
+        <div class="hidden-solution-content">
+            <p>A la fin de <code>display_animals</code>, on désinstancie le paramètre <code>many_animals</code>, ainsi que les données qu&rsquo;il own récursivement.
+<img src="/CPP_Learning/images/chapter3/ownership/07-case-2d.svg" alt="">
+Les pointeurs contenus dans <code>many_animals.animals</code> (la variable du <code>main</code>) pointent donc sur des données invalidées.<br>
+A la destruction de <code>many_animals</code>, les instructions <code>delete a</code> vont par conséquent échouer.</p>
+
+        </div>
+    </div>
+
+</div></p>
+</li>
+<li>
+<p>Proposez une solution pour résoudre le problème et dessinez le graphe d&rsquo;ownership associé.
+
+<div class="hidden-solution">
+
+    <button class="show-solution-btn" onclick="$(this).addClass('off'); $(this).next().removeClass('off');">
+        ⮟ Afficher la solution ⮟
+    </button>
+
+    <div class="off">
+        <button class="hide-solution-btn" onclick="$(this).parent().addClass('off'); $(this).parent().prev().removeClass('off');">
+            ⮝ Masquer la solution ⮝
+        </button>
+
+        <div class="hidden-solution-content">
+            <p>Il suffit de changer la signature de <code>display_animals</code> pour passer le paramètre par référence (qui peut d&rsquo;ailleurs être constante).
+Les références n&rsquo;ayant pas d&rsquo;impact sur le cycle de vie des données, lorsque l&rsquo;on sort de la fonction, aucun élément ne sera désinstancié.
+<img src="/CPP_Learning/images/chapter3/ownership/07-case-2e.svg" alt=""></p>
+
+        </div>
+    </div>
+
+</div></p>
+</li>
+</ol>
+<hr>
+<h3 id="synthèse">Synthèse</h3>
+<ul>
+<li>L&rsquo;élément responsable du cycle de vie d&rsquo;une donnée est son <strong>owner</strong>.</li>
+<li>Un <strong>pointeur-ownant</strong> doit libérer la donnée allouée ou bien transmettre cette responsabilité à un autre pointeur.</li>
+<li>Un <strong>pointeur-observant</strong> a le même rôle qu&rsquo;une référence, si ce n&rsquo;est qu&rsquo;il peut être vide (= <code>nullptr</code>) et est réassignable.</li>
+<li>Un graphe d&rsquo;ownership permet de détecter différents problèmes :
+<ul>
+<li>si une donnée est ownée par plusieurs éléments =&gt; libération multiple</li>
+<li>si on référence une donnée qui n&rsquo;existe plus =&gt; dangling-reference</li>
+</ul>
+</li>
+<li>Savoir qui own une donnée aide à savoir s&rsquo;il est valide d&rsquo;y accéder ou pas</li>
+</ul>
 
 
 <footer class="footline">
@@ -3216,19 +3741,19 @@ Sur cette page, nous allons introduire le concept d&rsquo;<strong>ownership</str
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/CPP_Learning/js/clipboard.min.js?1706446248"></script>
-    <script src="/CPP_Learning/js/perfect-scrollbar.min.js?1706446248"></script>
-    <script src="/CPP_Learning/js/perfect-scrollbar.jquery.min.js?1706446248"></script>
-    <script src="/CPP_Learning/js/jquery.sticky.js?1706446248"></script>
-    <script src="/CPP_Learning/js/featherlight.min.js?1706446248"></script>
-    <script src="/CPP_Learning/js/highlight.pack.js?1706446248"></script>
+    <script src="/CPP_Learning/js/clipboard.min.js?1706486189"></script>
+    <script src="/CPP_Learning/js/perfect-scrollbar.min.js?1706486189"></script>
+    <script src="/CPP_Learning/js/perfect-scrollbar.jquery.min.js?1706486189"></script>
+    <script src="/CPP_Learning/js/jquery.sticky.js?1706486189"></script>
+    <script src="/CPP_Learning/js/featherlight.min.js?1706486189"></script>
+    <script src="/CPP_Learning/js/highlight.pack.js?1706486189"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/CPP_Learning/js/modernizr.custom-3.6.0.js?1706446248"></script>
-    <script src="/CPP_Learning/js/learn.js?1706446248"></script>
-    <script src="/CPP_Learning/js/hugo-learn.js?1706446248"></script>
+    <script src="/CPP_Learning/js/modernizr.custom-3.6.0.js?1706486189"></script>
+    <script src="/CPP_Learning/js/learn.js?1706486189"></script>
+    <script src="/CPP_Learning/js/hugo-learn.js?1706486189"></script>
     
         
-            <script src="/CPP_Learning/mermaid/mermaid.js?1706446248"></script>
+            <script src="/CPP_Learning/mermaid/mermaid.js?1706486189"></script>
         
         <script>
             mermaid.initialize({ startOnLoad: true });
