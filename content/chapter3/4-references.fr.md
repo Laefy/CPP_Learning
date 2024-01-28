@@ -393,7 +393,7 @@ Les références permettent :
 - d'éviter une copie coûteuse lors d'un passage de paramètres = **passage par référence constante**,
 - d'éviter une copie coûteuse lors d'un retour de fonction = **retour par référence**,
 - d'éviter une copie coûteuse lors de la définition d'une variable (notamment pour les variables intermédiaires) ➔ définition de **variable-référence** plutôt que de **variable-valeur**,
-- de modéliser une **relation d'agrégation** ➔ définition d'un **attribut-référence** plutôt que d'un **attribut-valeur**  
+- de modéliser une **relation d'agrégation** ➔ définition d'un **attribut-référence** plutôt que d'un **attribut-valeur**.  
 
 Attention à bien prendre en compte **la durée de vie des données** lorsque vous définissez une fonction qui renvoie son résultat par référence, ou lorsque vous initialisez des attributs-références.
 
