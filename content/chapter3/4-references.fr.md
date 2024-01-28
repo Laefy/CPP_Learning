@@ -9,9 +9,9 @@ Comme cela doit paraître encore un peu abstrait, nous allons vous présenter co
 
 ### Modifier un argument
 
-Le premier cas d'utilisation des références avait déjà été décrit dans le chapitre 1 : il s'agit de pouvoir **modifier la valeur ou le contenu d'un argument** passé à une fonction.
+Le premier cas d'utilisation des références avait déjà été décrit dans le Chapitre 1 : il s'agit de pouvoir **modifier la valeur ou le contenu d'un argument** passé à une fonction.
 
-Pour rappel, lorsque vous passez un objet par valeur en paramètre à une fonction, l'intégralité de l'instance est copiée !  
+Pour rappel, lorsque vous passez un objet par valeur en paramètre d'une fonction, l'intégralité de l'instance est copiée !  
 Pour les personnes habituées au Java, le transcription de langage consisterait à **cloner** explicitement l'objet avant l'appel.
 ```cpp
 void fcn(MyClass obj)
@@ -27,7 +27,7 @@ int main()
     return 0;
 }
 ```
-serait équivalente à :
+serait équivalent à :
 ```java {hl_lines=9}
 private static void fcn(MyClass obj)
 {
@@ -72,7 +72,7 @@ int main()
 ### Eviter les copies inutiles
 
 Les copies inutiles de variables de type fondamental ne sont pas forcément gênantes.  
-En revanche, dans le cas d'objets qui réalisent des **allocations dynamiques** dans leur **constructeurs** (tels que `std::vector` ou `std::string`), il y a un risque non négligeable que cela impacte les **performances** du programme...
+En revanche, dans le cas d'objets qui réalisent des **allocations dynamiques** dans leur(s) **constructeur(s)** (tels que `std::vector` ou `std::string`), il y a un risque non négligeable que cela impacte les **performances** du programme...
 
 Les références sont donc un bon moyen d'éviter des copies coûteuses.
 
@@ -93,8 +93,8 @@ std::string concat_words(std::vector<std::string> words)
 }
 ```
 Dans le code ci-dessus, on identifie deux endroits où une copie inutile et coûteuse est réalisée :
-- le paramètre `words` est passé par valeur, donc l'argument passé à la fonction sera copié,
-- on copie chaque élément du tableau pour initialiser la variable `w` dans la boucle `for`.
+- Le paramètre `words` est passé par valeur, donc l'argument passé à la fonction sera copié,
+- On copie chaque élément du tableau pour initialiser la variable `w` dans la boucle `for`.
 
 Comment pourriez-vous réécrire cette fonction pour éliminer les copies inutiles ?
 {{% hidden-solution %}}
@@ -181,7 +181,7 @@ int main()
 ```
 
 {{% notice info %}}
-Faites bien attention lorsque vous retournez une donnée par référence, à ce que celle-ci ne soit pas désinstanciée à la fin de l'appel à la fonction.  
+Faites bien attention, lorsque vous retournez une donnée par référence, à ce que celle-ci ne soit pas désinstanciée à la fin de l'appel à la fonction.  
 Par exemple, il ne faut jamais renvoyer une référence sur une variable locale de la fonction (cf l'[exemple de la dangling-reference](../2-lifespan/#références)).  
 Dans notre cas, cela fonctionne car `_name` est un attribut de la classe. Il n'y a donc pas de raison que cette donnée disparaisse à la fin de l'appel à `get_name`.
 {{% /notice %}}
@@ -223,11 +223,10 @@ int main()
 
 Dans le code ci-dessus, vous avez soit lu le code deux fois (en lisant les commentaires et le code), soit lu uniquement les commentaires parce que le code était peu compréhensible...
 
-Le problème, c'est que les commentaires ne sont pas toujours très à jour de ce que le code fait vraiment.
-Du coup, vous perdez du temps à savoir qui est censé avoir raison entre le code et les commentaires.
+Le souci réside dans le fait que les commentaires ne reflètent pas toujours les actions réellement effectuées par le code, notamment lorsque ceux-ci ne sont pas correctement mis à jour après un changement.
+En fin de compte, vous gaspillez du temps à jouer au détective pour déterminer qui, entre le code et les commentaires, est censé détenir la vérité.
 
-Une vraie bonne méthode permettant de clarifier son code consiste à nommer correctement variables et fonctions.
-Les commentaires dont l'unique objectif est de paraphraser votre code peuvent alors tous être retirés.
+Une méthode véritablement efficace pour rendre son code plus clair est de choisir des noms appropriés pour les variables et les fonctions. En conséquence, les commentaires qui ne font que paraphraser le code peuvent être totalement éliminés.
 
 ```cpp
 float compute_average(const std::vector<float>& values)
@@ -267,8 +266,8 @@ Comme vous pouvez le constater, on a utilisé des références pour **décompose
 
 {{% notice note %}}
 On utilise une référence plutôt qu'une variable-valeur afin d'éviter la copie de l'objet.  
-Déjà, cette copie ne sert à rien, mais surtout, c'est la copie de notre grand cousin qui aurait été invité à notre anniversaire.  
-Le comportement du programme n'aurait alors probablement pas été celui attendu.
+Déjà, parce que cette copie ne servirait à rien, mais surtout parce que c'est la copie de notre grand-cousin qui aurait été invitée à notre anniversaire. Et nous, c'est notre vrai grand-cousin qu'on adore.  
+On remarque donc que le comportement du programme n'aurait alors probablement pas été celui attendu.
 {{% /notice %}}
 
 ---
@@ -276,11 +275,11 @@ Le comportement du programme n'aurait alors probablement pas été celui attendu
 ### Agréger des données
 
 Là, vous vous dites peut-être :  
-"Woooh, mais d'où tu me sors des mots chelous là ! C'était déjà assez la galère comme ça et tu m'sors le lexique du démon ! Vas-y j'me casse !! 😡"
+"Woooh, mais d'où tu m'sors des mots chelous là ! C'était d'jà assez la galère comme ça et tu m'sors le lexique du démon ! Vas-y j'me casse !! 😡"
 
 Mais s'il vous plaît, ne partez pas ! Ou alors, partez mais revenez plus tard !
 
-Si vous vous rappelez de vos cours d'UML, l'**agrégation** est une relation entre deux entités, dans laquelle il n'est pas nécessaire que l'une contienne l'autre.  
+Si vous vous rappelez de vos cours d'UML, l'**agrégation** est une relation entre deux entités, où il n'est pas nécessaire que l'une contienne l'autre.  
 C'est une manière pompeuse de dire : "A connait B".  
 En opposition, il y a la relation de **composition** qui revient à dire que "A contient B".
 
@@ -288,7 +287,7 @@ Par exemple, on peut dire qu'il y a une relation d'agrégation entre moi 💁 et
 
 Bref, revenons aux références.  
 On peut modéliser une relation d'agrégation en C++ en plaçant une référence en tant qu'attribut de classe.  
-L'objectif, c'est de pouvoir accéder à une donnée B depuis un objet A, même si B a été instancié ailleurs dans le programme.
+L'objectif, c'est de pouvoir accéder à une donnée B depuis un objet A, même si B a été instanciée ailleurs dans le programme.
 
 Prenez le temps de lire le code suivant pour comprendre ce qu'il s'y passe :
 ```cpp
@@ -354,10 +353,10 @@ int main()
 Dans l'exemple ci-dessus, on veut que la classe `Match` utilise des instances de `Fighter` définies à l'extérieur de la classe.  
 En effet, si les `Fighter` étaient instanciés directement dans `Match` sous forme d'**attributs-valeurs**, on ne pourrait pas les réutiliser dans d'autres combats.  
 En définissant des **attributs-références**, on utilise des `Fighters` qui viennent de l'extérieur de la classe.
-Les `Fighters` ne sont donc pas associés à un seul et unique `Match`.
+Les `Fighter` ne sont donc pas associés à un seul et unique `Match`.
 
 Attention néanmoins avec les attributs-références, c'est souvent synonyme de potentielles dangling-references...  
-Par exemple, supposons que vous ayiez la bonne-mauvaise idée de définir la fonction suivante pour créer la classe `Match` :
+Par exemple, supposons que vous ayiez la très bonne mauvaise idée (ou la mauvaise très idée) de définir la fonction suivante pour créer la classe `Match` :
 ```cpp {linenos=table}
 void create_match(const std::string& name_1, const std::string& name_2)
 {
@@ -380,8 +379,8 @@ Si vous ne trouvez pas, essayez de déterminer où sont instanciées et désinst
 
 {{% hidden-solution %}}
 `m._f1` fait référence à la variable `f1`, définie dans `create_match` à la ligne 3.  
-Cette donnée est désinstanciée à la ligne 7 et n'est donc plus valide au retour dans le `main` : les attributs `m._f1` et `m._f2` constituent des dangling-refs dès la ligne 11.  
-Hors, à la ligne 12, on fait appel à `m.fight()` qui accède au contenu de ces dangling-refs.  
+Cette donnée est désinstanciée à la ligne 7 et n'est donc plus valide au retour dans le `main` : les attributs `m._f1` et `m._f2` constituent des dangling-references dès la ligne 11.  
+Hors, à la ligne 12, on fait appel à `m.fight()` qui accède au contenu de ces dangling-references.  
 Conclusion, on a généré un undefined behavior !
 {{% /hidden-solution %}}
 
@@ -390,13 +389,13 @@ Conclusion, on a généré un undefined behavior !
 ### Synthèse
 
 Les références permettent :
-- de modifier un argument passé à une fonction = **passage par référence non-constante**
-- d'éviter une copie coûteuse lors d'un passage de paramètres = **passage par référence constante**
-- d'éviter une copie coûteuse lors d'un retour de fonction = **retour par référence**
-- d'éviter une copie coûteuse lors de la définition d'une variable (notamment pour les variables intermédiaires) = définition de **variable-référence** plutôt que de **variable-valeur**
-- de modéliser une **relation d'agrégation** = définition d'un **attribut-référence** plutôt que d'un **attribut-valeur**  
+- de modifier un argument passé à une fonction = **passage par référence non-constante**,
+- d'éviter une copie coûteuse lors d'un passage de paramètres = **passage par référence constante**,
+- d'éviter une copie coûteuse lors d'un retour de fonction = **retour par référence**,
+- d'éviter une copie coûteuse lors de la définition d'une variable (notamment pour les variables intermédiaires) ➔ définition de **variable-référence** plutôt que de **variable-valeur**,
+- de modéliser une **relation d'agrégation** ➔ définition d'un **attribut-référence** plutôt que d'un **attribut-valeur**  
 
-Attention à bien prendre en compte **la durée de vie des données** lorsque vous définissez une fonction qui renvoie son résultat par référence ou lorsque vous initialisez des attributs-référence.
+Attention à bien prendre en compte **la durée de vie des données** lorsque vous définissez une fonction qui renvoie son résultat par référence, ou lorsque vous initialisez des attributs-références.
 
 Aide-mémoire pour le passage des paramètres (fonctionne dans la plupart des cas) :
 ```mermaid
