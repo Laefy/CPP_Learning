@@ -20,8 +20,8 @@ class ClassName
 {
 public:
     ClassName(type p1, type p2, ...)
-        : _attribute_1 { /* value for _a1 */ }
-        , _attribute_2 { /* value for _a2 */ }
+        : _attribute_1 { /* value for _attribute_1 */ }
+        , _attribute_2 { /* value for _attribute_2 */ }
         , ...
     {
         // some optional code
@@ -60,7 +60,7 @@ Dog dog { "Colley", "Lassie" };
 ```
 
 Commencez par modifier votre fonction `main`, de manière à passer le nom `"Batman"` à la construction de la variable `p`, puis supprimez l'appel à `set_name`.  
-Modifiez ensuite la classe `Person` pour lui ajouter un constructeur à un paramètre, dans lequel vous initialiser l'attribut `_name`. Vous n'êtes pas obligé d'initialiser `_age` dans la liste d'initialisation du constructeur, car cet attribut est déjà initialisé au niveau de sa définition (= **class initializer**).
+Modifiez ensuite la classe `Person` pour lui ajouter un constructeur à un paramètre, dans lequel vous initialisez l'attribut `_name`. Vous n'êtes pas obligé d'initialiser `_age` dans la liste d'initialisation du constructeur, car cet attribut est déjà initialisé au niveau de sa définition (= **class initializer**).
 
 Comme d'habitude, compilez et testez ensuite votre programme.
 
@@ -133,28 +133,27 @@ Modifiez l'instanciation de `p` dans la fonction `main` de manière à ne plus l
 Person p;
 ```
 
-Le programme ne compile plus alors qu'il compilait tout à l'heure.  
-Commentez la définition de votre constructeur, et essayez de compiler à nouveau. Ca recompile...
+Oups ! Le programme ne compile plus, alors qu'il compilait tout à l'heure.  
+Commentez la définition de votre constructeur, et essayez de compiler à nouveau. Ça recompile...
 
 **Pourquoi le programme compile quand on retire un constructeur ?**
 
 Lorsque l'utilisateur ne définit aucun constructeur, le compilateur définit (s'il le peut) un constructeur qui n'attend aucun argument.
 
-En terme de vocabulaire, on appelle :
+En termes de vocabulaire, on appelle :
 - **constructeur par défaut** tout constructeur qui n'attend aucun paramètre,
 - **implémentation par défaut** une implémentation fournie automatiquement par le compilateur.
 
 Le compilateur définit donc une **implémentation par défaut du constructeur par défaut** (oui, c'est long à dire) si le programmeur ne définit **aucun** constructeur.
 
 L'implémentation par défaut du constructeur par défaut initialise les attributs de la classe selon les règles suivantes :
-1. en utilisant le class-initializer s'il est fourni (comme pour `_age`),
-2. s'il n'y a pas de class-initializer et que l'attribut est une classe, en appelant son constructeur par défaut (comme pour `_name`, qui étant une `std::string`, est construit par défaut avec la chaîne vide),
-3. s'il n'y a pas de class-initializer et que l'attribut n'est pas une classe, alors il ne passe rien, et le contenu de l'attribut est donc indéfini.
+1. Si un class-initializer est fourni, on l'utilise (comme pour `_age`),
+2. S'il n'y a pas de class-initializer et que l'attribut est une classe, on appelle son constructeur par défaut (comme pour `_name` qui, étant une `std::string`, est construit par défaut avec la chaîne vide),
+3. S'il n'y a pas de class-initializer et que l'attribut n'est pas une classe, alors il ne se passe rien, et le contenu de l'attribut est donc indéfini.
 
-Du coup pour répondre à la question, le code originel compilait car le compilateur définissait un constructeur par défaut à la classe `Person`.  
-Dès lors que vous avez ajouté votre propre constructeur, le compilateur a supposé que vous ne vouliez probablement plus de l'implémentation qu'il vous fournissait. Il ne vous était donc plus possible d'instancier la classe `Person` sans argument.
+Du coup, afin de répondre à la question, le code initial compilait en raison de la définition par le compilateur d'un constructeur par défaut pour la classe `Person`. Cependant, dès que vous avez introduit votre propre constructeur, le compilateur a supposé que vous ne souhaitiez probablement plus utiliser l'implémentation par défaut qu'il fournissait. Par conséquent, il vous était alors impossible d'instancier la classe `Person` sans spécifier d'arguments.
 
-Si vous vouliez pouvoir le faire à nouveau, tout en gardant votre constructeur à 2 paramètres, vous devriez donc définir vous-même un constructeur par défaut (c'est-à-dire un constructeur sans paramètre).
+Dans l'éventualité où vous souhaitez rétablir cette possibilité tout en conservant votre constructeur à 2 paramètres, il vous faudrait alors explicitement définir un constructeur par défaut, c'est-à-dire un constructeur sans paramètres.
 
 ```cpp
 class Person
@@ -172,8 +171,8 @@ public:
 ```
 
 {{% notice note %}}
-1- Si on n'initialise aucun attribut dans la liste d'initialisation d'un constructeur, alors il faut omettre complètement cette liste (écrire `Person() {}` plutôt que `Person() : {}`).  
-2- Si un attribut n'est pas initialisé via la liste d'initialisation, alors il est initialisé selon les mêmes règles que celles exposées pour l'implémentation par défaut du constructeur par défaut. C'est pour cela que l'on n'a pas besoin de respécifier `_age` dans la liste d'initialisation du constructeur à 2 paramètres.
+1. Si aucun attribut n'est initialisé dans la liste d'initialisation d'un constructeur, il est nécessaire d'omettre complètement cette liste (c'est-à-dire écrire `Person() {}` plutôt que `Person() : {}`).  
+2. Si un attribut n'est pas initialisé via la liste d'initialisation, il est automatiquement initialisé selon les mêmes règles que celles définies pour l'implémentation par défaut du constructeur par défaut. C'est la raison pour laquelle il n'est pas nécessaire de spécifier à nouveau `_age` dans la liste d'initialisation du constructeur à 2 paramètres.
 {{% /notice %}}
 
 ---
@@ -190,12 +189,12 @@ Et enfin, lorsqu'il n'y a qu'un seul paramètre, on peut dans certains cas utili
 
 Ces syntaxes s'utilisent également pour l'instanciation des variables de types fondamentaux : `int a = 1;` / `int a { 1 };` / `int a(1);` 
 
-Pour le moment, vous pouvez considérer que ces méthodes sont plus ou moins équivalentes (évidemment, ce n'est pas le cas, sinon ce ne serait pas drôle, mais nous y reviendrons un peu plus tard).\
+Pour le moment, vous pouvez considérer que ces méthodes sont plus ou moins équivalentes (évidemment, ce n'est pas le cas, sinon ce ne serait pas drôle, mais nous y reviendrons un peu plus tard).  
 Comme indiqué dans le Chapitre 1, ne vous embêtez pas à mémoriser toutes ces règles par coeur.
-Retenez simplement que d'autres variations de syntaxe existent, pour que vous ne soyiez pas étonner si vous les rencontrez dans du code que vous n'avez pas écrit.
+Retenez simplement que d'autres variantes de syntaxe existent, pour que vous ne soyiez pas étonnés si vous les rencontrez dans du code que vous n'avez pas écrit.
 
 {{% notice info %}}
-Si vous choisissez d'utiliser la syntaxe `()`, faites attention lorsque vous appelez le constructeur par défaut (= à 0 paramètre), car il faut alors complètement omettre les parenthèses.\
+Si vous choisissez d'utiliser la syntaxe `()`, faites attention lorsque vous appelez le constructeur par défaut (= à 0 paramètre), car il faut alors complètement omettre les parenthèses.  
 Si vous écrivez `Class obj();` au lieu de `Class obj;`, le compilateur va râler.
 {{% /notice %}}
 
@@ -208,8 +207,8 @@ Contrairement à l'initialisation des variables, on peut écrire `: _attr()` san
 
 ### À bas les setters
 
-L'ajout de votre constructeur vous a permis de supprimer le setter pour `_name`, afin que l'on ne puisse pas modifier l'attribut après son initialisation.\
-Il reste le setter pour `_age`, qui ne pose pas spécialement de problème, si ce n'est qu'on peut remonter le temps avec. Et là, c'est *Batman*, pas *Retour vers le futur* 🦇
+L'ajout de votre constructeur vous a permis de supprimer le setter pour `_name`, afin que l'on ne puisse plus modifier l'attribut après son initialisation.  
+Il reste cependant le setter pour `_age`, qui ne pose pas spécialement de problème, si ce n'est qu'on peut remonter le temps avec. Et là, c'est *Batman*, pas *Retour vers le futur* 🦇
 
 Vous allez donc remplacer votre fonction `set_age` par une fonction `wait`, qui permet d'augmenter l'âge de votre objet.
 Celle-ci prendra en paramètre le nombre d'années à attendre.
@@ -228,14 +227,14 @@ void wait(unsigned int years) { _age += years; }
 {{% /hidden-solution %}}
 
 {{% notice note %}}
-Définir et utiliser des setters n'est pas forcément mauvais. Ce qui est mauvais, c'est de définir des setters pour tous les attributs d'une classe, sans prendre le temps de définir au préalable ses invariants (l'âge d'une personne ne peut pas décroître au cours de l'exécution).
+Définir et utiliser des setters n'est pas forcément une mauvaise pratique. Ce qui est mauvais, c'est de définir des setters pour tous les attributs d'une classe, sans prendre le temps de définir au préalable ses invariants (l'âge d'une personne ne peut pas décroître au cours de l'exécution).
 {{% /notice %}}
 
 ---
 
 ### Synthèse
 
-- Un **constructeur** est une fonction-membre sans type de retour et ayant pour identifiant le nom de la class.
+- Un **constructeur** est une fonction-membre sans type de retour et ayant pour identifiant le nom de la classe.
 - La **liste d'initialisation** permet d'initialiser les attributs de la classe.
 - Si un attribut est initialisé directement sur la ligne de sa définition, on parle de **class-initializer**.
 - Si un constructeur n'a aucun paramètre, alors il s'agit du **constructeur par défaut** de la classe.
@@ -243,6 +242,6 @@ Définir et utiliser des setters n'est pas forcément mauvais. Ce qui est mauvai
 - Si on ne définit aucun constructeur, le compilateur génère l'**implémentation par défaut** du constructeur par défaut.
 
 {{% notice warning %}}
-En terme de vocabulaire, attention à ne pas confondre constructeur par défaut, et implémentation par défaut fournie par le compilateur.  
+En termes de vocabulaire, attention à ne pas confondre **constructeur par défaut**, et **implémentation par défaut** fournie par le compilateur.  
 Vous pouvez très bien implémenter vous-même un constructeur par défaut, et le compilateur peut fournir une implémentation par défaut pour d'autres fonctions que le constructeur. 
 {{% /notice %}}

@@ -281,7 +281,7 @@ public:
 
 ### Synthèse
 
-- Les classes peuvent contenir des **attributs** et des **fonctions-membre**
+- Les classes peuvent contenir des **attributs** et des **fonctions-membre**.
 - La définition d'une classe se termine toujours par un `;`
-- On utilise `public:` ou `private:` devant un groupe de champs pour indiquer s'ils sont publics ou privés
-- Si une fonction-membre n'a pas vocation à changer l'état de l'objet, il faut indiquer qu'elle est **const** (à placer derrière les parenthèses des paramètres)
+- On utilise `public:` ou `private:` devant un groupe de champs pour indiquer s'ils sont publics ou privés.
+- Si une fonction-membre n'a pas vocation à changer l'état de l'objet, il faut indiquer qu'elle est **const** (à placer derrière les parenthèses des paramètres).

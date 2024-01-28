@@ -11,10 +11,10 @@ Comme vous pourrez le constater, mis à part quelques subtilités, la plupart de
 ### Variables et types fondamentaux
 
 Comme dans tous les langages ou presque, on retrouve :
-- Les entiers (signés ou non-signés) : `int`, `short`, `unsigned int`, ...
-- Les flottants : `float`, `double`
-- Les types caractère : `char`, `unsigned char`
-- Le type booléen : `bool` (et non pas `boolean` comme en Java ⚠️)
+- les entiers (signés ou non-signés) : `int`, `short`, `unsigned int`, ...
+- les flottants : `float`, `double`
+- les types caractère : `char`, `unsigned char`
+- le type booléen : `bool` (et non pas `boolean` comme en Java ⚠️)
 
 Pour définir des variables, c'est comme d'habitude : `<type> <nom> = <valeur>;`
 

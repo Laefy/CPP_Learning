@@ -4,14 +4,14 @@ weight: 2
 ---
 
 Nous allons maintenant enfin pouvoir coder ! Dans la suite de ce chapitre, vous verrez comment :
-- Écrire un programme,
-- Déclarer des variables,
-- Écrire sur la sortie standard,
-- Lire sur l'entrée standard,
-- Définir des fonctions,
-- Utiliser les structures de contrôle (conditions, boucles, switch, etc.),
-- Créer des tableaux et des chaînes de caractères,
-- Utiliser des références.
+- écrire un programme,
+- déclarer des variables,
+- écrire sur la sortie standard,
+- lire sur l'entrée standard,
+- définir des fonctions,
+- utiliser les structures de contrôle (conditions, boucles, switch, etc.),
+- créer des tableaux et des chaînes de caractères,
+- utiliser des références.
 
 Ça fait beaucoup hein ? 😈
 

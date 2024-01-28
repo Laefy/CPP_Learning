@@ -59,11 +59,11 @@ Plutôt qu'expliquer précisément ce que fait le compilateur pour chacune d'ent
 
 Le compilateur lit le fichier instruction par instruction, en partant du haut du fichier.  
 Si l'instruction contient :
-- Une définition ou déclaration de symboles (variable, fonction ou type).  
+- une définition ou déclaration de symboles (variable, fonction ou type).  
 ➔ Le compilateur ajoute ce symbole à la table des symboles.
-- L'utilisation d'un symbole, comme un appel de fonction, la lecture ou l'écriture d'une variable.  
+- l'utilisation d'un symbole, comme un appel de fonction, la lecture ou l'écriture d'une variable.  
 ➔ Le compilateur regarde dans la table des symboles **s'il existe** et **si le contexte d'utilisation est cohérent**.
-- La fin d'un bloc.  
+- la fin d'un bloc.  
 ➔ le compilateur supprime de la table des symboles tous ceux qui ont été définis dans ce bloc.
 
 Au fur-et-à-mesure de l'analyse, le compilateur ajoute également dans le fichier-objet les instructions binaires correspondant aux fonctions et aux variables globales définies dans le fichier.
@@ -225,8 +225,8 @@ Puis le compilateur lit les instructions au fur-et-à-mesure :
 
 Dans le cas ci-dessus, la compilation s'est bien passée.  
 Le fichier-objet en sortie contient :
-- Une variable globale appelée `half` et les instructions binaires permettant de l'initialiser à `{ 1, 2 }`,
-- Une fonction `main` qui n'attend aucun paramètres et les instructions binaires qui la constituent.
+- une variable globale appelée `half` et les instructions binaires permettant de l'initialiser à `{ 1, 2 }`,
+- une fonction `main` qui n'attend aucun paramètres et les instructions binaires qui la constituent.
 
 ---
 
@@ -1065,13 +1065,13 @@ En revanche, pour de plus gros programmes, sachez que plus vous mettrez de chose
 Il faut retenir que la compilation d'un programme se fait en deux étapes : la compilation des fichiers-source suivie de l'édition des liens.
 
 Durant la compilation, le compilateur :
-- Ajoute les symboles dans une table lorsqu'il voit leurs définitions ou leurs déclarations,
-- Ajoute les instructions binaires des fonctions au fichier-objet losqu'il parcourt leur définition,
-- Vérifie que les symboles sont utilisés dans le bon contexte, à l'aide du contenu de la table des symboles.
+- ajoute les symboles dans une table lorsqu'il voit leurs définitions ou leurs déclarations,
+- ajoute les instructions binaires des fonctions au fichier-objet losqu'il parcourt leur définition,
+- vérifie que les symboles sont utilisés dans le bon contexte, à l'aide du contenu de la table des symboles.
 
 Durant l'édition des liens, le linker :
-- Retrouve pour chaque appel de fonction sa définition dans les fichiers-objet,
-- Écrit l'exécutable final en commençant par les instructions de la fonction `main`, et en ajoutant récursivement les instructions des fonctions appelées dedans. 
+- retrouve pour chaque appel de fonction sa définition dans les fichiers-objet,
+- écrit l'exécutable final en commençant par les instructions de la fonction `main`, et en ajoutant récursivement les instructions des fonctions appelées dedans. 
 
 Quelques bonnes pratiques lorsqu'on code **le contenu d'un header** :
 - On commence toujours par écrire `#pragma once`,
