@@ -17,15 +17,15 @@ La compilation désigne le procédé consistant à transformer du code-source en
 Dans ce cours, on utilisera le terme de "compilation" pour faire référence soit à la génération complète d'un exécutable (= compilation d'un programme), soit à la génération d'un fichier-objet (= compilation d'un fichier-source).
 
 La **compilation d'un programme** est constituée de deux phases bien distinctes :
-1. la **compilation de chacun de vos .cpp** en fichier-objet, réalisée par le compilateur,
-2. l'**édition des liens**, qui permet de créer un exécutable à partir de tous vos fichiers-objet, réalisée par le linker.
+1. La **compilation de chacun de vos `.cpp`** en fichier-objet, réalisée par le compilateur,
+2. L'**édition des liens**, qui permet de créer un exécutable à partir de tous vos fichiers-objet, réalisée par le linker.
 
 `g++` est à la fois un compilateur et un linker.  
 Lorsque vous exécutez `g++ -o program.exe a.cpp b.cpp c.cpp`, l'outil réalise donc 4 opérations :
-1. la compilation de a.cpp => `g++ -c a.cpp`
-2. la compilation de b.cpp => `g++ -c b.cpp`
-3. la compilation de c.cpp => `g++ -c c.cpp`
-4. l'édition des liens pour générer program.exe => `g++ -o program.exe a.o b.o c.o`
+1. La compilation de `a.cpp` ➔ `g++ -c a.cpp`
+2. La compilation de `b.cpp` ➔ `g++ -c b.cpp`
+3. La compilation de `c.cpp` ➔ `g++ -c c.cpp`
+4. L'édition des liens pour générer `program.exe` ➔ `g++ -o program.exe a.o b.o c.o`
 
 ```mermaid
 flowchart TD;
@@ -48,7 +48,7 @@ flowchart TD;
 
 Concentrons nous d'abord sur la phase de compilation.
 
-Le compilateur attend en entrée un fichier .cpp et écrit le fichier-objet correspondant.
+Le compilateur attend en entrée un fichier `.cpp` et écrit le fichier-objet correspondant.
 Ce fichier est un binaire contenant les instructions des fonctions et l'instanciation des variables globales définies dedans.
 
 Lorsque vous lancez la compilation, il y a tout d'abord le préprocesseur qui lit et récrit le fichier.
@@ -59,12 +59,12 @@ Plutôt qu'expliquer précisément ce que fait le compilateur pour chacune d'ent
 
 Le compilateur lit le fichier instruction par instruction, en partant du haut du fichier.  
 Si l'instruction contient :
-- une définition ou déclaration de symboles (variable, fonction ou type)  
-=> le compilateur ajoute ce symbole à la table des symboles
-- l'utilisation d'un symbole, comme un appel de fonction, la lecture ou l'écriture d'une variable  
-=> le compilateur regarde dans la table des symboles **s'il existe** et **si le contexte d'utilisation est cohérent**
-- la fin d'un bloc  
-=> le compilateur supprime de la table des symboles tous ceux qui ont été définis dans ce bloc
+- Une définition ou déclaration de symboles (variable, fonction ou type).  
+➔ Le compilateur ajoute ce symbole à la table des symboles.
+- L'utilisation d'un symbole, comme un appel de fonction, la lecture ou l'écriture d'une variable.  
+➔ Le compilateur regarde dans la table des symboles **s'il existe** et **si le contexte d'utilisation est cohérent**.
+- La fin d'un bloc.  
+➔ le compilateur supprime de la table des symboles tous ceux qui ont été définis dans ce bloc.
 
 Au fur-et-à-mesure de l'analyse, le compilateur ajoute également dans le fichier-objet les instructions binaires correspondant aux fonctions et aux variables globales définies dans le fichier.
 
@@ -225,8 +225,8 @@ Puis le compilateur lit les instructions au fur-et-à-mesure :
 
 Dans le cas ci-dessus, la compilation s'est bien passée.  
 Le fichier-objet en sortie contient :
-- une variable globale appelée `half` et les instructions binaires permettant de l'initialiser à `{ 1, 2 }`,
-- une fonction `main` qui n'attend aucun paramètres et les instructions binaires qui la constituent.
+- Une variable globale appelée `half` et les instructions binaires permettant de l'initialiser à `{ 1, 2 }`,
+- Une fonction `main` qui n'attend aucun paramètres et les instructions binaires qui la constituent.
 
 ---
 
@@ -678,8 +678,8 @@ end
 ```
 
 Le linker identifie les éléments dont les instructions seront exécutées quoi qu'il arrive :
-- le point d'entrée du programme, c'est-à-dire la fonction `main`,
-- les instructions nécessaires à l'initialisation des variables globales.
+- Le point d'entrée du programme, c'est-à-dire la fonction `main`,
+- Les instructions nécessaires à l'initialisation des variables globales.
 
 ```mermaid
 graph LR
@@ -1065,15 +1065,15 @@ En revanche, pour de plus gros programmes, sachez que plus vous mettrez de chose
 Il faut retenir que la compilation d'un programme se fait en deux étapes : la compilation des fichiers-source suivie de l'édition des liens.
 
 Durant la compilation, le compilateur :
-- ajoute les symboles dans une table lorsqu'il voit leurs définitions ou leurs déclarations,
-- ajoute les instructions binaires des fonctions au fichier-objet lorsqu'il parcourt leur définition,
-- vérifie que les symboles sont utilisés dans le bon contexte, à l'aide du contenu de la table des symboles.
+- Ajoute les symboles dans une table lorsqu'il voit leurs définitions ou leurs déclarations,
+- Ajoute les instructions binaires des fonctions au fichier-objet losqu'il parcourt leur définition,
+- Vérifie que les symboles sont utilisés dans le bon contexte, à l'aide du contenu de la table des symboles.
 
 Durant l'édition des liens, le linker :
-- retrouve pour chaque appel de fonction sa définition dans les fichiers-objet,
-- écrit l'exécutable final en commençant par les instructions de la fonction `main`, et en ajoutant récursivement les instructions des fonctions appelées dedans. 
+- Retrouve pour chaque appel de fonction sa définition dans les fichiers-objet,
+- Écrit l'exécutable final en commençant par les instructions de la fonction `main`, et en ajoutant récursivement les instructions des fonctions appelées dedans. 
 
 Quelques bonnes pratiques lorsqu'on code **le contenu d'un header** :
-- on commence toujours par écrire `#pragma once`,
-- on utilise des "forward-declare" plutôt que des inclusions lorsque cela est possible,
-- on écrit `inline` devant les **définitions** de fonctions (pas les déclarations).
+- On commence toujours par écrire `#pragma once`,
+- On utilise des "forward-declare" plutôt que des inclusions lorsque cela est possible,
+- On écrit `inline` devant les **définitions** de fonctions (pas les déclarations).
