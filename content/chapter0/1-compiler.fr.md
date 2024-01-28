@@ -20,7 +20,7 @@ MSYS2 contient en particulier MinGW, qui est l'équivalent du compilateur gcc/g+
    ```
 4. Ouvrez l'éditeur de variables d'environnement Windows.
 ![](/CPP_Learning/images/chapter0/env-var.png)
-5. Dans la variable `Path` (utilisateur ou système, peu importe), ajoutez "C:\msys64\ucrt64\bin".
+5. Dans la variable `Path` (utilisateur ou système, peu importe), ajoutez `"C:\msys64\ucrt64\bin"`.
 ![](/CPP_Learning/images/chapter0/add-path-v2.png)
 6. Si vous aviez une autre version de MinGW d'installée (en général dans C:\mingw), c'est **très important** que vous supprimiez son répertoire bin/ du `Path` utilisateur **et** du `Path` système.
 ![](/CPP_Learning/images/chapter0/rm-path-v2.png)
@@ -29,12 +29,12 @@ La dernière ligne devrait maintenant indiquer une version de gcc >= 9.
 
 Testez maintenant que tout fonctionne en suivant les étapes ci-dessous.
 1. Téléchargez {{< open_in_new_tab "/CPP_Learning/code/helloworld.cpp" "ce fichier" />}}.
-2. Ouvrez une fenêtre Powershell dans le répertoire contenant le fichier (vous pouvez utiliser Shift+RClick depuis l'explorateur de fichiers pour faire apparaître l'option dans le menu contextuel).
+2. Ouvrez une fenêtre Powershell dans le répertoire contenant le fichier (vous pouvez utiliser `Shift + Clic Droit` depuis l'explorateur de fichiers pour faire apparaître l'option dans le menu contextuel).
 ![](/CPP_Learning/images/chapter0/powershell.png)
 3. Exécutez la commande `g++ .\helloworld.cpp -o hello`\
-Un fichier hello.exe devrait avoir été généré.
+Un fichier `hello.exe` devrait avoir été généré.
 4. Exécutez `.\hello.exe`.
-Le programme devrait vous répondre "Hello!".
+Le programme devrait vous répondre `Hello!`.
 
 ---
 
@@ -50,21 +50,21 @@ Testez maintenant que tout fonctionne en suivant les étapes ci-dessous.
 1. Téléchargez {{< open_in_new_tab "/CPP_Learning/code/helloworld.cpp" "ce fichier" />}}.
 2. Ouvrez un terminal et placez-vous dans le répertoire contenant le fichier téléchargé : `cd path/to/folder`
 3. Exécutez la commande `g++ ./helloworld.cpp -o hello`\
-Un fichier hello devrait avoir été généré.
+Un fichier `hello` devrait avoir été généré.
 4. Exécutez `./hello`.
-Le programme devrait vous répondre "Hello!".
+Le programme devrait vous répondre `Hello!`.
 
 ---
 
 ### MacOS
 
-1. Ouvrez un terminal et exécuter `clang --version`
+1. Ouvrez un terminal et exécutez `clang --version`
 2. Si la commande échoue, installez clang en exécutant `xcode-select --install`
 
 Testez maintenant que tout fonctionne en suivant les étapes ci-dessous.
 1. Téléchargez {{< open_in_new_tab "/CPP_Learning/code/helloworld.cpp" "ce fichier" />}}.
 2. Ouvrez un terminal et placez-vous dans le répertoire contenant le fichier téléchargé : `cd path/to/folder`
 3. Exécutez la commande `clang++ ./helloworld.cpp -o hello`\
-Un fichier hello devrait avoir été généré.
+Un fichier `hello` devrait avoir été généré.
 4. Exécutez `./hello`.
-Le programme devrait vous répondre "Hello!".
+Le programme devrait vous répondre `Hello!`.
