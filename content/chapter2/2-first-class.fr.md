@@ -35,9 +35,9 @@ qui consiste à écrire le code des tests avant d'écrire le code appelé. Dans 
 
 {{% notice note %}}
 Pourquoi vous faire faire l'exercice de cette manière ? Déjà, cela vous permet de découvrir un peu des méthodologies qui sont employées en entreprise. Ensuite, parce que le TDD a de gros avantages :\
-\- vous n'implémentez que du code utile (principes [KISS](https://fr.wikipedia.org/wiki/Principe_KISS) et [YAGNI](https://fr.wikipedia.org/wiki/YAGNI)) : pas besoin de réfléchir à ce que vous devez fournir, puisque le code appelant vous dit quoi fournir, et vous perdez moins de temps à écrire du code qui au final ne sert à rien (= **code mort**),\
-\- vous ne déliverez que du code testé,\
-\- vous avez moins d'opportunités de **régression**, c'est-à-dire d'introduire des bugs dans du code qui fonctionnait à la base, lors d'un refactoring par exemple.
+\- Vous n'implémentez que du code utile (principes [KISS](https://fr.wikipedia.org/wiki/Principe_KISS) et [YAGNI](https://fr.wikipedia.org/wiki/YAGNI)) : pas besoin de réfléchir à ce que vous devez fournir, puisque le code appelant vous dit quoi fournir, et vous perdez moins de temps à écrire du code qui au final ne sert à rien (= **code mort**),\
+\- Vous ne déliverez que du code testé,\
+\- Vous avez moins d'opportunités de **régression**, c'est-à-dire d'introduire des bugs dans du code qui fonctionnait à la base, lors d'un refactoring par exemple.
 {{% /notice %}}
 
 ---
