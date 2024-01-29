@@ -14,4 +14,4 @@
 {{ end }}
 
 <label for="q{{ $counter }}">{{ $counter }}- {{ .Inner | markdownify }}</label>
-<textarea id="q{{ $counter }}" name="{{ .Inner }}" rows="{{ $rows }}" cols="50"></textarea>
+<textarea id="q{{ $counter }}" name="{{ $counter }}- {{ .Inner }}" rows="{{ $rows }}" cols="50"></textarea>
