@@ -13,5 +13,7 @@
   {{ $rows = . }}
 {{ end }}
 
+{{ $name := replaceRE `\[([^\]]*)\]` "［$1］" (.Inner | markdownify | plainify | htmlUnescape) }}
+
 <label for="q{{ $counter }}">{{ $counter }}- {{ .Inner | markdownify }}</label>
-<textarea id="q{{ $counter }}" name="{{ .Inner }}" rows="{{ $rows }}" cols="50"></textarea>
+<textarea id="q{{ $counter }}" name="{{ $counter }}- {{ $name }}" rows="{{ $rows }}" cols="50"></textarea>

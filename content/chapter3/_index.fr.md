@@ -11,7 +11,7 @@ Contrairement à des langages comme Java ou C#, qui disposent d'un garbage-colle
 
 Il doit penser à libérer la mémoire lorsqu'il ne compte plus s'en servir, mais surtout, il doit faire attention à ne pas tenter d'accéder à des données si celles-ci n'existent déjà plus 😬
 
-Dans ce chapitre, nous nous intéresserons au cyle de vie des données.  
-Nous vous expliquerons en quoi consiste la construction et la destruction des objets et à quel moment elles se produisent.  
+Dans ce chapitre, nous nous intéresserons au cycle de vie des données.  
+Nous reviendrons sur les notions d'instanciation et de désinstanciation des données, et nous détaillerons à quel moment ces deux événements se produisent.  
 Nous ferons un rappel de comment sont stockées les données en mémoire.  
 Enfin, nous reparlerons des références et verrons comment faire pour comprendre si une donnée à laquelle le développeur souhaite accéder est toujours valide ou non.
