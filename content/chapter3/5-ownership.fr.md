@@ -87,7 +87,7 @@ Dans ce cas précis, c'est la fonction `main` qui own le contenu de `clio.driver
 
 #### Ressources gérées par une classe
 
-Lorsque le cycle de vie d'une ressource (mémoire, fichier, connexion réseau, etc) stockée à l'intérieur d'un objet est orchestré par les fonctions-membre de cet objet, alors ces ressources sont ownées par l'objet.
+Lorsque le cycle de vie d'une ressource (mémoire, fichier, connexion réseau, etc) stockée à l'intérieur d'un objet est orchestré par les fonctions-membres de cet objet, alors ces ressources sont ownées par l'objet.
 
 Prenons ici l'exemple d'un `std::vector`.  
 ```cpp
@@ -99,7 +99,7 @@ drivers.emplace_back();
 
 Chacun des `Driver` faisant partie du tableau est stocké sur un segment-mémoire alloué dynamiquement par l'objet `drivers`.  
 Ce segment sera libéré à la destruction de `drivers` (ou plus tôt, en fonction des fonctions qu'on appelera sur l'objet), entraînant la désinstanciation des `Drivers`.  
-On peut donc dire que `drivers` owns chacun des éléments de type `Driver` ajouté via l'appel à `emplace_back`.
+On peut donc dire que `drivers` own chacun des éléments de type `Driver` ajoutés via l'appel à `emplace_back`.
 
 ![std::vector](/CPP_Learning/images/chapter3/ownership/04-vector.svg)
 
@@ -173,7 +173,7 @@ int main()
 <br/>
 {{% hidden-solution %}}
 Les éléments de `all_drivers` étant des pointeurs, on utilise un contour plein pour les cases du tableau.  
-En revanche, comme ces pointeurs ne contrôlent pas le cycle de vie de chacun des `Drivers`, on les relie vers eux avec flèches pointillées.
+En revanche, comme ces pointeurs ne contrôlent pas le cycle de vie de chacun des `Drivers`, on les relie vers eux avec des flèches en pointillé.
 ![Pointeur-observant](/CPP_Learning/images/chapter3/ownership/06-observing-ptr.svg)
 {{% /hidden-solution %}}
 
@@ -181,14 +181,14 @@ En revanche, comme ces pointeurs ne contrôlent pas le cycle de vie de chacun de
 
 ### Exercices pratiques
 
-Nous allons maintenant vous présentez quelques petits bouts de code.  
+Nous allons maintenant vous présenter quelques petits bouts de code.  
 Vous devrez dessiner le graphe d'ownership correspondant à l'état du programme aux instructions indiquées, et en déduire les éventuels problèmes s'il y en a.  
 Si vous souhaitez dessiner vos graphes sur ordinateur, vous pouvez utiliser [draw.io](https://app.diagrams.net/).
 
 Pour cela, vous pourrez vous appuyer sur les règles d'architecture suivantes :
-- chaque donnée a un seul et unique owner (=> une unique flèche pleine arrive sur chaque case)
-- toutes les références mènent à une donnée valide (=> pas de flèche qui pointe sur une case rouge)
-- si un pointeur est ownant, sa donnée sera correctement libérée **ou bien** il transfèrera l'ownership à un autre pointeur (pas les deux)
+- Chaque donnée a un seul et unique owner (➔ une unique flèche pleine arrive sur chaque case)
+- Toutes les références mènent à une donnée valide (➔ pas de flèche qui pointe sur une case rouge)
+- Si un pointeur est ownant, sa donnée sera correctement libérée **ou bien** il transfèrera l'ownership à un autre pointeur (pas les deux)
 
 #### Cas n°1
 
@@ -277,7 +277,7 @@ int main()
 }
 ```
 
-1. Etablissez le graphe d'ownership du programme à la ligne 33.  
+1. Établissez le graphe d'ownership du programme à la ligne 33.  
 Selon-vous, les pointeurs contenus dans `ManyAnimals::animals` sont-ils ownants ou observants ? 
 {{% hidden-solution %}}
 Le destructeur de `ManyAnimals` se charge de libérer la mémoire associée à chacun des pointeurs contenus dans l'attribut `animals`.  
@@ -288,7 +288,7 @@ On représente donc les relations associées avec des flèches pleines.
 
 2. Dessinez maintenant les modifications dans ce graphe une fois arrivé à la ligne 14 (c'est-à-dire pendant la sortie du `main`, lorsque l'instance de `many_animals` est en cours de destruction).
 {{% hidden-solution %}}
-A la ligne 14, les instances de `Animal` ont toutes été libérées.  
+À la ligne 14, les instances de `Animal` ont toutes été libérées.  
 ![](/CPP_Learning/images/chapter3/ownership/07-case-2b.svg)
 {{% /hidden-solution %}}
 
@@ -305,10 +305,10 @@ Le problème ici, c'est qu'on a maintenant deux owners pour les données `dog`, 
 4. Dessinez maintenant le graphe à la sortie de la fonction `display_animals`.  
 Expliquez ce qui pose problème et qui empêche le programme de se terminer correctement.
 {{% hidden-solution %}}
-A la fin de `display_animals`, on désinstancie le paramètre `many_animals`, ainsi que les données qu'il own récursivement.
+À la fin de `display_animals`, on désinstancie le paramètre `many_animals`, ainsi que les données qu'il own récursivement.
 ![](/CPP_Learning/images/chapter3/ownership/07-case-2d.svg)
 Les pointeurs contenus dans `many_animals.animals` (la variable du `main`) pointent donc sur des données invalidées.  
-A la destruction de `many_animals`, les instructions `delete a` vont par conséquent échouer.
+À la destruction de `many_animals`, les instructions `delete a` vont par conséquent échouer.
 {{% /hidden-solution %}}
 
 5. Proposez une solution pour résoudre le problème et dessinez le graphe d'ownership associé.
@@ -326,6 +326,6 @@ Les références n'ayant pas d'impact sur le cycle de vie des données, lorsque 
 - Un **pointeur-ownant** doit libérer la donnée allouée ou bien transmettre cette responsabilité à un autre pointeur. 
 - Un **pointeur-observant** a le même rôle qu'une référence, si ce n'est qu'il peut être vide (= `nullptr`) et est réassignable.
 - Un graphe d'ownership permet de détecter différents problèmes :
-  - si une donnée est ownée par plusieurs éléments => libération multiple
-  - si on référence une donnée qui n'existe plus => dangling-reference
-- Savoir qui own une donnée aide à savoir s'il est valide d'y accéder ou pas
+  - Si une donnée est ownée par plusieurs éléments ➔ libération multiple,
+  - Si on référence une donnée qui n'existe plus ➔ dangling-reference.
+- Savoir qui own une donnée aide à savoir s'il est valide d'y accéder ou pas.
