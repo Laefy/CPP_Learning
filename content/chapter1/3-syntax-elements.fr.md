@@ -24,9 +24,9 @@ En effet, ces variables ne sont pas toujours mises à 0 par défaut, comme en t�
 {{% /notice %}}
 
 En ce qui concerne les spécificités du C++ maintenant...    
-Contrairement au C, les pointeurs null ne sont plus représentés par la constante `NULL` (c'est-à-dire à 0, donc de type entier) mais par le mot-clef `nullptr` (en minuscule) de type `nullptr_t`.
+Contrairement au C, les pointeurs null ne sont plus représentés par la constante `NULL` (c'est-à-dire à 0, donc de type entier) mais par le mot-clef `nullptr` (en minuscules) de type `nullptr_t`.
 
-Autre particularité, vous n'êtes pas obligé de respécifier le type de la variable que vous déclarez si vous l'initialisez en même temps : si vous définissez votre variable avec le mot-clef `auto` (équivalent à `var` en Java), le compilateur utilise le type de la valeur utilisée pour l'initialisation.
+Autre particularité, vous n'êtes pas obligé de respécifier le type de la variable que vous déclarez si vous l'initialisez en même temps : si vous définissez votre variable avec le mot-clef `auto` (équivalent à `var` en Java >= 10), le compilateur utilise le type de la valeur utilisée pour l'initialisation (on parle d'inférence de type).
 
 Voici quelques exemples de définition de variables :
 ```cpp
@@ -97,7 +97,7 @@ On écrira donc `for (int i = 0; i < 10; ++ i) { ... }` plutôt que `int i; for 
 {{% /notice %}}
 
 En plus du `for` classique, le C++ introduit une structure `for`-each. Celle-ci permet d'itérer sur des plages de données.  
-Voici la syntaxe, mais nous vous détaillerons un peu mieux son fonctionnement une fois que lorsqu'on vous aura présenté quelques conteneurs de la librairie standard :
+Voici la syntaxe, mais nous vous détaillerons un peu mieux son fonctionnement une fois que l'on vous aura présenté quelques conteneurs de la librairie standard :
 
 ```cpp
 for (<type> <variable> : <conteneur>)
@@ -236,7 +236,7 @@ int main()
 Un type structuré est un type décomposé en sous-attributs.
 On utilisera souvent le terme **classe** pour parler des types structurés.
 
-Pour définir des types structurés, vous pouvez utiliser les mots-clef `struct` ou `class`.  
+Pour définir des types structurés, vous pouvez utiliser les mots-clefs `struct` ou `class`.  
 On peut ensuite définir des **attributs** et des **fonctions-membre** dans le type.  
 Pour spécifier la visibilité des champs, on écrit `public:` ou `private:` devant un ensemble de champs.
 
@@ -310,12 +310,12 @@ Sinon, le compilateur n'arrivera pas à comprendre ce que vous essayez de faire.
 {{% /notice %}}
 
 Comme vous pouvez le constater, nous avons défini des fonctions-membre dans une `struct`.  
-On aurait d'ailleurs tout à fait pû remplacer le mot-clef `struct` par `class`.
+On aurait d'ailleurs tout à fait pu remplacer le mot-clef `struct` par `class`.
 Cela n'aurait absolument rien changé dans ce cas.
 
 Vous vous demandez donc probablement quelle est la différence entre une `struct` et une `class`, puisqu'on peut faire la même chose avec les deux.  
 Eh bien la seule différence réside dans la visibilité par défaut des champs.
-Si vous ne précisez ni `public`, ni `private`, alors les champs seront publics pour une `struct` et privés pour une `class`.
+Si vous ne précisez ni `public`, ni `private`, alors par défaut les champs seront publics pour une `struct` et privés pour une `class`.
 
 ```cpp
 struct S
@@ -368,7 +368,7 @@ auto i8 = int { 0 };
 Attention, on ne vous demande pas de retenir toutes ces syntaxes, simplement d'être capable de reconnaître une instruction d'initialisation si vous en voyez une.
 
 Sachez aussi que dans ce cours, nous utiliserons essentiellement `= <value>` pour l'initialisation des types fondamentaux et `= <type> { <arg1>, ... }` pour celle des types structurés.  
-Néanmoins, ce n'est pas une prérogative et vous êtes libre d'utiliser le style de votre choix pour écrire votre code.
+Néanmoins, ce n'est pas une prérogative et vous êtes libres d'utiliser le style de votre choix pour écrire votre code.
 
 ---
 
@@ -377,12 +377,12 @@ Néanmoins, ce n'est pas une prérogative et vous êtes libre d'utiliser le styl
 Nous venons de vous présenter les bases de la syntaxe du C++.
 
 Voici un petit rappel des choses à retenir :
-- une bonne partie est similaire à ce que vous avez déjà vu en C ou en Java
+- Une bonne partie est similaire à ce que vous avez déjà vu en C ou en Java.
 - `bool` pour les booléens, et pas `boolean`
-- `auto` pour la déduction de type
+- `auto` pour la déduction de type.
 - `nullptr` au lieu de `NULL`
-- l'itérateur peut se définir directement dans l'instruction "for" : `for (auto it = ...; <condition>; <iteration>)`
-- la boucle "foreach" qui s'écrit `for (<type> <var> : <plage de données>)`
-- le passage par référence en ajoutant `&` derrière le type d'un paramètre : `void fcn(int& ref)`
-- le `;` derrière la définition des types structurés
-- la visibilité dans une classe est définie en plaçant `public:` ou `private:` devant un groupe de champs
+- L'itérateur peut se définir directement dans l'instruction "for" : `for (auto it = ...; <condition>; <iteration>)`
+- La boucle `for-each` qui s'écrit `for (<type> <var> : <plage de données>)`
+- Le passage par référence en ajoutant `&` derrière le type d'un paramètre : `void fcn(int& ref)`
+- Le `;` derrière la définition des types structurés.
+- La visibilité dans une classe est définie en plaçant `public:` ou `private:` devant un groupe de champs.

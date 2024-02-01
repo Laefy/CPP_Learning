@@ -50,8 +50,8 @@ Dans le cas d'un objet, la désinstanciation entraîne l'appel de son **destruct
 
 ### Il est temps de mourir, Batman !
 
-Le rôle premier du destructeur est de libérer les ressources allouées par l'objet depuis son instanciation (par exemple, libération de buffers mémoire, fermeture de fichiers, fermeture de connexions réseaux, etc).  
-Mais nous allons voir que nous pouvons bien faire tout ce dont on a envie dans un destructeur.
+Le rôle premier du destructeur est de libérer les ressources allouées par l'objet depuis son instanciation (par exemple, libération de buffers mémoire, fermeture de fichiers, fermeture de connexions réseau, etc).  
+Mais nous allons voir que nous pouvons en réalité faire tout ce dont on a envie dans un destructeur.
 
 Commençons par la syntaxe :
 ```cpp
@@ -74,10 +74,10 @@ Comme le destructeur ne prend aucun paramètre, il n'a qu'une seule signature po
 {{% /notice %}}
 
 1. Ouvrez le fichier `chap-02/3-destructor.cpp` et ajoutez un destructeur à la classe `Person`.  
-A l'intérieur, ajoutez une instruction qui affichera, dans le cas de Batman, `"Bruce Wayne died at 23 years old"`.
+À l'intérieur, ajoutez une instruction qui affichera, dans le cas de Batman, `"Bruce Wayne died at 23 years old"`.
 
 {{% hidden-solution %}}
-Dans le destructeur, on peut parfaitement faire appel aux autres fonctions-membre de la classe.  
+Dans le destructeur, on peut parfaitement faire appel aux autres fonctions-membres de la classe.  
 Ici, on utilise `get_full_name()` pour éviter de dupliquer le code de la concaténation de chaînes.
 
 ```cpp
@@ -97,14 +97,14 @@ public:
 {{% /hidden-solution %}}
 
 2. Compilez et testez le programme.  
-Vous pourrez constater que je ne vous ai pas raconté de salades concernant le moment de l'appel au destructeur.
+Vous pourrez constater que je ne vous ai pas raconté de salades concernant le moment où le destructeur est appelé.
 
 ---
 
 ### Destruction en cascade
 
 1. Définissez maintenant une classe `Batmobile`, qui aura un attribut `_batman` de type `Person`.  
-Vous initialiserez ce champs au moyen d'un class-initializer avec les arguments `"Bruce"` et `"Wayne"`.  
+Vous initialiserez ce champ au moyen d'un class-initializer avec les arguments `"Bruce"` et `"Wayne"`.  
 Petite question au passage, pourquoi ne pouvez-vous pas définir la classe `Batmobile` avant la classe `Person` ?
 
 {{% hidden-solution %}}
@@ -136,7 +136,7 @@ int main()
 Pouvez-vous prédire ce que le programme va afficher ?
 
 {{% hidden-solution %}}
-On pense bien à définir le destructeur dans la partie publique de la classe, sinon, il ne peut pas être appelé dans le `main`.
+On pense bien à définir le destructeur dans la partie publique de la classe, sinon il ne peut pas être appelé dans le `main`.
 ```cpp
 class Batmobile
 {
@@ -220,7 +220,7 @@ Le programme affiche maintenant :
 "Bruce Wayne died at 0 years old"
 ```
 
-Le destructeur de `Person` est donc appelé, même si il n'y a plus le code du destructeur de `Batmobile`.
+Le destructeur de `Person` est donc appelé, même s'il n'y a plus le code du destructeur de `Batmobile`.
 {{% /hidden-solution %}}
 
 Encore une fois, si on ne définit pas explicitement de destructeur, le compilateur en produit un pour nous : on parle d'**implémentation par défaut du destructeur**.  
@@ -232,6 +232,6 @@ A l'exécution, celui-ci se contente de désinstancier les attributs de la class
 
 - Le contraire de l'**instanciation** est la **désinstanciation**.
 - La désinstanciation d'un objet provoque l'appel à son **destructeur**, qui se définit avec `~ClassName() { ... }`.
-- Une variable locale est désinstanciée lorsqu'on sort du bloc dans lequel elle est définit.
+- Une variable locale est désinstanciée lorsqu'on sort du bloc dans lequel elle est définie.
 - Un attribut est désinstancié lorsque le destructeur de la classe est appelé.
 - Si on ne définit pas explicitement le destructeur d'une classe, le compilateur génère l'**implémentation par défaut** du destructeur.

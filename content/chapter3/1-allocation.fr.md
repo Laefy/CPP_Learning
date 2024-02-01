@@ -3,13 +3,13 @@ title: "Allocation dynamique 🎇"
 weight: 1
 ---
 
-Cette première page sera assez courte, elle vous présentera simplement la syntaxe permettant d'allouer dynamiquement de la mémoire et de libérer.
+Cette première page sera assez courte, elle vous présentera simplement la syntaxe permettant d'allouer dynamiquement de la mémoire et de la libérer.
 
 ---
 
 ### Allouer un seul élément 
 
-Pour allouer un bloc de mémoire, on utilise le mot-clef `new`, suivi du type de donnée que l'on souhaite placer dedans, puis de la valeur avec laquelle on souhaite l'initialiser.  
+Pour allouer un bloc de mémoire, on utilise le mot-clef `new`, suivi du type de donnée que l'on souhaite y placer, puis de la valeur avec laquelle on souhaite l'initialiser.  
 Cette instruction retourne un pointeur.
 
 ```cpp
@@ -23,8 +23,8 @@ int* ptr_3 = new int(3);
 std::cout << *ptr_3 << std::endl;   // --> 3
 ```
 
-Une fois que de la mémoire a été allouée dynamiquement, il faut penser à la libérer.  
-Pour cela, on emploie `delete` :
+Lorsque de la mémoire a été allouée dynamiquement, il faut penser à la libérer.  
+Pour cela, on utilise le mot-clef `delete` :
 ```cpp
 delete ptr_3;
 delete ptr_5;
@@ -57,4 +57,4 @@ En effet, en C++, même si vous en faites votre métier, vous n'aurez quasiment 
 Ce sont des classes, telles que `std::vector` ou `std::string`, qui se chargeront de faire ce sale boulot pour vous !  
 
 C'est néanmoins utile pour la culture d'avoir vu comment on écrivait des allocations à la mano.  
-Et surtout, cela vous permettra de comprendre ce que nous avons écrit dans la suite de ce chapitre.
+Et surtout, cela vous permettra de comprendre les extraits de code présentés dans la suite de ce chapitre.

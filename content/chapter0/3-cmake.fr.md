@@ -26,14 +26,14 @@ Afin de générer les artéfacts pour la compilation, nous utiliserons {{< open_
 
 ### Intégration à VSCode
 
-Afin de pouvoir utiliser CMake facilement depuis VSCode, il faut installer les extensions CMake et CMakeTools.
+Afin de pouvoir utiliser CMake facilement depuis VSCode, il faut installer les extensions `CMake` et `CMakeTools`.
 
 1. Démarrez VSCode.
-2. Ouvrez le panneau des extensions et recherchez les extensions CMake et CMakeTools.
+2. Ouvrez le panneau des extensions et recherchez les extensions `CMake` et `CMakeTools`.
 ![](/CPP_Learning/images/chapter0/cmake-ext.png)
 3. Cliquez ensuite sur le bouton `Install` pour chacune d'entre elles.
 4. Redémarrez VSCode.
-5. Vérifiez que vous avez accès aux commandes `CMake` depuis le panneau de commandes (`View > Command Palette ...` ou Ctrl+Shift+P).
+5. Vérifiez que vous avez accès aux commandes `CMake` depuis le panneau de commandes (`View > Command Palette ...` ou `Ctrl + Shift + P`).
 
 Vérifiez maintenant votre installation.
 1. Téléchargez et extrayez {{< open_in_new_tab "/CPP_Learning/code/hello.zip" "cette archive" />}} dans un nouveau dossier.
@@ -43,7 +43,7 @@ Vérifiez maintenant votre installation.
 4. Sélectionnez le compilateur g++ ou clang++ le plus récent dans la liste proposée.
 5.  La configuration et la génération des fichiers de build devraient avoir lieu.
 ![](/CPP_Learning/images/chapter0/cmake-result.png)
-6.  Cliquez maintenant sur le bouton Build dans la barre en bas (ou F7) pour compiler le projet.
+6.  Cliquez maintenant sur le bouton `Build` dans la barre en bas (ou F7) pour compiler le projet.
 ![](/CPP_Learning/images/chapter0/cmake-build.png)
 
 ---

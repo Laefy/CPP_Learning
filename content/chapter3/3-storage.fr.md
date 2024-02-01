@@ -3,8 +3,8 @@ title: "Espace de stockage 💾"
 weight: 3
 ---
 
-Sur cette page, nous rappelerons ce que sont les variables et les pointeurs et comment ils peuvent être représentés en mémoire, puis nous ferons de même pour les références.  
-Nous présenterons ensuite les spécificités des trois zones dans lequel le programme alloue de la mémoire : la mémoire statique, la pile et le tas.  
+Sur cette page, nous rappelerons ce que sont les variables et les pointeurs, et comment ils peuvent être représentés en mémoire, puis nous ferons de même pour les références.  
+Nous présenterons ensuite les spécificités des trois zones dans lesquelles le programme alloue de la mémoire : la **mémoire statique**, la **pile** et le **tas**.  
 Cela vous aidera, j'espère, à visualiser mentalement quelles sont les données valides du programme.
 
 ---
@@ -17,7 +17,7 @@ Une variable est un identifiant permettant d'accéder à une donnée de taille f
 L'emplacement précis de cette donnée constitue l'adresse de la variable.
 Sur un ordinateur moderne, il s'agira généralement d'un entier encodé sur 64 bits.
 
-Si on représente la mémoire comme un tableau dans lequel chaque case est un octet, alors nous pouvons représenter une variable comme une série contiguëes de cases de ce tableau.
+Si on représente la mémoire comme un tableau dans lequel chaque case est un octet, alors nous pouvons représenter une variable comme une série contiguë de cases de ce tableau.
 
 Supposons que le code suivant alloue `var` à l'adresse `0x00e8` (attention pour la suite, on compte en hexadécimal !).
 
@@ -58,7 +58,7 @@ Nous l'avons représenté en italique pour indiquer que la durée de vie de la d
 
 Dans le cas des types-structurés, les attributs d'un objet sont alloués au sein de l'espace alloué pour l'objet lui-même.
 
-La taille d'un objet est donc souvent égale à la somme des tailles de ces attributs, mais ce n'est pas toujours le cas...  
+La taille d'un objet est donc souvent égale à la somme des tailles de ses attributs, mais ce n'est pas toujours le cas...  
 En effet, le processeur est plus efficace pour accéder à certaines données si celles-ci sont écrites à des adresses multiples d'un certain nombre.
 Par exemple, il lira plus vite un `int` si celui-ci est écrit à une adresse multiple de `4`.  
 Le compilateur pourra donc décider de laisser du vide entre un attribut de type `char` (1 octet) et un attribut de type `int` (4 octets) afin d'**aligner** l'entier sur la bonne adresse.
@@ -88,16 +88,16 @@ Attention cependant, notez bien que cela modifie aussi l'ordre dans lequel ils s
 La **mémoire statique** est la zone contenant les données associées aux variables globales du programme.
 
 Comme la taille d'une variable dépend uniquement de son type, la compilation permet de déterminer la quantité d'espace à allouer pour le segment de mémoire statique.
-Il est réservé une fois pour toute par le système d'exploitation au lancement du programme et est restitué une fois la fonction `main` terminée.
+Il est réservé une fois pour toute par le système d'exploitation au lancement du programme, et est restitué une fois la fonction `main` terminée.
 
-Il n'est pas possible au cours de l'exécution du programme d'augmenter ou de réduire l'espace réservé, et c'est pour cela qu'on parle de mémoire "statique".
+Il n'est pas possible d'augmenter ou de réduire l'espace réservé au cours de l'exécution du programme, et c'est pour cela qu'on parle de mémoire "statique".
 
 ---
 
 ### La pile
 
 La **pile** est l'espace mémoire dans lequel sont stockées la plupart des variables locales.  
-Il s'agit d'un espace de taille limitée (quelque méga-octets en général, cela dépend du système), mais dans lequel il est très rapide d'accéder et de modifier les données.  
+Il s'agit d'un espace de taille limitée (quelques méga-octets en général, cela dépend du système), mais dans lequel il est très rapide d'accéder et de modifier les données.  
 De plus, l'allocation est **immédiate**, car cet espace est réservé à votre programme dès qu'il démarre.
 
 ```cpp {linenos=table}
@@ -128,10 +128,10 @@ Le haut de la pile est indiqué par la flèche.
 `l.6`: Une fois `f2` terminée, toutes les variables définies dedans sont retirées de la pile.  
 `l.11`: On place ensuite `v2` dans la pile, initialisée à la valeur de retour de `f2`.  
 `l.12`: Enfin, on empile `v3` et on exécute le restant de la fonction.  
-`l.12`: A la fin de l'appel à `f1`, on retire toutes les variables locales de la pile.
+`l.12`: À la fin de l'appel à `f1`, on retire toutes les variables locales de la pile.
 
 {{% notice note %}}
-Notez bien que ce scénario n'est qu'un exemple possible de ce qu'il pourrait se passer.
+Notez bien que ce scénario n'est qu'une hypothèse de ce qu'il pourrait se passer en réalité.
 En fonction de l'implémentation de votre compilateur et des instructions qu'il produit, le contenu de la pile ne sera pas le même.
 Par exemple, à des fins d'optimisation, il est fort probable que certaines variables soient stockées directement dans les registres du processeur plutôt que sur la pile.
 {{% /notice %}} 
@@ -147,12 +147,12 @@ En effet, le processus doit demander au système d'exploitation qu'il lui alloue
 Cette opération est longue car, comme tous les appels-système, elle nécessite de rendre la main au système d'exploitation et donc de changer de contexte d'exécution.
 
 L'accès est également plus lent que sur la pile, car les données ne sont pas forcément regroupées : elles sont stockées là où le système a trouvé assez d'espace pour l'allocation.
-On a donc plus souvent des cache-miss que lorsqu'on accède aux données de la pile.
+On a donc plus souvent des *cache-miss* (litteralement "échec de cache", c'est-à-dire lorsque le cache ne contient pas le contenu demandé) que lorsqu'on accède aux données de la pile.
 
 Il y a tout de même des avantages à allouer sur le tas.  
 Déjà, on peut allouer autant de données qu'on le souhaite (ou tout du moins, autant que votre machine vous le permette).  
 Ensuite, les données restent disponibles tant qu'on ne décide pas de les désinstancier.
-Cela permet d'instancier des objets dans une fonction et qu'ils ne soient pas désinstanciées au retour dans l'appelant.
+Cela permet d'instancier des objets dans une fonction et qu'ils ne soient pas désinstanciés au retour vers l'appelant.
 
 ```cpp {linenos=table}
 int* make_int(int value)
@@ -176,7 +176,7 @@ int main()
 `l.9`: On appelle la fonction `make_int` avec l'argument `1`.  
 `l.2`: On entre dans la fonction, on ajoute le paramètre `value` dans la pile.  
 `l.3`: On alloue un entier de valeur `1` sur le tas, et on stocke l'adresse dans `ptr`.  
-`l.5`: On sort de la fonction donc on dépile les variables locales, mais le contenu du tas ne change pas.   
+`l.5`: On sort de la fonction, donc on dépile les variables locales mais le contenu du tas ne change pas.   
 `l.9`: On stocke la valeur de retour de `make_int` dans `ptr_1`.  
 `l.11`: On demande la désinstanciation de l'entier alloué sur le tas.  
 `l.14`: On sort du `main`, donc on dépile toutes les variables définies dedans.  

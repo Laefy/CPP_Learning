@@ -28,9 +28,9 @@ Cependant, le C++ n'est pas un langage purement orienté-objet. On peut définir
 ##### ... Générique
 
 Un langage est dit générique s'il permet d'appliquer un même algorithme sur différents types de données. Dans le cas du C++, la généricité s'exprime via les mécanismes suivants : \
-\- le polymorphisme : on peut passer un objet de type Chien à une fonction recevant un objet de type Animal, \
-\- la surcharge : on peut définir différentes fonctions avec le même nom, dès lors qu'elles acceptent un nombre différent de paramètres, ou que ces paramètres ne sont pas de même type, \
-\- les templates (ou "patrons" en français, mais nous utiliserons toujours le terme anglais dans ce cours) : il est possible de définir des types et fonctions permettant de travailler avec des paramètres génériques.
+\- Le polymorphisme : on peut passer un objet de type `Chien` à une fonction recevant un objet de type `Animal`, \
+\- La surcharge : on peut définir différentes fonctions avec le même nom, dès lors qu'elles acceptent un nombre différent de paramètres, ou que ces paramètres ne sont pas de même type, \
+\- Les templates (ou "patrons" en français, mais nous utiliserons toujours le terme anglais dans ce cours) : il est possible de définir des types et fonctions permettant de travailler avec des paramètres génériques.
 
 ---
 

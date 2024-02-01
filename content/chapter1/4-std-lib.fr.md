@@ -10,7 +10,7 @@ Vous verrez également comment écrire ou lire dans des flux pour intéragir ave
 
 ### Chaînes de caractères
 
-Comme en C, `const char*` est le type fondamental associé à une chaîne de caractère littérale (c'est-à-dire écrite en dur, avec les guillemets autour) :
+Comme en C, `const char*` est le type fondamental associé à une chaîne de caractères littérale (c'est-à-dire écrite en dur, avec les guillemets autour) :
 ```cpp
 auto str = "hello"; // -> str est de type const char*
 ```
@@ -42,7 +42,7 @@ int main(int argc, char** argv)
 
 {{% notice warning %}}
 Attention à bien caster vos chaînes littérales en `std::string` avant de commencer à les utiliser.  
-Certaines opérations comme l'addition compileront sur le type `const char*`, mais vous n'obtiendrez pas le résultat attendu : `std::cout << ("abc" + "def") << std::endl` n'affichera pas du tout "abcdef".
+Certaines opérations comme l'addition compileront sur le type `const char*`, mais vous n'obtiendrez pas le résultat attendu : `std::cout << ("abc" + "def") << std::endl` n'affichera pas du tout `"abcdef"`.
 {{% /notice %}}
 
 ---
@@ -66,7 +66,7 @@ int main()
     // On crée un vector d'entiers contenant différents nombres
     auto numbers = std::vector<int> { 1, 23, 38, -54 };   
 
-    // On parcourt le tableau d'entiers avec une boucle foreach
+    // On parcourt le tableau d'entiers avec une boucle for-each
     for (auto n: numbers)
     {
         // On indique dans le tableau de booléens si le nombre est pair
@@ -156,7 +156,7 @@ Le programme devra écrire :
 > Craow Ca va ?
 
 1. Ouvrez le fichier `chap-01/2-parrot.cpp` dans VSCode.  
-Vérifiez qu'il compile et qu'il affiche "Craow" lorsque vous le lancez.
+Vérifiez qu'il compile et qu'il affiche `"Craow"` lorsque vous le lancez.
 
 {{% hidden-solution %}}
 Pour compiler, on peut ouvrir le terminal VSCode et écrire : `g++ -std=c++17 -o parrot 2-parrot.cpp` après s'être placé dans le bon répertoire avec `cd`.
@@ -183,7 +183,7 @@ int main()
 ```
 {{% /hidden-solution %}}
 
-3. Ajoutez une boucle au programme de manière à ce que le programme répète les phrases de l'utilisateur, précédées de "Craow", jusqu'à ce qu'il entre une ligne vide.
+3. Ajoutez une boucle au programme de manière à ce que le programme répète les phrases de l'utilisateur, précédées de `"Craow"`, jusqu'à ce qu'il entre une ligne vide.
 
 {{% hidden-solution %}}
 Si l'utilisateur n'a rien écrit, alors la chaîne renvoyée par `getline` est vide.
@@ -223,7 +223,7 @@ Pour manipuler des tableaux, on utilise la classe `std::vector` disponible dans 
 
 On a alors plusieurs possibilités : récupérer la ligne dans une nouvelle variable puis l'ajouter au tableau après avoir vérifié qu'elle n'est pas vide, ou bien ajouter la nouvelle ligne dans le tableau et la retirer ensuite si elle est vide.
 
-Une fois le tableau rempli, on peut utiliser une boucle foreach pour le parcourir et afficher les phrases du perroquet.
+Une fois le tableau rempli, on peut utiliser une boucle `for-each` pour le parcourir et afficher les phrases du perroquet.
 
 ```cpp
 #include <iostream> // pour std::cout et std::cin

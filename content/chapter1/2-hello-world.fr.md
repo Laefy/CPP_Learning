@@ -23,8 +23,8 @@ En réalité, comme vous avez déjà fait du C et du Java, il y a pas mal de cho
 
 Le code initial de tous les exercices proposés dans ce cours en ligne sont présents sur ce dépôt git : https://github.com/Laefy/CPP_Learning_Code.
 
-Clonez-le sur votre machine et ouvrez le répertoire `"chap-01"` dans VSCode.  
-Ouvrez ensuite le fichier `"1-hello_world.cpp"`.
+Clonez-le sur votre machine et ouvrez le répertoire `chap-01` dans VSCode.  
+Ouvrez ensuite le fichier `1-hello_world.cpp`.
 
 Pour votre premier programme, on ne va pas trop faire dans l'originalité, il s'agira d'un Hello World.
 Vous l'avez d'ailleurs déjà probablement vu dans le chapitre précédent, pour tester vos outils.
@@ -47,7 +47,7 @@ La valeur de retour du `main` indique si le programme s'est terminé sans erreur
 {{% /notice %}}
 
 Pour compiler votre programme, commencez par ouvrir un terminal (vous pouvez le faire directement dans l'interface de VSCode).  
-Placez-vous dans le répertoire `"chap-01"` avec `cd`, puis taper la commande: `g++ -std=c++17 -o hello-world 1-hello_world.cpp`.
+Placez-vous dans le répertoire `chap-01` avec `cd`, puis taper la commande: `g++ -std=c++17 -o hello-world 1-hello_world.cpp`.
 
 L'option `-std` sert à spécifier la version du langage qu'on veut utiliser.  
 L'option `-o` permet de spécifier le chemin (dossier + nom) du programme que l'on souhaite générer.  
@@ -60,7 +60,7 @@ Lancez maintenant votre programme pour vérifier qu'il s'exécute sans erreur.
 
 ### Ecrire sur la sortie standard
 
-L'instruction ci-dessous permet d'afficher la chaîne de caractère "Hello World!" sur la sortie standard du programme. 
+L'instruction ci-dessous permet d'afficher la chaîne de caractères `"Hello World"!` sur la sortie standard du programme. 
 ```cpp
 std::cout << "Hello World!" << std::endl;
 ```
@@ -78,16 +78,16 @@ Ce problème existe aussi en C bien sûr, et pour y pallier, certaines APIs pré
 {{% /notice %}}
 
 `cout`\
-Il s'agit de la variable globale contenant le flux pour écrire sur la sortie standard du programme. Le 'c' indique 'console' et le 'out' indique 'sortie'. Par symétrie, on fera référence au flux pour l'entrée standard avec `cin`.
+Il s'agit de la variable globale contenant le flux pour écrire sur la sortie standard du programme. Le `c` indique "console" et le `out` indique "sortie". Par symétrie, on fera référence au flux pour l'entrée standard avec `cin`.
 
 `<<`\
-Il s'agit d'un opérateur, un peu comme `+` ou `%`. Si on utilise `<<` entre une variable de flux et une chaîne de caractère, cette chaîne de caractère sera écrite dans le flux.
+Il s'agit d'un opérateur, un peu comme `+` ou `%`. Si on utilise `<<` entre une variable de flux et une chaîne de caractères, cette dernière sera écrite dans le flux.
 
 `"Hello World!"`\
-Une chaîne de caractère, comme en C.
+Une chaîne de caractères, comme en C.
 
 `endl`\
-Cette variable permet d'écrire le caractère de fin de ligne `\n` ('endl' pour 'end of line') dans le flux. Il permet également de forcer son flush.
+Cette variable permet d'écrire le caractère de fin de ligne `\n` (`endl` pour "end of line") dans le flux. Il permet également de forcer son flush.
 
 {{% notice tip %}}
 En C, on a dû vous dire expliquer qu'il fallait toujours mettre des `\n` à la fin de vos écritures avec `printf`, car cela permet d'être sûr que tout est bien écrit dans la console. En effet, les programmes n'écrivent pas directement dans la console. Ils écrivent d'abord chaque caractère dans un espace-mémoire (généralement aussi appelé espace tampon), puis au moment opportun comme lors d'un saut de ligne, le programme transfère tout le bloc de texte en une seule fois dans la console (on parle de flush).  

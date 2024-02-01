@@ -17,15 +17,15 @@ La compilation désigne le procédé consistant à transformer du code-source en
 Dans ce cours, on utilisera le terme de "compilation" pour faire référence soit à la génération complète d'un exécutable (= compilation d'un programme), soit à la génération d'un fichier-objet (= compilation d'un fichier-source).
 
 La **compilation d'un programme** est constituée de deux phases bien distinctes :
-1. la **compilation de chacun de vos .cpp** en fichier-objet, réalisée par le compilateur,
-2. l'**édition des liens**, qui permet de créer un exécutable à partir de tous vos fichiers-objet, réalisée par le linker.
+1. La **compilation de chacun de vos `.cpp`** en fichier-objet, réalisée par le compilateur,
+2. L'**édition des liens**, qui permet de créer un exécutable à partir de tous vos fichiers-objet, réalisée par le linker.
 
 `g++` est à la fois un compilateur et un linker.  
 Lorsque vous exécutez `g++ -o program.exe a.cpp b.cpp c.cpp`, l'outil réalise donc 4 opérations :
-1. la compilation de a.cpp => `g++ -c a.cpp`
-2. la compilation de b.cpp => `g++ -c b.cpp`
-3. la compilation de c.cpp => `g++ -c c.cpp`
-4. l'édition des liens pour générer program.exe => `g++ -o program.exe a.o b.o c.o`
+1. La compilation de `a.cpp` ➔ `g++ -c a.cpp`
+2. La compilation de `b.cpp` ➔ `g++ -c b.cpp`
+3. La compilation de `c.cpp` ➔ `g++ -c c.cpp`
+4. L'édition des liens pour générer `program.exe` ➔ `g++ -o program.exe a.o b.o c.o`
 
 ```mermaid
 flowchart TD;
@@ -48,7 +48,7 @@ flowchart TD;
 
 Concentrons nous d'abord sur la phase de compilation.
 
-Le compilateur attend en entrée un fichier .cpp et écrit le fichier-objet correspondant.
+Le compilateur attend en entrée un fichier `.cpp` et écrit le fichier-objet correspondant.
 Ce fichier est un binaire contenant les instructions des fonctions et l'instanciation des variables globales définies dedans.
 
 Lorsque vous lancez la compilation, il y a tout d'abord le préprocesseur qui lit et récrit le fichier.
@@ -59,12 +59,12 @@ Plutôt qu'expliquer précisément ce que fait le compilateur pour chacune d'ent
 
 Le compilateur lit le fichier instruction par instruction, en partant du haut du fichier.  
 Si l'instruction contient :
-- une définition ou déclaration de symboles (variable, fonction ou type)  
-=> le compilateur ajoute ce symbole à la table des symboles
-- l'utilisation d'un symbole, comme un appel de fonction, la lecture ou l'écriture d'une variable  
-=> le compilateur regarde dans la table des symboles **s'il existe** et **si le contexte d'utilisation est cohérent**
-- la fin d'un bloc  
-=> le compilateur supprime de la table des symboles tous ceux qui ont été définis dans ce bloc
+- une définition ou déclaration de symboles (variable, fonction ou type),  
+➔ le compilateur ajoute ce symbole à la table des symboles
+- l'utilisation d'un symbole, comme un appel de fonction, la lecture ou l'écriture d'une variable.  
+➔ le compilateur regarde dans la table des symboles **s'il existe** et **si le contexte d'utilisation est cohérent**
+- la fin d'un bloc.  
+➔ le compilateur supprime de la table des symboles tous ceux qui ont été définis dans ce bloc
 
 Au fur-et-à-mesure de l'analyse, le compilateur ajoute également dans le fichier-objet les instructions binaires correspondant aux fonctions et aux variables globales définies dans le fichier.
 
@@ -1074,6 +1074,6 @@ Durant l'édition des liens, le linker :
 - écrit l'exécutable final en commençant par les instructions de la fonction `main`, et en ajoutant récursivement les instructions des fonctions appelées dedans. 
 
 Quelques bonnes pratiques lorsqu'on code **le contenu d'un header** :
-- on commence toujours par écrire `#pragma once`,
-- on utilise des "forward-declare" plutôt que des inclusions lorsque cela est possible,
-- on écrit `inline` devant les **définitions** de fonctions (pas les déclarations).
+- On commence toujours par écrire `#pragma once`.
+- On utilise des "forward-declare" plutôt que des inclusions lorsque cela est possible.
+- On écrit `inline` devant les **définitions** de fonctions (pas les déclarations).

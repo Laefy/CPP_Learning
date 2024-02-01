@@ -9,13 +9,13 @@ Nous allons maintenant revenir sur l'instanciation et la désinstanciation des d
 
 ### Donnée de type fondamental
 
-L'instanciation d'une donnée de type fondamental est constitué de deux étapes :
-1. le programme alloue l'espace nécessaire pour stocker la donnée,
-2. **si spécifié par le programmeur**, le contenu de la donnée est initialisé.
+L'instanciation d'une donnée de type fondamental est constitué de deux phases.
+1. Le programme alloue l'espace nécessaire pour stocker la donnée.
+2. **Si spécifié par le programmeur**, le contenu de la donnée est initialisé.
 
 En ce qui concerne la désinstanciation, le programme désalloue l'espace réservé pour la donnée.
 
-Dans le cas d'une **allocation automatique**, l'instanciation a lieu au moment de la définition de la variable et la désinstanciation lorsque l'on sort du bloc dans lequel elle est définie.
+Dans le cas d'une **allocation automatique**, l'instanciation a lieu au moment de la définition de la variable, et la désinstanciation a lieu lorsque l'on sort du bloc dans lequel elle est définie.
 
 ```cpp {linenos=table}
 int twice_sum()
@@ -58,10 +58,10 @@ int main()
 ```
 
 Dans ce nouvel exemple :
-- la variable `value` est instanciée ligne 1 et désinstanciée ligne 6
-- la variable `ptr` (le pointeur !) est instanciée ligne 3 et désinstanciée ligne 6
-- l'entier alloué dynamiquement (et référencé par `*ptr` puis `*five`) est instancié ligne 4 et désinstancié ligne 54
-- la variable `five` (encore le pointeur) est instanciée à la ligne 10 et désinstanciée ligne 15
+- la variable `value` est instanciée ligne 1 et désinstanciée ligne 6,
+- la variable `ptr` (le pointeur !) est instanciée ligne 3 et désinstanciée ligne 6,
+- l'entier alloué dynamiquement (et référencé par `*ptr` puis `*five`) est instancié ligne 4 et désinstancié ligne 54,
+- la variable `five` (encore le pointeur) est instanciée à la ligne 10 et désinstanciée ligne 15.
 
 ---
 
@@ -69,11 +69,11 @@ Dans ce nouvel exemple :
 
 Pour les types-structurés (c'est-à-dire `class` et `struct`), le comportement à l'instanciation et désinstanciation est un peu différent.
 
-A l'instanciation :
+À l'instanciation :
 1. le programme alloue l'espace nécessaire pour stocker la donnée,
 2. le constructeur de la donnée est appelé **quoi qu'il arrive**.
 
-A la désinstanciation :
+À la désinstanciation :
 1. le destructeur de la donnée est appelé,
 2. le programme désalloue l'espace réservé pour la donnée.
 
@@ -107,18 +107,18 @@ int main()
 ```
 
 Voici ce qu'il se passe au moment de l'instanciation de `p` (ligne 23) :
-1. le programme alloue l'espace nécessaire pour stocker un objet de type `Person`,
-2. il appelle le constructeur de `Person` à deux paramètres qui :
+1. Le programme alloue l'espace nécessaire pour stocker un objet de type `Person`,
+2. Il appelle le constructeur de `Person` à deux paramètres qui :
     1. instancie `_name` :
-        1. le programme lui alloue le bloc mémoire nécessaire (au sein de l'espace déjà réservé pour `p`),
-        2. il appelle le constructeur de `std::string` à un paramètre,
+        1. Le programme lui alloue le bloc mémoire nécessaire (au sein de l'espace déjà réservé pour `p`).
+        2. Il appelle le constructeur de `std::string` à un paramètre.
     2. instancie `_age` :
-        1. le programme lui alloue le bloc mémoire nécessaire (au sein de l'espace déjà réservé pour `p`),
-        2. il lui assigne la valeur `3`,
+        1. Le programme lui alloue le bloc mémoire nécessaire (au sein de l'espace déjà réservé pour `p`).
+        2. Il lui assigne la valeur `3`.
     3. instancie `_surname` :
-        1. le programme lui alloue le bloc mémoire nécessaire (au sein de l'espace déjà réservé pour `p`),
-        2. il appelle le constructeur de `std::string` à un paramètre,
-    4. exécute les instructions présentes dans le corps du constructeur (en l'occurrence, cela affiche `"Jean is born"` dans la console).
+        1. Le programme lui alloue le bloc mémoire nécessaire (au sein de l'espace déjà réservé pour `p`).
+        2. Il appelle le constructeur de `std::string` à un paramètre.
+    4. exécute les instructions présentes dans le corps du constructeur (en l'occurrence, cela affiche `Jean is born` dans la console).
 
 {{% notice note %}}
 Notez bien ici que `_name` est instancié en premier, puis `_age`, puis `_surname`, malgré l'ordre dans lequel les attributs apparaissent dans la liste d'initialisation du constructeur.  
@@ -126,22 +126,21 @@ En effet, c'est l'ordre de définition des attributs dans la classe qui fait foi
 {{% /notice %}}
 
 {{% notice note %}}
-Si un attribut apparaît dans la liste d'initialisation, alors il est initialisé à partir de ce qui est spécifié dans celle-ci.  
-Sinon, il est initialisé à partir du class-initializer.
-Dans le cas où celui-ci n'est pas spécifié, alors le constructeur par défaut est appelé pour un type-structuré, et rien n'est fait pour un type fondamental.
+Lorsqu'un attribut est mentionné dans la liste d'initialisation, il est initialisé en fonction de ce qui est spécifié dans cette liste.
+En l'absence de cette mention, l'initialisation se fait à partir du class-initializer.
+Si ce dernier n'est pas défini, le constructeur par défaut est invoqué pour un type structuré, tandis que pour un type fondamental, rien n'est fait.
 {{% /notice %}}
 
 Voici maintenant ce qu'il se passe au moment de sa désinstanciation (ligne 25) :
-
-1. le programme appelle le destructeur de `Person` qui :
-    1. exécute les instructions présentes dans le corps du destructeur (en l'occurrence, cela affiche `"Jean is dead"` dans la console).
+1. Le programme appelle le destructeur de `Person` qui :
+    1. exécute les instructions présentes dans le corps du destructeur (en l'occurrence, cela affiche `Jean is dead` dans la console),
     2. désinstancie `_surname` :
-        1. le programme appelle le destructeur de `std::string`,
-        2. il désalloue l'espace réservé pour `_surname`,
-    2. désinstancie `_age`, c'est-à-dire qu'il désalloue l'espace qui lui est réservé,
-    3. désinstancie `_name` :
-        1. le programme appelle le destructeur de `std::string`,
-        2. il désalloue l'espace réservé pour `_name`,
+        1. Le programme appelle le destructeur de `std::string`.
+        2. Il désalloue l'espace réservé pour `_surname`.
+    3. désinstancie `_age`, c'est-à-dire qu'il désalloue l'espace qui lui est réservé,
+    4. désinstancie `_name` :
+        1. Le programme appelle le destructeur de `std::string`.
+        2. Il désalloue l'espace réservé pour `_name`.
 2. le programme désalloue entièrement l'espace réservé à `p`.
 
 Pour résumer, en plus de l'allocation et la désallocation mémoire, l'instanciation et la désinstanciation d'un objet de type-structuré comprennent sa construction et sa destruction.  
@@ -151,7 +150,8 @@ Ces deux étapes entraînent récursivement l'instanciation et la désinstanciat
 
 ### Références
 
-Une référence est un alias sur une donnée, mais la définition d'une référence ou la sortie du bloc dans lequel elle est définie n'a absolument **aucun impact** sur l'instanciation ou la désinstanciation de la donnée :
+Une référence est un alias d'une donnée.  
+Contrairement à la définition d'une variable classique, la définition d'une référence ou la sortie du bloc dans lequel elle est définie n'a absolument **aucun impact** sur l'instanciation ou la désinstanciation de la donnée :
 ```cpp {linenos=table}
 void fcn()
 {
@@ -166,7 +166,7 @@ void fcn()
 }
 ```
 
-La donnée representée par `a`, mais également par `b`, est instanciée ligne 3 et désinstanciée ligne 11.  
+La donnée représentée par `a`, mais également par `b`, est instanciée ligne 3 et désinstanciée ligne 11.  
 La ligne 6 n'a absolument aucun impact sur la mémoire : aucune nouvelle instanciation n'est réalisée.  
 Idem pour la ligne 8, rien n'est désinstancié, la donnée correspondant à `a` est toujours bien présente.
 
@@ -189,7 +189,7 @@ int main()
 ```
 
 Ici, `default_name` est instancié ligne 3 et désinstancié ligne 5 (lorsqu'on sort de la fonction `fcn`).  
-Dans le cas où `name` est vide, on renvoie une référence sur cette donnée, qui n'a par conséquent plus d'espace mémoire attribué une fois revenu dans la fonction `main`.  
+Dans le cas où `name` est vide, on renvoie une référence sur `default_name`, qui n'a par conséquent plus d'espace mémoire attribué une fois revenu dans la fonction `main`.  
 Ce qui est affiché dans la console à la ligne 11 est donc indéterminé (et encore, moyennant que le programme ne crash pas 😬).
 
 On utilise le terme **dangling-reference** pour parler de cette situation.
@@ -201,14 +201,15 @@ C'est un problème que l'on rencontre souvent, surtout lorsqu'on est débutant.
 
 L'accès à une donnée (en écriture ou en lecture) est valide **si et seulement si** cet accès est effectué après son instanciation et avant sa désinstanciation.
 
-Pourquoi ? Eh bien, tout simplement parce que le support d'existence d'une donnée est le segment mémoire dans lequel elle est écrite et ce segment est réservé au cours de l'instanciation et libéré à la désinstanciation.  
-C'est d'ailleurs la cause des dangling-references, que nous avons présentés dans le paragraphe précédent.
+Pourquoi ? Eh bien, tout simplement parce que le support d'existence d'une donnée est le segment mémoire dans lequel elle est écrite, et ce segment est réservé au cours de l'instanciation puis libéré à la désinstanciation.  
+C'est d'ailleurs la cause des dangling-references, que nous avons présentées dans le paragraphe précédent.
 
 La période entre ces deux événements est appelée **durée de vie** de la donnée, ou encore **lifespan** en anglais.
 
 Si l'accès à la donnée est fait en dehors de sa durée de vie, le comportement du programme est indéterminé (= **undefined behavior**).  
 Dans le cas d'un accès en lecture, si le programme ne génère pas immédiatement une segfault, vous pourrez vous retrouver avec une valeur complètement aléatoire (ce ne sera pas forcément la dernière valeur portée par la donnée).  
-Dans le cas d'un accès en écriture, au mieux, on aura une segfault qui permettra de localiser rapidement à quel endroit du code l'accès invalide est fait, au pire, on écrira dans une zone mémoire désormais allouée à une autre donnée, et c'est alors extrêmement difficile de comprendre d'où vient le problème...
+Dans le cas d'un accès en écriture, on aura au mieux une segfault qui permettra de localiser rapidement à quel endroit du code l'accès invalide a été fait, et dans le pire des cas on écrira dans une zone mémoire désormais allouée à une autre donnée.
+Il devient alors extrêmement difficile de comprendre d'où vient le problème...
 
 Petit exercice, dans le code ci-dessous, essayez d'anticiper quelles seront les valeurs affichées dans la console :
 ```cpp
@@ -285,14 +286,14 @@ Et comme on ne peut pas tester son code sur tous les compilateurs et toutes les 
 ### Synthèse
 
 - L'**instanciation** comporte :
-    - l'allocation de la mémoire pour la donnée
-    - son éventuelle initialisation : constructeur pour les types-structurés, initialisateur (seulement si spécifié) pour les types fondamentaux
+    - l'allocation de la mémoire pour la donnée,
+    - son éventuelle initialisation : constructeur pour les types-structurés, initialiseur (seulement si spécifié) pour les types fondamentaux.
 - La **désinstanciation** comporte :
-    - la destruction de la donnée s'il s'agit d'une instance de type-structuré
-    - la désallocation de la mémoire réservée
+    - la destruction de la donnée s'il s'agit d'une instance de type-structuré,
+    - la désallocation de la mémoire réservée.
 - On parle d'**allocation automatique** lorsque la donnée est instanciée via la définition d'une variable locale.  
 La désinstanciation a lieu lorsque l'on sort du bloc dans lequel elle est définie.
-- On parle d'**allocation dynamique** lorsque la donnée est instancié via l'utilisation de `new` (ou `new[]`).  
+- On parle d'**allocation dynamique** lorsque la donnée est instanciée via l'utilisation de `new` (ou `new[]`).  
 La désinstanciation se fait explicitement avec l'appel `delete` (ou `delete[]`).
 - Le constructeur d'un objet déclenche l'instanciation de chacun de ses attributs, dans l'ordre dans lequel ils ont été définis.
 - La **durée de vie** d'une donnée est la période durant laquelle il est valide d'y accéder : entre son instanciation et sa désinstanciation.
