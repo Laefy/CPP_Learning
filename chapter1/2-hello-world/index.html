@@ -12,22 +12,22 @@
     <title>Hello World 👋 :: Cours de C&#43;&#43; - Niveau Master</title>
 
     
-    <link href="/CPP_Learning/css/nucleus.css?1706621655" rel="stylesheet">
-    <link href="/CPP_Learning/css/fontawesome-all.min.css?1706621655" rel="stylesheet">
-    <link href="/CPP_Learning/css/hybrid.css?1706621655" rel="stylesheet">
-    <link href="/CPP_Learning/css/featherlight.min.css?1706621655" rel="stylesheet">
-    <link href="/CPP_Learning/css/perfect-scrollbar.min.css?1706621655" rel="stylesheet">
-    <link href="/CPP_Learning/css/auto-complete.css?1706621655" rel="stylesheet">
-    <link href="/CPP_Learning/css/atom-one-dark-reasonable.css?1706621655" rel="stylesheet">
-    <link href="/CPP_Learning/css/theme.css?1706621655" rel="stylesheet">
-    <link href="/CPP_Learning/css/tabs.css?1706621655" rel="stylesheet">
-    <link href="/CPP_Learning/css/hugo-theme.css?1706621655" rel="stylesheet">
+    <link href="/CPP_Learning/css/nucleus.css?1706811522" rel="stylesheet">
+    <link href="/CPP_Learning/css/fontawesome-all.min.css?1706811522" rel="stylesheet">
+    <link href="/CPP_Learning/css/hybrid.css?1706811522" rel="stylesheet">
+    <link href="/CPP_Learning/css/featherlight.min.css?1706811522" rel="stylesheet">
+    <link href="/CPP_Learning/css/perfect-scrollbar.min.css?1706811522" rel="stylesheet">
+    <link href="/CPP_Learning/css/auto-complete.css?1706811522" rel="stylesheet">
+    <link href="/CPP_Learning/css/atom-one-dark-reasonable.css?1706811522" rel="stylesheet">
+    <link href="/CPP_Learning/css/theme.css?1706811522" rel="stylesheet">
+    <link href="/CPP_Learning/css/tabs.css?1706811522" rel="stylesheet">
+    <link href="/CPP_Learning/css/hugo-theme.css?1706811522" rel="stylesheet">
     
-    <link href="/CPP_Learning/css/theme-mine.css?1706621655" rel="stylesheet">
+    <link href="/CPP_Learning/css/theme-mine.css?1706811522" rel="stylesheet">
     
-    <link href="/CPP_Learning/css/syntax.css?1706621655" rel="stylesheet">
+    <link href="/CPP_Learning/css/syntax.css?1706811522" rel="stylesheet">
 
-    <script src="/CPP_Learning/js/jquery-3.3.1.min.js?1706621655"></script>
+    <script src="/CPP_Learning/js/jquery-3.3.1.min.js?1706811522"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -1952,8 +1952,8 @@
 <hr>
 <h3 id="mise-en-place">Mise en place</h3>
 <p>Le code initial de tous les exercices proposés dans ce cours en ligne sont présents sur ce dépôt git : <a href="https://github.com/Laefy/CPP_Learning_Code">https://github.com/Laefy/CPP_Learning_Code</a>.</p>
-<p>Clonez-le sur votre machine et ouvrez le répertoire <code>&quot;chap-01&quot;</code> dans VSCode.<br>
-Ouvrez ensuite le fichier <code>&quot;1-hello_world.cpp&quot;</code>.</p>
+<p>Clonez-le sur votre machine et ouvrez le répertoire <code>chap-01</code> dans VSCode.<br>
+Ouvrez ensuite le fichier <code>1-hello_world.cpp</code>.</p>
 <p>Pour votre premier programme, on ne va pas trop faire dans l&rsquo;originalité, il s&rsquo;agira d&rsquo;un Hello World.
 Vous l&rsquo;avez d&rsquo;ailleurs déjà probablement vu dans le chapitre précédent, pour tester vos outils.</p>
 <hr>
@@ -1968,7 +1968,7 @@ Vous l&rsquo;avez d&rsquo;ailleurs déjà probablement vu dans le chapitre préc
 </div>
 
 <p>Pour compiler votre programme, commencez par ouvrir un terminal (vous pouvez le faire directement dans l&rsquo;interface de VSCode).<br>
-Placez-vous dans le répertoire <code>&quot;chap-01&quot;</code> avec <code>cd</code>, puis taper la commande: <code>g++ -std=c++17 -o hello-world 1-hello_world.cpp</code>.</p>
+Placez-vous dans le répertoire <code>chap-01</code> avec <code>cd</code>, puis taper la commande: <code>g++ -std=c++17 -o hello-world 1-hello_world.cpp</code>.</p>
 <p>L&rsquo;option <code>-std</code> sert à spécifier la version du langage qu&rsquo;on veut utiliser.<br>
 L&rsquo;option <code>-o</code> permet de spécifier le chemin (dossier + nom) du programme que l&rsquo;on souhaite générer.<br>
 Tous les autres arguments correspondent aux chemins des fichiers <code>.cpp</code> que l&rsquo;on veut compiler.
@@ -1976,7 +1976,7 @@ Pour le moment, il n&rsquo;y en a qu&rsquo;un seul, le fichier <code>1-hello_wor
 <p>Lancez maintenant votre programme pour vérifier qu&rsquo;il s&rsquo;exécute sans erreur.</p>
 <hr>
 <h3 id="ecrire-sur-la-sortie-standard">Ecrire sur la sortie standard</h3>
-<p>L&rsquo;instruction ci-dessous permet d&rsquo;afficher la chaîne de caractère &ldquo;Hello World!&rdquo; sur la sortie standard du programme.</p>
+<p>L&rsquo;instruction ci-dessous permet d&rsquo;afficher la chaîne de caractères <code>&quot;Hello World&quot;!</code> sur la sortie standard du programme.</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;Hello World!&#34;</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
 </span></span></code></pre></div><p>Décortiquons la ensemble&hellip;</p>
 <p><code>std::</code><br>
@@ -1992,13 +1992,13 @@ Ce problème existe aussi en C bien sûr, et pour y pallier, certaines APIs pré
 </div>
 
 <p><code>cout</code><br>
-Il s&rsquo;agit de la variable globale contenant le flux pour écrire sur la sortie standard du programme. Le &lsquo;c&rsquo; indique &lsquo;console&rsquo; et le &lsquo;out&rsquo; indique &lsquo;sortie&rsquo;. Par symétrie, on fera référence au flux pour l&rsquo;entrée standard avec <code>cin</code>.</p>
+Il s&rsquo;agit de la variable globale contenant le flux pour écrire sur la sortie standard du programme. Le <code>c</code> indique &ldquo;console&rdquo; et le <code>out</code> indique &ldquo;sortie&rdquo;. Par symétrie, on fera référence au flux pour l&rsquo;entrée standard avec <code>cin</code>.</p>
 <p><code>&lt;&lt;</code><br>
-Il s&rsquo;agit d&rsquo;un opérateur, un peu comme <code>+</code> ou <code>%</code>. Si on utilise <code>&lt;&lt;</code> entre une variable de flux et une chaîne de caractère, cette chaîne de caractère sera écrite dans le flux.</p>
+Il s&rsquo;agit d&rsquo;un opérateur, un peu comme <code>+</code> ou <code>%</code>. Si on utilise <code>&lt;&lt;</code> entre une variable de flux et une chaîne de caractères, cette dernière sera écrite dans le flux.</p>
 <p><code>&quot;Hello World!&quot;</code><br>
-Une chaîne de caractère, comme en C.</p>
+Une chaîne de caractères, comme en C.</p>
 <p><code>endl</code><br>
-Cette variable permet d&rsquo;écrire le caractère de fin de ligne <code>\n</code> (&rsquo;endl&rsquo; pour &rsquo;end of line&rsquo;) dans le flux. Il permet également de forcer son flush.</p>
+Cette variable permet d&rsquo;écrire le caractère de fin de ligne <code>\n</code> (<code>endl</code> pour &ldquo;end of line&rdquo;) dans le flux. Il permet également de forcer son flush.</p>
 
 <div class="notices tip" ><p>En C, on a dû vous dire expliquer qu&rsquo;il fallait toujours mettre des <code>\n</code> à la fin de vos écritures avec <code>printf</code>, car cela permet d&rsquo;être sûr que tout est bien écrit dans la console. En effet, les programmes n&rsquo;écrivent pas directement dans la console. Ils écrivent d&rsquo;abord chaque caractère dans un espace-mémoire (généralement aussi appelé espace tampon), puis au moment opportun comme lors d&rsquo;un saut de ligne, le programme transfère tout le bloc de texte en une seule fois dans la console (on parle de flush).<br>
 En C++, <code>\n</code> ne suffit pas à faire le flush. C&rsquo;est en plaçant la valeur <code>endl</code> dans le flux que l&rsquo;on indique qu&rsquo;on veut à la fois un saut de ligne et l&rsquo;opération de flush.</p>
@@ -3335,19 +3335,19 @@ Vous pouvez donc écrire des choses comme :</p>
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/CPP_Learning/js/clipboard.min.js?1706621655"></script>
-    <script src="/CPP_Learning/js/perfect-scrollbar.min.js?1706621655"></script>
-    <script src="/CPP_Learning/js/perfect-scrollbar.jquery.min.js?1706621655"></script>
-    <script src="/CPP_Learning/js/jquery.sticky.js?1706621655"></script>
-    <script src="/CPP_Learning/js/featherlight.min.js?1706621655"></script>
-    <script src="/CPP_Learning/js/highlight.pack.js?1706621655"></script>
+    <script src="/CPP_Learning/js/clipboard.min.js?1706811522"></script>
+    <script src="/CPP_Learning/js/perfect-scrollbar.min.js?1706811522"></script>
+    <script src="/CPP_Learning/js/perfect-scrollbar.jquery.min.js?1706811522"></script>
+    <script src="/CPP_Learning/js/jquery.sticky.js?1706811522"></script>
+    <script src="/CPP_Learning/js/featherlight.min.js?1706811522"></script>
+    <script src="/CPP_Learning/js/highlight.pack.js?1706811522"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/CPP_Learning/js/modernizr.custom-3.6.0.js?1706621655"></script>
-    <script src="/CPP_Learning/js/learn.js?1706621655"></script>
-    <script src="/CPP_Learning/js/hugo-learn.js?1706621655"></script>
+    <script src="/CPP_Learning/js/modernizr.custom-3.6.0.js?1706811522"></script>
+    <script src="/CPP_Learning/js/learn.js?1706811522"></script>
+    <script src="/CPP_Learning/js/hugo-learn.js?1706811522"></script>
     
         
-            <script src="/CPP_Learning/mermaid/mermaid.js?1706621655"></script>
+            <script src="/CPP_Learning/mermaid/mermaid.js?1706811522"></script>
         
         <script>
             mermaid.initialize({ startOnLoad: true });

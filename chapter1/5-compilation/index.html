@@ -12,22 +12,22 @@
     <title>Compilation ⚙️ :: Cours de C&#43;&#43; - Niveau Master</title>
 
     
-    <link href="/CPP_Learning/css/nucleus.css?1706621655" rel="stylesheet">
-    <link href="/CPP_Learning/css/fontawesome-all.min.css?1706621655" rel="stylesheet">
-    <link href="/CPP_Learning/css/hybrid.css?1706621655" rel="stylesheet">
-    <link href="/CPP_Learning/css/featherlight.min.css?1706621655" rel="stylesheet">
-    <link href="/CPP_Learning/css/perfect-scrollbar.min.css?1706621655" rel="stylesheet">
-    <link href="/CPP_Learning/css/auto-complete.css?1706621655" rel="stylesheet">
-    <link href="/CPP_Learning/css/atom-one-dark-reasonable.css?1706621655" rel="stylesheet">
-    <link href="/CPP_Learning/css/theme.css?1706621655" rel="stylesheet">
-    <link href="/CPP_Learning/css/tabs.css?1706621655" rel="stylesheet">
-    <link href="/CPP_Learning/css/hugo-theme.css?1706621655" rel="stylesheet">
+    <link href="/CPP_Learning/css/nucleus.css?1706811522" rel="stylesheet">
+    <link href="/CPP_Learning/css/fontawesome-all.min.css?1706811522" rel="stylesheet">
+    <link href="/CPP_Learning/css/hybrid.css?1706811522" rel="stylesheet">
+    <link href="/CPP_Learning/css/featherlight.min.css?1706811522" rel="stylesheet">
+    <link href="/CPP_Learning/css/perfect-scrollbar.min.css?1706811522" rel="stylesheet">
+    <link href="/CPP_Learning/css/auto-complete.css?1706811522" rel="stylesheet">
+    <link href="/CPP_Learning/css/atom-one-dark-reasonable.css?1706811522" rel="stylesheet">
+    <link href="/CPP_Learning/css/theme.css?1706811522" rel="stylesheet">
+    <link href="/CPP_Learning/css/tabs.css?1706811522" rel="stylesheet">
+    <link href="/CPP_Learning/css/hugo-theme.css?1706811522" rel="stylesheet">
     
-    <link href="/CPP_Learning/css/theme-mine.css?1706621655" rel="stylesheet">
+    <link href="/CPP_Learning/css/theme-mine.css?1706811522" rel="stylesheet">
     
-    <link href="/CPP_Learning/css/syntax.css?1706621655" rel="stylesheet">
+    <link href="/CPP_Learning/css/syntax.css?1706811522" rel="stylesheet">
 
-    <script src="/CPP_Learning/js/jquery-3.3.1.min.js?1706621655"></script>
+    <script src="/CPP_Learning/js/jquery-3.3.1.min.js?1706811522"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -1949,16 +1949,16 @@ Cela vous aidera, j&rsquo;espère, à comprendre un peu mieux les injures du com
 Dans ce cours, on utilisera le terme de &ldquo;compilation&rdquo; pour faire référence soit à la génération complète d&rsquo;un exécutable (= compilation d&rsquo;un programme), soit à la génération d&rsquo;un fichier-objet (= compilation d&rsquo;un fichier-source).</p>
 <p>La <strong>compilation d&rsquo;un programme</strong> est constituée de deux phases bien distinctes :</p>
 <ol>
-<li>la <strong>compilation de chacun de vos .cpp</strong> en fichier-objet, réalisée par le compilateur,</li>
-<li>l&rsquo;<strong>édition des liens</strong>, qui permet de créer un exécutable à partir de tous vos fichiers-objet, réalisée par le linker.</li>
+<li>La <strong>compilation de chacun de vos <code>.cpp</code></strong> en fichier-objet, réalisée par le compilateur,</li>
+<li>L&rsquo;<strong>édition des liens</strong>, qui permet de créer un exécutable à partir de tous vos fichiers-objet, réalisée par le linker.</li>
 </ol>
 <p><code>g++</code> est à la fois un compilateur et un linker.<br>
 Lorsque vous exécutez <code>g++ -o program.exe a.cpp b.cpp c.cpp</code>, l&rsquo;outil réalise donc 4 opérations :</p>
 <ol>
-<li>la compilation de a.cpp =&gt; <code>g++ -c a.cpp</code></li>
-<li>la compilation de b.cpp =&gt; <code>g++ -c b.cpp</code></li>
-<li>la compilation de c.cpp =&gt; <code>g++ -c c.cpp</code></li>
-<li>l&rsquo;édition des liens pour générer program.exe =&gt; <code>g++ -o program.exe a.o b.o c.o</code></li>
+<li>La compilation de <code>a.cpp</code> ➔ <code>g++ -c a.cpp</code></li>
+<li>La compilation de <code>b.cpp</code> ➔ <code>g++ -c b.cpp</code></li>
+<li>La compilation de <code>c.cpp</code> ➔ <code>g++ -c c.cpp</code></li>
+<li>L&rsquo;édition des liens pour générer <code>program.exe</code> ➔ <code>g++ -o program.exe a.o b.o c.o</code></li>
 </ol>
 <pre class="mermaid">flowchart TD;
     L(Edition des liens)
@@ -1976,7 +1976,7 @@ Lorsque vous exécutez <code>g++ -o program.exe a.cpp b.cpp c.cpp</code>, l&rsqu
 <hr>
 <h3 id="compilation">Compilation</h3>
 <p>Concentrons nous d&rsquo;abord sur la phase de compilation.</p>
-<p>Le compilateur attend en entrée un fichier .cpp et écrit le fichier-objet correspondant.
+<p>Le compilateur attend en entrée un fichier <code>.cpp</code> et écrit le fichier-objet correspondant.
 Ce fichier est un binaire contenant les instructions des fonctions et l&rsquo;instanciation des variables globales définies dedans.</p>
 <p>Lorsque vous lancez la compilation, il y a tout d&rsquo;abord le préprocesseur qui lit et récrit le fichier.
 Il remplace notamment chaque instruction <code>#include</code> par le contenu du fichier inclus et toutes les occurrences de macros préprocesseur (<code>#define</code>) par leur définition.</p>
@@ -1985,12 +1985,12 @@ Plutôt qu&rsquo;expliquer précisément ce que fait le compilateur pour chacune
 <p>Le compilateur lit le fichier instruction par instruction, en partant du haut du fichier.<br>
 Si l&rsquo;instruction contient :</p>
 <ul>
-<li>une définition ou déclaration de symboles (variable, fonction ou type)<br>
-=&gt; le compilateur ajoute ce symbole à la table des symboles</li>
-<li>l&rsquo;utilisation d&rsquo;un symbole, comme un appel de fonction, la lecture ou l&rsquo;écriture d&rsquo;une variable<br>
-=&gt; le compilateur regarde dans la table des symboles <strong>s&rsquo;il existe</strong> et <strong>si le contexte d&rsquo;utilisation est cohérent</strong></li>
-<li>la fin d&rsquo;un bloc<br>
-=&gt; le compilateur supprime de la table des symboles tous ceux qui ont été définis dans ce bloc</li>
+<li>une définition ou déclaration de symboles (variable, fonction ou type),<br>
+➔ le compilateur ajoute ce symbole à la table des symboles</li>
+<li>l&rsquo;utilisation d&rsquo;un symbole, comme un appel de fonction, la lecture ou l&rsquo;écriture d&rsquo;une variable.<br>
+➔ le compilateur regarde dans la table des symboles <strong>s&rsquo;il existe</strong> et <strong>si le contexte d&rsquo;utilisation est cohérent</strong></li>
+<li>la fin d&rsquo;un bloc.<br>
+➔ le compilateur supprime de la table des symboles tous ceux qui ont été définis dans ce bloc</li>
 </ul>
 <p>Au fur-et-à-mesure de l&rsquo;analyse, le compilateur ajoute également dans le fichier-objet les instructions binaires correspondant aux fonctions et aux variables globales définies dans le fichier.</p>
 <p>Supposons que l&rsquo;on a le code suivant dans <code>math.hpp</code> :</p>
@@ -3459,9 +3459,9 @@ En revanche, pour de plus gros programmes, sachez que plus vous mettrez de chose
 </ul>
 <p>Quelques bonnes pratiques lorsqu&rsquo;on code <strong>le contenu d&rsquo;un header</strong> :</p>
 <ul>
-<li>on commence toujours par écrire <code>#pragma once</code>,</li>
-<li>on utilise des &ldquo;forward-declare&rdquo; plutôt que des inclusions lorsque cela est possible,</li>
-<li>on écrit <code>inline</code> devant les <strong>définitions</strong> de fonctions (pas les déclarations).</li>
+<li>On commence toujours par écrire <code>#pragma once</code>.</li>
+<li>On utilise des &ldquo;forward-declare&rdquo; plutôt que des inclusions lorsque cela est possible.</li>
+<li>On écrit <code>inline</code> devant les <strong>définitions</strong> de fonctions (pas les déclarations).</li>
 </ul>
 
 
@@ -4748,19 +4748,19 @@ En revanche, pour de plus gros programmes, sachez que plus vous mettrez de chose
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/CPP_Learning/js/clipboard.min.js?1706621655"></script>
-    <script src="/CPP_Learning/js/perfect-scrollbar.min.js?1706621655"></script>
-    <script src="/CPP_Learning/js/perfect-scrollbar.jquery.min.js?1706621655"></script>
-    <script src="/CPP_Learning/js/jquery.sticky.js?1706621655"></script>
-    <script src="/CPP_Learning/js/featherlight.min.js?1706621655"></script>
-    <script src="/CPP_Learning/js/highlight.pack.js?1706621655"></script>
+    <script src="/CPP_Learning/js/clipboard.min.js?1706811522"></script>
+    <script src="/CPP_Learning/js/perfect-scrollbar.min.js?1706811522"></script>
+    <script src="/CPP_Learning/js/perfect-scrollbar.jquery.min.js?1706811522"></script>
+    <script src="/CPP_Learning/js/jquery.sticky.js?1706811522"></script>
+    <script src="/CPP_Learning/js/featherlight.min.js?1706811522"></script>
+    <script src="/CPP_Learning/js/highlight.pack.js?1706811522"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/CPP_Learning/js/modernizr.custom-3.6.0.js?1706621655"></script>
-    <script src="/CPP_Learning/js/learn.js?1706621655"></script>
-    <script src="/CPP_Learning/js/hugo-learn.js?1706621655"></script>
+    <script src="/CPP_Learning/js/modernizr.custom-3.6.0.js?1706811522"></script>
+    <script src="/CPP_Learning/js/learn.js?1706811522"></script>
+    <script src="/CPP_Learning/js/hugo-learn.js?1706811522"></script>
     
         
-            <script src="/CPP_Learning/mermaid/mermaid.js?1706621655"></script>
+            <script src="/CPP_Learning/mermaid/mermaid.js?1706811522"></script>
         
         <script>
             mermaid.initialize({ startOnLoad: true });

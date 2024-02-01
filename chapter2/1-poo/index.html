@@ -12,22 +12,22 @@
     <title>C&#39;est quoi un objet déjà ? :: Cours de C&#43;&#43; - Niveau Master</title>
 
     
-    <link href="/CPP_Learning/css/nucleus.css?1706621655" rel="stylesheet">
-    <link href="/CPP_Learning/css/fontawesome-all.min.css?1706621655" rel="stylesheet">
-    <link href="/CPP_Learning/css/hybrid.css?1706621655" rel="stylesheet">
-    <link href="/CPP_Learning/css/featherlight.min.css?1706621655" rel="stylesheet">
-    <link href="/CPP_Learning/css/perfect-scrollbar.min.css?1706621655" rel="stylesheet">
-    <link href="/CPP_Learning/css/auto-complete.css?1706621655" rel="stylesheet">
-    <link href="/CPP_Learning/css/atom-one-dark-reasonable.css?1706621655" rel="stylesheet">
-    <link href="/CPP_Learning/css/theme.css?1706621655" rel="stylesheet">
-    <link href="/CPP_Learning/css/tabs.css?1706621655" rel="stylesheet">
-    <link href="/CPP_Learning/css/hugo-theme.css?1706621655" rel="stylesheet">
+    <link href="/CPP_Learning/css/nucleus.css?1706811522" rel="stylesheet">
+    <link href="/CPP_Learning/css/fontawesome-all.min.css?1706811522" rel="stylesheet">
+    <link href="/CPP_Learning/css/hybrid.css?1706811522" rel="stylesheet">
+    <link href="/CPP_Learning/css/featherlight.min.css?1706811522" rel="stylesheet">
+    <link href="/CPP_Learning/css/perfect-scrollbar.min.css?1706811522" rel="stylesheet">
+    <link href="/CPP_Learning/css/auto-complete.css?1706811522" rel="stylesheet">
+    <link href="/CPP_Learning/css/atom-one-dark-reasonable.css?1706811522" rel="stylesheet">
+    <link href="/CPP_Learning/css/theme.css?1706811522" rel="stylesheet">
+    <link href="/CPP_Learning/css/tabs.css?1706811522" rel="stylesheet">
+    <link href="/CPP_Learning/css/hugo-theme.css?1706811522" rel="stylesheet">
     
-    <link href="/CPP_Learning/css/theme-mine.css?1706621655" rel="stylesheet">
+    <link href="/CPP_Learning/css/theme-mine.css?1706811522" rel="stylesheet">
     
-    <link href="/CPP_Learning/css/syntax.css?1706621655" rel="stylesheet">
+    <link href="/CPP_Learning/css/syntax.css?1706811522" rel="stylesheet">
 
-    <script src="/CPP_Learning/js/jquery-3.3.1.min.js?1706621655"></script>
+    <script src="/CPP_Learning/js/jquery-3.3.1.min.js?1706811522"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -1934,7 +1934,7 @@
         
 
 
-<p>Commençons par donner quelques rappels des notions de POO que vous avez pu voir l&rsquo;an dernier.</p>
+<p>Commençons par quelques piqûres de rappel à propos des notions de POO que vous avez pu voir l&rsquo;an dernier.</p>
 <hr>
 <h4 id="objet">Objet</h4>
 <p>Dans un programme, un <strong>objet</strong> est un élément constitué d&rsquo;un <strong>état</strong>, et disposant d&rsquo;une <strong>interface</strong> permettant d&rsquo;intéragir avec cet état.</p>
@@ -1944,27 +1944,30 @@
 <p>L&rsquo;état d&rsquo;un objet est composé de valeurs, pouvant ou non varier au cours de l&rsquo;exécution du programme.</p>
 <h4 id="attributs">Attributs</h4>
 <p>Les <strong>attributs</strong> sont les propriétés définies par une classe à partir desquelles on construit l&rsquo;état des instances.<br>
-Si une classe Personne définit deux attributs <code>nom</code> et <code>âge</code>, alors l&rsquo;état de chaque instance de Personne sera composée d&rsquo;une valeur pour le nom, et d&rsquo;une pour l&rsquo;age.</p>
+Si une classe <code>Personne</code> définit deux attributs <code>nom</code> et <code>age</code>, alors l&rsquo;état de chaque instance de <code>Personne</code> sera composé d&rsquo;une valeur pour le nom, et d&rsquo;une valeur pour l&rsquo;âge.</p>
 <h4 id="interface">Interface</h4>
 <p>L&rsquo;interface est l&rsquo;ensemble des procédés permettant d&rsquo;accéder à l&rsquo;état d&rsquo;un objet ou de le modifier.<br>
-Selon les langages, elle ne se présente pas de la même manière. En C++, elle se compose des <strong>fonctions-membres</strong> de la classe, ainsi que de ses éventuels attributs publiques.</p>
+Selon les langages, elle ne se présente pas de la même manière. En C++, elle se compose des <strong>fonctions-membres</strong> de la classe, ainsi que de ses éventuels attributs publics.</p>
 <h4 id="invariant-de-classe">Invariant de classe</h4>
-<p>Un <strong>invariant de classe</strong> est une condition que toutes les instances de cette classe doivent vérifier.<br>
-Un des invariants de la classe Carré est qu&rsquo;il faut qu&rsquo;à tout moment, les 4 côtés d&rsquo;une instance soient de même longueur.<br>
-Un des invariants de la classe Fraction est que le dénominateur de chacune de ses instances ne peut pas être nul.<br>
-Un des invariants de la classe ListeCroissante est que les éléments sont toujours par ordre croissant.</p>
-<p>Lorsqu&rsquo;une fonction-membre publique est appelée, on peut toujours supposer qu&rsquo;à son entrée, les invariants sont assurés.
-En contre-partie, il faut que l&rsquo;implémentation de la fonction garantisse qu&rsquo;à la sortie, les invariants sont toujours vrais.<br>
-Par exemple, la fonction <code>SortedList::insert()</code> n&rsquo;a pas besoin de vérifier que la liste est triée au début, car on part du principe que l&rsquo;invariant est forcément vrai.
+<p>Un <strong>invariant de classe</strong> est une condition que toutes les instances de cette classe doivent vérifier. Par exemple :</p>
+<ul>
+<li>Pour la classe <code>Carré</code>, l&rsquo;un des invariants stipule que les quatre côtés d&rsquo;une instance doivent toujours avoir la même longueur.</li>
+<li>Dans le cas de la classe <code>Fraction</code>, un invariant essentiel est que le dénominateur de chaque instance ne peut jamais être nul.</li>
+<li>Pour la classe <code>ListeCroissante</code>, le tri des éléments par ordre croissant constitue un invariant.</li>
+</ul>
+<p>Lorsqu&rsquo;une fonction-membre publique est appelée, on peut toujours supposer qu&rsquo;à son entrée, les invariants sont garantis.
+En contre-partie, il faut que l&rsquo;implémentation de la fonction garantisse également qu&rsquo;à la sortie, les invariants seront toujours vrais.<br>
+Par exemple, la fonction <code>SortedList::insert()</code> n&rsquo;a pas besoin de vérifier que la liste est triée au début, car on part du principe que l&rsquo;invariant est forcément vrai dès l&rsquo;entrée.
 On peut donc utiliser la recherche dichotomique pour trouver où doit être inséré le nouvel élément, ce qui est moins coûteux que si on avait à faire une recherche linéaire.<br>
 L&rsquo;invariant permet donc ici de gagner en temps de calcul.</p>
 <h4 id="encapsulation">Encapsulation</h4>
-<p>L&rsquo;<strong>encapsulation</strong> est le principe déclarant que pour pour accéder/modifier l&rsquo;état d&rsquo;un objet, il faut passer par des &ldquo;routines&rdquo; (fonction-membre en C++, méthode en Java, &hellip;). Il s&rsquo;accompagne souvent du masquage de l&rsquo;état des objets, c&rsquo;est-à-dire que l&rsquo;on déclare les attributs dans la partie privée de la classe.<br>
+<p>L&rsquo;<strong>encapsulation</strong> est le principe stipulant que pour pour accéder à l&rsquo;état d&rsquo;un objet ou le modifier, il faut passer par des &ldquo;routines&rdquo; (fonction-membre en C++, méthode en Java, &hellip;).
+Ce principe s&rsquo;accompagne souvent du masquage de l&rsquo;état des objets, c&rsquo;est-à-dire de la déclaration des attributs dans la partie privée de la classe.<br>
 Respecter le principe d&rsquo;encapsulation permet de garantir les invariants de classe plus facilement.</p>
 <p>Reprenons l&rsquo;exemple de la classe <code>SortedList</code>.
 On ne laissera pas l&rsquo;utilisateur accéder directement au tableau contenant les valeurs.
-Il pourrait ajouter un élément à la fin, ce qui aurait de grande chance de briser l&rsquo;invariant de classe.
-S&rsquo;il veut ajouter un élément, on le forcera à passer par notre fonction-membre qui fera respecter l&rsquo;invariant de classe.</p>
+En effet, il pourrait ajouter un élément à la fin, ce qui aurait de grandes chances de briser l&rsquo;invariant de classe.
+S&rsquo;il veut ajouter un élément, on le forcera à passer par notre fonction-membre qui fera respecter cet invariant.</p>
 
 
 <footer class="footline">
@@ -3247,19 +3250,19 @@ S&rsquo;il veut ajouter un élément, on le forcera à passer par notre fonction
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/CPP_Learning/js/clipboard.min.js?1706621655"></script>
-    <script src="/CPP_Learning/js/perfect-scrollbar.min.js?1706621655"></script>
-    <script src="/CPP_Learning/js/perfect-scrollbar.jquery.min.js?1706621655"></script>
-    <script src="/CPP_Learning/js/jquery.sticky.js?1706621655"></script>
-    <script src="/CPP_Learning/js/featherlight.min.js?1706621655"></script>
-    <script src="/CPP_Learning/js/highlight.pack.js?1706621655"></script>
+    <script src="/CPP_Learning/js/clipboard.min.js?1706811522"></script>
+    <script src="/CPP_Learning/js/perfect-scrollbar.min.js?1706811522"></script>
+    <script src="/CPP_Learning/js/perfect-scrollbar.jquery.min.js?1706811522"></script>
+    <script src="/CPP_Learning/js/jquery.sticky.js?1706811522"></script>
+    <script src="/CPP_Learning/js/featherlight.min.js?1706811522"></script>
+    <script src="/CPP_Learning/js/highlight.pack.js?1706811522"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/CPP_Learning/js/modernizr.custom-3.6.0.js?1706621655"></script>
-    <script src="/CPP_Learning/js/learn.js?1706621655"></script>
-    <script src="/CPP_Learning/js/hugo-learn.js?1706621655"></script>
+    <script src="/CPP_Learning/js/modernizr.custom-3.6.0.js?1706811522"></script>
+    <script src="/CPP_Learning/js/learn.js?1706811522"></script>
+    <script src="/CPP_Learning/js/hugo-learn.js?1706811522"></script>
     
         
-            <script src="/CPP_Learning/mermaid/mermaid.js?1706621655"></script>
+            <script src="/CPP_Learning/mermaid/mermaid.js?1706811522"></script>
         
         <script>
             mermaid.initialize({ startOnLoad: true });

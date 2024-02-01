@@ -12,22 +12,22 @@
     <title>Constructeur 🔨 :: Cours de C&#43;&#43; - Niveau Master</title>
 
     
-    <link href="/CPP_Learning/css/nucleus.css?1706621655" rel="stylesheet">
-    <link href="/CPP_Learning/css/fontawesome-all.min.css?1706621655" rel="stylesheet">
-    <link href="/CPP_Learning/css/hybrid.css?1706621655" rel="stylesheet">
-    <link href="/CPP_Learning/css/featherlight.min.css?1706621655" rel="stylesheet">
-    <link href="/CPP_Learning/css/perfect-scrollbar.min.css?1706621655" rel="stylesheet">
-    <link href="/CPP_Learning/css/auto-complete.css?1706621655" rel="stylesheet">
-    <link href="/CPP_Learning/css/atom-one-dark-reasonable.css?1706621655" rel="stylesheet">
-    <link href="/CPP_Learning/css/theme.css?1706621655" rel="stylesheet">
-    <link href="/CPP_Learning/css/tabs.css?1706621655" rel="stylesheet">
-    <link href="/CPP_Learning/css/hugo-theme.css?1706621655" rel="stylesheet">
+    <link href="/CPP_Learning/css/nucleus.css?1706811522" rel="stylesheet">
+    <link href="/CPP_Learning/css/fontawesome-all.min.css?1706811522" rel="stylesheet">
+    <link href="/CPP_Learning/css/hybrid.css?1706811522" rel="stylesheet">
+    <link href="/CPP_Learning/css/featherlight.min.css?1706811522" rel="stylesheet">
+    <link href="/CPP_Learning/css/perfect-scrollbar.min.css?1706811522" rel="stylesheet">
+    <link href="/CPP_Learning/css/auto-complete.css?1706811522" rel="stylesheet">
+    <link href="/CPP_Learning/css/atom-one-dark-reasonable.css?1706811522" rel="stylesheet">
+    <link href="/CPP_Learning/css/theme.css?1706811522" rel="stylesheet">
+    <link href="/CPP_Learning/css/tabs.css?1706811522" rel="stylesheet">
+    <link href="/CPP_Learning/css/hugo-theme.css?1706811522" rel="stylesheet">
     
-    <link href="/CPP_Learning/css/theme-mine.css?1706621655" rel="stylesheet">
+    <link href="/CPP_Learning/css/theme-mine.css?1706811522" rel="stylesheet">
     
-    <link href="/CPP_Learning/css/syntax.css?1706621655" rel="stylesheet">
+    <link href="/CPP_Learning/css/syntax.css?1706811522" rel="stylesheet">
 
-    <script src="/CPP_Learning/js/jquery-3.3.1.min.js?1706621655"></script>
+    <script src="/CPP_Learning/js/jquery-3.3.1.min.js?1706811522"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -1949,8 +1949,8 @@ Voici la syntaxe générique d&rsquo;un constructeur :</p>
 </span></span><span class="line"><span class="cl"><span class="p">{</span>
 </span></span><span class="line"><span class="cl"><span class="k">public</span><span class="o">:</span>
 </span></span><span class="line"><span class="cl">    <span class="n">ClassName</span><span class="p">(</span><span class="n">type</span> <span class="n">p1</span><span class="p">,</span> <span class="n">type</span> <span class="n">p2</span><span class="p">,</span> <span class="p">...)</span>
-</span></span><span class="line"><span class="cl">        <span class="o">:</span> <span class="n">_attribute_1</span> <span class="p">{</span> <span class="cm">/* value for _a1 */</span> <span class="p">}</span>
-</span></span><span class="line"><span class="cl">        <span class="p">,</span> <span class="n">_attribute_2</span> <span class="p">{</span> <span class="cm">/* value for _a2 */</span> <span class="p">}</span>
+</span></span><span class="line"><span class="cl">        <span class="o">:</span> <span class="n">_attribute_1</span> <span class="p">{</span> <span class="cm">/* value for _attribute_1 */</span> <span class="p">}</span>
+</span></span><span class="line"><span class="cl">        <span class="p">,</span> <span class="n">_attribute_2</span> <span class="p">{</span> <span class="cm">/* value for _attribute_2 */</span> <span class="p">}</span>
 </span></span><span class="line"><span class="cl">        <span class="p">,</span> <span class="p">...</span>
 </span></span><span class="line"><span class="cl">    <span class="p">{</span>
 </span></span><span class="line"><span class="cl">        <span class="c1">// some optional code
@@ -1980,7 +1980,7 @@ Voici la syntaxe générique d&rsquo;un constructeur :</p>
 </span></span></code></pre></div><p>Et pour instancier la classe <code>Dog</code> avec le constructeur ci-dessus, on peut écrire :</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="n">Dog</span> <span class="n">dog</span> <span class="p">{</span> <span class="s">&#34;Colley&#34;</span><span class="p">,</span> <span class="s">&#34;Lassie&#34;</span> <span class="p">};</span> 
 </span></span></code></pre></div><p>Commencez par modifier votre fonction <code>main</code>, de manière à passer le nom <code>&quot;Batman&quot;</code> à la construction de la variable <code>p</code>, puis supprimez l&rsquo;appel à <code>set_name</code>.<br>
-Modifiez ensuite la classe <code>Person</code> pour lui ajouter un constructeur à un paramètre, dans lequel vous initialiser l&rsquo;attribut <code>_name</code>. Vous n&rsquo;êtes pas obligé d&rsquo;initialiser <code>_age</code> dans la liste d&rsquo;initialisation du constructeur, car cet attribut est déjà initialisé au niveau de sa définition (= <strong>class initializer</strong>).</p>
+Modifiez ensuite la classe <code>Person</code> pour lui ajouter un constructeur à 1 paramètre, dans lequel vous initialisez l&rsquo;attribut <code>_name</code>. Vous n&rsquo;êtes pas obligé d&rsquo;initialiser <code>_age</code> dans la liste d&rsquo;initialisation du constructeur, car cet attribut est déjà initialisé au niveau de sa définition (= <strong>class initializer</strong>).</p>
 <p>Comme d&rsquo;habitude, compilez et testez ensuite votre programme.</p>
 
 <div class="hidden-solution">
@@ -2076,11 +2076,11 @@ Ajoutez l&rsquo;attribut correspondant <code>_surname</code> à la classe et mod
 <h3 id="le-constructeur-par-défaut">Le constructeur par défaut</h3>
 <p>Modifiez l&rsquo;instanciation de <code>p</code> dans la fonction <code>main</code> de manière à ne plus lui passer d&rsquo;arguments (comme c&rsquo;était le cas avant de commencer l&rsquo;exercice) :</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="n">Person</span> <span class="n">p</span><span class="p">;</span>
-</span></span></code></pre></div><p>Le programme ne compile plus alors qu&rsquo;il compilait tout à l&rsquo;heure.<br>
-Commentez la définition de votre constructeur, et essayez de compiler à nouveau. Ca recompile&hellip;</p>
+</span></span></code></pre></div><p>Oups ! Le programme ne compile plus, alors qu&rsquo;il compilait tout à l&rsquo;heure.<br>
+Commentez la définition de votre constructeur, et essayez de compiler à nouveau. Ça recompile&hellip;</p>
 <p><strong>Pourquoi le programme compile quand on retire un constructeur ?</strong></p>
 <p>Lorsque l&rsquo;utilisateur ne définit aucun constructeur, le compilateur définit (s&rsquo;il le peut) un constructeur qui n&rsquo;attend aucun argument.</p>
-<p>En terme de vocabulaire, on appelle :</p>
+<p>Concernant le vocabulaire, on appelle :</p>
 <ul>
 <li><strong>constructeur par défaut</strong> tout constructeur qui n&rsquo;attend aucun paramètre,</li>
 <li><strong>implémentation par défaut</strong> une implémentation fournie automatiquement par le compilateur.</li>
@@ -2088,13 +2088,14 @@ Commentez la définition de votre constructeur, et essayez de compiler à nouvea
 <p>Le compilateur définit donc une <strong>implémentation par défaut du constructeur par défaut</strong> (oui, c&rsquo;est long à dire) si le programmeur ne définit <strong>aucun</strong> constructeur.</p>
 <p>L&rsquo;implémentation par défaut du constructeur par défaut initialise les attributs de la classe selon les règles suivantes :</p>
 <ol>
-<li>en utilisant le class-initializer s&rsquo;il est fourni (comme pour <code>_age</code>),</li>
-<li>s&rsquo;il n&rsquo;y a pas de class-initializer et que l&rsquo;attribut est une classe, en appelant son constructeur par défaut (comme pour <code>_name</code>, qui étant une <code>std::string</code>, est construit par défaut avec la chaîne vide),</li>
-<li>s&rsquo;il n&rsquo;y a pas de class-initializer et que l&rsquo;attribut n&rsquo;est pas une classe, alors il ne passe rien, et le contenu de l&rsquo;attribut est donc indéfini.</li>
+<li>Si un class-initializer est fourni, on l&rsquo;utilise (comme pour <code>_age</code>).</li>
+<li>S&rsquo;il n&rsquo;y a pas de class-initializer et que l&rsquo;attribut est une classe, on appelle son constructeur par défaut (comme pour <code>_name</code> qui, étant une <code>std::string</code>, est construit par défaut avec la chaîne vide).</li>
+<li>S&rsquo;il n&rsquo;y a pas de class-initializer et que l&rsquo;attribut n&rsquo;est pas une classe, alors il ne se passe rien, et le contenu de l&rsquo;attribut est donc indéfini.</li>
 </ol>
-<p>Du coup pour répondre à la question, le code originel compilait car le compilateur définissait un constructeur par défaut à la classe <code>Person</code>.<br>
-Dès lors que vous avez ajouté votre propre constructeur, le compilateur a supposé que vous ne vouliez probablement plus de l&rsquo;implémentation qu&rsquo;il vous fournissait. Il ne vous était donc plus possible d&rsquo;instancier la classe <code>Person</code> sans argument.</p>
-<p>Si vous vouliez pouvoir le faire à nouveau, tout en gardant votre constructeur à 2 paramètres, vous devriez donc définir vous-même un constructeur par défaut (c&rsquo;est-à-dire un constructeur sans paramètre).</p>
+<p>Du coup, pour répondre à la question, le code original compilait car le compilateur définissait un constructeur par défaut pour la classe <code>Person</code>.<br>
+Cependant, dès que vous avez introduit votre propre constructeur, le compilateur a supposé que vous n&rsquo;aviez plus besoin de l&rsquo;implémentation par défaut qu&rsquo;il fournissait et l&rsquo;a supprimé.<br>
+Il n&rsquo;était alors plus possible d&rsquo;instancier la classe <code>Person</code> sans spécifier d&rsquo;arguments.</p>
+<p>Si vous voulez instancier une <code>Person</code> sans argument tout en conservant votre constructeur à 2 paramètres, vous devez définir explicitement un constructeur par défaut (c&rsquo;est-à-dire un constructeur sans paramètre).</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">Person</span>
 </span></span><span class="line"><span class="cl"><span class="p">{</span>
 </span></span><span class="line"><span class="cl"><span class="k">public</span><span class="o">:</span>
@@ -2108,8 +2109,8 @@ Dès lors que vous avez ajouté votre propre constructeur, le compilateur a supp
 </span></span><span class="line"><span class="cl">    <span class="p">...</span>
 </span></span><span class="line"><span class="cl"><span class="p">};</span>
 </span></span></code></pre></div>
-<div class="notices note" ><p>1- Si on n&rsquo;initialise aucun attribut dans la liste d&rsquo;initialisation d&rsquo;un constructeur, alors il faut omettre complètement cette liste (écrire <code>Person() {}</code> plutôt que <code>Person() : {}</code>).<br>
-2- Si un attribut n&rsquo;est pas initialisé via la liste d&rsquo;initialisation, alors il est initialisé selon les mêmes règles que celles exposées pour l&rsquo;implémentation par défaut du constructeur par défaut. C&rsquo;est pour cela que l&rsquo;on n&rsquo;a pas besoin de respécifier <code>_age</code> dans la liste d&rsquo;initialisation du constructeur à 2 paramètres.</p>
+<div class="notices note" ><p>1. Si aucun attribut n&rsquo;est initialisé dans la liste d&rsquo;initialisation d&rsquo;un constructeur, il est nécessaire d&rsquo;omettre complètement cette liste (c&rsquo;est-à-dire écrire <code>Person() {}</code> plutôt que <code>Person() : {}</code>).<br>
+2. Si un attribut n&rsquo;est pas initialisé via la liste d&rsquo;initialisation, il est automatiquement initialisé selon les mêmes règles que celles définies pour l&rsquo;implémentation par défaut du constructeur par défaut. C&rsquo;est la raison pour laquelle il n&rsquo;est pas nécessaire de spécifier à nouveau <code>_age</code> dans la liste d&rsquo;initialisation du constructeur à 2 paramètres.</p>
 </div>
 
 <hr>
@@ -2125,7 +2126,7 @@ Et enfin, lorsqu&rsquo;il n&rsquo;y a qu&rsquo;un seul paramètre, on peut dans 
 <p>Ces syntaxes s&rsquo;utilisent également pour l&rsquo;instanciation des variables de types fondamentaux : <code>int a = 1;</code> / <code>int a { 1 };</code> / <code>int a(1);</code></p>
 <p>Pour le moment, vous pouvez considérer que ces méthodes sont plus ou moins équivalentes (évidemment, ce n&rsquo;est pas le cas, sinon ce ne serait pas drôle, mais nous y reviendrons un peu plus tard).<br>
 Comme indiqué dans le Chapitre 1, ne vous embêtez pas à mémoriser toutes ces règles par coeur.
-Retenez simplement que d&rsquo;autres variations de syntaxe existent, pour que vous ne soyiez pas étonner si vous les rencontrez dans du code que vous n&rsquo;avez pas écrit.</p>
+Retenez simplement que d&rsquo;autres variantes de syntaxe existent, pour que vous ne soyiez pas étonnés si vous les rencontrez dans du code que vous n&rsquo;avez pas écrit.</p>
 
 <div class="notices info" ><p>Si vous choisissez d&rsquo;utiliser la syntaxe <code>()</code>, faites attention lorsque vous appelez le constructeur par défaut (= à 0 paramètre), car il faut alors complètement omettre les parenthèses.<br>
 Si vous écrivez <code>Class obj();</code> au lieu de <code>Class obj;</code>, le compilateur va râler.</p>
@@ -2138,7 +2139,7 @@ Contrairement à l&rsquo;initialisation des variables, on peut écrire <code>: _
 
 <hr>
 <h3 id="à-bas-les-setters">À bas les setters</h3>
-<p>L&rsquo;ajout de votre constructeur vous a permis de supprimer le setter pour <code>_name</code>, afin que l&rsquo;on ne puisse pas modifier l&rsquo;attribut après son initialisation.<br>
+<p>L&rsquo;ajout de votre constructeur vous a permis de supprimer le setter pour <code>_name</code>, afin que l&rsquo;on ne puisse plus modifier l&rsquo;attribut après son initialisation.<br>
 Il reste le setter pour <code>_age</code>, qui ne pose pas spécialement de problème, si ce n&rsquo;est qu&rsquo;on peut remonter le temps avec. Et là, c&rsquo;est <em>Batman</em>, pas <em>Retour vers le futur</em> 🦇</p>
 <p>Vous allez donc remplacer votre fonction <code>set_age</code> par une fonction <code>wait</code>, qui permet d&rsquo;augmenter l&rsquo;âge de votre objet.
 Celle-ci prendra en paramètre le nombre d&rsquo;années à attendre.
@@ -2166,13 +2167,13 @@ Testez que votre programme fonctionne correctement.</p>
 
 </div>
 
-<div class="notices note" ><p>Définir et utiliser des setters n&rsquo;est pas forcément mauvais. Ce qui est mauvais, c&rsquo;est de définir des setters pour tous les attributs d&rsquo;une classe, sans prendre le temps de définir au préalable ses invariants (l&rsquo;âge d&rsquo;une personne ne peut pas décroître au cours de l&rsquo;exécution).</p>
+<div class="notices note" ><p>Définir et utiliser des setters n&rsquo;est pas forcément une mauvaise pratique. Ce qui est mauvais, c&rsquo;est de définir des setters pour tous les attributs d&rsquo;une classe, sans prendre le temps de définir au préalable ses invariants (l&rsquo;âge d&rsquo;une personne ne peut pas décroître au cours de l&rsquo;exécution).</p>
 </div>
 
 <hr>
 <h3 id="synthèse">Synthèse</h3>
 <ul>
-<li>Un <strong>constructeur</strong> est une fonction-membre sans type de retour et ayant pour identifiant le nom de la class.</li>
+<li>Un <strong>constructeur</strong> est une fonction-membre sans type de retour et ayant pour identifiant le nom de la classe.</li>
 <li>La <strong>liste d&rsquo;initialisation</strong> permet d&rsquo;initialiser les attributs de la classe.</li>
 <li>Si un attribut est initialisé directement sur la ligne de sa définition, on parle de <strong>class-initializer</strong>.</li>
 <li>Si un constructeur n&rsquo;a aucun paramètre, alors il s&rsquo;agit du <strong>constructeur par défaut</strong> de la classe.</li>
@@ -2180,7 +2181,7 @@ Testez que votre programme fonctionne correctement.</p>
 <li>Si on ne définit aucun constructeur, le compilateur génère l&rsquo;<strong>implémentation par défaut</strong> du constructeur par défaut.</li>
 </ul>
 
-<div class="notices warning" ><p>En terme de vocabulaire, attention à ne pas confondre constructeur par défaut, et implémentation par défaut fournie par le compilateur.<br>
+<div class="notices warning" ><p>Attention à ne pas confondre <strong>constructeur par défaut</strong>, et <strong>implémentation par défaut</strong> fournie par le compilateur.<br>
 Vous pouvez très bien implémenter vous-même un constructeur par défaut, et le compilateur peut fournir une implémentation par défaut pour d&rsquo;autres fonctions que le constructeur.</p>
 </div>
 
@@ -3469,19 +3470,19 @@ Vous pouvez très bien implémenter vous-même un constructeur par défaut, et l
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/CPP_Learning/js/clipboard.min.js?1706621655"></script>
-    <script src="/CPP_Learning/js/perfect-scrollbar.min.js?1706621655"></script>
-    <script src="/CPP_Learning/js/perfect-scrollbar.jquery.min.js?1706621655"></script>
-    <script src="/CPP_Learning/js/jquery.sticky.js?1706621655"></script>
-    <script src="/CPP_Learning/js/featherlight.min.js?1706621655"></script>
-    <script src="/CPP_Learning/js/highlight.pack.js?1706621655"></script>
+    <script src="/CPP_Learning/js/clipboard.min.js?1706811522"></script>
+    <script src="/CPP_Learning/js/perfect-scrollbar.min.js?1706811522"></script>
+    <script src="/CPP_Learning/js/perfect-scrollbar.jquery.min.js?1706811522"></script>
+    <script src="/CPP_Learning/js/jquery.sticky.js?1706811522"></script>
+    <script src="/CPP_Learning/js/featherlight.min.js?1706811522"></script>
+    <script src="/CPP_Learning/js/highlight.pack.js?1706811522"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/CPP_Learning/js/modernizr.custom-3.6.0.js?1706621655"></script>
-    <script src="/CPP_Learning/js/learn.js?1706621655"></script>
-    <script src="/CPP_Learning/js/hugo-learn.js?1706621655"></script>
+    <script src="/CPP_Learning/js/modernizr.custom-3.6.0.js?1706811522"></script>
+    <script src="/CPP_Learning/js/learn.js?1706811522"></script>
+    <script src="/CPP_Learning/js/hugo-learn.js?1706811522"></script>
     
         
-            <script src="/CPP_Learning/mermaid/mermaid.js?1706621655"></script>
+            <script src="/CPP_Learning/mermaid/mermaid.js?1706811522"></script>
         
         <script>
             mermaid.initialize({ startOnLoad: true });

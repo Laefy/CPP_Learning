@@ -19,7 +19,7 @@
       <link>https://laefy.github.io/CPP_Learning/chapter3/1-allocation/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://laefy.github.io/CPP_Learning/chapter3/1-allocation/</guid>
-      <description>Cette première page sera assez courte, elle vous présentera simplement la syntaxe permettant d&amp;rsquo;allouer dynamiquement de la mémoire et de libérer.&#xA;Allouer un seul élément Pour allouer un bloc de mémoire, on utilise le mot-clef new, suivi du type de donnée que l&amp;rsquo;on souhaite placer dedans, puis de la valeur avec laquelle on souhaite l&amp;rsquo;initialiser.&#xA;Cette instruction retourne un pointeur.&#xA;int* ptr_5 = new int { 5 }; std::cout &amp;lt;&amp;lt; *ptr_5 &amp;lt;&amp;lt; std::endl; // --&amp;gt; 5 Comme pour une variable classique, on peut utiliser des {} ou des () pour indiquer la valeur initiale.</description>
+      <description>Cette première page sera assez courte, elle vous présentera simplement la syntaxe permettant d&amp;rsquo;allouer dynamiquement de la mémoire et de la libérer.&#xA;Allouer un seul élément Pour allouer un bloc de mémoire, on utilise le mot-clef new, suivi du type de donnée que l&amp;rsquo;on souhaite y placer, puis de la valeur avec laquelle on souhaite l&amp;rsquo;initialiser.&#xA;Cette instruction retourne un pointeur.&#xA;int* ptr_5 = new int { 5 }; std::cout &amp;lt;&amp;lt; *ptr_5 &amp;lt;&amp;lt; std::endl; // --&amp;gt; 5 Comme pour une variable classique, on peut utiliser des {} ou des () pour indiquer la valeur initiale.</description>
     </item>
     <item>
       <title>Assertions</title>
@@ -33,7 +33,7 @@
       <link>https://laefy.github.io/CPP_Learning/chapter2/1-poo/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://laefy.github.io/CPP_Learning/chapter2/1-poo/</guid>
-      <description>Commençons par donner quelques rappels des notions de POO que vous avez pu voir l&amp;rsquo;an dernier.&#xA;Objet Dans un programme, un objet est un élément constitué d&amp;rsquo;un état, et disposant d&amp;rsquo;une interface permettant d&amp;rsquo;intéragir avec cet état.&#xA;Classe Un objet est généralement créé à partir d&amp;rsquo;un modèle, que l&amp;rsquo;on appelle classe. Un objet créé à partir d&amp;rsquo;une classe constitue une instance de cette classe.&#xA;Etat L&amp;rsquo;état d&amp;rsquo;un objet est composé de valeurs, pouvant ou non varier au cours de l&amp;rsquo;exécution du programme.</description>
+      <description>Commençons par quelques piqûres de rappel à propos des notions de POO que vous avez pu voir l&amp;rsquo;an dernier.&#xA;Objet Dans un programme, un objet est un élément constitué d&amp;rsquo;un état, et disposant d&amp;rsquo;une interface permettant d&amp;rsquo;intéragir avec cet état.&#xA;Classe Un objet est généralement créé à partir d&amp;rsquo;un modèle, que l&amp;rsquo;on appelle classe. Un objet créé à partir d&amp;rsquo;une classe constitue une instance de cette classe.&#xA;Etat L&amp;rsquo;état d&amp;rsquo;un objet est composé de valeurs, pouvant ou non varier au cours de l&amp;rsquo;exécution du programme.</description>
     </item>
     <item>
       <title>Compilateur</title>
@@ -110,7 +110,7 @@
       <link>https://laefy.github.io/CPP_Learning/chapter3/2-lifespan/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://laefy.github.io/CPP_Learning/chapter3/2-lifespan/</guid>
-      <description>Nous allons maintenant revenir sur l&amp;rsquo;instanciation et la désinstanciation des données, car ce sont les deux événements qui délimitent leur période de validité.&#xA;Donnée de type fondamental L&amp;rsquo;instanciation d&amp;rsquo;une donnée de type fondamental est constitué de deux étapes :&#xA;le programme alloue l&amp;rsquo;espace nécessaire pour stocker la donnée, si spécifié par le programmeur, le contenu de la donnée est initialisé. En ce qui concerne la désinstanciation, le programme désalloue l&amp;rsquo;espace réservé pour la donnée.</description>
+      <description>Nous allons maintenant revenir sur l&amp;rsquo;instanciation et la désinstanciation des données, car ce sont les deux événements qui délimitent leur période de validité.&#xA;Donnée de type fondamental L&amp;rsquo;instanciation d&amp;rsquo;une donnée de type fondamental est constitué de deux phases.&#xA;Le programme alloue l&amp;rsquo;espace nécessaire pour stocker la donnée. Si spécifié par le programmeur, le contenu de la donnée est initialisé. En ce qui concerne la désinstanciation, le programme désalloue l&amp;rsquo;espace réservé pour la donnée.</description>
     </item>
     <item>
       <title>Exceptions</title>
@@ -208,7 +208,7 @@
       <link>https://laefy.github.io/CPP_Learning/chapter3/3-storage/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://laefy.github.io/CPP_Learning/chapter3/3-storage/</guid>
-      <description>Sur cette page, nous rappelerons ce que sont les variables et les pointeurs et comment ils peuvent être représentés en mémoire, puis nous ferons de même pour les références.&#xA;Nous présenterons ensuite les spécificités des trois zones dans lequel le programme alloue de la mémoire : la mémoire statique, la pile et le tas.&#xA;Cela vous aidera, j&amp;rsquo;espère, à visualiser mentalement quelles sont les données valides du programme.&#xA;Représentation Variables Une variable est un identifiant permettant d&amp;rsquo;accéder à une donnée de taille fixe en mémoire.</description>
+      <description>Sur cette page, nous rappelerons ce que sont les variables et les pointeurs, et comment ils peuvent être représentés en mémoire, puis nous ferons de même pour les références.&#xA;Nous présenterons ensuite les spécificités des trois zones dans lesquelles le programme alloue de la mémoire : la mémoire statique, la pile et le tas.&#xA;Cela vous aidera, j&amp;rsquo;espère, à visualiser mentalement quelles sont les données valides du programme.&#xA;Représentation Variables Une variable est un identifiant permettant d&amp;rsquo;accéder à une donnée de taille fixe en mémoire.</description>
     </item>
     <item>
       <title>Itérateurs</title>
@@ -271,7 +271,7 @@
       <link>https://laefy.github.io/CPP_Learning/chapter1/4-std-lib/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://laefy.github.io/CPP_Learning/chapter1/4-std-lib/</guid>
-      <description>Sur cette page, vous allez apprendre à utiliser quelques classes fournies par la librarie standard pour manipuler chaînes de caractères et tableaux. Vous verrez également comment écrire ou lire dans des flux pour intéragir avec l&amp;rsquo;utilisateur.&#xA;Chaînes de caractères Comme en C, const char* est le type fondamental associé à une chaîne de caractère littérale (c&amp;rsquo;est-à-dire écrite en dur, avec les guillemets autour) :&#xA;auto str = &amp;#34;hello&amp;#34;; // -&amp;gt; str est de type const char* Cependant, ce n&amp;rsquo;est pas du tout pratique pour faire des opérations comme des concaténations, des recherches, ou même simplement récupérer la taille de la chaîne.</description>
+      <description>Sur cette page, vous allez apprendre à utiliser quelques classes fournies par la librarie standard pour manipuler chaînes de caractères et tableaux. Vous verrez également comment écrire ou lire dans des flux pour intéragir avec l&amp;rsquo;utilisateur.&#xA;Chaînes de caractères Comme en C, const char* est le type fondamental associé à une chaîne de caractères littérale (c&amp;rsquo;est-à-dire écrite en dur, avec les guillemets autour) :&#xA;auto str = &amp;#34;hello&amp;#34;; // -&amp;gt; str est de type const char* Cependant, ce n&amp;rsquo;est pas du tout pratique pour faire des opérations comme des concaténations, des recherches, ou même simplement récupérer la taille de la chaîne.</description>
     </item>
     <item>
       <title>Polymorphisme</title>
@@ -292,7 +292,7 @@
       <link>https://laefy.github.io/CPP_Learning/chapter3/4-references/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://laefy.github.io/CPP_Learning/chapter3/4-references/</guid>
-      <description>Comme cela doit paraître encore un peu abstrait, nous allons vous présenter concrètement les principaux cas d&amp;rsquo;utilisation des références. Notez qu&amp;rsquo;il en existe un autre, mais vous le découvrirez dans le chapitre sur l&amp;rsquo;héritage !&#xA;Modifier un argument Le premier cas d&amp;rsquo;utilisation des références avait déjà été décrit dans le chapitre 1 : il s&amp;rsquo;agit de pouvoir modifier la valeur ou le contenu d&amp;rsquo;un argument passé à une fonction.&#xA;Pour rappel, lorsque vous passez un objet par valeur en paramètre à une fonction, l&amp;rsquo;intégralité de l&amp;rsquo;instance est copiée !</description>
+      <description>Comme cela doit paraître encore un peu abstrait, nous allons vous présenter concrètement les principaux cas d&amp;rsquo;utilisation des références. Notez qu&amp;rsquo;il en existe un autre, mais vous le découvrirez dans le chapitre sur l&amp;rsquo;héritage !&#xA;Modifier un argument Le premier cas d&amp;rsquo;utilisation des références avait déjà été décrit dans le Chapitre 1 : il s&amp;rsquo;agit de pouvoir modifier la valeur ou le contenu d&amp;rsquo;un argument passé à une fonction.&#xA;Pour rappel, lorsque vous passez un objet par valeur en paramètre d&amp;rsquo;une fonction, l&amp;rsquo;intégralité de l&amp;rsquo;instance est copiée !</description>
     </item>
     <item>
       <title>🚗 Véhicule partagé</title>
@@ -306,7 +306,7 @@
       <link>https://laefy.github.io/CPP_Learning/chapter0/5-clang-format/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://laefy.github.io/CPP_Learning/chapter0/5-clang-format/</guid>
-      <description>Clang-Format est un outil permettant de formatter automatiquement vos fichiers (indentation, espaces, retours à la ligne, etc).&#xA;Comme le C++ est un langage avec une syntaxe un peu lourde, utiliser ce type d&amp;rsquo;outils permet de faciliter la lecture du code.&#xA;Configuration de VSCode Clang-Format est déjà disponible dans l&amp;rsquo;extension C/C++ installée précédemment. Pour qu&amp;rsquo;il se lance automatiquement lorsque vous sauvegardez vos fichiers, suivez les instructions ci-dessous.&#xA;Ouvrez le panneau de commandes VSCode (Ctrl+Shift+P).</description>
+      <description>Clang-Format est un outil permettant de formatter automatiquement vos fichiers (indentation, espaces, retours à la ligne, etc).&#xA;Comme le C++ est un langage avec une syntaxe un peu lourde, utiliser ce type d&amp;rsquo;outils permet de faciliter la lecture du code.&#xA;Configuration de VSCode Clang-Format est déjà disponible dans l&amp;rsquo;extension C/C++ installée précédemment. Pour qu&amp;rsquo;il se lance automatiquement lorsque vous sauvegardez vos fichiers, suivez les instructions ci-dessous.&#xA;Ouvrez le panneau de commandes VSCode (Ctrl + Shift + P).</description>
     </item>
     <item>
       <title>Compilation ⚙️</title>
@@ -327,7 +327,7 @@
       <link>https://laefy.github.io/CPP_Learning/chapter2/5-modules/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://laefy.github.io/CPP_Learning/chapter2/5-modules/</guid>
-      <description>Cet exercice vous permettra de découvrir :&#xA;comment écrire des headers en C++, comment extraire l&amp;rsquo;implémentation des fonctions d&amp;rsquo;une classe en dehors de cette classe, à quoi correspondent les membres statiques d&amp;rsquo;une classe et comment les définir, comment déléguer un appel à un autre constructeur. Séparer l&amp;rsquo;implémentation des fonctions-membre Ouvrez le dossier chap-02/4-modules. Celui-ci est composé de 3 fichiers :&#xA;main.cpp, qui contient une fonction main déjà écrite Rectangle.h, qui contient une classe Rectangle, Rectangle.</description>
+      <description>Cet exercice vous permettra de découvrir :&#xA;comment écrire des headers en C++, comment extraire l&amp;rsquo;implémentation des fonctions d&amp;rsquo;une classe en dehors de cette classe, à quoi correspondent les membres statiques d&amp;rsquo;une classe et comment les définir, comment déléguer un appel à un autre constructeur. Séparer l&amp;rsquo;implémentation des fonctions-membres Ouvrez le dossier chap-02/4-modules. Celui-ci est composé de 3 fichiers :&#xA;main.cpp, qui contient une fonction main déjà écrite Rectangle.h, qui contient une classe Rectangle, Rectangle.</description>
     </item>
     <item>
       <title>Ownership 🏘️</title>

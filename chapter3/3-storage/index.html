@@ -12,22 +12,22 @@
     <title>Espace de stockage 💾 :: Cours de C&#43;&#43; - Niveau Master</title>
 
     
-    <link href="/CPP_Learning/css/nucleus.css?1706621655" rel="stylesheet">
-    <link href="/CPP_Learning/css/fontawesome-all.min.css?1706621655" rel="stylesheet">
-    <link href="/CPP_Learning/css/hybrid.css?1706621655" rel="stylesheet">
-    <link href="/CPP_Learning/css/featherlight.min.css?1706621655" rel="stylesheet">
-    <link href="/CPP_Learning/css/perfect-scrollbar.min.css?1706621655" rel="stylesheet">
-    <link href="/CPP_Learning/css/auto-complete.css?1706621655" rel="stylesheet">
-    <link href="/CPP_Learning/css/atom-one-dark-reasonable.css?1706621655" rel="stylesheet">
-    <link href="/CPP_Learning/css/theme.css?1706621655" rel="stylesheet">
-    <link href="/CPP_Learning/css/tabs.css?1706621655" rel="stylesheet">
-    <link href="/CPP_Learning/css/hugo-theme.css?1706621655" rel="stylesheet">
+    <link href="/CPP_Learning/css/nucleus.css?1706811522" rel="stylesheet">
+    <link href="/CPP_Learning/css/fontawesome-all.min.css?1706811522" rel="stylesheet">
+    <link href="/CPP_Learning/css/hybrid.css?1706811522" rel="stylesheet">
+    <link href="/CPP_Learning/css/featherlight.min.css?1706811522" rel="stylesheet">
+    <link href="/CPP_Learning/css/perfect-scrollbar.min.css?1706811522" rel="stylesheet">
+    <link href="/CPP_Learning/css/auto-complete.css?1706811522" rel="stylesheet">
+    <link href="/CPP_Learning/css/atom-one-dark-reasonable.css?1706811522" rel="stylesheet">
+    <link href="/CPP_Learning/css/theme.css?1706811522" rel="stylesheet">
+    <link href="/CPP_Learning/css/tabs.css?1706811522" rel="stylesheet">
+    <link href="/CPP_Learning/css/hugo-theme.css?1706811522" rel="stylesheet">
     
-    <link href="/CPP_Learning/css/theme-mine.css?1706621655" rel="stylesheet">
+    <link href="/CPP_Learning/css/theme-mine.css?1706811522" rel="stylesheet">
     
-    <link href="/CPP_Learning/css/syntax.css?1706621655" rel="stylesheet">
+    <link href="/CPP_Learning/css/syntax.css?1706811522" rel="stylesheet">
 
-    <script src="/CPP_Learning/js/jquery-3.3.1.min.js?1706621655"></script>
+    <script src="/CPP_Learning/js/jquery-3.3.1.min.js?1706811522"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -1938,8 +1938,8 @@
         
 
 
-<p>Sur cette page, nous rappelerons ce que sont les variables et les pointeurs et comment ils peuvent être représentés en mémoire, puis nous ferons de même pour les références.<br>
-Nous présenterons ensuite les spécificités des trois zones dans lequel le programme alloue de la mémoire : la mémoire statique, la pile et le tas.<br>
+<p>Sur cette page, nous rappelerons ce que sont les variables et les pointeurs, et comment ils peuvent être représentés en mémoire, puis nous ferons de même pour les références.<br>
+Nous présenterons ensuite les spécificités des trois zones dans lesquelles le programme alloue de la mémoire : la <strong>mémoire statique</strong>, la <strong>pile</strong> et le <strong>tas</strong>.<br>
 Cela vous aidera, j&rsquo;espère, à visualiser mentalement quelles sont les données valides du programme.</p>
 <hr>
 <h3 id="représentation">Représentation</h3>
@@ -1947,7 +1947,7 @@ Cela vous aidera, j&rsquo;espère, à visualiser mentalement quelles sont les do
 <p>Une variable est un identifiant permettant d&rsquo;accéder à une donnée de taille fixe en mémoire.<br>
 L&rsquo;emplacement précis de cette donnée constitue l&rsquo;adresse de la variable.
 Sur un ordinateur moderne, il s&rsquo;agira généralement d&rsquo;un entier encodé sur 64 bits.</p>
-<p>Si on représente la mémoire comme un tableau dans lequel chaque case est un octet, alors nous pouvons représenter une variable comme une série contiguëes de cases de ce tableau.</p>
+<p>Si on représente la mémoire comme un tableau dans lequel chaque case est un octet, alors nous pouvons représenter une variable comme une série contiguë de cases de ce tableau.</p>
 <p>Supposons que le code suivant alloue <code>var</code> à l&rsquo;adresse <code>0x00e8</code> (attention pour la suite, on compte en hexadécimal !).</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="kt">int</span> <span class="n">var</span> <span class="o">=</span> <span class="mi">145</span><span class="p">;</span>
 </span></span></code></pre></div><p>Comme <code>var</code> est de type entier, la zone mémoire s&rsquo;étend sur 4 octets, c&rsquo;est-à-dire entre <code>0x00e8</code> et <code>0x00eb</code>.</p>
@@ -1966,7 +1966,7 @@ Nous l&rsquo;avons représenté en italique pour indiquer que la durée de vie d
 <p><img src="/CPP_Learning/images/chapter3/storage/03-ref.svg" alt="Représentation d&rsquo;une référence en mémoire"></p>
 <h4 id="type-structuré">Type-structuré</h4>
 <p>Dans le cas des types-structurés, les attributs d&rsquo;un objet sont alloués au sein de l&rsquo;espace alloué pour l&rsquo;objet lui-même.</p>
-<p>La taille d&rsquo;un objet est donc souvent égale à la somme des tailles de ces attributs, mais ce n&rsquo;est pas toujours le cas&hellip;<br>
+<p>La taille d&rsquo;un objet est donc souvent égale à la somme des tailles de ses attributs, mais ce n&rsquo;est pas toujours le cas&hellip;<br>
 En effet, le processeur est plus efficace pour accéder à certaines données si celles-ci sont écrites à des adresses multiples d&rsquo;un certain nombre.
 Par exemple, il lira plus vite un <code>int</code> si celui-ci est écrit à une adresse multiple de <code>4</code>.<br>
 Le compilateur pourra donc décider de laisser du vide entre un attribut de type <code>char</code> (1 octet) et un attribut de type <code>int</code> (4 octets) afin d&rsquo;<strong>aligner</strong> l&rsquo;entier sur la bonne adresse.</p>
@@ -1988,12 +1988,12 @@ Attention cependant, notez bien que cela modifie aussi l&rsquo;ordre dans lequel
 <h3 id="la-mémoire-statique">La mémoire statique</h3>
 <p>La <strong>mémoire statique</strong> est la zone contenant les données associées aux variables globales du programme.</p>
 <p>Comme la taille d&rsquo;une variable dépend uniquement de son type, la compilation permet de déterminer la quantité d&rsquo;espace à allouer pour le segment de mémoire statique.
-Il est réservé une fois pour toute par le système d&rsquo;exploitation au lancement du programme et est restitué une fois la fonction <code>main</code> terminée.</p>
-<p>Il n&rsquo;est pas possible au cours de l&rsquo;exécution du programme d&rsquo;augmenter ou de réduire l&rsquo;espace réservé, et c&rsquo;est pour cela qu&rsquo;on parle de mémoire &ldquo;statique&rdquo;.</p>
+Il est réservé une fois pour toute par le système d&rsquo;exploitation au lancement du programme, et est restitué une fois la fonction <code>main</code> terminée.</p>
+<p>Il n&rsquo;est pas possible d&rsquo;augmenter ou de réduire l&rsquo;espace réservé au cours de l&rsquo;exécution du programme, et c&rsquo;est pour cela qu&rsquo;on parle de mémoire &ldquo;statique&rdquo;.</p>
 <hr>
 <h3 id="la-pile">La pile</h3>
 <p>La <strong>pile</strong> est l&rsquo;espace mémoire dans lequel sont stockées la plupart des variables locales.<br>
-Il s&rsquo;agit d&rsquo;un espace de taille limitée (quelque méga-octets en général, cela dépend du système), mais dans lequel il est très rapide d&rsquo;accéder et de modifier les données.<br>
+Il s&rsquo;agit d&rsquo;un espace de taille limitée (quelques méga-octets en général, cela dépend du système), mais dans lequel il est très rapide d&rsquo;accéder et de modifier les données.<br>
 De plus, l&rsquo;allocation est <strong>immédiate</strong>, car cet espace est réservé à votre programme dès qu&rsquo;il démarre.</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -2039,9 +2039,9 @@ De plus, l&rsquo;allocation est <strong>immédiate</strong>, car cet espace est 
 <code>l.6</code>: Une fois <code>f2</code> terminée, toutes les variables définies dedans sont retirées de la pile.<br>
 <code>l.11</code>: On place ensuite <code>v2</code> dans la pile, initialisée à la valeur de retour de <code>f2</code>.<br>
 <code>l.12</code>: Enfin, on empile <code>v3</code> et on exécute le restant de la fonction.<br>
-<code>l.12</code>: A la fin de l&rsquo;appel à <code>f1</code>, on retire toutes les variables locales de la pile.</p>
+<code>l.12</code>: À la fin de l&rsquo;appel à <code>f1</code>, on retire toutes les variables locales de la pile.</p>
 
-<div class="notices note" ><p>Notez bien que ce scénario n&rsquo;est qu&rsquo;un exemple possible de ce qu&rsquo;il pourrait se passer.
+<div class="notices note" ><p>Notez bien que ce scénario n&rsquo;est qu&rsquo;une hypothèse de ce qu&rsquo;il pourrait se passer en réalité.
 En fonction de l&rsquo;implémentation de votre compilateur et des instructions qu&rsquo;il produit, le contenu de la pile ne sera pas le même.
 Par exemple, à des fins d&rsquo;optimisation, il est fort probable que certaines variables soient stockées directement dans les registres du processeur plutôt que sur la pile.</p>
 </div>
@@ -2053,11 +2053,11 @@ Par exemple, à des fins d&rsquo;optimisation, il est fort probable que certaine
 En effet, le processus doit demander au système d&rsquo;exploitation qu&rsquo;il lui alloue un segment de mémoire-vive de taille suffisante pour stocker l&rsquo;objet.<br>
 Cette opération est longue car, comme tous les appels-système, elle nécessite de rendre la main au système d&rsquo;exploitation et donc de changer de contexte d&rsquo;exécution.</p>
 <p>L&rsquo;accès est également plus lent que sur la pile, car les données ne sont pas forcément regroupées : elles sont stockées là où le système a trouvé assez d&rsquo;espace pour l&rsquo;allocation.
-On a donc plus souvent des cache-miss que lorsqu&rsquo;on accède aux données de la pile.</p>
+On a donc plus souvent des <em>cache-miss</em> (litteralement &ldquo;échec de cache&rdquo;, c&rsquo;est-à-dire lorsque le cache ne contient pas le contenu demandé) que lorsqu&rsquo;on accède aux données de la pile.</p>
 <p>Il y a tout de même des avantages à allouer sur le tas.<br>
 Déjà, on peut allouer autant de données qu&rsquo;on le souhaite (ou tout du moins, autant que votre machine vous le permette).<br>
 Ensuite, les données restent disponibles tant qu&rsquo;on ne décide pas de les désinstancier.
-Cela permet d&rsquo;instancier des objets dans une fonction et qu&rsquo;ils ne soient pas désinstanciées au retour dans l&rsquo;appelant.</p>
+Cela permet d&rsquo;instancier des objets dans une fonction et qu&rsquo;ils ne soient pas désinstanciés au retour vers l&rsquo;appelant.</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt"> 1
@@ -2096,7 +2096,7 @@ Cela permet d&rsquo;instancier des objets dans une fonction et qu&rsquo;ils ne s
 <p><code>l.9</code>: On appelle la fonction <code>make_int</code> avec l&rsquo;argument <code>1</code>.<br>
 <code>l.2</code>: On entre dans la fonction, on ajoute le paramètre <code>value</code> dans la pile.<br>
 <code>l.3</code>: On alloue un entier de valeur <code>1</code> sur le tas, et on stocke l&rsquo;adresse dans <code>ptr</code>.<br>
-<code>l.5</code>: On sort de la fonction donc on dépile les variables locales, mais le contenu du tas ne change pas.<br>
+<code>l.5</code>: On sort de la fonction, donc on dépile les variables locales mais le contenu du tas ne change pas.<br>
 <code>l.9</code>: On stocke la valeur de retour de <code>make_int</code> dans <code>ptr_1</code>.<br>
 <code>l.11</code>: On demande la désinstanciation de l&rsquo;entier alloué sur le tas.<br>
 <code>l.14</code>: On sort du <code>main</code>, donc on dépile toutes les variables définies dedans.</p>
@@ -3394,19 +3394,19 @@ L&rsquo;allocation et les accès peuvent être longs, mais la quantité d&rsquo;
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/CPP_Learning/js/clipboard.min.js?1706621655"></script>
-    <script src="/CPP_Learning/js/perfect-scrollbar.min.js?1706621655"></script>
-    <script src="/CPP_Learning/js/perfect-scrollbar.jquery.min.js?1706621655"></script>
-    <script src="/CPP_Learning/js/jquery.sticky.js?1706621655"></script>
-    <script src="/CPP_Learning/js/featherlight.min.js?1706621655"></script>
-    <script src="/CPP_Learning/js/highlight.pack.js?1706621655"></script>
+    <script src="/CPP_Learning/js/clipboard.min.js?1706811522"></script>
+    <script src="/CPP_Learning/js/perfect-scrollbar.min.js?1706811522"></script>
+    <script src="/CPP_Learning/js/perfect-scrollbar.jquery.min.js?1706811522"></script>
+    <script src="/CPP_Learning/js/jquery.sticky.js?1706811522"></script>
+    <script src="/CPP_Learning/js/featherlight.min.js?1706811522"></script>
+    <script src="/CPP_Learning/js/highlight.pack.js?1706811522"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/CPP_Learning/js/modernizr.custom-3.6.0.js?1706621655"></script>
-    <script src="/CPP_Learning/js/learn.js?1706621655"></script>
-    <script src="/CPP_Learning/js/hugo-learn.js?1706621655"></script>
+    <script src="/CPP_Learning/js/modernizr.custom-3.6.0.js?1706811522"></script>
+    <script src="/CPP_Learning/js/learn.js?1706811522"></script>
+    <script src="/CPP_Learning/js/hugo-learn.js?1706811522"></script>
     
         
-            <script src="/CPP_Learning/mermaid/mermaid.js?1706621655"></script>
+            <script src="/CPP_Learning/mermaid/mermaid.js?1706811522"></script>
         
         <script>
             mermaid.initialize({ startOnLoad: true });

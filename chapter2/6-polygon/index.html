@@ -12,22 +12,22 @@
     <title>Opérateurs ➗ :: Cours de C&#43;&#43; - Niveau Master</title>
 
     
-    <link href="/CPP_Learning/css/nucleus.css?1706621655" rel="stylesheet">
-    <link href="/CPP_Learning/css/fontawesome-all.min.css?1706621655" rel="stylesheet">
-    <link href="/CPP_Learning/css/hybrid.css?1706621655" rel="stylesheet">
-    <link href="/CPP_Learning/css/featherlight.min.css?1706621655" rel="stylesheet">
-    <link href="/CPP_Learning/css/perfect-scrollbar.min.css?1706621655" rel="stylesheet">
-    <link href="/CPP_Learning/css/auto-complete.css?1706621655" rel="stylesheet">
-    <link href="/CPP_Learning/css/atom-one-dark-reasonable.css?1706621655" rel="stylesheet">
-    <link href="/CPP_Learning/css/theme.css?1706621655" rel="stylesheet">
-    <link href="/CPP_Learning/css/tabs.css?1706621655" rel="stylesheet">
-    <link href="/CPP_Learning/css/hugo-theme.css?1706621655" rel="stylesheet">
+    <link href="/CPP_Learning/css/nucleus.css?1706811522" rel="stylesheet">
+    <link href="/CPP_Learning/css/fontawesome-all.min.css?1706811522" rel="stylesheet">
+    <link href="/CPP_Learning/css/hybrid.css?1706811522" rel="stylesheet">
+    <link href="/CPP_Learning/css/featherlight.min.css?1706811522" rel="stylesheet">
+    <link href="/CPP_Learning/css/perfect-scrollbar.min.css?1706811522" rel="stylesheet">
+    <link href="/CPP_Learning/css/auto-complete.css?1706811522" rel="stylesheet">
+    <link href="/CPP_Learning/css/atom-one-dark-reasonable.css?1706811522" rel="stylesheet">
+    <link href="/CPP_Learning/css/theme.css?1706811522" rel="stylesheet">
+    <link href="/CPP_Learning/css/tabs.css?1706811522" rel="stylesheet">
+    <link href="/CPP_Learning/css/hugo-theme.css?1706811522" rel="stylesheet">
     
-    <link href="/CPP_Learning/css/theme-mine.css?1706621655" rel="stylesheet">
+    <link href="/CPP_Learning/css/theme-mine.css?1706811522" rel="stylesheet">
     
-    <link href="/CPP_Learning/css/syntax.css?1706621655" rel="stylesheet">
+    <link href="/CPP_Learning/css/syntax.css?1706811522" rel="stylesheet">
 
-    <script src="/CPP_Learning/js/jquery-3.3.1.min.js?1706621655"></script>
+    <script src="/CPP_Learning/js/jquery-3.3.1.min.js?1706811522"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -2004,14 +2004,14 @@ Voici un exemple pour chacune des méthodes :</p>
 <hr>
 <h3 id="méthodologie-de-lexercice">Méthodologie de l&rsquo;exercice</h3>
 <p>Pour assimiler un peu ces notions, nous vous proposons un petit exercice.<br>
-Commencer par ouvrir le fichier <code>chap-02/5-operators/main.cpp</code>.</p>
+Commencez par ouvrir le fichier <code>chap-02/5-operators/main.cpp</code>.</p>
 <p>Vous utiliserez la même méthodologie que pour <code>1-first_class.cpp</code> :</p>
 <ol>
-<li>Décommenter la prochaine ligne du <code>main</code>.</li>
-<li>Ecrire le code permettant de la faire compiler.</li>
-<li>Compiler et tester.</li>
-<li>Si ça ne fonctionne pas, modifier le code, et recommencer à partir de l&rsquo;étape 3.</li>
-<li>Si ça fonctionne, recommencer à partir de l&rsquo;étape 1, jusqu&rsquo;à ce que tout le code du <code>main</code> soit décommenté.</li>
+<li>Décommentez la prochaine ligne du <code>main</code>.</li>
+<li>Ecrivez le code permettant de la faire compiler.</li>
+<li>Compilez et testez.</li>
+<li>Si ça ne fonctionne pas, modifiez le code, et recommencez à partir de l&rsquo;étape 3.</li>
+<li>Si ça fonctionne, recommencez à partir de l&rsquo;étape 1, jusqu&rsquo;à ce que tout le code du <code>main</code> soit décommenté.</li>
 </ol>
 <p>Vous aurez à implémenter une classe <code>Polygon</code> contenant un tableau dynamique de <code>Vertex</code>.</p>
 <p>Vous ajouterez deux fichiers <code>Polygon.h</code> et <code>Polygon.cpp</code>, afin de contenir la définition de votre classe et l&rsquo;implémentation de ses fonctions.</p>
@@ -2083,7 +2083,7 @@ Quel doit-être le type de <code>_vertices</code> ? Dans quel header est défini
     </div>
 
 </div>
-<p>Comme <code>std::pair&lt;int, int&gt;</code> n&rsquo;est ni très lisible, ni très représentatif de ce qui va être contenu dedans, vous allez créer un <strong>alias</strong> <code>Vertex</code> dessus.<br>
+<p>Comme <code>std::pair&lt;int, int&gt;</code> n&rsquo;est ni très lisible, ni très représentatif de ce qui va être contenu dedans, vous allez créer un <strong>alias</strong> dessus : <code>Vertex</code>.<br>
 Pour définir un alias (équivalent au <code>typedef</code> en C), on utilise le mot-clef <code>using</code> :</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="k">using</span> <span class="n">AliasName</span> <span class="o">=</span> <span class="n">OriginalType</span><span class="p">;</span>
 </span></span></code></pre></div><p>Adaptez cette instruction et placez-la dans <code>Polygon.h</code>, juste avant la définition de votre classe. Modifiez la définition de <code>_vertices</code> afin d&rsquo;utiliser cet alias.
@@ -2142,7 +2142,7 @@ Pour construire un <code>Vertex</code> (aka <code>std::pair&lt;int, int&gt;</cod
 </span></span><span class="line"><span class="cl"><span class="p">}</span>
 </span></span></code></pre></div><div class="notices tip" ><p>La fonction <code>emplace_back</code> de <code>vector</code> est un peu spéciale.
 On peut lui passer directement les arguments que l&rsquo;on passerait au constructeur de l&rsquo;objet qu&rsquo;on souhaite ajouter au tableau.<br>
-Du coup, plutôt qu&rsquo;écrire <code>_vertices.emplace_back(Vertex { x, y })</code>, on peut directement écrire <code>_vertices.emplace_back(x, y)</code>.<br>
+Du coup, plutôt que d&rsquo;écrire <code>_vertices.emplace_back(Vertex { x, y })</code>, on peut directement écrire <code>_vertices.emplace_back(x, y)</code>.<br>
 Plutôt pratique, non ?</p>
 </div>
 
@@ -2152,12 +2152,12 @@ Plutôt pratique, non ?</p>
 </div>
 <hr>
 <h3 id="inspection-des-variables">Inspection des variables</h3>
-<p>Pour vérifier que le programme fonctionne correctement, vous allez utiliser le debugger.<br>
+<p>Pour vérifier que le programme fonctionne correctement, vous allez utiliser le debuggeur.<br>
 Pensez bien à compiler votre programme avec <code>-g</code> et à modifier la valeur de <code>program</code> dans le fichier <code>.vscode/launch.json</code>.</p>
 <p>Placez ensuite un breakpoint sur la ligne <code>polygon.add_vertex(2, 3);</code> du <code>main</code>.<br>
 <img src="/CPP_Learning/images/chapter2/6-breakpoint-v2.png" alt=""></p>
 <p>Lancez ensuite le programme avec F5.<br>
-Votre vue devrait désormais ressembler à celle-ci si vous vous placez dans l&rsquo;onglet &lsquo;Exécution&rsquo; à gauche :
+Votre vue devrait désormais ressembler à celle-ci si vous vous placez dans l&rsquo;onglet <code>Exécution</code> à gauche :
 <img src="/CPP_Learning/images/chapter2/6-execution-v2.png" alt=""></p>
 <p>Dans la fenêtre des variables, en haut à gauche, cliquez sur la variable <code>polygon</code>, puis sur son membre <code>_vertices</code>.<br>
 Celui-ci ne devrait rien contenir.</p>
@@ -2212,7 +2212,7 @@ Vous devriez constater que <code>_vertices</code> contient désormais le sommet 
 <p>Décommentez la dernière instruction :</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">polygon</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
 </span></span></code></pre></div><p>Le but de cette dernière partie est d&rsquo;implémenter l&rsquo;opérateur de flux <code>&lt;&lt;</code> pour la classe <code>Polygon</code>.</p>
-<p>La première opérande de l&rsquo;opérateur <code>&lt;&lt;</code> est le flux dans lequel on souhaite écrit.<br>
+<p>La première opérande de l&rsquo;opérateur <code>&lt;&lt;</code> est le flux dans lequel on souhaite écrire.<br>
 Le type associé est <code>std::ostream</code>, et on le passe par référence, car on ne veut pas créer de copie du flux à l&rsquo;appel de la fonction.<br>
 Ce flux est ensuite renvoyé comme valeur de retour, afin de pouvoir chaîner l&rsquo;appel :</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">polygon</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
@@ -3656,19 +3656,19 @@ Dans le cas ci-dessus, c&rsquo;est acceptable car on ne peut pas définir l&rsqu
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/CPP_Learning/js/clipboard.min.js?1706621655"></script>
-    <script src="/CPP_Learning/js/perfect-scrollbar.min.js?1706621655"></script>
-    <script src="/CPP_Learning/js/perfect-scrollbar.jquery.min.js?1706621655"></script>
-    <script src="/CPP_Learning/js/jquery.sticky.js?1706621655"></script>
-    <script src="/CPP_Learning/js/featherlight.min.js?1706621655"></script>
-    <script src="/CPP_Learning/js/highlight.pack.js?1706621655"></script>
+    <script src="/CPP_Learning/js/clipboard.min.js?1706811522"></script>
+    <script src="/CPP_Learning/js/perfect-scrollbar.min.js?1706811522"></script>
+    <script src="/CPP_Learning/js/perfect-scrollbar.jquery.min.js?1706811522"></script>
+    <script src="/CPP_Learning/js/jquery.sticky.js?1706811522"></script>
+    <script src="/CPP_Learning/js/featherlight.min.js?1706811522"></script>
+    <script src="/CPP_Learning/js/highlight.pack.js?1706811522"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/CPP_Learning/js/modernizr.custom-3.6.0.js?1706621655"></script>
-    <script src="/CPP_Learning/js/learn.js?1706621655"></script>
-    <script src="/CPP_Learning/js/hugo-learn.js?1706621655"></script>
+    <script src="/CPP_Learning/js/modernizr.custom-3.6.0.js?1706811522"></script>
+    <script src="/CPP_Learning/js/learn.js?1706811522"></script>
+    <script src="/CPP_Learning/js/hugo-learn.js?1706811522"></script>
     
         
-            <script src="/CPP_Learning/mermaid/mermaid.js?1706621655"></script>
+            <script src="/CPP_Learning/mermaid/mermaid.js?1706811522"></script>
         
         <script>
             mermaid.initialize({ startOnLoad: true });

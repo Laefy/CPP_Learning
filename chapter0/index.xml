@@ -40,7 +40,7 @@
       <link>https://laefy.github.io/CPP_Learning/chapter0/5-clang-format/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://laefy.github.io/CPP_Learning/chapter0/5-clang-format/</guid>
-      <description>Clang-Format est un outil permettant de formatter automatiquement vos fichiers (indentation, espaces, retours à la ligne, etc).&#xA;Comme le C++ est un langage avec une syntaxe un peu lourde, utiliser ce type d&amp;rsquo;outils permet de faciliter la lecture du code.&#xA;Configuration de VSCode Clang-Format est déjà disponible dans l&amp;rsquo;extension C/C++ installée précédemment. Pour qu&amp;rsquo;il se lance automatiquement lorsque vous sauvegardez vos fichiers, suivez les instructions ci-dessous.&#xA;Ouvrez le panneau de commandes VSCode (Ctrl+Shift+P).</description>
+      <description>Clang-Format est un outil permettant de formatter automatiquement vos fichiers (indentation, espaces, retours à la ligne, etc).&#xA;Comme le C++ est un langage avec une syntaxe un peu lourde, utiliser ce type d&amp;rsquo;outils permet de faciliter la lecture du code.&#xA;Configuration de VSCode Clang-Format est déjà disponible dans l&amp;rsquo;extension C/C++ installée précédemment. Pour qu&amp;rsquo;il se lance automatiquement lorsque vous sauvegardez vos fichiers, suivez les instructions ci-dessous.&#xA;Ouvrez le panneau de commandes VSCode (Ctrl + Shift + P).</description>
     </item>
     <item>
       <title>Retours ?</title>

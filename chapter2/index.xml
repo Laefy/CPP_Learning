@@ -12,7 +12,7 @@
       <link>https://laefy.github.io/CPP_Learning/chapter2/1-poo/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://laefy.github.io/CPP_Learning/chapter2/1-poo/</guid>
-      <description>Commençons par donner quelques rappels des notions de POO que vous avez pu voir l&amp;rsquo;an dernier.&#xA;Objet Dans un programme, un objet est un élément constitué d&amp;rsquo;un état, et disposant d&amp;rsquo;une interface permettant d&amp;rsquo;intéragir avec cet état.&#xA;Classe Un objet est généralement créé à partir d&amp;rsquo;un modèle, que l&amp;rsquo;on appelle classe. Un objet créé à partir d&amp;rsquo;une classe constitue une instance de cette classe.&#xA;Etat L&amp;rsquo;état d&amp;rsquo;un objet est composé de valeurs, pouvant ou non varier au cours de l&amp;rsquo;exécution du programme.</description>
+      <description>Commençons par quelques piqûres de rappel à propos des notions de POO que vous avez pu voir l&amp;rsquo;an dernier.&#xA;Objet Dans un programme, un objet est un élément constitué d&amp;rsquo;un état, et disposant d&amp;rsquo;une interface permettant d&amp;rsquo;intéragir avec cet état.&#xA;Classe Un objet est généralement créé à partir d&amp;rsquo;un modèle, que l&amp;rsquo;on appelle classe. Un objet créé à partir d&amp;rsquo;une classe constitue une instance de cette classe.&#xA;Etat L&amp;rsquo;état d&amp;rsquo;un objet est composé de valeurs, pouvant ou non varier au cours de l&amp;rsquo;exécution du programme.</description>
     </item>
     <item>
       <title>Première classe ✨</title>
@@ -40,7 +40,7 @@
       <link>https://laefy.github.io/CPP_Learning/chapter2/5-modules/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://laefy.github.io/CPP_Learning/chapter2/5-modules/</guid>
-      <description>Cet exercice vous permettra de découvrir :&#xA;comment écrire des headers en C++, comment extraire l&amp;rsquo;implémentation des fonctions d&amp;rsquo;une classe en dehors de cette classe, à quoi correspondent les membres statiques d&amp;rsquo;une classe et comment les définir, comment déléguer un appel à un autre constructeur. Séparer l&amp;rsquo;implémentation des fonctions-membre Ouvrez le dossier chap-02/4-modules. Celui-ci est composé de 3 fichiers :&#xA;main.cpp, qui contient une fonction main déjà écrite Rectangle.h, qui contient une classe Rectangle, Rectangle.</description>
+      <description>Cet exercice vous permettra de découvrir :&#xA;comment écrire des headers en C++, comment extraire l&amp;rsquo;implémentation des fonctions d&amp;rsquo;une classe en dehors de cette classe, à quoi correspondent les membres statiques d&amp;rsquo;une classe et comment les définir, comment déléguer un appel à un autre constructeur. Séparer l&amp;rsquo;implémentation des fonctions-membres Ouvrez le dossier chap-02/4-modules. Celui-ci est composé de 3 fichiers :&#xA;main.cpp, qui contient une fonction main déjà écrite Rectangle.h, qui contient une classe Rectangle, Rectangle.</description>
     </item>
     <item>
       <title>Opérateurs ➗</title>

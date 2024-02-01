@@ -12,22 +12,22 @@
     <title>Modularité 🧱 :: Cours de C&#43;&#43; - Niveau Master</title>
 
     
-    <link href="/CPP_Learning/css/nucleus.css?1706621655" rel="stylesheet">
-    <link href="/CPP_Learning/css/fontawesome-all.min.css?1706621655" rel="stylesheet">
-    <link href="/CPP_Learning/css/hybrid.css?1706621655" rel="stylesheet">
-    <link href="/CPP_Learning/css/featherlight.min.css?1706621655" rel="stylesheet">
-    <link href="/CPP_Learning/css/perfect-scrollbar.min.css?1706621655" rel="stylesheet">
-    <link href="/CPP_Learning/css/auto-complete.css?1706621655" rel="stylesheet">
-    <link href="/CPP_Learning/css/atom-one-dark-reasonable.css?1706621655" rel="stylesheet">
-    <link href="/CPP_Learning/css/theme.css?1706621655" rel="stylesheet">
-    <link href="/CPP_Learning/css/tabs.css?1706621655" rel="stylesheet">
-    <link href="/CPP_Learning/css/hugo-theme.css?1706621655" rel="stylesheet">
+    <link href="/CPP_Learning/css/nucleus.css?1706811522" rel="stylesheet">
+    <link href="/CPP_Learning/css/fontawesome-all.min.css?1706811522" rel="stylesheet">
+    <link href="/CPP_Learning/css/hybrid.css?1706811522" rel="stylesheet">
+    <link href="/CPP_Learning/css/featherlight.min.css?1706811522" rel="stylesheet">
+    <link href="/CPP_Learning/css/perfect-scrollbar.min.css?1706811522" rel="stylesheet">
+    <link href="/CPP_Learning/css/auto-complete.css?1706811522" rel="stylesheet">
+    <link href="/CPP_Learning/css/atom-one-dark-reasonable.css?1706811522" rel="stylesheet">
+    <link href="/CPP_Learning/css/theme.css?1706811522" rel="stylesheet">
+    <link href="/CPP_Learning/css/tabs.css?1706811522" rel="stylesheet">
+    <link href="/CPP_Learning/css/hugo-theme.css?1706811522" rel="stylesheet">
     
-    <link href="/CPP_Learning/css/theme-mine.css?1706621655" rel="stylesheet">
+    <link href="/CPP_Learning/css/theme-mine.css?1706811522" rel="stylesheet">
     
-    <link href="/CPP_Learning/css/syntax.css?1706621655" rel="stylesheet">
+    <link href="/CPP_Learning/css/syntax.css?1706811522" rel="stylesheet">
 
-    <script src="/CPP_Learning/js/jquery-3.3.1.min.js?1706621655"></script>
+    <script src="/CPP_Learning/js/jquery-3.3.1.min.js?1706811522"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -1907,7 +1907,7 @@
   <ul>
     <li>
       <ul>
-        <li><a href="#séparer-limplémentation-des-fonctions-membre">Séparer l&rsquo;implémentation des fonctions-membre</a></li>
+        <li><a href="#séparer-limplémentation-des-fonctions-membres">Séparer l&rsquo;implémentation des fonctions-membres</a></li>
         <li><a href="#petit-apparté-relatif-à-lédition-des-liens">Petit apparté relatif à l&rsquo;édition des liens</a></li>
         <li><a href="#constructeur-délégué">Constructeur délégué</a></li>
         <li><a href="#membres-statiques">Membres statiques</a></li>
@@ -1946,7 +1946,7 @@
 <li>comment déléguer un appel à un autre constructeur.</li>
 </ul>
 <hr>
-<h3 id="séparer-limplémentation-des-fonctions-membre">Séparer l&rsquo;implémentation des fonctions-membre</h3>
+<h3 id="séparer-limplémentation-des-fonctions-membres">Séparer l&rsquo;implémentation des fonctions-membres</h3>
 <p>Ouvrez le dossier <code>chap-02/4-modules</code>.
 Celui-ci est composé de 3 fichiers :</p>
 <ul>
@@ -1954,18 +1954,18 @@ Celui-ci est composé de 3 fichiers :</p>
 <li><code>Rectangle.h</code>, qui contient une classe <code>Rectangle</code>,</li>
 <li><code>Rectangle.cpp</code>, qui est lui tout vide.</li>
 </ul>
-<p>Il est très courant de placer la définition de chaque classe dans un header différent et d&rsquo;extraire l&rsquo;implémentation des ses fonctions-membres dans l&rsquo;<strong>unité de compilation</strong> (.cpp) associée.<br>
+<p>Il est très courant de placer la définition de chaque classe dans un header différent et d&rsquo;extraire l&rsquo;implémentation des ses fonctions-membres dans l&rsquo;<strong>unité de compilation</strong> (<code>.cpp</code>) associée.<br>
 Cela permet de réduire drastiquement les temps de compilation dans les gros projets, car :</p>
 <ol>
 <li>le code est réparti dans plusieurs fichiers qui peuvent être compilés en parallèle,</li>
-<li>si on modifie un .cpp, seul ce dernier a besoin d&rsquo;être recompilé,</li>
-<li>si on modifie un header, seuls les .cpp qui en dépendent ont besoin d&rsquo;être recompilés.</li>
+<li>si on modifie un <code>.cpp</code>, seul ce dernier a besoin d&rsquo;être recompilé,</li>
+<li>si on modifie un header, seuls les <code>.cpp</code> qui en dépendent ont besoin d&rsquo;être recompilés.</li>
 </ol>
 <p>Dans cet exercice, vous allez voir comment extraire le constructeur de la classe <code>Rectangle</code> et sa fonction <code>scale</code> dans le fichier <code>Rectangle.cpp</code>.<br>
 Vous laisserez dans le header les petits getters.</p>
 <ol>
 <li>
-<p>Commencez par vérifier que le programme constitué uniquement de <code>main.cpp</code> compile et exécutez-le.</p>
+<p>Commencez par vérifier que le programme constitué uniquement de <code>main.cpp</code> compile, et exécutez-le.</p>
 </li>
 <li>
 <p>Dans <code>Rectangle.h</code>, remplacez les définitions du constructeur de <code>scale</code> par des déclarations de fonction.
@@ -2015,7 +2015,7 @@ En revanche, en exécutant ensuite <code>g++ -o rectangle main.o</code>, on obti
     </div>
 
 </div>
-<p>Pour définir une fonction-membre en dehors de sa classe, il suffit de préfixer l&rsquo;identifiant de la fonction par le nom de la classe, suivie de <code>::</code>.<br>
+<p>Pour définir une fonction-membre en dehors de sa classe, il suffit de préfixer l&rsquo;identifiant de la fonction par le nom de la classe, suivi de <code>::</code>.<br>
 Par exemple :</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="k">struct</span> <span class="nc">ClassName</span>
 </span></span><span class="line"><span class="cl"><span class="p">{</span>
@@ -2028,8 +2028,8 @@ Par exemple :</p>
 </span></span><span class="line"><span class="cl">    <span class="p">...</span>
 </span></span><span class="line"><span class="cl"><span class="p">}</span>
 </span></span></code></pre></div><ol start="2">
-<li>Modifiez le fichier <code>Rectangle.cpp</code> de manière à y définir les fonctions-membre <code>Rectangle::Rectangle</code> (le constructeur de <code>Rectangle</code>) et <code>Rectangle::scale</code>.<br>
-Pensez également à y inclure le fichier <code>&quot;Rectangle.h&quot;</code>, sinon, le compilateur ne comprendra pas que <code>Rectangle</code> est une classe.<br>
+<li>Modifiez le fichier <code>Rectangle.cpp</code> de manière à y définir les fonctions-membres <code>Rectangle::Rectangle</code> (le constructeur de <code>Rectangle</code>) et <code>Rectangle::scale</code>.<br>
+Pensez également à y inclure le fichier <code>Rectangle.h</code>, sinon, le compilateur ne comprendra pas que <code>Rectangle</code> est une classe.<br>
 Compilez et testez le programme.</li>
 </ol>
 
@@ -2056,7 +2056,7 @@ Compilez et testez le programme.</li>
 </span></span><span class="line"><span class="cl">    <span class="n">_length</span> <span class="o">*=</span> <span class="n">ratio</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl">    <span class="n">_width</span> <span class="o">*=</span> <span class="n">ratio</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span></code></pre></div><p>On pense bien à indiquer les deux fichiers .cpp pour compiler le programme :</p>
+</span></span></code></pre></div><p>On pense bien à indiquer les deux fichiers <code>.cpp</code> pour compiler le programme :</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-b" data-lang="b"><span class="line"><span class="cl"><span class="c">g</span><span class="nb">++</span><span class="c"> </span><span class="nb">-</span><span class="c">std=c</span><span class="nb">++</span><span class="c">17 main</span><span class="nt">.</span><span class="c">cpp Rectangle</span><span class="nt">.</span><span class="c">cpp
 </span></span></span></code></pre></div>
         </div>
@@ -2073,7 +2073,7 @@ Pourtant, si on s&rsquo;intéresse aux fonctions dont les instructions attériss
 </ul>
 <p>Les fonctions <code>Rectangle::get_length()</code> et <code>Rectangle::get_width()</code> apparaissent donc 2 fois.<br>
 En théorie, on devrait donc avoir des erreurs de type <code>&quot;multiple definition of ...&quot;</code> et le programme ne devrait donc pas compiler&hellip;</p>
-<p>Eh bien en réalité, toutes les fonctions qui sont définies à l&rsquo;intérieur de la définition de la classe sont automatiquement taggées comme étant <code>inline</code>.
+<p>Eh bien en réalité, toutes les fonctions qui sont définies à l&rsquo;intérieur de la définition de la classe sont automatiquement spécifiées comme étant <code>inline</code>.
 Pour rappel, ce mot-clef permet d&rsquo;indiquer au linker qu&rsquo;il doit ignorer les éventuelles redéfinitions d&rsquo;une fonction.</p>
 <p>Ainsi, votre programme compile sans que vous ayiez besoin de mettre des <code>inline</code> sur tous vos getters.</p>
 <hr>
@@ -2084,7 +2084,7 @@ Pour cela, vous pouvez tout à faire écrire :</p>
 </span></span></code></pre></div><p>Sauf que ça vous paraît un peu bête de devoir réécrire deux fois la même valeur dans l&rsquo;appel au constructeur.</p>
 <ol>
 <li>Modifiez le <code>main</code> afin de créer cette instance de <code>square</code>, mais en n&rsquo;y passant qu&rsquo;une seule fois <code>2.5f</code>.<br>
-Définissez ensuite le constructeur à 1 paramètre correspondant qui initialise les deux attributs <code>_length</code> et <code>_width</code> avec cette valeur.<br>
+Définissez ensuite le constructeur à 1 paramètre correspondant, qui initialise les deux attributs <code>_length</code> et <code>_width</code> avec cette valeur.<br>
 Vous placerez l&rsquo;implémentation de ce constructeur dans <code>Rectangle.cpp</code>.</li>
 </ol>
 
@@ -2168,7 +2168,7 @@ Vous placerez l&rsquo;implémentation de ce constructeur dans <code>Rectangle.cp
 </div>
 
 <div class="notices info" ><p>Vous ne pouvez pas initialiser d&rsquo;attributs dans la liste d&rsquo;initialisation d&rsquo;un constructeur qui a délégué la construction à un autre constructeur.<br>
-Le constructeur a qui vous délégué la construction doit donc vous permettre d&rsquo;initialiser l&rsquo;intégralité des attributs de la classe comme vous le souhaitez.</p>
+Le constructeur à qui vous déléguez la construction doit donc vous permettre d&rsquo;initialiser l&rsquo;intégralité des attributs de la classe comme vous le souhaitez.</p>
 </div>
 
 <hr>
@@ -2187,12 +2187,12 @@ Voici à quoi le code devrait pour ressembler :</p>
 </span></span><span class="line"><span class="cl"><span class="n">Rectangle</span> <span class="n">s5</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="c1">// At this point, size of s1 and s2 should be 3.f, and size of s3, s4 and s5 should be 5.f. 
-</span></span></span></code></pre></div><p>Pour cela, nous allons définir des <strong>membres statiques</strong> à la classe Rectangle.</p>
+</span></span></span></code></pre></div><p>Pour cela, nous allons définir des <strong>membres statiques</strong> à la classe <code>Rectangle</code>.</p>
 <h4 id="attribut-statique">Attribut statique</h4>
 <p>Un attribut est dit statique si sa valeur est portée par la classe et non par une instance. Cela permet d&rsquo;avoir une variable qui est partagée par l&rsquo;ensemble des instances d&rsquo;une classe.</p>
 <ol>
 <li>Pour mettre cela en pratique, vous allez définir un nouvel attribut statique <code>_default_size</code> dans la partie publique de la classe <code>Rectangle</code>.
-Il sera de type <code>float</code>, et vous n&rsquo;essayerez pas de l&rsquo;initialiser pour le moment.
+Il sera de type <code>float</code>, et vous n&rsquo;essaierez pas de l&rsquo;initialiser pour le moment.
 Vous pouvez utiliser la syntaxe suivante pour déclarer un attribut statique : <code>static type _attribute;</code>.</li>
 </ol>
 
@@ -2222,8 +2222,8 @@ Vous pouvez utiliser la syntaxe suivante pour déclarer un attribut statique : <
 </div>
 <ol start="2">
 <li>Ajoutez maintenant un constructeur par défaut à votre classe, qui déléguera la construction au constructeur à 1 paramètre en lui passant <code>_default_size</code>.<br>
-A ce stade, votre programme ne devrait plus pouvoir compiler à cause d&rsquo;une erreur de linker.<br>
-Vérifiez néanmoins que chacun de vos .cpp compilent correctement.</li>
+À ce stade, votre programme ne devrait plus pouvoir compiler à cause d&rsquo;une erreur de linker.<br>
+Vérifiez néanmoins que chacun de vos <code>.cpp</code> compilent correctement.</li>
 </ol>
 
 <div class="hidden-solution">
@@ -2262,13 +2262,13 @@ Vérifiez néanmoins que chacun de vos .cpp compilent correctement.</li>
 <p>L&rsquo;erreur indique que la variable <code>Rectangle::_default_size</code> n&rsquo;est pas définie.
 Et en effet, vous n&rsquo;avez fait que la moitié du travail&hellip;<br>
 La ligne <code>static float _default_size;</code> dans <code>Rectangle</code> est une déclaration d&rsquo;attribut statique, et non pas une définition.</p>
-<p>Pour définir une attribut statique, il y a deux méthodes.<br>
-La première consiste à écrire dans un .cpp, en dehors de toute fonction : <code>type ClassName::attribute;</code><br>
+<p>Pour définir un attribut statique, il y a deux méthodes.<br>
+La première consiste à écrire dans un <code>.cpp</code>, en dehors de toute fonction : <code>type ClassName::attribute;</code><br>
 Notez bien qu&rsquo;à cet endroit, on ne remet pas le mot-clef <code>static</code>, mais on préfixe par contre l&rsquo;attribut avec <code>ClassName::</code>.</p>
 <ol start="3">
 <li>Ajoutez la définition de l&rsquo;attribut <code>_default_size</code> dans le fichier <code>Rectangle.cpp</code>.
 C&rsquo;est au niveau de la définition d&rsquo;un attribut que vous pouvez spécifier un initializer.<br>
-Compilez et testez votre programme avec un débuggeur de manière à vous assurez que la valeur de <code>_default_value</code> est correctement initialisée.</li>
+Compilez et testez votre programme avec un débuggeur de manière à vous assurer que la valeur de <code>_default_value</code> est correctement initialisée.</li>
 </ol>
 
 <div class="hidden-solution">
@@ -2329,7 +2329,7 @@ La déclaration se transforme alors magiquement en définition.</p>
 </div>
 <ol start="6">
 <li>Vous allez maintenant modifier la valeur de <code>_default_size</code> entre les différentes instanciations de vos rectangles.<br>
-Pour accéder ou modifier à la valeur de <code>_default_size</code> en dehors de la classe <code>Rectangle</code>, il faut préfixer par <code>Rectangle::</code>.<br>
+Pour accéder à la valeur de <code>_default_size</code> ou la modifier en dehors de la classe <code>Rectangle</code>, il faut préfixer par <code>Rectangle::</code>.<br>
 Testez que les tailles de vos rectangles sont bien initialisées avec la dernière valeur assignée à <code>_default_size</code> au moment de l&rsquo;appel au constructeur.</li>
 </ol>
 
@@ -2362,7 +2362,7 @@ Testez que les tailles de vos rectangles sont bien initialisées avec la derniè
 <h4 id="fonction-membre-statique">Fonction-membre statique</h4>
 <p>Une fonction-membre est dite statique si elle peut être appelée sur la classe plutôt que sur une instance. Ces fonctions peuvent donc accéder à l&rsquo;ensemble des attributs statiques de la classe, mais elles ne peuvent pas accéder aux attributs d&rsquo;instance, puisqu&rsquo;on ne leur founit aucune instance au moment de l&rsquo;appel.</p>
 <p>Vous allez déplacer <code>_default_size</code> dans la partie privée de la classe et définir un setter statique dans la partie publique.<br>
-Pour indiquer qu&rsquo;une fonction-membre est statique, il faut placer le mot-clef <code>static</code> devant la déclaration de la fonction dans la définition de la classe. Attention, c&rsquo;est uniquement à cet endroit là qu&rsquo;il faut le faire. Si vous implémentez la fonction dans un .cpp séparé, vous ne devrez donc pas remettre <code>static</code> devant la définition.</p>
+Pour indiquer qu&rsquo;une fonction-membre est statique, il faut placer le mot-clef <code>static</code> devant la déclaration de la fonction dans la définition de la classe. Attention, c&rsquo;est uniquement à cet endroit là qu&rsquo;il faut le faire. Si vous implémentez la fonction dans un <code>.cpp</code> séparé, vous ne devrez donc pas remettre <code>static</code> devant la définition.</p>
 <ol>
 <li>Définissez la fonction-membre statique <code>set_default_size</code> prenant un <code>float</code> en paramètre et assignant sa valeur à <code>_default_size</code>. Vous placerez l&rsquo;implémentation de la fonction dans <code>Rectangle.cpp</code>.</li>
 </ol>
@@ -2438,7 +2438,7 @@ Dans le <code>main</code>, remplacez les assignations de <code>_default_size</co
 <h3 id="synthèse">Synthèse</h3>
 <ul>
 <li>Pour définir une fonction-membre en dehors de la classe, on préfixe l&rsquo;identifiant de la fonction par <code>ClassName::</code>.</li>
-<li>Si une fonction est définie à l&rsquo;intérieur de la définition de la classe, elle est considérée <code>inline</code> par le linker (pas de risque de définitions multiples si le header est inclut depuis différents .cpp).</li>
+<li>Si une fonction est définie à l&rsquo;intérieur de la définition de la classe, elle est considérée <code>inline</code> par le linker (pas de risque de définitions multiples si le header est inclus depuis différents <code>.cpp</code>).</li>
 <li>On peut déléguer la construction à un autre constructeur en l&rsquo;appelant depuis la liste d&rsquo;initialisation.</li>
 <li>Les membres statiques ne sont pas associés à une instance de classe, on peut y accéder depuis la classe elle-même avec <code>ClassName::member</code>.</li>
 <li>Pour déclarer une fonction-membre statique, on écrit <code>static</code> devant le prototype de la fonction : <code>static void fcn();</code></li>
@@ -3730,19 +3730,19 @@ Dans le <code>main</code>, remplacez les assignations de <code>_default_size</co
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/CPP_Learning/js/clipboard.min.js?1706621655"></script>
-    <script src="/CPP_Learning/js/perfect-scrollbar.min.js?1706621655"></script>
-    <script src="/CPP_Learning/js/perfect-scrollbar.jquery.min.js?1706621655"></script>
-    <script src="/CPP_Learning/js/jquery.sticky.js?1706621655"></script>
-    <script src="/CPP_Learning/js/featherlight.min.js?1706621655"></script>
-    <script src="/CPP_Learning/js/highlight.pack.js?1706621655"></script>
+    <script src="/CPP_Learning/js/clipboard.min.js?1706811522"></script>
+    <script src="/CPP_Learning/js/perfect-scrollbar.min.js?1706811522"></script>
+    <script src="/CPP_Learning/js/perfect-scrollbar.jquery.min.js?1706811522"></script>
+    <script src="/CPP_Learning/js/jquery.sticky.js?1706811522"></script>
+    <script src="/CPP_Learning/js/featherlight.min.js?1706811522"></script>
+    <script src="/CPP_Learning/js/highlight.pack.js?1706811522"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/CPP_Learning/js/modernizr.custom-3.6.0.js?1706621655"></script>
-    <script src="/CPP_Learning/js/learn.js?1706621655"></script>
-    <script src="/CPP_Learning/js/hugo-learn.js?1706621655"></script>
+    <script src="/CPP_Learning/js/modernizr.custom-3.6.0.js?1706811522"></script>
+    <script src="/CPP_Learning/js/learn.js?1706811522"></script>
+    <script src="/CPP_Learning/js/hugo-learn.js?1706811522"></script>
     
         
-            <script src="/CPP_Learning/mermaid/mermaid.js?1706621655"></script>
+            <script src="/CPP_Learning/mermaid/mermaid.js?1706811522"></script>
         
         <script>
             mermaid.initialize({ startOnLoad: true });

@@ -12,22 +12,22 @@
     <title>Compilateur :: Cours de C&#43;&#43; - Niveau Master</title>
 
     
-    <link href="/CPP_Learning/css/nucleus.css?1706621655" rel="stylesheet">
-    <link href="/CPP_Learning/css/fontawesome-all.min.css?1706621655" rel="stylesheet">
-    <link href="/CPP_Learning/css/hybrid.css?1706621655" rel="stylesheet">
-    <link href="/CPP_Learning/css/featherlight.min.css?1706621655" rel="stylesheet">
-    <link href="/CPP_Learning/css/perfect-scrollbar.min.css?1706621655" rel="stylesheet">
-    <link href="/CPP_Learning/css/auto-complete.css?1706621655" rel="stylesheet">
-    <link href="/CPP_Learning/css/atom-one-dark-reasonable.css?1706621655" rel="stylesheet">
-    <link href="/CPP_Learning/css/theme.css?1706621655" rel="stylesheet">
-    <link href="/CPP_Learning/css/tabs.css?1706621655" rel="stylesheet">
-    <link href="/CPP_Learning/css/hugo-theme.css?1706621655" rel="stylesheet">
+    <link href="/CPP_Learning/css/nucleus.css?1706811522" rel="stylesheet">
+    <link href="/CPP_Learning/css/fontawesome-all.min.css?1706811522" rel="stylesheet">
+    <link href="/CPP_Learning/css/hybrid.css?1706811522" rel="stylesheet">
+    <link href="/CPP_Learning/css/featherlight.min.css?1706811522" rel="stylesheet">
+    <link href="/CPP_Learning/css/perfect-scrollbar.min.css?1706811522" rel="stylesheet">
+    <link href="/CPP_Learning/css/auto-complete.css?1706811522" rel="stylesheet">
+    <link href="/CPP_Learning/css/atom-one-dark-reasonable.css?1706811522" rel="stylesheet">
+    <link href="/CPP_Learning/css/theme.css?1706811522" rel="stylesheet">
+    <link href="/CPP_Learning/css/tabs.css?1706811522" rel="stylesheet">
+    <link href="/CPP_Learning/css/hugo-theme.css?1706811522" rel="stylesheet">
     
-    <link href="/CPP_Learning/css/theme-mine.css?1706621655" rel="stylesheet">
+    <link href="/CPP_Learning/css/theme-mine.css?1706811522" rel="stylesheet">
     
-    <link href="/CPP_Learning/css/syntax.css?1706621655" rel="stylesheet">
+    <link href="/CPP_Learning/css/syntax.css?1706811522" rel="stylesheet">
 
-    <script src="/CPP_Learning/js/jquery-3.3.1.min.js?1706621655"></script>
+    <script src="/CPP_Learning/js/jquery-3.3.1.min.js?1706811522"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -1951,7 +1951,7 @@ MSYS2 contient en particulier MinGW, qui est l&rsquo;équivalent du compilateur 
 </span></span></code></pre></div></li>
 <li>Ouvrez l&rsquo;éditeur de variables d&rsquo;environnement Windows.
 <img src="/CPP_Learning/images/chapter0/env-var.png" alt=""></li>
-<li>Dans la variable <code>Path</code> (utilisateur ou système, peu importe), ajoutez &ldquo;C:\msys64\ucrt64\bin&rdquo;.
+<li>Dans la variable <code>Path</code> (utilisateur ou système, peu importe), ajoutez <code>&quot;C:\msys64\ucrt64\bin&quot;</code>.
 <img src="/CPP_Learning/images/chapter0/add-path-v2.png" alt=""></li>
 <li>Si vous aviez une autre version de MinGW d&rsquo;installée (en général dans C:\mingw), c&rsquo;est <strong>très important</strong> que vous supprimiez son répertoire bin/ du <code>Path</code> utilisateur <strong>et</strong> du <code>Path</code> système.
 <img src="/CPP_Learning/images/chapter0/rm-path-v2.png" alt=""></li>
@@ -1962,12 +1962,12 @@ La dernière ligne devrait maintenant indiquer une version de gcc &gt;= 9.</li>
 <ol>
 <li>Téléchargez 
 <a href="/CPP_Learning/code/helloworld.cpp" target="_blank" rel="noopener noreferrer">ce fichier</a>.</li>
-<li>Ouvrez une fenêtre Powershell dans le répertoire contenant le fichier (vous pouvez utiliser Shift+RClick depuis l&rsquo;explorateur de fichiers pour faire apparaître l&rsquo;option dans le menu contextuel).
+<li>Ouvrez une fenêtre Powershell dans le répertoire contenant le fichier (vous pouvez utiliser <code>Shift + Clic Droit</code> depuis l&rsquo;explorateur de fichiers pour faire apparaître l&rsquo;option dans le menu contextuel).
 <img src="/CPP_Learning/images/chapter0/powershell.png" alt=""></li>
 <li>Exécutez la commande <code>g++ .\helloworld.cpp -o hello</code><br>
-Un fichier hello.exe devrait avoir été généré.</li>
+Un fichier <code>hello.exe</code> devrait avoir été généré.</li>
 <li>Exécutez <code>.\hello.exe</code>.
-Le programme devrait vous répondre &ldquo;Hello!&rdquo;.</li>
+Le programme devrait vous répondre <code>&quot;Hello!&quot;</code>.</li>
 </ol>
 <hr>
 <h3 id="linux">Linux</h3>
@@ -1984,14 +1984,14 @@ Vérifiez une nouvelle fois que votre g++ est bien à jour.</li>
 <a href="/CPP_Learning/code/helloworld.cpp" target="_blank" rel="noopener noreferrer">ce fichier</a>.</li>
 <li>Ouvrez un terminal et placez-vous dans le répertoire contenant le fichier téléchargé : <code>cd path/to/folder</code></li>
 <li>Exécutez la commande <code>g++ ./helloworld.cpp -o hello</code><br>
-Un fichier hello devrait avoir été généré.</li>
+Un fichier <code>hello</code> devrait avoir été généré.</li>
 <li>Exécutez <code>./hello</code>.
-Le programme devrait vous répondre &ldquo;Hello!&rdquo;.</li>
+Le programme devrait vous répondre <code>&quot;Hello!&quot;</code>.</li>
 </ol>
 <hr>
 <h3 id="macos">MacOS</h3>
 <ol>
-<li>Ouvrez un terminal et exécuter <code>clang --version</code></li>
+<li>Ouvrez un terminal et exécutez <code>clang --version</code></li>
 <li>Si la commande échoue, installez clang en exécutant <code>xcode-select --install</code></li>
 </ol>
 <p>Testez maintenant que tout fonctionne en suivant les étapes ci-dessous.</p>
@@ -2000,9 +2000,9 @@ Le programme devrait vous répondre &ldquo;Hello!&rdquo;.</li>
 <a href="/CPP_Learning/code/helloworld.cpp" target="_blank" rel="noopener noreferrer">ce fichier</a>.</li>
 <li>Ouvrez un terminal et placez-vous dans le répertoire contenant le fichier téléchargé : <code>cd path/to/folder</code></li>
 <li>Exécutez la commande <code>clang++ ./helloworld.cpp -o hello</code><br>
-Un fichier hello devrait avoir été généré.</li>
+Un fichier <code>hello</code> devrait avoir été généré.</li>
 <li>Exécutez <code>./hello</code>.
-Le programme devrait vous répondre &ldquo;Hello!&rdquo;.</li>
+Le programme devrait vous répondre <code>&quot;Hello!&quot;</code>.</li>
 </ol>
 
 
@@ -3283,19 +3283,19 @@ Le programme devrait vous répondre &ldquo;Hello!&rdquo;.</li>
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/CPP_Learning/js/clipboard.min.js?1706621655"></script>
-    <script src="/CPP_Learning/js/perfect-scrollbar.min.js?1706621655"></script>
-    <script src="/CPP_Learning/js/perfect-scrollbar.jquery.min.js?1706621655"></script>
-    <script src="/CPP_Learning/js/jquery.sticky.js?1706621655"></script>
-    <script src="/CPP_Learning/js/featherlight.min.js?1706621655"></script>
-    <script src="/CPP_Learning/js/highlight.pack.js?1706621655"></script>
+    <script src="/CPP_Learning/js/clipboard.min.js?1706811522"></script>
+    <script src="/CPP_Learning/js/perfect-scrollbar.min.js?1706811522"></script>
+    <script src="/CPP_Learning/js/perfect-scrollbar.jquery.min.js?1706811522"></script>
+    <script src="/CPP_Learning/js/jquery.sticky.js?1706811522"></script>
+    <script src="/CPP_Learning/js/featherlight.min.js?1706811522"></script>
+    <script src="/CPP_Learning/js/highlight.pack.js?1706811522"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/CPP_Learning/js/modernizr.custom-3.6.0.js?1706621655"></script>
-    <script src="/CPP_Learning/js/learn.js?1706621655"></script>
-    <script src="/CPP_Learning/js/hugo-learn.js?1706621655"></script>
+    <script src="/CPP_Learning/js/modernizr.custom-3.6.0.js?1706811522"></script>
+    <script src="/CPP_Learning/js/learn.js?1706811522"></script>
+    <script src="/CPP_Learning/js/hugo-learn.js?1706811522"></script>
     
         
-            <script src="/CPP_Learning/mermaid/mermaid.js?1706621655"></script>
+            <script src="/CPP_Learning/mermaid/mermaid.js?1706811522"></script>
         
         <script>
             mermaid.initialize({ startOnLoad: true });

@@ -12,22 +12,22 @@
     <title>Eléments de syntaxe ✍ :: Cours de C&#43;&#43; - Niveau Master</title>
 
     
-    <link href="/CPP_Learning/css/nucleus.css?1706621655" rel="stylesheet">
-    <link href="/CPP_Learning/css/fontawesome-all.min.css?1706621655" rel="stylesheet">
-    <link href="/CPP_Learning/css/hybrid.css?1706621655" rel="stylesheet">
-    <link href="/CPP_Learning/css/featherlight.min.css?1706621655" rel="stylesheet">
-    <link href="/CPP_Learning/css/perfect-scrollbar.min.css?1706621655" rel="stylesheet">
-    <link href="/CPP_Learning/css/auto-complete.css?1706621655" rel="stylesheet">
-    <link href="/CPP_Learning/css/atom-one-dark-reasonable.css?1706621655" rel="stylesheet">
-    <link href="/CPP_Learning/css/theme.css?1706621655" rel="stylesheet">
-    <link href="/CPP_Learning/css/tabs.css?1706621655" rel="stylesheet">
-    <link href="/CPP_Learning/css/hugo-theme.css?1706621655" rel="stylesheet">
+    <link href="/CPP_Learning/css/nucleus.css?1706811522" rel="stylesheet">
+    <link href="/CPP_Learning/css/fontawesome-all.min.css?1706811522" rel="stylesheet">
+    <link href="/CPP_Learning/css/hybrid.css?1706811522" rel="stylesheet">
+    <link href="/CPP_Learning/css/featherlight.min.css?1706811522" rel="stylesheet">
+    <link href="/CPP_Learning/css/perfect-scrollbar.min.css?1706811522" rel="stylesheet">
+    <link href="/CPP_Learning/css/auto-complete.css?1706811522" rel="stylesheet">
+    <link href="/CPP_Learning/css/atom-one-dark-reasonable.css?1706811522" rel="stylesheet">
+    <link href="/CPP_Learning/css/theme.css?1706811522" rel="stylesheet">
+    <link href="/CPP_Learning/css/tabs.css?1706811522" rel="stylesheet">
+    <link href="/CPP_Learning/css/hugo-theme.css?1706811522" rel="stylesheet">
     
-    <link href="/CPP_Learning/css/theme-mine.css?1706621655" rel="stylesheet">
+    <link href="/CPP_Learning/css/theme-mine.css?1706811522" rel="stylesheet">
     
-    <link href="/CPP_Learning/css/syntax.css?1706621655" rel="stylesheet">
+    <link href="/CPP_Learning/css/syntax.css?1706811522" rel="stylesheet">
 
-    <script src="/CPP_Learning/js/jquery-3.3.1.min.js?1706621655"></script>
+    <script src="/CPP_Learning/js/jquery-3.3.1.min.js?1706811522"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -1958,8 +1958,8 @@ En effet, ces variables ne sont pas toujours mises à 0 par défaut, comme en t�
 </div>
 
 <p>En ce qui concerne les spécificités du C++ maintenant&hellip; <br>
-Contrairement au C, les pointeurs null ne sont plus représentés par la constante <code>NULL</code> (c&rsquo;est-à-dire à 0, donc de type entier) mais par le mot-clef <code>nullptr</code> (en minuscule) de type <code>nullptr_t</code>.</p>
-<p>Autre particularité, vous n&rsquo;êtes pas obligé de respécifier le type de la variable que vous déclarez si vous l&rsquo;initialisez en même temps : si vous définissez votre variable avec le mot-clef <code>auto</code> (équivalent à <code>var</code> en Java), le compilateur utilise le type de la valeur utilisée pour l&rsquo;initialisation.</p>
+Contrairement au C, les pointeurs null ne sont plus représentés par la constante <code>NULL</code> (c&rsquo;est-à-dire à 0, donc de type entier) mais par le mot-clef <code>nullptr</code> (en minuscules) de type <code>nullptr_t</code>.</p>
+<p>Autre particularité, vous n&rsquo;êtes pas obligé de respécifier le type de la variable que vous déclarez si vous l&rsquo;initialisez en même temps : si vous définissez votre variable avec le mot-clef <code>auto</code> (équivalent à <code>var</code> en Java &gt;= 10), le compilateur utilise le type de la valeur utilisée pour l&rsquo;initialisation (on parle d&rsquo;inférence de type).</p>
 <p>Voici quelques exemples de définition de variables :</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="kt">int</span>          <span class="n">i1</span> <span class="o">=</span> <span class="mi">3</span><span class="p">;</span>        <span class="c1">// type i1 = int
 </span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kt">unsigned</span> <span class="kt">int</span> <span class="n">u2</span> <span class="o">=</span> <span class="mi">4</span><span class="p">;</span>        <span class="c1">// type u2 = int
@@ -2019,7 +2019,7 @@ On écrira donc <code>for (int i = 0; i &lt; 10; ++ i) { ... }</code> plutôt qu
 </div>
 
 <p>En plus du <code>for</code> classique, le C++ introduit une structure <code>for</code>-each. Celle-ci permet d&rsquo;itérer sur des plages de données.<br>
-Voici la syntaxe, mais nous vous détaillerons un peu mieux son fonctionnement une fois que lorsqu&rsquo;on vous aura présenté quelques conteneurs de la librairie standard :</p>
+Voici la syntaxe, mais nous vous détaillerons un peu mieux son fonctionnement une fois que l&rsquo;on vous aura présenté quelques conteneurs de la librairie standard :</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="k">for</span> <span class="p">(</span><span class="o">&lt;</span><span class="n">type</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="n">variable</span><span class="o">&gt;</span> <span class="o">:</span> <span class="o">&lt;</span><span class="n">conteneur</span><span class="o">&gt;</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl"><span class="p">{</span>
 </span></span><span class="line"><span class="cl">    <span class="p">...</span>
@@ -2131,7 +2131,7 @@ Mais si vous définissez votre paramètre comme étant une référence, alors le
 <h3 id="types-structurés">Types structurés</h3>
 <p>Un type structuré est un type décomposé en sous-attributs.
 On utilisera souvent le terme <strong>classe</strong> pour parler des types structurés.</p>
-<p>Pour définir des types structurés, vous pouvez utiliser les mots-clef <code>struct</code> ou <code>class</code>.<br>
+<p>Pour définir des types structurés, vous pouvez utiliser les mots-clefs <code>struct</code> ou <code>class</code>.<br>
 On peut ensuite définir des <strong>attributs</strong> et des <strong>fonctions-membre</strong> dans le type.<br>
 Pour spécifier la visibilité des champs, on écrit <code>public:</code> ou <code>private:</code> devant un ensemble de champs.</p>
 <p>Voici un exemple de définition et d&rsquo;utilisation d&rsquo;un type structuré :</p>
@@ -2201,11 +2201,11 @@ Sinon, le compilateur n&rsquo;arrivera pas à comprendre ce que vous essayez de 
 </div>
 
 <p>Comme vous pouvez le constater, nous avons défini des fonctions-membre dans une <code>struct</code>.<br>
-On aurait d&rsquo;ailleurs tout à fait pû remplacer le mot-clef <code>struct</code> par <code>class</code>.
+On aurait d&rsquo;ailleurs tout à fait pu remplacer le mot-clef <code>struct</code> par <code>class</code>.
 Cela n&rsquo;aurait absolument rien changé dans ce cas.</p>
 <p>Vous vous demandez donc probablement quelle est la différence entre une <code>struct</code> et une <code>class</code>, puisqu&rsquo;on peut faire la même chose avec les deux.<br>
 Eh bien la seule différence réside dans la visibilité par défaut des champs.
-Si vous ne précisez ni <code>public</code>, ni <code>private</code>, alors les champs seront publics pour une <code>struct</code> et privés pour une <code>class</code>.</p>
+Si vous ne précisez ni <code>public</code>, ni <code>private</code>, alors par défaut les champs seront publics pour une <code>struct</code> et privés pour une <code>class</code>.</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="k">struct</span> <span class="nc">S</span>
 </span></span><span class="line"><span class="cl"><span class="p">{</span>
 </span></span><span class="line"><span class="cl">    <span class="kt">int</span> <span class="n">v</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
@@ -2246,21 +2246,21 @@ Si vous ne précisez ni <code>public</code>, ni <code>private</code>, alors les 
 </span></span><span class="line"><span class="cl"><span class="k">auto</span> <span class="n">i8</span> <span class="o">=</span> <span class="kt">int</span> <span class="p">{</span> <span class="mi">0</span> <span class="p">};</span>
 </span></span></code></pre></div><p>Attention, on ne vous demande pas de retenir toutes ces syntaxes, simplement d&rsquo;être capable de reconnaître une instruction d&rsquo;initialisation si vous en voyez une.</p>
 <p>Sachez aussi que dans ce cours, nous utiliserons essentiellement <code>= &lt;value&gt;</code> pour l&rsquo;initialisation des types fondamentaux et <code>= &lt;type&gt; { &lt;arg1&gt;, ... }</code> pour celle des types structurés.<br>
-Néanmoins, ce n&rsquo;est pas une prérogative et vous êtes libre d&rsquo;utiliser le style de votre choix pour écrire votre code.</p>
+Néanmoins, ce n&rsquo;est pas une prérogative et vous êtes libres d&rsquo;utiliser le style de votre choix pour écrire votre code.</p>
 <hr>
 <h3 id="synthèse">Synthèse</h3>
 <p>Nous venons de vous présenter les bases de la syntaxe du C++.</p>
 <p>Voici un petit rappel des choses à retenir :</p>
 <ul>
-<li>une bonne partie est similaire à ce que vous avez déjà vu en C ou en Java</li>
+<li>Une bonne partie est similaire à ce que vous avez déjà vu en C ou en Java.</li>
 <li><code>bool</code> pour les booléens, et pas <code>boolean</code></li>
-<li><code>auto</code> pour la déduction de type</li>
+<li><code>auto</code> pour la déduction de type.</li>
 <li><code>nullptr</code> au lieu de <code>NULL</code></li>
-<li>l&rsquo;itérateur peut se définir directement dans l&rsquo;instruction &ldquo;for&rdquo; : <code>for (auto it = ...; &lt;condition&gt;; &lt;iteration&gt;)</code></li>
-<li>la boucle &ldquo;foreach&rdquo; qui s&rsquo;écrit <code>for (&lt;type&gt; &lt;var&gt; : &lt;plage de données&gt;)</code></li>
-<li>le passage par référence en ajoutant <code>&amp;</code> derrière le type d&rsquo;un paramètre : <code>void fcn(int&amp; ref)</code></li>
-<li>le <code>;</code> derrière la définition des types structurés</li>
-<li>la visibilité dans une classe est définie en plaçant <code>public:</code> ou <code>private:</code> devant un groupe de champs</li>
+<li>L&rsquo;itérateur peut se définir directement dans l&rsquo;instruction &ldquo;for&rdquo; : <code>for (auto it = ...; &lt;condition&gt;; &lt;iteration&gt;)</code></li>
+<li>La boucle <code>for-each</code> qui s&rsquo;écrit <code>for (&lt;type&gt; &lt;var&gt; : &lt;plage de données&gt;)</code></li>
+<li>Le passage par référence en ajoutant <code>&amp;</code> derrière le type d&rsquo;un paramètre : <code>void fcn(int&amp; ref)</code></li>
+<li>Le <code>;</code> derrière la définition des types structurés.</li>
+<li>La visibilité dans une classe est définie en plaçant <code>public:</code> ou <code>private:</code> devant un groupe de champs.</li>
 </ul>
 
 
@@ -3547,19 +3547,19 @@ Néanmoins, ce n&rsquo;est pas une prérogative et vous êtes libre d&rsquo;util
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/CPP_Learning/js/clipboard.min.js?1706621655"></script>
-    <script src="/CPP_Learning/js/perfect-scrollbar.min.js?1706621655"></script>
-    <script src="/CPP_Learning/js/perfect-scrollbar.jquery.min.js?1706621655"></script>
-    <script src="/CPP_Learning/js/jquery.sticky.js?1706621655"></script>
-    <script src="/CPP_Learning/js/featherlight.min.js?1706621655"></script>
-    <script src="/CPP_Learning/js/highlight.pack.js?1706621655"></script>
+    <script src="/CPP_Learning/js/clipboard.min.js?1706811522"></script>
+    <script src="/CPP_Learning/js/perfect-scrollbar.min.js?1706811522"></script>
+    <script src="/CPP_Learning/js/perfect-scrollbar.jquery.min.js?1706811522"></script>
+    <script src="/CPP_Learning/js/jquery.sticky.js?1706811522"></script>
+    <script src="/CPP_Learning/js/featherlight.min.js?1706811522"></script>
+    <script src="/CPP_Learning/js/highlight.pack.js?1706811522"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/CPP_Learning/js/modernizr.custom-3.6.0.js?1706621655"></script>
-    <script src="/CPP_Learning/js/learn.js?1706621655"></script>
-    <script src="/CPP_Learning/js/hugo-learn.js?1706621655"></script>
+    <script src="/CPP_Learning/js/modernizr.custom-3.6.0.js?1706811522"></script>
+    <script src="/CPP_Learning/js/learn.js?1706811522"></script>
+    <script src="/CPP_Learning/js/hugo-learn.js?1706811522"></script>
     
         
-            <script src="/CPP_Learning/mermaid/mermaid.js?1706621655"></script>
+            <script src="/CPP_Learning/mermaid/mermaid.js?1706811522"></script>
         
         <script>
             mermaid.initialize({ startOnLoad: true });

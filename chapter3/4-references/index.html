@@ -12,22 +12,22 @@
     <title>Usage des références 🔀 :: Cours de C&#43;&#43; - Niveau Master</title>
 
     
-    <link href="/CPP_Learning/css/nucleus.css?1706621655" rel="stylesheet">
-    <link href="/CPP_Learning/css/fontawesome-all.min.css?1706621655" rel="stylesheet">
-    <link href="/CPP_Learning/css/hybrid.css?1706621655" rel="stylesheet">
-    <link href="/CPP_Learning/css/featherlight.min.css?1706621655" rel="stylesheet">
-    <link href="/CPP_Learning/css/perfect-scrollbar.min.css?1706621655" rel="stylesheet">
-    <link href="/CPP_Learning/css/auto-complete.css?1706621655" rel="stylesheet">
-    <link href="/CPP_Learning/css/atom-one-dark-reasonable.css?1706621655" rel="stylesheet">
-    <link href="/CPP_Learning/css/theme.css?1706621655" rel="stylesheet">
-    <link href="/CPP_Learning/css/tabs.css?1706621655" rel="stylesheet">
-    <link href="/CPP_Learning/css/hugo-theme.css?1706621655" rel="stylesheet">
+    <link href="/CPP_Learning/css/nucleus.css?1706811522" rel="stylesheet">
+    <link href="/CPP_Learning/css/fontawesome-all.min.css?1706811522" rel="stylesheet">
+    <link href="/CPP_Learning/css/hybrid.css?1706811522" rel="stylesheet">
+    <link href="/CPP_Learning/css/featherlight.min.css?1706811522" rel="stylesheet">
+    <link href="/CPP_Learning/css/perfect-scrollbar.min.css?1706811522" rel="stylesheet">
+    <link href="/CPP_Learning/css/auto-complete.css?1706811522" rel="stylesheet">
+    <link href="/CPP_Learning/css/atom-one-dark-reasonable.css?1706811522" rel="stylesheet">
+    <link href="/CPP_Learning/css/theme.css?1706811522" rel="stylesheet">
+    <link href="/CPP_Learning/css/tabs.css?1706811522" rel="stylesheet">
+    <link href="/CPP_Learning/css/hugo-theme.css?1706811522" rel="stylesheet">
     
-    <link href="/CPP_Learning/css/theme-mine.css?1706621655" rel="stylesheet">
+    <link href="/CPP_Learning/css/theme-mine.css?1706811522" rel="stylesheet">
     
-    <link href="/CPP_Learning/css/syntax.css?1706621655" rel="stylesheet">
+    <link href="/CPP_Learning/css/syntax.css?1706811522" rel="stylesheet">
 
-    <script src="/CPP_Learning/js/jquery-3.3.1.min.js?1706621655"></script>
+    <script src="/CPP_Learning/js/jquery-3.3.1.min.js?1706811522"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -1941,8 +1941,8 @@
 <p>Comme cela doit paraître encore un peu abstrait, nous allons vous présenter concrètement les principaux cas d&rsquo;utilisation des références. Notez qu&rsquo;il en existe un autre, mais vous le découvrirez dans le chapitre sur l&rsquo;héritage !</p>
 <hr>
 <h3 id="modifier-un-argument">Modifier un argument</h3>
-<p>Le premier cas d&rsquo;utilisation des références avait déjà été décrit dans le chapitre 1 : il s&rsquo;agit de pouvoir <strong>modifier la valeur ou le contenu d&rsquo;un argument</strong> passé à une fonction.</p>
-<p>Pour rappel, lorsque vous passez un objet par valeur en paramètre à une fonction, l&rsquo;intégralité de l&rsquo;instance est copiée !<br>
+<p>Le premier cas d&rsquo;utilisation des références avait déjà été décrit dans le Chapitre 1 : il s&rsquo;agit de pouvoir <strong>modifier la valeur ou le contenu d&rsquo;un argument</strong> passé à une fonction.</p>
+<p>Pour rappel, lorsque vous passez un objet par valeur en paramètre d&rsquo;une fonction, l&rsquo;intégralité de l&rsquo;instance est copiée !<br>
 Pour les personnes habituées au Java, le transcription de langage consisterait à <strong>cloner</strong> explicitement l&rsquo;objet avant l&rsquo;appel.</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="kt">void</span> <span class="nf">fcn</span><span class="p">(</span><span class="n">MyClass</span> <span class="n">obj</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl"><span class="p">{</span>
@@ -1956,7 +1956,7 @@ Pour les personnes habituées au Java, le transcription de langage consisterait 
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span></code></pre></div><p>serait équivalente à :</p>
+</span></span></code></pre></div><p>serait équivalent à :</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kd">private</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">fcn</span><span class="p">(</span><span class="n">MyClass</span><span class="w"> </span><span class="n">obj</span><span class="p">)</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">{</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">...</span><span class="w">
@@ -1992,7 +1992,7 @@ Pour les personnes habituées au Java, le transcription de langage consisterait 
 </span></span></code></pre></div><hr>
 <h3 id="eviter-les-copies-inutiles">Eviter les copies inutiles</h3>
 <p>Les copies inutiles de variables de type fondamental ne sont pas forcément gênantes.<br>
-En revanche, dans le cas d&rsquo;objets qui réalisent des <strong>allocations dynamiques</strong> dans leur <strong>constructeurs</strong> (tels que <code>std::vector</code> ou <code>std::string</code>), il y a un risque non négligeable que cela impacte les <strong>performances</strong> du programme&hellip;</p>
+En revanche, dans le cas d&rsquo;objets qui réalisent des <strong>allocations dynamiques</strong> dans leur <strong>constructeur</strong> (tels que <code>std::vector</code> ou <code>std::string</code>), il y a un risque non négligeable que cela impacte les <strong>performances</strong> du programme&hellip;</p>
 <p>Les références sont donc un bon moyen d&rsquo;éviter des copies coûteuses.</p>
 <h4 id="premier-exemple--variable-locale-et-passage-de-paramètres">Premier exemple : variable locale et passage de paramètres</h4>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line hl"><span class="cl"><span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">concat_words</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&gt;</span> <span class="n">words</span><span class="p">)</span>
@@ -2009,8 +2009,8 @@ En revanche, dans le cas d&rsquo;objets qui réalisent des <strong>allocations d
 </span></span><span class="line"><span class="cl"><span class="p">}</span>
 </span></span></code></pre></div><p>Dans le code ci-dessus, on identifie deux endroits où une copie inutile et coûteuse est réalisée :</p>
 <ul>
-<li>le paramètre <code>words</code> est passé par valeur, donc l&rsquo;argument passé à la fonction sera copié,</li>
-<li>on copie chaque élément du tableau pour initialiser la variable <code>w</code> dans la boucle <code>for</code>.</li>
+<li>Le paramètre <code>words</code> est passé par valeur, donc l&rsquo;argument passé à la fonction sera copié.</li>
+<li>On copie chaque élément du tableau pour initialiser la variable <code>w</code> dans la boucle <code>for</code>.</li>
 </ul>
 <p>Comment pourriez-vous réécrire cette fonction pour éliminer les copies inutiles ?
 
@@ -2151,10 +2151,10 @@ Sachez que c&rsquo;est très caca de faire ça 💩</p>
 </span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl"><span class="p">}</span>
 </span></span></code></pre></div><p>Dans le code ci-dessus, vous avez soit lu le code deux fois (en lisant les commentaires et le code), soit lu uniquement les commentaires parce que le code était peu compréhensible&hellip;</p>
-<p>Le problème, c&rsquo;est que les commentaires ne sont pas toujours très à jour de ce que le code fait vraiment.
-Du coup, vous perdez du temps à savoir qui est censé avoir raison entre le code et les commentaires.</p>
-<p>Une vraie bonne méthode permettant de clarifier son code consiste à nommer correctement variables et fonctions.
-Les commentaires dont l&rsquo;unique objectif est de paraphraser votre code peuvent alors tous être retirés.</p>
+<p>Le souci réside dans le fait que les commentaires ne reflètent pas toujours les actions réellement effectuées par le code, notamment lorsque ceux-ci ne sont pas correctement mis à jour après un changement.
+En fin de compte, vous gaspillez du temps à jouer au détective pour savoir si vous devez vous fier au code ou aux commentaires.</p>
+<p>Une méthode véritablement efficace pour rendre son code plus clair est de choisir des noms appropriés pour les variables et les fonctions.
+En conséquence, les commentaires qui ne font que paraphraser le code peuvent être totalement éliminés 🤯</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="kt">float</span> <span class="nf">compute_average</span><span class="p">(</span><span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">float</span><span class="o">&gt;&amp;</span> <span class="n">values</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl"><span class="p">{</span>
 </span></span><span class="line"><span class="cl">    <span class="k">auto</span> <span class="n">sum</span> <span class="o">=</span> <span class="mf">0.f</span><span class="p">;</span>
@@ -2184,22 +2184,21 @@ Les commentaires dont l&rsquo;unique objectif est de paraphraser votre code peuv
 </span></span></code></pre></div><p>Comme vous pouvez le constater, on a utilisé des références pour <strong>décomposer une expression</strong> en plus petits morceaux.</p>
 
 <div class="notices note" ><p>On utilise une référence plutôt qu&rsquo;une variable-valeur afin d&rsquo;éviter la copie de l&rsquo;objet.<br>
-Déjà, cette copie ne sert à rien, mais surtout, c&rsquo;est la copie de notre grand cousin qui aurait été invité à notre anniversaire.<br>
-Le comportement du programme n&rsquo;aurait alors probablement pas été celui attendu.</p>
+Déjà, parce que cette copie ne servirait à rien, mais surtout parce que c&rsquo;est la copie de notre grand-cousin qui aurait été invitée à notre anniversaire. Et nous, c&rsquo;est notre vrai grand-cousin qu&rsquo;on adore.</p>
 </div>
 
 <hr>
 <h3 id="agréger-des-données">Agréger des données</h3>
 <p>Là, vous vous dites peut-être :<br>
-&ldquo;Woooh, mais d&rsquo;où tu me sors des mots chelous là ! C&rsquo;était déjà assez la galère comme ça et tu m&rsquo;sors le lexique du démon ! Vas-y j&rsquo;me casse !! 😡&rdquo;</p>
+&ldquo;Woooh, mais d&rsquo;où tu m&rsquo;sors des mots chelous là ! C&rsquo;était d&rsquo;jà assez la galère comme ça et tu m&rsquo;sors le lexique du démon ! Vas-y j&rsquo;me casse !! 😡&rdquo;</p>
 <p>Mais s&rsquo;il vous plaît, ne partez pas ! Ou alors, partez mais revenez plus tard !</p>
-<p>Si vous vous rappelez de vos cours d&rsquo;UML, l&rsquo;<strong>agrégation</strong> est une relation entre deux entités, dans laquelle il n&rsquo;est pas nécessaire que l&rsquo;une contienne l&rsquo;autre.<br>
+<p>Si vous vous rappelez de vos cours d&rsquo;UML, l&rsquo;<strong>agrégation</strong> est une relation entre deux entités, où il n&rsquo;est pas nécessaire que l&rsquo;une contienne l&rsquo;autre.<br>
 C&rsquo;est une manière pompeuse de dire : &ldquo;A connait B&rdquo;.<br>
 En opposition, il y a la relation de <strong>composition</strong> qui revient à dire que &ldquo;A contient B&rdquo;.</p>
 <p>Par exemple, on peut dire qu&rsquo;il y a une relation d&rsquo;agrégation entre moi 💁 et ma voiture 🚗 et qu&rsquo;il y a une relation de composition entre moi 💁 et mon pied 🦶.</p>
 <p>Bref, revenons aux références.<br>
 On peut modéliser une relation d&rsquo;agrégation en C++ en plaçant une référence en tant qu&rsquo;attribut de classe.<br>
-L&rsquo;objectif, c&rsquo;est de pouvoir accéder à une donnée B depuis un objet A, même si B a été instancié ailleurs dans le programme.</p>
+L&rsquo;objectif, c&rsquo;est de pouvoir accéder à une donnée B depuis un objet A, même si B a été instanciée ailleurs dans le programme.</p>
 <p>Prenez le temps de lire le code suivant pour comprendre ce qu&rsquo;il s&rsquo;y passe :</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">Fighter</span>
 </span></span><span class="line"><span class="cl"><span class="p">{</span>
@@ -2261,7 +2260,7 @@ L&rsquo;objectif, c&rsquo;est de pouvoir accéder à une donnée B depuis un obj
 </span></span></code></pre></div><p>Dans l&rsquo;exemple ci-dessus, on veut que la classe <code>Match</code> utilise des instances de <code>Fighter</code> définies à l&rsquo;extérieur de la classe.<br>
 En effet, si les <code>Fighter</code> étaient instanciés directement dans <code>Match</code> sous forme d&rsquo;<strong>attributs-valeurs</strong>, on ne pourrait pas les réutiliser dans d&rsquo;autres combats.<br>
 En définissant des <strong>attributs-références</strong>, on utilise des <code>Fighters</code> qui viennent de l&rsquo;extérieur de la classe.
-Les <code>Fighters</code> ne sont donc pas associés à un seul et unique <code>Match</code>.</p>
+Les <code>Fighter</code> ne sont donc pas associés à un seul et unique <code>Match</code>.</p>
 <p>Attention néanmoins avec les attributs-références, c&rsquo;est souvent synonyme de potentielles dangling-references&hellip;<br>
 Par exemple, supposons que vous ayiez la bonne-mauvaise idée de définir la fonction suivante pour créer la classe <code>Match</code> :</p>
 <div class="highlight"><div class="chroma">
@@ -2314,8 +2313,8 @@ Si vous ne trouvez pas, essayez de déterminer où sont instanciées et désinst
 
         <div class="hidden-solution-content">
             <p><code>m._f1</code> fait référence à la variable <code>f1</code>, définie dans <code>create_match</code> à la ligne 3.<br>
-Cette donnée est désinstanciée à la ligne 7 et n&rsquo;est donc plus valide au retour dans le <code>main</code> : les attributs <code>m._f1</code> et <code>m._f2</code> constituent des dangling-refs dès la ligne 11.<br>
-Hors, à la ligne 12, on fait appel à <code>m.fight()</code> qui accède au contenu de ces dangling-refs.<br>
+Cette donnée est désinstanciée à la ligne 7 et n&rsquo;est donc plus valide au retour dans le <code>main</code> : les attributs <code>m._f1</code> et <code>m._f2</code> constituent des dangling-references dès la ligne 11.<br>
+Hors, à la ligne 12, on fait appel à <code>m.fight()</code> qui accède au contenu de ces dangling-references.<br>
 Conclusion, on a généré un undefined behavior !</p>
 
         </div>
@@ -2326,13 +2325,13 @@ Conclusion, on a généré un undefined behavior !</p>
 <h3 id="synthèse">Synthèse</h3>
 <p>Les références permettent :</p>
 <ul>
-<li>de modifier un argument passé à une fonction = <strong>passage par référence non-constante</strong></li>
-<li>d&rsquo;éviter une copie coûteuse lors d&rsquo;un passage de paramètres = <strong>passage par référence constante</strong></li>
-<li>d&rsquo;éviter une copie coûteuse lors d&rsquo;un retour de fonction = <strong>retour par référence</strong></li>
-<li>d&rsquo;éviter une copie coûteuse lors de la définition d&rsquo;une variable (notamment pour les variables intermédiaires) = définition de <strong>variable-référence</strong> plutôt que de <strong>variable-valeur</strong></li>
-<li>de modéliser une <strong>relation d&rsquo;agrégation</strong> = définition d&rsquo;un <strong>attribut-référence</strong> plutôt que d&rsquo;un <strong>attribut-valeur</strong></li>
+<li>de modifier un argument passé à une fonction = <strong>passage par référence non-constante</strong>,</li>
+<li>d&rsquo;éviter une copie coûteuse lors d&rsquo;un passage de paramètres = <strong>passage par référence constante</strong>,</li>
+<li>d&rsquo;éviter une copie coûteuse lors d&rsquo;un retour de fonction = <strong>retour par référence</strong>,</li>
+<li>d&rsquo;éviter une copie coûteuse lors de la définition d&rsquo;une variable (notamment pour les variables intermédiaires) ➔ définition de <strong>variable-référence</strong> plutôt que de <strong>variable-valeur</strong>,</li>
+<li>de modéliser une <strong>relation d&rsquo;agrégation</strong> ➔ définition d&rsquo;un <strong>attribut-référence</strong> plutôt que d&rsquo;un <strong>attribut-valeur</strong>.</li>
 </ul>
-<p>Attention à bien prendre en compte <strong>la durée de vie des données</strong> lorsque vous définissez une fonction qui renvoie son résultat par référence ou lorsque vous initialisez des attributs-référence.</p>
+<p>Attention à bien prendre en compte <strong>la durée de vie des données</strong> lorsque vous définissez une fonction qui renvoie son résultat par référence, ou lorsque vous initialisez des attributs-références.</p>
 <p>Aide-mémoire pour le passage des paramètres (fonctionne dans la plupart des cas) :</p>
 <pre class="mermaid">flowchart TD;
     Q1(Est-ce que la fonction est censée<br/>avoir un effet de bord sur l'argument ?)
@@ -3630,19 +3629,19 @@ Conclusion, on a généré un undefined behavior !</p>
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/CPP_Learning/js/clipboard.min.js?1706621655"></script>
-    <script src="/CPP_Learning/js/perfect-scrollbar.min.js?1706621655"></script>
-    <script src="/CPP_Learning/js/perfect-scrollbar.jquery.min.js?1706621655"></script>
-    <script src="/CPP_Learning/js/jquery.sticky.js?1706621655"></script>
-    <script src="/CPP_Learning/js/featherlight.min.js?1706621655"></script>
-    <script src="/CPP_Learning/js/highlight.pack.js?1706621655"></script>
+    <script src="/CPP_Learning/js/clipboard.min.js?1706811522"></script>
+    <script src="/CPP_Learning/js/perfect-scrollbar.min.js?1706811522"></script>
+    <script src="/CPP_Learning/js/perfect-scrollbar.jquery.min.js?1706811522"></script>
+    <script src="/CPP_Learning/js/jquery.sticky.js?1706811522"></script>
+    <script src="/CPP_Learning/js/featherlight.min.js?1706811522"></script>
+    <script src="/CPP_Learning/js/highlight.pack.js?1706811522"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/CPP_Learning/js/modernizr.custom-3.6.0.js?1706621655"></script>
-    <script src="/CPP_Learning/js/learn.js?1706621655"></script>
-    <script src="/CPP_Learning/js/hugo-learn.js?1706621655"></script>
+    <script src="/CPP_Learning/js/modernizr.custom-3.6.0.js?1706811522"></script>
+    <script src="/CPP_Learning/js/learn.js?1706811522"></script>
+    <script src="/CPP_Learning/js/hugo-learn.js?1706811522"></script>
     
         
-            <script src="/CPP_Learning/mermaid/mermaid.js?1706621655"></script>
+            <script src="/CPP_Learning/mermaid/mermaid.js?1706811522"></script>
         
         <script>
             mermaid.initialize({ startOnLoad: true });

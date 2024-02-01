@@ -33,7 +33,7 @@
       <link>https://laefy.github.io/CPP_Learning/chapter1/4-std-lib/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://laefy.github.io/CPP_Learning/chapter1/4-std-lib/</guid>
-      <description>Sur cette page, vous allez apprendre à utiliser quelques classes fournies par la librarie standard pour manipuler chaînes de caractères et tableaux. Vous verrez également comment écrire ou lire dans des flux pour intéragir avec l&amp;rsquo;utilisateur.&#xA;Chaînes de caractères Comme en C, const char* est le type fondamental associé à une chaîne de caractère littérale (c&amp;rsquo;est-à-dire écrite en dur, avec les guillemets autour) :&#xA;auto str = &amp;#34;hello&amp;#34;; // -&amp;gt; str est de type const char* Cependant, ce n&amp;rsquo;est pas du tout pratique pour faire des opérations comme des concaténations, des recherches, ou même simplement récupérer la taille de la chaîne.</description>
+      <description>Sur cette page, vous allez apprendre à utiliser quelques classes fournies par la librarie standard pour manipuler chaînes de caractères et tableaux. Vous verrez également comment écrire ou lire dans des flux pour intéragir avec l&amp;rsquo;utilisateur.&#xA;Chaînes de caractères Comme en C, const char* est le type fondamental associé à une chaîne de caractères littérale (c&amp;rsquo;est-à-dire écrite en dur, avec les guillemets autour) :&#xA;auto str = &amp;#34;hello&amp;#34;; // -&amp;gt; str est de type const char* Cependant, ce n&amp;rsquo;est pas du tout pratique pour faire des opérations comme des concaténations, des recherches, ou même simplement récupérer la taille de la chaîne.</description>
     </item>
     <item>
       <title>Compilation ⚙️</title>

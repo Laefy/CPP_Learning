@@ -12,28 +12,28 @@
       <link>https://laefy.github.io/CPP_Learning/chapter3/1-allocation/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://laefy.github.io/CPP_Learning/chapter3/1-allocation/</guid>
-      <description>Cette première page sera assez courte, elle vous présentera simplement la syntaxe permettant d&amp;rsquo;allouer dynamiquement de la mémoire et de libérer.&#xA;Allouer un seul élément Pour allouer un bloc de mémoire, on utilise le mot-clef new, suivi du type de donnée que l&amp;rsquo;on souhaite placer dedans, puis de la valeur avec laquelle on souhaite l&amp;rsquo;initialiser.&#xA;Cette instruction retourne un pointeur.&#xA;int* ptr_5 = new int { 5 }; std::cout &amp;lt;&amp;lt; *ptr_5 &amp;lt;&amp;lt; std::endl; // --&amp;gt; 5 Comme pour une variable classique, on peut utiliser des {} ou des () pour indiquer la valeur initiale.</description>
+      <description>Cette première page sera assez courte, elle vous présentera simplement la syntaxe permettant d&amp;rsquo;allouer dynamiquement de la mémoire et de la libérer.&#xA;Allouer un seul élément Pour allouer un bloc de mémoire, on utilise le mot-clef new, suivi du type de donnée que l&amp;rsquo;on souhaite y placer, puis de la valeur avec laquelle on souhaite l&amp;rsquo;initialiser.&#xA;Cette instruction retourne un pointeur.&#xA;int* ptr_5 = new int { 5 }; std::cout &amp;lt;&amp;lt; *ptr_5 &amp;lt;&amp;lt; std::endl; // --&amp;gt; 5 Comme pour une variable classique, on peut utiliser des {} ou des () pour indiquer la valeur initiale.</description>
     </item>
     <item>
       <title>Durée de vie ⏳</title>
       <link>https://laefy.github.io/CPP_Learning/chapter3/2-lifespan/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://laefy.github.io/CPP_Learning/chapter3/2-lifespan/</guid>
-      <description>Nous allons maintenant revenir sur l&amp;rsquo;instanciation et la désinstanciation des données, car ce sont les deux événements qui délimitent leur période de validité.&#xA;Donnée de type fondamental L&amp;rsquo;instanciation d&amp;rsquo;une donnée de type fondamental est constitué de deux étapes :&#xA;le programme alloue l&amp;rsquo;espace nécessaire pour stocker la donnée, si spécifié par le programmeur, le contenu de la donnée est initialisé. En ce qui concerne la désinstanciation, le programme désalloue l&amp;rsquo;espace réservé pour la donnée.</description>
+      <description>Nous allons maintenant revenir sur l&amp;rsquo;instanciation et la désinstanciation des données, car ce sont les deux événements qui délimitent leur période de validité.&#xA;Donnée de type fondamental L&amp;rsquo;instanciation d&amp;rsquo;une donnée de type fondamental est constitué de deux phases.&#xA;Le programme alloue l&amp;rsquo;espace nécessaire pour stocker la donnée. Si spécifié par le programmeur, le contenu de la donnée est initialisé. En ce qui concerne la désinstanciation, le programme désalloue l&amp;rsquo;espace réservé pour la donnée.</description>
     </item>
     <item>
       <title>Espace de stockage 💾</title>
       <link>https://laefy.github.io/CPP_Learning/chapter3/3-storage/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://laefy.github.io/CPP_Learning/chapter3/3-storage/</guid>
-      <description>Sur cette page, nous rappelerons ce que sont les variables et les pointeurs et comment ils peuvent être représentés en mémoire, puis nous ferons de même pour les références.&#xA;Nous présenterons ensuite les spécificités des trois zones dans lequel le programme alloue de la mémoire : la mémoire statique, la pile et le tas.&#xA;Cela vous aidera, j&amp;rsquo;espère, à visualiser mentalement quelles sont les données valides du programme.&#xA;Représentation Variables Une variable est un identifiant permettant d&amp;rsquo;accéder à une donnée de taille fixe en mémoire.</description>
+      <description>Sur cette page, nous rappelerons ce que sont les variables et les pointeurs, et comment ils peuvent être représentés en mémoire, puis nous ferons de même pour les références.&#xA;Nous présenterons ensuite les spécificités des trois zones dans lesquelles le programme alloue de la mémoire : la mémoire statique, la pile et le tas.&#xA;Cela vous aidera, j&amp;rsquo;espère, à visualiser mentalement quelles sont les données valides du programme.&#xA;Représentation Variables Une variable est un identifiant permettant d&amp;rsquo;accéder à une donnée de taille fixe en mémoire.</description>
     </item>
     <item>
       <title>Usage des références 🔀</title>
       <link>https://laefy.github.io/CPP_Learning/chapter3/4-references/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://laefy.github.io/CPP_Learning/chapter3/4-references/</guid>
-      <description>Comme cela doit paraître encore un peu abstrait, nous allons vous présenter concrètement les principaux cas d&amp;rsquo;utilisation des références. Notez qu&amp;rsquo;il en existe un autre, mais vous le découvrirez dans le chapitre sur l&amp;rsquo;héritage !&#xA;Modifier un argument Le premier cas d&amp;rsquo;utilisation des références avait déjà été décrit dans le chapitre 1 : il s&amp;rsquo;agit de pouvoir modifier la valeur ou le contenu d&amp;rsquo;un argument passé à une fonction.&#xA;Pour rappel, lorsque vous passez un objet par valeur en paramètre à une fonction, l&amp;rsquo;intégralité de l&amp;rsquo;instance est copiée !</description>
+      <description>Comme cela doit paraître encore un peu abstrait, nous allons vous présenter concrètement les principaux cas d&amp;rsquo;utilisation des références. Notez qu&amp;rsquo;il en existe un autre, mais vous le découvrirez dans le chapitre sur l&amp;rsquo;héritage !&#xA;Modifier un argument Le premier cas d&amp;rsquo;utilisation des références avait déjà été décrit dans le Chapitre 1 : il s&amp;rsquo;agit de pouvoir modifier la valeur ou le contenu d&amp;rsquo;un argument passé à une fonction.&#xA;Pour rappel, lorsque vous passez un objet par valeur en paramètre d&amp;rsquo;une fonction, l&amp;rsquo;intégralité de l&amp;rsquo;instance est copiée !</description>
     </item>
     <item>
       <title>Ownership 🏘️</title>

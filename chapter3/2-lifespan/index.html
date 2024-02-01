@@ -12,22 +12,22 @@
     <title>Durée de vie ⏳ :: Cours de C&#43;&#43; - Niveau Master</title>
 
     
-    <link href="/CPP_Learning/css/nucleus.css?1706621655" rel="stylesheet">
-    <link href="/CPP_Learning/css/fontawesome-all.min.css?1706621655" rel="stylesheet">
-    <link href="/CPP_Learning/css/hybrid.css?1706621655" rel="stylesheet">
-    <link href="/CPP_Learning/css/featherlight.min.css?1706621655" rel="stylesheet">
-    <link href="/CPP_Learning/css/perfect-scrollbar.min.css?1706621655" rel="stylesheet">
-    <link href="/CPP_Learning/css/auto-complete.css?1706621655" rel="stylesheet">
-    <link href="/CPP_Learning/css/atom-one-dark-reasonable.css?1706621655" rel="stylesheet">
-    <link href="/CPP_Learning/css/theme.css?1706621655" rel="stylesheet">
-    <link href="/CPP_Learning/css/tabs.css?1706621655" rel="stylesheet">
-    <link href="/CPP_Learning/css/hugo-theme.css?1706621655" rel="stylesheet">
+    <link href="/CPP_Learning/css/nucleus.css?1706811522" rel="stylesheet">
+    <link href="/CPP_Learning/css/fontawesome-all.min.css?1706811522" rel="stylesheet">
+    <link href="/CPP_Learning/css/hybrid.css?1706811522" rel="stylesheet">
+    <link href="/CPP_Learning/css/featherlight.min.css?1706811522" rel="stylesheet">
+    <link href="/CPP_Learning/css/perfect-scrollbar.min.css?1706811522" rel="stylesheet">
+    <link href="/CPP_Learning/css/auto-complete.css?1706811522" rel="stylesheet">
+    <link href="/CPP_Learning/css/atom-one-dark-reasonable.css?1706811522" rel="stylesheet">
+    <link href="/CPP_Learning/css/theme.css?1706811522" rel="stylesheet">
+    <link href="/CPP_Learning/css/tabs.css?1706811522" rel="stylesheet">
+    <link href="/CPP_Learning/css/hugo-theme.css?1706811522" rel="stylesheet">
     
-    <link href="/CPP_Learning/css/theme-mine.css?1706621655" rel="stylesheet">
+    <link href="/CPP_Learning/css/theme-mine.css?1706811522" rel="stylesheet">
     
-    <link href="/CPP_Learning/css/syntax.css?1706621655" rel="stylesheet">
+    <link href="/CPP_Learning/css/syntax.css?1706811522" rel="stylesheet">
 
-    <script src="/CPP_Learning/js/jquery-3.3.1.min.js?1706621655"></script>
+    <script src="/CPP_Learning/js/jquery-3.3.1.min.js?1706811522"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -1941,13 +1941,13 @@
 <p>Nous allons maintenant revenir sur l&rsquo;instanciation et la désinstanciation des données, car ce sont les deux événements qui délimitent leur période de validité.</p>
 <hr>
 <h3 id="donnée-de-type-fondamental">Donnée de type fondamental</h3>
-<p>L&rsquo;instanciation d&rsquo;une donnée de type fondamental est constitué de deux étapes :</p>
+<p>L&rsquo;instanciation d&rsquo;une donnée de type fondamental est constitué de deux phases.</p>
 <ol>
-<li>le programme alloue l&rsquo;espace nécessaire pour stocker la donnée,</li>
-<li><strong>si spécifié par le programmeur</strong>, le contenu de la donnée est initialisé.</li>
+<li>Le programme alloue l&rsquo;espace nécessaire pour stocker la donnée.</li>
+<li><strong>Si spécifié par le programmeur</strong>, le contenu de la donnée est initialisé.</li>
 </ol>
 <p>En ce qui concerne la désinstanciation, le programme désalloue l&rsquo;espace réservé pour la donnée.</p>
-<p>Dans le cas d&rsquo;une <strong>allocation automatique</strong>, l&rsquo;instanciation a lieu au moment de la définition de la variable et la désinstanciation lorsque l&rsquo;on sort du bloc dans lequel elle est définie.</p>
+<p>Dans le cas d&rsquo;une <strong>allocation automatique</strong>, l&rsquo;instanciation a lieu au moment de la définition de la variable, et la désinstanciation a lieu lorsque l&rsquo;on sort du bloc dans lequel elle est définie.</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt"> 1
@@ -2023,20 +2023,20 @@
 </div>
 </div><p>Dans ce nouvel exemple :</p>
 <ul>
-<li>la variable <code>value</code> est instanciée ligne 1 et désinstanciée ligne 6</li>
-<li>la variable <code>ptr</code> (le pointeur !) est instanciée ligne 3 et désinstanciée ligne 6</li>
-<li>l&rsquo;entier alloué dynamiquement (et référencé par <code>*ptr</code> puis <code>*five</code>) est instancié ligne 4 et désinstancié ligne 54</li>
-<li>la variable <code>five</code> (encore le pointeur) est instanciée à la ligne 10 et désinstanciée ligne 15</li>
+<li>la variable <code>value</code> est instanciée ligne 1 et désinstanciée ligne 6,</li>
+<li>la variable <code>ptr</code> (le pointeur !) est instanciée ligne 3 et désinstanciée ligne 6,</li>
+<li>l&rsquo;entier alloué dynamiquement (et référencé par <code>*ptr</code> puis <code>*five</code>) est instancié ligne 4 et désinstancié ligne 54,</li>
+<li>la variable <code>five</code> (encore le pointeur) est instanciée à la ligne 10 et désinstanciée ligne 15.</li>
 </ul>
 <hr>
 <h3 id="donnée-de-type-structuré">Donnée de type-structuré</h3>
 <p>Pour les types-structurés (c&rsquo;est-à-dire <code>class</code> et <code>struct</code>), le comportement à l&rsquo;instanciation et désinstanciation est un peu différent.</p>
-<p>A l&rsquo;instanciation :</p>
+<p>À l&rsquo;instanciation :</p>
 <ol>
 <li>le programme alloue l&rsquo;espace nécessaire pour stocker la donnée,</li>
 <li>le constructeur de la donnée est appelé <strong>quoi qu&rsquo;il arrive</strong>.</li>
 </ol>
-<p>A la désinstanciation :</p>
+<p>À la désinstanciation :</p>
 <ol>
 <li>le destructeur de la donnée est appelé,</li>
 <li>le programme désalloue l&rsquo;espace réservé pour la donnée.</li>
@@ -2100,28 +2100,28 @@
 </div>
 </div><p>Voici ce qu&rsquo;il se passe au moment de l&rsquo;instanciation de <code>p</code> (ligne 23) :</p>
 <ol>
-<li>le programme alloue l&rsquo;espace nécessaire pour stocker un objet de type <code>Person</code>,</li>
-<li>il appelle le constructeur de <code>Person</code> à deux paramètres qui :
+<li>Le programme alloue l&rsquo;espace nécessaire pour stocker un objet de type <code>Person</code>,</li>
+<li>Il appelle le constructeur de <code>Person</code> à deux paramètres qui :
 <ol>
 <li>instancie <code>_name</code> :
 <ol>
-<li>le programme lui alloue le bloc mémoire nécessaire (au sein de l&rsquo;espace déjà réservé pour <code>p</code>),</li>
-<li>il appelle le constructeur de <code>std::string</code> à un paramètre,</li>
+<li>Le programme lui alloue le bloc mémoire nécessaire (au sein de l&rsquo;espace déjà réservé pour <code>p</code>).</li>
+<li>Il appelle le constructeur de <code>std::string</code> à un paramètre.</li>
 </ol>
 </li>
 <li>instancie <code>_age</code> :
 <ol>
-<li>le programme lui alloue le bloc mémoire nécessaire (au sein de l&rsquo;espace déjà réservé pour <code>p</code>),</li>
-<li>il lui assigne la valeur <code>3</code>,</li>
+<li>Le programme lui alloue le bloc mémoire nécessaire (au sein de l&rsquo;espace déjà réservé pour <code>p</code>).</li>
+<li>Il lui assigne la valeur <code>3</code>.</li>
 </ol>
 </li>
 <li>instancie <code>_surname</code> :
 <ol>
-<li>le programme lui alloue le bloc mémoire nécessaire (au sein de l&rsquo;espace déjà réservé pour <code>p</code>),</li>
-<li>il appelle le constructeur de <code>std::string</code> à un paramètre,</li>
+<li>Le programme lui alloue le bloc mémoire nécessaire (au sein de l&rsquo;espace déjà réservé pour <code>p</code>).</li>
+<li>Il appelle le constructeur de <code>std::string</code> à un paramètre.</li>
 </ol>
 </li>
-<li>exécute les instructions présentes dans le corps du constructeur (en l&rsquo;occurrence, cela affiche <code>&quot;Jean is born&quot;</code> dans la console).</li>
+<li>exécute les instructions présentes dans le corps du constructeur (en l&rsquo;occurrence, cela affiche <code>Jean is born</code> dans la console).</li>
 </ol>
 </li>
 </ol>
@@ -2131,27 +2131,27 @@ En effet, c&rsquo;est l&rsquo;ordre de définition des attributs dans la classe 
 </div>
 
 
-<div class="notices note" ><p>Si un attribut apparaît dans la liste d&rsquo;initialisation, alors il est initialisé à partir de ce qui est spécifié dans celle-ci.<br>
-Sinon, il est initialisé à partir du class-initializer.
-Dans le cas où celui-ci n&rsquo;est pas spécifié, alors le constructeur par défaut est appelé pour un type-structuré, et rien n&rsquo;est fait pour un type fondamental.</p>
+<div class="notices note" ><p>Lorsqu&rsquo;un attribut est mentionné dans la liste d&rsquo;initialisation, il est initialisé en fonction de ce qui est spécifié dans cette liste.
+En l&rsquo;absence de cette mention, l&rsquo;initialisation se fait à partir du class-initializer.
+Si ce dernier n&rsquo;est pas défini, le constructeur par défaut est invoqué pour un type structuré, tandis que pour un type fondamental, rien n&rsquo;est fait.</p>
 </div>
 
 <p>Voici maintenant ce qu&rsquo;il se passe au moment de sa désinstanciation (ligne 25) :</p>
 <ol>
-<li>le programme appelle le destructeur de <code>Person</code> qui :
+<li>Le programme appelle le destructeur de <code>Person</code> qui :
 <ol>
-<li>exécute les instructions présentes dans le corps du destructeur (en l&rsquo;occurrence, cela affiche <code>&quot;Jean is dead&quot;</code> dans la console).</li>
+<li>exécute les instructions présentes dans le corps du destructeur (en l&rsquo;occurrence, cela affiche <code>Jean is dead</code> dans la console),</li>
 <li>désinstancie <code>_surname</code> :
 <ol>
-<li>le programme appelle le destructeur de <code>std::string</code>,</li>
-<li>il désalloue l&rsquo;espace réservé pour <code>_surname</code>,</li>
+<li>Le programme appelle le destructeur de <code>std::string</code>.</li>
+<li>Il désalloue l&rsquo;espace réservé pour <code>_surname</code>.</li>
 </ol>
 </li>
 <li>désinstancie <code>_age</code>, c&rsquo;est-à-dire qu&rsquo;il désalloue l&rsquo;espace qui lui est réservé,</li>
 <li>désinstancie <code>_name</code> :
 <ol>
-<li>le programme appelle le destructeur de <code>std::string</code>,</li>
-<li>il désalloue l&rsquo;espace réservé pour <code>_name</code>,</li>
+<li>Le programme appelle le destructeur de <code>std::string</code>.</li>
+<li>Il désalloue l&rsquo;espace réservé pour <code>_name</code>.</li>
 </ol>
 </li>
 </ol>
@@ -2162,7 +2162,8 @@ Dans le cas où celui-ci n&rsquo;est pas spécifié, alors le constructeur par d
 Ces deux étapes entraînent récursivement l&rsquo;instanciation et la désinstanciation de ses attributs.</p>
 <hr>
 <h3 id="références">Références</h3>
-<p>Une référence est un alias sur une donnée, mais la définition d&rsquo;une référence ou la sortie du bloc dans lequel elle est définie n&rsquo;a absolument <strong>aucun impact</strong> sur l&rsquo;instanciation ou la désinstanciation de la donnée :</p>
+<p>Une référence est un alias d&rsquo;une donnée.<br>
+Contrairement à la définition d&rsquo;une variable classique, la définition d&rsquo;une référence ou la sortie du bloc dans lequel elle est définie n&rsquo;a absolument <strong>aucun impact</strong> sur l&rsquo;instanciation ou la désinstanciation de la donnée :</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt"> 1
@@ -2191,7 +2192,7 @@ Ces deux étapes entraînent récursivement l&rsquo;instanciation et la désinst
 </span></span><span class="line"><span class="cl"><span class="p">}</span>
 </span></span></code></pre></td></tr></table>
 </div>
-</div><p>La donnée representée par <code>a</code>, mais également par <code>b</code>, est instanciée ligne 3 et désinstanciée ligne 11.<br>
+</div><p>La donnée représentée par <code>a</code>, mais également par <code>b</code>, est instanciée ligne 3 et désinstanciée ligne 11.<br>
 La ligne 6 n&rsquo;a absolument aucun impact sur la mémoire : aucune nouvelle instanciation n&rsquo;est réalisée.<br>
 Idem pour la ligne 8, rien n&rsquo;est désinstancié, la donnée correspondant à <code>a</code> est toujours bien présente.</p>
 <p>En revanche, il faut faire attention au cas inverse : conserver une référence sur une donnée qui va être désinstanciée !<br>
@@ -2229,19 +2230,20 @@ Voici un exemple :</p>
 </span></span></code></pre></td></tr></table>
 </div>
 </div><p>Ici, <code>default_name</code> est instancié ligne 3 et désinstancié ligne 5 (lorsqu&rsquo;on sort de la fonction <code>fcn</code>).<br>
-Dans le cas où <code>name</code> est vide, on renvoie une référence sur cette donnée, qui n&rsquo;a par conséquent plus d&rsquo;espace mémoire attribué une fois revenu dans la fonction <code>main</code>.<br>
+Dans le cas où <code>name</code> est vide, on renvoie une référence sur <code>default_name</code>, qui n&rsquo;a par conséquent plus d&rsquo;espace mémoire attribué une fois revenu dans la fonction <code>main</code>.<br>
 Ce qui est affiché dans la console à la ligne 11 est donc indéterminé (et encore, moyennant que le programme ne crash pas 😬).</p>
 <p>On utilise le terme <strong>dangling-reference</strong> pour parler de cette situation.
 C&rsquo;est un problème que l&rsquo;on rencontre souvent, surtout lorsqu&rsquo;on est débutant.</p>
 <hr>
 <h3 id="validité-des-données">Validité des données</h3>
 <p>L&rsquo;accès à une donnée (en écriture ou en lecture) est valide <strong>si et seulement si</strong> cet accès est effectué après son instanciation et avant sa désinstanciation.</p>
-<p>Pourquoi ? Eh bien, tout simplement parce que le support d&rsquo;existence d&rsquo;une donnée est le segment mémoire dans lequel elle est écrite et ce segment est réservé au cours de l&rsquo;instanciation et libéré à la désinstanciation.<br>
-C&rsquo;est d&rsquo;ailleurs la cause des dangling-references, que nous avons présentés dans le paragraphe précédent.</p>
+<p>Pourquoi ? Eh bien, tout simplement parce que le support d&rsquo;existence d&rsquo;une donnée est le segment mémoire dans lequel elle est écrite, et ce segment est réservé au cours de l&rsquo;instanciation puis libéré à la désinstanciation.<br>
+C&rsquo;est d&rsquo;ailleurs la cause des dangling-references, que nous avons présentées dans le paragraphe précédent.</p>
 <p>La période entre ces deux événements est appelée <strong>durée de vie</strong> de la donnée, ou encore <strong>lifespan</strong> en anglais.</p>
 <p>Si l&rsquo;accès à la donnée est fait en dehors de sa durée de vie, le comportement du programme est indéterminé (= <strong>undefined behavior</strong>).<br>
 Dans le cas d&rsquo;un accès en lecture, si le programme ne génère pas immédiatement une segfault, vous pourrez vous retrouver avec une valeur complètement aléatoire (ce ne sera pas forcément la dernière valeur portée par la donnée).<br>
-Dans le cas d&rsquo;un accès en écriture, au mieux, on aura une segfault qui permettra de localiser rapidement à quel endroit du code l&rsquo;accès invalide est fait, au pire, on écrira dans une zone mémoire désormais allouée à une autre donnée, et c&rsquo;est alors extrêmement difficile de comprendre d&rsquo;où vient le problème&hellip;</p>
+Dans le cas d&rsquo;un accès en écriture, on aura au mieux une segfault qui permettra de localiser rapidement à quel endroit du code l&rsquo;accès invalide a été fait, et dans le pire des cas on écrira dans une zone mémoire désormais allouée à une autre donnée.
+Il devient alors extrêmement difficile de comprendre d&rsquo;où vient le problème&hellip;</p>
 <p>Petit exercice, dans le code ci-dessous, essayez d&rsquo;anticiper quelles seront les valeurs affichées dans la console :</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp">
 </span></span></span><span class="line"><span class="cl"><span class="cp">#include</span> <span class="cpf">&lt;vector&gt;</span><span class="cp">
@@ -2313,19 +2315,19 @@ Et comme on ne peut pas tester son code sur tous les compilateurs et toutes les 
 <ul>
 <li>L&rsquo;<strong>instanciation</strong> comporte :
 <ul>
-<li>l&rsquo;allocation de la mémoire pour la donnée</li>
-<li>son éventuelle initialisation : constructeur pour les types-structurés, initialisateur (seulement si spécifié) pour les types fondamentaux</li>
+<li>l&rsquo;allocation de la mémoire pour la donnée,</li>
+<li>son éventuelle initialisation : constructeur pour les types-structurés, initialiseur (seulement si spécifié) pour les types fondamentaux.</li>
 </ul>
 </li>
 <li>La <strong>désinstanciation</strong> comporte :
 <ul>
-<li>la destruction de la donnée s&rsquo;il s&rsquo;agit d&rsquo;une instance de type-structuré</li>
-<li>la désallocation de la mémoire réservée</li>
+<li>la destruction de la donnée s&rsquo;il s&rsquo;agit d&rsquo;une instance de type-structuré,</li>
+<li>la désallocation de la mémoire réservée.</li>
 </ul>
 </li>
 <li>On parle d&rsquo;<strong>allocation automatique</strong> lorsque la donnée est instanciée via la définition d&rsquo;une variable locale.<br>
 La désinstanciation a lieu lorsque l&rsquo;on sort du bloc dans lequel elle est définie.</li>
-<li>On parle d&rsquo;<strong>allocation dynamique</strong> lorsque la donnée est instancié via l&rsquo;utilisation de <code>new</code> (ou <code>new[]</code>).<br>
+<li>On parle d&rsquo;<strong>allocation dynamique</strong> lorsque la donnée est instanciée via l&rsquo;utilisation de <code>new</code> (ou <code>new[]</code>).<br>
 La désinstanciation se fait explicitement avec l&rsquo;appel <code>delete</code> (ou <code>delete[]</code>).</li>
 <li>Le constructeur d&rsquo;un objet déclenche l&rsquo;instanciation de chacun de ses attributs, dans l&rsquo;ordre dans lequel ils ont été définis.</li>
 <li>La <strong>durée de vie</strong> d&rsquo;une donnée est la période durant laquelle il est valide d&rsquo;y accéder : entre son instanciation et sa désinstanciation.</li>
@@ -3619,19 +3621,19 @@ L&rsquo;utilisation d&rsquo;une dangling-reference est un bon exemple.</li>
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/CPP_Learning/js/clipboard.min.js?1706621655"></script>
-    <script src="/CPP_Learning/js/perfect-scrollbar.min.js?1706621655"></script>
-    <script src="/CPP_Learning/js/perfect-scrollbar.jquery.min.js?1706621655"></script>
-    <script src="/CPP_Learning/js/jquery.sticky.js?1706621655"></script>
-    <script src="/CPP_Learning/js/featherlight.min.js?1706621655"></script>
-    <script src="/CPP_Learning/js/highlight.pack.js?1706621655"></script>
+    <script src="/CPP_Learning/js/clipboard.min.js?1706811522"></script>
+    <script src="/CPP_Learning/js/perfect-scrollbar.min.js?1706811522"></script>
+    <script src="/CPP_Learning/js/perfect-scrollbar.jquery.min.js?1706811522"></script>
+    <script src="/CPP_Learning/js/jquery.sticky.js?1706811522"></script>
+    <script src="/CPP_Learning/js/featherlight.min.js?1706811522"></script>
+    <script src="/CPP_Learning/js/highlight.pack.js?1706811522"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/CPP_Learning/js/modernizr.custom-3.6.0.js?1706621655"></script>
-    <script src="/CPP_Learning/js/learn.js?1706621655"></script>
-    <script src="/CPP_Learning/js/hugo-learn.js?1706621655"></script>
+    <script src="/CPP_Learning/js/modernizr.custom-3.6.0.js?1706811522"></script>
+    <script src="/CPP_Learning/js/learn.js?1706811522"></script>
+    <script src="/CPP_Learning/js/hugo-learn.js?1706811522"></script>
     
         
-            <script src="/CPP_Learning/mermaid/mermaid.js?1706621655"></script>
+            <script src="/CPP_Learning/mermaid/mermaid.js?1706811522"></script>
         
         <script>
             mermaid.initialize({ startOnLoad: true });

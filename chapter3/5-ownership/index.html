@@ -12,22 +12,22 @@
     <title>Ownership 🏘️ :: Cours de C&#43;&#43; - Niveau Master</title>
 
     
-    <link href="/CPP_Learning/css/nucleus.css?1706621655" rel="stylesheet">
-    <link href="/CPP_Learning/css/fontawesome-all.min.css?1706621655" rel="stylesheet">
-    <link href="/CPP_Learning/css/hybrid.css?1706621655" rel="stylesheet">
-    <link href="/CPP_Learning/css/featherlight.min.css?1706621655" rel="stylesheet">
-    <link href="/CPP_Learning/css/perfect-scrollbar.min.css?1706621655" rel="stylesheet">
-    <link href="/CPP_Learning/css/auto-complete.css?1706621655" rel="stylesheet">
-    <link href="/CPP_Learning/css/atom-one-dark-reasonable.css?1706621655" rel="stylesheet">
-    <link href="/CPP_Learning/css/theme.css?1706621655" rel="stylesheet">
-    <link href="/CPP_Learning/css/tabs.css?1706621655" rel="stylesheet">
-    <link href="/CPP_Learning/css/hugo-theme.css?1706621655" rel="stylesheet">
+    <link href="/CPP_Learning/css/nucleus.css?1706811522" rel="stylesheet">
+    <link href="/CPP_Learning/css/fontawesome-all.min.css?1706811522" rel="stylesheet">
+    <link href="/CPP_Learning/css/hybrid.css?1706811522" rel="stylesheet">
+    <link href="/CPP_Learning/css/featherlight.min.css?1706811522" rel="stylesheet">
+    <link href="/CPP_Learning/css/perfect-scrollbar.min.css?1706811522" rel="stylesheet">
+    <link href="/CPP_Learning/css/auto-complete.css?1706811522" rel="stylesheet">
+    <link href="/CPP_Learning/css/atom-one-dark-reasonable.css?1706811522" rel="stylesheet">
+    <link href="/CPP_Learning/css/theme.css?1706811522" rel="stylesheet">
+    <link href="/CPP_Learning/css/tabs.css?1706811522" rel="stylesheet">
+    <link href="/CPP_Learning/css/hugo-theme.css?1706811522" rel="stylesheet">
     
-    <link href="/CPP_Learning/css/theme-mine.css?1706621655" rel="stylesheet">
+    <link href="/CPP_Learning/css/theme-mine.css?1706811522" rel="stylesheet">
     
-    <link href="/CPP_Learning/css/syntax.css?1706621655" rel="stylesheet">
+    <link href="/CPP_Learning/css/syntax.css?1706811522" rel="stylesheet">
 
-    <script src="/CPP_Learning/js/jquery-3.3.1.min.js?1706621655"></script>
+    <script src="/CPP_Learning/js/jquery-3.3.1.min.js?1706811522"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -1992,7 +1992,7 @@ Le owner de <code>clio.driver</code> n&rsquo;est donc pas <code>clio</code>, pui
 Dans ce cas précis, c&rsquo;est la fonction <code>main</code> qui own le contenu de <code>clio.driver</code>.</p>
 <p><img src="/CPP_Learning/images/chapter3/ownership/03-ref-attribute.svg" alt="Attribut-référence"></p>
 <h4 id="ressources-gérées-par-une-classe">Ressources gérées par une classe</h4>
-<p>Lorsque le cycle de vie d&rsquo;une ressource (mémoire, fichier, connexion réseau, etc) stockée à l&rsquo;intérieur d&rsquo;un objet est orchestré par les fonctions-membre de cet objet, alors ces ressources sont ownées par l&rsquo;objet.</p>
+<p>Lorsque le cycle de vie d&rsquo;une ressource (mémoire, fichier, connexion réseau, etc) stockée à l&rsquo;intérieur d&rsquo;un objet est orchestré par les fonctions-membres de cet objet, alors ces ressources sont ownées par l&rsquo;objet.</p>
 <p>Prenons ici l&rsquo;exemple d&rsquo;un <code>std::vector</code>.</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">Driver</span><span class="o">&gt;</span> <span class="n">drivers</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl"><span class="n">drivers</span><span class="p">.</span><span class="n">emplace_back</span><span class="p">();</span>
@@ -2000,7 +2000,7 @@ Dans ce cas précis, c&rsquo;est la fonction <code>main</code> qui own le conten
 </span></span><span class="line"><span class="cl"><span class="n">drivers</span><span class="p">.</span><span class="n">emplace_back</span><span class="p">();</span>
 </span></span></code></pre></div><p>Chacun des <code>Driver</code> faisant partie du tableau est stocké sur un segment-mémoire alloué dynamiquement par l&rsquo;objet <code>drivers</code>.<br>
 Ce segment sera libéré à la destruction de <code>drivers</code> (ou plus tôt, en fonction des fonctions qu&rsquo;on appelera sur l&rsquo;objet), entraînant la désinstanciation des <code>Drivers</code>.<br>
-On peut donc dire que <code>drivers</code> owns chacun des éléments de type <code>Driver</code> ajouté via l&rsquo;appel à <code>emplace_back</code>.</p>
+On peut donc dire que <code>drivers</code> own chacun des éléments de type <code>Driver</code> ajoutés via l&rsquo;appel à <code>emplace_back</code>.</p>
 <p><img src="/CPP_Learning/images/chapter3/ownership/04-vector.svg" alt="std::vector"></p>
 <h4 id="pointeur-ownant">Pointeur-ownant</h4>
 <p>Si on considère qu&rsquo;un pointeur est responsable du cyle de vie de la donnée pointée, on parlera de <strong>pointeurs-ownants</strong>.</p>
@@ -2084,7 +2084,7 @@ Par exemple, vous ne pouvez pas créer de référence qui ne référence rien, a
 
         <div class="hidden-solution-content">
             <p>Les éléments de <code>all_drivers</code> étant des pointeurs, on utilise un contour plein pour les cases du tableau.<br>
-En revanche, comme ces pointeurs ne contrôlent pas le cycle de vie de chacun des <code>Drivers</code>, on les relie vers eux avec flèches pointillées.
+En revanche, comme ces pointeurs ne contrôlent pas le cycle de vie de chacun des <code>Drivers</code>, on les relie vers eux avec des flèches en pointillé.
 <img src="/CPP_Learning/images/chapter3/ownership/06-observing-ptr.svg" alt="Pointeur-observant"></p>
 
         </div>
@@ -2093,14 +2093,14 @@ En revanche, comme ces pointeurs ne contrôlent pas le cycle de vie de chacun de
 </div>
 <hr>
 <h3 id="exercices-pratiques">Exercices pratiques</h3>
-<p>Nous allons maintenant vous présentez quelques petits bouts de code.<br>
+<p>Nous allons maintenant vous présenter quelques petits bouts de code.<br>
 Vous devrez dessiner le graphe d&rsquo;ownership correspondant à l&rsquo;état du programme aux instructions indiquées, et en déduire les éventuels problèmes s&rsquo;il y en a.<br>
 Si vous souhaitez dessiner vos graphes sur ordinateur, vous pouvez utiliser <a href="https://app.diagrams.net/">draw.io</a>.</p>
 <p>Pour cela, vous pourrez vous appuyer sur les règles d&rsquo;architecture suivantes :</p>
 <ul>
-<li>chaque donnée a un seul et unique owner (=&gt; une unique flèche pleine arrive sur chaque case)</li>
-<li>toutes les références mènent à une donnée valide (=&gt; pas de flèche qui pointe sur une case rouge)</li>
-<li>si un pointeur est ownant, sa donnée sera correctement libérée <strong>ou bien</strong> il transfèrera l&rsquo;ownership à un autre pointeur (pas les deux)</li>
+<li>Chaque donnée a un seul et unique owner (=&gt; une unique flèche pleine arrive sur chaque case)</li>
+<li>Toutes les références mènent à une donnée valide (=&gt; pas de flèche qui pointe sur une case rouge)</li>
+<li>Si un pointeur est ownant, sa donnée sera correctement libérée <strong>ou bien</strong> il transfèrera l&rsquo;ownership à un autre pointeur (pas les deux)</li>
 </ul>
 <h4 id="cas-n1">Cas n°1</h4>
 <div class="highlight"><div class="chroma">
@@ -2316,7 +2316,7 @@ Or cette référence est utilisée ligne 12, on a donc un undefined behavior&hel
 </div>
 </div><ol>
 <li>
-<p>Etablissez le graphe d&rsquo;ownership du programme à la ligne 33.<br>
+<p>Établissez le graphe d&rsquo;ownership du programme à la ligne 33.<br>
 Selon-vous, les pointeurs contenus dans <code>ManyAnimals::animals</code> sont-ils ownants ou observants ?
 
 <div class="hidden-solution">
@@ -2356,7 +2356,7 @@ On représente donc les relations associées avec des flèches pleines.
         </button>
 
         <div class="hidden-solution-content">
-            <p>A la ligne 14, les instances de <code>Animal</code> ont toutes été libérées.<br>
+            <p>À la ligne 14, les instances de <code>Animal</code> ont toutes été libérées.<br>
 <img src="/CPP_Learning/images/chapter3/ownership/07-case-2b.svg" alt=""></p>
 
         </div>
@@ -2407,10 +2407,10 @@ Expliquez ce qui pose problème et qui empêche le programme de se terminer corr
         </button>
 
         <div class="hidden-solution-content">
-            <p>A la fin de <code>display_animals</code>, on désinstancie le paramètre <code>many_animals</code>, ainsi que les données qu&rsquo;il own récursivement.
+            <p>À la fin de <code>display_animals</code>, on désinstancie le paramètre <code>many_animals</code>, ainsi que les données qu&rsquo;il own récursivement.
 <img src="/CPP_Learning/images/chapter3/ownership/07-case-2d.svg" alt="">
 Les pointeurs contenus dans <code>many_animals.animals</code> (la variable du <code>main</code>) pointent donc sur des données invalidées.<br>
-A la destruction de <code>many_animals</code>, les instructions <code>delete a</code> vont par conséquent échouer.</p>
+À la destruction de <code>many_animals</code>, les instructions <code>delete a</code> vont par conséquent échouer.</p>
 
         </div>
     </div>
@@ -2450,11 +2450,11 @@ Les références n&rsquo;ayant pas d&rsquo;impact sur le cycle de vie des donné
 <li>Un <strong>pointeur-observant</strong> a le même rôle qu&rsquo;une référence, si ce n&rsquo;est qu&rsquo;il peut être vide (= <code>nullptr</code>) et est réassignable.</li>
 <li>Un graphe d&rsquo;ownership permet de détecter différents problèmes :
 <ul>
-<li>si une donnée est ownée par plusieurs éléments =&gt; libération multiple</li>
-<li>si on référence une donnée qui n&rsquo;existe plus =&gt; dangling-reference</li>
+<li>Si une donnée est ownée par plusieurs éléments ➔ libération multiple,</li>
+<li>Si on référence une donnée qui n&rsquo;existe plus ➔ dangling-reference.</li>
 </ul>
 </li>
-<li>Savoir qui own une donnée aide à savoir s&rsquo;il est valide d&rsquo;y accéder ou pas</li>
+<li>Savoir qui own une donnée aide à savoir s&rsquo;il est valide d&rsquo;y accéder ou pas.</li>
 </ul>
 
 
@@ -3741,19 +3741,19 @@ Les références n&rsquo;ayant pas d&rsquo;impact sur le cycle de vie des donné
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/CPP_Learning/js/clipboard.min.js?1706621655"></script>
-    <script src="/CPP_Learning/js/perfect-scrollbar.min.js?1706621655"></script>
-    <script src="/CPP_Learning/js/perfect-scrollbar.jquery.min.js?1706621655"></script>
-    <script src="/CPP_Learning/js/jquery.sticky.js?1706621655"></script>
-    <script src="/CPP_Learning/js/featherlight.min.js?1706621655"></script>
-    <script src="/CPP_Learning/js/highlight.pack.js?1706621655"></script>
+    <script src="/CPP_Learning/js/clipboard.min.js?1706811522"></script>
+    <script src="/CPP_Learning/js/perfect-scrollbar.min.js?1706811522"></script>
+    <script src="/CPP_Learning/js/perfect-scrollbar.jquery.min.js?1706811522"></script>
+    <script src="/CPP_Learning/js/jquery.sticky.js?1706811522"></script>
+    <script src="/CPP_Learning/js/featherlight.min.js?1706811522"></script>
+    <script src="/CPP_Learning/js/highlight.pack.js?1706811522"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/CPP_Learning/js/modernizr.custom-3.6.0.js?1706621655"></script>
-    <script src="/CPP_Learning/js/learn.js?1706621655"></script>
-    <script src="/CPP_Learning/js/hugo-learn.js?1706621655"></script>
+    <script src="/CPP_Learning/js/modernizr.custom-3.6.0.js?1706811522"></script>
+    <script src="/CPP_Learning/js/learn.js?1706811522"></script>
+    <script src="/CPP_Learning/js/hugo-learn.js?1706811522"></script>
     
         
-            <script src="/CPP_Learning/mermaid/mermaid.js?1706621655"></script>
+            <script src="/CPP_Learning/mermaid/mermaid.js?1706811522"></script>
         
         <script>
             mermaid.initialize({ startOnLoad: true });

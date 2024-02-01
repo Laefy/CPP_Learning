@@ -12,22 +12,22 @@
     <title>Destructeur 💣 :: Cours de C&#43;&#43; - Niveau Master</title>
 
     
-    <link href="/CPP_Learning/css/nucleus.css?1706621655" rel="stylesheet">
-    <link href="/CPP_Learning/css/fontawesome-all.min.css?1706621655" rel="stylesheet">
-    <link href="/CPP_Learning/css/hybrid.css?1706621655" rel="stylesheet">
-    <link href="/CPP_Learning/css/featherlight.min.css?1706621655" rel="stylesheet">
-    <link href="/CPP_Learning/css/perfect-scrollbar.min.css?1706621655" rel="stylesheet">
-    <link href="/CPP_Learning/css/auto-complete.css?1706621655" rel="stylesheet">
-    <link href="/CPP_Learning/css/atom-one-dark-reasonable.css?1706621655" rel="stylesheet">
-    <link href="/CPP_Learning/css/theme.css?1706621655" rel="stylesheet">
-    <link href="/CPP_Learning/css/tabs.css?1706621655" rel="stylesheet">
-    <link href="/CPP_Learning/css/hugo-theme.css?1706621655" rel="stylesheet">
+    <link href="/CPP_Learning/css/nucleus.css?1706811522" rel="stylesheet">
+    <link href="/CPP_Learning/css/fontawesome-all.min.css?1706811522" rel="stylesheet">
+    <link href="/CPP_Learning/css/hybrid.css?1706811522" rel="stylesheet">
+    <link href="/CPP_Learning/css/featherlight.min.css?1706811522" rel="stylesheet">
+    <link href="/CPP_Learning/css/perfect-scrollbar.min.css?1706811522" rel="stylesheet">
+    <link href="/CPP_Learning/css/auto-complete.css?1706811522" rel="stylesheet">
+    <link href="/CPP_Learning/css/atom-one-dark-reasonable.css?1706811522" rel="stylesheet">
+    <link href="/CPP_Learning/css/theme.css?1706811522" rel="stylesheet">
+    <link href="/CPP_Learning/css/tabs.css?1706811522" rel="stylesheet">
+    <link href="/CPP_Learning/css/hugo-theme.css?1706811522" rel="stylesheet">
     
-    <link href="/CPP_Learning/css/theme-mine.css?1706621655" rel="stylesheet">
+    <link href="/CPP_Learning/css/theme-mine.css?1706811522" rel="stylesheet">
     
-    <link href="/CPP_Learning/css/syntax.css?1706621655" rel="stylesheet">
+    <link href="/CPP_Learning/css/syntax.css?1706811522" rel="stylesheet">
 
-    <script src="/CPP_Learning/js/jquery-3.3.1.min.js?1706621655"></script>
+    <script src="/CPP_Learning/js/jquery-3.3.1.min.js?1706811522"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -1976,8 +1976,8 @@ Encore faut-il comprendre ce que signifie &ldquo;instanciation&rdquo;&hellip; �
 </span></span></code></pre></div><p>Dans le cas d&rsquo;un objet, la désinstanciation entraîne l&rsquo;appel de son <strong>destructeur</strong>.</p>
 <hr>
 <h3 id="il-est-temps-de-mourir-batman-">Il est temps de mourir, Batman !</h3>
-<p>Le rôle premier du destructeur est de libérer les ressources allouées par l&rsquo;objet depuis son instanciation (par exemple, libération de buffers mémoire, fermeture de fichiers, fermeture de connexions réseaux, etc).<br>
-Mais nous allons voir que nous pouvons bien faire tout ce dont on a envie dans un destructeur.</p>
+<p>Le rôle premier du destructeur est de libérer les ressources allouées par l&rsquo;objet depuis son instanciation (par exemple, libération de buffers mémoire, fermeture de fichiers, fermeture de connexions réseau, etc).<br>
+Mais nous allons voir que nous pouvons en réalité faire tout ce dont on a envie dans un destructeur.</p>
 <p>Commençons par la syntaxe :</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">ClassName</span>
 </span></span><span class="line"><span class="cl"><span class="p">{</span>
@@ -1996,7 +1996,7 @@ En effet, comme ce n&rsquo;est pas vous qui appelez le destructeur, mais le comp
 
 <ol>
 <li>Ouvrez le fichier <code>chap-02/3-destructor.cpp</code> et ajoutez un destructeur à la classe <code>Person</code>.<br>
-A l&rsquo;intérieur, ajoutez une instruction qui affichera, dans le cas de Batman, <code>&quot;Bruce Wayne died at 23 years old&quot;</code>.</li>
+À l&rsquo;intérieur, ajoutez une instruction qui affichera, dans le cas de Batman, <code>&quot;Bruce Wayne died at 23 years old&quot;</code>.</li>
 </ol>
 
 <div class="hidden-solution">
@@ -2011,7 +2011,7 @@ A l&rsquo;intérieur, ajoutez une instruction qui affichera, dans le cas de Batm
         </button>
 
         <div class="hidden-solution-content">
-            <p>Dans le destructeur, on peut parfaitement faire appel aux autres fonctions-membre de la classe.<br>
+            <p>Dans le destructeur, on peut parfaitement faire appel aux autres fonctions-membres de la classe.<br>
 Ici, on utilise <code>get_full_name()</code> pour éviter de dupliquer le code de la concaténation de chaînes.</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">Person</span>
 </span></span><span class="line"><span class="cl"><span class="p">{</span>
@@ -2032,13 +2032,13 @@ Ici, on utilise <code>get_full_name()</code> pour éviter de dupliquer le code d
 </div>
 <ol start="2">
 <li>Compilez et testez le programme.<br>
-Vous pourrez constater que je ne vous ai pas raconté de salades concernant le moment de l&rsquo;appel au destructeur.</li>
+Vous pourrez constater que je ne vous ai pas raconté de salades concernant le moment où le destructeur est appelé.</li>
 </ol>
 <hr>
 <h3 id="destruction-en-cascade">Destruction en cascade</h3>
 <ol>
 <li>Définissez maintenant une classe <code>Batmobile</code>, qui aura un attribut <code>_batman</code> de type <code>Person</code>.<br>
-Vous initialiserez ce champs au moyen d&rsquo;un class-initializer avec les arguments <code>&quot;Bruce&quot;</code> et <code>&quot;Wayne&quot;</code>.<br>
+Vous initialiserez ce champ au moyen d&rsquo;un class-initializer avec les arguments <code>&quot;Bruce&quot;</code> et <code>&quot;Wayne&quot;</code>.<br>
 Petite question au passage, pourquoi ne pouvez-vous pas définir la classe <code>Batmobile</code> avant la classe <code>Person</code> ?</li>
 </ol>
 
@@ -2092,7 +2092,7 @@ Remplacez ensuite le contenu du <code>main</code> par :</li>
         </button>
 
         <div class="hidden-solution-content">
-            <p>On pense bien à définir le destructeur dans la partie publique de la classe, sinon, il ne peut pas être appelé dans le <code>main</code>.</p>
+            <p>On pense bien à définir le destructeur dans la partie publique de la classe, sinon il ne peut pas être appelé dans le <code>main</code>.</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">Batmobile</span>
 </span></span><span class="line"><span class="cl"><span class="p">{</span>
 </span></span><span class="line"><span class="cl"><span class="k">public</span><span class="o">:</span>
@@ -2174,7 +2174,7 @@ Que va-t-il se passer à l&rsquo;exécution ?</p>
         <div class="hidden-solution-content">
             <p>Le programme affiche maintenant :</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-b" data-lang="b"><span class="line"><span class="cl"><span class="c">&#34;Bruce Wayne died at 0 years old&#34;
-</span></span></span></code></pre></div><p>Le destructeur de <code>Person</code> est donc appelé, même si il n&rsquo;y a plus le code du destructeur de <code>Batmobile</code>.</p>
+</span></span></span></code></pre></div><p>Le destructeur de <code>Person</code> est donc appelé, même s&rsquo;il n&rsquo;y a plus le code du destructeur de <code>Batmobile</code>.</p>
 
         </div>
     </div>
@@ -2187,7 +2187,7 @@ A l&rsquo;exécution, celui-ci se contente de désinstancier les attributs de la
 <ul>
 <li>Le contraire de l&rsquo;<strong>instanciation</strong> est la <strong>désinstanciation</strong>.</li>
 <li>La désinstanciation d&rsquo;un objet provoque l&rsquo;appel à son <strong>destructeur</strong>, qui se définit avec <code>~ClassName() { ... }</code>.</li>
-<li>Une variable locale est désinstanciée lorsqu&rsquo;on sort du bloc dans lequel elle est définit.</li>
+<li>Une variable locale est désinstanciée lorsqu&rsquo;on sort du bloc dans lequel elle est définie.</li>
 <li>Un attribut est désinstancié lorsque le destructeur de la classe est appelé.</li>
 <li>Si on ne définit pas explicitement le destructeur d&rsquo;une classe, le compilateur génère l&rsquo;<strong>implémentation par défaut</strong> du destructeur.</li>
 </ul>
@@ -3476,19 +3476,19 @@ A l&rsquo;exécution, celui-ci se contente de désinstancier les attributs de la
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/CPP_Learning/js/clipboard.min.js?1706621655"></script>
-    <script src="/CPP_Learning/js/perfect-scrollbar.min.js?1706621655"></script>
-    <script src="/CPP_Learning/js/perfect-scrollbar.jquery.min.js?1706621655"></script>
-    <script src="/CPP_Learning/js/jquery.sticky.js?1706621655"></script>
-    <script src="/CPP_Learning/js/featherlight.min.js?1706621655"></script>
-    <script src="/CPP_Learning/js/highlight.pack.js?1706621655"></script>
+    <script src="/CPP_Learning/js/clipboard.min.js?1706811522"></script>
+    <script src="/CPP_Learning/js/perfect-scrollbar.min.js?1706811522"></script>
+    <script src="/CPP_Learning/js/perfect-scrollbar.jquery.min.js?1706811522"></script>
+    <script src="/CPP_Learning/js/jquery.sticky.js?1706811522"></script>
+    <script src="/CPP_Learning/js/featherlight.min.js?1706811522"></script>
+    <script src="/CPP_Learning/js/highlight.pack.js?1706811522"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/CPP_Learning/js/modernizr.custom-3.6.0.js?1706621655"></script>
-    <script src="/CPP_Learning/js/learn.js?1706621655"></script>
-    <script src="/CPP_Learning/js/hugo-learn.js?1706621655"></script>
+    <script src="/CPP_Learning/js/modernizr.custom-3.6.0.js?1706811522"></script>
+    <script src="/CPP_Learning/js/learn.js?1706811522"></script>
+    <script src="/CPP_Learning/js/hugo-learn.js?1706811522"></script>
     
         
-            <script src="/CPP_Learning/mermaid/mermaid.js?1706621655"></script>
+            <script src="/CPP_Learning/mermaid/mermaid.js?1706811522"></script>
         
         <script>
             mermaid.initialize({ startOnLoad: true });

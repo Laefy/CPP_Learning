@@ -12,22 +12,22 @@
     <title>Librairie standard 📚 :: Cours de C&#43;&#43; - Niveau Master</title>
 
     
-    <link href="/CPP_Learning/css/nucleus.css?1706621655" rel="stylesheet">
-    <link href="/CPP_Learning/css/fontawesome-all.min.css?1706621655" rel="stylesheet">
-    <link href="/CPP_Learning/css/hybrid.css?1706621655" rel="stylesheet">
-    <link href="/CPP_Learning/css/featherlight.min.css?1706621655" rel="stylesheet">
-    <link href="/CPP_Learning/css/perfect-scrollbar.min.css?1706621655" rel="stylesheet">
-    <link href="/CPP_Learning/css/auto-complete.css?1706621655" rel="stylesheet">
-    <link href="/CPP_Learning/css/atom-one-dark-reasonable.css?1706621655" rel="stylesheet">
-    <link href="/CPP_Learning/css/theme.css?1706621655" rel="stylesheet">
-    <link href="/CPP_Learning/css/tabs.css?1706621655" rel="stylesheet">
-    <link href="/CPP_Learning/css/hugo-theme.css?1706621655" rel="stylesheet">
+    <link href="/CPP_Learning/css/nucleus.css?1706811522" rel="stylesheet">
+    <link href="/CPP_Learning/css/fontawesome-all.min.css?1706811522" rel="stylesheet">
+    <link href="/CPP_Learning/css/hybrid.css?1706811522" rel="stylesheet">
+    <link href="/CPP_Learning/css/featherlight.min.css?1706811522" rel="stylesheet">
+    <link href="/CPP_Learning/css/perfect-scrollbar.min.css?1706811522" rel="stylesheet">
+    <link href="/CPP_Learning/css/auto-complete.css?1706811522" rel="stylesheet">
+    <link href="/CPP_Learning/css/atom-one-dark-reasonable.css?1706811522" rel="stylesheet">
+    <link href="/CPP_Learning/css/theme.css?1706811522" rel="stylesheet">
+    <link href="/CPP_Learning/css/tabs.css?1706811522" rel="stylesheet">
+    <link href="/CPP_Learning/css/hugo-theme.css?1706811522" rel="stylesheet">
     
-    <link href="/CPP_Learning/css/theme-mine.css?1706621655" rel="stylesheet">
+    <link href="/CPP_Learning/css/theme-mine.css?1706811522" rel="stylesheet">
     
-    <link href="/CPP_Learning/css/syntax.css?1706621655" rel="stylesheet">
+    <link href="/CPP_Learning/css/syntax.css?1706811522" rel="stylesheet">
 
-    <script src="/CPP_Learning/js/jquery-3.3.1.min.js?1706621655"></script>
+    <script src="/CPP_Learning/js/jquery-3.3.1.min.js?1706811522"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -1941,7 +1941,7 @@
 Vous verrez également comment écrire ou lire dans des flux pour intéragir avec l&rsquo;utilisateur.</p>
 <hr>
 <h3 id="chaînes-de-caractères">Chaînes de caractères</h3>
-<p>Comme en C, <code>const char*</code> est le type fondamental associé à une chaîne de caractère littérale (c&rsquo;est-à-dire écrite en dur, avec les guillemets autour) :</p>
+<p>Comme en C, <code>const char*</code> est le type fondamental associé à une chaîne de caractères littérale (c&rsquo;est-à-dire écrite en dur, avec les guillemets autour) :</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="k">auto</span> <span class="n">str</span> <span class="o">=</span> <span class="s">&#34;hello&#34;</span><span class="p">;</span> <span class="c1">// -&gt; str est de type const char*
 </span></span></span></code></pre></div><p>Cependant, ce n&rsquo;est pas du tout pratique pour faire des opérations comme des concaténations, des recherches, ou même simplement récupérer la taille de la chaîne.</p>
 <p>Pour pouvoir faire ce genre de choses facilement, on utilise la classe <code>std::string</code> définie dans le header <code>&lt;string&gt;</code>.</p>
@@ -1966,7 +1966,7 @@ Vous verrez également comment écrire ou lire dans des flux pour intéragir ave
 </span></span><span class="line"><span class="cl"><span class="p">}</span>
 </span></span></code></pre></div>
 <div class="notices warning" ><p>Attention à bien caster vos chaînes littérales en <code>std::string</code> avant de commencer à les utiliser.<br>
-Certaines opérations comme l&rsquo;addition compileront sur le type <code>const char*</code>, mais vous n&rsquo;obtiendrez pas le résultat attendu : <code>std::cout &lt;&lt; (&quot;abc&quot; + &quot;def&quot;) &lt;&lt; std::endl</code> n&rsquo;affichera pas du tout &ldquo;abcdef&rdquo;.</p>
+Certaines opérations comme l&rsquo;addition compileront sur le type <code>const char*</code>, mais vous n&rsquo;obtiendrez pas le résultat attendu : <code>std::cout &lt;&lt; (&quot;abc&quot; + &quot;def&quot;) &lt;&lt; std::endl</code> n&rsquo;affichera pas du tout <code>&quot;abcdef&quot;</code>.</p>
 </div>
 
 <hr>
@@ -1986,7 +1986,7 @@ Par exemple, <code>std::vector&lt;int&gt;</code> est un tableau d&rsquo;entiers 
 </span></span><span class="line"><span class="cl">    <span class="c1">// On crée un vector d&#39;entiers contenant différents nombres
 </span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="k">auto</span> <span class="n">numbers</span> <span class="o">=</span> <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="p">{</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">23</span><span class="p">,</span> <span class="mi">38</span><span class="p">,</span> <span class="o">-</span><span class="mi">54</span> <span class="p">};</span>   
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">    <span class="c1">// On parcourt le tableau d&#39;entiers avec une boucle foreach
+</span></span><span class="line"><span class="cl">    <span class="c1">// On parcourt le tableau d&#39;entiers avec une boucle for-each
 </span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="k">for</span> <span class="p">(</span><span class="k">auto</span> <span class="nl">n</span><span class="p">:</span> <span class="n">numbers</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">    <span class="p">{</span>
 </span></span><span class="line"><span class="cl">        <span class="c1">// On indique dans le tableau de booléens si le nombre est pair
@@ -2065,7 +2065,7 @@ Craow Ca va ?</p>
 </blockquote>
 <ol>
 <li>Ouvrez le fichier <code>chap-01/2-parrot.cpp</code> dans VSCode.<br>
-Vérifiez qu&rsquo;il compile et qu&rsquo;il affiche &ldquo;Craow&rdquo; lorsque vous le lancez.</li>
+Vérifiez qu&rsquo;il compile et qu&rsquo;il affiche <code>&quot;Craow&quot;</code> lorsque vous le lancez.</li>
 </ol>
 
 <div class="hidden-solution">
@@ -2121,7 +2121,7 @@ Pour utiliser <code>std::string</code> et <code>std::getline</code>, on doit pen
 
 </div>
 <ol start="3">
-<li>Ajoutez une boucle au programme de manière à ce que le programme répète les phrases de l&rsquo;utilisateur, précédées de &ldquo;Craow&rdquo;, jusqu&rsquo;à ce qu&rsquo;il entre une ligne vide.</li>
+<li>Ajoutez une boucle au programme de manière à ce que le programme répète les phrases de l&rsquo;utilisateur, précédées de <code>&quot;Craow&quot;</code>, jusqu&rsquo;à ce qu&rsquo;il entre une ligne vide.</li>
 </ol>
 
 <div class="hidden-solution">
@@ -2183,7 +2183,7 @@ Ce n&rsquo;est qu&rsquo;après que l&rsquo;utilisateur ait entré une ligne vide
         <div class="hidden-solution-content">
             <p>Pour manipuler des tableaux, on utilise la classe <code>std::vector</code> disponible dans <code>&lt;vector&gt;</code>.</p>
 <p>On a alors plusieurs possibilités : récupérer la ligne dans une nouvelle variable puis l&rsquo;ajouter au tableau après avoir vérifié qu&rsquo;elle n&rsquo;est pas vide, ou bien ajouter la nouvelle ligne dans le tableau et la retirer ensuite si elle est vide.</p>
-<p>Une fois le tableau rempli, on peut utiliser une boucle foreach pour le parcourir et afficher les phrases du perroquet.</p>
+<p>Une fois le tableau rempli, on peut utiliser une boucle <code>for-each</code> pour le parcourir et afficher les phrases du perroquet.</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp"> </span><span class="c1">// pour std::cout et std::cin
 </span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="cp">#include</span> <span class="cpf">&lt;string&gt;</span><span class="cp">   </span><span class="c1">// pour std::string et std::getline
 </span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="cp">#include</span> <span class="cpf">&lt;vector&gt;</span><span class="cp">   </span><span class="c1">// pour std::vector
@@ -3548,19 +3548,19 @@ On construit chaque ligne du perroquet à l&rsquo;intérieur de la boucle, et on
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/CPP_Learning/js/clipboard.min.js?1706621655"></script>
-    <script src="/CPP_Learning/js/perfect-scrollbar.min.js?1706621655"></script>
-    <script src="/CPP_Learning/js/perfect-scrollbar.jquery.min.js?1706621655"></script>
-    <script src="/CPP_Learning/js/jquery.sticky.js?1706621655"></script>
-    <script src="/CPP_Learning/js/featherlight.min.js?1706621655"></script>
-    <script src="/CPP_Learning/js/highlight.pack.js?1706621655"></script>
+    <script src="/CPP_Learning/js/clipboard.min.js?1706811522"></script>
+    <script src="/CPP_Learning/js/perfect-scrollbar.min.js?1706811522"></script>
+    <script src="/CPP_Learning/js/perfect-scrollbar.jquery.min.js?1706811522"></script>
+    <script src="/CPP_Learning/js/jquery.sticky.js?1706811522"></script>
+    <script src="/CPP_Learning/js/featherlight.min.js?1706811522"></script>
+    <script src="/CPP_Learning/js/highlight.pack.js?1706811522"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/CPP_Learning/js/modernizr.custom-3.6.0.js?1706621655"></script>
-    <script src="/CPP_Learning/js/learn.js?1706621655"></script>
-    <script src="/CPP_Learning/js/hugo-learn.js?1706621655"></script>
+    <script src="/CPP_Learning/js/modernizr.custom-3.6.0.js?1706811522"></script>
+    <script src="/CPP_Learning/js/learn.js?1706811522"></script>
+    <script src="/CPP_Learning/js/hugo-learn.js?1706811522"></script>
     
         
-            <script src="/CPP_Learning/mermaid/mermaid.js?1706621655"></script>
+            <script src="/CPP_Learning/mermaid/mermaid.js?1706811522"></script>
         
         <script>
             mermaid.initialize({ startOnLoad: true });

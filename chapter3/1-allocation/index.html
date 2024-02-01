@@ -12,22 +12,22 @@
     <title>Allocation dynamique 🎇 :: Cours de C&#43;&#43; - Niveau Master</title>
 
     
-    <link href="/CPP_Learning/css/nucleus.css?1706621655" rel="stylesheet">
-    <link href="/CPP_Learning/css/fontawesome-all.min.css?1706621655" rel="stylesheet">
-    <link href="/CPP_Learning/css/hybrid.css?1706621655" rel="stylesheet">
-    <link href="/CPP_Learning/css/featherlight.min.css?1706621655" rel="stylesheet">
-    <link href="/CPP_Learning/css/perfect-scrollbar.min.css?1706621655" rel="stylesheet">
-    <link href="/CPP_Learning/css/auto-complete.css?1706621655" rel="stylesheet">
-    <link href="/CPP_Learning/css/atom-one-dark-reasonable.css?1706621655" rel="stylesheet">
-    <link href="/CPP_Learning/css/theme.css?1706621655" rel="stylesheet">
-    <link href="/CPP_Learning/css/tabs.css?1706621655" rel="stylesheet">
-    <link href="/CPP_Learning/css/hugo-theme.css?1706621655" rel="stylesheet">
+    <link href="/CPP_Learning/css/nucleus.css?1706811522" rel="stylesheet">
+    <link href="/CPP_Learning/css/fontawesome-all.min.css?1706811522" rel="stylesheet">
+    <link href="/CPP_Learning/css/hybrid.css?1706811522" rel="stylesheet">
+    <link href="/CPP_Learning/css/featherlight.min.css?1706811522" rel="stylesheet">
+    <link href="/CPP_Learning/css/perfect-scrollbar.min.css?1706811522" rel="stylesheet">
+    <link href="/CPP_Learning/css/auto-complete.css?1706811522" rel="stylesheet">
+    <link href="/CPP_Learning/css/atom-one-dark-reasonable.css?1706811522" rel="stylesheet">
+    <link href="/CPP_Learning/css/theme.css?1706811522" rel="stylesheet">
+    <link href="/CPP_Learning/css/tabs.css?1706811522" rel="stylesheet">
+    <link href="/CPP_Learning/css/hugo-theme.css?1706811522" rel="stylesheet">
     
-    <link href="/CPP_Learning/css/theme-mine.css?1706621655" rel="stylesheet">
+    <link href="/CPP_Learning/css/theme-mine.css?1706811522" rel="stylesheet">
     
-    <link href="/CPP_Learning/css/syntax.css?1706621655" rel="stylesheet">
+    <link href="/CPP_Learning/css/syntax.css?1706811522" rel="stylesheet">
 
-    <script src="/CPP_Learning/js/jquery-3.3.1.min.js?1706621655"></script>
+    <script src="/CPP_Learning/js/jquery-3.3.1.min.js?1706811522"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -1936,18 +1936,18 @@
         
 
 
-<p>Cette première page sera assez courte, elle vous présentera simplement la syntaxe permettant d&rsquo;allouer dynamiquement de la mémoire et de libérer.</p>
+<p>Cette première page sera assez courte, elle vous présentera simplement la syntaxe permettant d&rsquo;allouer dynamiquement de la mémoire et de la libérer.</p>
 <hr>
 <h3 id="allouer-un-seul-élément">Allouer un seul élément</h3>
-<p>Pour allouer un bloc de mémoire, on utilise le mot-clef <code>new</code>, suivi du type de donnée que l&rsquo;on souhaite placer dedans, puis de la valeur avec laquelle on souhaite l&rsquo;initialiser.<br>
+<p>Pour allouer un bloc de mémoire, on utilise le mot-clef <code>new</code>, suivi du type de donnée que l&rsquo;on souhaite y placer, puis de la valeur avec laquelle on souhaite l&rsquo;initialiser.<br>
 Cette instruction retourne un pointeur.</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="kt">int</span><span class="o">*</span> <span class="n">ptr_5</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">int</span> <span class="p">{</span> <span class="mi">5</span> <span class="p">};</span>
 </span></span><span class="line"><span class="cl"><span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="o">*</span><span class="n">ptr_5</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>   <span class="c1">// --&gt; 5
 </span></span></span></code></pre></div><p>Comme pour une variable classique, on peut utiliser des <code>{}</code> ou des <code>()</code> pour indiquer la valeur initiale.</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="kt">int</span><span class="o">*</span> <span class="n">ptr_3</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">int</span><span class="p">(</span><span class="mi">3</span><span class="p">);</span>
 </span></span><span class="line"><span class="cl"><span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="o">*</span><span class="n">ptr_3</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>   <span class="c1">// --&gt; 3
-</span></span></span></code></pre></div><p>Une fois que de la mémoire a été allouée dynamiquement, il faut penser à la libérer.<br>
-Pour cela, on emploie <code>delete</code> :</p>
+</span></span></span></code></pre></div><p>Lorsque de la mémoire a été allouée dynamiquement, il faut penser à la libérer.<br>
+Pour cela, on utilise le mot-clef <code>delete</code> :</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="k">delete</span> <span class="n">ptr_3</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl"><span class="k">delete</span> <span class="n">ptr_5</span><span class="p">;</span>
 </span></span></code></pre></div><hr>
@@ -1964,7 +1964,7 @@ L&rsquo;initialisation se fait forcément avec des <code>{}</code>.</p>
 <p>En effet, en C++, même si vous en faites votre métier, vous n&rsquo;aurez quasiment jamais besoin de vous servir de <code>new</code> et <code>delete</code>.<br>
 Ce sont des classes, telles que <code>std::vector</code> ou <code>std::string</code>, qui se chargeront de faire ce sale boulot pour vous !</p>
 <p>C&rsquo;est néanmoins utile pour la culture d&rsquo;avoir vu comment on écrivait des allocations à la mano.<br>
-Et surtout, cela vous permettra de comprendre ce que nous avons écrit dans la suite de ce chapitre.</p>
+Et surtout, cela vous permettra de comprendre les extraits de code présentés dans la suite de ce chapitre.</p>
 
 
 <footer class="footline">
@@ -3247,19 +3247,19 @@ Et surtout, cela vous permettra de comprendre ce que nous avons écrit dans la s
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/CPP_Learning/js/clipboard.min.js?1706621655"></script>
-    <script src="/CPP_Learning/js/perfect-scrollbar.min.js?1706621655"></script>
-    <script src="/CPP_Learning/js/perfect-scrollbar.jquery.min.js?1706621655"></script>
-    <script src="/CPP_Learning/js/jquery.sticky.js?1706621655"></script>
-    <script src="/CPP_Learning/js/featherlight.min.js?1706621655"></script>
-    <script src="/CPP_Learning/js/highlight.pack.js?1706621655"></script>
+    <script src="/CPP_Learning/js/clipboard.min.js?1706811522"></script>
+    <script src="/CPP_Learning/js/perfect-scrollbar.min.js?1706811522"></script>
+    <script src="/CPP_Learning/js/perfect-scrollbar.jquery.min.js?1706811522"></script>
+    <script src="/CPP_Learning/js/jquery.sticky.js?1706811522"></script>
+    <script src="/CPP_Learning/js/featherlight.min.js?1706811522"></script>
+    <script src="/CPP_Learning/js/highlight.pack.js?1706811522"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/CPP_Learning/js/modernizr.custom-3.6.0.js?1706621655"></script>
-    <script src="/CPP_Learning/js/learn.js?1706621655"></script>
-    <script src="/CPP_Learning/js/hugo-learn.js?1706621655"></script>
+    <script src="/CPP_Learning/js/modernizr.custom-3.6.0.js?1706811522"></script>
+    <script src="/CPP_Learning/js/learn.js?1706811522"></script>
+    <script src="/CPP_Learning/js/hugo-learn.js?1706811522"></script>
     
         
-            <script src="/CPP_Learning/mermaid/mermaid.js?1706621655"></script>
+            <script src="/CPP_Learning/mermaid/mermaid.js?1706811522"></script>
         
         <script>
             mermaid.initialize({ startOnLoad: true });

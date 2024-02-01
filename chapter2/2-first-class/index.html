@@ -12,22 +12,22 @@
     <title>Première classe ✨ :: Cours de C&#43;&#43; - Niveau Master</title>
 
     
-    <link href="/CPP_Learning/css/nucleus.css?1706621655" rel="stylesheet">
-    <link href="/CPP_Learning/css/fontawesome-all.min.css?1706621655" rel="stylesheet">
-    <link href="/CPP_Learning/css/hybrid.css?1706621655" rel="stylesheet">
-    <link href="/CPP_Learning/css/featherlight.min.css?1706621655" rel="stylesheet">
-    <link href="/CPP_Learning/css/perfect-scrollbar.min.css?1706621655" rel="stylesheet">
-    <link href="/CPP_Learning/css/auto-complete.css?1706621655" rel="stylesheet">
-    <link href="/CPP_Learning/css/atom-one-dark-reasonable.css?1706621655" rel="stylesheet">
-    <link href="/CPP_Learning/css/theme.css?1706621655" rel="stylesheet">
-    <link href="/CPP_Learning/css/tabs.css?1706621655" rel="stylesheet">
-    <link href="/CPP_Learning/css/hugo-theme.css?1706621655" rel="stylesheet">
+    <link href="/CPP_Learning/css/nucleus.css?1706811522" rel="stylesheet">
+    <link href="/CPP_Learning/css/fontawesome-all.min.css?1706811522" rel="stylesheet">
+    <link href="/CPP_Learning/css/hybrid.css?1706811522" rel="stylesheet">
+    <link href="/CPP_Learning/css/featherlight.min.css?1706811522" rel="stylesheet">
+    <link href="/CPP_Learning/css/perfect-scrollbar.min.css?1706811522" rel="stylesheet">
+    <link href="/CPP_Learning/css/auto-complete.css?1706811522" rel="stylesheet">
+    <link href="/CPP_Learning/css/atom-one-dark-reasonable.css?1706811522" rel="stylesheet">
+    <link href="/CPP_Learning/css/theme.css?1706811522" rel="stylesheet">
+    <link href="/CPP_Learning/css/tabs.css?1706811522" rel="stylesheet">
+    <link href="/CPP_Learning/css/hugo-theme.css?1706811522" rel="stylesheet">
     
-    <link href="/CPP_Learning/css/theme-mine.css?1706621655" rel="stylesheet">
+    <link href="/CPP_Learning/css/theme-mine.css?1706811522" rel="stylesheet">
     
-    <link href="/CPP_Learning/css/syntax.css?1706621655" rel="stylesheet">
+    <link href="/CPP_Learning/css/syntax.css?1706811522" rel="stylesheet">
 
-    <script src="/CPP_Learning/js/jquery-3.3.1.min.js?1706621655"></script>
+    <script src="/CPP_Learning/js/jquery-3.3.1.min.js?1706811522"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -1966,9 +1966,9 @@ qui consiste à écrire le code des tests avant d&rsquo;écrire le code appelé.
 </ol>
 
 <div class="notices note" ><p>Pourquoi vous faire faire l&rsquo;exercice de cette manière ? Déjà, cela vous permet de découvrir un peu des méthodologies qui sont employées en entreprise. Ensuite, parce que le TDD a de gros avantages :<br>
-- vous n&rsquo;implémentez que du code utile : pas besoin de réfléchir à ce que vous devez fournir, puisque le code appelant vous dit quoi fournir, et vous perdez moins de temps à écrire du code qui au final ne sert à rien (= <strong>code mort</strong>),<br>
-- vous ne déliverez que du code testé,<br>
-- vous avez moins d&rsquo;opportunités de <strong>régression</strong>, c&rsquo;est-à-dire d&rsquo;introduire des bugs dans du code qui fonctionnait à la base, lors d&rsquo;un refacto par exemple.</p>
+- Vous n&rsquo;implémentez que du code utile (principes <a href="https://fr.wikipedia.org/wiki/Principe_KISS">KISS</a> et <a href="https://fr.wikipedia.org/wiki/YAGNI">YAGNI</a>) : pas besoin de réfléchir à ce que vous devez fournir, puisque le code appelant vous dit quoi fournir, et vous perdez moins de temps à écrire du code qui au final ne sert à rien (= <strong>code mort</strong>).<br>
+- Vous ne délivrez que du code testé.<br>
+- Vous avez moins d&rsquo;opportunités de <strong>régression</strong>, c&rsquo;est-à-dire d&rsquo;introduire des bugs dans du code qui fonctionnait à la base, lors d&rsquo;un refactoring par exemple.</p>
 </div>
 
 <hr>
@@ -2033,7 +2033,7 @@ Compilez et testez que le programme se lance correctement.</p>
 </span></span><span class="line"><span class="cl">    <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">_member2</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl"><span class="p">};</span>
 </span></span></code></pre></div>
-<div class="notices note" ><p>- Nous avons mis la partie publique avant la partie privée, mais on peut très bien faire l&rsquo;inverse. Il est même possible d&rsquo;écrire un nouveau bloc public derrière le bloc privé.<br>
+<div class="notices note" ><p>- Nous avons mis la partie publique avant la partie privée, mais on peut très bien faire l&rsquo;inverse. Il est même possible d&rsquo;écrire un nouveau bloc public derrière le bloc privé. Restez cependant cohérents et lisibles.<br>
 - Ici, toutes les fonctions sont publiques, et tous les attributs sont privés, mais on peut très bien mettre la définition d&rsquo;une fonction dans le bloc privé ou la définition d&rsquo;un attribut dans le bloc public.<br>
 - Nous avons préfixé les attributs avec <code>_</code>. Ce n&rsquo;est ni obligatoire de préfixer, ni d&rsquo;utiliser <code>_</code> comme préfixe (certains utilisent <code>m_</code> ou <code>my</code>), mais c&rsquo;est toujours pratique de le faire pour distinguer les attributs des paramètres de même nom.</p>
 </div>
@@ -2081,27 +2081,35 @@ Cette option sert à ajouter les <strong>symboles de debug</strong> à l&rsquo;i
 Si ce n&rsquo;est pas encore fait, rendez vous sur <a href="/CPP_Learning/chapter0/6-tips/2-vscode/#configuration-du-fichier-launchjson">cette section</a>, et remplacez bien le paramètre <code>program</code> par le chemin de l&rsquo;exécutable.
 Par exemple, si vous avez suivi la correction, vous pouvez indiquer :</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-json" data-lang="json"><span class="line"><span class="cl"><span class="s2">&#34;program&#34;</span><span class="err">:</span> <span class="s2">&#34;${workspaceFolder}/chap-02/1-first_class&#34;</span><span class="err">,</span>
-</span></span></code></pre></div><p>Une fois l&rsquo;environnement correctement configuré, il faut ajouter un <strong>breakpoint</strong> : cela permet au programme de se mettre en pause, juste avant l&rsquo;exécution d&rsquo;une instruction particulière.<br>
-Ici, vous allez placer un breakpoint sur l&rsquo;instruction <code>return 0;</code> du <code>main</code>.
-Pour cela, placez votre curseur sur la ligne en question et appuyer sur F9. Vous pouvez aussi cliquer directement dans l&rsquo;espace juste avant le numéro de ligne.
+</span></span></code></pre></div><p>Une fois l&rsquo;environnement correctement configuré, il faut ajouter un <strong>breakpoint</strong>, c&rsquo;est-à-dire un point d&rsquo;arrêt : cela permet au programme de se mettre en pause, juste avant l&rsquo;exécution d&rsquo;une instruction particulière.</p>
+<p>Par défaut, VSCode propose des raccourcis clavier pour les différentes fonctions du débuggeur. Les plus utiles sont :</p>
+<ul>
+<li><strong>F5</strong> pour lancer ou reprendre l&rsquo;exécution du programme (il se mettra en pause lorsqu&rsquo;il atteindra un prochain point d&rsquo;arrêt),</li>
+<li><strong>F9</strong> pour ajouter ou supprimer un point d&rsquo;arrêt à la ligne actuelle,</li>
+<li><strong>F10</strong> pour passer à l&rsquo;instruction suivante (étape par étape), sans descendre dans les fonctions,</li>
+<li><strong>F11</strong> pour passer à l&rsquo;instruction suivante en descendant dans les fonctions si nécessaire,</li>
+<li><strong>Shift + F11</strong> pour remonter dans la fonction appelante.</li>
+</ul>
+<p>Ici, vous allez placer un breakpoint sur l&rsquo;instruction <code>return 0;</code> du <code>main</code>.
+Pour cela, placez votre curseur sur la ligne en question et appuyez sur F9. Vous pouvez aussi cliquer directement à gauche du numéro de ligne.
 <img src="/CPP_Learning/images/vscode-breakpoint.png" alt=""></p>
 <p>Utilisez ensuite F5 pour lancer le programme.
-L&rsquo;éditeur devrait prendre cette apparence, indiquant que le programme est en pause à l&rsquo;instruction surlignée :
+L&rsquo;éditeur devrait prendre cette apparence, indiquant que le programme est en pause juste avant l&rsquo;exécution de l&rsquo;instruction surlignée :
 <img src="/CPP_Learning/images/vscode-breaking.png" alt=""></p>
 <p>Ouvrez maintenant le panneau d&rsquo;exécution en allant dans <code>View &gt; Run</code>.
 <img src="/CPP_Learning/images/vscode-locals.png" alt=""></p>
 <p>Ce panneau contient 3 sections :</p>
 <ul>
-<li>La section Variables, dans laquelle vous pouvez voir le contenu de chacune des variables locales à votre fonction.</li>
-<li>La section Watch, qui vous permet d&rsquo;entrer des expressions pour en récupérer le contenu. Vous pouvez par exemple entrer &ldquo;8+3*5&rdquo; pour obtenir le résultat du calcul, ou &ldquo;p._name&rdquo; pour obtenir la valeur de <code>p.name</code>, ou encore &ldquo;&amp;p&rdquo; pour récupérer l&rsquo;adresse de <code>p</code>.</li>
-<li>La section Call Stack, qui vous permet de remonter les appels de fonction pour vous placer à un endroit particulier de la pile d&rsquo;appel. Ici, vu qu&rsquo;on a que le <code>main</code>, ce n&rsquo;est pas très intéressant pour nous, mais nous y reviendrons.</li>
+<li>La section <strong>Variables</strong>, dans laquelle vous pouvez voir le contenu de chacune des variables locales à votre fonction.</li>
+<li>La section <strong>Watch</strong>, qui vous permet d&rsquo;entrer des expressions pour en récupérer le contenu. Vous pouvez par exemple entrer <code>8 + 3 * 5</code> pour obtenir le résultat du calcul, ou <code>p._name</code> pour obtenir la valeur de l&rsquo;attribut <code>_name</code> de <code>p</code>, ou encore <code>&amp;p</code> pour récupérer l&rsquo;adresse de <code>p</code>.</li>
+<li>La section <strong>Call Stack</strong>, qui vous permet de suivre la trace des appels de fonctions, et de vous positionner à un point spécifique de la pile d&rsquo;appels. Ce n&rsquo;est pas très intéressant ici, vu qu&rsquo;on n&rsquo;a que le <code>main</code>, mais nous y reviendrons.</li>
 </ul>
-<p>Dans la section des Variables, si vous pouvez constater comme sur le screenshot que <code>p._name</code> vaut bien <code>&quot;Batman&quot;</code>, alors c&rsquo;est que votre code est correct.</p>
+<p>Dans la section des <strong>Variables</strong>, si vous pouvez constater comme sur le screenshot que <code>p._name</code> vaut bien <code>&quot;Batman&quot;</code>, alors c&rsquo;est que votre code est correct.</p>
 <p>Appuyez ensuite sur F5 pour reprendre l&rsquo;exécution du programme.</p>
 <hr>
 <h3 id="modification-dun-attribut">Modification d&rsquo;un attribut</h3>
 <p>Décommentez l&rsquo;instruction faisant l&rsquo;appel à <code>set_age</code>, et définissez la fonction ainsi que l&rsquo;attribut correspondants.<br>
-Quel type avez-vous utiliser pour l&rsquo;âge de Batman ?</p>
+Quel type avez-vous utilisé pour l&rsquo;âge de Batman ?</p>
 
 <div class="hidden-solution">
 
@@ -2115,9 +2123,9 @@ Quel type avez-vous utiliser pour l&rsquo;âge de Batman ?</p>
         </button>
 
         <div class="hidden-solution-content">
-            <p>Pour <code>_age</code>, le mieux est d&rsquo;utilisé un entier non-signé. En effet, ce n&rsquo;est pas possible d&rsquo;avoir un âge négatif, donc utiliser un <code>unsigned int</code> plutôt qu&rsquo;un <code>int</code> permet de réduire la possibilité d&rsquo;avoir un mauvais usage. Vous pouvez également décider d&rsquo;utiliser un <code>unsigned short</code>, plutôt que <code>unsigned int</code>, puisque même Batman ne vivra pas si vieux.</p>
+            <p>Pour <code>_age</code>, le mieux est d&rsquo;utiliser un entier non-signé. En effet, ce n&rsquo;est pas possible d&rsquo;avoir un âge négatif, donc utiliser un <code>unsigned int</code> plutôt qu&rsquo;un <code>int</code> permet de réduire la possibilité d&rsquo;avoir un mauvais usage. Vous pouvez également décider d&rsquo;utiliser un <code>unsigned short</code>, plutôt que <code>unsigned int</code>, puisque même Batman ne vivra pas si vieux.</p>
 <div class="notices tip" ><p>Je déconseille l&rsquo;utilisation de <code>unsigned char</code> cependant, car <code>char</code> est associé à la notion de caractères. Donc bien que l&rsquo;espace soit suffisant pour contenir un âge humain, il est plus clair d&rsquo;utiliser un vrai type entier.<br>
-Evidemment, ce genre de bonne pratique ne peut s&rsquo;appliquer que dans le cas où il n&rsquo;y a pas de contrainte critique d&rsquo;utilisation de la mémoire.</p>
+Évidemment, ce genre de bonnes pratiques ne peut s&rsquo;appliquer que dans le cas où il n&rsquo;y a pas de contrainte critique d&rsquo;utilisation de la mémoire.</p>
 </div>
 <p>Voici le nouveau code :</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">Person</span>
@@ -2173,7 +2181,7 @@ Evidemment, ce genre de bonne pratique ne peut s&rsquo;appliquer que dans le cas
             <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="k">private</span><span class="o">:</span>
 </span></span><span class="line"><span class="cl">    <span class="n">std</span><span class="o">::</span><span class="n">string</span>  <span class="n">_name</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl">    <span class="kt">unsigned</span> <span class="kt">int</span> <span class="n">_age</span> <span class="o">=</span> <span class="mi">0u</span><span class="p">;</span>
-</span></span></code></pre></div><div class="notices info" ><p><code>0u</code> permet de faire référence au <code>0</code> entier non-signé. Cela n&rsquo;a pas beaucoup d&rsquo;importance d&rsquo;ici, puisque <code>_age</code> est explicitement typé, mais si on écrivait dans une fonction <code>auto v = 0u;</code> alors <code>v</code> serait de type <code>unsigned int</code> plutôt que de type <code>int</code>.</p>
+</span></span></code></pre></div><div class="notices info" ><p><code>0u</code> permet de faire référence au <code>0</code> entier non-signé. Cela n&rsquo;a pas beaucoup d&rsquo;importance ici, puisque <code>_age</code> est explicitement typé, mais si on écrivait dans une fonction <code>auto v = 0u;</code> alors <code>v</code> serait de type <code>unsigned int</code> plutôt que de type <code>int</code>.</p>
 </div>
 
         </div>
@@ -2186,7 +2194,7 @@ Evidemment, ce genre de bonne pratique ne peut s&rsquo;appliquer que dans le cas
 <p>Les accesseurs sont des fonctions qui ne sont pas censées modifier l&rsquo;état de l&rsquo;objet lorsqu&rsquo;elles sont appelées. En C++, on spécifie cette garantie en plaçant le mot-clef <code>const</code> à la fin de la signature de la fonction.</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="k">public</span><span class="o">:</span>
 </span></span><span class="line"><span class="cl">    <span class="kt">int</span> <span class="n">get_value</span><span class="p">()</span> <span class="k">const</span> <span class="p">{</span> <span class="k">return</span> <span class="n">_value</span><span class="p">;</span> <span class="p">}</span>
-</span></span></code></pre></div><p>Dès lors qu&rsquo;une fonction-membre est marquée <code>const</code>, le compilateur va vérifier qu&rsquo;aucune modification n&rsquo;est effectué sur les attributs de l&rsquo;objet. Le code suivant ne compilera donc pas :</p>
+</span></span></code></pre></div><p>Dès lors qu&rsquo;une fonction-membre est marquée <code>const</code>, le compilateur va vérifier qu&rsquo;aucune modification n&rsquo;est effectuée sur les attributs de l&rsquo;objet. Le code suivant ne compilera donc pas :</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">SomeClass</span>
 </span></span><span class="line"><span class="cl"><span class="p">{</span>
 </span></span><span class="line"><span class="cl"><span class="k">public</span><span class="o">:</span>
@@ -2200,10 +2208,10 @@ Evidemment, ce genre de bonne pratique ne peut s&rsquo;appliquer que dans le cas
 </span></span><span class="line"><span class="cl">    <span class="kt">int</span> <span class="n">_value</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl"><span class="p">};</span>
 </span></span></code></pre></div>
-<div class="notices warning" ><p>Il est extrêmement facile d&rsquo;oublier d&rsquo;indiquer <code>const</code> sur les fonctions qui ne sont pas supposer modifier l&rsquo;état de l&rsquo;objet.<br>
-En effet, ils ne sont pas toujours nécessaire pour faire compiler et fonctionner le programme, et c&rsquo;est donc difficile de prendre l&rsquo;habitude de les ajouter.<br>
-Mais même si le compilateur peut s&rsquo;en passer, il s&rsquo;agit d&rsquo;une information très utile pour le programmeur qui va lire votre code, car cela permet d&rsquo;identifier très vite ce qui peut bouger et ce qui ne bougera jamais au cours de l&rsquo;exécution.<br>
-Par conséquent, <strong>relisez-vous toujours</strong> après avoir ajouté une fonction-membre et demandez-vous si cette fonction est censée modifier la classe ? Si ce n&rsquo;est pas le cas, ajoutez <code>const</code> 💪</p>
+<div class="notices warning" ><p>Il est extrêmement facile d&rsquo;omettre d&rsquo;ajouter <code>const</code> aux fonctions qui ne sont pas censées modifier l&rsquo;état de l&rsquo;objet.<br>
+Parfois, ces indications ne sont pas nécessaires pour compiler et exécuter le programme, et c&rsquo;est donc difficile de prendre l&rsquo;habitude de les ajouter.<br>
+Cependant, même si le compilateur peut s&rsquo;en passer, inclure le mot-clé <code>const</code> est une information précieuse pour les programmeurs qui liront votre code. Cela permet d&rsquo;identifier rapidement ce qui peut être modifié et ce qui restera constant pendant l&rsquo;exécution.<br>
+Par conséquent, il est fortement recommandé de se <strong>relire systématiquement</strong> après l&rsquo;ajout d&rsquo;une fonction-membre et de se demander si cette fonction est censée modifier la classe. Si ce n&rsquo;est pas le cas, pensez à ajouter <code>const</code> 💪</p>
 </div>
 
 <p>Revenons à notre exercice. Décommentez la dernière instruction du <code>main</code>, implémentez les deux accesseurs nécessaires (sans oublier leur <code>const</code> 🙃) et vérifiez que le programme fonctionne.</p>
@@ -2233,10 +2241,10 @@ Par conséquent, <strong>relisez-vous toujours</strong> après avoir ajouté une
 <hr>
 <h3 id="synthèse">Synthèse</h3>
 <ul>
-<li>Les classes peuvent contenir des <strong>attributs</strong> et des <strong>fonctions-membre</strong></li>
+<li>Les classes peuvent contenir des <strong>attributs</strong> et des <strong>fonctions-membres</strong>.</li>
 <li>La définition d&rsquo;une classe se termine toujours par un <code>;</code></li>
-<li>On utilise <code>public:</code> ou <code>private:</code> devant un groupe de champs pour indiquer s&rsquo;ils sont publics ou privés</li>
-<li>Si une fonction-membre n&rsquo;a pas vocation a changé l&rsquo;état de l&rsquo;objet, il faut indiquer qu&rsquo;elle est <strong>const</strong> (à placer derrière les parenthèses des paramètres)</li>
+<li>On utilise <code>public:</code> ou <code>private:</code> devant un groupe de champs pour indiquer s&rsquo;ils sont publics ou privés.</li>
+<li>Si une fonction-membre n&rsquo;a pas vocation à changer l&rsquo;état de l&rsquo;objet, il faut indiquer qu&rsquo;elle est <strong>const</strong> (à placer derrière les parenthèses des paramètres).</li>
 </ul>
 
 
@@ -3523,19 +3531,19 @@ Par conséquent, <strong>relisez-vous toujours</strong> après avoir ajouté une
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/CPP_Learning/js/clipboard.min.js?1706621655"></script>
-    <script src="/CPP_Learning/js/perfect-scrollbar.min.js?1706621655"></script>
-    <script src="/CPP_Learning/js/perfect-scrollbar.jquery.min.js?1706621655"></script>
-    <script src="/CPP_Learning/js/jquery.sticky.js?1706621655"></script>
-    <script src="/CPP_Learning/js/featherlight.min.js?1706621655"></script>
-    <script src="/CPP_Learning/js/highlight.pack.js?1706621655"></script>
+    <script src="/CPP_Learning/js/clipboard.min.js?1706811522"></script>
+    <script src="/CPP_Learning/js/perfect-scrollbar.min.js?1706811522"></script>
+    <script src="/CPP_Learning/js/perfect-scrollbar.jquery.min.js?1706811522"></script>
+    <script src="/CPP_Learning/js/jquery.sticky.js?1706811522"></script>
+    <script src="/CPP_Learning/js/featherlight.min.js?1706811522"></script>
+    <script src="/CPP_Learning/js/highlight.pack.js?1706811522"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/CPP_Learning/js/modernizr.custom-3.6.0.js?1706621655"></script>
-    <script src="/CPP_Learning/js/learn.js?1706621655"></script>
-    <script src="/CPP_Learning/js/hugo-learn.js?1706621655"></script>
+    <script src="/CPP_Learning/js/modernizr.custom-3.6.0.js?1706811522"></script>
+    <script src="/CPP_Learning/js/learn.js?1706811522"></script>
+    <script src="/CPP_Learning/js/hugo-learn.js?1706811522"></script>
     
         
-            <script src="/CPP_Learning/mermaid/mermaid.js?1706621655"></script>
+            <script src="/CPP_Learning/mermaid/mermaid.js?1706811522"></script>
         
         <script>
             mermaid.initialize({ startOnLoad: true });
