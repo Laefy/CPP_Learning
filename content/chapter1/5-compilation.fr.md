@@ -59,12 +59,12 @@ Plutôt qu'expliquer précisément ce que fait le compilateur pour chacune d'ent
 
 Le compilateur lit le fichier instruction par instruction, en partant du haut du fichier.  
 Si l'instruction contient :
-- une définition ou déclaration de symboles (variable, fonction ou type).  
-➔ Le compilateur ajoute ce symbole à la table des symboles.
+- une définition ou déclaration de symboles (variable, fonction ou type),  
+➔ le compilateur ajoute ce symbole à la table des symboles
 - l'utilisation d'un symbole, comme un appel de fonction, la lecture ou l'écriture d'une variable.  
-➔ Le compilateur regarde dans la table des symboles **s'il existe** et **si le contexte d'utilisation est cohérent**.
+➔ le compilateur regarde dans la table des symboles **s'il existe** et **si le contexte d'utilisation est cohérent**
 - la fin d'un bloc.  
-➔ le compilateur supprime de la table des symboles tous ceux qui ont été définis dans ce bloc.
+➔ le compilateur supprime de la table des symboles tous ceux qui ont été définis dans ce bloc
 
 Au fur-et-à-mesure de l'analyse, le compilateur ajoute également dans le fichier-objet les instructions binaires correspondant aux fonctions et aux variables globales définies dans le fichier.
 
@@ -678,8 +678,8 @@ end
 ```
 
 Le linker identifie les éléments dont les instructions seront exécutées quoi qu'il arrive :
-- Le point d'entrée du programme, c'est-à-dire la fonction `main`,
-- Les instructions nécessaires à l'initialisation des variables globales.
+- le point d'entrée du programme, c'est-à-dire la fonction `main`,
+- les instructions nécessaires à l'initialisation des variables globales.
 
 ```mermaid
 graph LR
@@ -1066,7 +1066,7 @@ Il faut retenir que la compilation d'un programme se fait en deux étapes : la c
 
 Durant la compilation, le compilateur :
 - ajoute les symboles dans une table lorsqu'il voit leurs définitions ou leurs déclarations,
-- ajoute les instructions binaires des fonctions au fichier-objet losqu'il parcourt leur définition,
+- ajoute les instructions binaires des fonctions au fichier-objet lorsqu'il parcourt leur définition,
 - vérifie que les symboles sont utilisés dans le bon contexte, à l'aide du contenu de la table des symboles.
 
 Durant l'édition des liens, le linker :
@@ -1074,6 +1074,6 @@ Durant l'édition des liens, le linker :
 - écrit l'exécutable final en commençant par les instructions de la fonction `main`, et en ajoutant récursivement les instructions des fonctions appelées dedans. 
 
 Quelques bonnes pratiques lorsqu'on code **le contenu d'un header** :
-- On commence toujours par écrire `#pragma once`,
-- On utilise des "forward-declare" plutôt que des inclusions lorsque cela est possible,
+- On commence toujours par écrire `#pragma once`.
+- On utilise des "forward-declare" plutôt que des inclusions lorsque cela est possible.
 - On écrit `inline` devant les **définitions** de fonctions (pas les déclarations).

@@ -152,7 +152,7 @@ private:
 ```
 {{% /hidden-solution %}}
 
-Comme `std::pair<int, int>` n'est ni très lisible, ni très représentatif de ce qui va être contenu dedans, vous allez lui créer un **alias** : `Vertex`.  
+Comme `std::pair<int, int>` n'est ni très lisible, ni très représentatif de ce qui va être contenu dedans, vous allez créer un **alias** dessus : `Vertex`.  
 Pour définir un alias (équivalent au `typedef` en C), on utilise le mot-clef `using` :
 ```cpp
 using AliasName = OriginalType;
@@ -293,7 +293,7 @@ std::ostream& operator<<(std::ostream& stream, Polygon polygon);
 
 Essayez d'implémenter cette fonction.
 Vous placerez la déclaration dans `Polygon.h` et la définition dans `Polygon.cpp`.
-Pour son contenu, faites pour le moment en sorte qu'elle affiche `This is a polygon` dans le flux.
+Pour son contenu, faites pour le moment en sorte qu'elle affiche `"This is a polygon"` dans le flux.
 
 {{% hidden-solution %}}
 Dans `Polygon.h` :

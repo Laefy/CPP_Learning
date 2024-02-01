@@ -24,7 +24,7 @@ En effet, ces variables ne sont pas toujours mises à 0 par défaut, comme en t�
 {{% /notice %}}
 
 En ce qui concerne les spécificités du C++ maintenant...    
-Contrairement au C, les pointeurs null ne sont plus représentés par la constante `NULL` (qui correspond en réalité à un entier de valeur 0) mais par le mot-clef `nullptr` (en minuscules) de type `nullptr_t`.
+Contrairement au C, les pointeurs null ne sont plus représentés par la constante `NULL` (c'est-à-dire à 0, donc de type entier) mais par le mot-clef `nullptr` (en minuscules) de type `nullptr_t`.
 
 Autre particularité, vous n'êtes pas obligé de respécifier le type de la variable que vous déclarez si vous l'initialisez en même temps : si vous définissez votre variable avec le mot-clef `auto` (équivalent à `var` en Java >= 10), le compilateur utilise le type de la valeur utilisée pour l'initialisation (on parle d'inférence de type).
 

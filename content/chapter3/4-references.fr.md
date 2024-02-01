@@ -72,7 +72,7 @@ int main()
 ### Eviter les copies inutiles
 
 Les copies inutiles de variables de type fondamental ne sont pas forcément gênantes.  
-En revanche, dans le cas d'objets qui réalisent des **allocations dynamiques** dans leur(s) **constructeur(s)** (tels que `std::vector` ou `std::string`), il y a un risque non négligeable que cela impacte les **performances** du programme...
+En revanche, dans le cas d'objets qui réalisent des **allocations dynamiques** dans leur **constructeur** (tels que `std::vector` ou `std::string`), il y a un risque non négligeable que cela impacte les **performances** du programme...
 
 Les références sont donc un bon moyen d'éviter des copies coûteuses.
 
@@ -93,7 +93,7 @@ std::string concat_words(std::vector<std::string> words)
 }
 ```
 Dans le code ci-dessus, on identifie deux endroits où une copie inutile et coûteuse est réalisée :
-- Le paramètre `words` est passé par valeur, donc l'argument passé à la fonction sera copié,
+- Le paramètre `words` est passé par valeur, donc l'argument passé à la fonction sera copié.
 - On copie chaque élément du tableau pour initialiser la variable `w` dans la boucle `for`.
 
 Comment pourriez-vous réécrire cette fonction pour éliminer les copies inutiles ?
@@ -181,7 +181,7 @@ int main()
 ```
 
 {{% notice info %}}
-Faites bien attention, lorsque vous retournez une donnée par référence, à ce que celle-ci ne soit pas désinstanciée à la fin de l'appel à la fonction.  
+Faites bien attention lorsque vous retournez une donnée par référence, à ce que celle-ci ne soit pas désinstanciée à la fin de l'appel à la fonction.  
 Par exemple, il ne faut jamais renvoyer une référence sur une variable locale de la fonction (cf l'[exemple de la dangling-reference](../2-lifespan/#références)).  
 Dans notre cas, cela fonctionne car `_name` est un attribut de la classe. Il n'y a donc pas de raison que cette donnée disparaisse à la fin de l'appel à `get_name`.
 {{% /notice %}}
@@ -224,9 +224,10 @@ int main()
 Dans le code ci-dessus, vous avez soit lu le code deux fois (en lisant les commentaires et le code), soit lu uniquement les commentaires parce que le code était peu compréhensible...
 
 Le souci réside dans le fait que les commentaires ne reflètent pas toujours les actions réellement effectuées par le code, notamment lorsque ceux-ci ne sont pas correctement mis à jour après un changement.
-En fin de compte, vous gaspillez du temps à jouer au détective pour déterminer qui, entre le code et les commentaires, est censé détenir la vérité.
+En fin de compte, vous gaspillez du temps à jouer au détective pour savoir si vous devez vous fier au code ou aux commentaires.
 
-Une méthode véritablement efficace pour rendre son code plus clair est de choisir des noms appropriés pour les variables et les fonctions. En conséquence, les commentaires qui ne font que paraphraser le code peuvent être totalement éliminés.
+Une méthode véritablement efficace pour rendre son code plus clair est de choisir des noms appropriés pour les variables et les fonctions.
+En conséquence, les commentaires qui ne font que paraphraser le code peuvent être totalement éliminés 🤯
 
 ```cpp
 float compute_average(const std::vector<float>& values)
@@ -267,7 +268,6 @@ Comme vous pouvez le constater, on a utilisé des références pour **décompose
 {{% notice note %}}
 On utilise une référence plutôt qu'une variable-valeur afin d'éviter la copie de l'objet.  
 Déjà, parce que cette copie ne servirait à rien, mais surtout parce que c'est la copie de notre grand-cousin qui aurait été invitée à notre anniversaire. Et nous, c'est notre vrai grand-cousin qu'on adore.  
-On remarque donc que le comportement du programme n'aurait alors probablement pas été celui attendu.
 {{% /notice %}}
 
 ---
@@ -356,7 +356,7 @@ En définissant des **attributs-références**, on utilise des `Fighters` qui vi
 Les `Fighter` ne sont donc pas associés à un seul et unique `Match`.
 
 Attention néanmoins avec les attributs-références, c'est souvent synonyme de potentielles dangling-references...  
-Par exemple, supposons que vous ayiez la très bonne mauvaise idée (ou la mauvaise très idée) de définir la fonction suivante pour créer la classe `Match` :
+Par exemple, supposons que vous ayiez la bonne-mauvaise idée de définir la fonction suivante pour créer la classe `Match` :
 ```cpp {linenos=table}
 void create_match(const std::string& name_1, const std::string& name_2)
 {

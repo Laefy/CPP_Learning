@@ -19,7 +19,7 @@ Sur un ordinateur moderne, il s'agira généralement d'un entier encodé sur 64 
 
 Si on représente la mémoire comme un tableau dans lequel chaque case est un octet, alors nous pouvons représenter une variable comme une série contiguë de cases de ce tableau.
 
-Supposons que le code suivant alloue `var` à l'adresse `0x00e8` (attention, pour la suite, on compte en hexadécimal !).
+Supposons que le code suivant alloue `var` à l'adresse `0x00e8` (attention pour la suite, on compte en hexadécimal !).
 
 ```cpp
 int var = 145;
@@ -90,7 +90,7 @@ La **mémoire statique** est la zone contenant les données associées aux varia
 Comme la taille d'une variable dépend uniquement de son type, la compilation permet de déterminer la quantité d'espace à allouer pour le segment de mémoire statique.
 Il est réservé une fois pour toute par le système d'exploitation au lancement du programme, et est restitué une fois la fonction `main` terminée.
 
-Il n'est pas possible d'augmenter ou de réduire cet espace réservé au cours de l'exécution du programme, et c'est pour cela qu'on parle de mémoire "statique".
+Il n'est pas possible d'augmenter ou de réduire l'espace réservé au cours de l'exécution du programme, et c'est pour cela qu'on parle de mémoire "statique".
 
 ---
 
@@ -131,7 +131,7 @@ Le haut de la pile est indiqué par la flèche.
 `l.12`: À la fin de l'appel à `f1`, on retire toutes les variables locales de la pile.
 
 {{% notice note %}}
-Notez bien que ce scénario n'est qu'un exemple parmi d'autres de ce qu'il pourrait se passer.
+Notez bien que ce scénario n'est qu'une hypothèse de ce qu'il pourrait se passer en réalité.
 En fonction de l'implémentation de votre compilateur et des instructions qu'il produit, le contenu de la pile ne sera pas le même.
 Par exemple, à des fins d'optimisation, il est fort probable que certaines variables soient stockées directement dans les registres du processeur plutôt que sur la pile.
 {{% /notice %}} 
@@ -176,7 +176,7 @@ int main()
 `l.9`: On appelle la fonction `make_int` avec l'argument `1`.  
 `l.2`: On entre dans la fonction, on ajoute le paramètre `value` dans la pile.  
 `l.3`: On alloue un entier de valeur `1` sur le tas, et on stocke l'adresse dans `ptr`.  
-`l.5`: On sort de la fonction, donc on dépile les variables locales, mais le contenu du tas ne change pas.   
+`l.5`: On sort de la fonction, donc on dépile les variables locales mais le contenu du tas ne change pas.   
 `l.9`: On stocke la valeur de retour de `make_int` dans `ptr_1`.  
 `l.11`: On demande la désinstanciation de l'entier alloué sur le tas.  
 `l.14`: On sort du `main`, donc on dépile toutes les variables définies dedans.  

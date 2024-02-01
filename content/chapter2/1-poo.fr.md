@@ -34,7 +34,7 @@ Selon les langages, elle ne se présente pas de la même manière. En C++, elle 
 Un **invariant de classe** est une condition que toutes les instances de cette classe doivent vérifier. Par exemple :
 - Pour la classe `Carré`, l'un des invariants stipule que les quatre côtés d'une instance doivent toujours avoir la même longueur.
 - Dans le cas de la classe `Fraction`, un invariant essentiel est que le dénominateur de chaque instance ne peut jamais être nul.
-- Pour la classe `ListeCroissante`, un invariant crucial spécifie que les éléments doivent toujours être ordonnés de manière croissante.
+- Pour la classe `ListeCroissante`, le tri des éléments par ordre croissant constitue un invariant.
 
 Lorsqu'une fonction-membre publique est appelée, on peut toujours supposer qu'à son entrée, les invariants sont garantis.
 En contre-partie, il faut que l'implémentation de la fonction garantisse également qu'à la sortie, les invariants seront toujours vrais.  
@@ -44,8 +44,11 @@ L'invariant permet donc ici de gagner en temps de calcul.
 
 #### Encapsulation
 
-L'**encapsulation** est le principe stipulant que pour pour accéder à l'état d'un objet ou le modifier, il faut passer par des *routines* (fonction-membre en C++, méthode en Java, ...). Ce principe s'accompagne souvent du masquage de l'état des objets, c'est-à-dire que les attributs d'une classe sont généralement déclarés dans sa partie privée.  
+L'**encapsulation** est le principe stipulant que pour pour accéder à l'état d'un objet ou le modifier, il faut passer par des "routines" (fonction-membre en C++, méthode en Java, ...).
+Ce principe s'accompagne souvent du masquage de l'état des objets, c'est-à-dire de la déclaration des attributs dans la partie privée de la classe.  
 Respecter le principe d'encapsulation permet de garantir les invariants de classe plus facilement.
 
-Reprenons l'exemple de la classe `SortedList` :
-On ne laissera pas l'utilisateur accéder directement au tableau contenant les valeurs. En effet, il pourrait ajouter un élément à la fin, ce qui aurait de grandes chances de briser l'invariant de classe. S'il veut ajouter un élément, on le forcera à passer par notre fonction-membre qui fera respecter cet invariant.
+Reprenons l'exemple de la classe `SortedList`.
+On ne laissera pas l'utilisateur accéder directement au tableau contenant les valeurs.
+En effet, il pourrait ajouter un élément à la fin, ce qui aurait de grandes chances de briser l'invariant de classe.
+S'il veut ajouter un élément, on le forcera à passer par notre fonction-membre qui fera respecter cet invariant.

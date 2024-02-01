@@ -57,4 +57,4 @@ En effet, en C++, même si vous en faites votre métier, vous n'aurez quasiment 
 Ce sont des classes, telles que `std::vector` ou `std::string`, qui se chargeront de faire ce sale boulot pour vous !  
 
 C'est néanmoins utile pour la culture d'avoir vu comment on écrivait des allocations à la mano.  
-Et surtout, cela vous permettra de comprendre ce que nous allons voir dans la suite de ce chapitre.
+Et surtout, cela vous permettra de comprendre les extraits de code présentés dans la suite de ce chapitre.

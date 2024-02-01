@@ -186,8 +186,8 @@ Vous devrez dessiner le graphe d'ownership correspondant à l'état du programme
 Si vous souhaitez dessiner vos graphes sur ordinateur, vous pouvez utiliser [draw.io](https://app.diagrams.net/).
 
 Pour cela, vous pourrez vous appuyer sur les règles d'architecture suivantes :
-- Chaque donnée a un seul et unique owner (➔ une unique flèche pleine arrive sur chaque case)
-- Toutes les références mènent à une donnée valide (➔ pas de flèche qui pointe sur une case rouge)
+- Chaque donnée a un seul et unique owner (=> une unique flèche pleine arrive sur chaque case)
+- Toutes les références mènent à une donnée valide (=> pas de flèche qui pointe sur une case rouge)
 - Si un pointeur est ownant, sa donnée sera correctement libérée **ou bien** il transfèrera l'ownership à un autre pointeur (pas les deux)
 
 #### Cas n°1

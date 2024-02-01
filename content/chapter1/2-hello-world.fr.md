@@ -60,7 +60,7 @@ Lancez maintenant votre programme pour vérifier qu'il s'exécute sans erreur.
 
 ### Ecrire sur la sortie standard
 
-L'instruction ci-dessous permet d'afficher la chaîne de caractères `Hello World!` sur la sortie standard du programme. 
+L'instruction ci-dessous permet d'afficher la chaîne de caractères `"Hello World"!` sur la sortie standard du programme. 
 ```cpp
 std::cout << "Hello World!" << std::endl;
 ```

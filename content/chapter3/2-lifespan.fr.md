@@ -9,8 +9,8 @@ Nous allons maintenant revenir sur l'instanciation et la désinstanciation des d
 
 ### Donnée de type fondamental
 
-L'instanciation d'une donnée de type fondamental se passe en deux étapes :
-1. Le programme alloue l'espace nécessaire pour stocker la donnée,
+L'instanciation d'une donnée de type fondamental est constitué de deux phases.
+1. Le programme alloue l'espace nécessaire pour stocker la donnée.
 2. **Si spécifié par le programmeur**, le contenu de la donnée est initialisé.
 
 En ce qui concerne la désinstanciation, le programme désalloue l'espace réservé pour la donnée.
@@ -110,13 +110,13 @@ Voici ce qu'il se passe au moment de l'instanciation de `p` (ligne 23) :
 1. Le programme alloue l'espace nécessaire pour stocker un objet de type `Person`,
 2. Il appelle le constructeur de `Person` à deux paramètres qui :
     1. instancie `_name` :
-        1. Le programme lui alloue le bloc mémoire nécessaire (au sein de l'espace déjà réservé pour `p`),
+        1. Le programme lui alloue le bloc mémoire nécessaire (au sein de l'espace déjà réservé pour `p`).
         2. Il appelle le constructeur de `std::string` à un paramètre.
     2. instancie `_age` :
-        1. Le programme lui alloue le bloc mémoire nécessaire (au sein de l'espace déjà réservé pour `p`),
+        1. Le programme lui alloue le bloc mémoire nécessaire (au sein de l'espace déjà réservé pour `p`).
         2. Il lui assigne la valeur `3`.
     3. instancie `_surname` :
-        1. Le programme lui alloue le bloc mémoire nécessaire (au sein de l'espace déjà réservé pour `p`),
+        1. Le programme lui alloue le bloc mémoire nécessaire (au sein de l'espace déjà réservé pour `p`).
         2. Il appelle le constructeur de `std::string` à un paramètre.
     4. exécute les instructions présentes dans le corps du constructeur (en l'occurrence, cela affiche `Jean is born` dans la console).
 
@@ -126,18 +126,20 @@ En effet, c'est l'ordre de définition des attributs dans la classe qui fait foi
 {{% /notice %}}
 
 {{% notice note %}}
-Lorsqu'un attribut est mentionné dans la liste d'initialisation, il est initialisé en fonction de ce qui est spécifié dans cette liste. En l'absence de cette mention, l'initialisation se fait à partir du class-initializer. Si ce dernier n'est pas défini, le constructeur par défaut est invoqué pour un type structuré, tandis que pour un type fondamental, rien n'est fait.
+Lorsqu'un attribut est mentionné dans la liste d'initialisation, il est initialisé en fonction de ce qui est spécifié dans cette liste.
+En l'absence de cette mention, l'initialisation se fait à partir du class-initializer.
+Si ce dernier n'est pas défini, le constructeur par défaut est invoqué pour un type structuré, tandis que pour un type fondamental, rien n'est fait.
 {{% /notice %}}
 
 Voici maintenant ce qu'il se passe au moment de sa désinstanciation (ligne 25) :
 1. Le programme appelle le destructeur de `Person` qui :
     1. exécute les instructions présentes dans le corps du destructeur (en l'occurrence, cela affiche `Jean is dead` dans la console),
     2. désinstancie `_surname` :
-        1. Le programme appelle le destructeur de `std::string`,
+        1. Le programme appelle le destructeur de `std::string`.
         2. Il désalloue l'espace réservé pour `_surname`.
     3. désinstancie `_age`, c'est-à-dire qu'il désalloue l'espace qui lui est réservé,
     4. désinstancie `_name` :
-        1. Le programme appelle le destructeur de `std::string`,
+        1. Le programme appelle le destructeur de `std::string`.
         2. Il désalloue l'espace réservé pour `_name`.
 2. le programme désalloue entièrement l'espace réservé à `p`.
 
@@ -148,7 +150,8 @@ Ces deux étapes entraînent récursivement l'instanciation et la désinstanciat
 
 ### Références
 
-Une référence est un alias d'une donnée, cependant, la déclaration ou la sortie du bloc dans lequel elle est définie n'a absolument **aucun impact** sur l'instanciation ou la désinstanciation de la donnée :
+Une référence est un alias d'une donnée.  
+Contrairement à la définition d'une variable classique, la définition d'une référence ou la sortie du bloc dans lequel elle est définie n'a absolument **aucun impact** sur l'instanciation ou la désinstanciation de la donnée :
 ```cpp {linenos=table}
 void fcn()
 {
@@ -186,7 +189,7 @@ int main()
 ```
 
 Ici, `default_name` est instancié ligne 3 et désinstancié ligne 5 (lorsqu'on sort de la fonction `fcn`).  
-Dans le cas où `name` est vide, on renvoie une référence sur cette donnée, qui n'a par conséquent plus d'espace mémoire attribué une fois revenu dans la fonction `main`.  
+Dans le cas où `name` est vide, on renvoie une référence sur `default_name`, qui n'a par conséquent plus d'espace mémoire attribué une fois revenu dans la fonction `main`.  
 Ce qui est affiché dans la console à la ligne 11 est donc indéterminé (et encore, moyennant que le programme ne crash pas 😬).
 
 On utilise le terme **dangling-reference** pour parler de cette situation.
@@ -205,7 +208,8 @@ La période entre ces deux événements est appelée **durée de vie** de la don
 
 Si l'accès à la donnée est fait en dehors de sa durée de vie, le comportement du programme est indéterminé (= **undefined behavior**).  
 Dans le cas d'un accès en lecture, si le programme ne génère pas immédiatement une segfault, vous pourrez vous retrouver avec une valeur complètement aléatoire (ce ne sera pas forcément la dernière valeur portée par la donnée).  
-Dans le cas d'un accès en écriture, on aura au mieux une segfault qui permettra de localiser rapidement à quel endroit du code l'accès invalide a été fait, et dans le pire des cas on écrira dans une zone mémoire désormais allouée à une autre donnée, et il devient alors extrêmement difficile de comprendre d'où vient le problème...
+Dans le cas d'un accès en écriture, on aura au mieux une segfault qui permettra de localiser rapidement à quel endroit du code l'accès invalide a été fait, et dans le pire des cas on écrira dans une zone mémoire désormais allouée à une autre donnée.
+Il devient alors extrêmement difficile de comprendre d'où vient le problème...
 
 Petit exercice, dans le code ci-dessous, essayez d'anticiper quelles seront les valeurs affichées dans la console :
 ```cpp

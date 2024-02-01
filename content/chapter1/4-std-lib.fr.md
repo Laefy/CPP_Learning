@@ -42,7 +42,7 @@ int main(int argc, char** argv)
 
 {{% notice warning %}}
 Attention à bien caster vos chaînes littérales en `std::string` avant de commencer à les utiliser.  
-Certaines opérations comme l'addition compileront sur le type `const char*`, mais vous n'obtiendrez pas le résultat attendu : `std::cout << ("abc" + "def") << std::endl` n'affichera pas du tout `abcdef`.
+Certaines opérations comme l'addition compileront sur le type `const char*`, mais vous n'obtiendrez pas le résultat attendu : `std::cout << ("abc" + "def") << std::endl` n'affichera pas du tout `"abcdef"`.
 {{% /notice %}}
 
 ---
@@ -156,7 +156,7 @@ Le programme devra écrire :
 > Craow Ca va ?
 
 1. Ouvrez le fichier `chap-01/2-parrot.cpp` dans VSCode.  
-Vérifiez qu'il compile et qu'il affiche `Craow` lorsque vous le lancez.
+Vérifiez qu'il compile et qu'il affiche `"Craow"` lorsque vous le lancez.
 
 {{% hidden-solution %}}
 Pour compiler, on peut ouvrir le terminal VSCode et écrire : `g++ -std=c++17 -o parrot 2-parrot.cpp` après s'être placé dans le bon répertoire avec `cd`.
@@ -183,7 +183,7 @@ int main()
 ```
 {{% /hidden-solution %}}
 
-3. Ajoutez une boucle au programme de manière à ce que le programme répète les phrases de l'utilisateur, précédées de `Craow`, jusqu'à ce qu'il entre une ligne vide.
+3. Ajoutez une boucle au programme de manière à ce que le programme répète les phrases de l'utilisateur, précédées de `"Craow"`, jusqu'à ce qu'il entre une ligne vide.
 
 {{% hidden-solution %}}
 Si l'utilisateur n'a rien écrit, alors la chaîne renvoyée par `getline` est vide.

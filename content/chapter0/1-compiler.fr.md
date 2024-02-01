@@ -34,7 +34,7 @@ Testez maintenant que tout fonctionne en suivant les étapes ci-dessous.
 3. Exécutez la commande `g++ .\helloworld.cpp -o hello`\
 Un fichier `hello.exe` devrait avoir été généré.
 4. Exécutez `.\hello.exe`.
-Le programme devrait vous répondre `Hello!`.
+Le programme devrait vous répondre `"Hello!"`.
 
 ---
 
@@ -52,7 +52,7 @@ Testez maintenant que tout fonctionne en suivant les étapes ci-dessous.
 3. Exécutez la commande `g++ ./helloworld.cpp -o hello`\
 Un fichier `hello` devrait avoir été généré.
 4. Exécutez `./hello`.
-Le programme devrait vous répondre `Hello!`.
+Le programme devrait vous répondre `"Hello!"`.
 
 ---
 
@@ -67,4 +67,4 @@ Testez maintenant que tout fonctionne en suivant les étapes ci-dessous.
 3. Exécutez la commande `clang++ ./helloworld.cpp -o hello`\
 Un fichier `hello` devrait avoir été généré.
 4. Exécutez `./hello`.
-Le programme devrait vous répondre `Hello!`.
+Le programme devrait vous répondre `"Hello!"`.

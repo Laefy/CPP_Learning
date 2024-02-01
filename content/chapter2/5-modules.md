@@ -118,10 +118,10 @@ Pourtant, si on s'intéresse aux fonctions dont les instructions attérissent da
 Les fonctions `Rectangle::get_length()` et `Rectangle::get_width()` apparaissent donc 2 fois.  
 En théorie, on devrait donc avoir des erreurs de type `"multiple definition of ..."` et le programme ne devrait donc pas compiler...
 
-Eh bien en réalité, toutes les fonctions qui sont définies à l'intérieur de la définition de la classe sont automatiquement marquées comme étant `inline`.
+Eh bien en réalité, toutes les fonctions qui sont définies à l'intérieur de la définition de la classe sont automatiquement spécifiées comme étant `inline`.
 Pour rappel, ce mot-clef permet d'indiquer au linker qu'il doit ignorer les éventuelles redéfinitions d'une fonction.
 
-Ainsi, votre programme compile, sans que vous ayiez besoin de mettre des `inline` sur tous vos getters.
+Ainsi, votre programme compile sans que vous ayiez besoin de mettre des `inline` sur tous vos getters.
 
 ---
 
@@ -136,7 +136,7 @@ Rectangle square(2.5f, 2.5f);
 Sauf que ça vous paraît un peu bête de devoir réécrire deux fois la même valeur dans l'appel au constructeur.
 
 1. Modifiez le `main` afin de créer cette instance de `square`, mais en n'y passant qu'une seule fois `2.5f`.\
-Définissez ensuite le constructeur à 1 paramètre correspondant, qui initialise les deux attributs `_length` et `_width` avec cette valeur.\
+Définissez ensuite le constructeur à 1 paramètre correspondant, qui initialise les deux attributs `_length` et `_width` avec cette valeur.  
 Vous placerez l'implémentation de ce constructeur dans `Rectangle.cpp`.
 
 {{% hidden-solution %}}
@@ -197,7 +197,7 @@ Rectangle::Rectangle(float size)
 
 {{% notice info %}}
 Vous ne pouvez pas initialiser d'attributs dans la liste d'initialisation d'un constructeur qui a délégué la construction à un autre constructeur.  
-Le constructeur aà qui vous déléguez la construction doit donc vous permettre d'initialiser l'intégralité des attributs de la classe comme vous le souhaitez.
+Le constructeur à qui vous déléguez la construction doit donc vous permettre d'initialiser l'intégralité des attributs de la classe comme vous le souhaitez.
 {{% /notice %}}
 
 ---

@@ -140,20 +140,22 @@ Commentez la définition de votre constructeur, et essayez de compiler à nouvea
 
 Lorsque l'utilisateur ne définit aucun constructeur, le compilateur définit (s'il le peut) un constructeur qui n'attend aucun argument.
 
-En termes de vocabulaire, on appelle :
+Concernant le vocabulaire, on appelle :
 - **constructeur par défaut** tout constructeur qui n'attend aucun paramètre,
 - **implémentation par défaut** une implémentation fournie automatiquement par le compilateur.
 
 Le compilateur définit donc une **implémentation par défaut du constructeur par défaut** (oui, c'est long à dire) si le programmeur ne définit **aucun** constructeur.
 
 L'implémentation par défaut du constructeur par défaut initialise les attributs de la classe selon les règles suivantes :
-1. Si un class-initializer est fourni, on l'utilise (comme pour `_age`),
-2. S'il n'y a pas de class-initializer et que l'attribut est une classe, on appelle son constructeur par défaut (comme pour `_name` qui, étant une `std::string`, est construit par défaut avec la chaîne vide),
+1. Si un class-initializer est fourni, on l'utilise (comme pour `_age`).
+2. S'il n'y a pas de class-initializer et que l'attribut est une classe, on appelle son constructeur par défaut (comme pour `_name` qui, étant une `std::string`, est construit par défaut avec la chaîne vide).
 3. S'il n'y a pas de class-initializer et que l'attribut n'est pas une classe, alors il ne se passe rien, et le contenu de l'attribut est donc indéfini.
 
-Du coup, afin de répondre à la question, le code initial compilait en raison de la définition par le compilateur d'un constructeur par défaut pour la classe `Person`. Cependant, dès que vous avez introduit votre propre constructeur, le compilateur a supposé que vous ne souhaitiez probablement plus utiliser l'implémentation par défaut qu'il fournissait. Par conséquent, il vous était alors impossible d'instancier la classe `Person` sans spécifier d'arguments.
+Du coup, pour répondre à la question, le code original compilait car le compilateur définissait un constructeur par défaut pour la classe `Person`.  
+Cependant, dès que vous avez introduit votre propre constructeur, le compilateur a supposé que vous n'aviez plus besoin de l'implémentation par défaut qu'il fournissait et l'a supprimé.  
+Il n'était alors plus possible d'instancier la classe `Person` sans spécifier d'arguments.
 
-Dans l'éventualité où vous souhaitez rétablir cette possibilité tout en conservant votre constructeur à 2 paramètres, il vous faudrait alors explicitement définir un constructeur par défaut, c'est-à-dire un constructeur sans paramètres.
+Si vous voulez instancier une `Person` sans argument tout en conservant votre constructeur à 2 paramètres, vous devez définir explicitement un constructeur par défaut (c'est-à-dire un constructeur sans paramètre).
 
 ```cpp
 class Person
@@ -171,8 +173,8 @@ public:
 ```
 
 {{% notice note %}}
-1. Si aucun attribut n'est initialisé dans la liste d'initialisation d'un constructeur, il est nécessaire d'omettre complètement cette liste (c'est-à-dire écrire `Person() {}` plutôt que `Person() : {}`).  
-2. Si un attribut n'est pas initialisé via la liste d'initialisation, il est automatiquement initialisé selon les mêmes règles que celles définies pour l'implémentation par défaut du constructeur par défaut. C'est la raison pour laquelle il n'est pas nécessaire de spécifier à nouveau `_age` dans la liste d'initialisation du constructeur à 2 paramètres.
+1\. Si aucun attribut n'est initialisé dans la liste d'initialisation d'un constructeur, il est nécessaire d'omettre complètement cette liste (c'est-à-dire écrire `Person() {}` plutôt que `Person() : {}`).  
+2\. Si un attribut n'est pas initialisé via la liste d'initialisation, il est automatiquement initialisé selon les mêmes règles que celles définies pour l'implémentation par défaut du constructeur par défaut. C'est la raison pour laquelle il n'est pas nécessaire de spécifier à nouveau `_age` dans la liste d'initialisation du constructeur à 2 paramètres.
 {{% /notice %}}
 
 ---
@@ -208,7 +210,7 @@ Contrairement à l'initialisation des variables, on peut écrire `: _attr()` san
 ### À bas les setters
 
 L'ajout de votre constructeur vous a permis de supprimer le setter pour `_name`, afin que l'on ne puisse plus modifier l'attribut après son initialisation.  
-Il reste cependant le setter pour `_age`, qui ne pose pas spécialement de problème, si ce n'est qu'on peut remonter le temps avec. Et là, c'est *Batman*, pas *Retour vers le futur* 🦇
+Il reste le setter pour `_age`, qui ne pose pas spécialement de problème, si ce n'est qu'on peut remonter le temps avec. Et là, c'est *Batman*, pas *Retour vers le futur* 🦇
 
 Vous allez donc remplacer votre fonction `set_age` par une fonction `wait`, qui permet d'augmenter l'âge de votre objet.
 Celle-ci prendra en paramètre le nombre d'années à attendre.
@@ -242,6 +244,6 @@ Définir et utiliser des setters n'est pas forcément une mauvaise pratique. Ce 
 - Si on ne définit aucun constructeur, le compilateur génère l'**implémentation par défaut** du constructeur par défaut.
 
 {{% notice warning %}}
-En termes de vocabulaire, attention à ne pas confondre **constructeur par défaut**, et **implémentation par défaut** fournie par le compilateur.  
+Attention à ne pas confondre **constructeur par défaut**, et **implémentation par défaut** fournie par le compilateur.  
 Vous pouvez très bien implémenter vous-même un constructeur par défaut, et le compilateur peut fournir une implémentation par défaut pour d'autres fonctions que le constructeur. 
 {{% /notice %}}
