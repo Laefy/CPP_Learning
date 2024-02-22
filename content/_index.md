@@ -22,13 +22,13 @@ Le planning est le suivant :
 | TP 1 | Groupe I1 - 19/01<br/>Groupe I2 - 22/01<br/>Groupe Alt - 19/01 | * Compilation<br/>* Entrée / sortie<br/>* std::string et std::vector<br/>* Classes |
 | TP 2 | Groupe I1 - 26/01<br/>Groupe I2 - 29/01<br/>Groupe Alt - 26/01 | * Classes<br/>* Constructeurs<br/>* Membres statiques<br/>* Opérateurs |
 | TP 3 | Groupe I1 - 02/02<br/>Groupe I2 - 05/02<br/>Groupe Alt - 02/02 | * Références<br/>* Ownership |
-| TP 4 | Groupe I1 - 09/02<br/>Groupe I2 - 12/02<br/>Groupe Alt - 09/02 | TBD |
-| TP noté 1 | 21/02 | TBD |
+| TP 4 | Groupe I1 - 09/02<br/>Groupe I2 - 12/02<br/>Groupe Alt - 09/02 | * Révisions |
+| TP noté 1 | 21/02 | * Compilation<br/>* Entrée / sortie<br/>* std::string et std::vector<br/>* Classes<br/>* Constructeurs<br/>* Opérateurs<br/>* Références |
 | Cours 2 | 21/02 | |
-| TP 5 | Groupe I1 - 23/02<br/>Groupe I2 - 26/02<br/>Groupe Alt - 23/02 | TBD |
+| TP 5 | Groupe I1 - 23/02<br/>Groupe I2 - 26/02<br/>Groupe Alt - 23/02 | * Copie<br/>* Déplacement<br/>* l-value / r-value<br/>* std::unique_ptr |
 | TP 6 | Groupe I1 - 29/02<br/>Groupe I2 - 04/03<br/>Groupe Alt - 29/02 | TBD |
 | TP 7 | Groupe I1 - 08/03<br/>Groupe I2 - 11/03<br/>Groupe Alt - 08/03 | TBD |
-| TP 8 | Groupe I1 - 15/03<br/>Groupe I2 - 18/03<br/>Groupe Alt - 15/03 | TBD |
+| TP 8 | Groupe I1 - 15/03<br/>Groupe I2 - 18/03<br/>Groupe Alt - 15/03 | * Révisions |
 | TP noté 2 | 21/03 | TBD |
 | Cours 3 | 21/03 | |
 | TP 9 | Groupe I1 - 29/03<br/>Groupe I2 - 25/03<br/>Groupe Alt - 29/03 | TBD |
