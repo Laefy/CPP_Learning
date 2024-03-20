@@ -1,9 +1,9 @@
 ---
 title: "Paramètres de templates"
 chapter: true
-chapterName: Chapitre 10
-pre: "<b>10- </b>"
-weight: 11
+chapterName: Chapitre 8
+pre: "<b>8- </b>"
+weight: 9
 ---
 
 Dans ce deuxième chapitre sur les templates, nous parlerons de tout un tas de fonctionnalités et subtilités liées aux paramètres de templates.
