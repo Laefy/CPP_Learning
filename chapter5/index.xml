@@ -50,7 +50,7 @@
       <description>Vous avez déjà utilisé le type pair au cours d&amp;rsquo;exercices précédents. Nous allons maintenant vous présenter son cousin, la classe tuple.&#xA;Pour cet exercice, vous modifierez le fichier :&#xA;- chap-05/5-tuples.cpp&#xA;La cible à compiler est c5-5-tuples.&#xA;Micro rappel sur les pair La classe pair est un type templaté avec deux paramètres :&#xA;std::pair&amp;lt;int, float&amp;gt; such_a_nice_pair { 1, 3.f }; On accède aux éléments de la pair directement via ses attributs first et second (pas de getters) :</description>
     </item>
     <item>
-      <title>Questionnaire !</title>
+      <title>Questionnaire ☑</title>
       <link>https://laefy.github.io/CPP_Learning/chapter5/test/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://laefy.github.io/CPP_Learning/chapter5/test/</guid>

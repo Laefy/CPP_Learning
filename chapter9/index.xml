@@ -29,7 +29,7 @@
       <description>Définition d&amp;rsquo;un template Pour définir un template, il faut écrire template &amp;lt;...&amp;gt; devant la définition de la classe ou fonction templatée.&#xA;Les chevrons contiennent la liste des paramètres du template. Chaque paramètre est typé par :&#xA;- typename : il faut donc passer un nom de type en paramètre,&#xA;- un type intégral, comme size_t, char, int, &amp;hellip; : il faut passer une expression du bon type évaluable à la compilation,</description>
     </item>
     <item>
-      <title>Questionnaire !</title>
+      <title>Questionnaire ☑</title>
       <link>https://laefy.github.io/CPP_Learning/chapter9/test/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://laefy.github.io/CPP_Learning/chapter9/test/</guid>

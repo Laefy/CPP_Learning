@@ -36,7 +36,7 @@
       <description>Les lambdas sont des objets-fonction un peu spéciaux, que l&amp;rsquo;on peut facilement définir depuis le corps d&amp;rsquo;une fonction. Vous avez déjà dû voir de nombreux exemples d&amp;rsquo;utilisation de lambda tout au long de ce cours. Nous allons maintenant revenir plus en détail sur leur fonctionnement et vous montrez tout ce qu&amp;rsquo;il est possible de faire avec.&#xA;Syntaxe La définition d&amp;rsquo;une lambda est composée en général de trois parties :&#xA;[c1, c2, c3](int p1, int p2, int p3) { return c1 * p1 + c2 * p2 + c3 * p3; } La partie entre crochet s&amp;rsquo;appelle la capture.</description>
     </item>
     <item>
-      <title>Questionnaire !</title>
+      <title>Questionnaire ☑</title>
       <link>https://laefy.github.io/CPP_Learning/chapter6/test/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://laefy.github.io/CPP_Learning/chapter6/test/</guid>

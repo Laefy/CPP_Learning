@@ -36,18 +36,11 @@
       <description>Nous allons maintenant vous expliquer ce que signifie SFINAE, le besoin auquel ce mécanisme répond et comment le mettre en oeuvre dans votre code.&#xA;Le besoin Supposons que nous souhaitions pouvoir récupérer une clef pour différents type à l&amp;rsquo;aide d&amp;rsquo;une fonction get_key(const Type&amp;amp;), en utilisant des overloads.&#xA;class Person { public: Person(const std::string&amp;amp; name) : _name { name } {} const std::string&amp;amp; get_name() const { return _name; } private: const std::string _name; }; // Overload pour notre classe Person.</description>
     </item>
     <item>
-      <title>Questionnaire !</title>
+      <title>Questionnaire ☑</title>
       <link>https://laefy.github.io/CPP_Learning/chapter10/test/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://laefy.github.io/CPP_Learning/chapter10/test/</guid>
       <description>Pas de questionnaire cette semaine, parce que mis en ligne trop tard.&#xA;N&amp;rsquo;hésitez néanmoins pas à utiliser le formulaire pour envoyer vos questions.&#xA;Vous êtes :&#xD;Votre adresse mail :&#xD;Votre groupe :&#xD;Initiaux 1&#xD;Initiaux 2&#xD;Alternants&#xD;Combien de temps avez-vous mis à compléter ce chapitre ?&#xD;Avez-vous des questions suite à sa lecture ?&#xD;Avez-vous des commentaires concernant le chapitre et/ou le site ?&#xD;</description>
-    </item>
-    <item>
-      <title>Synthèse</title>
-      <link>https://laefy.github.io/CPP_Learning/chapter10/summary/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://laefy.github.io/CPP_Learning/chapter10/summary/</guid>
-      <description>// 🚧🚥🔨 //</description>
     </item>
     <item>
       <title>Merci !</title>

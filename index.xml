@@ -22,13 +22,6 @@
       <description>Cette première page sera assez courte, elle vous présentera simplement la syntaxe permettant d&amp;rsquo;allouer dynamiquement de la mémoire et de la libérer.&#xA;Allouer un seul élément Pour allouer un bloc de mémoire, on utilise le mot-clef new, suivi du type de donnée que l&amp;rsquo;on souhaite y placer, puis de la valeur avec laquelle on souhaite l&amp;rsquo;initialiser.&#xA;Cette instruction retourne un pointeur.&#xA;int* ptr_5 = new int { 5 }; std::cout &amp;lt;&amp;lt; *ptr_5 &amp;lt;&amp;lt; std::endl; // --&amp;gt; 5 Comme pour une variable classique, on peut utiliser des {} ou des () pour indiquer la valeur initiale.</description>
     </item>
     <item>
-      <title>Assertions</title>
-      <link>https://laefy.github.io/CPP_Learning/chapter8/1-assertions/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://laefy.github.io/CPP_Learning/chapter8/1-assertions/</guid>
-      <description>Types d&amp;rsquo;erreurs Lorsqu&amp;rsquo;une erreur se produit dans un logiciel, il s&amp;rsquo;agit soit d&amp;rsquo;une erreur de programmation, soit d&amp;rsquo;une erreur d&amp;rsquo;utilisation du logiciel.&#xA;Voici quelques exemples :&#xA;Un pointeur null a été déréférencé : erreur de programmation. Le programme a demandé à l&amp;rsquo;utilisateur de rentrer une image, mais celui-ci a fournit un fichier texte : erreur d&amp;rsquo;utilisation. On a écrit dans la case array.size() de array : erreur de programmation. L&amp;rsquo;utilisateur a entraîné &amp;ldquo;-34&amp;rdquo; alors que le programme attendait un entier positif : erreur d&amp;rsquo;utilisation.</description>
-    </item>
-    <item>
       <title>C&#39;est quoi un objet déjà ?</title>
       <link>https://laefy.github.io/CPP_Learning/chapter2/1-poo/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -111,13 +104,6 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://laefy.github.io/CPP_Learning/chapter3/2-lifespan/</guid>
       <description>Nous allons maintenant revenir sur l&amp;rsquo;instanciation et la désinstanciation des données, car ce sont les deux événements qui délimitent leur période de validité.&#xA;Donnée de type fondamental L&amp;rsquo;instanciation d&amp;rsquo;une donnée de type fondamental est constitué de deux phases.&#xA;Le programme alloue l&amp;rsquo;espace nécessaire pour stocker la donnée. Si spécifié par le programmeur, le contenu de la donnée est initialisé. En ce qui concerne la désinstanciation, le programme désalloue l&amp;rsquo;espace réservé pour la donnée.</description>
-    </item>
-    <item>
-      <title>Exceptions</title>
-      <link>https://laefy.github.io/CPP_Learning/chapter8/2-exceptions/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://laefy.github.io/CPP_Learning/chapter8/2-exceptions/</guid>
-      <description>Qu&amp;rsquo;est-ce qu&amp;rsquo;une exception ? En C++, une exception sert à interrompre le flot classique d&amp;rsquo;exécution du programme lorsqu&amp;rsquo;un événement particulier se produit. Lorsqu&amp;rsquo;une exception est lancée, on sort du bloc courant, et on remonte la callstack autant que nécessaire, jusqu&amp;rsquo;à atteindre un bloc capable de traiter l&amp;rsquo;exception.&#xA;C&amp;rsquo;est donc un mécanisme extrêmement utilisé pour le traitement des erreurs (autant de programmation que d&amp;rsquo;utilisation), puisque l&amp;rsquo;erreur est remontée automatiquement jusqu&amp;rsquo;à l&amp;rsquo;endroit qui peut la traiter, sans avoir besoin de toucher au code des fonctions intermédiaires.</description>
     </item>
     <item>
       <title>Exemples</title>
@@ -352,45 +338,17 @@
     </item>
     <item>
       <title>Questionnaire !</title>
-      <link>https://laefy.github.io/CPP_Learning/chapter10/test/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://laefy.github.io/CPP_Learning/chapter10/test/</guid>
-      <description>Pas de questionnaire cette semaine, parce que mis en ligne trop tard.&#xA;N&amp;rsquo;hésitez néanmoins pas à utiliser le formulaire pour envoyer vos questions.&#xA;Vous êtes :&#xD;Votre adresse mail :&#xD;Votre groupe :&#xD;Initiaux 1&#xD;Initiaux 2&#xD;Alternants&#xD;Combien de temps avez-vous mis à compléter ce chapitre ?&#xD;Avez-vous des questions suite à sa lecture ?&#xD;Avez-vous des commentaires concernant le chapitre et/ou le site ?&#xD;</description>
-    </item>
-    <item>
-      <title>Questionnaire !</title>
       <link>https://laefy.github.io/CPP_Learning/chapter4/test/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://laefy.github.io/CPP_Learning/chapter4/test/</guid>
       <description>Vous avez terminé le Chapitre 4 ! C&amp;rsquo;est donc maintenant le moment de connecter vos neurones pour répondre aux questions suivantes.&#xA;Bon courage à vous 🙂&#xA;Vous êtes :&#xD;Votre adresse mail :&#xD;Votre groupe :&#xD;Initiaux 1&#xD;Initiaux 2&#xD;Alternants&#xD;1- Qu’est-ce qu’une classe polymorphe ?&#xA;2- Définissez une classe polymorphe Nothing qui ne fait rien.&#xA;3- Comment représenter une classe abstraite en C++ ?&#xA;Les questions 4 à 6 font référence au code suivant :</description>
     </item>
     <item>
-      <title>Questionnaire !</title>
-      <link>https://laefy.github.io/CPP_Learning/chapter5/test/</link>
+      <title>Questionnaire ☑</title>
+      <link>https://laefy.github.io/CPP_Learning/chapter10/test/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://laefy.github.io/CPP_Learning/chapter5/test/</guid>
-      <description>Le premier objectif de ce chapitre était de vous présenter quelques classes de la STL, leurs rôles, leurs différences, dans quelles situations les utiliser et comment.&#xA;Il avait également un deuxième objectif, qui était en quelque sorte de vous apprendre à vous débrouiller tout seul : vous devriez désormais être capable de rechercher par vous-même des informations dans la documentation, et vous devriez aussi appréhender un peu mieux qu&amp;rsquo;avant les messages du compilateur.</description>
-    </item>
-    <item>
-      <title>Questionnaire !</title>
-      <link>https://laefy.github.io/CPP_Learning/chapter6/test/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://laefy.github.io/CPP_Learning/chapter6/test/</guid>
-      <description>C&amp;rsquo;est l&amp;rsquo;heure du test ! N&amp;rsquo;oubliez pas que vous pouvez utiliser Godbolt pour compiler et tester des petits bouts de code.&#xA;Bon courage à vous 🙂&#xA;Vous êtes :&#xD;Votre adresse mail :&#xD;Votre groupe :&#xD;Initiaux 1&#xD;Initiaux 2&#xD;Alternants&#xD;1- Quel type de boucle faut-il utiliser pour modifier la structure d’un conteneur lors d’un parcours ?&#xA;2- Dans quel cas peut-il être intéressant d’utiliser la fonction std::for_each ?</description>
-    </item>
-    <item>
-      <title>Questionnaire !</title>
-      <link>https://laefy.github.io/CPP_Learning/chapter8/test/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://laefy.github.io/CPP_Learning/chapter8/test/</guid>
-      <description>C&amp;rsquo;est l&amp;rsquo;heure du test ! N&amp;rsquo;oubliez pas que vous pouvez utiliser Godbolt pour compiler et tester des petits bouts de code.&#xA;Bon courage à vous 🙂&#xA;Vous êtes :&#xD;Votre adresse mail :&#xD;Votre groupe :&#xD;Initiaux 1&#xD;Initiaux 2&#xD;Alternants&#xD;1- A quoi sert une assertion ?&#xA;2- Pourquoi ne faut-il pas utiliser d’assertions pour traiter une erreur d’utilisation d’un logiciel ?&#xA;3- Ecrivez une assertion permettant de s’assurer qu’une variable name de type std::string n’est pas vide.</description>
-    </item>
-    <item>
-      <title>Questionnaire !</title>
-      <link>https://laefy.github.io/CPP_Learning/chapter9/test/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://laefy.github.io/CPP_Learning/chapter9/test/</guid>
-      <description>C&amp;rsquo;est l&amp;rsquo;heure du test ! N&amp;rsquo;oubliez pas que vous pouvez utiliser Godbolt pour compiler et tester des petits bouts de code.&#xA;Bon courage à vous 🙂&#xA;Vous êtes :&#xD;Votre adresse mail :&#xD;Votre groupe :&#xD;Initiaux 1&#xD;Initiaux 2&#xD;Alternants&#xD;1- Que faut-il écrire juste avant la définition d’une classe (ou fonction) pour en faire une classe (ou fonction) templatée ?&#xA;2- Pourquoi n’est-il pas toujours possible de placer l’implémentation des fonctions-membres d’une classe-template dans un .</description>
+      <guid>https://laefy.github.io/CPP_Learning/chapter10/test/</guid>
+      <description>Pas de questionnaire cette semaine, parce que mis en ligne trop tard.&#xA;N&amp;rsquo;hésitez néanmoins pas à utiliser le formulaire pour envoyer vos questions.&#xA;Vous êtes :&#xD;Votre adresse mail :&#xD;Votre groupe :&#xD;Initiaux 1&#xD;Initiaux 2&#xD;Alternants&#xD;Combien de temps avez-vous mis à compléter ce chapitre ?&#xD;Avez-vous des questions suite à sa lecture ?&#xD;Avez-vous des commentaires concernant le chapitre et/ou le site ?&#xD;</description>
     </item>
     <item>
       <title>Questionnaire ☑</title>
@@ -414,18 +372,32 @@
       <description>Vous êtes :&#xD;Votre adresse mail :&#xD;Votre groupe :&#xD;Initiaux 1&#xD;Initiaux 2&#xD;Alternants&#xD;1- Quels sont les avantages et les inconvénients de la pile par rapport du tas ?&#xA;2- A quoi sert le mot-clef delete[] ?&#xA;3- Quels sont les deux événements qui délimitent la durée de vie d’une donnée ?&#xA;4- Qu’est-ce qu’une dangling-reference ?&#xA;Donnez un exemple de situation dans lequel on peut en avoir une.</description>
     </item>
     <item>
+      <title>Questionnaire ☑</title>
+      <link>https://laefy.github.io/CPP_Learning/chapter5/test/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://laefy.github.io/CPP_Learning/chapter5/test/</guid>
+      <description>Le premier objectif de ce chapitre était de vous présenter quelques classes de la STL, leurs rôles, leurs différences, dans quelles situations les utiliser et comment.&#xA;Il avait également un deuxième objectif, qui était en quelque sorte de vous apprendre à vous débrouiller tout seul : vous devriez désormais être capable de rechercher par vous-même des informations dans la documentation, et vous devriez aussi appréhender un peu mieux qu&amp;rsquo;avant les messages du compilateur.</description>
+    </item>
+    <item>
+      <title>Questionnaire ☑</title>
+      <link>https://laefy.github.io/CPP_Learning/chapter6/test/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://laefy.github.io/CPP_Learning/chapter6/test/</guid>
+      <description>C&amp;rsquo;est l&amp;rsquo;heure du test ! N&amp;rsquo;oubliez pas que vous pouvez utiliser Godbolt pour compiler et tester des petits bouts de code.&#xA;Bon courage à vous 🙂&#xA;Vous êtes :&#xD;Votre adresse mail :&#xD;Votre groupe :&#xD;Initiaux 1&#xD;Initiaux 2&#xD;Alternants&#xD;1- Quel type de boucle faut-il utiliser pour modifier la structure d’un conteneur lors d’un parcours ?&#xA;2- Dans quel cas peut-il être intéressant d’utiliser la fonction std::for_each ?</description>
+    </item>
+    <item>
+      <title>Questionnaire ☑</title>
+      <link>https://laefy.github.io/CPP_Learning/chapter9/test/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://laefy.github.io/CPP_Learning/chapter9/test/</guid>
+      <description>C&amp;rsquo;est l&amp;rsquo;heure du test ! N&amp;rsquo;oubliez pas que vous pouvez utiliser Godbolt pour compiler et tester des petits bouts de code.&#xA;Bon courage à vous 🙂&#xA;Vous êtes :&#xD;Votre adresse mail :&#xD;Votre groupe :&#xD;Initiaux 1&#xD;Initiaux 2&#xD;Alternants&#xD;1- Que faut-il écrire juste avant la définition d’une classe (ou fonction) pour en faire une classe (ou fonction) templatée ?&#xA;2- Pourquoi n’est-il pas toujours possible de placer l’implémentation des fonctions-membres d’une classe-template dans un .</description>
+    </item>
+    <item>
       <title>Retours ?</title>
       <link>https://laefy.github.io/CPP_Learning/chapter0/test/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://laefy.github.io/CPP_Learning/chapter0/test/</guid>
       <description>Si vous avez rencontré des problèmes lors de l&amp;rsquo;installation d&amp;rsquo;un des logiciels, n&amp;rsquo;hésitez pas à nous l&amp;rsquo;indiquer, afin que nous puissions améliorer nos explications. Merci d&amp;rsquo;avance ! 🙂&#xA;Vous êtes :&#xD;Votre adresse mail :&#xD;Votre groupe :&#xD;Initiaux 1&#xD;Initiaux 2&#xD;Alternants&#xD;1- Avez-vous rencontré des difficultés lors de l’installation d’un des composants ? Si oui, du ou desquels s’agit-il ?&#xA;2- Si une erreur est survenue à un moment, pouvez-vous la copier-coller ci-dessous et indiquer le contexte dans lequel celle-ci a eu lieu ?</description>
-    </item>
-    <item>
-      <title>Synthèse</title>
-      <link>https://laefy.github.io/CPP_Learning/chapter10/summary/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://laefy.github.io/CPP_Learning/chapter10/summary/</guid>
-      <description>// 🚧🚥🔨 //</description>
     </item>
     <item>
       <title>Synthèse</title>
@@ -506,13 +478,6 @@
     </item>
     <item>
       <title>Merci !</title>
-      <link>https://laefy.github.io/CPP_Learning/chapter8/test_done/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://laefy.github.io/CPP_Learning/chapter8/test_done/</guid>
-      <description>&#xD;Vos réponses nous ont bien été communiquées 😃&#xD;N&#39;hésitez pas à nous relancer si vous n&#39;avez pas eu de nouvelles après une semaine !&#xD;</description>
-    </item>
-    <item>
-      <title>Merci !</title>
       <link>https://laefy.github.io/CPP_Learning/chapter9/test_done/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://laefy.github.io/CPP_Learning/chapter9/test_done/</guid>
@@ -530,7 +495,7 @@
       <link>https://laefy.github.io/CPP_Learning/slides/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://laefy.github.io/CPP_Learning/slides/</guid>
-      <description>Ci-dessous, vous trouverez le lien pour télécharger les slides de chaque séance de cours magistraux.&#xA;Cours 1 Cours 2 </description>
+      <description>Ci-dessous, vous trouverez le lien pour télécharger les slides de chaque séance de cours magistraux.&#xA;Cours 1 Cours 2 Cours 3 </description>
     </item>
     <item>
       <title>Workflow</title>

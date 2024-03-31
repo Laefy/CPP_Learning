@@ -6,8 +6,6 @@
   </url><url>
     <loc>https://laefy.github.io/CPP_Learning/chapter3/1-allocation/</loc>
   </url><url>
-    <loc>https://laefy.github.io/CPP_Learning/chapter8/1-assertions/</loc>
-  </url><url>
     <loc>https://laefy.github.io/CPP_Learning/chapter2/1-poo/</loc>
   </url><url>
     <loc>https://laefy.github.io/CPP_Learning/chapter0/1-compiler/</loc>
@@ -33,8 +31,6 @@
     <loc>https://laefy.github.io/CPP_Learning/chapter4/2-farm/</loc>
   </url><url>
     <loc>https://laefy.github.io/CPP_Learning/chapter3/2-lifespan/</loc>
-  </url><url>
-    <loc>https://laefy.github.io/CPP_Learning/chapter8/2-exceptions/</loc>
   </url><url>
     <loc>https://laefy.github.io/CPP_Learning/chapter9/2-examples/</loc>
   </url><url>
@@ -116,23 +112,13 @@
   </url><url>
     <loc>https://laefy.github.io/CPP_Learning/chapter6/</loc>
   </url><url>
-    <loc>https://laefy.github.io/CPP_Learning/chapter8/</loc>
-  </url><url>
     <loc>https://laefy.github.io/CPP_Learning/chapter9/</loc>
   </url><url>
     <loc>https://laefy.github.io/CPP_Learning/chapter10/</loc>
   </url><url>
-    <loc>https://laefy.github.io/CPP_Learning/chapter10/test/</loc>
-  </url><url>
     <loc>https://laefy.github.io/CPP_Learning/chapter4/test/</loc>
   </url><url>
-    <loc>https://laefy.github.io/CPP_Learning/chapter5/test/</loc>
-  </url><url>
-    <loc>https://laefy.github.io/CPP_Learning/chapter6/test/</loc>
-  </url><url>
-    <loc>https://laefy.github.io/CPP_Learning/chapter8/test/</loc>
-  </url><url>
-    <loc>https://laefy.github.io/CPP_Learning/chapter9/test/</loc>
+    <loc>https://laefy.github.io/CPP_Learning/chapter10/test/</loc>
   </url><url>
     <loc>https://laefy.github.io/CPP_Learning/chapter1/test/</loc>
   </url><url>
@@ -140,9 +126,13 @@
   </url><url>
     <loc>https://laefy.github.io/CPP_Learning/chapter3/test/</loc>
   </url><url>
-    <loc>https://laefy.github.io/CPP_Learning/chapter0/test/</loc>
+    <loc>https://laefy.github.io/CPP_Learning/chapter5/test/</loc>
   </url><url>
-    <loc>https://laefy.github.io/CPP_Learning/chapter10/summary/</loc>
+    <loc>https://laefy.github.io/CPP_Learning/chapter6/test/</loc>
+  </url><url>
+    <loc>https://laefy.github.io/CPP_Learning/chapter9/test/</loc>
+  </url><url>
+    <loc>https://laefy.github.io/CPP_Learning/chapter0/test/</loc>
   </url><url>
     <loc>https://laefy.github.io/CPP_Learning/chapter4/summary/</loc>
   </url><url>
@@ -189,8 +179,6 @@
     <loc>https://laefy.github.io/CPP_Learning/chapter5/test_done/</loc>
   </url><url>
     <loc>https://laefy.github.io/CPP_Learning/chapter6/test_done/</loc>
-  </url><url>
-    <loc>https://laefy.github.io/CPP_Learning/chapter8/test_done/</loc>
   </url><url>
     <loc>https://laefy.github.io/CPP_Learning/chapter9/test_done/</loc>
   </url><url>
