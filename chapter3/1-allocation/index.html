@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="Hugo 0.121.0">
+    <meta name="generator" content="Hugo 0.121.2">
     <meta name="description" content="">
 
 
@@ -12,22 +12,22 @@
     <title>Allocation dynamique 🎇 :: Cours de C&#43;&#43; - Niveau Master</title>
 
     
-    <link href="/CPP_Learning/css/nucleus.css?1712909077" rel="stylesheet">
-    <link href="/CPP_Learning/css/fontawesome-all.min.css?1712909077" rel="stylesheet">
-    <link href="/CPP_Learning/css/hybrid.css?1712909077" rel="stylesheet">
-    <link href="/CPP_Learning/css/featherlight.min.css?1712909077" rel="stylesheet">
-    <link href="/CPP_Learning/css/perfect-scrollbar.min.css?1712909077" rel="stylesheet">
-    <link href="/CPP_Learning/css/auto-complete.css?1712909077" rel="stylesheet">
-    <link href="/CPP_Learning/css/atom-one-dark-reasonable.css?1712909077" rel="stylesheet">
-    <link href="/CPP_Learning/css/theme.css?1712909077" rel="stylesheet">
-    <link href="/CPP_Learning/css/tabs.css?1712909077" rel="stylesheet">
-    <link href="/CPP_Learning/css/hugo-theme.css?1712909077" rel="stylesheet">
+    <link href="/CPP_Learning/css/nucleus.css?1768939190" rel="stylesheet">
+    <link href="/CPP_Learning/css/fontawesome-all.min.css?1768939190" rel="stylesheet">
+    <link href="/CPP_Learning/css/hybrid.css?1768939190" rel="stylesheet">
+    <link href="/CPP_Learning/css/featherlight.min.css?1768939190" rel="stylesheet">
+    <link href="/CPP_Learning/css/perfect-scrollbar.min.css?1768939190" rel="stylesheet">
+    <link href="/CPP_Learning/css/auto-complete.css?1768939190" rel="stylesheet">
+    <link href="/CPP_Learning/css/atom-one-dark-reasonable.css?1768939190" rel="stylesheet">
+    <link href="/CPP_Learning/css/theme.css?1768939190" rel="stylesheet">
+    <link href="/CPP_Learning/css/tabs.css?1768939190" rel="stylesheet">
+    <link href="/CPP_Learning/css/hugo-theme.css?1768939190" rel="stylesheet">
     
-    <link href="/CPP_Learning/css/theme-mine.css?1712909077" rel="stylesheet">
+    <link href="/CPP_Learning/css/theme-mine.css?1768939190" rel="stylesheet">
     
-    <link href="/CPP_Learning/css/syntax.css?1712909077" rel="stylesheet">
+    <link href="/CPP_Learning/css/syntax.css?1768939190" rel="stylesheet">
 
-    <script src="/CPP_Learning/js/jquery-3.3.1.min.js?1712909077"></script>
+    <script src="/CPP_Learning/js/jquery-3.3.1.min.js?1768939190"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -39,7 +39,48 @@
         }
       
     </style>
-    
+    <div
+  id="redirect-warning"
+  style="
+    background-color: orange;
+    position: fixed;
+    top: 0;
+    left: 300px;
+    z-index: 999999;
+    overflow: hidden;
+    width: calc(100% - 300px);
+    display: block;
+    transform: translateY(-100%);
+    transform-origin: top;
+    transition: transform 0.5s ease-out;
+    padding: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    color: white;
+  "
+>
+  ⚠ Si vous êtes un étudiant en Master 1 d'Informatique à l'UPEM, sachez que
+  vous n'êtes pas sur le bon site ! ⚠
+  <button
+    style="position: fixed; right: 10px; background-color: transparent"
+    onclick="sessionStorage.setItem('redirect-warning-closed', 'true');
+    document.getElementById('redirect-warning').style.transform = 'translateY(-100%)';"
+  >
+    X
+  </button>
+</div>
+
+<script>
+  setTimeout(() => {
+    if (sessionStorage.getItem("redirect-warning-closed") !== "true") {
+      document.getElementById("redirect-warning").style.transform =
+        "translateY(0)";
+    }
+  }, 0);
+</script>
+
   </head>
   <body class="" data-url="/CPP_Learning/chapter3/1-allocation/">
     <nav id="sidebar" class="showVisitedLinks">
@@ -3039,19 +3080,19 @@ Et surtout, cela vous permettra de comprendre les extraits de code présentés d
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/CPP_Learning/js/clipboard.min.js?1712909077"></script>
-    <script src="/CPP_Learning/js/perfect-scrollbar.min.js?1712909077"></script>
-    <script src="/CPP_Learning/js/perfect-scrollbar.jquery.min.js?1712909077"></script>
-    <script src="/CPP_Learning/js/jquery.sticky.js?1712909077"></script>
-    <script src="/CPP_Learning/js/featherlight.min.js?1712909077"></script>
-    <script src="/CPP_Learning/js/highlight.pack.js?1712909077"></script>
+    <script src="/CPP_Learning/js/clipboard.min.js?1768939190"></script>
+    <script src="/CPP_Learning/js/perfect-scrollbar.min.js?1768939190"></script>
+    <script src="/CPP_Learning/js/perfect-scrollbar.jquery.min.js?1768939190"></script>
+    <script src="/CPP_Learning/js/jquery.sticky.js?1768939190"></script>
+    <script src="/CPP_Learning/js/featherlight.min.js?1768939190"></script>
+    <script src="/CPP_Learning/js/highlight.pack.js?1768939190"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/CPP_Learning/js/modernizr.custom-3.6.0.js?1712909077"></script>
-    <script src="/CPP_Learning/js/learn.js?1712909077"></script>
-    <script src="/CPP_Learning/js/hugo-learn.js?1712909077"></script>
+    <script src="/CPP_Learning/js/modernizr.custom-3.6.0.js?1768939190"></script>
+    <script src="/CPP_Learning/js/learn.js?1768939190"></script>
+    <script src="/CPP_Learning/js/hugo-learn.js?1768939190"></script>
     
         
-            <script src="/CPP_Learning/mermaid/mermaid.js?1712909077"></script>
+            <script src="/CPP_Learning/mermaid/mermaid.js?1768939190"></script>
         
         <script>
             mermaid.initialize({ startOnLoad: true });
